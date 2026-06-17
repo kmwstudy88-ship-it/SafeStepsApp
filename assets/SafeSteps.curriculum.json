@@ -1,0 +1,62 @@
+{
+  "Understanding Emotions": {
+    "id": "Understanding Emotions",
+    "type": "lesson",
+    "name": "Understanding Emotions",
+    "description": "Learn how to identify and manage emotions effectively."
+  },
+  "Positive Behaviour Guidance": {
+    "id": "Positive Behaviour Guidance",
+    "type": "lesson",
+    "name": "Positive Behaviour Guidance",
+    "description": "Explore strategies for encouraging positive behaviour in children."
+  },
+  "Secure Attachment": {
+    "id": "Secure Attachment",
+    "type": "lesson",
+    "name": "Secure Attachment",
+    "description": "Understand the importance of secure attachment and how to foster it."
+  },
+  "Building Resilience": {
+    "id": "Building Resilience",
+    "type": "lesson",
+    "name": "Building Resilience",
+    "description": "Help children develop emotional resilience and coping skills."
+  },
+  "Healthy Communication": {
+    "id": "Healthy Communication",
+    "type": "lesson",
+    "name": "Healthy Communication",
+    "description": "Discover effective ways to communicate with children and caregivers."
+  },
+  "Safety Planning": {
+    "id": "Safety Planning",
+    "type": "lesson",
+    "name": "Safety Planning",
+    "description": "Learn how to create and implement safety plans for families."
+  },
+  "Conflict Resolution": {
+    "id": "Conflict Resolution",
+    "type": "lesson",
+    "name": "Conflict Resolution",
+    "description": "Learn strategies for resolving conflicts peacefully and constructively."
+  },
+  "Parent‑Child Bonding": {
+    "id": "Parent‑Child Bonding",
+    "type": "lesson",
+    "name": "Parent‑Child Bonding",
+    "description": "Explore activities and techniques to strengthen parent‑child relationships."
+  },
+  "Emotional Regulation": {
+    "id": "Emotional Regulation",
+    "type": "lesson",
+    "name": "Emotional Regulation",
+    "description": "Help children recognize and regulate their emotions effectively."
+  },
+  "Community Support": {
+    "id": "Community Support",
+    "type": "lesson",
+    "name": "Community Support",
+    "description": "Learn how to connect families with community resources and support networks."
+  }
+}

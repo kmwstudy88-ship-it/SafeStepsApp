@@ -1,0 +1,18 @@
+{
+  "program": {
+    "name": "SafeSteps Program",
+    "courses": [
+      {
+        "title": "Trauma-Informed Housing Support",
+        "lessons": [
+          {
+            "title": "Part 1 (Foundations)",
+            "topics": [
+              { "title": "Understanding trauma responses", "sections": ["Video", "Reflection"] }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
