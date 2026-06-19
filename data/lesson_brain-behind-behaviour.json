@@ -1,0 +1,21 @@
+{
+    "id":  "brain-behind-behaviour",
+    "title":  "The Brain Behind Behaviour",
+    "keyMessage":  "A dysregulated brain cannot behave well.",
+    "summary":  "When children are overwhelmed, their thinking brain goes offline. They need regulation before they can listen, learn, or follow instructions.",
+    "cards":  [
+                  "Overwhelm shuts down the thinking brain.",
+                  "Children cannot behave well when dysregulated.",
+                  "Regulation must come before behaviour change."
+              ],
+    "actions":  [
+                    "Reduce noise and stimulation.",
+                    "Use a soft, calm tone.",
+                    "Offer co-regulation before giving instructions."
+                ],
+    "reflection":  [
+                       "What dysregulates my child most?",
+                       "What helps them return to calm?"
+                   ],
+    "path":  "C:\\Users\\SAFES\\SafeStepsProject\\safesteps-curriculum\\lessons\\BehaviourSupport\\BrainBehindBehaviour\\BrainBehindBehaviour.json"
+}

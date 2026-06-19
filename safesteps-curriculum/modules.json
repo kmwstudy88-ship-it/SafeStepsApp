@@ -1,0 +1,32 @@
+{
+  "modules": [
+    {
+      "id": "parenting-basics",
+      "name": "Parenting Basics",
+      "tasks": [
+        "Practice positive reinforcement",
+        "Review daily routines",
+        "Identify safe home practices"
+      ],
+      "evidence": [
+        "Consistent routines observed",
+        "Positive parent-child interactions",
+        "Safe home environment maintained"
+      ]
+    },
+    {
+      "id": "safety-awareness",
+      "name": "Safety Awareness",
+      "tasks": [
+        "Discuss risk factors",
+        "Identify protective behaviours",
+        "Review safety planning"
+      ],
+      "evidence": [
+        "Improved risk recognition",
+        "Demonstrated protective actions",
+        "Engagement in safety planning"
+      ]
+    }
+  ]
+}

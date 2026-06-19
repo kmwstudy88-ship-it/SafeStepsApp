@@ -1,0 +1,21 @@
+{
+    "id":  "supporting-sensory-needs",
+    "title":  "Supporting Sensory Needs",
+    "keyMessage":  "Sensory overload drives behaviour.",
+    "summary":  "Noise, lights, textures, and movement can overwhelm children. Supporting sensory needs reduces behaviour challenges.",
+    "cards":  [
+                  "Sensory needs affect behaviour.",
+                  "Overload leads to big reactions.",
+                  "Supporting sensory needs reduces stress."
+              ],
+    "actions":  [
+                    "Reduce noise and visual clutter.",
+                    "Offer sensory tools.",
+                    "Create calm sensory spaces."
+                ],
+    "reflection":  [
+                       "What sensory needs does my child have?",
+                       "What helps them feel calm?"
+                   ],
+    "path":  "C:\\Users\\SAFES\\SafeStepsProject\\safesteps-curriculum\\lessons\\BehaviourSupport\\SupportingSensoryNeeds\\SupportingSensoryNeeds.json"
+}

@@ -1,0 +1,84 @@
+﻿{
+    "programId":  "REUNIFY-24M-CUSTOM",
+    "week":  36,
+    "stageId":  "STAGE-05",
+    "stageName":  "Custom Stage 5",
+    "modules":  [
+                    {
+                        "id":  "PP-REUNIFY-02",
+                        "name":  "Safe Emotional Regulation",
+                        "goal":  "Reduce risk during stress.",
+                        "tasks":  [
+                                      "Practice STOPâ†’THINKâ†’ACTâ†’REVIEW daily",
+                                      "Use grounding techniques when triggered",
+                                      "Call a support person instead of escalating"
+                                  ],
+                        "evidence":  [
+                                         "No new incidents",
+                                         "Improved contact behaviour"
+                                     ],
+                        "category":  "emotional-regulation",
+                        "tags":  [
+
+                                 ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "Practice STOPâ†’THINKâ†’ACTâ†’REVIEW daily"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "Use grounding techniques when triggered"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "Call a support person instead of escalating"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+                                    "No new incidents"
+                                ],
+                     "insight":  [
+
+                                 ],
+                     "behaviour":  [
+                                       "Improved contact behaviour"
+                                   ]
+                 }
+}

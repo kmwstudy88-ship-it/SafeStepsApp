@@ -1,0 +1,43 @@
+{
+    "id":  "section_lesson_coordinated_collective_action_01",
+    "title":  "coordinated collective action - Part 1 (Foundations)",
+    "content":  [
+                    "This section introduces the foundations of coordinated collective action.",
+                    "It explains key definitions, principles, and how this topic connects to safety, wellbeing, and accountability.",
+                    "You will begin linking coordinated collective action to your role, your organisation, and the broader service system."
+                ],
+    "content_variants":  {
+                             "toddlers":  "For toddlers: Use very simple words, short sentences, and lots of calm, gentle reassurance. This section provides a practical, trauma-informed exploration of lesson coordinated collective action.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children\u0027s. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
+                             "school_age":  "For school-age children: Explain things clearly, invite questions, and help them name their feelings. This section provides a practical, trauma-informed exploration of lesson coordinated collective action.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children\u0027s. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
+                             "teens":  "For teens: Respect their growing independence, listen carefully, and involve them in decisions. This section provides a practical, trauma-informed exploration of lesson coordinated collective action.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children\u0027s. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
+                             "fatherhood":  "For fathers and father-figures: Focus on staying present, accountable, and emotionally available. This section provides a practical, trauma-informed exploration of lesson coordinated collective action.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children\u0027s. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions."
+                         },
+    "safety_guidance":  {
+                            "red_flags":  [
+                                              "The child appears fearful, withdrawn, or hypervigilant during discussions related to lesson coordinated collective action.",
+                                              "The parent becomes overwhelmed, dissociative, or unable to remain emotionally regulated.",
+                                              "There is evidence of escalating conflict, shouting, or intimidation in the home.",
+                                              "The child reports feeling unsafe, scared, or threatened.",
+                                              "The parent expresses hopelessness, extreme frustration, or thoughts of harming themselves or others.",
+                                              "There are signs of substance use impacting safety or supervision.",
+                                              "The parent or child discloses past or current abuse, neglect, or violence."
+                                          ],
+                            "when_to_escalate":  [
+                                                     "If the parent or child expresses feeling unsafe or at risk.",
+                                                     "If conflict escalates beyond verbal disagreement and becomes threatening.",
+                                                     "If the parent is unable to regulate enough to continue practicing lesson coordinated collective action safely.",
+                                                     "If the child shows signs of trauma activation that require clinical support.",
+                                                     "If there is any disclosure of abuse, neglect, or violence.",
+                                                     "If the worker feels unsure, overwhelmed, or out of scope.",
+                                                     "If mandatory reporting thresholds are met or suspected."
+                                                 ]
+                        },
+    "trauma_informed":  {
+                            "clinical":  "This clinical trauma-informed overlay explains how lesson coordinated collective action interacts with the nervous system.\r\nKey concepts include:\r\n- Fight, flight, freeze, and fawn responses\r\n- Window of tolerance\r\n- Co-regulation and self-regulation\r\n- Predictability and routine as stabilisers\r\n- How trauma impacts behaviour, attention, and emotional control\r\n\r\nThis version helps workers and parents understand the biological and neurological foundations behind lesson coordinated collective action.",
+                            "relational":  "This relational trauma-informed overlay focuses on attachment, emotional safety, and connection.\r\nKey concepts include:\r\n- Connection before correction\r\n- Repair after rupture\r\n- Shame-free communication\r\n- Emotional attunement\r\n- Building trust through consistent presence\r\n\r\nThis version supports parents to use lesson coordinated collective action in ways that strengthen the parent-child relationship.",
+                            "justice":  "This justice-oriented trauma-informed overlay acknowledges systemic, cultural, and intergenerational trauma.\r\nKey concepts include:\r\n- Structural inequality and its impact on families\r\n- Cultural harm and historical trauma\r\n- Power dynamics between services and families\r\n- Community-based healing\r\n- Strength-based, non-deficit approaches\r\n\r\nThis version ensures lesson coordinated collective action is delivered in a way that respects lived experience and cultural context.",
+                            "fatherhood":  "This fatherhood-focused trauma-informed overlay recognises how trauma and socialisation shape men\u0027s parenting.\r\nKey concepts include:\r\n- Emotional suppression and its impact on fathering\r\n- Intergenerational fatherhood wounds\r\n- Repairing trust through consistency\r\n- Using calm leadership instead of control\r\n- Building connection through shared activity\r\n\r\nThis version helps fathers use lesson coordinated collective action in ways that feel authentic, strong, and emotionally safe."
+                        },
+    "simplified_parent_version":  "What this skill means:\r\nlesson coordinated collective action is about helping you and your child stay calm, understand each other, and get through tricky moments together.\r\n\r\nWhy it matters:\r\nWhen you use lesson coordinated collective action, your child feels safer, more understood, and more connected to you. This makes hard moments easier for both of you.\r\n\r\nHow to use it:\r\n- Keep your voice calm and steady.\r\n- Use short, simple sentences.\r\n- Show your child you are listening.\r\n- Give clear choices when things feel stuck.\r\n- Take a slow breath before responding.\r\n\r\nExample:\r\nIf your child is upset, you might say:\r\n\"I\u0027m here. Let\u0027s take a breath. We can figure this out together.\"\r\n\r\nTry this today:\r\nPick one small moment — like getting ready, bedtime, or a small disagreement — and practice using lesson coordinated collective action in a calm, simple way.",
+    "path":  "C:\\Users\\SAFES\\Desktop\\court_bundle_test\\section_lesson_coordinated_collective_action_01.json"
+}

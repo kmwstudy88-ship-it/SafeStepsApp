@@ -1,0 +1,21 @@
+{
+    "id":  "preventing-escalation",
+    "title":  "Preventing Behaviour Escalation",
+    "keyMessage":  "Early intervention prevents blow-ups.",
+    "summary":  "Noticing early signs of stress allows parents to step in before behaviour escalates. Small adjustments can prevent big reactions.",
+    "cards":  [
+                  "Notice early signs of stress.",
+                  "Step in early with connection.",
+                  "Small adjustments prevent escalation."
+              ],
+    "actions":  [
+                    "Reduce demands when stress rises.",
+                    "Offer connection early.",
+                    "Use soft tone and slow movements."
+                ],
+    "reflection":  [
+                       "What are my child\u0027s early warning signs?",
+                       "What helps prevent escalation?"
+                   ],
+    "path":  "C:\\Users\\SAFES\\SafeStepsProject\\safesteps-curriculum\\lessons\\BehaviourSupport\\PreventingEscalation\\PreventingEscalation.json"
+}

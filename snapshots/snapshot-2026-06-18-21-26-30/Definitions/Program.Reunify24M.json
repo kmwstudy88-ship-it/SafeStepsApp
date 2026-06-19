@@ -1,0 +1,123 @@
+﻿{
+  "programId": "REUNIFY-24M",
+  "name": "24-Month Reunification Program",
+  "durationMonths": 24,
+  "totalWeeks": 96,
+  "stages": [
+    {
+      "stageId": "STAGE-01",
+      "name": "Orientation & Understanding the Case",
+      "startWeek": 1,
+      "endWeek": 8,
+      "modules": [
+        "PP-ENGAGE-01",
+        "PP-REUNIFY-01"
+      ]
+    },
+    {
+      "stageId": "STAGE-02",
+      "name": "Emotional Regulation & Safety Basics",
+      "startWeek": 9,
+      "endWeek": 16,
+      "modules": [
+        "PP-ENGAGE-02",
+        "PP-REUNIFY-02"
+      ]
+    },
+    {
+      "stageId": "STAGE-03",
+      "name": "Child-Focused Thinking",
+      "startWeek": 17,
+      "endWeek": 24,
+      "modules": [
+        "PP-ENGAGE-03"
+      ]
+    },
+    {
+      "stageId": "STAGE-04",
+      "name": "Safe Contact & Relationship Repair",
+      "startWeek": 25,
+      "endWeek": 32,
+      "modules": [
+        "PP-REUNIFY-03"
+      ]
+    },
+    {
+      "stageId": "STAGE-05",
+      "name": "Protective Decision-Making",
+      "startWeek": 33,
+      "endWeek": 40,
+      "modules": [
+        "PP-ENGAGE-02",
+        "PP-REUNIFY-02"
+      ]
+    },
+    {
+      "stageId": "STAGE-06",
+      "name": "Stability Building",
+      "startWeek": 41,
+      "endWeek": 48,
+      "modules": [
+        "PP-ENGAGE-03"
+      ]
+    },
+    {
+      "stageId": "STAGE-07",
+      "name": "Substance Use / Mental Health Stability",
+      "startWeek": 49,
+      "endWeek": 56,
+      "modules": [
+        "PP-REUNIFY-02"
+      ]
+    },
+    {
+      "stageId": "STAGE-08",
+      "name": "Help-Seeking & Support Network",
+      "startWeek": 57,
+      "endWeek": 64,
+      "modules": [
+        "PP-ENGAGE-01",
+        "PP-ENGAGE-03"
+      ]
+    },
+    {
+      "stageId": "STAGE-09",
+      "name": "Independent Safety Management",
+      "startWeek": 65,
+      "endWeek": 72,
+      "modules": [
+        "PP-ENGAGE-02"
+      ]
+    },
+    {
+      "stageId": "STAGE-10",
+      "name": "Demonstrating Protective Capacity",
+      "startWeek": 73,
+      "endWeek": 80,
+      "modules": [
+        "PP-REUNIFY-01",
+        "PP-REUNIFY-03"
+      ]
+    },
+    {
+      "stageId": "STAGE-11",
+      "name": "Reunification Readiness",
+      "startWeek": 81,
+      "endWeek": 88,
+      "modules": [
+        "PP-ENGAGE-03",
+        "PP-REUNIFY-02"
+      ]
+    },
+    {
+      "stageId": "STAGE-12",
+      "name": "Reunification Implementation",
+      "startWeek": 89,
+      "endWeek": 96,
+      "modules": [
+        "PP-ENGAGE-01",
+        "PP-REUNIFY-03"
+      ]
+    }
+  ]
+}

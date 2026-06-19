@@ -1,0 +1,21 @@
+{
+    "id":  "building-cooperation",
+    "title":  "Building Cooperation",
+    "keyMessage":  "Cooperation grows through connection and predictability.",
+    "summary":  "Children cooperate more when they feel safe, connected, and understood. Predictable routines and warm communication build cooperation.",
+    "cards":  [
+                  "Cooperation grows from connection.",
+                  "Predictability reduces stress.",
+                  "Warm communication builds trust."
+              ],
+    "actions":  [
+                    "Use routines and visual schedules.",
+                    "Give choices to increase autonomy.",
+                    "Praise cooperation warmly."
+                ],
+    "reflection":  [
+                       "What increases cooperation?",
+                       "What decreases it?"
+                   ],
+    "path":  "C:\\Users\\SAFES\\SafeStepsProject\\safesteps-curriculum\\lessons\\BehaviourSupport\\BuildingCooperation\\BuildingCooperation.json"
+}

@@ -1,0 +1,21 @@
+{
+    "id":  "natural-logical-consequences",
+    "title":  "Natural and Logical Consequences",
+    "keyMessage":  "Consequences should teach, not shame.",
+    "summary":  "Natural and logical consequences help children learn responsibility without fear. They are calm, predictable, and connected.",
+    "cards":  [
+                  "Consequences should teach, not punish.",
+                  "Natural consequences build responsibility.",
+                  "Predictable consequences build safety."
+              ],
+    "actions":  [
+                    "Use calm, predictable consequences.",
+                    "Avoid shame or fear-based responses.",
+                    "Explain consequences ahead of time."
+                ],
+    "reflection":  [
+                       "What consequences work well for my child?",
+                       "What consequences do not work?"
+                   ],
+    "path":  "C:\\Users\\SAFES\\SafeStepsProject\\safesteps-curriculum\\lessons\\BehaviourSupport\\NaturalLogicalConsequences\\NaturalLogicalConsequences.json"
+}

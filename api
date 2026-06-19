@@ -1,0 +1,16 @@
+/api
+  /routes
+    users.routes.ts
+    programs.routes.ts
+    shortCourses.routes.ts
+    tasks.routes.ts
+    assessments.routes.ts
+    media.routes.ts
+    risk.routes.ts
+    alerts.routes.ts
+    reports.routes.ts
+    caseNotes.routes.ts
+  /controllers
+    (mirrors modules)
+  /validators
+    (mirrors modules)

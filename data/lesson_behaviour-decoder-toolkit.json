@@ -1,0 +1,59 @@
+{
+    "id":  "behaviour-decoder-toolkit",
+    "title":  "Behaviour Decoder Toolkit",
+    "keyMessage":  "Behaviour is a message. Your job is to decode it.",
+    "process":  [
+                    "Pause – slow your body and voice.",
+                    "Observe – what do you see, hear, or notice?",
+                    "Decode – ask: \u0027What is the need behind this behaviour?\u0027",
+                    "Respond – meet the need with connection and support."
+                ],
+    "behaviourMap":  [
+                         {
+                             "behaviour":  "Tantrums or meltdowns",
+                             "possibleNeed":  "Regulation, sensory relief, predictability"
+                         },
+                         {
+                             "behaviour":  "Refusing to listen",
+                             "possibleNeed":  "Autonomy, control, clarity"
+                         },
+                         {
+                             "behaviour":  "Aggression (hitting, kicking, throwing)",
+                             "possibleNeed":  "Safety, co-regulation, sensory support"
+                         },
+                         {
+                             "behaviour":  "Running away or hiding",
+                             "possibleNeed":  "Escape from overwhelm, protection, space"
+                         },
+                         {
+                             "behaviour":  "Talking back or attitude",
+                             "possibleNeed":  "Voice, respect, emotional validation"
+                         },
+                         {
+                             "behaviour":  "Clinginess",
+                             "possibleNeed":  "Attachment, reassurance, proximity"
+                         },
+                         {
+                             "behaviour":  "Lying",
+                             "possibleNeed":  "Safety, avoiding shame, avoiding punishment"
+                         },
+                         {
+                             "behaviour":  "Stealing",
+                             "possibleNeed":  "Security, comfort, unmet needs"
+                         },
+                         {
+                             "behaviour":  "Over-helping or people-pleasing",
+                             "possibleNeed":  "Safety, fear of conflict, reassurance"
+                         },
+                         {
+                             "behaviour":  "Zoning out or shutting down",
+                             "possibleNeed":  "Overwhelm, sensory overload, emotional fatigue"
+                         }
+                     ],
+    "reflection":  [
+                       "Which behaviours trigger me the most?",
+                       "What patterns do I notice in my child\u0027s behaviour?",
+                       "How can I respond with curiosity instead of frustration?"
+                   ],
+    "path":  "C:\\Users\\SAFES\\SafeStepsProject\\safesteps-curriculum\\lessons\\BehaviourSupport\\BehaviourDecoder\\BehaviourDecoderToolkit.json"
+}

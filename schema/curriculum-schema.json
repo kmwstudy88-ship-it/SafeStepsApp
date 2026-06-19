@@ -1,0 +1,96 @@
+{
+  "programId": "string",
+  "programName": "string",
+  "description": "string",
+  "durationWeeks": "number",
+
+  "stages": [
+    {
+      "stageId": "string",
+      "stageName": "string",
+      "stageNumber": "number",
+      "description": "string",
+
+      "weeks": [
+        {
+          "weekId": "string",
+          "weekNumber": "number",
+          "weekName": "string",
+          "focus": "string",
+
+          "lessons": [
+            {
+              "lessonId": "string",
+              "lessonNumber": "number",
+              "title": "string",
+              "summary": "string",
+
+              "learningObjectives": [
+                "string"
+              ],
+
+              "skills": [
+                {
+                  "skillId": "string",
+                  "skillName": "string",
+                  "skillCategory": "string",
+                  "level": "beginner | intermediate | advanced"
+                }
+              ],
+
+              "content": [
+                {
+                  "type": "text | scenario | reflection | activity | checklist | video | audio",
+                  "body": "string"
+                }
+              ],
+
+              "activities": [
+                {
+                  "activityId": "string",
+                  "activityType": "worksheet | journaling | roleplay | scenario | practice",
+                  "instructions": "string",
+                  "expectedTimeMinutes": "number"
+                }
+              ],
+
+              "evidence": [
+                {
+                  "evidenceId": "string",
+                  "type": "photo | video | text | checklist | attendance | document",
+                  "description": "string",
+                  "required": "boolean"
+                }
+              ],
+
+              "caseworkerNotes": {
+                "riskIndicators": [
+                  "string"
+                ],
+                "protectiveFactors": [
+                  "string"
+                ],
+                "observationPrompts": [
+                  "string"
+                ]
+              },
+
+              "parentReflection": [
+                {
+                  "questionId": "string",
+                  "question": "string"
+                }
+              ],
+
+              "metadata": {
+                "createdAt": "string",
+                "updatedAt": "string",
+                "version": "number"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

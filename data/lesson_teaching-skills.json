@@ -1,0 +1,21 @@
+{
+    "id":  "teaching-skills",
+    "title":  "Teaching Skills, Not Punishment",
+    "keyMessage":  "Children need skills, not punishment.",
+    "summary":  "Punishment does not teach new skills. Children need support to learn emotional regulation, communication, and problem-solving.",
+    "cards":  [
+                  "Punishment doesn\u0027t teach skills.",
+                  "Children need support to learn.",
+                  "Skills grow through practice."
+              ],
+    "actions":  [
+                    "Teach one skill at a time.",
+                    "Model calm behaviour.",
+                    "Practice skills together daily."
+                ],
+    "reflection":  [
+                       "What skill does my child need most?",
+                       "How can I teach it gently?"
+                   ],
+    "path":  "C:\\Users\\SAFES\\SafeStepsProject\\safesteps-curriculum\\lessons\\BehaviourSupport\\TeachingSkills\\TeachingSkills.json"
+}
