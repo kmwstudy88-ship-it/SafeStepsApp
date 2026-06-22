@@ -1,7 +1,7 @@
 ﻿import React from "react";
 import { View, Text } from "react-native";
 import { Link } from "expo-router";
-import { globalStyles } from "./styles";
+import { globalStyles } from "../styles/styles";
 
 export default function Home() {
   return (

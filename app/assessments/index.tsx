@@ -1,11 +1,23 @@
 ﻿import React from "react";
-import { View, Text } from "react-native";
-import { globalStyles } from "../styles";
+import { View, Text, StyleSheet } from "react-native";
 
 export default function AssessmentsScreen() {
   return (
-    <View style={globalStyles.screen}>
-      <Text style={globalStyles.title}>Assessments</Text>
+    <View style={styles.screen}>
+      <Text style={styles.title}>Assessments</Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: "#ffffff",
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#000000",
+  },
+});
