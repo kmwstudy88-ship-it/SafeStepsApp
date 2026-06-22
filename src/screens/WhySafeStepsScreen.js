@@ -149,8 +149,6 @@ const styles = StyleSheet.create({
     color: "#2E4A4E",
     marginBottom: 16,
   },
-});
-,
   navButton: {
     backgroundColor: '#1A3C40',
     paddingVertical: 14,
@@ -163,3 +161,4 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
   }
+});

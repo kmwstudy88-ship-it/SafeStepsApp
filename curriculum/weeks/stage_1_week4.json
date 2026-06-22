@@ -1,0 +1,10 @@
+﻿{
+    "id":  "stage-1-week4",
+    "name":  "Week 4",
+    "stageId":  "stage-1",
+    "lessons":  [
+                    "stage_1_week4_lesson1",
+                    "stage_1_week4_lesson2",
+                    "stage_1_week4_lesson3"
+                ]
+}

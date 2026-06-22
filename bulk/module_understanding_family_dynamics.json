@@ -1,0 +1,12 @@
+{
+    "path":  "courses/working_with_families/modules/module_understanding_family_dynamics.json",
+    "data":  {
+                 "title":  "Understanding Family Dynamics",
+                 "lessons":  [
+                                 "lesson_family_systems",
+                                 "lesson_roles_rules_patterns",
+                                 "lesson_healthy_vs_unhealthy_dynamics"
+                             ],
+                 "id":  "module_understanding_family_dynamics"
+             }
+}

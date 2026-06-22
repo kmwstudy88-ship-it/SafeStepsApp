@@ -1,0 +1,12 @@
+{
+    "path":  "courses/working_with_families/lessons/lesson_roles_rules_patterns.json",
+    "data":  {
+                 "title":  "Roles, Rules, and Patterns",
+                 "sections":  [
+                                  "section_roles_01",
+                                  "section_roles_02",
+                                  "section_roles_03"
+                              ],
+                 "id":  "lesson_roles_rules_patterns"
+             }
+}

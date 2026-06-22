@@ -4,6 +4,10 @@
   "version": "1.0.0",
   "dependencies": {
     "@expo/ui": "~56.0.17",
+    "@supabase/server": "^1.1.0",
+    "@supabase/ssr": "^0.12.0",
+    "@supabase/supabase-js": "^2.108.2",
+    "@ts-morph/common": "^0.29.0",
     "@types/react-dom": "^19.2.3",
     "docx": "^9.7.1",
     "expo": "^56.0.12",
@@ -28,10 +32,13 @@
     "react-native-safe-area-context": "~5.7.0",
     "react-native-screens": "4.25.2",
     "react-native-web": "~0.21.0",
-    "react-native-worklets": "0.8.3"
+    "react-native-worklets": "0.8.3",
+    "ts-morph": "^28.0.0"
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
+    "@types/react-native": "^0.72.8",
+    "supabase": "^2.107.0",
     "typescript": "~6.0.3"
   },
   "scripts": {

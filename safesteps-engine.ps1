@@ -1,43 +1,61 @@
-param(
-    [string]$Command = "",
-    [string]$Arg1 = "",
-    [string]$Arg2 = ""
+﻿param(
+    [Parameter(Mandatory=$true)]
+    [string]$Command,
+
+    [string]$Arg1,
+    [string]$Arg2
 )
 
-$root = "C:\Users\SAFES\SafeStepsApp"
+$tools = Join-Path $PSScriptRoot "safesteps-tools.psm1"
+Import-Module $tools -Force
 
-Write-Host "Running SafeSteps command: $Command"
+function Get-Default {
+    param($Value, $Fallback)
+    if ([string]::IsNullOrWhiteSpace($Value)) { return $Fallback }
+    return $Value
+}
+
+function Invoke-SafeStepsGenerate {
+    $program = Get-Default -Value $Arg1 -Fallback "SafeSteps Program"
+    $stage   = Get-Default -Value $Arg2 -Fallback "Stage 1"
+
+    Write-SafeStepsLog -Message "Running GENERATE engine: Program=$program Stage=$stage"
+    & "$PSScriptRoot\safesteps-generate.ps1" -ProgramName $program -StageName $stage
+}
+
+function Invoke-SafeStepsValidate {
+    Write-SafeStepsLog -Message "Running VALIDATE engine"
+    & "$PSScriptRoot\safesteps-validate.ps1" -Strict
+}
+
+function Invoke-SafeStepsExport {
+    Write-SafeStepsLog -Message "Running EXPORT engine"
+    & "$PSScriptRoot\safesteps-export.ps1"
+}
 
 switch ($Command.ToLower()) {
 
-    "bulk" {
-        powershell -ExecutionPolicy Bypass -File "$root\app\log.ps1" -Message "Bulk-add started"
-        powershell -ExecutionPolicy Bypass -File "$root\app\validate-safesteps.ps1"
-        powershell -ExecutionPolicy Bypass -File "$root\app\repair-json.ps1"
-        powershell -ExecutionPolicy Bypass -File "$root\app\generate-metadata.ps1"
-        powershell -ExecutionPolicy Bypass -File "$root\app\normalize-folders.ps1"
-        powershell -ExecutionPolicy Bypass -File "$root\build-safesteps-library.ps1"
-        powershell -ExecutionPolicy Bypass -File "$root\app\version-manager.ps1" -Type "patch"
-        powershell -ExecutionPolicy Bypass -File "$root\app\log.ps1" -Message "Bulk-add completed"
-        break
+    "generate" {
+        Invoke-SafeStepsGenerate
     }
 
-    "build" {
-        powershell -ExecutionPolicy Bypass -File "$root\build-safesteps-library.ps1"
-        break
+    "validate" {
+        Invoke-SafeStepsValidate
     }
 
-    "curriculum" {
-        powershell -ExecutionPolicy Bypass -File "$root\curriculum-engine.ps1"
-        break
+    "export" {
+        Invoke-SafeStepsExport
+    }
+
+    "full" {
+        Write-Host "=== SAFE STEPS FULL RUN ===" -ForegroundColor Cyan
+        Invoke-SafeStepsGenerate
+        Invoke-SafeStepsValidate
+        Invoke-SafeStepsExport
+        Write-Host "=== FULL RUN COMPLETE ===" -ForegroundColor Green
     }
 
     default {
-        Write-Host ""
-        Write-Host "SafeSteps Commands:"
-        Write-Host "  safesteps bulk"
-        Write-Host "  safesteps build"
-        Write-Host "  safesteps curriculum"
-        Write-Host ""
+        throw "Unknown SafeSteps command: $Command"
     }
 }

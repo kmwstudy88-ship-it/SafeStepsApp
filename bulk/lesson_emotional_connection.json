@@ -1,0 +1,12 @@
+{
+    "path":  "courses/working_with_families/lessons/lesson_emotional_connection.json",
+    "data":  {
+                 "title":  "Emotional Connection Basics",
+                 "sections":  [
+                                  "section_emotion_01",
+                                  "section_emotion_02",
+                                  "section_emotion_03"
+                              ],
+                 "id":  "lesson_emotional_connection"
+             }
+}
