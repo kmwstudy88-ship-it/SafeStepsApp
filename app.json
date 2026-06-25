@@ -7,6 +7,12 @@
     "icon": "./assets/images/icon.png",
     "scheme": "safestepstemp",
     "userInterfaceStyle": "automatic",
+
+    "extra": {
+      "supabaseUrl": "process.env.EXPO_PUBLIC_SUPABASE_URL",
+      "supabaseAnonKey": "process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY"
+    },
+
     "ios": {
       "icon": "./assets/expo.icon"
     },

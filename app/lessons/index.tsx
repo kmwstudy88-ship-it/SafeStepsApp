@@ -1,6 +1,6 @@
-﻿import React from "react";
+import React from "react";
 import { View, Text } from "react-native";
-import { globalStyles } from "../styles";
+import { globalStyles } from "../../lib/styles";
 
 export default function LessonsScreen() {
   return (
