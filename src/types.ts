@@ -1,4 +1,4 @@
-export type TextValue = String;
+export type TextValue = string;
 
 export type Step = {
   text: TextValue;

@@ -50,10 +50,7 @@ const styles = StyleSheet.create({
     borderColor: '#D0E4E2',
     justifyContent: 'space-around',
     paddingTop: 10,
-    elevation: 12,
-    shadowColor: '#000',
-    shadowOpacity: 0.08,
-    shadowRadius: 6,
+    boxShadow: '0 -2px 6px rgba(0, 0, 0, 0.08)',
   },
   tab: {
     alignItems: 'center',
