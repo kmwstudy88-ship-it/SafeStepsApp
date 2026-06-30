@@ -1,4 +1,5 @@
 import { supabase } from "../supabase/client";
+import { getOptionalUserId, getSignedInUserId } from "../authSession";
 
 export type UserTask = {
   id: string;
@@ -26,17 +27,8 @@ export type CreateUserTaskInput = {
 };
 
 export async function fetchUserTasks() {
-  const { data: userData, error: userError } = await supabase.auth.getUser();
-
-  if (userError) {
-    throw new Error(userError.message);
-  }
-
-  const userId = userData.user?.id;
-
-  if (!userId) {
-    throw new Error("No logged-in user found. Sign in before viewing tasks.");
-  }
+  const userId = await getOptionalUserId();
+  if (!userId) return [];
 
   const { data, error } = await supabase
     .from("user_tasks")
@@ -52,17 +44,7 @@ export async function fetchUserTasks() {
 }
 
 export async function createUserTask(input: CreateUserTaskInput) {
-  const { data: userData, error: userError } = await supabase.auth.getUser();
-
-  if (userError) {
-    throw new Error(userError.message);
-  }
-
-  const userId = userData.user?.id;
-
-  if (!userId) {
-    throw new Error("No logged-in user found. Sign in before creating tasks.");
-  }
+  const userId = await getSignedInUserId("creating tasks");
 
   const { data, error } = await supabase
     .from("user_tasks")
@@ -100,17 +82,7 @@ export async function createUserTask(input: CreateUserTaskInput) {
 }
 
 export async function completeUserTask(taskId: string, taskTitle: string) {
-  const { data: userData, error: userError } = await supabase.auth.getUser();
-
-  if (userError) {
-    throw new Error(userError.message);
-  }
-
-  const userId = userData.user?.id;
-
-  if (!userId) {
-    throw new Error("No logged-in user found. Sign in before completing tasks.");
-  }
+  const userId = await getSignedInUserId("completing tasks");
 
   const completedAt = new Date().toISOString();
 
@@ -141,4 +113,43 @@ export async function completeUserTask(taskId: string, taskTitle: string) {
   });
 
   return data as UserTask;
+}
+
+export async function completeUserTasks(tasks: Pick<UserTask, "id" | "title" | "status">[]) {
+  const openTasks = tasks.filter((task) => task.status !== "completed");
+
+  if (openTasks.length === 0) {
+    return { updatedCount: 0 };
+  }
+
+  const userId = await getSignedInUserId("completing tasks");
+
+  const completedAt = new Date().toISOString();
+  const taskIds = openTasks.map((task) => task.id);
+
+  const { error } = await supabase
+    .from("user_tasks")
+    .update({
+      status: "completed",
+      completed_at: completedAt,
+    })
+    .eq("owner_id", userId)
+    .in("id", taskIds);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  await supabase.from("progress_events").insert({
+    owner_id: userId,
+    event_type: "tasks_bulk_completed",
+    label: `${openTasks.length} tasks completed`,
+    metadata: {
+      task_ids: taskIds,
+      task_titles: openTasks.map((task) => task.title),
+      completed_at: completedAt,
+    },
+  });
+
+  return { updatedCount: openTasks.length };
 }

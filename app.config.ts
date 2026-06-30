@@ -14,9 +14,11 @@ export default {
       supabaseAnonKey: process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
     },
     ios: {
+      bundleIdentifier: "com.safes.safesteps",
       icon: "./assets/icon.png",
     },
     android: {
+      package: "com.safes.safesteps",
       adaptiveIcon: {
         backgroundColor: "#E6F4FE",
         foregroundImage: "./assets/android-icon-foreground.png",

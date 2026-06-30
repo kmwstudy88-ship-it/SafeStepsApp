@@ -63,6 +63,8 @@ top-files.txt
 top-folders.txt
 *.bak_*
 *.bak_route_conflict_*
+*.bomfix_backup_*
+*.deepclean_backup_*
 package.json.bak_*
 supabase/migrations_BACKUP_*/
 supabase/migrations_disabled/

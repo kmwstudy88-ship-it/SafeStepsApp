@@ -11,13 +11,16 @@ import {
   createEvidenceItem,
   EvidenceItem,
   fetchEvidenceItems,
+  updateEvidenceItemsStatus,
 } from "../../lib/engines/evidenceEngine";
 
 export default function EvidenceScreen() {
   const [items, setItems] = useState<EvidenceItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [bulkUpdating, setBulkUpdating] = useState(false);
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   const [title, setTitle] = useState("");
   const [notes, setNotes] = useState("");
@@ -25,6 +28,7 @@ export default function EvidenceScreen() {
   async function loadEvidence() {
     setLoading(true);
     setError("");
+    setMessage("");
 
     try {
       const savedItems = await fetchEvidenceItems();
@@ -45,6 +49,7 @@ export default function EvidenceScreen() {
 
     setSaving(true);
     setError("");
+    setMessage("");
 
     try {
       await createEvidenceItem({
@@ -67,9 +72,38 @@ export default function EvidenceScreen() {
     }
   }
 
+  async function handleStoreDrafts() {
+    const draftItems = items.filter((item) => item.status === "draft");
+    if (draftItems.length === 0 || bulkUpdating) return;
+
+    setBulkUpdating(true);
+    setError("");
+    setMessage("");
+
+    try {
+      const result = await updateEvidenceItemsStatus(draftItems, "stored");
+      await loadEvidence();
+      setMessage(
+        result.updatedCount === 0
+          ? "No draft evidence needed updating."
+          : `${result.updatedCount} draft evidence records marked stored.`,
+      );
+    } catch (updateError) {
+      setError(
+        updateError instanceof Error
+          ? updateError.message
+          : "Could not update draft evidence."
+      );
+    } finally {
+      setBulkUpdating(false);
+    }
+  }
+
   useEffect(() => {
     loadEvidence();
   }, []);
+
+  const draftItems = items.filter((item) => item.status === "draft");
 
   return (
     <ScrollView style={{ flex: 1, padding: 20 }}>
@@ -78,8 +112,8 @@ export default function EvidenceScreen() {
       </Text>
 
       <Text style={{ marginBottom: 16 }}>
-        Evidence stores parent notes, practice records, documents, photos or
-        future uploads. This first version saves evidence notes into Supabase.
+        Evidence stores parent notes, practice records, documents, photos, draft
+        evidence, and stored proof for reports and facilitator review.
       </Text>
 
       <View
@@ -158,7 +192,38 @@ export default function EvidenceScreen() {
         <Text style={{ fontWeight: "bold" }}>Refresh Evidence</Text>
       </Pressable>
 
+      <Pressable
+        disabled={draftItems.length === 0 || bulkUpdating}
+        onPress={handleStoreDrafts}
+        style={{
+          padding: 12,
+          backgroundColor: draftItems.length > 0 ? "#dcefe8" : "#e5e5e5",
+          borderRadius: 10,
+          alignItems: "center",
+          marginBottom: 16,
+          opacity: bulkUpdating ? 0.65 : 1,
+        }}
+      >
+        <Text style={{ fontWeight: "bold" }}>
+          {bulkUpdating ? "Updating..." : "Mark All Draft Evidence Stored"}
+        </Text>
+      </Pressable>
+
       {loading && <ActivityIndicator />}
+
+      {message.length > 0 && (
+        <View
+          style={{
+            padding: 14,
+            backgroundColor: "#edf8f2",
+            borderRadius: 12,
+            marginBottom: 14,
+          }}
+        >
+          <Text style={{ fontWeight: "bold" }}>Evidence Update</Text>
+          <Text style={{ marginTop: 6 }}>{message}</Text>
+        </View>
+      )}
 
       {error.length > 0 && (
         <View

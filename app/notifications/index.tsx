@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Alert, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
-import { createReminder, listMyNotifications, markNotificationRead } from "../../lib/platform/notifications";
+import {
+  createReminder,
+  listMyNotifications,
+  markNotificationRead,
+  markNotificationsRead,
+  NotificationRecord,
+  unreadNotifications,
+} from "../../lib/platform/notifications";
 
 export default function NotificationsScreen() {
-  const [items, setItems] = useState<any[]>([]);
+  const [items, setItems] = useState<NotificationRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState("Daily lesson reminder");
   const [body, setBody] = useState("Complete today's SafeSteps lesson and reflection.");
   const [dueAt, setDueAt] = useState("");
+  const [bulkUpdating, setBulkUpdating] = useState(false);
 
   async function load() {
     setLoading(true);
@@ -23,8 +31,13 @@ export default function NotificationsScreen() {
   }, []);
 
   async function saveReminder() {
+    if (!title.trim()) {
+      Alert.alert("Title required", "Add a reminder title before saving.");
+      return;
+    }
+
     try {
-      await createReminder({ title, body, dueAt: dueAt.trim() || undefined });
+      await createReminder({ title: title.trim(), body: body.trim(), dueAt: dueAt.trim() || undefined });
       await load();
       Alert.alert("Reminder saved", "The reminder was saved in the notifications table.");
     } catch (error) {
@@ -32,10 +45,37 @@ export default function NotificationsScreen() {
     }
   }
 
+  async function markAllRead() {
+    const unreadIds = unreadNotifications(items).map((item) => item.id);
+    if (unreadIds.length === 0 || bulkUpdating) return;
+
+    setBulkUpdating(true);
+    try {
+      await markNotificationsRead(unreadIds);
+      await load();
+    } catch (error) {
+      Alert.alert("Could not update", error instanceof Error ? error.message : "Unknown error");
+    } finally {
+      setBulkUpdating(false);
+    }
+  }
+
+  const unreadCount = unreadNotifications(items).length;
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Notifications and reminders</Text>
       <Text style={styles.body}>This adds in-app reminders now. Expo push notifications can be connected later without changing the database shape.</Text>
+
+      <Pressable
+        disabled={unreadCount === 0 || bulkUpdating}
+        style={[styles.secondaryButton, (unreadCount === 0 || bulkUpdating) && styles.disabled]}
+        onPress={markAllRead}
+      >
+        <Text style={styles.secondaryButtonText}>
+          {bulkUpdating ? "Updating..." : `Mark all unread read (${unreadCount})`}
+        </Text>
+      </Pressable>
 
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Create reminder</Text>
@@ -73,5 +113,8 @@ const styles = StyleSheet.create({
   input: { borderWidth: 1, borderColor: "#d6e2d8", borderRadius: 14, padding: 12, backgroundColor: "#fbfdfb", fontSize: 15 },
   multiline: { minHeight: 90, textAlignVertical: "top" },
   button: { backgroundColor: "#2f5f4a", padding: 15, borderRadius: 16, alignItems: "center" },
+  secondaryButton: { backgroundColor: "#dcefe8", padding: 15, borderRadius: 16, alignItems: "center" },
+  secondaryButtonText: { color: "#102033", fontWeight: "800" },
+  disabled: { opacity: 0.65 },
   buttonText: { color: "white", fontWeight: "800" },
 });

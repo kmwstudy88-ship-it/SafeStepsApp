@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   ActivityIndicator,
   Pressable,
@@ -12,6 +12,8 @@ import {
   GrowthStats,
   SavedDailyLessonRecord,
 } from "../../lib/engines/growthTimelineEngine";
+import { useAuth } from "../../lib/auth";
+import { getReportSummary, type ReportSummary } from "../../lib/platformData";
 
 function StatCard({
   label,
@@ -38,19 +40,32 @@ function StatCard({
 }
 
 export default function ReportsScreen() {
+  const { user } = useAuth();
+  const userId = user?.id;
   const [records, setRecords] = useState<SavedDailyLessonRecord[]>([]);
   const [stats, setStats] = useState<GrowthStats | null>(null);
+  const [summary, setSummary] = useState<ReportSummary | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  async function loadReport() {
+  const loadReport = useCallback(async () => {
+    if (!userId) {
+      setLoading(false);
+      setError("Sign in before viewing reports.");
+      return;
+    }
+
     setLoading(true);
     setError("");
 
     try {
-      const savedRecords = await fetchDailyLessonRecords();
+      const [savedRecords, reportSummary] = await Promise.all([
+        fetchDailyLessonRecords(),
+        getReportSummary(userId),
+      ]);
       setRecords(savedRecords);
       setStats(calculateGrowthStats(savedRecords));
+      setSummary(reportSummary);
     } catch (loadError) {
       setError(
         loadError instanceof Error
@@ -60,11 +75,17 @@ export default function ReportsScreen() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [userId]);
 
   useEffect(() => {
     loadReport();
-  }, []);
+  }, [loadReport]);
+
+  const completedTaskCount = summary?.tasks.filter((task) => task.status === "completed").length ?? 0;
+  const openTaskCount = summary ? summary.tasks.length - completedTaskCount : 0;
+  const draftEvidenceCount = summary?.evidence.filter((item) => item.status === "draft").length ?? 0;
+  const storedEvidenceCount = summary?.evidence.filter((item) => item.status === "stored").length ?? 0;
+  const sharedEvidenceCount = summary?.evidence.filter((item) => item.status === "shared").length ?? 0;
 
   return (
     <ScrollView style={{ flex: 1, padding: 20 }}>
@@ -109,6 +130,21 @@ export default function ReportsScreen() {
 
       {!loading && stats && (
         <>
+          {summary ? (
+            <>
+              <Text style={{ fontSize: 20, fontWeight: "bold", marginBottom: 10 }}>
+                Completion Summary
+              </Text>
+
+              <StatCard label="Open tasks remaining" value={openTaskCount} />
+              <StatCard label="Completed tasks" value={completedTaskCount} />
+              <StatCard label="Draft evidence remaining" value={draftEvidenceCount} />
+              <StatCard label="Stored evidence records" value={storedEvidenceCount} />
+              <StatCard label="Shared evidence records" value={sharedEvidenceCount} />
+              <StatCard label="Program reflections saved" value={summary.reflections.length} />
+            </>
+          ) : null}
+
           <Text style={{ fontSize: 20, fontWeight: "bold", marginBottom: 10 }}>
             Objective Completion Data
           </Text>

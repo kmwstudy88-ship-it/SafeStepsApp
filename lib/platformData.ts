@@ -1432,6 +1432,7 @@ export async function bulkSetTaskStatus(userId: string, tasks: SafeStepsTask[], 
     );
     addDemoEvent("tasks_bulk_status_updated", `${realTasks.length} tasks marked ${status.replace("_", " ")}`, {
       taskIds: realTasks.map((task) => task.id),
+      taskTitles: realTasks.map((task) => task.title),
       status,
     });
     return { updatedCount: realTasks.length };
@@ -1451,6 +1452,7 @@ export async function bulkSetTaskStatus(userId: string, tasks: SafeStepsTask[], 
     label: `${realTasks.length} tasks marked ${status.replace("_", " ")}`,
     metadata: {
       taskIds: realTasks.map((task) => task.id),
+      taskTitles: realTasks.map((task) => task.title),
       status,
     },
   });
@@ -1976,6 +1978,7 @@ export async function bulkSetEvidenceStatus(
     demoState.evidence = demoState.evidence.map((item) => (itemIds.has(item.id) ? { ...item, status } : item));
     addDemoEvent("evidence_bulk_status_updated", `${itemsToUpdate.length} evidence items marked ${status}`, {
       evidenceIds: itemsToUpdate.map((item) => item.id),
+      evidenceTitles: itemsToUpdate.map((item) => item.title),
       status,
     });
     return { updatedCount: itemsToUpdate.length };
@@ -1995,6 +1998,7 @@ export async function bulkSetEvidenceStatus(
     label: `${itemsToUpdate.length} evidence items marked ${status}`,
     metadata: {
       evidenceIds: itemsToUpdate.map((item) => item.id),
+      evidenceTitles: itemsToUpdate.map((item) => item.title),
       status,
     },
   });

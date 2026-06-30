@@ -1,4 +1,17 @@
-export const courses = [
+export type CourseLesson = {
+  lessonNumber: number;
+  title: string;
+  durationMinutes: number;
+};
+
+export type StandaloneCourse = {
+  id: string;
+  title: string;
+  description: string;
+  lessons: CourseLesson[];
+};
+
+export const courses: StandaloneCourse[] = [
   {
     id: "communication-skills",
     title: "Communication Skills",
@@ -23,3 +36,11 @@ export const courses = [
     ]
   }
 ];
+
+export function getCourseById(courseId: string) {
+  return courses.find((course) => course.id === courseId) ?? null;
+}
+
+export function areAllCourseLessonsViewed(course: StandaloneCourse, viewedLessons: Record<number, boolean>) {
+  return course.lessons.every((lesson) => viewedLessons[lesson.lessonNumber]);
+}

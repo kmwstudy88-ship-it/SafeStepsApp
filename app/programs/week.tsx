@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from "react-native";
-import { programs } from "../../lib/data/programs";
+import { getProgramById, getProgramMonth, getProgramWeek } from "../../lib/data/programs";
 import { hasReflectionRecord } from "../../lib/engines/reflectionStatusEngine";
 
 export default function WeekScreen() {
@@ -19,20 +19,16 @@ export default function WeekScreen() {
   const monthTopic = String(params.monthTopic ?? "Monthly Topic");
   const weekNumber = Number(params.weekNumber ?? 0);
 
-  const program = programs.find((item) => item.id === programId) ?? programs[0];
-  const month =
-    program.months.find((item) => item.monthNumber === monthNumber) ??
-    program.months[0];
-  const week =
-    month?.weeks.find((item) => item.weekNumber === weekNumber) ??
-    month?.weeks[0];
+  const program = getProgramById(programId);
+  const month = program ? getProgramMonth(program, monthNumber) : null;
+  const week = program ? getProgramWeek(program, monthNumber, weekNumber) : null;
 
   const [weeklyReflectionSaved, setWeeklyReflectionSaved] = useState(false);
   const [checkingStatus, setCheckingStatus] = useState(true);
   const [statusError, setStatusError] = useState("");
 
   const loadWeekStatus = useCallback(async () => {
-    if (!month || !week) return;
+    if (!month || !program || !week) return;
 
     setCheckingStatus(true);
     setStatusError("");
@@ -55,11 +51,24 @@ export default function WeekScreen() {
     } finally {
       setCheckingStatus(false);
     }
-  }, [month, program.id, week]);
+  }, [month, program, week]);
 
   useEffect(() => {
     loadWeekStatus();
   }, [loadWeekStatus]);
+
+  if (!program) {
+    return (
+      <ScrollView style={{ flex: 1, padding: 20 }}>
+        <Text style={{ fontSize: 24, fontWeight: "bold" }}>
+          Program not found
+        </Text>
+        <Text style={{ marginTop: 6 }}>
+          This program is not available in the current SafeSteps pathway list.
+        </Text>
+      </ScrollView>
+    );
+  }
 
   if (!month || !week) {
     return (

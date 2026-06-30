@@ -1,21 +1,89 @@
 import { useLocalSearchParams } from "expo-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
-import { courses } from "../../lib/data/courses";
+import { areAllCourseLessonsViewed, getCourseById } from "../../lib/data/courses";
+import {
+  CertificateRecord,
+  findMatchingCertificate,
+  issueCertificate,
+  listMyCertificates,
+} from "../../lib/platform/certificates";
 
 export default function CoursePlayerScreen() {
   const params = useLocalSearchParams();
   const courseId = String(params.courseId ?? "");
 
-  const course = courses.find((item) => item.id === courseId) ?? courses[0];
+  const course = getCourseById(courseId);
 
+  const [certificates, setCertificates] = useState<CertificateRecord[]>([]);
+  const [issuing, setIssuing] = useState(false);
+  const [message, setMessage] = useState("");
   const [viewedLessons, setViewedLessons] = useState<Record<number, boolean>>(
     {}
   );
 
+  const certificateTitle = course ? `${course.title} completion` : "";
+  const courseCertificate = findMatchingCertificate(
+    certificates,
+    "standalone_course",
+    certificateTitle,
+    { courseId: course?.id ?? null },
+  );
+
   const allLessonsViewed = useMemo(() => {
-    return course.lessons.every((lesson) => viewedLessons[lesson.lessonNumber]);
-  }, [course.lessons, viewedLessons]);
+    return course ? areAllCourseLessonsViewed(course, viewedLessons) : false;
+  }, [course, viewedLessons]);
+
+  async function loadCertificates() {
+    try {
+      setCertificates(await listMyCertificates());
+    } catch {
+      setCertificates([]);
+    }
+  }
+
+  useEffect(() => {
+    loadCertificates();
+  }, []);
+
+  async function issueCourseCertificate() {
+    if (!course || !allLessonsViewed || issuing) return;
+
+    setIssuing(true);
+    setMessage("");
+
+    try {
+      if (courseCertificate) {
+        setMessage(`Certificate already issued: ${courseCertificate.certificate_number}.`);
+        return;
+      }
+
+      await issueCertificate({
+        courseId: course.id,
+        certificateType: "standalone_course",
+        levelTitle: certificateTitle,
+      });
+      await loadCertificates();
+      setMessage("Course certificate issued.");
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Could not issue course certificate.");
+    } finally {
+      setIssuing(false);
+    }
+  }
+
+  if (!course) {
+    return (
+      <ScrollView style={{ flex: 1, padding: 20 }}>
+        <Text style={{ fontSize: 28, fontWeight: "bold", marginBottom: 8 }}>
+          Course not found
+        </Text>
+        <Text>
+          This standalone course is not available in the current SafeSteps library.
+        </Text>
+      </ScrollView>
+    );
+  }
 
   return (
     <ScrollView style={{ flex: 1, padding: 20 }}>
@@ -63,7 +131,8 @@ export default function CoursePlayerScreen() {
           </Text>
 
           <Text style={{ marginTop: 8 }}>
-            Course lesson content will be displayed here.
+            Practise the skill, record what changed, then mark the lesson viewed
+            when it is ready to count toward course completion.
           </Text>
 
           <Pressable
@@ -101,15 +170,41 @@ export default function CoursePlayerScreen() {
         }}
       >
         <Text style={{ fontSize: 18, fontWeight: "bold" }}>
-          {allLessonsViewed
+          {courseCertificate
+            ? "Course Certificate Issued"
+            : allLessonsViewed
             ? "Course Ready for Completion"
             : "Complete all course lessons first"}
         </Text>
 
         <Text style={{ marginTop: 6 }}>
-          Final quiz and certificate generation will be added in the next build
-          stage.
+          {courseCertificate
+            ? `Certificate number: ${courseCertificate.certificate_number}`
+            : allLessonsViewed
+            ? "Issue a standalone course certificate for this completed course."
+            : "Mark every lesson viewed to unlock certificate generation."}
         </Text>
+
+        <Pressable
+          disabled={!allLessonsViewed || issuing || Boolean(courseCertificate)}
+          onPress={issueCourseCertificate}
+          style={{
+            marginTop: 12,
+            padding: 12,
+            borderRadius: 10,
+            backgroundColor: allLessonsViewed && !courseCertificate ? "#2f5f4a" : "#cbd8d0",
+            alignItems: "center",
+            opacity: issuing ? 0.65 : 1,
+          }}
+        >
+          <Text style={{ color: allLessonsViewed && !courseCertificate ? "#ffffff" : "#22332b", fontWeight: "bold" }}>
+            {issuing ? "Issuing..." : courseCertificate ? "Certificate Issued" : "Issue Course Certificate"}
+          </Text>
+        </Pressable>
+
+        {message ? (
+          <Text style={{ marginTop: 8, fontWeight: "bold" }}>{message}</Text>
+        ) : null}
       </View>
     </ScrollView>
   );

@@ -5,6 +5,7 @@ import { Redirect } from "expo-router";
 import { AppBottomNav } from "../../components/AppBottomNav";
 import { useAuth } from "../../lib/auth";
 import { getProgramTitle, getReportSummary, type ReportSummary } from "../../lib/platformData";
+import { metadataEvidenceTitles, metadataTaskTitles } from "../../lib/progressMetadata";
 import { globalStyles } from "../../lib/styles";
 
 type TimelineItem = {
@@ -12,7 +13,7 @@ type TimelineItem = {
   at: string;
   title: string;
   detail: string;
-  category: "Program" | "Reflection" | "Lesson" | "Check-in" | "Evidence" | "Task" | "Activity";
+  category: "Program" | "Reflection" | "Lesson" | "Check-in" | "Evidence" | "Task" | "Bulk" | "Activity";
 };
 
 const emptySummary: ReportSummary = {
@@ -37,6 +38,7 @@ function formatDateTime(value: string) {
 }
 
 function eventCategory(eventType: string): TimelineItem["category"] {
+  if (eventType.includes("bulk")) return "Bulk";
   if (eventType.includes("meaning_reflections")) return "Reflection";
   if (eventType.includes("lesson")) return "Lesson";
   if (eventType.includes("check_in")) return "Check-in";
@@ -44,6 +46,22 @@ function eventCategory(eventType: string): TimelineItem["category"] {
   if (eventType.includes("task")) return "Task";
   if (eventType.includes("evidence")) return "Evidence";
   return "Activity";
+}
+
+function formatEventDetail(event: ReportSummary["events"][number]) {
+  const detailParts = [event.event_type.replace(/_/g, " ")];
+  const taskTitles = metadataTaskTitles(event.metadata);
+  const evidenceTitles = metadataEvidenceTitles(event.metadata);
+
+  if (taskTitles.length > 0) {
+    detailParts.push(`Tasks: ${taskTitles.join(", ")}`);
+  }
+
+  if (evidenceTitles.length > 0) {
+    detailParts.push(`Evidence: ${evidenceTitles.join(", ")}`);
+  }
+
+  return detailParts.join("\n");
 }
 
 function buildTimeline(summary: ReportSummary): TimelineItem[] {
@@ -59,7 +77,7 @@ function buildTimeline(summary: ReportSummary): TimelineItem[] {
     id: `event-${event.id}`,
     at: event.created_at,
     title: event.label,
-    detail: event.event_type.replace(/_/g, " "),
+    detail: formatEventDetail(event),
     category: eventCategory(event.event_type),
   }));
 
@@ -146,6 +164,9 @@ export default function GrowthTimelineScreen() {
         </Text>
         <Text style={globalStyles.cardText}>
           Completed tasks: {timeline.filter((item) => item.category === "Task").length}
+        </Text>
+        <Text style={globalStyles.cardText}>
+          Bulk actions: {timeline.filter((item) => item.category === "Bulk").length}
         </Text>
       </View>
 

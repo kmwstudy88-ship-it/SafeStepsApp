@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from "react-native";
-import { programs } from "../../lib/data/programs";
+import { getProgramById, getProgramMonth } from "../../lib/data/programs";
 import { hasReflectionRecord } from "../../lib/engines/reflectionStatusEngine";
 
 export default function MonthScreen() {
@@ -17,17 +17,15 @@ export default function MonthScreen() {
   const programTitle = String(params.programTitle ?? "Program");
   const monthNumber = Number(params.monthNumber ?? 0);
 
-  const program = programs.find((item) => item.id === programId) ?? programs[0];
-  const month =
-    program.months.find((item) => item.monthNumber === monthNumber) ??
-    program.months[0];
+  const program = getProgramById(programId);
+  const month = program ? getProgramMonth(program, monthNumber) : null;
 
   const [monthlyReflectionSaved, setMonthlyReflectionSaved] = useState(false);
   const [checkingStatus, setCheckingStatus] = useState(true);
   const [statusError, setStatusError] = useState("");
 
   const loadMonthStatus = useCallback(async () => {
-    if (!month) return;
+    if (!month || !program) return;
 
     setCheckingStatus(true);
     setStatusError("");
@@ -49,11 +47,24 @@ export default function MonthScreen() {
     } finally {
       setCheckingStatus(false);
     }
-  }, [month, program.id]);
+  }, [month, program]);
 
   useEffect(() => {
     loadMonthStatus();
   }, [loadMonthStatus]);
+
+  if (!program) {
+    return (
+      <ScrollView style={{ flex: 1, padding: 20 }}>
+        <Text style={{ fontSize: 24, fontWeight: "bold" }}>
+          Program not found
+        </Text>
+        <Text style={{ marginTop: 6 }}>
+          This program is not available in the current SafeSteps pathway list.
+        </Text>
+      </ScrollView>
+    );
+  }
 
   if (!month) {
     return (

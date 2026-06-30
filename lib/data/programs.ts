@@ -1,4 +1,117 @@
-export const programs = [
+export type ProgramLesson = {
+  day: number;
+  title: string;
+  durationMinutes: number;
+  requiresStartReflection: boolean;
+  requiresKnowledgeCheckpoint: boolean;
+  requiresScenarioCheckpoint: boolean;
+  requiresPracticalActivity: boolean;
+  requiresEndReflection: boolean;
+};
+
+export type ProgramWeek = {
+  weekNumber: number;
+  subTopic: string;
+  startReflectionRequired: boolean;
+  endReflectionRequired: boolean;
+  lessons: ProgramLesson[];
+};
+
+export type ProgramMonth = {
+  monthNumber: number;
+  topic: string;
+  startReflectionRequired: boolean;
+  endReflectionRequired: boolean;
+  weeks: ProgramWeek[];
+};
+
+export type ProgramPathway = {
+  id: string;
+  title: string;
+  durationMonths: number;
+  description: string;
+  months: ProgramMonth[];
+};
+
+const generatedTopics = [
+  "Communication",
+  "Child Development",
+  "Positive Parenting",
+  "Attachment and Bonding",
+  "Emotional Regulation",
+  "Behaviour Management",
+  "Child Safety",
+  "Protective Parenting",
+  "Family Routines",
+  "Co-Parenting",
+  "Reunification Parenting",
+  "Trauma-Informed Parenting",
+];
+
+const generatedWeekFocus = [
+  "Understanding the topic",
+  "Practising the skill",
+  "Using the skill under pressure",
+  "Reviewing growth and next steps",
+];
+
+const generatedLessonFocus = [
+  "What this means to my family",
+  "What I already do well",
+  "What gets difficult",
+  "A safer way to practise",
+  "What changed this week",
+];
+
+function createGeneratedLesson(day: number, topic: string, focus: string): ProgramLesson {
+  return {
+    day,
+    title: `${topic}: ${focus}`,
+    durationMinutes: 30,
+    requiresStartReflection: true,
+    requiresKnowledgeCheckpoint: true,
+    requiresScenarioCheckpoint: true,
+    requiresPracticalActivity: true,
+    requiresEndReflection: true,
+  };
+}
+
+function createGeneratedMonth(monthNumber: number): ProgramMonth {
+  const topic = generatedTopics[(monthNumber - 1) % generatedTopics.length];
+
+  return {
+    monthNumber,
+    topic,
+    startReflectionRequired: true,
+    endReflectionRequired: true,
+    weeks: generatedWeekFocus.map((focus, index) => ({
+      weekNumber: index + 1,
+      subTopic: `${topic}: ${focus}`,
+      startReflectionRequired: true,
+      endReflectionRequired: true,
+      lessons: generatedLessonFocus.map((lessonFocus, lessonIndex) =>
+        createGeneratedLesson(lessonIndex + 1, topic, lessonFocus),
+      ),
+    })),
+  };
+}
+
+export function getProgramMonths(program: ProgramPathway) {
+  if (program.months.length > 0) return program.months;
+
+  const totalMonths = program.durationMonths > 0 ? program.durationMonths : 1;
+  return Array.from({ length: totalMonths }, (_, index) => createGeneratedMonth(index + 1));
+}
+
+export function getProgramMonth(program: ProgramPathway, monthNumber: number) {
+  return getProgramMonths(program).find((month) => month.monthNumber === monthNumber) ?? null;
+}
+
+export function getProgramWeek(program: ProgramPathway, monthNumber: number, weekNumber: number) {
+  return getProgramMonth(program, monthNumber)?.weeks.find((week) => week.weekNumber === weekNumber) ?? null;
+}
+
+export const programs: ProgramPathway[] = [
   {
     id: "keeping-families-together",
     title: "Keeping Families Together",
@@ -57,3 +170,7 @@ export const programs = [
     months: []
   }
 ];
+
+export function getProgramById(programId: string) {
+  return programs.find((program) => program.id === programId) ?? null;
+}

@@ -10,6 +10,31 @@ import {
   fetchDailyLessonRecords,
   SavedDailyLessonRecord,
 } from "../../lib/engines/growthTimelineEngine";
+import { metadataEvidenceTitles, metadataTaskTitles } from "../../lib/progressMetadata";
+
+function formatEventType(eventType: string) {
+  return eventType
+    .split("_")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function isStructuredLessonRecord(record: SavedDailyLessonRecord) {
+  return Boolean(
+    record.metadata.program_title ||
+      record.metadata.month_number ||
+      record.metadata.week_number ||
+      record.metadata.day_number,
+  );
+}
+
+function taskTitles(record: SavedDailyLessonRecord) {
+  return metadataTaskTitles(record.metadata);
+}
+
+function evidenceTitles(record: SavedDailyLessonRecord) {
+  return metadataEvidenceTitles(record.metadata);
+}
 
 export default function ProgressScreen() {
   const [records, setRecords] = useState<SavedDailyLessonRecord[]>([]);
@@ -111,12 +136,30 @@ export default function ProgressScreen() {
             {record.label}
           </Text>
 
-          <Text style={{ marginTop: 4 }}>
-            {record.metadata.program_title ?? "Program"} • Month{" "}
-            {record.metadata.month_number ?? "-"} • Week{" "}
-            {record.metadata.week_number ?? "-"} • Day{" "}
-            {record.metadata.day_number ?? "-"}
-          </Text>
+          {isStructuredLessonRecord(record) ? (
+            <Text style={{ marginTop: 4 }}>
+              {record.metadata.program_title ?? "Program"} • Month{" "}
+              {record.metadata.month_number ?? "-"} • Week{" "}
+              {record.metadata.week_number ?? "-"} • Day{" "}
+              {record.metadata.day_number ?? "-"}
+            </Text>
+          ) : (
+            <Text style={{ marginTop: 4 }}>{formatEventType(record.event_type)}</Text>
+          )}
+
+          {taskTitles(record).length > 0 && (
+            <>
+              <Text style={{ marginTop: 8, fontWeight: "bold" }}>Tasks</Text>
+              <Text>{taskTitles(record).join(", ")}</Text>
+            </>
+          )}
+
+          {evidenceTitles(record).length > 0 && (
+            <>
+              <Text style={{ marginTop: 8, fontWeight: "bold" }}>Evidence</Text>
+              <Text>{evidenceTitles(record).join(", ")}</Text>
+            </>
+          )}
 
           {record.metadata.lesson_title && (
             <>

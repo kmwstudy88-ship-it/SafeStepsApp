@@ -176,6 +176,41 @@ export default function DashboardScreen() {
       />
 
       <Text style={{ fontSize: 22, fontWeight: "bold", marginVertical: 10 }}>
+        Bulk Completion
+      </Text>
+
+      <NavCard
+        title="Bulk Setup"
+        description="Add the remaining SafeSteps task and evidence bundles, then review what was created."
+        href="/bulk-setup"
+        primary
+      />
+
+      <NavCard
+        title="Complete Ready Tasks"
+        description="Open tasks and use Mark All Ready Tasks Complete when the remaining actions are done."
+        href="/tasks"
+      />
+
+      <NavCard
+        title="Store Draft Evidence"
+        description="Open evidence and mark all draft evidence stored after review."
+        href="/evidence"
+      />
+
+      <NavCard
+        title="Issue Completion Certificate"
+        description="Create a certificate record once the current SafeSteps work has been reviewed."
+        href="/certificates"
+      />
+
+      <NavCard
+        title="Clear Reminders"
+        description="Review reminders and mark unread notifications read in bulk."
+        href="/notifications"
+      />
+
+      <Text style={{ fontSize: 22, fontWeight: "bold", marginVertical: 10 }}>
         Main Areas
       </Text>
 

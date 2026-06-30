@@ -1,12 +1,17 @@
 import React, { useMemo, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { Redirect } from "expo-router";
+import { Link, Redirect } from "expo-router";
 
 import { AppBottomNav } from "../../components/AppBottomNav";
 import { useAuth } from "../../lib/auth";
+import { draftEvidenceMatchingTemplates, tasksMatchingTemplates } from "../../lib/bulkSelection";
 import {
   bulkAddEvidenceNotes,
   bulkAddTasks,
+  bulkSetEvidenceStatus,
+  bulkSetTaskStatus,
+  getEvidence,
+  getTasks,
   safeStepsBulkSetupBundles,
   type SafeStepsBulkSetupBundle,
 } from "../../lib/platformData";
@@ -18,6 +23,7 @@ export default function BulkSetupScreen() {
     () => new Set(safeStepsBulkSetupBundles.map((bundle) => bundle.id)),
   );
   const [saving, setSaving] = useState(false);
+  const [finishing, setFinishing] = useState(false);
   const [message, setMessage] = useState("");
 
   const selectedBundles = useMemo(
@@ -56,6 +62,16 @@ export default function BulkSetupScreen() {
     });
   };
 
+  const selectAllBundles = () => {
+    setSelectedBundleIds(new Set(safeStepsBulkSetupBundles.map((bundle) => bundle.id)));
+    setMessage("");
+  };
+
+  const clearBundles = () => {
+    setSelectedBundleIds(new Set());
+    setMessage("");
+  };
+
   const handleBulkSetup = async () => {
     if (selectedBundles.length === 0) {
       setMessage("Choose at least one bulk setup bundle first.");
@@ -81,6 +97,46 @@ export default function BulkSetupScreen() {
     }
   };
 
+  const handleFinishRemainingSetup = async () => {
+    if (selectedBundles.length === 0) {
+      setMessage("Choose at least one bulk setup bundle first.");
+      return;
+    }
+
+    setFinishing(true);
+    setMessage("");
+
+    try {
+      const taskTemplates = selectedBundles.flatMap((bundle) => bundle.taskTemplates);
+      const evidenceTemplates = selectedBundles.flatMap((bundle) => bundle.evidenceTemplates);
+      const taskAddResult = await bulkAddTasks(user.id, taskTemplates);
+      const evidenceAddResult = await bulkAddEvidenceNotes(user.id, evidenceTemplates);
+      const [tasks, evidence] = await Promise.all([getTasks(user.id), getEvidence(user.id)]);
+      const selectedTasks = tasksMatchingTemplates(tasks, taskTemplates);
+      const selectedDraftEvidence = draftEvidenceMatchingTemplates(evidence, evidenceTemplates);
+      const taskCompleteResult = await bulkSetTaskStatus(user.id, selectedTasks, "completed");
+      const evidenceStoreResult = await bulkSetEvidenceStatus(
+        user.id,
+        selectedDraftEvidence,
+        "stored",
+      );
+
+      setMessage(
+        [
+          `${taskAddResult.addedCount} tasks added`,
+          `${evidenceAddResult.addedCount} evidence drafts added`,
+          `${taskCompleteResult.updatedCount} tasks completed`,
+          `${evidenceStoreResult.updatedCount} draft evidence records stored`,
+          `${taskAddResult.skippedCount + evidenceAddResult.skippedCount} existing items skipped`,
+        ].join(". ") + ".",
+      );
+    } catch {
+      setMessage("Could not finish the selected setup yet. Check Supabase access and try again.");
+    } finally {
+      setFinishing(false);
+    }
+  };
+
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={globalStyles.screen}>
       <Text style={globalStyles.title}>Bulk setup</Text>
@@ -95,14 +151,43 @@ export default function BulkSetupScreen() {
           <Text style={globalStyles.pill}>{totals.tasks} tasks</Text>
           <Text style={globalStyles.pill}>{totals.evidence} evidence drafts</Text>
         </View>
+        <View style={globalStyles.inlineRow}>
+          <TouchableOpacity onPress={selectAllBundles} style={globalStyles.secondaryButtonCompact}>
+            <Text style={globalStyles.secondaryButtonText}>Select all</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={clearBundles} style={globalStyles.secondaryButtonCompact}>
+            <Text style={globalStyles.secondaryButtonText}>Clear</Text>
+          </TouchableOpacity>
+        </View>
         {message ? <Text style={message.startsWith("Could") || message.startsWith("Choose") ? globalStyles.error : globalStyles.notice}>{message}</Text> : null}
         <TouchableOpacity
-          disabled={saving}
+          disabled={saving || finishing}
           onPress={handleBulkSetup}
-          style={[globalStyles.button, saving && globalStyles.buttonDisabled]}
+          style={[globalStyles.button, (saving || finishing) && globalStyles.buttonDisabled]}
         >
           <Text style={globalStyles.buttonText}>{saving ? "Adding..." : "Add selected setup"}</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          disabled={saving || finishing}
+          onPress={handleFinishRemainingSetup}
+          style={[globalStyles.button, (saving || finishing) && globalStyles.buttonDisabled]}
+        >
+          <Text style={globalStyles.buttonText}>{finishing ? "Finishing..." : "Finish remaining selected setup"}</Text>
+        </TouchableOpacity>
+        {message && !message.startsWith("Could") && !message.startsWith("Choose") ? (
+          <View style={globalStyles.inlineRow}>
+            <Link href="/tasks" asChild>
+              <TouchableOpacity style={globalStyles.secondaryButtonCompact}>
+                <Text style={globalStyles.secondaryButtonText}>Review tasks</Text>
+              </TouchableOpacity>
+            </Link>
+            <Link href="/evidence" asChild>
+              <TouchableOpacity style={globalStyles.secondaryButtonCompact}>
+                <Text style={globalStyles.secondaryButtonText}>Review evidence</Text>
+              </TouchableOpacity>
+            </Link>
+          </View>
+        ) : null}
       </View>
 
       {safeStepsBulkSetupBundles.map((bundle) => {

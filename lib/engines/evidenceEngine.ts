@@ -86,3 +86,51 @@ export async function createEvidenceItem(input: CreateEvidenceItemInput) {
 
   return data as EvidenceItem;
 }
+
+export async function updateEvidenceItemsStatus(
+  items: Pick<EvidenceItem, "id" | "title" | "status">[],
+  status: EvidenceItem["status"],
+) {
+  const itemsToUpdate = items.filter((item) => item.status !== status);
+
+  if (itemsToUpdate.length === 0) {
+    return { updatedCount: 0 };
+  }
+
+  const { data: userData, error: userError } = await supabase.auth.getUser();
+
+  if (userError) {
+    throw new Error(userError.message);
+  }
+
+  const userId = userData.user?.id;
+
+  if (!userId) {
+    throw new Error("No logged-in user found. Sign in before updating evidence.");
+  }
+
+  const evidenceIds = itemsToUpdate.map((item) => item.id);
+
+  const { error } = await supabase
+    .from("evidence_items")
+    .update({ status })
+    .eq("owner_id", userId)
+    .in("id", evidenceIds);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  await supabase.from("progress_events").insert({
+    owner_id: userId,
+    event_type: "evidence_bulk_status_updated",
+    label: `${itemsToUpdate.length} evidence records marked ${status}`,
+    metadata: {
+      evidence_ids: evidenceIds,
+      evidence_titles: itemsToUpdate.map((item) => item.title),
+      status,
+    },
+  });
+
+  return { updatedCount: itemsToUpdate.length };
+}

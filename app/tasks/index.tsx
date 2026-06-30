@@ -8,6 +8,7 @@ import {
   View,
 } from "react-native";
 import {
+  completeUserTasks,
   completeUserTask,
   createUserTask,
   fetchUserTasks,
@@ -18,7 +19,9 @@ export default function TasksScreen() {
   const [tasks, setTasks] = useState<UserTask[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [bulkCompleting, setBulkCompleting] = useState(false);
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -26,6 +29,7 @@ export default function TasksScreen() {
   async function loadTasks() {
     setLoading(true);
     setError("");
+    setMessage("");
 
     try {
       const savedTasks = await fetchUserTasks();
@@ -44,6 +48,7 @@ export default function TasksScreen() {
 
     setSaving(true);
     setError("");
+    setMessage("");
 
     try {
       await createUserTask({
@@ -70,16 +75,44 @@ export default function TasksScreen() {
 
   async function handleCompleteTask(task: UserTask) {
     setError("");
+    setMessage("");
 
     try {
       await completeUserTask(task.id, task.title);
       await loadTasks();
+      setMessage("Task marked complete.");
     } catch (completeError) {
       setError(
         completeError instanceof Error
           ? completeError.message
           : "Could not complete task."
       );
+    }
+  }
+
+  async function handleCompleteReadyTasks() {
+    if (readyTasks.length === 0 || bulkCompleting) return;
+
+    setBulkCompleting(true);
+    setError("");
+    setMessage("");
+
+    try {
+      const result = await completeUserTasks(readyTasks);
+      await loadTasks();
+      setMessage(
+        result.updatedCount === 0
+          ? "No ready tasks needed updating."
+          : `${result.updatedCount} ready tasks marked complete.`,
+      );
+    } catch (completeError) {
+      setError(
+        completeError instanceof Error
+          ? completeError.message
+          : "Could not complete ready tasks."
+      );
+    } finally {
+      setBulkCompleting(false);
     }
   }
 
@@ -175,7 +208,38 @@ export default function TasksScreen() {
         <Text style={{ fontWeight: "bold" }}>Refresh Tasks</Text>
       </Pressable>
 
+      <Pressable
+        disabled={readyTasks.length === 0 || bulkCompleting}
+        onPress={handleCompleteReadyTasks}
+        style={{
+          padding: 12,
+          backgroundColor: readyTasks.length > 0 ? "#dcefe8" : "#e5e5e5",
+          borderRadius: 10,
+          alignItems: "center",
+          marginBottom: 16,
+          opacity: bulkCompleting ? 0.65 : 1,
+        }}
+      >
+        <Text style={{ fontWeight: "bold" }}>
+          {bulkCompleting ? "Completing..." : "Mark All Ready Tasks Complete"}
+        </Text>
+      </Pressable>
+
       {loading && <ActivityIndicator />}
+
+      {message.length > 0 && (
+        <View
+          style={{
+            padding: 14,
+            backgroundColor: "#edf8f2",
+            borderRadius: 12,
+            marginBottom: 14,
+          }}
+        >
+          <Text style={{ fontWeight: "bold" }}>Task Update</Text>
+          <Text style={{ marginTop: 6 }}>{message}</Text>
+        </View>
+      )}
 
       {error.length > 0 && (
         <View

@@ -1,5 +1,5 @@
 import { Link, useLocalSearchParams } from "expo-router";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
   Pressable,
@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from "react-native";
-import { programs } from "../../lib/data/programs";
+import { getProgramById, getProgramMonths } from "../../lib/data/programs";
 import {
   fetchActiveProgramEnrollment,
   startProgramEnrollment,
@@ -18,32 +18,18 @@ export default function ProgramPathwayScreen() {
   const params = useLocalSearchParams();
   const programId = String(params.programId ?? "");
 
-  const program = programs.find((item) => item.id === programId) ?? programs[0];
+  const program = getProgramById(programId);
+  const selectedProgramId = program?.id ?? "";
+  const programMonths = program ? getProgramMonths(program) : [];
 
   const [enrollment, setEnrollment] = useState<ProgramEnrollment | null>(null);
   const [checking, setChecking] = useState(true);
   const [starting, setStarting] = useState(false);
   const [error, setError] = useState("");
 
-  const loadEnrollment = useCallback(async () => {
-    setChecking(true);
-    setError("");
-
-    try {
-      const active = await fetchActiveProgramEnrollment(program.id);
-      setEnrollment(active);
-    } catch (loadError) {
-      setError(
-        loadError instanceof Error
-          ? loadError.message
-          : "Could not check program enrolment."
-      );
-    } finally {
-      setChecking(false);
-    }
-  }, [program.id]);
-
   async function handleStartProgram() {
+    if (!program) return;
+
     setStarting(true);
     setError("");
 
@@ -62,10 +48,47 @@ export default function ProgramPathwayScreen() {
   }
 
   useEffect(() => {
+    let active = true;
+
+    async function loadEnrollment() {
+      setChecking(true);
+      setError("");
+
+      try {
+        if (!selectedProgramId) return;
+        const activeEnrollment = await fetchActiveProgramEnrollment(selectedProgramId);
+        if (active) setEnrollment(activeEnrollment);
+      } catch (loadError) {
+        if (!active) return;
+        setError(
+          loadError instanceof Error
+            ? loadError.message
+            : "Could not check program enrolment."
+        );
+      } finally {
+        if (active) setChecking(false);
+      }
+    }
+
     loadEnrollment();
-  }, [loadEnrollment]);
+
+    return () => {
+      active = false;
+    };
+  }, [selectedProgramId]);
 
   const programStarted = enrollment !== null;
+
+  if (!program) {
+    return (
+      <ScrollView style={{ flex: 1, padding: 20 }}>
+        <Text style={{ fontSize: 28, fontWeight: "bold", marginBottom: 8 }}>
+          Program not found
+        </Text>
+        <Text>This program is not available in the current SafeSteps pathway list.</Text>
+      </ScrollView>
+    );
+  }
 
   return (
     <ScrollView style={{ flex: 1, padding: 20 }}>
@@ -164,25 +187,7 @@ export default function ProgramPathwayScreen() {
         </Text>
       </View>
 
-      {program.months.length === 0 && (
-        <View
-          style={{
-            padding: 16,
-            backgroundColor: "#ffffff",
-            borderRadius: 12,
-            borderWidth: 1,
-            borderColor: "#d8e5dd",
-          }}
-        >
-          <Text style={{ fontWeight: "bold" }}>No monthly topics yet</Text>
-          <Text style={{ marginTop: 6 }}>
-            Monthly topics will be added to this program in the curriculum data
-            file.
-          </Text>
-        </View>
-      )}
-
-      {program.months.map((month) => (
+      {programMonths.map((month) => (
         <View
           key={`${program.id}-month-${month.monthNumber}`}
           style={{

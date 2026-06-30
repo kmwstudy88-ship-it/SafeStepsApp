@@ -1,4 +1,5 @@
 import { supabase } from "../supabase/client";
+import { getOptionalUserId } from "../authSession";
 
 export type SavedDailyLessonRecord = {
   id: string;
@@ -37,17 +38,8 @@ export type GrowthStats = {
 };
 
 export async function fetchDailyLessonRecords() {
-  const { data: userData, error: userError } = await supabase.auth.getUser();
-
-  if (userError) {
-    throw new Error(userError.message);
-  }
-
-  const userId = userData.user?.id;
-
-  if (!userId) {
-    throw new Error("No logged-in user found. Sign in before viewing progress.");
-  }
+  const userId = await getOptionalUserId();
+  if (!userId) return [];
 
   const { data, error } = await supabase
     .from("progress_events")
@@ -60,6 +52,17 @@ export async function fetchDailyLessonRecords() {
       "practical_activity_recorded",
       "month_reflection_saved",
       "week_reflection_saved",
+      "tasks_bulk_added",
+      "tasks_bulk_skipped",
+      "tasks_bulk_completed",
+      "tasks_bulk_status_updated",
+      "evidence_bulk_added",
+      "evidence_bulk_skipped",
+      "evidence_bulk_status_updated",
+      "program_week_bulk_added",
+      "daily_home_evidence_added",
+      "certificate_issued",
+      "assessment_submitted",
     ])
     .order("created_at", { ascending: true });
 

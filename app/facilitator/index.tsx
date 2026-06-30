@@ -68,6 +68,9 @@ export default function FacilitatorWorkspaceScreen() {
 
   const completedTasks = summary.tasks.filter((task) => task.status === "completed");
   const openTasks = summary.tasks.filter((task) => task.status !== "completed");
+  const draftEvidence = summary.evidence.filter((item) => item.status === "draft");
+  const storedEvidence = summary.evidence.filter((item) => item.status === "stored");
+  const sharedEvidence = summary.evidence.filter((item) => item.status === "shared");
   const meaningReflections = summary.reflections.filter((item) => item.reflection_type.endsWith("_meaning"));
   const weeklyGrowthNotes = summary.reflections.filter((item) =>
     ["weekly_family_win", "toolbox_skill", "child_future_letter"].includes(item.reflection_type),
@@ -131,9 +134,26 @@ export default function FacilitatorWorkspaceScreen() {
         <View style={globalStyles.inlineRow}>
           <Text style={priority === "High" ? globalStyles.priorityHigh : globalStyles.pill}>{priority}</Text>
           <Text style={globalStyles.pill}>{openTasks.length} open tasks</Text>
+          <Text style={globalStyles.pill}>{completedTasks.length} completed tasks</Text>
+          <Text style={draftEvidence.length > 0 ? globalStyles.priorityHigh : globalStyles.pill}>
+            {draftEvidence.length} draft evidence
+          </Text>
           <Text style={globalStyles.pill}>{objectiveEvidence.length} objective evidence</Text>
           <Text style={globalStyles.pill}>{meaningReflections.length + weeklyGrowthNotes.length} reflection records</Text>
         </View>
+      </View>
+
+      <View style={globalStyles.card}>
+        <Text style={globalStyles.cardTitle}>Completion review</Text>
+        <Text style={globalStyles.cardText}>
+          Tasks: {completedTasks.length} complete, {openTasks.length} open
+        </Text>
+        <Text style={globalStyles.cardText}>
+          Evidence: {draftEvidence.length} draft, {storedEvidence.length} stored, {sharedEvidence.length} shared
+        </Text>
+        <Text style={globalStyles.cardText}>
+          Daily home evidence: {summary.dailyHomeEvidenceHistory.completeDays}/{summary.dailyHomeEvidenceHistory.days.length || 7} days complete
+        </Text>
       </View>
 
       <View style={globalStyles.card}>
