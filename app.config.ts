@@ -11,7 +11,9 @@ export default {
     userInterfaceStyle: "automatic",
     extra: {
       supabaseUrl: process.env.EXPO_PUBLIC_SUPABASE_URL,
-      supabaseAnonKey: process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
+      supabaseAnonKey:
+        process.env.EXPO_PUBLIC_SUPABASE_KEY ??
+        process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
     },
     ios: {
       bundleIdentifier: "com.safes.safesteps",

@@ -1,5 +1,17 @@
 import { supabase } from "../supabase/client";
 
+function getAuthRedirectUrl() {
+  if (process.env.EXPO_PUBLIC_AUTH_REDIRECT_URL) {
+    return process.env.EXPO_PUBLIC_AUTH_REDIRECT_URL;
+  }
+
+  if (typeof window !== "undefined" && window.location.origin) {
+    return `${window.location.origin}/welcome`;
+  }
+
+  return undefined;
+}
+
 export type SafeStepsProfile = {
   id: string;
   email: string | null;
@@ -53,6 +65,9 @@ export async function registerWithEmail(input: {
   const { data, error } = await supabase.auth.signUp({
     email: input.email.trim(),
     password: input.password,
+    options: {
+      emailRedirectTo: getAuthRedirectUrl(),
+    },
   });
 
   if (error) {
@@ -61,11 +76,19 @@ export async function registerWithEmail(input: {
 
   const user = data.user;
 
-  if (user) {
-    await upsertProfile({
-      display_name: input.displayName.trim(),
-      email: user.email ?? input.email.trim(),
-    });
+  if (user && data.session) {
+    const { error: profileError } = await supabase
+      .from("profiles")
+      .update({
+        display_name: input.displayName.trim(),
+        email: user.email ?? input.email.trim(),
+        updated_at: new Date().toISOString(),
+      })
+      .eq("id", user.id);
+
+    if (profileError) {
+      throw new Error(profileError.message);
+    }
   }
 
   return data;

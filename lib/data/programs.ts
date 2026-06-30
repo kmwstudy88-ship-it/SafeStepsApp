@@ -113,6 +113,20 @@ export function getProgramWeek(program: ProgramPathway, monthNumber: number, wee
 
 export const programs: ProgramPathway[] = [
   {
+    id: "intensive-reunification",
+    title: "24-Month Intensive Reunification Program",
+    durationMonths: 24,
+    description: "Long-term reunification pathway for parents working toward safe, sustained family restoration after serious child safety concerns.",
+    months: []
+  },
+  {
+    id: "home-again",
+    title: "Home Again Program",
+    durationMonths: 12,
+    description: "6-12 month reunification transition pathway focused on rebuilding safe routines, home stability, connection, and child adjustment after return home.",
+    months: []
+  },
+  {
     id: "keeping-families-together",
     title: "Keeping Families Together",
     durationMonths: 18,

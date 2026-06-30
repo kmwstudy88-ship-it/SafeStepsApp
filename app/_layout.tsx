@@ -10,6 +10,7 @@ export default function RootLayout() {
         <Stack.Screen name="index" />
         <Stack.Screen name="login/index" />
         <Stack.Screen name="register/index" />
+        <Stack.Screen name="welcome" />
         <Stack.Screen name="dashboard/index" />
         <Stack.Screen name="programs" />
         <Stack.Screen name="program-lessons/[programId]/[weekId]/[dayId]" />

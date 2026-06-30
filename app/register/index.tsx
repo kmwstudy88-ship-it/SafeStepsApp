@@ -17,6 +17,7 @@ export default function RegisterScreen() {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
 
   async function handleRegister() {
     if (
@@ -30,15 +31,21 @@ export default function RegisterScreen() {
 
     setLoading(true);
     setError("");
+    setMessage("");
 
     try {
-      await registerWithEmail({
+      const data = await registerWithEmail({
         displayName,
         email,
         password,
       });
 
-      router.replace("/dashboard");
+      if (data.session) {
+        router.replace("/welcome");
+        return;
+      }
+
+      setMessage("Account created. Please check your email if confirmation is required, then log in.");
     } catch (registerError) {
       setError(
         registerError instanceof Error
@@ -131,6 +138,20 @@ export default function RegisterScreen() {
         >
           <Text style={{ fontWeight: "bold" }}>Register Error</Text>
           <Text style={{ marginTop: 6 }}>{error}</Text>
+        </View>
+      )}
+
+      {message.length > 0 && (
+        <View
+          style={{
+            padding: 14,
+            backgroundColor: "#ecfdf3",
+            borderRadius: 12,
+            marginBottom: 14,
+          }}
+        >
+          <Text style={{ fontWeight: "bold" }}>Account Created</Text>
+          <Text style={{ marginTop: 6 }}>{message}</Text>
         </View>
       )}
 

@@ -18,6 +18,19 @@ describe("program pathway data", () => {
     expect(getProgramWeek(program!, 1, 1)?.lessons).toHaveLength(5);
   });
 
+  test("includes reunification and home again pathways", () => {
+    const reunification = getProgramById("intensive-reunification");
+    const homeAgain = getProgramById("home-again");
+
+    expect(reunification?.title).toBe("24-Month Intensive Reunification Program");
+    expect(reunification?.durationMonths).toBe(24);
+    expect(getProgramMonths(reunification!)).toHaveLength(24);
+
+    expect(homeAgain?.title).toBe("Home Again Program");
+    expect(homeAgain?.durationMonths).toBe(12);
+    expect(getProgramMonths(homeAgain!)).toHaveLength(12);
+  });
+
   test("generates one setup month for custom programs", () => {
     const program = programs.find((item) => item.id === "custom-program");
 

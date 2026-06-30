@@ -7,6 +7,7 @@ const supabaseUrl =
   Constants.expoConfig?.extra?.supabaseUrl ?? process.env.EXPO_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey =
   Constants.expoConfig?.extra?.supabaseAnonKey ??
+  process.env.EXPO_PUBLIC_SUPABASE_KEY ??
   process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
 const isServerRender = typeof window === "undefined";
 const isTest = process.env.NODE_ENV === "test";
@@ -54,7 +55,7 @@ function makeMissingClient() {
     },
     from: () => {
       throw new Error(
-        "Supabase is not configured. Add EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_ANON_KEY to your .env file.",
+        "Supabase is not configured. Add EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_KEY to your .env file.",
       );
     },
   } as unknown as SupabaseClient;
@@ -62,7 +63,7 @@ function makeMissingClient() {
 
 if ((!supabaseUrl || !supabaseAnonKey) && !isTest) {
   throw new Error(
-    "Missing Supabase config. Set EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_ANON_KEY.",
+    "Missing Supabase config. Set EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_KEY.",
   );
 }
 
