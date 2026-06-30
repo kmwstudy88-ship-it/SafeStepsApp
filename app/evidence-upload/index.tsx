@@ -1,18 +1,5 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { Redirect } from "expo-router";
 
-export default function evidenceupload() {
-  return (
-    <View style={styles.container}>
-      <Text>evidence-upload screen</Text>
-    </View>
-  );
+export default function EvidenceUploadRedirect() {
+  return <Redirect href="/daily-evidence" />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});

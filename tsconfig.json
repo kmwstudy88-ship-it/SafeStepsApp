@@ -1,11 +1,27 @@
 {
-  "files": [],
-  "compilerOptions": {},
-  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@lib/*": [
+        "lib/*"
+      ],
+      "@styles/*": [
+        "lib/styles/*"
+      ]
+    }
+  },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "lib/**/*.ts",
+    "lib/**/*.tsx",
+    "app.config.ts",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+  ],
+  "extends": "expo/tsconfig.base"
 }

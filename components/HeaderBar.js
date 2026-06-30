@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#007bff',
     justifyContent: 'center',
     paddingHorizontal: 16,
-    elevation: 4
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.12)'
   },
   title: {
     color: '#fff',

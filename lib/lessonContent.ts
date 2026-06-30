@@ -1,0 +1,123 @@
+export type AppLesson = {
+  id: string;
+  week: number;
+  title: string;
+  summary: string;
+  estimatedMinutes: number;
+  sections: Array<{
+    heading: string;
+    body: string;
+  }>;
+  actions: string[];
+};
+
+export const appLessons: AppLesson[] = [
+  {
+    id: "safety-planning-basics",
+    week: 1,
+    title: "Safety planning basics",
+    summary: "Create a simple plan for what to do when stress rises or things feel unsafe.",
+    estimatedMinutes: 15,
+    sections: [
+      {
+        heading: "What this step is for",
+        body: "A safety plan is a practical set of choices made before a hard moment. It helps you act early, reduce risk, and show that you are thinking ahead.",
+      },
+      {
+        heading: "Start small",
+        body: "Choose one warning sign, one calming action, one safe person, and one place to go if the situation becomes too much.",
+      },
+      {
+        heading: "Record the proof",
+        body: "When you use your plan, save a short note in SafeSteps. The point is not perfection. The point is showing what you noticed and what you did next.",
+      },
+    ],
+    actions: [
+      "Write down one personal warning sign.",
+      "Choose one safe support person.",
+      "Add one evidence note after using the plan.",
+    ],
+  },
+  {
+    id: "understanding-weekly-goals",
+    week: 1,
+    title: "Understanding weekly goals",
+    summary: "Turn broad expectations into clear weekly actions you can complete and record.",
+    estimatedMinutes: 12,
+    sections: [
+      {
+        heading: "Why weekly goals matter",
+        body: "Large case goals can feel vague. Weekly goals make progress visible by turning the bigger plan into something you can do, save, and explain.",
+      },
+      {
+        heading: "Make the goal observable",
+        body: "A strong weekly goal answers: What will I do? When will I do it? What proof will show it happened?",
+      },
+      {
+        heading: "Keep the record fair",
+        body: "If something blocks the goal, record that too. A fair record includes effort, barriers, support requested, and the next step.",
+      },
+    ],
+    actions: [
+      "Choose one goal for this week.",
+      "Attach one task to that goal.",
+      "Save evidence when the task is complete.",
+    ],
+  },
+  {
+    id: "parenting-strengths-and-stress",
+    week: 2,
+    title: "Parenting strengths and stress points",
+    summary: "Identify what is already working and where extra support is needed.",
+    estimatedMinutes: 18,
+    sections: [
+      {
+        heading: "Start with strengths",
+        body: "Progress is easier to build when you know what is already working. A strength may be showing up, asking for help, keeping appointments, or repairing after conflict.",
+      },
+      {
+        heading: "Name the stress point",
+        body: "A stress point is not a failure. It is a place where a plan, support, or different routine is needed.",
+      },
+      {
+        heading: "Link strengths to evidence",
+        body: "Use SafeSteps to save examples of what you are doing well: attendance, routines, positive contact, clean tests, certificates, messages, and notes.",
+      },
+    ],
+    actions: [
+      "Write one parenting strength.",
+      "Write one stress point.",
+      "Choose one support or routine that could help this week.",
+    ],
+  },
+  {
+    id: "building-evidence-for-progress",
+    week: 2,
+    title: "Building evidence for progress",
+    summary: "Save records in a way that tells a clear, steady story of change.",
+    estimatedMinutes: 16,
+    sections: [
+      {
+        heading: "Evidence is a timeline",
+        body: "One document can help, but a steady timeline is stronger. Evidence should show what happened, when it happened, and why it matters.",
+      },
+      {
+        heading: "Use plain labels",
+        body: "Give each item a clear title like 'Parenting course certificate', 'Visit attended', or 'Safety plan used'.",
+      },
+      {
+        heading: "Add context",
+        body: "A short note helps future readers understand the evidence. Include the action, the date, and the progress it shows.",
+      },
+    ],
+    actions: [
+      "Upload or write one evidence item.",
+      "Add a plain title.",
+      "Add a note explaining why it matters.",
+    ],
+  },
+];
+
+export function getLessonById(lessonId: string) {
+  return appLessons.find((lesson) => lesson.id === lessonId) ?? null;
+}

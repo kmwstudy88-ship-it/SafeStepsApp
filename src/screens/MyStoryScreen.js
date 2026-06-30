@@ -1,8 +1,11 @@
 ﻿import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { useRouter } from 'expo-router';
 import BottomNavBar from '../components/BottomNavBar';
 
 export default function MyStoryScreen() {
+  const router = useRouter();
+
   return (
     <View style={{ flex: 1 }}>
       <ScrollView style={styles.container}>
@@ -90,10 +93,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     padding: 20,
     marginBottom: 40,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 3,
+    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.10)',
   },
   paragraph: {
     fontSize: 16,
@@ -101,8 +101,6 @@ const styles = StyleSheet.create({
     color: '#2E4A4E',
     marginBottom: 16,
   },
-});
-,
   navButton: {
     backgroundColor: '#1A3C40',
     paddingVertical: 14,
@@ -114,4 +112,5 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '600',
-  }
+  },
+});

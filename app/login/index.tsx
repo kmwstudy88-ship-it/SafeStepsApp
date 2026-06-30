@@ -1,46 +1,133 @@
-import React from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import { globalStyles } from "../styles";
+import { Link, router } from "expo-router";
+import { useState } from "react";
+import {
+  ActivityIndicator,
+  Pressable,
+  ScrollView,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
+import { signInWithEmail } from "../../lib/engines/authEngine";
 
-export default function Login() {
+export default function LoginScreen() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  async function handleLogin() {
+    if (email.trim().length === 0 || password.length === 0 || loading) return;
+
+    setLoading(true);
+    setError("");
+
+    try {
+      await signInWithEmail(email, password);
+      router.replace("/welcome");
+    } catch (loginError) {
+      setError(
+        loginError instanceof Error ? loginError.message : "Could not login."
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  const canLogin = email.trim().length > 0 && password.length > 0;
+
   return (
-    <View style={globalStyles.screen}>
-      <Text style={globalStyles.title}>Login</Text>
+    <ScrollView style={{ flex: 1, padding: 20 }}>
+      <Text style={{ fontSize: 30, fontWeight: "bold", marginBottom: 8 }}>
+        Login
+      </Text>
 
+      <Text style={{ marginBottom: 20 }}>
+        Sign in to continue your SafeSteps pathway.
+      </Text>
+
+      <Text style={{ fontWeight: "bold" }}>Email</Text>
       <TextInput
-        placeholder="Email"
+        value={email}
+        onChangeText={setEmail}
+        autoCapitalize="none"
+        keyboardType="email-address"
+        placeholder="Email address"
         style={{
+          minHeight: 50,
           borderWidth: 1,
-          borderColor: "#ccc",
-          padding: 10,
-          marginBottom: 12,
-          borderRadius: 6,
+          borderColor: "#cbd8d0",
+          borderRadius: 10,
+          padding: 12,
+          marginTop: 8,
+          marginBottom: 14,
+          backgroundColor: "#ffffff",
         }}
       />
 
+      <Text style={{ fontWeight: "bold" }}>Password</Text>
       <TextInput
-        placeholder="Password"
+        value={password}
+        onChangeText={setPassword}
         secureTextEntry
+        placeholder="Password"
         style={{
+          minHeight: 50,
           borderWidth: 1,
-          borderColor: "#ccc",
-          padding: 10,
-          marginBottom: 20,
-          borderRadius: 6,
+          borderColor: "#cbd8d0",
+          borderRadius: 10,
+          padding: 12,
+          marginTop: 8,
+          marginBottom: 14,
+          backgroundColor: "#ffffff",
         }}
       />
 
-      <TouchableOpacity
+      {error.length > 0 && (
+        <View
+          style={{
+            padding: 14,
+            backgroundColor: "#ffecec",
+            borderRadius: 12,
+            marginBottom: 14,
+          }}
+        >
+          <Text style={{ fontWeight: "bold" }}>Login Error</Text>
+          <Text style={{ marginTop: 6 }}>{error}</Text>
+        </View>
+      )}
+
+      <Pressable
+        disabled={!canLogin || loading}
+        onPress={handleLogin}
         style={{
-          backgroundColor: "#007AFF",
           padding: 14,
-          borderRadius: 6,
+          backgroundColor: canLogin ? "#dcefe8" : "#e5e5e5",
+          borderRadius: 12,
+          alignItems: "center",
+          marginBottom: 12,
         }}
       >
-        <Text style={{ color: "#fff", textAlign: "center", fontSize: 16 }}>
-          Sign In
-        </Text>
-      </TouchableOpacity>
-    </View>
+        {loading ? (
+          <ActivityIndicator />
+        ) : (
+          <Text style={{ fontWeight: "bold" }}>Login</Text>
+        )}
+      </Pressable>
+
+      <Link href="/register" asChild>
+        <Pressable
+          style={{
+            padding: 14,
+            backgroundColor: "#f1f5f3",
+            borderRadius: 12,
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ fontWeight: "bold" }}>Create Account</Text>
+        </Pressable>
+      </Link>
+    </ScrollView>
   );
 }

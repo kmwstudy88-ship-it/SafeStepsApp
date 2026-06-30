@@ -131,10 +131,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     padding: 20,
     marginBottom: 40,
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 3,
+    boxShadow: "0 2px 6px rgba(0, 0, 0, 0.10)",
   },
   subheading: {
     fontSize: 20,

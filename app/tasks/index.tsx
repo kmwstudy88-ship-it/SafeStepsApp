@@ -1,11 +1,336 @@
-﻿import React from "react";
-import { View, Text } from "react-native";
-import { globalStyles } from "../styles";
+import { useEffect, useState } from "react";
+import {
+  ActivityIndicator,
+  Pressable,
+  ScrollView,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
+import {
+  completeUserTasks,
+  completeUserTask,
+  createUserTask,
+  fetchUserTasks,
+  UserTask,
+} from "../../lib/engines/taskEngine";
 
 export default function TasksScreen() {
+  const [tasks, setTasks] = useState<UserTask[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [bulkCompleting, setBulkCompleting] = useState(false);
+  const [error, setError] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+
+  async function loadTasks() {
+    setLoading(true);
+    setError("");
+    setMessage("");
+
+    try {
+      const savedTasks = await fetchUserTasks();
+      setTasks(savedTasks);
+    } catch (loadError) {
+      setError(
+        loadError instanceof Error ? loadError.message : "Could not load tasks."
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleCreateTask() {
+    if (title.trim().length === 0 || saving) return;
+
+    setSaving(true);
+    setError("");
+    setMessage("");
+
+    try {
+      await createUserTask({
+        title: title.trim(),
+        description: description.trim(),
+        priority: "medium",
+        category: "general",
+        evidence_required: false,
+      });
+
+      setTitle("");
+      setDescription("");
+      await loadTasks();
+    } catch (saveError) {
+      setError(
+        saveError instanceof Error
+          ? saveError.message
+          : "Could not create task."
+      );
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  async function handleCompleteTask(task: UserTask) {
+    setError("");
+    setMessage("");
+
+    try {
+      await completeUserTask(task.id, task.title);
+      await loadTasks();
+      setMessage("Task marked complete.");
+    } catch (completeError) {
+      setError(
+        completeError instanceof Error
+          ? completeError.message
+          : "Could not complete task."
+      );
+    }
+  }
+
+  async function handleCompleteReadyTasks() {
+    if (readyTasks.length === 0 || bulkCompleting) return;
+
+    setBulkCompleting(true);
+    setError("");
+    setMessage("");
+
+    try {
+      const result = await completeUserTasks(readyTasks);
+      await loadTasks();
+      setMessage(
+        result.updatedCount === 0
+          ? "No ready tasks needed updating."
+          : `${result.updatedCount} ready tasks marked complete.`,
+      );
+    } catch (completeError) {
+      setError(
+        completeError instanceof Error
+          ? completeError.message
+          : "Could not complete ready tasks."
+      );
+    } finally {
+      setBulkCompleting(false);
+    }
+  }
+
+  useEffect(() => {
+    loadTasks();
+  }, []);
+
+  const readyTasks = tasks.filter((task) => task.status !== "completed");
+  const completedTasks = tasks.filter((task) => task.status === "completed");
+
   return (
-    <View style={globalStyles.screen}>
-      <Text style={globalStyles.title}>Tasks</Text>
-    </View>
+    <ScrollView style={{ flex: 1, padding: 20 }}>
+      <Text style={{ fontSize: 28, fontWeight: "bold", marginBottom: 8 }}>
+        Tasks
+      </Text>
+
+      <Text style={{ marginBottom: 16 }}>
+        Tasks are parent actions connected to learning, practice, evidence and
+        progress. Lesson practice activities are also recorded here.
+      </Text>
+
+      <View
+        style={{
+          padding: 16,
+          backgroundColor: "#f1f5f3",
+          borderRadius: 12,
+          marginBottom: 16,
+        }}
+      >
+        <Text style={{ fontSize: 18, fontWeight: "bold" }}>Add Task</Text>
+
+        <TextInput
+          value={title}
+          onChangeText={setTitle}
+          placeholder="Task title"
+          style={{
+            minHeight: 50,
+            borderWidth: 1,
+            borderColor: "#cbd8d0",
+            borderRadius: 10,
+            padding: 12,
+            marginTop: 10,
+            backgroundColor: "#ffffff",
+          }}
+        />
+
+        <TextInput
+          value={description}
+          onChangeText={setDescription}
+          placeholder="Task description"
+          multiline
+          style={{
+            minHeight: 90,
+            borderWidth: 1,
+            borderColor: "#cbd8d0",
+            borderRadius: 10,
+            padding: 12,
+            marginTop: 10,
+            backgroundColor: "#ffffff",
+            textAlignVertical: "top",
+          }}
+        />
+
+        <Pressable
+          disabled={title.trim().length === 0 || saving}
+          onPress={handleCreateTask}
+          style={{
+            marginTop: 12,
+            padding: 12,
+            backgroundColor: title.trim().length > 0 ? "#dcefe8" : "#e5e5e5",
+            borderRadius: 10,
+            alignItems: "center",
+          }}
+        >
+          {saving ? (
+            <ActivityIndicator />
+          ) : (
+            <Text style={{ fontWeight: "bold" }}>Save Task</Text>
+          )}
+        </Pressable>
+      </View>
+
+      <Pressable
+        onPress={loadTasks}
+        style={{
+          padding: 12,
+          backgroundColor: "#dcefe8",
+          borderRadius: 10,
+          alignItems: "center",
+          marginBottom: 16,
+        }}
+      >
+        <Text style={{ fontWeight: "bold" }}>Refresh Tasks</Text>
+      </Pressable>
+
+      <Pressable
+        disabled={readyTasks.length === 0 || bulkCompleting}
+        onPress={handleCompleteReadyTasks}
+        style={{
+          padding: 12,
+          backgroundColor: readyTasks.length > 0 ? "#dcefe8" : "#e5e5e5",
+          borderRadius: 10,
+          alignItems: "center",
+          marginBottom: 16,
+          opacity: bulkCompleting ? 0.65 : 1,
+        }}
+      >
+        <Text style={{ fontWeight: "bold" }}>
+          {bulkCompleting ? "Completing..." : "Mark All Ready Tasks Complete"}
+        </Text>
+      </Pressable>
+
+      {loading && <ActivityIndicator />}
+
+      {message.length > 0 && (
+        <View
+          style={{
+            padding: 14,
+            backgroundColor: "#edf8f2",
+            borderRadius: 12,
+            marginBottom: 14,
+          }}
+        >
+          <Text style={{ fontWeight: "bold" }}>Task Update</Text>
+          <Text style={{ marginTop: 6 }}>{message}</Text>
+        </View>
+      )}
+
+      {error.length > 0 && (
+        <View
+          style={{
+            padding: 14,
+            backgroundColor: "#ffecec",
+            borderRadius: 12,
+            marginBottom: 14,
+          }}
+        >
+          <Text style={{ fontWeight: "bold" }}>Task Error</Text>
+          <Text style={{ marginTop: 6 }}>{error}</Text>
+        </View>
+      )}
+
+      <Text style={{ fontSize: 20, fontWeight: "bold", marginBottom: 10 }}>
+        Ready Tasks
+      </Text>
+
+      {!loading && readyTasks.length === 0 && (
+        <View
+          style={{
+            padding: 16,
+            backgroundColor: "#ffffff",
+            borderRadius: 12,
+            borderWidth: 1,
+            borderColor: "#d8e5dd",
+            marginBottom: 14,
+          }}
+        >
+          <Text>No ready tasks.</Text>
+        </View>
+      )}
+
+      {readyTasks.map((task) => (
+        <View
+          key={task.id}
+          style={{
+            padding: 16,
+            backgroundColor: "#ffffff",
+            borderRadius: 12,
+            borderWidth: 1,
+            borderColor: "#d8e5dd",
+            marginBottom: 14,
+          }}
+        >
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>{task.title}</Text>
+          <Text style={{ marginTop: 6 }}>{task.description}</Text>
+          <Text style={{ marginTop: 6 }}>Priority: {task.priority}</Text>
+          <Text style={{ marginTop: 6 }}>
+            Evidence required: {task.evidence_required ? "Yes" : "No"}
+          </Text>
+
+          <Pressable
+            onPress={() => handleCompleteTask(task)}
+            style={{
+              marginTop: 12,
+              padding: 12,
+              backgroundColor: "#dcefe8",
+              borderRadius: 10,
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontWeight: "bold" }}>Mark Complete</Text>
+          </Pressable>
+        </View>
+      ))}
+
+      <Text style={{ fontSize: 20, fontWeight: "bold", marginVertical: 10 }}>
+        Completed Tasks
+      </Text>
+
+      {completedTasks.map((task) => (
+        <View
+          key={task.id}
+          style={{
+            padding: 16,
+            backgroundColor: "#f1f5f3",
+            borderRadius: 12,
+            marginBottom: 12,
+          }}
+        >
+          <Text style={{ fontSize: 18, fontWeight: "bold" }}>{task.title}</Text>
+          <Text style={{ marginTop: 6 }}>{task.description}</Text>
+          {task.completed_at && (
+            <Text style={{ marginTop: 6 }}>
+              Completed: {new Date(task.completed_at).toLocaleDateString()}
+            </Text>
+          )}
+        </View>
+      ))}
+    </ScrollView>
   );
 }
