@@ -45,7 +45,7 @@ export default function RegisterScreen() {
         return;
       }
 
-      setMessage("Account created. Please check your email if confirmation is required, then log in.");
+      router.replace("/welcome");
     } catch (registerError) {
       setError(
         registerError instanceof Error

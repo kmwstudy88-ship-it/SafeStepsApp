@@ -9,7 +9,7 @@ function ActionCard({
 }: {
   title: string;
   description: string;
-  href: "/dashboard" | "/settings";
+  href: "/assessments" | "/dashboard";
   primary?: boolean;
 }) {
   return (
@@ -113,15 +113,15 @@ export default function WelcomeScreen() {
 
       <View style={{ gap: 10, marginTop: 4 }}>
         <ActionCard
-          title="Continue to Dashboard"
-          description="Go straight to your SafeSteps dashboard and start exploring."
-          href="/dashboard"
+          title="Start Intake and Assessment"
+          description="Begin with your first check-in so SafeSteps can start building your progress record."
+          href="/assessments"
           primary
         />
         <ActionCard
-          title="Finish Profile Setup"
-          description="Add your display name, story goal, strengths, and support notes first."
-          href="/settings"
+          title="Continue to Dashboard"
+          description="Go straight to your SafeSteps dashboard and start exploring."
+          href="/dashboard"
         />
       </View>
     </ScrollView>

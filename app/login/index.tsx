@@ -25,7 +25,7 @@ export default function LoginScreen() {
 
     try {
       await signInWithEmail(email, password);
-      router.replace("/welcome");
+      router.replace("/dashboard");
     } catch (loginError) {
       setError(
         loginError instanceof Error ? loginError.message : "Could not login."
