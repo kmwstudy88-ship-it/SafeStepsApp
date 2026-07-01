@@ -71,4 +71,14 @@ describe("standalone course helpers", () => {
       expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
     }
   });
+
+  test("demonstrating change lessons include parent meaning prompts", () => {
+    const course = getCourseById("demonstrating-change-self-managed-safety");
+
+    expect(course).toBeDefined();
+    expect(course!.lessons).toHaveLength(4);
+    for (const lesson of course!.lessons) {
+      expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
+    }
+  });
 });

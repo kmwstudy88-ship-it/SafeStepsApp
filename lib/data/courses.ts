@@ -937,6 +937,214 @@ export const courses: StandaloneCourse[] = [
         },
       },
     ],
+  },
+  {
+    id: "demonstrating-change-self-managed-safety",
+    title: "Demonstrating Change and Self-Managed Safety",
+    description:
+      "Standalone course helping parents show behaviour-based change, manage risk early, and build evidence of safety over time.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Change is Shown Through Behaviour",
+        durationMinutes: 30,
+        summary:
+          "Demonstrating change means showing safe decisions, stable routines, protective actions, and repair over time.",
+        content: {
+          whyItMatters:
+            "Parents may not agree with every system concern, but safety is still assessed through observable behaviour. Clear actions help show what has changed beyond words, intentions, or attendance.",
+          parentMeaningPrompt:
+            "What does demonstrating change through behaviour mean for you, your child, and the future you are working toward?",
+          comparisonTitle: "Promises and demonstrated change",
+          positiveTitle: "Demonstrated change includes",
+          positiveItems: [
+            "Safe decisions under stress",
+            "Protective routines repeated over time",
+            "Evidence that shows what changed",
+          ],
+          negativeTitle: "Demonstrated change is not",
+          negativeItems: [
+            "Only saying things will be different",
+            "Attending sessions without practising skills",
+            "Blaming others instead of showing safer actions",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try showing",
+            insteadOf: "I have changed, so everyone should trust me now.",
+            trySaying: "Here are the safe choices, routines, and support steps I have repeated this month.",
+          },
+          stepsTitle: "How to demonstrate change in 3 steps",
+          steps: [
+            {
+              title: "Choose one behaviour",
+              body: "Pick one action connected to safety, stability, or repair.",
+              prompt: "What behaviour would show safer parenting this week?",
+            },
+            {
+              title: "Repeat it",
+              body: "Practise the action consistently so it becomes a pattern.",
+              prompt: "How can I repeat this without waiting for a crisis?",
+            },
+            {
+              title: "Record it",
+              body: "Save a note, reflection, task, or evidence item that explains what happened.",
+              prompt: "What evidence fairly shows this change?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Self-Managed Safety",
+        durationMinutes: 30,
+        summary:
+          "Self-managed safety means recognising risk early, responding before problems escalate, and using supports without waiting for formal intervention.",
+        content: {
+          whyItMatters:
+            "After formal oversight reduces or ends, families still need a safety net. Self-managed safety shows that parents can notice concerns, seek help, and protect children through ordinary life stress.",
+          parentMeaningPrompt:
+            "What does self-managed safety mean for how you notice stress, ask for support, and protect your child before problems grow?",
+          comparisonTitle: "Self-managed safety and unmanaged risk",
+          positiveTitle: "Self-managed safety is",
+          positiveItems: [
+            "Recognising warning signs early",
+            "Using support before crisis",
+            "Maintaining safety routines during stress",
+          ],
+          negativeTitle: "Self-managed safety is not",
+          negativeItems: [
+            "Pretending risk can never return",
+            "Waiting until someone else intervenes",
+            "Handling every problem alone",
+          ],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "The case is over, so I do not need to watch for risk anymore.",
+            trySaying: "Life still brings stress. I can notice early signs and use support before things escalate.",
+          },
+          stepsTitle: "How to manage safety in 3 steps",
+          steps: [
+            {
+              title: "Notice early signs",
+              body: "Pay attention to stress, conflict, substance use risk, isolation, or routine breakdown.",
+              prompt: "What warning sign tells me I need support?",
+            },
+            {
+              title: "Act early",
+              body: "Use a safe response before risk becomes serious.",
+              prompt: "Who can I call, what routine can I reset, or what boundary needs to happen?",
+            },
+            {
+              title: "Review",
+              body: "After the moment passes, reflect on what worked and what needs strengthening.",
+              prompt: "What did I do that kept my child safer?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Building an Evidence Portfolio",
+        durationMinutes: 30,
+        summary:
+          "An evidence portfolio is a clear collection of records that shows safe behaviour, stability, help-seeking, and protective parenting over time.",
+        content: {
+          whyItMatters:
+            "Progress is easier to understand when it is documented. Evidence helps turn scattered actions into a visible story of consistency, accountability, and child-focused change.",
+          parentMeaningPrompt:
+            "What evidence could fairly show the safe changes you are making without pretending everything is perfect?",
+          comparisonTitle: "Useful and weak evidence",
+          positiveTitle: "Useful evidence can include",
+          positiveItems: [
+            "Contact, attendance, or service records",
+            "Routine logs and parenting reflections",
+            "Examples of safe decisions during stress",
+          ],
+          negativeTitle: "Weak evidence relies on",
+          negativeItems: [
+            "Vague statements with no examples",
+            "Only one good day",
+            "Records that ignore safety concerns",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saving",
+            trySayingLabel: "Try saving",
+            insteadOf: "Everything is fine now.",
+            trySaying: "This week I used my bedtime routine four nights and called support before conflict escalated.",
+          },
+          stepsTitle: "How to build evidence in 3 steps",
+          steps: [
+            {
+              title: "Name the change",
+              body: "Write the specific behaviour or routine you are trying to show.",
+              prompt: "What change am I documenting?",
+            },
+            {
+              title: "Attach the proof",
+              body: "Add a note, photo, record, certificate, message, or task completion.",
+              prompt: "What record supports this?",
+            },
+            {
+              title: "Explain the meaning",
+              body: "Connect the evidence to child safety, stability, repair, or support.",
+              prompt: "Why does this matter for my child?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 4,
+        title: "Repair After Setbacks",
+        durationMinutes: 30,
+        summary:
+          "A setback does not have to become a pattern if the parent notices it, takes responsibility, repairs harm, and changes the next response.",
+        content: {
+          whyItMatters:
+            "Families may struggle, improve, struggle again, and recover. What matters is whether risk is recognised early and whether the parent responds in a protective, accountable way.",
+          parentMeaningPrompt:
+            "What does repair after setbacks mean for the parent you want to become and the safety your child needs to trust?",
+          comparisonTitle: "Repair and repeat risk",
+          positiveTitle: "Repair after setbacks includes",
+          positiveItems: [
+            "Acknowledging what happened",
+            "Taking responsibility without blaming the child",
+            "Changing the support plan or routine",
+          ],
+          negativeTitle: "Repeat risk can look like",
+          negativeItems: [
+            "Minimising the concern",
+            "Hiding problems until they escalate",
+            "Returning to old unsafe patterns",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "It was not a big deal, so I do not need to change anything.",
+            trySaying: "That was a warning sign. I need to repair, adjust my plan, and use support earlier next time.",
+          },
+          stepsTitle: "How to repair a setback in 3 steps",
+          steps: [
+            {
+              title: "Name it clearly",
+              body: "Describe what happened and how it may have affected safety or trust.",
+              prompt: "What happened without excuses?",
+            },
+            {
+              title: "Repair the impact",
+              body: "Use apology, support, boundaries, or practical action to reduce harm.",
+              prompt: "What does my child or family need now?",
+            },
+            {
+              title: "Update the plan",
+              body: "Change the routine, support, or response so the pattern is less likely to repeat.",
+              prompt: "What will I do earlier next time?",
+            },
+          ],
+        },
+      },
+    ],
   }
 ];
 
