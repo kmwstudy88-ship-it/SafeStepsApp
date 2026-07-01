@@ -51,4 +51,14 @@ describe("standalone course helpers", () => {
       expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
     }
   });
+
+  test("attachment and bonding lessons include parent meaning prompts", () => {
+    const course = getCourseById("attachment-and-bonding-foundations");
+
+    expect(course).toBeDefined();
+    expect(course!.lessons).toHaveLength(3);
+    for (const lesson of course!.lessons) {
+      expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
+    }
+  });
 });

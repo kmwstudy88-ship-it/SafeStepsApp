@@ -623,6 +623,163 @@ export const courses: StandaloneCourse[] = [
         },
       },
     ],
+  },
+  {
+    id: "attachment-and-bonding-foundations",
+    title: "Attachment and Bonding Foundations",
+    description: "Standalone course teaching secure attachment, daily trust-building, and repair after disconnection.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "What is Attachment?",
+        durationMinutes: 30,
+        summary:
+          "Attachment is the emotional bond children build with caregivers who are safe, responsive, predictable, and available.",
+        content: {
+          whyItMatters:
+            "Secure attachment helps children trust that adults will protect, comfort, guide, and return after hard moments. It gives children a safer base for learning, behaviour, and relationships.",
+          parentMeaningPrompt:
+            "What does attachment mean for the relationship you want with your child, especially if trust has been strained or interrupted?",
+          comparisonTitle: "Secure attachment and insecure patterns",
+          positiveTitle: "Secure attachment is built through",
+          positiveItems: [
+            "Comfort when children are distressed",
+            "Predictable care and follow-through",
+            "Repair after disconnection",
+          ],
+          negativeTitle: "Secure attachment is not built through",
+          negativeItems: [
+            "Ignoring a child's need for comfort",
+            "Using fear to get closeness or control",
+            "Expecting trust without repeated safety",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "You do not need me. Stop acting like a baby.",
+            trySaying: "You need some closeness right now. I can help you feel safe.",
+          },
+          stepsTitle: "How to support attachment in 3 steps",
+          steps: [
+            {
+              title: "Notice bids",
+              body: "Look for the ways your child asks for comfort, help, attention, or reassurance.",
+              prompt: "How does my child show me they need connection?",
+            },
+            {
+              title: "Respond warmly",
+              body: "Offer calm attention before moving into teaching or limits.",
+              prompt: "Can I show safety before I correct?",
+            },
+            {
+              title: "Repeat safety",
+              body: "Build trust through many small reliable moments over time.",
+              prompt: "What is one safe response I can repeat this week?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Building Trust Through Daily Care",
+        durationMinutes: 30,
+        summary:
+          "Trust grows when children experience repeated daily care that is reliable, respectful, and emotionally safe.",
+        content: {
+          whyItMatters:
+            "Children learn trust through patterns. Small routines like listening, keeping promises, showing up, and staying calm can matter as much as big conversations.",
+          parentMeaningPrompt:
+            "What daily care habits could help your child experience you as more predictable, safe, and trustworthy?",
+          comparisonTitle: "Trust-building daily care",
+          positiveTitle: "Trust-building care includes",
+          positiveItems: [
+            "Doing what you said you would do",
+            "Showing interest in the child's world",
+            "Keeping routines steady where possible",
+          ],
+          negativeTitle: "Trust-building care does not include",
+          negativeItems: [
+            "Making promises you cannot keep",
+            "Only showing interest during problems",
+            "Using care as a reward or withdrawal as punishment",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I forgot again. It is not a big deal.",
+            trySaying: "I said I would do that and I missed it. I am sorry. Here is how I will repair it.",
+          },
+          stepsTitle: "How to build trust through care in 3 steps",
+          steps: [
+            {
+              title: "Choose one routine",
+              body: "Pick one daily moment where your child can count on you.",
+              prompt: "Which routine can I make more predictable?",
+            },
+            {
+              title: "Follow through",
+              body: "Keep the commitment small enough that you can do it consistently.",
+              prompt: "What promise can I realistically keep?",
+            },
+            {
+              title: "Name reliability",
+              body: "Help your child notice the pattern without demanding trust immediately.",
+              prompt: "How can I show consistency instead of asking for it?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Repairing Attachment Ruptures",
+        durationMinutes: 30,
+        summary:
+          "An attachment rupture is a break in connection caused by fear, conflict, absence, broken trust, or unmet needs.",
+        content: {
+          whyItMatters:
+            "Repair teaches children that relationships can return to safety after hurt. For reunification and family recovery, repeated repair is often more important than trying to erase the past.",
+          parentMeaningPrompt:
+            "What does repairing connection mean for you and your child after hurt, separation, conflict, or broken trust?",
+          comparisonTitle: "Real repair and false repair",
+          positiveTitle: "Real repair includes",
+          positiveItems: [
+            "Taking responsibility for your part",
+            "Listening to the child's experience",
+            "Showing change through repeated actions",
+          ],
+          negativeTitle: "Real repair is not",
+          negativeItems: [
+            "Demanding the child move on quickly",
+            "Explaining away the hurt",
+            "Expecting one apology to rebuild trust",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I said sorry, so you should be over it.",
+            trySaying: "I understand trust may take time. I will keep showing you safety in my actions.",
+          },
+          stepsTitle: "How to repair attachment in 3 steps",
+          steps: [
+            {
+              title: "Own the rupture",
+              body: "Name what happened without blaming the child for the disconnection.",
+              prompt: "What part can I take responsibility for?",
+            },
+            {
+              title: "Listen first",
+              body: "Make room for the child's feelings before asking for closeness.",
+              prompt: "What might my child need me to understand?",
+            },
+            {
+              title: "Show change",
+              body: "Repair becomes believable when the child sees safer patterns repeated.",
+              prompt: "What action can I repeat to rebuild trust?",
+            },
+          ],
+        },
+      },
+    ],
   }
 ];
 
