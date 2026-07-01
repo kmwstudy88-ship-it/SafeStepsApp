@@ -19,7 +19,7 @@ function ComparisonColumn({
         <View key={item} style={globalStyles.courseStepRow}>
           <View style={positive ? globalStyles.courseCheckIcon : globalStyles.courseXIcon}>
             <Text style={positive ? globalStyles.courseCheckIconText : globalStyles.courseXIconText}>
-              {positive ? "✓" : "×"}
+              {positive ? "OK" : "X"}
             </Text>
           </View>
           <Text style={globalStyles.courseBody}>{item}</Text>
@@ -58,10 +58,40 @@ export function CourseLessonContent({
 
       {lesson.content?.validationIs && lesson.content.validationIsNot ? (
         <View style={globalStyles.courseBlock}>
-          <Text style={globalStyles.courseBlockTitle}>What validation is and is not</Text>
+          <Text style={globalStyles.courseBlockTitle}>
+            {lesson.content.comparisonTitle ?? "What this is and is not"}
+          </Text>
           <View style={globalStyles.courseGrid}>
-            <ComparisonColumn title="Validation is" items={lesson.content.validationIs} positive />
-            <ComparisonColumn title="Validation is not" items={lesson.content.validationIsNot} positive={false} />
+            <ComparisonColumn
+              title={lesson.content.positiveTitle ?? "This is"}
+              items={lesson.content.validationIs}
+              positive
+            />
+            <ComparisonColumn
+              title={lesson.content.negativeTitle ?? "This is not"}
+              items={lesson.content.validationIsNot}
+              positive={false}
+            />
+          </View>
+        </View>
+      ) : null}
+
+      {lesson.content?.positiveItems && lesson.content.negativeItems ? (
+        <View style={globalStyles.courseBlock}>
+          <Text style={globalStyles.courseBlockTitle}>
+            {lesson.content.comparisonTitle ?? "What this is and is not"}
+          </Text>
+          <View style={globalStyles.courseGrid}>
+            <ComparisonColumn
+              title={lesson.content.positiveTitle ?? "This is"}
+              items={lesson.content.positiveItems}
+              positive
+            />
+            <ComparisonColumn
+              title={lesson.content.negativeTitle ?? "This is not"}
+              items={lesson.content.negativeItems}
+              positive={false}
+            />
           </View>
         </View>
       ) : null}
@@ -72,11 +102,15 @@ export function CourseLessonContent({
             <Text style={globalStyles.courseBlockTitle}>Example</Text>
             <View style={globalStyles.courseGrid}>
               <View style={globalStyles.courseSpeechCard}>
-                <Text style={globalStyles.courseSectionTitle}>Instead of saying</Text>
+                <Text style={globalStyles.courseSectionTitle}>
+                  {lesson.content.example.insteadOfLabel ?? "Instead of"}
+                </Text>
                 <Text style={globalStyles.courseBody}>{lesson.content.example.insteadOf}</Text>
               </View>
               <View style={globalStyles.courseSpeechCard}>
-                <Text style={globalStyles.courseSectionTitle}>Try saying</Text>
+                <Text style={globalStyles.courseSectionTitle}>
+                  {lesson.content.example.trySayingLabel ?? "Try"}
+                </Text>
                 <Text style={globalStyles.courseBody}>{lesson.content.example.trySaying}</Text>
               </View>
             </View>
@@ -87,7 +121,7 @@ export function CourseLessonContent({
       {lesson.content?.steps?.length ? (
         <View style={globalStyles.courseBlock}>
           <Text style={globalStyles.courseBlockTitle}>
-            How to validate in {lesson.content.steps.length} steps
+            {lesson.content.stepsTitle ?? `How to practise in ${lesson.content.steps.length} steps`}
           </Text>
           {lesson.content.steps.map((step, index) => (
             <View key={step.title} style={globalStyles.courseStepRow}>

@@ -21,4 +21,14 @@ describe("standalone course helpers", () => {
       }),
     ).toBe(true);
   });
+
+  test("communication lessons include parent meaning prompts", () => {
+    const course = getCourseById("communication-skills");
+
+    expect(course).toBeDefined();
+    expect(course!.lessons).toHaveLength(5);
+    for (const lesson of course!.lessons) {
+      expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
+    }
+  });
 });
