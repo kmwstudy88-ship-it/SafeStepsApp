@@ -1302,6 +1302,163 @@ export const courses: StandaloneCourse[] = [
         },
       },
     ],
+  },
+  {
+    id: "family-routines-and-structure",
+    title: "Family Routines and Structure",
+    description: "Standalone course teaching predictable routines, calmer transitions, and structure during hard weeks.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Why Routines Matter",
+        durationMinutes: 30,
+        summary:
+          "Routines are repeated patterns that help children know what happens next and help parents respond with more consistency.",
+        content: {
+          whyItMatters:
+            "Predictable routines reduce stress because children do not have to guess what adults expect. They also help parents show stability through repeated daily actions.",
+          parentMeaningPrompt:
+            "What does having predictable routines mean for your child, your stress level, and the kind of home you are trying to build?",
+          comparisonTitle: "Helpful routines and rigid routines",
+          positiveTitle: "Helpful routines are",
+          positiveItems: [
+            "Predictable but flexible",
+            "Simple enough to repeat",
+            "Connected to safety, care, and connection",
+          ],
+          negativeTitle: "Helpful routines are not",
+          negativeItems: [
+            "Punishment when life gets messy",
+            "So strict that children feel trapped",
+            "A way to ignore feelings or needs",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "Why can't this family ever get organised?",
+            trySaying: "We can start with one small routine that makes tomorrow easier.",
+          },
+          stepsTitle: "How to begin a routine in 3 steps",
+          steps: [
+            {
+              title: "Pick one moment",
+              body: "Choose one daily time that creates stress, such as morning, meals, homework, or bedtime.",
+              prompt: "Where would predictability help most?",
+            },
+            {
+              title: "Keep it simple",
+              body: "Use two or three clear steps instead of a complicated plan.",
+              prompt: "What are the smallest repeatable steps?",
+            },
+            {
+              title: "Practise gently",
+              body: "Repeat the routine and repair when it goes off track.",
+              prompt: "How can I return to the routine without shame?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Morning, Meal, and Bedtime Routines",
+        durationMinutes: 30,
+        summary:
+          "Daily routines around waking, eating, and sleeping create anchors that support regulation, connection, and safety.",
+        content: {
+          whyItMatters:
+            "Children often struggle most during transitions. Clear routines help them prepare, cooperate, and recover because the adult response becomes calmer and more predictable.",
+          parentMeaningPrompt:
+            "Which daily routine would make the biggest difference for your child if it became calmer and more predictable?",
+          comparisonTitle: "Daily routine anchors",
+          positiveTitle: "Routine anchors include",
+          positiveItems: [
+            "A clear start and finish",
+            "Simple choices where possible",
+            "Calm reminders before transitions",
+          ],
+          negativeTitle: "Routine anchors do not include",
+          negativeItems: [
+            "Rushing until everyone escalates",
+            "Changing expectations every day",
+            "Using threats as the main reminder",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "Hurry up or everything is ruined.",
+            trySaying: "First shoes, then bag, then we leave. I will help with the first step.",
+          },
+          stepsTitle: "How to strengthen a daily routine in 3 steps",
+          steps: [
+            {
+              title: "Prepare",
+              body: "Set up what you can before the hard moment begins.",
+              prompt: "What can be ready before morning, meals, or bedtime?",
+            },
+            {
+              title: "Cue",
+              body: "Use the same calm phrase or visual reminder each time.",
+              prompt: "What phrase can my child learn to expect?",
+            },
+            {
+              title: "Close",
+              body: "End with connection, praise for effort, or a repair if things were hard.",
+              prompt: "How can I help the routine end safely?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Keeping Routines During Hard Weeks",
+        durationMinutes: 30,
+        summary:
+          "Hard weeks happen. Keeping routines during stress means protecting the most important anchors and asking for support early.",
+        content: {
+          whyItMatters:
+            "Routines are most protective when life becomes stressful. Even a simplified routine can help children feel that adults are still present, organised, and safe.",
+          parentMeaningPrompt:
+            "What routine matters most when your family is under pressure, and what support would help you keep it going?",
+          comparisonTitle: "Hard-week routines",
+          positiveTitle: "Hard-week routines are",
+          positiveItems: [
+            "Reduced to the essentials",
+            "Supported by people or reminders",
+            "Restarted after setbacks",
+          ],
+          negativeTitle: "Hard-week routines are not",
+          negativeItems: [
+            "Giving up because one day went badly",
+            "Pretending stress is not affecting the family",
+            "Expecting children to manage adult chaos",
+          ],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "I failed because the routine broke.",
+            trySaying: "The routine broke today. I can restart with one safe anchor tonight.",
+          },
+          stepsTitle: "How to protect routines in 3 steps",
+          steps: [
+            {
+              title: "Choose essentials",
+              body: "Keep the routines that most affect safety, sleep, food, school, or connection.",
+              prompt: "What cannot disappear when things are hard?",
+            },
+            {
+              title: "Ask early",
+              body: "Use support before stress turns into a bigger safety issue.",
+              prompt: "Who can help me hold this routine?",
+            },
+            {
+              title: "Restart",
+              body: "Return to the routine after disruption without blame.",
+              prompt: "What is the next safe step back into structure?",
+            },
+          ],
+        },
+      },
+    ],
   }
 ];
 

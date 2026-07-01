@@ -91,4 +91,14 @@ describe("standalone course helpers", () => {
       expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
     }
   });
+
+  test("family routines lessons include parent meaning prompts", () => {
+    const course = getCourseById("family-routines-and-structure");
+
+    expect(course).toBeDefined();
+    expect(course!.lessons).toHaveLength(3);
+    for (const lesson of course!.lessons) {
+      expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
+    }
+  });
 });
