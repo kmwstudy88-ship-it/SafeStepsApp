@@ -1,6 +1,7 @@
 import { useLocalSearchParams } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
-import { Pressable, ScrollView, Text, View } from "react-native";
+import { ImageBackground, Pressable, ScrollView, Text, View } from "react-native";
+import { CourseLessonContent } from "../../components/CourseLessonContent";
 import { areAllCourseLessonsViewed, getCourseById } from "../../lib/data/courses";
 import {
   CertificateRecord,
@@ -8,6 +9,7 @@ import {
   issueCertificate,
   listMyCertificates,
 } from "../../lib/platform/certificates";
+import { globalStyles } from "../../lib/styles";
 
 export default function CoursePlayerScreen() {
   const params = useLocalSearchParams();
@@ -19,6 +21,9 @@ export default function CoursePlayerScreen() {
   const [issuing, setIssuing] = useState(false);
   const [message, setMessage] = useState("");
   const [viewedLessons, setViewedLessons] = useState<Record<number, boolean>>(
+    {}
+  );
+  const [parentMeanings, setParentMeanings] = useState<Record<number, string>>(
     {}
   );
 
@@ -86,12 +91,15 @@ export default function CoursePlayerScreen() {
   }
 
   return (
-    <ScrollView style={{ flex: 1, padding: 20 }}>
-      <Text style={{ fontSize: 28, fontWeight: "bold", marginBottom: 8 }}>
-        {course.title}
-      </Text>
+    <ImageBackground
+      source={require("../../assets/safesteps-course-background.png")}
+      resizeMode="cover"
+      style={globalStyles.courseBackground}
+    >
+      <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={globalStyles.courseScreen}>
+      <Text style={globalStyles.courseTitle}>{course.title}</Text>
 
-      <Text style={{ marginBottom: 16 }}>{course.description}</Text>
+      <Text style={globalStyles.courseSubtitle}>{course.description}</Text>
 
       <View
         style={{
@@ -130,12 +138,32 @@ export default function CoursePlayerScreen() {
             Duration: {lesson.durationMinutes} minutes
           </Text>
 
-          <Text style={{ marginTop: 8 }}>
-            Practise the skill, record what changed, then mark the lesson viewed
-            when it is ready to count toward course completion.
-          </Text>
+          {lesson.summary ? (
+            <Text style={{ marginTop: 8, fontSize: 16, lineHeight: 23 }}>
+              {lesson.summary}
+            </Text>
+          ) : (
+            <Text style={{ marginTop: 8 }}>
+              Practise the skill, record what it means to you, then mark the lesson
+              viewed when it is ready to count toward course completion.
+            </Text>
+          )}
+
+          <View style={{ marginTop: 14 }}>
+            <CourseLessonContent
+              lesson={lesson}
+              parentMeaning={parentMeanings[lesson.lessonNumber] ?? ""}
+              onParentMeaningChange={(value) =>
+                setParentMeanings((current) => ({
+                  ...current,
+                  [lesson.lessonNumber]: value,
+                }))
+              }
+            />
+          </View>
 
           <Pressable
+            disabled={(parentMeanings[lesson.lessonNumber] ?? "").trim().length === 0}
             onPress={() =>
               setViewedLessons((current) => ({
                 ...current,
@@ -148,14 +176,19 @@ export default function CoursePlayerScreen() {
               borderRadius: 10,
               backgroundColor: viewedLessons[lesson.lessonNumber]
                 ? "#dcefe8"
-                : "#eef3f5",
+                : (parentMeanings[lesson.lessonNumber] ?? "").trim().length > 0
+                ? "#eef3f5"
+                : "#e5e5e5",
               alignItems: "center",
+              opacity: (parentMeanings[lesson.lessonNumber] ?? "").trim().length > 0 ? 1 : 0.75,
             }}
           >
             <Text style={{ fontWeight: "bold" }}>
               {viewedLessons[lesson.lessonNumber]
                 ? "Lesson Viewed"
-                : "Mark Lesson Viewed"}
+                : (parentMeanings[lesson.lessonNumber] ?? "").trim().length > 0
+                ? "Mark Lesson Viewed"
+                : "Add Parent Meaning First"}
             </Text>
           </Pressable>
         </View>
@@ -207,5 +240,6 @@ export default function CoursePlayerScreen() {
         ) : null}
       </View>
     </ScrollView>
+    </ImageBackground>
   );
 }
