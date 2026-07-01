@@ -1775,6 +1775,297 @@ export const courses: StandaloneCourse[] = [
         },
       },
     ],
+  },
+  {
+    id: "emotional-regulation-for-parents",
+    title: "Emotional Regulation for Parents",
+    description: "Standalone course teaching parents to recognise escalation, calm before responding, and repair after stress.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Recognising Escalation",
+        durationMinutes: 30,
+        summary:
+          "Escalation is the build-up of stress, body signals, thoughts, tone, and actions that can lead to unsafe reactions.",
+        content: {
+          whyItMatters:
+            "Parents can respond more safely when they notice escalation early. Recognising body signals and triggers gives the parent a chance to pause before the child experiences fear or confusion.",
+          parentMeaningPrompt:
+            "What does recognising escalation mean for how you protect your child from adult stress and big reactions?",
+          comparisonTitle: "Recognising escalation",
+          positiveTitle: "Early awareness includes",
+          positiveItems: ["Noticing body tension", "Recognising trigger thoughts", "Naming when intensity is rising"],
+          negativeTitle: "Escalation is harder to manage when",
+          negativeItems: ["Warning signs are ignored", "Stress is blamed on the child", "The parent waits until control is lost"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "They are making me lose it.",
+            trySaying: "My body is escalating. I need to pause before I respond.",
+          },
+          stepsTitle: "How to notice escalation in 3 steps",
+          steps: [
+            { title: "Scan your body", body: "Notice jaw, hands, chest, breathing, heat, or urge to shout.", prompt: "What is my body telling me?" },
+            { title: "Name the trigger", body: "Identify what story or fear is driving the reaction.", prompt: "What am I reacting to right now?" },
+            { title: "Pause early", body: "Use a short break, breath, water, or support before responding.", prompt: "What pause keeps this safer?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Calming Before Responding",
+        durationMinutes: 30,
+        summary:
+          "Calming before responding means lowering intensity first so correction, limits, and teaching can happen safely.",
+        content: {
+          whyItMatters:
+            "Children learn regulation by watching adults. A calm parent can still be firm, but the child is less likely to feel threatened and more likely to learn the next safe step.",
+          parentMeaningPrompt:
+            "What does calming before responding mean for your parenting and the emotional safety in your home?",
+          comparisonTitle: "Calm response and reactive response",
+          positiveTitle: "Calming before responding includes",
+          positiveItems: ["Lowering your voice", "Using fewer words", "Taking space safely"],
+          negativeTitle: "Calming is not",
+          negativeItems: ["Ignoring unsafe behaviour", "Walking away without returning", "Letting resentment build silently"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I am done with you.",
+            trySaying: "I am too escalated to talk safely. I will come back in five minutes.",
+          },
+          stepsTitle: "How to calm before responding in 3 steps",
+          steps: [
+            { title: "Lower intensity", body: "Reduce volume, speed, and movement.", prompt: "What can I lower right now?" },
+            { title: "Hold the limit", body: "Keep the safety boundary clear without arguing.", prompt: "What is the one limit?" },
+            { title: "Return to teach", body: "Come back when calmer to explain, repair, or problem-solve.", prompt: "What needs to be taught later?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Repair After Stress",
+        durationMinutes: 30,
+        summary:
+          "Repair after stress means acknowledging the impact of a hard moment and showing the child how safety returns.",
+        content: {
+          whyItMatters:
+            "No parent stays calm all the time. Repair teaches children that adults can take responsibility and relationships can recover after stress without blame or fear.",
+          parentMeaningPrompt:
+            "What does repair after stress mean for how your child learns about mistakes, responsibility, and safety?",
+          comparisonTitle: "Repair and avoidance",
+          positiveTitle: "Repair includes",
+          positiveItems: ["Owning your reaction", "Naming the impact", "Trying again in a safer way"],
+          negativeTitle: "Repair is not",
+          negativeItems: ["Blaming the child", "Demanding instant forgiveness", "Pretending nothing happened"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I yelled because you pushed me too far.",
+            trySaying: "I yelled, and that was not okay. I am going to try again more calmly.",
+          },
+          stepsTitle: "How to repair after stress in 3 steps",
+          steps: [
+            { title: "Own it", body: "Say what you did without blaming the child.", prompt: "What can I take responsibility for?" },
+            { title: "Reconnect", body: "Offer reassurance or space depending on what the child needs.", prompt: "What helps my child feel safe again?" },
+            { title: "Plan earlier", body: "Choose one earlier signal and one safer response for next time.", prompt: "What will I do sooner?" },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "parent-safety-and-stability",
+    title: "Parent Safety and Stability",
+    description: "Standalone course supporting parents to recognise risk, build safe routines, and use support early.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Recognising Parent Safety Risks",
+        durationMinutes: 30,
+        summary:
+          "Parent safety risks are situations, people, stressors, or patterns that can reduce a parent's ability to keep themselves and children safe.",
+        content: {
+          whyItMatters:
+            "Parents need safety too. Recognising risks early helps parents protect children from unsafe environments, adult conflict, intimidation, instability, or crisis.",
+          parentMeaningPrompt:
+            "What safety risks affect your parenting capacity, and what would it mean to notice them earlier?",
+          comparisonTitle: "Risk awareness",
+          positiveTitle: "Risk awareness includes",
+          positiveItems: ["Naming unsafe patterns", "Taking threats seriously", "Planning before crisis"],
+          negativeTitle: "Risk awareness is not",
+          negativeItems: ["Minimising danger", "Handling intimidation alone", "Waiting until children are exposed"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "It will probably be fine this time.",
+            trySaying: "This pattern has become unsafe before. I need a plan before it escalates.",
+          },
+          stepsTitle: "How to recognise risk in 3 steps",
+          steps: [
+            { title: "Name the pattern", body: "Identify people, places, times, or stressors linked to risk.", prompt: "What pattern has caused concern before?" },
+            { title: "Check child impact", body: "Consider what the child may see, hear, feel, or lose access to.", prompt: "How could this affect my child?" },
+            { title: "Act early", body: "Use support, boundaries, or safety planning before escalation.", prompt: "What can I do before crisis?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Safe Routines for Parent Stability",
+        durationMinutes: 30,
+        summary:
+          "Parent stability routines help keep basic needs, support, planning, and calm responses more consistent.",
+        content: {
+          whyItMatters:
+            "Stability is easier to show when parents have routines that support sleep, appointments, medication, meals, transport, safety planning, and help-seeking.",
+          parentMeaningPrompt:
+            "What routine would support your stability and make safer parenting more realistic this week?",
+          comparisonTitle: "Stability routines",
+          positiveTitle: "Stability routines include",
+          positiveItems: ["Appointments and supports kept", "Basic needs planned", "Safety steps written down"],
+          negativeTitle: "Stability routines do not include",
+          negativeItems: ["Ignoring your own warning signs", "Only planning for perfect days", "Trying to prove you need no help"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I should be able to manage everything alone.",
+            trySaying: "Using support early is part of keeping my child and myself stable.",
+          },
+          stepsTitle: "How to build stability in 3 steps",
+          steps: [
+            { title: "Pick one anchor", body: "Choose one routine that supports safety or wellbeing.", prompt: "What routine holds my week together?" },
+            { title: "Add support", body: "Connect the routine to a person, reminder, service, or checklist.", prompt: "What helps me follow through?" },
+            { title: "Track it", body: "Record completion so stability becomes visible.", prompt: "How can I show this pattern?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Responding to Unsafe Situations",
+        durationMinutes: 30,
+        summary:
+          "Responding to unsafe situations means choosing protective action quickly and using support when risk is more than you can safely manage alone.",
+        content: {
+          whyItMatters:
+            "Protective parenting includes knowing when to leave, call support, set a boundary, seek emergency help, or stop contact with unsafe people or environments.",
+          parentMeaningPrompt:
+            "What does protective action mean for you when a situation becomes unsafe or starts moving toward unsafe?",
+          comparisonTitle: "Protective action",
+          positiveTitle: "Protective action includes",
+          positiveItems: ["Leaving or creating distance when needed", "Calling safe supports", "Prioritising child safety over adult conflict"],
+          negativeTitle: "Protective action is not",
+          negativeItems: ["Arguing until someone changes", "Exposing children to adult danger", "Keeping risk secret because of shame"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I will just try to calm everyone down myself.",
+            trySaying: "This is unsafe. I am moving away and calling support now.",
+          },
+          stepsTitle: "How to respond protectively in 3 steps",
+          steps: [
+            { title: "Choose safety", body: "Focus on reducing risk, not winning the argument.", prompt: "What action makes this safer fastest?" },
+            { title: "Use support", body: "Contact the right person, service, or emergency support.", prompt: "Who needs to know or help?" },
+            { title: "Document the step", body: "Record what happened and what protective decision you made.", prompt: "What evidence shows I acted early?" },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "co-parenting-foundations",
+    title: "Co-Parenting Foundations",
+    description: "Standalone course teaching child-focused co-parenting, boundaries, and communication across households.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Child-Focused Co-Parenting",
+        durationMinutes: 30,
+        summary:
+          "Child-focused co-parenting keeps the child's safety, routines, emotions, and development at the centre of adult decisions.",
+        content: {
+          whyItMatters:
+            "Children can feel caught in adult conflict. Child-focused co-parenting helps reduce loyalty pressure and keeps adult issues separate from the child's need for safety and connection.",
+          parentMeaningPrompt:
+            "What does child-focused co-parenting mean for how you speak, plan, and make decisions around your child?",
+          comparisonTitle: "Child-focused and adult-focused co-parenting",
+          positiveTitle: "Child-focused co-parenting includes",
+          positiveItems: ["Keeping adult conflict away from children", "Planning around the child's needs", "Supporting safe relationships"],
+          negativeTitle: "Child-focused co-parenting is not",
+          negativeItems: ["Using children as messengers", "Speaking badly about the other parent to the child", "Making the child manage adult feelings"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "Tell your other parent they need to stop being difficult.",
+            trySaying: "Adult plans are for adults to manage. You do not need to carry that message.",
+          },
+          stepsTitle: "How to stay child-focused in 3 steps",
+          steps: [
+            { title: "Separate adult issues", body: "Keep adult conflict out of the child's role.", prompt: "Is this my issue or my child's issue?" },
+            { title: "Name the child need", body: "Focus plans around safety, routine, school, health, or feelings.", prompt: "What does my child need most here?" },
+            { title: "Use adult channels", body: "Communicate through safe adult pathways when needed.", prompt: "What is the safest way to handle this?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Communication Boundaries",
+        durationMinutes: 30,
+        summary:
+          "Communication boundaries help adults share necessary information without escalating conflict or involving the child in adult stress.",
+        content: {
+          whyItMatters:
+            "Clear boundaries protect children from adult conflict and help parents communicate about practical matters like routines, contact, school, health, and safety.",
+          parentMeaningPrompt:
+            "What communication boundary would protect your child from adult stress while still keeping important information clear?",
+          comparisonTitle: "Boundaried communication",
+          positiveTitle: "Boundaried communication is",
+          positiveItems: ["Brief and practical", "Focused on the child", "Documented when needed"],
+          negativeTitle: "Boundaried communication is not",
+          negativeItems: ["Dragging in old arguments", "Sending messages through the child", "Using contact to intimidate or shame"],
+          example: {
+            insteadOfLabel: "Instead of writing",
+            trySayingLabel: "Try writing",
+            insteadOf: "You always ruin everything and never care.",
+            trySaying: "Pickup is 4 pm. The school bag and medication will be ready at the front desk.",
+          },
+          stepsTitle: "How to communicate with boundaries in 3 steps",
+          steps: [
+            { title: "Keep it practical", body: "Share only what is needed for the child or plan.", prompt: "What information is necessary?" },
+            { title: "Use neutral tone", body: "Avoid blame, threats, sarcasm, or emotional dumping.", prompt: "Would this be safe for a child to overhear?" },
+            { title: "Record clearly", body: "Keep records of important arrangements and changes.", prompt: "What needs to be documented?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Managing Conflict Across Households",
+        durationMinutes: 30,
+        summary:
+          "Managing conflict across households means reducing adult tension, protecting routines, and helping children move between homes with less stress.",
+        content: {
+          whyItMatters:
+            "Transitions can be stressful for children when adult conflict is high. Calm, predictable handovers and consistent routines help children feel safer.",
+          parentMeaningPrompt:
+            "What does safer conflict management across households mean for your child during transitions and contact?",
+          comparisonTitle: "Safer transitions",
+          positiveTitle: "Safer transitions include",
+          positiveItems: ["Predictable handover plans", "Calm adult behaviour", "Child reassurance before and after"],
+          negativeTitle: "Safer transitions do not include",
+          negativeItems: ["Arguments at handover", "Questioning the child for information", "Changing plans to punish the other adult"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "What did they say about me?",
+            trySaying: "You are back. I am glad to see you. We can settle in with our usual routine.",
+          },
+          stepsTitle: "How to manage transitions in 3 steps",
+          steps: [
+            { title: "Prepare the child", body: "Use calm reminders about what will happen next.", prompt: "What does my child need to know before transition?" },
+            { title: "Lower adult conflict", body: "Use brief, practical communication and safe handover locations if needed.", prompt: "How can adults keep this calmer?" },
+            { title: "Reconnect after", body: "Offer a settling routine without interrogation.", prompt: "What helps my child land safely?" },
+          ],
+        },
+      },
+    ],
   }
 ];
 

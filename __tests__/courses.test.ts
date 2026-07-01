@@ -105,6 +105,9 @@ describe("standalone course helpers", () => {
   test.each([
     ["reunification-parenting-foundations", 3],
     ["trauma-informed-parenting-foundations", 3],
+    ["emotional-regulation-for-parents", 3],
+    ["parent-safety-and-stability", 3],
+    ["co-parenting-foundations", 3],
   ])("%s lessons include parent meaning prompts", (courseId, lessonCount) => {
     const course = getCourseById(courseId);
 
