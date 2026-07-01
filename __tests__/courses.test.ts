@@ -101,4 +101,17 @@ describe("standalone course helpers", () => {
       expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
     }
   });
+
+  test.each([
+    ["reunification-parenting-foundations", 3],
+    ["trauma-informed-parenting-foundations", 3],
+  ])("%s lessons include parent meaning prompts", (courseId, lessonCount) => {
+    const course = getCourseById(courseId);
+
+    expect(course).toBeDefined();
+    expect(course!.lessons).toHaveLength(lessonCount);
+    for (const lesson of course!.lessons) {
+      expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
+    }
+  });
 });

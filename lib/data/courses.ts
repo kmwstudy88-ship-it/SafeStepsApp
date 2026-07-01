@@ -1459,6 +1459,322 @@ export const courses: StandaloneCourse[] = [
         },
       },
     ],
+  },
+  {
+    id: "reunification-parenting-foundations",
+    title: "Reunification Parenting Foundations",
+    description:
+      "Standalone course teaching reunification expectations, repair after separation, and evidence of readiness.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "What Reunification Asks of Parents",
+        durationMinutes: 30,
+        summary:
+          "Reunification asks parents to show safe, consistent, child-focused change over time, not just hope or intention.",
+        content: {
+          whyItMatters:
+            "Children need safety, predictability, and trust to rebuild after separation. Reunification planning focuses on what the parent can show through repeated behaviour and protective decisions.",
+          parentMeaningPrompt:
+            "What does reunification ask of you as a parent, and what safe changes do you want your child to be able to trust?",
+          comparisonTitle: "Reunification readiness",
+          positiveTitle: "Reunification readiness includes",
+          positiveItems: [
+            "Consistent safe behaviour",
+            "Child-focused decisions",
+            "Willingness to use support and accountability",
+          ],
+          negativeTitle: "Reunification readiness is not",
+          negativeItems: [
+            "Only wanting the child home",
+            "Rushing past the child's feelings",
+            "Expecting trust without evidence of change",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I should get my child back because I love them.",
+            trySaying: "I love my child, and I am showing safety through routines, repair, and support.",
+          },
+          stepsTitle: "How to work toward readiness in 3 steps",
+          steps: [
+            {
+              title: "Understand concerns",
+              body: "Name the safety concerns without reducing them to blame or shame.",
+              prompt: "What needs to be safer for my child?",
+            },
+            {
+              title: "Practise change",
+              body: "Use daily actions that show stability, accountability, and protection.",
+              prompt: "What behaviour can I repeat this week?",
+            },
+            {
+              title: "Show evidence",
+              body: "Record the routines, supports, and safer decisions that show change over time.",
+              prompt: "What evidence would fairly show progress?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Repairing Relationships After Separation",
+        durationMinutes: 30,
+        summary:
+          "Repair after separation means rebuilding trust through patience, listening, safe contact, and repeated child-focused actions.",
+        content: {
+          whyItMatters:
+            "Separation can leave children with mixed feelings, worry, anger, loyalty pressure, or confusion. Repair helps parents respond to the child's experience instead of demanding immediate closeness.",
+          parentMeaningPrompt:
+            "What does repairing your relationship after separation mean for how you listen, respond, and rebuild trust with your child?",
+          comparisonTitle: "Repair after separation",
+          positiveTitle: "Repair includes",
+          positiveItems: [
+            "Listening to the child's feelings",
+            "Taking responsibility for your part",
+            "Letting trust rebuild at the child's pace",
+          ],
+          negativeTitle: "Repair is not",
+          negativeItems: [
+            "Pressuring the child to move on",
+            "Speaking negatively about other adults",
+            "Using contact time to process adult conflict",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "You should be happy to see me.",
+            trySaying: "It is okay to have mixed feelings. I am here to listen and keep this time safe.",
+          },
+          stepsTitle: "How to repair after separation in 3 steps",
+          steps: [
+            {
+              title: "Make contact safe",
+              body: "Use calm tone, predictable structure, and child-friendly expectations.",
+              prompt: "What would help my child feel safer during contact?",
+            },
+            {
+              title: "Listen without pressure",
+              body: "Let the child have their feelings without correcting them too quickly.",
+              prompt: "What feeling might my child need me to hear?",
+            },
+            {
+              title: "Repeat reliability",
+              body: "Show up, follow through, and repair small ruptures consistently.",
+              prompt: "What can I do repeatedly to rebuild trust?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Evidence of Reunification Readiness",
+        durationMinutes: 30,
+        summary:
+          "Evidence of reunification readiness shows that safe parenting, stability, support use, and repair are becoming reliable patterns.",
+        content: {
+          whyItMatters:
+            "Reunification decisions are strengthened by clear evidence of safe change. A strong record shows not only what the parent learned, but what the parent can now do consistently.",
+          parentMeaningPrompt:
+            "What evidence could show that your child would be safer, more supported, and more stable with you over time?",
+          comparisonTitle: "Readiness evidence",
+          positiveTitle: "Readiness evidence can show",
+          positiveItems: [
+            "Stable routines over time",
+            "Safe contact or parenting practice",
+            "Support used before risk escalates",
+          ],
+          negativeTitle: "Readiness evidence should not rely on",
+          negativeItems: [
+            "One good visit",
+            "Promises without examples",
+            "Ignoring setbacks or concerns",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saving",
+            trySayingLabel: "Try saving",
+            insteadOf: "I am ready now.",
+            trySaying: "Here are four weeks of routines, support calls, safe contact notes, and repaired setbacks.",
+          },
+          stepsTitle: "How to build readiness evidence in 3 steps",
+          steps: [
+            {
+              title: "Choose domains",
+              body: "Track safety, routines, contact, support use, and child-focused repair.",
+              prompt: "Which readiness area needs more evidence?",
+            },
+            {
+              title: "Save examples",
+              body: "Record specific actions rather than broad claims.",
+              prompt: "What happened, when, and why did it matter?",
+            },
+            {
+              title: "Review patterns",
+              body: "Look for consistency, gaps, and next steps.",
+              prompt: "What does my evidence show over time?",
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "trauma-informed-parenting-foundations",
+    title: "Trauma-Informed Parenting Foundations",
+    description:
+      "Standalone course teaching trauma responses, emotional safety, and consistent repair through a parenting lens.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Trauma and Child Behaviour",
+        durationMinutes: 30,
+        summary:
+          "Trauma can shape behaviour by affecting a child's sense of safety, trust, regulation, attention, and reactions to stress.",
+        content: {
+          whyItMatters:
+            "When parents understand trauma responses, they can respond with safety and teaching instead of only punishment. This helps children learn that adults can be steady during big feelings.",
+          parentMeaningPrompt:
+            "What does trauma-informed parenting mean for how you understand your child's behaviour and your own response?",
+          comparisonTitle: "Trauma-aware responses",
+          positiveTitle: "Trauma-aware parenting includes",
+          positiveItems: [
+            "Looking for fear or stress beneath behaviour",
+            "Using calm, predictable responses",
+            "Teaching regulation skills slowly",
+          ],
+          negativeTitle: "Trauma-aware parenting is not",
+          negativeItems: [
+            "Excusing unsafe behaviour without limits",
+            "Forcing children to talk before they are ready",
+            "Using fear to control behaviour",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "You are acting like this for attention.",
+            trySaying: "Something feels unsafe or too big right now. I will help you calm and keep the limit clear.",
+          },
+          stepsTitle: "How to respond to trauma behaviour in 3 steps",
+          steps: [
+            {
+              title: "Notice stress",
+              body: "Look for signs of fear, overwhelm, shutdown, or escalation.",
+              prompt: "What might my child's body be telling me?",
+            },
+            {
+              title: "Create safety",
+              body: "Use a calmer voice, fewer words, space, routine, or reassurance.",
+              prompt: "What would lower the stress right now?",
+            },
+            {
+              title: "Teach later",
+              body: "Return to problem-solving after the child is calmer.",
+              prompt: "What skill can wait until safety returns?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Creating Emotional Safety",
+        durationMinutes: 30,
+        summary:
+          "Emotional safety means children can have feelings, ask for help, make mistakes, and return to connection without fear or shame.",
+        content: {
+          whyItMatters:
+            "Children who have experienced stress or trauma need repeated experiences of safe adults. Emotional safety supports regulation, trust, communication, and learning.",
+          parentMeaningPrompt:
+            "What does emotional safety mean in your home, and what would your child notice if it became stronger?",
+          comparisonTitle: "Emotional safety",
+          positiveTitle: "Emotional safety includes",
+          positiveItems: [
+            "Warm tone during hard moments",
+            "Feelings named without shame",
+            "Limits held without intimidation",
+          ],
+          negativeTitle: "Emotional safety does not include",
+          negativeItems: [
+            "Yelling to force compliance",
+            "Mocking or dismissing feelings",
+            "Punishing children for needing comfort",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "Stop crying or I will give you something to cry about.",
+            trySaying: "You are upset. I will stay calm, and the safety rule still stays the same.",
+          },
+          stepsTitle: "How to build emotional safety in 3 steps",
+          steps: [
+            {
+              title: "Soften the entry",
+              body: "Start with tone, body language, and words that lower threat.",
+              prompt: "How can I make my first response safer?",
+            },
+            {
+              title: "Name and limit",
+              body: "Name the feeling and hold the boundary at the same time.",
+              prompt: "What feeling and limit both need to be clear?",
+            },
+            {
+              title: "Reconnect",
+              body: "Return after the hard moment so the relationship stays safe.",
+              prompt: "What repair or reassurance is needed?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Repair, Rhythm, and Recovery",
+        durationMinutes: 30,
+        summary:
+          "Recovery is supported through repeated repair, predictable rhythms, and safe relationships that help children settle over time.",
+        content: {
+          whyItMatters:
+            "Trauma recovery is not a single conversation. Children heal through repeated experiences of safety, routine, repair, and adults who keep coming back calmly.",
+          parentMeaningPrompt:
+            "What does repair, rhythm, and recovery mean for the daily parenting patterns you want to build?",
+          comparisonTitle: "Recovery-supporting parenting",
+          positiveTitle: "Recovery-supporting parenting includes",
+          positiveItems: [
+            "Predictable routines",
+            "Repair after hard moments",
+            "Patience with repeated practice",
+          ],
+          negativeTitle: "Recovery-supporting parenting is not",
+          negativeItems: [
+            "Expecting instant trust",
+            "Changing rules based on adult mood",
+            "Giving up after setbacks",
+          ],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "We already talked about this, so it should be fixed.",
+            trySaying: "Recovery takes repeated safety. I can practise this again with calm and consistency.",
+          },
+          stepsTitle: "How to support recovery in 3 steps",
+          steps: [
+            {
+              title: "Build rhythm",
+              body: "Use repeated routines that help the child know what to expect.",
+              prompt: "What rhythm helps my child settle?",
+            },
+            {
+              title: "Repair quickly",
+              body: "Come back after conflict, confusion, or disconnection.",
+              prompt: "What do I need to own or clarify?",
+            },
+            {
+              title: "Track recovery",
+              body: "Notice small signs of safety, trust, communication, or regulation improving.",
+              prompt: "What small change shows healing may be growing?",
+            },
+          ],
+        },
+      },
+    ],
   }
 ];
 
