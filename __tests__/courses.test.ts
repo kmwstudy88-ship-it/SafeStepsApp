@@ -111,6 +111,22 @@ describe("standalone course helpers", () => {
     ["accountability-and-responsibility", 3],
     ["substance-use-and-parenting-stability", 3],
     ["mental-health-stress-and-parenting", 3],
+    ["relationship-skills", 3],
+    ["safe-conversations", 3],
+    ["protective-parenting-foundations", 3],
+    ["family-mental-health-curriculum", 14],
+    ["understanding-your-nervous-system", 12],
+    ["breaking-the-cycle-intergenerational-trauma", 12],
+    ["your-child-s-brain-what-they-need-from-you", 14],
+    ["emotional-literacy", 14],
+    ["healthy-relationships", 15],
+    ["financial-literacy-and-life-skills", 15],
+    ["co-parenting-after-separation", 15],
+    ["seeing-through-your-child-s-eyes", 14],
+    ["self-compassion-and-shame-resilience", 15],
+    ["executive-functioning-in-family-life", 15],
+    ["digital-safety-for-families", 15],
+    ["building-your-village", 15],
   ])("%s lessons include parent meaning prompts", (courseId, lessonCount) => {
     const course = getCourseById(courseId);
 
@@ -119,5 +135,28 @@ describe("standalone course helpers", () => {
     for (const lesson of course!.lessons) {
       expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
     }
+  });
+
+  test("complete imported course library contains 171 lessons", () => {
+    const courseIds = [
+      "understanding-your-nervous-system",
+      "breaking-the-cycle-intergenerational-trauma",
+      "your-child-s-brain-what-they-need-from-you",
+      "emotional-literacy",
+      "healthy-relationships",
+      "financial-literacy-and-life-skills",
+      "co-parenting-after-separation",
+      "seeing-through-your-child-s-eyes",
+      "self-compassion-and-shame-resilience",
+      "executive-functioning-in-family-life",
+      "digital-safety-for-families",
+      "building-your-village",
+    ];
+
+    const lessonCount = courseIds.reduce((total, courseId) => {
+      return total + (getCourseById(courseId)?.lessons.length ?? 0);
+    }, 0);
+
+    expect(lessonCount).toBe(171);
   });
 });

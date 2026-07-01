@@ -1,3 +1,5 @@
+import { completeCourseLibrary } from "./completeCourseLibrary";
+
 export type CourseLesson = {
   lessonNumber: number;
   title: string;
@@ -36,6 +38,7 @@ export type StandaloneCourse = {
 };
 
 export const courses: StandaloneCourse[] = [
+  ...completeCourseLibrary,
   {
     id: "communication-skills",
     title: "Communication Skills",
@@ -2353,6 +2356,716 @@ export const courses: StandaloneCourse[] = [
             { title: "Choose anchors", body: "Pick the routines that matter most for safety and wellbeing.", prompt: "What must stay steady?" },
             { title: "Simplify", body: "Make the routine smaller but still reliable.", prompt: "What is the simplest version?" },
             { title: "Repair and reset", body: "If a routine breaks, restart without shame.", prompt: "What is the next steady step?" },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "family-mental-health-curriculum",
+    title: "Family Mental Health: Children, Parents, and the Parent-Child Relationship",
+    description:
+      "A comprehensive 14-week course covering children's mental health, parents' own mental health, and parenting while managing a mental health condition.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Foundations of Child Mental Health & Development",
+        durationMinutes: 120,
+        summary:
+          "An introduction to what mental health means for children, how it differs across developmental stages, and the factors that shape it.",
+        content: {
+          whyItMatters:
+            "Child mental health is shaped by development, relationships, biology, coping skills, and context. Seeing mental health as a continuum helps parents respond with curiosity and support instead of panic, blame, or denial.",
+          parentMeaningPrompt:
+            "What does child mental health mean for your child right now, and what developmental strengths or support needs do you notice?",
+          comparisonTitle: "Helpful mental health framing",
+          positiveTitle: "Helpful framing includes",
+          positiveItems: ["Seeing mental health as a continuum", "Matching expectations to developmental stage", "Looking at biological, psychological, and social factors"],
+          negativeTitle: "Helpful framing is not",
+          negativeItems: ["Expecting children to be happy all the time", "Treating one hard week as a fixed identity", "Blaming one cause for every concern"],
+          example: {
+            insteadOfLabel: "Instead of asking",
+            trySayingLabel: "Try asking",
+            insteadOf: "What is wrong with my child?",
+            trySaying: "How is my child doing right now, and what support might help?",
+          },
+          stepsTitle: "How to take a developmental snapshot in 3 steps",
+          steps: [
+            { title: "Name the stage", body: "Notice your child's age, abilities, relationships, and current developmental tasks.", prompt: "What is typical for this stage?" },
+            { title: "Notice the pattern", body: "Look for changes across mood, behavior, sleep, school, and relationships.", prompt: "What has shifted over time?" },
+            { title: "Identify support", body: "Choose one strength to build on and one area where extra support may help.", prompt: "What would make this easier for my child?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Common Mental Health Conditions in Children",
+        durationMinutes: 120,
+        summary:
+          "An overview of common mental health conditions diagnosed in childhood and adolescence, including how they typically present.",
+        content: {
+          whyItMatters:
+            "Children often show distress through behavior, body complaints, irritability, school refusal, sleep changes, or withdrawal. Understanding common patterns helps parents seek assessment without turning the course into self-diagnosis.",
+          parentMeaningPrompt:
+            "What patterns have you noticed in your child's mood, behavior, body complaints, school life, or relationships?",
+          comparisonTitle: "Observation and diagnosis",
+          positiveTitle: "Helpful observation includes",
+          positiveItems: ["Watching frequency and duration", "Noticing impairment across settings", "Seeking professional assessment when patterns persist"],
+          negativeTitle: "Helpful observation is not",
+          negativeItems: ["Using labels as punishment", "Diagnosing from one checklist", "Ignoring co-occurring or overlapping concerns"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "They are just being difficult.",
+            trySaying: "This pattern may be communicating distress, and I can ask for guidance.",
+          },
+          stepsTitle: "How to observe concerns in 3 steps",
+          steps: [
+            { title: "Describe behavior", body: "Use concrete examples instead of labels.", prompt: "What did I see or hear?" },
+            { title: "Check context", body: "Notice where, when, how often, and how long the concern occurs.", prompt: "Is this happening across settings?" },
+            { title: "Consult early", body: "Bring patterns to a pediatrician, school counselor, or mental health professional.", prompt: "Who is the right first contact?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Recognizing Warning Signs & When to Seek Help",
+        durationMinutes: 120,
+        summary:
+          "Practical guidance on identifying when a child's emotional or behavioral changes warrant professional attention, and how to take the next step.",
+        content: {
+          whyItMatters:
+            "Some warning signs call for immediate action, while others need planned support. Parents protect children best when they can distinguish urgent safety concerns from patterns that should be tracked and discussed with professionals.",
+          parentMeaningPrompt:
+            "What signs would tell you your child needs planned support, and what signs would require immediate help?",
+          comparisonTitle: "Urgent and planned support",
+          positiveTitle: "Seek urgent help for",
+          positiveItems: ["Talk of self-harm or suicide", "Intent to harm self or others", "Disclosure of abuse or immediate danger"],
+          negativeTitle: "Plan a consultation for",
+          negativeItems: ["Persistent worry or low mood", "Ongoing sleep or appetite changes", "School, friendship, or behavior changes that continue"],
+          example: {
+            insteadOfLabel: "Instead of waiting",
+            trySayingLabel: "Try acting",
+            insteadOf: "Maybe this will pass even though safety is at risk.",
+            trySaying: "This is a safety concern. I will contact emergency or crisis support now.",
+          },
+          stepsTitle: "How to respond to warning signs in 3 steps",
+          steps: [
+            { title: "Assess safety", body: "Check whether there is immediate danger, self-harm, harm to others, or abuse disclosure.", prompt: "Is anyone unsafe right now?" },
+            { title: "Track patterns", body: "Record frequency, duration, settings, and impact on daily life.", prompt: "What pattern can I describe clearly?" },
+            { title: "Choose the pathway", body: "Use emergency support for danger and planned professional support for persistent concerns.", prompt: "Who do I contact first?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 4,
+        title: "Supporting a Child Day-to-Day",
+        durationMinutes: 120,
+        summary:
+          "Practical strategies for communication, routines, and collaboration with schools to support a child's mental health in daily life.",
+        content: {
+          whyItMatters:
+            "Daily support is built through repeated small actions: emotional validation, predictable routines, collaboration with school, and adult repair after mistakes. These actions help children feel safer while longer-term support is arranged.",
+          parentMeaningPrompt:
+            "Which daily routine, conversation, or school connection would most support your child's wellbeing this week?",
+          comparisonTitle: "Day-to-day support",
+          positiveTitle: "Supportive care includes",
+          positiveItems: ["Validating feelings with limits", "Predictable routines", "Home-school collaboration"],
+          negativeTitle: "Supportive care is not",
+          negativeItems: ["Letting emotions remove every boundary", "Changing routines without explanation", "Managing concerns in isolation"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "Stop feeling that way.",
+            trySaying: "I can see this is hard. The feeling is allowed, and I will help you choose a safe next step.",
+          },
+          stepsTitle: "How to support day-to-day in 3 steps",
+          steps: [
+            { title: "Validate", body: "Name the feeling without removing necessary limits.", prompt: "What feeling can I acknowledge?" },
+            { title: "Anchor routines", body: "Protect sleep, meals, school, connection, and predictable transitions.", prompt: "What anchor matters most today?" },
+            { title: "Coordinate support", body: "Share helpful context with teachers, caregivers, or professionals when appropriate.", prompt: "Who needs to know what?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 5,
+        title: "Trauma, Adversity, and Resilience in Children",
+        durationMinutes: 120,
+        summary:
+          "Understanding how adverse experiences affect children's mental health, and the factors that build resilience.",
+        content: {
+          whyItMatters:
+            "Trauma can affect behavior, learning, relationships, and the body's stress response. A trauma-informed lens shifts adults from blame toward safety, predictability, repair, and protective relationships.",
+          parentMeaningPrompt:
+            "What protective relationship, routine, or safe place helps your child recover from stress or adversity?",
+          comparisonTitle: "Trauma-informed support",
+          positiveTitle: "Trauma-informed support asks",
+          positiveItems: ["What happened and what helps safety?", "What protective factors can we strengthen?", "How can we be predictable and calm?"],
+          negativeTitle: "Trauma-informed support avoids",
+          negativeItems: ["What is wrong with this child?", "Using fear to force compliance", "Treating risk as destiny"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "This child is choosing to be difficult.",
+            trySaying: "This behavior may be a stress response, and safety is the first step.",
+          },
+          stepsTitle: "How to build resilience in 3 steps",
+          steps: [
+            { title: "Increase safety", body: "Make routines, adults, and expectations more predictable.", prompt: "What helps this child feel safe enough to learn?" },
+            { title: "Strengthen connection", body: "Use stable, supportive relationships as a protective factor.", prompt: "Who is a safe adult for this child?" },
+            { title: "Practise repair", body: "Return after hard moments and rebuild trust through action.", prompt: "What repair is needed now?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 6,
+        title: "Understanding Parental Mental Health",
+        durationMinutes: 120,
+        summary:
+          "An introduction to the unique mental health pressures parents face, including stress, burnout, and perinatal mood disorders.",
+        content: {
+          whyItMatters:
+            "Parental mental health affects the whole family system. Naming stress, burnout, and perinatal mood or anxiety concerns as real and treatable helps parents seek support before pressure becomes unsafe or isolating.",
+          parentMeaningPrompt:
+            "What signs tell you that parenting stress is becoming more than ordinary tiredness, and what support would help?",
+          comparisonTitle: "Parent stress and support",
+          positiveTitle: "Supportive framing includes",
+          positiveItems: ["Taking parental mental health seriously", "Recognizing burnout signals", "Seeking care without shame"],
+          negativeTitle: "Supportive framing is not",
+          negativeItems: ["Treating exhaustion as failure", "Ignoring perinatal mood concerns", "Waiting until crisis before asking for help"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "A good parent should cope without help.",
+            trySaying: "Getting support helps me stay safer and more available for my child.",
+          },
+          stepsTitle: "How to check parental wellbeing in 3 steps",
+          steps: [
+            { title: "Notice signs", body: "Name stress, burnout, mood, anxiety, sleep, and irritability patterns.", prompt: "What has changed in me?" },
+            { title: "Lower load", body: "Choose one practical pressure to reduce or share.", prompt: "What support would make today safer?" },
+            { title: "Ask early", body: "Contact a GP, therapist, support group, or trusted person before the pressure grows.", prompt: "Who can I tell?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 7,
+        title: "Common Mental Health Conditions Among Parents",
+        durationMinutes: 120,
+        summary:
+          "A closer look at anxiety, depression, and trauma-related conditions as they present specifically in parents.",
+        content: {
+          whyItMatters:
+            "Anxiety, depression, postpartum conditions, and trauma can present through irritability, over-control, withdrawal, numbness, fear, or continued functioning that hides distress. Recognizing patterns supports earlier care.",
+          parentMeaningPrompt:
+            "Which parenting situations tend to activate anxiety, low mood, trauma responses, or overwhelm for you?",
+          comparisonTitle: "Recognizing parent symptoms",
+          positiveTitle: "Helpful recognition includes",
+          positiveItems: ["Noticing hidden or high-functioning distress", "Understanding postpartum symptoms can persist", "Seeing trauma activation as support-worthy"],
+          negativeTitle: "Helpful recognition is not",
+          negativeItems: ["Masking every symptom", "Assuming functioning means wellbeing", "Calling distress a character flaw"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "I am still doing everything, so I must be fine.",
+            trySaying: "Functioning does not mean I am okay; I can still ask for support.",
+          },
+          stepsTitle: "How to separate stress from symptoms in 3 steps",
+          steps: [
+            { title: "Name the pattern", body: "Notice what repeats across mood, thoughts, body, behavior, and relationships.", prompt: "What keeps happening?" },
+            { title: "Check impact", body: "Ask how the pattern affects care, connection, sleep, work, or safety.", prompt: "Where is this interfering?" },
+            { title: "Seek assessment", body: "Use professional support when symptoms persist or intensify.", prompt: "Who can assess this with me?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 8,
+        title: "Self-Care, Coping Strategies, and Seeking Professional Support",
+        durationMinutes: 120,
+        summary:
+          "Practical, realistic approaches to coping and self-care for parents, and guidance on accessing professional mental health support.",
+        content: {
+          whyItMatters:
+            "Self-care needs to be realistic enough for actual parenting life. Small coping actions, social support, and professional care can reduce strain and help parents respond more safely and consistently.",
+          parentMeaningPrompt:
+            "What small coping action or professional support step is realistic for you this week?",
+          comparisonTitle: "Realistic self-care",
+          positiveTitle: "Realistic care includes",
+          positiveItems: ["Small repeatable actions", "Movement, mindfulness, reframing, or connection", "Professional support when needed"],
+          negativeTitle: "Realistic care is not",
+          negativeItems: ["A luxury that replaces treatment", "A one-off escape from every pressure", "Something parents must earn by coping alone first"],
+          example: {
+            insteadOfLabel: "Instead of planning",
+            trySayingLabel: "Try planning",
+            insteadOf: "I need a whole day off before anything can change.",
+            trySaying: "I can take ten minutes, message one support person, and book one appointment.",
+          },
+          stepsTitle: "How to build a coping toolkit in 3 steps",
+          steps: [
+            { title: "Choose one body tool", body: "Use breath, movement, food, sleep, or grounding in a small practical way.", prompt: "What helps my body settle?" },
+            { title: "Choose one thought tool", body: "Practise reframing or naming a more balanced thought.", prompt: "What is a kinder true statement?" },
+            { title: "Choose one support", body: "Identify a person, service, group, or clinician to contact.", prompt: "Who is part of my support plan?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 9,
+        title: "Stigma, Identity, and Asking for Help as a Parent",
+        durationMinutes: 120,
+        summary:
+          "Exploring the cultural and identity-based pressures that make it hard for parents to acknowledge struggle, and how to build a culture of openness.",
+        content: {
+          whyItMatters:
+            "Shame and idealized ideas of good parenting can keep parents isolated. Challenging stigma makes it easier to ask for help, use community support, and model honest coping for children.",
+          parentMeaningPrompt:
+            "What message about being a good parent makes it harder for you to ask for help, and what healthier message could replace it?",
+          comparisonTitle: "Stigma and openness",
+          positiveTitle: "Openness includes",
+          positiveItems: ["Naming struggle honestly", "Letting identity and culture be part of the conversation", "Using peer and community support"],
+          negativeTitle: "Stigma can sound like",
+          negativeItems: ["Good parents do not struggle", "Asking for help means failing", "Mental health should stay hidden"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I should be able to handle this alone.",
+            trySaying: "Support is part of responsible parenting, not proof that I am failing.",
+          },
+          stepsTitle: "How to reframe stigma in 3 steps",
+          steps: [
+            { title: "Name the rule", body: "Identify the belief that creates shame or silence.", prompt: "What rule am I trying to obey?" },
+            { title: "Test the rule", body: "Ask whether the belief protects your child or isolates your family.", prompt: "Is this rule helping?" },
+            { title: "Replace the rule", body: "Choose a more accurate and supportive belief.", prompt: "What would I tell another parent?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 10,
+        title: "How a Parent's Mental Health Affects the Parent-Child Relationship",
+        durationMinutes: 120,
+        summary:
+          "Understanding the bidirectional relationship between a parent's mental health condition and the parent-child bond, without blame or fatalism.",
+        content: {
+          whyItMatters:
+            "A parent's mental health can affect availability, patience, routines, and repair, but it does not prevent good parenting. Support, treatment, consistency, and repair can protect the parent-child relationship.",
+          parentMeaningPrompt:
+            "How does your wellbeing affect your connection with your child, and what protective factor could strengthen that relationship?",
+          comparisonTitle: "Good enough parenting",
+          positiveTitle: "Good enough parenting includes",
+          positiveItems: ["Consistency over time", "Repair after hard moments", "Using support and treatment"],
+          negativeTitle: "Good enough parenting is not",
+          negativeItems: ["Perfect mood every day", "Never needing help", "Assuming a diagnosis defines the relationship"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "My mental health means I cannot be a good parent.",
+            trySaying: "With support and repair, I can keep building safety and connection.",
+          },
+          stepsTitle: "How to protect the relationship in 3 steps",
+          steps: [
+            { title: "Notice impact", body: "Name how symptoms affect care, tone, routines, or connection.", prompt: "What does my child experience?" },
+            { title: "Add protection", body: "Use treatment, routines, secondary caregivers, or practical support.", prompt: "What buffer can I add?" },
+            { title: "Repair", body: "Come back after hard moments with ownership and safer action.", prompt: "What do I need to own or redo?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 11,
+        title: "Building a Support System: Professional and Informal",
+        durationMinutes: 120,
+        summary:
+          "Practical guidance for parents managing a mental health condition on assembling a robust network of professional and informal support.",
+        content: {
+          whyItMatters:
+            "Parents should not have to hold every need alone. A mapped support system reduces decision load during hard periods and helps professional, practical, and emotional support work together.",
+          parentMeaningPrompt:
+            "Who belongs on your support map, and what role could each person or service play?",
+          comparisonTitle: "Support networks",
+          positiveTitle: "A support system includes",
+          positiveItems: ["Professional care", "Trusted informal helpers", "Clear roles and contact steps"],
+          negativeTitle: "A support system is not",
+          negativeItems: ["One person doing everything", "Vague offers with no plan", "Waiting until crisis to decide who helps"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I do not know who to call, so I will just manage.",
+            trySaying: "My plan names who helps with care, treatment, transport, meals, and crisis steps.",
+          },
+          stepsTitle: "How to build a support map in 3 steps",
+          steps: [
+            { title: "List needs", body: "Name practical, emotional, parenting, medical, and crisis support needs.", prompt: "What support categories matter?" },
+            { title: "List people", body: "Match safe people, services, and professionals to specific roles.", prompt: "Who can help with what?" },
+            { title: "Share the plan", body: "Make contact details and first steps clear before pressure rises.", prompt: "Who needs a copy or conversation?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 12,
+        title: "Communicating With Children About a Parent's Mental Health Condition",
+        durationMinutes: 120,
+        summary:
+          "Age-appropriate, honest, and reassuring ways to talk with children about a parent's mental health, reducing confusion and self-blame.",
+        content: {
+          whyItMatters:
+            "When adults stay silent, children may create their own explanations and blame themselves. Age-appropriate honesty can reduce fear, confusion, and shame while keeping adult burdens with adults.",
+          parentMeaningPrompt:
+            "What simple, age-appropriate message would help your child understand that your mental health is not their fault?",
+          comparisonTitle: "Safe explanations",
+          positiveTitle: "Safe explanations include",
+          positiveItems: ["Simple honest language", "It is not your fault", "Who is helping and what stays steady"],
+          negativeTitle: "Safe explanations avoid",
+          negativeItems: ["Adult emotional dumping", "Vague silence", "Making children responsible for fixing the parent"],
+          example: {
+            insteadOfLabel: "Instead of saying nothing",
+            trySayingLabel: "Try saying",
+            insteadOf: "Everything is fine, do not ask questions.",
+            trySaying: "My feelings are hard right now, it is not because of you, and adults are helping me.",
+          },
+          stepsTitle: "How to talk with children in 3 steps",
+          steps: [
+            { title: "Use their age", body: "Choose words that match the child's developmental stage.", prompt: "What can my child understand?" },
+            { title: "Remove blame", body: "Say clearly that the child did not cause the condition.", prompt: "Have I said it is not their fault?" },
+            { title: "Name support", body: "Explain who is helping and what routines or care will stay in place.", prompt: "What practical reassurance can I give?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 13,
+        title: "Crisis Planning & Safeguarding Child Wellbeing",
+        durationMinutes: 120,
+        summary:
+          "Proactive planning principles to ensure a child's safety, stability, and emotional wellbeing during a parent's mental health crisis.",
+        content: {
+          whyItMatters:
+            "Crisis plans work best when built during stable periods. Clear caregivers, contacts, routines, warning signs, and emergency steps protect children and reduce high-stakes decision-making during acute stress.",
+          parentMeaningPrompt:
+            "What would need to be in your family crisis plan so your child is cared for if pressure escalates?",
+          comparisonTitle: "Crisis planning",
+          positiveTitle: "A plan names",
+          positiveItems: ["Primary and backup caregivers", "Treatment and emergency contacts", "Early warning signs and practical child information"],
+          negativeTitle: "A plan does not rely on",
+          negativeItems: ["Improvising during crisis", "Children managing adult safety", "Delaying action during immediate danger"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "We will work it out if things get bad.",
+            trySaying: "We will write the care, contact, and safety steps while things are stable.",
+          },
+          stepsTitle: "How to draft a crisis plan in 3 steps",
+          steps: [
+            { title: "Name caregivers", body: "Identify primary and backup adults who can care for the child.", prompt: "Who can safely step in?" },
+            { title: "Name contacts", body: "Record treatment team, emergency, crisis, school, and key family contacts.", prompt: "Who gets called first?" },
+            { title: "Name triggers", body: "List warning signs and what action happens when they appear.", prompt: "When do we activate support?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 14,
+        title: "Integration & Capstone: Building a Family Action Plan",
+        durationMinutes: 120,
+        summary:
+          "Bringing together all three tracks through a family-systems lens, culminating in a personalized action plan.",
+        content: {
+          whyItMatters:
+            "Children's mental health, parents' mental health, and parent-child relationships are connected. A family action plan turns learning into specific, realistic next steps that can be reviewed and adjusted over time.",
+          parentMeaningPrompt:
+            "What are your family's current strengths, main areas of focus, and three concrete next steps?",
+          comparisonTitle: "Action planning",
+          positiveTitle: "Effective plans are",
+          positiveItems: ["Specific and modest", "Connected to strengths and risks", "Reviewed as family needs change"],
+          negativeTitle: "Effective plans are not",
+          negativeItems: ["Broad and vague", "Focused on one person as the whole problem", "Fixed forever after one draft"],
+          example: {
+            insteadOfLabel: "Instead of writing",
+            trySayingLabel: "Try writing",
+            insteadOf: "Improve mental health.",
+            trySaying: "Book a GP appointment by Friday, restart bedtime routine tonight, and ask Nan about school pickup backup.",
+          },
+          stepsTitle: "How to build a family action plan in 3 steps",
+          steps: [
+            { title: "List strengths", body: "Name what is already working in the child, parent, and family system.", prompt: "What can we build on?" },
+            { title: "Choose focus areas", body: "Pick two or three concerns or risks that need attention first.", prompt: "What matters most now?" },
+            { title: "Set next steps", body: "Write concrete actions with people and rough timelines.", prompt: "Who will do what by when?" },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "relationship-skills",
+    title: "Relationship Skills",
+    description: "Standalone course teaching respect, trust, repair, and healthier family relationship patterns.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Respectful Interactions",
+        durationMinutes: 30,
+        summary: "Respectful interactions are the everyday words, tone, boundaries, and actions that help people feel safe with each other.",
+        content: {
+          whyItMatters:
+            "Children learn relationship patterns by watching adults. Respectful interactions show children that stress, disagreement, and limits can happen without fear or humiliation.",
+          parentMeaningPrompt:
+            "What does respectful interaction mean for the relationships you want your child to grow up around?",
+          comparisonTitle: "Respect and disrespect",
+          positiveTitle: "Respectful interactions include",
+          positiveItems: ["Calm tone", "Clear boundaries", "Repair after hurt"],
+          negativeTitle: "Respectful interactions do not include",
+          negativeItems: ["Threats or intimidation", "Name-calling", "Using silence to punish"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "You never do anything right.",
+            trySaying: "This did not work. Let's slow down and choose the next step.",
+          },
+          stepsTitle: "How to practise respect in 3 steps",
+          steps: [
+            { title: "Pause tone", body: "Check your voice, pace, and body language before speaking.", prompt: "Would this feel safe to hear?" },
+            { title: "Name the issue", body: "Talk about the behaviour or problem without attacking the person.", prompt: "What is the issue, not the insult?" },
+            { title: "Repair", body: "Come back when words or tone caused harm.", prompt: "What do I need to own or redo?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Building Trust Through Actions",
+        durationMinutes: 30,
+        summary: "Trust grows when words and actions match consistently over time.",
+        content: {
+          whyItMatters:
+            "Families recover through repeated evidence of reliability. Children and adults are more likely to feel safe when promises are realistic and follow-through is visible.",
+          parentMeaningPrompt:
+            "What trust-building action could you repeat so your child can experience reliability, not just hear promises?",
+          comparisonTitle: "Trust-building actions",
+          positiveTitle: "Trust grows through",
+          positiveItems: ["Keeping realistic promises", "Showing up consistently", "Repairing when you miss something"],
+          negativeTitle: "Trust is weakened by",
+          negativeItems: ["Overpromising", "Excuses without repair", "Changing plans without explanation"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I promise everything will be perfect now.",
+            trySaying: "I can promise one thing today, and I will follow through on it.",
+          },
+          stepsTitle: "How to build trust in 3 steps",
+          steps: [
+            { title: "Promise small", body: "Choose commitments you can realistically keep.", prompt: "What can I follow through on today?" },
+            { title: "Follow through", body: "Do the action when you said you would.", prompt: "How will I make this visible?" },
+            { title: "Repair quickly", body: "If you miss it, own it and make a new realistic plan.", prompt: "What repair is needed?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Changing Relationship Patterns",
+        durationMinutes: 30,
+        summary: "Changing relationship patterns means noticing repeated cycles and practising safer ways to connect, disagree, and repair.",
+        content: {
+          whyItMatters:
+            "Old patterns can return under stress. Naming the cycle helps parents choose a different response before the pattern harms trust or safety again.",
+          parentMeaningPrompt:
+            "What relationship pattern do you want to change, and what safer pattern do you want your child to see?",
+          comparisonTitle: "Old patterns and new patterns",
+          positiveTitle: "New patterns include",
+          positiveItems: ["Pausing before escalation", "Using respectful words", "Returning to repair"],
+          negativeTitle: "Old patterns can include",
+          negativeItems: ["Blame cycles", "Avoidance after conflict", "Escalation until someone gives in"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "This is just how we are.",
+            trySaying: "This is a pattern, and I can practise a safer step in it.",
+          },
+          stepsTitle: "How to change a pattern in 3 steps",
+          steps: [
+            { title: "Name the cycle", body: "Write what usually happens first, next, and after.", prompt: "What repeats?" },
+            { title: "Choose the break point", body: "Pick one place where you can respond differently.", prompt: "Where can I interrupt the pattern?" },
+            { title: "Practise repair", body: "Use repair to make the new pattern stronger.", prompt: "How do I come back safely?" },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "safe-conversations",
+    title: "Safe Conversations",
+    description: "Standalone course teaching parents to hold difficult conversations with clarity, calm, and child safety.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Preparing for Difficult Conversations",
+        durationMinutes: 30,
+        summary: "Preparation helps hard conversations stay calmer, clearer, and more focused on safety.",
+        content: {
+          whyItMatters:
+            "Difficult conversations can escalate quickly when people are unprepared. Planning the purpose, timing, and safety boundary helps parents avoid harm and stay child-focused.",
+          parentMeaningPrompt:
+            "What does preparing for a safe conversation mean for how you manage stress, tone, and timing?",
+          comparisonTitle: "Prepared and unprepared conversations",
+          positiveTitle: "Preparation includes",
+          positiveItems: ["Choosing timing", "Knowing the purpose", "Planning a pause if escalation starts"],
+          negativeTitle: "Unprepared conversations often include",
+          negativeItems: ["Starting while escalated", "Trying to solve everything at once", "Talking where children can hear adult conflict"],
+          example: {
+            insteadOfLabel: "Instead of starting with",
+            trySayingLabel: "Try starting with",
+            insteadOf: "We need to talk right now.",
+            trySaying: "This matters. I want to talk when we can both stay calm and focused.",
+          },
+          stepsTitle: "How to prepare in 3 steps",
+          steps: [
+            { title: "Choose purpose", body: "Know the one issue you are discussing.", prompt: "What is this conversation for?" },
+            { title: "Choose timing", body: "Pick a safer time and setting where children are protected.", prompt: "Is this a safe time?" },
+            { title: "Choose pause plan", body: "Decide what happens if the conversation escalates.", prompt: "How will I pause safely?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Speaking Clearly Without Harm",
+        durationMinutes: 30,
+        summary: "Clear speech names needs, limits, and concerns without threats, insults, or emotional dumping.",
+        content: {
+          whyItMatters:
+            "Parents can be firm without being frightening. Clear, respectful language helps children and adults understand the issue without making the relationship feel unsafe.",
+          parentMeaningPrompt:
+            "What does speaking clearly without harm mean for your home and the way your child learns to communicate?",
+          comparisonTitle: "Clear and harmful speech",
+          positiveTitle: "Clear speech includes",
+          positiveItems: ["Specific words", "Respectful limits", "One issue at a time"],
+          negativeTitle: "Harmful speech includes",
+          negativeItems: ["Threats", "Global blame", "Insults or humiliation"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "You always ruin everything.",
+            trySaying: "The plan changed, and I need us to agree on pickup clearly.",
+          },
+          stepsTitle: "How to speak clearly in 3 steps",
+          steps: [
+            { title: "Use one issue", body: "Stay with the current concern.", prompt: "What is the one issue?" },
+            { title: "Use one request", body: "Say what needs to happen next.", prompt: "What am I asking for?" },
+            { title: "Use one boundary", body: "Name what keeps the conversation safe.", prompt: "What boundary protects safety?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Ending Conversations Safely",
+        durationMinutes: 30,
+        summary: "Ending safely means knowing when to pause, summarise, repair, or return later.",
+        content: {
+          whyItMatters:
+            "Not every conversation can be finished in one sitting. Ending safely prevents escalation and shows children that adults can stop before harm happens.",
+          parentMeaningPrompt:
+            "What does safely ending a hard conversation mean for how you protect your child and yourself from escalation?",
+          comparisonTitle: "Safe endings",
+          positiveTitle: "Safe endings include",
+          positiveItems: ["Summarising the next step", "Pausing before escalation", "Returning to repair"],
+          negativeTitle: "Unsafe endings include",
+          negativeItems: ["Storming off with threats", "Continuing until someone breaks", "Leaving children anxious and confused"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I'm done. Do whatever you want.",
+            trySaying: "We are getting escalated. I am pausing now and will return to the pickup plan at 6 pm.",
+          },
+          stepsTitle: "How to end safely in 3 steps",
+          steps: [
+            { title: "Notice escalation", body: "Watch tone, pace, repetition, or threats.", prompt: "Is this still safe?" },
+            { title: "Name the pause", body: "Say why you are pausing and when you will return.", prompt: "What clear pause can I name?" },
+            { title: "Return or document", body: "Come back later or write the practical next step.", prompt: "What needs follow-up?" },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "protective-parenting-foundations",
+    title: "Protective Parenting Foundations",
+    description: "Standalone course teaching protective decisions, safe boundaries, and support-seeking before risk escalates.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "What Protective Parenting Means",
+        durationMinutes: 30,
+        summary: "Protective parenting means making decisions that put the child's safety and wellbeing ahead of adult pressure, conflict, or convenience.",
+        content: {
+          whyItMatters:
+            "Children rely on adults to recognise risk and act early. Protective parenting shows that safety is active, practical, and repeated over time.",
+          parentMeaningPrompt:
+            "What does protective parenting mean for the choices you make when adult needs and child safety compete?",
+          comparisonTitle: "Protective and passive parenting",
+          positiveTitle: "Protective parenting includes",
+          positiveItems: ["Acting early", "Setting safe boundaries", "Using support when risk rises"],
+          negativeTitle: "Protective parenting is not",
+          negativeItems: ["Hoping risk passes", "Keeping unsafe secrets", "Choosing adult comfort over child safety"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "I do not want to upset anyone.",
+            trySaying: "My child's safety comes first, even if the boundary is uncomfortable.",
+          },
+          stepsTitle: "How to act protectively in 3 steps",
+          steps: [
+            { title: "Name the risk", body: "Be honest about what could affect safety.", prompt: "What is the risk?" },
+            { title: "Choose the boundary", body: "Set the limit that lowers the risk.", prompt: "What boundary protects my child?" },
+            { title: "Use backup", body: "Bring in support if the boundary is hard to hold alone.", prompt: "Who can help?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Safe People and Safe Places",
+        durationMinutes: 30,
+        summary: "Safe people and safe places are part of a child's protection network when routines, stress, or conflict become difficult.",
+        content: {
+          whyItMatters:
+            "No parent protects a child alone all the time. A clear network helps families respond earlier and gives children safer options when they need help.",
+          parentMeaningPrompt:
+            "Who are the safe people and safe places that can support your child and family when pressure rises?",
+          comparisonTitle: "Safety network",
+          positiveTitle: "A safety network includes",
+          positiveItems: ["Trusted adults", "Clear contact steps", "Places children can get help"],
+          negativeTitle: "A safety network should not rely on",
+          negativeItems: ["Unsafe adults", "Secrets children must keep", "Plans no one understands"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "If something happens, just figure it out.",
+            trySaying: "If you feel unsafe, these are the people and places that can help.",
+          },
+          stepsTitle: "How to build a network in 3 steps",
+          steps: [
+            { title: "List safe people", body: "Name adults who are calm, reliable, and child-safe.", prompt: "Who can my child safely go to?" },
+            { title: "List safe places", body: "Identify places connected to help, care, or supervision.", prompt: "Where is safe?" },
+            { title: "Practise the plan", body: "Use simple words so children know what to do.", prompt: "How can we practise without fear?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Protective Decisions Under Pressure",
+        durationMinutes: 30,
+        summary: "Protective decisions under pressure are the choices parents make when stress, conflict, or risk makes safety harder.",
+        content: {
+          whyItMatters:
+            "Protective capacity is tested during pressure, not just calm moments. Planning ahead helps parents choose safety when emotions are high.",
+          parentMeaningPrompt:
+            "What protective decision do you want to be able to make even when you are under pressure?",
+          comparisonTitle: "Pressure decisions",
+          positiveTitle: "Protective decisions include",
+          positiveItems: ["Leaving unsafe situations", "Calling support early", "Choosing child safety over adult conflict"],
+          negativeTitle: "Risk decisions include",
+          negativeItems: ["Staying to prove a point", "Letting children witness escalation", "Waiting until harm happens"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I need to win this argument.",
+            trySaying: "I need to keep my child safe. I can step away and use support.",
+          },
+          stepsTitle: "How to decide under pressure in 3 steps",
+          steps: [
+            { title: "Slow the moment", body: "Use breath, distance, or a short phrase to interrupt reaction.", prompt: "How can I slow this down?" },
+            { title: "Choose safety first", body: "Pick the option that lowers risk fastest.", prompt: "What protects the child?" },
+            { title: "Record the choice", body: "Document the protective decision and what it prevented.", prompt: "What did I do to reduce risk?" },
           ],
         },
       },
