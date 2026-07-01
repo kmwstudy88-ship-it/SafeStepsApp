@@ -466,6 +466,163 @@ export const courses: StandaloneCourse[] = [
         },
       }
     ]
+  },
+  {
+    id: "positive-parenting-foundations",
+    title: "Positive Parenting Foundations",
+    description: "Standalone course teaching encouragement, boundaries, reinforcement, and positive family culture.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "What is Positive Parenting?",
+        durationMinutes: 30,
+        summary:
+          "Positive parenting means leading children with warmth, clear limits, teaching, encouragement, and repair instead of fear or shame.",
+        content: {
+          whyItMatters:
+            "Positive parenting helps children feel safe enough to learn while still understanding boundaries. It gives parents a steady way to guide behaviour without losing connection.",
+          parentMeaningPrompt:
+            "What does positive parenting mean for the kind of parent you want to be and the kind of safety you want your child to feel?",
+          comparisonTitle: "Positive parenting and permissive parenting",
+          positiveTitle: "Positive parenting is",
+          positiveItems: [
+            "Warmth with clear limits",
+            "Teaching skills instead of only punishing mistakes",
+            "Repairing after difficult moments",
+          ],
+          negativeTitle: "Positive parenting is not",
+          negativeItems: [
+            "Letting children do anything they want",
+            "Ignoring unsafe behaviour",
+            "Trying to be perfect all the time",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "You are always naughty.",
+            trySaying: "That choice was not okay. I will help you practise a safer one.",
+          },
+          stepsTitle: "How to practise positive parenting in 3 steps",
+          steps: [
+            {
+              title: "Connect",
+              body: "Start with calm presence so your child can hear you.",
+              prompt: "Can I lower the stress before I correct?",
+            },
+            {
+              title: "Guide",
+              body: "Name the limit and the safer behaviour clearly.",
+              prompt: "What do I want my child to do instead?",
+            },
+            {
+              title: "Follow through",
+              body: "Use steady, respectful consequences and repair when needed.",
+              prompt: "How can I be firm without being frightening?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Positive Reinforcement",
+        durationMinutes: 30,
+        summary:
+          "Positive reinforcement means noticing and encouraging helpful behaviour so children understand what to repeat.",
+        content: {
+          whyItMatters:
+            "Children often receive the most attention when something goes wrong. Reinforcement helps parents notice effort, progress, and safe choices before behaviour escalates.",
+          parentMeaningPrompt:
+            "What would it mean for your child if you noticed their effort and safe choices more often?",
+          comparisonTitle: "Helpful praise and unhelpful praise",
+          positiveTitle: "Helpful reinforcement is",
+          positiveItems: [
+            "Specific about the behaviour",
+            "Connected to effort and progress",
+            "Used alongside clear boundaries",
+          ],
+          negativeTitle: "Helpful reinforcement is not",
+          negativeItems: [
+            "Only praising perfect behaviour",
+            "Using rewards to avoid limits",
+            "Ignoring big feelings or safety needs",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "Finally, you did what I asked.",
+            trySaying: "I noticed you came back when I called. That helped keep you safe.",
+          },
+          stepsTitle: "How to reinforce positive behaviour in 3 steps",
+          steps: [
+            {
+              title: "Notice",
+              body: "Look for small moments of effort, cooperation, honesty, or calming.",
+              prompt: "What did my child do that moved in the right direction?",
+            },
+            {
+              title: "Name it",
+              body: "Say exactly what you noticed so the behaviour is clear.",
+              prompt: "I noticed you...",
+            },
+            {
+              title: "Repeat",
+              body: "Make encouragement part of daily routines, not only special moments.",
+              prompt: "Where can I add one more positive notice today?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Creating a Positive Family Culture",
+        durationMinutes: 30,
+        summary:
+          "Family culture is the pattern of how people speak, solve problems, show care, handle stress, and recover after conflict.",
+        content: {
+          whyItMatters:
+            "A positive family culture gives children predictable safety. It helps parents build routines, values, and relationship habits that can continue after programs finish.",
+          parentMeaningPrompt:
+            "What kind of family culture are you trying to build, and what would your child notice if that culture became stronger?",
+          comparisonTitle: "A positive family culture",
+          positiveTitle: "A positive family culture includes",
+          positiveItems: [
+            "Predictable routines and expectations",
+            "Respectful words during stress",
+            "Regular repair and reconnection",
+          ],
+          negativeTitle: "A positive family culture does not rely on",
+          negativeItems: [
+            "Fear to get cooperation",
+            "Silence after conflict",
+            "One person carrying all responsibility",
+          ],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "This family just does not work.",
+            trySaying: "We can build one safer routine and one repair habit at a time.",
+          },
+          stepsTitle: "How to build family culture in 3 steps",
+          steps: [
+            {
+              title: "Choose values",
+              body: "Name the values you want your home to practise, such as safety, respect, honesty, or repair.",
+              prompt: "What do I want this home to stand for?",
+            },
+            {
+              title: "Build routines",
+              body: "Turn values into small repeated actions that children can predict.",
+              prompt: "What routine can show this value every day?",
+            },
+            {
+              title: "Repair quickly",
+              body: "When the culture slips, return to the value and practise again.",
+              prompt: "How do we come back to safety after a hard moment?",
+            },
+          ],
+        },
+      },
+    ],
   }
 ];
 
