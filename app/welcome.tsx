@@ -1,4 +1,5 @@
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
+import { useState } from "react";
 import { Pressable, ScrollView, Text, View } from "react-native";
 
 function ActionCard({
@@ -62,6 +63,8 @@ function SummaryItem({ title, body }: { title: string; body: string }) {
 }
 
 export default function WelcomeScreen() {
+  const [acceptedDisclaimer, setAcceptedDisclaimer] = useState(false);
+
   return (
     <ScrollView
       contentInsetAdjustmentBehavior="automatic"
@@ -111,13 +114,64 @@ export default function WelcomeScreen() {
         body="See completed lessons, reflections, certificates, and growth information in one connected dashboard."
       />
 
-      <View style={{ gap: 10, marginTop: 4 }}>
-        <ActionCard
-          title="Start Intake and Assessment"
-          description="Begin with your first check-in so SafeSteps can start building your progress record."
-          href="/assessments"
-          primary
-        />
+      <View
+        style={{
+          padding: 16,
+          backgroundColor: "#ffffff",
+          borderRadius: 12,
+          borderWidth: 1,
+          borderColor: "#d8e5dd",
+          gap: 14,
+          marginTop: 4,
+        }}
+      >
+        <Pressable
+          accessibilityRole="checkbox"
+          accessibilityState={{ checked: acceptedDisclaimer }}
+          onPress={() => setAcceptedDisclaimer((current) => !current)}
+          style={{ flexDirection: "row", gap: 12, alignItems: "flex-start" }}
+        >
+          <View
+            style={{
+              width: 24,
+              height: 24,
+              borderRadius: 5,
+              borderWidth: 2,
+              borderColor: acceptedDisclaimer ? "#2f5f4a" : "#8aa096",
+              backgroundColor: acceptedDisclaimer ? "#2f5f4a" : "#ffffff",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: 1,
+            }}
+          >
+            {acceptedDisclaimer ? (
+              <Text style={{ color: "#ffffff", fontWeight: "bold", fontSize: 16 }}>X</Text>
+            ) : null}
+          </View>
+          <Text style={{ flex: 1, color: "#33443a", lineHeight: 22 }}>
+            I understand that SAFE STEPS is a support and documentation tool, and its use does not
+            guarantee or promise that family reunification will occur. All decisions regarding
+            reunification remain with the relevant authorities.
+          </Text>
+        </Pressable>
+
+        <Pressable
+          disabled={!acceptedDisclaimer}
+          onPress={() => router.push("/assessments")}
+          style={{
+            padding: 16,
+            backgroundColor: acceptedDisclaimer ? "#2f5f4a" : "#c7d1cb",
+            borderRadius: 12,
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ color: acceptedDisclaimer ? "#ffffff" : "#64736b", fontWeight: "bold" }}>
+            Get Started
+          </Text>
+        </Pressable>
+      </View>
+
+      <View style={{ gap: 10 }}>
         <ActionCard
           title="Continue to Dashboard"
           description="Go straight to your SafeSteps dashboard and start exploring."
