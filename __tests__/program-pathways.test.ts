@@ -31,6 +31,9 @@ describe("program pathway data", () => {
     expect(homeAgain?.title).toBe("Home Again Program");
     expect(homeAgain?.durationMonths).toBe(12);
     expect(getProgramMonths(homeAgain!)).toHaveLength(12);
+    expect(getProgramMonth(homeAgain!, 1)?.topic).toBe("Returning Home Safely");
+    expect(getProgramMonth(homeAgain!, 12)?.topic).toBe("Sustaining Home Again Success");
+    expect(getProgramWeek(homeAgain!, 1, 1)?.lessons[0]?.title).toContain("home feel predictable");
   });
 
   test("generates one setup month for custom programs", () => {
