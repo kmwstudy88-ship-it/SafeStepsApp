@@ -61,4 +61,14 @@ describe("standalone course helpers", () => {
       expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
     }
   });
+
+  test("behaviour management lessons include parent meaning prompts", () => {
+    const course = getCourseById("behaviour-management-foundations");
+
+    expect(course).toBeDefined();
+    expect(course!.lessons).toHaveLength(3);
+    for (const lesson of course!.lessons) {
+      expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
+    }
+  });
 });

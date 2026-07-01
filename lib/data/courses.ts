@@ -780,6 +780,163 @@ export const courses: StandaloneCourse[] = [
         },
       },
     ],
+  },
+  {
+    id: "behaviour-management-foundations",
+    title: "Behaviour Management Foundations",
+    description: "Standalone course teaching behaviour as communication, predictable boundaries, and calm responses.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Behaviour as Communication",
+        durationMinutes: 30,
+        summary:
+          "Behaviour is often a child's way of communicating feelings, needs, stress, skills they do not yet have, or problems they cannot explain.",
+        content: {
+          whyItMatters:
+            "When parents look beneath behaviour, they can respond to the need while still setting safe limits. This reduces blame and helps children learn better ways to communicate.",
+          parentMeaningPrompt:
+            "What does it mean for you as a parent to see behaviour as communication instead of only disobedience?",
+          comparisonTitle: "Behaviour-aware parenting",
+          positiveTitle: "Behaviour-aware parenting is",
+          positiveItems: [
+            "Looking for the need underneath the behaviour",
+            "Teaching replacement skills",
+            "Keeping limits clear and calm",
+          ],
+          negativeTitle: "Behaviour-aware parenting is not",
+          negativeItems: [
+            "Excusing unsafe behaviour",
+            "Labelling the child as bad",
+            "Ignoring patterns or triggers",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "You are just doing this to annoy me.",
+            trySaying: "Something is hard right now. The limit still stands, and I will help you use safer words.",
+          },
+          stepsTitle: "How to read behaviour in 3 steps",
+          steps: [
+            {
+              title: "Pause",
+              body: "Slow your reaction so you can observe before responding.",
+              prompt: "What happened right before this behaviour?",
+            },
+            {
+              title: "Look underneath",
+              body: "Consider feelings, tiredness, hunger, fear, skill gaps, or unmet needs.",
+              prompt: "What might my child be trying to communicate?",
+            },
+            {
+              title: "Teach the next skill",
+              body: "Show the child a safer way to ask, cope, wait, repair, or express feelings.",
+              prompt: "What can I teach instead of only punish?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Boundaries and Routines",
+        durationMinutes: 30,
+        summary:
+          "Boundaries and routines help children know what is expected, what happens next, and how adults will respond.",
+        content: {
+          whyItMatters:
+            "Predictable boundaries reduce confusion and power struggles. Routines help children feel safer because they do not have to guess what will happen next.",
+          parentMeaningPrompt:
+            "What boundaries or routines would help your child feel safer and help you stay calmer as a parent?",
+          comparisonTitle: "Healthy boundaries and routines",
+          positiveTitle: "Healthy boundaries are",
+          positiveItems: [
+            "Clear before problems happen",
+            "Connected to safety and learning",
+            "Followed through consistently",
+          ],
+          negativeTitle: "Healthy boundaries are not",
+          negativeItems: [
+            "Threats made in anger",
+            "Rules that change without explanation",
+            "Punishment without teaching",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "If you do not stop, you will be in trouble.",
+            trySaying: "The rule is walking inside. If running continues, we will move to a quieter space.",
+          },
+          stepsTitle: "How to set boundaries in 3 steps",
+          steps: [
+            {
+              title: "Name the rule",
+              body: "Use short, clear language before the situation escalates.",
+              prompt: "What is the simple safety rule?",
+            },
+            {
+              title: "Name the next step",
+              body: "Explain what will happen if the boundary is not followed.",
+              prompt: "What is the calm follow-through?",
+            },
+            {
+              title: "Repeat calmly",
+              body: "Keep your tone steady and return to the routine after the limit.",
+              prompt: "How can I stay predictable right now?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Responding Without Escalation",
+        durationMinutes: 30,
+        summary:
+          "Responding without escalation means staying regulated enough to reduce harm, hold limits, and teach the next safe step.",
+        content: {
+          whyItMatters:
+            "Escalation can make children feel unsafe and can turn small problems into bigger conflict. Calm responses help parents protect the relationship while still guiding behaviour.",
+          parentMeaningPrompt:
+            "What does responding without escalation mean for your safety, your child's safety, and the home you want to build?",
+          comparisonTitle: "De-escalating responses",
+          positiveTitle: "De-escalation includes",
+          positiveItems: [
+            "Lowering your voice and pace",
+            "Using fewer words",
+            "Choosing safety before winning",
+          ],
+          negativeTitle: "De-escalation does not include",
+          negativeItems: [
+            "Arguing until the child agrees",
+            "Matching the child's intensity",
+            "Using shame to force control",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "Do not talk back to me.",
+            trySaying: "I will listen when voices are calmer. The limit is still the same.",
+          },
+          stepsTitle: "How to respond without escalation in 3 steps",
+          steps: [
+            {
+              title: "Regulate yourself",
+              body: "Notice your body, breathing, voice, and urge to react.",
+              prompt: "What do I need to do to stay safe and steady?",
+            },
+            {
+              title: "Reduce words",
+              body: "Use one clear message instead of a long argument.",
+              prompt: "What is the one limit or next step?",
+            },
+            {
+              title: "Return later",
+              body: "Teach, repair, or problem-solve after everyone is calmer.",
+              prompt: "What conversation can wait until regulation returns?",
+            },
+          ],
+        },
+      },
+    ],
   }
 ];
 
