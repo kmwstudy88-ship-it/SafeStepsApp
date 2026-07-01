@@ -31,4 +31,14 @@ describe("standalone course helpers", () => {
       expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
     }
   });
+
+  test("child development lessons include parent meaning prompts", () => {
+    const course = getCourseById("child-development-foundations");
+
+    expect(course).toBeDefined();
+    expect(course!.lessons).toHaveLength(4);
+    for (const lesson of course!.lessons) {
+      expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
+    }
+  });
 });

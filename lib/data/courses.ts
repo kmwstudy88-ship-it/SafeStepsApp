@@ -265,10 +265,206 @@ export const courses: StandaloneCourse[] = [
     title: "Child Development Foundations",
     description: "Standalone course covering child milestones, development, and parenting expectations.",
     lessons: [
-      { lessonNumber: 1, title: "What is Child Development?", durationMinutes: 30 },
-      { lessonNumber: 2, title: "Understanding Child Milestones", durationMinutes: 30 },
-      { lessonNumber: 3, title: "Brain Development in Children", durationMinutes: 30 },
-      { lessonNumber: 4, title: "Attachment and Bonding", durationMinutes: 30 }
+      {
+        lessonNumber: 1,
+        title: "What is Child Development?",
+        durationMinutes: 30,
+        summary:
+          "Child development is the way children grow in their bodies, thinking, feelings, relationships, language, and independence over time.",
+        content: {
+          whyItMatters:
+            "When parents understand development, they can set expectations that match the child's age and needs. This reduces frustration and helps children feel safer, supported, and less blamed for things they are still learning.",
+          parentMeaningPrompt:
+            "What does understanding child development mean for how you see your child, their behaviour, and your role as a parent?",
+          comparisonTitle: "Development-aware parenting",
+          positiveTitle: "Development-aware parenting is",
+          positiveItems: [
+            "Matching expectations to age and ability",
+            "Seeing behaviour as communication",
+            "Teaching skills step by step",
+          ],
+          negativeTitle: "Development-aware parenting is not",
+          negativeItems: [
+            "Expecting adult-level control from children",
+            "Labelling learning needs as bad behaviour",
+            "Using fear to force maturity",
+          ],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "They should know better by now.",
+            trySaying: "What skill is my child still learning, and how can I teach it safely?",
+          },
+          stepsTitle: "How to use development knowledge in 3 steps",
+          steps: [
+            {
+              title: "Observe",
+              body: "Notice what your child can do calmly, tired, stressed, and excited.",
+              prompt: "When is this skill easiest or hardest for them?",
+            },
+            {
+              title: "Adjust",
+              body: "Change your expectation or support based on their age, stage, and needs.",
+              prompt: "Do they need fewer steps, more practice, or help calming first?",
+            },
+            {
+              title: "Teach",
+              body: "Model and practise the skill instead of only correcting the mistake.",
+              prompt: "What can I show them how to do next time?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Understanding Child Milestones",
+        durationMinutes: 30,
+        summary:
+          "Milestones are common signs of growth, but every child develops at their own pace and may need different support.",
+        content: {
+          whyItMatters:
+            "Milestones help parents notice progress, strengths, and areas where extra support may be needed. They are a guide, not a weapon for comparison or shame.",
+          parentMeaningPrompt:
+            "What milestones or abilities are you noticing in your child, and where might they need more support from you?",
+          comparisonTitle: "Healthy use of milestones",
+          positiveTitle: "Milestones help us",
+          positiveItems: [
+            "Notice growth and strengths",
+            "Spot where support may help",
+            "Celebrate progress over time",
+          ],
+          negativeTitle: "Milestones should not be used to",
+          negativeItems: [
+            "Compare children harshly",
+            "Shame a child for delays",
+            "Ignore culture, trauma, disability, or stress",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "Other kids can do this. Why can't you?",
+            trySaying: "This skill is still growing. Let's practise one small part together.",
+          },
+          stepsTitle: "How to respond to milestones in 3 steps",
+          steps: [
+            {
+              title: "Notice the skill",
+              body: "Name what your child is learning, not only what is missing.",
+              prompt: "What progress can I see?",
+            },
+            {
+              title: "Support the gap",
+              body: "Break the next skill into smaller, safer practice steps.",
+              prompt: "What is the next small step?",
+            },
+            {
+              title: "Ask for help",
+              body: "Seek advice when delays, distress, or concerns persist.",
+              prompt: "Who can help me understand this better?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Brain Development in Children",
+        durationMinutes: 30,
+        summary:
+          "Children's brains are still developing, especially the parts that manage impulse control, planning, emotional regulation, and problem solving.",
+        content: {
+          whyItMatters:
+            "When parents understand the developing brain, they can respond with teaching and co-regulation instead of expecting children to calm, plan, and reason like adults.",
+          parentMeaningPrompt:
+            "What does knowing your child's brain is still developing change about how you want to respond during big feelings or difficult behaviour?",
+          comparisonTitle: "Brain-aware parenting",
+          positiveTitle: "Brain-aware parenting is",
+          positiveItems: [
+            "Helping children calm before problem solving",
+            "Using repetition and routine",
+            "Teaching regulation through connection",
+          ],
+          negativeTitle: "Brain-aware parenting is not",
+          negativeItems: [
+            "Excusing unsafe behaviour without limits",
+            "Expecting instant self-control",
+            "Trying to reason during a meltdown",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "Calm down right now or else.",
+            trySaying: "Your body is really upset. I am going to help you get safe first.",
+          },
+          stepsTitle: "How to support the developing brain in 3 steps",
+          steps: [
+            {
+              title: "Regulate first",
+              body: "Lower stress before teaching or correcting.",
+              prompt: "What helps this child feel safe enough to listen?",
+            },
+            {
+              title: "Keep it simple",
+              body: "Use fewer words and clear limits when emotions are high.",
+              prompt: "What is the one message they need right now?",
+            },
+            {
+              title: "Repeat with warmth",
+              body: "Practise skills many times with patience and consistency.",
+              prompt: "How can I make this predictable?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 4,
+        title: "Attachment and Bonding",
+        durationMinutes: 30,
+        summary:
+          "Attachment is the trust and emotional connection children build with caregivers who are safe, responsive, and consistent.",
+        content: {
+          whyItMatters:
+            "Secure attachment helps children feel safe enough to explore, learn, return for comfort, and recover from stress. Bonding is built through repeated small moments, not perfection.",
+          parentMeaningPrompt:
+            "What does building or repairing attachment mean for you and your child, especially after stress, separation, conflict, or hurt?",
+          comparisonTitle: "Attachment-building care",
+          positiveTitle: "Attachment-building care is",
+          positiveItems: [
+            "Responding with warmth and consistency",
+            "Repairing after hard moments",
+            "Being a safe base children can return to",
+          ],
+          negativeTitle: "Attachment-building care is not",
+          negativeItems: [
+            "Being perfect all the time",
+            "Letting children have no limits",
+            "Expecting trust to rebuild instantly",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "You're fine. Stop being clingy.",
+            trySaying: "You want to know I am here. I can stay close while you settle.",
+          },
+          stepsTitle: "How to strengthen attachment in 3 steps",
+          steps: [
+            {
+              title: "Show up",
+              body: "Use small repeated moments of attention, comfort, and reliability.",
+              prompt: "What is one predictable connection moment I can offer?",
+            },
+            {
+              title: "Respond",
+              body: "Notice needs beneath behaviour and respond with safe limits.",
+              prompt: "What might my child be needing underneath this?",
+            },
+            {
+              title: "Repair",
+              body: "Come back after disconnection and make the relationship safe again.",
+              prompt: "What do I need to own, explain, or redo?",
+            },
+          ],
+        },
+      }
     ]
   }
 ];
