@@ -25,6 +25,8 @@ describe("program pathway data", () => {
     expect(reunification?.title).toBe("24-Month Intensive Reunification Program");
     expect(reunification?.durationMonths).toBe(24);
     expect(getProgramMonths(reunification!)).toHaveLength(24);
+    expect(getProgramMonth(reunification!, 24)?.topic).toBe("Celebrating the Reunification Journey");
+    expect(getProgramWeek(reunification!, 24, 1)?.lessons[0]?.title).toContain("emotional safety");
 
     expect(homeAgain?.title).toBe("Home Again Program");
     expect(homeAgain?.durationMonths).toBe(12);

@@ -63,10 +63,65 @@ const generatedLessonFocus = [
   "What changed this week",
 ];
 
+const reunificationMonthTopics = [
+  "Beginning the Reunification Journey",
+  "Safety, Accountability, and Trust",
+  "Repairing Parent-Child Connection",
+  "Predictable Parenting Time",
+  "Preparing for Increased Contact",
+  "Parenting Time Transitions",
+  "Re-Establishing Family Identity",
+  "Full-Time Family Adjustment",
+  "Long-Term Family Stability",
+  "Family Communication Practice",
+  "Problem-Solving Skills",
+  "Sustaining Reunification Progress",
+  "Strengthening Trust After Reunification",
+  "Building Long-Term Routines",
+  "Supporting Emotional Development",
+  "Guiding Behaviour With Safety",
+  "Managing Stress and Setbacks",
+  "Deepening Parent-Child Connection",
+  "Strengthening Long-Term Safety",
+  "Supporting Family Growth",
+  "Long-Term Emotional Stability",
+  "Life Skills and Independence",
+  "Future-Focused Family Planning",
+  "Celebrating the Reunification Journey",
+];
+
+const reunificationWeekFocus = [
+  "Building safety and predictability",
+  "Understanding your child's needs",
+  "Practising calm support under pressure",
+  "Reflecting on growth and next steps",
+];
+
+const reunificationLessonFocus = [
+  "Strengthening emotional safety",
+  "Supporting your child through change",
+  "Building predictable routines",
+  "Helping your child adjust",
+  "Reflecting on this week's progress",
+];
+
 function createGeneratedLesson(day: number, topic: string, focus: string): ProgramLesson {
   return {
     day,
     title: `${topic}: ${focus}`,
+    durationMinutes: 30,
+    requiresStartReflection: true,
+    requiresKnowledgeCheckpoint: true,
+    requiresScenarioCheckpoint: true,
+    requiresPracticalActivity: true,
+    requiresEndReflection: true,
+  };
+}
+
+function createReunificationLesson(day: number, topic: string, focus: string): ProgramLesson {
+  return {
+    day,
+    title: `${focus} during ${topic.toLowerCase()}`,
     durationMinutes: 30,
     requiresStartReflection: true,
     requiresKnowledgeCheckpoint: true,
@@ -96,10 +151,34 @@ function createGeneratedMonth(monthNumber: number): ProgramMonth {
   };
 }
 
+function createReunificationMonth(monthNumber: number): ProgramMonth {
+  const topic = reunificationMonthTopics[monthNumber - 1] ?? `Reunification Month ${monthNumber}`;
+
+  return {
+    monthNumber,
+    topic,
+    startReflectionRequired: true,
+    endReflectionRequired: true,
+    weeks: reunificationWeekFocus.map((focus, index) => ({
+      weekNumber: index + 1,
+      subTopic: `${topic}: ${focus}`,
+      startReflectionRequired: true,
+      endReflectionRequired: true,
+      lessons: reunificationLessonFocus.map((lessonFocus, lessonIndex) =>
+        createReunificationLesson(lessonIndex + 1, topic, lessonFocus),
+      ),
+    })),
+  };
+}
+
 export function getProgramMonths(program: ProgramPathway) {
   if (program.months.length > 0) return program.months;
 
   const totalMonths = program.durationMonths > 0 ? program.durationMonths : 1;
+  if (program.id === "intensive-reunification") {
+    return Array.from({ length: totalMonths }, (_, index) => createReunificationMonth(index + 1));
+  }
+
   return Array.from({ length: totalMonths }, (_, index) => createGeneratedMonth(index + 1));
 }
 
