@@ -1145,6 +1145,163 @@ export const courses: StandaloneCourse[] = [
         },
       },
     ],
+  },
+  {
+    id: "child-safety-foundations",
+    title: "Child Safety Foundations",
+    description: "Standalone course teaching everyday child safety, safer home routines, and evidence of protective care.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Everyday Child Safety",
+        durationMinutes: 30,
+        summary:
+          "Everyday child safety means noticing risks, supervising appropriately, and making small protective decisions throughout normal family life.",
+        content: {
+          whyItMatters:
+            "Safety is not only about emergencies. Children feel safer when adults notice hazards, respond calmly, and make protective choices before problems grow.",
+          parentMeaningPrompt:
+            "What does everyday child safety mean in your home, and what do you want your child to experience as safe care?",
+          comparisonTitle: "Everyday safety and unmanaged risk",
+          positiveTitle: "Everyday safety includes",
+          positiveItems: [
+            "Supervision that matches the child's age and needs",
+            "Noticing hazards before they become incidents",
+            "Calm responses when something feels unsafe",
+          ],
+          negativeTitle: "Everyday safety is not",
+          negativeItems: [
+            "Waiting until something serious happens",
+            "Expecting children to manage adult-level risk",
+            "Ignoring stress, conflict, or unsafe people around the child",
+          ],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "Nothing bad has happened, so this is fine.",
+            trySaying: "What could become unsafe here, and what small step can I take now?",
+          },
+          stepsTitle: "How to practise everyday safety in 3 steps",
+          steps: [
+            {
+              title: "Scan",
+              body: "Look around for physical, emotional, relational, or supervision risks.",
+              prompt: "What needs my attention before it becomes a problem?",
+            },
+            {
+              title: "Reduce risk",
+              body: "Make one practical change that lowers the chance of harm.",
+              prompt: "What can I move, pause, check, or change right now?",
+            },
+            {
+              title: "Explain calmly",
+              body: "Use simple words so your child understands the safety reason.",
+              prompt: "How can I teach safety without frightening or shaming?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Home Safety Routines",
+        durationMinutes: 30,
+        summary:
+          "Home safety routines are repeated habits that make the home more predictable, supervised, and child-aware.",
+        content: {
+          whyItMatters:
+            "Routines reduce chaos and help parents keep safety visible even when life is stressful. A simple routine can protect children more reliably than waiting for perfect conditions.",
+          parentMeaningPrompt:
+            "What home safety routine would make your home feel more stable, predictable, and protective for your child?",
+          comparisonTitle: "Protective routines and unsafe routines",
+          positiveTitle: "Protective routines are",
+          positiveItems: [
+            "Simple enough to repeat",
+            "Connected to real safety needs",
+            "Adjusted as children grow",
+          ],
+          negativeTitle: "Protective routines are not",
+          negativeItems: [
+            "Rules that only happen when someone is watching",
+            "Complicated plans no one can maintain",
+            "Routines that ignore the child's age, trauma, or needs",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "Just be careful.",
+            trySaying: "Shoes stay by the door, medicines stay locked away, and we check the gate before outside play.",
+          },
+          stepsTitle: "How to build a home safety routine in 3 steps",
+          steps: [
+            {
+              title: "Pick one area",
+              body: "Start with one place or time, such as bedtime, morning, kitchen, bathroom, or outside play.",
+              prompt: "Where does safety break down most often?",
+            },
+            {
+              title: "Make it visible",
+              body: "Use a checklist, reminder, shared rule, or repeated phrase.",
+              prompt: "How will I remember this when I am tired or stressed?",
+            },
+            {
+              title: "Practise daily",
+              body: "Repeat the routine until it becomes normal family behaviour.",
+              prompt: "What can I practise for one week?",
+            },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Showing Safety Over Time",
+        durationMinutes: 30,
+        summary:
+          "Showing safety over time means recording repeated protective actions, stable routines, and safe decisions so progress is visible.",
+        content: {
+          whyItMatters:
+            "One safe moment matters, but repeated safe patterns show reliability. Evidence of safety helps parents, workers, and families see what has actually changed.",
+          parentMeaningPrompt:
+            "What would fairly show that your child is safer with you over time, not just in one good moment?",
+          comparisonTitle: "Evidence of safety",
+          positiveTitle: "Safety evidence can show",
+          positiveItems: [
+            "Repeated routines completed",
+            "Hazards reduced or managed",
+            "Support used before risk escalated",
+          ],
+          negativeTitle: "Safety evidence should not rely on",
+          negativeItems: [
+            "A single good day",
+            "Statements with no examples",
+            "Ignoring incidents or warning signs",
+          ],
+          example: {
+            insteadOfLabel: "Instead of saving",
+            trySayingLabel: "Try saving",
+            insteadOf: "The house is safe now.",
+            trySaying: "This week I completed the bedtime safety routine five nights and fixed the broken lock before outside play.",
+          },
+          stepsTitle: "How to show safety in 3 steps",
+          steps: [
+            {
+              title: "Record the action",
+              body: "Write what you did, when you did it, and what risk it reduced.",
+              prompt: "What protective action happened today?",
+            },
+            {
+              title: "Connect it to the child",
+              body: "Explain how the action helped your child feel safer, supervised, or supported.",
+              prompt: "Why did this matter for my child?",
+            },
+            {
+              title: "Build a pattern",
+              body: "Save repeated examples so safety can be seen across time.",
+              prompt: "What will I repeat next week?",
+            },
+          ],
+        },
+      },
+    ],
   }
 ];
 

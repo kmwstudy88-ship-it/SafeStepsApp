@@ -81,4 +81,14 @@ describe("standalone course helpers", () => {
       expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
     }
   });
+
+  test("child safety lessons include parent meaning prompts", () => {
+    const course = getCourseById("child-safety-foundations");
+
+    expect(course).toBeDefined();
+    expect(course!.lessons).toHaveLength(3);
+    for (const lesson of course!.lessons) {
+      expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
+    }
+  });
 });
