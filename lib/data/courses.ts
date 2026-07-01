@@ -2066,6 +2066,297 @@ export const courses: StandaloneCourse[] = [
         },
       },
     ],
+  },
+  {
+    id: "accountability-and-responsibility",
+    title: "Accountability and Responsibility",
+    description: "Standalone course teaching insight, ownership, safer choices, and responsibility without shame.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Understanding Accountability",
+        durationMinutes: 30,
+        summary:
+          "Accountability means being able to name what happened, understand the impact, and choose safer action without blaming the child or others.",
+        content: {
+          whyItMatters:
+            "Accountability helps children feel safer because adults stop defending the old pattern and start showing what will be different. It is about ownership, not humiliation.",
+          parentMeaningPrompt:
+            "What does accountability mean for you as a parent, and what impact do you want your child to see in your actions?",
+          comparisonTitle: "Accountability and blame",
+          positiveTitle: "Accountability includes",
+          positiveItems: ["Naming your part", "Understanding the impact", "Changing the next response"],
+          negativeTitle: "Accountability is not",
+          negativeItems: ["Shaming yourself forever", "Blaming the child", "Only explaining why it happened"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I only reacted because everyone was against me.",
+            trySaying: "I was overwhelmed, and my reaction was not safe. I need to respond differently.",
+          },
+          stepsTitle: "How to practise accountability in 3 steps",
+          steps: [
+            { title: "Name it", body: "Describe the behaviour clearly without excuses.", prompt: "What did I do or not do?" },
+            { title: "Name the impact", body: "Consider how it affected safety, trust, or stability.", prompt: "How might this have felt for my child?" },
+            { title: "Name the change", body: "Choose the next safer behaviour.", prompt: "What will I do differently next time?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Taking Responsibility Without Shame",
+        durationMinutes: 30,
+        summary:
+          "Taking responsibility means owning behaviour while still believing change is possible.",
+        content: {
+          whyItMatters:
+            "Shame can make parents shut down, defend, or avoid support. Responsibility keeps the focus on practical change and child safety.",
+          parentMeaningPrompt:
+            "What helps you take responsibility without getting stuck in shame, defensiveness, or giving up?",
+          comparisonTitle: "Responsibility and shame",
+          positiveTitle: "Responsibility sounds like",
+          positiveItems: ["I can own this", "I can repair this", "I can practise safer action"],
+          negativeTitle: "Shame sounds like",
+          negativeItems: ["I am hopeless", "There is no point trying", "Everyone just wants me to fail"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "I am a bad parent, so nothing can change.",
+            trySaying: "I made unsafe choices, and I can build safer patterns one step at a time.",
+          },
+          stepsTitle: "How to take responsibility in 3 steps",
+          steps: [
+            { title: "Separate self from behaviour", body: "Focus on what needs to change, not on attacking yourself.", prompt: "What behaviour needs attention?" },
+            { title: "Use support", body: "Let another safe adult, worker, or service help you stay steady.", prompt: "Who can help me stay accountable?" },
+            { title: "Practise repair", body: "Use one action that shows responsibility in real life.", prompt: "What repair action can I take?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Shared Accountability and Safe Change",
+        durationMinutes: 30,
+        summary:
+          "Shared accountability means using support, records, feedback, and routines so change does not depend on memory or mood alone.",
+        content: {
+          whyItMatters:
+            "Change is easier to trust when it is visible and supported. Shared accountability helps parents keep going when stress, conflict, or old patterns return.",
+          parentMeaningPrompt:
+            "What kind of support or evidence would help you stay accountable to the safe changes you want to make?",
+          comparisonTitle: "Supported change",
+          positiveTitle: "Supported change includes",
+          positiveItems: ["Check-ins", "Evidence records", "Feedback and repair"],
+          negativeTitle: "Unsupported change relies on",
+          negativeItems: ["Memory alone", "Mood alone", "Promises no one can see"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "Trust me, I will remember.",
+            trySaying: "I will use a reminder, save a record, and review it weekly.",
+          },
+          stepsTitle: "How to support accountability in 3 steps",
+          steps: [
+            { title: "Choose a support", body: "Pick one person, tool, or routine that helps you stay on track.", prompt: "What support will keep this visible?" },
+            { title: "Save a record", body: "Document the action or reflection so progress can be reviewed.", prompt: "What can I save today?" },
+            { title: "Review honestly", body: "Look at what worked, what did not, and what needs adjusting.", prompt: "What is the next honest step?" },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "substance-use-and-parenting-stability",
+    title: "Substance Use and Parenting Stability",
+    description: "Standalone course focused on triggers, relapse planning, safety decisions, and parenting reliability.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Substance Use and Parenting Capacity",
+        durationMinutes: 30,
+        summary:
+          "Parenting capacity can be affected when substance use changes supervision, judgement, mood, routines, or safety.",
+        content: {
+          whyItMatters:
+            "Children need adults who can respond reliably. Understanding how substance use affects parenting helps parents plan for safety before children are exposed to risk.",
+          parentMeaningPrompt:
+            "What does parenting stability mean for you when substance use, cravings, recovery, or stress are part of the picture?",
+          comparisonTitle: "Parenting capacity",
+          positiveTitle: "Protective parenting includes",
+          positiveItems: ["Safe supervision", "Clear recovery supports", "Plans for high-risk moments"],
+          negativeTitle: "Risk increases when",
+          negativeItems: ["Use happens during care", "Cravings are hidden", "There is no backup plan"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "I can handle it and no one needs to know.",
+            trySaying: "If risk is rising, my child needs a safe backup plan before it becomes a crisis.",
+          },
+          stepsTitle: "How to protect parenting capacity in 3 steps",
+          steps: [
+            { title: "Name risk times", body: "Identify when cravings, use, conflict, or exhaustion increase risk.", prompt: "When am I least steady?" },
+            { title: "Create backup", body: "Choose a safe adult, service, or plan before the risk moment.", prompt: "Who can step in safely?" },
+            { title: "Record stability", body: "Track safe care, support use, appointments, or recovery steps.", prompt: "What shows safe parenting today?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Triggers and Support Plans",
+        durationMinutes: 30,
+        summary:
+          "Triggers are situations, feelings, people, places, or thoughts that raise the risk of using or losing stability.",
+        content: {
+          whyItMatters:
+            "Triggers are easier to manage when they are expected. A support plan helps parents act early instead of waiting until risk affects the child.",
+          parentMeaningPrompt:
+            "What triggers affect your parenting stability, and what support plan would help you respond earlier?",
+          comparisonTitle: "Trigger planning",
+          positiveTitle: "A trigger plan includes",
+          positiveItems: ["Early warning signs", "Safe people to call", "Child-safe backup steps"],
+          negativeTitle: "A trigger plan does not include",
+          negativeItems: ["Keeping all risk secret", "Only relying on willpower", "Waiting until after use or escalation"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I will just try harder next time.",
+            trySaying: "When this trigger shows up, I will call support and move to my safety routine.",
+          },
+          stepsTitle: "How to build a trigger plan in 3 steps",
+          steps: [
+            { title: "Map triggers", body: "Write the top three triggers that affect stability.", prompt: "What patterns repeat?" },
+            { title: "Match supports", body: "Connect each trigger to a practical support step.", prompt: "What helps with this specific trigger?" },
+            { title: "Practise before crisis", body: "Use the support step when risk is low enough to manage.", prompt: "How can I act earlier?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Evidence of Recovery Stability",
+        durationMinutes: 30,
+        summary:
+          "Recovery stability evidence shows repeated safe choices, support use, and child-safe planning over time.",
+        content: {
+          whyItMatters:
+            "Recovery is strengthened by visible patterns. Evidence can show that parenting safety is being protected through support, planning, honesty, and stable routines.",
+          parentMeaningPrompt:
+            "What evidence could fairly show recovery stability and safer parenting over time?",
+          comparisonTitle: "Recovery evidence",
+          positiveTitle: "Useful evidence can include",
+          positiveItems: ["Appointment attendance", "Support contacts", "Safe care routines"],
+          negativeTitle: "Weak evidence relies on",
+          negativeItems: ["Promises only", "Hidden risk", "One isolated good week"],
+          example: {
+            insteadOfLabel: "Instead of saving",
+            trySayingLabel: "Try saving",
+            insteadOf: "I am doing better now.",
+            trySaying: "This month I attended support, used my trigger plan twice, and arranged backup care early.",
+          },
+          stepsTitle: "How to show recovery stability in 3 steps",
+          steps: [
+            { title: "Track supports", body: "Record appointments, check-ins, meetings, or recovery actions.", prompt: "What support did I use?" },
+            { title: "Track safe decisions", body: "Record moments where you reduced risk before it escalated.", prompt: "What safe choice did I make?" },
+            { title: "Review gaps", body: "Notice missing support or repeated risk and update the plan.", prompt: "What needs strengthening next?" },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: "mental-health-stress-and-parenting",
+    title: "Mental Health, Stress, and Parenting",
+    description: "Standalone course helping parents manage stress, support plans, and routines during hard mental health periods.",
+    lessons: [
+      {
+        lessonNumber: 1,
+        title: "Stress and Parenting Responses",
+        durationMinutes: 30,
+        summary:
+          "Stress can affect patience, tone, decision-making, consistency, and a parent's ability to respond calmly.",
+        content: {
+          whyItMatters:
+            "Stress does not make someone a bad parent, but unmanaged stress can affect children. Recognising stress early helps parents protect routines and relationships.",
+          parentMeaningPrompt:
+            "What does managing stress mean for your parenting and the emotional safety your child needs?",
+          comparisonTitle: "Stress-aware parenting",
+          positiveTitle: "Stress-aware parenting includes",
+          positiveItems: ["Noticing stress signals", "Using support early", "Simplifying routines during hard days"],
+          negativeTitle: "Stress-aware parenting is not",
+          negativeItems: ["Pretending stress is not there", "Taking stress out on children", "Giving up on repair"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "I cannot cope, so everything is ruined.",
+            trySaying: "This is a hard day. I can use one support and keep one routine steady.",
+          },
+          stepsTitle: "How to respond to stress in 3 steps",
+          steps: [
+            { title: "Notice", body: "Name stress signals before they turn into reactions.", prompt: "How do I know stress is rising?" },
+            { title: "Reduce demand", body: "Keep essential routines and pause non-urgent conflict.", prompt: "What can wait?" },
+            { title: "Use support", body: "Reach out before stress becomes unsafe.", prompt: "Who can help me steady this moment?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 2,
+        title: "Support Planning",
+        durationMinutes: 30,
+        summary:
+          "A support plan names who helps, what helps, and what to do when stress or mental health symptoms increase.",
+        content: {
+          whyItMatters:
+            "Support planning turns help-seeking into a parenting safety skill. It means children are not left carrying adult stress alone.",
+          parentMeaningPrompt:
+            "What support plan would make your parenting safer and more stable during hard mental health or stress periods?",
+          comparisonTitle: "Support planning",
+          positiveTitle: "A support plan includes",
+          positiveItems: ["Trusted people", "Professional supports", "Clear early action steps"],
+          negativeTitle: "A support plan is not",
+          negativeItems: ["Only crisis numbers", "A plan no one knows about", "Proof that you are failing"],
+          example: {
+            insteadOfLabel: "Instead of saying",
+            trySayingLabel: "Try saying",
+            insteadOf: "I should not need help.",
+            trySaying: "Asking early helps me stay safe and consistent for my child.",
+          },
+          stepsTitle: "How to make a support plan in 3 steps",
+          steps: [
+            { title: "List signs", body: "Name signs that show support is needed.", prompt: "What are my early warning signs?" },
+            { title: "List people", body: "Name safe people, services, or professionals.", prompt: "Who can I contact for what?" },
+            { title: "List actions", body: "Write the first three steps to take on a hard day.", prompt: "What do I do first?" },
+          ],
+        },
+      },
+      {
+        lessonNumber: 3,
+        title: "Keeping Routines Through Hard Weeks",
+        durationMinutes: 30,
+        summary:
+          "Keeping routines through hard weeks means protecting the basic anchors that help children feel safe while the parent gets support.",
+        content: {
+          whyItMatters:
+            "Children do not need perfect weeks. They need enough predictability, warmth, food, sleep, school, care, and repair to feel adults are still holding the structure.",
+          parentMeaningPrompt:
+            "Which routine helps your child most when your stress or mental health is under pressure?",
+          comparisonTitle: "Hard-week stability",
+          positiveTitle: "Hard-week stability includes",
+          positiveItems: ["Basic routines protected", "Support used early", "Repair after difficult moments"],
+          negativeTitle: "Hard-week stability is not",
+          negativeItems: ["Pretending nothing changed", "Letting every routine disappear", "Expecting children to manage adult distress"],
+          example: {
+            insteadOfLabel: "Instead of thinking",
+            trySayingLabel: "Try thinking",
+            insteadOf: "I cannot do everything, so I will do nothing.",
+            trySaying: "I can protect bedtime, meals, and one connection moment while I get support.",
+          },
+          stepsTitle: "How to keep routines in 3 steps",
+          steps: [
+            { title: "Choose anchors", body: "Pick the routines that matter most for safety and wellbeing.", prompt: "What must stay steady?" },
+            { title: "Simplify", body: "Make the routine smaller but still reliable.", prompt: "What is the simplest version?" },
+            { title: "Repair and reset", body: "If a routine breaks, restart without shame.", prompt: "What is the next steady step?" },
+          ],
+        },
+      },
+    ],
   }
 ];
 

@@ -108,6 +108,9 @@ describe("standalone course helpers", () => {
     ["emotional-regulation-for-parents", 3],
     ["parent-safety-and-stability", 3],
     ["co-parenting-foundations", 3],
+    ["accountability-and-responsibility", 3],
+    ["substance-use-and-parenting-stability", 3],
+    ["mental-health-stress-and-parenting", 3],
   ])("%s lessons include parent meaning prompts", (courseId, lessonCount) => {
     const course = getCourseById(courseId);
 
