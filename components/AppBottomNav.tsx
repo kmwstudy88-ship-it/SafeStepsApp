@@ -14,6 +14,7 @@ const NAV_ITEMS = [
   { label: "Check-in", href: "/check-in" },
   { label: "Daily evidence", href: "/daily-evidence" },
   { label: "Evidence", href: "/evidence" },
+  { label: "Assessment system", href: "/assessment-system" },
   { label: "Bulk setup", href: "/bulk-setup" },
   { label: "Timeline", href: "/timeline" },
   { label: "Facilitator", href: "/facilitator" },

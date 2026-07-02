@@ -199,6 +199,13 @@ export default function DashboardScreen() {
       />
 
       <NavCard
+        title="Assessment System"
+        description="Set up cases, score assessment domains, link evidence, and prepare structured reports."
+        href="/assessment-system"
+        primary
+      />
+
+      <NavCard
         title="Issue Completion Certificate"
         description="Create a certificate record once the current SafeSteps work has been reviewed."
         href="/certificates"

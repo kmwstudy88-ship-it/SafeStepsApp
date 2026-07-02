@@ -25,6 +25,12 @@ export default function RootLayout() {
         <Stack.Screen name="timeline/index" />
         <Stack.Screen name="facilitator/index" />
         <Stack.Screen name="assessments/index" />
+        <Stack.Screen name="assessment-system/index" />
+        <Stack.Screen name="assessment-system/case-setup" />
+        <Stack.Screen name="assessment-system/records" />
+        <Stack.Screen name="assessment-system/rubric-scoring" />
+        <Stack.Screen name="assessment-system/evidence-uploads" />
+        <Stack.Screen name="assessment-system/report-output" />
         <Stack.Screen name="reports/index" />
         <Stack.Screen name="my-story" />
         <Stack.Screen name="settings" />
