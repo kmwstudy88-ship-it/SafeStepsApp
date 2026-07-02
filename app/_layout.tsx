@@ -30,6 +30,7 @@ export default function RootLayout() {
         <Stack.Screen name="assessment-system/records" />
         <Stack.Screen name="assessment-system/rubric-scoring" />
         <Stack.Screen name="assessment-system/evidence-uploads" />
+        <Stack.Screen name="assessment-system/readiness-index" />
         <Stack.Screen name="assessment-system/report-output" />
         <Stack.Screen name="reports/index" />
         <Stack.Screen name="my-story" />

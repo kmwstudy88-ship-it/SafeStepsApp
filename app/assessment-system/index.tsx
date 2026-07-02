@@ -37,6 +37,12 @@ const steps: {
     status: "Evidence",
   },
   {
+    title: "Readiness Index",
+    description: "Check readiness across home stability, parenting routines, child voice, evidence, and risk reduction.",
+    href: "/assessment-system/readiness-index" as Href,
+    status: "Readiness",
+  },
+  {
     title: "Report Output",
     description: "Generate a clear report summary for case review, court, or support planning.",
     href: "/assessment-system/report-output" as Href,
