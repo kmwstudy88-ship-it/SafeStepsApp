@@ -1,6 +1,6 @@
 import { Link, type Href } from "expo-router";
 import React from "react";
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
+import { ImageBackground, Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 export const assessmentColors = {
   background: "#F7F4EC",
@@ -28,12 +28,24 @@ export function AssessmentScreenShell({
   children: React.ReactNode;
 }) {
   return (
-    <View style={styles.shell}>
-      <Text style={styles.brand}>SAFE STEPS</Text>
-      <Text style={styles.title}>{title}</Text>
-      {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
-      {children}
-    </View>
+    <ImageBackground
+      source={require("../assets/safesteps-course-background.png")}
+      resizeMode="cover"
+      style={styles.background}
+      imageStyle={styles.backgroundImage}
+    >
+      <View style={styles.shell}>
+        <View style={styles.headerBar}>
+          <View>
+            <Text style={styles.brand}>SAFE STEPS</Text>
+            <Text style={styles.title}>{title}</Text>
+          </View>
+          <Text style={styles.profileBadge}>Katrina Watts</Text>
+        </View>
+        {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
+        {children}
+      </View>
+    </ImageBackground>
   );
 }
 
@@ -130,7 +142,22 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     gap: 14,
     padding: 20,
+    backgroundColor: "rgba(247, 244, 236, 0.8)",
+  },
+  background: {
+    flex: 1,
     backgroundColor: assessmentColors.background,
+  },
+  backgroundImage: {
+    opacity: 0.32,
+  },
+  headerBar: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 12,
+    paddingBottom: 4,
   },
   brand: {
     color: assessmentColors.teal,
@@ -160,7 +187,21 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     borderColor: assessmentColors.border,
-    backgroundColor: assessmentColors.card,
+    backgroundColor: "rgba(255, 255, 255, 0.94)",
+    shadowColor: "#103F3B",
+    shadowOpacity: 0.08,
+    shadowRadius: 14,
+    shadowOffset: { width: 0, height: 8 },
+  },
+  profileBadge: {
+    overflow: "hidden",
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    backgroundColor: "rgba(255, 255, 255, 0.88)",
+    color: assessmentColors.charcoal,
+    fontSize: 13,
+    fontWeight: "800",
   },
   cardTitle: {
     color: assessmentColors.charcoal,
