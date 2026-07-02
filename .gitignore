@@ -38,6 +38,8 @@ Screen
 # Generated JSON (too large for git)
 custom-program.json
 api-output.json
+active_payload.json
+intense_curriculum_manifest*.json
 
 # Office / docs
 *.docx
