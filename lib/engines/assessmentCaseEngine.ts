@@ -44,7 +44,11 @@ export type SaveAssessmentCaseSetupInput = {
 async function getCurrentUserId() {
   const { data, error } = await supabase.auth.getUser();
 
-  if (error) {
+  const isMissingAuthSession = error?.message
+    .toLowerCase()
+    .includes("auth session missing");
+
+  if (error && !isMissingAuthSession) {
     throw new Error(error.message);
   }
 

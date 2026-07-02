@@ -609,10 +609,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.border,
     backgroundColor: colors.card,
-    shadowColor: "#0B2742",
-    shadowOpacity: 0.07,
-    shadowRadius: 14,
-    shadowOffset: { width: 0, height: 7 },
+    boxShadow: "0 7px 14px rgba(11, 39, 66, 0.07)",
   },
   panelHeader: {
     flexDirection: "row",

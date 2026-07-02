@@ -188,10 +188,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: assessmentColors.border,
     backgroundColor: "rgba(255, 255, 255, 0.94)",
-    shadowColor: "#103F3B",
-    shadowOpacity: 0.08,
-    shadowRadius: 14,
-    shadowOffset: { width: 0, height: 8 },
+    boxShadow: "0 8px 14px rgba(16, 63, 59, 0.08)",
   },
   profileBadge: {
     overflow: "hidden",

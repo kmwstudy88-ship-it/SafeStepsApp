@@ -10,13 +10,16 @@ export default {
     scheme: "safesteps",
     userInterfaceStyle: "automatic",
     extra: {
-  supabaseUrl: process.env.EXPO_PUBLIC_SUPABASE_URL,
-  supabaseAnonKey: process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY,
-  router: {},
-  eas: {
-    projectId: "1d2466ca-e4d4-4438-a33a-ca623d562953",
-  },
-},
+      supabaseUrl: process.env.EXPO_PUBLIC_SUPABASE_URL,
+      supabaseAnonKey:
+        process.env.EXPO_PUBLIC_SUPABASE_KEY ??
+        process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ??
+        process.env.SUPABASE_PUBLISHABLE_KEY,
+      router: {},
+      eas: {
+        projectId: "1d2466ca-e4d4-4438-a33a-ca623d562953",
+      },
+    },
     ios: {
       bundleIdentifier: "com.safes.safesteps",
       icon: "./assets/icon.png",

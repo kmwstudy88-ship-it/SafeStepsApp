@@ -7,8 +7,10 @@ const supabaseUrl =
   Constants.expoConfig?.extra?.supabaseUrl ?? process.env.EXPO_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey =
   Constants.expoConfig?.extra?.supabaseAnonKey ??
+  Constants.expoConfig?.extra?.supabaseKey ??
   process.env.EXPO_PUBLIC_SUPABASE_KEY ??
-  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
+  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ??
+  process.env.SUPABASE_PUBLISHABLE_KEY;
 const isServerRender = typeof window === "undefined";
 const isTest = process.env.NODE_ENV === "test";
 
