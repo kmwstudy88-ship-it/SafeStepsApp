@@ -41,6 +41,9 @@ export default function BulkSetupScreen() {
     ),
     [selectedBundles],
   );
+  const hasSelection = selectedBundles.length > 0;
+  const isBusy = saving || finishing;
+  const actionDisabled = !hasSelection || isBusy;
 
   if (initializing) {
     return null;
@@ -72,8 +75,16 @@ export default function BulkSetupScreen() {
     setMessage("");
   };
 
+  const getOperationErrorMessage = (error: unknown, fallback: string) => {
+    if (error instanceof Error && error.message.trim().length > 0) {
+      return `${fallback} ${error.message}`;
+    }
+
+    return fallback;
+  };
+
   const handleBulkSetup = async () => {
-    if (selectedBundles.length === 0) {
+    if (!hasSelection) {
       setMessage("Choose at least one bulk setup bundle first.");
       return;
     }
@@ -90,15 +101,20 @@ export default function BulkSetupScreen() {
       setMessage(
         `${taskResult.addedCount} tasks and ${evidenceResult.addedCount} evidence drafts added. ${taskResult.skippedCount + evidenceResult.skippedCount} existing items skipped.`,
       );
-    } catch {
-      setMessage("Could not add the selected bulk setup yet. Check Supabase access and try again.");
+    } catch (error) {
+      setMessage(
+        getOperationErrorMessage(
+          error,
+          "Could not add the selected bulk setup yet.",
+        ),
+      );
     } finally {
       setSaving(false);
     }
   };
 
   const handleFinishRemainingSetup = async () => {
-    if (selectedBundles.length === 0) {
+    if (!hasSelection) {
       setMessage("Choose at least one bulk setup bundle first.");
       return;
     }
@@ -130,8 +146,13 @@ export default function BulkSetupScreen() {
           `${taskAddResult.skippedCount + evidenceAddResult.skippedCount} existing items skipped`,
         ].join(". ") + ".",
       );
-    } catch {
-      setMessage("Could not finish the selected setup yet. Check Supabase access and try again.");
+    } catch (error) {
+      setMessage(
+        getOperationErrorMessage(
+          error,
+          "Could not finish the selected setup yet.",
+        ),
+      );
     } finally {
       setFinishing(false);
     }
@@ -151,26 +172,43 @@ export default function BulkSetupScreen() {
           <Text style={globalStyles.pill}>{totals.tasks} tasks</Text>
           <Text style={globalStyles.pill}>{totals.evidence} evidence drafts</Text>
         </View>
+        {!hasSelection ? (
+          <Text style={globalStyles.error}>
+            Select one or more bundles to enable bulk setup actions.
+          </Text>
+        ) : (
+          <Text style={globalStyles.cardText}>
+            Selected bundles will add missing tasks and evidence drafts only. Existing matching items are skipped.
+          </Text>
+        )}
         <View style={globalStyles.inlineRow}>
-          <TouchableOpacity onPress={selectAllBundles} style={globalStyles.secondaryButtonCompact}>
+          <TouchableOpacity
+            disabled={isBusy}
+            onPress={selectAllBundles}
+            style={[globalStyles.secondaryButtonCompact, isBusy && globalStyles.buttonDisabled]}
+          >
             <Text style={globalStyles.secondaryButtonText}>Select all</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={clearBundles} style={globalStyles.secondaryButtonCompact}>
+          <TouchableOpacity
+            disabled={isBusy}
+            onPress={clearBundles}
+            style={[globalStyles.secondaryButtonCompact, isBusy && globalStyles.buttonDisabled]}
+          >
             <Text style={globalStyles.secondaryButtonText}>Clear</Text>
           </TouchableOpacity>
         </View>
         {message ? <Text style={message.startsWith("Could") || message.startsWith("Choose") ? globalStyles.error : globalStyles.notice}>{message}</Text> : null}
         <TouchableOpacity
-          disabled={saving || finishing}
+          disabled={actionDisabled}
           onPress={handleBulkSetup}
-          style={[globalStyles.button, (saving || finishing) && globalStyles.buttonDisabled]}
+          style={[globalStyles.button, actionDisabled && globalStyles.buttonDisabled]}
         >
           <Text style={globalStyles.buttonText}>{saving ? "Adding..." : "Add selected setup"}</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          disabled={saving || finishing}
+          disabled={actionDisabled}
           onPress={handleFinishRemainingSetup}
-          style={[globalStyles.button, (saving || finishing) && globalStyles.buttonDisabled]}
+          style={[globalStyles.button, actionDisabled && globalStyles.buttonDisabled]}
         >
           <Text style={globalStyles.buttonText}>{finishing ? "Finishing..." : "Finish remaining selected setup"}</Text>
         </TouchableOpacity>
