@@ -1,4 +1,5 @@
 import { completeCourseLibrary } from "./completeCourseLibrary";
+import { safestepsProductionCourses } from "./safestepsProductionCourses";
 
 export type CourseLesson = {
   lessonNumber: number;
@@ -39,6 +40,7 @@ export type StandaloneCourse = {
 
 export const courses: StandaloneCourse[] = [
   ...completeCourseLibrary,
+  ...safestepsProductionCourses,
   {
     id: "communication-skills",
     title: "Communication Skills",

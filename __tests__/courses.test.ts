@@ -127,6 +127,11 @@ describe("standalone course helpers", () => {
     ["executive-functioning-in-family-life", 15],
     ["digital-safety-for-families", 15],
     ["building-your-village", 15],
+    ["safesteps-behaviour-guidance-foundations", 12],
+    ["safesteps-child-development-and-wellbeing", 12],
+    ["safesteps-connection-and-regulation", 6],
+    ["safesteps-safety-separation-and-coparenting", 9],
+    ["safesteps-communication-and-family-conversations", 8],
   ])("%s lessons include parent meaning prompts", (courseId, lessonCount) => {
     const course = getCourseById(courseId);
 
@@ -158,5 +163,21 @@ describe("standalone course helpers", () => {
     }, 0);
 
     expect(lessonCount).toBe(171);
+  });
+
+  test("SafeSteps production courses contain all 47 source lessons", () => {
+    const courseIds = [
+      "safesteps-behaviour-guidance-foundations",
+      "safesteps-child-development-and-wellbeing",
+      "safesteps-connection-and-regulation",
+      "safesteps-safety-separation-and-coparenting",
+      "safesteps-communication-and-family-conversations",
+    ];
+
+    const lessonCount = courseIds.reduce((total, courseId) => {
+      return total + (getCourseById(courseId)?.lessons.length ?? 0);
+    }, 0);
+
+    expect(lessonCount).toBe(47);
   });
 });
