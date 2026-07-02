@@ -1,65 +1,84 @@
-import { ScrollView, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 import {
-  AssessmentButton,
-  AssessmentCard,
   AssessmentScreenShell,
-  ChipList,
-  StatusPill,
-  assessmentStyles,
+  assessmentColors,
 } from "../../components/AssessmentSystemUI";
-import {
-  activeCase,
-  reportSections,
-  reportTypes,
-} from "../../lib/data/assessmentSystem";
+
+const sections = [
+  "Case overview",
+  "Assessment domains",
+  "Rubric score summary",
+  "Evidence summary",
+  "Strengths and protective factors",
+  "Risks and unresolved concerns",
+  "Recommended next steps",
+];
 
 export default function ReportOutputScreen() {
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-      <AssessmentScreenShell
-        title="Report Output"
-        subtitle="Build a structured assessment report for workers, court, programs, and parent records."
-      >
-        <AssessmentCard>
-          <Text style={assessmentStyles.cardTitle}>Report Type</Text>
-          <ChipList items={reportTypes} />
-        </AssessmentCard>
+    <AssessmentScreenShell
+      title="Report Output"
+      subtitle="Preview the structured report areas before connecting live data and export tools."
+    >
+      <View style={styles.reportCard}>
+        <Text style={styles.reportTitle}>SafeSteps Assessment Report</Text>
+        <Text style={styles.reportText}>
+          This report preview will combine case setup, assessment records, rubric scoring, and evidence uploads into one structured summary.
+        </Text>
 
-        <AssessmentCard>
-          <Text style={assessmentStyles.cardTitle}>Report Sections</Text>
-          {reportSections.map((section, index) => (
-            <Text key={section} style={assessmentStyles.cardText}>
-              {index + 1}. {section}
-            </Text>
-          ))}
-        </AssessmentCard>
-
-        <AssessmentCard>
-          <View style={assessmentStyles.row}>
-            <View style={[assessmentStyles.splitItem, { flexBasis: 260 }]}>
-              <Text style={assessmentStyles.cardTitle}>Assessment Report Draft</Text>
-              <Text style={assessmentStyles.cardText}>Case: {activeCase.caseName}</Text>
-              <Text style={assessmentStyles.cardText}>Assessment: {activeCase.assessment}</Text>
-              <Text style={assessmentStyles.cardText}>Program: {activeCase.program}</Text>
-            </View>
-            <View style={assessmentStyles.splitItem}>
-              <StatusPill label="Draft" tone="warning" />
-              <Text style={assessmentStyles.cardText}>
-                Overall Progress: {activeCase.overallProgress}
-              </Text>
-              <Text style={assessmentStyles.cardText}>Evidence Items Included: 14</Text>
-              <Text style={assessmentStyles.cardText}>Child Voice Included: Yes</Text>
-            </View>
+        {sections.map((section, index) => (
+          <View key={section} style={styles.sectionRow}>
+            <Text style={styles.sectionNumber}>{index + 1}</Text>
+            <Text style={styles.sectionText}>{section}</Text>
           </View>
-          <View style={assessmentStyles.buttonRow}>
-            <AssessmentButton label="Preview Report" tone="secondary" />
-            <AssessmentButton label="Export PDF" tone="secondary" />
-            <AssessmentButton label="Send to Worker" />
-            <AssessmentButton label="Save Draft" tone="secondary" />
-          </View>
-        </AssessmentCard>
-      </AssessmentScreenShell>
-    </ScrollView>
+        ))}
+      </View>
+    </AssessmentScreenShell>
   );
 }
+
+const styles = StyleSheet.create({
+  reportCard: {
+    gap: 14,
+    padding: 18,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: assessmentColors.border,
+    backgroundColor: "#FFFFFF",
+  },
+  reportTitle: {
+    color: assessmentColors.charcoal,
+    fontSize: 22,
+    fontWeight: "900",
+  },
+  reportText: {
+    color: assessmentColors.muted,
+    lineHeight: 21,
+  },
+  sectionRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    paddingVertical: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#EDF2F0",
+  },
+  sectionNumber: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    overflow: "hidden",
+    color: "#FFFFFF",
+    backgroundColor: assessmentColors.teal,
+    textAlign: "center",
+    textAlignVertical: "center",
+    fontWeight: "900",
+  },
+  sectionText: {
+    flex: 1,
+    color: assessmentColors.charcoal,
+    fontWeight: "800",
+  },
+});
+

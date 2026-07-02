@@ -1,73 +1,124 @@
-import { ScrollView, Text } from "react-native";
+import { useState } from "react";
+import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 import {
-  AssessmentButton,
-  AssessmentCard,
   AssessmentScreenShell,
-  ChipList,
-  Field,
-  assessmentStyles,
+  assessmentColors,
 } from "../../components/AssessmentSystemUI";
-import {
-  assignedPeople,
-  assessmentTypes,
-  caseGoals,
-  programStreams,
-} from "../../lib/data/assessmentSystem";
 
 export default function CaseSetupScreen() {
+  const [caseName, setCaseName] = useState("");
+  const [parentName, setParentName] = useState("");
+  const [workerName, setWorkerName] = useState("");
+  const [programStream, setProgramStream] = useState("");
+
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-      <AssessmentScreenShell
-        title="Case Setup"
-        subtitle="Create the foundation for the family assessment record."
-      >
-        <AssessmentCard tone="warning">
-          <Text style={assessmentStyles.cardTitle}>Recording standard</Text>
-          <Text style={assessmentStyles.cardText}>
-            Assessment records should be factual, respectful, and evidence-based. Do not include
-            assumptions, blame, or unsupported claims.
-          </Text>
-        </AssessmentCard>
+    <AssessmentScreenShell
+      title="Case Setup"
+      subtitle="Set up the family case before completing assessments, scoring, evidence review, and reports."
+    >
+      <View style={styles.card}>
+        <Text style={styles.sectionTitle}>Family and case details</Text>
 
-        <AssessmentCard>
-          <Text style={assessmentStyles.cardTitle}>Family Case</Text>
-          <Field label="Case Name" placeholder="Katrina Watts Family Case" />
-          <Field label="Parent / Carer Name" placeholder="Parent or carer full name" />
-          <Field label="Child / Children Names" placeholder="Names or initials approved for records" />
-        </AssessmentCard>
+        <Text style={styles.label}>Case name</Text>
+        <TextInput
+          value={caseName}
+          onChangeText={setCaseName}
+          placeholder="Example: Watts family reunification case"
+          style={styles.input}
+        />
 
-        <AssessmentCard>
-          <Text style={assessmentStyles.cardTitle}>Program Stream</Text>
-          <ChipList items={programStreams} />
-        </AssessmentCard>
+        <Text style={styles.label}>Parent or carer name</Text>
+        <TextInput
+          value={parentName}
+          onChangeText={setParentName}
+          placeholder="Enter parent or carer name"
+          style={styles.input}
+        />
 
-        <AssessmentCard>
-          <Text style={assessmentStyles.cardTitle}>Assessment Type</Text>
-          <ChipList items={assessmentTypes} />
-        </AssessmentCard>
+        <Text style={styles.label}>Worker or support person</Text>
+        <TextInput
+          value={workerName}
+          onChangeText={setWorkerName}
+          placeholder="Enter worker name"
+          style={styles.input}
+        />
 
-        <AssessmentCard>
-          <Text style={assessmentStyles.cardTitle}>Case Goals</Text>
-          <ChipList items={caseGoals} />
-        </AssessmentCard>
+        <Text style={styles.label}>Program stream</Text>
+        <TextInput
+          value={programStream}
+          onChangeText={setProgramStream}
+          placeholder="Example: 24 month reunification program"
+          style={styles.input}
+        />
 
-        <AssessmentCard>
-          <Text style={assessmentStyles.cardTitle}>Important Dates</Text>
-          <Field label="Case start date" placeholder="2 July 2026" />
-          <Field label="Assessment date" placeholder="2 July 2026" />
-          <Field label="Review due date" placeholder="23 July 2026" />
-          <Field label="Court date, if applicable" placeholder="Optional" />
-        </AssessmentCard>
+        <View style={styles.summaryBox}>
+          <Text style={styles.summaryTitle}>Setup summary</Text>
+          <Text style={styles.summaryText}>Case: {caseName || "Not entered yet"}</Text>
+          <Text style={styles.summaryText}>Parent or carer: {parentName || "Not entered yet"}</Text>
+          <Text style={styles.summaryText}>Worker: {workerName || "Not entered yet"}</Text>
+          <Text style={styles.summaryText}>Program: {programStream || "Not entered yet"}</Text>
+        </View>
 
-        <AssessmentCard>
-          <Text style={assessmentStyles.cardTitle}>Assigned People</Text>
-          <ChipList items={assignedPeople} />
-          <Field label="Worker notes" placeholder="Assigned contacts, role details, or handover notes" multiline />
-        </AssessmentCard>
-
-        <AssessmentButton label="Save Case Setup" tone="success" />
-      </AssessmentScreenShell>
-    </ScrollView>
+        <Pressable style={styles.primaryButton}>
+          <Text style={styles.primaryButtonText}>Save Case Setup</Text>
+        </Pressable>
+      </View>
+    </AssessmentScreenShell>
   );
 }
+
+const styles = StyleSheet.create({
+  card: {
+    gap: 12,
+    padding: 18,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: assessmentColors.border,
+    backgroundColor: "#FFFFFF",
+  },
+  sectionTitle: {
+    color: assessmentColors.charcoal,
+    fontSize: 20,
+    fontWeight: "900",
+  },
+  label: {
+    color: assessmentColors.charcoal,
+    fontWeight: "800",
+  },
+  input: {
+    minHeight: 46,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: assessmentColors.border,
+    paddingHorizontal: 12,
+    backgroundColor: "#FFFFFF",
+  },
+  summaryBox: {
+    gap: 6,
+    padding: 14,
+    borderRadius: 12,
+    backgroundColor: assessmentColors.sage,
+  },
+  summaryTitle: {
+    color: assessmentColors.tealDark,
+    fontWeight: "900",
+  },
+  summaryText: {
+    color: assessmentColors.charcoal,
+    lineHeight: 20,
+  },
+  primaryButton: {
+    alignSelf: "flex-start",
+    minHeight: 44,
+    borderRadius: 10,
+    justifyContent: "center",
+    paddingHorizontal: 18,
+    backgroundColor: assessmentColors.teal,
+  },
+  primaryButtonText: {
+    color: "#FFFFFF",
+    fontWeight: "900",
+  },
+});
+

@@ -1,76 +1,95 @@
-import { ScrollView, Text, View } from "react-native";
+import { useState } from "react";
+import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
 
 import {
-  AssessmentButton,
-  AssessmentCard,
   AssessmentScreenShell,
-  ChipList,
-  Field,
-  StatusPill,
-  assessmentStyles,
+  assessmentColors,
 } from "../../components/AssessmentSystemUI";
-import {
-  evidenceCards,
-  evidenceStatuses,
-  evidenceTypes,
-  linkedDomains,
-  privacyLevels,
-} from "../../lib/data/assessmentSystem";
-
-function evidenceStatusTone(status: string) {
-  if (status === "Accepted" || status === "Reviewed") return "success";
-  if (status === "Needs Clarification") return "warning";
-  if (status === "Excluded From Report" || status === "Not Relevant") return "risk";
-  return "default";
-}
 
 export default function EvidenceUploadsScreen() {
+  const [note, setNote] = useState("");
+
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-      <AssessmentScreenShell
-        title="Evidence Uploads"
-        subtitle="Attach real-life proof to a specific assessment and domain so evidence can support rubric scoring and reports."
-      >
-        <AssessmentCard>
-          <Text style={assessmentStyles.cardTitle}>Upload Evidence</Text>
-          <Text style={assessmentStyles.metaLabel}>Evidence Type</Text>
-          <ChipList items={evidenceTypes} />
-          <Text style={assessmentStyles.metaLabel}>Linked Domain</Text>
-          <ChipList items={linkedDomains} />
-          <Field label="Evidence Description" placeholder="What does this evidence show?" multiline />
-          <Field label="Date Evidence Was Created" placeholder="2 July 2026" />
-          <Field label="Who uploaded it?" placeholder="Parent, support worker, caseworker, or supervisor" />
-          <Text style={assessmentStyles.metaLabel}>Privacy Level</Text>
-          <ChipList items={privacyLevels} />
-          <AssessmentButton label="Upload Evidence" />
-        </AssessmentCard>
+    <AssessmentScreenShell
+      title="Evidence Uploads"
+      subtitle="Collect supporting material that shows effort, safety, stability, progress, and family connection."
+    >
+      <View style={styles.card}>
+        <Text style={styles.sectionTitle}>Evidence note</Text>
+        <Text style={styles.panelText}>
+          Add a short note for the evidence item. File upload and Supabase storage can be connected next.
+        </Text>
 
-        {evidenceCards.map((item) => (
-          <AssessmentCard key={item.title}>
-            <View style={assessmentStyles.row}>
-              <View style={[assessmentStyles.splitItem, { flexBasis: 250 }]}>
-                <Text style={assessmentStyles.cardTitle}>{item.title}</Text>
-                <Text style={assessmentStyles.cardText}>Uploaded: {item.uploaded}</Text>
-                <Text style={assessmentStyles.cardText}>Linked to: {item.linkedTo}</Text>
-                <Text style={assessmentStyles.cardText}>Used in: {item.usedIn}</Text>
-              </View>
-              <StatusPill label={item.status} tone={evidenceStatusTone(item.status)} />
-            </View>
-            <Text style={assessmentStyles.metaLabel}>Description</Text>
-            <Text style={assessmentStyles.cardText}>{item.description}</Text>
-            <View style={assessmentStyles.buttonRow}>
-              <AssessmentButton label="View" tone="secondary" />
-              <AssessmentButton label="Link to Rubric" href="/assessment-system/rubric-scoring" tone="secondary" />
-              <AssessmentButton label="Add to Report" href="/assessment-system/report-output" tone="secondary" />
-            </View>
-          </AssessmentCard>
-        ))}
+        <TextInput
+          value={note}
+          onChangeText={setNote}
+          placeholder="Example: Weekly home check in completed with photos of routines and child safe spaces."
+          multiline
+          style={styles.textArea}
+        />
 
-        <AssessmentCard>
-          <Text style={assessmentStyles.cardTitle}>Evidence Status Options</Text>
-          <ChipList items={evidenceStatuses} />
-        </AssessmentCard>
-      </AssessmentScreenShell>
-    </ScrollView>
+        <Pressable style={styles.primaryButton}>
+          <Text style={styles.primaryButtonText}>Save Evidence Note</Text>
+        </Pressable>
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.sectionTitle}>Evidence categories</Text>
+        <Text style={styles.item}>Home safety and routines</Text>
+        <Text style={styles.item}>Parenting activity completion</Text>
+        <Text style={styles.item}>Service attendance confirmation</Text>
+        <Text style={styles.item}>Child voice and wellbeing observations</Text>
+        <Text style={styles.item}>Financial and housing stability</Text>
+      </View>
+    </AssessmentScreenShell>
   );
 }
+
+const styles = StyleSheet.create({
+  card: {
+    gap: 12,
+    padding: 18,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: assessmentColors.border,
+    backgroundColor: "#FFFFFF",
+  },
+  sectionTitle: {
+    color: assessmentColors.charcoal,
+    fontSize: 20,
+    fontWeight: "900",
+  },
+  panelText: {
+    color: assessmentColors.muted,
+    lineHeight: 21,
+  },
+  textArea: {
+    minHeight: 130,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: assessmentColors.border,
+    padding: 12,
+    textAlignVertical: "top",
+    backgroundColor: "#FFFFFF",
+  },
+  primaryButton: {
+    alignSelf: "flex-start",
+    minHeight: 44,
+    borderRadius: 10,
+    justifyContent: "center",
+    paddingHorizontal: 18,
+    backgroundColor: assessmentColors.teal,
+  },
+  primaryButtonText: {
+    color: "#FFFFFF",
+    fontWeight: "900",
+  },
+  item: {
+    color: assessmentColors.charcoal,
+    paddingVertical: 8,
+    borderBottomWidth: 1,
+    borderBottomColor: "#EDF2F0",
+    fontWeight: "800",
+  },
+});
+
