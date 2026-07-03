@@ -3,7 +3,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true, Position = 0)]
-    [ValidateSet("Status", "Push", "Verify", "NewMigration", "Advisors")]
+    [ValidateSet("Status", "Push", "Verify", "NewMigration", "Advisors", "SecurityAudit")]
     [string]$Action,
 
     [Parameter(Position = 1)]
@@ -87,6 +87,46 @@ left join information_schema.tables actual
     Invoke-Supabase @("db", "query", "--linked", "--file", $TempSql)
 }
 
+function Invoke-SafeStepsSecurityAudit {
+    $Sql = @"
+select
+  'rls_status' as audit_type,
+  c.relname as table_name,
+  null::text as policy_name,
+  null::text as command,
+  null::text as roles,
+  case when c.relrowsecurity then 'enabled' else 'disabled' end as status,
+  format('forced=%s policies=%s', c.relforcerowsecurity, count(p.polname)) as detail
+from pg_class c
+join pg_namespace n
+  on n.oid = c.relnamespace
+left join pg_policy p
+  on p.polrelid = c.oid
+where n.nspname = 'public'
+  and c.relkind = 'r'
+group by n.nspname, c.relname, c.relrowsecurity, c.relforcerowsecurity
+union all
+select
+  'broad_policy' as audit_type,
+  tablename,
+  policyname,
+  cmd::text,
+  roles::text,
+  'review' as status,
+  'Policy applies to public or anon role.' as detail
+from pg_policies
+where schemaname = 'public'
+  and roles && array['public'::name, 'anon'::name]
+order by audit_type, table_name, policy_name;
+"@
+
+    $TempSql = Join-Path ([System.IO.Path]::GetTempPath()) "safesteps_security_audit.sql"
+    $Sql | Set-Content -LiteralPath $TempSql -Encoding utf8
+
+    Write-Host "Auditing RLS and broad public/anon policies in linked Supabase project..." -ForegroundColor Cyan
+    Invoke-Supabase @("db", "query", "--linked", "--file", $TempSql)
+}
+
 switch ($Action) {
     "Status" {
         Write-Host "Checking local and remote migration status..." -ForegroundColor Cyan
@@ -94,7 +134,7 @@ switch ($Action) {
     }
     "Push" {
         Write-Host "Applying pending Supabase migrations to the linked project..." -ForegroundColor Cyan
-        Invoke-Supabase @("db", "push")
+        Invoke-Supabase @("db", "push", "--yes")
     }
     "Verify" {
         Invoke-SafeStepsVerification
@@ -108,7 +148,10 @@ switch ($Action) {
         Invoke-Supabase @("migration", "new", $Name)
     }
     "Advisors" {
-        Write-Host "Running Supabase database advisors..." -ForegroundColor Cyan
-        Invoke-Supabase @("db", "advisors")
+        Write-Host "Running Supabase database advisors against linked project..." -ForegroundColor Cyan
+        Invoke-Supabase @("db", "advisors", "--linked")
+    }
+    "SecurityAudit" {
+        Invoke-SafeStepsSecurityAudit
     }
 }

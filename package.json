@@ -62,6 +62,7 @@
     "db:push": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 Push",
     "db:verify": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 Verify",
     "db:advisors": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 Advisors",
+    "db:security": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 SecurityAudit",
     "db:new": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 NewMigration",
     "lint": "expo lint",
     "test": "jest --runInBand"

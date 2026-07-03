@@ -42,6 +42,12 @@ Run database advisors:
 npm run db:advisors
 ```
 
+Audit public-table RLS status and broad `public` / `anon` policies:
+
+```powershell
+npm run db:security
+```
+
 ## Rules
 
 - Every table, policy, function, trigger, storage bucket, and seedable reference structure belongs in a migration.
@@ -59,6 +65,7 @@ npm install
 npm run db:status
 npm run db:push
 npm run db:verify
+npm run db:security
 ```
 
 That gives SafeSteps a repeatable backend pipeline without relying on fragile manual Studio state.
