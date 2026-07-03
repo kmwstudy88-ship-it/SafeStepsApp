@@ -41,6 +41,15 @@ api-output.json
 active_payload.json
 intense_curriculum_manifest*.json
 
+# Local forensic/evidence engine experiments
+anti_weaponization_engine.ps1
+court_ready_compiler.ps1
+evidence_engine.py
+evidence_ingestion.ps1
+forensic_anonymizer.ps1
+forensic_bias_filter.ps1
+forensic_scoring_engine.ps1
+
 # Office / docs
 *.docx
 Product Requirements Document (PRD).txt
