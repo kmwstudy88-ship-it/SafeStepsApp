@@ -58,6 +58,11 @@
     "build:android": "npx eas-cli@latest build --platform android --profile production",
     "build:ios": "npx eas-cli@latest build --platform ios --profile production",
     "build:preview": "npx eas-cli@latest build --platform all --profile preview",
+    "db:status": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 Status",
+    "db:push": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 Push",
+    "db:verify": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 Verify",
+    "db:advisors": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 Advisors",
+    "db:new": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 NewMigration",
     "lint": "expo lint",
     "test": "jest --runInBand"
   },
