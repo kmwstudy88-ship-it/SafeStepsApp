@@ -25,6 +25,12 @@ const steps: {
     status: "Records",
   },
   {
+    title: "Parent Profiles",
+    description: "Split each parent into identity, protective capacity, risk, parenting behaviour, and engagement domains.",
+    href: "/assessment-system/parent-profiles" as Href,
+    status: "Profiles",
+  },
+  {
     title: "Rubric Scoring",
     description: "Score parenting capacity, safety, stability, engagement, and evidence strength.",
     href: "/assessment-system/scoring" as Href,
