@@ -64,6 +64,7 @@
     "db:advisors": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 Advisors",
     "db:security": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 SecurityAudit",
     "db:new": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 NewMigration",
+    "audit:found-curriculum": "node SafeStepsTools/audit-found-curriculum.js",
     "lint": "expo lint",
     "test": "jest --runInBand"
   },
