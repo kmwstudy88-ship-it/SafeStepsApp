@@ -1,3 +1,5 @@
+import { safestepsLessonCurriculum48To95 } from "./data/safestepsLessonCurriculum48To95";
+
 export type AppLesson = {
   id: string;
   week: number;
@@ -11,7 +13,7 @@ export type AppLesson = {
   actions: string[];
 };
 
-export const appLessons: AppLesson[] = [
+const starterLessons: AppLesson[] = [
   {
     id: "safety-planning-basics",
     week: 1,
@@ -116,6 +118,42 @@ export const appLessons: AppLesson[] = [
       "Add a note explaining why it matters.",
     ],
   },
+];
+
+const productionCurriculumLessons: AppLesson[] = safestepsLessonCurriculum48To95.map((lesson) => ({
+  id: lesson.slug,
+  week: lesson.lessonNumber,
+  title: lesson.title,
+  summary: lesson.learningPurpose,
+  estimatedMinutes: lesson.durationMinutes.recommended,
+  sections: [
+    {
+      heading: "Before you begin",
+      body: lesson.beforeQuestion,
+    },
+    {
+      heading: "Teaching transcript",
+      body: lesson.teachingTranscript,
+    },
+    {
+      heading: "Knowledge check",
+      body: `${lesson.knowledgeCheck.question} ${lesson.knowledgeCheck.suggestedAnswer}`,
+    },
+    {
+      heading: "Evidence task",
+      body: lesson.evidenceTask,
+    },
+  ],
+  actions: [
+    ...lesson.learningOutcomes,
+    lesson.practiceActivity,
+    lesson.afterQuestion,
+  ],
+}));
+
+export const appLessons: AppLesson[] = [
+  ...starterLessons,
+  ...productionCurriculumLessons,
 ];
 
 export function getLessonById(lessonId: string) {
