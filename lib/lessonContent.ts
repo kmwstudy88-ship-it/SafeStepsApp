@@ -1,4 +1,5 @@
 import { safestepsLessonCurriculum48To95 } from "./data/safestepsLessonCurriculum48To95";
+import { oneDriveLessonLibrary } from "./data/oneDriveLessonLibrary";
 
 export type AppLesson = {
   id: string;
@@ -151,9 +152,41 @@ const productionCurriculumLessons: AppLesson[] = safestepsLessonCurriculum48To95
   ],
 }));
 
+const oneDriveLessons: AppLesson[] = oneDriveLessonLibrary.map((lesson, index) => ({
+  id: lesson.id,
+  week: 1000 + index + 1,
+  title: lesson.title,
+  summary: lesson.summary,
+  estimatedMinutes: lesson.estimatedMinutes,
+  sections: [
+    {
+      heading: "Overview",
+      body: lesson.summary,
+    },
+    {
+      heading: "Key concepts",
+      body: lesson.keyConcepts.join(" "),
+    },
+    {
+      heading: "Facilitator notes",
+      body: lesson.facilitatorNotes.join(" "),
+    },
+    {
+      heading: "Printable summary",
+      body: lesson.printableSummary,
+    },
+  ],
+  actions: [
+    ...lesson.learningOutcomes,
+    ...lesson.practiceActivities,
+    ...lesson.reflectionPrompts,
+  ],
+}));
+
 export const appLessons: AppLesson[] = [
   ...starterLessons,
   ...productionCurriculumLessons,
+  ...oneDriveLessons,
 ];
 
 export function getLessonById(lessonId: string) {
