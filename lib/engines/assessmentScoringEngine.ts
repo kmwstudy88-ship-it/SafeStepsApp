@@ -1,3 +1,5 @@
+import type { SaferJudgementResult } from "./saferAssessmentEngine";
+
 export type AssessmentItemType = "likert" | "multiple_choice" | "yes_no" | "numeric" | "narrative";
 
 export type AssessmentResponseOption = {
@@ -85,6 +87,7 @@ export type ReadinessIndexResult = {
   flags: string[];
   signals: ReadinessSignal[];
   suppressedByOverride: boolean;
+  saferJudgement?: SaferJudgementResult | null;
 };
 
 export type ServiceReferralProgress = {
@@ -255,15 +258,20 @@ export function computeReadinessIndex({
   visitationQualityScore,
   milestoneProgressScore,
   activeCriticalOverride,
+  saferJudgement,
 }: {
   assessmentScore?: number | null;
   serviceCompletionScore?: number | null;
   visitationQualityScore?: number | null;
   milestoneProgressScore?: number | null;
   activeCriticalOverride?: boolean;
+  saferJudgement?: SaferJudgementResult | null;
 }): ReadinessIndexResult {
   const signals: ReadinessSignal[] = [
     { label: "Assessment scores", score: assessmentScore ?? null, weight: 0.4 },
+    ...(saferJudgement
+      ? [{ label: "SAFER guided judgement", score: saferJudgement.readinessSupportScore, weight: 0.2 }]
+      : []),
     { label: "Service completion", score: serviceCompletionScore ?? null, weight: 0.2 },
     { label: "Visitation quality", score: visitationQualityScore ?? null, weight: 0.25 },
     { label: "Milestone progress", score: milestoneProgressScore ?? null, weight: 0.15 },
@@ -280,6 +288,18 @@ export function computeReadinessIndex({
       flags: ["Active critical override suppresses readiness index.", ...flags],
       signals,
       suppressedByOverride: true,
+      saferJudgement: saferJudgement ?? null,
+    };
+  }
+
+  if (saferJudgement?.requiredReview) {
+    return {
+      compositeScore: null,
+      recommendation: "SAFER guided judgement requires practitioner review before readiness can be relied on.",
+      flags: ["SAFER practitioner review required before readiness use.", ...saferJudgement.flags, ...flags],
+      signals,
+      suppressedByOverride: true,
+      saferJudgement,
     };
   }
 
@@ -290,6 +310,7 @@ export function computeReadinessIndex({
       flags,
       signals,
       suppressedByOverride: false,
+      saferJudgement: saferJudgement ?? null,
     };
   }
 
@@ -310,6 +331,7 @@ export function computeReadinessIndex({
     flags,
     signals,
     suppressedByOverride: false,
+    saferJudgement: saferJudgement ?? null,
   };
 }
 
@@ -372,12 +394,14 @@ export function computeReadinessIndexFromSignals({
   visitations,
   milestones,
   activeCriticalOverride,
+  saferJudgement,
 }: {
   assessmentScore?: number | null;
   serviceReferrals: ServiceReferralProgress[];
   visitations: VisitationProgress[];
   milestones: MilestoneProgress[];
   activeCriticalOverride?: boolean;
+  saferJudgement?: SaferJudgementResult | null;
 }) {
   return computeReadinessIndex({
     assessmentScore,
@@ -385,5 +409,6 @@ export function computeReadinessIndexFromSignals({
     visitationQualityScore: calculateVisitationQualityTrend(visitations),
     milestoneProgressScore: calculateMilestoneProgressScore(milestones),
     activeCriticalOverride,
+    saferJudgement,
   });
 }

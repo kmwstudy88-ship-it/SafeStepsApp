@@ -11,6 +11,7 @@ import {
   type AssessmentResponse,
   type AssessmentScoringBand,
 } from "../lib/engines/assessmentScoringEngine";
+import { computeSaferGuidedJudgement } from "../lib/engines/saferAssessmentEngine";
 
 const domains: AssessmentDomain[] = [
   { id: "protective", name: "Protective Capacity", weight: 2 },
@@ -136,6 +137,71 @@ describe("assessment scoring engine", () => {
     expect(result.compositeScore).toBeNull();
     expect(result.flags[0]).toBe("Active critical override suppresses readiness index.");
     expect(result.recommendation).toBe("Supervisor review required before any reunification-level change.");
+  });
+
+  test("readiness index is suppressed when SAFER judgement requires review", () => {
+    const saferJudgement = computeSaferGuidedJudgement({
+      consequenceOfHarm: 80,
+      probabilityOfHarm: 70,
+      protectiveCapacity: 60,
+      demonstratedSafety: 55,
+      evidenceGapCount: 1,
+      reviewState: "draft",
+      classifications: [],
+    });
+
+    const result = computeReadinessIndex({
+      assessmentScore: 90,
+      serviceCompletionScore: 90,
+      visitationQualityScore: 90,
+      milestoneProgressScore: 90,
+      saferJudgement,
+    });
+
+    expect(result.compositeScore).toBeNull();
+    expect(result.suppressedByOverride).toBe(true);
+    expect(result.flags[0]).toBe("SAFER practitioner review required before readiness use.");
+    expect(result.saferJudgement?.riskScore).toBe(75.5);
+  });
+
+  test("readiness index includes reviewed SAFER judgement as a weighted signal", () => {
+    const saferJudgement = computeSaferGuidedJudgement({
+      consequenceOfHarm: 20,
+      probabilityOfHarm: 20,
+      protectiveCapacity: 90,
+      demonstratedSafety: 90,
+      evidenceGapCount: 0,
+      reviewState: "reviewed",
+      classifications: [
+        {
+          evidenceId: "manual",
+          categories: [
+            "child",
+            "parent_or_caregiver",
+            "family",
+            "culture",
+            "community",
+            "risk",
+            "strengths",
+            "protection_and_safety",
+          ],
+          specialistFlags: [],
+          confidence: "manual",
+        },
+      ],
+    });
+
+    const result = computeReadinessIndex({
+      assessmentScore: 80,
+      serviceCompletionScore: 60,
+      visitationQualityScore: 80,
+      milestoneProgressScore: 70,
+      saferJudgement,
+    });
+
+    expect(result.signals.map((signal) => signal.label)).toContain("SAFER guided judgement");
+    expect(result.compositeScore).toBe(77.17);
+    expect(result.suppressedByOverride).toBe(false);
   });
 
   test("calculates service completion with engaged services counted as partial progress", () => {
