@@ -61,12 +61,15 @@ Current audit result:
 - Lessons 252-466 and 468-780: 528 external records, 528 workspace records, 0 missing IDs.
 - Parent challenges: 104 external records, 104 workspace records, 0 missing IDs.
 - Reflection worksheets: 50 workspace records.
+- Strong Fathers Safe Children: 48 source lessons, 48 generated workspace lesson IDs, 0 missing IDs.
 
 App integration status:
 
 - Lessons 1-47 are available through `appLessons` with `foundation-` ID prefixes, such as `foundation-active-listening`, to avoid collisions with later uploaded lesson slugs.
 - Lessons 48-95 and expanded lessons 252-780 are also available through `appLessons`.
 - Parent challenges are available from the task screen and are converted into user task input through `buildParentChallengeTaskInput`, including challenge steps, reflection questions, completion checklist, evidence task, and safety note.
+- The Strong Fathers Safe Children pathway is generated from `data\courses\fathers\father-course.full.json` into `lib\data\strongFathersCourse.ts`, exposed as a standalone course through `lib\data\courses.ts`, and can be regenerated with `npm run import:father-course`.
+- Reflection worksheets are selectable from the reflection screen through `safestepsReflectionWorksheets`, so worksheet prompts can be used without hand-copying content into the route.
 
 ## Priority 2 - Assessment Schema
 
@@ -86,6 +89,11 @@ Empty workspace migration files observed:
 - `supabase\migrations\20260619142937_rls_policies.sql`
 - `supabase\migrations\20260622181621_create_intake_forms.sql`
 - `supabase\migrations\20260703061540_add_relationship_assessment_layer.sql`
+
+Current migration reconciliation:
+
+- `supabase\migrations\20260703061540_add_relationship_assessment_layer.sql` now defines relationship assessment and observation tables with RLS, owner boundaries, management overrides through `public.can_manage_assessments()`, and timestamp/index support.
+- The migration has static test coverage in `__tests__\relationship-migration.test.ts`; it has not been pushed to a remote database in this reconciliation pass.
 
 Recommended next step:
 
@@ -155,6 +163,26 @@ Workspace already has more complete-looking tool files:
 Recommended next step:
 
 Treat external modules as historical references unless a specific function is missing from the workspace version. Do not replace workspace tools wholesale.
+
+## Priority 6 - Casefile And Manual Source Material
+
+Workspace source material found:
+
+- `casefiles\CASE_001\casefile.json`
+- `casefiles\CASE_002\casefile.json`
+- `parents\FATHER_001\profile.json`
+- `parents\FATHER_002\profile.json`
+- `parents\MOTHER_001\profile.json`
+- `parents\MOTHER_002\profile.json`
+- `CHILD PROTECTION MANUAL FRAMEWORK GUIDELINES`
+- `new content\Reflections Worksheets & Json Scripts.odt`
+
+Current delivery treatment:
+
+- The sample casefiles and parent profiles are represented as typed fixture data in `lib\data\sampleCasefiles.ts` with Jest coverage, so app code can consume the examples without relying on loose local JSON folders.
+- `SafeStepsTools\New-SafeStepsCasefile.ps1` is the portable casefile generator. `automation\create_casefile.ps1` delegates to it and no longer hard-codes `C:\Users\SAFES\SafeStepsApp`.
+- The child-protection manual folder contains 382 downloaded source/reference files totaling about 32 MB. It is retained as reference material, not imported as app runtime data in this pass.
+- The ODT reflection worksheet source is retained as source material. The app-facing worksheet data is already available as TypeScript in `lib\data\safestepsReflectionWorksheets.ts`.
 
 ## Recommended Import Order
 

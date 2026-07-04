@@ -53,6 +53,18 @@ const repoFiles = [
     path: path.join(repoRoot, "lib", "data", "safestepsReflectionWorksheets.ts"),
     kind: "tsData",
   },
+  {
+    label: "Strong fathers course",
+    path: path.join(repoRoot, "lib", "data", "strongFathersCourse.ts"),
+    kind: "tsData",
+  },
+];
+
+const repoJsonFiles = [
+  {
+    label: "Strong fathers source course",
+    path: path.join(repoRoot, "data", "courses", "fathers", "father-course.full.json"),
+  },
 ];
 
 function readJson(filePath) {
@@ -198,10 +210,22 @@ function printReconciliation(externalSummaries, repoSummaries) {
       [...firstBatchExternalIds].filter((id) => !firstBatchRepoIds.has(id)).length
     }`,
   );
+
+  const fatherSource = readJson(repoJsonFiles[0].path);
+  const fatherSourceLessonIds = fatherSource.modules.flatMap((module) =>
+    module.lessons.map((lesson) => lesson.id),
+  );
+  const repoFatherCourse = repoSummaries.find((summary) => summary.file.label === "Strong fathers course");
+  const repoFatherLessonIds = new Set(repoFatherCourse?.ids ?? []);
+  const fatherMissing = fatherSourceLessonIds.filter((id) => !repoFatherLessonIds.has(id));
+
+  console.log(`Strong fathers source lesson ids: ${fatherSourceLessonIds.length}`);
+  console.log(`Strong fathers repo ids: ${repoFatherLessonIds.size}`);
+  console.log(`Strong fathers lesson ids missing from repo: ${fatherMissing.length}`);
 }
 
 function main() {
-  const missingFiles = [...externalFiles, ...repoFiles].filter((file) => !fs.existsSync(file.path));
+  const missingFiles = [...externalFiles, ...repoFiles, ...repoJsonFiles].filter((file) => !fs.existsSync(file.path));
   if (missingFiles.length > 0) {
     console.error("Missing files:");
     for (const file of missingFiles) console.error(`- ${file.path}`);

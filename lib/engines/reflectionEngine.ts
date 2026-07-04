@@ -1,3 +1,8 @@
+import {
+  getReflectionWorksheetById,
+  safestepsReflectionWorksheets,
+} from "../data/safestepsReflectionWorksheets";
+
 export const monthlyReflectionQuestions = [
   "What does this monthly topic mean to you?",
   "Why do you think this topic is important?",
@@ -28,3 +33,5 @@ export const lessonEndQuestions = [
   "What was difficult?",
   "How confident do you feel now from 1 to 10?"
 ];
+
+export { getReflectionWorksheetById, safestepsReflectionWorksheets };

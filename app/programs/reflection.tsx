@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import {
   monthlyReflectionQuestions,
+  safestepsReflectionWorksheets,
   weeklyReflectionQuestions,
 } from "../../lib/engines/reflectionEngine";
 import { saveReflectionRecord } from "../../lib/engines/reflectionSaveEngine";
@@ -26,10 +27,14 @@ export default function ProgramReflectionScreen() {
 
   const weekNumber = params.weekNumber ? Number(params.weekNumber) : null;
   const weekSubTopic = String(params.weekSubTopic ?? "");
+  const [selectedWorksheetId, setSelectedWorksheetId] = useState("");
 
   const questions = useMemo(() => {
+    const worksheet = safestepsReflectionWorksheets.find((item) => item.id === selectedWorksheetId);
+    if (worksheet) return worksheet.prompts;
+
     return level === "week" ? weeklyReflectionQuestions : monthlyReflectionQuestions;
-  }, [level]);
+  }, [level, selectedWorksheetId]);
 
   const title =
     level === "week"
@@ -60,6 +65,12 @@ export default function ProgramReflectionScreen() {
       ...current,
       [index]: value,
     }));
+  }
+
+  function selectWorksheet(worksheetId: string) {
+    setSelectedWorksheetId(worksheetId);
+    setAnswers({});
+    setConfidence("");
   }
 
   async function handleSave() {
@@ -144,6 +155,54 @@ export default function ProgramReflectionScreen() {
           understand the parent&apos;s current thoughts, experiences, strengths, and
           support needs before learning begins.
         </Text>
+      </View>
+
+      <View
+        style={{
+          padding: 16,
+          backgroundColor: "#ffffff",
+          borderRadius: 12,
+          borderWidth: 1,
+          borderColor: "#d8e5dd",
+          marginBottom: 16,
+        }}
+      >
+        <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+          Reflection Worksheets
+        </Text>
+        <Text style={{ marginTop: 8 }}>
+          Use one of the imported personal growth worksheet prompt sets for this reflection.
+        </Text>
+
+        <Pressable
+          onPress={() => selectWorksheet("")}
+          style={{
+            padding: 10,
+            backgroundColor: selectedWorksheetId === "" ? "#dcefe8" : "#f1f5f3",
+            borderRadius: 10,
+            marginTop: 10,
+          }}
+        >
+          <Text style={{ fontWeight: "bold" }}>Standard SafeSteps reflection</Text>
+        </Pressable>
+
+        {safestepsReflectionWorksheets.map((worksheet) => (
+          <Pressable
+            key={worksheet.id}
+            onPress={() => selectWorksheet(worksheet.id)}
+            style={{
+              padding: 10,
+              backgroundColor: selectedWorksheetId === worksheet.id ? "#dcefe8" : "#f9fbfa",
+              borderRadius: 10,
+              borderWidth: 1,
+              borderColor: "#edf2ee",
+              marginTop: 8,
+            }}
+          >
+            <Text style={{ fontWeight: "bold" }}>{worksheet.title}</Text>
+            <Text style={{ marginTop: 4 }}>{worksheet.purpose}</Text>
+          </Pressable>
+        ))}
       </View>
 
       {questions.map((question, index) => (

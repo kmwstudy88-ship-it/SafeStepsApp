@@ -11,14 +11,17 @@ import {
   completeUserTasks,
   completeUserTask,
   createUserTask,
+  createUserTaskFromParentChallenge,
   fetchUserTasks,
   UserTask,
 } from "../../lib/engines/taskEngine";
+import { safestepsParentChallenges } from "../../lib/data/safestepsParentChallenges";
 
 export default function TasksScreen() {
   const [tasks, setTasks] = useState<UserTask[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [addingChallengeId, setAddingChallengeId] = useState<string | null>(null);
   const [bulkCompleting, setBulkCompleting] = useState(false);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
@@ -87,6 +90,28 @@ export default function TasksScreen() {
           ? completeError.message
           : "Could not complete task."
       );
+    }
+  }
+
+  async function handleAddChallenge(challengeId: string) {
+    if (addingChallengeId) return;
+
+    setAddingChallengeId(challengeId);
+    setError("");
+    setMessage("");
+
+    try {
+      await createUserTaskFromParentChallenge(challengeId);
+      await loadTasks();
+      setMessage("Parent challenge added to ready tasks.");
+    } catch (challengeError) {
+      setError(
+        challengeError instanceof Error
+          ? challengeError.message
+          : "Could not add parent challenge."
+      );
+    } finally {
+      setAddingChallengeId(null);
     }
   }
 
@@ -207,6 +232,58 @@ export default function TasksScreen() {
       >
         <Text style={{ fontWeight: "bold" }}>Refresh Tasks</Text>
       </Pressable>
+
+      <View
+        style={{
+          padding: 16,
+          backgroundColor: "#ffffff",
+          borderRadius: 12,
+          borderWidth: 1,
+          borderColor: "#d8e5dd",
+          marginBottom: 16,
+        }}
+      >
+        <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+          Parent Challenge Library
+        </Text>
+        <Text style={{ marginTop: 6 }}>
+          Add short SafeSteps parent practice challenges to ready tasks.
+        </Text>
+
+        {safestepsParentChallenges.map((challenge) => (
+          <View
+            key={challenge.id}
+            style={{
+              paddingVertical: 12,
+              borderTopWidth: 1,
+              borderTopColor: "#edf2ee",
+              marginTop: 10,
+            }}
+          >
+            <Text style={{ fontWeight: "bold" }}>{challenge.displayTitle}</Text>
+            <Text style={{ marginTop: 4 }}>{challenge.purpose}</Text>
+            <Text style={{ marginTop: 4 }}>
+              {challenge.category} - {challenge.challengeType} - {challenge.estimatedTime}
+            </Text>
+            <Pressable
+              disabled={addingChallengeId === challenge.id}
+              onPress={() => handleAddChallenge(challenge.id)}
+              style={{
+                marginTop: 8,
+                padding: 10,
+                backgroundColor: "#dcefe8",
+                borderRadius: 10,
+                alignItems: "center",
+                opacity: addingChallengeId === challenge.id ? 0.65 : 1,
+              }}
+            >
+              <Text style={{ fontWeight: "bold" }}>
+                {addingChallengeId === challenge.id ? "Adding..." : "Add Challenge"}
+              </Text>
+            </Pressable>
+          </View>
+        ))}
+      </View>
 
       <Pressable
         disabled={readyTasks.length === 0 || bulkCompleting}
