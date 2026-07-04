@@ -1,5 +1,10 @@
 # Node / JS
 node_modules/
+.expo/
+
+# Local source/reference archives. Extract reviewed content into docs or typed data.
+CHILD PROTECTION MANUAL FRAMEWORK GUIDELINES/
+new content/
 npm-debug.log*
 yarn-error.log*
 
