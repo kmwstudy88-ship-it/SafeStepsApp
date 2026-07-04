@@ -1,3 +1,5 @@
+import type { RecognitionSupportPlan } from "./recognitionSupportEngine";
+
 export type SaferInformationCategory =
   | "child"
   | "parent_or_caregiver"
@@ -61,6 +63,7 @@ export type SaferJudgementInput = {
   evidenceGapCount: number;
   classifications: SaferEvidenceClassification[];
   reviewState?: SaferReviewState;
+  recognitionSupportPlan?: RecognitionSupportPlan | null;
 };
 
 export type SaferJudgementResult = {
@@ -193,8 +196,17 @@ export function computeSaferGuidedJudgement(input: SaferJudgementInput): SaferJu
   const safetyScore = roundScore(protectiveCapacity * 0.45 + demonstratedSafety * 0.55);
   const { presentCategories, missingCategories, evidenceCoverageScore } = computeSaferEvidenceCoverage(input.classifications);
   const specialistFlags = uniqueSorted(input.classifications.flatMap((classification) => classification.specialistFlags));
+  const recognitionSupportPlan = input.recognitionSupportPlan ?? null;
+  const requiredRecognitionGaps =
+    recognitionSupportPlan?.gaps.filter((gap) => gap.severity === "required") ?? [];
   const readinessSupportScore = roundScore(
-    clampScore(safetyScore * 0.55 + evidenceCoverageScore * 0.25 + (100 - riskScore) * 0.2 - evidenceGapPenalty),
+    clampScore(
+      safetyScore * 0.55 +
+        evidenceCoverageScore * 0.25 +
+        (100 - riskScore) * 0.2 -
+        evidenceGapPenalty -
+        requiredRecognitionGaps.length * 6,
+    ),
   );
   const reviewState = input.reviewState ?? "draft";
   const requiredReview =
@@ -203,12 +215,14 @@ export function computeSaferGuidedJudgement(input: SaferJudgementInput): SaferJu
     readinessSupportScore < 60 ||
     missingCategories.includes("child") ||
     missingCategories.includes("protection_and_safety") ||
-    specialistFlags.includes("family_violence");
+    specialistFlags.includes("family_violence") ||
+    requiredRecognitionGaps.length > 0;
   const flags = [
     ...(riskScore >= 65 ? ["High risk judgement requires supervisor review."] : []),
     ...(missingCategories.length ? [`Missing SAFER evidence categories: ${missingCategories.join(", ")}.`] : []),
     ...(specialistFlags.includes("family_violence") ? ["Family violence flag requires specialist risk review."] : []),
     ...(input.evidenceGapCount > 0 ? [`${input.evidenceGapCount} evidence gap(s) remain unresolved.`] : []),
+    ...requiredRecognitionGaps.map((gap) => gap.label),
     ...(reviewState !== "reviewed" ? [`Assessment is ${reviewState}; do not use as final decision evidence.`] : []),
   ];
   const recommendation =
