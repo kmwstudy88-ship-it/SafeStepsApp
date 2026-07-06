@@ -18,7 +18,11 @@ type CardProps = {
 
 export function ParentChildShell({ title, subtitle, children }: ShellProps) {
   return (
-    <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
+    <ScrollView
+      style={styles.screen}
+      contentContainerStyle={styles.content}
+      contentInsetAdjustmentBehavior="automatic"
+    >
       <View style={styles.header}>
         <Text style={styles.kicker}>SafeSteps Parent-Child Section</Text>
         <Text style={styles.title}>{title}</Text>
@@ -60,6 +64,47 @@ export function ParentChildCard({ title, description, badge, href, children }: C
   );
 }
 
+export function ParentChildMetric({ label, value, tone = "default" }: { label: string; value: string | number; tone?: "default" | "alert" }) {
+  return (
+    <View style={[styles.metric, tone === "alert" ? styles.metricAlert : null]}>
+      <Text style={styles.metricValue}>{value}</Text>
+      <Text style={styles.metricLabel}>{label}</Text>
+    </View>
+  );
+}
+
+export function ParentChildActionRow({ children }: { children: React.ReactNode }) {
+  return <View style={styles.actionRow}>{children}</View>;
+}
+
+export function ParentChildButton({
+  label,
+  onPress,
+  disabled,
+  variant = "primary",
+}: {
+  label: string;
+  onPress?: () => void;
+  disabled?: boolean;
+  variant?: "primary" | "secondary";
+}) {
+  return (
+    <Pressable
+      style={[
+        styles.button,
+        variant === "secondary" ? styles.secondaryButton : null,
+        disabled ? styles.disabledButton : null,
+      ]}
+      onPress={onPress}
+      disabled={disabled}
+    >
+      <Text style={[styles.buttonText, variant === "secondary" ? styles.secondaryButtonText : null]}>
+        {label}
+      </Text>
+    </Pressable>
+  );
+}
+
 export function BackToParentChildHome() {
   return (
     <Link href={"/parent-child" as Href} asChild>
@@ -94,12 +139,12 @@ const styles = StyleSheet.create({
   content: {
     padding: 20,
     paddingBottom: 48,
+    gap: 14,
   },
   header: {
     backgroundColor: "#D9E8DC",
     borderRadius: 24,
     padding: 20,
-    marginBottom: 14,
     borderWidth: 1,
     borderColor: "#C4D7C8",
   },
@@ -126,7 +171,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF9E8",
     borderRadius: 18,
     padding: 16,
-    marginBottom: 14,
     borderWidth: 1,
     borderColor: "#E8DCA9",
   },
@@ -145,7 +189,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderRadius: 20,
     padding: 18,
-    marginBottom: 12,
     borderWidth: 1,
     borderColor: "#D7E2DA",
   },
@@ -175,6 +218,65 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 999,
+    overflow: "hidden",
+    textTransform: "capitalize",
+  },
+  metric: {
+    flex: 1,
+    minWidth: 112,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 18,
+    padding: 16,
+    borderWidth: 1,
+    borderColor: "#D7E2DA",
+  },
+  metricAlert: {
+    backgroundColor: "#FFF9E8",
+    borderColor: "#E8DCA9",
+  },
+  metricValue: {
+    color: "#20382B",
+    fontSize: 26,
+    fontWeight: "900",
+    fontVariant: ["tabular-nums"],
+  },
+  metricLabel: {
+    color: "#53665A",
+    fontSize: 13,
+    fontWeight: "800",
+    lineHeight: 18,
+    marginTop: 4,
+  },
+  actionRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+    marginTop: 12,
+  },
+  button: {
+    flexGrow: 1,
+    backgroundColor: "#20382B",
+    paddingVertical: 12,
+    paddingHorizontal: 14,
+    borderRadius: 14,
+    alignItems: "center",
+    minWidth: 120,
+  },
+  secondaryButton: {
+    backgroundColor: "#D9E8DC",
+    borderWidth: 1,
+    borderColor: "#C4D7C8",
+  },
+  disabledButton: {
+    opacity: 0.55,
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontWeight: "900",
+    textAlign: "center",
+  },
+  secondaryButtonText: {
+    color: "#20382B",
   },
   backButton: {
     backgroundColor: "#D9E8DC",

@@ -60,7 +60,7 @@ export async function uploadEvidenceFile(uri: string, fileName?: string, mimeTyp
   const path = `${userId}/evidence-${Date.now()}.${safeExtension}`;
 
   const { error } = await supabase.storage.from("evidence").upload(path, blob, {
-    contentType: mimeType ?? blob.type || "application/octet-stream",
+    contentType: mimeType ?? (blob.type || "application/octet-stream"),
     upsert: false,
   });
 

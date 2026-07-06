@@ -1,0 +1,66 @@
+{
+  "module_id": "parent_identity_background",
+  "version": "1.0.0",
+  "title": "Parent Identity & Background",
+  "description": "Foundational identity, history, and contextual background for the parent.",
+  "branching": {
+    "path": "parent_type",
+    "options": ["mother", "father"],
+    "conditional_rules": [
+      {
+        "if": "parent_type == 'mother'",
+        "load": ["mother_specific_items"]
+      },
+      {
+        "if": "parent_type == 'father'",
+        "load": ["father_specific_items"]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "section_id": "identity_core",
+      "title": "Core Identity",
+      "items": [
+        {
+          "id": "id_full_name",
+          "type": "text",
+          "label": "Full legal name",
+          "required": true
+        },
+        {
+          "id": "id_preferred_name",
+          "type": "text",
+          "label": "Preferred name",
+          "required": false
+        },
+        {
+          "id": "id_parent_type",
+          "type": "single_select",
+          "label": "Parent type",
+          "options": ["Mother", "Father"],
+          "required": true
+        },
+        {
+          "id": "id_date_of_birth",
+          "type": "date",
+          "label": "Date of birth",
+          "required": true
+        },
+        {
+          "id": "id_primary_language",
+          "type": "single_select",
+          "label": "Primary language",
+          "options": ["English", "Other"],
+          "required": true
+        },
+        {
+          "id": "id_cultural_identity",
+          "type": "text",
+          "label": "Cultural identity / background",
+          "required": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,15 @@
 {
+  "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react-native",
+    "strict": true,
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -12,16 +21,19 @@
       "@styles/*": [
         "lib/styles/*"
       ]
-    }
+    },
+    "types": ["react", "react-native"],
+    "ignoreDeprecations": "6.0"
   },
   "include": [
     "app/**/*.ts",
     "app/**/*.tsx",
     "lib/**/*.ts",
     "lib/**/*.tsx",
+    "src",
+    "App.tsx",
     "app.config.ts",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ],
-  "extends": "expo/tsconfig.base"
+  ]
 }
