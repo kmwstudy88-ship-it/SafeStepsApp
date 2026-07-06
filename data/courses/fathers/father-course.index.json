@@ -1,0 +1,154 @@
+{
+  "id": "strong-fathers-safe-children",
+  "slug": "strong-fathers-safe-children",
+  "title": "Strong Fathers, Safe Children",
+  "subtitle": "SafeSteps Father Pathway",
+  "version": "1.0.0",
+  "status": "draft",
+  "audience": [
+    "fathers",
+    "male carers",
+    "separated fathers",
+    "fathers involved with Child Safety",
+    "reunification fathers"
+  ],
+  "durationOptions": [
+    {
+      "id": "father-reset-12-week",
+      "title": "12-week Father Reset",
+      "durationWeeks": 12,
+      "riskLevel": "general"
+    },
+    {
+      "id": "build-strong-fathers-6-month",
+      "title": "6-month Build Strong Fathers",
+      "durationMonths": 6,
+      "riskLevel": "low"
+    },
+    {
+      "id": "back-on-track-dads-12-month",
+      "title": "12-month Back on Track Dads",
+      "durationMonths": 12,
+      "riskLevel": "medium"
+    },
+    {
+      "id": "keeping-children-safe-with-dad-18-month",
+      "title": "18-month Keeping Children Safe With Dad",
+      "durationMonths": 18,
+      "riskLevel": "high"
+    },
+    {
+      "id": "reunification-father-pathway-24-month",
+      "title": "24-month Reunification Father Pathway",
+      "durationMonths": 24,
+      "riskLevel": "reunification"
+    },
+    {
+      "id": "home-again-dad-extension",
+      "title": "6–12 month Home Again Dad Extension",
+      "durationMonths": "6-12",
+      "riskLevel": "post-reunification"
+    }
+  ],
+  "description": "A father-specific SafeSteps pathway that helps fathers build safe, consistent, child-centred care and document meaningful progress over time.",
+  "principles": [
+    "child-centred",
+    "father-inclusive",
+    "strengths-based",
+    "accountability-focused",
+    "trauma-informed",
+    "evidence-over-time"
+  ],
+  "dashboardSections": [
+    "My Father Role",
+    "Today’s Dad Check-In",
+    "Father Progress Score",
+    "Evidence Vault",
+    "My Child’s Voice",
+    "Safety Plan",
+    "Reports"
+  ],
+  "scoreAreas": [
+    {
+      "id": "safety-emotional-control",
+      "title": "Safety and Emotional Control",
+      "weight": 20,
+      "indicators": [
+        "calm communication",
+        "no intimidation",
+        "uses regulation tools",
+        "safe body language"
+      ]
+    },
+    {
+      "id": "parenting-knowledge",
+      "title": "Parenting Knowledge",
+      "weight": 15,
+      "indicators": [
+        "lesson completion",
+        "child development understanding",
+        "positive discipline knowledge"
+      ]
+    },
+    {
+      "id": "consistency",
+      "title": "Consistency",
+      "weight": 20,
+      "indicators": [
+        "attendance",
+        "follows contact rules",
+        "completed weekly tasks",
+        "routine stability"
+      ]
+    },
+    {
+      "id": "evidence-uploads",
+      "title": "Evidence Uploads",
+      "weight": 15,
+      "indicators": [
+        "home evidence",
+        "routine evidence",
+        "child contact evidence",
+        "service attendance proof"
+      ]
+    },
+    {
+      "id": "child-centred-behaviour",
+      "title": "Child-Centred Behaviour",
+      "weight": 20,
+      "indicators": [
+        "listens to child",
+        "protects child from adult conflict",
+        "responds to child needs",
+        "supports emotional safety"
+      ]
+    },
+    {
+      "id": "accountability-repair",
+      "title": "Accountability and Repair",
+      "weight": 10,
+      "indicators": [
+        "owns behaviour",
+        "reflects honestly",
+        "repairs mistakes",
+        "accepts feedback"
+      ]
+    }
+  ],
+  "moduleFiles": [
+    "modules/01-becoming-a-safe-father.json",
+    "modules/02-father-identity-accountability.json",
+    "modules/03-emotional-regulation-for-fathers.json",
+    "modules/04-child-development-for-fathers.json",
+    "modules/05-attachment-and-connection.json",
+    "modules/06-positive-discipline.json",
+    "modules/07-coparenting-communication.json",
+    "modules/08-family-violence-control-safety.json",
+    "modules/09-mental-health-aod-stability.json",
+    "modules/10-home-routine-care-capacity.json",
+    "modules/11-education-health-involvement.json",
+    "modules/12-reunification-long-term-change.json"
+  ],
+  "totalModules": 12,
+  "totalLessons": 48
+}

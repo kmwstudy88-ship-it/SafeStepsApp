@@ -132,6 +132,7 @@ describe("standalone course helpers", () => {
     ["safesteps-connection-and-regulation", 6],
     ["safesteps-safety-separation-and-coparenting", 9],
     ["safesteps-communication-and-family-conversations", 8],
+    ["strong-fathers-safe-children", 48],
   ])("%s lessons include parent meaning prompts", (courseId, lessonCount) => {
     const course = getCourseById(courseId);
 
@@ -179,5 +180,18 @@ describe("standalone course helpers", () => {
     }, 0);
 
     expect(lessonCount).toBe(47);
+  });
+
+  test("father pathway course is available as a standalone course", () => {
+    const course = getCourseById("strong-fathers-safe-children");
+
+    expect(course?.title).toBe("Strong Fathers, Safe Children");
+    expect(course?.lessons).toHaveLength(48);
+    expect(course?.lessons[0]).toEqual(
+      expect.objectContaining({
+        title: "What Children Need From Fathers",
+        durationMinutes: 25,
+      }),
+    );
   });
 });

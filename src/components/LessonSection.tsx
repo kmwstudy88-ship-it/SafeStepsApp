@@ -1,7 +1,7 @@
 import { useLocalSearchParams } from "expo-router";
 import { ScrollView, ActivityIndicator, View, Text } from "react-native";
-import LessonHeader from "../../src/components/LessonHeader";
-import LessonSection from "../../src/components/LessonSection";
+import LessonHeader from "../../components/LessonHeader";
+import LessonSection from "../../components/LessonSection";
 import { useApp } from "../../safesteps/context";
 
 export default function LessonScreen() {
@@ -38,17 +38,13 @@ export default function LessonScreen() {
     <ScrollView>
       <LessonHeader
         title={lesson.title}
-        level={lesson.level}
-        duration={lesson.duration}
-        category={lesson.category}
+        description={[lesson.level, lesson.duration, lesson.category].filter(Boolean).join(" • ")}
       />
 
       {lesson.sections?.map((section: any, index: number) => (
-        <LessonSection
-          key={index}
-          heading={section.heading}
-          body={section.body}
-        />
+        <LessonSection key={index} title={section.heading}>
+          <Text>{section.body}</Text>
+        </LessonSection>
       ))}
     </ScrollView>
   );

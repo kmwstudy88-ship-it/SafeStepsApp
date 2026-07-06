@@ -40,6 +40,7 @@ const sidebarItems = [
   ["Reports", "/reports"],
   ["Calendar", "/timeline"],
   ["Messages", "/notifications"],
+  ["Parent Child", "/parent-child"],
   ["Resources", "/resources"],
   ["Support", "/facilitator"],
   ["Profile", "/settings"],
@@ -51,8 +52,16 @@ const quickActions = [
   ["Journal Entry", "/growth"],
   ["Assessments", "/assessment-system"],
   ["View Reports", "/reports"],
+  ["Parent Child", "/parent-child"],
   ["Messages", "/notifications"],
   ["Resources", "/resources"],
+] as const;
+
+const evidenceUploadLinks = [
+  ["Daily task uploads", "/tasks"],
+  ["Evidence uploads", "/evidence"],
+  ["Reflection uploads", "/growth"],
+  ["Photo and document uploads", "/evidence-upload"],
 ] as const;
 
 function Sidebar() {
@@ -302,12 +311,22 @@ export default function DashboardScreen() {
               </View>
             </Panel>
 
-            <Panel title="Weekly Evidence Upload">
+            <Panel title="Evidence Upload">
               <View style={styles.evidencePanelBody}>
                 <View style={{ flex: 1, gap: 8 }}>
                   <Text style={styles.panelText}>
                     Keep your progress visible. Consistency builds trust.
                   </Text>
+                  <View style={styles.evidenceUploadList}>
+                    {evidenceUploadLinks.map(([label, href]) => (
+                      <Link key={label} href={href} asChild>
+                        <Pressable style={styles.evidenceUploadLink}>
+                          <Text style={styles.evidenceUploadItem}>{label}</Text>
+                          <Text style={styles.evidenceUploadArrow}>›</Text>
+                        </Pressable>
+                      </Link>
+                    ))}
+                  </View>
                   <Link href="/evidence" asChild>
                     <Pressable style={styles.primaryButton}>
                       <Text style={styles.primaryButtonText}>Upload Evidence</Text>
@@ -357,6 +376,12 @@ export default function DashboardScreen() {
               <Link href="/reports" asChild>
                 <Pressable>
                   <Text style={styles.textLink}>View full report</Text>
+                </Pressable>
+              </Link>
+
+              <Link href="/parent-child" asChild>
+                <Pressable>
+                  <Text style={styles.textLink}>Open parent child dashboard</Text>
                 </Pressable>
               </Link>
             </Panel>
@@ -744,6 +769,32 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     alignItems: "center",
     gap: 22,
+  },
+  evidenceUploadList: {
+    gap: 6,
+    paddingTop: 2,
+  },
+  evidenceUploadLink: {
+    minHeight: 36,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: "rgba(228, 243, 239, 0.62)",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 10,
+    paddingHorizontal: 12,
+  },
+  evidenceUploadItem: {
+    color: colors.tealDeep,
+    fontSize: 14,
+    fontWeight: "900",
+  },
+  evidenceUploadArrow: {
+    color: colors.tealDeep,
+    fontSize: 20,
+    fontWeight: "900",
   },
   quickGrid: {
     flexDirection: "row",

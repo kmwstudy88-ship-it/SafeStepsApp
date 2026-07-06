@@ -1,5 +1,6 @@
 import { supabase } from "../supabase/client";
 import { getOptionalUserId, getSignedInUserId } from "../authSession";
+import { getParentChallengeById } from "../data/safestepsParentChallenges";
 
 export type UserTask = {
   id: string;
@@ -25,6 +26,38 @@ export type CreateUserTaskInput = {
   related_lesson_id?: string | null;
   due_at?: string | null;
 };
+
+export function buildParentChallengeTaskInput(challengeId: string): CreateUserTaskInput {
+  const challenge = getParentChallengeById(challengeId);
+  if (!challenge) {
+    throw new Error("Parent challenge not found.");
+  }
+
+  return {
+    title: challenge.displayTitle,
+    description: [
+      challenge.purpose,
+      "",
+      challenge.quickQuestionBeforeChallenge,
+      "",
+      "Challenge steps:",
+      ...challenge.challengeSteps.map((step, index) => `${index + 1}. ${step}`),
+      "",
+      "Reflection questions:",
+      ...challenge.reflectionQuestions.map((question) => `- ${question}`),
+      "",
+      "Completion checklist:",
+      ...challenge.completionChecklist.map((item) => `- ${item}`),
+      "",
+      `Evidence task: ${challenge.evidenceTask}`,
+      "",
+      `Safety note: ${challenge.safetyNote}`,
+    ].join("\n"),
+    priority: challenge.challengeType === "daily" ? "medium" : "low",
+    category: `parent_challenge:${challenge.category}`,
+    evidence_required: true,
+  };
+}
 
 export async function fetchUserTasks() {
   const userId = await getOptionalUserId();
@@ -79,6 +112,10 @@ export async function createUserTask(input: CreateUserTaskInput) {
   });
 
   return data as UserTask;
+}
+
+export async function createUserTaskFromParentChallenge(challengeId: string) {
+  return createUserTask(buildParentChallengeTaskInput(challengeId));
 }
 
 export async function completeUserTask(taskId: string, taskTitle: string) {

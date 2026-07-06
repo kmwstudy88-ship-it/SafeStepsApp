@@ -1,0 +1,539 @@
+{
+  "id": "reunification-long-term-change",
+  "slug": "reunification-long-term-change",
+  "title": "Reunification and Long-Term Change",
+  "moduleNumber": 12,
+  "description": "Prepare fathers to show sustained change before, during, and after children return home.",
+  "estimatedHours": 2,
+  "required": true,
+  "lessons": [
+    {
+      "id": "reunification-long-term-change-proving-change-over-time",
+      "slug": "proving-change-over-time",
+      "title": "Proving Change Over Time",
+      "lessonNumber": 1,
+      "estimatedMinutes": 25,
+      "lessonType": "core",
+      "summary": "Safe change is shown through repeated behaviour, records, evidence, reflections, and feedback over time.",
+      "learningOutcomes": [
+        "Explain why proving change over time matters for child safety and wellbeing.",
+        "Identify one personal pattern that may affect parenting.",
+        "Create one practical action that can be completed this week."
+      ],
+      "startQuestions": [
+        "What do I already know about this topic?",
+        "How does this affect my child?",
+        "What have I struggled with before?",
+        "What would my child need to see from me?",
+        "What is one change I can practise this week?"
+      ],
+      "content": [
+        {
+          "heading": "Proving Change Over Time",
+          "body": "Safe change is shown through repeated behaviour, records, evidence, reflections, and feedback over time."
+        },
+        {
+          "heading": "Father practice focus",
+          "body": "This lesson asks fathers to move from words into repeated safe action. Children need predictable behaviour, calm responses, and adults who can place the child’s needs ahead of adult conflict, pride, anger, or fear."
+        },
+        {
+          "heading": "What this looks like in real life",
+          "body": "A father can practise this skill by slowing down, listening carefully, following through, keeping adult topics away from children, and recording evidence of safe routines and progress over time."
+        }
+      ],
+      "activities": [
+        {
+          "id": "proving-change-over-time-activity-1",
+          "title": "My Current Pattern Map",
+          "type": "worksheet",
+          "instructions": [
+            "Write down one situation where this topic shows up in your parenting.",
+            "Describe what usually happens, including thoughts, feelings, words, actions, and the child’s reaction.",
+            "Write one safer response you can practise next time."
+          ],
+          "saveToRecord": true
+        },
+        {
+          "id": "proving-change-over-time-activity-2",
+          "title": "One Safe Action This Week",
+          "type": "real_world_task",
+          "instructions": [
+            "Choose one small action that supports your child’s safety, routine, connection, or trust.",
+            "Complete the action before the next lesson or check-in.",
+            "Upload evidence or write a short note explaining what you did and what changed."
+          ],
+          "saveToRecord": true
+        }
+      ],
+      "quiz": {
+        "id": "proving-change-over-time-quiz",
+        "passingScorePercent": 70,
+        "questions": [
+          {
+            "id": "proving-change-over-time-q1",
+            "question": "Why is proving change over time important in fathering?",
+            "options": [
+              "Because it helps the father win arguments",
+              "Because it supports the child’s safety, trust and wellbeing",
+              "Because it removes the need for routines",
+              "Because it means the child should ignore their feelings"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Fathering progress is measured by child safety, trust, wellbeing and repeated safe behaviour."
+          },
+          {
+            "id": "proving-change-over-time-q2",
+            "question": "What is the safest first step when a father feels triggered?",
+            "options": [
+              "Pause and regulate before responding",
+              "Raise his voice so he is heard",
+              "Blame the other parent",
+              "Tell the child to stop feeling upset"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "A pause gives the father time to choose a calm and safer response."
+          },
+          {
+            "id": "proving-change-over-time-q3",
+            "question": "What best shows real change over time?",
+            "options": [
+              "One promise",
+              "Repeated safe behaviour supported by evidence and reflection",
+              "Avoiding all feedback",
+              "Only saying what professionals want to hear"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Safe change is shown through repeated behaviour, honest reflection, and records over time."
+          }
+        ]
+      },
+      "reflection": {
+        "required": true,
+        "prompts": [
+          "What did this lesson help me understand about my child?",
+          "What is one behaviour I need to keep practising?",
+          "What evidence could show I am making this change?",
+          "What support do I need to stay consistent?"
+        ]
+      },
+      "evidenceUpload": {
+        "required": false,
+        "acceptedTypes": [
+          "photo",
+          "document",
+          "screenshot",
+          "written_reflection",
+          "routine_record"
+        ],
+        "prompts": [
+          "Upload a photo, document, checklist, routine record, or written reflection that shows your safe action this week.",
+          "Do not upload anything that exposes a child’s private information unless it is safe and authorised."
+        ]
+      },
+      "caseNotePrompt": "Record any observed strengths, risk concerns, behaviour change, father engagement, and recommended next steps.",
+      "tags": [
+        "fathers",
+        "father-pathway",
+        "reunification-long-term-change",
+        "child-centred",
+        "evidence-based"
+      ]
+    },
+    {
+      "id": "reunification-long-term-change-contact-visits-emotional-safety",
+      "slug": "contact-visits-emotional-safety",
+      "title": "Contact Visits and Emotional Safety",
+      "lessonNumber": 2,
+      "estimatedMinutes": 25,
+      "lessonType": "core",
+      "summary": "Contact should protect the child from pressure, conflict, disappointment, and adult topics.",
+      "learningOutcomes": [
+        "Explain why contact visits and emotional safety matters for child safety and wellbeing.",
+        "Identify one personal pattern that may affect parenting.",
+        "Create one practical action that can be completed this week."
+      ],
+      "startQuestions": [
+        "What do I already know about this topic?",
+        "How does this affect my child?",
+        "What have I struggled with before?",
+        "What would my child need to see from me?",
+        "What is one change I can practise this week?"
+      ],
+      "content": [
+        {
+          "heading": "Contact Visits and Emotional Safety",
+          "body": "Contact should protect the child from pressure, conflict, disappointment, and adult topics."
+        },
+        {
+          "heading": "Father practice focus",
+          "body": "This lesson asks fathers to move from words into repeated safe action. Children need predictable behaviour, calm responses, and adults who can place the child’s needs ahead of adult conflict, pride, anger, or fear."
+        },
+        {
+          "heading": "What this looks like in real life",
+          "body": "A father can practise this skill by slowing down, listening carefully, following through, keeping adult topics away from children, and recording evidence of safe routines and progress over time."
+        }
+      ],
+      "activities": [
+        {
+          "id": "contact-visits-emotional-safety-activity-1",
+          "title": "My Current Pattern Map",
+          "type": "worksheet",
+          "instructions": [
+            "Write down one situation where this topic shows up in your parenting.",
+            "Describe what usually happens, including thoughts, feelings, words, actions, and the child’s reaction.",
+            "Write one safer response you can practise next time."
+          ],
+          "saveToRecord": true
+        },
+        {
+          "id": "contact-visits-emotional-safety-activity-2",
+          "title": "One Safe Action This Week",
+          "type": "real_world_task",
+          "instructions": [
+            "Choose one small action that supports your child’s safety, routine, connection, or trust.",
+            "Complete the action before the next lesson or check-in.",
+            "Upload evidence or write a short note explaining what you did and what changed."
+          ],
+          "saveToRecord": true
+        }
+      ],
+      "quiz": {
+        "id": "contact-visits-emotional-safety-quiz",
+        "passingScorePercent": 70,
+        "questions": [
+          {
+            "id": "contact-visits-emotional-safety-q1",
+            "question": "Why is contact visits and emotional safety important in fathering?",
+            "options": [
+              "Because it helps the father win arguments",
+              "Because it supports the child’s safety, trust and wellbeing",
+              "Because it removes the need for routines",
+              "Because it means the child should ignore their feelings"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Fathering progress is measured by child safety, trust, wellbeing and repeated safe behaviour."
+          },
+          {
+            "id": "contact-visits-emotional-safety-q2",
+            "question": "What is the safest first step when a father feels triggered?",
+            "options": [
+              "Pause and regulate before responding",
+              "Raise his voice so he is heard",
+              "Blame the other parent",
+              "Tell the child to stop feeling upset"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "A pause gives the father time to choose a calm and safer response."
+          },
+          {
+            "id": "contact-visits-emotional-safety-q3",
+            "question": "What best shows real change over time?",
+            "options": [
+              "One promise",
+              "Repeated safe behaviour supported by evidence and reflection",
+              "Avoiding all feedback",
+              "Only saying what professionals want to hear"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Safe change is shown through repeated behaviour, honest reflection, and records over time."
+          }
+        ]
+      },
+      "reflection": {
+        "required": true,
+        "prompts": [
+          "What did this lesson help me understand about my child?",
+          "What is one behaviour I need to keep practising?",
+          "What evidence could show I am making this change?",
+          "What support do I need to stay consistent?"
+        ]
+      },
+      "evidenceUpload": {
+        "required": false,
+        "acceptedTypes": [
+          "photo",
+          "document",
+          "screenshot",
+          "written_reflection",
+          "routine_record"
+        ],
+        "prompts": [
+          "Upload a photo, document, checklist, routine record, or written reflection that shows your safe action this week.",
+          "Do not upload anything that exposes a child’s private information unless it is safe and authorised."
+        ]
+      },
+      "caseNotePrompt": "Record any observed strengths, risk concerns, behaviour change, father engagement, and recommended next steps.",
+      "tags": [
+        "fathers",
+        "father-pathway",
+        "reunification-long-term-change",
+        "child-centred",
+        "evidence-based"
+      ]
+    },
+    {
+      "id": "reunification-long-term-change-preparing-children-coming-home",
+      "slug": "preparing-children-coming-home",
+      "title": "Preparing For Children Coming Home",
+      "lessonNumber": 3,
+      "estimatedMinutes": 25,
+      "lessonType": "core",
+      "summary": "Reunification requires routines, home safety, emotional preparation, school planning, and support systems.",
+      "learningOutcomes": [
+        "Explain why preparing for children coming home matters for child safety and wellbeing.",
+        "Identify one personal pattern that may affect parenting.",
+        "Create one practical action that can be completed this week."
+      ],
+      "startQuestions": [
+        "What do I already know about this topic?",
+        "How does this affect my child?",
+        "What have I struggled with before?",
+        "What would my child need to see from me?",
+        "What is one change I can practise this week?"
+      ],
+      "content": [
+        {
+          "heading": "Preparing For Children Coming Home",
+          "body": "Reunification requires routines, home safety, emotional preparation, school planning, and support systems."
+        },
+        {
+          "heading": "Father practice focus",
+          "body": "This lesson asks fathers to move from words into repeated safe action. Children need predictable behaviour, calm responses, and adults who can place the child’s needs ahead of adult conflict, pride, anger, or fear."
+        },
+        {
+          "heading": "What this looks like in real life",
+          "body": "A father can practise this skill by slowing down, listening carefully, following through, keeping adult topics away from children, and recording evidence of safe routines and progress over time."
+        }
+      ],
+      "activities": [
+        {
+          "id": "preparing-children-coming-home-activity-1",
+          "title": "My Current Pattern Map",
+          "type": "worksheet",
+          "instructions": [
+            "Write down one situation where this topic shows up in your parenting.",
+            "Describe what usually happens, including thoughts, feelings, words, actions, and the child’s reaction.",
+            "Write one safer response you can practise next time."
+          ],
+          "saveToRecord": true
+        },
+        {
+          "id": "preparing-children-coming-home-activity-2",
+          "title": "One Safe Action This Week",
+          "type": "real_world_task",
+          "instructions": [
+            "Choose one small action that supports your child’s safety, routine, connection, or trust.",
+            "Complete the action before the next lesson or check-in.",
+            "Upload evidence or write a short note explaining what you did and what changed."
+          ],
+          "saveToRecord": true
+        }
+      ],
+      "quiz": {
+        "id": "preparing-children-coming-home-quiz",
+        "passingScorePercent": 70,
+        "questions": [
+          {
+            "id": "preparing-children-coming-home-q1",
+            "question": "Why is preparing for children coming home important in fathering?",
+            "options": [
+              "Because it helps the father win arguments",
+              "Because it supports the child’s safety, trust and wellbeing",
+              "Because it removes the need for routines",
+              "Because it means the child should ignore their feelings"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Fathering progress is measured by child safety, trust, wellbeing and repeated safe behaviour."
+          },
+          {
+            "id": "preparing-children-coming-home-q2",
+            "question": "What is the safest first step when a father feels triggered?",
+            "options": [
+              "Pause and regulate before responding",
+              "Raise his voice so he is heard",
+              "Blame the other parent",
+              "Tell the child to stop feeling upset"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "A pause gives the father time to choose a calm and safer response."
+          },
+          {
+            "id": "preparing-children-coming-home-q3",
+            "question": "What best shows real change over time?",
+            "options": [
+              "One promise",
+              "Repeated safe behaviour supported by evidence and reflection",
+              "Avoiding all feedback",
+              "Only saying what professionals want to hear"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Safe change is shown through repeated behaviour, honest reflection, and records over time."
+          }
+        ]
+      },
+      "reflection": {
+        "required": true,
+        "prompts": [
+          "What did this lesson help me understand about my child?",
+          "What is one behaviour I need to keep practising?",
+          "What evidence could show I am making this change?",
+          "What support do I need to stay consistent?"
+        ]
+      },
+      "evidenceUpload": {
+        "required": false,
+        "acceptedTypes": [
+          "photo",
+          "document",
+          "screenshot",
+          "written_reflection",
+          "routine_record"
+        ],
+        "prompts": [
+          "Upload a photo, document, checklist, routine record, or written reflection that shows your safe action this week.",
+          "Do not upload anything that exposes a child’s private information unless it is safe and authorised."
+        ]
+      },
+      "caseNotePrompt": "Record any observed strengths, risk concerns, behaviour change, father engagement, and recommended next steps.",
+      "tags": [
+        "fathers",
+        "father-pathway",
+        "reunification-long-term-change",
+        "child-centred",
+        "evidence-based"
+      ]
+    },
+    {
+      "id": "reunification-long-term-change-staying-consistent-after-case-closes",
+      "slug": "staying-consistent-after-case-closes",
+      "title": "Staying Consistent After the Case Closes",
+      "lessonNumber": 4,
+      "estimatedMinutes": 25,
+      "lessonType": "core",
+      "summary": "Long-term safety means continuing the same protective routines and supports when monitoring reduces.",
+      "learningOutcomes": [
+        "Explain why staying consistent after the case closes matters for child safety and wellbeing.",
+        "Identify one personal pattern that may affect parenting.",
+        "Create one practical action that can be completed this week."
+      ],
+      "startQuestions": [
+        "What do I already know about this topic?",
+        "How does this affect my child?",
+        "What have I struggled with before?",
+        "What would my child need to see from me?",
+        "What is one change I can practise this week?"
+      ],
+      "content": [
+        {
+          "heading": "Staying Consistent After the Case Closes",
+          "body": "Long-term safety means continuing the same protective routines and supports when monitoring reduces."
+        },
+        {
+          "heading": "Father practice focus",
+          "body": "This lesson asks fathers to move from words into repeated safe action. Children need predictable behaviour, calm responses, and adults who can place the child’s needs ahead of adult conflict, pride, anger, or fear."
+        },
+        {
+          "heading": "What this looks like in real life",
+          "body": "A father can practise this skill by slowing down, listening carefully, following through, keeping adult topics away from children, and recording evidence of safe routines and progress over time."
+        }
+      ],
+      "activities": [
+        {
+          "id": "staying-consistent-after-case-closes-activity-1",
+          "title": "My Current Pattern Map",
+          "type": "worksheet",
+          "instructions": [
+            "Write down one situation where this topic shows up in your parenting.",
+            "Describe what usually happens, including thoughts, feelings, words, actions, and the child’s reaction.",
+            "Write one safer response you can practise next time."
+          ],
+          "saveToRecord": true
+        },
+        {
+          "id": "staying-consistent-after-case-closes-activity-2",
+          "title": "One Safe Action This Week",
+          "type": "real_world_task",
+          "instructions": [
+            "Choose one small action that supports your child’s safety, routine, connection, or trust.",
+            "Complete the action before the next lesson or check-in.",
+            "Upload evidence or write a short note explaining what you did and what changed."
+          ],
+          "saveToRecord": true
+        }
+      ],
+      "quiz": {
+        "id": "staying-consistent-after-case-closes-quiz",
+        "passingScorePercent": 70,
+        "questions": [
+          {
+            "id": "staying-consistent-after-case-closes-q1",
+            "question": "Why is staying consistent after the case closes important in fathering?",
+            "options": [
+              "Because it helps the father win arguments",
+              "Because it supports the child’s safety, trust and wellbeing",
+              "Because it removes the need for routines",
+              "Because it means the child should ignore their feelings"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Fathering progress is measured by child safety, trust, wellbeing and repeated safe behaviour."
+          },
+          {
+            "id": "staying-consistent-after-case-closes-q2",
+            "question": "What is the safest first step when a father feels triggered?",
+            "options": [
+              "Pause and regulate before responding",
+              "Raise his voice so he is heard",
+              "Blame the other parent",
+              "Tell the child to stop feeling upset"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "A pause gives the father time to choose a calm and safer response."
+          },
+          {
+            "id": "staying-consistent-after-case-closes-q3",
+            "question": "What best shows real change over time?",
+            "options": [
+              "One promise",
+              "Repeated safe behaviour supported by evidence and reflection",
+              "Avoiding all feedback",
+              "Only saying what professionals want to hear"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Safe change is shown through repeated behaviour, honest reflection, and records over time."
+          }
+        ]
+      },
+      "reflection": {
+        "required": true,
+        "prompts": [
+          "What did this lesson help me understand about my child?",
+          "What is one behaviour I need to keep practising?",
+          "What evidence could show I am making this change?",
+          "What support do I need to stay consistent?"
+        ]
+      },
+      "evidenceUpload": {
+        "required": false,
+        "acceptedTypes": [
+          "photo",
+          "document",
+          "screenshot",
+          "written_reflection",
+          "routine_record"
+        ],
+        "prompts": [
+          "Upload a photo, document, checklist, routine record, or written reflection that shows your safe action this week.",
+          "Do not upload anything that exposes a child’s private information unless it is safe and authorised."
+        ]
+      },
+      "caseNotePrompt": "Record any observed strengths, risk concerns, behaviour change, father engagement, and recommended next steps.",
+      "tags": [
+        "fathers",
+        "father-pathway",
+        "reunification-long-term-change",
+        "child-centred",
+        "evidence-based"
+      ]
+    }
+  ]
+}

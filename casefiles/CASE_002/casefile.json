@@ -1,0 +1,78 @@
+{
+    "case_id":  "CASE_002",
+    "parents":  [
+                    {
+                        "parent_id":  "MOTHER_002",
+                        "parenting_behaviors":  {
+                                                    "responsiveness_to_child_distress":  "",
+                                                    "discipline_style":  "",
+                                                    "attunement_examples":  ""
+                                                },
+                        "protective_capacities":  {
+                                                      "safety_planning_behavior":  "",
+                                                      "trauma_awareness":  "",
+                                                      "supervision_quality":  "",
+                                                      "emotional_regulation":  ""
+                                                  },
+                        "identity":  {
+                                         "primary_responsibilities":  [
+
+                                                                      ],
+                                         "name":  "",
+                                         "legal_status":  ""
+                                     },
+                        "role":  "mother",
+                        "risk_indicators":  {
+                                                "mental_health_risk":  "",
+                                                "exposure_to_violence":  "",
+                                                "coercive_control_patterns":  "",
+                                                "substance_use_flags":  ""
+                                            },
+                        "engagement":  {
+                                           "attendance":  "",
+                                           "homework_completion":  "",
+                                           "reflective_insights":  ""
+                                       },
+                        "account_linked":  false
+                    },
+                    {
+                        "parent_id":  "FATHER_002",
+                        "parenting_behaviors":  {
+                                                    "responsiveness_to_child_distress":  "",
+                                                    "discipline_style":  "",
+                                                    "attunement_examples":  ""
+                                                },
+                        "protective_capacities":  {
+                                                      "safety_planning_behavior":  "",
+                                                      "trauma_awareness":  "",
+                                                      "supervision_quality":  "",
+                                                      "emotional_regulation":  ""
+                                                  },
+                        "identity":  {
+                                         "primary_responsibilities":  [
+
+                                                                      ],
+                                         "name":  "",
+                                         "legal_status":  ""
+                                     },
+                        "role":  "father",
+                        "risk_indicators":  {
+                                                "mental_health_risk":  "",
+                                                "exposure_to_violence":  "",
+                                                "coercive_control_patterns":  "",
+                                                "substance_use_flags":  ""
+                                            },
+                        "engagement":  {
+                                           "attendance":  "",
+                                           "homework_completion":  "",
+                                           "reflective_insights":  ""
+                                       },
+                        "account_linked":  false
+                    }
+                ],
+    "account_mode":  "dual",
+    "children":  [
+
+                 ]
+}
+

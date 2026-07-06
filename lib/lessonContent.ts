@@ -1,4 +1,6 @@
+import { safestepsLessonCurriculum1To47 } from "./data/safestepsLessonCurriculum1To47";
 import { safestepsLessonCurriculum48To95 } from "./data/safestepsLessonCurriculum48To95";
+import { safestepsExpandedLessonCurriculum252To780 } from "./data/safestepsExpandedLessonCurriculum252To780";
 import { oneDriveLessonLibrary } from "./data/oneDriveLessonLibrary";
 import { oneDriveDeepLessonLibrary } from "./data/oneDriveDeepLessonLibrary";
 
@@ -122,6 +124,41 @@ const starterLessons: AppLesson[] = [
   },
 ];
 
+const foundationCurriculumLessons: AppLesson[] = safestepsLessonCurriculum1To47.map((lesson) => ({
+  id: `foundation-${lesson.slug}`,
+  week: lesson.id,
+  title: lesson.title,
+  summary: lesson.learningPurpose,
+  estimatedMinutes: lesson.durationMinutes.recommended,
+  sections: [
+    {
+      heading: "Before you begin",
+      body: lesson.beforeQuestion,
+    },
+    {
+      heading: "Teaching transcript",
+      body: lesson.transcript,
+    },
+    {
+      heading: "Practice activity",
+      body: lesson.practiceActivity,
+    },
+    {
+      heading: "Knowledge check",
+      body: `${lesson.quiz.question} ${lesson.quiz.answer}. ${lesson.quiz.explanation}`,
+    },
+    {
+      heading: "Evidence task",
+      body: lesson.evidenceTask,
+    },
+  ],
+  actions: [
+    ...lesson.learningOutcomes,
+    lesson.changeInUnderstandingQuestion,
+    lesson.afterQuestion,
+  ],
+}));
+
 const productionCurriculumLessons: AppLesson[] = safestepsLessonCurriculum48To95.map((lesson) => ({
   id: lesson.slug,
   week: lesson.lessonNumber,
@@ -151,6 +188,41 @@ const productionCurriculumLessons: AppLesson[] = safestepsLessonCurriculum48To95
     lesson.practiceActivity,
     lesson.afterQuestion,
   ],
+}));
+
+const expandedCurriculumLessons: AppLesson[] = safestepsExpandedLessonCurriculum252To780.map((lesson, index) => ({
+  id: lesson.slug || lesson.id,
+  week: 3000 + index + 1,
+  title: lesson.title,
+  summary: lesson.learningPurpose,
+  estimatedMinutes: lesson.standardDurationMinutes,
+  sections: [
+    {
+      heading: "Before you begin",
+      body: lesson.beforeQuestion,
+    },
+    {
+      heading: "Teaching transcript",
+      body: lesson.teachingTranscript,
+    },
+    {
+      heading: "Practice activities",
+      body: [lesson.lessonPlan, lesson.practiceActivities].filter(Boolean).join("\n\n"),
+    },
+    {
+      heading: "Knowledge check",
+      body: lesson.knowledgeCheck,
+    },
+    {
+      heading: "Evidence task",
+      body: lesson.evidenceTask,
+    },
+  ],
+  actions: [
+    ...lesson.learningOutcomes,
+    lesson.reflectionQuestions,
+    lesson.afterQuestion,
+  ].filter(Boolean),
 }));
 
 const oneDriveLessons: AppLesson[] = oneDriveLessonLibrary.map((lesson, index) => ({
@@ -224,7 +296,9 @@ const oneDriveDeepLessons: AppLesson[] = oneDriveDeepLessonLibrary.map((lesson, 
 
 export const appLessons: AppLesson[] = [
   ...starterLessons,
+  ...foundationCurriculumLessons,
   ...productionCurriculumLessons,
+  ...expandedCurriculumLessons,
   ...oneDriveLessons,
   ...oneDriveDeepLessons,
 ];
