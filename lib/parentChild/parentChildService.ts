@@ -36,12 +36,34 @@ export type ChildRequestResponse = {
   created_at: string;
 };
 
+export type ParentChildMessage = {
+  id: string;
+  child_user_id: string;
+  parent_user_id: string | null;
+  caseworker_user_id: string | null;
+  sender_user_id: string;
+  sender_role: "child" | "parent" | "caseworker";
+  message_text: string;
+  share_audience: "private" | "parent" | "caseworker" | "both";
+  monitoring_status: "open" | "reviewed" | "follow_up" | "closed";
+  monitoring_note: string | null;
+  visible_to_child: boolean;
+  visible_to_parent: boolean;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
 export type ParentChildOverview = {
   sharedItemCount: number;
   requestCount: number;
   openRequestCount: number;
+  messageCount: number;
+  openMessageCount: number;
   latestSharedItem: ChildSharedItem | null;
   latestRequest: ChildRequest | null;
+  latestMessage: ParentChildMessage | null;
 };
 
 export async function getParentChildSharedItems() {
@@ -72,18 +94,36 @@ export async function getParentChildRequests() {
   return (data ?? []) as ChildRequest[];
 }
 
+export async function getParentChildMessages() {
+  const { data, error } = await supabase
+    .from("parent_child_messages")
+    .select("*")
+    .in("share_audience", ["parent", "both"])
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return (data ?? []) as ParentChildMessage[];
+}
+
 export async function getParentChildOverview(): Promise<ParentChildOverview> {
-  const [sharedItems, requests] = await Promise.all([
+  const [sharedItems, requests, messages] = await Promise.all([
     getParentChildSharedItems(),
     getParentChildRequests(),
+    getParentChildMessages(),
   ]);
 
   return {
     sharedItemCount: sharedItems.length,
     requestCount: requests.length,
     openRequestCount: requests.filter((request) => request.status !== "completed").length,
+    messageCount: messages.length,
+    openMessageCount: messages.filter((message) => message.monitoring_status !== "closed").length,
     latestSharedItem: sharedItems[0] ?? null,
     latestRequest: requests[0] ?? null,
+    latestMessage: messages[0] ?? null,
   };
 }
 
@@ -155,4 +195,81 @@ export async function createChildRequestResponse(input: {
   }
 
   return data as ChildRequestResponse;
+}
+
+export async function createParentChildMessage(input: {
+  childUserId: string;
+  parentUserId?: string | null;
+  caseworkerUserId?: string | null;
+  messageText: string;
+  visibleToChild: boolean;
+}) {
+  const { data: userData, error: userError } = await supabase.auth.getUser();
+
+  if (userError) {
+    throw new Error(userError.message);
+  }
+
+  if (!userData.user?.id) {
+    throw new Error("You need to be signed in before sending a monitored message.");
+  }
+
+  const { data, error } = await supabase
+    .from("parent_child_messages")
+    .insert({
+      child_user_id: input.childUserId,
+      parent_user_id: input.parentUserId ?? userData.user.id,
+      caseworker_user_id: input.caseworkerUserId ?? null,
+      sender_user_id: userData.user.id,
+      sender_role: "parent",
+      message_text: input.messageText.trim(),
+      share_audience: "parent",
+      visible_to_child: input.visibleToChild,
+      visible_to_parent: true,
+      monitoring_status: "open",
+    })
+    .select()
+    .single();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data as ParentChildMessage;
+}
+
+export async function updateParentChildMessageMonitoring(
+  messageId: string,
+  input: {
+    monitoringStatus: ParentChildMessage["monitoring_status"];
+    monitoringNote?: string;
+  },
+) {
+  const { data: userData, error: userError } = await supabase.auth.getUser();
+
+  if (userError) {
+    throw new Error(userError.message);
+  }
+
+  if (!userData.user?.id) {
+    throw new Error("You need to be signed in before updating monitoring status.");
+  }
+
+  const { data, error } = await supabase
+    .from("parent_child_messages")
+    .update({
+      monitoring_status: input.monitoringStatus,
+      monitoring_note: input.monitoringNote?.trim() || null,
+      reviewed_by: userData.user.id,
+      reviewed_at: new Date().toISOString(),
+    })
+    .eq("id", messageId)
+    .select()
+    .single();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data as ParentChildMessage;
 }
