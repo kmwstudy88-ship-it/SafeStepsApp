@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   ActivityIndicator,
   Pressable,
@@ -7,14 +7,28 @@ import {
   TextInput,
   View,
 } from "react-native";
+import { Redirect } from "expo-router";
+import * as DocumentPicker from "expo-document-picker";
+import * as ImagePicker from "expo-image-picker";
+
+import { useAuth } from "../../lib/auth";
 import {
   createEvidenceItem,
   EvidenceItem,
   fetchEvidenceItems,
   updateEvidenceItemsStatus,
+  uploadEvidenceFile,
 } from "../../lib/engines/evidenceEngine";
 
+type EvidenceAttachment = {
+  uri: string;
+  name: string;
+  mimeType?: string;
+  source: "document" | "media" | "live";
+};
+
 export default function EvidenceScreen() {
+  const { initializing, user } = useAuth();
   const [items, setItems] = useState<EvidenceItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -24,8 +38,11 @@ export default function EvidenceScreen() {
 
   const [title, setTitle] = useState("");
   const [notes, setNotes] = useState("");
+  const [attachment, setAttachment] = useState<EvidenceAttachment | null>(null);
 
-  async function loadEvidence() {
+  const loadEvidence = useCallback(async () => {
+    if (!user) return;
+
     setLoading(true);
     setError("");
     setMessage("");
@@ -42,7 +59,7 @@ export default function EvidenceScreen() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [user]);
 
   async function handleSaveEvidence() {
     if (title.trim().length === 0 || saving) return;
@@ -52,14 +69,26 @@ export default function EvidenceScreen() {
     setMessage("");
 
     try {
+      const filePath = attachment
+        ? await uploadEvidenceFile(attachment.uri, attachment.name, attachment.mimeType)
+        : null;
+
       await createEvidenceItem({
         title: title.trim(),
-        notes: notes.trim(),
+        notes: [
+          notes.trim(),
+          attachment ? `Attachment source: ${attachment.source}` : "",
+          attachment ? `Attachment name: ${attachment.name}` : "",
+        ]
+          .filter(Boolean)
+          .join("\n"),
+        file_path: filePath,
         status: "stored",
       });
 
       setTitle("");
       setNotes("");
+      setAttachment(null);
       await loadEvidence();
     } catch (saveError) {
       setError(
@@ -69,6 +98,99 @@ export default function EvidenceScreen() {
       );
     } finally {
       setSaving(false);
+    }
+  }
+
+  async function handlePickDocument() {
+    setError("");
+    setMessage("");
+
+    const result = await DocumentPicker.getDocumentAsync({
+      copyToCacheDirectory: true,
+      multiple: false,
+      type: [
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "application/vnd.ms-excel",
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "application/vnd.ms-powerpoint",
+        "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+        "text/plain",
+        "text/csv",
+        "image/*",
+        "video/*",
+      ],
+    });
+
+    if (!result.canceled) {
+      const picked = result.assets[0];
+      setAttachment({
+        uri: picked.uri,
+        name: picked.name,
+        mimeType: picked.mimeType,
+        source: "document",
+      });
+      if (!title.trim()) setTitle(picked.name.replace(/\.[^/.]+$/, ""));
+    }
+  }
+
+  async function handlePickMedia() {
+    setError("");
+    setMessage("");
+
+    const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+    if (!permission.granted) {
+      setError("Photo and video library access is needed to attach evidence.");
+      return;
+    }
+
+    const result = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: false,
+      mediaTypes: ["images", "videos"],
+      quality: 0.8,
+      videoMaxDuration: 90,
+    });
+
+    if (!result.canceled) {
+      const picked = result.assets[0];
+      setAttachment({
+        uri: picked.uri,
+        name: picked.fileName ?? `evidence-${Date.now()}`,
+        mimeType: picked.mimeType,
+        source: "media",
+      });
+    }
+  }
+
+  async function handleCaptureLiveEvidence() {
+    setError("");
+    setMessage("");
+
+    const permission = await ImagePicker.requestCameraPermissionsAsync();
+
+    if (!permission.granted) {
+      setError("Camera access is needed to capture live evidence.");
+      return;
+    }
+
+    const result = await ImagePicker.launchCameraAsync({
+      allowsEditing: false,
+      mediaTypes: ["images", "videos"],
+      quality: 0.8,
+      videoMaxDuration: 90,
+    });
+
+    if (!result.canceled) {
+      const captured = result.assets[0];
+      setAttachment({
+        uri: captured.uri,
+        name: captured.fileName ?? `live-evidence-${Date.now()}`,
+        mimeType: captured.mimeType,
+        source: "live",
+      });
+      if (!title.trim()) setTitle("Live evidence capture");
     }
   }
 
@@ -100,8 +222,18 @@ export default function EvidenceScreen() {
   }
 
   useEffect(() => {
-    loadEvidence();
-  }, []);
+    if (user) {
+      loadEvidence();
+    }
+  }, [loadEvidence, user]);
+
+  if (initializing) {
+    return null;
+  }
+
+  if (!user) {
+    return <Redirect href="/login" />;
+  }
 
   const draftItems = items.filter((item) => item.status === "draft");
 
@@ -159,6 +291,78 @@ export default function EvidenceScreen() {
             textAlignVertical: "top",
           }}
         />
+
+        <View
+          style={{
+            padding: 12,
+            borderWidth: 1,
+            borderColor: "#d8e5dd",
+            borderRadius: 10,
+            marginTop: 10,
+            backgroundColor: "#ffffff",
+          }}
+        >
+          <Text style={{ fontWeight: "bold" }}>Attachment</Text>
+          <Text style={{ marginTop: 6 }}>
+            {attachment
+              ? `${attachment.name} (${attachment.source})`
+              : "No document, photo, video, or live capture attached."}
+          </Text>
+
+          <Pressable
+            onPress={handlePickDocument}
+            style={{
+              marginTop: 10,
+              padding: 12,
+              backgroundColor: "#eef6f2",
+              borderRadius: 10,
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontWeight: "bold" }}>Upload Document</Text>
+          </Pressable>
+
+          <Pressable
+            onPress={handlePickMedia}
+            style={{
+              marginTop: 10,
+              padding: 12,
+              backgroundColor: "#eef6f2",
+              borderRadius: 10,
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontWeight: "bold" }}>Attach Photo or Video</Text>
+          </Pressable>
+
+          <Pressable
+            onPress={handleCaptureLiveEvidence}
+            style={{
+              marginTop: 10,
+              padding: 12,
+              backgroundColor: "#eef6f2",
+              borderRadius: 10,
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ fontWeight: "bold" }}>Capture Live Evidence</Text>
+          </Pressable>
+
+          {attachment ? (
+            <Pressable
+              onPress={() => setAttachment(null)}
+              style={{
+                marginTop: 10,
+                padding: 12,
+                backgroundColor: "#f7eeee",
+                borderRadius: 10,
+                alignItems: "center",
+              }}
+            >
+              <Text style={{ fontWeight: "bold" }}>Remove Attachment</Text>
+            </Pressable>
+          ) : null}
+        </View>
 
         <Pressable
           disabled={title.trim().length === 0 || saving}
@@ -268,6 +472,9 @@ export default function EvidenceScreen() {
         >
           <Text style={{ fontSize: 18, fontWeight: "bold" }}>{item.title}</Text>
           <Text style={{ marginTop: 6 }}>{item.notes}</Text>
+          <Text style={{ marginTop: 6 }}>
+            Attachment: {item.file_path ? "Stored securely" : "No file attached"}
+          </Text>
           <Text style={{ marginTop: 6 }}>Status: {item.status}</Text>
           <Text style={{ marginTop: 6 }}>
             Created: {new Date(item.created_at).toLocaleDateString()}

@@ -17,6 +17,60 @@ export type CreateEvidenceItemInput = {
   status?: "draft" | "stored" | "shared";
 };
 
+function getSafeFileExtension(fileName?: string, mimeType?: string) {
+  const fallbackByMime: Record<string, string> = {
+    "application/pdf": "pdf",
+    "application/msword": "doc",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document": "docx",
+    "application/vnd.ms-excel": "xls",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": "xlsx",
+    "application/vnd.ms-powerpoint": "ppt",
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation": "pptx",
+    "text/plain": "txt",
+    "text/csv": "csv",
+    "image/jpeg": "jpg",
+    "image/png": "png",
+    "image/webp": "webp",
+    "image/heic": "heic",
+    "video/mp4": "mp4",
+    "video/quicktime": "mov",
+    "video/webm": "webm",
+  };
+  const extension = fileName?.split(".").pop() ?? (mimeType ? fallbackByMime[mimeType] : undefined) ?? "bin";
+
+  return extension.replace(/[^a-z0-9]/gi, "").toLowerCase() || "bin";
+}
+
+export async function uploadEvidenceFile(uri: string, fileName?: string, mimeType?: string) {
+  const { data: userData, error: userError } = await supabase.auth.getUser();
+
+  if (userError) {
+    throw new Error(userError.message);
+  }
+
+  const userId = userData.user?.id;
+
+  if (!userId) {
+    throw new Error("No logged-in user found. Sign in before uploading evidence.");
+  }
+
+  const response = await fetch(uri);
+  const blob = await response.blob();
+  const safeExtension = getSafeFileExtension(fileName, mimeType ?? blob.type);
+  const path = `${userId}/evidence-${Date.now()}.${safeExtension}`;
+
+  const { error } = await supabase.storage.from("evidence").upload(path, blob, {
+    contentType: mimeType ?? blob.type || "application/octet-stream",
+    upsert: false,
+  });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return path;
+}
+
 export async function fetchEvidenceItems() {
   const { data: userData, error: userError } = await supabase.auth.getUser();
 
