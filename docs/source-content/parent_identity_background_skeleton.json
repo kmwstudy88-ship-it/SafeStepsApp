@@ -1,0 +1,63 @@
+{
+  "module_id": "parent_identity_background",
+  "version": "1.0.0",
+  "title": "Parent Identity & Background",
+  "description": "Foundational identity, history, and contextual background for the parent.",
+  "branching": {
+    "path": "parent_type",
+    "options": ["mother", "father"],
+    "conditional_rules": [
+      {
+        "if": "parent_type == 'mother'",
+        "load": ["mother_specific_items"]
+      },
+      {
+        "if": "parent_type == 'father'",
+        "load": ["father_specific_items"]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "section_id": "identity_core",
+      "title": "Core Identity",
+      "items": []
+    },
+    {
+      "section_id": "background_history",
+      "title": "Background & History",
+      "items": []
+    },
+    {
+      "section_id": "cultural_context",
+      "title": "Cultural & Community Context",
+      "items": []
+    },
+    {
+      "section_id": "personal_challenges",
+      "title": "Personal Challenges & Life Stressors",
+      "items": []
+    },
+    {
+      "section_id": "support_network",
+      "title": "Support Network",
+      "items": []
+    }
+  ],
+  "scoring": {
+    "dimensions": [
+      "identity_stability",
+      "life_stressors",
+      "support_strength",
+      "cultural_alignment",
+      "risk_flags"
+    ],
+    "rules": []
+  },
+  "curriculum_mapping": {
+    "routes": []
+  },
+  "ingestion_schema": {
+    "fields": []
+  }
+}

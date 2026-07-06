@@ -23,6 +23,7 @@ export default function RootLayout() {
         <Stack.Screen name="evidence/index" />
         <Stack.Screen name="bulk-setup/index" />
         <Stack.Screen name="timeline/index" />
+        <Stack.Screen name="parent-child" />
         <Stack.Screen name="facilitator/index" />
         <Stack.Screen name="assessments/index" />
         <Stack.Screen name="assessment-system/index" />
