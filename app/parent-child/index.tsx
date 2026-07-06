@@ -59,6 +59,7 @@ export default function ParentChildHomeScreen() {
           <ParentChildMetric label="Shared items" value={overview.sharedItemCount} />
           <ParentChildMetric label="Child requests" value={overview.requestCount} />
           <ParentChildMetric label="Still open" value={overview.openRequestCount} tone="alert" />
+          <ParentChildMetric label="Messages open" value={overview.openMessageCount} tone="alert" />
         </View>
       ) : null}
 
@@ -84,6 +85,19 @@ export default function ParentChildHomeScreen() {
         {overview?.latestRequest ? (
           <Text style={{ color: "#53665A", fontWeight: "800", marginTop: 10 }}>
             Latest: {overview.latestRequest.request_type}
+          </Text>
+        ) : null}
+      </ParentChildCard>
+
+      <ParentChildCard
+        title="Monitoring Messages"
+        description="Review monitored messages between parent and child, add notes, and mark follow-up or closure."
+        badge={overview?.openMessageCount ? `${overview.openMessageCount} open` : "Messages"}
+        href="/parent-child/messages"
+      >
+        {overview?.latestMessage ? (
+          <Text style={{ color: "#53665A", fontWeight: "800", marginTop: 10 }}>
+            Latest: {overview.latestMessage.sender_role} message
           </Text>
         ) : null}
       </ParentChildCard>

@@ -2,6 +2,25 @@ import { supabase } from "../supabase";
 
 export type ShareAudience = "private" | "parent" | "caseworker" | "both";
 
+export type ChildMonitoredMessage = {
+  id: string;
+  child_user_id: string;
+  parent_user_id: string | null;
+  caseworker_user_id: string | null;
+  sender_user_id: string;
+  sender_role: "child" | "parent" | "caseworker";
+  message_text: string;
+  share_audience: ShareAudience;
+  monitoring_status: "open" | "reviewed" | "follow_up" | "closed";
+  monitoring_note: string | null;
+  visible_to_child: boolean;
+  visible_to_parent: boolean;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
 async function getCurrentChildUserId() {
   const { data, error } = await supabase.auth.getUser();
 
@@ -159,4 +178,57 @@ export async function createChildSharedItem(input: {
   }
 
   return data;
+}
+
+export async function getChildMonitoredMessages() {
+  const childUserId = await getCurrentChildUserId();
+
+  const { data, error } = await supabase
+    .from("parent_child_messages")
+    .select("*")
+    .eq("child_user_id", childUserId)
+    .eq("visible_to_child", true)
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return (data ?? []) as ChildMonitoredMessage[];
+}
+
+export async function sendChildMonitoredMessage(input: {
+  messageText: string;
+  shareAudience: Exclude<ShareAudience, "private">;
+}) {
+  const childUserId = await getCurrentChildUserId();
+
+  const { data, error } = await supabase
+    .from("parent_child_messages")
+    .insert({
+      child_user_id: childUserId,
+      sender_user_id: childUserId,
+      sender_role: "child",
+      message_text: input.messageText.trim(),
+      share_audience: input.shareAudience,
+      visible_to_child: true,
+      visible_to_parent: input.shareAudience === "parent" || input.shareAudience === "both",
+      monitoring_status: "open",
+    })
+    .select()
+    .single();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  await createChildSharedItem({
+    itemType: "monitored_message",
+    itemId: data.id,
+    itemTitle: "Message to parent",
+    summaryText: input.messageText.trim(),
+    shareAudience: input.shareAudience,
+  });
+
+  return data as ChildMonitoredMessage;
 }
