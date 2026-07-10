@@ -1,4 +1,11 @@
 import { supabase } from "../supabase/client";
+import {
+  getOfflineEvidenceVaultItems,
+  markOfflineEvidenceSyncFailed,
+  OfflineEvidenceAttachment,
+  queueOfflineEvidence,
+  removeOfflineEvidenceItem,
+} from "./offlineEvidenceVault";
 
 export type EvidenceItem = {
   id: string;
@@ -16,6 +23,28 @@ export type CreateEvidenceItemInput = {
   file_path?: string | null;
   status?: "draft" | "stored" | "shared";
 };
+
+export type CreateEvidenceWithAttachmentInput = {
+  title: string;
+  notes?: string;
+  attachment?: OfflineEvidenceAttachment | null;
+};
+
+async function getCurrentEvidenceUserId(action: string) {
+  const { data: userData, error: userError } = await supabase.auth.getUser();
+
+  if (userError) {
+    throw new Error(userError.message);
+  }
+
+  const userId = userData.user?.id;
+
+  if (!userId) {
+    throw new Error(`No logged-in user found. Sign in before ${action}.`);
+  }
+
+  return userId;
+}
 
 function getSafeFileExtension(fileName?: string, mimeType?: string) {
   const fallbackByMime: Record<string, string> = {
@@ -42,17 +71,7 @@ function getSafeFileExtension(fileName?: string, mimeType?: string) {
 }
 
 export async function uploadEvidenceFile(uri: string, fileName?: string, mimeType?: string) {
-  const { data: userData, error: userError } = await supabase.auth.getUser();
-
-  if (userError) {
-    throw new Error(userError.message);
-  }
-
-  const userId = userData.user?.id;
-
-  if (!userId) {
-    throw new Error("No logged-in user found. Sign in before uploading evidence.");
-  }
+  const userId = await getCurrentEvidenceUserId("uploading evidence");
 
   const response = await fetch(uri);
   const blob = await response.blob();
@@ -72,17 +91,7 @@ export async function uploadEvidenceFile(uri: string, fileName?: string, mimeTyp
 }
 
 export async function fetchEvidenceItems() {
-  const { data: userData, error: userError } = await supabase.auth.getUser();
-
-  if (userError) {
-    throw new Error(userError.message);
-  }
-
-  const userId = userData.user?.id;
-
-  if (!userId) {
-    throw new Error("No logged-in user found. Sign in before viewing evidence.");
-  }
+  const userId = await getCurrentEvidenceUserId("viewing evidence");
 
   const { data, error } = await supabase
     .from("evidence_items")
@@ -98,17 +107,7 @@ export async function fetchEvidenceItems() {
 }
 
 export async function createEvidenceItem(input: CreateEvidenceItemInput) {
-  const { data: userData, error: userError } = await supabase.auth.getUser();
-
-  if (userError) {
-    throw new Error(userError.message);
-  }
-
-  const userId = userData.user?.id;
-
-  if (!userId) {
-    throw new Error("No logged-in user found. Sign in before adding evidence.");
-  }
+  const userId = await getCurrentEvidenceUserId("adding evidence");
 
   const { data, error } = await supabase
     .from("evidence_items")
@@ -139,6 +138,99 @@ export async function createEvidenceItem(input: CreateEvidenceItemInput) {
   });
 
   return data as EvidenceItem;
+}
+
+function evidenceNotesWithAttachment(input: CreateEvidenceWithAttachmentInput) {
+  return [
+    input.notes?.trim() ?? "",
+    input.attachment ? `Attachment source: ${input.attachment.source}` : "",
+    input.attachment ? `Attachment name: ${input.attachment.name}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+export async function createEvidenceItemWithOfflineFallback(input: CreateEvidenceWithAttachmentInput) {
+  const userId = await getCurrentEvidenceUserId("adding evidence");
+
+  try {
+    const filePath = input.attachment
+      ? await uploadEvidenceFile(input.attachment.uri, input.attachment.name, input.attachment.mimeType)
+      : null;
+
+    return {
+      mode: "online" as const,
+      item: await createEvidenceItem({
+        title: input.title,
+        notes: evidenceNotesWithAttachment(input),
+        file_path: filePath,
+        status: "stored",
+      }),
+    };
+  } catch (error) {
+    const queued = await queueOfflineEvidence({
+      ownerId: userId,
+      title: input.title,
+      notes: evidenceNotesWithAttachment(input),
+      attachment: input.attachment ?? null,
+    });
+
+    return {
+      mode: "offline" as const,
+      item: queued,
+      error: error instanceof Error ? error.message : "Evidence queued for upload.",
+    };
+  }
+}
+
+export async function getPendingOfflineEvidenceItems() {
+  const userId = await getCurrentEvidenceUserId("viewing offline evidence");
+  return getOfflineEvidenceVaultItems(userId);
+}
+
+export async function syncPendingOfflineEvidence() {
+  const userId = await getCurrentEvidenceUserId("syncing offline evidence");
+  const pendingItems = await getOfflineEvidenceVaultItems(userId);
+  let syncedCount = 0;
+  let failedCount = 0;
+
+  for (const pendingItem of pendingItems) {
+    try {
+      const filePath = pendingItem.attachment
+        ? await uploadEvidenceFile(
+            pendingItem.attachment.uri,
+            pendingItem.attachment.name,
+            pendingItem.attachment.mimeType,
+          )
+        : null;
+
+      await createEvidenceItem({
+        title: pendingItem.title,
+        notes: [
+          pendingItem.notes,
+          "Offline vault sync: yes",
+          `Offline captured at: ${pendingItem.createdAt}`,
+          `Offline vault hash: ${pendingItem.integrityHash}`,
+          `Previous vault hash: ${pendingItem.previousHash}`,
+        ]
+          .filter(Boolean)
+          .join("\n"),
+        file_path: filePath,
+        status: "stored",
+      });
+
+      await removeOfflineEvidenceItem(pendingItem.id);
+      syncedCount += 1;
+    } catch (error) {
+      await markOfflineEvidenceSyncFailed(
+        pendingItem.id,
+        error instanceof Error ? error.message : "Could not sync offline evidence.",
+      );
+      failedCount += 1;
+    }
+  }
+
+  return { syncedCount, failedCount, pendingCount: pendingItems.length - syncedCount };
 }
 
 export async function updateEvidenceItemsStatus(

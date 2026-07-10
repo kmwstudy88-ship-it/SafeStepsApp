@@ -1,0 +1,27 @@
+{
+  "id": "phase-3-stage-1",
+  "title": "Sustainment — Stage 1",
+  "objectives": [
+    "Maintain long-term safety",
+    "Demonstrate stable home environment"
+  ],
+  "required_lessons": [
+    "SAF-SP-004_safe_places"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "Home safety review"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo"
+    ],
+    "level": "A"
+  }
+}

@@ -1,6 +1,6 @@
 // RootNavigation.tsx
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from "expo-router/js-tabs";
 import HomeScreen from "../screens/HomeScreen";
 import ParentProfileScreen from "../screens/ParentProfileScreen";
 import CurriculumScreen from "../screens/CurriculumScreen";

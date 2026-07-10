@@ -1,0 +1,120 @@
+﻿{
+    "sectionId":  "I",
+    "description":  "Automatically generated report summarising strengths, challenges, recommended focus areas, and suggested SafeSteps programs.",
+    "name":  "AI Parenting Report",
+    "templates":  {
+                      "professional_reports":  {
+                                                   "id":  "R_ProfessionalReports",
+                                                   "label":  "Professional Review Options",
+                                                   "ai_generated":  true,
+                                                   "report_types":  [
+                                                                        {
+                                                                            "label":  "Parenting Progress Report",
+                                                                            "description":  "Tracks improvements over time.",
+                                                                            "id":  "PR_ParentingProgress"
+                                                                        },
+                                                                        {
+                                                                            "label":  "Parenting Support Report",
+                                                                            "description":  "Summarises support needs and recommended interventions.",
+                                                                            "id":  "PR_ParentingSupport"
+                                                                        },
+                                                                        {
+                                                                            "label":  "Family Functioning Report",
+                                                                            "description":  "Overview of family dynamics, stability, and wellbeing.",
+                                                                            "id":  "PR_FamilyFunctioning"
+                                                                        }
+                                                                    ],
+                                                   "description":  "Reports parents can share with professionals.",
+                                                   "type":  "report_types",
+                                                   "shareable_with":  [
+                                                                          "Psychologists",
+                                                                          "Counsellors",
+                                                                          "Family therapists",
+                                                                          "Parenting practitioners",
+                                                                          "Case managers",
+                                                                          "Child protection support workers"
+                                                                      ]
+                                               },
+                      "progress_roadmap":  {
+                                               "id":  "R_ProgressRoadmap",
+                                               "label":  "Progress Roadmap",
+                                               "ai_generated":  true,
+                                               "description":  "Short-term and long-term goals for family development.",
+                                               "type":  "timeline",
+                                               "timeline":  [
+                                                                {
+                                                                    "description":  "Immediate behavioural changes and stabilisation goals",
+                                                                    "period":  "30_days"
+                                                                },
+                                                                {
+                                                                    "description":  "Skill-building and routine strengthening",
+                                                                    "period":  "60_days"
+                                                                },
+                                                                {
+                                                                    "description":  "Sustained behaviour change and evidence collection",
+                                                                    "period":  "90_days"
+                                                                },
+                                                                {
+                                                                    "description":  "Long-term family development and stability plan",
+                                                                    "period":  "12_months"
+                                                                }
+                                                            ]
+                                           },
+                      "program_recommendations":  {
+                                                      "id":  "R_ProgramRecommendations",
+                                                      "label":  "Suggested SafeSteps Programs",
+                                                      "ai_generated":  true,
+                                                      "description":  "Programs automatically matched to the parent’s needs.",
+                                                      "type":  "program_list",
+                                                      "examples":  [
+                                                                       "Positive Parenting Foundations",
+                                                                       "Trauma-Informed Parenting",
+                                                                       "Co-Parenting Success",
+                                                                       "Emotional Regulation Skills",
+                                                                       "Child Development Essentials",
+                                                                       "Family Routines \u0026 Stability"
+                                                                   ]
+                                                  },
+                      "key_strengths":  {
+                                            "id":  "R_KeyStrengths",
+                                            "label":  "Key Strengths",
+                                            "ai_generated":  true,
+                                            "description":  "Automatically identifies the parent’s strongest areas.",
+                                            "type":  "list",
+                                            "examples":  [
+                                                             "Strong emotional connection with child",
+                                                             "Consistent routines",
+                                                             "Good engagement with education",
+                                                             "Reliable supervision",
+                                                             "Strong support network"
+                                                         ]
+                                        },
+                      "focus_areas":  {
+                                          "id":  "R_FocusAreas",
+                                          "label":  "Recommended Focus Areas",
+                                          "ai_generated":  true,
+                                          "description":  "Areas where support, learning, or change may be beneficial.",
+                                          "type":  "list",
+                                          "examples":  [
+                                                           "Improve conflict resolution",
+                                                           "Build stress management skills",
+                                                           "Increase positive parent–child interactions",
+                                                           "Strengthen home routines",
+                                                           "Improve communication skills"
+                                                       ]
+                                      },
+                      "executive_summary":  {
+                                                "id":  "R_ExecutiveSummary",
+                                                "label":  "Executive Summary",
+                                                "ai_generated":  true,
+                                                "description":  "A plain-language overview of family strengths, challenges, and overall wellbeing.",
+                                                "type":  "text_block",
+                                                "structure":  [
+                                                                  "Overall family wellbeing snapshot",
+                                                                  "Key strengths",
+                                                                  "Key challenges",
+                                                                  "Immediate priorities"
+                                                              ]
+                                            }
+                  }
+}

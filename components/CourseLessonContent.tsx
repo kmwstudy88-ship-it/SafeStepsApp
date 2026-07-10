@@ -1,6 +1,6 @@
 import { Text, TextInput, View } from "react-native";
 
-import type { CourseLesson } from "../lib/data/courses";
+import type { CourseLesson } from "../curriculum/courses";
 import { globalStyles } from "../lib/styles";
 
 function ComparisonColumn({

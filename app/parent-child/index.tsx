@@ -1,4 +1,4 @@
-import { Link } from "expo-router";
+import { Link, usePathname } from "expo-router";
 import React, { useEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
@@ -45,6 +45,8 @@ const wellbeing = [
 ] as const;
 
 function Sidebar({ messageCount }: { messageCount: number }) {
+  const pathname = usePathname();
+
   return (
     <View style={styles.sidebar}>
       <View style={styles.logoWrap}>
@@ -57,12 +59,32 @@ function Sidebar({ messageCount }: { messageCount: number }) {
 
       <View style={styles.navList}>
         {navItems.map(([label, href, icon]) => {
-          const active = label === "Parent-Child Profile";
+          const active = href === pathname || (href === "/parent-child" && pathname.startsWith("/parent-child"));
+
           return (
             <Link key={label} href={href as any} asChild>
-              <Pressable style={[styles.navItem, active ? styles.navItemActive : null]}>
-                <Text style={[styles.navIcon, active ? styles.navTextActive : null]}>{icon}</Text>
-                <Text style={[styles.navText, active ? styles.navTextActive : null]}>{label}</Text>
+              <Pressable
+                style={StyleSheet.flatten([
+                  styles.navItem,
+                  active && styles.navItemActive,
+                ])}
+              >
+                <Text
+                  style={StyleSheet.flatten([
+                    styles.navIcon,
+                    active && styles.navTextActive,
+                  ])}
+                >
+                  {icon}
+                </Text>
+                <Text
+                  style={StyleSheet.flatten([
+                    styles.navText,
+                    active && styles.navTextActive,
+                  ])}
+                >
+                  {label}
+                </Text>
                 {label === "Messages" && messageCount > 0 ? (
                   <Text style={styles.navBadge}>{messageCount}</Text>
                 ) : null}

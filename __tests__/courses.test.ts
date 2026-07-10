@@ -1,4 +1,9 @@
-import { areAllCourseLessonsViewed, getCourseById } from "../lib/data/courses";
+import {
+  areAllCourseLessonsViewed,
+  courseAreas,
+  getCourseById,
+  getCoursesForArea,
+} from "../curriculum/courses";
 
 describe("standalone course helpers", () => {
   test("finds courses by id without falling back to another course", () => {
@@ -193,5 +198,17 @@ describe("standalone course helpers", () => {
         durationMinutes: 25,
       }),
     );
+  });
+
+  test("course areas map users to real structured course sets", () => {
+    expect(courseAreas.length).toBeGreaterThanOrEqual(8);
+
+    for (const area of courseAreas) {
+      const areaCourses = getCoursesForArea(area.id);
+
+      expect(areaCourses).toHaveLength(area.courseIds.length);
+      expect(areaCourses.some((course) => course.id === area.suggestedStartCourseId)).toBe(true);
+      expect(area.description.length).toBeGreaterThan(20);
+    }
   });
 });

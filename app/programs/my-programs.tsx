@@ -1,4 +1,4 @@
-import { Link } from "expo-router";
+import { Link, usePathname } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
@@ -49,6 +49,8 @@ const pathway = [
 ] as const;
 
 function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <View style={styles.sidebar}>
       <View style={styles.logoWrap}>
@@ -61,12 +63,33 @@ function Sidebar() {
 
       <View style={styles.navList}>
         {navItems.map(([label, href, icon]) => {
-          const active = label === "My Program";
+          const active =
+            href === pathname || (href === "/programs/my-programs" && pathname.startsWith("/programs"));
+
           return (
             <Link key={label} href={href as any} asChild>
-              <Pressable style={[styles.navItem, active ? styles.navItemActive : null]}>
-                <Text style={[styles.navIcon, active ? styles.navTextActive : null]}>{icon}</Text>
-                <Text style={[styles.navText, active ? styles.navTextActive : null]}>{label}</Text>
+              <Pressable
+                style={StyleSheet.flatten([
+                  styles.navItem,
+                  active && styles.navItemActive,
+                ])}
+              >
+                <Text
+                  style={StyleSheet.flatten([
+                    styles.navIcon,
+                    active && styles.navTextActive,
+                  ])}
+                >
+                  {icon}
+                </Text>
+                <Text
+                  style={StyleSheet.flatten([
+                    styles.navText,
+                    active && styles.navTextActive,
+                  ])}
+                >
+                  {label}
+                </Text>
                 {label === "Messages" ? <Text style={styles.navBadge}>2</Text> : null}
                 {active ? <Text style={styles.navChevron}>›</Text> : null}
               </Pressable>

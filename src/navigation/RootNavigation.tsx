@@ -1,5 +1,5 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from "expo-router/js-tabs";
 import { RootTabParamList } from "./types";
 
 import HomeScreen from "../screens/HomeScreen";

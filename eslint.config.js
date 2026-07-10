@@ -23,6 +23,7 @@ module.exports = defineConfig([
       "dashboard.tsx",
       "settings.tsx",
       "LessonSection.tsx",
+      "app/prismaClient.js",
     ],
   },
   {

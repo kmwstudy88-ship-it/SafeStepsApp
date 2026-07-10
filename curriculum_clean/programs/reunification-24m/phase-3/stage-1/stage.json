@@ -1,0 +1,35 @@
+{
+  "id": "phase-3-stage-1",
+  "title": "Demonstration — Stage 1",
+  "objectives": [
+    "Apply safety planning in real scenarios",
+    "Demonstrate risk recognition"
+  ],
+  "required_lessons": [
+    "SAF-SP-005_escape_routes",
+    "SAF-SP-006_emergency_bag",
+    "SAF-SP-007_code_words"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "Updated safety plan",
+    "Safety rehearsal completed"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_contact_logs",
+      "weekly_routine_log"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "fridge_pantry_photo",
+      "medication_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "phase-2-stage-1",
+  "title": "Strengthening — Stage 1",
+  "objectives": [
+    "Strengthen attachment",
+    "Improve communication"
+  ],
+  "required_lessons": [
+    "PAR-ATT-001_secure_attachment",
+    "PAR-COM-001_positive_language"
+  ],
+  "recommended_lessons": [
+    "PAR-ATT-002_play_connection"
+  ],
+  "evidence": [
+    "Attachment activity reflection"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo"
+    ],
+    "level": "A"
+  }
+}

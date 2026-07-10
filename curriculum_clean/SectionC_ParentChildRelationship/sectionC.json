@@ -1,0 +1,52 @@
+﻿{
+    "sectionId":  "C",
+    "groups":  [
+                   {
+                       "label":  "Relationship Quality",
+                       "id":  "C_Relationship",
+                       "items":  [
+                                     {
+                                         "id":  "C_RC_Communication",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child feels comfortable talking to me.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "parent_child_relationship",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "C_RC_CalmConflict",
+                                         "direction":  "higher_score_better",
+                                         "text":  "I remain calm during conflict with my child.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "parent_child_relationship",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "C_RC_EmotionalUnderstanding",
+                                         "direction":  "higher_score_better",
+                                         "text":  "I understand my child\u0027s emotional needs.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "parent_child_relationship",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "C_RC_Trust",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child trusts me.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "parent_child_relationship",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "C_RC_QualityTime",
+                                         "direction":  "higher_score_better",
+                                         "text":  "We spend quality time together.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "parent_child_relationship",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   }
+               ],
+    "name":  "Parent–Child Relationship"
+}

@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "systemName": "SafeSteps",
+  "createdAt": "2026-06-10T03:14:09.4206548+10:00",
+  "programs": [
+    {
+      "lessons": [],
+      "programId": "child-development",
+      "totalLessons": 200,
+      "description": "Developmental stages, parenting strategies, behavioural support",
+      "title": "Child Development"
+    },
+    {
+      "lessons": [],
+      "programId": "aod",
+      "totalLessons": 150,
+      "description": "Substance use, recovery, harm reduction, family impact",
+      "title": "Alcohol & Other Drugs"
+    },
+    {
+      "lessons": [],
+      "programId": "dfv",
+      "totalLessons": 150,
+      "description": "Safety, intervention, recovery, coercive control awareness",
+      "title": "Domestic & Family Violence"
+    }
+  ]
+}

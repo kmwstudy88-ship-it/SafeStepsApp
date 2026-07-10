@@ -1,0 +1,85 @@
+﻿{
+    "programId":  "REUNIFY-24M-CUSTOM",
+    "week":  8,
+    "stageId":  "STAGE-01",
+    "stageName":  "Custom Stage 1",
+    "modules":  [
+                    {
+                        "id":  "PP-ENGAGE-01",
+                        "name":  "Understanding Your Current Position",
+                        "goal":  "Clarify where you are without judgment.",
+                        "tasks":  [
+                                      "Write what you believe is happening in your situation",
+                                      "Write what you believe child protection is concerned about",
+                                      "Write what you want for your child long-term"
+                                  ],
+                        "evidence":  [
+                                         "Written reflections",
+                                         "Caseworker acknowledgement"
+                                     ],
+                        "category":  "emotional-regulation",
+                        "tags":  [
+
+                                 ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "Write what you believe is happening in your situation"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "Write what you believe child protection is concerned about"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "Write what you want for your child long-term"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+
+                                ],
+                     "insight":  [
+                                     "Written reflections",
+                                     "Caseworker acknowledgement"
+                                 ],
+                     "behaviour":  [
+
+                                   ]
+                 }
+}

@@ -1,0 +1,76 @@
+﻿{
+    "welcome_overview":  {
+                             "importance":  "",
+                             "difficulty":  "",
+                             "estimated_time":  "",
+                             "purpose":  "",
+                             "skills":  [
+
+                                        ]
+                         },
+    "daily_challenge":  "",
+    "what_you_will_learn":  "",
+    "pre_assessment":  {
+                           "baseline_knowledge":  "",
+                           "baseline_confidence":  ""
+                       },
+    "progress_review":  {
+                            "dashboard":  "",
+                            "milestones":  [
+
+                                           ]
+                        },
+    "core_lesson_2":  "",
+    "family_challenge":  "",
+    "goal_setting":  {
+                         "smart_goals":  [
+
+                                         ]
+                     },
+    "category":  "Healthy Relationships Challenges",
+    "research_highlights":  "",
+    "certificate_next_steps":  {
+                                   "recommended_pathway":  "",
+                                   "certificate":  ""
+                               },
+    "evidence_upload":  {
+                            "allowed_types":  [
+                                                  "photo",
+                                                  "video",
+                                                  "audio",
+                                                  "document",
+                                                  "journal"
+                                              ]
+                        },
+    "learning_outcomes":  [
+
+                          ],
+    "challenge_number":  1170,
+    "child_activity":  "",
+    "interactive_activity_1":  "",
+    "title":  "Challenge 1170",
+    "scenario_practice":  [
+
+                          ],
+    "final_reflection":  "",
+    "post_assessment":  {
+                            "confidence_change":  "",
+                            "knowledge_change":  ""
+                        },
+    "weekly_challenge":  "",
+    "journal_entry":  "",
+    "knowledge_quiz":  {
+                           "questions":  [
+
+                                         ],
+                           "feedback":  ""
+                       },
+    "real_life_example":  "",
+    "core_lesson_1":  "",
+    "self_reflection":  {
+                            "challenges":  "",
+                            "strengths":  ""
+                        },
+    "core_lesson_3":  "",
+    "interactive_activity_2":  ""
+}

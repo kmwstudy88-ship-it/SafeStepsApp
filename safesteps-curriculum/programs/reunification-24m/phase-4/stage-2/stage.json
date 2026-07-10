@@ -1,0 +1,29 @@
+{
+  "id": "phase-4-stage-2",
+  "title": "Transition — Stage 2",
+  "objectives": [
+    "Prepare home environment",
+    "Demonstrate sustained safety"
+  ],
+  "required_lessons": [
+    "SAF-SP-003_safe_people",
+    "SAF-SP-004_safe_places"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "Home safety checklist",
+    "Caseworker home visit report"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo"
+    ],
+    "level": "A"
+  }
+}

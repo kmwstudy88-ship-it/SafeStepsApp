@@ -13,6 +13,7 @@ import {
   startProgramEnrollment,
   ProgramEnrollment,
 } from "../../lib/engines/programEnrollmentEngine";
+import { ChallengeRecommendations } from "../../components/ChallengeRecommendations";
 
 export default function ProgramPathwayScreen() {
   const params = useLocalSearchParams();
@@ -103,6 +104,11 @@ export default function ProgramPathwayScreen() {
       </Text>
 
       <Text style={{ marginBottom: 18 }}>{program.description}</Text>
+
+      <ChallengeRecommendations
+        context={`${program.title} ${program.description} ${programMonths.map((month) => month.topic).join(" ")}`}
+        title="Challenges for this program"
+      />
 
       <View
         style={{

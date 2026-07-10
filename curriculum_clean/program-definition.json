@@ -1,0 +1,27 @@
+{
+  "programId": "SafeSteps-Parenting-01",
+  "totalWeeks": 12,
+  "stages": [
+    {
+      "stageId": "S1",
+      "name": "Foundation",
+      "startWeek": 1,
+      "endWeek": 4,
+      "modules": ["parenting-basics"]
+    },
+    {
+      "stageId": "S2",
+      "name": "Safety Development",
+      "startWeek": 5,
+      "endWeek": 8,
+      "modules": ["safety-awareness"]
+    },
+    {
+      "stageId": "S3",
+      "name": "Integration",
+      "startWeek": 9,
+      "endWeek": 12,
+      "modules": ["parenting-basics", "safety-awareness"]
+    }
+  ]
+}

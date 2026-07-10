@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
+import { BottomTabNavigationProp } from "expo-router/js-tabs";
+import { useNavigation } from "expo-router/react-navigation";
 import { RootTabParamList } from "../navigation/types";
 
 type NavProp = BottomTabNavigationProp<RootTabParamList>;

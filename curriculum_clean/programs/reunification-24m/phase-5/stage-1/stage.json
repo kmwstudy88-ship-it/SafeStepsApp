@@ -1,0 +1,29 @@
+{
+  "id": "phase-5-stage-1",
+  "title": "Sustainment — Stage 1",
+  "objectives": [
+    "Identify triggers",
+    "Manage cravings",
+    "Maintain sobriety plan"
+  ],
+  "required_lessons": [
+    "AOD-RP-001_triggers",
+    "AOD-RP-002_craving_management"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "AOD relapse prevention plan"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo"
+    ],
+    "level": "A"
+  }
+}

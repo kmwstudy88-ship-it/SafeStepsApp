@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "type": "ShortCourse",
+  "durationWeeks": 6,
+  "created": "2026-06-09",
+  "metadata": {
+    "generatedBy": "SafeSteps Automation",
+    "category": "ShortCourse"
+  },
+  "topic": "DFV",
+  "compliance": {
+    "weeklyCheckIns": true,
+    "evidenceUploads": true,
+    "attendanceRequired": true
+  },
+  "modules": [],
+  "programName": "DFV Short Course (6 Weeks)"
+}

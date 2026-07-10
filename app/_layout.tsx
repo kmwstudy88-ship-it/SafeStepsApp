@@ -15,6 +15,8 @@ export default function RootLayout() {
         <Stack.Screen name="programs" />
         <Stack.Screen name="program-lessons/[programId]/[weekId]/[dayId]" />
         <Stack.Screen name="library/index" />
+        <Stack.Screen name="challenges/index" />
+        <Stack.Screen name="challenges/[challengeId]" />
         <Stack.Screen name="resources/index" />
         <Stack.Screen name="lessons/index" />
         <Stack.Screen name="tasks/index" />

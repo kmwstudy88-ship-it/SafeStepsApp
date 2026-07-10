@@ -56,7 +56,47 @@ export function buildParentChallengeTaskInput(challengeId: string): CreateUserTa
     priority: challenge.challengeType === "daily" ? "medium" : "low",
     category: `parent_challenge:${challenge.category}`,
     evidence_required: true,
+    related_lesson_id: `challenge:${challenge.id}`,
   };
+}
+
+export async function fetchParentChallengeTask(challengeId: string) {
+  const userId = await getOptionalUserId();
+  if (!userId) return null;
+
+  const challenge = getParentChallengeById(challengeId);
+  if (!challenge) return null;
+
+  const { data, error } = await supabase
+    .from("user_tasks")
+    .select("*")
+    .eq("owner_id", userId)
+    .eq("related_lesson_id", `challenge:${challenge.id}`)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  if (data) return data as UserTask;
+
+  const { data: legacyData, error: legacyError } = await supabase
+    .from("user_tasks")
+    .select("*")
+    .eq("owner_id", userId)
+    .eq("title", challenge.displayTitle)
+    .eq("category", `parent_challenge:${challenge.category}`)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (legacyError) {
+    throw new Error(legacyError.message);
+  }
+
+  return (legacyData as UserTask | null) ?? null;
 }
 
 export async function fetchUserTasks() {
@@ -115,6 +155,9 @@ export async function createUserTask(input: CreateUserTaskInput) {
 }
 
 export async function createUserTaskFromParentChallenge(challengeId: string) {
+  const existing = await fetchParentChallengeTask(challengeId);
+  if (existing) return existing;
+
   return createUserTask(buildParentChallengeTaskInput(challengeId));
 }
 

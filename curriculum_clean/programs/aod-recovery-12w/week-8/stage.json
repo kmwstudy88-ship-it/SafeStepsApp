@@ -1,0 +1,29 @@
+{
+  "id": "week-8",
+  "title": "AOD Recovery — Week 8",
+  "objectives": [
+    "Address shame and guilt"
+  ],
+  "required_lessons": [
+    "AOD-RP-005_shame_guilt"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "Reflection worksheet"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_aod_evidence"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "medication_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

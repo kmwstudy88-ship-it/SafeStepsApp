@@ -1,0 +1,29 @@
+{
+  "id": "week-9",
+  "title": "AOD Recovery — Week 9",
+  "objectives": [
+    "Build coping strategies"
+  ],
+  "required_lessons": [
+    "MH-ER-008_urge_surfing"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "Coping strategy log"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_aod_evidence"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "medication_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

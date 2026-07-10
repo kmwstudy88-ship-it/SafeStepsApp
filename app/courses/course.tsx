@@ -2,7 +2,8 @@ import { useLocalSearchParams } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
 import { ImageBackground, Pressable, ScrollView, Text, View } from "react-native";
 import { CourseLessonContent } from "../../components/CourseLessonContent";
-import { areAllCourseLessonsViewed, getCourseById } from "../../lib/data/courses";
+import { ChallengeRecommendations } from "../../components/ChallengeRecommendations";
+import { areAllCourseLessonsViewed, getCourseById } from "../../curriculum/courses";
 import {
   CertificateRecord,
   findMatchingCertificate,
@@ -100,6 +101,11 @@ export default function CoursePlayerScreen() {
       <Text style={globalStyles.courseTitle}>{course.title}</Text>
 
       <Text style={globalStyles.courseSubtitle}>{course.description}</Text>
+
+      <ChallengeRecommendations
+        context={`${course.title} ${course.description} ${course.lessons.map((lesson) => `${lesson.title} ${lesson.summary ?? ""}`).join(" ")}`}
+        title="Challenges for this course"
+      />
 
       <View
         style={{

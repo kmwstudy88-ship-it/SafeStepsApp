@@ -1,0 +1,6 @@
+/modules/alerts
+  alert.service.ts
+  alert.repository.ts
+  alert.controller.ts
+  alert.types.ts
+  alert.rules.ts
