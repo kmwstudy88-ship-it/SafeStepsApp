@@ -1,0 +1,9 @@
+﻿{
+  "id": "game_150",
+  "title": "SafeSteps Game 150",
+  "category": "quick_fun",
+  "minPlayers": 2,
+  "maxPlayers": 8,
+  "recommendedModes": ["live_family", "remote_connection"],
+  "duration": "quick_play"
+}
