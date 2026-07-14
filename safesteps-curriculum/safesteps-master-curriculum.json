@@ -1,0 +1,187 @@
+{
+  "system": "SafeSteps",
+  "version": "1.0",
+  "description": "Unified curriculum system for Child Development + Alcohol and Other Drugs (AOD)",
+  
+  "curricula": [
+    {
+      "id": "child-development",
+      "title": "Child Development",
+      "range": "1-200",
+      "modules": [
+        {
+          "module": "Early Development Foundations",
+          "lessons": [
+            "Infant Development (0-12 Months)",
+            "Toddler Development (1-2 Years)",
+            "Early Childhood Development (3-5 Years)"
+          ]
+        },
+        {
+          "module": "Middle & Late Childhood",
+          "lessons": [
+            "Middle Childhood Development (6-8 Years)",
+            "Late Childhood Development (9-12 Years)"
+          ]
+        },
+        {
+          "module": "Adolescent Development",
+          "lessons": [
+            "Adolescent Brain Development",
+            "Identity Formation in Children",
+            "Peer Relationship Development",
+            "Risk Taking Behaviour in Adolescents"
+          ]
+        },
+        {
+          "module": "Core Development Systems",
+          "lessons": [
+            "Brain Development & Neuroplasticity",
+            "Attachment Theory in Childhood",
+            "Emotional Regulation Development",
+            "Behavioural Development Patterns",
+            "Cognitive Development Stages",
+            "Social Development Skills",
+            "Self-Regulation Development",
+            "Memory Development",
+            "Language Acquisition Stages"
+          ]
+        },
+        {
+          "module": "Risk & Protection",
+          "lessons": [
+            "Trauma Impact on Development",
+            "Domestic Violence Impact on Children",
+            "Neglect & Developmental Delay",
+            "Risk Factors in Development",
+            "Protective Factors in Development",
+            "Resilience Building",
+            "Emotional Safety in the Home"
+          ]
+        },
+        {
+          "module": "Parenting & Environment",
+          "lessons": [
+            "Parent-Child Bonding",
+            "Mother Role in Development",
+            "Father Role in Development",
+            "Co-Parenting Impact",
+            "Family Systems & Child Development",
+            "Caregiver Influence on Development",
+            "Conflict Exposure Effects"
+          ]
+        },
+        {
+          "module": "Learning & Behaviour",
+          "lessons": [
+            "Play-Based Learning Development",
+            "School Readiness Skills",
+            "Attention & Focus Development",
+            "Executive Function Development",
+            "Problem Solving Skills",
+            "Decision Making Skills",
+            "School Engagement & Learning",
+            "Behavioural Intervention Strategies"
+          ]
+        },
+        {
+          "module": "Intervention & Support",
+          "lessons": [
+            "Early Intervention Principles",
+            "Developmental Delay Identification",
+            "Autism Spectrum Awareness",
+            "ADHD Behaviour Patterns",
+            "Learning Difficulties Overview",
+            "Dyslexia & Learning Support",
+            "Child Protection Considerations",
+            "Reunification & Stability"
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "aod",
+      "title": "Alcohol and Other Drugs (AOD)",
+      "range": "1-50",
+      "modules": [
+        {
+          "module": "Foundations",
+          "lessons": [
+            "Introduction & Awareness",
+            "Understanding Addiction",
+            "Types of Substances",
+            "Brain & Body Effects",
+            "Addiction Science"
+          ]
+        },
+        {
+          "module": "Substances",
+          "lessons": [
+            "Alcohol Impacts",
+            "Depressants",
+            "Stimulants (Ice, Speed)",
+            "Cannabis Use",
+            "Prescription Drug Misuse",
+            "Polydrug Use"
+          ]
+        },
+        {
+          "module": "Signs & Indicators",
+          "lessons": [
+            "Physical Signs",
+            "Behavioural Signs",
+            "Emotional Signs",
+            "Mental Health Links",
+            "Health Damage"
+          ]
+        },
+        {
+          "module": "Risk & Protection",
+          "lessons": [
+            "Risk Factors",
+            "Protective Factors",
+            "Triggers",
+            "Peer Pressure",
+            "Child Safety Risks"
+          ]
+        },
+        {
+          "module": "Impact Systems",
+          "lessons": [
+            "Family Impact",
+            "Social Consequences",
+            "Trauma & Substance Use",
+            "Support Systems"
+          ]
+        },
+        {
+          "module": "Crisis & Legal",
+          "lessons": [
+            "Legal Consequences",
+            "Overdose & Crisis",
+            "Child Protection Considerations"
+          ]
+        },
+        {
+          "module": "Recovery System",
+          "lessons": [
+            "Intervention Skills",
+            "Harm Reduction",
+            "Recovery Pathways",
+            "Recovery Planning",
+            "Relapse Prevention",
+            "Long-term Recovery",
+            "Healthy Lifestyle"
+          ]
+        }
+      ]
+    }
+  ],
+
+  "meta": {
+    "total_curricula": 2,
+    "system_type": "modular_learning_engine",
+    "future_expansion_ready": true
+  }
+}

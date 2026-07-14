@@ -1,0 +1,15 @@
+{
+  "curriculum": {
+    "name": "SafeSteps Alcohol and Other Drugs (AOD)",
+    "version": "1.0",
+    "category": "Alcohol and Other Drugs",
+    "total_lessons": 34,
+    "lessons": [
+      { "lessonNumber": 1, "title": "Introduction & Awareness", "file": "001 - Introduction & Awareness.ps1" },
+      { "lessonNumber": 2, "title": "Understanding Addiction", "file": "002 - Understanding Addiction.ps1" },
+      { "lessonNumber": 3, "title": "Addiction Science", "file": "003 - Addiction Science.ps1" },
+      { "lessonNumber": 4, "title": "Types of Substances", "file": "004 - Types of Substances.ps1" },
+      { "lessonNumber": 5, "title": "Alcohol Impacts", "file": "005 - Alcohol Impacts.ps1" }
+    ]
+  }
+}

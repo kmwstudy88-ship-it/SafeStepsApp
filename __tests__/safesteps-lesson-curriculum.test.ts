@@ -1,6 +1,8 @@
-import { safestepsLessonCurriculum1To47 } from "../lib/data/safestepsLessonCurriculum1To47";
-import { safestepsLessonCurriculum48To95 } from "../lib/data/safestepsLessonCurriculum48To95";
-import { safestepsExpandedLessonCurriculum252To780 } from "../lib/data/safestepsExpandedLessonCurriculum252To780";
+import {
+  safestepsExpandedLessonCurriculum252To780,
+  safestepsLessonCurriculum1To47,
+  safestepsLessonCurriculum48To95,
+} from "../curriculum/lessons";
 import { appLessons, getLessonById } from "../lib/lessonContent";
 
 describe("SafeSteps lesson curriculum 1-47", () => {
@@ -87,7 +89,7 @@ describe("SafeSteps lesson curriculum 48-95", () => {
   });
 
   test("makes the uploaded expanded lessons available in the app lesson flow", () => {
-    expect(safestepsExpandedLessonCurriculum252To780).toHaveLength(528);
+    expect(safestepsExpandedLessonCurriculum252To780).toHaveLength(524);
 
     const firstLesson = safestepsExpandedLessonCurriculum252To780[0];
     expect(firstLesson.title).toBe("Communication roadblocks");

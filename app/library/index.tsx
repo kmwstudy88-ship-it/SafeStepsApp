@@ -1,96 +1,207 @@
-import React, { useMemo, useState } from "react";
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { Redirect } from "expo-router";
+import { Link, Redirect, type Href } from "expo-router";
+import { useEffect, useMemo, useState } from "react";
+import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 
 import { AppBottomNav } from "../../components/AppBottomNav";
 import { useAuth } from "../../lib/auth";
-import { learningCourses, type LearningCourse } from "../../lib/platformData";
+import { courses, getGoldStandardCourses } from "../../curriculum/courses";
+import {
+  listCurriculumCoursesFromApi,
+  listCurriculumLessonsFromApi,
+} from "../../lib/curriculumApi";
+import type { ApiCurriculumCourseSummary, ApiCurriculumLessonSummary } from "../../lib/curriculumApi";
+import { programs } from "../../lib/data/programs";
+import { appLessons } from "../../lib/lessonContent";
 import { globalStyles } from "../../lib/styles";
 
-const FILTERS = ["All", "Accountability", "DFV", "AOD", "Mental health", "Safety", "Parenting"] as const;
+type Section = "courses" | "programs" | "core";
+type CourseScope = "gold" | "all";
 
-function courseMatchesFilter(course: LearningCourse, filter: (typeof FILTERS)[number]) {
-  if (filter === "All") return true;
-  return course.category.toLowerCase().includes(filter.toLowerCase());
-}
-
-export default function LearningLibraryScreen() {
+export default function CurriculumLibraryScreen() {
   const { initializing, user } = useAuth();
-  const [filter, setFilter] = useState<(typeof FILTERS)[number]>("All");
+  const [section, setSection] = useState<Section>("courses");
+  const [courseScope, setCourseScope] = useState<CourseScope>("gold");
+  const [query, setQuery] = useState("");
+  const [apiCourses, setApiCourses] = useState<ApiCurriculumCourseSummary[]>([]);
+  const [apiLessons, setApiLessons] = useState<ApiCurriculumLessonSummary[]>([]);
+  const [apiReady, setApiReady] = useState(false);
+  const search = query.trim().toLowerCase();
+
+  useEffect(() => {
+    let active = true;
+
+    Promise.all([listCurriculumCoursesFromApi(), listCurriculumLessonsFromApi(100)])
+      .then(([nextCourses, nextLessons]) => {
+        if (!active) return;
+        setApiCourses(nextCourses);
+        setApiLessons(nextLessons);
+        setApiReady(true);
+      })
+      .catch(() => {
+        if (!active) return;
+        setApiCourses([]);
+        setApiLessons([]);
+        setApiReady(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const displayedCourses = apiReady && apiCourses.length > 0 ? apiCourses : courses;
+  const goldStandardCourses = useMemo(() => getGoldStandardCourses(), []);
+  const goldStandardCourseIds = useMemo(
+    () => new Set(goldStandardCourses.map((course) => course.id)),
+    [goldStandardCourses],
+  );
+  const scopedCourses =
+    section === "courses" && courseScope === "gold" && !(apiReady && apiCourses.length > 0)
+      ? displayedCourses.filter((course) => goldStandardCourseIds.has(course.id))
+      : displayedCourses;
+  const displayedLessons = apiReady && apiLessons.length > 0 ? apiLessons : appLessons;
 
   const filteredCourses = useMemo(
-    () => learningCourses.filter((course) => courseMatchesFilter(course, filter)),
-    [filter],
+    () =>
+      scopedCourses.filter(
+        (course) => !search || `${course.title} ${course.description ?? ""}`.toLowerCase().includes(search),
+      ),
+    [scopedCourses, search],
+  );
+  const filteredPrograms = useMemo(
+    () => programs.filter((program) => !search || `${program.title} ${program.description}`.toLowerCase().includes(search)),
+    [search],
+  );
+  const filteredLessons = useMemo(
+    () =>
+      displayedLessons.filter(
+        (lesson) =>
+          !search ||
+          `${lesson.title} ${"summary" in lesson ? lesson.summary : lesson.content ?? lesson.body ?? ""}`
+            .toLowerCase()
+            .includes(search),
+      ),
+    [displayedLessons, search],
   );
 
-  if (initializing) {
-    return null;
-  }
-
-  if (!user) {
-    return <Redirect href="/login" />;
-  }
+  if (initializing) return null;
+  if (!user) return <Redirect href="/login" />;
 
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={globalStyles.screen}>
-      <Text style={globalStyles.title}>Learning library</Text>
+      <Text style={globalStyles.title}>Curriculum</Text>
       <Text style={globalStyles.subtitle}>
-        Standalone courses for focused learning. Courses do not use the program month and week structure; they use lessons, knowledge checks, optional reflection, and certificates.
+        Browse structured programs, standalone courses, and the core SafeSteps lesson pathway.
+      </Text>
+      <Text style={globalStyles.mutedText}>
+        {apiReady ? "Showing Prisma-backed curriculum from the local SafeSteps API." : "Showing built-in curriculum while the local API is unavailable."}
       </Text>
 
-      <View style={globalStyles.segmentedRow}>
-        {FILTERS.map((item) => {
-          const selected = filter === item;
+      <TextInput
+        accessibilityLabel="Search curriculum"
+        value={query}
+        onChangeText={setQuery}
+        placeholder="Search titles, topics, or skills"
+        placeholderTextColor="#667085"
+        style={globalStyles.input}
+      />
 
-          return (
-            <TouchableOpacity
-              key={item}
-              onPress={() => setFilter(item)}
-              style={selected ? globalStyles.segmentSelected : globalStyles.segment}
-            >
-              <Text style={selected ? globalStyles.segmentTextSelected : globalStyles.segmentText}>
-                {item}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
+      <View style={globalStyles.segmentedRow}>
+        {([
+          ["courses", `Courses (${displayedCourses.length})`],
+          ["programs", `Programs (${programs.length})`],
+          ["core", `Core lessons (${displayedLessons.length})`],
+        ] as const).map(([value, label]) => (
+          <Pressable
+            key={value}
+            accessibilityRole="tab"
+            accessibilityState={{ selected: section === value }}
+            onPress={() => setSection(value)}
+            style={section === value ? globalStyles.segmentSelected : globalStyles.segment}
+          >
+            <Text style={section === value ? globalStyles.segmentTextSelected : globalStyles.segmentText}>{label}</Text>
+          </Pressable>
+        ))}
       </View>
 
-      {filteredCourses.map((course) => (
-        <View key={course.id} style={globalStyles.card}>
-          <View style={globalStyles.inlineRow}>
-            <Text style={globalStyles.pill}>{course.length}</Text>
-            <Text style={globalStyles.pill}>public course</Text>
-            <Text style={globalStyles.pill}>evidence mode</Text>
-          </View>
-          <Text style={globalStyles.cardTitle}>{course.title}</Text>
-          <Text style={globalStyles.cardText}>{course.category}</Text>
-          {course.outcomes.map((outcome) => (
-            <Text key={outcome} style={globalStyles.mutedText}>{outcome}</Text>
-          ))}
-
-          <View style={globalStyles.compactBlock}>
-            <Text style={globalStyles.cardTitle}>Lesson evidence cycle</Text>
-            <Text style={globalStyles.cardText}>Before reflection</Text>
-            <Text style={globalStyles.cardText}>Lesson content</Text>
-            <Text style={globalStyles.cardText}>Readiness questionnaire</Text>
-            <Text style={globalStyles.cardText}>Skill demonstration</Text>
-            <Text style={globalStyles.cardText}>Evidence upload</Text>
-            <Text style={globalStyles.cardText}>After reflection</Text>
-            <Text style={globalStyles.cardText}>Spiral reassessment</Text>
-          </View>
-
-          {course.lessons.map((lesson) => (
-            <View key={lesson.id} style={globalStyles.compactBlock}>
-              <Text style={globalStyles.cardText}>{lesson.title}</Text>
-              <Text style={globalStyles.mutedText}>
-                Reassess in week {lesson.reassessmentWeekOffset}: {lesson.scoringDomains.join(", ")}
-              </Text>
-            </View>
+      {section === "courses" && (
+        <View style={globalStyles.segmentedRow}>
+          {([
+            ["gold", `Gold standard (${goldStandardCourses.length})`],
+            ["all", `All courses (${displayedCourses.length})`],
+          ] as const).map(([value, label]) => (
+            <Pressable
+              key={value}
+              accessibilityRole="tab"
+              accessibilityState={{ selected: courseScope === value }}
+              onPress={() => setCourseScope(value)}
+              style={courseScope === value ? globalStyles.segmentSelected : globalStyles.segment}
+            >
+              <Text style={courseScope === value ? globalStyles.segmentTextSelected : globalStyles.segmentText}>{label}</Text>
+            </Pressable>
           ))}
         </View>
-      ))}
+      )}
 
+      {section === "courses" &&
+        filteredCourses.map((course) => (
+          <Link key={course.id} href={{ pathname: "/courses/course", params: { courseId: course.id } }} asChild>
+            <Pressable style={globalStyles.card}>
+              <Text style={globalStyles.cardTitle}>{course.title}</Text>
+              <Text style={globalStyles.cardText}>{course.description ?? "Generated SafeSteps curriculum course."}</Text>
+              <Text style={globalStyles.mutedText}>
+                {"lessons" in course ? `${course.lessons.length} lessons` : `${course.modules.length} modules from Prisma`}
+              </Text>
+            </Pressable>
+          </Link>
+        ))}
+
+      {section === "programs" &&
+        filteredPrograms.map((program) => (
+          <Link key={program.id} href={{ pathname: "/programs/program", params: { programId: program.id } }} asChild>
+            <Pressable style={globalStyles.card}>
+              <Text style={globalStyles.cardTitle}>{program.title}</Text>
+              <Text style={globalStyles.cardText}>{program.description}</Text>
+              <Text style={globalStyles.mutedText}>
+                {program.durationMonths > 0 ? `${program.durationMonths} months` : "Flexible duration"}
+              </Text>
+            </Pressable>
+          </Link>
+        ))}
+
+      {section === "core" &&
+        filteredLessons.map((lesson) => (
+          <Link
+            key={lesson.id}
+            href={"estimatedMinutes" in lesson ? { pathname: "/lessons/[lessonId]", params: { lessonId: lesson.id } } : ("/library" as Href)}
+            asChild
+          >
+            <Pressable style={globalStyles.card}>
+              <Text style={globalStyles.cardTitle}>
+                {"week" in lesson ? `Week ${lesson.week}: ${lesson.title}` : lesson.title}
+              </Text>
+              <Text style={globalStyles.cardText}>
+                {"summary" in lesson ? lesson.summary : lesson.content ?? lesson.body ?? "Generated lesson content pending review."}
+              </Text>
+              <Text style={globalStyles.mutedText}>
+                {"estimatedMinutes" in lesson ? `${lesson.estimatedMinutes} minutes` : lesson.weekId ?? lesson.sourcePath}
+              </Text>
+            </Pressable>
+          </Link>
+        ))}
+
+      {(section === "courses" ? filteredCourses : section === "programs" ? filteredPrograms : filteredLessons).length === 0 && (
+        <View style={globalStyles.card}>
+          <Text style={globalStyles.cardTitle}>No curriculum found</Text>
+          <Text style={globalStyles.cardText}>Try a broader search term.</Text>
+        </View>
+      )}
+
+      <Link href={"/challenges" as Href} asChild>
+        <Pressable style={globalStyles.button}>
+          <Text style={globalStyles.buttonText}>Open Challenges</Text>
+        </Pressable>
+      </Link>
       <AppBottomNav />
     </ScrollView>
   );

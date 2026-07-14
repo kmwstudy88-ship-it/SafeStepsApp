@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: safesteps-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: safesteps-backend
+  template:
+    metadata:
+      labels:
+        app: safesteps-backend
+    spec:
+      containers:
+        - name: backend
+          image: safesteps-backend:latest
+          ports:
+            - containerPort: 3000

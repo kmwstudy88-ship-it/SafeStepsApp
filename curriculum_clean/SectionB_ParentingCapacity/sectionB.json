@@ -1,0 +1,124 @@
+﻿{
+    "sectionId":  "B",
+    "groups":  [
+                   {
+                       "label":  "Meeting Basic Needs",
+                       "id":  "B_BasicNeeds",
+                       "items":  [
+                                     {
+                                         "id":  "B_BN_Food",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child has reliable access to enough food.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "basic_needs",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "B_BN_Clothing",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child has appropriate clothing for weather and activities.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "basic_needs",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "B_BN_Medical",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child receives needed medical and dental care.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "basic_needs",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "B_BN_Education",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child attends and engages in education regularly.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "basic_needs",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   },
+                   {
+                       "label":  "Emotional Care",
+                       "id":  "B_EmotionalCare",
+                       "items":  [
+                                     {
+                                         "id":  "B_EC_Affection",
+                                         "direction":  "higher_score_better",
+                                         "text":  "I show my child affection regularly.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "emotional_care",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "B_EC_EmotionalSupport",
+                                         "direction":  "higher_score_better",
+                                         "text":  "I support my child when they feel upset or stressed.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "emotional_care",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "B_EC_Listening",
+                                         "direction":  "higher_score_better",
+                                         "text":  "I listen carefully when my child talks to me.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "emotional_care",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "B_EC_Encouragement",
+                                         "direction":  "higher_score_better",
+                                         "text":  "I encourage my child’s efforts and progress.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "emotional_care",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   },
+                   {
+                       "label":  "Supervision",
+                       "id":  "B_Supervision",
+                       "items":  [
+                                     {
+                                         "id":  "B_SV_ChildSafety",
+                                         "direction":  "higher_score_better",
+                                         "text":  "I know where my child is and who they are with.",
+                                         "flags":  {
+                                                       "flag":  "low_supervision",
+                                                       "threshold":  2
+                                                   },
+                                         "type":  "likert_agreement",
+                                         "domain":  "supervision",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "B_SV_OnlineSafety",
+                                         "direction":  "higher_score_better",
+                                         "text":  "I monitor and guide my child’s online activity.",
+                                         "flags":  {
+                                                       "flag":  "online_risk",
+                                                       "threshold":  2
+                                                   },
+                                         "type":  "likert_agreement",
+                                         "domain":  "supervision",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "B_SV_CommunitySafety",
+                                         "direction":  "higher_score_better",
+                                         "text":  "I consider my child’s safety in the community.",
+                                         "flags":  {
+                                                       "flag":  "community_risk",
+                                                       "threshold":  2
+                                                   },
+                                         "type":  "likert_agreement",
+                                         "domain":  "supervision",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   }
+               ],
+    "name":  "Parenting Capacity"
+}

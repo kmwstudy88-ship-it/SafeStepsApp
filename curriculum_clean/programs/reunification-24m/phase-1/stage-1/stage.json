@@ -1,0 +1,44 @@
+{
+  "id": "phase-1-stage-1",
+  "title": "Stabilisation — Stage 1",
+  "objectives": [
+    "Establish immediate physical and emotional safety",
+    "Learn grounding and distress tolerance skills",
+    "Begin personal safety planning"
+  ],
+  "required_lessons": [
+    "MH-ER-001_grounding_basics",
+    "MH-ER-002_54321_technique",
+    "SAF-SP-001_what_is_a_safety_plan"
+  ],
+  "recommended_lessons": [
+    "MH-ER-009_distress_tolerance",
+    "SAF-SP-003_safe_people"
+  ],
+  "evidence": [
+    "Completed personal safety plan",
+    "Demonstrated grounding technique"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_contact_logs",
+      "weekly_caseworker_checkin",
+      "weekly_safety_plan_update",
+      "weekly_aod_evidence"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "fridge_pantry_photo",
+      "bedroom_photo",
+      "bathroom_photo",
+      "medication_photo",
+      "daily_reflection",
+      "routine_checklist"
+    ],
+    "level": "C"
+  }
+}

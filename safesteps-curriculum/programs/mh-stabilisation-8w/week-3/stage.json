@@ -1,0 +1,21 @@
+{
+  "id": "week-3",
+  "title": "MH Stabilisation — Week 3",
+  "objectives": [],
+  "required_lessons": [],
+  "recommended_lessons": [],
+  "evidence": [],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

@@ -1,0 +1,2289 @@
+﻿{
+    "programs":  [
+                     {
+                         "title":  ".obsidian",
+                         "id":  ".obsidian",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "Alcohol and Other Drugs",
+                         "id":  "Alcohol and Other Drugs",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Addiction Science",
+                                             "id":  "Addiction Science"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Behavioural Signs",
+                                             "id":  "Behavioural Signs"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Crisis \u0026 Overdose Response",
+                                             "id":  "Crisis \u0026 Overdose Response"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Family Impact",
+                                             "id":  "Family Impact"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Harm Reduction",
+                                             "id":  "Harm Reduction"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Intervention Skills",
+                                             "id":  "Intervention Skills"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Introduction to AOD",
+                                             "id":  "Introduction to AOD"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Mental Health Links",
+                                             "id":  "Mental Health Links"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Recovery Pathways",
+                                             "id":  "Recovery Pathways"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Relapse Prevention",
+                                             "id":  "Relapse Prevention"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Risk Factors",
+                                             "id":  "Risk Factors"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Substance Effects",
+                                             "id":  "Substance Effects"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Withdrawal \u0026 Dependence",
+                                             "id":  "Withdrawal \u0026 Dependence"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "AOD",
+                         "id":  "AOD",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "Child Development",
+                         "id":  "Child Development",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Adolescence",
+                                             "id":  "Adolescence"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Attachment",
+                                             "id":  "Attachment"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Behaviour Development",
+                                             "id":  "Behaviour Development"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Brain Development",
+                                             "id":  "Brain Development"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Early Childhood",
+                                             "id":  "Early Childhood"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Emotional Regulation",
+                                             "id":  "Emotional Regulation"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Infant Development",
+                                             "id":  "Infant Development"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Middle Childhood",
+                                             "id":  "Middle Childhood"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Toddler Development",
+                                             "id":  "Toddler Development"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "Child Parent Mental Health",
+                         "id":  "Child Parent Mental Health",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "courses",
+                         "id":  "courses",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "lessons",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "lesson_emotional_connection",
+                                                                                     "path":  "courses\\working_with_families\\lessons\\lesson_emotional_connection.json",
+                                                                                     "id":  "lesson_emotional_connection"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "lesson_family_systems",
+                                                                                     "path":  "courses\\working_with_families\\lessons\\lesson_family_systems.json",
+                                                                                     "id":  "lesson_family_systems"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "lesson_healthy_vs_unhealthy_dynamics",
+                                                                                     "path":  "courses\\working_with_families\\lessons\\lesson_healthy_vs_unhealthy_dynamics.json",
+                                                                                     "id":  "lesson_healthy_vs_unhealthy_dynamics"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "lesson_repairing_ruptures",
+                                                                                     "path":  "courses\\working_with_families\\lessons\\lesson_repairing_ruptures.json",
+                                                                                     "id":  "lesson_repairing_ruptures"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "lesson_roles_rules_patterns",
+                                                                                     "path":  "courses\\working_with_families\\lessons\\lesson_roles_rules_patterns.json",
+                                                                                     "id":  "lesson_roles_rules_patterns"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "lesson_trust_and_safety",
+                                                                                     "path":  "courses\\working_with_families\\lessons\\lesson_trust_and_safety.json",
+                                                                                     "id":  "lesson_trust_and_safety"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "lessons"
+                                                             },
+                                                             {
+                                                                 "title":  "modules",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "module_positive_parent_child_relationships",
+                                                                                     "path":  "courses\\working_with_families\\modules\\module_positive_parent_child_relationships.json",
+                                                                                     "id":  "module_positive_parent_child_relationships"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "module_understanding_family_dynamics",
+                                                                                     "path":  "courses\\working_with_families\\modules\\module_understanding_family_dynamics.json",
+                                                                                     "id":  "module_understanding_family_dynamics"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "modules"
+                                                             }
+                                                         ],
+                                             "title":  "working_with_families",
+                                             "id":  "working_with_families"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "Dashboard",
+                         "id":  "Dashboard",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "DFV",
+                         "id":  "DFV",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "Domestic and Family Violence",
+                         "id":  "Domestic and Family Violence",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Child Impact",
+                                             "id":  "Child Impact"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Coercive Control",
+                                             "id":  "Coercive Control"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Legal Systems",
+                                             "id":  "Legal Systems"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Patterns of Abuse",
+                                             "id":  "Patterns of Abuse"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Recovery \u0026 Support",
+                                             "id":  "Recovery \u0026 Support"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Reunification",
+                                             "id":  "Reunification"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Risk Assessment",
+                                             "id":  "Risk Assessment"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Safety Planning",
+                                             "id":  "Safety Planning"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Trauma Responses",
+                                             "id":  "Trauma Responses"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Understanding DFV",
+                                             "id":  "Understanding DFV"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "Early Childhood Bonding",
+                         "id":  "Early Childhood Bonding",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "Employment",
+                         "id":  "Employment",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "Family Preservation",
+                         "id":  "Family Preservation",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "Housing",
+                         "id":  "Housing",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "integrated",
+                         "id":  "integrated",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "integrity",
+                         "id":  "integrity",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "lessons",
+                         "id":  "lessons",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "cravings",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "cravings"
+                                                             },
+                                                             {
+                                                                 "title":  "harm-minimisation",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "harm-minimisation"
+                                                             },
+                                                             {
+                                                                 "title":  "relapse-prevention",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "AOD-RP-001_triggers",
+                                                                                     "path":  "lessons\\aod\\relapse-prevention\\AOD-RP-001_triggers.json",
+                                                                                     "id":  "AOD-RP-001_triggers"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "AOD-RP-002_craving_management",
+                                                                                     "path":  "lessons\\aod\\relapse-prevention\\AOD-RP-002_craving_management.json",
+                                                                                     "id":  "AOD-RP-002_craving_management"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "relapse-prevention"
+                                                             },
+                                                             {
+                                                                 "title":  "triggers",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "triggers"
+                                                             }
+                                                         ],
+                                             "title":  "aod",
+                                             "id":  "aod"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "behaviour",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "behaviour"
+                                                             },
+                                                             {
+                                                                 "title":  "learning",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "learning"
+                                                             },
+                                                             {
+                                                                 "title":  "milestones",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "milestones"
+                                                             },
+                                                             {
+                                                                 "title":  "trauma",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "trauma"
+                                                             }
+                                                         ],
+                                             "title":  "child-development",
+                                             "id":  "child-development"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "community",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "community"
+                                                             },
+                                                             {
+                                                                 "title":  "connection",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "connection"
+                                                             },
+                                                             {
+                                                                 "title":  "identity",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "identity"
+                                                             }
+                                                         ],
+                                             "title":  "cultural",
+                                             "id":  "cultural"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "accountability",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "accountability"
+                                                             },
+                                                             {
+                                                                 "title":  "behaviour-change",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "behaviour-change"
+                                                             },
+                                                             {
+                                                                 "title":  "coercive-control",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "DFV-CC-001_patterns",
+                                                                                     "path":  "lessons\\dfv\\coercive-control\\DFV-CC-001_patterns.json",
+                                                                                     "id":  "DFV-CC-001_patterns"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "DFV-CC-002_cycle",
+                                                                                     "path":  "lessons\\dfv\\coercive-control\\DFV-CC-002_cycle.json",
+                                                                                     "id":  "DFV-CC-002_cycle"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "DFV-CC-003_red_flags",
+                                                                                     "path":  "lessons\\dfv\\coercive-control\\DFV-CC-003_red_flags.json",
+                                                                                     "id":  "DFV-CC-003_red_flags"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "DFV-CC-004_gaslighting",
+                                                                                     "path":  "lessons\\dfv\\coercive-control\\DFV-CC-004_gaslighting.json",
+                                                                                     "id":  "DFV-CC-004_gaslighting"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "DFV-CC-005_financial_control",
+                                                                                     "path":  "lessons\\dfv\\coercive-control\\DFV-CC-005_financial_control.json",
+                                                                                     "id":  "DFV-CC-005_financial_control"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "coercive-control"
+                                                             },
+                                                             {
+                                                                 "title":  "working-with-perpetrators",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "working-with-perpetrators"
+                                                             }
+                                                         ],
+                                             "title":  "dfv",
+                                             "id":  "dfv"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "budgeting",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "budgeting"
+                                                             },
+                                                             {
+                                                                 "title":  "home-management",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "home-management"
+                                                             },
+                                                             {
+                                                                 "title":  "organisation",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "organisation"
+                                                             },
+                                                             {
+                                                                 "title":  "time-management",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "time-management"
+                                                             }
+                                                         ],
+                                             "title":  "life-skills",
+                                             "id":  "life-skills"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "cognitive-skills",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "cognitive-skills"
+                                                             },
+                                                             {
+                                                                 "title":  "distress-tolerance",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "distress-tolerance"
+                                                             },
+                                                             {
+                                                                 "title":  "emotional-regulation",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "MH-ER-006_name_it_to_tame_it",
+                                                                                     "path":  "lessons\\mental-health\\emotional-regulation\\MH-ER-006_name_it_to_tame_it.json",
+                                                                                     "id":  "MH-ER-006_name_it_to_tame_it"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "MH-ER-007_emotion_wheel",
+                                                                                     "path":  "lessons\\mental-health\\emotional-regulation\\MH-ER-007_emotion_wheel.json",
+                                                                                     "id":  "MH-ER-007_emotion_wheel"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "MH-ER-008_urge_surfing",
+                                                                                     "path":  "lessons\\mental-health\\emotional-regulation\\MH-ER-008_urge_surfing.json",
+                                                                                     "id":  "MH-ER-008_urge_surfing"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "MH-ER-009_distress_tolerance",
+                                                                                     "path":  "lessons\\mental-health\\emotional-regulation\\MH-ER-009_distress_tolerance.json",
+                                                                                     "id":  "MH-ER-009_distress_tolerance"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "MH-ER-010_tipp_skills",
+                                                                                     "path":  "lessons\\mental-health\\emotional-regulation\\MH-ER-010_tipp_skills.json",
+                                                                                     "id":  "MH-ER-010_tipp_skills"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "MH-ER-011_opposite_action",
+                                                                                     "path":  "lessons\\mental-health\\emotional-regulation\\MH-ER-011_opposite_action.json",
+                                                                                     "id":  "MH-ER-011_opposite_action"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "emotional-regulation"
+                                                             },
+                                                             {
+                                                                 "title":  "grounding",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "MH-ER-001_grounding_basics",
+                                                                                     "path":  "lessons\\mental-health\\grounding\\MH-ER-001_grounding_basics.json",
+                                                                                     "id":  "MH-ER-001_grounding_basics"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "MH-ER-002_54321_technique",
+                                                                                     "path":  "lessons\\mental-health\\grounding\\MH-ER-002_54321_technique.json",
+                                                                                     "id":  "MH-ER-002_54321_technique"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "MH-ER-003_object_focus",
+                                                                                     "path":  "lessons\\mental-health\\grounding\\MH-ER-003_object_focus.json",
+                                                                                     "id":  "MH-ER-003_object_focus"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "MH-ER-004_temperature_grounding",
+                                                                                     "path":  "lessons\\mental-health\\grounding\\MH-ER-004_temperature_grounding.json",
+                                                                                     "id":  "MH-ER-004_temperature_grounding"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "MH-ER-005_breathing_grounding",
+                                                                                     "path":  "lessons\\mental-health\\grounding\\MH-ER-005_breathing_grounding.json",
+                                                                                     "id":  "MH-ER-005_breathing_grounding"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "grounding"
+                                                             }
+                                                         ],
+                                             "title":  "mental-health",
+                                             "id":  "mental-health"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "attachment",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "PAR-ATT-001_secure_attachment",
+                                                                                     "path":  "lessons\\parenting\\attachment\\PAR-ATT-001_secure_attachment.json",
+                                                                                     "id":  "PAR-ATT-001_secure_attachment"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "PAR-ATT-002_play_connection",
+                                                                                     "path":  "lessons\\parenting\\attachment\\PAR-ATT-002_play_connection.json",
+                                                                                     "id":  "PAR-ATT-002_play_connection"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "attachment"
+                                                             },
+                                                             {
+                                                                 "title":  "boundaries",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "boundaries"
+                                                             },
+                                                             {
+                                                                 "title":  "communication",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "PAR-COM-001_positive_language",
+                                                                                     "path":  "lessons\\parenting\\communication\\PAR-COM-001_positive_language.json",
+                                                                                     "id":  "PAR-COM-001_positive_language"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "communication"
+                                                             },
+                                                             {
+                                                                 "title":  "routines",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "PAR-ROU-001_morning_routines",
+                                                                                     "path":  "lessons\\parenting\\routines\\PAR-ROU-001_morning_routines.json",
+                                                                                     "id":  "PAR-ROU-001_morning_routines"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "PAR-ROU-002_bedtime_routines",
+                                                                                     "path":  "lessons\\parenting\\routines\\PAR-ROU-002_bedtime_routines.json",
+                                                                                     "id":  "PAR-ROU-002_bedtime_routines"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "routines"
+                                                             },
+                                                             {
+                                                                 "title":  "supervision",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "supervision"
+                                                             }
+                                                         ],
+                                             "title":  "parenting",
+                                             "id":  "parenting"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "child-safety",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "child-safety"
+                                                             },
+                                                             {
+                                                                 "title":  "emergency-planning",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "emergency-planning"
+                                                             },
+                                                             {
+                                                                 "title":  "protective-behaviours",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "protective-behaviours"
+                                                             },
+                                                             {
+                                                                 "title":  "risk-assessment",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "risk-assessment"
+                                                             },
+                                                             {
+                                                                 "title":  "safety-planning",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "SAF-SP-001_what_is_a_safety_plan",
+                                                                                     "path":  "lessons\\safety\\safety-planning\\SAF-SP-001_what_is_a_safety_plan.json",
+                                                                                     "id":  "SAF-SP-001_what_is_a_safety_plan"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "SAF-SP-002_warning_signs",
+                                                                                     "path":  "lessons\\safety\\safety-planning\\SAF-SP-002_warning_signs.json",
+                                                                                     "id":  "SAF-SP-002_warning_signs"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "SAF-SP-003_safe_people",
+                                                                                     "path":  "lessons\\safety\\safety-planning\\SAF-SP-003_safe_people.json",
+                                                                                     "id":  "SAF-SP-003_safe_people"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "SAF-SP-004_safe_places",
+                                                                                     "path":  "lessons\\safety\\safety-planning\\SAF-SP-004_safe_places.json",
+                                                                                     "id":  "SAF-SP-004_safe_places"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "SAF-SP-005_escape_routes",
+                                                                                     "path":  "lessons\\safety\\safety-planning\\SAF-SP-005_escape_routes.json",
+                                                                                     "id":  "SAF-SP-005_escape_routes"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "SAF-SP-006_emergency_bag",
+                                                                                     "path":  "lessons\\safety\\safety-planning\\SAF-SP-006_emergency_bag.json",
+                                                                                     "id":  "SAF-SP-006_emergency_bag"
+                                                                                 },
+                                                                                 {
+                                                                                     "title":  "SAF-SP-007_code_words",
+                                                                                     "path":  "lessons\\safety\\safety-planning\\SAF-SP-007_code_words.json",
+                                                                                     "id":  "SAF-SP-007_code_words"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "safety-planning"
+                                                             },
+                                                             {
+                                                                 "title":  "technology-safety",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "technology-safety"
+                                                             }
+                                                         ],
+                                             "title":  "safety",
+                                             "id":  "safety"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "libraries",
+                         "id":  "libraries",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "library",
+                         "id":  "library",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "lessons",
+                                             "id":  "lessons"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "modules",
+                                             "id":  "modules"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "topics",
+                                             "id":  "topics"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "Life Skills",
+                         "id":  "Life Skills",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "maps",
+                         "id":  "maps",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "Mental Health",
+                         "id":  "Mental Health",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Anxiety",
+                                             "id":  "Anxiety"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Behavioural Health",
+                                             "id":  "Behavioural Health"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Crisis Management",
+                                             "id":  "Crisis Management"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Depression",
+                                             "id":  "Depression"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Emotional Regulation",
+                                             "id":  "Emotional Regulation"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Neurodevelopment",
+                                             "id":  "Neurodevelopment"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Recovery Pathways",
+                                             "id":  "Recovery Pathways"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Stress Response",
+                                             "id":  "Stress Response"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Support Systems",
+                                             "id":  "Support Systems"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Trauma",
+                                             "id":  "Trauma"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "param(",
+                         "id":  "param(",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "lessons",
+                                             "id":  "lessons"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "Parenting",
+                         "id":  "Parenting",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "ParentingCourse",
+                         "id":  "ParentingCourse",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "ParentingCurriculum",
+                         "id":  "ParentingCurriculum",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "ParentingLessons",
+                         "id":  "ParentingLessons",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "programs",
+                         "id":  "programs",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "aod-recovery",
+                                             "id":  "aod-recovery"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "week-1",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\aod-recovery-12w\\week-1\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-1"
+                                                             },
+                                                             {
+                                                                 "title":  "week-10",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\aod-recovery-12w\\week-10\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-10"
+                                                             },
+                                                             {
+                                                                 "title":  "week-11",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\aod-recovery-12w\\week-11\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-11"
+                                                             },
+                                                             {
+                                                                 "title":  "week-12",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\aod-recovery-12w\\week-12\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-12"
+                                                             },
+                                                             {
+                                                                 "title":  "week-2",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\aod-recovery-12w\\week-2\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-2"
+                                                             },
+                                                             {
+                                                                 "title":  "week-3",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\aod-recovery-12w\\week-3\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-3"
+                                                             },
+                                                             {
+                                                                 "title":  "week-4",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\aod-recovery-12w\\week-4\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-4"
+                                                             },
+                                                             {
+                                                                 "title":  "week-5",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\aod-recovery-12w\\week-5\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-5"
+                                                             },
+                                                             {
+                                                                 "title":  "week-6",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\aod-recovery-12w\\week-6\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-6"
+                                                             },
+                                                             {
+                                                                 "title":  "week-7",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\aod-recovery-12w\\week-7\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-7"
+                                                             },
+                                                             {
+                                                                 "title":  "week-8",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\aod-recovery-12w\\week-8\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-8"
+                                                             },
+                                                             {
+                                                                 "title":  "week-9",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\aod-recovery-12w\\week-9\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-9"
+                                                             }
+                                                         ],
+                                             "title":  "aod-recovery-12w",
+                                             "id":  "aod-recovery-12w"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "back-on-track-6m",
+                                             "id":  "back-on-track-6m"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "child-protection-awareness-12w",
+                                             "id":  "child-protection-awareness-12w"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "dfv-recovery",
+                                             "id":  "dfv-recovery"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "week-1",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\dfv-recovery-12w\\week-1\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-1"
+                                                             },
+                                                             {
+                                                                 "title":  "week-10",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\dfv-recovery-12w\\week-10\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-10"
+                                                             },
+                                                             {
+                                                                 "title":  "week-11",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\dfv-recovery-12w\\week-11\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-11"
+                                                             },
+                                                             {
+                                                                 "title":  "week-12",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\dfv-recovery-12w\\week-12\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-12"
+                                                             },
+                                                             {
+                                                                 "title":  "week-2",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\dfv-recovery-12w\\week-2\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-2"
+                                                             },
+                                                             {
+                                                                 "title":  "week-3",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\dfv-recovery-12w\\week-3\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-3"
+                                                             },
+                                                             {
+                                                                 "title":  "week-4",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\dfv-recovery-12w\\week-4\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-4"
+                                                             },
+                                                             {
+                                                                 "title":  "week-5",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\dfv-recovery-12w\\week-5\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-5"
+                                                             },
+                                                             {
+                                                                 "title":  "week-6",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\dfv-recovery-12w\\week-6\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-6"
+                                                             },
+                                                             {
+                                                                 "title":  "week-7",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\dfv-recovery-12w\\week-7\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-7"
+                                                             },
+                                                             {
+                                                                 "title":  "week-8",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\dfv-recovery-12w\\week-8\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-8"
+                                                             },
+                                                             {
+                                                                 "title":  "week-9",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\dfv-recovery-12w\\week-9\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-9"
+                                                             }
+                                                         ],
+                                             "title":  "dfv-recovery-12w",
+                                             "id":  "dfv-recovery-12w"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "phase-1",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "phase-1"
+                                                             },
+                                                             {
+                                                                 "title":  "phase-2",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "phase-2"
+                                                             },
+                                                             {
+                                                                 "title":  "phase-3",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "phase-3"
+                                                             }
+                                                         ],
+                                             "title":  "home-again-12m",
+                                             "id":  "home-again-12m"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "keeping-families-together-12m",
+                                             "id":  "keeping-families-together-12m"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "mental-health-stability",
+                                             "id":  "mental-health-stability"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "week-1",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\mh-stabilisation-8w\\week-1\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-1"
+                                                             },
+                                                             {
+                                                                 "title":  "week-2",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\mh-stabilisation-8w\\week-2\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-2"
+                                                             },
+                                                             {
+                                                                 "title":  "week-3",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\mh-stabilisation-8w\\week-3\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-3"
+                                                             },
+                                                             {
+                                                                 "title":  "week-4",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\mh-stabilisation-8w\\week-4\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-4"
+                                                             },
+                                                             {
+                                                                 "title":  "week-5",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\mh-stabilisation-8w\\week-5\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-5"
+                                                             },
+                                                             {
+                                                                 "title":  "week-6",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\mh-stabilisation-8w\\week-6\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-6"
+                                                             },
+                                                             {
+                                                                 "title":  "week-7",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\mh-stabilisation-8w\\week-7\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-7"
+                                                             },
+                                                             {
+                                                                 "title":  "week-8",
+                                                                 "lessons":  [
+                                                                                 {
+                                                                                     "title":  "stage",
+                                                                                     "path":  "programs\\mh-stabilisation-8w\\week-8\\stage.json",
+                                                                                     "id":  "stage"
+                                                                                 }
+                                                                             ],
+                                                                 "id":  "week-8"
+                                                             }
+                                                         ],
+                                             "title":  "mh-stabilisation-8w",
+                                             "id":  "mh-stabilisation-8w"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "phase-1",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "phase-1"
+                                                             },
+                                                             {
+                                                                 "title":  "phase-2",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "phase-2"
+                                                             },
+                                                             {
+                                                                 "title":  "phase-3",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "phase-3"
+                                                             },
+                                                             {
+                                                                 "title":  "phase-4",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "phase-4"
+                                                             },
+                                                             {
+                                                                 "title":  "phase-5",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "phase-5"
+                                                             }
+                                                         ],
+                                             "title":  "reunification-24m",
+                                             "id":  "reunification-24m"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "AOD",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "AOD"
+                                                             },
+                                                             {
+                                                                 "title":  "DFV",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "DFV"
+                                                             },
+                                                             {
+                                                                 "title":  "MentalHealth",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "MentalHealth"
+                                                             }
+                                                         ],
+                                             "title":  "short-courses",
+                                             "id":  "short-courses"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "Reports",
+                         "id":  "Reports",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "Reunification",
+                         "id":  "Reunification",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "routes",
+                         "id":  "routes",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "parents",
+                                             "id":  "parents"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "SafeSteps Curriculum",
+                         "id":  "SafeSteps Curriculum",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "plugins",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "plugins"
+                                                             }
+                                                         ],
+                                             "title":  ".obsidian",
+                                             "id":  ".obsidian"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "week 02",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "week 02"
+                                                             },
+                                                             {
+                                                                 "title":  "week 04 1",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "week 04 1"
+                                                             }
+                                                         ],
+                                             "title":  ".trash",
+                                             "id":  ".trash"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "Month 06 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 06 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 07 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 07 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 08 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 08 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 09 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 09 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 10 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 10 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 11 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 11 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 12 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 12 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 13 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 13 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 14 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 14 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 15 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 15 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 16 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 16 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 17 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 17 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 18 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 18 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 19 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 19 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 20 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 20 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 21 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 21 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 22 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 22 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 23 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 23 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 24",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 24"
+                                                             }
+                                                         ],
+                                             "title":  "1 - Reunification Program (24m)",
+                                             "id":  "1 - Reunification Program (24m)"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "Month 01-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 01-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 02-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 02-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 03 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 03 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 04 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 04 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 05-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 05-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 06-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 06-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 07-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 07-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 08-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 08-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 09-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 09-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 10-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 10-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 11-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 11-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 12-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 12-"
+                                                             }
+                                                         ],
+                                             "title":  "2 - Home Again Program (6-12m)",
+                                             "id":  "2 - Home Again Program (6-12m)"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "Month 01-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 01-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 02-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 02-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 03-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 03-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 04-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 04-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 05-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 05-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 06-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 06-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 07-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 07-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 08-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 08-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 09-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 09-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 10-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 10-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 11-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 11-"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 12-",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 12-"
+                                                             }
+                                                         ],
+                                             "title":  "3 - Keep Families Together (12m)",
+                                             "id":  "3 - Keep Families Together (12m)"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "Month 01 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 01 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 02 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 02 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 03 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 03 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 04 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 04 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 05 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 05 -"
+                                                             },
+                                                             {
+                                                                 "title":  "Month 06 -",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Month 06 -"
+                                                             }
+                                                         ],
+                                             "title":  "4 - Back on Track (6m)",
+                                             "id":  "4 - Back on Track (6m)"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "5 - Parenting Mega Program",
+                                             "id":  "5 - Parenting Mega Program"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "6 - Specialist Courses",
+                                             "id":  "6 - Specialist Courses"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "9 - Safety Framework",
+                                             "id":  "9 - Safety Framework"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Caseworker Handbook",
+                                             "id":  "Caseworker Handbook"
+                                         },
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "copilot-custom-prompts",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "copilot-custom-prompts"
+                                                             }
+                                                         ],
+                                             "title":  "copilot",
+                                             "id":  "copilot"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Google Keep",
+                                             "id":  "Google Keep"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Lesson Titles",
+                                             "id":  "Lesson Titles"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Master Blueprint",
+                                             "id":  "Master Blueprint"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "OneNote",
+                                             "id":  "OneNote"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "System Architecture",
+                                             "id":  "System Architecture"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Untitled",
+                                             "id":  "Untitled"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Untitled 1",
+                                             "id":  "Untitled 1"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Untitled 2",
+                                             "id":  "Untitled 2"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Untitled 3",
+                                             "id":  "Untitled 3"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Untitled 4",
+                                             "id":  "Untitled 4"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "scripts",
+                         "id":  "scripts",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "SectionA_ParentWellbeing",
+                         "id":  "SectionA_ParentWellbeing",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "SectionB_ParentingCapacity",
+                         "id":  "SectionB_ParentingCapacity",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "SectionC_ParentChildRelationship",
+                         "id":  "SectionC_ParentChildRelationship",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "SectionD_HomeEnvironment",
+                         "id":  "SectionD_HomeEnvironment",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "SectionE_ChildDevelopment",
+                         "id":  "SectionE_ChildDevelopment",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "SectionF_ProtectiveFactors",
+                         "id":  "SectionF_ProtectiveFactors",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "SectionG_RiskIndicators",
+                         "id":  "SectionG_RiskIndicators",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "Self Reflection",
+                         "id":  "Self Reflection",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "Self Reflection \u0026 Accountability",
+                         "id":  "Self Reflection \u0026 Accountability",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Accountability Systems",
+                                             "id":  "Accountability Systems"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Behaviour Patterns",
+                                             "id":  "Behaviour Patterns"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Behaviour Transformation",
+                                             "id":  "Behaviour Transformation"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Conflict Reflection",
+                                             "id":  "Conflict Reflection"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Decision Making",
+                                             "id":  "Decision Making"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Emotional Regulation",
+                                             "id":  "Emotional Regulation"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Habit Change",
+                                             "id":  "Habit Change"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Identity Development",
+                                             "id":  "Identity Development"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Personal Responsibility",
+                                             "id":  "Personal Responsibility"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "Self Awareness",
+                                             "id":  "Self Awareness"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "snapshots",
+                         "id":  "snapshots",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "stage1",
+                         "id":  "stage1",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "week1",
+                                             "id":  "week1"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "stages",
+                         "id":  "stages",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "summary",
+                         "id":  "summary",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "templates",
+                         "id":  "templates",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+                                                             {
+                                                                 "title":  "Child Development",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Child Development"
+                                                             },
+                                                             {
+                                                                 "title":  "Communication",
+                                                                 "lessons":  [
+
+                                                                             ],
+                                                                 "id":  "Communication"
+                                                             }
+                                                         ],
+                                             "title":  "topics",
+                                             "id":  "topics"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "Untitled",
+                         "id":  "Untitled",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "versions",
+                         "id":  "versions",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "v1.0.1",
+                                             "id":  "v1.0.1"
+                                         }
+                                     ]
+                     },
+                     {
+                         "title":  "weeks",
+                         "id":  "weeks",
+                         "courses":  [
+
+                                     ]
+                     },
+                     {
+                         "title":  "working_with_families",
+                         "id":  "working_with_families",
+                         "courses":  [
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "lessons",
+                                             "id":  "lessons"
+                                         },
+                                         {
+                                             "modules":  [
+
+                                                         ],
+                                             "title":  "modules",
+                                             "id":  "modules"
+                                         }
+                                     ]
+                     }
+                 ]
+}

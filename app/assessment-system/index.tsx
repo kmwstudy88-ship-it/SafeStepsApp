@@ -31,16 +31,60 @@ const steps: {
     status: "Profiles",
   },
   {
-    title: "Rubric Scoring",
-    description: "Score parenting capacity, safety, stability, engagement, and evidence strength.",
+    title: "Parent Identity & Background",
+    description: "Use structured background prompts to document school history, reflection, parenting impact, and worker interpretation.",
+    href: "/assessment-system/parent-identity" as Href,
+    status: "Identity",
+  },
+  {
+    title: "Protective Capacity Scoring",
+    description: "Score safety, protective capacity, routines, services, child voice, and evidence with critical overrides.",
     href: "/assessment-system/scoring" as Href,
     status: "Scoring",
+  },
+  {
+    title: "Child Development & Capacity",
+    description:
+      "Use age-based scenarios to test child development awareness, risk recognition, parent regulation, and protective action.",
+    href: "/assessment-system/child-development-capacity" as Href,
+    status: "Scenarios",
+  },
+  {
+    title: "Intensive Reunification Support",
+    description:
+      "Track intensive program models, kinship mapping, graduated contact, service-load risk, and pre-return safety verification.",
+    href: "/assessment-system/intensive-reunification-support" as Href,
+    status: "High intensity",
   },
   {
     title: "Evidence Uploads",
     description: "Attach observations, documents, visit notes, photos, and service confirmations.",
     href: "/assessment-system/evidence-uploads" as Href,
     status: "Evidence",
+  },
+  {
+    title: "Visit and Contact Logistics",
+    description: "Record contact dates, handovers, observed quality, incidents, and factual summaries against the current case.",
+    href: "/visits" as Href,
+    status: "Visits",
+  },
+  {
+    title: "Session Management",
+    description: "Schedule sessions, generate agendas, record notes, handle consented transcripts, score sessions, and flag missed sessions.",
+    href: "/sessions" as Href,
+    status: "Sessions",
+  },
+  {
+    title: "Document Management",
+    description: "Track document requests, versions, expiry dates, evidence links, and report-ready attachments.",
+    href: "/documents" as Href,
+    status: "Documents",
+  },
+  {
+    title: "Service Referrals",
+    description: "Track support referrals, provider-contact consent, attendance evidence, overdue follow-up, and review prompts.",
+    href: "/referrals" as Href,
+    status: "Referrals",
   },
   {
     title: "Readiness Index",
@@ -60,7 +104,7 @@ export default function AssessmentSystemHome() {
   return (
     <AssessmentScreenShell
       title="Assessment System"
-      subtitle="A structured place to document case setup, assessment records, rubric scoring, evidence, and report output."
+      subtitle="A structured place to document case setup, assessment records, protective-capacity scoring, evidence, readiness, and report output."
     >
       <View style={styles.grid}>
         {steps.map((step) => (

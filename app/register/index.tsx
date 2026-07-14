@@ -41,11 +41,11 @@ export default function RegisterScreen() {
       });
 
       if (data.session) {
-        router.replace("/welcome");
+        router.replace("/assessments");
         return;
       }
 
-      router.replace("/welcome");
+      router.replace("/assessments");
     } catch (registerError) {
       setError(
         registerError instanceof Error

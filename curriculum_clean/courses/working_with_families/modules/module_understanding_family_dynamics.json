@@ -1,0 +1,9 @@
+﻿{
+    "title":  "Understanding Family Dynamics",
+    "lessons":  [
+                    "lesson_family_systems",
+                    "lesson_roles_rules_patterns",
+                    "lesson_healthy_vs_unhealthy_dynamics"
+                ],
+    "id":  "module_understanding_family_dynamics"
+}

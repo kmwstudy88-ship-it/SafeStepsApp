@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { getProgramById, getProgramMonth } from "../../lib/data/programs";
 import { hasReflectionRecord } from "../../lib/engines/reflectionStatusEngine";
+import { ChallengeRecommendations } from "../../components/ChallengeRecommendations";
 
 export default function MonthScreen() {
   const params = useLocalSearchParams();
@@ -170,6 +171,12 @@ export default function MonthScreen() {
           <Text style={{ fontWeight: "bold" }}>Refresh Unlock Status</Text>
         </Pressable>
       </View>
+
+      <ChallengeRecommendations
+        context={`${program.title} ${program.description} ${month.topic} ${month.weeks.map((week) => week.subTopic).join(" ")}`}
+        title={`Practice for ${month.topic}`}
+        limit={3}
+      />
 
       {month.weeks.map((week) => (
         <View

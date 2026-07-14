@@ -6,7 +6,7 @@ function getAuthRedirectUrl() {
   }
 
   if (typeof window !== "undefined" && window.location.origin) {
-    return `${window.location.origin}/welcome`;
+    return `${window.location.origin}/assessments`;
   }
 
   return undefined;

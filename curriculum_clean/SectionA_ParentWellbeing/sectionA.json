@@ -1,0 +1,20 @@
+﻿{
+    "sectionId":  "A",
+    "groups":  [
+                   {
+                       "label":  "Mental Health",
+                       "id":  "A_MentalHealth",
+                       "items":  [
+                                     {
+                                         "id":  "A_MH_Overwhelmed",
+                                         "direction":  "higher_risk_higher_score",
+                                         "text":  "How often do you feel overwhelmed?",
+                                         "type":  "likert_frequency",
+                                         "domain":  "mental_health",
+                                         "scale":  "1=Never;5=Very often"
+                                     }
+                                 ]
+                   }
+               ],
+    "name":  "Parent Wellbeing"
+}

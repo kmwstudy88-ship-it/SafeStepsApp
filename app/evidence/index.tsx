@@ -13,12 +13,14 @@ import * as ImagePicker from "expo-image-picker";
 
 import { useAuth } from "../../lib/auth";
 import {
-  createEvidenceItem,
+  createEvidenceItemWithOfflineFallback,
   EvidenceItem,
   fetchEvidenceItems,
+  getPendingOfflineEvidenceItems,
+  syncPendingOfflineEvidence,
   updateEvidenceItemsStatus,
-  uploadEvidenceFile,
 } from "../../lib/engines/evidenceEngine";
+import type { OfflineEvidenceVaultItem } from "../../lib/engines/offlineEvidenceVault";
 
 type EvidenceAttachment = {
   uri: string;
@@ -30,8 +32,10 @@ type EvidenceAttachment = {
 export default function EvidenceScreen() {
   const { initializing, user } = useAuth();
   const [items, setItems] = useState<EvidenceItem[]>([]);
+  const [pendingItems, setPendingItems] = useState<OfflineEvidenceVaultItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [syncing, setSyncing] = useState(false);
   const [bulkUpdating, setBulkUpdating] = useState(false);
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
@@ -48,9 +52,21 @@ export default function EvidenceScreen() {
     setMessage("");
 
     try {
+      const syncResult = await syncPendingOfflineEvidence();
+      if (syncResult.syncedCount > 0) {
+        setMessage(`${syncResult.syncedCount} offline evidence item${syncResult.syncedCount === 1 ? "" : "s"} uploaded.`);
+      }
+
       const savedItems = await fetchEvidenceItems();
+      const queuedItems = await getPendingOfflineEvidenceItems();
       setItems(savedItems);
+      setPendingItems(queuedItems);
     } catch (loadError) {
+      try {
+        setPendingItems(await getPendingOfflineEvidenceItems());
+      } catch {
+        setPendingItems([]);
+      }
       setError(
         loadError instanceof Error
           ? loadError.message
@@ -69,27 +85,24 @@ export default function EvidenceScreen() {
     setMessage("");
 
     try {
-      const filePath = attachment
-        ? await uploadEvidenceFile(attachment.uri, attachment.name, attachment.mimeType)
-        : null;
-
-      await createEvidenceItem({
+      const result = await createEvidenceItemWithOfflineFallback({
         title: title.trim(),
-        notes: [
-          notes.trim(),
-          attachment ? `Attachment source: ${attachment.source}` : "",
-          attachment ? `Attachment name: ${attachment.name}` : "",
-        ]
-          .filter(Boolean)
-          .join("\n"),
-        file_path: filePath,
-        status: "stored",
+        notes,
+        attachment,
       });
 
       setTitle("");
       setNotes("");
       setAttachment(null);
-      await loadEvidence();
+      if (result.mode === "online") {
+        await loadEvidence();
+        setMessage("Evidence saved.");
+      } else {
+        setPendingItems(await getPendingOfflineEvidenceItems());
+        setMessage(
+          "No connection detected. Evidence has been sealed in the offline vault and will upload when sync succeeds.",
+        );
+      }
     } catch (saveError) {
       setError(
         saveError instanceof Error
@@ -98,6 +111,32 @@ export default function EvidenceScreen() {
       );
     } finally {
       setSaving(false);
+    }
+  }
+
+  async function handleSyncOfflineVault() {
+    if (syncing) return;
+
+    setSyncing(true);
+    setError("");
+    setMessage("");
+
+    try {
+      const result = await syncPendingOfflineEvidence();
+      setMessage(
+        result.syncedCount > 0
+          ? `${result.syncedCount} offline evidence item${result.syncedCount === 1 ? "" : "s"} uploaded.`
+          : "No offline evidence could be uploaded yet. It will stay sealed in the vault.",
+      );
+      await loadEvidence();
+    } catch (syncError) {
+      setError(
+        syncError instanceof Error
+          ? syncError.message
+          : "Could not sync offline evidence.",
+      );
+    } finally {
+      setSyncing(false);
     }
   }
 
@@ -247,6 +286,43 @@ export default function EvidenceScreen() {
         Evidence stores parent notes, practice records, documents, photos, draft
         evidence, and stored proof for reports and facilitator review.
       </Text>
+
+      <View
+        style={{
+          padding: 16,
+          backgroundColor: pendingItems.length > 0 ? "#fff4d6" : "#eef7f3",
+          borderRadius: 12,
+          marginBottom: 16,
+        }}
+      >
+        <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+          Offline evidence vault
+        </Text>
+        <Text style={{ marginTop: 6, lineHeight: 21 }}>
+          If internet drops, evidence is sealed locally with tamper-evident vault
+          hashes and uploaded when sync succeeds.
+        </Text>
+        <Text style={{ marginTop: 8, fontWeight: "bold" }}>
+          Pending upload: {pendingItems.length}
+        </Text>
+        {pendingItems.length > 0 ? (
+          <Pressable
+            disabled={syncing}
+            onPress={handleSyncOfflineVault}
+            style={{
+              marginTop: 12,
+              padding: 12,
+              backgroundColor: syncing ? "#c7d1cb" : "#2f5f4a",
+              borderRadius: 10,
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ color: "#ffffff", fontWeight: "bold" }}>
+              {syncing ? "Syncing..." : "Sync Offline Evidence"}
+            </Text>
+          </Pressable>
+        ) : null}
+      </View>
 
       <View
         style={{

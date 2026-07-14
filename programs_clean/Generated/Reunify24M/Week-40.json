@@ -1,0 +1,96 @@
+﻿{
+    "programId":  "REUNIFY-24M",
+    "week":  40,
+    "stageId":  "STAGE-05",
+    "stageName":  "Protective Decision-Making",
+    "modules":  [
+                    {
+                        "id":  "PP-ENGAGE-02",
+                        "name":  "STOP-THINK-ACT Model",
+                        "goal":  "Improve decision-making under stress.",
+                        "tasks":  [
+                                      "Pause before reacting to conflict",
+                                      "Identify possible risks before responding",
+                                      "Choose the safest possible action",
+                                      "Review what worked and what didn’t"
+                                  ],
+                        "evidence":  [
+                                         "Reduced incidents",
+                                         "Support person feedback"
+                                     ]
+                    },
+                    {
+                        "id":  "PP-REUNIFY-02",
+                        "name":  "Safe Emotional Regulation",
+                        "goal":  "Reduce risk during stress.",
+                        "tasks":  [
+                                      "Practice STOP→THINK→ACT→REVIEW daily",
+                                      "Use grounding techniques when triggered",
+                                      "Call a support person instead of escalating"
+                                  ],
+                        "evidence":  [
+                                         "No new incidents",
+                                         "Improved contact behaviour"
+                                     ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "Pause before reacting to conflict"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "Identify possible risks before responding"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "Choose the safest possible action"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "Review what worked and what didn’t"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "Practice STOP→THINK→ACT→REVIEW daily"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "Use grounding techniques when triggered"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Call a support person instead of escalating"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+                                    "Reduced incidents",
+                                    "No new incidents"
+                                ],
+                     "insight":  [
+                                     "Support person feedback"
+                                 ],
+                     "behaviour":  [
+                                       "Improved contact behaviour"
+                                   ]
+                 }
+}

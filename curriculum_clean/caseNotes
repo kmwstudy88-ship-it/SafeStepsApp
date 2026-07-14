@@ -1,0 +1,6 @@
+/modules/caseNotes
+  caseNote.service.ts
+  caseNote.repository.ts
+  caseNote.controller.ts
+  caseNote.validators.ts
+  caseNote.types.ts

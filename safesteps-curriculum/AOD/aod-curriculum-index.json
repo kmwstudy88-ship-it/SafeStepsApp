@@ -1,0 +1,181 @@
+{
+  "curriculum": {
+    "name": "SafeSteps Alcohol and Other Drugs (AOD)",
+    "version": "1.0",
+    "category": "Alcohol and Other Drugs",
+    "total_lessons": 34,
+
+    "lessons": [
+      {
+        "lessonNumber": 1,
+        "title": "Introduction & Awareness",
+        "file": "001 - Introduction & Awareness.ps1"
+      },
+      {
+        "lessonNumber": 2,
+        "title": "Understanding Addiction",
+        "file": "002 - Understanding Addiction.ps1"
+      },
+      {
+        "lessonNumber": 3,
+        "title": "Addiction Science",
+        "file": "003 - Addiction Science.ps1"
+      },
+      {
+        "lessonNumber": 4,
+        "title": "Types of Substances",
+        "file": "004 - Types of Substances.ps1"
+      },
+      {
+        "lessonNumber": 5,
+        "title": "Alcohol Impacts",
+        "file": "005 - Alcohol Impacts.ps1"
+      },
+      {
+        "lessonNumber": 6,
+        "title": "Cannabis Use",
+        "file": "006 - Cannabis Use.ps1"
+      },
+      {
+        "lessonNumber": 7,
+        "title": "Stimulants (Ice, Speed)",
+        "file": "007 - Stimulants (Ice, Speed).ps1"
+      },
+      {
+        "lessonNumber": 8,
+        "title": "Depressants",
+        "file": "008 - Depressants.ps1"
+      },
+      {
+        "lessonNumber": 9,
+        "title": "Prescription Drug Misuse",
+        "file": "009 - Prescription Drug Misuse.ps1"
+      },
+      {
+        "lessonNumber": 10,
+        "title": "Polydrug Use",
+        "file": "010 - Polydrug Use.ps1"
+      },
+      {
+        "lessonNumber": 11,
+        "title": "Physical Signs",
+        "file": "011 - Physical Signs.ps1"
+      },
+      {
+        "lessonNumber": 12,
+        "title": "Behavioural Signs",
+        "file": "012 - Behavioural Signs.ps1"
+      },
+      {
+        "lessonNumber": 13,
+        "title": "Emotional Signs",
+        "file": "013 - Emotional Signs.ps1"
+      },
+      {
+        "lessonNumber": 14,
+        "title": "Brain & Body Effects",
+        "file": "014 - Brain & Body Effects.ps1"
+      },
+      {
+        "lessonNumber": 15,
+        "title": "Health Damage",
+        "file": "015 - Health Damage.ps1"
+      },
+      {
+        "lessonNumber": 16,
+        "title": "Mental Health Links",
+        "file": "016 - Mental Health Links.ps1"
+      },
+      {
+        "lessonNumber": 17,
+        "title": "Family Impact",
+        "file": "017 - Family Impact.ps1"
+      },
+      {
+        "lessonNumber": 18,
+        "title": "Child Safety Risks",
+        "file": "018 - Child Safety Risks.ps1"
+      },
+      {
+        "lessonNumber": 19,
+        "title": "Social Consequences",
+        "file": "019 - Social Consequences.ps1"
+      },
+      {
+        "lessonNumber": 20,
+        "title": "Legal Consequences",
+        "file": "020 - Legal Consequences.ps1"
+      },
+      {
+        "lessonNumber": 21,
+        "title": "Overdose & Crisis",
+        "file": "021 - Overdose & Crisis.ps1"
+      },
+      {
+        "lessonNumber": 22,
+        "title": "Dependence & Withdrawal",
+        "file": "022 - Dependence & Withdrawal.ps1"
+      },
+      {
+        "lessonNumber": 23,
+        "title": "Triggers",
+        "file": "023 - Triggers.ps1"
+      },
+      {
+        "lessonNumber": 24,
+        "title": "Peer Pressure",
+        "file": "024 - Peer Pressure.ps1"
+      },
+      {
+        "lessonNumber": 25,
+        "title": "Risk Factors",
+        "file": "025 - Risk Factors.ps1"
+      },
+      {
+        "lessonNumber": 26,
+        "title": "Protective Factors",
+        "file": "026 - Protective Factors.ps1"
+      },
+      {
+        "lessonNumber": 27,
+        "title": "Harm Reduction",
+        "file": "027 - Harm Reduction.ps1"
+      },
+      {
+        "lessonNumber": 28,
+        "title": "Intervention Skills",
+        "file": "028 - Intervention Skills.ps1"
+      },
+      {
+        "lessonNumber": 29,
+        "title": "Support Systems",
+        "file": "029 - Support Systems.ps1"
+      },
+      {
+        "lessonNumber": 30,
+        "title": "Recovery Pathways",
+        "file": "030 - Recovery Pathways.ps1"
+      },
+      {
+        "lessonNumber": 31,
+        "title": "Recovery Planning",
+        "file": "031 - Recovery Planning.ps1"
+      },
+      {
+        "lessonNumber": 32,
+        "title": "Relapse Prevention",
+        "file": "032 - Relapse Prevention.ps1"
+      },
+      {
+        "lessonNumber": 33,
+        "title": "Long-term Recovery",
+        "file": "033 - Long-term Recovery.ps1"
+      },
+      {
+        "lessonNumber": 34,
+        "title": "Healthy Lifestyle",
+        "file": "034 - Healthy Lifestyle.ps1"
+      }
+    ]
+  }
+}

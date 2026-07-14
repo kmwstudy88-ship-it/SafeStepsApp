@@ -1,15 +1,15 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { ActivityIndicator, ScrollView, Text, TouchableOpacity, View } from "react-native";
-import { Redirect } from "expo-router";
+import { ActivityIndicator, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Redirect, router } from "expo-router";
 
 import { AppBottomNav } from "../../components/AppBottomNav";
 import { useAuth } from "../../lib/auth";
 import {
   getAssessmentResponses,
-  getProgressCheckAssessment,
-  submitAssessmentResponse,
+  getIntakeAssessment,
+  hasCompletedIntakeAssessment,
+  submitIntakeAssessmentResponse,
   type AssessmentDefinition,
-  type AssessmentResponse,
 } from "../../lib/platformData";
 import { globalStyles } from "../../lib/styles";
 
@@ -21,24 +21,12 @@ function formatDate(value: string) {
   }).format(new Date(value));
 }
 
-function getSavedScore(response: AssessmentResponse) {
-  const payload = response.responses as unknown as {
-    score?: number;
-    maxScore?: number;
-  };
-
-  return {
-    score: payload.score ?? 0,
-    maxScore: payload.maxScore ?? 0,
-  };
-}
-
 export default function AssessmentsScreen() {
   const { initializing, user } = useAuth();
   const userId = user?.id;
   const [assessment, setAssessment] = useState<AssessmentDefinition | null>(null);
-  const [answers, setAnswers] = useState<Record<string, number>>({});
-  const [history, setHistory] = useState<AssessmentResponse[]>([]);
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [completedAt, setCompletedAt] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
@@ -47,17 +35,22 @@ export default function AssessmentsScreen() {
     if (!userId) return;
 
     let active = true;
+    const currentUserId = userId;
 
-    getProgressCheckAssessment().then(async (nextAssessment) => {
+    async function loadIntake() {
+      setLoading(true);
+      const nextAssessment = await getIntakeAssessment();
+      const intakeComplete = await hasCompletedIntakeAssessment(currentUserId);
+      const history = await getAssessmentResponses(currentUserId, nextAssessment.id);
+
       if (!active) return;
+
       setAssessment(nextAssessment);
-
-      if (nextAssessment) {
-        setHistory(await getAssessmentResponses(userId, nextAssessment.id));
-      }
-
+      setCompletedAt(intakeComplete ? history[0]?.created_at ?? new Date().toISOString() : null);
       setLoading(false);
-    });
+    }
+
+    loadIntake();
 
     return () => {
       active = false;
@@ -65,9 +58,11 @@ export default function AssessmentsScreen() {
   }, [userId]);
 
   const answeredCount = useMemo(
-    () => Object.keys(answers).filter((key) => answers[key] > 0).length,
+    () => Object.values(answers).filter((answer) => answer.trim().length > 0).length,
     [answers],
   );
+  const totalQuestions = assessment?.questions.length ?? 0;
+  const canSubmit = totalQuestions > 0 && answeredCount === totalQuestions;
 
   if (initializing) {
     return null;
@@ -78,10 +73,10 @@ export default function AssessmentsScreen() {
   }
 
   const handleSubmit = async () => {
-    if (!assessment) return;
+    if (!assessment || !userId || saving) return;
 
-    if (answeredCount !== assessment.questions.length) {
-      setMessage("Answer every question before saving.");
+    if (!canSubmit) {
+      setMessage("Complete every intake section before saving.");
       return;
     }
 
@@ -89,12 +84,12 @@ export default function AssessmentsScreen() {
     setMessage("");
 
     try {
-      const result = await submitAssessmentResponse(user.id, assessment, answers);
-      setHistory(await getAssessmentResponses(user.id, assessment.id));
+      const result = await submitIntakeAssessmentResponse(userId, answers);
+      setCompletedAt(new Date().toISOString());
       setAnswers({});
-      setMessage(`Saved score: ${result.score}/${result.maxScore}`);
-    } catch {
-      setMessage("Could not save assessment yet. Check Supabase access and try again.");
+      setMessage(`Intake complete. ${result.completedSections} sections saved. Programs are now unlocked.`);
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Could not save intake assessment yet.");
     } finally {
       setSaving(false);
     }
@@ -102,76 +97,63 @@ export default function AssessmentsScreen() {
 
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={globalStyles.screen}>
-      <Text style={globalStyles.title}>Assessments</Text>
-      <Text style={globalStyles.subtitle}>Complete a quick check-in and save the result to your progress record.</Text>
+      <Text style={globalStyles.title}>SafeSteps Intake Assessment</Text>
+      <Text style={globalStyles.subtitle}>
+        This is the required first step after sign-up. Programs cannot be started until this intake is complete.
+      </Text>
+
+      <View style={globalStyles.card}>
+        <Text style={globalStyles.cardTitle}>Pre-entry baseline</Text>
+        <Text style={globalStyles.cardText}>
+          Based on the SafeSteps Intake Assessment document. Record enough information for review, support planning, and program routing before any program begins.
+        </Text>
+        {completedAt ? (
+          <Text style={globalStyles.notice}>Completed {formatDate(completedAt)}. You can now start programs.</Text>
+        ) : (
+          <Text style={globalStyles.error}>Required before programs unlock.</Text>
+        )}
+      </View>
 
       {loading ? <ActivityIndicator /> : null}
 
-      {!loading && !assessment ? (
-        <View style={globalStyles.card}>
-          <Text style={globalStyles.cardTitle}>Assessment unavailable</Text>
-          <Text style={globalStyles.cardText}>The starter assessment has not been loaded yet.</Text>
-        </View>
-      ) : null}
-
-      {assessment ? (
+      {assessment && !completedAt ? (
         <View style={globalStyles.card}>
           <Text style={globalStyles.cardTitle}>{assessment.name}</Text>
           <Text style={globalStyles.cardText}>{assessment.description}</Text>
 
           {assessment.questions.map((question) => (
             <View key={question.id} style={globalStyles.questionBlock}>
-              <Text style={globalStyles.cardText}>
+              <Text style={globalStyles.cardTitle}>
                 {question.question_number}. {question.question_text}
               </Text>
-              <View style={globalStyles.scoreRow}>
-                {[1, 2, 3, 4, 5].map((score) => {
-                  const selected = answers[question.id] === score;
-
-                  return (
-                    <TouchableOpacity
-                      key={score}
-                      onPress={() => setAnswers((current) => ({ ...current, [question.id]: score }))}
-                      style={selected ? globalStyles.scoreButtonSelected : globalStyles.scoreButton}
-                    >
-                      <Text style={selected ? globalStyles.scoreButtonTextSelected : globalStyles.scoreButtonText}>
-                        {score}
-                      </Text>
-                    </TouchableOpacity>
-                  );
-                })}
-              </View>
+              <TextInput
+                multiline
+                onChangeText={(value) => setAnswers((current) => ({ ...current, [question.id]: value }))}
+                placeholder="Record the intake details for this section."
+                placeholderTextColor="#667085"
+                style={[globalStyles.input, globalStyles.textArea]}
+                value={answers[question.id] ?? ""}
+              />
             </View>
           ))}
 
-          {message ? <Text style={message.startsWith("Saved") ? globalStyles.notice : globalStyles.error}>{message}</Text> : null}
+          {message ? <Text style={message.startsWith("Intake complete") ? globalStyles.notice : globalStyles.error}>{message}</Text> : null}
 
           <TouchableOpacity
-            disabled={saving}
+            disabled={!canSubmit || saving}
             onPress={handleSubmit}
-            style={[globalStyles.button, saving && globalStyles.buttonDisabled]}
+            style={[globalStyles.button, (!canSubmit || saving) && globalStyles.buttonDisabled]}
           >
-            <Text style={globalStyles.buttonText}>{saving ? "Saving..." : "Save assessment"}</Text>
+            <Text style={globalStyles.buttonText}>{saving ? "Saving intake..." : "Complete intake assessment"}</Text>
           </TouchableOpacity>
         </View>
       ) : null}
 
-      <View style={globalStyles.card}>
-        <Text style={globalStyles.cardTitle}>Saved results</Text>
-        {history.length === 0 ? (
-          <Text style={globalStyles.cardText}>No assessment results saved yet.</Text>
-        ) : (
-          history.map((item) => {
-            const result = getSavedScore(item);
-
-            return (
-              <Text key={item.id} style={globalStyles.cardText}>
-                {formatDate(item.created_at)} - {result.score}/{result.maxScore}
-              </Text>
-            );
-          })
-        )}
-      </View>
+      {completedAt ? (
+        <TouchableOpacity onPress={() => router.replace("/programs")} style={globalStyles.button}>
+          <Text style={globalStyles.buttonText}>Continue to programs</Text>
+        </TouchableOpacity>
+      ) : null}
 
       <AppBottomNav />
     </ScrollView>

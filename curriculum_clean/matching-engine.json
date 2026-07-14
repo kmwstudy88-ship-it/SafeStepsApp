@@ -1,0 +1,17 @@
+﻿{
+    "engine":  {
+                   "version":  "1.0.0",
+                   "name":  "SafeSteps Parenting Insights Matching Engine"
+               },
+    "logic":  {
+                  "risk_priority":  [
+                                        {
+                                            "flag":  "dv_exposure_risk",
+                                            "recommend":  [
+                                                              "TIP",
+                                                              "PPF"
+                                                          ]
+                                        }
+                                    ]
+              }
+}

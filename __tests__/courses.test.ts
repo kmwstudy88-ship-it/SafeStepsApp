@@ -1,4 +1,10 @@
-import { areAllCourseLessonsViewed, getCourseById } from "../lib/data/courses";
+import {
+  areAllCourseLessonsViewed,
+  courseAreas,
+  getCourseById,
+  getCoursesForArea,
+  getGoldStandardCourses,
+} from "../curriculum/courses";
 
 describe("standalone course helpers", () => {
   test("finds courses by id without falling back to another course", () => {
@@ -166,6 +172,16 @@ describe("standalone course helpers", () => {
     expect(lessonCount).toBe(171);
   });
 
+  test("gold standard course helper exposes the 12-course pathway in order", () => {
+    const goldStandardCourses = getGoldStandardCourses();
+    const lessonCount = goldStandardCourses.reduce((total, course) => total + course.lessons.length, 0);
+
+    expect(goldStandardCourses).toHaveLength(12);
+    expect(goldStandardCourses[0]?.id).toBe("understanding-your-nervous-system");
+    expect(goldStandardCourses.at(-1)?.id).toBe("building-your-village");
+    expect(lessonCount).toBe(171);
+  });
+
   test("SafeSteps production courses contain all 47 source lessons", () => {
     const courseIds = [
       "safesteps-behaviour-guidance-foundations",
@@ -193,5 +209,17 @@ describe("standalone course helpers", () => {
         durationMinutes: 25,
       }),
     );
+  });
+
+  test("course areas map users to real structured course sets", () => {
+    expect(courseAreas.length).toBeGreaterThanOrEqual(8);
+
+    for (const area of courseAreas) {
+      const areaCourses = getCoursesForArea(area.id);
+
+      expect(areaCourses).toHaveLength(area.courseIds.length);
+      expect(areaCourses.some((course) => course.id === area.suggestedStartCourseId)).toBe(true);
+      expect(area.description.length).toBeGreaterThan(20);
+    }
   });
 });

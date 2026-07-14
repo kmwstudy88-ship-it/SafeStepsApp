@@ -1,0 +1,108 @@
+﻿{
+    "sectionId":  "E",
+    "groups":  [
+                   {
+                       "label":  "Ages 0–5",
+                       "ageRange":  "0-5",
+                       "id":  "E_0_5",
+                       "items":  [
+                                     {
+                                         "id":  "E_05_Attachment",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child shows healthy attachment behaviours (comfort seeking, bonding, connection).",
+                                         "type":  "likert_agreement",
+                                         "domain":  "attachment",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "E_05_Language",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child is developing language skills appropriate for their age.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "language_development",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "E_05_Social",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child is developing age‑appropriate social skills (sharing, play, interaction).",
+                                         "type":  "likert_agreement",
+                                         "domain":  "social_development",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   },
+                   {
+                       "label":  "Ages 6–12",
+                       "ageRange":  "6-12",
+                       "id":  "E_6_12",
+                       "items":  [
+                                     {
+                                         "id":  "E_612_SchoolEngagement",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child is engaged in school and learning activities.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "school_engagement",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "E_612_Friendships",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child has healthy friendships and peer relationships.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "friendships",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "E_612_BehaviourRegulation",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child can manage their behaviour and emotions appropriately for their age.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "behaviour_regulation",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   },
+                   {
+                       "label":  "Ages 13–18",
+                       "ageRange":  "13-18",
+                       "id":  "E_13_18",
+                       "items":  [
+                                     {
+                                         "id":  "E_1318_Independence",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child is developing independence appropriate for their age.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "independence",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "E_1318_MentalHealth",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child’s mental health appears stable and supported.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "mental_health",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "E_1318_EducationGoals",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child has education or future goals they are working toward.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "education_goals",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     },
+                                     {
+                                         "id":  "E_1318_RiskBehaviours",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child is not involved in risk behaviours (substances, unsafe peers, unsafe activities).",
+                                         "reverseForRisk":  true,
+                                         "type":  "likert_agreement",
+                                         "domain":  "risk_behaviours",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   }
+               ],
+    "name":  "Child Development"
+}

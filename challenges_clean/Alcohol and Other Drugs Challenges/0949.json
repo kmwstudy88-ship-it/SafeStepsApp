@@ -1,0 +1,400 @@
+﻿{
+    "welcome_overview":  {
+                             "skills":  [
+
+                                        ],
+                             "purpose":  "",
+                             "difficulty":  "",
+                             "importance":  "",
+                             "estimated_time":  "",
+                             "default_welcome":  "This module follows the SAFE STEPS master template."
+                         },
+    "daily_challenge":  "Short daily task for challenge 949",
+    "what_you_will_learn":  "",
+    "pre_assessment":  {
+                           "baseline_knowledge":  "",
+                           "baseline_confidence":  ""
+                       },
+    "progress_review":  {
+                            "dashboard":  "",
+                            "milestones":  [
+
+                                           ]
+                        },
+    "core_lesson_2":  "Core lesson 2 content placeholder.",
+    "updated_at":  "2026-07-07T15:04:07.5331297+10:00",
+    "family_challenge":  "Family activity for challenge 949",
+    "goal_setting":  {
+                         "smart_goals":  [
+
+                                         ]
+                     },
+    "category":  "Alcohol and Other Drugs Challenges",
+    "research_highlights":  "Content is evidence-informed and practice-ready.",
+    "certificate_next_steps":  {
+                                   "recommended_pathway":  "",
+                                   "certificate":  ""
+                               },
+    "evidence_upload":  {
+                            "allowed_types":  [
+                                                  "photo",
+                                                  "video",
+                                                  "audio",
+                                                  "document",
+                                                  "journal"
+                                              ]
+                        },
+    "learning_outcomes":  [
+                              "Explain the topic",
+                              "Identify barriers",
+                              "Apply practical strategies"
+                          ],
+    "challenge_number":  949,
+    "child_activity":  "",
+    "interactive_activity_1":  "",
+    "title":  "Alcohol 949 - Everyday Skills",
+    "scenario_practice":  [
+                              {
+                                  "recommended_action":  "Recommended action for scenario 1",
+                                  "title":  "Scenario 1 for challenge 949",
+                                  "description":  "Short scenario description for scenario 1.",
+                                  "choices":  [
+                                                  {
+                                                      "key":  "A",
+                                                      "feedback":  "Why A is good or not",
+                                                      "text":  "Choice A"
+                                                  },
+                                                  {
+                                                      "key":  "B",
+                                                      "feedback":  "Why B is good or not",
+                                                      "text":  "Choice B"
+                                                  },
+                                                  {
+                                                      "key":  "C",
+                                                      "feedback":  "Why C is good or not",
+                                                      "text":  "Choice C"
+                                                  }
+                                              ],
+                                  "id":  "S1"
+                              },
+                              {
+                                  "recommended_action":  "Recommended action for scenario 2",
+                                  "title":  "Scenario 2 for challenge 949",
+                                  "description":  "Short scenario description for scenario 2.",
+                                  "choices":  [
+                                                  {
+                                                      "key":  "A",
+                                                      "feedback":  "Why A is good or not",
+                                                      "text":  "Choice A"
+                                                  },
+                                                  {
+                                                      "key":  "B",
+                                                      "feedback":  "Why B is good or not",
+                                                      "text":  "Choice B"
+                                                  },
+                                                  {
+                                                      "key":  "C",
+                                                      "feedback":  "Why C is good or not",
+                                                      "text":  "Choice C"
+                                                  }
+                                              ],
+                                  "id":  "S2"
+                              },
+                              {
+                                  "recommended_action":  "Recommended action for scenario 3",
+                                  "title":  "Scenario 3 for challenge 949",
+                                  "description":  "Short scenario description for scenario 3.",
+                                  "choices":  [
+                                                  {
+                                                      "key":  "A",
+                                                      "feedback":  "Why A is good or not",
+                                                      "text":  "Choice A"
+                                                  },
+                                                  {
+                                                      "key":  "B",
+                                                      "feedback":  "Why B is good or not",
+                                                      "text":  "Choice B"
+                                                  },
+                                                  {
+                                                      "key":  "C",
+                                                      "feedback":  "Why C is good or not",
+                                                      "text":  "Choice C"
+                                                  }
+                                              ],
+                                  "id":  "S3"
+                              }
+                          ],
+    "final_reflection":  "",
+    "post_assessment":  {
+                            "confidence_change":  "",
+                            "knowledge_change":  ""
+                        },
+    "weekly_challenge":  "Weekly practice task for challenge 949",
+    "journal_entry":  "",
+    "knowledge_quiz":  {
+                           "questions":  [
+                                             {
+                                                 "id":  "Q01",
+                                                 "feedback":  "Feedback for question 1",
+                                                 "correct":  "C",
+                                                 "options":  [
+                                                                 {
+                                                                     "key":  "A",
+                                                                     "text":  "Option A"
+                                                                 },
+                                                                 {
+                                                                     "key":  "B",
+                                                                     "text":  "Option B"
+                                                                 },
+                                                                 {
+                                                                     "key":  "C",
+                                                                     "text":  "Option C"
+                                                                 },
+                                                                 {
+                                                                     "key":  "D",
+                                                                     "text":  "Option D"
+                                                                 }
+                                                             ],
+                                                 "question":  "Placeholder question 1 for challenge 949",
+                                                 "points":  1
+                                             },
+                                             {
+                                                 "id":  "Q02",
+                                                 "feedback":  "Feedback for question 2",
+                                                 "correct":  "D",
+                                                 "options":  [
+                                                                 {
+                                                                     "key":  "A",
+                                                                     "text":  "Option A"
+                                                                 },
+                                                                 {
+                                                                     "key":  "B",
+                                                                     "text":  "Option B"
+                                                                 },
+                                                                 {
+                                                                     "key":  "C",
+                                                                     "text":  "Option C"
+                                                                 },
+                                                                 {
+                                                                     "key":  "D",
+                                                                     "text":  "Option D"
+                                                                 }
+                                                             ],
+                                                 "question":  "Placeholder question 2 for challenge 949",
+                                                 "points":  1
+                                             },
+                                             {
+                                                 "id":  "Q03",
+                                                 "feedback":  "Feedback for question 3",
+                                                 "correct":  "A",
+                                                 "options":  [
+                                                                 {
+                                                                     "key":  "A",
+                                                                     "text":  "Option A"
+                                                                 },
+                                                                 {
+                                                                     "key":  "B",
+                                                                     "text":  "Option B"
+                                                                 },
+                                                                 {
+                                                                     "key":  "C",
+                                                                     "text":  "Option C"
+                                                                 },
+                                                                 {
+                                                                     "key":  "D",
+                                                                     "text":  "Option D"
+                                                                 }
+                                                             ],
+                                                 "question":  "Placeholder question 3 for challenge 949",
+                                                 "points":  1
+                                             },
+                                             {
+                                                 "id":  "Q04",
+                                                 "feedback":  "Feedback for question 4",
+                                                 "correct":  "B",
+                                                 "options":  [
+                                                                 {
+                                                                     "key":  "A",
+                                                                     "text":  "Option A"
+                                                                 },
+                                                                 {
+                                                                     "key":  "B",
+                                                                     "text":  "Option B"
+                                                                 },
+                                                                 {
+                                                                     "key":  "C",
+                                                                     "text":  "Option C"
+                                                                 },
+                                                                 {
+                                                                     "key":  "D",
+                                                                     "text":  "Option D"
+                                                                 }
+                                                             ],
+                                                 "question":  "Placeholder question 4 for challenge 949",
+                                                 "points":  1
+                                             },
+                                             {
+                                                 "id":  "Q05",
+                                                 "feedback":  "Feedback for question 5",
+                                                 "correct":  "C",
+                                                 "options":  [
+                                                                 {
+                                                                     "key":  "A",
+                                                                     "text":  "Option A"
+                                                                 },
+                                                                 {
+                                                                     "key":  "B",
+                                                                     "text":  "Option B"
+                                                                 },
+                                                                 {
+                                                                     "key":  "C",
+                                                                     "text":  "Option C"
+                                                                 },
+                                                                 {
+                                                                     "key":  "D",
+                                                                     "text":  "Option D"
+                                                                 }
+                                                             ],
+                                                 "question":  "Placeholder question 5 for challenge 949",
+                                                 "points":  1
+                                             },
+                                             {
+                                                 "id":  "Q06",
+                                                 "feedback":  "Feedback for question 6",
+                                                 "correct":  "D",
+                                                 "options":  [
+                                                                 {
+                                                                     "key":  "A",
+                                                                     "text":  "Option A"
+                                                                 },
+                                                                 {
+                                                                     "key":  "B",
+                                                                     "text":  "Option B"
+                                                                 },
+                                                                 {
+                                                                     "key":  "C",
+                                                                     "text":  "Option C"
+                                                                 },
+                                                                 {
+                                                                     "key":  "D",
+                                                                     "text":  "Option D"
+                                                                 }
+                                                             ],
+                                                 "question":  "Placeholder question 6 for challenge 949",
+                                                 "points":  1
+                                             },
+                                             {
+                                                 "id":  "Q07",
+                                                 "feedback":  "Feedback for question 7",
+                                                 "correct":  "A",
+                                                 "options":  [
+                                                                 {
+                                                                     "key":  "A",
+                                                                     "text":  "Option A"
+                                                                 },
+                                                                 {
+                                                                     "key":  "B",
+                                                                     "text":  "Option B"
+                                                                 },
+                                                                 {
+                                                                     "key":  "C",
+                                                                     "text":  "Option C"
+                                                                 },
+                                                                 {
+                                                                     "key":  "D",
+                                                                     "text":  "Option D"
+                                                                 }
+                                                             ],
+                                                 "question":  "Placeholder question 7 for challenge 949",
+                                                 "points":  1
+                                             },
+                                             {
+                                                 "id":  "Q08",
+                                                 "feedback":  "Feedback for question 8",
+                                                 "correct":  "B",
+                                                 "options":  [
+                                                                 {
+                                                                     "key":  "A",
+                                                                     "text":  "Option A"
+                                                                 },
+                                                                 {
+                                                                     "key":  "B",
+                                                                     "text":  "Option B"
+                                                                 },
+                                                                 {
+                                                                     "key":  "C",
+                                                                     "text":  "Option C"
+                                                                 },
+                                                                 {
+                                                                     "key":  "D",
+                                                                     "text":  "Option D"
+                                                                 }
+                                                             ],
+                                                 "question":  "Placeholder question 8 for challenge 949",
+                                                 "points":  1
+                                             },
+                                             {
+                                                 "id":  "Q09",
+                                                 "feedback":  "Feedback for question 9",
+                                                 "correct":  "C",
+                                                 "options":  [
+                                                                 {
+                                                                     "key":  "A",
+                                                                     "text":  "Option A"
+                                                                 },
+                                                                 {
+                                                                     "key":  "B",
+                                                                     "text":  "Option B"
+                                                                 },
+                                                                 {
+                                                                     "key":  "C",
+                                                                     "text":  "Option C"
+                                                                 },
+                                                                 {
+                                                                     "key":  "D",
+                                                                     "text":  "Option D"
+                                                                 }
+                                                             ],
+                                                 "question":  "Placeholder question 9 for challenge 949",
+                                                 "points":  1
+                                             },
+                                             {
+                                                 "id":  "Q10",
+                                                 "feedback":  "Feedback for question 10",
+                                                 "correct":  "D",
+                                                 "options":  [
+                                                                 {
+                                                                     "key":  "A",
+                                                                     "text":  "Option A"
+                                                                 },
+                                                                 {
+                                                                     "key":  "B",
+                                                                     "text":  "Option B"
+                                                                 },
+                                                                 {
+                                                                     "key":  "C",
+                                                                     "text":  "Option C"
+                                                                 },
+                                                                 {
+                                                                     "key":  "D",
+                                                                     "text":  "Option D"
+                                                                 }
+                                                             ],
+                                                 "question":  "Placeholder question 10 for challenge 949",
+                                                 "points":  1
+                                             }
+                                         ],
+                           "feedback":  ""
+                       },
+    "uuid":  "6e320a5f-fb3b-41f7-b46d-3c31a189247c",
+    "core_lesson_3":  "Core lesson 3 content placeholder.",
+    "real_life_example":  "",
+    "version":  "1.0",
+    "core_lesson_1":  "Core lesson 1 content placeholder.",
+    "self_reflection":  {
+                            "challenges":  "",
+                            "strengths":  ""
+                        },
+    "created_at":  "2026-07-07T15:04:07.5331297+10:00",
+    "interactive_activity_2":  ""
+}

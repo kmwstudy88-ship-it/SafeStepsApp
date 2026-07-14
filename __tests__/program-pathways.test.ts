@@ -1,21 +1,37 @@
 import { getProgramById, getProgramMonth, getProgramMonths, getProgramWeek, programs } from "../lib/data/programs";
 
 describe("program pathway data", () => {
-  test("keeps authored months when present", () => {
+  test("generates curated months for Keeping Families Together", () => {
     const program = programs.find((item) => item.id === "keeping-families-together");
 
     expect(program).toBeDefined();
-    expect(getProgramMonths(program!).length).toBe(program!.months.length);
-    expect(getProgramMonth(program!, 1)?.topic).toBe("Communication");
+    expect(program!.months).toHaveLength(0);
+    expect(getProgramMonths(program!)).toHaveLength(18);
+    expect(getProgramMonth(program!, 1)?.topic).toBe("Immediate Safety and Family Preservation");
+    expect(getProgramMonth(program!, 18)?.topic).toBe("Transition to Maintenance Support");
   });
 
-  test("generates month and week content for programs without authored months", () => {
+  test("generates curated month and week content for programs without authored months", () => {
     const program = programs.find((item) => item.id === "back-on-track");
 
     expect(program).toBeDefined();
     expect(getProgramMonths(program!)).toHaveLength(program!.durationMonths);
+    expect(getProgramMonth(program!, 1)?.topic).toBe("Resetting Family Priorities");
+    expect(getProgramMonth(program!, 12)?.topic).toBe("Maintenance and Early Warning Signs");
     expect(getProgramMonth(program!, 1)?.weeks).toHaveLength(4);
     expect(getProgramWeek(program!, 1, 1)?.lessons).toHaveLength(5);
+  });
+
+  test("curates the short draft programs with their own month topics", () => {
+    const buildStrongerFamilies = getProgramById("build-stronger-families");
+    const childSafetyContact = getProgramById("child-safety-contact");
+
+    expect(getProgramMonths(buildStrongerFamilies!)).toHaveLength(6);
+    expect(getProgramMonth(buildStrongerFamilies!, 6)?.topic).toBe("Family Maintenance Plan");
+
+    expect(getProgramMonths(childSafetyContact!)).toHaveLength(3);
+    expect(getProgramMonth(childSafetyContact!, 1)?.topic).toBe("Understanding Current Child Safety Expectations");
+    expect(getProgramMonth(childSafetyContact!, 3)?.topic).toBe("Next-Step Planning and Review");
   });
 
   test("includes reunification and home again pathways", () => {

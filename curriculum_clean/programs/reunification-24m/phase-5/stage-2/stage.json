@@ -1,0 +1,30 @@
+{
+  "id": "phase-5-stage-2",
+  "title": "Sustainment — Stage 2",
+  "objectives": [
+    "Maintain safety strategies",
+    "Sustain parenting capacity",
+    "Demonstrate long-term change"
+  ],
+  "required_lessons": [
+    "SAF-SP-001_what_is_a_safety_plan",
+    "DFV-CC-001_patterns"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "Final safety plan",
+    "3-month stability review"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo"
+    ],
+    "level": "A"
+  }
+}

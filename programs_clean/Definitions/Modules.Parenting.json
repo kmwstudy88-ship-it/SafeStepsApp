@@ -1,0 +1,473 @@
+﻿{
+    "modules":  [
+                    {
+                        "id":  "PP-ENGAGE-01",
+                        "name":  "Understanding Your Current Position",
+                        "goal":  "Clarify where you are without judgment.",
+                        "tasks":  [
+                                      "Write what you believe is happening in your situation",
+                                      "Write what you believe child protection is concerned about",
+                                      "Write what you want for your child long-term"
+                                  ],
+                        "evidence":  [
+                                         "Written reflections",
+                                         "Caseworker acknowledgement"
+                                     ],
+                        "category":  "emotional-regulation",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-ENGAGE-02",
+                        "name":  "STOP-THINK-ACT Model",
+                        "goal":  "Improve decision-making under stress.",
+                        "tasks":  [
+                                      "Pause before reacting to conflict",
+                                      "Identify possible risks before responding",
+                                      "Choose the safest possible action",
+                                      "Review what worked and what didnâ€™t"
+                                  ],
+                        "evidence":  [
+                                         "Reduced incidents",
+                                         "Support person feedback"
+                                     ],
+                        "category":  "emotional-regulation",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-ENGAGE-03",
+                        "name":  "Child-Focused Thinking",
+                        "goal":  "Shift from self-focus to child experience.",
+                        "tasks":  [
+                                      "After stressful events, answer: How was my child affected?",
+                                      "What did my child need from me?",
+                                      "Did I meet that need?"
+                                  ],
+                        "evidence":  [
+                                         "Contact reports",
+                                         "Therapist notes"
+                                     ],
+                        "category":  "child-development",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-REUNIFY-01",
+                        "name":  "Understanding the Reunification Pathway",
+                        "goal":  "Know exactly what reunification requires.",
+                        "tasks":  [
+                                      "List what child protection is worried about",
+                                      "List what you are already doing well",
+                                      "List what you need to strengthen for reunification"
+                                  ],
+                        "evidence":  [
+                                         "Reflections",
+                                         "Caseworker acknowledgement"
+                                     ],
+                        "category":  "emotional-regulation",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-REUNIFY-02",
+                        "name":  "Safe Emotional Regulation",
+                        "goal":  "Reduce risk during stress.",
+                        "tasks":  [
+                                      "Practice STOPâ†’THINKâ†’ACTâ†’REVIEW daily",
+                                      "Use grounding techniques when triggered",
+                                      "Call a support person instead of escalating"
+                                  ],
+                        "evidence":  [
+                                         "No new incidents",
+                                         "Improved contact behaviour"
+                                     ],
+                        "category":  "emotional-regulation",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-REUNIFY-03",
+                        "name":  "Safe Contact \u0026 Supervised Visit Behaviour",
+                        "goal":  "Show safe, consistent behaviour during contact.",
+                        "tasks":  [
+                                      "Prepare a contact plan before each visit",
+                                      "Bring age-appropriate activities",
+                                      "Avoid discussing the case with the child"
+                                  ],
+                        "evidence":  [
+                                         "Positive contact reports",
+                                         "Supervisor feedback"
+                                     ],
+                        "category":  "child-development",
+                        "tags":  [
+                                     "contact"
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-01",
+                        "name":  "Emotional Literacy Basics",
+                        "goal":  "Help parents identify and name emotions accurately.",
+                        "tasks":  [
+                                      "Identify 5 emotions you felt today",
+                                      "Describe what triggered each emotion",
+                                      "Explain how your child might read your emotions"
+                                  ],
+                        "evidence":  [
+                                         "Emotion logs",
+                                         "Worker observation"
+                                     ],
+                        "category":  "emotional-regulation",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-02",
+                        "name":  "Managing Triggers",
+                        "goal":  "Build awareness of personal triggers and safe responses.",
+                        "tasks":  [
+                                      "List your top 5 triggers",
+                                      "Describe how your body reacts",
+                                      "Practice a grounding technique"
+                                  ],
+                        "evidence":  [
+                                         "Trigger list",
+                                         "Reduced reactive behaviour"
+                                     ],
+                        "category":  "emotional-regulation",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-03",
+                        "name":  "Understanding Child Development",
+                        "goal":  "Increase awareness of ageâ€‘appropriate behaviour and needs.",
+                        "tasks":  [
+                                      "Identify 3 things your child can do at their age",
+                                      "Describe how stress affects child development",
+                                      "List 2 ways you can support your child this week"
+                                  ],
+                        "evidence":  [
+                                         "Parent reflections",
+                                         "Caseworker notes"
+                                     ],
+                        "category":  "child-development",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-04",
+                        "name":  "Safe Communication",
+                        "goal":  "Improve communication during stressful moments.",
+                        "tasks":  [
+                                      "Practice using calm tone statements",
+                                      "Identify one communication habit to change",
+                                      "Use a repair statement after conflict"
+                                  ],
+                        "evidence":  [
+                                         "Improved communication reports",
+                                         "Support person feedback"
+                                     ],
+                        "category":  "general",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-05",
+                        "name":  "Repairing After Conflict",
+                        "goal":  "Learn how to repair relationships after arguments.",
+                        "tasks":  [
+                                      "Describe a recent conflict and how you repaired it",
+                                      "Identify what your child needed after the conflict",
+                                      "Practice a repair conversation"
+                                  ],
+                        "evidence":  [
+                                         "Repair attempts",
+                                         "Contact supervisor notes"
+                                     ],
+                        "category":  "general",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-06",
+                        "name":  "Building Protective Routines",
+                        "goal":  "Create predictable routines that increase child safety.",
+                        "tasks":  [
+                                      "Create a morning routine",
+                                      "Create an evening routine",
+                                      "Identify one routine to improve"
+                                  ],
+                        "evidence":  [
+                                         "Routine charts",
+                                         "Improved consistency"
+                                     ],
+                        "category":  "routines",
+                        "tags":  [
+                                     "routine"
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-07",
+                        "name":  "Understanding Trauma Responses",
+                        "goal":  "Recognise how trauma affects behaviour and emotions.",
+                        "tasks":  [
+                                      "Identify your trauma triggers",
+                                      "Describe how trauma affects parenting",
+                                      "List 2 grounding strategies"
+                                  ],
+                        "evidence":  [
+                                         "Trauma reflection",
+                                         "Worker observation"
+                                     ],
+                        "category":  "trauma",
+                        "tags":  [
+                                     "trauma"
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-08",
+                        "name":  "Safe Boundaries With Children",
+                        "goal":  "Strengthen healthy boundaries and reduce risk.",
+                        "tasks":  [
+                                      "Identify 3 healthy boundaries",
+                                      "Describe why boundaries help children feel safe",
+                                      "Practice a boundary statement"
+                                  ],
+                        "evidence":  [
+                                         "Boundary examples",
+                                         "Contact reports"
+                                     ],
+                        "category":  "general",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-09",
+                        "name":  "Coâ€‘Parenting Basics",
+                        "goal":  "Improve cooperation and reduce conflict with coâ€‘parents.",
+                        "tasks":  [
+                                      "Identify one coâ€‘parenting strength",
+                                      "Identify one area to improve",
+                                      "Practice a respectful communication message"
+                                  ],
+                        "evidence":  [
+                                         "Coâ€‘parenting logs",
+                                         "Reduced conflict reports"
+                                     ],
+                        "category":  "co-parenting",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-10",
+                        "name":  "Fatherhood Foundations",
+                        "goal":  "Strengthen fatherâ€‘child connection and safe involvement.",
+                        "tasks":  [
+                                      "Describe what being a safe father means",
+                                      "Identify one behaviour to model",
+                                      "Plan a positive fatherâ€‘child activity"
+                                  ],
+                        "evidence":  [
+                                         "Activity reports",
+                                         "Supervisor feedback"
+                                     ],
+                        "category":  "fatherhood",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-11",
+                        "name":  "Cultural Identity \u0026 Parenting",
+                        "goal":  "Support cultural identity and belonging for children.",
+                        "tasks":  [
+                                      "Identify 3 cultural strengths",
+                                      "Describe how culture shapes parenting",
+                                      "Plan one cultural activity"
+                                  ],
+                        "evidence":  [
+                                         "Cultural activity logs",
+                                         "Worker observation"
+                                     ],
+                        "category":  "cultural",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-12",
+                        "name":  "Healthy Relationships \u0026 Safety",
+                        "goal":  "Recognise unsafe relationship patterns and build safety.",
+                        "tasks":  [
+                                      "Identify one unsafe pattern",
+                                      "Describe how it affects your child",
+                                      "List 2 safe relationship behaviours"
+                                  ],
+                        "evidence":  [
+                                         "Safety reflections",
+                                         "No new incidents"
+                                     ],
+                        "category":  "general",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-13",
+                        "name":  "Substance Use Safety Planning",
+                        "goal":  "Reduce risk and increase safety during recovery.",
+                        "tasks":  [
+                                      "Identify triggers for use",
+                                      "List 3 safe coping strategies",
+                                      "Create a support contact plan"
+                                  ],
+                        "evidence":  [
+                                         "Support person confirmation",
+                                         "No substanceâ€‘related incidents"
+                                     ],
+                        "category":  "general",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-14",
+                        "name":  "Managing Overwhelm",
+                        "goal":  "Build strategies to stay regulated during stress.",
+                        "tasks":  [
+                                      "Identify early signs of overwhelm",
+                                      "Practice a 2â€‘minute reset",
+                                      "Describe how overwhelm affects your child"
+                                  ],
+                        "evidence":  [
+                                         "Regulation logs",
+                                         "Improved contact behaviour"
+                                     ],
+                        "category":  "emotional-regulation",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-15",
+                        "name":  "Understanding Child Emotions",
+                        "goal":  "Help parents respond to childrenâ€™s emotional needs.",
+                        "tasks":  [
+                                      "Identify 3 emotions your child shows",
+                                      "Describe what your child needs during those emotions",
+                                      "Practice a supportive response"
+                                  ],
+                        "evidence":  [
+                                         "Contact observations",
+                                         "Therapist notes"
+                                     ],
+                        "category":  "child-development",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-16",
+                        "name":  "Safe Home Environment",
+                        "goal":  "Create a physically and emotionally safe home.",
+                        "tasks":  [
+                                      "Identify 3 safety hazards",
+                                      "Create a home safety checklist",
+                                      "Describe how you will maintain safety"
+                                  ],
+                        "evidence":  [
+                                         "Home safety checklist",
+                                         "Worker home visit notes"
+                                     ],
+                        "category":  "safety",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-17",
+                        "name":  "Positive Parenting Strategies",
+                        "goal":  "Increase positive interactions and reduce conflict.",
+                        "tasks":  [
+                                      "Identify one positive behaviour to praise",
+                                      "Practice a positive interaction",
+                                      "Describe how your child responded"
+                                  ],
+                        "evidence":  [
+                                         "Positive interaction logs",
+                                         "Contact supervisor feedback"
+                                     ],
+                        "category":  "general",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-18",
+                        "name":  "Understanding Risk \u0026 Safety",
+                        "goal":  "Improve insight into risk factors and protective actions.",
+                        "tasks":  [
+                                      "Identify 3 risks in your situation",
+                                      "Describe how each risk affects your child",
+                                      "List 3 protective actions"
+                                  ],
+                        "evidence":  [
+                                         "Risk reflections",
+                                         "No new incidents"
+                                     ],
+                        "category":  "safety",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-19",
+                        "name":  "Building a Support Network",
+                        "goal":  "Increase safe support around the family.",
+                        "tasks":  [
+                                      "Identify 3 safe support people",
+                                      "Describe how each person can help",
+                                      "Create a support contact plan"
+                                  ],
+                        "evidence":  [
+                                         "Support person confirmations",
+                                         "Worker verification"
+                                     ],
+                        "category":  "general",
+                        "tags":  [
+
+                                 ]
+                    },
+                    {
+                        "id":  "PP-SKILLS-20",
+                        "name":  "Parenting Under Stress",
+                        "goal":  "Strengthen safe parenting during highâ€‘stress periods.",
+                        "tasks":  [
+                                      "Describe how stress affects your parenting",
+                                      "Identify one unsafe stress behaviour",
+                                      "Practice a safe alternative behaviour"
+                                  ],
+                        "evidence":  [
+                                         "Stress logs",
+                                         "Improved behaviour reports"
+                                     ],
+                        "category":  "general",
+                        "tags":  [
+
+                                 ]
+                    }
+                ]
+}

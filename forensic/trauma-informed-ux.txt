@@ -1,0 +1,28 @@
+SAFE-STEPS TRAUMA-INFORMED UX PRINCIPLES
+
+1. Child Autonomy
+   - Child can pause messaging at any time
+   - Parent never sees pause reason
+   - System never pressures child to respond
+
+2. Safety First
+   - Threats auto-blocked
+   - Child protected from harmful content
+   - Parent receives neutral safety messages
+
+3. Emotional Buffering
+   - Parent receives softened system messages
+   - Child receives supportive system messages
+
+4. Predictability
+   - Clear UI states: ACTIVE, PAUSED, BLOCKED
+   - No sudden changes without explanation
+
+5. Non-Blaming Language
+   - System messages avoid shame
+   - Caseworker messages use neutral tone
+
+6. Transparency for Caseworkers
+   - Full forensic logs
+   - Escalation indicators visible
+   - Immutable message history

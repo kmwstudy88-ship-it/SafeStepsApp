@@ -17,6 +17,7 @@ describe("parent profile domain engine", () => {
           ...emptyParentProfileDomains.identity,
           name: "  Parent A  ",
           traumaHistory: "  complex trauma history  ",
+          schoolExperienceAdultImpact: "  school shaped confidence  ",
         },
         protectiveCapacities: {
           ...emptyParentProfileDomains.protectiveCapacities,
@@ -41,6 +42,7 @@ describe("parent profile domain engine", () => {
     expect(payload.identity).toMatchObject({
       name: "Parent A",
       traumaHistory: "complex trauma history",
+      schoolExperienceAdultImpact: "school shaped confidence",
     });
     expect(payload.protective_capacities).toMatchObject({ insight: "emerging insight" });
     expect(payload.risk_indicators).toMatchObject({ substanceUse: "monitored" });
@@ -61,6 +63,7 @@ describe("parent profile domain engine", () => {
 
     expect(domains.identity.name).toBe("Parent B");
     expect(domains.identity.age).toBe("");
+    expect(domains.identity.schoolExperienceParentingInfluence).toBe("");
     expect(domains.protectiveCapacities.empathy).toBe("high");
     expect(domains.riskIndicators.unsafePartners).toBe("");
   });

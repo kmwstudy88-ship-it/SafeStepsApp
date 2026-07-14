@@ -30,9 +30,11 @@ Screen
 /SafeSteps Curriculum/
 /ParentingInsights/
 /Programs/
+!/programs/
+!/programs/curriculumComposition.ts
 /SafeSteps-CLI/
 /SafeStepsLibrary/
-/backend/
+/api/
 /frontend/
 /infrastructure/
 /modules/
@@ -65,6 +67,7 @@ $null
 
 # Generated audits, inventories, and local backups
 _audit_*/
+_CAN_DELETE_REVIEW/
 *-files.txt
 all-files.txt
 app-files.txt
@@ -89,6 +92,14 @@ supabase/migrations_disabled/
 /data/safesteps/
 /src/data/programs/
 /src/curriculum/
+/src/legacyMessagingDemo/
+/src/messaging/
+/src/modules/
+/src/prisma/
+/src/screens/child/
+/src/screens/parent/
+/src/screens/shared/
+/src/shared/
 /src/safesteps/
 /types/data/
 /database/
@@ -96,6 +107,32 @@ supabase/migrations_disabled/
 /curriculum/courses/working_with_families/modules/
 /curriculum/programs/
 /@[{]Root=*
+
+# Generated or experimental root modules that are not launch runtime code.
+# Review and extract typed app code into app/, lib/, curriculum/, or supabase/ before tracking.
+/AiCurriculumEngine/
+/ChildSafetyEngine/
+/activity_library/
+/lesson-theme/
+/evidence/
+/tools/
+/code
+/file
+/moduleLoader.js
+/moduleRegistry.json
+/readinessEngine.js
+/scheduler.js
+/server.js
+/verificationEngine.js
+/api.old
+/generateReport.js
+/SafeSteps-BulkPatch.ps1
+/SafeSteps-EvidenceAPI-Patch.ps1
+/SafeSteps-EvidenceVault-Patch.ps1
+/SafeSteps-Scheduler-Patch.ps1
+/SafeSteps-VerificationEngine-Patch.ps1
+/SafeStepsTools/quarantine/
+/Unified Production Pipeline Master Document video series/
 
 # Root-level framework samples outside the Expo app tree
 /_layout.tsx

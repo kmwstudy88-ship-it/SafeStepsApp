@@ -1,0 +1,34 @@
+{
+  "id": "phase-1-stage-1",
+  "title": "Stability — Stage 1",
+  "objectives": [
+    "Re-establish home stability",
+    "Maintain routines",
+    "Ensure safe environment"
+  ],
+  "required_lessons": [
+    "PAR-ROU-001_morning_routines",
+    "SAF-SP-003_safe_people"
+  ],
+  "recommended_lessons": [
+    "MH-ER-009_distress_tolerance"
+  ],
+  "evidence": [
+    "Weekly home stability log"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_routine_log"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "fridge_pantry_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

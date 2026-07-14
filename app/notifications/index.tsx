@@ -65,7 +65,7 @@ export default function NotificationsScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Notifications and reminders</Text>
-      <Text style={styles.body}>This adds in-app reminders now. Expo push notifications can be connected later without changing the database shape.</Text>
+      <Text style={styles.body}>In-app reminders and safety alerts. Critical alerts are review prompts for workers and supervisors; emergency escalation still follows service policy.</Text>
 
       <Pressable
         disabled={unreadCount === 0 || bulkUpdating}
@@ -90,14 +90,27 @@ export default function NotificationsScreen() {
       {loading && <ActivityIndicator />}
       {!loading && items.map((item) => (
         <Pressable key={item.id} style={styles.card} onPress={async () => { await markNotificationRead(item.id); await load(); }}>
+          {item.alert_severity ? (
+            <Text style={[styles.severityBadge, severityStyle(item.alert_severity)]}>
+              {item.alert_severity.toUpperCase()} ALERT
+            </Text>
+          ) : null}
           <Text style={styles.cardTitle}>{item.title}</Text>
           {!!item.body && <Text>{item.body}</Text>}
+          {item.audience?.length ? <Text>Audience: {item.audience.join(", ")}</Text> : null}
           <Text>{item.due_at ? new Date(item.due_at).toLocaleString() : "No due date"}</Text>
           <Text>{item.read_at ? "Read" : "Unread"}</Text>
         </Pressable>
       ))}
     </ScrollView>
   );
+}
+
+function severityStyle(severity: NonNullable<NotificationRecord["alert_severity"]>) {
+  if (severity === "critical") return styles.criticalSeverity;
+  if (severity === "high") return styles.highSeverity;
+  if (severity === "moderate") return styles.moderateSeverity;
+  return styles.infoSeverity;
 }
 
 function Input(props: React.ComponentProps<typeof TextInput>) {
@@ -110,6 +123,11 @@ const styles = StyleSheet.create({
   body: { fontSize: 16, lineHeight: 23 },
   card: { backgroundColor: "white", padding: 16, borderRadius: 18, gap: 10, borderWidth: 1, borderColor: "#d6e2d8" },
   cardTitle: { fontSize: 18, fontWeight: "800" },
+  severityBadge: { alignSelf: "flex-start", paddingHorizontal: 10, paddingVertical: 5, borderRadius: 999, overflow: "hidden", fontSize: 12, fontWeight: "900" },
+  criticalSeverity: { color: "#FFFFFF", backgroundColor: "#9E2B25" },
+  highSeverity: { color: "#FFFFFF", backgroundColor: "#B45309" },
+  moderateSeverity: { color: "#102033", backgroundColor: "#F7D774" },
+  infoSeverity: { color: "#102033", backgroundColor: "#DCEFE8" },
   input: { borderWidth: 1, borderColor: "#d6e2d8", borderRadius: 14, padding: 12, backgroundColor: "#fbfdfb", fontSize: 15 },
   multiline: { minHeight: 90, textAlignVertical: "top" },
   button: { backgroundColor: "#2f5f4a", padding: 15, borderRadius: 16, alignItems: "center" },

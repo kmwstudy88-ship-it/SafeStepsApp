@@ -1,18 +1,411 @@
-import React, { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { Link, usePathname } from "expo-router";
+import React, { useEffect, useMemo, useState } from "react";
 import {
-  EmptyState,
-  ErrorState,
-  ParentChildCard,
-  ParentChildMetric,
-  ParentChildShell,
-} from "../../lib/parentChild/components";
+  ActivityIndicator,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  useWindowDimensions,
+  View,
+} from "react-native";
+
+import { EmptyState, ErrorState } from "../../lib/parentChild/components";
 import { getParentChildOverview, type ParentChildOverview } from "../../lib/parentChild/parentChildService";
+
+const navItems = [
+  ["Home Dashboard", "/dashboard", "⌂"],
+  ["Parent-Child Profile", "/parent-child", "👥"],
+  ["My Program", "/programs/my-programs", "▣"],
+  ["Lessons", "/lessons", "☰"],
+  ["Tasks", "/tasks", "☑"],
+  ["Family Meeting", "/family-meeting", "◇"],
+  ["Assessments", "/assessment-system", "⌁"],
+  ["Evidence", "/evidence", "□"],
+  ["Reports", "/reports", "▤"],
+  ["Messages", "/parent-child/messages", "☏"],
+  ["Calendar", "/timeline", "◇"],
+  ["Resources", "/resources", "▥"],
+  ["Settings", "/settings", "⚙"],
+  ["Help & Support", "/facilitator", "?"],
+] as const;
+
+const goals = [
+  ["Strengthen family relationships", 75],
+  ["Improve communication", 60],
+  ["Consistent routines", 40],
+  ["School engagement", 25],
+] as const;
+
+const wellbeing = [
+  ["☺", "Emotional\nWellbeing", "good"],
+  ["☼", "Family\nConnection", "good"],
+  ["⏱", "Daily\nRoutines", "watch"],
+  ["♨", "Stress\nManagement", "watch"],
+  ["♧", "School\nEngagement", "good"],
+] as const;
+
+function Sidebar({ messageCount }: { messageCount: number }) {
+  const pathname = usePathname();
+
+  return (
+    <View style={styles.sidebar}>
+      <View style={styles.logoWrap}>
+        <View style={styles.logoIcon}>
+          <Text style={styles.logoIconText}>S</Text>
+        </View>
+        <Text style={styles.logo}>SafeSteps</Text>
+        <Text style={styles.tagline}>Stronger Families. Safer Futures</Text>
+      </View>
+
+      <View style={styles.navList}>
+        {navItems.map(([label, href, icon]) => {
+          const active = href === pathname || (href === "/parent-child" && pathname.startsWith("/parent-child"));
+
+          return (
+            <Link key={label} href={href as any} asChild>
+              <Pressable
+                style={StyleSheet.flatten([
+                  styles.navItem,
+                  active && styles.navItemActive,
+                ])}
+              >
+                <Text
+                  style={StyleSheet.flatten([
+                    styles.navIcon,
+                    active && styles.navTextActive,
+                  ])}
+                >
+                  {icon}
+                </Text>
+                <Text
+                  style={StyleSheet.flatten([
+                    styles.navText,
+                    active && styles.navTextActive,
+                  ])}
+                >
+                  {label}
+                </Text>
+                {label === "Messages" && messageCount > 0 ? (
+                  <Text style={styles.navBadge}>{messageCount}</Text>
+                ) : null}
+                {active ? <Text style={styles.navChevron}>›</Text> : null}
+              </Pressable>
+            </Link>
+          );
+        })}
+      </View>
+
+      <Link href="/login" asChild>
+        <Pressable style={styles.logout}>
+          <Text style={styles.navIcon}>↪</Text>
+          <Text style={styles.logoutText}>Logout</Text>
+        </Pressable>
+      </Link>
+    </View>
+  );
+}
+
+function TopBar() {
+  return (
+    <View style={styles.topBar}>
+      <View style={styles.menuButton}>
+        <Text style={styles.menuText}>☰</Text>
+      </View>
+      <View style={{ flex: 1 }}>
+        <Text style={styles.welcome}>Welcome back, Parent 👋</Text>
+        <Text style={styles.welcomeSub}>{"Here is an overview of your family's progress."}</Text>
+      </View>
+      <View style={styles.bellWrap}>
+        <Text style={styles.bell}>♧</Text>
+        <Text style={styles.bellBadge}>3</Text>
+      </View>
+      <View style={styles.parentAvatar}>
+        <Text style={styles.avatarFace}>P</Text>
+      </View>
+      <Text style={styles.parentName}>Parent Name⌄</Text>
+    </View>
+  );
+}
+
+function Shortcut({ title, subtitle, href, icon }: { title: string; subtitle: string; href: string; icon: string }) {
+  return (
+    <Link href={href as any} asChild>
+      <Pressable style={styles.shortcut}>
+        <Text style={styles.shortcutIcon}>{icon}</Text>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.shortcutTitle}>{title}</Text>
+          <Text style={styles.shortcutSub}>{subtitle}</Text>
+        </View>
+        <Text style={styles.shortcutArrow}>›</Text>
+      </Pressable>
+    </Link>
+  );
+}
+
+function SectionCard({
+  title,
+  subtitle,
+  icon,
+  children,
+  tone = "blue",
+}: {
+  title: string;
+  subtitle?: string;
+  icon: string;
+  children: React.ReactNode;
+  tone?: "blue" | "green" | "purple" | "orange";
+}) {
+  return (
+    <View style={[styles.sectionCard, styles[`${tone}Wash`]]}>
+      <View style={styles.sectionHeader}>
+        <Text style={styles.sectionIcon}>{icon}</Text>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.sectionTitle}>{title}</Text>
+          {subtitle ? <Text style={styles.sectionSub}>{subtitle}</Text> : null}
+        </View>
+      </View>
+      {children}
+    </View>
+  );
+}
+
+function ProgressLine({ label, value }: { label: string; value: number }) {
+  return (
+    <View style={styles.goalRow}>
+      <View style={styles.goalTop}>
+        <Text style={styles.goalLabel}>{label}</Text>
+        <Text style={styles.goalValue}>{value}%</Text>
+      </View>
+      <View style={styles.goalTrack}>
+        <View style={[styles.goalFill, { width: `${value}%` }]} />
+      </View>
+    </View>
+  );
+}
+
+function FamilyProfile({ overview }: { overview: ParentChildOverview | null }) {
+  const statusLabel = overview?.openRequestCount || overview?.openMessageCount ? "Needs review" : "Active";
+
+  return (
+    <View style={styles.profileGrid}>
+      <View style={styles.profilePanel}>
+        <View style={styles.profilePeople}>
+          <View style={styles.personBlock}>
+            <Text style={styles.smallLabel}>Parent</Text>
+            <View style={styles.largeAvatar}>
+              <Text style={styles.largeAvatarText}>P</Text>
+            </View>
+            <Text style={styles.personName}>Parent Name</Text>
+            <Text style={styles.personMeta}>Primary Parent</Text>
+          </View>
+          <View style={styles.childrenBlock}>
+            <Text style={styles.smallLabel}>Children</Text>
+            <View style={styles.childAvatars}>
+              <View style={styles.childAvatar}>
+                <Text style={styles.childAvatarText}>8</Text>
+              </View>
+              <View style={styles.childAvatarPink}>
+                <Text style={styles.childAvatarText}>6</Text>
+              </View>
+            </View>
+            <Text style={styles.childNames}>Child Name        Child Name</Text>
+          </View>
+        </View>
+        <View style={styles.profileFacts}>
+          <Fact icon="⌂" label="Location" value="Springfield, IL" />
+          <Fact icon="□" label="Case Start Date" value="May 14, 2025" />
+          <Fact icon="◇" label="Status" value={statusLabel} pill />
+        </View>
+      </View>
+
+      <View style={styles.heroPanel}>
+        <View style={styles.sun} />
+        <View style={styles.mountainOne} />
+        <View style={styles.mountainTwo} />
+        <View style={styles.familyShapes}>
+          <View style={styles.parentShape} />
+          <View style={styles.childShape} />
+          <View style={styles.parentShapeAlt} />
+          <View style={styles.childShapeSmall} />
+        </View>
+        <View style={styles.quoteCard}>
+          <Text style={styles.quoteMark}>“</Text>
+          <Text style={styles.quoteText}>
+            Every step forward, no matter how small, builds a stronger tomorrow.
+          </Text>
+          <Text style={styles.quoteHeart}>♥</Text>
+        </View>
+      </View>
+    </View>
+  );
+}
+
+function Fact({ icon, label, value, pill }: { icon: string; label: string; value: string; pill?: boolean }) {
+  return (
+    <View style={styles.fact}>
+      <Text style={styles.factIcon}>{icon}</Text>
+      <View>
+        <Text style={styles.factLabel}>{label}</Text>
+        <Text style={pill ? styles.factPill : styles.factValue}>{value}</Text>
+      </View>
+    </View>
+  );
+}
+
+function OverviewContent({ overview }: { overview: ParentChildOverview }) {
+  const progress = useMemo(() => {
+    const total = overview.sharedItemCount + overview.requestCount + overview.messageCount;
+    const open = overview.openRequestCount + overview.openMessageCount;
+    if (total === 0) return 68;
+    return Math.max(20, Math.min(95, Math.round(((total - open) / total) * 100)));
+  }, [overview]);
+
+  return (
+    <>
+      <View style={styles.shortcutRow}>
+        <Shortcut title="My Program" subtitle="View your program pathway" href="/programs/my-programs" icon="▤" />
+        <Shortcut title="Courses" subtitle="Browse and continue courses" href="/lessons" icon="□" />
+      </View>
+
+      <FamilyProfile overview={overview} />
+
+      <View style={styles.overallProgress}>
+        <Text style={styles.progressIcon}>◎</Text>
+        <View style={{ flex: 1 }}>
+          <Text style={styles.overallTitle}>Overall Family Progress</Text>
+          <Text style={styles.overallSub}>{"You're making great progress."}</Text>
+        </View>
+        <View style={styles.overallTrack}>
+          <View style={[styles.overallFill, { width: `${progress}%` }]} />
+        </View>
+        <Text style={styles.overallPercent}>{progress}%</Text>
+        <Link href="/progress" asChild>
+          <Pressable style={styles.viewButton}>
+            <Text style={styles.viewButtonText}>View Full Progress ›</Text>
+          </Pressable>
+        </Link>
+      </View>
+
+      <View style={styles.threeColumn}>
+        <SectionCard title="Case Goals" subtitle="Working together toward our goals." icon="◎" tone="blue">
+          {goals.map(([label, value]) => (
+            <ProgressLine key={label} label={label} value={value} />
+          ))}
+          <Link href="/parent-child/requests" asChild>
+            <Pressable>
+              <Text style={styles.linkText}>View all goals ›</Text>
+            </Pressable>
+          </Link>
+        </SectionCard>
+
+        <SectionCard title="Child Voice" subtitle="What your child wants you to know." icon="☏" tone="green">
+          <VoiceBubble avatar="8" text={overview.latestRequest?.message || "I like when we play games together as a family."} />
+          <VoiceBubble avatar="6" text={overview.latestSharedItem?.item_title || "I feel happy when we go on walks together."} />
+          <Link href="/parent-child/shared-items" asChild>
+            <Pressable>
+              <Text style={styles.linkText}>View full summary ›</Text>
+            </Pressable>
+          </Link>
+        </SectionCard>
+
+        <SectionCard title="Support Contacts" subtitle="You can reach out to key contacts." icon="♙" tone="orange">
+          <ContactRow name="Case Worker" detail="Jordan Lee" phone="(217) 555-0134" />
+          <ContactRow name="Family Support Specialist" detail="Taylor Morgan" phone="(217) 555-0178" />
+          <ContactRow name="Therapist" detail="Dr. Alex Rivera" phone="(217) 555-0199" />
+          <Text style={styles.linkText}>View all contacts ›</Text>
+        </SectionCard>
+      </View>
+
+      <View style={styles.bottomGrid}>
+        <SectionCard title="Wellbeing Indicators" subtitle="Your family's wellbeing at a glance." icon="♡" tone="green">
+          <View style={styles.wellbeingRow}>
+            {wellbeing.map(([icon, label, state]) => (
+              <View key={label} style={styles.wellbeingItem}>
+                <View style={[styles.wellbeingCircle, state === "watch" ? styles.wellbeingWatch : null]}>
+                  <Text style={[styles.wellbeingIcon, state === "watch" ? styles.wellbeingWatchText : null]}>{icon}</Text>
+                </View>
+                <Text style={styles.wellbeingLabel}>{label}</Text>
+              </View>
+            ))}
+          </View>
+          <View style={styles.legendRow}>
+            <Legend color="#25A985" label="Doing well" />
+            <Legend color="#F2AA22" label="Needs attention" />
+            <Legend color="#E7584F" label="Needs support" />
+          </View>
+        </SectionCard>
+
+        <SectionCard title="Family Timeline" subtitle="Important milestones and upcoming activities." icon="◷" tone="purple">
+          <TimelineRow color="#25A985" title="Case opened" date="May 14, 2025" detail="Initial assessment completed and case plan created." />
+          <TimelineRow color="#2B83D3" title="Next review" date="Jun 20, 2025" detail="Progress review with your case team." />
+          <TimelineRow color="#7E66D9" title="Family activity" date="Jun 28, 2025" detail="Community family fun day, optional." />
+          <Link href="/timeline" asChild>
+            <Pressable>
+              <Text style={styles.linkText}>View full timeline ›</Text>
+            </Pressable>
+          </Link>
+        </SectionCard>
+      </View>
+    </>
+  );
+}
+
+function VoiceBubble({ avatar, text }: { avatar: string; text: string }) {
+  return (
+    <View style={styles.voiceRow}>
+      <View style={styles.voiceAvatar}>
+        <Text style={styles.voiceAvatarText}>{avatar}</Text>
+      </View>
+      <View style={styles.voiceBubble}>
+        <Text style={styles.voiceText}>“{text}”</Text>
+      </View>
+    </View>
+  );
+}
+
+function ContactRow({ name, detail, phone }: { name: string; detail: string; phone: string }) {
+  return (
+    <View style={styles.contactRow}>
+      <View style={styles.contactAvatar}>
+        <Text style={styles.contactAvatarText}>P</Text>
+      </View>
+      <View style={{ flex: 1 }}>
+        <Text style={styles.contactName}>{name}</Text>
+        <Text style={styles.contactDetail}>{detail}</Text>
+      </View>
+      <Text style={styles.contactPhone}>{phone}</Text>
+      <Text style={styles.contactMail}>✉</Text>
+    </View>
+  );
+}
+
+function Legend({ color, label }: { color: string; label: string }) {
+  return (
+    <View style={styles.legendItem}>
+      <View style={[styles.legendDot, { backgroundColor: color }]} />
+      <Text style={styles.legendText}>{label}</Text>
+    </View>
+  );
+}
+
+function TimelineRow({ color, title, date, detail }: { color: string; title: string; date: string; detail: string }) {
+  return (
+    <View style={styles.timelineRow}>
+      <View style={[styles.timelineDot, { backgroundColor: color }]} />
+      <Text style={styles.timelineTitle}>{title}</Text>
+      <Text style={styles.timelineDate}>{date}</Text>
+      <Text style={styles.timelineDetail}>{detail}</Text>
+    </View>
+  );
+}
 
 export default function ParentChildHomeScreen() {
   const [overview, setOverview] = useState<ParentChildOverview | null>(null);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const { width } = useWindowDimensions();
+  const wide = width >= 980;
 
   useEffect(() => {
     let mounted = true;
@@ -46,67 +439,872 @@ export default function ParentChildHomeScreen() {
   }, []);
 
   return (
-    <ParentChildShell
-      title="Parent-Child Section"
-      subtitle="Review child-shared requests, reflections, and messages without entering the private child space."
-    >
-      {loading ? <EmptyState message="Loading parent-child overview..." /> : null}
+    <View style={styles.appShell}>
+      {wide ? <Sidebar messageCount={overview?.openMessageCount ?? 0} /> : null}
+      <ScrollView style={styles.screen} contentContainerStyle={styles.content} contentInsetAdjustmentBehavior="automatic">
+        <TopBar />
 
-      {!loading && errorMessage ? <ErrorState message={errorMessage} /> : null}
+        {!wide ? (
+          <View style={styles.mobileNavNotice}>
+            <Text style={styles.mobileNavText}>Parent-Child Profile</Text>
+            <Link href="/parent-child/messages" asChild>
+              <Pressable style={styles.mobileMessageButton}>
+                <Text style={styles.mobileMessageText}>Messages {overview?.openMessageCount ? `(${overview.openMessageCount})` : ""}</Text>
+              </Pressable>
+            </Link>
+          </View>
+        ) : null}
 
-      {!loading && overview ? (
-        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 12 }}>
-          <ParentChildMetric label="Shared items" value={overview.sharedItemCount} />
-          <ParentChildMetric label="Child requests" value={overview.requestCount} />
-          <ParentChildMetric label="Still open" value={overview.openRequestCount} tone="alert" />
-          <ParentChildMetric label="Messages open" value={overview.openMessageCount} tone="alert" />
+        <View style={styles.pageHeader}>
+          <Text style={styles.backArrow}>←</Text>
+          <View>
+            <Text style={styles.pageTitle}>Parent-Child Profile</Text>
+            <Text style={styles.pageSub}>Overview of your family, goals, and support network.</Text>
+          </View>
         </View>
-      ) : null}
 
-      <ParentChildCard
-        title="Shared Items"
-        description="See feelings, lessons, visit reflections, messages, or tasks the child chose to share."
-        badge={overview?.latestSharedItem ? "New activity" : "Shared"}
-        href="/parent-child/shared-items"
-      >
-        {overview?.latestSharedItem ? (
-          <Text style={{ color: "#53665A", fontWeight: "800", marginTop: 10 }}>
-            Latest: {overview.latestSharedItem.item_title || overview.latestSharedItem.item_type}
-          </Text>
+        {loading ? (
+          <View style={styles.loadingPanel}>
+            <ActivityIndicator color="#0D8E8A" />
+            <EmptyState message="Loading parent-child overview..." />
+          </View>
         ) : null}
-      </ParentChildCard>
 
-      <ParentChildCard
-        title="Child Requests"
-        description="See game requests, talk requests, help requests, and parent improvement requests the child chose to send."
-        badge={overview?.openRequestCount ? `${overview.openRequestCount} open` : "Requests"}
-        href="/parent-child/requests"
-      >
-        {overview?.latestRequest ? (
-          <Text style={{ color: "#53665A", fontWeight: "800", marginTop: 10 }}>
-            Latest: {overview.latestRequest.request_type}
-          </Text>
-        ) : null}
-      </ParentChildCard>
+        {!loading && errorMessage ? <ErrorState message={errorMessage} /> : null}
 
-      <ParentChildCard
-        title="Monitoring Messages"
-        description="Review monitored messages between parent and child, add notes, and mark follow-up or closure."
-        badge={overview?.openMessageCount ? `${overview.openMessageCount} open` : "Messages"}
-        href="/parent-child/messages"
-      >
-        {overview?.latestMessage ? (
-          <Text style={{ color: "#53665A", fontWeight: "800", marginTop: 10 }}>
-            Latest: {overview.latestMessage.sender_role} message
-          </Text>
-        ) : null}
-      </ParentChildCard>
-
-      <ParentChildCard
-        title="What parents cannot see"
-        description="Parents cannot see private child feelings, child tasks, child evidence, child assessments, child progress, or child visit reflections unless the child chooses to share them."
-        badge="Safety"
-      />
-    </ParentChildShell>
+        {!loading && overview ? <OverviewContent overview={overview} /> : null}
+      </ScrollView>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  appShell: {
+    flex: 1,
+    backgroundColor: "#F9F4EA",
+    flexDirection: "row",
+  },
+  sidebar: {
+    width: 294,
+    backgroundColor: "#003A4B",
+    paddingHorizontal: 16,
+    paddingVertical: 24,
+    borderRightWidth: 4,
+    borderRightColor: "#E6B44D",
+  },
+  logoWrap: {
+    alignItems: "center",
+    marginBottom: 18,
+  },
+  logoIcon: {
+    width: 76,
+    height: 76,
+    borderRadius: 38,
+    backgroundColor: "#E7F4ED",
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 3,
+    borderColor: "#26AAA0",
+  },
+  logoIconText: {
+    color: "#0E5864",
+    fontSize: 34,
+    fontWeight: "900",
+  },
+  logo: {
+    color: "#27C3B5",
+    fontSize: 24,
+    fontWeight: "900",
+    marginTop: 8,
+  },
+  tagline: {
+    color: "#D4E9EA",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  navList: {
+    gap: 6,
+  },
+  navItem: {
+    minHeight: 48,
+    borderRadius: 8,
+    flexDirection: "row",
+    alignItems: "center",
+    paddingHorizontal: 14,
+    gap: 12,
+  },
+  navItemActive: {
+    backgroundColor: "#1AA59F",
+  },
+  navIcon: {
+    width: 24,
+    color: "#F2FAFB",
+    fontSize: 18,
+    textAlign: "center",
+    fontWeight: "900",
+  },
+  navText: {
+    flex: 1,
+    color: "#F2FAFB",
+    fontSize: 16,
+    fontWeight: "800",
+  },
+  navTextActive: {
+    color: "#FFFFFF",
+  },
+  navChevron: {
+    color: "#FFFFFF",
+    fontSize: 28,
+    lineHeight: 28,
+  },
+  navBadge: {
+    minWidth: 26,
+    height: 26,
+    borderRadius: 13,
+    backgroundColor: "#FFBF2E",
+    color: "#062F3B",
+    fontWeight: "900",
+    textAlign: "center",
+    lineHeight: 26,
+    overflow: "hidden",
+  },
+  logout: {
+    marginTop: "auto",
+    borderTopWidth: 1,
+    borderTopColor: "rgba(255,255,255,0.24)",
+    paddingTop: 24,
+    flexDirection: "row",
+    gap: 12,
+    alignItems: "center",
+    paddingHorizontal: 14,
+  },
+  logoutText: {
+    color: "#FFFFFF",
+    fontSize: 16,
+    fontWeight: "800",
+  },
+  screen: {
+    flex: 1,
+    backgroundColor: "#FBF7EF",
+  },
+  content: {
+    paddingHorizontal: 30,
+    paddingTop: 20,
+    paddingBottom: 34,
+    gap: 12,
+  },
+  topBar: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 16,
+  },
+  menuButton: {
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    backgroundColor: "#24A9A1",
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 2,
+    borderColor: "#BEE5DC",
+  },
+  menuText: {
+    color: "#FFFFFF",
+    fontSize: 24,
+    fontWeight: "900",
+  },
+  welcome: {
+    color: "#0B3770",
+    fontSize: 24,
+    fontWeight: "900",
+  },
+  welcomeSub: {
+    color: "#0B3770",
+    fontSize: 15,
+    fontWeight: "700",
+    marginTop: 3,
+  },
+  bellWrap: {
+    width: 42,
+    height: 42,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  bell: {
+    color: "#0B5C92",
+    fontSize: 24,
+    fontWeight: "900",
+  },
+  bellBadge: {
+    position: "absolute",
+    right: 3,
+    top: 0,
+    width: 18,
+    height: 18,
+    borderRadius: 9,
+    backgroundColor: "#25A985",
+    color: "#FFFFFF",
+    textAlign: "center",
+    lineHeight: 18,
+    fontSize: 11,
+    fontWeight: "900",
+    overflow: "hidden",
+  },
+  parentAvatar: {
+    width: 52,
+    height: 52,
+    borderRadius: 26,
+    backgroundColor: "#E7F4ED",
+    borderWidth: 2,
+    borderColor: "#24A9A1",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  avatarFace: {
+    color: "#0B5C73",
+    fontSize: 24,
+    fontWeight: "900",
+  },
+  parentName: {
+    color: "#0B3770",
+    fontSize: 14,
+    fontWeight: "900",
+  },
+  mobileNavNotice: {
+    backgroundColor: "#083E50",
+    borderRadius: 8,
+    padding: 12,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+  },
+  mobileNavText: {
+    flex: 1,
+    color: "#FFFFFF",
+    fontWeight: "900",
+  },
+  mobileMessageButton: {
+    backgroundColor: "#24A9A1",
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+  },
+  mobileMessageText: {
+    color: "#FFFFFF",
+    fontWeight: "900",
+  },
+  pageHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 18,
+    marginTop: 8,
+  },
+  backArrow: {
+    color: "#0B3770",
+    fontSize: 32,
+    fontWeight: "800",
+  },
+  pageTitle: {
+    color: "#0B3770",
+    fontSize: 25,
+    fontWeight: "900",
+  },
+  pageSub: {
+    color: "#0B3770",
+    fontSize: 14,
+    fontWeight: "700",
+    marginTop: 4,
+  },
+  shortcutRow: {
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    gap: 18,
+    flexWrap: "wrap",
+  },
+  shortcut: {
+    width: 340,
+    minHeight: 64,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#E4C997",
+    backgroundColor: "rgba(255,255,255,0.72)",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 14,
+    paddingHorizontal: 16,
+  },
+  shortcutIcon: {
+    color: "#0B5C92",
+    fontSize: 26,
+    fontWeight: "900",
+  },
+  shortcutTitle: {
+    color: "#0B3770",
+    fontSize: 15,
+    fontWeight: "900",
+  },
+  shortcutSub: {
+    color: "#0B3770",
+    fontSize: 13,
+    fontWeight: "600",
+    marginTop: 2,
+  },
+  shortcutArrow: {
+    color: "#0B5C92",
+    fontSize: 28,
+  },
+  profileGrid: {
+    flexDirection: "row",
+    gap: 14,
+    flexWrap: "wrap",
+  },
+  profilePanel: {
+    flex: 0.9,
+    minWidth: 360,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#E4C997",
+    backgroundColor: "rgba(255,255,255,0.8)",
+    padding: 18,
+  },
+  profilePeople: {
+    flexDirection: "row",
+    gap: 24,
+    alignItems: "center",
+  },
+  personBlock: {
+    flex: 1,
+    alignItems: "center",
+  },
+  childrenBlock: {
+    flex: 1,
+    alignItems: "center",
+  },
+  smallLabel: {
+    alignSelf: "flex-start",
+    color: "#0B3770",
+    fontWeight: "900",
+    fontSize: 14,
+    marginBottom: 8,
+  },
+  largeAvatar: {
+    width: 88,
+    height: 88,
+    borderRadius: 44,
+    backgroundColor: "#E6F5EF",
+    borderWidth: 2,
+    borderColor: "#25A985",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  largeAvatarText: {
+    color: "#0C6E74",
+    fontSize: 34,
+    fontWeight: "900",
+  },
+  personName: {
+    color: "#0B3770",
+    fontSize: 15,
+    fontWeight: "900",
+    marginTop: 12,
+  },
+  personMeta: {
+    color: "#0B3770",
+    fontSize: 12,
+    fontWeight: "700",
+    marginTop: 3,
+  },
+  childAvatars: {
+    flexDirection: "row",
+    gap: 22,
+  },
+  childAvatar: {
+    width: 76,
+    height: 76,
+    borderRadius: 38,
+    backgroundColor: "#DFF0FF",
+    borderWidth: 2,
+    borderColor: "#58A3D7",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  childAvatarPink: {
+    width: 76,
+    height: 76,
+    borderRadius: 38,
+    backgroundColor: "#FFE9E9",
+    borderWidth: 2,
+    borderColor: "#B6A5D9",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  childAvatarText: {
+    color: "#0B3770",
+    fontSize: 22,
+    fontWeight: "900",
+  },
+  childNames: {
+    color: "#0B3770",
+    fontSize: 12,
+    fontWeight: "800",
+    marginTop: 10,
+    textAlign: "center",
+  },
+  profileFacts: {
+    borderTopWidth: 1,
+    borderTopColor: "#E4C997",
+    marginTop: 16,
+    paddingTop: 14,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    gap: 8,
+    flexWrap: "wrap",
+  },
+  fact: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+  },
+  factIcon: {
+    color: "#0B5C92",
+    fontSize: 24,
+    fontWeight: "900",
+  },
+  factLabel: {
+    color: "#52708B",
+    fontSize: 12,
+    fontWeight: "800",
+  },
+  factValue: {
+    color: "#0B3770",
+    fontSize: 13,
+    fontWeight: "900",
+    marginTop: 2,
+  },
+  factPill: {
+    color: "#176E4E",
+    backgroundColor: "#DDF4E5",
+    borderRadius: 999,
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+    overflow: "hidden",
+    fontSize: 12,
+    fontWeight: "900",
+    marginTop: 2,
+  },
+  heroPanel: {
+    flex: 1.4,
+    minWidth: 430,
+    minHeight: 230,
+    borderRadius: 8,
+    overflow: "hidden",
+    borderWidth: 1,
+    borderColor: "#E4C997",
+    backgroundColor: "#F9D8C6",
+  },
+  sun: {
+    position: "absolute",
+    top: 54,
+    left: "42%",
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: "#FFF1C9",
+  },
+  mountainOne: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 42,
+    height: 105,
+    backgroundColor: "#B9C7E9",
+    opacity: 0.65,
+    transform: [{ skewY: "-8deg" }],
+  },
+  mountainTwo: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 12,
+    height: 80,
+    backgroundColor: "#BFE4E2",
+    opacity: 0.78,
+    transform: [{ skewY: "5deg" }],
+  },
+  familyShapes: {
+    position: "absolute",
+    left: "44%",
+    bottom: 48,
+    flexDirection: "row",
+    alignItems: "flex-end",
+    gap: 10,
+  },
+  parentShape: {
+    width: 18,
+    height: 78,
+    borderRadius: 9,
+    backgroundColor: "#275B72",
+  },
+  parentShapeAlt: {
+    width: 18,
+    height: 72,
+    borderRadius: 9,
+    backgroundColor: "#426A8C",
+  },
+  childShape: {
+    width: 13,
+    height: 48,
+    borderRadius: 7,
+    backgroundColor: "#0E8B8B",
+  },
+  childShapeSmall: {
+    width: 12,
+    height: 44,
+    borderRadius: 7,
+    backgroundColor: "#5470AE",
+  },
+  quoteCard: {
+    position: "absolute",
+    right: 42,
+    top: 40,
+    width: 230,
+    borderRadius: 8,
+    backgroundColor: "rgba(255,255,255,0.78)",
+    padding: 18,
+  },
+  quoteMark: {
+    color: "#D4A96F",
+    fontSize: 32,
+    fontWeight: "900",
+    lineHeight: 34,
+  },
+  quoteText: {
+    color: "#0B3770",
+    fontSize: 16,
+    lineHeight: 26,
+    fontWeight: "800",
+  },
+  quoteHeart: {
+    alignSelf: "flex-end",
+    color: "#19A89F",
+    fontSize: 24,
+  },
+  overallProgress: {
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#E4C997",
+    backgroundColor: "rgba(255,255,255,0.72)",
+    padding: 16,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 16,
+    flexWrap: "wrap",
+  },
+  progressIcon: {
+    color: "#0B5C92",
+    fontSize: 34,
+    fontWeight: "900",
+  },
+  overallTitle: {
+    color: "#0B3770",
+    fontSize: 18,
+    fontWeight: "900",
+  },
+  overallSub: {
+    color: "#0B3770",
+    fontSize: 13,
+    fontWeight: "700",
+  },
+  overallTrack: {
+    flex: 1.4,
+    minWidth: 230,
+    height: 14,
+    borderRadius: 7,
+    backgroundColor: "#ECE4DA",
+    overflow: "hidden",
+  },
+  overallFill: {
+    height: 14,
+    borderRadius: 7,
+    backgroundColor: "#35B49D",
+  },
+  overallPercent: {
+    color: "#0B3770",
+    fontSize: 15,
+    fontWeight: "900",
+  },
+  viewButton: {
+    minWidth: 190,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#8DCBC3",
+    backgroundColor: "#F7FBFA",
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    alignItems: "center",
+  },
+  viewButtonText: {
+    color: "#0B5C92",
+    fontSize: 14,
+    fontWeight: "900",
+  },
+  threeColumn: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 14,
+  },
+  bottomGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 14,
+  },
+  sectionCard: {
+    flex: 1,
+    minWidth: 330,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#E4C997",
+    backgroundColor: "rgba(255,255,255,0.76)",
+    padding: 18,
+  },
+  blueWash: {
+    backgroundColor: "#FFFBF2",
+  },
+  greenWash: {
+    backgroundColor: "#F6FCF8",
+  },
+  purpleWash: {
+    backgroundColor: "#FCF9FF",
+  },
+  orangeWash: {
+    backgroundColor: "#FFF9F1",
+  },
+  sectionHeader: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    gap: 12,
+    marginBottom: 12,
+  },
+  sectionIcon: {
+    color: "#0B5C92",
+    fontSize: 30,
+    fontWeight: "900",
+    lineHeight: 34,
+  },
+  sectionTitle: {
+    color: "#0B3770",
+    fontSize: 18,
+    fontWeight: "900",
+  },
+  sectionSub: {
+    color: "#0B3770",
+    fontSize: 13,
+    fontWeight: "700",
+    marginTop: 2,
+  },
+  goalRow: {
+    marginTop: 8,
+  },
+  goalTop: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+  },
+  goalLabel: {
+    flex: 1,
+    color: "#0B3770",
+    fontSize: 13,
+    fontWeight: "800",
+  },
+  goalValue: {
+    color: "#0B3770",
+    fontSize: 13,
+    fontWeight: "900",
+  },
+  goalTrack: {
+    height: 9,
+    borderRadius: 5,
+    backgroundColor: "#EAE3D8",
+    overflow: "hidden",
+    marginTop: 5,
+  },
+  goalFill: {
+    height: 9,
+    borderRadius: 5,
+    backgroundColor: "#35B49D",
+  },
+  linkText: {
+    color: "#079894",
+    fontSize: 14,
+    fontWeight: "900",
+    marginTop: 14,
+  },
+  voiceRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    marginBottom: 10,
+  },
+  voiceAvatar: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: "#DFF0FF",
+    borderWidth: 1,
+    borderColor: "#58A3D7",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  voiceAvatarText: {
+    color: "#0B3770",
+    fontWeight: "900",
+  },
+  voiceBubble: {
+    flex: 1,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#E4DDD0",
+    backgroundColor: "rgba(255,255,255,0.8)",
+    padding: 12,
+  },
+  voiceText: {
+    color: "#0B3770",
+    fontSize: 14,
+    lineHeight: 21,
+    fontWeight: "800",
+  },
+  contactRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#ECE4DA",
+    paddingVertical: 8,
+  },
+  contactAvatar: {
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    backgroundColor: "#FFE1C8",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  contactAvatarText: {
+    color: "#0B3770",
+    fontWeight: "900",
+  },
+  contactName: {
+    color: "#0B3770",
+    fontSize: 13,
+    fontWeight: "900",
+  },
+  contactDetail: {
+    color: "#42678A",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  contactPhone: {
+    color: "#0B3770",
+    fontSize: 13,
+    fontWeight: "800",
+  },
+  contactMail: {
+    color: "#0B5C92",
+    fontSize: 17,
+    fontWeight: "900",
+  },
+  wellbeingRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    gap: 12,
+  },
+  wellbeingItem: {
+    width: 92,
+    alignItems: "center",
+  },
+  wellbeingCircle: {
+    width: 58,
+    height: 58,
+    borderRadius: 29,
+    borderWidth: 2,
+    borderColor: "#35B49D",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FFFFFF",
+  },
+  wellbeingWatch: {
+    borderColor: "#F2AA22",
+  },
+  wellbeingIcon: {
+    color: "#1EA283",
+    fontSize: 24,
+    fontWeight: "900",
+  },
+  wellbeingWatchText: {
+    color: "#F2AA22",
+  },
+  wellbeingLabel: {
+    color: "#0B3770",
+    fontSize: 12,
+    fontWeight: "800",
+    textAlign: "center",
+    marginTop: 8,
+    lineHeight: 16,
+  },
+  legendRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 18,
+    marginTop: 16,
+  },
+  legendItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  legendDot: {
+    width: 14,
+    height: 14,
+    borderRadius: 7,
+  },
+  legendText: {
+    color: "#0B3770",
+    fontSize: 12,
+    fontWeight: "800",
+  },
+  timelineRow: {
+    minHeight: 42,
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: "#ECE4DA",
+  },
+  timelineDot: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+  },
+  timelineTitle: {
+    width: 120,
+    color: "#0B3770",
+    fontSize: 13,
+    fontWeight: "900",
+  },
+  timelineDate: {
+    width: 100,
+    color: "#42678A",
+    fontSize: 12,
+    fontWeight: "800",
+  },
+  timelineDetail: {
+    flex: 1,
+    color: "#42678A",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  loadingPanel: {
+    gap: 12,
+  },
+});

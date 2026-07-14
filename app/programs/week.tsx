@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { getProgramById, getProgramMonth, getProgramWeek } from "../../lib/data/programs";
 import { hasReflectionRecord } from "../../lib/engines/reflectionStatusEngine";
+import { ChallengeRecommendations } from "../../components/ChallengeRecommendations";
 
 export default function WeekScreen() {
   const params = useLocalSearchParams();
@@ -178,6 +179,12 @@ export default function WeekScreen() {
           <Text style={{ fontWeight: "bold" }}>Refresh Unlock Status</Text>
         </Pressable>
       </View>
+
+      <ChallengeRecommendations
+        context={`${program.title} ${month.topic} ${week.subTopic} ${week.lessons.map((lesson) => lesson.title).join(" ")}`}
+        title="Optional practice this week"
+        limit={2}
+      />
 
       {week.lessons.map((lesson) => (
         <View

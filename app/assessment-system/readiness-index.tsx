@@ -1,95 +1,134 @@
-import { useMemo, useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { useMemo } from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 import {
   AssessmentScreenShell,
   assessmentColors,
 } from "../../components/AssessmentSystemUI";
-
-const readinessAreas = [
-  {
-    title: "Safe and stable home environment",
-    description: "The home environment is safe, predictable, and suitable for children.",
-  },
-  {
-    title: "Parenting routines and consistency",
-    description: "Daily routines, supervision, boundaries, and care tasks are consistent.",
-  },
-  {
-    title: "Service engagement",
-    description: "Required services, programs, appointments, and support plans are being followed.",
-  },
-  {
-    title: "Child voice and wellbeing",
-    description: "The child voice is heard, recorded, and considered in planning.",
-  },
-  {
-    title: "Evidence of change over time",
-    description: "Progress is supported by repeated evidence, not a single snapshot.",
-  },
-  {
-    title: "Risk reduction",
-    description: "Known risks are reduced, managed, and reviewed with a clear safety plan.",
-  },
-];
+import {
+  safeStepsCriticalOverrides,
+  safeStepsDefaultResponses,
+  safeStepsProtectiveCapacityDomains,
+  safeStepsProtectiveCapacityItems,
+  safeStepsScoringBands,
+  sampleMilestones,
+  sampleServiceReferrals,
+  sampleVisitations,
+} from "../../lib/data/safeStepsAssessmentInstrument";
+import {
+  calculateMilestoneProgressScore,
+  calculateServiceCompletionScore,
+  calculateVisitationQualityTrend,
+  computeReadinessIndexFromSignals,
+  scoreAssessment,
+} from "../../lib/engines/assessmentScoringEngine";
 
 export default function ReadinessIndexScreen() {
-  const [checkedAreas, setCheckedAreas] = useState<Record<string, boolean>>({});
-
-  const completedCount = useMemo(
-    () => readinessAreas.filter((area) => checkedAreas[area.title]).length,
-    [checkedAreas],
+  const assessmentScore = useMemo(
+    () =>
+      scoreAssessment({
+        domains: safeStepsProtectiveCapacityDomains,
+        items: safeStepsProtectiveCapacityItems,
+        responses: safeStepsDefaultResponses,
+        overrides: safeStepsCriticalOverrides,
+        bands: safeStepsScoringBands,
+      }),
+    [],
   );
 
-  const readinessPercent = Math.round((completedCount / readinessAreas.length) * 100);
+  const readiness = useMemo(
+    () =>
+      computeReadinessIndexFromSignals({
+        assessmentScore: assessmentScore.overallScore,
+        serviceReferrals: sampleServiceReferrals,
+        visitations: sampleVisitations,
+        milestones: sampleMilestones,
+        activeCriticalOverride: assessmentScore.overrideTriggered,
+      }),
+    [assessmentScore],
+  );
 
-  function toggleArea(title: string) {
-    setCheckedAreas((current) => ({
-      ...current,
-      [title]: !current[title],
-    }));
-  }
+  const serviceScore = calculateServiceCompletionScore(sampleServiceReferrals);
+  const visitationScore = calculateVisitationQualityTrend(sampleVisitations);
+  const milestoneScore = calculateMilestoneProgressScore(sampleMilestones);
 
   return (
     <AssessmentScreenShell
       title="Reunification Readiness Index"
-      subtitle="Check what is stable, what is improving, and what still needs support before reunification decisions."
+      subtitle="Decision support that combines assessment scores, service completion, contact quality, milestones, and critical safety overrides."
     >
-      <View style={styles.summaryCard}>
-        <Text style={styles.summaryLabel}>Readiness score</Text>
-        <Text style={styles.summaryScore}>{readinessPercent}%</Text>
+      <View style={styles.exampleNotice}>
+        <Text style={styles.exampleTitle}>Example calculation only</Text>
         <Text style={styles.summaryText}>
-          {completedCount} of {readinessAreas.length} readiness areas marked as currently supported.
+          This readiness view currently uses sample responses, referrals, visitations, and milestones. It is not a live reunification recommendation.
         </Text>
       </View>
 
-      <View style={styles.list}>
-        {readinessAreas.map((area) => {
-          const active = Boolean(checkedAreas[area.title]);
+      <View style={readiness.suppressedByOverride ? styles.reviewCard : styles.summaryCard}>
+        <Text style={styles.summaryLabel}>Readiness support score</Text>
+        <Text style={styles.summaryScore}>
+          {readiness.compositeScore == null ? "Review" : `${readiness.compositeScore}%`}
+        </Text>
+        <Text style={styles.summaryText}>{readiness.recommendation}</Text>
+      </View>
 
-          return (
-            <Pressable
-              key={area.title}
-              onPress={() => toggleArea(area.title)}
-              style={[styles.areaCard, active && styles.areaCardActive]}
-            >
-              <View style={active ? styles.checkActive : styles.checkEmpty}>
-                <Text style={styles.checkText}>{active ? "✓" : ""}</Text>
-              </View>
+      <View style={styles.signalGrid}>
+        <SignalCard label="Assessment" value={assessmentScore.overallScore} />
+        <SignalCard label="Services" value={serviceScore} />
+        <SignalCard label="Contact quality" value={visitationScore} />
+        <SignalCard label="Milestones" value={milestoneScore} />
+      </View>
 
-              <View style={styles.areaCopy}>
-                <Text style={styles.areaTitle}>{area.title}</Text>
-                <Text style={styles.areaDescription}>{area.description}</Text>
-              </View>
-            </Pressable>
-          );
-        })}
+      <View style={styles.card}>
+        <Text style={styles.sectionTitle}>Safety controls</Text>
+        <Text style={styles.body}>
+          Critical safety findings suppress readiness instead of being averaged away. This screen is decision support only; supervisor and case-team review remain required before any reunification-level change.
+        </Text>
+        {readiness.flags.length ? (
+          readiness.flags.map((flag) => (
+            <Text key={flag} style={styles.flagText}>{flag}</Text>
+          ))
+        ) : (
+          <Text style={styles.body}>No missing signal or critical-override flags in the current example.</Text>
+        )}
+      </View>
+
+      <View style={styles.card}>
+        <Text style={styles.sectionTitle}>How the index is weighted</Text>
+        {readiness.signals.map((signal) => (
+          <View key={signal.label} style={styles.weightRow}>
+            <Text style={styles.weightLabel}>{signal.label}</Text>
+            <Text style={styles.weightValue}>{Math.round(signal.weight * 100)}%</Text>
+          </View>
+        ))}
       </View>
     </AssessmentScreenShell>
   );
 }
 
+function SignalCard({ label, value }: { label: string; value: number | null }) {
+  return (
+    <View style={styles.signalCard}>
+      <Text style={styles.signalLabel}>{label}</Text>
+      <Text style={styles.signalValue}>{value == null ? "Missing" : `${value}%`}</Text>
+    </View>
+  );
+}
+
 const styles = StyleSheet.create({
+  exampleNotice: {
+    gap: 8,
+    padding: 16,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#B45309",
+    backgroundColor: "#FFFBEB",
+  },
+  exampleTitle: {
+    color: "#92400E",
+    fontSize: 16,
+    fontWeight: "900",
+  },
   summaryCard: {
     gap: 8,
     padding: 18,
@@ -97,6 +136,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: assessmentColors.border,
     backgroundColor: assessmentColors.sage,
+  },
+  reviewCard: {
+    gap: 8,
+    padding: 18,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: "#D56A4D",
+    backgroundColor: "#FFF2ED",
   },
   summaryLabel: {
     color: assessmentColors.tealDark,
@@ -111,11 +158,31 @@ const styles = StyleSheet.create({
     color: assessmentColors.muted,
     lineHeight: 21,
   },
-  list: {
+  signalGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
     gap: 12,
   },
-  areaCard: {
-    flexDirection: "row",
+  signalCard: {
+    flexGrow: 1,
+    flexBasis: 150,
+    gap: 6,
+    padding: 16,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: assessmentColors.border,
+    backgroundColor: "#FFFFFF",
+  },
+  signalLabel: {
+    color: assessmentColors.muted,
+    fontWeight: "800",
+  },
+  signalValue: {
+    color: assessmentColors.tealDark,
+    fontSize: 24,
+    fontWeight: "900",
+  },
+  card: {
     gap: 12,
     padding: 16,
     borderRadius: 14,
@@ -123,42 +190,33 @@ const styles = StyleSheet.create({
     borderColor: assessmentColors.border,
     backgroundColor: "#FFFFFF",
   },
-  areaCardActive: {
-    borderColor: assessmentColors.teal,
-    backgroundColor: "#F1FBF8",
-  },
-  checkEmpty: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
-    borderWidth: 2,
-    borderColor: assessmentColors.border,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  checkActive: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
-    backgroundColor: assessmentColors.teal,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  checkText: {
-    color: "#FFFFFF",
-    fontWeight: "900",
-  },
-  areaCopy: {
-    flex: 1,
-    gap: 5,
-  },
-  areaTitle: {
+  sectionTitle: {
     color: assessmentColors.charcoal,
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "900",
   },
-  areaDescription: {
+  body: {
     color: assessmentColors.muted,
-    lineHeight: 20,
+    lineHeight: 21,
+  },
+  flagText: {
+    color: "#9E2B25",
+    fontWeight: "900",
+  },
+  weightRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    gap: 12,
+    paddingVertical: 9,
+    borderTopWidth: 1,
+    borderTopColor: "#EDF2F0",
+  },
+  weightLabel: {
+    color: assessmentColors.charcoal,
+    fontWeight: "800",
+  },
+  weightValue: {
+    color: assessmentColors.tealDark,
+    fontWeight: "900",
   },
 });

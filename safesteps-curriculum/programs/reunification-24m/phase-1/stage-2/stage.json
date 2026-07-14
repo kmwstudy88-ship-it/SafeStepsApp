@@ -1,0 +1,44 @@
+{
+  "id": "phase-1-stage-2",
+  "title": "Stabilisation — Stage 2",
+  "objectives": [
+    "Identify coercive control patterns",
+    "Recognise red flags and risk indicators",
+    "Develop early warning systems"
+  ],
+  "required_lessons": [
+    "DFV-CC-001_patterns",
+    "DFV-CC-003_red_flags",
+    "SAF-SP-002_warning_signs"
+  ],
+  "recommended_lessons": [
+    "DFV-CC-004_gaslighting",
+    "SAF-SP-004_safe_places"
+  ],
+  "evidence": [
+    "Risk awareness worksheet",
+    "Identified personal red flags"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_contact_logs",
+      "weekly_caseworker_checkin",
+      "weekly_safety_plan_update",
+      "weekly_aod_evidence"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "fridge_pantry_photo",
+      "bedroom_photo",
+      "bathroom_photo",
+      "medication_photo",
+      "daily_reflection",
+      "routine_checklist"
+    ],
+    "level": "C"
+  }
+}

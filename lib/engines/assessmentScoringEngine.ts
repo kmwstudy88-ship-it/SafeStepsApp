@@ -90,6 +90,14 @@ export type ReadinessIndexResult = {
   saferJudgement?: SaferJudgementResult | null;
 };
 
+export type CompositeRiskBand = "Critical" | "High" | "Moderate" | "Ready";
+
+export type CompositeReadinessRiskResult = ReadinessIndexResult & {
+  riskBand: CompositeRiskBand;
+  direction: "improving" | "declining" | "stable" | "unknown";
+  workerOnly: true;
+};
+
 export type ServiceReferralProgress = {
   status: "referred" | "engaged" | "completed" | "declined" | "discontinued";
   completionWeight?: number;
@@ -269,9 +277,6 @@ export function computeReadinessIndex({
 }): ReadinessIndexResult {
   const signals: ReadinessSignal[] = [
     { label: "Assessment scores", score: assessmentScore ?? null, weight: 0.4 },
-    ...(saferJudgement
-      ? [{ label: "SAFER guided judgement", score: saferJudgement.readinessSupportScore, weight: 0.2 }]
-      : []),
     { label: "Service completion", score: serviceCompletionScore ?? null, weight: 0.2 },
     { label: "Visitation quality", score: visitationQualityScore ?? null, weight: 0.25 },
     { label: "Milestone progress", score: milestoneProgressScore ?? null, weight: 0.15 },
@@ -303,6 +308,10 @@ export function computeReadinessIndex({
     };
   }
 
+  if (saferJudgement) {
+    flags.push("SAFER guided judgement is shown as review context, not a weighted readiness signal.");
+  }
+
   if (!availableSignals.length) {
     return {
       compositeScore: null,
@@ -332,6 +341,45 @@ export function computeReadinessIndex({
     signals,
     suppressedByOverride: false,
     saferJudgement: saferJudgement ?? null,
+  };
+}
+
+export function classifyCompositeRiskBand(input: {
+  compositeScore: number | null;
+  suppressedByOverride?: boolean;
+}): CompositeRiskBand {
+  if (input.suppressedByOverride || input.compositeScore == null) return "Critical";
+  if (input.compositeScore < 40) return "Critical";
+  if (input.compositeScore < 60) return "High";
+  if (input.compositeScore < 80) return "Moderate";
+  return "Ready";
+}
+
+export function calculateReadinessDirection(currentScore: number | null, previousScore?: number | null) {
+  if (currentScore == null || previousScore == null) return "unknown" as const;
+  const change = roundScore(currentScore - previousScore);
+  if (change > 2) return "improving" as const;
+  if (change < -2) return "declining" as const;
+  return "stable" as const;
+}
+
+export function computeCompositeReunificationReadinessRisk({
+  previousCompositeScore,
+  ...input
+}: Parameters<typeof computeReadinessIndex>[0] & {
+  previousCompositeScore?: number | null;
+}): CompositeReadinessRiskResult {
+  const readiness = computeReadinessIndex(input);
+  const riskBand = classifyCompositeRiskBand({
+    compositeScore: readiness.compositeScore,
+    suppressedByOverride: readiness.suppressedByOverride,
+  });
+
+  return {
+    ...readiness,
+    riskBand,
+    direction: calculateReadinessDirection(readiness.compositeScore, previousCompositeScore),
+    workerOnly: true,
   };
 }
 

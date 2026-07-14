@@ -12,6 +12,7 @@ import {
 } from "react-native";
 
 import { AppBottomNav } from "../../components/AppBottomNav";
+import { useAuth } from "../../lib/auth";
 import {
   DashboardStats,
   fetchDashboardStats,
@@ -34,6 +35,8 @@ const colors = {
 const sidebarItems = [
   ["Dashboard", "/dashboard"],
   ["My Program", "/programs/my-programs"],
+  ["Curriculum", "/library"],
+  ["Challenges", "/challenges"],
   ["Tasks", "/tasks"],
   ["Evidence", "/evidence"],
   ["Assessments", "/assessment-system"],
@@ -48,6 +51,8 @@ const sidebarItems = [
 ] as const;
 
 const quickActions = [
+  ["Curriculum", "/library"],
+  ["Challenges", "/challenges"],
   ["Upload Evidence", "/evidence"],
   ["Journal Entry", "/growth"],
   ["Assessments", "/assessment-system"],
@@ -63,6 +68,10 @@ const evidenceUploadLinks = [
   ["Reflection uploads", "/growth"],
   ["Photo and document uploads", "/evidence-upload"],
 ] as const;
+
+function pluralize(count: number, singular: string, plural = `${singular}s`) {
+  return `${count} ${count === 1 ? singular : plural}`;
+}
 
 function Sidebar() {
   return (
@@ -81,7 +90,7 @@ function Sidebar() {
           ]);
 
           return (
-            <Link key={label} href={href} asChild>
+            <Link key={label} href={href as any} asChild>
               <Pressable style={linkStyle}>
                 <Text style={isActive ? styles.sideNavTextActive : styles.sideNavText}>
                   {label}
@@ -169,6 +178,7 @@ function QuickAction({ label, href }: { label: string; href: string }) {
 }
 
 export default function DashboardScreen() {
+  const { user } = useAuth();
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -201,6 +211,13 @@ export default function DashboardScreen() {
   const readyTasks = stats?.readyTasks ?? 0;
   const evidenceItems = stats?.evidenceItems ?? 0;
   const progressEvents = stats?.progressEvents ?? 0;
+  const totalTasks = completedTasks + readyTasks;
+  const taskCompletionPercent =
+    totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+  const displayName =
+    user?.user_metadata?.full_name ||
+    user?.email?.split("@")[0] ||
+    "SafeSteps parent";
 
   return (
     <ImageBackground
@@ -218,9 +235,9 @@ export default function DashboardScreen() {
             <View style={styles.profileCluster}>
               <Text style={styles.bell}>!</Text>
               <View style={styles.avatar}>
-                <Text style={styles.avatarText}>K</Text>
+                <Text style={styles.avatarText}>{displayName.slice(0, 1).toUpperCase()}</Text>
               </View>
-              <Text style={styles.profileName}>Katrina Watts</Text>
+              <Text style={styles.profileName}>{displayName}</Text>
             </View>
           </View>
 
@@ -228,12 +245,13 @@ export default function DashboardScreen() {
 
           <View style={styles.hero}>
             <View style={styles.heroCopy}>
-              <Text style={styles.eyebrow}>Good morning, Katrina</Text>
+              <Text style={styles.eyebrow}>Welcome back</Text>
               <Text style={styles.heroTitle}>
-                You are taking steps toward a stronger future.
+                Keep your SafeSteps record moving.
               </Text>
               <Text style={styles.heroText}>
-                Your consistency today creates a better tomorrow for your family.
+                Continue your program, complete practical tasks, and save evidence
+                as your work builds over time.
               </Text>
               <Link href="/programs/my-programs" asChild>
                 <Pressable style={styles.primaryButton}>
@@ -259,17 +277,21 @@ export default function DashboardScreen() {
             <Panel title="Program Progress">
               <View style={styles.progressPanelBody}>
                 <View style={styles.progressRing}>
-                  <Text style={styles.progressPercent}>68%</Text>
-                  <Text style={styles.progressLabel}>Complete</Text>
+                  <Text style={styles.progressPercent}>{taskCompletionPercent}%</Text>
+                  <Text style={styles.progressLabel}>Tasks</Text>
                 </View>
                 <View style={{ flex: 1, gap: 8 }}>
-                  <Text style={styles.stageTitle}>Stage 3 of 5</Text>
-                  <Text style={styles.stageSubtitle}>Building Stability</Text>
+                  <Text style={styles.stageTitle}>Active program record</Text>
+                  <Text style={styles.stageSubtitle}>
+                    {stats?.activePrograms
+                      ? `${stats.activePrograms} active program${stats.activePrograms === 1 ? "" : "s"}`
+                      : "No active program yet"}
+                  </Text>
                   <Text style={styles.panelText}>
-                    You are making meaningful progress. Keep showing up for your family.
+                    Progress is built from saved tasks, reflections, evidence, and lesson activity.
                   </Text>
                   <View style={styles.progressTrack}>
-                    <View style={styles.progressFill} />
+                    <View style={[styles.progressFill, { width: `${taskCompletionPercent}%` }]} />
                   </View>
                   <Link href="/programs/my-programs" asChild>
                     <Pressable>
@@ -280,11 +302,27 @@ export default function DashboardScreen() {
               </View>
             </Panel>
 
-            <Panel title="Today's Priorities" action="3 of 4 completed">
-              <PriorityRow title="Complete parenting activity" due="Due today" complete />
-              <PriorityRow title="Upload visit documentation" due="Due today" complete />
-              <PriorityRow title="Journal entry" due="Take a moment for you" complete />
-              <PriorityRow title="Review safety plan" due="Due tomorrow" complete={false} />
+            <Panel title="Current Priorities" action={`${readyTasks} ready`}>
+              <PriorityRow
+                title={`${readyTasks} task${readyTasks === 1 ? "" : "s"} ready`}
+                due="Open Tasks to continue practical work"
+                complete={readyTasks === 0}
+              />
+              <PriorityRow
+                title={`${completedTasks} task${completedTasks === 1 ? "" : "s"} completed`}
+                due="Saved from your SafeSteps activity"
+                complete
+              />
+              <PriorityRow
+                title={`${stats?.reflections ?? 0} reflection${(stats?.reflections ?? 0) === 1 ? "" : "s"} saved`}
+                due="Reflections help turn content into evidence of insight"
+                complete={(stats?.reflections ?? 0) > 0}
+              />
+              <PriorityRow
+                title={`${evidenceItems} evidence item${evidenceItems === 1 ? "" : "s"} saved`}
+                due="Upload documents or media when you have new proof of work"
+                complete={evidenceItems > 0}
+              />
               <Link href="/tasks" asChild>
                 <Pressable>
                   <Text style={styles.textLink}>View all tasks</Text>
@@ -292,21 +330,14 @@ export default function DashboardScreen() {
               </Link>
             </Panel>
 
-            <Panel title="Upcoming Appointments">
+            <Panel title="Appointments">
               <View style={styles.appointmentRow}>
-                <Text style={styles.dateBadge}>JUL{"\n"}23</Text>
+                <Text style={styles.dateBadge}>NEXT</Text>
                 <View style={{ flex: 1 }}>
-                  <Text style={styles.priorityTitle}>Caseworker Check-in</Text>
-                  <Text style={styles.priorityDue}>Thu, Jul 23 at 10:00 AM</Text>
-                  <Text style={styles.priorityDue}>Virtual</Text>
-                </View>
-              </View>
-              <View style={styles.appointmentRow}>
-                <Text style={styles.dateBadge}>JUL{"\n"}28</Text>
-                <View style={{ flex: 1 }}>
-                  <Text style={styles.priorityTitle}>Family Support Session</Text>
-                  <Text style={styles.priorityDue}>Tue, Jul 28 at 2:00 PM</Text>
-                  <Text style={styles.priorityDue}>Community Center</Text>
+                  <Text style={styles.priorityTitle}>No appointment record loaded</Text>
+                  <Text style={styles.priorityDue}>
+                    SafeSteps will only show appointment dates after they are saved to your record.
+                  </Text>
                 </View>
               </View>
             </Panel>
@@ -350,32 +381,28 @@ export default function DashboardScreen() {
           </Panel>
 
           <View style={styles.grid}>
-            <Panel title="Child Voice & Family Progress">
+            <Panel title="Child Voice & Family Records">
               <Text style={styles.panelText}>
-                {"Your children's wellbeing matters. Here is how things are going."}
+                Child-facing and parent-child records are kept separate until they are shared through the right safety and privacy pathway.
               </Text>
 
               <View style={styles.measureRow}>
-                <Text style={styles.priorityTitle}>Emotional Well-being</Text>
-                <Text style={styles.textLink}>Good</Text>
-              </View>
-
-              <View style={styles.progressTrack}>
-                <View style={[styles.progressFill, { width: "72%" }]} />
+                <Text style={styles.priorityTitle}>Parent-child sharing</Text>
+                <Text style={styles.statusPill}>Review</Text>
               </View>
 
               <View style={styles.measureRow}>
-                <Text style={styles.priorityTitle}>Family Connection</Text>
-                <Text style={styles.textLink}>Strong</Text>
+                <Text style={styles.priorityTitle}>Report source</Text>
+                <Text style={styles.statusPill}>Saved records</Text>
               </View>
 
-              <View style={styles.progressTrack}>
-                <View style={[styles.progressFill, { width: "86%" }]} />
-              </View>
+              <Text style={styles.priorityDue}>
+                This dashboard does not score child wellbeing or family connection from unsaved or private child material.
+              </Text>
 
               <Link href="/reports" asChild>
                 <Pressable>
-                  <Text style={styles.textLink}>View full report</Text>
+                  <Text style={styles.textLink}>View saved-record report</Text>
                 </Pressable>
               </Link>
 
@@ -419,8 +446,14 @@ export default function DashboardScreen() {
           <View style={styles.bottomBanner}>
             <Text style={styles.bottomIcon}>♡</Text>
             <View style={{ flex: 1 }}>
-              <Text style={styles.bottomTitle}>Small steps build lasting change.</Text>
-              <Text style={styles.panelText}>You are doing better than you think.</Text>
+              <Text style={styles.bottomTitle}>Your record is built from saved activity.</Text>
+              <Text style={styles.panelText}>
+                {[
+                  pluralize(completedTasks, "completed task"),
+                  pluralize(evidenceItems, "evidence item"),
+                  pluralize(stats?.reflections ?? 0, "reflection"),
+                ].join(", ")}.
+              </Text>
             </View>
           </View>
 
@@ -825,7 +858,18 @@ const styles = StyleSheet.create({
   measureRow: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     gap: 12,
+  },
+  statusPill: {
+    overflow: "hidden",
+    borderRadius: 8,
+    backgroundColor: colors.sage,
+    color: colors.tealDeep,
+    fontSize: 12,
+    fontWeight: "900",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
   },
   statsRow: {
     flexDirection: "row",

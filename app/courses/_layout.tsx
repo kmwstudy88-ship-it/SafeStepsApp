@@ -5,6 +5,8 @@ export default function CoursesLayout() {
     <Stack>
       <Stack.Screen name="index" options={{ title: "Courses" }} />
       <Stack.Screen name="course" options={{ title: "Course Player" }} />
+      <Stack.Screen name="video-series-pipeline" options={{ title: "Video Series Pipeline" }} />
+      <Stack.Screen name="video-series-pipeline/[seriesId]" options={{ title: "Series Review" }} />
     </Stack>
   );
 }

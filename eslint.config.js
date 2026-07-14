@@ -13,6 +13,7 @@ module.exports = defineConfig([
       "src/core/**",
       "src/config/**",
       "src/curriculum/**",
+      "src/prisma/**",
       "src/safesteps/**",
       "src/screens/**",
       "src/server.ts",
@@ -23,6 +24,7 @@ module.exports = defineConfig([
       "dashboard.tsx",
       "settings.tsx",
       "LessonSection.tsx",
+      "app/prismaClient.js",
     ],
   },
   {

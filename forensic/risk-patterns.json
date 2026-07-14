@@ -1,0 +1,40 @@
+{
+  "riskPatterns": [
+    {
+      "id": "rp-001",
+      "tier": 1,
+      "example": "shut up",
+      "category": "mild_abuse"
+    },
+    {
+      "id": "rp-002",
+      "tier": 1,
+      "example": "you never listen",
+      "category": "emotional_distress"
+    },
+    {
+      "id": "rp-003",
+      "tier": 2,
+      "example": "you make me do this",
+      "category": "manipulation"
+    },
+    {
+      "id": "rp-004",
+      "tier": 2,
+      "example": "it's your fault",
+      "category": "blame"
+    },
+    {
+      "id": "rp-005",
+      "tier": 3,
+      "example": "I will hurt you",
+      "category": "threat"
+    },
+    {
+      "id": "rp-006",
+      "tier": 3,
+      "example": "I hope you die",
+      "category": "severe_abuse"
+    }
+  ]
+}

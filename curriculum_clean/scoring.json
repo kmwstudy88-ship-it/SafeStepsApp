@@ -1,0 +1,41 @@
+﻿{
+    "growth_opportunities":  {
+                                 "method":  "inverse_strength"
+                             },
+    "parenting_strength":  {
+                               "sources":  [
+                                               "basic_needs",
+                                               "emotional_care",
+                                               "supervision",
+                                               "parent_child_relationship"
+                                           ],
+                               "method":  "weighted_average"
+                           },
+    "family_stability":  {
+                             "sources":  [
+                                             "home_environment",
+                                             "routine",
+                                             "predictability",
+                                             "housing_instability"
+                                         ],
+                             "method":  "weighted_average"
+                         },
+    "protective_factors":  {
+                               "sources":  [
+                                               "family_support",
+                                               "school_involvement",
+                                               "community_engagement",
+                                               "positive_relationships",
+                                               "access_to_services"
+                                           ],
+                               "method":  "weighted_sum"
+                           },
+    "child_wellbeing":  {
+                            "sources":  [
+                                            "child_development",
+                                            "school_engagement",
+                                            "stability"
+                                        ],
+                            "method":  "weighted_average"
+                        }
+}

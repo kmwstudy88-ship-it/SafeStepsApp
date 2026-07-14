@@ -1,0 +1,11 @@
+Write-Host 'Welcome to SafeSteps Development'
+
+Write-Host '1. Start backend: backend/start.ps1'
+Write-Host '2. Start dashboard: caseworker-dashboard/start.ps1'
+Write-Host '3. Start mobile app: app/start.ps1'
+Write-Host '4. Run tests: backend/run-tests.ps1'
+Write-Host '5. Lint + format: backend/lint-format.ps1'
+Write-Host '6. Seed database: backend/seed.ps1'
+Write-Host '7. Run everything: ./run-all.ps1'
+Write-Host '8. Diagnostics: ./diagnostics.ps1'
+Write-Host '9. Cleanup: ./cleanup.ps1'

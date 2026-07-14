@@ -10,6 +10,7 @@ describe("task engine", () => {
         priority: "medium",
         category: "parent_challenge:Connection & Attachment",
         evidence_required: true,
+        related_lesson_id: "challenge:SS-PC-001",
       }),
     );
     expect(taskInput.description).toContain("Challenge steps:");

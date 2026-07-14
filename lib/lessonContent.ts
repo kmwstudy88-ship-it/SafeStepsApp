@@ -1,6 +1,8 @@
-import { safestepsLessonCurriculum1To47 } from "./data/safestepsLessonCurriculum1To47";
-import { safestepsLessonCurriculum48To95 } from "./data/safestepsLessonCurriculum48To95";
-import { safestepsExpandedLessonCurriculum252To780 } from "./data/safestepsExpandedLessonCurriculum252To780";
+import {
+  safestepsExpandedLessonCurriculum252To780,
+  safestepsLessonCurriculum1To47,
+  safestepsLessonCurriculum48To95,
+} from "../curriculum/lessons";
 import { oneDriveLessonLibrary } from "./data/oneDriveLessonLibrary";
 import { oneDriveDeepLessonLibrary } from "./data/oneDriveDeepLessonLibrary";
 

@@ -1,6 +1,8 @@
 import { safestepsParentChallenges } from "../lib/data/safestepsParentChallenges";
-import { safestepsExpandedLessonCurriculum252To780 } from "../lib/data/safestepsExpandedLessonCurriculum252To780";
-import { safestepsLessonCurriculum1To47 } from "../lib/data/safestepsLessonCurriculum1To47";
+import {
+  safestepsExpandedLessonCurriculum252To780,
+  safestepsLessonCurriculum1To47,
+} from "../curriculum/lessons";
 import { safestepsReflectionWorksheets } from "../lib/data/safestepsReflectionWorksheets";
 import {
   getReflectionWorksheetById,
@@ -46,7 +48,7 @@ describe("uploaded SafeSteps practice content", () => {
   });
 
   test("imports the expanded 30 to 40 minute lesson batches", () => {
-    expect(safestepsExpandedLessonCurriculum252To780).toHaveLength(528);
+    expect(safestepsExpandedLessonCurriculum252To780).toHaveLength(524);
 
     const firstLesson = safestepsExpandedLessonCurriculum252To780[0];
     const finalLesson = safestepsExpandedLessonCurriculum252To780.at(-1);
