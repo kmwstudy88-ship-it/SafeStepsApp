@@ -224,9 +224,99 @@ export type AssessmentDefinition = {
 export type AssessmentResponse = {
   id: string;
   assessment_id: string;
-  responses: Record<string, number>;
+  responses: Record<string, unknown>;
   created_at: string;
 };
+
+export const SAFESTEPS_INTAKE_ASSESSMENT_ID = "22222222-2222-4222-8222-222222222222";
+export const SAFESTEPS_PROGRESS_CHECK_ASSESSMENT_ID = "11111111-1111-4111-8111-111111111111";
+
+export const intakeAssessmentQuestions: AssessmentQuestion[] = [
+  {
+    id: "intake-consent",
+    assessment_id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    question_number: 1,
+    question_text: "I understand SafeSteps will use my intake answers, reflections, evidence, sessions, and progress records to support program planning and review.",
+    question_type: "yes_no",
+  },
+  {
+    id: "intake-personal-details",
+    assessment_id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    question_number: 2,
+    question_text: "Parent/carer personal details, contact details, and preferred name have been recorded.",
+    question_type: "completion_check",
+  },
+  {
+    id: "intake-child-family-details",
+    assessment_id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    question_number: 3,
+    question_text: "Child, family, placement, and reunification details have been recorded.",
+    question_type: "completion_check",
+  },
+  {
+    id: "intake-child-protection-history",
+    assessment_id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    question_number: 4,
+    question_text: "Child protection history, current concerns, orders, and safety requirements have been recorded.",
+    question_type: "completion_check",
+  },
+  {
+    id: "intake-psychosocial-history",
+    assessment_id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    question_number: 5,
+    question_text: "Housing, education, employment, finances, transport, culture, and daily stability needs have been recorded.",
+    question_type: "completion_check",
+  },
+  {
+    id: "intake-mental-health",
+    assessment_id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    question_number: 6,
+    question_text: "Mental health, wellbeing, stress, diagnosis, treatment, and support needs have been recorded.",
+    question_type: "completion_check",
+  },
+  {
+    id: "intake-substance-use",
+    assessment_id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    question_number: 7,
+    question_text: "Alcohol and other drug history, current use, treatment, relapse risks, and safety planning needs have been recorded.",
+    question_type: "completion_check",
+  },
+  {
+    id: "intake-dfv-safety",
+    assessment_id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    question_number: 8,
+    question_text: "Domestic and family violence, coercive control, victim-survivor needs, perpetration concerns, and safety planning needs have been recorded.",
+    question_type: "completion_check",
+  },
+  {
+    id: "intake-parenting-capacity",
+    assessment_id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    question_number: 9,
+    question_text: "Parenting capacity, routines, attachment, insight, accountability, child safety, and protective capacity baseline have been recorded.",
+    question_type: "completion_check",
+  },
+  {
+    id: "intake-support-network",
+    assessment_id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    question_number: 10,
+    question_text: "Support network, professional contacts, referrals, and practical support needs have been recorded.",
+    question_type: "completion_check",
+  },
+  {
+    id: "intake-risk-gaming",
+    assessment_id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    question_number: 11,
+    question_text: "Risk, minimisation, avoidance, disguised compliance, and program participation concerns have been considered.",
+    question_type: "completion_check",
+  },
+  {
+    id: "intake-consent-plan",
+    assessment_id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    question_number: 12,
+    question_text: "Consent, immediate safety actions, first referrals, and the starting SafeSteps plan have been recorded.",
+    question_type: "completion_check",
+  },
+];
 
 export type ReportSummary = {
   tasks: SafeStepsTask[];
@@ -2369,7 +2459,7 @@ export async function getProgressCheckAssessment(): Promise<AssessmentDefinition
   const { data: assessment, error: assessmentError } = await supabase
     .from("assessments")
     .select("id,name,description")
-    .eq("id", "11111111-1111-4111-8111-111111111111")
+    .eq("id", SAFESTEPS_PROGRESS_CHECK_ASSESSMENT_ID)
     .maybeSingle();
 
   if (assessmentError || !assessment) return null;
@@ -2388,7 +2478,46 @@ export async function getProgressCheckAssessment(): Promise<AssessmentDefinition
   };
 }
 
+export async function getIntakeAssessment(): Promise<AssessmentDefinition> {
+  const { data: assessment, error: assessmentError } = await supabase
+    .from("assessments")
+    .select("id,name,description")
+    .eq("id", SAFESTEPS_INTAKE_ASSESSMENT_ID)
+    .maybeSingle();
+
+  if (assessmentError || !assessment) {
+    return {
+      id: SAFESTEPS_INTAKE_ASSESSMENT_ID,
+      name: "SafeSteps Intake Assessment",
+      description: "Pre-entry baseline assessment. This must be completed before any program can be started.",
+      questions: intakeAssessmentQuestions,
+    };
+  }
+
+  const { data: questions, error: questionsError } = await supabase
+    .from("assessment_questions")
+    .select("id,assessment_id,question_number,question_text,question_type")
+    .eq("assessment_id", assessment.id)
+    .order("question_number");
+
+  return {
+    ...assessment,
+    questions: questionsError || !questions?.length ? intakeAssessmentQuestions : (questions as AssessmentQuestion[]),
+  };
+}
+
 export async function getAssessmentResponses(userId: string, assessmentId: string) {
+  if (isDemoUser(userId)) {
+    return demoState.events
+      .filter((event) => event.event_type === "assessment_submitted" && event.metadata?.assessmentId === assessmentId)
+      .map((event) => ({
+        id: event.id,
+        assessment_id: assessmentId,
+        responses: event.metadata ?? {},
+        created_at: event.created_at,
+      })) as AssessmentResponse[];
+  }
+
   const { data, error } = await supabase
     .from("assessment_responses")
     .select("id,assessment_id,responses,created_at")
@@ -2399,6 +2528,25 @@ export async function getAssessmentResponses(userId: string, assessmentId: strin
   if (error) return [];
 
   return data as AssessmentResponse[];
+}
+
+export async function hasCompletedIntakeAssessment(userId: string) {
+  if (isDemoUser(userId)) {
+    return demoState.events.some(
+      (event) => event.event_type === "assessment_submitted" && event.metadata?.assessmentId === SAFESTEPS_INTAKE_ASSESSMENT_ID,
+    );
+  }
+
+  const { data, error } = await supabase
+    .from("assessment_responses")
+    .select("id")
+    .eq("user_id", userId)
+    .eq("assessment_id", SAFESTEPS_INTAKE_ASSESSMENT_ID)
+    .limit(1);
+
+  if (error) return false;
+
+  return (data ?? []).length > 0;
 }
 
 export async function submitAssessmentResponse(
@@ -2428,4 +2576,56 @@ export async function submitAssessmentResponse(
   });
 
   return { score, maxScore };
+}
+
+export async function submitIntakeAssessmentResponse(
+  userId: string,
+  responses: Record<string, string>,
+) {
+  const assessment = await getIntakeAssessment();
+  const missingQuestion = assessment.questions.find((question) => !responses[question.id]?.trim());
+
+  if (missingQuestion) {
+    throw new Error("Complete every intake section before starting a program.");
+  }
+
+  const completedSections = assessment.questions.length;
+
+  if (isDemoUser(userId)) {
+    addDemoEvent("assessment_submitted", "SafeSteps Intake Assessment completed", {
+      assessmentId: assessment.id,
+      assessmentName: assessment.name,
+      completedSections,
+      responses,
+      intakeComplete: true,
+    });
+    return { completedSections };
+  }
+
+  const { error } = await supabase.from("assessment_responses").insert({
+    assessment_id: assessment.id,
+    user_id: userId,
+    responses: {
+      assessmentType: "intake",
+      completedSections,
+      answers: responses,
+      intakeComplete: true,
+    },
+  });
+
+  if (error) throw error;
+
+  await supabase.from("progress_events").insert({
+    owner_id: userId,
+    event_type: "assessment_submitted",
+    label: "SafeSteps Intake Assessment completed",
+    metadata: {
+      assessmentId: assessment.id,
+      assessmentName: assessment.name,
+      completedSections,
+      intakeComplete: true,
+    },
+  });
+
+  return { completedSections };
 }

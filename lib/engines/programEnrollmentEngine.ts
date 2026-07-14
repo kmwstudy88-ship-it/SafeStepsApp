@@ -1,4 +1,5 @@
 import { supabase } from "../supabase/client";
+import { hasCompletedIntakeAssessment } from "../platformData";
 
 export type ProgramEnrollment = {
   id: string;
@@ -80,6 +81,12 @@ export async function startProgramEnrollment(programId: string, programTitle: st
 
   if (existing) {
     return existing;
+  }
+
+  const intakeComplete = await hasCompletedIntakeAssessment(userId);
+
+  if (!intakeComplete) {
+    throw new Error("Complete the SafeSteps intake assessment before starting a program.");
   }
 
   const { data, error } = await supabase
