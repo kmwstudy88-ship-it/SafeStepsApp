@@ -69,6 +69,10 @@ const evidenceUploadLinks = [
   ["Photo and document uploads", "/evidence-upload"],
 ] as const;
 
+function pluralize(count: number, singular: string, plural = `${singular}s`) {
+  return `${count} ${count === 1 ? singular : plural}`;
+}
+
 function Sidebar() {
   return (
     <View style={styles.sidebar}>
@@ -326,13 +330,13 @@ export default function DashboardScreen() {
               </Link>
             </Panel>
 
-            <Panel title="Upcoming Appointments">
+            <Panel title="Appointments">
               <View style={styles.appointmentRow}>
                 <Text style={styles.dateBadge}>NEXT</Text>
                 <View style={{ flex: 1 }}>
-                  <Text style={styles.priorityTitle}>No scheduled appointment loaded</Text>
+                  <Text style={styles.priorityTitle}>No appointment record loaded</Text>
                   <Text style={styles.priorityDue}>
-                    Add appointment integration before showing dates here.
+                    SafeSteps will only show appointment dates after they are saved to your record.
                   </Text>
                 </View>
               </View>
@@ -377,32 +381,28 @@ export default function DashboardScreen() {
           </Panel>
 
           <View style={styles.grid}>
-            <Panel title="Child Voice & Family Progress">
+            <Panel title="Child Voice & Family Records">
               <Text style={styles.panelText}>
-                {"Your children's wellbeing matters. Here is how things are going."}
+                Child-facing and parent-child records are kept separate until they are shared through the right safety and privacy pathway.
               </Text>
 
               <View style={styles.measureRow}>
-                <Text style={styles.priorityTitle}>Emotional Well-being</Text>
-                <Text style={styles.textLink}>Good</Text>
-              </View>
-
-              <View style={styles.progressTrack}>
-                <View style={[styles.progressFill, { width: "72%" }]} />
+                <Text style={styles.priorityTitle}>Parent-child sharing</Text>
+                <Text style={styles.statusPill}>Review</Text>
               </View>
 
               <View style={styles.measureRow}>
-                <Text style={styles.priorityTitle}>Family Connection</Text>
-                <Text style={styles.textLink}>Strong</Text>
+                <Text style={styles.priorityTitle}>Report source</Text>
+                <Text style={styles.statusPill}>Saved records</Text>
               </View>
 
-              <View style={styles.progressTrack}>
-                <View style={[styles.progressFill, { width: "86%" }]} />
-              </View>
+              <Text style={styles.priorityDue}>
+                This dashboard does not score child wellbeing or family connection from unsaved or private child material.
+              </Text>
 
               <Link href="/reports" asChild>
                 <Pressable>
-                  <Text style={styles.textLink}>View full report</Text>
+                  <Text style={styles.textLink}>View saved-record report</Text>
                 </Pressable>
               </Link>
 
@@ -446,8 +446,14 @@ export default function DashboardScreen() {
           <View style={styles.bottomBanner}>
             <Text style={styles.bottomIcon}>♡</Text>
             <View style={{ flex: 1 }}>
-              <Text style={styles.bottomTitle}>Small steps build lasting change.</Text>
-              <Text style={styles.panelText}>You are doing better than you think.</Text>
+              <Text style={styles.bottomTitle}>Your record is built from saved activity.</Text>
+              <Text style={styles.panelText}>
+                {[
+                  pluralize(completedTasks, "completed task"),
+                  pluralize(evidenceItems, "evidence item"),
+                  pluralize(stats?.reflections ?? 0, "reflection"),
+                ].join(", ")}.
+              </Text>
             </View>
           </View>
 
@@ -852,7 +858,18 @@ const styles = StyleSheet.create({
   measureRow: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     gap: 12,
+  },
+  statusPill: {
+    overflow: "hidden",
+    borderRadius: 8,
+    backgroundColor: colors.sage,
+    color: colors.tealDeep,
+    fontSize: 12,
+    fontWeight: "900",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
   },
   statsRow: {
     flexDirection: "row",
