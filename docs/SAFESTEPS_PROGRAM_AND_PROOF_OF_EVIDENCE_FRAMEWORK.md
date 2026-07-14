@@ -374,3 +374,30 @@ Avoid language:
 5. Connect evidence to reports without overclaiming.
 6. Hold child/caseworker modules as advanced until privacy and safety are tested.
 7. Add immutable server-side audit history before claiming forensic-grade evidence.
+
+## Safety Threat And Weapon-Risk Boundary
+
+SafeSteps may include a weapon-risk transcript engine for safety review prompts when an authorised transcript JSON or supplied audio-feature labels contain explicit weapon-risk indicators.
+
+Approved launch-safe use:
+
+- Classify explicit transcript text such as weapon words or direct safety statements.
+- Classify supplied audio-feature labels from an authorised pipeline.
+- Create safety review prompts.
+- Attach results to evidence, incident, or caseworker review records.
+- Escalate for human review according to service policy.
+
+Not approved:
+
+- Covert recording.
+- Silent microphone activation.
+- Decoy screens.
+- Automatic police calls.
+- Automatic emergency escalation without user consent, policy, and human review.
+- Final safety findings from AI output alone.
+
+Current implementation:
+
+- `backend/security/weapon_risk/weaponRiskEvaluator.js`
+
+This is a JSON/transcript rules engine, not a Python engine.

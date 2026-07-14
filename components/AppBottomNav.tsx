@@ -12,6 +12,8 @@ const NAV_ITEMS = [
   { label: "Challenges", href: "/challenges" },
   { label: "Resources", href: "/resources" },
   { label: "Tasks", href: "/tasks" },
+  { label: "Visits", href: "/visits" },
+  { label: "Family meeting", href: "/family-meeting" },
   { label: "Check-in", href: "/check-in" },
   { label: "Daily evidence", href: "/daily-evidence" },
   { label: "Evidence", href: "/evidence" },
@@ -19,6 +21,9 @@ const NAV_ITEMS = [
   { label: "Bulk setup", href: "/bulk-setup" },
   { label: "Timeline", href: "/timeline" },
   { label: "Facilitator", href: "/facilitator" },
+  { label: "CP", href: "/child-protection" },
+  { label: "Carer", href: "/carer" },
+  { label: "Advocate", href: "/advocate" },
   { label: "Reports", href: "/reports" },
 ] as const;
 

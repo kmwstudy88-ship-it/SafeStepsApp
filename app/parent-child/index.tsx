@@ -19,6 +19,7 @@ const navItems = [
   ["My Program", "/programs/my-programs", "▣"],
   ["Lessons", "/lessons", "☰"],
   ["Tasks", "/tasks", "☑"],
+  ["Family Meeting", "/family-meeting", "◇"],
   ["Assessments", "/assessment-system", "⌁"],
   ["Evidence", "/evidence", "□"],
   ["Reports", "/reports", "▤"],

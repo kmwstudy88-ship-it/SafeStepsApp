@@ -12,9 +12,6 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
       "@lib/*": [
         "lib/*"
       ],
@@ -30,8 +27,6 @@
     "app/**/*.tsx",
     "lib/**/*.ts",
     "lib/**/*.tsx",
-    "src",
-    "App.tsx",
     "app.config.ts",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
