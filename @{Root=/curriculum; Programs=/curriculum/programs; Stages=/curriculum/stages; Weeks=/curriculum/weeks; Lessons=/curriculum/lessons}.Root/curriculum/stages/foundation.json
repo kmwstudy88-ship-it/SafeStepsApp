@@ -1,9 +1,0 @@
-﻿{
-    "id":  "foundation",
-    "name":  "Foundation",
-    "programId":  "safesteps-core",
-    "weeks":  [
-                  "foundation_week1",
-                  "foundation_week2"
-              ]
-}
