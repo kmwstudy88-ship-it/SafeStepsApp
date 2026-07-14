@@ -5,6 +5,7 @@ export {
   getCourseAreaById,
   getCourseById,
   getCoursesForArea,
+  getGoldStandardCourses,
   type CourseArea,
   type CourseLesson,
   type StandaloneCourse,

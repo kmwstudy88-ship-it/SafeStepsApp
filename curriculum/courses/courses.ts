@@ -1,4 +1,4 @@
-import { completeCourseLibrary } from "./completeCourseLibrary";
+import { completeCourseLibrary, completeCourseLibraryCourseIds } from "./completeCourseLibrary";
 import { safestepsProductionCourses } from "./safestepsProductionCourses";
 import { strongFathersStandaloneCourse } from "./strongFathersCourse";
 
@@ -3217,6 +3217,12 @@ export function getCoursesForArea(areaId: string) {
   if (!area) return [];
 
   return area.courseIds
+    .map((courseId) => getCourseById(courseId))
+    .filter((course): course is StandaloneCourse => course !== null);
+}
+
+export function getGoldStandardCourses() {
+  return completeCourseLibraryCourseIds
     .map((courseId) => getCourseById(courseId))
     .filter((course): course is StandaloneCourse => course !== null);
 }

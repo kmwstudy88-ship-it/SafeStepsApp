@@ -3,6 +3,7 @@ import {
   courseAreas,
   getCourseById,
   getCoursesForArea,
+  getGoldStandardCourses,
 } from "../curriculum/courses";
 
 describe("standalone course helpers", () => {
@@ -168,6 +169,16 @@ describe("standalone course helpers", () => {
       return total + (getCourseById(courseId)?.lessons.length ?? 0);
     }, 0);
 
+    expect(lessonCount).toBe(171);
+  });
+
+  test("gold standard course helper exposes the 12-course pathway in order", () => {
+    const goldStandardCourses = getGoldStandardCourses();
+    const lessonCount = goldStandardCourses.reduce((total, course) => total + course.lessons.length, 0);
+
+    expect(goldStandardCourses).toHaveLength(12);
+    expect(goldStandardCourses[0]?.id).toBe("understanding-your-nervous-system");
+    expect(goldStandardCourses.at(-1)?.id).toBe("building-your-village");
     expect(lessonCount).toBe(171);
   });
 

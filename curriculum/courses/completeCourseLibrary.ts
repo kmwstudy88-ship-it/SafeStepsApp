@@ -1,5 +1,22 @@
 import type { StandaloneCourse } from "./courses";
 
+export const completeCourseLibraryCourseIds = [
+  "understanding-your-nervous-system",
+  "breaking-the-cycle-intergenerational-trauma",
+  "your-child-s-brain-what-they-need-from-you",
+  "emotional-literacy",
+  "healthy-relationships",
+  "financial-literacy-and-life-skills",
+  "co-parenting-after-separation",
+  "seeing-through-your-child-s-eyes",
+  "self-compassion-and-shame-resilience",
+  "executive-functioning-in-family-life",
+  "digital-safety-for-families",
+  "building-your-village",
+] as const;
+
+export type CompleteCourseLibraryCourseId = (typeof completeCourseLibraryCourseIds)[number];
+
 export const completeCourseLibrary: StandaloneCourse[] = [
   {
     id: "understanding-your-nervous-system",
