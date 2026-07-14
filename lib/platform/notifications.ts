@@ -11,6 +11,11 @@ export type NotificationRecord = {
   read_at: string | null;
   related_table: string | null;
   related_id: string | null;
+  alert_severity?: "info" | "moderate" | "high" | "critical" | null;
+  audience?: string[];
+  metadata?: Record<string, unknown>;
+  acknowledged_at?: string | null;
+  acknowledged_by?: string | null;
   created_at: string;
 };
 
@@ -44,6 +49,48 @@ export async function createReminder(input: {
     })
     .select("*")
     .single();
+  if (error) throw error;
+  return data as NotificationRecord;
+}
+
+export async function createSafetyAlertNotification(input: {
+  userId: string;
+  title: string;
+  body: string;
+  notificationType:
+    | "safety_alert"
+    | "risk_regression"
+    | "compliance_gap"
+    | "crisis_alert"
+    | "lesson_due"
+    | "session_alert"
+    | "document_expiry"
+    | "service_referral_alert"
+    | "milestone";
+  severity: "info" | "moderate" | "high" | "critical";
+  audience: string[];
+  metadata?: Record<string, unknown>;
+  relatedTable?: string;
+  relatedId?: string;
+}) {
+  const createdBy = await currentUserId();
+  const { data, error } = await supabase
+    .from("notifications")
+    .insert({
+      user_id: input.userId,
+      title: input.title,
+      body: input.body,
+      notification_type: input.notificationType,
+      alert_severity: input.severity,
+      audience: input.audience,
+      metadata: input.metadata ?? {},
+      related_table: input.relatedTable ?? null,
+      related_id: input.relatedId ?? null,
+      created_by: createdBy,
+    })
+    .select("*")
+    .single();
+
   if (error) throw error;
   return data as NotificationRecord;
 }
