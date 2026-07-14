@@ -1,25 +1,28 @@
-import { Link } from "expo-router";
-import { useMemo, useState } from "react";
-import { Pressable, ScrollView, Text, View } from "react-native";
-import { courseAreas, courses, getCoursesForArea } from "../../curriculum/courses";
+import { Link, type Href } from "expo-router";
+import { useEffect, useMemo, useState } from "react";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { courseAreas, courses, getCoursesForArea, getGoldStandardCourses } from "../../curriculum/courses";
+import { listCurriculumCoursesFromApi } from "../../lib/curriculumApi";
+import type { ApiCurriculumCourseSummary } from "../../lib/curriculumApi";
+import { getSafeStepsLessonWatercolorPalette, safestepsLessonTheme } from "../../lib/safestepsLessonTheme";
 
-type CourseView = "areas" | "all";
+type CourseView = "gold" | "areas" | "all";
+type DisplayCourse = (typeof courses)[number] | ApiCurriculumCourseSummary;
 
-function CourseCard({ course }: { course: (typeof courses)[number] }) {
+function CourseCard({ course }: { course: DisplayCourse }) {
+  const lessonCount = "lessons" in course ? `${course.lessons.length} lessons` : `${course.modules.length} modules`;
+  const palette = getSafeStepsLessonWatercolorPalette(course.id);
+
   return (
     <View
-      style={{
-        padding: 16,
-        backgroundColor: "#eef3f5",
-        borderRadius: 12,
-        marginBottom: 14,
-      }}
+      style={[styles.courseCard, { backgroundColor: palette.wash }]}
     >
-      <Text style={{ fontSize: 20, fontWeight: "bold" }}>{course.title}</Text>
+      <View style={[styles.cardAccent, { backgroundColor: palette.accent }]} />
+      <Text style={styles.cardTitle}>{course.title}</Text>
 
-      <Text style={{ marginTop: 6 }}>{course.description}</Text>
+      <Text style={styles.cardText}>{course.description ?? "Generated SafeSteps curriculum course."}</Text>
 
-      <Text style={{ marginTop: 6 }}>Lessons: {course.lessons.length}</Text>
+      <Text style={styles.metaText}>Structure: {lessonCount}</Text>
 
       <Link
         href={{
@@ -31,15 +34,9 @@ function CourseCard({ course }: { course: (typeof courses)[number] }) {
         asChild
       >
         <Pressable
-          style={{
-            marginTop: 12,
-            padding: 12,
-            backgroundColor: "#dcefe8",
-            borderRadius: 10,
-            alignItems: "center",
-          }}
+          style={[styles.cardButton, { backgroundColor: palette.accentDark }]}
         >
-          <Text style={{ fontWeight: "bold" }}>Open Course</Text>
+          <Text style={styles.cardButtonText}>Open Course</Text>
         </Pressable>
       </Link>
     </View>
@@ -47,74 +44,126 @@ function CourseCard({ course }: { course: (typeof courses)[number] }) {
 }
 
 export default function CoursesScreen() {
-  const [view, setView] = useState<CourseView>("areas");
+  const [view, setView] = useState<CourseView>("gold");
+  const [apiCourses, setApiCourses] = useState<ApiCurriculumCourseSummary[]>([]);
+  const [apiReady, setApiReady] = useState(false);
+  const goldStandardCourses = useMemo(() => getGoldStandardCourses(), []);
+  const goldStandardLessonCount = useMemo(
+    () => goldStandardCourses.reduce((total, course) => total + course.lessons.length, 0),
+    [goldStandardCourses],
+  );
   const totalAreaCourses = useMemo(
     () => new Set(courseAreas.flatMap((area) => area.courseIds)).size,
     [],
   );
+  const allCourses = apiReady && apiCourses.length > 0 ? apiCourses : courses;
+
+  useEffect(() => {
+    let active = true;
+
+    listCurriculumCoursesFromApi()
+      .then((nextCourses) => {
+        if (!active) return;
+        setApiCourses(nextCourses);
+        setApiReady(true);
+      })
+      .catch(() => {
+        if (!active) return;
+        setApiCourses([]);
+        setApiReady(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   return (
-    <ScrollView style={{ flex: 1, padding: 20 }}>
-      <Text style={{ fontSize: 28, fontWeight: "bold", marginBottom: 8 }}>
-        Courses
-      </Text>
+    <ScrollView contentContainerStyle={styles.screen}>
+      <Text style={styles.brand}>SafeSteps</Text>
+      <Text style={styles.title}>Courses</Text>
 
-      <Text style={{ marginBottom: 20 }}>
+      <Text style={styles.subtitle}>
         Courses can be followed as structured learning paths or selected around
         the areas a parent needs most right now.
       </Text>
+      <Text style={styles.statusText}>
+        {apiReady ? "All Courses is reading from the local Prisma curriculum API." : "All Courses is using the built-in course library until the local API is available."}
+      </Text>
 
-      <View style={{ flexDirection: "row", gap: 10, marginBottom: 18 }}>
+      <Link href={"/courses/video-series-pipeline" as Href} asChild>
+        <Pressable style={styles.pipelineButton}>
+          <Text style={styles.pipelineButtonText}>Review Video Series Pipeline</Text>
+        </Pressable>
+      </Link>
+
+      <View style={styles.segmentRow}>
+        <Pressable
+          onPress={() => setView("gold")}
+          style={[styles.segmentButton, view === "gold" && styles.segmentButtonActive]}
+        >
+          <Text style={view === "gold" ? styles.segmentTextActive : styles.segmentText}>
+            Gold Standard
+          </Text>
+        </Pressable>
+
         <Pressable
           onPress={() => setView("areas")}
-          style={{
-            flex: 1,
-            padding: 12,
-            backgroundColor: view === "areas" ? "#2f5f4a" : "#f1f5f3",
-            borderRadius: 10,
-            alignItems: "center",
-          }}
+          style={[styles.segmentButton, view === "areas" && styles.segmentButtonActive]}
         >
-          <Text style={{ color: view === "areas" ? "#ffffff" : "#102033", fontWeight: "bold" }}>
+          <Text style={view === "areas" ? styles.segmentTextActive : styles.segmentText}>
             Areas of Need
           </Text>
         </Pressable>
 
         <Pressable
           onPress={() => setView("all")}
-          style={{
-            flex: 1,
-            padding: 12,
-            backgroundColor: view === "all" ? "#2f5f4a" : "#f1f5f3",
-            borderRadius: 10,
-            alignItems: "center",
-          }}
+          style={[styles.segmentButton, view === "all" && styles.segmentButtonActive]}
         >
-          <Text style={{ color: view === "all" ? "#ffffff" : "#102033", fontWeight: "bold" }}>
+          <Text style={view === "all" ? styles.segmentTextActive : styles.segmentText}>
             All Courses
           </Text>
         </Pressable>
       </View>
 
-      {view === "areas" ? (
+      {view === "gold" ? (
         <>
           <View
-            style={{
-              padding: 16,
-              backgroundColor: "#dcefe8",
-              borderRadius: 12,
-              marginBottom: 14,
-            }}
+            style={styles.featureCard}
           >
-            <Text style={{ fontSize: 20, fontWeight: "bold" }}>
+            <View style={styles.cardAccent} />
+            <Text style={styles.cardTitle}>
+              SafeSteps gold standard course library
+            </Text>
+            <Text style={styles.cardText}>
+              These courses cover the areas many DFV, AOD, parenting, and reunification programs
+              miss: nervous system education, intergenerational trauma, child empathy,
+              shame resilience, practical life skills, digital safety, and community connection.
+            </Text>
+            <Text style={styles.metaText}>
+              {goldStandardCourses.length} courses, {goldStandardLessonCount} lessons
+            </Text>
+          </View>
+
+          {goldStandardCourses.map((course) => (
+            <CourseCard key={course.id} course={course} />
+          ))}
+        </>
+      ) : view === "areas" ? (
+        <>
+          <View
+            style={styles.featureCard}
+          >
+            <View style={styles.cardAccent} />
+            <Text style={styles.cardTitle}>
               Build around what is needed
             </Text>
-            <Text style={{ marginTop: 6, lineHeight: 21 }}>
+            <Text style={styles.cardText}>
               Pick an area below to see a short, structured set of courses. This
               keeps the full library available while giving parents a clearer
               place to start.
             </Text>
-            <Text style={{ marginTop: 8, fontWeight: "bold" }}>
+            <Text style={styles.metaText}>
               {courseAreas.length} areas, {totalAreaCourses} launch courses mapped
             </Text>
           </View>
@@ -128,18 +177,11 @@ export default function CoursesScreen() {
             return (
               <View
                 key={area.id}
-                style={{
-                  padding: 16,
-                  backgroundColor: "#ffffff",
-                  borderRadius: 12,
-                  borderWidth: 1,
-                  borderColor: "#d8e5dd",
-                  marginBottom: 14,
-                }}
+                style={styles.areaCard}
               >
-                <Text style={{ fontSize: 20, fontWeight: "bold" }}>{area.title}</Text>
-                <Text style={{ marginTop: 6, lineHeight: 21 }}>{area.description}</Text>
-                <Text style={{ marginTop: 8, fontWeight: "bold" }}>
+                <Text style={styles.cardTitle}>{area.title}</Text>
+                <Text style={styles.cardText}>{area.description}</Text>
+                <Text style={styles.metaText}>
                   {areaCourses.length} course{areaCourses.length === 1 ? "" : "s"}
                   {suggestedCourse ? ` | Start with: ${suggestedCourse.title}` : ""}
                 </Text>
@@ -156,16 +198,13 @@ export default function CoursesScreen() {
                     asChild
                   >
                     <Pressable
-                      style={{
-                        marginTop: 10,
-                        padding: 12,
-                        backgroundColor:
-                          course.id === area.suggestedStartCourseId ? "#dcefe8" : "#f7faf9",
-                        borderRadius: 10,
-                      }}
+                      style={[
+                        styles.areaCourseButton,
+                        course.id === area.suggestedStartCourseId && styles.areaCourseButtonSuggested,
+                      ]}
                     >
-                      <Text style={{ fontWeight: "bold" }}>{course.title}</Text>
-                      <Text style={{ marginTop: 4 }}>
+                      <Text style={styles.areaCourseTitle}>{course.title}</Text>
+                      <Text style={styles.cardText}>
                         {course.lessons.length} lessons
                         {course.id === area.suggestedStartCourseId ? " | suggested start" : ""}
                       </Text>
@@ -178,44 +217,173 @@ export default function CoursesScreen() {
         </>
       ) : (
         <>
-          <Text style={{ marginBottom: 14, fontWeight: "bold" }}>
-            Full course library: {courses.length} courses
+          <Text style={styles.metaText}>
+            Full course library: {allCourses.length} courses
           </Text>
-          {courses.map((course) => (
+          {allCourses.map((course) => (
             <CourseCard key={course.id} course={course} />
           ))}
         </>
       )}
 
       <View
-        style={{
-          padding: 16,
-          backgroundColor: "#f1f5f3",
-          borderRadius: 12,
-          marginBottom: 28,
-        }}
+        style={styles.featureCard}
       >
-        <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+        <View style={styles.cardAccent} />
+        <Text style={styles.cardTitle}>
           Need a full program instead?
         </Text>
-        <Text style={{ marginTop: 6, lineHeight: 21 }}>
+        <Text style={styles.cardText}>
           Programs are longer pathways with monthly topics, weekly sub-topics,
           daily lessons, reflections, and evidence flow.
         </Text>
         <Link href="/programs" asChild>
           <Pressable
-              style={{
-                marginTop: 12,
-                padding: 12,
-                backgroundColor: "#dcefe8",
-                borderRadius: 10,
-                alignItems: "center",
-              }}
+              style={styles.cardButton}
             >
-            <Text style={{ fontWeight: "bold" }}>Open Programs</Text>
+            <Text style={styles.cardButtonText}>Open Programs</Text>
           </Pressable>
         </Link>
       </View>
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  screen: {
+    padding: 20,
+    gap: 16,
+    backgroundColor: safestepsLessonTheme.colors.background,
+  },
+  brand: {
+    color: safestepsLessonTheme.colors.purpleDark,
+    fontSize: 30,
+    fontWeight: "800",
+    textAlign: "center",
+  },
+  title: {
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 42,
+    lineHeight: 48,
+    fontWeight: "900",
+    textAlign: "center",
+  },
+  subtitle: {
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 17,
+    lineHeight: 25,
+    textAlign: "center",
+  },
+  statusText: {
+    color: safestepsLessonTheme.colors.muted,
+    fontWeight: "700",
+    textAlign: "center",
+  },
+  pipelineButton: {
+    alignSelf: "center",
+    borderRadius: safestepsLessonTheme.radius.pill,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    backgroundColor: safestepsLessonTheme.colors.purpleDark,
+  },
+  pipelineButtonText: {
+    color: safestepsLessonTheme.colors.white,
+    fontWeight: "900",
+  },
+  segmentRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+  },
+  segmentButton: {
+    flexGrow: 1,
+    borderRadius: safestepsLessonTheme.radius.pill,
+    borderWidth: 1,
+    borderColor: safestepsLessonTheme.colors.border,
+    padding: 12,
+    alignItems: "center",
+    backgroundColor: safestepsLessonTheme.colors.card,
+  },
+  segmentButtonActive: {
+    backgroundColor: safestepsLessonTheme.colors.purpleDark,
+  },
+  segmentText: {
+    color: safestepsLessonTheme.colors.navy,
+    fontWeight: "900",
+  },
+  segmentTextActive: {
+    color: safestepsLessonTheme.colors.white,
+    fontWeight: "900",
+  },
+  courseCard: {
+    borderRadius: safestepsLessonTheme.radius.large,
+    borderWidth: 1,
+    borderColor: safestepsLessonTheme.colors.border,
+    padding: 18,
+    gap: 10,
+    ...safestepsLessonTheme.shadow,
+  },
+  featureCard: {
+    borderRadius: safestepsLessonTheme.radius.large,
+    borderWidth: 1,
+    borderColor: safestepsLessonTheme.colors.border,
+    padding: 18,
+    gap: 10,
+    backgroundColor: safestepsLessonTheme.colors.card,
+    ...safestepsLessonTheme.shadow,
+  },
+  areaCard: {
+    borderRadius: safestepsLessonTheme.radius.large,
+    borderWidth: 1,
+    borderColor: safestepsLessonTheme.colors.border,
+    padding: 18,
+    gap: 10,
+    backgroundColor: safestepsLessonTheme.colors.white,
+  },
+  cardAccent: {
+    width: 52,
+    height: 7,
+    borderRadius: safestepsLessonTheme.radius.pill,
+    backgroundColor: safestepsLessonTheme.colors.peach,
+  },
+  cardTitle: {
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 22,
+    lineHeight: 28,
+    fontWeight: "900",
+  },
+  cardText: {
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 16,
+    lineHeight: 24,
+  },
+  metaText: {
+    color: safestepsLessonTheme.colors.purpleDark,
+    fontWeight: "900",
+  },
+  cardButton: {
+    marginTop: 4,
+    borderRadius: safestepsLessonTheme.radius.pill,
+    padding: 14,
+    alignItems: "center",
+    backgroundColor: safestepsLessonTheme.colors.purpleDark,
+  },
+  cardButtonText: {
+    color: safestepsLessonTheme.colors.white,
+    fontWeight: "900",
+  },
+  areaCourseButton: {
+    borderRadius: safestepsLessonTheme.radius.medium,
+    borderWidth: 1,
+    borderColor: safestepsLessonTheme.colors.border,
+    padding: 14,
+    backgroundColor: safestepsLessonTheme.colors.card,
+  },
+  areaCourseButtonSuggested: {
+    backgroundColor: safestepsLessonTheme.colors.lavender,
+  },
+  areaCourseTitle: {
+    color: safestepsLessonTheme.colors.navy,
+    fontWeight: "900",
+  },
+});

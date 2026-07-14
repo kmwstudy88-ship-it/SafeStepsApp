@@ -1,14 +1,16 @@
 import React, { useMemo, useState } from "react";
-import { ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ImageBackground, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { Link, Redirect, useLocalSearchParams } from "expo-router";
 
 import { AppBottomNav } from "../../../../components/AppBottomNav";
+import { SafeStepsSingleLessonExperience } from "../../../../components/SafeStepsLessonExperience";
 import { useAuth } from "../../../../lib/auth";
 import {
   getProgramById,
   getProgramWeekPlan,
   saveDailyProgramLessonCompletion,
 } from "../../../../lib/platformData";
+import { getSafeStepsLessonWatercolorPalette, safestepsLessonTheme } from "../../../../lib/safestepsLessonTheme";
 import { globalStyles } from "../../../../lib/styles";
 
 export default function DailyProgramLessonScreen() {
@@ -28,6 +30,7 @@ export default function DailyProgramLessonScreen() {
   const [endReflection, setEndReflection] = useState("");
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
+  const palette = getSafeStepsLessonWatercolorPalette(`${programId}-${weekId}-${dayId}`);
 
   if (initializing) {
     return null;
@@ -39,12 +42,12 @@ export default function DailyProgramLessonScreen() {
 
   if (!program || !week || !lesson) {
     return (
-      <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={globalStyles.screen}>
-        <Text style={globalStyles.title}>Daily lesson not found</Text>
-        <Text style={globalStyles.subtitle}>Choose another program week.</Text>
+      <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={styles.courseScreen}>
+        <Text style={styles.title}>Daily lesson not found</Text>
+        <Text style={styles.subtitle}>Choose another program week.</Text>
         <Link href="/programs" asChild>
-          <TouchableOpacity style={globalStyles.button}>
-            <Text style={globalStyles.buttonText}>Back to programs</Text>
+          <TouchableOpacity style={[styles.button, { backgroundColor: safestepsLessonTheme.colors.purpleDark }]}>
+            <Text style={styles.buttonText}>Back to programs</Text>
           </TouchableOpacity>
         </Link>
       </ScrollView>
@@ -81,100 +84,220 @@ export default function DailyProgramLessonScreen() {
   };
 
   return (
-    <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={globalStyles.screen}>
-      <View style={globalStyles.inlineRow}>
-        <Text style={globalStyles.pill}>{program.title}</Text>
-        <Text style={globalStyles.pill}>{week.title}</Text>
-        <Text style={globalStyles.pill}>Day {lesson.dayNumber}</Text>
-        <Text style={globalStyles.pill}>{lesson.durationMinutes} min</Text>
+    <ImageBackground
+      source={require("../../../../assets/safesteps-course-background.png")}
+      resizeMode="cover"
+      style={globalStyles.courseBackground}
+    >
+    <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={styles.courseScreen}>
+      <SafeStepsSingleLessonExperience
+        lesson={{
+          id: `${program.id}-${week.weekNumber}-${lesson.dayNumber}`,
+          title: lesson.title,
+          summary: week.focus,
+          estimatedMinutes: lesson.durationMinutes,
+          moduleTitle: week.title,
+          courseTitle: program.title,
+          goals: [lesson.checkpoint, lesson.practiceTask, week.evidencePrompt],
+          parentMeaningPrompt: lesson.meaningPrompt,
+        }}
+      />
+
+      <View style={styles.inlineRow}>
+        <Text style={[styles.pill, { backgroundColor: palette.washStrong, color: palette.accentDark }]}>{program.title}</Text>
+        <Text style={[styles.pill, { backgroundColor: palette.washStrong, color: palette.accentDark }]}>{week.title}</Text>
+        <Text style={[styles.pill, { backgroundColor: palette.washStrong, color: palette.accentDark }]}>Day {lesson.dayNumber}</Text>
+        <Text style={[styles.pill, { backgroundColor: palette.washStrong, color: palette.accentDark }]}>{lesson.durationMinutes} min</Text>
       </View>
 
-      <Text style={globalStyles.title}>{lesson.title}</Text>
-      <Text style={globalStyles.subtitle}>{week.focus}</Text>
+      <Text style={styles.title}>{lesson.title} reflection record</Text>
+      <Text style={styles.subtitle}>{week.focus}</Text>
 
-      <View style={globalStyles.card}>
-        <Text style={globalStyles.cardTitle}>Before the lesson</Text>
-        <Text style={globalStyles.cardText}>{lesson.meaningPrompt}</Text>
+      <View style={styles.card}>
+        <View style={[styles.cardAccent, { backgroundColor: palette.accent }]} />
+        <Text style={styles.cardTitle}>Before the lesson</Text>
+        <Text style={styles.cardText}>{lesson.meaningPrompt}</Text>
         <TextInput
           multiline
           onChangeText={setMeaningResponse}
+          placeholderTextColor={safestepsLessonTheme.colors.muted}
           placeholder="There are no right or wrong answers."
-          style={[globalStyles.input, globalStyles.textArea]}
+          style={[styles.input, styles.textArea]}
           value={meaningResponse}
         />
       </View>
 
-      <View style={globalStyles.card}>
-        <Text style={globalStyles.cardTitle}>30-minute lesson</Text>
-        <Text style={globalStyles.cardText}>
+      <View style={[styles.card, { backgroundColor: palette.wash }]}>
+        <View style={[styles.cardAccent, { backgroundColor: palette.highlight }]} />
+        <Text style={styles.cardTitle}>30-minute lesson</Text>
+        <Text style={styles.cardText}>
           Focus on one practical idea from {week.monthTopic.toLowerCase()}. Notice what this skill looks like in your family, what makes it easier, and what makes it hard to use.
         </Text>
-        <Text style={globalStyles.cardText}>
+        <Text style={styles.cardText}>
           Keep the goal small: one conversation, one routine, one calmer response, or one repair attempt is enough for today&apos;s practice.
         </Text>
       </View>
 
-      <View style={globalStyles.card}>
-        <Text style={globalStyles.cardTitle}>Knowledge checkpoint</Text>
-        <Text style={globalStyles.cardText}>{lesson.checkpoint}</Text>
+      <View style={styles.card}>
+        <View style={[styles.cardAccent, { backgroundColor: palette.accent }]} />
+        <Text style={styles.cardTitle}>Knowledge checkpoint</Text>
+        <Text style={styles.cardText}>{lesson.checkpoint}</Text>
         <TextInput
           multiline
           onChangeText={setCheckpointResponse}
+          placeholderTextColor={safestepsLessonTheme.colors.muted}
           placeholder="Write your answer."
-          style={[globalStyles.input, globalStyles.textArea]}
+          style={[styles.input, styles.textArea]}
           value={checkpointResponse}
         />
       </View>
 
-      <View style={globalStyles.card}>
-        <Text style={globalStyles.cardTitle}>Scenario checkpoint</Text>
-        <Text style={globalStyles.cardText}>
+      <View style={styles.card}>
+        <View style={[styles.cardAccent, { backgroundColor: palette.accent }]} />
+        <Text style={styles.cardTitle}>Scenario checkpoint</Text>
+        <Text style={styles.cardText}>
           Imagine this topic comes up during a stressful family moment. What would be a safe, respectful next step?
         </Text>
         <TextInput
           multiline
           onChangeText={setScenarioResponse}
+          placeholderTextColor={safestepsLessonTheme.colors.muted}
           placeholder="Describe what you would try and why."
-          style={[globalStyles.input, globalStyles.textArea]}
+          style={[styles.input, styles.textArea]}
           value={scenarioResponse}
         />
       </View>
 
-      <View style={globalStyles.card}>
-        <Text style={globalStyles.cardTitle}>Real-world practice</Text>
-        <Text style={globalStyles.cardText}>{lesson.practiceTask}</Text>
+      <View style={styles.card}>
+        <View style={[styles.cardAccent, { backgroundColor: palette.accent }]} />
+        <Text style={styles.cardTitle}>Real-world practice</Text>
+        <Text style={styles.cardText}>{lesson.practiceTask}</Text>
         <TextInput
           multiline
           onChangeText={setPracticeResponse}
+          placeholderTextColor={safestepsLessonTheme.colors.muted}
           placeholder="What happened when you tried it?"
-          style={[globalStyles.input, globalStyles.textArea]}
+          style={[styles.input, styles.textArea]}
           value={practiceResponse}
         />
       </View>
 
-      <View style={globalStyles.card}>
-        <Text style={globalStyles.cardTitle}>End reflection</Text>
-        <Text style={globalStyles.cardText}>What did you learn, practise, or notice after today&apos;s lesson?</Text>
+      <View style={styles.card}>
+        <View style={[styles.cardAccent, { backgroundColor: palette.accent }]} />
+        <Text style={styles.cardTitle}>End reflection</Text>
+        <Text style={styles.cardText}>What did you learn, practise, or notice after today&apos;s lesson?</Text>
         <TextInput
           multiline
           onChangeText={setEndReflection}
+          placeholderTextColor={safestepsLessonTheme.colors.muted}
           placeholder="Write your end reflection."
-          style={[globalStyles.input, globalStyles.textArea]}
+          style={[styles.input, styles.textArea]}
           value={endReflection}
         />
       </View>
 
-      {message ? <Text style={message.startsWith("Could") ? globalStyles.error : globalStyles.notice}>{message}</Text> : null}
+      {message ? <Text style={message.startsWith("Could") ? globalStyles.error : styles.notice}>{message}</Text> : null}
 
       <TouchableOpacity
         disabled={saving}
         onPress={handleComplete}
-        style={[globalStyles.button, saving && globalStyles.buttonDisabled]}
+        style={[styles.button, { backgroundColor: palette.accentDark }, saving && globalStyles.buttonDisabled]}
       >
-        <Text style={globalStyles.buttonText}>{saving ? "Saving..." : "Complete daily lesson"}</Text>
+        <Text style={styles.buttonText}>{saving ? "Saving..." : "Complete daily lesson"}</Text>
       </TouchableOpacity>
 
       <AppBottomNav />
     </ScrollView>
+    </ImageBackground>
   );
 }
+
+const styles = StyleSheet.create({
+  courseScreen: {
+    padding: 20,
+    gap: 18,
+    backgroundColor: safestepsLessonTheme.colors.background,
+  },
+  inlineRow: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+    alignItems: "center",
+  },
+  pill: {
+    borderRadius: safestepsLessonTheme.radius.pill,
+    overflow: "hidden",
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    fontWeight: "800",
+  },
+  title: {
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 34,
+    lineHeight: 40,
+    fontWeight: "900",
+    textAlign: "center",
+  },
+  subtitle: {
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 17,
+    lineHeight: 25,
+    textAlign: "center",
+  },
+  card: {
+    borderRadius: safestepsLessonTheme.radius.large,
+    borderWidth: 1,
+    borderColor: safestepsLessonTheme.colors.border,
+    padding: 20,
+    gap: 12,
+    backgroundColor: safestepsLessonTheme.colors.card,
+    ...safestepsLessonTheme.shadow,
+  },
+  cardAccent: {
+    width: 52,
+    height: 7,
+    borderRadius: safestepsLessonTheme.radius.pill,
+  },
+  cardTitle: {
+    color: safestepsLessonTheme.colors.purpleDark,
+    fontSize: 22,
+    lineHeight: 28,
+    fontWeight: "900",
+  },
+  cardText: {
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 16,
+    lineHeight: 24,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: safestepsLessonTheme.colors.line,
+    borderRadius: safestepsLessonTheme.radius.small,
+    padding: 14,
+    backgroundColor: safestepsLessonTheme.colors.white,
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 16,
+  },
+  textArea: {
+    minHeight: 118,
+    textAlignVertical: "top",
+  },
+  notice: {
+    color: safestepsLessonTheme.colors.purpleDark,
+    fontWeight: "800",
+    textAlign: "center",
+  },
+  button: {
+    minHeight: 64,
+    borderRadius: safestepsLessonTheme.radius.pill,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 20,
+    ...safestepsLessonTheme.shadow,
+  },
+  buttonText: {
+    color: safestepsLessonTheme.colors.white,
+    fontSize: 20,
+    fontWeight: "900",
+  },
+});

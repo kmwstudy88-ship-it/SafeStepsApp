@@ -1,15 +1,19 @@
 import { useLocalSearchParams } from "expo-router";
 import { useEffect, useMemo, useState } from "react";
-import { ImageBackground, Pressable, ScrollView, Text, View } from "react-native";
+import { ImageBackground, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { CourseLessonContent } from "../../components/CourseLessonContent";
 import { ChallengeRecommendations } from "../../components/ChallengeRecommendations";
+import { SafeStepsLessonExperience } from "../../components/SafeStepsLessonExperience";
 import { areAllCourseLessonsViewed, getCourseById } from "../../curriculum/courses";
+import { getCurriculumCourseFromApi } from "../../lib/curriculumApi";
+import type { ApiCurriculumCourseDetail } from "../../lib/curriculumApi";
 import {
   CertificateRecord,
   findMatchingCertificate,
   issueCertificate,
   listMyCertificates,
 } from "../../lib/platform/certificates";
+import { getSafeStepsLessonWatercolorPalette, safestepsLessonTheme } from "../../lib/safestepsLessonTheme";
 import { globalStyles } from "../../lib/styles";
 
 export default function CoursePlayerScreen() {
@@ -18,6 +22,8 @@ export default function CoursePlayerScreen() {
 
   const course = getCourseById(courseId);
 
+  const [apiCourse, setApiCourse] = useState<ApiCurriculumCourseDetail | null>(null);
+  const [apiCourseLoading, setApiCourseLoading] = useState(false);
   const [certificates, setCertificates] = useState<CertificateRecord[]>([]);
   const [issuing, setIssuing] = useState(false);
   const [message, setMessage] = useState("");
@@ -52,6 +58,36 @@ export default function CoursePlayerScreen() {
     loadCertificates();
   }, []);
 
+  useEffect(() => {
+    let active = true;
+
+    if (!courseId) {
+      setApiCourse(null);
+      return () => {
+        active = false;
+      };
+    }
+
+    setApiCourseLoading(true);
+    getCurriculumCourseFromApi(courseId)
+      .then((nextCourse) => {
+        if (!active) return;
+        setApiCourse(nextCourse);
+      })
+      .catch(() => {
+        if (!active) return;
+        setApiCourse(null);
+      })
+      .finally(() => {
+        if (!active) return;
+        setApiCourseLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [courseId]);
+
   async function issueCourseCertificate() {
     if (!course || !allLessonsViewed || issuing) return;
 
@@ -78,6 +114,31 @@ export default function CoursePlayerScreen() {
     }
   }
 
+  if (!apiCourse && !course && apiCourseLoading) {
+    return (
+      <ScrollView style={{ flex: 1, padding: 20 }}>
+        <Text style={{ fontSize: 28, fontWeight: "bold", marginBottom: 8 }}>
+          Loading course
+        </Text>
+        <Text>Checking the local SafeSteps curriculum API.</Text>
+      </ScrollView>
+    );
+  }
+
+  if (apiCourse) {
+    return (
+      <ImageBackground
+        source={require("../../assets/safesteps-course-background.png")}
+        resizeMode="cover"
+        style={globalStyles.courseBackground}
+      >
+        <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={globalStyles.courseScreen}>
+          <SafeStepsLessonExperience course={apiCourse} />
+        </ScrollView>
+      </ImageBackground>
+    );
+  }
+
   if (!course) {
     return (
       <ScrollView style={{ flex: 1, padding: 20 }}>
@@ -97,10 +158,10 @@ export default function CoursePlayerScreen() {
       resizeMode="cover"
       style={globalStyles.courseBackground}
     >
-      <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={globalStyles.courseScreen}>
-      <Text style={globalStyles.courseTitle}>{course.title}</Text>
+      <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={styles.courseScreen}>
+      <Text style={styles.courseTitle}>{course.title}</Text>
 
-      <Text style={globalStyles.courseSubtitle}>{course.description}</Text>
+      <Text style={styles.courseSubtitle}>{course.description}</Text>
 
       <ChallengeRecommendations
         context={`${course.title} ${course.description} ${course.lessons.map((lesson) => `${lesson.title} ${lesson.summary ?? ""}`).join(" ")}`}
@@ -108,48 +169,43 @@ export default function CoursePlayerScreen() {
       />
 
       <View
-        style={{
-          padding: 16,
-          backgroundColor: "#f1f5f3",
-          borderRadius: 12,
-          marginBottom: 16,
-        }}
+        style={styles.structureCard}
       >
-        <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+        <View style={styles.cardAccent} />
+        <Text style={styles.cardTitle}>
           Course Structure
         </Text>
-        <Text style={{ marginTop: 6 }}>
+        <Text style={styles.cardText}>
           This is a standalone course. It uses simple lessons and a final
           completion step. It does not use monthly or weekly program structure.
         </Text>
       </View>
 
-      {course.lessons.map((lesson) => (
+      {course.lessons.map((lesson) => {
+        const palette = getSafeStepsLessonWatercolorPalette(`${course.id}-${lesson.lessonNumber}-${lesson.title}`);
+        const hasParentMeaning = (parentMeanings[lesson.lessonNumber] ?? "").trim().length > 0;
+        const viewed = viewedLessons[lesson.lessonNumber];
+
+        return (
         <View
           key={lesson.lessonNumber}
-          style={{
-            padding: 16,
-            backgroundColor: "#ffffff",
-            borderRadius: 12,
-            borderWidth: 1,
-            borderColor: "#d8e5dd",
-            marginBottom: 12,
-          }}
+          style={[styles.lessonCard, { backgroundColor: palette.wash }]}
         >
-          <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+          <View style={[styles.lessonAccent, { backgroundColor: palette.accent }]} />
+          <Text style={styles.lessonTitle}>
             Lesson {lesson.lessonNumber}: {lesson.title}
           </Text>
 
-          <Text style={{ marginTop: 6 }}>
+          <Text style={styles.durationText}>
             Duration: {lesson.durationMinutes} minutes
           </Text>
 
           {lesson.summary ? (
-            <Text style={{ marginTop: 8, fontSize: 16, lineHeight: 23 }}>
+            <Text style={styles.lessonSummary}>
               {lesson.summary}
             </Text>
           ) : (
-            <Text style={{ marginTop: 8 }}>
+            <Text style={styles.lessonSummary}>
               Practise the skill, record what it means to you, then mark the lesson
               viewed when it is ready to count toward course completion.
             </Text>
@@ -169,46 +225,37 @@ export default function CoursePlayerScreen() {
           </View>
 
           <Pressable
-            disabled={(parentMeanings[lesson.lessonNumber] ?? "").trim().length === 0}
+            disabled={!hasParentMeaning}
             onPress={() =>
               setViewedLessons((current) => ({
                 ...current,
                 [lesson.lessonNumber]: true,
               }))
             }
-            style={{
-              marginTop: 12,
-              padding: 12,
-              borderRadius: 10,
-              backgroundColor: viewedLessons[lesson.lessonNumber]
-                ? "#dcefe8"
-                : (parentMeanings[lesson.lessonNumber] ?? "").trim().length > 0
-                ? "#eef3f5"
-                : "#e5e5e5",
-              alignItems: "center",
-              opacity: (parentMeanings[lesson.lessonNumber] ?? "").trim().length > 0 ? 1 : 0.75,
-            }}
+            style={[
+              styles.lessonButton,
+              {
+                backgroundColor: viewed ? palette.accent : hasParentMeaning ? palette.accentDark : safestepsLessonTheme.colors.line,
+                opacity: hasParentMeaning ? 1 : 0.75,
+              },
+            ]}
           >
-            <Text style={{ fontWeight: "bold" }}>
-              {viewedLessons[lesson.lessonNumber]
+            <Text style={styles.lessonButtonText}>
+              {viewed
                 ? "Lesson Viewed"
-                : (parentMeanings[lesson.lessonNumber] ?? "").trim().length > 0
+                : hasParentMeaning
                 ? "Mark Lesson Viewed"
                 : "Add Parent Meaning First"}
             </Text>
           </Pressable>
         </View>
-      ))}
+        );
+      })}
 
       <View
-        style={{
-          padding: 16,
-          backgroundColor: allLessonsViewed ? "#dcefe8" : "#e5e5e5",
-          borderRadius: 12,
-          marginBottom: 40,
-        }}
+        style={[styles.certificateCard, { backgroundColor: allLessonsViewed ? safestepsLessonTheme.colors.lavender : safestepsLessonTheme.colors.card }]}
       >
-        <Text style={{ fontSize: 18, fontWeight: "bold" }}>
+        <Text style={styles.cardTitle}>
           {courseCertificate
             ? "Course Certificate Issued"
             : allLessonsViewed
@@ -216,7 +263,7 @@ export default function CoursePlayerScreen() {
             : "Complete all course lessons first"}
         </Text>
 
-        <Text style={{ marginTop: 6 }}>
+        <Text style={styles.cardText}>
           {courseCertificate
             ? `Certificate number: ${courseCertificate.certificate_number}`
             : allLessonsViewed
@@ -227,25 +274,130 @@ export default function CoursePlayerScreen() {
         <Pressable
           disabled={!allLessonsViewed || issuing || Boolean(courseCertificate)}
           onPress={issueCourseCertificate}
-          style={{
-            marginTop: 12,
-            padding: 12,
-            borderRadius: 10,
-            backgroundColor: allLessonsViewed && !courseCertificate ? "#2f5f4a" : "#cbd8d0",
-            alignItems: "center",
-            opacity: issuing ? 0.65 : 1,
-          }}
+          style={[
+            styles.certificateButton,
+            {
+              backgroundColor: allLessonsViewed && !courseCertificate ? safestepsLessonTheme.colors.purpleDark : safestepsLessonTheme.colors.line,
+              opacity: issuing ? 0.65 : 1,
+            },
+          ]}
         >
-          <Text style={{ color: allLessonsViewed && !courseCertificate ? "#ffffff" : "#22332b", fontWeight: "bold" }}>
+          <Text style={[styles.certificateButtonText, { color: allLessonsViewed && !courseCertificate ? safestepsLessonTheme.colors.white : safestepsLessonTheme.colors.navy }]}>
             {issuing ? "Issuing..." : courseCertificate ? "Certificate Issued" : "Issue Course Certificate"}
           </Text>
         </Pressable>
 
         {message ? (
-          <Text style={{ marginTop: 8, fontWeight: "bold" }}>{message}</Text>
+          <Text style={styles.messageText}>{message}</Text>
         ) : null}
       </View>
     </ScrollView>
     </ImageBackground>
   );
 }
+
+const styles = StyleSheet.create({
+  courseScreen: {
+    padding: 20,
+    gap: 16,
+    backgroundColor: safestepsLessonTheme.colors.background,
+  },
+  courseTitle: {
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 40,
+    lineHeight: 46,
+    fontWeight: "900",
+    textAlign: "center",
+  },
+  courseSubtitle: {
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 17,
+    lineHeight: 25,
+    textAlign: "center",
+  },
+  structureCard: {
+    borderRadius: safestepsLessonTheme.radius.large,
+    borderWidth: 1,
+    borderColor: safestepsLessonTheme.colors.border,
+    padding: 18,
+    gap: 10,
+    backgroundColor: safestepsLessonTheme.colors.card,
+    ...safestepsLessonTheme.shadow,
+  },
+  cardAccent: {
+    width: 56,
+    height: 7,
+    borderRadius: safestepsLessonTheme.radius.pill,
+    backgroundColor: safestepsLessonTheme.colors.peach,
+  },
+  cardTitle: {
+    color: safestepsLessonTheme.colors.purpleDark,
+    fontSize: 22,
+    lineHeight: 28,
+    fontWeight: "900",
+  },
+  cardText: {
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 16,
+    lineHeight: 24,
+  },
+  lessonCard: {
+    borderRadius: safestepsLessonTheme.radius.large,
+    borderWidth: 1,
+    borderColor: safestepsLessonTheme.colors.border,
+    padding: 18,
+    gap: 10,
+    ...safestepsLessonTheme.shadow,
+  },
+  lessonAccent: {
+    width: 48,
+    height: 7,
+    borderRadius: safestepsLessonTheme.radius.pill,
+  },
+  lessonTitle: {
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 22,
+    lineHeight: 28,
+    fontWeight: "900",
+  },
+  durationText: {
+    color: safestepsLessonTheme.colors.purpleDark,
+    fontWeight: "800",
+  },
+  lessonSummary: {
+    color: safestepsLessonTheme.colors.navy,
+    fontSize: 16,
+    lineHeight: 24,
+  },
+  lessonButton: {
+    marginTop: 12,
+    padding: 14,
+    borderRadius: safestepsLessonTheme.radius.pill,
+    alignItems: "center",
+  },
+  lessonButtonText: {
+    color: safestepsLessonTheme.colors.white,
+    fontWeight: "900",
+  },
+  certificateCard: {
+    borderRadius: safestepsLessonTheme.radius.large,
+    borderWidth: 1,
+    borderColor: safestepsLessonTheme.colors.border,
+    padding: 18,
+    gap: 10,
+    marginBottom: 40,
+  },
+  certificateButton: {
+    marginTop: 8,
+    padding: 14,
+    borderRadius: safestepsLessonTheme.radius.pill,
+    alignItems: "center",
+  },
+  certificateButtonText: {
+    fontWeight: "900",
+  },
+  messageText: {
+    color: safestepsLessonTheme.colors.purpleDark,
+    fontWeight: "800",
+  },
+});
