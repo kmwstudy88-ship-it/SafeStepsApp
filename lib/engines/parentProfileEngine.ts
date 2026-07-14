@@ -9,6 +9,9 @@ export type ParentIdentity = {
   culturalIdentity: string;
   familyHistory: string;
   traumaHistory: string;
+  schoolExperienceAdultImpact: string;
+  schoolExperienceParentingInfluence: string;
+  schoolExperienceChildHopesAndAvoidance: string;
   strengths: string;
   supports: string;
 };
@@ -88,6 +91,9 @@ export const emptyParentProfileDomains: ParentProfileDomains = {
     culturalIdentity: "",
     familyHistory: "",
     traumaHistory: "",
+    schoolExperienceAdultImpact: "",
+    schoolExperienceParentingInfluence: "",
+    schoolExperienceChildHopesAndAvoidance: "",
     strengths: "",
     supports: "",
   },

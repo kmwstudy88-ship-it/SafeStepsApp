@@ -3,6 +3,7 @@ import {
   calculateServiceCompletionScore,
   calculateVisitationQualityTrend,
   computeReadinessIndexFromSignals,
+  computeCompositeReunificationReadinessRisk,
   computeReadinessIndex,
   scoreAssessment,
   scoreTrend,
@@ -164,7 +165,7 @@ describe("assessment scoring engine", () => {
     expect(result.saferJudgement?.riskScore).toBe(75.5);
   });
 
-  test("readiness index includes reviewed SAFER judgement as a weighted signal", () => {
+  test("readiness index keeps reviewed SAFER judgement out of the weighted composite", () => {
     const saferJudgement = computeSaferGuidedJudgement({
       consequenceOfHarm: 20,
       probabilityOfHarm: 20,
@@ -199,8 +200,9 @@ describe("assessment scoring engine", () => {
       saferJudgement,
     });
 
-    expect(result.signals.map((signal) => signal.label)).toContain("SAFER guided judgement");
-    expect(result.compositeScore).toBe(77.17);
+    expect(result.signals.map((signal) => signal.label)).not.toContain("SAFER guided judgement");
+    expect(result.compositeScore).toBe(74.5);
+    expect(result.flags).toContain("SAFER guided judgement is shown as review context, not a weighted readiness signal.");
     expect(result.suppressedByOverride).toBe(false);
   });
 
@@ -247,5 +249,33 @@ describe("assessment scoring engine", () => {
 
     expect(result.compositeScore).toBe(76.25);
     expect(result.flags).toEqual([]);
+  });
+
+  test("classifies worker-only composite risk band and direction", () => {
+    const result = computeCompositeReunificationReadinessRisk({
+      assessmentScore: 75,
+      serviceCompletionScore: 60,
+      visitationQualityScore: 80,
+      milestoneProgressScore: 70,
+      previousCompositeScore: 60,
+    });
+
+    expect(result.workerOnly).toBe(true);
+    expect(result.riskBand).toBe("Moderate");
+    expect(result.direction).toBe("improving");
+  });
+
+  test("critical override forces critical composite risk", () => {
+    const result = computeCompositeReunificationReadinessRisk({
+      assessmentScore: 90,
+      serviceCompletionScore: 90,
+      visitationQualityScore: 90,
+      milestoneProgressScore: 90,
+      activeCriticalOverride: true,
+    });
+
+    expect(result.compositeScore).toBeNull();
+    expect(result.riskBand).toBe("Critical");
+    expect(result.suppressedByOverride).toBe(true);
   });
 });

@@ -12,10 +12,28 @@ export const assessmentRoutes = [
       "View all assessments connected to this case, including drafts, completed reviews, and upcoming reassessments.",
   },
   {
-    title: "Rubric Scoring",
-    href: "/assessment-system/rubric-scoring",
+    title: "Parent Identity & Background",
+    href: "/assessment-system/parent-identity",
     description:
-      "Score each safety and progress domain using a clear 0-4 evidence-based rubric.",
+      "Use structured background prompts to document identity, school history, reflection, parenting impact, and worker interpretation.",
+  },
+  {
+    title: "Protective Capacity Scoring",
+    href: "/assessment-system/scoring",
+    description:
+      "Score safety, protective capacity, routines, child voice, service engagement, and evidence consistency.",
+  },
+  {
+    title: "Child Development & Capacity",
+    href: "/assessment-system/child-development-capacity",
+    description:
+      "Run scenario-based reviews covering child development awareness, high-risk parenting concerns, contact observation, and parent preparation.",
+  },
+  {
+    title: "Intensive Reunification Support",
+    href: "/assessment-system/intensive-reunification-support",
+    description:
+      "Track intensive reunification support models, mandated tasks, graduated contact, systemic challenge flags, and pre-return verification.",
   },
   {
     title: "Evidence Uploads",
@@ -44,7 +62,7 @@ export const activeCase = {
 export const progressItems = [
   { label: "Case Setup", value: "Complete" },
   { label: "Records", value: "In Progress" },
-  { label: "Rubric Scoring", value: "Not Started" },
+  { label: "Protective Capacity Scoring", value: "Not Started" },
   { label: "Evidence", value: "5 uploads added" },
   { label: "Report", value: "Draft" },
 ];
