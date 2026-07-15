@@ -26,7 +26,7 @@ jobs:
         run: npm ci
 
       - name: Typecheck
-        run: npx tsc --noEmit
+        run: npx tsc --noEmit 2>&1 | tee tsc-output.log
 
       - name: Route hygiene audit
         run: npm run audit:routes
@@ -40,12 +40,13 @@ jobs:
       - name: Unit tests
         run: npm test -- --json --outputFile=jest-results.json 2>&1 | tee jest-output.log
 
-      - name: Upload Jest diagnostics
+      - name: Upload diagnostics
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: jest-diagnostics
+          name: ci-diagnostics
           path: |
+            tsc-output.log
             jest-output.log
             jest-results.json
           if-no-files-found: ignore
