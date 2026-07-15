@@ -3,24 +3,14 @@ import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from "react-native";
 
 import { assertProgramEnrollmentAccess } from "../../lib/engines/programStartGateEngine";
-
-const GUARDED_PROGRAM_PATHS = [
-  "/programs/month",
-  "/programs/week",
-  "/programs/lesson",
-  "/programs/reflection",
-] as const;
-
-function needsEnrollment(pathname: string): boolean {
-  return GUARDED_PROGRAM_PATHS.some((path) => pathname === path || pathname.startsWith(`${path}/`));
-}
+import { programContentRouteRequiresEnrollment } from "../../lib/engines/programStartGatePolicy";
 
 export function ProgramEnrollmentBoundary({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const params = useLocalSearchParams<{ programId?: string | string[] }>();
   const rawProgramId = params.programId;
   const programId = Array.isArray(rawProgramId) ? rawProgramId[0] ?? "" : rawProgramId ?? "";
-  const guarded = needsEnrollment(pathname);
+  const guarded = programContentRouteRequiresEnrollment(pathname);
   const [checking, setChecking] = useState(guarded);
   const [allowed, setAllowed] = useState(!guarded);
   const [error, setError] = useState("");
