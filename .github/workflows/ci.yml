@@ -31,5 +31,8 @@ jobs:
       - name: Route hygiene audit
         run: npm run audit:routes
 
+      - name: Sensitive route permission tests
+        run: npx jest __tests__/sensitive-route-permissions.test.ts __tests__/sensitive-audit-metadata.test.ts --runInBand
+
       - name: Unit tests
         run: npm test
