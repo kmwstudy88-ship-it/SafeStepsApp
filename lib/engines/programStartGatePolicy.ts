@@ -42,6 +42,8 @@ export function isGuardedProgramContentPath(pathname: string): boolean {
   );
 }
 
+export const programContentRouteRequiresEnrollment = isGuardedProgramContentPath;
+
 export function evaluateProgramStartGate(
   snapshot: ProgramStartGateSnapshot,
   riskLevel: ProgramRiskLevel,
