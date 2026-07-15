@@ -19,6 +19,20 @@ export type IntakeProgress = ProgramStartGateSnapshot & {
   decision: ProgramStartGateDecision;
 };
 
+export type IntakeReviewQueueItem = {
+  id: string;
+  case_id: string;
+  parent_user_id: string;
+  completed_sections: number;
+  total_sections: number;
+  completed_at: string;
+  reviewer_state: "pending" | "changes_required";
+  reviewer_notes: string | null;
+  family_label: string | null;
+  parent_carer_name: string | null;
+  program_stream: string | null;
+};
+
 function hasText(value: unknown): boolean {
   return typeof value === "string" && value.trim().length > 0;
 }
@@ -106,6 +120,32 @@ export async function getMyIntakeProgress(programId?: string): Promise<IntakePro
   };
 }
 
+export async function completeMyCaseIntake(
+  assessmentId: string,
+  responses: Record<string, string>,
+  totalSections: number,
+): Promise<{ completedSections: number; completedAt: string }> {
+  const caseId = await resolveSingleActiveCaseId();
+  const entries = Object.entries(responses).filter(([, value]) => value.trim().length > 0);
+  const completedSections = entries.length;
+
+  if (completedSections !== totalSections || totalSections <= 0) {
+    throw new Error("Complete every intake section before saving.");
+  }
+
+  const { error } = await supabase.rpc("complete_case_intake", {
+    target_case_id: caseId,
+    target_assessment_id: assessmentId,
+    intake_answers: Object.fromEntries(entries),
+    completed_section_count: completedSections,
+    total_section_count: totalSections,
+  });
+
+  if (error) throw new Error(error.message);
+
+  return { completedSections, completedAt: new Date().toISOString() };
+}
+
 export async function assertProgramCanStart(programId: string): Promise<IntakeProgress> {
   const progress = await getMyIntakeProgress(programId);
   if (!progress.decision.allowed) {
@@ -120,10 +160,12 @@ export async function assertProgramEnrollmentAccess(programId: string): Promise<
   const userId = userData.user?.id;
   if (!userId) throw new Error("Sign in before opening program content.");
 
+  const caseId = await resolveSingleActiveCaseId();
   const { data, error } = await supabase
     .from("program_enrollments")
     .select("id")
     .eq("owner_id", userId)
+    .eq("case_id", caseId)
     .eq("program_id", programId)
     .eq("status", "active")
     .limit(1);
@@ -132,6 +174,37 @@ export async function assertProgramEnrollmentAccess(programId: string): Promise<
   if (!(data ?? []).length) {
     throw new Error("This program has not been started. Complete intake and program start requirements first.");
   }
+}
+
+export async function fetchIntakeReviewQueue(): Promise<IntakeReviewQueueItem[]> {
+  const { data, error } = await supabase
+    .from("case_intake_status")
+    .select("id,case_id,parent_user_id,completed_sections,total_sections,completed_at,reviewer_state,reviewer_notes,reunification_cases(family_label,parent_carer_name,program_stream)")
+    .in("reviewer_state", ["pending", "changes_required"])
+    .not("completed_at", "is", null)
+    .order("completed_at", { ascending: true });
+
+  if (error) throw new Error(error.message);
+
+  return (data ?? []).map((row) => {
+    const caseRecord = Array.isArray(row.reunification_cases)
+      ? row.reunification_cases[0]
+      : row.reunification_cases;
+
+    return {
+      id: String(row.id),
+      case_id: String(row.case_id),
+      parent_user_id: String(row.parent_user_id),
+      completed_sections: Number(row.completed_sections),
+      total_sections: Number(row.total_sections),
+      completed_at: String(row.completed_at),
+      reviewer_state: row.reviewer_state as "pending" | "changes_required",
+      reviewer_notes: row.reviewer_notes ? String(row.reviewer_notes) : null,
+      family_label: caseRecord?.family_label ? String(caseRecord.family_label) : null,
+      parent_carer_name: caseRecord?.parent_carer_name ? String(caseRecord.parent_carer_name) : null,
+      program_stream: caseRecord?.program_stream ? String(caseRecord.program_stream) : null,
+    };
+  });
 }
 
 export async function reviewIntake(
