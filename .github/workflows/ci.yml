@@ -34,6 +34,9 @@ jobs:
       - name: Sensitive route permission tests
         run: npx jest __tests__/sensitive-route-permissions.test.ts __tests__/sensitive-audit-metadata.test.ts --runInBand
 
+      - name: Intake and program start gate tests
+        run: npx jest __tests__/program-start-gate.test.ts --runInBand
+
       - name: Unit tests
         run: npm test -- --json --outputFile=jest-results.json 2>&1 | tee jest-output.log
 
