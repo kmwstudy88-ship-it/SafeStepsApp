@@ -12,10 +12,17 @@ declare
 begin
   if new.case_id is not null then return new; end if;
 
-  select count(distinct cm.case_id), min(cm.case_id)
-  into case_count, resolved_case_id
+  select count(distinct cm.case_id)
+  into case_count
   from public.case_memberships cm
   where cm.user_id = auth.uid() and cm.status = 'active';
+
+  select cm.case_id
+  into resolved_case_id
+  from public.case_memberships cm
+  where cm.user_id = auth.uid() and cm.status = 'active'
+  order by cm.case_id::text
+  limit 1;
 
   if case_count = 0 then
     raise exception 'active case membership required';
