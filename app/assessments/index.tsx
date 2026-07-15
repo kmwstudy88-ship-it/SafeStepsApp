@@ -4,13 +4,8 @@ import { Redirect, router } from "expo-router";
 
 import { AppBottomNav } from "../../components/AppBottomNav";
 import { useAuth } from "../../lib/auth";
-import {
-  getAssessmentResponses,
-  getIntakeAssessment,
-  hasCompletedIntakeAssessment,
-  submitIntakeAssessmentResponse,
-  type AssessmentDefinition,
-} from "../../lib/platformData";
+import { completeMyCaseIntake, getMyIntakeProgress } from "../../lib/engines/programStartGateEngine";
+import { getIntakeAssessment, type AssessmentDefinition } from "../../lib/platformData";
 import { globalStyles } from "../../lib/styles";
 
 function formatDate(value: string) {
@@ -23,7 +18,6 @@ function formatDate(value: string) {
 
 export default function AssessmentsScreen() {
   const { initializing, user } = useAuth();
-  const userId = user?.id;
   const [assessment, setAssessment] = useState<AssessmentDefinition | null>(null);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [completedAt, setCompletedAt] = useState<string | null>(null);
@@ -32,30 +26,35 @@ export default function AssessmentsScreen() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    if (!userId) return;
+    if (!user?.id) return;
 
     let active = true;
-    const currentUserId = userId;
 
     async function loadIntake() {
       setLoading(true);
-      const nextAssessment = await getIntakeAssessment();
-      const intakeComplete = await hasCompletedIntakeAssessment(currentUserId);
-      const history = await getAssessmentResponses(currentUserId, nextAssessment.id);
+      setMessage("");
 
-      if (!active) return;
+      try {
+        const [nextAssessment, progress] = await Promise.all([
+          getIntakeAssessment(),
+          getMyIntakeProgress(),
+        ]);
 
-      setAssessment(nextAssessment);
-      setCompletedAt(intakeComplete ? history[0]?.created_at ?? new Date().toISOString() : null);
-      setLoading(false);
+        if (!active) return;
+        setAssessment(nextAssessment);
+        setCompletedAt(progress.intakeCompletedAt);
+      } catch (error) {
+        if (active) setMessage(error instanceof Error ? error.message : "Could not load intake.");
+      } finally {
+        if (active) setLoading(false);
+      }
     }
 
     loadIntake();
-
     return () => {
       active = false;
     };
-  }, [userId]);
+  }, [user?.id]);
 
   const answeredCount = useMemo(
     () => Object.values(answers).filter((answer) => answer.trim().length > 0).length,
@@ -64,16 +63,11 @@ export default function AssessmentsScreen() {
   const totalQuestions = assessment?.questions.length ?? 0;
   const canSubmit = totalQuestions > 0 && answeredCount === totalQuestions;
 
-  if (initializing) {
-    return null;
-  }
-
-  if (!user) {
-    return <Redirect href="/login" />;
-  }
+  if (initializing) return null;
+  if (!user) return <Redirect href="/login" />;
 
   const handleSubmit = async () => {
-    if (!assessment || !userId || saving) return;
+    if (!assessment || saving) return;
 
     if (!canSubmit) {
       setMessage("Complete every intake section before saving.");
@@ -84,10 +78,10 @@ export default function AssessmentsScreen() {
     setMessage("");
 
     try {
-      const result = await submitIntakeAssessmentResponse(userId, answers);
-      setCompletedAt(new Date().toISOString());
+      const result = await completeMyCaseIntake(assessment.id, answers, totalQuestions);
+      setCompletedAt(result.completedAt);
       setAnswers({});
-      setMessage(`Intake complete. ${result.completedSections} sections saved. Programs are now unlocked.`);
+      setMessage(`Intake complete. ${result.completedSections} sections saved. Program start requirements will now be checked.`);
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Could not save intake assessment yet.");
     } finally {
@@ -99,16 +93,16 @@ export default function AssessmentsScreen() {
     <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={globalStyles.screen}>
       <Text style={globalStyles.title}>SafeSteps Intake Assessment</Text>
       <Text style={globalStyles.subtitle}>
-        This is the required first step after sign-up. Programs cannot be started until this intake is complete.
+        Intake, profile, and case setup are required before any program can start. Higher-risk pathways also require worker approval.
       </Text>
 
       <View style={globalStyles.card}>
         <Text style={globalStyles.cardTitle}>Pre-entry baseline</Text>
         <Text style={globalStyles.cardText}>
-          Based on the SafeSteps Intake Assessment document. Record enough information for review, support planning, and program routing before any program begins.
+          Complete every section factually. SafeSteps stores the completion time and uses the intake record for pathway review and program-start gating.
         </Text>
         {completedAt ? (
-          <Text style={globalStyles.notice}>Completed {formatDate(completedAt)}. You can now start programs.</Text>
+          <Text style={globalStyles.notice}>Completed {formatDate(completedAt)}.</Text>
         ) : (
           <Text style={globalStyles.error}>Required before programs unlock.</Text>
         )}
@@ -120,6 +114,7 @@ export default function AssessmentsScreen() {
         <View style={globalStyles.card}>
           <Text style={globalStyles.cardTitle}>{assessment.name}</Text>
           <Text style={globalStyles.cardText}>{assessment.description}</Text>
+          <Text style={globalStyles.cardText}>Progress: {answeredCount} of {totalQuestions} sections completed.</Text>
 
           {assessment.questions.map((question) => (
             <View key={question.id} style={globalStyles.questionBlock}>
@@ -149,9 +144,11 @@ export default function AssessmentsScreen() {
         </View>
       ) : null}
 
+      {message && completedAt ? <Text style={globalStyles.notice}>{message}</Text> : null}
+
       {completedAt ? (
-        <TouchableOpacity onPress={() => router.replace("/programs")} style={globalStyles.button}>
-          <Text style={globalStyles.buttonText}>Continue to programs</Text>
+        <TouchableOpacity onPress={() => router.replace("/intake-progress")} style={globalStyles.button}>
+          <Text style={globalStyles.buttonText}>View intake and program start progress</Text>
         </TouchableOpacity>
       ) : null}
 
