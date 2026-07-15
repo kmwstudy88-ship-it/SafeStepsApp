@@ -1,4 +1,4 @@
-import { sanitizeAuditMetadata } from "../lib/security/audit";
+import { sanitizeAuditMetadata } from "../lib/security/auditMetadata";
 
 describe("sensitive audit metadata", () => {
   test("removes sensitive content fields", () => {
