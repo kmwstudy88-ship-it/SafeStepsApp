@@ -4,6 +4,12 @@ Last updated: 2026-07-13
 
 SafeSteps uses assessments as structured decision support for parenting capacity, child safety, and reunification planning. The system must not treat one number as a reunification decision.
 
+Assessment fairness and reviewability requirements are defined in:
+
+```text
+docs/ASSESSMENT_FAIRNESS_AND_REVIEWABILITY_FRAMEWORK.md
+```
+
 ## Data Model
 
 The main Supabase data model is in:
@@ -73,6 +79,7 @@ Primary screens:
 - `app/assessment-system/evidence-uploads.tsx`
 - `app/assessment-system/case-setup.tsx`
 - `app/assessment-system/records.tsx`
+- `app/assessment-system/fairness-review.tsx`
 
 The scoring and readiness screens now use the real engine rather than placeholder averages or checkbox-only scoring.
 
