@@ -19,6 +19,7 @@ ios/
 # Logs & temp
 logs/
 *.log
+.jest-cache*/
 Screen
 
 # Curriculum engine (NOT part of the app)
