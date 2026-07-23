@@ -1,4 +1,5 @@
 import { completeCourseLibrary, completeCourseLibraryCourseIds } from "./completeCourseLibrary";
+import { familyMentalHealthExpandedLessons } from "./familyMentalHealthExpansion";
 import { productionReadinessLessonPack } from "./productionReadinessLessonPack";
 import { safestepsProductionCourses } from "./safestepsProductionCourses";
 import { strongFathersStandaloneCourse } from "./strongFathersCourse";
@@ -2379,7 +2380,7 @@ export const courses: StandaloneCourse[] = [
     id: "family-mental-health-curriculum",
     title: "Family Mental Health: Children, Parents, and the Parent-Child Relationship",
     description:
-      "A comprehensive 14-week course covering children's mental health, parents' own mental health, and parenting while managing a mental health condition.",
+      "A comprehensive 54-week course covering children's mental health, parents' own mental health, the parent-child relationship, child development, family dynamics, substance use, family safety, grief, learning, neurodiversity, diverse family structures, digital wellbeing, financial stress, emotional intelligence, and positive parenting.",
     lessons: [
       {
         lessonNumber: 1,
@@ -2801,6 +2802,7 @@ export const courses: StandaloneCourse[] = [
           ],
         },
       },
+      ...familyMentalHealthExpandedLessons,
     ],
   },
   {

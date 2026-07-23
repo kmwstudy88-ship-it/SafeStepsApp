@@ -4,6 +4,9 @@ import {
   getCourseById,
   getCoursesForArea,
   getGoldStandardCourses,
+  familyMentalHealthExpandedLessons,
+  familyMentalHealthExpandedTracks,
+  familyMentalHealthExpandedWeeks,
 } from "../curriculum/courses";
 
 describe("standalone course helpers", () => {
@@ -120,7 +123,7 @@ describe("standalone course helpers", () => {
     ["relationship-skills", 3],
     ["safe-conversations", 3],
     ["protective-parenting-foundations", 3],
-    ["family-mental-health-curriculum", 14],
+    ["family-mental-health-curriculum", 54],
     ["understanding-your-nervous-system", 12],
     ["breaking-the-cycle-intergenerational-trauma", 12],
     ["your-child-s-brain-what-they-need-from-you", 14],
@@ -197,6 +200,52 @@ describe("standalone course helpers", () => {
     }, 0);
 
     expect(lessonCount).toBe(47);
+  });
+
+  test("family mental health course includes the uploaded weeks 15 to 54 expansion", () => {
+    const course = getCourseById("family-mental-health-curriculum");
+
+    expect(course).toBeDefined();
+    expect(course!.description).toContain("54-week course");
+    expect(course!.lessons).toHaveLength(54);
+    expect(course!.lessons[14]).toEqual(
+      expect.objectContaining({
+        lessonNumber: 15,
+        title: "Attachment Theory: The Foundation of Emotional Development",
+        durationMinutes: 120,
+      }),
+    );
+    expect(course!.lessons.at(-1)).toEqual(
+      expect.objectContaining({
+        lessonNumber: 54,
+        title: "Raising Emotionally Healthy Adolescents",
+      }),
+    );
+    expect(familyMentalHealthExpandedLessons).toHaveLength(40);
+    expect(familyMentalHealthExpandedWeeks.map((week) => week.week)).toEqual(
+      Array.from({ length: 40 }, (_, index) => index + 15),
+    );
+    expect(familyMentalHealthExpandedTracks.map((track) => track.code)).toEqual([
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+    ]);
+    expect(familyMentalHealthExpandedWeeks[24]).toEqual(
+      expect.objectContaining({
+        week: 39,
+        track: "J",
+        title: "LGBTQ+ Parents and Their Children",
+      }),
+    );
+    expect(familyMentalHealthExpandedWeeks[0].knowledge_check).toHaveLength(2);
+    expect(familyMentalHealthExpandedWeeks[0].resources.length).toBeGreaterThanOrEqual(2);
   });
 
   test("father pathway course is available as a standalone course", () => {

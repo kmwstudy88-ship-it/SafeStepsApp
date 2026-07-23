@@ -10,3 +10,10 @@ export {
   type CourseLesson,
   type StandaloneCourse,
 } from "./courses";
+
+export {
+  familyMentalHealthExpandedLessons,
+  familyMentalHealthExpandedTracks,
+  familyMentalHealthExpandedWeeks,
+  type FamilyMentalHealthExpandedWeek,
+} from "./familyMentalHealthExpansion";
