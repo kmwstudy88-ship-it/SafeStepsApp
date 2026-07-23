@@ -1,0 +1,4661 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "safesteps_definition_meaning_match_001_100",
+  "title": "SafeSteps Definition and Meaning Match-Up",
+  "description": "One SafeSteps term with one correct meaning mixed with five distractors.",
+  "instructions": "Choose the meaning that best matches the SafeSteps term.",
+  "questionCount": 100,
+  "scoring": {
+    "pointsPerCorrectAnswer": 1,
+    "pointsPerIncorrectAnswer": 0,
+    "maximumScore": 100,
+    "percentageFormula": "round((earnedPoints / maximumScore) * 100)",
+    "scoreBands": [
+      {
+        "minimum": 90,
+        "maximum": 100,
+        "label": "Excellent understanding",
+        "action": "Continue to application and reflection activities."
+      },
+      {
+        "minimum": 75,
+        "maximum": 89,
+        "label": "Strong understanding",
+        "action": "Review missed concepts before continuing."
+      },
+      {
+        "minimum": 60,
+        "maximum": 74,
+        "label": "Developing understanding",
+        "action": "Complete targeted concept review and retry."
+      },
+      {
+        "minimum": 40,
+        "maximum": 59,
+        "label": "Further learning recommended",
+        "action": "Review the relevant lessons with guided support."
+      },
+      {
+        "minimum": 0,
+        "maximum": 39,
+        "label": "Foundational review needed",
+        "action": "Repeat the learning material before reassessment."
+      }
+    ],
+    "passingScore": 75,
+    "completionRule": "All displayed questions must be answered.",
+    "interpretationSafeguard": "This quiz measures concept knowledge only. It must not be used alone as proof of parenting capacity, safety, insight or behavioural change."
+  },
+  "delivery": {
+    "selectionMode": "single_answer",
+    "optionsPerQuestion": 6,
+    "randomiseQuestionOrder": true,
+    "randomiseOptionOrder": true,
+    "recommendedQuestionsPerAttempt": 20,
+    "showCorrectAnswerAfterAttempt": true,
+    "showExplanationAfterAttempt": true,
+    "recordAttemptHistory": true
+  },
+  "questions": [
+    {
+      "id": "safesteps_definition_match_001",
+      "number": 1,
+      "assessmentType": "definition_meaning_match",
+      "term": "Emotional regulation",
+      "prompt": "Which meaning best matches “Emotional regulation”?",
+      "options": [
+        {
+          "id": "q001_a",
+          "label": "A",
+          "text": "Reacting to danger by escaping, avoiding or becoming restless."
+        },
+        {
+          "id": "q001_b",
+          "label": "B",
+          "text": "A limit that protects a person’s safety, privacy and wellbeing."
+        },
+        {
+          "id": "q001_c",
+          "label": "C",
+          "text": "Managing emotions and behaviour in a safe and healthy way."
+        },
+        {
+          "id": "q001_d",
+          "label": "D",
+          "text": "Reducing the intensity of conflict before it becomes more harmful."
+        },
+        {
+          "id": "q001_e",
+          "label": "E",
+          "text": "Feeling shut down, disconnected, numb, exhausted or unable to respond."
+        },
+        {
+          "id": "q001_f",
+          "label": "F",
+          "text": "When a child develops certain skills later than generally expected."
+        }
+      ],
+      "correctOptionId": "q001_c",
+      "correctDefinition": "Managing emotions and behaviour in a safe and healthy way.",
+      "explanation": "Emotional regulation means: Managing emotions and behaviour in a safe and healthy way.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_002",
+      "number": 2,
+      "assessmentType": "definition_meaning_match",
+      "term": "Co-regulation",
+      "prompt": "Which meaning best matches “Co-regulation”?",
+      "options": [
+        {
+          "id": "q002_a",
+          "label": "A",
+          "text": "Reacting to danger by becoming still, numb, silent or unable to act."
+        },
+        {
+          "id": "q002_b",
+          "label": "B",
+          "text": "Helping another person calm down through connection, reassurance and support."
+        },
+        {
+          "id": "q002_c",
+          "label": "C",
+          "text": "Freely agreeing to something with enough information and without pressure."
+        },
+        {
+          "id": "q002_d",
+          "label": "D",
+          "text": "Taking steps to restore trust and connection after hurt or conflict."
+        },
+        {
+          "id": "q002_e",
+          "label": "E",
+          "text": "A safe action used to manage stress, emotions or difficult situations."
+        },
+        {
+          "id": "q002_f",
+          "label": "F",
+          "text": "A personal variation in temperament, ability, culture, development or experience."
+        }
+      ],
+      "correctOptionId": "q002_b",
+      "correctDefinition": "Helping another person calm down through connection, reassurance and support.",
+      "explanation": "Co-regulation means: Helping another person calm down through connection, reassurance and support.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_003",
+      "number": 3,
+      "assessmentType": "definition_meaning_match",
+      "term": "Dysregulation",
+      "prompt": "Which meaning best matches “Dysregulation”?",
+      "options": [
+        {
+          "id": "q003_a",
+          "label": "A",
+          "text": "A state where emotions or body reactions become difficult to manage."
+        },
+        {
+          "id": "q003_b",
+          "label": "B",
+          "text": "Trying to avoid danger by pleasing, agreeing with or submitting to others."
+        },
+        {
+          "id": "q003_c",
+          "label": "C",
+          "text": "Making decisions with the child’s safety, needs and wellbeing as the priority."
+        },
+        {
+          "id": "q003_d",
+          "label": "D",
+          "text": "Teaching safe behaviour through guidance, connection and appropriate consequences."
+        },
+        {
+          "id": "q003_e",
+          "label": "E",
+          "text": "A technique that helps the body and mind return to a more settled state."
+        },
+        {
+          "id": "q003_f",
+          "label": "F",
+          "text": "The way a child grows physically, emotionally, socially and intellectually."
+        }
+      ],
+      "correctOptionId": "q003_a",
+      "correctDefinition": "A state where emotions or body reactions become difficult to manage.",
+      "explanation": "Dysregulation means: A state where emotions or body reactions become difficult to manage.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_004",
+      "number": 4,
+      "assessmentType": "definition_meaning_match",
+      "term": "Trigger",
+      "prompt": "Which meaning best matches “Trigger”?",
+      "options": [
+        {
+          "id": "q004_a",
+          "label": "A",
+          "text": "Recognising your own thoughts, feelings, behaviours and reactions."
+        },
+        {
+          "id": "q004_b",
+          "label": "B",
+          "text": "The child’s feelings, experiences, views, preferences and concerns."
+        },
+        {
+          "id": "q004_c",
+          "label": "C",
+          "text": "A result that happens without an adult creating the outcome."
+        },
+        {
+          "id": "q004_d",
+          "label": "D",
+          "text": "Paying attention to the present moment without immediately judging it."
+        },
+        {
+          "id": "q004_e",
+          "label": "E",
+          "text": "Mental skills used for planning, attention, memory, organisation and self-control."
+        },
+        {
+          "id": "q004_f",
+          "label": "F",
+          "text": "Something that causes a strong emotional or physical reaction."
+        }
+      ],
+      "correctOptionId": "q004_f",
+      "correctDefinition": "Something that causes a strong emotional or physical reaction.",
+      "explanation": "Trigger means: Something that causes a strong emotional or physical reaction.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_005",
+      "number": 5,
+      "assessmentType": "definition_meaning_match",
+      "term": "Grounding",
+      "prompt": "Which meaning best matches “Grounding”?",
+      "options": [
+        {
+          "id": "q005_a",
+          "label": "A",
+          "text": "Thinking honestly about your actions and what you could learn from them."
+        },
+        {
+          "id": "q005_b",
+          "label": "B",
+          "text": "Decisions focused on what most supports the child’s safety and development."
+        },
+        {
+          "id": "q005_c",
+          "label": "C",
+          "text": "A respectful consequence directly connected to the behaviour."
+        },
+        {
+          "id": "q005_d",
+          "label": "D",
+          "text": "Deliberately slowing the breath to help calm the nervous system."
+        },
+        {
+          "id": "q005_e",
+          "label": "E",
+          "text": "Using the senses or body to reconnect with the present moment."
+        },
+        {
+          "id": "q005_f",
+          "label": "F",
+          "text": "The ability to pause and consider consequences before acting."
+        }
+      ],
+      "correctOptionId": "q005_e",
+      "correctDefinition": "Using the senses or body to reconnect with the present moment.",
+      "explanation": "Grounding means: Using the senses or body to reconnect with the present moment.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_006",
+      "number": 6,
+      "assessmentType": "definition_meaning_match",
+      "term": "Window of tolerance",
+      "prompt": "Which meaning best matches “Window of tolerance”?",
+      "options": [
+        {
+          "id": "q006_a",
+          "label": "A",
+          "text": "Accepting responsibility for your choices and their effects."
+        },
+        {
+          "id": "q006_b",
+          "label": "B",
+          "text": "Feeling secure enough to express feelings without fear, ridicule or punishment."
+        },
+        {
+          "id": "q006_c",
+          "label": "C",
+          "text": "Responding reliably and following through on reasonable expectations."
+        },
+        {
+          "id": "q006_d",
+          "label": "D",
+          "text": "The emotional zone where a person can think, feel and respond effectively."
+        },
+        {
+          "id": "q006_e",
+          "label": "E",
+          "text": "Recognising physical sensations that may signal emotions, stress or safety needs."
+        },
+        {
+          "id": "q006_f",
+          "label": "F",
+          "text": "A need relating to how the nervous system responds to sound, touch, movement, light or other sensations."
+        }
+      ],
+      "correctOptionId": "q006_d",
+      "correctDefinition": "The emotional zone where a person can think, feel and respond effectively.",
+      "explanation": "Window of tolerance means: The emotional zone where a person can think, feel and respond effectively.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_007",
+      "number": 7,
+      "assessmentType": "definition_meaning_match",
+      "term": "Fight response",
+      "prompt": "Which meaning best matches “Fight response”?",
+      "options": [
+        {
+          "id": "q007_a",
+          "label": "A",
+          "text": "Understanding why something happened and how your behaviour affected others."
+        },
+        {
+          "id": "q007_b",
+          "label": "B",
+          "text": "Being protected from injury, violence, dangerous objects and unsafe environments."
+        },
+        {
+          "id": "q007_c",
+          "label": "C",
+          "text": "Reacting to danger through anger, aggression, arguing or confrontation."
+        },
+        {
+          "id": "q007_d",
+          "label": "D",
+          "text": "A predictable pattern of activities that supports stability and security."
+        },
+        {
+          "id": "q007_e",
+          "label": "E",
+          "text": "A small change that indicates stress or dysregulation may be increasing."
+        },
+        {
+          "id": "q007_f",
+          "label": "F",
+          "text": "Encouragement or recognition that increases the likelihood of a helpful behaviour recurring."
+        }
+      ],
+      "correctOptionId": "q007_c",
+      "correctDefinition": "Reacting to danger through anger, aggression, arguing or confrontation.",
+      "explanation": "Fight response means: Reacting to danger through anger, aggression, arguing or confrontation.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_008",
+      "number": 8,
+      "assessmentType": "definition_meaning_match",
+      "term": "Flight response",
+      "prompt": "Which meaning best matches “Flight response”?",
+      "options": [
+        {
+          "id": "q008_a",
+          "label": "A",
+          "text": "A strength or support that reduces risk and improves family wellbeing."
+        },
+        {
+          "id": "q008_b",
+          "label": "B",
+          "text": "Reacting to danger by escaping, avoiding or becoming restless."
+        },
+        {
+          "id": "q008_c",
+          "label": "C",
+          "text": "Failing to provide a child’s essential care, safety, supervision or basic needs."
+        },
+        {
+          "id": "q008_d",
+          "label": "D",
+          "text": "A requirement that matches the child’s developmental abilities and needs."
+        },
+        {
+          "id": "q008_e",
+          "label": "E",
+          "text": "A prepared way to stop, regulate and think before responding."
+        },
+        {
+          "id": "q008_f",
+          "label": "F",
+          "text": "Positive feedback that recognises a child’s effort, behaviour or achievement."
+        }
+      ],
+      "correctOptionId": "q008_b",
+      "correctDefinition": "Reacting to danger by escaping, avoiding or becoming restless.",
+      "explanation": "Flight response means: Reacting to danger by escaping, avoiding or becoming restless.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_009",
+      "number": 9,
+      "assessmentType": "definition_meaning_match",
+      "term": "Freeze response",
+      "prompt": "Which meaning best matches “Freeze response”?",
+      "options": [
+        {
+          "id": "q009_a",
+          "label": "A",
+          "text": "Reacting to danger by becoming still, numb, silent or unable to act."
+        },
+        {
+          "id": "q009_b",
+          "label": "B",
+          "text": "A condition or behaviour that may increase the chance of harm."
+        },
+        {
+          "id": "q009_c",
+          "label": "C",
+          "text": "Watching and supporting a child according to their age, abilities and environment."
+        },
+        {
+          "id": "q009_d",
+          "label": "D",
+          "text": "An action that may communicate a child’s feeling, need or difficulty."
+        },
+        {
+          "id": "q009_e",
+          "label": "E",
+          "text": "The ability to recognise, name, understand and communicate emotions."
+        },
+        {
+          "id": "q009_f",
+          "label": "F",
+          "text": "Support that helps a child keep trying, learning or solving a problem."
+        }
+      ],
+      "correctOptionId": "q009_a",
+      "correctDefinition": "Reacting to danger by becoming still, numb, silent or unable to act.",
+      "explanation": "Freeze response means: Reacting to danger by becoming still, numb, silent or unable to act.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_010",
+      "number": 10,
+      "assessmentType": "definition_meaning_match",
+      "term": "Fawn response",
+      "prompt": "Which meaning best matches “Fawn response”?",
+      "options": [
+        {
+          "id": "q010_a",
+          "label": "A",
+          "text": "A clear set of actions for responding to danger or unsafe situations."
+        },
+        {
+          "id": "q010_b",
+          "label": "B",
+          "text": "The emotional bond that helps a child feel safe, connected and supported."
+        },
+        {
+          "id": "q010_c",
+          "label": "C",
+          "text": "Information showing that safer behaviour has been demonstrated consistently over time."
+        },
+        {
+          "id": "q010_d",
+          "label": "D",
+          "text": "Understanding emotions and using that knowledge to guide safe behaviour and relationships."
+        },
+        {
+          "id": "q010_e",
+          "label": "E",
+          "text": "Demonstrating the behaviour you want a child to learn and use."
+        },
+        {
+          "id": "q010_f",
+          "label": "F",
+          "text": "Trying to avoid danger by pleasing, agreeing with or submitting to others."
+        }
+      ],
+      "correctOptionId": "q010_f",
+      "correctDefinition": "Trying to avoid danger by pleasing, agreeing with or submitting to others.",
+      "explanation": "Fawn response means: Trying to avoid danger by pleasing, agreeing with or submitting to others.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_011",
+      "number": 11,
+      "assessmentType": "definition_meaning_match",
+      "term": "Self-awareness",
+      "prompt": "Which meaning best matches “Self-awareness”?",
+      "options": [
+        {
+          "id": "q011_a",
+          "label": "A",
+          "text": "Trusted people and services that can provide practical or emotional help."
+        },
+        {
+          "id": "q011_b",
+          "label": "B",
+          "text": "A trusting relationship in which a child expects comfort, protection and care."
+        },
+        {
+          "id": "q011_c",
+          "label": "C",
+          "text": "A dated and organised record of actions, progress, challenges or completed tasks."
+        },
+        {
+          "id": "q011_d",
+          "label": "D",
+          "text": "The ability to recover, adapt and continue after stress or difficulty."
+        },
+        {
+          "id": "q011_e",
+          "label": "E",
+          "text": "Recognising your own thoughts, feelings, behaviours and reactions."
+        },
+        {
+          "id": "q011_f",
+          "label": "F",
+          "text": "Guiding a child away from unsafe behaviour and towards a safer choice."
+        }
+      ],
+      "correctOptionId": "q011_e",
+      "correctDefinition": "Recognising your own thoughts, feelings, behaviours and reactions.",
+      "explanation": "Self-awareness means: Recognising your own thoughts, feelings, behaviours and reactions.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_012",
+      "number": 12,
+      "assessmentType": "definition_meaning_match",
+      "term": "Self-reflection",
+      "prompt": "Which meaning best matches “Self-reflection”?",
+      "options": [
+        {
+          "id": "q012_a",
+          "label": "A",
+          "text": "A trusted adult a child can approach when worried, frightened or needing help."
+        },
+        {
+          "id": "q012_b",
+          "label": "B",
+          "text": "Noticing and responding appropriately to a child’s emotional and physical cues."
+        },
+        {
+          "id": "q012_c",
+          "label": "C",
+          "text": "Recognising abilities, progress, resources and protective qualities while addressing concerns."
+        },
+        {
+          "id": "q012_d",
+          "label": "D",
+          "text": "Thinking honestly about your actions and what you could learn from them."
+        },
+        {
+          "id": "q012_e",
+          "label": "E",
+          "text": "Healthy actions that support physical, emotional and mental wellbeing."
+        },
+        {
+          "id": "q012_f",
+          "label": "F",
+          "text": "Clearly and respectfully explaining what behaviour is and is not acceptable."
+        }
+      ],
+      "correctOptionId": "q012_d",
+      "correctDefinition": "Thinking honestly about your actions and what you could learn from them.",
+      "explanation": "Self-reflection means: Thinking honestly about your actions and what you could learn from them.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_013",
+      "number": 13,
+      "assessmentType": "definition_meaning_match",
+      "term": "Accountability",
+      "prompt": "Which meaning best matches “Accountability”?",
+      "options": [
+        {
+          "id": "q013_a",
+          "label": "A",
+          "text": "A limit that protects a person’s safety, privacy and wellbeing."
+        },
+        {
+          "id": "q013_b",
+          "label": "B",
+          "text": "Building safety and connection before addressing a child’s behaviour."
+        },
+        {
+          "id": "q013_c",
+          "label": "C",
+          "text": "Accepting responsibility for your choices and their effects."
+        },
+        {
+          "id": "q013_d",
+          "label": "D",
+          "text": "Safely returning a child to a parent’s care when the required conditions have been met."
+        },
+        {
+          "id": "q013_e",
+          "label": "E",
+          "text": "Physical and emotional exhaustion caused by prolonged stress and overwhelming demands."
+        },
+        {
+          "id": "q013_f",
+          "label": "F",
+          "text": "An agreed expectation intended to support safety, respect and daily functioning."
+        }
+      ],
+      "correctOptionId": "q013_c",
+      "correctDefinition": "Accepting responsibility for your choices and their effects.",
+      "explanation": "Accountability means: Accepting responsibility for your choices and their effects.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_014",
+      "number": 14,
+      "assessmentType": "definition_meaning_match",
+      "term": "Insight",
+      "prompt": "Which meaning best matches “Insight”?",
+      "options": [
+        {
+          "id": "q014_a",
+          "label": "A",
+          "text": "Freely agreeing to something with enough information and without pressure."
+        },
+        {
+          "id": "q014_b",
+          "label": "B",
+          "text": "Understanding why something happened and how your behaviour affected others."
+        },
+        {
+          "id": "q014_c",
+          "label": "C",
+          "text": "Showing that another person’s feelings and experiences have been heard and understood."
+        },
+        {
+          "id": "q014_d",
+          "label": "D",
+          "text": "Supporting someone with awareness of how trauma may affect their feelings, behaviour and needs."
+        },
+        {
+          "id": "q014_e",
+          "label": "E",
+          "text": "A parent’s ability to consistently meet their child’s safety, care and developmental needs."
+        },
+        {
+          "id": "q014_f",
+          "label": "F",
+          "text": "Helping a child know what is likely to happen and what is expected."
+        }
+      ],
+      "correctOptionId": "q014_b",
+      "correctDefinition": "Understanding why something happened and how your behaviour affected others.",
+      "explanation": "Insight means: Understanding why something happened and how your behaviour affected others.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_015",
+      "number": 15,
+      "assessmentType": "definition_meaning_match",
+      "term": "Protective factor",
+      "prompt": "Which meaning best matches “Protective factor”?",
+      "options": [
+        {
+          "id": "q015_a",
+          "label": "A",
+          "text": "A strength or support that reduces risk and improves family wellbeing."
+        },
+        {
+          "id": "q015_b",
+          "label": "B",
+          "text": "Making decisions with the child’s safety, needs and wellbeing as the priority."
+        },
+        {
+          "id": "q015_c",
+          "label": "C",
+          "text": "Giving full attention and checking that you correctly understand the speaker."
+        },
+        {
+          "id": "q015_d",
+          "label": "D",
+          "text": "An emotional, physical or behavioural reaction connected to a frightening or harmful experience."
+        },
+        {
+          "id": "q015_e",
+          "label": "E",
+          "text": "An ability, behaviour or resource that supports positive outcomes for a child."
+        },
+        {
+          "id": "q015_f",
+          "label": "F",
+          "text": "Letting a child know in advance that an activity or routine is about to change."
+        }
+      ],
+      "correctOptionId": "q015_a",
+      "correctDefinition": "A strength or support that reduces risk and improves family wellbeing.",
+      "explanation": "Protective factor means: A strength or support that reduces risk and improves family wellbeing.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_016",
+      "number": 16,
+      "assessmentType": "definition_meaning_match",
+      "term": "Risk factor",
+      "prompt": "Which meaning best matches “Risk factor”?",
+      "options": [
+        {
+          "id": "q016_a",
+          "label": "A",
+          "text": "The child’s feelings, experiences, views, preferences and concerns."
+        },
+        {
+          "id": "q016_b",
+          "label": "B",
+          "text": "Trying to understand another person’s feelings and point of view."
+        },
+        {
+          "id": "q016_c",
+          "label": "C",
+          "text": "Feeling overly alert, anxious, restless or ready to react to danger."
+        },
+        {
+          "id": "q016_d",
+          "label": "D",
+          "text": "Something important for safety, health, connection or development that has not been provided."
+        },
+        {
+          "id": "q016_e",
+          "label": "E",
+          "text": "Offering acceptable options while maintaining necessary safety boundaries."
+        },
+        {
+          "id": "q016_f",
+          "label": "F",
+          "text": "A condition or behaviour that may increase the chance of harm."
+        }
+      ],
+      "correctOptionId": "q016_f",
+      "correctDefinition": "A condition or behaviour that may increase the chance of harm.",
+      "explanation": "Risk factor means: A condition or behaviour that may increase the chance of harm.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_017",
+      "number": 17,
+      "assessmentType": "definition_meaning_match",
+      "term": "Safety plan",
+      "prompt": "Which meaning best matches “Safety plan”?",
+      "options": [
+        {
+          "id": "q017_a",
+          "label": "A",
+          "text": "Decisions focused on what most supports the child’s safety and development."
+        },
+        {
+          "id": "q017_b",
+          "label": "B",
+          "text": "Expressing needs and concerns without threats, insults, intimidation or blame."
+        },
+        {
+          "id": "q017_c",
+          "label": "C",
+          "text": "Feeling shut down, disconnected, numb, exhausted or unable to respond."
+        },
+        {
+          "id": "q017_d",
+          "label": "D",
+          "text": "Essentials such as food, water, clothing, shelter, hygiene, healthcare and safety."
+        },
+        {
+          "id": "q017_e",
+          "label": "E",
+          "text": "A clear set of actions for responding to danger or unsafe situations."
+        },
+        {
+          "id": "q017_f",
+          "label": "F",
+          "text": "Identifying a difficulty, considering options and choosing a safe response."
+        }
+      ],
+      "correctOptionId": "q017_e",
+      "correctDefinition": "A clear set of actions for responding to danger or unsafe situations.",
+      "explanation": "Safety plan means: A clear set of actions for responding to danger or unsafe situations.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_018",
+      "number": 18,
+      "assessmentType": "definition_meaning_match",
+      "term": "Support network",
+      "prompt": "Which meaning best matches “Support network”?",
+      "options": [
+        {
+          "id": "q018_a",
+          "label": "A",
+          "text": "Feeling secure enough to express feelings without fear, ridicule or punishment."
+        },
+        {
+          "id": "q018_b",
+          "label": "B",
+          "text": "Working through disagreement to find a safe and respectful solution."
+        },
+        {
+          "id": "q018_c",
+          "label": "C",
+          "text": "A safe action used to manage stress, emotions or difficult situations."
+        },
+        {
+          "id": "q018_d",
+          "label": "D",
+          "text": "Trusted people and services that can provide practical or emotional help."
+        },
+        {
+          "id": "q018_e",
+          "label": "E",
+          "text": "A skill or ability commonly gained during a particular stage of childhood."
+        },
+        {
+          "id": "q018_f",
+          "label": "F",
+          "text": "An adult and child working together to understand and address a difficulty."
+        }
+      ],
+      "correctOptionId": "q018_d",
+      "correctDefinition": "Trusted people and services that can provide practical or emotional help.",
+      "explanation": "Support network means: Trusted people and services that can provide practical or emotional help.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_019",
+      "number": 19,
+      "assessmentType": "definition_meaning_match",
+      "term": "Safe person",
+      "prompt": "Which meaning best matches “Safe person”?",
+      "options": [
+        {
+          "id": "q019_a",
+          "label": "A",
+          "text": "Being protected from injury, violence, dangerous objects and unsafe environments."
+        },
+        {
+          "id": "q019_b",
+          "label": "B",
+          "text": "Reducing the intensity of conflict before it becomes more harmful."
+        },
+        {
+          "id": "q019_c",
+          "label": "C",
+          "text": "A trusted adult a child can approach when worried, frightened or needing help."
+        },
+        {
+          "id": "q019_d",
+          "label": "D",
+          "text": "A technique that helps the body and mind return to a more settled state."
+        },
+        {
+          "id": "q019_e",
+          "label": "E",
+          "text": "When a child develops certain skills later than generally expected."
+        },
+        {
+          "id": "q019_f",
+          "label": "F",
+          "text": "A planned discussion where family members share concerns, ideas and decisions respectfully."
+        }
+      ],
+      "correctOptionId": "q019_c",
+      "correctDefinition": "A trusted adult a child can approach when worried, frightened or needing help.",
+      "explanation": "Safe person means: A trusted adult a child can approach when worried, frightened or needing help.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_020",
+      "number": 20,
+      "assessmentType": "definition_meaning_match",
+      "term": "Personal boundary",
+      "prompt": "Which meaning best matches “Personal boundary”?",
+      "options": [
+        {
+          "id": "q020_a",
+          "label": "A",
+          "text": "Failing to provide a child’s essential care, safety, supervision or basic needs."
+        },
+        {
+          "id": "q020_b",
+          "label": "B",
+          "text": "A limit that protects a person’s safety, privacy and wellbeing."
+        },
+        {
+          "id": "q020_c",
+          "label": "C",
+          "text": "Taking steps to restore trust and connection after hurt or conflict."
+        },
+        {
+          "id": "q020_d",
+          "label": "D",
+          "text": "Paying attention to the present moment without immediately judging it."
+        },
+        {
+          "id": "q020_e",
+          "label": "E",
+          "text": "A personal variation in temperament, ability, culture, development or experience."
+        },
+        {
+          "id": "q020_f",
+          "label": "F",
+          "text": "Including relevant people in decisions that affect their lives whenever safe and appropriate."
+        }
+      ],
+      "correctOptionId": "q020_b",
+      "correctDefinition": "A limit that protects a person’s safety, privacy and wellbeing.",
+      "explanation": "Personal boundary means: A limit that protects a person’s safety, privacy and wellbeing.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_021",
+      "number": 21,
+      "assessmentType": "definition_meaning_match",
+      "term": "Consent",
+      "prompt": "Which meaning best matches “Consent”?",
+      "options": [
+        {
+          "id": "q021_a",
+          "label": "A",
+          "text": "Freely agreeing to something with enough information and without pressure."
+        },
+        {
+          "id": "q021_b",
+          "label": "B",
+          "text": "Watching and supporting a child according to their age, abilities and environment."
+        },
+        {
+          "id": "q021_c",
+          "label": "C",
+          "text": "Teaching safe behaviour through guidance, connection and appropriate consequences."
+        },
+        {
+          "id": "q021_d",
+          "label": "D",
+          "text": "Deliberately slowing the breath to help calm the nervous system."
+        },
+        {
+          "id": "q021_e",
+          "label": "E",
+          "text": "The way a child grows physically, emotionally, socially and intellectually."
+        },
+        {
+          "id": "q021_f",
+          "label": "F",
+          "text": "Adults working together to meet a child’s needs, whether or not they are in a relationship."
+        }
+      ],
+      "correctOptionId": "q021_a",
+      "correctDefinition": "Freely agreeing to something with enough information and without pressure.",
+      "explanation": "Consent means: Freely agreeing to something with enough information and without pressure.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_022",
+      "number": 22,
+      "assessmentType": "definition_meaning_match",
+      "term": "Child-centred practice",
+      "prompt": "Which meaning best matches “Child-centred practice”?",
+      "options": [
+        {
+          "id": "q022_a",
+          "label": "A",
+          "text": "The emotional bond that helps a child feel safe, connected and supported."
+        },
+        {
+          "id": "q022_b",
+          "label": "B",
+          "text": "A result that happens without an adult creating the outcome."
+        },
+        {
+          "id": "q022_c",
+          "label": "C",
+          "text": "Recognising physical sensations that may signal emotions, stress or safety needs."
+        },
+        {
+          "id": "q022_d",
+          "label": "D",
+          "text": "Mental skills used for planning, attention, memory, organisation and self-control."
+        },
+        {
+          "id": "q022_e",
+          "label": "E",
+          "text": "A structured arrangement that limits direct conflict between separated parents."
+        },
+        {
+          "id": "q022_f",
+          "label": "F",
+          "text": "Making decisions with the child’s safety, needs and wellbeing as the priority."
+        }
+      ],
+      "correctOptionId": "q022_f",
+      "correctDefinition": "Making decisions with the child’s safety, needs and wellbeing as the priority.",
+      "explanation": "Child-centred practice means: Making decisions with the child’s safety, needs and wellbeing as the priority.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_023",
+      "number": 23,
+      "assessmentType": "definition_meaning_match",
+      "term": "Voice of the child",
+      "prompt": "Which meaning best matches “Voice of the child”?",
+      "options": [
+        {
+          "id": "q023_a",
+          "label": "A",
+          "text": "A trusting relationship in which a child expects comfort, protection and care."
+        },
+        {
+          "id": "q023_b",
+          "label": "B",
+          "text": "A respectful consequence directly connected to the behaviour."
+        },
+        {
+          "id": "q023_c",
+          "label": "C",
+          "text": "A small change that indicates stress or dysregulation may be increasing."
+        },
+        {
+          "id": "q023_d",
+          "label": "D",
+          "text": "The ability to pause and consider consequences before acting."
+        },
+        {
+          "id": "q023_e",
+          "label": "E",
+          "text": "The child’s feelings, experiences, views, preferences and concerns."
+        },
+        {
+          "id": "q023_f",
+          "label": "F",
+          "text": "Behaviour used to control, threaten, frighten or harm a family member."
+        }
+      ],
+      "correctOptionId": "q023_e",
+      "correctDefinition": "The child’s feelings, experiences, views, preferences and concerns.",
+      "explanation": "Voice of the child means: The child’s feelings, experiences, views, preferences and concerns.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_024",
+      "number": 24,
+      "assessmentType": "definition_meaning_match",
+      "term": "Best interests of the child",
+      "prompt": "Which meaning best matches “Best interests of the child”?",
+      "options": [
+        {
+          "id": "q024_a",
+          "label": "A",
+          "text": "Noticing and responding appropriately to a child’s emotional and physical cues."
+        },
+        {
+          "id": "q024_b",
+          "label": "B",
+          "text": "Responding reliably and following through on reasonable expectations."
+        },
+        {
+          "id": "q024_c",
+          "label": "C",
+          "text": "A prepared way to stop, regulate and think before responding."
+        },
+        {
+          "id": "q024_d",
+          "label": "D",
+          "text": "Decisions focused on what most supports the child’s safety and development."
+        },
+        {
+          "id": "q024_e",
+          "label": "E",
+          "text": "A need relating to how the nervous system responds to sound, touch, movement, light or other sensations."
+        },
+        {
+          "id": "q024_f",
+          "label": "F",
+          "text": "A repeated pattern of behaviour used to dominate, isolate or restrict another person."
+        }
+      ],
+      "correctOptionId": "q024_d",
+      "correctDefinition": "Decisions focused on what most supports the child’s safety and development.",
+      "explanation": "Best interests of the child means: Decisions focused on what most supports the child’s safety and development.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_025",
+      "number": 25,
+      "assessmentType": "definition_meaning_match",
+      "term": "Emotional safety",
+      "prompt": "Which meaning best matches “Emotional safety”?",
+      "options": [
+        {
+          "id": "q025_a",
+          "label": "A",
+          "text": "Building safety and connection before addressing a child’s behaviour."
+        },
+        {
+          "id": "q025_b",
+          "label": "B",
+          "text": "A predictable pattern of activities that supports stability and security."
+        },
+        {
+          "id": "q025_c",
+          "label": "C",
+          "text": "Feeling secure enough to express feelings without fear, ridicule or punishment."
+        },
+        {
+          "id": "q025_d",
+          "label": "D",
+          "text": "The ability to recognise, name, understand and communicate emotions."
+        },
+        {
+          "id": "q025_e",
+          "label": "E",
+          "text": "Encouragement or recognition that increases the likelihood of a helpful behaviour recurring."
+        },
+        {
+          "id": "q025_f",
+          "label": "F",
+          "text": "Controlling money or resources to restrict another person’s independence and choices."
+        }
+      ],
+      "correctOptionId": "q025_c",
+      "correctDefinition": "Feeling secure enough to express feelings without fear, ridicule or punishment.",
+      "explanation": "Emotional safety means: Feeling secure enough to express feelings without fear, ridicule or punishment.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_026",
+      "number": 26,
+      "assessmentType": "definition_meaning_match",
+      "term": "Physical safety",
+      "prompt": "Which meaning best matches “Physical safety”?",
+      "options": [
+        {
+          "id": "q026_a",
+          "label": "A",
+          "text": "Showing that another person’s feelings and experiences have been heard and understood."
+        },
+        {
+          "id": "q026_b",
+          "label": "B",
+          "text": "Being protected from injury, violence, dangerous objects and unsafe environments."
+        },
+        {
+          "id": "q026_c",
+          "label": "C",
+          "text": "A requirement that matches the child’s developmental abilities and needs."
+        },
+        {
+          "id": "q026_d",
+          "label": "D",
+          "text": "Understanding emotions and using that knowledge to guide safe behaviour and relationships."
+        },
+        {
+          "id": "q026_e",
+          "label": "E",
+          "text": "Positive feedback that recognises a child’s effort, behaviour or achievement."
+        },
+        {
+          "id": "q026_f",
+          "label": "F",
+          "text": "Repeated behaviour that humiliates, frightens, controls or damages emotional wellbeing."
+        }
+      ],
+      "correctOptionId": "q026_b",
+      "correctDefinition": "Being protected from injury, violence, dangerous objects and unsafe environments.",
+      "explanation": "Physical safety means: Being protected from injury, violence, dangerous objects and unsafe environments.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_027",
+      "number": 27,
+      "assessmentType": "definition_meaning_match",
+      "term": "Neglect",
+      "prompt": "Which meaning best matches “Neglect”?",
+      "options": [
+        {
+          "id": "q027_a",
+          "label": "A",
+          "text": "Failing to provide a child’s essential care, safety, supervision or basic needs."
+        },
+        {
+          "id": "q027_b",
+          "label": "B",
+          "text": "Giving full attention and checking that you correctly understand the speaker."
+        },
+        {
+          "id": "q027_c",
+          "label": "C",
+          "text": "An action that may communicate a child’s feeling, need or difficulty."
+        },
+        {
+          "id": "q027_d",
+          "label": "D",
+          "text": "The ability to recover, adapt and continue after stress or difficulty."
+        },
+        {
+          "id": "q027_e",
+          "label": "E",
+          "text": "Support that helps a child keep trying, learning or solving a problem."
+        },
+        {
+          "id": "q027_f",
+          "label": "F",
+          "text": "Using devices or online services to monitor, threaten, harass or control someone."
+        }
+      ],
+      "correctOptionId": "q027_a",
+      "correctDefinition": "Failing to provide a child’s essential care, safety, supervision or basic needs.",
+      "explanation": "Neglect means: Failing to provide a child’s essential care, safety, supervision or basic needs.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_028",
+      "number": 28,
+      "assessmentType": "definition_meaning_match",
+      "term": "Supervision",
+      "prompt": "Which meaning best matches “Supervision”?",
+      "options": [
+        {
+          "id": "q028_a",
+          "label": "A",
+          "text": "Trying to understand another person’s feelings and point of view."
+        },
+        {
+          "id": "q028_b",
+          "label": "B",
+          "text": "Information showing that safer behaviour has been demonstrated consistently over time."
+        },
+        {
+          "id": "q028_c",
+          "label": "C",
+          "text": "Healthy actions that support physical, emotional and mental wellbeing."
+        },
+        {
+          "id": "q028_d",
+          "label": "D",
+          "text": "Demonstrating the behaviour you want a child to learn and use."
+        },
+        {
+          "id": "q028_e",
+          "label": "E",
+          "text": "Sharing a concern or harmful experience with a trusted person in a supported way."
+        },
+        {
+          "id": "q028_f",
+          "label": "F",
+          "text": "Watching and supporting a child according to their age, abilities and environment."
+        }
+      ],
+      "correctOptionId": "q028_f",
+      "correctDefinition": "Watching and supporting a child according to their age, abilities and environment.",
+      "explanation": "Supervision means: Watching and supporting a child according to their age, abilities and environment.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_029",
+      "number": 29,
+      "assessmentType": "definition_meaning_match",
+      "term": "Attachment",
+      "prompt": "Which meaning best matches “Attachment”?",
+      "options": [
+        {
+          "id": "q029_a",
+          "label": "A",
+          "text": "Expressing needs and concerns without threats, insults, intimidation or blame."
+        },
+        {
+          "id": "q029_b",
+          "label": "B",
+          "text": "A dated and organised record of actions, progress, challenges or completed tasks."
+        },
+        {
+          "id": "q029_c",
+          "label": "C",
+          "text": "Physical and emotional exhaustion caused by prolonged stress and overwhelming demands."
+        },
+        {
+          "id": "q029_d",
+          "label": "D",
+          "text": "Guiding a child away from unsafe behaviour and towards a safer choice."
+        },
+        {
+          "id": "q029_e",
+          "label": "E",
+          "text": "The emotional bond that helps a child feel safe, connected and supported."
+        },
+        {
+          "id": "q029_f",
+          "label": "F",
+          "text": "A legal duty held by specified professionals to report certain child-safety concerns."
+        }
+      ],
+      "correctOptionId": "q029_e",
+      "correctDefinition": "The emotional bond that helps a child feel safe, connected and supported.",
+      "explanation": "Attachment means: The emotional bond that helps a child feel safe, connected and supported.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_030",
+      "number": 30,
+      "assessmentType": "definition_meaning_match",
+      "term": "Secure attachment",
+      "prompt": "Which meaning best matches “Secure attachment”?",
+      "options": [
+        {
+          "id": "q030_a",
+          "label": "A",
+          "text": "Working through disagreement to find a safe and respectful solution."
+        },
+        {
+          "id": "q030_b",
+          "label": "B",
+          "text": "Recognising abilities, progress, resources and protective qualities while addressing concerns."
+        },
+        {
+          "id": "q030_c",
+          "label": "C",
+          "text": "A parent’s ability to consistently meet their child’s safety, care and developmental needs."
+        },
+        {
+          "id": "q030_d",
+          "label": "D",
+          "text": "A trusting relationship in which a child expects comfort, protection and care."
+        },
+        {
+          "id": "q030_e",
+          "label": "E",
+          "text": "Clearly and respectfully explaining what behaviour is and is not acceptable."
+        },
+        {
+          "id": "q030_f",
+          "label": "F",
+          "text": "Managing emotions and behaviour in a safe and healthy way."
+        }
+      ],
+      "correctOptionId": "q030_d",
+      "correctDefinition": "A trusting relationship in which a child expects comfort, protection and care.",
+      "explanation": "Secure attachment means: A trusting relationship in which a child expects comfort, protection and care.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_031",
+      "number": 31,
+      "assessmentType": "definition_meaning_match",
+      "term": "Attunement",
+      "prompt": "Which meaning best matches “Attunement”?",
+      "options": [
+        {
+          "id": "q031_a",
+          "label": "A",
+          "text": "Reducing the intensity of conflict before it becomes more harmful."
+        },
+        {
+          "id": "q031_b",
+          "label": "B",
+          "text": "Safely returning a child to a parent’s care when the required conditions have been met."
+        },
+        {
+          "id": "q031_c",
+          "label": "C",
+          "text": "Noticing and responding appropriately to a child’s emotional and physical cues."
+        },
+        {
+          "id": "q031_d",
+          "label": "D",
+          "text": "An ability, behaviour or resource that supports positive outcomes for a child."
+        },
+        {
+          "id": "q031_e",
+          "label": "E",
+          "text": "An agreed expectation intended to support safety, respect and daily functioning."
+        },
+        {
+          "id": "q031_f",
+          "label": "F",
+          "text": "Helping another person calm down through connection, reassurance and support."
+        }
+      ],
+      "correctOptionId": "q031_c",
+      "correctDefinition": "Noticing and responding appropriately to a child’s emotional and physical cues.",
+      "explanation": "Attunement means: Noticing and responding appropriately to a child’s emotional and physical cues.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_032",
+      "number": 32,
+      "assessmentType": "definition_meaning_match",
+      "term": "Connection before correction",
+      "prompt": "Which meaning best matches “Connection before correction”?",
+      "options": [
+        {
+          "id": "q032_a",
+          "label": "A",
+          "text": "Taking steps to restore trust and connection after hurt or conflict."
+        },
+        {
+          "id": "q032_b",
+          "label": "B",
+          "text": "Building safety and connection before addressing a child’s behaviour."
+        },
+        {
+          "id": "q032_c",
+          "label": "C",
+          "text": "Supporting someone with awareness of how trauma may affect their feelings, behaviour and needs."
+        },
+        {
+          "id": "q032_d",
+          "label": "D",
+          "text": "Something important for safety, health, connection or development that has not been provided."
+        },
+        {
+          "id": "q032_e",
+          "label": "E",
+          "text": "Helping a child know what is likely to happen and what is expected."
+        },
+        {
+          "id": "q032_f",
+          "label": "F",
+          "text": "A state where emotions or body reactions become difficult to manage."
+        }
+      ],
+      "correctOptionId": "q032_b",
+      "correctDefinition": "Building safety and connection before addressing a child’s behaviour.",
+      "explanation": "Connection before correction means: Building safety and connection before addressing a child’s behaviour.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_033",
+      "number": 33,
+      "assessmentType": "definition_meaning_match",
+      "term": "Validation",
+      "prompt": "Which meaning best matches “Validation”?",
+      "options": [
+        {
+          "id": "q033_a",
+          "label": "A",
+          "text": "Showing that another person’s feelings and experiences have been heard and understood."
+        },
+        {
+          "id": "q033_b",
+          "label": "B",
+          "text": "Teaching safe behaviour through guidance, connection and appropriate consequences."
+        },
+        {
+          "id": "q033_c",
+          "label": "C",
+          "text": "An emotional, physical or behavioural reaction connected to a frightening or harmful experience."
+        },
+        {
+          "id": "q033_d",
+          "label": "D",
+          "text": "Essentials such as food, water, clothing, shelter, hygiene, healthcare and safety."
+        },
+        {
+          "id": "q033_e",
+          "label": "E",
+          "text": "Letting a child know in advance that an activity or routine is about to change."
+        },
+        {
+          "id": "q033_f",
+          "label": "F",
+          "text": "Something that causes a strong emotional or physical reaction."
+        }
+      ],
+      "correctOptionId": "q033_a",
+      "correctDefinition": "Showing that another person’s feelings and experiences have been heard and understood.",
+      "explanation": "Validation means: Showing that another person’s feelings and experiences have been heard and understood.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_034",
+      "number": 34,
+      "assessmentType": "definition_meaning_match",
+      "term": "Active listening",
+      "prompt": "Which meaning best matches “Active listening”?",
+      "options": [
+        {
+          "id": "q034_a",
+          "label": "A",
+          "text": "A result that happens without an adult creating the outcome."
+        },
+        {
+          "id": "q034_b",
+          "label": "B",
+          "text": "Feeling overly alert, anxious, restless or ready to react to danger."
+        },
+        {
+          "id": "q034_c",
+          "label": "C",
+          "text": "A skill or ability commonly gained during a particular stage of childhood."
+        },
+        {
+          "id": "q034_d",
+          "label": "D",
+          "text": "Offering acceptable options while maintaining necessary safety boundaries."
+        },
+        {
+          "id": "q034_e",
+          "label": "E",
+          "text": "Using the senses or body to reconnect with the present moment."
+        },
+        {
+          "id": "q034_f",
+          "label": "F",
+          "text": "Giving full attention and checking that you correctly understand the speaker."
+        }
+      ],
+      "correctOptionId": "q034_f",
+      "correctDefinition": "Giving full attention and checking that you correctly understand the speaker.",
+      "explanation": "Active listening means: Giving full attention and checking that you correctly understand the speaker.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_035",
+      "number": 35,
+      "assessmentType": "definition_meaning_match",
+      "term": "Empathy",
+      "prompt": "Which meaning best matches “Empathy”?",
+      "options": [
+        {
+          "id": "q035_a",
+          "label": "A",
+          "text": "A respectful consequence directly connected to the behaviour."
+        },
+        {
+          "id": "q035_b",
+          "label": "B",
+          "text": "Feeling shut down, disconnected, numb, exhausted or unable to respond."
+        },
+        {
+          "id": "q035_c",
+          "label": "C",
+          "text": "When a child develops certain skills later than generally expected."
+        },
+        {
+          "id": "q035_d",
+          "label": "D",
+          "text": "Identifying a difficulty, considering options and choosing a safe response."
+        },
+        {
+          "id": "q035_e",
+          "label": "E",
+          "text": "Trying to understand another person’s feelings and point of view."
+        },
+        {
+          "id": "q035_f",
+          "label": "F",
+          "text": "The emotional zone where a person can think, feel and respond effectively."
+        }
+      ],
+      "correctOptionId": "q035_e",
+      "correctDefinition": "Trying to understand another person’s feelings and point of view.",
+      "explanation": "Empathy means: Trying to understand another person’s feelings and point of view.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_036",
+      "number": 36,
+      "assessmentType": "definition_meaning_match",
+      "term": "Respectful communication",
+      "prompt": "Which meaning best matches “Respectful communication”?",
+      "options": [
+        {
+          "id": "q036_a",
+          "label": "A",
+          "text": "Responding reliably and following through on reasonable expectations."
+        },
+        {
+          "id": "q036_b",
+          "label": "B",
+          "text": "A safe action used to manage stress, emotions or difficult situations."
+        },
+        {
+          "id": "q036_c",
+          "label": "C",
+          "text": "A personal variation in temperament, ability, culture, development or experience."
+        },
+        {
+          "id": "q036_d",
+          "label": "D",
+          "text": "Expressing needs and concerns without threats, insults, intimidation or blame."
+        },
+        {
+          "id": "q036_e",
+          "label": "E",
+          "text": "An adult and child working together to understand and address a difficulty."
+        },
+        {
+          "id": "q036_f",
+          "label": "F",
+          "text": "Reacting to danger through anger, aggression, arguing or confrontation."
+        }
+      ],
+      "correctOptionId": "q036_d",
+      "correctDefinition": "Expressing needs and concerns without threats, insults, intimidation or blame.",
+      "explanation": "Respectful communication means: Expressing needs and concerns without threats, insults, intimidation or blame.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_037",
+      "number": 37,
+      "assessmentType": "definition_meaning_match",
+      "term": "Conflict resolution",
+      "prompt": "Which meaning best matches “Conflict resolution”?",
+      "options": [
+        {
+          "id": "q037_a",
+          "label": "A",
+          "text": "A predictable pattern of activities that supports stability and security."
+        },
+        {
+          "id": "q037_b",
+          "label": "B",
+          "text": "A technique that helps the body and mind return to a more settled state."
+        },
+        {
+          "id": "q037_c",
+          "label": "C",
+          "text": "Working through disagreement to find a safe and respectful solution."
+        },
+        {
+          "id": "q037_d",
+          "label": "D",
+          "text": "The way a child grows physically, emotionally, socially and intellectually."
+        },
+        {
+          "id": "q037_e",
+          "label": "E",
+          "text": "A planned discussion where family members share concerns, ideas and decisions respectfully."
+        },
+        {
+          "id": "q037_f",
+          "label": "F",
+          "text": "Reacting to danger by escaping, avoiding or becoming restless."
+        }
+      ],
+      "correctOptionId": "q037_c",
+      "correctDefinition": "Working through disagreement to find a safe and respectful solution.",
+      "explanation": "Conflict resolution means: Working through disagreement to find a safe and respectful solution.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_038",
+      "number": 38,
+      "assessmentType": "definition_meaning_match",
+      "term": "De-escalation",
+      "prompt": "Which meaning best matches “De-escalation”?",
+      "options": [
+        {
+          "id": "q038_a",
+          "label": "A",
+          "text": "A requirement that matches the child’s developmental abilities and needs."
+        },
+        {
+          "id": "q038_b",
+          "label": "B",
+          "text": "Reducing the intensity of conflict before it becomes more harmful."
+        },
+        {
+          "id": "q038_c",
+          "label": "C",
+          "text": "Paying attention to the present moment without immediately judging it."
+        },
+        {
+          "id": "q038_d",
+          "label": "D",
+          "text": "Mental skills used for planning, attention, memory, organisation and self-control."
+        },
+        {
+          "id": "q038_e",
+          "label": "E",
+          "text": "Including relevant people in decisions that affect their lives whenever safe and appropriate."
+        },
+        {
+          "id": "q038_f",
+          "label": "F",
+          "text": "Reacting to danger by becoming still, numb, silent or unable to act."
+        }
+      ],
+      "correctOptionId": "q038_b",
+      "correctDefinition": "Reducing the intensity of conflict before it becomes more harmful.",
+      "explanation": "De-escalation means: Reducing the intensity of conflict before it becomes more harmful.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_039",
+      "number": 39,
+      "assessmentType": "definition_meaning_match",
+      "term": "Repair",
+      "prompt": "Which meaning best matches “Repair”?",
+      "options": [
+        {
+          "id": "q039_a",
+          "label": "A",
+          "text": "Taking steps to restore trust and connection after hurt or conflict."
+        },
+        {
+          "id": "q039_b",
+          "label": "B",
+          "text": "An action that may communicate a child’s feeling, need or difficulty."
+        },
+        {
+          "id": "q039_c",
+          "label": "C",
+          "text": "Deliberately slowing the breath to help calm the nervous system."
+        },
+        {
+          "id": "q039_d",
+          "label": "D",
+          "text": "The ability to pause and consider consequences before acting."
+        },
+        {
+          "id": "q039_e",
+          "label": "E",
+          "text": "Adults working together to meet a child’s needs, whether or not they are in a relationship."
+        },
+        {
+          "id": "q039_f",
+          "label": "F",
+          "text": "Trying to avoid danger by pleasing, agreeing with or submitting to others."
+        }
+      ],
+      "correctOptionId": "q039_a",
+      "correctDefinition": "Taking steps to restore trust and connection after hurt or conflict.",
+      "explanation": "Repair means: Taking steps to restore trust and connection after hurt or conflict.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_040",
+      "number": 40,
+      "assessmentType": "definition_meaning_match",
+      "term": "Positive discipline",
+      "prompt": "Which meaning best matches “Positive discipline”?",
+      "options": [
+        {
+          "id": "q040_a",
+          "label": "A",
+          "text": "Information showing that safer behaviour has been demonstrated consistently over time."
+        },
+        {
+          "id": "q040_b",
+          "label": "B",
+          "text": "Recognising physical sensations that may signal emotions, stress or safety needs."
+        },
+        {
+          "id": "q040_c",
+          "label": "C",
+          "text": "A need relating to how the nervous system responds to sound, touch, movement, light or other sensations."
+        },
+        {
+          "id": "q040_d",
+          "label": "D",
+          "text": "A structured arrangement that limits direct conflict between separated parents."
+        },
+        {
+          "id": "q040_e",
+          "label": "E",
+          "text": "Recognising your own thoughts, feelings, behaviours and reactions."
+        },
+        {
+          "id": "q040_f",
+          "label": "F",
+          "text": "Teaching safe behaviour through guidance, connection and appropriate consequences."
+        }
+      ],
+      "correctOptionId": "q040_f",
+      "correctDefinition": "Teaching safe behaviour through guidance, connection and appropriate consequences.",
+      "explanation": "Positive discipline means: Teaching safe behaviour through guidance, connection and appropriate consequences.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_041",
+      "number": 41,
+      "assessmentType": "definition_meaning_match",
+      "term": "Natural consequence",
+      "prompt": "Which meaning best matches “Natural consequence”?",
+      "options": [
+        {
+          "id": "q041_a",
+          "label": "A",
+          "text": "A dated and organised record of actions, progress, challenges or completed tasks."
+        },
+        {
+          "id": "q041_b",
+          "label": "B",
+          "text": "A small change that indicates stress or dysregulation may be increasing."
+        },
+        {
+          "id": "q041_c",
+          "label": "C",
+          "text": "Encouragement or recognition that increases the likelihood of a helpful behaviour recurring."
+        },
+        {
+          "id": "q041_d",
+          "label": "D",
+          "text": "Behaviour used to control, threaten, frighten or harm a family member."
+        },
+        {
+          "id": "q041_e",
+          "label": "E",
+          "text": "A result that happens without an adult creating the outcome."
+        },
+        {
+          "id": "q041_f",
+          "label": "F",
+          "text": "Thinking honestly about your actions and what you could learn from them."
+        }
+      ],
+      "correctOptionId": "q041_e",
+      "correctDefinition": "A result that happens without an adult creating the outcome.",
+      "explanation": "Natural consequence means: A result that happens without an adult creating the outcome.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_042",
+      "number": 42,
+      "assessmentType": "definition_meaning_match",
+      "term": "Logical consequence",
+      "prompt": "Which meaning best matches “Logical consequence”?",
+      "options": [
+        {
+          "id": "q042_a",
+          "label": "A",
+          "text": "Recognising abilities, progress, resources and protective qualities while addressing concerns."
+        },
+        {
+          "id": "q042_b",
+          "label": "B",
+          "text": "A prepared way to stop, regulate and think before responding."
+        },
+        {
+          "id": "q042_c",
+          "label": "C",
+          "text": "Positive feedback that recognises a child’s effort, behaviour or achievement."
+        },
+        {
+          "id": "q042_d",
+          "label": "D",
+          "text": "A respectful consequence directly connected to the behaviour."
+        },
+        {
+          "id": "q042_e",
+          "label": "E",
+          "text": "A repeated pattern of behaviour used to dominate, isolate or restrict another person."
+        },
+        {
+          "id": "q042_f",
+          "label": "F",
+          "text": "Accepting responsibility for your choices and their effects."
+        }
+      ],
+      "correctOptionId": "q042_d",
+      "correctDefinition": "A respectful consequence directly connected to the behaviour.",
+      "explanation": "Logical consequence means: A respectful consequence directly connected to the behaviour.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_043",
+      "number": 43,
+      "assessmentType": "definition_meaning_match",
+      "term": "Consistency",
+      "prompt": "Which meaning best matches “Consistency”?",
+      "options": [
+        {
+          "id": "q043_a",
+          "label": "A",
+          "text": "Safely returning a child to a parent’s care when the required conditions have been met."
+        },
+        {
+          "id": "q043_b",
+          "label": "B",
+          "text": "The ability to recognise, name, understand and communicate emotions."
+        },
+        {
+          "id": "q043_c",
+          "label": "C",
+          "text": "Responding reliably and following through on reasonable expectations."
+        },
+        {
+          "id": "q043_d",
+          "label": "D",
+          "text": "Support that helps a child keep trying, learning or solving a problem."
+        },
+        {
+          "id": "q043_e",
+          "label": "E",
+          "text": "Controlling money or resources to restrict another person’s independence and choices."
+        },
+        {
+          "id": "q043_f",
+          "label": "F",
+          "text": "Understanding why something happened and how your behaviour affected others."
+        }
+      ],
+      "correctOptionId": "q043_c",
+      "correctDefinition": "Responding reliably and following through on reasonable expectations.",
+      "explanation": "Consistency means: Responding reliably and following through on reasonable expectations.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_044",
+      "number": 44,
+      "assessmentType": "definition_meaning_match",
+      "term": "Routine",
+      "prompt": "Which meaning best matches “Routine”?",
+      "options": [
+        {
+          "id": "q044_a",
+          "label": "A",
+          "text": "Supporting someone with awareness of how trauma may affect their feelings, behaviour and needs."
+        },
+        {
+          "id": "q044_b",
+          "label": "B",
+          "text": "A predictable pattern of activities that supports stability and security."
+        },
+        {
+          "id": "q044_c",
+          "label": "C",
+          "text": "Understanding emotions and using that knowledge to guide safe behaviour and relationships."
+        },
+        {
+          "id": "q044_d",
+          "label": "D",
+          "text": "Demonstrating the behaviour you want a child to learn and use."
+        },
+        {
+          "id": "q044_e",
+          "label": "E",
+          "text": "Repeated behaviour that humiliates, frightens, controls or damages emotional wellbeing."
+        },
+        {
+          "id": "q044_f",
+          "label": "F",
+          "text": "A strength or support that reduces risk and improves family wellbeing."
+        }
+      ],
+      "correctOptionId": "q044_b",
+      "correctDefinition": "A predictable pattern of activities that supports stability and security.",
+      "explanation": "Routine means: A predictable pattern of activities that supports stability and security.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_045",
+      "number": 45,
+      "assessmentType": "definition_meaning_match",
+      "term": "Age-appropriate expectation",
+      "prompt": "Which meaning best matches “Age-appropriate expectation”?",
+      "options": [
+        {
+          "id": "q045_a",
+          "label": "A",
+          "text": "A requirement that matches the child’s developmental abilities and needs."
+        },
+        {
+          "id": "q045_b",
+          "label": "B",
+          "text": "An emotional, physical or behavioural reaction connected to a frightening or harmful experience."
+        },
+        {
+          "id": "q045_c",
+          "label": "C",
+          "text": "The ability to recover, adapt and continue after stress or difficulty."
+        },
+        {
+          "id": "q045_d",
+          "label": "D",
+          "text": "Guiding a child away from unsafe behaviour and towards a safer choice."
+        },
+        {
+          "id": "q045_e",
+          "label": "E",
+          "text": "Using devices or online services to monitor, threaten, harass or control someone."
+        },
+        {
+          "id": "q045_f",
+          "label": "F",
+          "text": "A condition or behaviour that may increase the chance of harm."
+        }
+      ],
+      "correctOptionId": "q045_a",
+      "correctDefinition": "A requirement that matches the child’s developmental abilities and needs.",
+      "explanation": "Age-appropriate expectation means: A requirement that matches the child’s developmental abilities and needs.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_046",
+      "number": 46,
+      "assessmentType": "definition_meaning_match",
+      "term": "Behaviour cue",
+      "prompt": "Which meaning best matches “Behaviour cue”?",
+      "options": [
+        {
+          "id": "q046_a",
+          "label": "A",
+          "text": "Feeling overly alert, anxious, restless or ready to react to danger."
+        },
+        {
+          "id": "q046_b",
+          "label": "B",
+          "text": "Healthy actions that support physical, emotional and mental wellbeing."
+        },
+        {
+          "id": "q046_c",
+          "label": "C",
+          "text": "Clearly and respectfully explaining what behaviour is and is not acceptable."
+        },
+        {
+          "id": "q046_d",
+          "label": "D",
+          "text": "Sharing a concern or harmful experience with a trusted person in a supported way."
+        },
+        {
+          "id": "q046_e",
+          "label": "E",
+          "text": "A clear set of actions for responding to danger or unsafe situations."
+        },
+        {
+          "id": "q046_f",
+          "label": "F",
+          "text": "An action that may communicate a child’s feeling, need or difficulty."
+        }
+      ],
+      "correctOptionId": "q046_f",
+      "correctDefinition": "An action that may communicate a child’s feeling, need or difficulty.",
+      "explanation": "Behaviour cue means: An action that may communicate a child’s feeling, need or difficulty.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_047",
+      "number": 47,
+      "assessmentType": "definition_meaning_match",
+      "term": "Evidence of change",
+      "prompt": "Which meaning best matches “Evidence of change”?",
+      "options": [
+        {
+          "id": "q047_a",
+          "label": "A",
+          "text": "Feeling shut down, disconnected, numb, exhausted or unable to respond."
+        },
+        {
+          "id": "q047_b",
+          "label": "B",
+          "text": "Physical and emotional exhaustion caused by prolonged stress and overwhelming demands."
+        },
+        {
+          "id": "q047_c",
+          "label": "C",
+          "text": "An agreed expectation intended to support safety, respect and daily functioning."
+        },
+        {
+          "id": "q047_d",
+          "label": "D",
+          "text": "A legal duty held by specified professionals to report certain child-safety concerns."
+        },
+        {
+          "id": "q047_e",
+          "label": "E",
+          "text": "Information showing that safer behaviour has been demonstrated consistently over time."
+        },
+        {
+          "id": "q047_f",
+          "label": "F",
+          "text": "Trusted people and services that can provide practical or emotional help."
+        }
+      ],
+      "correctOptionId": "q047_e",
+      "correctDefinition": "Information showing that safer behaviour has been demonstrated consistently over time.",
+      "explanation": "Evidence of change means: Information showing that safer behaviour has been demonstrated consistently over time.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_048",
+      "number": 48,
+      "assessmentType": "definition_meaning_match",
+      "term": "Evidence record",
+      "prompt": "Which meaning best matches “Evidence record”?",
+      "options": [
+        {
+          "id": "q048_a",
+          "label": "A",
+          "text": "A safe action used to manage stress, emotions or difficult situations."
+        },
+        {
+          "id": "q048_b",
+          "label": "B",
+          "text": "A parent’s ability to consistently meet their child’s safety, care and developmental needs."
+        },
+        {
+          "id": "q048_c",
+          "label": "C",
+          "text": "Helping a child know what is likely to happen and what is expected."
+        },
+        {
+          "id": "q048_d",
+          "label": "D",
+          "text": "A dated and organised record of actions, progress, challenges or completed tasks."
+        },
+        {
+          "id": "q048_e",
+          "label": "E",
+          "text": "Managing emotions and behaviour in a safe and healthy way."
+        },
+        {
+          "id": "q048_f",
+          "label": "F",
+          "text": "A trusted adult a child can approach when worried, frightened or needing help."
+        }
+      ],
+      "correctOptionId": "q048_d",
+      "correctDefinition": "A dated and organised record of actions, progress, challenges or completed tasks.",
+      "explanation": "Evidence record means: A dated and organised record of actions, progress, challenges or completed tasks.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_049",
+      "number": 49,
+      "assessmentType": "definition_meaning_match",
+      "term": "Strength-based practice",
+      "prompt": "Which meaning best matches “Strength-based practice”?",
+      "options": [
+        {
+          "id": "q049_a",
+          "label": "A",
+          "text": "A technique that helps the body and mind return to a more settled state."
+        },
+        {
+          "id": "q049_b",
+          "label": "B",
+          "text": "An ability, behaviour or resource that supports positive outcomes for a child."
+        },
+        {
+          "id": "q049_c",
+          "label": "C",
+          "text": "Recognising abilities, progress, resources and protective qualities while addressing concerns."
+        },
+        {
+          "id": "q049_d",
+          "label": "D",
+          "text": "Letting a child know in advance that an activity or routine is about to change."
+        },
+        {
+          "id": "q049_e",
+          "label": "E",
+          "text": "Helping another person calm down through connection, reassurance and support."
+        },
+        {
+          "id": "q049_f",
+          "label": "F",
+          "text": "A limit that protects a person’s safety, privacy and wellbeing."
+        }
+      ],
+      "correctOptionId": "q049_c",
+      "correctDefinition": "Recognising abilities, progress, resources and protective qualities while addressing concerns.",
+      "explanation": "Strength-based practice means: Recognising abilities, progress, resources and protective qualities while addressing concerns.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_050",
+      "number": 50,
+      "assessmentType": "definition_meaning_match",
+      "term": "Reunification",
+      "prompt": "Which meaning best matches “Reunification”?",
+      "options": [
+        {
+          "id": "q050_a",
+          "label": "A",
+          "text": "Paying attention to the present moment without immediately judging it."
+        },
+        {
+          "id": "q050_b",
+          "label": "B",
+          "text": "Safely returning a child to a parent’s care when the required conditions have been met."
+        },
+        {
+          "id": "q050_c",
+          "label": "C",
+          "text": "Something important for safety, health, connection or development that has not been provided."
+        },
+        {
+          "id": "q050_d",
+          "label": "D",
+          "text": "Offering acceptable options while maintaining necessary safety boundaries."
+        },
+        {
+          "id": "q050_e",
+          "label": "E",
+          "text": "A state where emotions or body reactions become difficult to manage."
+        },
+        {
+          "id": "q050_f",
+          "label": "F",
+          "text": "Freely agreeing to something with enough information and without pressure."
+        }
+      ],
+      "correctOptionId": "q050_b",
+      "correctDefinition": "Safely returning a child to a parent’s care when the required conditions have been met.",
+      "explanation": "Reunification means: Safely returning a child to a parent’s care when the required conditions have been met.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_051",
+      "number": 51,
+      "assessmentType": "definition_meaning_match",
+      "term": "Trauma-informed care",
+      "prompt": "Which meaning best matches “Trauma-informed care”?",
+      "options": [
+        {
+          "id": "q051_a",
+          "label": "A",
+          "text": "Supporting someone with awareness of how trauma may affect their feelings, behaviour and needs."
+        },
+        {
+          "id": "q051_b",
+          "label": "B",
+          "text": "Deliberately slowing the breath to help calm the nervous system."
+        },
+        {
+          "id": "q051_c",
+          "label": "C",
+          "text": "Essentials such as food, water, clothing, shelter, hygiene, healthcare and safety."
+        },
+        {
+          "id": "q051_d",
+          "label": "D",
+          "text": "Identifying a difficulty, considering options and choosing a safe response."
+        },
+        {
+          "id": "q051_e",
+          "label": "E",
+          "text": "Something that causes a strong emotional or physical reaction."
+        },
+        {
+          "id": "q051_f",
+          "label": "F",
+          "text": "Making decisions with the child’s safety, needs and wellbeing as the priority."
+        }
+      ],
+      "correctOptionId": "q051_a",
+      "correctDefinition": "Supporting someone with awareness of how trauma may affect their feelings, behaviour and needs.",
+      "explanation": "Trauma-informed care means: Supporting someone with awareness of how trauma may affect their feelings, behaviour and needs.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_052",
+      "number": 52,
+      "assessmentType": "definition_meaning_match",
+      "term": "Trauma response",
+      "prompt": "Which meaning best matches “Trauma response”?",
+      "options": [
+        {
+          "id": "q052_a",
+          "label": "A",
+          "text": "Recognising physical sensations that may signal emotions, stress or safety needs."
+        },
+        {
+          "id": "q052_b",
+          "label": "B",
+          "text": "A skill or ability commonly gained during a particular stage of childhood."
+        },
+        {
+          "id": "q052_c",
+          "label": "C",
+          "text": "An adult and child working together to understand and address a difficulty."
+        },
+        {
+          "id": "q052_d",
+          "label": "D",
+          "text": "Using the senses or body to reconnect with the present moment."
+        },
+        {
+          "id": "q052_e",
+          "label": "E",
+          "text": "The child’s feelings, experiences, views, preferences and concerns."
+        },
+        {
+          "id": "q052_f",
+          "label": "F",
+          "text": "An emotional, physical or behavioural reaction connected to a frightening or harmful experience."
+        }
+      ],
+      "correctOptionId": "q052_f",
+      "correctDefinition": "An emotional, physical or behavioural reaction connected to a frightening or harmful experience.",
+      "explanation": "Trauma response means: An emotional, physical or behavioural reaction connected to a frightening or harmful experience.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_053",
+      "number": 53,
+      "assessmentType": "definition_meaning_match",
+      "term": "Hyperarousal",
+      "prompt": "Which meaning best matches “Hyperarousal”?",
+      "options": [
+        {
+          "id": "q053_a",
+          "label": "A",
+          "text": "A small change that indicates stress or dysregulation may be increasing."
+        },
+        {
+          "id": "q053_b",
+          "label": "B",
+          "text": "When a child develops certain skills later than generally expected."
+        },
+        {
+          "id": "q053_c",
+          "label": "C",
+          "text": "A planned discussion where family members share concerns, ideas and decisions respectfully."
+        },
+        {
+          "id": "q053_d",
+          "label": "D",
+          "text": "The emotional zone where a person can think, feel and respond effectively."
+        },
+        {
+          "id": "q053_e",
+          "label": "E",
+          "text": "Feeling overly alert, anxious, restless or ready to react to danger."
+        },
+        {
+          "id": "q053_f",
+          "label": "F",
+          "text": "Decisions focused on what most supports the child’s safety and development."
+        }
+      ],
+      "correctOptionId": "q053_e",
+      "correctDefinition": "Feeling overly alert, anxious, restless or ready to react to danger.",
+      "explanation": "Hyperarousal means: Feeling overly alert, anxious, restless or ready to react to danger.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_054",
+      "number": 54,
+      "assessmentType": "definition_meaning_match",
+      "term": "Hypoarousal",
+      "prompt": "Which meaning best matches “Hypoarousal”?",
+      "options": [
+        {
+          "id": "q054_a",
+          "label": "A",
+          "text": "A prepared way to stop, regulate and think before responding."
+        },
+        {
+          "id": "q054_b",
+          "label": "B",
+          "text": "A personal variation in temperament, ability, culture, development or experience."
+        },
+        {
+          "id": "q054_c",
+          "label": "C",
+          "text": "Including relevant people in decisions that affect their lives whenever safe and appropriate."
+        },
+        {
+          "id": "q054_d",
+          "label": "D",
+          "text": "Feeling shut down, disconnected, numb, exhausted or unable to respond."
+        },
+        {
+          "id": "q054_e",
+          "label": "E",
+          "text": "Reacting to danger through anger, aggression, arguing or confrontation."
+        },
+        {
+          "id": "q054_f",
+          "label": "F",
+          "text": "Feeling secure enough to express feelings without fear, ridicule or punishment."
+        }
+      ],
+      "correctOptionId": "q054_d",
+      "correctDefinition": "Feeling shut down, disconnected, numb, exhausted or unable to respond.",
+      "explanation": "Hypoarousal means: Feeling shut down, disconnected, numb, exhausted or unable to respond.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_055",
+      "number": 55,
+      "assessmentType": "definition_meaning_match",
+      "term": "Coping strategy",
+      "prompt": "Which meaning best matches “Coping strategy”?",
+      "options": [
+        {
+          "id": "q055_a",
+          "label": "A",
+          "text": "The ability to recognise, name, understand and communicate emotions."
+        },
+        {
+          "id": "q055_b",
+          "label": "B",
+          "text": "The way a child grows physically, emotionally, socially and intellectually."
+        },
+        {
+          "id": "q055_c",
+          "label": "C",
+          "text": "A safe action used to manage stress, emotions or difficult situations."
+        },
+        {
+          "id": "q055_d",
+          "label": "D",
+          "text": "Adults working together to meet a child’s needs, whether or not they are in a relationship."
+        },
+        {
+          "id": "q055_e",
+          "label": "E",
+          "text": "Reacting to danger by escaping, avoiding or becoming restless."
+        },
+        {
+          "id": "q055_f",
+          "label": "F",
+          "text": "Being protected from injury, violence, dangerous objects and unsafe environments."
+        }
+      ],
+      "correctOptionId": "q055_c",
+      "correctDefinition": "A safe action used to manage stress, emotions or difficult situations.",
+      "explanation": "Coping strategy means: A safe action used to manage stress, emotions or difficult situations.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_056",
+      "number": 56,
+      "assessmentType": "definition_meaning_match",
+      "term": "Calming strategy",
+      "prompt": "Which meaning best matches “Calming strategy”?",
+      "options": [
+        {
+          "id": "q056_a",
+          "label": "A",
+          "text": "Understanding emotions and using that knowledge to guide safe behaviour and relationships."
+        },
+        {
+          "id": "q056_b",
+          "label": "B",
+          "text": "A technique that helps the body and mind return to a more settled state."
+        },
+        {
+          "id": "q056_c",
+          "label": "C",
+          "text": "Mental skills used for planning, attention, memory, organisation and self-control."
+        },
+        {
+          "id": "q056_d",
+          "label": "D",
+          "text": "A structured arrangement that limits direct conflict between separated parents."
+        },
+        {
+          "id": "q056_e",
+          "label": "E",
+          "text": "Reacting to danger by becoming still, numb, silent or unable to act."
+        },
+        {
+          "id": "q056_f",
+          "label": "F",
+          "text": "Failing to provide a child’s essential care, safety, supervision or basic needs."
+        }
+      ],
+      "correctOptionId": "q056_b",
+      "correctDefinition": "A technique that helps the body and mind return to a more settled state.",
+      "explanation": "Calming strategy means: A technique that helps the body and mind return to a more settled state.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_057",
+      "number": 57,
+      "assessmentType": "definition_meaning_match",
+      "term": "Mindfulness",
+      "prompt": "Which meaning best matches “Mindfulness”?",
+      "options": [
+        {
+          "id": "q057_a",
+          "label": "A",
+          "text": "Paying attention to the present moment without immediately judging it."
+        },
+        {
+          "id": "q057_b",
+          "label": "B",
+          "text": "The ability to recover, adapt and continue after stress or difficulty."
+        },
+        {
+          "id": "q057_c",
+          "label": "C",
+          "text": "The ability to pause and consider consequences before acting."
+        },
+        {
+          "id": "q057_d",
+          "label": "D",
+          "text": "Behaviour used to control, threaten, frighten or harm a family member."
+        },
+        {
+          "id": "q057_e",
+          "label": "E",
+          "text": "Trying to avoid danger by pleasing, agreeing with or submitting to others."
+        },
+        {
+          "id": "q057_f",
+          "label": "F",
+          "text": "Watching and supporting a child according to their age, abilities and environment."
+        }
+      ],
+      "correctOptionId": "q057_a",
+      "correctDefinition": "Paying attention to the present moment without immediately judging it.",
+      "explanation": "Mindfulness means: Paying attention to the present moment without immediately judging it.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_058",
+      "number": 58,
+      "assessmentType": "definition_meaning_match",
+      "term": "Controlled breathing",
+      "prompt": "Which meaning best matches “Controlled breathing”?",
+      "options": [
+        {
+          "id": "q058_a",
+          "label": "A",
+          "text": "Healthy actions that support physical, emotional and mental wellbeing."
+        },
+        {
+          "id": "q058_b",
+          "label": "B",
+          "text": "A need relating to how the nervous system responds to sound, touch, movement, light or other sensations."
+        },
+        {
+          "id": "q058_c",
+          "label": "C",
+          "text": "A repeated pattern of behaviour used to dominate, isolate or restrict another person."
+        },
+        {
+          "id": "q058_d",
+          "label": "D",
+          "text": "Recognising your own thoughts, feelings, behaviours and reactions."
+        },
+        {
+          "id": "q058_e",
+          "label": "E",
+          "text": "The emotional bond that helps a child feel safe, connected and supported."
+        },
+        {
+          "id": "q058_f",
+          "label": "F",
+          "text": "Deliberately slowing the breath to help calm the nervous system."
+        }
+      ],
+      "correctOptionId": "q058_f",
+      "correctDefinition": "Deliberately slowing the breath to help calm the nervous system.",
+      "explanation": "Controlled breathing means: Deliberately slowing the breath to help calm the nervous system.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_059",
+      "number": 59,
+      "assessmentType": "definition_meaning_match",
+      "term": "Body awareness",
+      "prompt": "Which meaning best matches “Body awareness”?",
+      "options": [
+        {
+          "id": "q059_a",
+          "label": "A",
+          "text": "Physical and emotional exhaustion caused by prolonged stress and overwhelming demands."
+        },
+        {
+          "id": "q059_b",
+          "label": "B",
+          "text": "Encouragement or recognition that increases the likelihood of a helpful behaviour recurring."
+        },
+        {
+          "id": "q059_c",
+          "label": "C",
+          "text": "Controlling money or resources to restrict another person’s independence and choices."
+        },
+        {
+          "id": "q059_d",
+          "label": "D",
+          "text": "Thinking honestly about your actions and what you could learn from them."
+        },
+        {
+          "id": "q059_e",
+          "label": "E",
+          "text": "Recognising physical sensations that may signal emotions, stress or safety needs."
+        },
+        {
+          "id": "q059_f",
+          "label": "F",
+          "text": "A trusting relationship in which a child expects comfort, protection and care."
+        }
+      ],
+      "correctOptionId": "q059_e",
+      "correctDefinition": "Recognising physical sensations that may signal emotions, stress or safety needs.",
+      "explanation": "Body awareness means: Recognising physical sensations that may signal emotions, stress or safety needs.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_060",
+      "number": 60,
+      "assessmentType": "definition_meaning_match",
+      "term": "Early warning sign",
+      "prompt": "Which meaning best matches “Early warning sign”?",
+      "options": [
+        {
+          "id": "q060_a",
+          "label": "A",
+          "text": "A parent’s ability to consistently meet their child’s safety, care and developmental needs."
+        },
+        {
+          "id": "q060_b",
+          "label": "B",
+          "text": "Positive feedback that recognises a child’s effort, behaviour or achievement."
+        },
+        {
+          "id": "q060_c",
+          "label": "C",
+          "text": "Repeated behaviour that humiliates, frightens, controls or damages emotional wellbeing."
+        },
+        {
+          "id": "q060_d",
+          "label": "D",
+          "text": "A small change that indicates stress or dysregulation may be increasing."
+        },
+        {
+          "id": "q060_e",
+          "label": "E",
+          "text": "Accepting responsibility for your choices and their effects."
+        },
+        {
+          "id": "q060_f",
+          "label": "F",
+          "text": "Noticing and responding appropriately to a child’s emotional and physical cues."
+        }
+      ],
+      "correctOptionId": "q060_d",
+      "correctDefinition": "A small change that indicates stress or dysregulation may be increasing.",
+      "explanation": "Early warning sign means: A small change that indicates stress or dysregulation may be increasing.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_061",
+      "number": 61,
+      "assessmentType": "definition_meaning_match",
+      "term": "Pause plan",
+      "prompt": "Which meaning best matches “Pause plan”?",
+      "options": [
+        {
+          "id": "q061_a",
+          "label": "A",
+          "text": "An ability, behaviour or resource that supports positive outcomes for a child."
+        },
+        {
+          "id": "q061_b",
+          "label": "B",
+          "text": "Support that helps a child keep trying, learning or solving a problem."
+        },
+        {
+          "id": "q061_c",
+          "label": "C",
+          "text": "A prepared way to stop, regulate and think before responding."
+        },
+        {
+          "id": "q061_d",
+          "label": "D",
+          "text": "Using devices or online services to monitor, threaten, harass or control someone."
+        },
+        {
+          "id": "q061_e",
+          "label": "E",
+          "text": "Understanding why something happened and how your behaviour affected others."
+        },
+        {
+          "id": "q061_f",
+          "label": "F",
+          "text": "Building safety and connection before addressing a child’s behaviour."
+        }
+      ],
+      "correctOptionId": "q061_c",
+      "correctDefinition": "A prepared way to stop, regulate and think before responding.",
+      "explanation": "Pause plan means: A prepared way to stop, regulate and think before responding.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_062",
+      "number": 62,
+      "assessmentType": "definition_meaning_match",
+      "term": "Emotional literacy",
+      "prompt": "Which meaning best matches “Emotional literacy”?",
+      "options": [
+        {
+          "id": "q062_a",
+          "label": "A",
+          "text": "Something important for safety, health, connection or development that has not been provided."
+        },
+        {
+          "id": "q062_b",
+          "label": "B",
+          "text": "The ability to recognise, name, understand and communicate emotions."
+        },
+        {
+          "id": "q062_c",
+          "label": "C",
+          "text": "Demonstrating the behaviour you want a child to learn and use."
+        },
+        {
+          "id": "q062_d",
+          "label": "D",
+          "text": "Sharing a concern or harmful experience with a trusted person in a supported way."
+        },
+        {
+          "id": "q062_e",
+          "label": "E",
+          "text": "A strength or support that reduces risk and improves family wellbeing."
+        },
+        {
+          "id": "q062_f",
+          "label": "F",
+          "text": "Showing that another person’s feelings and experiences have been heard and understood."
+        }
+      ],
+      "correctOptionId": "q062_b",
+      "correctDefinition": "The ability to recognise, name, understand and communicate emotions.",
+      "explanation": "Emotional literacy means: The ability to recognise, name, understand and communicate emotions.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_063",
+      "number": 63,
+      "assessmentType": "definition_meaning_match",
+      "term": "Emotional intelligence",
+      "prompt": "Which meaning best matches “Emotional intelligence”?",
+      "options": [
+        {
+          "id": "q063_a",
+          "label": "A",
+          "text": "Understanding emotions and using that knowledge to guide safe behaviour and relationships."
+        },
+        {
+          "id": "q063_b",
+          "label": "B",
+          "text": "Essentials such as food, water, clothing, shelter, hygiene, healthcare and safety."
+        },
+        {
+          "id": "q063_c",
+          "label": "C",
+          "text": "Guiding a child away from unsafe behaviour and towards a safer choice."
+        },
+        {
+          "id": "q063_d",
+          "label": "D",
+          "text": "A legal duty held by specified professionals to report certain child-safety concerns."
+        },
+        {
+          "id": "q063_e",
+          "label": "E",
+          "text": "A condition or behaviour that may increase the chance of harm."
+        },
+        {
+          "id": "q063_f",
+          "label": "F",
+          "text": "Giving full attention and checking that you correctly understand the speaker."
+        }
+      ],
+      "correctOptionId": "q063_a",
+      "correctDefinition": "Understanding emotions and using that knowledge to guide safe behaviour and relationships.",
+      "explanation": "Emotional intelligence means: Understanding emotions and using that knowledge to guide safe behaviour and relationships.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_064",
+      "number": 64,
+      "assessmentType": "definition_meaning_match",
+      "term": "Resilience",
+      "prompt": "Which meaning best matches “Resilience”?",
+      "options": [
+        {
+          "id": "q064_a",
+          "label": "A",
+          "text": "A skill or ability commonly gained during a particular stage of childhood."
+        },
+        {
+          "id": "q064_b",
+          "label": "B",
+          "text": "Clearly and respectfully explaining what behaviour is and is not acceptable."
+        },
+        {
+          "id": "q064_c",
+          "label": "C",
+          "text": "Managing emotions and behaviour in a safe and healthy way."
+        },
+        {
+          "id": "q064_d",
+          "label": "D",
+          "text": "A clear set of actions for responding to danger or unsafe situations."
+        },
+        {
+          "id": "q064_e",
+          "label": "E",
+          "text": "Trying to understand another person’s feelings and point of view."
+        },
+        {
+          "id": "q064_f",
+          "label": "F",
+          "text": "The ability to recover, adapt and continue after stress or difficulty."
+        }
+      ],
+      "correctOptionId": "q064_f",
+      "correctDefinition": "The ability to recover, adapt and continue after stress or difficulty.",
+      "explanation": "Resilience means: The ability to recover, adapt and continue after stress or difficulty.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_065",
+      "number": 65,
+      "assessmentType": "definition_meaning_match",
+      "term": "Self-care",
+      "prompt": "Which meaning best matches “Self-care”?",
+      "options": [
+        {
+          "id": "q065_a",
+          "label": "A",
+          "text": "When a child develops certain skills later than generally expected."
+        },
+        {
+          "id": "q065_b",
+          "label": "B",
+          "text": "An agreed expectation intended to support safety, respect and daily functioning."
+        },
+        {
+          "id": "q065_c",
+          "label": "C",
+          "text": "Helping another person calm down through connection, reassurance and support."
+        },
+        {
+          "id": "q065_d",
+          "label": "D",
+          "text": "Trusted people and services that can provide practical or emotional help."
+        },
+        {
+          "id": "q065_e",
+          "label": "E",
+          "text": "Healthy actions that support physical, emotional and mental wellbeing."
+        },
+        {
+          "id": "q065_f",
+          "label": "F",
+          "text": "Expressing needs and concerns without threats, insults, intimidation or blame."
+        }
+      ],
+      "correctOptionId": "q065_e",
+      "correctDefinition": "Healthy actions that support physical, emotional and mental wellbeing.",
+      "explanation": "Self-care means: Healthy actions that support physical, emotional and mental wellbeing.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_066",
+      "number": 66,
+      "assessmentType": "definition_meaning_match",
+      "term": "Burnout",
+      "prompt": "Which meaning best matches “Burnout”?",
+      "options": [
+        {
+          "id": "q066_a",
+          "label": "A",
+          "text": "A personal variation in temperament, ability, culture, development or experience."
+        },
+        {
+          "id": "q066_b",
+          "label": "B",
+          "text": "Helping a child know what is likely to happen and what is expected."
+        },
+        {
+          "id": "q066_c",
+          "label": "C",
+          "text": "A state where emotions or body reactions become difficult to manage."
+        },
+        {
+          "id": "q066_d",
+          "label": "D",
+          "text": "Physical and emotional exhaustion caused by prolonged stress and overwhelming demands."
+        },
+        {
+          "id": "q066_e",
+          "label": "E",
+          "text": "A trusted adult a child can approach when worried, frightened or needing help."
+        },
+        {
+          "id": "q066_f",
+          "label": "F",
+          "text": "Working through disagreement to find a safe and respectful solution."
+        }
+      ],
+      "correctOptionId": "q066_d",
+      "correctDefinition": "Physical and emotional exhaustion caused by prolonged stress and overwhelming demands.",
+      "explanation": "Burnout means: Physical and emotional exhaustion caused by prolonged stress and overwhelming demands.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_067",
+      "number": 67,
+      "assessmentType": "definition_meaning_match",
+      "term": "Parental capacity",
+      "prompt": "Which meaning best matches “Parental capacity”?",
+      "options": [
+        {
+          "id": "q067_a",
+          "label": "A",
+          "text": "The way a child grows physically, emotionally, socially and intellectually."
+        },
+        {
+          "id": "q067_b",
+          "label": "B",
+          "text": "Letting a child know in advance that an activity or routine is about to change."
+        },
+        {
+          "id": "q067_c",
+          "label": "C",
+          "text": "A parent’s ability to consistently meet their child’s safety, care and developmental needs."
+        },
+        {
+          "id": "q067_d",
+          "label": "D",
+          "text": "Something that causes a strong emotional or physical reaction."
+        },
+        {
+          "id": "q067_e",
+          "label": "E",
+          "text": "A limit that protects a person’s safety, privacy and wellbeing."
+        },
+        {
+          "id": "q067_f",
+          "label": "F",
+          "text": "Reducing the intensity of conflict before it becomes more harmful."
+        }
+      ],
+      "correctOptionId": "q067_c",
+      "correctDefinition": "A parent’s ability to consistently meet their child’s safety, care and developmental needs.",
+      "explanation": "Parental capacity means: A parent’s ability to consistently meet their child’s safety, care and developmental needs.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_068",
+      "number": 68,
+      "assessmentType": "definition_meaning_match",
+      "term": "Parenting strength",
+      "prompt": "Which meaning best matches “Parenting strength”?",
+      "options": [
+        {
+          "id": "q068_a",
+          "label": "A",
+          "text": "Mental skills used for planning, attention, memory, organisation and self-control."
+        },
+        {
+          "id": "q068_b",
+          "label": "B",
+          "text": "An ability, behaviour or resource that supports positive outcomes for a child."
+        },
+        {
+          "id": "q068_c",
+          "label": "C",
+          "text": "Offering acceptable options while maintaining necessary safety boundaries."
+        },
+        {
+          "id": "q068_d",
+          "label": "D",
+          "text": "Using the senses or body to reconnect with the present moment."
+        },
+        {
+          "id": "q068_e",
+          "label": "E",
+          "text": "Freely agreeing to something with enough information and without pressure."
+        },
+        {
+          "id": "q068_f",
+          "label": "F",
+          "text": "Taking steps to restore trust and connection after hurt or conflict."
+        }
+      ],
+      "correctOptionId": "q068_b",
+      "correctDefinition": "An ability, behaviour or resource that supports positive outcomes for a child.",
+      "explanation": "Parenting strength means: An ability, behaviour or resource that supports positive outcomes for a child.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_069",
+      "number": 69,
+      "assessmentType": "definition_meaning_match",
+      "term": "Unmet need",
+      "prompt": "Which meaning best matches “Unmet need”?",
+      "options": [
+        {
+          "id": "q069_a",
+          "label": "A",
+          "text": "Something important for safety, health, connection or development that has not been provided."
+        },
+        {
+          "id": "q069_b",
+          "label": "B",
+          "text": "The ability to pause and consider consequences before acting."
+        },
+        {
+          "id": "q069_c",
+          "label": "C",
+          "text": "Identifying a difficulty, considering options and choosing a safe response."
+        },
+        {
+          "id": "q069_d",
+          "label": "D",
+          "text": "The emotional zone where a person can think, feel and respond effectively."
+        },
+        {
+          "id": "q069_e",
+          "label": "E",
+          "text": "Making decisions with the child’s safety, needs and wellbeing as the priority."
+        },
+        {
+          "id": "q069_f",
+          "label": "F",
+          "text": "Teaching safe behaviour through guidance, connection and appropriate consequences."
+        }
+      ],
+      "correctOptionId": "q069_a",
+      "correctDefinition": "Something important for safety, health, connection or development that has not been provided.",
+      "explanation": "Unmet need means: Something important for safety, health, connection or development that has not been provided.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_070",
+      "number": 70,
+      "assessmentType": "definition_meaning_match",
+      "term": "Basic needs",
+      "prompt": "Which meaning best matches “Basic needs”?",
+      "options": [
+        {
+          "id": "q070_a",
+          "label": "A",
+          "text": "A need relating to how the nervous system responds to sound, touch, movement, light or other sensations."
+        },
+        {
+          "id": "q070_b",
+          "label": "B",
+          "text": "An adult and child working together to understand and address a difficulty."
+        },
+        {
+          "id": "q070_c",
+          "label": "C",
+          "text": "Reacting to danger through anger, aggression, arguing or confrontation."
+        },
+        {
+          "id": "q070_d",
+          "label": "D",
+          "text": "The child’s feelings, experiences, views, preferences and concerns."
+        },
+        {
+          "id": "q070_e",
+          "label": "E",
+          "text": "A result that happens without an adult creating the outcome."
+        },
+        {
+          "id": "q070_f",
+          "label": "F",
+          "text": "Essentials such as food, water, clothing, shelter, hygiene, healthcare and safety."
+        }
+      ],
+      "correctOptionId": "q070_f",
+      "correctDefinition": "Essentials such as food, water, clothing, shelter, hygiene, healthcare and safety.",
+      "explanation": "Basic needs means: Essentials such as food, water, clothing, shelter, hygiene, healthcare and safety.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_071",
+      "number": 71,
+      "assessmentType": "definition_meaning_match",
+      "term": "Developmental milestone",
+      "prompt": "Which meaning best matches “Developmental milestone”?",
+      "options": [
+        {
+          "id": "q071_a",
+          "label": "A",
+          "text": "Encouragement or recognition that increases the likelihood of a helpful behaviour recurring."
+        },
+        {
+          "id": "q071_b",
+          "label": "B",
+          "text": "A planned discussion where family members share concerns, ideas and decisions respectfully."
+        },
+        {
+          "id": "q071_c",
+          "label": "C",
+          "text": "Reacting to danger by escaping, avoiding or becoming restless."
+        },
+        {
+          "id": "q071_d",
+          "label": "D",
+          "text": "Decisions focused on what most supports the child’s safety and development."
+        },
+        {
+          "id": "q071_e",
+          "label": "E",
+          "text": "A skill or ability commonly gained during a particular stage of childhood."
+        },
+        {
+          "id": "q071_f",
+          "label": "F",
+          "text": "A respectful consequence directly connected to the behaviour."
+        }
+      ],
+      "correctOptionId": "q071_e",
+      "correctDefinition": "A skill or ability commonly gained during a particular stage of childhood.",
+      "explanation": "Developmental milestone means: A skill or ability commonly gained during a particular stage of childhood.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_072",
+      "number": 72,
+      "assessmentType": "definition_meaning_match",
+      "term": "Developmental delay",
+      "prompt": "Which meaning best matches “Developmental delay”?",
+      "options": [
+        {
+          "id": "q072_a",
+          "label": "A",
+          "text": "Positive feedback that recognises a child’s effort, behaviour or achievement."
+        },
+        {
+          "id": "q072_b",
+          "label": "B",
+          "text": "Including relevant people in decisions that affect their lives whenever safe and appropriate."
+        },
+        {
+          "id": "q072_c",
+          "label": "C",
+          "text": "Reacting to danger by becoming still, numb, silent or unable to act."
+        },
+        {
+          "id": "q072_d",
+          "label": "D",
+          "text": "When a child develops certain skills later than generally expected."
+        },
+        {
+          "id": "q072_e",
+          "label": "E",
+          "text": "Feeling secure enough to express feelings without fear, ridicule or punishment."
+        },
+        {
+          "id": "q072_f",
+          "label": "F",
+          "text": "Responding reliably and following through on reasonable expectations."
+        }
+      ],
+      "correctOptionId": "q072_d",
+      "correctDefinition": "When a child develops certain skills later than generally expected.",
+      "explanation": "Developmental delay means: When a child develops certain skills later than generally expected.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_073",
+      "number": 73,
+      "assessmentType": "definition_meaning_match",
+      "term": "Individual difference",
+      "prompt": "Which meaning best matches “Individual difference”?",
+      "options": [
+        {
+          "id": "q073_a",
+          "label": "A",
+          "text": "Support that helps a child keep trying, learning or solving a problem."
+        },
+        {
+          "id": "q073_b",
+          "label": "B",
+          "text": "Adults working together to meet a child’s needs, whether or not they are in a relationship."
+        },
+        {
+          "id": "q073_c",
+          "label": "C",
+          "text": "A personal variation in temperament, ability, culture, development or experience."
+        },
+        {
+          "id": "q073_d",
+          "label": "D",
+          "text": "Trying to avoid danger by pleasing, agreeing with or submitting to others."
+        },
+        {
+          "id": "q073_e",
+          "label": "E",
+          "text": "Being protected from injury, violence, dangerous objects and unsafe environments."
+        },
+        {
+          "id": "q073_f",
+          "label": "F",
+          "text": "A predictable pattern of activities that supports stability and security."
+        }
+      ],
+      "correctOptionId": "q073_c",
+      "correctDefinition": "A personal variation in temperament, ability, culture, development or experience.",
+      "explanation": "Individual difference means: A personal variation in temperament, ability, culture, development or experience.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_074",
+      "number": 74,
+      "assessmentType": "definition_meaning_match",
+      "term": "Child development",
+      "prompt": "Which meaning best matches “Child development”?",
+      "options": [
+        {
+          "id": "q074_a",
+          "label": "A",
+          "text": "Demonstrating the behaviour you want a child to learn and use."
+        },
+        {
+          "id": "q074_b",
+          "label": "B",
+          "text": "The way a child grows physically, emotionally, socially and intellectually."
+        },
+        {
+          "id": "q074_c",
+          "label": "C",
+          "text": "A structured arrangement that limits direct conflict between separated parents."
+        },
+        {
+          "id": "q074_d",
+          "label": "D",
+          "text": "Recognising your own thoughts, feelings, behaviours and reactions."
+        },
+        {
+          "id": "q074_e",
+          "label": "E",
+          "text": "Failing to provide a child’s essential care, safety, supervision or basic needs."
+        },
+        {
+          "id": "q074_f",
+          "label": "F",
+          "text": "A requirement that matches the child’s developmental abilities and needs."
+        }
+      ],
+      "correctOptionId": "q074_b",
+      "correctDefinition": "The way a child grows physically, emotionally, socially and intellectually.",
+      "explanation": "Child development means: The way a child grows physically, emotionally, socially and intellectually.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_075",
+      "number": 75,
+      "assessmentType": "definition_meaning_match",
+      "term": "Executive functioning",
+      "prompt": "Which meaning best matches “Executive functioning”?",
+      "options": [
+        {
+          "id": "q075_a",
+          "label": "A",
+          "text": "Mental skills used for planning, attention, memory, organisation and self-control."
+        },
+        {
+          "id": "q075_b",
+          "label": "B",
+          "text": "Guiding a child away from unsafe behaviour and towards a safer choice."
+        },
+        {
+          "id": "q075_c",
+          "label": "C",
+          "text": "Behaviour used to control, threaten, frighten or harm a family member."
+        },
+        {
+          "id": "q075_d",
+          "label": "D",
+          "text": "Thinking honestly about your actions and what you could learn from them."
+        },
+        {
+          "id": "q075_e",
+          "label": "E",
+          "text": "Watching and supporting a child according to their age, abilities and environment."
+        },
+        {
+          "id": "q075_f",
+          "label": "F",
+          "text": "An action that may communicate a child’s feeling, need or difficulty."
+        }
+      ],
+      "correctOptionId": "q075_a",
+      "correctDefinition": "Mental skills used for planning, attention, memory, organisation and self-control.",
+      "explanation": "Executive functioning means: Mental skills used for planning, attention, memory, organisation and self-control.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_076",
+      "number": 76,
+      "assessmentType": "definition_meaning_match",
+      "term": "Impulse control",
+      "prompt": "Which meaning best matches “Impulse control”?",
+      "options": [
+        {
+          "id": "q076_a",
+          "label": "A",
+          "text": "Clearly and respectfully explaining what behaviour is and is not acceptable."
+        },
+        {
+          "id": "q076_b",
+          "label": "B",
+          "text": "A repeated pattern of behaviour used to dominate, isolate or restrict another person."
+        },
+        {
+          "id": "q076_c",
+          "label": "C",
+          "text": "Accepting responsibility for your choices and their effects."
+        },
+        {
+          "id": "q076_d",
+          "label": "D",
+          "text": "The emotional bond that helps a child feel safe, connected and supported."
+        },
+        {
+          "id": "q076_e",
+          "label": "E",
+          "text": "Information showing that safer behaviour has been demonstrated consistently over time."
+        },
+        {
+          "id": "q076_f",
+          "label": "F",
+          "text": "The ability to pause and consider consequences before acting."
+        }
+      ],
+      "correctOptionId": "q076_f",
+      "correctDefinition": "The ability to pause and consider consequences before acting.",
+      "explanation": "Impulse control means: The ability to pause and consider consequences before acting.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_077",
+      "number": 77,
+      "assessmentType": "definition_meaning_match",
+      "term": "Sensory need",
+      "prompt": "Which meaning best matches “Sensory need”?",
+      "options": [
+        {
+          "id": "q077_a",
+          "label": "A",
+          "text": "An agreed expectation intended to support safety, respect and daily functioning."
+        },
+        {
+          "id": "q077_b",
+          "label": "B",
+          "text": "Controlling money or resources to restrict another person’s independence and choices."
+        },
+        {
+          "id": "q077_c",
+          "label": "C",
+          "text": "Understanding why something happened and how your behaviour affected others."
+        },
+        {
+          "id": "q077_d",
+          "label": "D",
+          "text": "A trusting relationship in which a child expects comfort, protection and care."
+        },
+        {
+          "id": "q077_e",
+          "label": "E",
+          "text": "A need relating to how the nervous system responds to sound, touch, movement, light or other sensations."
+        },
+        {
+          "id": "q077_f",
+          "label": "F",
+          "text": "A dated and organised record of actions, progress, challenges or completed tasks."
+        }
+      ],
+      "correctOptionId": "q077_e",
+      "correctDefinition": "A need relating to how the nervous system responds to sound, touch, movement, light or other sensations.",
+      "explanation": "Sensory need means: A need relating to how the nervous system responds to sound, touch, movement, light or other sensations.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_078",
+      "number": 78,
+      "assessmentType": "definition_meaning_match",
+      "term": "Positive reinforcement",
+      "prompt": "Which meaning best matches “Positive reinforcement”?",
+      "options": [
+        {
+          "id": "q078_a",
+          "label": "A",
+          "text": "Helping a child know what is likely to happen and what is expected."
+        },
+        {
+          "id": "q078_b",
+          "label": "B",
+          "text": "Repeated behaviour that humiliates, frightens, controls or damages emotional wellbeing."
+        },
+        {
+          "id": "q078_c",
+          "label": "C",
+          "text": "A strength or support that reduces risk and improves family wellbeing."
+        },
+        {
+          "id": "q078_d",
+          "label": "D",
+          "text": "Encouragement or recognition that increases the likelihood of a helpful behaviour recurring."
+        },
+        {
+          "id": "q078_e",
+          "label": "E",
+          "text": "Noticing and responding appropriately to a child’s emotional and physical cues."
+        },
+        {
+          "id": "q078_f",
+          "label": "F",
+          "text": "Recognising abilities, progress, resources and protective qualities while addressing concerns."
+        }
+      ],
+      "correctOptionId": "q078_d",
+      "correctDefinition": "Encouragement or recognition that increases the likelihood of a helpful behaviour recurring.",
+      "explanation": "Positive reinforcement means: Encouragement or recognition that increases the likelihood of a helpful behaviour recurring.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_079",
+      "number": 79,
+      "assessmentType": "definition_meaning_match",
+      "term": "Praise",
+      "prompt": "Which meaning best matches “Praise”?",
+      "options": [
+        {
+          "id": "q079_a",
+          "label": "A",
+          "text": "Letting a child know in advance that an activity or routine is about to change."
+        },
+        {
+          "id": "q079_b",
+          "label": "B",
+          "text": "Using devices or online services to monitor, threaten, harass or control someone."
+        },
+        {
+          "id": "q079_c",
+          "label": "C",
+          "text": "Positive feedback that recognises a child’s effort, behaviour or achievement."
+        },
+        {
+          "id": "q079_d",
+          "label": "D",
+          "text": "A condition or behaviour that may increase the chance of harm."
+        },
+        {
+          "id": "q079_e",
+          "label": "E",
+          "text": "Building safety and connection before addressing a child’s behaviour."
+        },
+        {
+          "id": "q079_f",
+          "label": "F",
+          "text": "Safely returning a child to a parent’s care when the required conditions have been met."
+        }
+      ],
+      "correctOptionId": "q079_c",
+      "correctDefinition": "Positive feedback that recognises a child’s effort, behaviour or achievement.",
+      "explanation": "Praise means: Positive feedback that recognises a child’s effort, behaviour or achievement.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_080",
+      "number": 80,
+      "assessmentType": "definition_meaning_match",
+      "term": "Encouragement",
+      "prompt": "Which meaning best matches “Encouragement”?",
+      "options": [
+        {
+          "id": "q080_a",
+          "label": "A",
+          "text": "Offering acceptable options while maintaining necessary safety boundaries."
+        },
+        {
+          "id": "q080_b",
+          "label": "B",
+          "text": "Support that helps a child keep trying, learning or solving a problem."
+        },
+        {
+          "id": "q080_c",
+          "label": "C",
+          "text": "Sharing a concern or harmful experience with a trusted person in a supported way."
+        },
+        {
+          "id": "q080_d",
+          "label": "D",
+          "text": "A clear set of actions for responding to danger or unsafe situations."
+        },
+        {
+          "id": "q080_e",
+          "label": "E",
+          "text": "Showing that another person’s feelings and experiences have been heard and understood."
+        },
+        {
+          "id": "q080_f",
+          "label": "F",
+          "text": "Supporting someone with awareness of how trauma may affect their feelings, behaviour and needs."
+        }
+      ],
+      "correctOptionId": "q080_b",
+      "correctDefinition": "Support that helps a child keep trying, learning or solving a problem.",
+      "explanation": "Encouragement means: Support that helps a child keep trying, learning or solving a problem.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_081",
+      "number": 81,
+      "assessmentType": "definition_meaning_match",
+      "term": "Behaviour modelling",
+      "prompt": "Which meaning best matches “Behaviour modelling”?",
+      "options": [
+        {
+          "id": "q081_a",
+          "label": "A",
+          "text": "Demonstrating the behaviour you want a child to learn and use."
+        },
+        {
+          "id": "q081_b",
+          "label": "B",
+          "text": "Identifying a difficulty, considering options and choosing a safe response."
+        },
+        {
+          "id": "q081_c",
+          "label": "C",
+          "text": "A legal duty held by specified professionals to report certain child-safety concerns."
+        },
+        {
+          "id": "q081_d",
+          "label": "D",
+          "text": "Trusted people and services that can provide practical or emotional help."
+        },
+        {
+          "id": "q081_e",
+          "label": "E",
+          "text": "Giving full attention and checking that you correctly understand the speaker."
+        },
+        {
+          "id": "q081_f",
+          "label": "F",
+          "text": "An emotional, physical or behavioural reaction connected to a frightening or harmful experience."
+        }
+      ],
+      "correctOptionId": "q081_a",
+      "correctDefinition": "Demonstrating the behaviour you want a child to learn and use.",
+      "explanation": "Behaviour modelling means: Demonstrating the behaviour you want a child to learn and use.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_082",
+      "number": 82,
+      "assessmentType": "definition_meaning_match",
+      "term": "Redirection",
+      "prompt": "Which meaning best matches “Redirection”?",
+      "options": [
+        {
+          "id": "q082_a",
+          "label": "A",
+          "text": "An adult and child working together to understand and address a difficulty."
+        },
+        {
+          "id": "q082_b",
+          "label": "B",
+          "text": "Managing emotions and behaviour in a safe and healthy way."
+        },
+        {
+          "id": "q082_c",
+          "label": "C",
+          "text": "A trusted adult a child can approach when worried, frightened or needing help."
+        },
+        {
+          "id": "q082_d",
+          "label": "D",
+          "text": "Trying to understand another person’s feelings and point of view."
+        },
+        {
+          "id": "q082_e",
+          "label": "E",
+          "text": "Feeling overly alert, anxious, restless or ready to react to danger."
+        },
+        {
+          "id": "q082_f",
+          "label": "F",
+          "text": "Guiding a child away from unsafe behaviour and towards a safer choice."
+        }
+      ],
+      "correctOptionId": "q082_f",
+      "correctDefinition": "Guiding a child away from unsafe behaviour and towards a safer choice.",
+      "explanation": "Redirection means: Guiding a child away from unsafe behaviour and towards a safer choice.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_083",
+      "number": 83,
+      "assessmentType": "definition_meaning_match",
+      "term": "Limit setting",
+      "prompt": "Which meaning best matches “Limit setting”?",
+      "options": [
+        {
+          "id": "q083_a",
+          "label": "A",
+          "text": "A planned discussion where family members share concerns, ideas and decisions respectfully."
+        },
+        {
+          "id": "q083_b",
+          "label": "B",
+          "text": "Helping another person calm down through connection, reassurance and support."
+        },
+        {
+          "id": "q083_c",
+          "label": "C",
+          "text": "A limit that protects a person’s safety, privacy and wellbeing."
+        },
+        {
+          "id": "q083_d",
+          "label": "D",
+          "text": "Expressing needs and concerns without threats, insults, intimidation or blame."
+        },
+        {
+          "id": "q083_e",
+          "label": "E",
+          "text": "Clearly and respectfully explaining what behaviour is and is not acceptable."
+        },
+        {
+          "id": "q083_f",
+          "label": "F",
+          "text": "Feeling shut down, disconnected, numb, exhausted or unable to respond."
+        }
+      ],
+      "correctOptionId": "q083_e",
+      "correctDefinition": "Clearly and respectfully explaining what behaviour is and is not acceptable.",
+      "explanation": "Limit setting means: Clearly and respectfully explaining what behaviour is and is not acceptable.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_084",
+      "number": 84,
+      "assessmentType": "definition_meaning_match",
+      "term": "Family rule",
+      "prompt": "Which meaning best matches “Family rule”?",
+      "options": [
+        {
+          "id": "q084_a",
+          "label": "A",
+          "text": "Including relevant people in decisions that affect their lives whenever safe and appropriate."
+        },
+        {
+          "id": "q084_b",
+          "label": "B",
+          "text": "A state where emotions or body reactions become difficult to manage."
+        },
+        {
+          "id": "q084_c",
+          "label": "C",
+          "text": "Freely agreeing to something with enough information and without pressure."
+        },
+        {
+          "id": "q084_d",
+          "label": "D",
+          "text": "An agreed expectation intended to support safety, respect and daily functioning."
+        },
+        {
+          "id": "q084_e",
+          "label": "E",
+          "text": "Working through disagreement to find a safe and respectful solution."
+        },
+        {
+          "id": "q084_f",
+          "label": "F",
+          "text": "A safe action used to manage stress, emotions or difficult situations."
+        }
+      ],
+      "correctOptionId": "q084_d",
+      "correctDefinition": "An agreed expectation intended to support safety, respect and daily functioning.",
+      "explanation": "Family rule means: An agreed expectation intended to support safety, respect and daily functioning.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_085",
+      "number": 85,
+      "assessmentType": "definition_meaning_match",
+      "term": "Predictability",
+      "prompt": "Which meaning best matches “Predictability”?",
+      "options": [
+        {
+          "id": "q085_a",
+          "label": "A",
+          "text": "Adults working together to meet a child’s needs, whether or not they are in a relationship."
+        },
+        {
+          "id": "q085_b",
+          "label": "B",
+          "text": "Something that causes a strong emotional or physical reaction."
+        },
+        {
+          "id": "q085_c",
+          "label": "C",
+          "text": "Helping a child know what is likely to happen and what is expected."
+        },
+        {
+          "id": "q085_d",
+          "label": "D",
+          "text": "Making decisions with the child’s safety, needs and wellbeing as the priority."
+        },
+        {
+          "id": "q085_e",
+          "label": "E",
+          "text": "Reducing the intensity of conflict before it becomes more harmful."
+        },
+        {
+          "id": "q085_f",
+          "label": "F",
+          "text": "A technique that helps the body and mind return to a more settled state."
+        }
+      ],
+      "correctOptionId": "q085_c",
+      "correctDefinition": "Helping a child know what is likely to happen and what is expected.",
+      "explanation": "Predictability means: Helping a child know what is likely to happen and what is expected.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_086",
+      "number": 86,
+      "assessmentType": "definition_meaning_match",
+      "term": "Transition warning",
+      "prompt": "Which meaning best matches “Transition warning”?",
+      "options": [
+        {
+          "id": "q086_a",
+          "label": "A",
+          "text": "A structured arrangement that limits direct conflict between separated parents."
+        },
+        {
+          "id": "q086_b",
+          "label": "B",
+          "text": "Letting a child know in advance that an activity or routine is about to change."
+        },
+        {
+          "id": "q086_c",
+          "label": "C",
+          "text": "Using the senses or body to reconnect with the present moment."
+        },
+        {
+          "id": "q086_d",
+          "label": "D",
+          "text": "The child’s feelings, experiences, views, preferences and concerns."
+        },
+        {
+          "id": "q086_e",
+          "label": "E",
+          "text": "Taking steps to restore trust and connection after hurt or conflict."
+        },
+        {
+          "id": "q086_f",
+          "label": "F",
+          "text": "Paying attention to the present moment without immediately judging it."
+        }
+      ],
+      "correctOptionId": "q086_b",
+      "correctDefinition": "Letting a child know in advance that an activity or routine is about to change.",
+      "explanation": "Transition warning means: Letting a child know in advance that an activity or routine is about to change.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_087",
+      "number": 87,
+      "assessmentType": "definition_meaning_match",
+      "term": "Choice within limits",
+      "prompt": "Which meaning best matches “Choice within limits”?",
+      "options": [
+        {
+          "id": "q087_a",
+          "label": "A",
+          "text": "Offering acceptable options while maintaining necessary safety boundaries."
+        },
+        {
+          "id": "q087_b",
+          "label": "B",
+          "text": "Behaviour used to control, threaten, frighten or harm a family member."
+        },
+        {
+          "id": "q087_c",
+          "label": "C",
+          "text": "The emotional zone where a person can think, feel and respond effectively."
+        },
+        {
+          "id": "q087_d",
+          "label": "D",
+          "text": "Decisions focused on what most supports the child’s safety and development."
+        },
+        {
+          "id": "q087_e",
+          "label": "E",
+          "text": "Teaching safe behaviour through guidance, connection and appropriate consequences."
+        },
+        {
+          "id": "q087_f",
+          "label": "F",
+          "text": "Deliberately slowing the breath to help calm the nervous system."
+        }
+      ],
+      "correctOptionId": "q087_a",
+      "correctDefinition": "Offering acceptable options while maintaining necessary safety boundaries.",
+      "explanation": "Choice within limits means: Offering acceptable options while maintaining necessary safety boundaries.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_088",
+      "number": 88,
+      "assessmentType": "definition_meaning_match",
+      "term": "Problem-solving",
+      "prompt": "Which meaning best matches “Problem-solving”?",
+      "options": [
+        {
+          "id": "q088_a",
+          "label": "A",
+          "text": "A repeated pattern of behaviour used to dominate, isolate or restrict another person."
+        },
+        {
+          "id": "q088_b",
+          "label": "B",
+          "text": "Reacting to danger through anger, aggression, arguing or confrontation."
+        },
+        {
+          "id": "q088_c",
+          "label": "C",
+          "text": "Feeling secure enough to express feelings without fear, ridicule or punishment."
+        },
+        {
+          "id": "q088_d",
+          "label": "D",
+          "text": "A result that happens without an adult creating the outcome."
+        },
+        {
+          "id": "q088_e",
+          "label": "E",
+          "text": "Recognising physical sensations that may signal emotions, stress or safety needs."
+        },
+        {
+          "id": "q088_f",
+          "label": "F",
+          "text": "Identifying a difficulty, considering options and choosing a safe response."
+        }
+      ],
+      "correctOptionId": "q088_f",
+      "correctDefinition": "Identifying a difficulty, considering options and choosing a safe response.",
+      "explanation": "Problem-solving means: Identifying a difficulty, considering options and choosing a safe response.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_089",
+      "number": 89,
+      "assessmentType": "definition_meaning_match",
+      "term": "Collaborative problem-solving",
+      "prompt": "Which meaning best matches “Collaborative problem-solving”?",
+      "options": [
+        {
+          "id": "q089_a",
+          "label": "A",
+          "text": "Controlling money or resources to restrict another person’s independence and choices."
+        },
+        {
+          "id": "q089_b",
+          "label": "B",
+          "text": "Reacting to danger by escaping, avoiding or becoming restless."
+        },
+        {
+          "id": "q089_c",
+          "label": "C",
+          "text": "Being protected from injury, violence, dangerous objects and unsafe environments."
+        },
+        {
+          "id": "q089_d",
+          "label": "D",
+          "text": "A respectful consequence directly connected to the behaviour."
+        },
+        {
+          "id": "q089_e",
+          "label": "E",
+          "text": "An adult and child working together to understand and address a difficulty."
+        },
+        {
+          "id": "q089_f",
+          "label": "F",
+          "text": "A small change that indicates stress or dysregulation may be increasing."
+        }
+      ],
+      "correctOptionId": "q089_e",
+      "correctDefinition": "An adult and child working together to understand and address a difficulty.",
+      "explanation": "Collaborative problem-solving means: An adult and child working together to understand and address a difficulty.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_090",
+      "number": 90,
+      "assessmentType": "definition_meaning_match",
+      "term": "Family meeting",
+      "prompt": "Which meaning best matches “Family meeting”?",
+      "options": [
+        {
+          "id": "q090_a",
+          "label": "A",
+          "text": "Repeated behaviour that humiliates, frightens, controls or damages emotional wellbeing."
+        },
+        {
+          "id": "q090_b",
+          "label": "B",
+          "text": "Reacting to danger by becoming still, numb, silent or unable to act."
+        },
+        {
+          "id": "q090_c",
+          "label": "C",
+          "text": "Failing to provide a child’s essential care, safety, supervision or basic needs."
+        },
+        {
+          "id": "q090_d",
+          "label": "D",
+          "text": "A planned discussion where family members share concerns, ideas and decisions respectfully."
+        },
+        {
+          "id": "q090_e",
+          "label": "E",
+          "text": "Responding reliably and following through on reasonable expectations."
+        },
+        {
+          "id": "q090_f",
+          "label": "F",
+          "text": "A prepared way to stop, regulate and think before responding."
+        }
+      ],
+      "correctOptionId": "q090_d",
+      "correctDefinition": "A planned discussion where family members share concerns, ideas and decisions respectfully.",
+      "explanation": "Family meeting means: A planned discussion where family members share concerns, ideas and decisions respectfully.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_091",
+      "number": 91,
+      "assessmentType": "definition_meaning_match",
+      "term": "Shared decision-making",
+      "prompt": "Which meaning best matches “Shared decision-making”?",
+      "options": [
+        {
+          "id": "q091_a",
+          "label": "A",
+          "text": "Using devices or online services to monitor, threaten, harass or control someone."
+        },
+        {
+          "id": "q091_b",
+          "label": "B",
+          "text": "Trying to avoid danger by pleasing, agreeing with or submitting to others."
+        },
+        {
+          "id": "q091_c",
+          "label": "C",
+          "text": "Including relevant people in decisions that affect their lives whenever safe and appropriate."
+        },
+        {
+          "id": "q091_d",
+          "label": "D",
+          "text": "Watching and supporting a child according to their age, abilities and environment."
+        },
+        {
+          "id": "q091_e",
+          "label": "E",
+          "text": "A predictable pattern of activities that supports stability and security."
+        },
+        {
+          "id": "q091_f",
+          "label": "F",
+          "text": "The ability to recognise, name, understand and communicate emotions."
+        }
+      ],
+      "correctOptionId": "q091_c",
+      "correctDefinition": "Including relevant people in decisions that affect their lives whenever safe and appropriate.",
+      "explanation": "Shared decision-making means: Including relevant people in decisions that affect their lives whenever safe and appropriate.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_092",
+      "number": 92,
+      "assessmentType": "definition_meaning_match",
+      "term": "Co-parenting",
+      "prompt": "Which meaning best matches “Co-parenting”?",
+      "options": [
+        {
+          "id": "q092_a",
+          "label": "A",
+          "text": "Sharing a concern or harmful experience with a trusted person in a supported way."
+        },
+        {
+          "id": "q092_b",
+          "label": "B",
+          "text": "Adults working together to meet a child’s needs, whether or not they are in a relationship."
+        },
+        {
+          "id": "q092_c",
+          "label": "C",
+          "text": "Recognising your own thoughts, feelings, behaviours and reactions."
+        },
+        {
+          "id": "q092_d",
+          "label": "D",
+          "text": "The emotional bond that helps a child feel safe, connected and supported."
+        },
+        {
+          "id": "q092_e",
+          "label": "E",
+          "text": "A requirement that matches the child’s developmental abilities and needs."
+        },
+        {
+          "id": "q092_f",
+          "label": "F",
+          "text": "Understanding emotions and using that knowledge to guide safe behaviour and relationships."
+        }
+      ],
+      "correctOptionId": "q092_b",
+      "correctDefinition": "Adults working together to meet a child’s needs, whether or not they are in a relationship.",
+      "explanation": "Co-parenting means: Adults working together to meet a child’s needs, whether or not they are in a relationship.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_093",
+      "number": 93,
+      "assessmentType": "definition_meaning_match",
+      "term": "Parallel parenting",
+      "prompt": "Which meaning best matches “Parallel parenting”?",
+      "options": [
+        {
+          "id": "q093_a",
+          "label": "A",
+          "text": "A structured arrangement that limits direct conflict between separated parents."
+        },
+        {
+          "id": "q093_b",
+          "label": "B",
+          "text": "A legal duty held by specified professionals to report certain child-safety concerns."
+        },
+        {
+          "id": "q093_c",
+          "label": "C",
+          "text": "Thinking honestly about your actions and what you could learn from them."
+        },
+        {
+          "id": "q093_d",
+          "label": "D",
+          "text": "A trusting relationship in which a child expects comfort, protection and care."
+        },
+        {
+          "id": "q093_e",
+          "label": "E",
+          "text": "An action that may communicate a child’s feeling, need or difficulty."
+        },
+        {
+          "id": "q093_f",
+          "label": "F",
+          "text": "The ability to recover, adapt and continue after stress or difficulty."
+        }
+      ],
+      "correctOptionId": "q093_a",
+      "correctDefinition": "A structured arrangement that limits direct conflict between separated parents.",
+      "explanation": "Parallel parenting means: A structured arrangement that limits direct conflict between separated parents.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_094",
+      "number": 94,
+      "assessmentType": "definition_meaning_match",
+      "term": "Family violence",
+      "prompt": "Which meaning best matches “Family violence”?",
+      "options": [
+        {
+          "id": "q094_a",
+          "label": "A",
+          "text": "Managing emotions and behaviour in a safe and healthy way."
+        },
+        {
+          "id": "q094_b",
+          "label": "B",
+          "text": "Accepting responsibility for your choices and their effects."
+        },
+        {
+          "id": "q094_c",
+          "label": "C",
+          "text": "Noticing and responding appropriately to a child’s emotional and physical cues."
+        },
+        {
+          "id": "q094_d",
+          "label": "D",
+          "text": "Information showing that safer behaviour has been demonstrated consistently over time."
+        },
+        {
+          "id": "q094_e",
+          "label": "E",
+          "text": "Healthy actions that support physical, emotional and mental wellbeing."
+        },
+        {
+          "id": "q094_f",
+          "label": "F",
+          "text": "Behaviour used to control, threaten, frighten or harm a family member."
+        }
+      ],
+      "correctOptionId": "q094_f",
+      "correctDefinition": "Behaviour used to control, threaten, frighten or harm a family member.",
+      "explanation": "Family violence means: Behaviour used to control, threaten, frighten or harm a family member.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_095",
+      "number": 95,
+      "assessmentType": "definition_meaning_match",
+      "term": "Coercive control",
+      "prompt": "Which meaning best matches “Coercive control”?",
+      "options": [
+        {
+          "id": "q095_a",
+          "label": "A",
+          "text": "Helping another person calm down through connection, reassurance and support."
+        },
+        {
+          "id": "q095_b",
+          "label": "B",
+          "text": "Understanding why something happened and how your behaviour affected others."
+        },
+        {
+          "id": "q095_c",
+          "label": "C",
+          "text": "Building safety and connection before addressing a child’s behaviour."
+        },
+        {
+          "id": "q095_d",
+          "label": "D",
+          "text": "A dated and organised record of actions, progress, challenges or completed tasks."
+        },
+        {
+          "id": "q095_e",
+          "label": "E",
+          "text": "A repeated pattern of behaviour used to dominate, isolate or restrict another person."
+        },
+        {
+          "id": "q095_f",
+          "label": "F",
+          "text": "Physical and emotional exhaustion caused by prolonged stress and overwhelming demands."
+        }
+      ],
+      "correctOptionId": "q095_e",
+      "correctDefinition": "A repeated pattern of behaviour used to dominate, isolate or restrict another person.",
+      "explanation": "Coercive control means: A repeated pattern of behaviour used to dominate, isolate or restrict another person.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_096",
+      "number": 96,
+      "assessmentType": "definition_meaning_match",
+      "term": "Financial abuse",
+      "prompt": "Which meaning best matches “Financial abuse”?",
+      "options": [
+        {
+          "id": "q096_a",
+          "label": "A",
+          "text": "A state where emotions or body reactions become difficult to manage."
+        },
+        {
+          "id": "q096_b",
+          "label": "B",
+          "text": "A strength or support that reduces risk and improves family wellbeing."
+        },
+        {
+          "id": "q096_c",
+          "label": "C",
+          "text": "Showing that another person’s feelings and experiences have been heard and understood."
+        },
+        {
+          "id": "q096_d",
+          "label": "D",
+          "text": "Controlling money or resources to restrict another person’s independence and choices."
+        },
+        {
+          "id": "q096_e",
+          "label": "E",
+          "text": "Recognising abilities, progress, resources and protective qualities while addressing concerns."
+        },
+        {
+          "id": "q096_f",
+          "label": "F",
+          "text": "A parent’s ability to consistently meet their child’s safety, care and developmental needs."
+        }
+      ],
+      "correctOptionId": "q096_d",
+      "correctDefinition": "Controlling money or resources to restrict another person’s independence and choices.",
+      "explanation": "Financial abuse means: Controlling money or resources to restrict another person’s independence and choices.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_097",
+      "number": 97,
+      "assessmentType": "definition_meaning_match",
+      "term": "Emotional abuse",
+      "prompt": "Which meaning best matches “Emotional abuse”?",
+      "options": [
+        {
+          "id": "q097_a",
+          "label": "A",
+          "text": "Something that causes a strong emotional or physical reaction."
+        },
+        {
+          "id": "q097_b",
+          "label": "B",
+          "text": "A condition or behaviour that may increase the chance of harm."
+        },
+        {
+          "id": "q097_c",
+          "label": "C",
+          "text": "Repeated behaviour that humiliates, frightens, controls or damages emotional wellbeing."
+        },
+        {
+          "id": "q097_d",
+          "label": "D",
+          "text": "Giving full attention and checking that you correctly understand the speaker."
+        },
+        {
+          "id": "q097_e",
+          "label": "E",
+          "text": "Safely returning a child to a parent’s care when the required conditions have been met."
+        },
+        {
+          "id": "q097_f",
+          "label": "F",
+          "text": "An ability, behaviour or resource that supports positive outcomes for a child."
+        }
+      ],
+      "correctOptionId": "q097_c",
+      "correctDefinition": "Repeated behaviour that humiliates, frightens, controls or damages emotional wellbeing.",
+      "explanation": "Emotional abuse means: Repeated behaviour that humiliates, frightens, controls or damages emotional wellbeing.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_098",
+      "number": 98,
+      "assessmentType": "definition_meaning_match",
+      "term": "Technology-facilitated abuse",
+      "prompt": "Which meaning best matches “Technology-facilitated abuse”?",
+      "options": [
+        {
+          "id": "q098_a",
+          "label": "A",
+          "text": "Using the senses or body to reconnect with the present moment."
+        },
+        {
+          "id": "q098_b",
+          "label": "B",
+          "text": "Using devices or online services to monitor, threaten, harass or control someone."
+        },
+        {
+          "id": "q098_c",
+          "label": "C",
+          "text": "A clear set of actions for responding to danger or unsafe situations."
+        },
+        {
+          "id": "q098_d",
+          "label": "D",
+          "text": "Trying to understand another person’s feelings and point of view."
+        },
+        {
+          "id": "q098_e",
+          "label": "E",
+          "text": "Supporting someone with awareness of how trauma may affect their feelings, behaviour and needs."
+        },
+        {
+          "id": "q098_f",
+          "label": "F",
+          "text": "Something important for safety, health, connection or development that has not been provided."
+        }
+      ],
+      "correctOptionId": "q098_b",
+      "correctDefinition": "Using devices or online services to monitor, threaten, harass or control someone.",
+      "explanation": "Technology-facilitated abuse means: Using devices or online services to monitor, threaten, harass or control someone.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_099",
+      "number": 99,
+      "assessmentType": "definition_meaning_match",
+      "term": "Safe disclosure",
+      "prompt": "Which meaning best matches “Safe disclosure”?",
+      "options": [
+        {
+          "id": "q099_a",
+          "label": "A",
+          "text": "Sharing a concern or harmful experience with a trusted person in a supported way."
+        },
+        {
+          "id": "q099_b",
+          "label": "B",
+          "text": "The emotional zone where a person can think, feel and respond effectively."
+        },
+        {
+          "id": "q099_c",
+          "label": "C",
+          "text": "Trusted people and services that can provide practical or emotional help."
+        },
+        {
+          "id": "q099_d",
+          "label": "D",
+          "text": "Expressing needs and concerns without threats, insults, intimidation or blame."
+        },
+        {
+          "id": "q099_e",
+          "label": "E",
+          "text": "An emotional, physical or behavioural reaction connected to a frightening or harmful experience."
+        },
+        {
+          "id": "q099_f",
+          "label": "F",
+          "text": "Essentials such as food, water, clothing, shelter, hygiene, healthcare and safety."
+        }
+      ],
+      "correctOptionId": "q099_a",
+      "correctDefinition": "Sharing a concern or harmful experience with a trusted person in a supported way.",
+      "explanation": "Safe disclosure means: Sharing a concern or harmful experience with a trusted person in a supported way.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    },
+    {
+      "id": "safesteps_definition_match_100",
+      "number": 100,
+      "assessmentType": "definition_meaning_match",
+      "term": "Mandatory reporting",
+      "prompt": "Which meaning best matches “Mandatory reporting”?",
+      "options": [
+        {
+          "id": "q100_a",
+          "label": "A",
+          "text": "Reacting to danger through anger, aggression, arguing or confrontation."
+        },
+        {
+          "id": "q100_b",
+          "label": "B",
+          "text": "A trusted adult a child can approach when worried, frightened or needing help."
+        },
+        {
+          "id": "q100_c",
+          "label": "C",
+          "text": "Working through disagreement to find a safe and respectful solution."
+        },
+        {
+          "id": "q100_d",
+          "label": "D",
+          "text": "Feeling overly alert, anxious, restless or ready to react to danger."
+        },
+        {
+          "id": "q100_e",
+          "label": "E",
+          "text": "A skill or ability commonly gained during a particular stage of childhood."
+        },
+        {
+          "id": "q100_f",
+          "label": "F",
+          "text": "A legal duty held by specified professionals to report certain child-safety concerns."
+        }
+      ],
+      "correctOptionId": "q100_f",
+      "correctDefinition": "A legal duty held by specified professionals to report certain child-safety concerns.",
+      "explanation": "Mandatory reporting means: A legal duty held by specified professionals to report certain child-safety concerns.",
+      "points": 1,
+      "shuffleOptions": true,
+      "allowRetry": true,
+      "maxAttempts": 2
+    }
+  ]
+}
