@@ -1,4 +1,9 @@
 import { supabase } from "../supabase/client";
+import {
+  defaultRepresentationPreferences,
+  normaliseRepresentationPreferences,
+  type RepresentationPreferences,
+} from "./representationPreferencesEngine";
 
 function getAuthRedirectUrl() {
   if (process.env.EXPO_PUBLIC_AUTH_REDIRECT_URL) {
@@ -20,6 +25,7 @@ export type SafeStepsProfile = {
   story_goal: string;
   strengths: string;
   support_notes: string;
+  representation_preferences: RepresentationPreferences;
   created_at: string;
   updated_at: string;
 };
@@ -126,7 +132,10 @@ export async function fetchMyProfile() {
     });
   }
 
-  return data as SafeStepsProfile;
+  return {
+    ...data,
+    representation_preferences: normaliseRepresentationPreferences(data.representation_preferences),
+  } as SafeStepsProfile;
 }
 
 export async function upsertProfile(input: {
@@ -135,6 +144,7 @@ export async function upsertProfile(input: {
   story_goal?: string;
   strengths?: string;
   support_notes?: string;
+  representation_preferences?: RepresentationPreferences;
 }) {
   const user = await getCurrentUser();
 
@@ -152,6 +162,7 @@ export async function upsertProfile(input: {
       story_goal: input.story_goal ?? "",
       strengths: input.strengths ?? "",
       support_notes: input.support_notes ?? "",
+      representation_preferences: input.representation_preferences ?? defaultRepresentationPreferences,
       updated_at: new Date().toISOString(),
     })
     .select()

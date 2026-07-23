@@ -1,6 +1,7 @@
 import { supabase } from "../supabase/client";
 import { resolveSingleActiveCaseId } from "../security/caseAccess";
 import { assertProgramCanStart } from "./programStartGateEngine";
+import { hasCompletedIntakeAssessment } from "../platformData";
 
 export type ProgramEnrollment = {
   id: string;
@@ -58,6 +59,12 @@ export async function startProgramEnrollment(programId: string, programTitle: st
   if (userError) throw new Error(userError.message);
   const userId = userData.user?.id;
   if (!userId) throw new Error("No logged-in user found. Parent must be signed in before starting a program.");
+
+  const intakeComplete = await hasCompletedIntakeAssessment(userId);
+
+  if (!intakeComplete) {
+    throw new Error("Complete the SafeSteps intake assessment before starting or continuing a program.");
+  }
 
   const existing = await fetchActiveProgramEnrollment(programId);
   if (existing) return existing;
