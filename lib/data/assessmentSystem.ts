@@ -47,16 +47,94 @@ export const assessmentRoutes = [
     description:
       "Generate structured progress reports for workers, court, programs, and parent records.",
   },
+  {
+    title: "Fairness & Reviewability",
+    href: "/assessment-system/fairness-review",
+    description:
+      "Check evidence reliability, protected disagreement, proportionality, service-system barriers, review triggers, and authorised decision packages.",
+  },
+  {
+    title: "Assessment Method Encyclopedia",
+    href: "/assessment-system/method-encyclopedia",
+    description:
+      "Reference varied assessment formats for knowledge, understanding, insight, behaviour, safety, parenting skills, professional review, and AI-assisted decision support.",
+  },
+  {
+    title: "Psychometric Assessment Engine",
+    href: "/assessment-system/psychometric-engine",
+    description:
+      "Convert assessment evidence into competency confidence, evidence quality, reliability, validity, sufficiency, contradictions, trend, and next-evidence recommendations.",
+  },
+  {
+    title: "Measurement & Evidence Ontology",
+    href: "/assessment-system/measurement-evidence-ontology",
+    description:
+      "Use a shared object model from person, competency, capability, behaviour, evidence, observation, finding, claim, conclusion, recommendation, and review.",
+  },
+  {
+    title: "Human Development Model",
+    href: "/assessment-system/human-development-model",
+    description:
+      "Track growth from exposure to mastery while keeping learning progress separate from demonstrated competency evidence across contexts.",
+  },
+  {
+    title: "Human Development Operating System",
+    href: "/assessment-system/human-development-operating-system",
+    description:
+      "Coordinate people, competencies, activities, evidence, reasoning, outcomes, progress, time, quality, reports, and AI through shared architecture.",
+  },
+  {
+    title: "Platform Domain Architecture",
+    href: "/assessment-system/platform-domain-architecture",
+    description:
+      "Define SafeSteps platform domains, ownership boundaries, shared services, events, permanent IDs, versioning, and implementation blueprints.",
+  },
+  {
+    title: "Implementation Blueprint",
+    href: "/assessment-system/implementation-blueprint",
+    description:
+      "Define the buildable assessment database foundation, schema tables, scoring layers, evidence links, reviews, quality flags, audit history, and build phases.",
+  },
+  {
+    title: "Workflow & State Machines",
+    href: "/assessment-system/workflow-state-machines",
+    description:
+      "Control assessment, response, scoring, review, evidence, observation, competency, contradiction, disagreement, claim, report, event, and permission workflows.",
+  },
+  {
+    title: "Fairness & Assessor Governance",
+    href: "/assessment-system/fairness-governance",
+    description:
+      "Govern context, accessibility, cultural review, bias screening, assessor credentials, conflicts, AI limits, appeals, and procedural fairness.",
+  },
+  {
+    title: "Evidence Integrity & Chain of Custody",
+    href: "/assessment-system/evidence-integrity",
+    description:
+      "Protect original evidence with provenance, hashing, metadata review, security screening, consent, custody, legal holds, exports, and integrity alerts.",
+  },
+  {
+    title: "Event Orchestration",
+    href: "/assessment-system/event-orchestration",
+    description:
+      "Coordinate assessment submission, evidence processing, review queues, competency recalculation, notifications, appeals, reports, retries, and recovery through outbox workflows.",
+  },
+  {
+    title: "API & Service Contracts",
+    href: "/assessment-system/api-service-contracts",
+    description:
+      "Define stable typed API contracts, envelopes, errors, idempotency, optimistic concurrency, upload quarantine, endpoint groups, contract tests, and security rules.",
+  },
 ] as const;
 
 export const activeCase = {
-  caseName: "Katrina Watts Family Case",
-  program: "24 Month Reunification Program",
-  phase: "Month 3",
-  riskLevel: "High",
-  nextReviewDue: "23 July 2026",
-  assessment: "3 Month Review",
-  overallProgress: "Moderate to Strong",
+  caseName: "No live case selected",
+  program: "Select a program stream",
+  phase: "No phase selected",
+  riskLevel: "Not assessed",
+  nextReviewDue: "Not scheduled",
+  assessment: "No assessment selected",
+  overallProgress: "Not scored",
 };
 
 export const progressItems = [

@@ -81,6 +81,124 @@ const steps: {
     status: "Documents",
   },
   {
+    title: "Document Intelligence",
+    description: "Analyze pasted or uploaded document text across capacity, wellbeing, safety, evidence, and worker-review signals.",
+    href: "/assessment-system/document-intelligence" as Href,
+    status: "AI review",
+  },
+  {
+    title: "Fairness & Reviewability",
+    description:
+      "Check evidence reliability, protected disagreement, proportionality, service-system barriers, review triggers, and authorised decision packages.",
+    href: "/assessment-system/fairness-review" as Href,
+    status: "Safeguards",
+  },
+  {
+    title: "Assessment Method Encyclopedia",
+    description:
+      "Use varied assessment formats to measure knowledge, application, insight, behaviour, evidence, professional review, and longitudinal change.",
+    href: "/assessment-system/method-encyclopedia" as Href,
+    status: "Methods",
+  },
+  {
+    title: "Sequence Knowledge",
+    description:
+      "Arrange child-support actions into a safe order while separating actions that should be left out.",
+    href: "/assessment-system/sequence-knowledge" as Href,
+    status: "Sequence",
+  },
+  {
+    title: "Psychometric Assessment Engine",
+    description:
+      "Score demonstrated competency with confidence, evidence quality, reliability, validity, sufficiency, trend, and contradiction review.",
+    href: "/assessment-system/psychometric-engine" as Href,
+    status: "Psychometric",
+  },
+  {
+    title: "Measurement & Evidence Ontology",
+    description:
+      "Trace person, competency, capability, behaviour, evidence, observation, finding, claim, conclusion, recommendation, and human review.",
+    href: "/assessment-system/measurement-evidence-ontology" as Href,
+    status: "Ontology",
+  },
+  {
+    title: "Human Development Model",
+    description:
+      "Measure development from exposure to mastery and separate learning progress from demonstrated competency evidence.",
+    href: "/assessment-system/human-development-model" as Href,
+    status: "Development",
+  },
+  {
+    title: "Human Development Operating System",
+    description:
+      "Connect people, competencies, activities, evidence, reasoning, outcomes, progress, time, quality, reports, and AI.",
+    href: "/assessment-system/human-development-operating-system" as Href,
+    status: "HDOS",
+  },
+  {
+    title: "Platform Domain Architecture",
+    description:
+      "Define domain ownership, event flow, shared services, permanent IDs, versioning, and implementation blueprints.",
+    href: "/assessment-system/platform-domain-architecture" as Href,
+    status: "Platform",
+  },
+  {
+    title: "Implementation Blueprint",
+    description:
+      "Map the assessment database foundation, scoring tables, evidence links, claims, reviews, quality flags, audit records, and build phases.",
+    href: "/assessment-system/implementation-blueprint" as Href,
+    status: "Blueprint",
+  },
+  {
+    title: "Workflow & State Machines",
+    description:
+      "Define controlled lifecycle rules for templates, assignments, sessions, responses, scoring, evidence, reviews, claims, reports, events, and permissions.",
+    href: "/assessment-system/workflow-state-machines" as Href,
+    status: "Workflow",
+  },
+  {
+    title: "Fairness & Assessor Governance",
+    description:
+      "Govern context, accessibility, culture, socioeconomic barriers, assessor credentials, conflicts, bias screening, AI limits, appeals, and procedural fairness.",
+    href: "/assessment-system/fairness-governance" as Href,
+    status: "Governance",
+  },
+  {
+    title: "AI Governance & Responsible Automation",
+    description:
+      "Govern AI use cases, model lifecycle, prompt workflows, training data, inference routing, guardrails, fairness, explainability, human review, monitoring, incidents, and audit exports.",
+    href: "/assessment-system/ai-governance" as Href,
+    status: "AI controls",
+  },
+  {
+    title: "Evidence Integrity & Chain of Custody",
+    description:
+      "Protect evidence provenance, hashes, immutable originals, metadata, consent, child permissions, custody, legal holds, exports, and integrity alerts.",
+    href: "/assessment-system/evidence-integrity" as Href,
+    status: "Integrity",
+  },
+  {
+    title: "Event Orchestration",
+    description:
+      "Coordinate outbox events, workflow instances, retries, human tasks, timers, projections, notifications, appeals, reports, and failed-job recovery.",
+    href: "/assessment-system/event-orchestration" as Href,
+    status: "Events",
+  },
+  {
+    title: "API & Service Contracts",
+    description:
+      "Define typed API envelopes, stable errors, idempotency, concurrency, upload quarantine, endpoint groups, contract tests, and service boundaries.",
+    href: "/assessment-system/api-service-contracts" as Href,
+    status: "API",
+  },
+  {
+    title: "Program and Service Recommendations",
+    description:
+      "Match parent-reported needs to evidence-based parenting programs, service pathways, parent-report wording, and referral drafts.",
+    href: "/assessment-system/program-service-recommendations" as Href,
+    status: "Recommendations",
+  },
+  {
     title: "Service Referrals",
     description: "Track support referrals, provider-contact consent, attendance evidence, overdue follow-up, and review prompts.",
     href: "/referrals" as Href,
@@ -91,6 +209,20 @@ const steps: {
     description: "Check readiness across home stability, parenting routines, child voice, evidence, and risk reduction.",
     href: "/assessment-system/readiness-index" as Href,
     status: "Readiness",
+  },
+  {
+    title: "Contact Progression Review",
+    description:
+      "Review generated stage recommendations, hard blocks, required interventions, and caseworker override records.",
+    href: "/assessment-system/contact-progression-review" as Href,
+    status: "Stage review",
+  },
+  {
+    title: "Home Again Transition Review",
+    description:
+      "Review return-home stability, child adjustment, setbacks, support use, and maintenance-plan step-down gates.",
+    href: "/assessment-system/home-again-transition-review" as Href,
+    status: "Home Again",
   },
   {
     title: "Report Output",

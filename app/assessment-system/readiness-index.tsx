@@ -58,9 +58,10 @@ export default function ReadinessIndexScreen() {
       subtitle="Decision support that combines assessment scores, service completion, contact quality, milestones, and critical safety overrides."
     >
       <View style={styles.exampleNotice}>
-        <Text style={styles.exampleTitle}>Example calculation only</Text>
+        <Text style={styles.exampleTitle}>Calibration preview only</Text>
         <Text style={styles.summaryText}>
-          This readiness view currently uses sample responses, referrals, visitations, and milestones. It is not a live reunification recommendation.
+          This readiness view uses calibration responses to verify the index. It is not a live reunification
+          recommendation until connected to saved assessment, service, contact, and milestone records.
         </Text>
       </View>
 
@@ -89,7 +90,7 @@ export default function ReadinessIndexScreen() {
             <Text key={flag} style={styles.flagText}>{flag}</Text>
           ))
         ) : (
-          <Text style={styles.body}>No missing signal or critical-override flags in the current example.</Text>
+          <Text style={styles.body}>No missing signal or critical-override flags in the current calibration preview.</Text>
         )}
       </View>
 

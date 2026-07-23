@@ -40,7 +40,7 @@ export function AssessmentScreenShell({
             <Text style={styles.brand}>SAFE STEPS</Text>
             <Text style={styles.title}>{title}</Text>
           </View>
-          <Text style={styles.profileBadge}>Katrina Watts</Text>
+          <Text style={styles.profileBadge}>Worker review</Text>
         </View>
         {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
         {children}
@@ -62,15 +62,17 @@ export function AssessmentCard({
 export function AssessmentButton({
   label,
   href,
+  onPress,
   tone = "primary",
 }: {
   label: string;
   href?: string;
+  onPress?: () => void;
   tone?: "primary" | "secondary" | "warning" | "success";
 }) {
   const flattenedButtonStyle = StyleSheet.flatten([styles.button, buttonStyles[tone]]);
   const button = (
-    <Pressable style={flattenedButtonStyle}>
+    <Pressable style={flattenedButtonStyle} onPress={onPress}>
       <Text style={[styles.buttonText, tone === "secondary" && styles.secondaryButtonText]}>
         {label}
       </Text>

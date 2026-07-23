@@ -57,7 +57,15 @@ export default function ChildDevelopmentCapacityAssessmentScreen() {
           <Metric label="Scenario library" value={`${childDevelopmentCapacityScenarios.length}`} />
           <Metric label="Risk domains" value={`${capacityAssessmentDomains.length}`} />
           <Metric label="Observation weeks" value={`${contactObservationGuide.length}`} />
-          <Metric label="Sample score" value={`${sampleSummary.scorePercentage}%`} />
+          <Metric label="Calibration score" value={`${sampleSummary.scorePercentage}%`} />
+        </View>
+
+        <View style={styles.notice}>
+          <Text style={styles.noticeTitle}>Calibration preview only</Text>
+          <Text style={styles.cardText}>
+            The score and case-note language below come from built-in calibration responses. They are included to verify
+            the assessment logic and must not be treated as a live child-development or protective-capacity finding.
+          </Text>
         </View>
 
         <Section title="Assessment Domains">
@@ -85,16 +93,16 @@ export default function ChildDevelopmentCapacityAssessmentScreen() {
           ))}
         </Section>
 
-        <Section title="Scoring Preview">
+        <Section title="Calibration Scoring Preview">
           <View style={styles.card}>
-            <Text style={styles.cardTitle}>Worker review summary</Text>
+            <Text style={styles.cardTitle}>Calibration review summary</Text>
             <Text style={styles.cardText}>{sampleSummary.reportLanguage}</Text>
             {sampleSummary.domainSummaries.map((domain) => (
               <Text key={domain.domain} style={styles.bullet}>
                 - {domain.domain.replace(/_/g, " ")}: {domain.scorePercentage}% across {domain.tested} tested scenario(s)
               </Text>
             ))}
-            <Text style={styles.subheading}>Evidence-based case note example</Text>
+            <Text style={styles.subheading}>Evidence-based case note template example</Text>
             <Text style={styles.cardText}>{sampleCaseNote}</Text>
           </View>
         </Section>
@@ -193,6 +201,19 @@ const styles = StyleSheet.create({
   },
   section: {
     gap: 12,
+  },
+  notice: {
+    gap: 8,
+    padding: 16,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#B45309",
+    backgroundColor: "#FFFBEB",
+  },
+  noticeTitle: {
+    color: "#92400E",
+    fontSize: 16,
+    fontWeight: "900",
   },
   sectionTitle: {
     color: assessmentColors.charcoal,

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Emotional Awareness Check",
+    "purpose": "Help parents identify their emotional state.",
+    "prompts": [
+      "What emotion did you feel today?",
+      "What caused it?",
+      "How did you respond?"
+    ],
+    "fields": [
+      "emotion_felt",
+      "emotion_cause",
+      "emotion_response"
+    ],
+    "meta": {
+      "domain": "emotional_awareness",
+      "difficulty": "intro",
+      "tags": ["emotion", "awareness", "daily"]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Stress Reflection",
+    "purpose": "Identify stress triggers and responses.",
+    "prompts": [
+      "What stressed you today?",
+      "How did it affect your parenting?",
+      "What could help next time?"
+    ],
+    "fields": [
+      "stress_trigger",
+      "stress_effect",
+      "stress_plan"
+    ],
+    "meta": {
+      "domain": "stress",
+      "difficulty": "intro",
+      "tags": ["stress", "reflection"]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Child Communication Reflection",
+    "purpose": "Improve communication with your child.",
+    "prompts": [
+      "What did your child try to express?",
+      "How did you respond?",
+      "How could you respond next time?"
+    ],
+    "fields": [
+      "child_expression",
+      "parent_response",
+      "improved_response"
+    ],
+    "meta": {
+      "domain": "communication",
+      "difficulty": "intro",
+      "tags": ["communication", "child"]
+    }
+  }
+]

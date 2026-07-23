@@ -78,9 +78,10 @@ export default function RubricScoringScreen() {
       subtitle="Score the SafeSteps assessment domains with weighted scoring, critical-item overrides, and reunification readiness support."
     >
       <View style={styles.exampleNotice}>
-        <Text style={styles.exampleTitle}>Example calculation only</Text>
+        <Text style={styles.exampleTitle}>Calibration preview only</Text>
         <Text style={styles.summaryText}>
-          This screen currently uses sample assessment responses and sample service, contact, and milestone signals. Do not treat these scores as a live case result.
+          This screen uses built-in calibration responses to verify scoring logic. Do not treat these scores as a live
+          case result until connected to saved assessment records and reviewed evidence.
         </Text>
       </View>
 
