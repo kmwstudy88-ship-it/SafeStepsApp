@@ -138,6 +138,7 @@ describe("standalone course helpers", () => {
     ["safesteps-connection-and-regulation", 6],
     ["safesteps-safety-separation-and-coparenting", 9],
     ["safesteps-communication-and-family-conversations", 8],
+    ["safesteps-production-readiness-practice-pack", 4],
     ["strong-fathers-safe-children", 48],
   ])("%s lessons include parent meaning prompts", (courseId, lessonCount) => {
     const course = getCourseById(courseId);
@@ -209,6 +210,37 @@ describe("standalone course helpers", () => {
         durationMinutes: 25,
       }),
     );
+  });
+
+  test("production readiness practice pack includes first-class tasks, assessments, tests, activities, and evidence", () => {
+    const course = getCourseById("safesteps-production-readiness-practice-pack");
+
+    expect(course?.description).toContain("tasks");
+    expect(course?.lessons).toHaveLength(4);
+
+    const requiredStepTitles = [
+      /activity/i,
+      /assessment|checkpoint/i,
+      /knowledge|test/i,
+      /task/i,
+      /evidence/i,
+    ];
+
+    for (const lesson of course!.lessons) {
+      const steps = lesson.content?.steps ?? [];
+      const stepTitles = steps.map((step) => step.title).join(" ");
+      const stepBodies = steps.map((step) => step.body).join(" ");
+
+      expect(lesson.summary?.length).toBeGreaterThan(60);
+      expect(lesson.content?.whyItMatters.length).toBeGreaterThan(200);
+      expect(lesson.content?.parentMeaningPrompt).toBeTruthy();
+
+      for (const titlePattern of requiredStepTitles) {
+        expect(`${stepTitles} ${stepBodies}`).toMatch(titlePattern);
+      }
+
+      expect(stepBodies).toMatch(/upload|save|record/i);
+    }
   });
 
   test("course areas map users to real structured course sets", () => {

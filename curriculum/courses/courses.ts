@@ -1,4 +1,5 @@
 import { completeCourseLibrary, completeCourseLibraryCourseIds } from "./completeCourseLibrary";
+import { productionReadinessLessonPack } from "./productionReadinessLessonPack";
 import { safestepsProductionCourses } from "./safestepsProductionCourses";
 import { strongFathersStandaloneCourse } from "./strongFathersCourse";
 
@@ -50,6 +51,7 @@ export type CourseArea = {
 export const courses: StandaloneCourse[] = [
   ...completeCourseLibrary,
   ...safestepsProductionCourses,
+  productionReadinessLessonPack,
   strongFathersStandaloneCourse,
   {
     id: "communication-skills",
@@ -3146,6 +3148,7 @@ export const courseAreas: CourseArea[] = [
     suggestedStartCourseId: "parent-safety-and-stability",
     courseIds: [
       "parent-safety-and-stability",
+      "safesteps-production-readiness-practice-pack",
       "child-safety-foundations",
       "protective-parenting-foundations",
       "demonstrating-change-self-managed-safety",
