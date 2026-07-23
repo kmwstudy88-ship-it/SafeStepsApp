@@ -112,7 +112,17 @@ export default function ChallengeDetailScreen() {
             </Pressable>
           </Link>
           {task.evidence_required && task.status !== "completed" ? (
-            <Link href={"/evidence" as Href} asChild>
+            <Link
+              href={{
+                pathname: "/evidence",
+                params: {
+                  taskId: task.id,
+                  taskTitle: task.title,
+                  challengeId: challenge.id,
+                },
+              } as unknown as Href}
+              asChild
+            >
               <Pressable style={globalStyles.secondaryButton}>
                 <Text style={globalStyles.secondaryButtonText}>Add Evidence</Text>
               </Pressable>

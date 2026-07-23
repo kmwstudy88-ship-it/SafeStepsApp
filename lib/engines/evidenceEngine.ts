@@ -7,12 +7,19 @@ import {
   queueOfflineEvidence,
   removeOfflineEvidenceItem,
 } from "./offlineEvidenceVault";
+import type { EvidenceReviewAvailability } from "./structuredEvidenceWorkflow";
 
 export type EvidenceItem = {
   id: string;
   owner_id: string;
   title: string;
   notes: string;
+  evidence_type?: string | null;
+  purpose?: string | null;
+  structured_data?: Record<string, unknown> | null;
+  review_status?: "draft" | "pending_review" | "reviewed" | "excluded";
+  dispute_status?: "not_disputed" | "disputed" | "resolved" | "superseded";
+  source_reliability?: string | null;
   file_path: string | null;
   status: "draft" | "stored" | "shared";
   created_at: string;
@@ -28,6 +35,12 @@ export type EvidenceItem = {
 export type CreateEvidenceItemInput = {
   title: string;
   notes?: string;
+  evidence_type?: string | null;
+  purpose?: string | null;
+  structured_data?: Record<string, unknown> | null;
+  review_status?: "draft" | "pending_review" | "reviewed" | "excluded";
+  dispute_status?: "not_disputed" | "disputed" | "resolved" | "superseded";
+  source_reliability?: string | null;
   file_path?: string | null;
   status?: "draft" | "stored" | "shared";
   captured_at?: string | null;
@@ -41,13 +54,25 @@ export type CreateEvidenceItemInput = {
 export type CreateEvidenceWithAttachmentInput = {
   title: string;
   notes?: string;
+  evidence_type?: string | null;
+  purpose?: string | null;
+  structured_data?: Record<string, unknown> | null;
   attachment?: OfflineEvidenceAttachment | null;
+};
+
+export type EvidenceCaseReviewAvailability = {
+  status: EvidenceReviewAvailability;
+  caseIds: string[];
+  linkedWorkerCount: number;
 };
 
 async function createEvidenceIntegrityHash(input: {
   owner_id: string;
   title: string;
   notes: string;
+  evidence_type: string | null;
+  purpose: string | null;
+  structured_data: Record<string, unknown> | null;
   file_path: string | null;
   status: string;
   captured_at: string | null;
@@ -60,6 +85,9 @@ async function createEvidenceIntegrityHash(input: {
     owner_id: input.owner_id,
     title: input.title,
     notes: input.notes,
+    evidence_type: input.evidence_type,
+    purpose: input.purpose,
+    structured_data: input.structured_data,
     file_path: input.file_path,
     status: input.status,
     captured_at: input.captured_at,
@@ -192,16 +220,80 @@ export async function fetchEvidenceItems() {
   return (data ?? []) as EvidenceItem[];
 }
 
+export async function fetchEvidenceCaseReviewAvailability(): Promise<EvidenceCaseReviewAvailability> {
+  const userId = await getCurrentEvidenceUserId("checking evidence review availability");
+
+  const { data: directCases, error: directCaseError } = await supabase
+    .from("reunification_cases")
+    .select("id,worker_user_id")
+    .or(`owner_id.eq.${userId},parent_user_id.eq.${userId}`);
+
+  if (directCaseError) {
+    return { status: "unknown_case_linkage", caseIds: [], linkedWorkerCount: 0 };
+  }
+
+  const directCaseIds = (directCases ?? []).map((row) => row.id).filter(Boolean) as string[];
+  const directWorkerCount = (directCases ?? []).filter((row) => Boolean(row.worker_user_id)).length;
+
+  const { data: profileRows, error: profileError } = await supabase
+    .from("parent_profiles")
+    .select("case_id")
+    .eq("owner_id", userId);
+
+  const profileCaseIds = profileError
+    ? []
+    : ((profileRows ?? []).map((row) => row.case_id).filter(Boolean) as string[]);
+  const caseIds = Array.from(new Set([...directCaseIds, ...profileCaseIds]));
+
+  if (caseIds.length === 0) {
+    return { status: "no_linked_worker", caseIds: [], linkedWorkerCount: 0 };
+  }
+
+  const [sessions, documents, referrals] = await Promise.all([
+    supabase.from("case_sessions").select("worker_user_id").in("case_id", caseIds),
+    supabase.from("case_documents").select("worker_user_id").in("case_id", caseIds),
+    supabase.from("case_service_referrals").select("worker_user_id").in("case_id", caseIds),
+  ]);
+
+  if (sessions.error || documents.error || referrals.error) {
+    return {
+      status: directWorkerCount > 0 ? "linked_worker_available" : "unknown_case_linkage",
+      caseIds,
+      linkedWorkerCount: directWorkerCount,
+    };
+  }
+
+  const linkedWorkerIds = new Set<string>();
+  (directCases ?? []).forEach((row) => {
+    if (row.worker_user_id) linkedWorkerIds.add(row.worker_user_id);
+  });
+  [...(sessions.data ?? []), ...(documents.data ?? []), ...(referrals.data ?? [])].forEach((row) => {
+    if (row.worker_user_id) linkedWorkerIds.add(row.worker_user_id);
+  });
+
+  return {
+    status: linkedWorkerIds.size > 0 ? "linked_worker_available" : "no_linked_worker",
+    caseIds,
+    linkedWorkerCount: linkedWorkerIds.size,
+  };
+}
+
 export async function createEvidenceItem(input: CreateEvidenceItemInput) {
   const userId = await getCurrentEvidenceUserId("adding evidence");
   const status = input.status ?? "stored";
   const capturedAt = input.captured_at ?? new Date().toISOString();
   const notes = input.notes ?? "";
   const filePath = input.file_path ?? null;
+  const evidenceType = input.evidence_type ?? null;
+  const purpose = input.purpose ?? null;
+  const structuredData = input.structured_data ?? null;
   const integrityHash = await createEvidenceIntegrityHash({
     owner_id: userId,
     title: input.title,
     notes,
+    evidence_type: evidenceType,
+    purpose,
+    structured_data: structuredData,
     file_path: filePath,
     status,
     captured_at: capturedAt,
@@ -217,6 +309,12 @@ export async function createEvidenceItem(input: CreateEvidenceItemInput) {
       owner_id: userId,
       title: input.title,
       notes,
+      evidence_type: evidenceType,
+      purpose,
+      structured_data: structuredData,
+      review_status: input.review_status ?? "draft",
+      dispute_status: input.dispute_status ?? "not_disputed",
+      source_reliability: input.source_reliability ?? null,
       file_path: filePath,
       status,
       captured_at: capturedAt,
@@ -258,6 +356,8 @@ export async function createEvidenceItem(input: CreateEvidenceItemInput) {
       notes,
       file_path: filePath,
       status,
+      evidence_type: evidenceType,
+      purpose,
       captured_at: capturedAt,
       integrity_hash: integrityHash,
     },
@@ -289,6 +389,10 @@ export async function createEvidenceItemWithOfflineFallback(input: CreateEvidenc
       item: await createEvidenceItem({
         title: input.title,
         notes: evidenceNotesWithAttachment(input),
+        evidence_type: input.evidence_type ?? null,
+        purpose: input.purpose ?? null,
+        structured_data: input.structured_data ?? null,
+        source_reliability: input.structured_data?.source_reliability as string | null | undefined,
         file_path: filePath,
         status: "stored",
       }),
@@ -298,6 +402,9 @@ export async function createEvidenceItemWithOfflineFallback(input: CreateEvidenc
       ownerId: userId,
       title: input.title,
       notes: evidenceNotesWithAttachment(input),
+      evidenceType: input.evidence_type ?? null,
+      purpose: input.purpose ?? null,
+      structuredData: input.structured_data ?? null,
       attachment: input.attachment ?? null,
     });
 
@@ -342,6 +449,10 @@ export async function syncPendingOfflineEvidence() {
           .filter(Boolean)
           .join("\n"),
         file_path: filePath,
+        evidence_type: pendingItem.evidenceType ?? null,
+        purpose: pendingItem.purpose ?? null,
+        structured_data: pendingItem.structuredData ?? null,
+        source_reliability: pendingItem.structuredData?.source_reliability as string | null | undefined,
         status: "stored",
         captured_at: pendingItem.createdAt,
         vault_hash: pendingItem.integrityHash,

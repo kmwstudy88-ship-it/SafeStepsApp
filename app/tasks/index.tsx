@@ -7,6 +7,7 @@ import {
   TextInput,
   View,
 } from "react-native";
+import { Link, type Href } from "expo-router";
 import {
   completeUserTasks,
   completeUserTask,
@@ -81,7 +82,7 @@ export default function TasksScreen() {
     setMessage("");
 
     try {
-      await completeUserTask(task.id, task.title);
+      await completeUserTask(task);
       await loadTasks();
       setMessage("Task marked complete.");
     } catch (completeError) {
@@ -126,9 +127,16 @@ export default function TasksScreen() {
       const result = await completeUserTasks(readyTasks);
       await loadTasks();
       setMessage(
-        result.updatedCount === 0
+        result.updatedCount === 0 && result.skippedCount === 0
           ? "No ready tasks needed updating."
-          : `${result.updatedCount} ready tasks marked complete.`,
+          : [
+              result.updatedCount > 0 ? `${result.updatedCount} ready tasks marked complete` : null,
+              result.skippedCount > 0
+                ? `${result.skippedCount} challenge tasks still need linked evidence before completion`
+                : null,
+            ]
+              .filter(Boolean)
+              .join(". ") + ".",
       );
     } catch (completeError) {
       setError(
@@ -369,6 +377,39 @@ export default function TasksScreen() {
           <Text style={{ marginTop: 6 }}>
             Evidence required: {task.evidence_required ? "Yes" : "No"}
           </Text>
+          {task.evidence_required ? (
+            <Text style={{ marginTop: 6, fontWeight: "bold", color: "#7a4a00" }}>
+              Add linked evidence before marking this challenge complete.
+            </Text>
+          ) : null}
+
+          {task.evidence_required ? (
+            <Link
+              href={{
+                pathname: "/evidence",
+                params: {
+                  taskId: task.id,
+                  taskTitle: task.title,
+                  challengeId: task.related_lesson_id?.startsWith("challenge:")
+                    ? task.related_lesson_id.replace("challenge:", "")
+                    : "",
+                },
+              } as unknown as Href}
+              asChild
+            >
+              <Pressable
+                style={{
+                  marginTop: 12,
+                  padding: 12,
+                  backgroundColor: "#fff4d6",
+                  borderRadius: 10,
+                  alignItems: "center",
+                }}
+              >
+                <Text style={{ fontWeight: "bold" }}>Add Evidence for This Task</Text>
+              </Pressable>
+            </Link>
+          ) : null}
 
           <Pressable
             onPress={() => handleCompleteTask(task)}

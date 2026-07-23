@@ -28,6 +28,9 @@ export type OfflineEvidenceVaultItem = {
   ownerId: string;
   title: string;
   notes: string;
+  evidenceType?: string | null;
+  purpose?: string | null;
+  structuredData?: Record<string, unknown> | null;
   attachment: OfflineEvidenceAttachment | null;
   createdAt: string;
   status: "queued" | "syncing" | "failed";
@@ -44,6 +47,9 @@ export type QueueOfflineEvidenceInput = {
   ownerId: string;
   title: string;
   notes?: string;
+  evidenceType?: string | null;
+  purpose?: string | null;
+  structuredData?: Record<string, unknown> | null;
   attachment?: OfflineEvidenceAttachment | null;
 };
 
@@ -131,6 +137,9 @@ function vaultRecordForHash(item: Omit<OfflineEvidenceVaultItem, "integrityHash"
     ownerId: item.ownerId,
     title: item.title,
     notes: item.notes,
+    evidenceType: item.evidenceType ?? null,
+    purpose: item.purpose ?? null,
+    structuredData: item.structuredData ?? null,
     attachment: item.attachment,
     createdAt: item.createdAt,
     status: item.status,
@@ -313,6 +322,9 @@ export async function queueOfflineEvidence(input: QueueOfflineEvidenceInput) {
     ownerId: input.ownerId,
     title: input.title,
     notes: input.notes ?? "",
+    evidenceType: input.evidenceType ?? null,
+    purpose: input.purpose ?? null,
+    structuredData: input.structuredData ?? null,
     attachment: sealedAttachment,
     createdAt: sealedAt,
     status: "queued",

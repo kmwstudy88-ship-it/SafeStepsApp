@@ -1,6 +1,8 @@
 import { supabase } from "../supabase/client";
 import { getOptionalUserId, getSignedInUserId } from "../authSession";
 import { getParentChallengeById } from "../data/safestepsParentChallenges";
+import { getScenarioModuleById } from "../data/scenarioModules";
+import { buildScenarioTaskDescription } from "./scenarioActivityEngine";
 
 export type UserTask = {
   id: string;
@@ -26,6 +28,66 @@ export type CreateUserTaskInput = {
   related_lesson_id?: string | null;
   due_at?: string | null;
 };
+
+export type TaskCompletionRequirement = {
+  canComplete: boolean;
+  reason?: string;
+  linkedEvidenceCount: number;
+};
+
+function isParentChallengeTask(task: Pick<UserTask, "category" | "related_lesson_id">) {
+  return task.category.startsWith("parent_challenge:") || task.related_lesson_id?.startsWith("challenge:");
+}
+
+function isScenarioTask(task: Pick<UserTask, "category" | "related_lesson_id">) {
+  return task.category.startsWith("scenario_activity:") || task.related_lesson_id?.startsWith("scenario:");
+}
+
+function challengeIdFromTask(task: Pick<UserTask, "related_lesson_id">) {
+  return task.related_lesson_id?.startsWith("challenge:")
+    ? task.related_lesson_id.replace("challenge:", "")
+    : null;
+}
+
+export function evaluateTaskCompletionRequirement(
+  task: Pick<UserTask, "evidence_required" | "category" | "related_lesson_id">,
+  linkedEvidenceCount: number,
+): TaskCompletionRequirement {
+  if (!task.evidence_required || (!isParentChallengeTask(task) && !isScenarioTask(task))) {
+    return { canComplete: true, linkedEvidenceCount };
+  }
+
+  const missingEvidenceReason = isParentChallengeTask(task)
+    ? "Add or upload evidence for this challenge before marking it complete."
+    : "Add or upload evidence for this activity before marking it complete.";
+
+  return {
+    canComplete: linkedEvidenceCount > 0,
+    linkedEvidenceCount,
+    reason:
+      linkedEvidenceCount > 0
+        ? undefined
+        : missingEvidenceReason,
+  };
+}
+
+function evidenceLinkFilter(task: Pick<UserTask, "id" | "title" | "related_lesson_id">) {
+  const challengeId = challengeIdFromTask(task);
+  const filters = [
+    `structured_data->>task_id.eq.${task.id}`,
+    `structured_data->>related_task_id.eq.${task.id}`,
+  ];
+
+  if (challengeId) {
+    filters.push(`structured_data->>challenge_id.eq.${challengeId}`);
+  }
+
+  if (task.related_lesson_id?.startsWith("scenario:")) {
+    filters.push(`structured_data->>scenario_module_id.eq.${task.related_lesson_id.replace("scenario:", "")}`);
+  }
+
+  return filters.join(",");
+}
 
 export function buildParentChallengeTaskInput(challengeId: string): CreateUserTaskInput {
   const challenge = getParentChallengeById(challengeId);
@@ -161,8 +223,48 @@ export async function createUserTaskFromParentChallenge(challengeId: string) {
   return createUserTask(buildParentChallengeTaskInput(challengeId));
 }
 
-export async function completeUserTask(taskId: string, taskTitle: string) {
+export function buildScenarioActivityTaskInput(moduleId: string): CreateUserTaskInput {
+  const module = getScenarioModuleById(moduleId);
+  if (!module) {
+    throw new Error("Scenario module not found.");
+  }
+
+  return {
+    title: module.title,
+    description: buildScenarioTaskDescription(module),
+    priority: module.scenario.risk_level === "high" ? "high" : "medium",
+    category: `scenario_activity:${module.category}`,
+    evidence_required: true,
+    related_lesson_id: `scenario:${module.module_id}`,
+  };
+}
+
+export async function getTaskCompletionRequirement(task: UserTask): Promise<TaskCompletionRequirement> {
+  if (!task.evidence_required || (!isParentChallengeTask(task) && !isScenarioTask(task))) {
+    return { canComplete: true, linkedEvidenceCount: 0 };
+  }
+
+  const userId = await getSignedInUserId("checking task evidence");
+  const { count, error } = await supabase
+    .from("evidence_items")
+    .select("id", { count: "exact", head: true })
+    .eq("owner_id", userId)
+    .or(evidenceLinkFilter(task));
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return evaluateTaskCompletionRequirement(task, count ?? 0);
+}
+
+export async function completeUserTask(task: UserTask) {
   const userId = await getSignedInUserId("completing tasks");
+  const requirement = await getTaskCompletionRequirement(task);
+
+  if (!requirement.canComplete) {
+    throw new Error(requirement.reason ?? "Task completion requirements are not met.");
+  }
 
   const completedAt = new Date().toISOString();
 
@@ -172,7 +274,7 @@ export async function completeUserTask(taskId: string, taskTitle: string) {
       status: "completed",
       completed_at: completedAt,
     })
-    .eq("id", taskId)
+    .eq("id", task.id)
     .eq("owner_id", userId)
     .select()
     .single();
@@ -184,10 +286,11 @@ export async function completeUserTask(taskId: string, taskTitle: string) {
   await supabase.from("progress_events").insert({
     owner_id: userId,
     event_type: "task_completed",
-    label: `Task completed: ${taskTitle}`,
+    label: `Task completed: ${task.title}`,
     metadata: {
-      task_id: taskId,
-      task_title: taskTitle,
+      task_id: task.id,
+      task_title: task.title,
+      linked_evidence_count: requirement.linkedEvidenceCount,
       completed_at: completedAt,
     },
   });
@@ -195,17 +298,33 @@ export async function completeUserTask(taskId: string, taskTitle: string) {
   return data as UserTask;
 }
 
-export async function completeUserTasks(tasks: Pick<UserTask, "id" | "title" | "status">[]) {
+export async function completeUserTasks(tasks: UserTask[]) {
   const openTasks = tasks.filter((task) => task.status !== "completed");
 
   if (openTasks.length === 0) {
-    return { updatedCount: 0 };
+    return { updatedCount: 0, skippedCount: 0, skippedTitles: [] };
   }
 
   const userId = await getSignedInUserId("completing tasks");
+  const requirements = await Promise.all(
+    openTasks.map(async (task) => ({
+      task,
+      requirement: await getTaskCompletionRequirement(task),
+    })),
+  );
+  const completableTasks = requirements.filter((item) => item.requirement.canComplete).map((item) => item.task);
+  const skippedTasks = requirements.filter((item) => !item.requirement.canComplete).map((item) => item.task);
+
+  if (completableTasks.length === 0) {
+    return {
+      updatedCount: 0,
+      skippedCount: skippedTasks.length,
+      skippedTitles: skippedTasks.map((task) => task.title),
+    };
+  }
 
   const completedAt = new Date().toISOString();
-  const taskIds = openTasks.map((task) => task.id);
+  const taskIds = completableTasks.map((task) => task.id);
 
   const { error } = await supabase
     .from("user_tasks")
@@ -223,13 +342,18 @@ export async function completeUserTasks(tasks: Pick<UserTask, "id" | "title" | "
   await supabase.from("progress_events").insert({
     owner_id: userId,
     event_type: "tasks_bulk_completed",
-    label: `${openTasks.length} tasks completed`,
+    label: `${completableTasks.length} tasks completed`,
     metadata: {
       task_ids: taskIds,
-      task_titles: openTasks.map((task) => task.title),
+      task_titles: completableTasks.map((task) => task.title),
+      skipped_task_titles: skippedTasks.map((task) => task.title),
       completed_at: completedAt,
     },
   });
 
-  return { updatedCount: openTasks.length };
+  return {
+    updatedCount: completableTasks.length,
+    skippedCount: skippedTasks.length,
+    skippedTitles: skippedTasks.map((task) => task.title),
+  };
 }
