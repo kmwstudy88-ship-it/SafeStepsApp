@@ -21,6 +21,68 @@ export type ContactProgressionInput = {
   supervisorReviewed?: boolean;
 };
 
+export type StageGatedContactStage =
+  | "no_contact"
+  | "supervised"
+  | "semi_supervised"
+  | "unsupervised"
+  | "overnight"
+  | "return_home_trial";
+
+export type StageGatedContactSessionSignal = {
+  id: string;
+  stage: StageGatedContactStage;
+  occurredAt: string;
+  durationMinutes: number;
+  childDistressScore: number;
+  childComfortScore: number;
+  emotionalRegulationScore: number;
+  facilitatorInterventionCount: number;
+  riskFlags?: {
+    code: string;
+    severity: "green" | "amber" | "red" | "critical";
+  }[];
+  facilitatorUnsafeToEscalate?: boolean;
+  skillEvidence?: Partial<Record<"co_regulation" | "reflective_listening" | "boundary_respect" | "repair_attempts", boolean>>;
+};
+
+export type StageGatedAssessmentRecordSignal = {
+  id: string;
+  lessonId: string;
+  createdAt: string;
+  score?: number | null;
+  riskFlags?: {
+    code: string;
+    severity: "green" | "amber" | "red" | "critical";
+  }[];
+  validatedBy?: string | null;
+  skillEvidence?: Partial<Record<"co_regulation" | "reflective_listening" | "boundary_respect" | "repair_attempts", boolean>>;
+};
+
+export type EvaluateContactProgressionInput = {
+  parentProfileId: string;
+  caseId: string;
+  currentStage: StageGatedContactStage;
+  contactSessions: StageGatedContactSessionSignal[];
+  assessmentRecords: StageGatedAssessmentRecordSignal[];
+  requiredLessonIds?: string[];
+  sessionWindow?: number;
+  lessonWindow?: number;
+  childDistressThreshold?: number;
+  caseworkerManualHold?: boolean;
+};
+
+export type EvaluateContactProgressionResult = {
+  currentStage: StageGatedContactStage;
+  recommendedStage: StageGatedContactStage;
+  canEscalate: boolean;
+  mustRegress: boolean;
+  riskLevel: "low" | "medium" | "high" | "critical";
+  reasons: string[];
+  hardBlocks: string[];
+  requiredInterventions: string[];
+};
+
 export type SafetyVerificationResponse = {
   id: SafetyVerificationId;
   completedChecks: string[];
@@ -39,6 +101,47 @@ export type ReunificationPlanningSummary = {
 
 function round(value: number) {
   return Math.round(value * 100) / 100;
+}
+
+const stageOrder: StageGatedContactStage[] = [
+  "no_contact",
+  "supervised",
+  "semi_supervised",
+  "unsupervised",
+  "overnight",
+  "return_home_trial",
+];
+
+function nextStage(stage: StageGatedContactStage) {
+  return stageOrder[Math.min(stageOrder.indexOf(stage) + 1, stageOrder.length - 1)] ?? stage;
+}
+
+function previousStage(stage: StageGatedContactStage) {
+  return stageOrder[Math.max(stageOrder.indexOf(stage) - 1, 0)] ?? stage;
+}
+
+function newestFirst<T extends { occurredAt?: string; createdAt?: string }>(items: T[]) {
+  return [...items].sort((left, right) =>
+    String(right.occurredAt ?? right.createdAt).localeCompare(String(left.occurredAt ?? left.createdAt)),
+  );
+}
+
+function hasAmberOrWorse(flags: { severity: "green" | "amber" | "red" | "critical" }[] | undefined) {
+  return (flags ?? []).some((flag) => ["amber", "red", "critical"].includes(flag.severity));
+}
+
+function hasRedOrCritical(flags: { severity: "green" | "amber" | "red" | "critical" }[] | undefined) {
+  return (flags ?? []).some((flag) => ["red", "critical"].includes(flag.severity));
+}
+
+function demonstratedSkills(input: EvaluateContactProgressionInput) {
+  const skills = new Set<string>();
+  for (const signal of [...input.contactSessions, ...input.assessmentRecords]) {
+    Object.entries(signal.skillEvidence ?? {}).forEach(([skill, demonstrated]) => {
+      if (demonstrated && ("validatedBy" in signal ? signal.validatedBy : true)) skills.add(skill);
+    });
+  }
+  return skills;
 }
 
 export function assessAppointmentLoad(input: AppointmentLoadInput) {
@@ -81,7 +184,128 @@ export function identifyChallengeFlags(input: {
   return flags;
 }
 
-export function evaluateContactProgression(input: ContactProgressionInput) {
+export function evaluateContactProgression(input: ContactProgressionInput): {
+  canProgress: boolean;
+  recommendation: string;
+};
+export function evaluateContactProgression(input: EvaluateContactProgressionInput): EvaluateContactProgressionResult;
+export function evaluateContactProgression(input: ContactProgressionInput | EvaluateContactProgressionInput) {
+  if ("parentProfileId" in input) {
+    const sessionWindow = input.sessionWindow ?? 3;
+    const lessonWindow = input.lessonWindow ?? 5;
+    const childDistressThreshold = input.childDistressThreshold ?? 4;
+    const currentStageSessions = newestFirst(input.contactSessions)
+      .filter((session) => session.stage === input.currentStage)
+      .slice(0, sessionWindow);
+    const recentLessons = newestFirst(input.assessmentRecords).slice(0, lessonWindow);
+    const hardBlocks: string[] = [];
+    const reasons: string[] = [];
+    const requiredInterventions = new Set<string>();
+
+    if (input.caseworkerManualHold) {
+      hardBlocks.push("Caseworker manual hold is active.");
+      requiredInterventions.add("caseworker_review");
+    }
+
+    if (currentStageSessions.some((session) => hasAmberOrWorse(session.riskFlags))) {
+      hardBlocks.push("Amber or red contact-session risk flag is present in the stability window.");
+      requiredInterventions.add("pause_contact_progression");
+    }
+
+    if (recentLessons.some((record) => hasAmberOrWorse(record.riskFlags))) {
+      hardBlocks.push("New negative assessment-record risk flag is present.");
+      requiredInterventions.add("targeted_lesson_review");
+    }
+
+    if (currentStageSessions.some((session) => session.childDistressScore >= childDistressThreshold)) {
+      hardBlocks.push("Child distress score is above the escalation threshold.");
+      requiredInterventions.add("child_comfort_review");
+    }
+
+    if (currentStageSessions.some((session) => session.facilitatorUnsafeToEscalate)) {
+      hardBlocks.push("Facilitator marked unsafe to escalate.");
+      requiredInterventions.add("facilitator_case_review");
+    }
+
+    const redOrCritical = [...currentStageSessions, ...recentLessons].some((signal) => hasRedOrCritical(signal.riskFlags));
+    if (redOrCritical) {
+      requiredInterventions.add("regression_safety_review");
+    }
+
+    if (currentStageSessions.length < sessionWindow) {
+      reasons.push(`Needs ${sessionWindow} consecutive sessions at ${input.currentStage}.`);
+    } else {
+      reasons.push(`${currentStageSessions.length} current-stage sessions are available for review.`);
+    }
+
+    const completedLessonIds = new Set(recentLessons.map((record) => record.lessonId));
+    const missingLessons = (input.requiredLessonIds ?? []).filter((lessonId) => !completedLessonIds.has(lessonId));
+    if (missingLessons.length > 0) {
+      reasons.push(`Required stage lessons incomplete: ${missingLessons.join(", ")}.`);
+      requiredInterventions.add("complete_required_lessons");
+    }
+
+    const oldestToNewest = [...currentStageSessions].reverse();
+    const first = oldestToNewest[0];
+    const last = oldestToNewest.at(-1);
+    const regulationImproving =
+      first && last ? last.emotionalRegulationScore >= first.emotionalRegulationScore : false;
+    const interventionsDecreasing =
+      first && last ? last.facilitatorInterventionCount <= first.facilitatorInterventionCount : false;
+    const childComfortImproving = first && last ? last.childComfortScore >= first.childComfortScore : false;
+
+    if (!regulationImproving) {
+      reasons.push("Emotional regulation is not yet stable or improving.");
+      requiredInterventions.add("co_regulation_coaching");
+    }
+    if (!interventionsDecreasing) {
+      reasons.push("Facilitator intervention frequency is not decreasing.");
+      requiredInterventions.add("supported_contact_practice");
+    }
+    if (!childComfortImproving) {
+      reasons.push("Child comfort trajectory is not yet positive.");
+      requiredInterventions.add("child_voice_and_comfort_review");
+    }
+
+    const skills = demonstratedSkills(input);
+    const missingSkills = ["co_regulation", "reflective_listening", "boundary_respect", "repair_attempts"].filter(
+      (skill) => !skills.has(skill),
+    );
+    if (missingSkills.length > 0) {
+      reasons.push(`Required skill evidence missing: ${missingSkills.join(", ")}.`);
+      requiredInterventions.add("skill_demonstration_tasks");
+    }
+
+    const canEscalate =
+      hardBlocks.length === 0 &&
+      currentStageSessions.length >= sessionWindow &&
+      missingLessons.length === 0 &&
+      regulationImproving &&
+      interventionsDecreasing &&
+      childComfortImproving &&
+      missingSkills.length === 0 &&
+      input.currentStage !== "return_home_trial";
+    const mustRegress = redOrCritical || hardBlocks.some((block) => block.includes("distress") || block.includes("unsafe"));
+    const riskLevel: EvaluateContactProgressionResult["riskLevel"] = redOrCritical
+      ? "critical"
+      : hardBlocks.length > 0
+        ? "high"
+        : reasons.length > 1
+          ? "medium"
+          : "low";
+
+    return {
+      currentStage: input.currentStage,
+      recommendedStage: mustRegress ? previousStage(input.currentStage) : canEscalate ? nextStage(input.currentStage) : input.currentStage,
+      canEscalate,
+      mustRegress,
+      riskLevel,
+      reasons: canEscalate ? ["All escalation gates passed across contact, lesson, trend, and skill evidence."] : reasons,
+      hardBlocks,
+      requiredInterventions: Array.from(requiredInterventions),
+    };
+  }
+
   if (input.unresolvedIncidents > 0) {
     return {
       canProgress: false,

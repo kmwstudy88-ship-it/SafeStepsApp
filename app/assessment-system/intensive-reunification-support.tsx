@@ -12,7 +12,14 @@ import {
   preReturnSafetyVerifications,
   reunificationChallengeModels,
 } from "../../lib/data/intensiveReunificationSupport";
-import { buildIntensiveReunificationPlanSummary } from "../../lib/engines/intensiveReunificationEngine";
+import {
+  buildIntensiveReunificationPlanSummary,
+  evaluateContactProgression,
+} from "../../lib/engines/intensiveReunificationEngine";
+import {
+  evaluateQuestProgress,
+  unlockAchievements,
+} from "../../lib/engines/reunificationQuestAchievementEngine";
 
 const sampleSummary = buildIntensiveReunificationPlanSummary({
   appointmentLoad: {
@@ -40,6 +47,139 @@ const sampleSummary = buildIntensiveReunificationPlanSummary({
   relapseWarningSignals: 1,
 });
 
+const stageGatePreview = evaluateContactProgression({
+  parentProfileId: "calibration-parent",
+  caseId: "calibration-case",
+  currentStage: "supervised",
+  requiredLessonIds: ["reflective-listening", "co-regulation"],
+  contactSessions: [
+    {
+      id: "contact-1",
+      stage: "supervised",
+      occurredAt: "2026-07-01T10:00:00.000Z",
+      durationMinutes: 60,
+      childDistressScore: 2,
+      childComfortScore: 3,
+      emotionalRegulationScore: 3,
+      facilitatorInterventionCount: 3,
+      skillEvidence: { boundary_respect: true },
+    },
+    {
+      id: "contact-2",
+      stage: "supervised",
+      occurredAt: "2026-07-08T10:00:00.000Z",
+      durationMinutes: 60,
+      childDistressScore: 2,
+      childComfortScore: 4,
+      emotionalRegulationScore: 4,
+      facilitatorInterventionCount: 2,
+      skillEvidence: { co_regulation: true, repair_attempts: true },
+    },
+    {
+      id: "contact-3",
+      stage: "supervised",
+      occurredAt: "2026-07-15T10:00:00.000Z",
+      durationMinutes: 60,
+      childDistressScore: 1,
+      childComfortScore: 5,
+      emotionalRegulationScore: 5,
+      facilitatorInterventionCount: 1,
+      skillEvidence: { reflective_listening: true },
+    },
+  ],
+  assessmentRecords: [
+    {
+      id: "assessment-1",
+      lessonId: "reflective-listening",
+      createdAt: "2026-07-10T10:00:00.000Z",
+      validatedBy: "facilitator-1",
+      skillEvidence: { reflective_listening: true },
+    },
+    {
+      id: "assessment-2",
+      lessonId: "co-regulation",
+      createdAt: "2026-07-11T10:00:00.000Z",
+      validatedBy: "facilitator-1",
+      skillEvidence: { co_regulation: true },
+    },
+  ],
+});
+
+const questPreview = evaluateQuestProgress(
+  {
+    id: "quest-reflective-listening",
+    code: "REFLECTIVE_LISTENING_SUPERVISED_01",
+    title: "Reflective listening in supervised contact",
+    requiredEvidence: {
+      evidenceTypes: ["contact_log", "text"],
+      lessonIds: ["reflective-listening"],
+      minCount: 2,
+      minScore: 4,
+      requiresValidation: true,
+      disallowAmberOrRedRisk: true,
+    },
+  },
+  [
+    {
+      id: "evidence-1",
+      lessonId: "reflective-listening",
+      evidenceType: "contact_log",
+      score: 4,
+      validatedBy: "facilitator-1",
+      evidencePayload: { reflective_listening: true },
+    },
+    {
+      id: "evidence-2",
+      lessonId: "reflective-listening",
+      evidenceType: "text",
+      score: 5,
+      validatedBy: "facilitator-1",
+      evidencePayload: { reflective_listening: true },
+    },
+  ],
+);
+
+const achievementPreview = unlockAchievements({
+  achievements: [
+    {
+      id: "achievement-consistent-co-regulator",
+      code: "CONSISTENT_CO_REGULATOR",
+      title: "Consistent Co-Regulator",
+      criteria: {
+        minCompletedQuests: 1,
+        completedQuestCodes: ["REFLECTIVE_LISTENING_SUPERVISED_01"],
+        requiredSkillEvidence: ["reflective_listening"],
+        riskFreeEvidenceWindow: 2,
+      },
+    },
+  ],
+  questDefinitions: [
+    {
+      id: "quest-reflective-listening",
+      code: "REFLECTIVE_LISTENING_SUPERVISED_01",
+      title: "Reflective listening in supervised contact",
+      requiredEvidence: {},
+    },
+  ],
+  questEvaluations: [questPreview],
+  evidenceRecords: [
+    {
+      id: "evidence-1",
+      lessonId: "reflective-listening",
+      evidenceType: "contact_log",
+      validatedBy: "facilitator-1",
+      evidencePayload: { reflective_listening: true },
+    },
+    {
+      id: "evidence-2",
+      lessonId: "reflective-listening",
+      evidenceType: "text",
+      validatedBy: "facilitator-1",
+      evidencePayload: { reflective_listening: true },
+    },
+  ],
+})[0];
+
 export default function IntensiveReunificationSupportScreen() {
   return (
     <AssessmentScreenShell
@@ -51,15 +191,75 @@ export default function IntensiveReunificationSupportScreen() {
           <Metric label="Program models" value={`${intensiveReunificationPrograms.length}`} />
           <Metric label="Task engines" value={`${highIntensityReunificationTasks.length}`} />
           <Metric label="Challenge models" value={`${reunificationChallengeModels.length}`} />
-          <Metric label="Verification" value={`${sampleSummary.verificationCompletion}%`} />
+          <Metric label="Calibration verification" value={`${sampleSummary.verificationCompletion}%`} />
+          <Metric label="Stage recommendation" value={stageGatePreview.recommendedStage.replace(/_/g, " ")} />
+          <Metric label="Quest preview" value={questPreview.status} />
         </View>
 
-        <Section title="Planning Summary">
+        <View style={styles.notice}>
+          <Text style={styles.noticeTitle}>Calibration preview only</Text>
+          <Text style={styles.cardText}>
+            The verification percentage and summary language below come from a built-in calibration payload. Use this
+            screen as a planning framework until it is connected to saved case tasks, contact records, and safety
+            verifications.
+          </Text>
+        </View>
+
+        <Section title="Planning Summary Template">
           <View style={styles.card}>
-            <Text style={styles.cardTitle}>Current review snapshot</Text>
+            <Text style={styles.cardTitle}>Calibration review snapshot</Text>
             <Text style={styles.cardText}>{sampleSummary.reportLanguage}</Text>
             {sampleSummary.missingVerificationWarnings.map((warning) => (
               <Text key={warning} style={styles.warningText}>- {warning}</Text>
+            ))}
+          </View>
+        </Section>
+
+        <Section title="Stage-Gated Contact Progression">
+          <View style={styles.card}>
+            <Text style={styles.badge}>{stageGatePreview.riskLevel} risk</Text>
+            <Text style={styles.cardTitle}>
+              {stageGatePreview.currentStage.replace(/_/g, " ")} to {stageGatePreview.recommendedStage.replace(/_/g, " ")}
+            </Text>
+            <Text style={styles.cardText}>
+              Can escalate: {stageGatePreview.canEscalate ? "Yes, caseworker review still required" : "No"}
+            </Text>
+            <Text style={styles.cardText}>
+              Must regress: {stageGatePreview.mustRegress ? "Yes" : "No"}
+            </Text>
+            <Text style={styles.subheading}>Reasons</Text>
+            {stageGatePreview.reasons.map((reason) => (
+              <Text key={reason} style={styles.bullet}>- {reason}</Text>
+            ))}
+            <Text style={styles.subheading}>Hard blocks</Text>
+            {stageGatePreview.hardBlocks.length === 0 ? (
+              <Text style={styles.bullet}>- None in calibration window</Text>
+            ) : (
+              stageGatePreview.hardBlocks.map((block) => (
+                <Text key={block} style={styles.warningText}>- {block}</Text>
+              ))
+            )}
+          </View>
+        </Section>
+
+        <Section title="Mini-Quests and Achievements">
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Quest: Reflective listening in supervised contact</Text>
+            <Text style={styles.cardText}>Status: {questPreview.status}</Text>
+            <Text style={styles.cardText}>Matched evidence: {questPreview.matchedEvidenceIds.join(", ")}</Text>
+            {questPreview.reasons.map((reason) => (
+              <Text key={reason} style={styles.bullet}>- {reason}</Text>
+            ))}
+          </View>
+          <View style={styles.card}>
+            <Text style={styles.cardTitle}>Achievement: Consistent Co-Regulator</Text>
+            <Text style={styles.cardText}>
+              {achievementPreview?.unlocked
+                ? "Unlocked from validated, risk-free evidence."
+                : "Locked until therapeutic progress criteria are met."}
+            </Text>
+            {achievementPreview?.reasons.map((reason) => (
+              <Text key={reason} style={styles.bullet}>- {reason}</Text>
             ))}
           </View>
         </Section>
@@ -187,6 +387,19 @@ const styles = StyleSheet.create({
   },
   section: {
     gap: 12,
+  },
+  notice: {
+    gap: 8,
+    padding: 16,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#B45309",
+    backgroundColor: "#FFFBEB",
+  },
+  noticeTitle: {
+    color: "#92400E",
+    fontSize: 16,
+    fontWeight: "900",
   },
   sectionTitle: {
     color: assessmentColors.charcoal,
