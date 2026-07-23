@@ -61,6 +61,36 @@ export const childDashboardItems = [
     badge: "Send",
   },
   {
+    title: "Messages",
+    description: "Send and read monitored messages that you choose to share.",
+    href: "/child/notifications",
+    badge: "Monitored",
+  },
+  {
+    title: "Parent-Child Games",
+    description: "Ask for a safe family game or activity with your parent.",
+    href: "/child/games",
+    badge: "Play",
+  },
+  {
+    title: "Family Challenges",
+    description: "Choose a family challenge you would like to try together.",
+    href: "/child/family-challenges",
+    badge: "Together",
+  },
+  {
+    title: "Weekend Activities",
+    description: "Pick a safe weekend activity, routine, or family task.",
+    href: "/child/weekend-activities",
+    badge: "Weekend",
+  },
+  {
+    title: "Family Calendar",
+    description: "Share upcoming visits, activities, family tasks, and future requested games.",
+    href: "/child/family-calendar",
+    badge: "Plan",
+  },
+  {
     title: "Shared Items Log",
     description: "See what you chose to share, when you shared it, and who you shared it with.",
     href: "/child/shared-log",

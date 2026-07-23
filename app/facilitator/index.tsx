@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, ScrollView, Text, View } from "react-native";
-import { Redirect } from "expo-router";
+import { Link, Redirect } from "expo-router";
 
 import { AppBottomNav } from "../../components/AppBottomNav";
 import { useAuth } from "../../lib/auth";
@@ -120,6 +120,16 @@ export default function FacilitatorWorkspaceScreen() {
       </Text>
 
       {loading ? <ActivityIndicator /> : null}
+
+      <View style={globalStyles.card}>
+        <Text style={globalStyles.cardTitle}>Contact progression evidence</Text>
+        <Text style={globalStyles.cardText}>
+          Log contact-session scores, child comfort, risk flags, and demonstrated skills for caseworker review.
+        </Text>
+        <Link href="/facilitator/contact-session-log" style={globalStyles.link}>
+          Open contact session log
+        </Link>
+      </View>
 
       <View style={globalStyles.card}>
         <Text style={globalStyles.cardTitle}>Participant overview</Text>
