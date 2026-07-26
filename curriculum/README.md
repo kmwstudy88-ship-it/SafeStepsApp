@@ -1,15 +1,23 @@
 # SafeSteps Curriculum Library
 
-This directory is the canonical source for reusable SafeSteps curriculum.
+This is the single canonical curriculum root for SafeSteps.
 
-## Sections
+## Canonical folders
 
-- `lessons/` contains standalone lesson definitions and the lesson catalogue.
-- `courses/` contains standalone courses assembled from ordered lessons.
+- `lessons/` is the main source of reusable learning curriculum.
+- `modules/` stores complete module source files.
+- `courses/` stores complete course source files.
+- `programs/` stores complete program source files.
+- `source-imports/` keeps raw legacy curriculum folders after consolidation.
 
-Programs do not live in this directory. Program definitions belong in
-`/programs` and compose lesson or course identifiers from these catalogues
-through `programs/curriculumComposition.ts`.
+Lessons stay canonical. Modules, courses, and programs should compose or reference
+lessons wherever possible. When a full module, course, or program is added as a
+JSON source, import it through:
 
-Application code should import from `curriculum/lessons` or
-`curriculum/courses`, not from legacy curriculum copies under `lib/data`.
+```powershell
+npm run import:curriculum-source -- course .\path\to\course.json
+```
+
+Use `module` or `program` instead of `course` for those source types. The importer
+stores the full source file in the matching folder and extracts every nested
+lesson into `curriculum/lessons/extracted/<source>/` with source metadata.

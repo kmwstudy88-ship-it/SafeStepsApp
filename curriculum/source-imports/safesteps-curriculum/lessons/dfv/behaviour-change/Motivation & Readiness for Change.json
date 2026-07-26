@@ -1,0 +1,65 @@
+{
+      "module_id": "behaviour_change_motivation_v1",
+      "module_title": "Motivation & Readiness for Change",
+      "learning_outcomes": [
+        "Understand motivation as a dynamic process.",
+        "Recognise readiness levels in parents and children.",
+        "Identify ambivalence and resistance.",
+        "Apply strategies to increase readiness safely."
+      ],
+      "lesson_content": {
+        "definition": "Motivation is the internal drive that supports behaviour change. It fluctuates based on stress, safety, and support.",
+        "readiness_levels": [
+          "Not Ready",
+          "Unsure",
+          "Preparing",
+          "Taking Action",
+          "Maintaining"
+        ],
+        "motivation_drivers": [
+          "Safety",
+          "Connection",
+          "Clarity",
+          "Support",
+          "Confidence"
+        ]
+      },
+      "activities": [
+        {
+          "activity_id": "readiness_sorting",
+          "type": "sorting"
+        }
+      ],
+      "fill_in_the_blank": [
+        { "question": "Motivation is ________ and changes over time.", "answer": "dynamic" }
+      ],
+      "quiz": {
+        "multiple_choice": [
+          {
+            "question": "Which is a readiness level?",
+            "options": ["Not Ready", "Perfect", "Complete", "Finished"],
+            "answer": "Not Ready"
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "assessment_id": "motivation_plan",
+          "type": "scenario_analysis",
+          "criteria": [
+            { "criterion_id": "readiness_identification", "weight": 0.40 },
+            { "criterion_id": "strategy_alignment", "weight": 0.35 },
+            { "criterion_id": "support_planning", "weight": 0.25 }
+          ]
+        }
+      ],
+      "competency_check": [
+        "Identify readiness",
+        "Support motivation",
+        "Respond to ambivalence"
+      ],
+      "extensions": [
+        "Motivation in High-Stress Homes",
+        "Motivation for Teen Behaviour Change"
+      ]
+    }

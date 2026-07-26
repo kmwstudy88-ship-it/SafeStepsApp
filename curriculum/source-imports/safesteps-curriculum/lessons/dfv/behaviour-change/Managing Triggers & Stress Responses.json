@@ -1,0 +1,63 @@
+{
+      "module_id": "behaviour_change_trigger_management_v1",
+      "module_title": "Managing Triggers & Stress Responses",
+      "learning_outcomes": [
+        "Identify emotional and environmental triggers.",
+        "Understand stress responses in parents and children.",
+        "Apply trigger-management strategies.",
+        "Reduce reactive behaviour patterns."
+      ],
+      "lesson_content": {
+        "definition": "Triggers are internal or external cues that activate emotional or behavioural reactions.",
+        "trigger_types": [
+          "Emotional triggers",
+          "Sensory triggers",
+          "Relational triggers",
+          "Environmental triggers"
+        ],
+        "management_strategies": [
+          "Pause and breathe",
+          "Grounding",
+          "Changing environment",
+          "Naming the trigger"
+        ]
+      },
+      "activities": [
+        {
+          "activity_id": "trigger_identification",
+          "type": "scenario_identification"
+        }
+      ],
+      "fill_in_the_blank": [
+        { "question": "Triggers activate ________ responses.", "answer": "emotional" }
+      ],
+      "quiz": {
+        "multiple_choice": [
+          {
+            "question": "Which is a trigger-management strategy?",
+            "options": ["Yelling", "Grounding", "Avoiding", "Shaming"],
+            "answer": "Grounding"
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "assessment_id": "trigger_plan",
+          "type": "scenario_analysis",
+          "criteria": [
+            { "criterion_id": "trigger_identification", "weight": 0.40 },
+            { "criterion_id": "strategy_accuracy", "weight": 0.35 },
+            { "criterion_id": "impact_reasoning", "weight": 0.25 }
+          ]
+        }
+      ],
+      "competency_check": [
+        "Identify triggers",
+        "Apply strategies",
+        "Reduce reactive patterns"
+      ],
+      "extensions": [
+        "Triggers in Trauma-Affected Families",
+        "Triggers for Neurodivergent Parents"
+      ]
+    }

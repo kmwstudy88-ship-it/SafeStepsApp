@@ -24,6 +24,7 @@ function walk(dir) {
 
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory() && entry.name === "source-imports") return [];
     if (entry.isDirectory()) return walk(fullPath);
     return [fullPath];
   });

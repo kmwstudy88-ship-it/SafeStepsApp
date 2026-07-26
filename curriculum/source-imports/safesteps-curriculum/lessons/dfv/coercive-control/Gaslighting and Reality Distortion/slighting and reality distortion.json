@@ -1,0 +1,247 @@
+{
+  "module_id": "parenting_gaslighting_reality_distortion_v1",
+  "module_title": "Gaslighting and Reality Distortion",
+  "series": "SafeSteps Parenting Literacy Series",
+  "level": 3,
+  "version": "1.0.0",
+
+  "learning_outcomes": [
+    "Understand gaslighting as a pattern of psychological manipulation.",
+    "Recognise reality distortion in parenting, co-parenting, and family systems.",
+    "Identify behavioural, emotional, and cognitive signs of gaslighting.",
+    "Interpret the impact of gaslighting on children’s development and parental wellbeing.",
+    "Apply safe, supportive responses to counter reality distortion."
+  ],
+
+  "lesson_content": {
+    "definition": "Gaslighting is a pattern of psychological manipulation where a person distorts reality to make another doubt their perceptions, memory, or sanity. Reality distortion includes denial, rewriting events, minimising harm, and creating confusion.",
+    "core_components": [
+      {
+        "name": "Denial of Reality",
+        "examples": [
+          "Claiming events never happened",
+          "Dismissing clear evidence",
+          "Saying 'You're imagining things'"
+        ]
+      },
+      {
+        "name": "Rewriting Events",
+        "examples": [
+          "Changing details of past events",
+          "Blaming the victim for the perpetrator’s actions",
+          "Retelling stories to shift responsibility"
+        ]
+      },
+      {
+        "name": "Minimisation",
+        "examples": [
+          "Downplaying harmful behaviour",
+          "Saying 'It wasn’t that bad'",
+          "Mocking emotional reactions"
+        ]
+      },
+      {
+        "name": "Projection",
+        "examples": [
+          "Accusing the victim of behaviours the perpetrator is doing",
+          "Shifting blame to avoid accountability"
+        ]
+      },
+      {
+        "name": "Confusion Induction",
+        "examples": [
+          "Contradictory statements",
+          "Sudden rule changes",
+          "Emotional volatility that destabilises perception"
+        ]
+      }
+    ],
+    "child_specific_impacts": [
+      "Difficulty trusting their own feelings or memories",
+      "Increased anxiety and self-doubt",
+      "Hyper-vigilance around adult reactions",
+      "Confusion about what is real or safe",
+      "Long-term impacts on identity and self-worth"
+    ],
+    "parent_specific_impacts": [
+      "Feeling confused or disoriented",
+      "Questioning their own judgement",
+      "Feeling isolated or dependent",
+      "Emotional exhaustion",
+      "Reduced confidence in parenting decisions"
+    ]
+  },
+
+  "video_lesson": {
+    "title": "Understanding Gaslighting and Reality Distortion",
+    "length_minutes": 6,
+    "script": [
+      "Gaslighting is a powerful form of psychological manipulation that distorts a person's sense of reality.",
+      "It often appears subtly, through denial, minimisation, or rewriting events.",
+      "Over time, gaslighting erodes confidence, clarity, and emotional safety.",
+      "Children exposed to gaslighting may struggle to trust their own perceptions and develop chronic self-doubt.",
+      "Recognising these patterns early helps parents protect themselves and their children."
+    ]
+  },
+
+  "knowledge_sequence": [
+    "Definition",
+    "Core Components",
+    "Pattern Recognition",
+    "Impact Interpretation",
+    "Safe Response Planning"
+  ],
+
+  "activities": [
+    {
+      "activity_id": "gaslighting_identification",
+      "type": "sorting",
+      "description": "Sort behaviours into correct gaslighting categories.",
+      "items": [
+        { "behaviour": "Claiming an event never happened", "correct_category": "Denial of Reality" },
+        { "behaviour": "Retelling a story to shift blame", "correct_category": "Rewriting Events" },
+        { "behaviour": "Saying 'You're too sensitive'", "correct_category": "Minimisation" }
+      ]
+    },
+    {
+      "activity_id": "micro_scenarios",
+      "type": "scenario_identification",
+      "description": "Identify gaslighting patterns and explain likely impacts.",
+      "scenarios": [
+        {
+          "scenario_id": "gl1",
+          "text": "A parent insists a child 'made up' an incident the child clearly remembers.",
+          "correct_category": "Denial of Reality"
+        },
+        {
+          "scenario_id": "gl2",
+          "text": "A parent blames the child for the parent's own outburst.",
+          "correct_category": "Projection"
+        }
+      ]
+    }
+  ],
+
+  "fill_in_the_blank": [
+    {
+      "question": "Gaslighting is a pattern of ________ manipulation.",
+      "answer": "psychological"
+    },
+    {
+      "question": "Reality distortion causes people to doubt their own ________.",
+      "answer": "perceptions"
+    },
+    {
+      "question": "Minimisation often sounds like 'It wasn’t ________.'",
+      "answer": "that bad"
+    },
+    {
+      "question": "Children exposed to gaslighting may develop chronic ________.",
+      "answer": "self-doubt"
+    },
+    {
+      "question": "Projection involves blaming the victim for the ________ behaviour.",
+      "answer": "perpetrator's"
+    }
+  ],
+
+  "quiz": {
+    "multiple_choice": [
+      {
+        "question": "Which behaviour is an example of gaslighting?",
+        "options": [
+          "Validating a child's emotions",
+          "Denying an event that clearly occurred",
+          "Setting consistent boundaries",
+          "Encouraging independence"
+        ],
+        "answer": "Denying an event that clearly occurred"
+      },
+      {
+        "question": "Which behaviour is an example of minimisation?",
+        "options": [
+          "Saying 'You're imagining things'",
+          "Saying 'It wasn’t that bad'",
+          "Blaming the child for adult behaviour",
+          "Changing details of past events"
+        ],
+        "answer": "Saying 'It wasn’t that bad'"
+      }
+    ],
+    "true_false": [
+      {
+        "question": "Gaslighting can occur without yelling or visible conflict.",
+        "answer": true
+      },
+      {
+        "question": "Children always recognise when they are being gaslit.",
+        "answer": false
+      }
+    ],
+    "short_answer": [
+      {
+        "question": "Name two impacts of gaslighting on children.",
+        "expected_keywords": ["self-doubt", "anxiety", "confusion", "identity disruption"]
+      },
+      {
+        "question": "Why is gaslighting harmful even when subtle?",
+        "expected_keywords": ["erodes confidence", "distorts reality", "creates emotional harm"]
+      }
+    ],
+    "scenario_questions": [
+      {
+        "question": "A parent repeatedly changes details of past events. Which category does this belong to?",
+        "answer": "Rewriting Events"
+      },
+      {
+        "question": "A parent accuses the child of behaviours the parent is doing. Which category does this belong to?",
+        "answer": "Projection"
+      }
+    ]
+  },
+
+  "assessments": [
+    {
+      "assessment_id": "gaslighting_analysis",
+      "type": "scenario_analysis",
+      "max_score": 100,
+      "criteria": [
+        { "criterion_id": "gaslighting_identification", "weight": 0.40 },
+        { "criterion_id": "impact_reasoning", "weight": 0.35 },
+        { "criterion_id": "safe_response_planning", "weight": 0.25 }
+      ]
+    },
+    {
+      "assessment_id": "reality_distortion_map",
+      "type": "visual_mapping",
+      "max_score": 100,
+      "criteria": [
+        { "criterion_id": "category_accuracy", "weight": 0.45 },
+        { "criterion_id": "pattern_linking", "weight": 0.35 },
+        { "criterion_id": "visual_clarity", "weight": 0.20 }
+      ]
+    },
+    {
+      "assessment_id": "mastery_test",
+      "type": "exam",
+      "max_score": 100,
+      "criteria": [
+        { "criterion_id": "knowledge_accuracy", "weight": 1.0 }
+      ]
+    }
+  ],
+
+  "competency_check": [
+    "Identify gaslighting and reality distortion patterns",
+    "Explain emotional and developmental impacts",
+    "Apply safe, supportive responses",
+    "Recognise early warning signs of psychological manipulation"
+  ],
+
+  "extensions": [
+    "Advanced Reality Distortion Patterns",
+    "Gaslighting in Co-Parenting",
+    "Gaslighting in Teen Relationships",
+    "Gaslighting in High-Conflict Separations"
+  ]
+}

@@ -1,4 +1,4 @@
-import nervousSystemCourseJson from "../../lesson videos/safesteps_nervous_system_course.json";
+import nervousSystemCourseJson from "../../curriculum/courses/lesson-videos/safesteps_nervous_system_course.json";
 
 import {
   interactiveVideoCourseUsesPlaceholderVideos,

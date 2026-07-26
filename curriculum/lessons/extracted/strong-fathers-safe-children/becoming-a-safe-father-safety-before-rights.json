@@ -1,0 +1,146 @@
+{
+  "id": "becoming-a-safe-father-safety-before-rights",
+  "slug": "safety-before-rights",
+  "title": "Safety Before Rights",
+  "lessonNumber": 2,
+  "estimatedMinutes": 25,
+  "lessonType": "core",
+  "summary": "A father’s rights matter, but a child’s safety and emotional security must always come first.",
+  "learningOutcomes": [
+    "Explain why safety before rights matters for child safety and wellbeing.",
+    "Identify one personal pattern that may affect parenting.",
+    "Create one practical action that can be completed this week."
+  ],
+  "startQuestions": [
+    "What do I already know about this topic?",
+    "How does this affect my child?",
+    "What have I struggled with before?",
+    "What would my child need to see from me?",
+    "What is one change I can practise this week?"
+  ],
+  "content": [
+    {
+      "heading": "Safety Before Rights",
+      "body": "A father’s rights matter, but a child’s safety and emotional security must always come first."
+    },
+    {
+      "heading": "Father practice focus",
+      "body": "This lesson asks fathers to move from words into repeated safe action. Children need predictable behaviour, calm responses, and adults who can place the child’s needs ahead of adult conflict, pride, anger, or fear."
+    },
+    {
+      "heading": "What this looks like in real life",
+      "body": "A father can practise this skill by slowing down, listening carefully, following through, keeping adult topics away from children, and recording evidence of safe routines and progress over time."
+    }
+  ],
+  "activities": [
+    {
+      "id": "safety-before-rights-activity-1",
+      "title": "My Current Pattern Map",
+      "type": "worksheet",
+      "instructions": [
+        "Write down one situation where this topic shows up in your parenting.",
+        "Describe what usually happens, including thoughts, feelings, words, actions, and the child’s reaction.",
+        "Write one safer response you can practise next time."
+      ],
+      "saveToRecord": true
+    },
+    {
+      "id": "safety-before-rights-activity-2",
+      "title": "One Safe Action This Week",
+      "type": "real_world_task",
+      "instructions": [
+        "Choose one small action that supports your child’s safety, routine, connection, or trust.",
+        "Complete the action before the next lesson or check-in.",
+        "Upload evidence or write a short note explaining what you did and what changed."
+      ],
+      "saveToRecord": true
+    }
+  ],
+  "quiz": {
+    "id": "safety-before-rights-quiz",
+    "passingScorePercent": 70,
+    "questions": [
+      {
+        "id": "safety-before-rights-q1",
+        "question": "Why is safety before rights important in fathering?",
+        "options": [
+          "Because it helps the father win arguments",
+          "Because it supports the child’s safety, trust and wellbeing",
+          "Because it removes the need for routines",
+          "Because it means the child should ignore their feelings"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Fathering progress is measured by child safety, trust, wellbeing and repeated safe behaviour."
+      },
+      {
+        "id": "safety-before-rights-q2",
+        "question": "What is the safest first step when a father feels triggered?",
+        "options": [
+          "Pause and regulate before responding",
+          "Raise his voice so he is heard",
+          "Blame the other parent",
+          "Tell the child to stop feeling upset"
+        ],
+        "correctAnswerIndex": 0,
+        "explanation": "A pause gives the father time to choose a calm and safer response."
+      },
+      {
+        "id": "safety-before-rights-q3",
+        "question": "What best shows real change over time?",
+        "options": [
+          "One promise",
+          "Repeated safe behaviour supported by evidence and reflection",
+          "Avoiding all feedback",
+          "Only saying what professionals want to hear"
+        ],
+        "correctAnswerIndex": 1,
+        "explanation": "Safe change is shown through repeated behaviour, honest reflection, and records over time."
+      }
+    ]
+  },
+  "reflection": {
+    "required": true,
+    "prompts": [
+      "What did this lesson help me understand about my child?",
+      "What is one behaviour I need to keep practising?",
+      "What evidence could show I am making this change?",
+      "What support do I need to stay consistent?"
+    ]
+  },
+  "evidenceUpload": {
+    "required": false,
+    "acceptedTypes": [
+      "photo",
+      "document",
+      "screenshot",
+      "written_reflection",
+      "routine_record"
+    ],
+    "prompts": [
+      "Upload a photo, document, checklist, routine record, or written reflection that shows your safe action this week.",
+      "Do not upload anything that exposes a child’s private information unless it is safe and authorised."
+    ]
+  },
+  "caseNotePrompt": "Record any observed strengths, risk concerns, behaviour change, father engagement, and recommended next steps.",
+  "tags": [
+    "fathers",
+    "father-pathway",
+    "becoming-a-safe-father",
+    "child-centred",
+    "evidence-based"
+  ],
+  "curriculumSource": {
+    "importedAt": "2026-07-26T05:01:06.450Z",
+    "sourceKind": "course",
+    "sourceId": "strong-fathers-safe-children",
+    "sourceTitle": "Strong Fathers, Safe Children",
+    "sourceFile": "curriculum/courses/strong-fathers-safe-children.json",
+    "sourcePath": [
+      "modules",
+      0,
+      "lessons",
+      1
+    ],
+    "contentHash": "536fbb17f658"
+  }
+}

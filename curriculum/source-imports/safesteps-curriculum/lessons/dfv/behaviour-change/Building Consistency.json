@@ -1,0 +1,60 @@
+ {
+      "module_id": "behaviour_change_consistency_v1",
+      "module_title": "Building Consistency",
+      "learning_outcomes": [
+        "Understand consistency as a stabilising force.",
+        "Recognise how inconsistency creates confusion.",
+        "Apply consistent routines and responses.",
+        "Support children through predictable patterns."
+      ],
+      "lesson_content": {
+        "definition": "Consistency means responding in predictable ways that help children feel safe.",
+        "consistency_elements": [
+          "Predictable routines",
+          "Stable emotional responses",
+          "Clear expectations",
+          "Follow-through"
+        ]
+      },
+      "activities": [
+        {
+          "activity_id": "routine_builder",
+          "type": "planning"
+        }
+      ],
+      "fill_in_the_blank": [
+        { "question": "Consistency creates ________ for children.", "answer": "safety" }
+      ],
+      "quiz": {
+        "multiple_choice": [
+          {
+            "question": "Which supports consistency?",
+            "options": ["Random rules", "Predictable routines", "Frequent changes", "Emotional volatility"],
+            "answer": "Predictable routines"
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "assessment_id": "consistency_plan",
+          "type": "scenario_analysis",
+          "criteria": [
+            { "criterion_id": "routine_accuracy", "weight": 0.40 },
+            { "criterion_id": "predictability_planning", "weight": 0.35 },
+            { "criterion_id": "follow_through", "weight": 0.25 }
+          ]
+        }
+      ],
+      "competency_check": [
+        "Build predictable routines",
+        "Maintain consistency",
+        "Support child stability"
+      ],
+      "extensions": [
+        "Consistency in Blended Families",
+        "Consistency for Neurodivergent Children"
+      ]
+    }
+
+  ]
+}

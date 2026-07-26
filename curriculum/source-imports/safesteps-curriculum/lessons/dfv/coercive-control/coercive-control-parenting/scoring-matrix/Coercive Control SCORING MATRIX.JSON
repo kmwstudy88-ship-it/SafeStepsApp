@@ -1,0 +1,201 @@
+{
+  "module_id": "parenting_coercive_control_v1",
+  "assessment_scoring_matrices": {
+    "mastery_thresholds": {
+      "pass": 0.70,
+      "high_mastery": 0.90,
+      "fail": 0.69
+    },
+
+    "global_weights": {
+      "accuracy": 0.40,
+      "pattern_identification": 0.30,
+      "impact_reasoning": 0.20,
+      "safe_alternatives": 0.10
+    },
+
+    "assessments": [
+      {
+        "assessment_id": "written_analysis",
+        "title": "Written Scenario Analysis",
+        "type": "scenario_analysis",
+        "max_score": 100,
+        "criteria": [
+          {
+            "criterion_id": "pattern_identification",
+            "description": "Correctly identifies coercive control patterns present in the scenario.",
+            "weight": 0.35,
+            "levels": {
+              "excellent": {
+                "score": 35,
+                "description": "Identifies all relevant patterns with precise justification."
+              },
+              "good": {
+                "score": 28,
+                "description": "Identifies most patterns with reasonable justification."
+              },
+              "partial": {
+                "score": 18,
+                "description": "Identifies some patterns but misses key elements."
+              },
+              "poor": {
+                "score": 10,
+                "description": "Incorrect or incomplete pattern identification."
+              }
+            }
+          },
+          {
+            "criterion_id": "developmental_impact",
+            "description": "Explains developmental, emotional, and relational impacts.",
+            "weight": 0.30,
+            "levels": {
+              "excellent": {
+                "score": 30,
+                "description": "Provides clear, accurate, developmentally grounded impacts."
+              },
+              "good": {
+                "score": 24,
+                "description": "Provides mostly accurate impacts with minor gaps."
+              },
+              "partial": {
+                "score": 15,
+                "description": "Provides limited or generic impacts."
+              },
+              "poor": {
+                "score": 8,
+                "description": "Impacts missing or incorrect."
+              }
+            }
+          },
+          {
+            "criterion_id": "safe_alternatives",
+            "description": "Suggests developmentally appropriate, safe alternatives.",
+            "weight": 0.20,
+            "levels": {
+              "excellent": {
+                "score": 20,
+                "description": "Provides multiple clear, actionable alternatives."
+              },
+              "good": {
+                "score": 16,
+                "description": "Provides reasonable alternatives with minor gaps."
+              },
+              "partial": {
+                "score": 10,
+                "description": "Alternatives are vague or incomplete."
+              },
+              "poor": {
+                "score": 5,
+                "description": "Alternatives missing or unsafe."
+              }
+            }
+          },
+          {
+            "criterion_id": "clarity_structure",
+            "description": "Clarity, structure, and coherence of written response.",
+            "weight": 0.15,
+            "levels": {
+              "excellent": {
+                "score": 15,
+                "description": "Highly structured, clear, and logically organised."
+              },
+              "good": {
+                "score": 12,
+                "description": "Mostly clear with minor structural issues."
+              },
+              "partial": {
+                "score": 8,
+                "description": "Some clarity issues or disorganisation."
+              },
+              "poor": {
+                "score": 4,
+                "description": "Unclear, disorganised, or difficult to follow."
+              }
+            }
+          }
+        ]
+      },
+
+      {
+        "assessment_id": "pattern_map",
+        "title": "Parenting Pattern Map",
+        "type": "visual_mapping",
+        "max_score": 100,
+        "criteria": [
+          {
+            "criterion_id": "timeline_accuracy",
+            "description": "Accurate representation of escalation over time.",
+            "weight": 0.40,
+            "levels": {
+              "excellent": { "score": 40, "description": "Timeline is precise and captures escalation clearly." },
+              "good": { "score": 32, "description": "Timeline mostly accurate with minor gaps." },
+              "partial": { "score": 20, "description": "Timeline incomplete or missing escalation." },
+              "poor": { "score": 10, "description": "Timeline inaccurate or missing." }
+            }
+          },
+          {
+            "criterion_id": "pattern_linking",
+            "description": "Correctly links behaviours to coercive control patterns.",
+            "weight": 0.35,
+            "levels": {
+              "excellent": { "score": 35, "description": "All behaviours correctly linked to patterns." },
+              "good": { "score": 28, "description": "Most behaviours correctly linked." },
+              "partial": { "score": 18, "description": "Some correct links but several errors." },
+              "poor": { "score": 10, "description": "Incorrect or missing pattern links." }
+            }
+          },
+          {
+            "criterion_id": "visual_clarity",
+            "description": "Clarity and readability of the visual map.",
+            "weight": 0.25,
+            "levels": {
+              "excellent": { "score": 25, "description": "Highly clear, organised, and visually coherent." },
+              "good": { "score": 20, "description": "Clear with minor visual issues." },
+              "partial": { "score": 14, "description": "Some clarity issues or clutter." },
+              "poor": { "score": 8, "description": "Confusing or poorly structured." }
+            }
+          }
+        ]
+      },
+
+      {
+        "assessment_id": "mastery_test",
+        "title": "Mastery Test",
+        "type": "exam",
+        "max_score": 100,
+        "criteria": [
+          {
+            "criterion_id": "knowledge_accuracy",
+            "description": "Accuracy of answers across all question types.",
+            "weight": 1.0,
+            "levels": {
+              "excellent": { "score": 100, "description": "90–100% correct answers." },
+              "good": { "score": 85, "description": "75–89% correct answers." },
+              "partial": { "score": 70, "description": "60–74% correct answers." },
+              "poor": { "score": 50, "description": "Below 60% correct answers." }
+            }
+          }
+        ]
+      }
+    ],
+
+    "automated_feedback_rules": {
+      "pattern_misidentification": {
+        "trigger": "incorrect_pattern",
+        "feedback": "Review the seven parenting coercive control patterns. Focus on distinguishing autonomy invasion from emotional destabilisation."
+      },
+      "impact_underdeveloped": {
+        "trigger": "weak_impact_reasoning",
+        "feedback": "Consider how coercive control affects emotional regulation, attachment, and long-term wellbeing."
+      },
+      "unsafe_alternatives": {
+        "trigger": "unsafe_suggestions",
+        "feedback": "Ensure alternatives support autonomy, emotional safety, and developmentally appropriate guidance."
+      },
+      "low_mastery": {
+        "trigger": "score_below_threshold",
+        "feedback": "Revisit the core lesson content and complete the practice activities before retaking the assessment."
+      }
+    }
+  }
+}

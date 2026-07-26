@@ -1,0 +1,247 @@
+{
+  "module_id": "parenting_financial_control_tactics_v1",
+  "module_title": "Financial Control Tactics",
+  "series": "SafeSteps Parenting Literacy Series",
+  "level": 3,
+  "version": "1.0.0",
+
+  "learning_outcomes": [
+    "Understand financial control as a pattern of coercive behaviour.",
+    "Recognise financial control tactics in parenting, co-parenting, and family systems.",
+    "Identify behavioural and structural signs of economic abuse.",
+    "Interpret the impact of financial control on children and caregivers.",
+    "Apply safe, supportive responses and basic safety planning around money."
+  ],
+
+  "lesson_content": {
+    "definition": "Financial control tactics are patterns of behaviour that restrict, manipulate, or dominate another person’s access to money, resources, and economic independence.",
+    "core_components": [
+      {
+        "name": "Restriction of Access",
+        "examples": [
+          "Blocking access to bank accounts",
+          "Refusing to share financial information",
+          "Controlling all passwords and cards"
+        ]
+      },
+      {
+        "name": "Conditional Provision",
+        "examples": [
+          "Only providing money as a reward for compliance",
+          "Withholding essentials as punishment",
+          "Making basic needs dependent on obedience"
+        ]
+      },
+      {
+        "name": "Sabotage of Income",
+        "examples": [
+          "Interfering with employment or study",
+          "Demanding the person quit work",
+          "Creating crises that cause job loss"
+        ]
+      },
+      {
+        "name": "Debt & Financial Risk Imposition",
+        "examples": [
+          "Forcing loans or credit in the victim’s name",
+          "Running up debt without consent",
+          "Refusing to contribute to shared responsibilities"
+        ]
+      },
+      {
+        "name": "Child-Linked Financial Control",
+        "examples": [
+          "Threatening to withhold child-related expenses",
+          "Using child support as leverage",
+          "Controlling school, activity, or medical costs to gain power"
+        ]
+      }
+    ],
+    "child_specific_impacts": [
+      "Inconsistent access to food, clothing, and essentials",
+      "Stress about money and basic needs",
+      "Feeling responsible for adult financial problems",
+      "Reduced participation in school and activities",
+      "Long-term anxiety about security and stability"
+    ],
+    "parent_specific_impacts": [
+      "Economic dependence and reduced autonomy",
+      "Difficulty leaving unsafe situations",
+      "Chronic stress and decision fatigue",
+      "Shame or self-blame about money",
+      "Limited ability to plan for safety or future"
+    ]
+  },
+
+  "video_lesson": {
+    "title": "Understanding Financial Control Tactics",
+    "length_minutes": 6,
+    "script": [
+      "Financial control is a powerful form of coercive behaviour that limits a person’s autonomy and safety.",
+      "It can look like restricted access to money, sabotaged income, or using children’s expenses as leverage.",
+      "Over time, financial control traps families in instability and makes it harder to leave unsafe situations.",
+      "Recognising these tactics early helps parents protect themselves and their children, and seek support safely."
+    ]
+  },
+
+  "knowledge_sequence": [
+    "Definition",
+    "Core Components",
+    "Pattern Recognition",
+    "Impact Interpretation",
+    "Safe Response Planning"
+  ],
+
+  "activities": [
+    {
+      "activity_id": "financial_tactic_identification",
+      "type": "sorting",
+      "description": "Sort behaviours into correct financial control categories.",
+      "items": [
+        { "behaviour": "Blocking access to bank accounts", "correct_category": "Restriction of Access" },
+        { "behaviour": "Demanding a partner quit work", "correct_category": "Sabotage of Income" },
+        { "behaviour": "Using child support as leverage", "correct_category": "Child-Linked Financial Control" }
+      ]
+    },
+    {
+      "activity_id": "micro_scenarios",
+      "type": "scenario_identification",
+      "description": "Identify financial control patterns and explain likely impacts.",
+      "scenarios": [
+        {
+          "scenario_id": "fc1",
+          "text": "A parent refuses to pay for school excursions unless the other parent follows their demands.",
+          "correct_category": "Child-Linked Financial Control"
+        },
+        {
+          "scenario_id": "fc2",
+          "text": "A partner insists on handling all money and never shares account details.",
+          "correct_category": "Restriction of Access"
+        }
+      ]
+    }
+  ],
+
+  "fill_in_the_blank": [
+    {
+      "question": "Financial control tactics restrict a person’s access to ________ and resources.",
+      "answer": "money"
+    },
+    {
+      "question": "Sabotaging employment is a form of ________ of income.",
+      "answer": "sabotage"
+    },
+    {
+      "question": "Using child-related expenses as leverage is ________-linked financial control.",
+      "answer": "child"
+    },
+    {
+      "question": "Economic dependence reduces a person’s ________ to leave unsafe situations.",
+      "answer": "ability"
+    },
+    {
+      "question": "Running up debt in another person’s name is a ________ risk tactic.",
+      "answer": "financial"
+    }
+  ],
+
+  "quiz": {
+    "multiple_choice": [
+      {
+        "question": "Which behaviour is an example of financial control?",
+        "options": [
+          "Jointly planning a family budget",
+          "Blocking access to shared bank accounts",
+          "Encouraging financial literacy",
+          "Sharing account information openly"
+        ],
+        "answer": "Blocking access to shared bank accounts"
+      },
+      {
+        "question": "Which behaviour is an example of sabotage of income?",
+        "options": [
+          "Supporting a partner’s study",
+          "Demanding a partner quit work",
+          "Sharing childcare responsibilities",
+          "Planning for long-term savings"
+        ],
+        "answer": "Demanding a partner quit work"
+      }
+    ],
+    "true_false": [
+      {
+        "question": "Financial control can occur even when there is no physical violence.",
+        "answer": true
+      },
+      {
+        "question": "Children are never affected by financial control tactics.",
+        "answer": false
+      }
+    ],
+    "short_answer": [
+      {
+        "question": "Name two impacts of financial control on children.",
+        "expected_keywords": ["stress", "inconsistent essentials", "reduced activities", "anxiety"]
+      },
+      {
+        "question": "Why is financial control harmful even when basic needs are sometimes met?",
+        "expected_keywords": ["instability", "dependence", "fear", "lack of autonomy"]
+      }
+    ],
+    "scenario_questions": [
+      {
+        "question": "A partner runs up debt in the other’s name without consent. Which category does this belong to?",
+        "answer": "Debt & Financial Risk Imposition"
+      },
+      {
+        "question": "A parent only pays for school supplies when the other parent complies with demands. Which category does this belong to?",
+        "answer": "Child-Linked Financial Control"
+      }
+    ]
+  },
+
+  "assessments": [
+    {
+      "assessment_id": "financial_control_analysis",
+      "type": "scenario_analysis",
+      "max_score": 100,
+      "criteria": [
+        { "criterion_id": "financial_tactic_identification", "weight": 0.40 },
+        { "criterion_id": "impact_reasoning", "weight": 0.35 },
+        { "criterion_id": "safe_response_planning", "weight": 0.25 }
+      ]
+    },
+    {
+      "assessment_id": "financial_control_map",
+      "type": "visual_mapping",
+      "max_score": 100,
+      "criteria": [
+        { "criterion_id": "category_accuracy", "weight": 0.45 },
+        { "criterion_id": "pattern_linking", "weight": 0.35 },
+        { "criterion_id": "visual_clarity", "weight": 0.20 }
+      ]
+    },
+    {
+      "assessment_id": "mastery_test",
+      "type": "exam",
+      "max_score": 100,
+      "criteria": [
+        { "criterion_id": "knowledge_accuracy", "weight": 1.0 }
+      ]
+    }
+  ],
+
+  "competency_check": [
+    "Identify financial control tactics across family contexts",
+    "Explain economic, emotional, and developmental impacts",
+    "Apply safe, supportive responses and basic safety planning",
+    "Recognise early warning signs of economic abuse"
+  ],
+
+  "extensions": [
+    "Advanced Economic Abuse Patterns",
+    "Financial Control in Post-Separation Contexts",
+    "Financial Safety Planning for Parents",
+    "Teaching Children Basic Financial Safety Concepts"
+  ]
+}

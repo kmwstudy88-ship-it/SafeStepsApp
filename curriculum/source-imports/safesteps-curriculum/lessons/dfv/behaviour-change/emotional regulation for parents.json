@@ -1,0 +1,66 @@
+ "module_id": "behaviour_change_emotional_regulation_v1",
+      "module_title": "Emotional Regulation for Parents",
+      "learning_outcomes": [
+        "Understand emotional regulation as a foundation for behaviour change.",
+        "Recognise emotional triggers in parenting moments.",
+        "Apply regulation strategies during conflict or stress.",
+        "Support children in co-regulating safely."
+      ],
+      "lesson_content": {
+        "definition": "Emotional regulation is the ability to manage internal states in ways that support safe, connected behaviour.",
+        "strategies": [
+          "Pause and breathe before responding",
+          "Name the emotion to reduce intensity",
+          "Grounding techniques (5-4-3-2-1)",
+          "Repair after dysregulation"
+        ],
+        "common_triggers": [
+          "Fatigue",
+          "Overwhelm",
+          "Child distress",
+          "Noise and chaos",
+          "Unresolved trauma"
+        ]
+      },
+      "activities": [
+        {
+          "activity_id": "trigger_sorting",
+          "type": "sorting",
+          "items": [
+            { "behaviour": "Feeling overwhelmed by noise", "correct_category": "Trigger" }
+          ]
+        }
+      ],
+      "fill_in_the_blank": [
+        { "question": "Emotional regulation supports ________ behaviour.", "answer": "safe" }
+      ],
+      "quiz": {
+        "multiple_choice": [
+          {
+            "question": "Which is a regulation strategy?",
+            "options": ["Yelling", "Pausing", "Ignoring", "Shaming"],
+            "answer": "Pausing"
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "assessment_id": "regulation_plan",
+          "type": "scenario_analysis",
+          "criteria": [
+            { "criterion_id": "trigger_identification", "weight": 0.40 },
+            { "criterion_id": "strategy_application", "weight": 0.35 },
+            { "criterion_id": "repair_planning", "weight": 0.25 }
+          ]
+        }
+      ],
+      "competency_check": [
+        "Identify triggers",
+        "Apply regulation strategies",
+        "Repair after dysregulation"
+      ],
+      "extensions": [
+        "Advanced Co-Regulation",
+        "Regulation for Neurodivergent Parents"
+      ]
+    }

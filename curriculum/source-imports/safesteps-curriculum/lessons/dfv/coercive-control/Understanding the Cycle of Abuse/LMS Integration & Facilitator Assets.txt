@@ -1,0 +1,23 @@
+1. Canvas / Moodle Ready Quiz Import (GIFT Format)Below is the GIFT-formatted quiz code. You can copy and save this into a .txt file to import directly into Moodle, Canvas, or Blackboard.Plaintext// Quiz: Understanding the Cycle of Abuse
+
+::Q1: Function of Reconciliation Phase:: What is the primary function of the Reconciliation (Honeymoon) phase for the abusive partner? {
+  ~To permanently end the conflict.
+  =To regain control and re-establish the victim's hope in the relationship.
+  ~To prove that the victim was responsible for the incident.
+  ~To show genuine long-term psychological change.
+}
+
+::Q2: Progression Over Time:: Which of the following is true about how the Cycle of Abuse evolves over time? {
+  ~The calm phase expands until the cycle disappears on its own.
+  ~The cycle remains completely identical in length and intensity indefinitely.
+  =The time between incidents often shrinks, and abuse frequently escalates in severity.
+  ~The tension building phase disappears completely after the first incident.
+}
+
+::Q3: Walking on Eggshells:: What does "walking on eggshells" refer to during the Tension Building phase? {
+  ~The physical destruction of property in the home.
+  =The victim constantly modifying their behavior to avoid provoking an abusive outburst.
+  ~A formal therapeutic intervention strategy.
+  ~The cooling-off period following an acute incident.
+}
+2. Facilitator Guide & Delivery Agenda (60-Minute Workshop)Workshop ScheduleTimeDurationSegmentFacilitator Action / Media00:00 – 00:055 minsIntroduction & Safety FramingRead content warning; share hotline contacts on slide. Set ground rules for safe discussion.00:05 – 00:2015 minsCore Lecture: The 4 PhasesWalk through Lenore Walker’s framework diagram. Highlight the escalation factor.00:20 – 00:3515 minsActivity 1 & Scenario AnalysisDivide participants into pairs. Assign the Alex & Jordan Scenario. Debrief as a group.00:35 – 00:5015 minsCase Study Evaluation (Maya)Individual/group exercise using the Assessment Deliverables (Cycle Mapping & Response Plan).00:50 – 01:0010 minsQ&A, Resources & Wrap-UpShare referral links (National Domestic Violence Hotline, Love is Respect). Administer feedback survey.Facilitator Script Notes & Common TrapsTeaching Tip: Handling Victim BlamingCommon Participant Pitfall: Participants often ask, "Why didn't Maya just leave after Sam smashed her phone?"Facilitator Pivot: Redirect focus back to the model: "Notice how Phase 3 (Reconciliation) builds intense hope and psychological attachment. Leaving is often the most dangerous time in an abusive cycle—coercive control makes exiting a high-risk decision, not just a matter of choice."3. Slide Deck Outline (Presentation-Ready)Slide 1: Title & Safety NoticeTitle: Understanding the Cycle of AbuseSubtitle: Recognizing Dynamics, Escalation, and Support StrategiesVisual: Hotline contacts & crisis resources displayed prominently.Slide 2: The Cycle FrameworkVisual: Circular 4-stage diagram (Tension Building $\rightarrow$ Incident $\rightarrow$ Reconciliation $\rightarrow$ Calm).Key Bullet: Abuse is dynamic and cyclical, not a static 24/7 state of conflict.Slide 3: Phase 1 & Phase 2Left Column (Tension): Microaggressions, hyper-vigilance, "walking on eggshells."Right Column (Incident): Acute outburst (verbal, physical, emotional, financial, or digital).Slide 4: Phase 3 & Phase 4Left Column (Reconciliation): Promises, gifts, shifting blame, temporary hope.Right Column (Calm): Minimization, false sense of security, temporary stability.Slide 5: The Escalation PatternVisual: Spiral graphic showing decreasing calm/honeymoon periods over time.Key Point: Without intervention, frequency increases and severity escalates.Slide 6: Practical Support & InterventionsDo's: Validate feelings, offer non-judgmental support, assist with safety planning.Don'ts: Give ultimatums, blame the victim, or criticize the abusive partner directly to the victim.

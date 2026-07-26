@@ -74,7 +74,7 @@ export type VideoSeriesLessonPreviewSlot = {
   detail: string;
 };
 
-const rootPath = "Unified Production Pipeline Master Document video series";
+const rootPath = "curriculum/source-imports/Unified Production Pipeline Master Document video series";
 
 export const videoSeriesPipelines: VideoSeriesPipeline[] = [
   {
