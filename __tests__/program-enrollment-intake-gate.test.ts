@@ -1,5 +1,7 @@
 import { supabase } from "../lib/supabase/client";
 import { hasCompletedIntakeAssessment } from "../lib/platformData";
+import { resolveSingleActiveCaseId } from "../lib/security/caseAccess";
+import { assertProgramCanStart } from "../lib/engines/programStartGateEngine";
 import { startProgramEnrollment } from "../lib/engines/programEnrollmentEngine";
 
 jest.mock("../lib/supabase/client", () => ({
@@ -8,6 +10,7 @@ jest.mock("../lib/supabase/client", () => ({
       getUser: jest.fn(),
     },
     from: jest.fn(),
+    rpc: jest.fn(),
   },
 }));
 
@@ -15,11 +18,22 @@ jest.mock("../lib/platformData", () => ({
   hasCompletedIntakeAssessment: jest.fn(),
 }));
 
+jest.mock("../lib/security/caseAccess", () => ({
+  resolveSingleActiveCaseId: jest.fn(),
+}));
+
+jest.mock("../lib/engines/programStartGateEngine", () => ({
+  assertProgramCanStart: jest.fn(),
+}));
+
 const mockSupabase = supabase as unknown as {
   auth: { getUser: jest.Mock };
   from: jest.Mock;
+  rpc: jest.Mock;
 };
 const mockHasCompletedIntakeAssessment = hasCompletedIntakeAssessment as jest.Mock;
+const mockResolveSingleActiveCaseId = resolveSingleActiveCaseId as jest.Mock;
+const mockAssertProgramCanStart = assertProgramCanStart as jest.Mock;
 
 function queryResult(data: unknown, error: { message: string } | null = null) {
   const result = { data, error };
@@ -42,6 +56,12 @@ describe("program enrollment intake gate", () => {
     mockSupabase.auth.getUser.mockResolvedValue({
       data: { user: { id: "user-1" } },
       error: null,
+    });
+    mockResolveSingleActiveCaseId.mockResolvedValue("case-1");
+    mockAssertProgramCanStart.mockResolvedValue({
+      caseId: "case-1",
+      intakeCompletedAt: "2026-07-21T00:00:00.000Z",
+      reviewerState: "ready",
     });
   });
 
@@ -66,20 +86,24 @@ describe("program enrollment intake gate", () => {
       started_at: "2026-07-21T00:00:00.000Z",
       completed_at: null,
     };
-    const createEnrollmentQuery = queryResult(createdEnrollment);
     const progressEventQuery = queryResult(null);
 
     mockHasCompletedIntakeAssessment.mockResolvedValue(true);
+    mockSupabase.rpc.mockResolvedValue({ data: createdEnrollment, error: null });
     mockSupabase.from
       .mockReturnValueOnce(activeEnrollmentQuery)
-      .mockReturnValueOnce(createEnrollmentQuery)
       .mockReturnValueOnce(progressEventQuery);
 
     await expect(startProgramEnrollment("home-again", "Home Again")).resolves.toEqual(createdEnrollment);
 
     expect(mockHasCompletedIntakeAssessment).toHaveBeenCalledWith("user-1");
     expect(mockSupabase.from).toHaveBeenNthCalledWith(1, "program_enrollments");
-    expect(mockSupabase.from).toHaveBeenNthCalledWith(2, "program_enrollments");
-    expect(mockSupabase.from).toHaveBeenNthCalledWith(3, "progress_events");
+    expect(mockResolveSingleActiveCaseId).toHaveBeenCalled();
+    expect(mockAssertProgramCanStart).toHaveBeenCalledWith("home-again");
+    expect(mockSupabase.rpc).toHaveBeenCalledWith("start_program_enrollment", {
+      target_case_id: "case-1",
+      target_program_id: "home-again",
+    });
+    expect(mockSupabase.from).toHaveBeenNthCalledWith(2, "progress_events");
   });
 });

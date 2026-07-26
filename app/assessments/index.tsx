@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { Redirect, router } from "expo-router";
+import { Redirect, type Href, router } from "expo-router";
 
 import { AppBottomNav } from "../../components/AppBottomNav";
 import { useAuth } from "../../lib/auth";
@@ -147,7 +147,7 @@ export default function AssessmentsScreen() {
       {message && completedAt ? <Text style={globalStyles.notice}>{message}</Text> : null}
 
       {completedAt ? (
-        <TouchableOpacity onPress={() => router.replace("/intake-progress")} style={globalStyles.button}>
+        <TouchableOpacity onPress={() => router.replace("/intake-progress" as Href)} style={globalStyles.button}>
           <Text style={globalStyles.buttonText}>View intake and program start progress</Text>
         </TouchableOpacity>
       ) : null}

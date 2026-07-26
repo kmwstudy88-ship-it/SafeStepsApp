@@ -1,4 +1,4 @@
-import { Link, useLocalSearchParams, usePathname } from "expo-router";
+import { Link, type Href, useLocalSearchParams, usePathname } from "expo-router";
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from "react-native";
 
@@ -77,7 +77,7 @@ export function ProgramEnrollmentBoundary({ children }: { children: React.ReactN
       <View style={styles.centered}>
         <Text style={styles.title}>Program locked</Text>
         <Text style={styles.body}>{error}</Text>
-        <Link href="/intake-progress" asChild>
+        <Link href={"/intake-progress" as Href} asChild>
           <Pressable style={styles.button}>
             <Text style={styles.buttonText}>View intake progress</Text>
           </Pressable>
