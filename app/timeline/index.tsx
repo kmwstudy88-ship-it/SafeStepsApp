@@ -5,7 +5,13 @@ import { Redirect } from "expo-router";
 import { AppBottomNav } from "../../components/AppBottomNav";
 import { useAuth } from "../../lib/auth";
 import { getProgramTitle, getReportSummary, type ReportSummary } from "../../lib/platformData";
-import { metadataEvidenceTitles, metadataTaskTitles } from "../../lib/progressMetadata";
+import {
+  metadataEvidenceTitles,
+  metadataLessonId,
+  metadataQuizPassed,
+  metadataTaskTitles,
+  metadataVideoStepCount,
+} from "../../lib/progressMetadata";
 import { globalStyles } from "../../lib/styles";
 
 type TimelineItem = {
@@ -52,6 +58,9 @@ function formatEventDetail(event: ReportSummary["events"][number]) {
   const detailParts = [event.event_type.replace(/_/g, " ")];
   const taskTitles = metadataTaskTitles(event.metadata);
   const evidenceTitles = metadataEvidenceTitles(event.metadata);
+  const videoStepCount = metadataVideoStepCount(event.metadata);
+  const quizPassed = metadataQuizPassed(event.metadata);
+  const lessonId = metadataLessonId(event.metadata);
 
   if (taskTitles.length > 0) {
     detailParts.push(`Tasks: ${taskTitles.join(", ")}`);
@@ -59,6 +68,18 @@ function formatEventDetail(event: ReportSummary["events"][number]) {
 
   if (evidenceTitles.length > 0) {
     detailParts.push(`Evidence: ${evidenceTitles.join(", ")}`);
+  }
+
+  if (videoStepCount !== null) {
+    detailParts.push(`Video steps completed: ${videoStepCount}`);
+  }
+
+  if (quizPassed !== null) {
+    detailParts.push(`Quiz checkpoint: ${quizPassed ? "passed" : "needs review"}`);
+  }
+
+  if (lessonId) {
+    detailParts.push(`Lesson ID: ${lessonId}`);
   }
 
   return detailParts.join("\n");

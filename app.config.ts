@@ -41,6 +41,8 @@ export default {
     plugins: [
       "expo-router",
       "expo-secure-store",
+      "expo-sharing",
+      "expo-video",
       [
         "expo-image-picker",
         {

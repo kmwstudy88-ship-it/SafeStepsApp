@@ -419,7 +419,7 @@ export const fallbackPrograms: SafeStepsProgram[] = [
     id: "intensive-reunification",
     title: "Intensive Reunification Program",
     description: "A 24-month pathway for parents working toward long-term reunification after serious child safety concerns.",
-    weeks: 104,
+    weeks: 96,
     durationLabel: "24 months",
     pathwayType: "set-program",
     audience: ["Parents working toward long-term reunification", "Families with serious child safety concerns"],
@@ -1128,6 +1128,52 @@ const monthlyProgramTopics = [
   "Parenting Through Crisis",
 ];
 
+const intensiveReunificationMonthTopics = [
+  "Beginning the Reunification Journey",
+  "Safety, Accountability, and Trust",
+  "Repairing Parent-Child Connection",
+  "Predictable Parenting Time",
+  "Preparing for Increased Contact",
+  "Parenting Time Transitions",
+  "Re-Establishing Family Identity",
+  "Full-Time Family Adjustment",
+  "Long-Term Family Stability",
+  "Family Communication Practice",
+  "Problem-Solving Skills",
+  "Sustaining Reunification Progress",
+  "Strengthening Trust After Reunification",
+  "Building Long-Term Routines",
+  "Supporting Emotional Development",
+  "Guiding Behaviour With Safety",
+  "Managing Stress and Setbacks",
+  "Deepening Parent-Child Connection",
+  "Strengthening Long-Term Safety",
+  "Supporting Family Growth",
+  "Long-Term Emotional Stability",
+  "Life Skills and Independence",
+  "Future-Focused Family Planning",
+  "Celebrating the Reunification Journey",
+];
+
+const intensiveReunificationWeekFocusCycle = [
+  {
+    focus: "Safety, accountability, and case-plan clarity",
+    evidencePrompt: "Upload or write one factual note showing how this week's safety expectation was understood, practised, or reviewed.",
+  },
+  {
+    focus: "Child experience, attachment, and repair",
+    evidencePrompt: "Record one child-centred reflection or worker-approved observation about connection, repair, or contact preparation.",
+  },
+  {
+    focus: "Regulation, routines, and parenting under pressure",
+    evidencePrompt: "Document one routine, regulation tool, or support action used before stress escalated.",
+  },
+  {
+    focus: "Evidence review, support coordination, and next steps",
+    evidencePrompt: "Summarise what changed this month, what evidence supports it, and what still needs worker or support-service review.",
+  },
+];
+
 const dailyLessonFocus = [
   "What this means to my family",
   "What I already do well",
@@ -1136,8 +1182,22 @@ const dailyLessonFocus = [
   "What changed this week",
 ];
 
-function getMonthlyTopic(weekNumber: number) {
+const intensiveReunificationDailyLessonFocus = [
+  "Understand the current reunification expectation",
+  "Name what this means for my child",
+  "Practise one safe parenting behaviour",
+  "Prepare for contact, transition, or home routine",
+  "Use support before stress escalates",
+  "Record factual evidence of safe change",
+  "Reflect on progress, repair, and next steps",
+];
+
+function getMonthlyTopic(weekNumber: number, programId?: string) {
   const monthNumber = Math.ceil(weekNumber / 4);
+  if (programId === "intensive-reunification") {
+    return intensiveReunificationMonthTopics[monthNumber - 1] ?? `Reunification Month ${monthNumber}`;
+  }
+
   return monthlyProgramTopics[(monthNumber - 1) % monthlyProgramTopics.length];
 }
 
@@ -1158,6 +1218,17 @@ function getDailyProgramLessons(monthTopic: string, weekFocus: string) {
   }));
 }
 
+function getIntensiveReunificationDailyLessons(monthTopic: string, weekFocus: string) {
+  return intensiveReunificationDailyLessonFocus.map((focus, index) => ({
+    dayNumber: index + 1,
+    title: `${monthTopic}: ${focus}`,
+    durationMinutes: 30,
+    meaningPrompt: getReflectionPrompt("daily", focus),
+    checkpoint: `Name one ${weekFocus.toLowerCase()} action that protects your child, follows the current plan, or builds safer contact.`,
+    practiceTask: `Practise one small ${monthTopic.toLowerCase()} action that is safe, observable, and aligned with your current case or support plan. Record what happened factually.`,
+  }));
+}
+
 export function getProgramWeekPlan(programId: string, weekId: string | number) {
   const program = getProgramById(programId);
   if (!program) return null;
@@ -1166,10 +1237,13 @@ export function getProgramWeekPlan(programId: string, weekId: string | number) {
   if (!Number.isInteger(weekNumber) || weekNumber < 1) return null;
   if (program.weeks > 0 && weekNumber > program.weeks) return null;
 
-  const cycle = weekFocusCycle[(weekNumber - 1) % weekFocusCycle.length];
+  const isIntensiveReunification = program.id === "intensive-reunification";
+  const cycle = isIntensiveReunification
+    ? intensiveReunificationWeekFocusCycle[(weekNumber - 1) % intensiveReunificationWeekFocusCycle.length]
+    : weekFocusCycle[(weekNumber - 1) % weekFocusCycle.length];
   const monthNumber = Math.ceil(weekNumber / 4);
   const weekInMonth = ((weekNumber - 1) % 4) + 1;
-  const monthTopic = getMonthlyTopic(weekNumber);
+  const monthTopic = getMonthlyTopic(weekNumber, program.id);
   const focus = `${monthTopic}: ${cycle.focus}`;
   const weekLessons = appLessons.filter((lesson) => lesson.week === weekNumber).map((lesson) => lesson.id);
 
@@ -1185,7 +1259,9 @@ export function getProgramWeekPlan(programId: string, weekId: string | number) {
     weeklyReflectionPrompt: getReflectionPrompt("weekly", focus),
     evidencePrompt: cycle.evidencePrompt,
     lessonIds: weekLessons,
-    dailyLessons: getDailyProgramLessons(monthTopic, cycle.focus),
+    dailyLessons: isIntensiveReunification
+      ? getIntensiveReunificationDailyLessons(monthTopic, cycle.focus)
+      : getDailyProgramLessons(monthTopic, cycle.focus),
   } satisfies ProgramWeekPlan;
 }
 
@@ -2364,6 +2440,46 @@ export async function completeLesson(userId: string, lessonId: string, title: st
     label: title,
     metadata: { lessonId },
   });
+
+  if (error) throw error;
+}
+
+export async function completeInteractiveVideoLesson(
+  userId: string,
+  title: string,
+  metadata: Record<string, unknown>,
+) {
+  const lessonId = typeof metadata.lessonId === "string" ? metadata.lessonId : null;
+
+  if (isDemoUser(userId)) {
+    if (lessonId && !demoState.events.some((event) => event.event_type === "lesson_completed" && event.metadata?.lessonId === lessonId)) {
+      addDemoEvent("lesson_completed", title, { lessonId, source: "interactive_video_lesson" });
+    }
+    addDemoEvent("interactive_video_lesson_completed", title, metadata);
+    return;
+  }
+
+  const completedLessonIds = lessonId ? await getCompletedLessonIds(userId) : new Set<string>();
+  const rows = [
+    {
+      owner_id: userId,
+      event_type: "interactive_video_lesson_completed",
+      label: title,
+      metadata,
+    },
+    ...(lessonId && !completedLessonIds.has(lessonId)
+      ? [
+          {
+            owner_id: userId,
+            event_type: "lesson_completed",
+            label: title,
+            metadata: { lessonId, source: "interactive_video_lesson" },
+          },
+        ]
+      : []),
+  ];
+
+  const { error } = await supabase.from("progress_events").insert(rows);
 
   if (error) throw error;
 }

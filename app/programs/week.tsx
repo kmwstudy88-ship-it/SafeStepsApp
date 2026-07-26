@@ -225,6 +225,9 @@ export default function WeekScreen() {
                   weekSubTopic: week.subTopic,
                   day: String(lesson.day),
                   lessonTitle: lesson.title,
+                  lessonCheckpoint: `${lesson.title}: name one idea that protects safety, supports your child, or builds reliable change.`,
+                  scenarioPrompt: `Imagine ${week.subTopic.toLowerCase()} comes up during a stressful contact, transition, or home routine. What would be a safe, respectful next step?`,
+                  practiceTask: `${lesson.title}. Practise one small action that is safe, observable, and aligned with the current plan. Record what happened factually.`,
                 },
               }}
               asChild

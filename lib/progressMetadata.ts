@@ -15,3 +15,15 @@ export function metadataEvidenceTitles(metadata: Record<string, unknown> | null 
     ...listMetadataStrings(metadata?.evidenceTitles),
   ];
 }
+
+export function metadataVideoStepCount(metadata: Record<string, unknown> | null | undefined) {
+  return typeof metadata?.videoStepCount === "number" ? metadata.videoStepCount : null;
+}
+
+export function metadataQuizPassed(metadata: Record<string, unknown> | null | undefined) {
+  return typeof metadata?.quizPassed === "boolean" ? metadata.quizPassed : null;
+}
+
+export function metadataLessonId(metadata: Record<string, unknown> | null | undefined) {
+  return typeof metadata?.lessonId === "string" ? metadata.lessonId : null;
+}

@@ -46,7 +46,7 @@ export default function DailyProgramLessonScreen() {
         <Text style={styles.title}>Daily lesson not found</Text>
         <Text style={styles.subtitle}>Choose another program week.</Text>
         <Link href="/programs" asChild>
-          <TouchableOpacity style={[styles.button, { backgroundColor: safestepsLessonTheme.colors.purpleDark }]}>
+          <TouchableOpacity style={StyleSheet.flatten([styles.button, { backgroundColor: safestepsLessonTheme.colors.purpleDark }])}>
             <Text style={styles.buttonText}>Back to programs</Text>
           </TouchableOpacity>
         </Link>

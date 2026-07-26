@@ -43,7 +43,6 @@ const sidebarItems = [
   ["Reports", "/reports"],
   ["Calendar", "/timeline"],
   ["Messages", "/notifications"],
-  ["Parent Child", "/parent-child"],
   ["Resources", "/resources"],
   ["Support", "/facilitator"],
   ["Profile", "/settings"],
@@ -51,15 +50,15 @@ const sidebarItems = [
 ] as const;
 
 const quickActions = [
-  ["Curriculum", "/library"],
-  ["Challenges", "/challenges"],
-  ["Upload Evidence", "/evidence"],
-  ["Journal Entry", "/growth"],
-  ["Assessments", "/assessment-system"],
-  ["View Reports", "/reports"],
-  ["Parent Child", "/parent-child"],
-  ["Messages", "/notifications"],
-  ["Resources", "/resources"],
+  ["Daily Challenges", "/parent/daily-challenges", "★"],
+  ["Curriculum", "/library", "▤"],
+  ["Challenges", "/challenges", "◎"],
+  ["Upload Evidence", "/evidence", "↑"],
+  ["Journal Entry", "/growth", "✎"],
+  ["Assessments", "/assessment-system", "⌁"],
+  ["View Reports", "/reports", "▣"],
+  ["Messages", "/notifications", "☏"],
+  ["Resources", "/resources", "?"],
 ] as const;
 
 const evidenceUploadLinks = [
@@ -166,11 +165,11 @@ function PriorityRow({
   );
 }
 
-function QuickAction({ label, href }: { label: string; href: string }) {
+function QuickAction({ label, href, icon }: { label: string; href: string; icon: string }) {
   return (
     <Link href={href as any} asChild>
       <Pressable style={styles.quickAction}>
-        <Text style={styles.quickIcon}>{label.slice(0, 1)}</Text>
+        <Text style={styles.quickIcon}>{icon}</Text>
         <Text style={styles.quickText}>{label}</Text>
       </Pressable>
     </Link>
@@ -231,9 +230,7 @@ export default function DashboardScreen() {
 
         <ScrollView contentContainerStyle={styles.content}>
           <View style={styles.topBar}>
-            <Text style={styles.menuIcon}>☰</Text>
             <View style={styles.profileCluster}>
-              <Text style={styles.bell}>!</Text>
               <View style={styles.avatar}>
                 <Text style={styles.avatarText}>{displayName.slice(0, 1).toUpperCase()}</Text>
               </View>
@@ -359,8 +356,9 @@ export default function DashboardScreen() {
                     ))}
                   </View>
                   <Link href="/evidence" asChild>
-                    <Pressable style={styles.primaryButton}>
-                      <Text style={styles.primaryButtonText}>Upload Evidence</Text>
+                    <Pressable style={styles.evidenceUploadLink}>
+                      <Text style={styles.evidenceUploadItem}>Upload Evidence</Text>
+                      <Text style={styles.evidenceUploadArrow}>›</Text>
                     </Pressable>
                   </Link>
                 </View>
@@ -372,43 +370,25 @@ export default function DashboardScreen() {
             </Panel>
           </View>
 
-                    <Panel title="Quick Actions">
+          <Panel title="Quick Actions">
             <View style={styles.quickGrid}>
-              {quickActions.map(([label, href]) => (
-                <QuickAction key={label} label={label} href={href} />
+              {quickActions.map(([label, href, icon]) => (
+                <QuickAction key={label} label={label} href={href} icon={icon} />
               ))}
             </View>
           </Panel>
 
           <View style={styles.grid}>
-            <Panel title="Child Voice & Family Records">
+            <Panel title="Parent-Child Dashboard">
               <Text style={styles.panelText}>
-                Child-facing and parent-child records are kept separate until they are shared through the right safety and privacy pathway.
+                Child-shared records, monitored messages, family activities, and calendar requests live in a separate parent-child area.
               </Text>
-
-              <View style={styles.measureRow}>
-                <Text style={styles.priorityTitle}>Parent-child sharing</Text>
-                <Text style={styles.statusPill}>Review</Text>
-              </View>
-
-              <View style={styles.measureRow}>
-                <Text style={styles.priorityTitle}>Report source</Text>
-                <Text style={styles.statusPill}>Saved records</Text>
-              </View>
-
               <Text style={styles.priorityDue}>
-                This dashboard does not score child wellbeing or family connection from unsaved or private child material.
+                Parents only see what the child has chosen to share through the parent-child pathway.
               </Text>
-
-              <Link href="/reports" asChild>
-                <Pressable>
-                  <Text style={styles.textLink}>View saved-record report</Text>
-                </Pressable>
-              </Link>
-
               <Link href="/parent-child" asChild>
-                <Pressable>
-                  <Text style={styles.textLink}>Open parent child dashboard</Text>
+                <Pressable style={styles.outlineButton}>
+                  <Text style={styles.outlineButtonText}>Open Parent-Child Dashboard</Text>
                 </Pressable>
               </Link>
             </Panel>
@@ -568,25 +548,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  menuIcon: {
-    color: colors.text,
-    fontSize: 22,
-    fontWeight: "800",
-  },
   profileCluster: {
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
-  },
-  bell: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
-    color: "#FFFFFF",
-    backgroundColor: colors.teal,
-    textAlign: "center",
-    textAlignVertical: "center",
-    fontWeight: "900",
   },
   avatar: {
     width: 38,

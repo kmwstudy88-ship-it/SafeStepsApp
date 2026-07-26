@@ -4,6 +4,15 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { courseAreas, courses, getCoursesForArea, getGoldStandardCourses } from "../../curriculum/courses";
 import { listCurriculumCoursesFromApi } from "../../lib/curriculumApi";
 import type { ApiCurriculumCourseSummary } from "../../lib/curriculumApi";
+import { formatInteractiveVideoCourseAssetStatus } from "../../lib/data/interactiveVideoCourse";
+import {
+  nervousSystemVideoCourse,
+} from "../../lib/data/nervousSystemVideoCourse";
+import {
+  strengtheningFamilyBondVideoCourse,
+  strengtheningFamilyBondTitle,
+  strengtheningFamilyBondVideoSteps,
+} from "../../lib/data/strengtheningFamilyBondVideoCourse";
 import { getSafeStepsLessonWatercolorPalette, safestepsLessonTheme } from "../../lib/safestepsLessonTheme";
 
 type CourseView = "gold" | "areas" | "all";
@@ -34,7 +43,7 @@ function CourseCard({ course }: { course: DisplayCourse }) {
         asChild
       >
         <Pressable
-          style={[styles.cardButton, { backgroundColor: palette.accentDark }]}
+          style={StyleSheet.flatten([styles.cardButton, { backgroundColor: palette.accentDark }])}
         >
           <Text style={styles.cardButtonText}>Open Course</Text>
         </Pressable>
@@ -94,6 +103,32 @@ export default function CoursesScreen() {
       <Link href={"/courses/video-series-pipeline" as Href} asChild>
         <Pressable style={styles.pipelineButton}>
           <Text style={styles.pipelineButtonText}>Review Video Series Pipeline</Text>
+        </Pressable>
+      </Link>
+
+      <Link href={"/parent-lessons/nervous-system-regulation" as Href} asChild>
+        <Pressable style={styles.videoCourseCard}>
+          <Text style={styles.videoBadge}>Interactive video course</Text>
+          <Text style={styles.cardTitle}>{nervousSystemVideoCourse.title}</Text>
+          <Text style={styles.cardText}>{nervousSystemVideoCourse.description}</Text>
+          <Text style={styles.metaText}>
+            {nervousSystemVideoCourse.steps.length} videos | {formatInteractiveVideoCourseAssetStatus(nervousSystemVideoCourse)}
+          </Text>
+          <Text style={styles.videoCourseLink}>Open video course</Text>
+        </Pressable>
+      </Link>
+
+      <Link href={"/parent-lessons/strengthening-family-bond" as Href} asChild>
+        <Pressable style={styles.videoCourseCard}>
+          <Text style={styles.videoBadge}>Interactive video course</Text>
+          <Text style={styles.cardTitle}>{strengtheningFamilyBondTitle}</Text>
+          <Text style={styles.cardText}>
+            A 10-video parent lesson with reflections, a quiz checkpoint, and saved completion data.
+          </Text>
+          <Text style={styles.metaText}>
+            {strengtheningFamilyBondVideoSteps.length} videos | {formatInteractiveVideoCourseAssetStatus(strengtheningFamilyBondVideoCourse)}
+          </Text>
+          <Text style={styles.videoCourseLink}>Open video course</Text>
         </Pressable>
       </Link>
 
@@ -198,10 +233,10 @@ export default function CoursesScreen() {
                     asChild
                   >
                     <Pressable
-                      style={[
+                      style={StyleSheet.flatten([
                         styles.areaCourseButton,
                         course.id === area.suggestedStartCourseId && styles.areaCourseButtonSuggested,
-                      ]}
+                      ])}
                     >
                       <Text style={styles.areaCourseTitle}>{course.title}</Text>
                       <Text style={styles.cardText}>
@@ -288,6 +323,32 @@ const styles = StyleSheet.create({
   },
   pipelineButtonText: {
     color: safestepsLessonTheme.colors.white,
+    fontWeight: "900",
+  },
+  videoCourseCard: {
+    borderRadius: safestepsLessonTheme.radius.large,
+    borderWidth: 1,
+    borderColor: safestepsLessonTheme.colors.border,
+    padding: 18,
+    gap: 10,
+    backgroundColor: "#EFF8F4",
+    ...safestepsLessonTheme.shadow,
+  },
+  videoBadge: {
+    alignSelf: "flex-start",
+    overflow: "hidden",
+    borderRadius: safestepsLessonTheme.radius.pill,
+    backgroundColor: "#005766",
+    color: safestepsLessonTheme.colors.white,
+    paddingHorizontal: 12,
+    paddingVertical: 7,
+    fontSize: 12,
+    fontWeight: "900",
+    textTransform: "uppercase",
+  },
+  videoCourseLink: {
+    color: "#005766",
+    fontSize: 14,
     fontWeight: "900",
   },
   segmentRow: {

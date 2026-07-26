@@ -10,7 +10,7 @@ import {
   View,
 } from "react-native";
 
-import { programs, type ProgramPathway } from "../../lib/data/programs";
+import { getProgramMonths, programs, type ProgramPathway } from "../../lib/data/programs";
 import {
   fetchMyProgramEnrollments,
   type ProgramEnrollment,
@@ -38,14 +38,6 @@ const categories = [
   ["Parenting Skills", "8 Lessons", "#E8EFD4"],
   ["Problem Solving", "6 Lessons", "#DFF0FF"],
   ["Family Connection", "6 Lessons", "#F7DCD2"],
-] as const;
-
-const pathway = [
-  ["1", "Build Foundation", "Weeks 1-3", true],
-  ["2", "Strengthen Communication", "Weeks 4-6", false],
-  ["3", "Solve Problems Together", "Weeks 7-9", false],
-  ["4", "Build Empathy & Trust", "Weeks 10-11", false],
-  ["5", "Celebrate & Plan Ahead", "Week 12", false],
 ] as const;
 
 function Sidebar() {
@@ -90,7 +82,6 @@ function Sidebar() {
                 >
                   {label}
                 </Text>
-                {label === "Messages" ? <Text style={styles.navBadge}>2</Text> : null}
                 {active ? <Text style={styles.navChevron}>›</Text> : null}
               </Pressable>
             </Link>
@@ -108,7 +99,7 @@ function Sidebar() {
   );
 }
 
-function TopBar() {
+function TopBar({ activeCount }: { activeCount: number }) {
   return (
     <View style={styles.topBar}>
       <View style={styles.menuButton}>
@@ -120,12 +111,12 @@ function TopBar() {
       </View>
       <View style={styles.bellWrap}>
         <Text style={styles.bell}>♧</Text>
-        <Text style={styles.bellBadge}>3</Text>
+        {activeCount > 0 ? <Text style={styles.bellBadge}>{activeCount}</Text> : null}
       </View>
       <View style={styles.parentAvatar}>
         <Text style={styles.avatarFace}>P</Text>
       </View>
-      <Text style={styles.parentName}>Parent Name⌄</Text>
+      <Text style={styles.parentName}>My profile</Text>
     </View>
   );
 }
@@ -142,6 +133,75 @@ function ButtonLink({ href, label }: { href: string | object; label: string }) {
 
 function WatercolorPanel({ children, style }: { children: React.ReactNode; style?: object }) {
   return <View style={[styles.panel, style]}>{children}</View>;
+}
+
+export function getProgramDurationSummary(program: ProgramPathway) {
+  const months = program.durationMonths;
+  const weeks = getProgramMonths(program).reduce((total, month) => total + month.weeks.length, 0);
+  const monthLabel = months === 1 ? "1-month" : `${months}-month`;
+  const weekLabel = weeks === 1 ? "1-week" : `${weeks}-week`;
+
+  if (program.id === "intensive-reunification") {
+    return `${monthLabel} intensive reunification pathway with a ${weekLabel} structured plan, practical lessons, reflections, evidence, and worker review.`;
+  }
+
+  if (program.id === "home-again") {
+    return `${monthLabel} return-home transition pathway with a ${weekLabel} structured plan for routines, child adjustment, repair, evidence, and stability review.`;
+  }
+
+  if (months > 0) {
+    return `${monthLabel} program with a ${weekLabel} structured plan, practical lessons, reflections, evidence, and growth tracking.`;
+  }
+
+  return "Assessment-based pathway with practical lessons, reflections, evidence, and growth tracking.";
+}
+
+function getProgramWeekSummary(program: ProgramPathway) {
+  const weeks = getProgramMonths(program).reduce((total, month) => total + month.weeks.length, 0);
+  if (weeks <= 0) return "Assessment-based pathway";
+  return `${weeks}-week structured plan`;
+}
+
+function getTotalProgramWeeks(program: ProgramPathway) {
+  return getProgramMonths(program).reduce((total, month) => total + month.weeks.length, 0);
+}
+
+function formatDate(value?: string | null) {
+  if (!value) return "Not started";
+  return new Intl.DateTimeFormat("en-AU", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(value));
+}
+
+function addMonths(value: string | null | undefined, months: number) {
+  if (!value || months <= 0) return null;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return null;
+  date.setMonth(date.getMonth() + months);
+  return date.toISOString();
+}
+
+export function getProgramPathwaySegments(program: ProgramPathway) {
+  const totalWeeks = getTotalProgramWeeks(program);
+  if (totalWeeks <= 0) {
+    return [["1", "Assessment Plan", "Flexible timing", true]] as const;
+  }
+
+  const labels =
+    program.id === "intensive-reunification"
+      ? ["Safety & Accountability", "Contact Preparation", "Return-Home Readiness", "Post-Return Stability", "Long-Term Maintenance"]
+      : program.id === "home-again"
+        ? ["Return Home Safely", "Settle Routines", "Repair & Connection", "Stability Review", "Maintenance Plan"]
+        : ["Build Foundation", "Practise Skills", "Use Support", "Review Progress", "Plan Ahead"];
+  const segmentSize = Math.ceil(totalWeeks / labels.length);
+
+  return labels.map((label, index) => {
+    const startWeek = index * segmentSize + 1;
+    const endWeek = Math.min((index + 1) * segmentSize, totalWeeks);
+    return [String(index + 1), label, startWeek === endWeek ? `Week ${startWeek}` : `Weeks ${startWeek}-${endWeek}`, index === 0] as const;
+  });
 }
 
 function ProgramArtwork({ small = false }: { small?: boolean }) {
@@ -175,21 +235,24 @@ function HeaderArtwork() {
 }
 
 function CurrentProgram({ program }: { program: ProgramPathway }) {
+  const totalWeeks = getTotalProgramWeeks(program);
+  const progressText = totalWeeks > 0 ? `0/${totalWeeks} weeks reviewed` : "Assessment-based progress";
+
   return (
     <WatercolorPanel style={styles.currentProgram}>
       <Text style={styles.panelTitle}>Current Program</Text>
       <View style={styles.currentProgramBody}>
         <ProgramArtwork />
         <View style={styles.currentProgramText}>
-          <Text style={styles.programName}>{program.title || "Stronger Together"}</Text>
-          <Text style={styles.programSubtitle}>{program.description || "Building lifelong connection"}</Text>
-          <Text style={styles.programDescription}>A 12-week program for parents and children, with practical lessons and reflections.</Text>
-          <Text style={styles.weekText}>Week 4 of 12</Text>
+          <Text style={styles.programName}>{program.title}</Text>
+          <Text style={styles.programSubtitle}>{program.description}</Text>
+          <Text style={styles.programDescription}>{getProgramDurationSummary(program)}</Text>
+          <Text style={styles.weekText}>{getProgramWeekSummary(program)}</Text>
           <View style={styles.progressRow}>
             <View style={styles.progressTrack}>
-              <View style={[styles.progressFill, { width: "38%" }]} />
+              <View style={[styles.progressFill, { width: "0%" }]} />
             </View>
-            <Text style={styles.progressValue}>33%</Text>
+            <Text style={styles.progressValue}>{progressText}</Text>
           </View>
           <ButtonLink
             href={{ pathname: "/programs/program", params: { programId: program.id } }}
@@ -206,11 +269,11 @@ function ContinueCourse() {
     <WatercolorPanel style={styles.continuePanel}>
       <View style={styles.continueColumn}>
         <Text style={styles.panelTitle}>Continue Course</Text>
-        <Text style={styles.mutedLabel}>Active Lesson</Text>
-        <Text style={styles.courseName}>Positive Communication</Text>
-        <Text style={styles.lessonCount}>Lesson 4 of 12</Text>
+        <Text style={styles.mutedLabel}>Course Library</Text>
+        <Text style={styles.courseName}>Choose the next assigned lesson</Text>
+        <Text style={styles.lessonCount}>Progress updates after saved lesson records</Text>
         <View style={styles.smallTrack}>
-          <View style={[styles.progressFill, { width: "38%" }]} />
+          <View style={[styles.progressFill, { width: "0%" }]} />
         </View>
         <ButtonLink href="/lessons" label="Continue Learning" />
       </View>
@@ -218,18 +281,18 @@ function ContinueCourse() {
         <Text style={styles.panelTitle}>Completed Lessons</Text>
         <View style={styles.ring}>
           <View style={styles.ringInner}>
-            <Text style={styles.ringNumber}>15</Text>
-            <Text style={styles.ringSub}>of 36</Text>
+            <Text style={styles.ringNumber}>0</Text>
+            <Text style={styles.ringSub}>saved</Text>
           </View>
         </View>
-        <Text style={styles.completedText}>42% Completed</Text>
+        <Text style={styles.completedText}>No live lesson total loaded</Text>
         <ButtonLink href="/lessons" label="View All Lessons" />
       </View>
     </WatercolorPanel>
   );
 }
 
-function Milestones() {
+function Milestones({ program }: { program: ProgramPathway }) {
   return (
     <WatercolorPanel style={styles.milestonePanel}>
       <HeaderArtwork />
@@ -237,9 +300,9 @@ function Milestones() {
         <Text style={styles.star}>☆</Text>
         <View style={{ flex: 1 }}>
           <Text style={styles.panelTitle}>Upcoming Milestones</Text>
-          <Text style={styles.mutedLabel}>Next Milestone</Text>
-          <Text style={styles.milestoneName}>Strengthen Empathy</Text>
-          <Text style={styles.lessonCount}>Due in 5 days</Text>
+          <Text style={styles.mutedLabel}>Next review focus</Text>
+          <Text style={styles.milestoneName}>{program.curation.reviewCadence}</Text>
+          <Text style={styles.lessonCount}>Dates appear after saved case milestones are loaded</Text>
         </View>
         <ButtonLink href="/timeline" label="View Milestones" />
       </View>
@@ -247,7 +310,9 @@ function Milestones() {
   );
 }
 
-function Pathway() {
+function Pathway({ program }: { program: ProgramPathway }) {
+  const pathway = getProgramPathwaySegments(program);
+
   return (
     <WatercolorPanel style={styles.pathwayPanel}>
       <View style={styles.panelHeader}>
@@ -279,28 +344,30 @@ function Pathway() {
   );
 }
 
-function ProgramProgress() {
+function ProgramProgress({ program, enrollment }: { program: ProgramPathway; enrollment?: ProgramEnrollment | null }) {
+  const targetCompletion = addMonths(enrollment?.started_at, program.durationMonths);
+
   return (
     <WatercolorPanel style={styles.progressPanel}>
       <Text style={styles.panelTitle}>Program Progress</Text>
       <View style={styles.bigProgressRow}>
         <Text style={styles.chartIcon}>▥</Text>
         <View>
-          <Text style={styles.bigPercent}>28%</Text>
+          <Text style={styles.bigPercent}>0%</Text>
           <Text style={styles.progressCaption}>Overall Progress</Text>
         </View>
       </View>
       <View style={styles.progressTrackWide}>
-        <View style={[styles.progressFill, { width: "28%" }]} />
+        <View style={[styles.progressFill, { width: "0%" }]} />
       </View>
       <View style={styles.dateRow}>
         <View>
           <Text style={styles.mutedLabel}>Started</Text>
-          <Text style={styles.dateText}>May 14, 2025</Text>
+          <Text style={styles.dateText}>{formatDate(enrollment?.started_at)}</Text>
         </View>
         <View>
           <Text style={styles.mutedLabel}>Target Completion</Text>
-          <Text style={styles.dateText}>Aug 6, 2025</Text>
+          <Text style={styles.dateText}>{formatDate(targetCompletion)}</Text>
         </View>
       </View>
     </WatercolorPanel>
@@ -341,13 +408,13 @@ function CourseCategories() {
   );
 }
 
-function Recommended() {
+function Recommended({ program }: { program: ProgramPathway }) {
   return (
     <WatercolorPanel style={styles.recommendedPanel}>
       <View style={styles.panelHeader}>
         <View>
           <Text style={styles.panelTitle}>Recommended for You</Text>
-          <Text style={styles.panelSub}>Personalized based on your progress</Text>
+          <Text style={styles.panelSub}>Based on the selected program pathway</Text>
         </View>
         <Link href="/lessons" asChild>
           <Pressable>
@@ -356,8 +423,15 @@ function Recommended() {
         </Link>
       </View>
       <View style={styles.recommendRow}>
-        <RecommendedLesson title="Active Listening" meta="Lesson 5 • Communication" body="Improve listening skills to build trust and understanding." />
-        <RecommendedLesson title="Managing Big Emotions" meta="Lesson 3 • Emotional Well-being" body="Help your child navigate big feelings in healthy ways." purple />
+        {program.curation.requiredCourseIds.slice(0, 2).map((courseId, index) => (
+          <RecommendedLesson
+            key={courseId}
+            title={courseId.replace(/-/g, " ")}
+            meta={index === 0 ? "Required course" : "Required or assigned course"}
+            body="Open the course library to continue the next worker-aligned learning step."
+            purple={index === 1}
+          />
+        ))}
       </View>
     </WatercolorPanel>
   );
@@ -385,8 +459,8 @@ function Encouragement() {
       <View style={styles.encouragementLeft}>
         <Text style={styles.star}>☆</Text>
         <View>
-          <Text style={styles.encouragementTitle}>Great job staying consistent!</Text>
-        <Text style={styles.encouragementText}>{"You're showing up for your family and making a difference every day."}</Text>
+              <Text style={styles.encouragementTitle}>Keep building your record</Text>
+            <Text style={styles.encouragementText}>Saved lessons, reflections, and evidence will make your progress clearer over time.</Text>
         </View>
       </View>
       <Text style={styles.quote}>“The best thing you can give your children: your time, your attention, and your love.”</Text>
@@ -467,14 +541,18 @@ export default function MyProgramsScreen() {
   const activeEnrollments = enrollments.filter((enrollment) => enrollment.status === "active");
   const selectedProgram = useMemo(() => {
     const active = activeEnrollments[0];
-    return programs.find((item) => item.id === active?.program_id) ?? programs[0];
+    if (!active) return null;
+    return programs.find((item) => item.id === active.program_id) ?? null;
   }, [activeEnrollments]);
+  const selectedEnrollment = selectedProgram
+    ? activeEnrollments.find((enrollment) => enrollment.program_id === selectedProgram.id) ?? null
+    : null;
 
   return (
     <View style={styles.appShell}>
       {wide ? <Sidebar /> : null}
       <ScrollView style={styles.screen} contentContainerStyle={styles.content} contentInsetAdjustmentBehavior="automatic">
-        <TopBar />
+        <TopBar activeCount={activeEnrollments.length} />
 
         {!wide ? (
           <View style={styles.mobileNavNotice}>
@@ -483,25 +561,29 @@ export default function MyProgramsScreen() {
           </View>
         ) : null}
 
-        <View style={styles.topGrid}>
-          <CurrentProgram program={selectedProgram} />
-          <ContinueCourse />
-          <Milestones />
-        </View>
-
         <EmptyOrError loading={loading} error={error} activeCount={activeEnrollments.length} onRefresh={loadEnrollments} />
 
-        <View style={styles.middleGrid}>
-          <Pathway />
-          <ProgramProgress />
-        </View>
+        {selectedProgram ? (
+          <>
+            <View style={styles.topGrid}>
+              <CurrentProgram program={selectedProgram} />
+              <ContinueCourse />
+              <Milestones program={selectedProgram} />
+            </View>
 
-        <View style={styles.bottomGrid}>
-          <CourseCategories />
-          <Recommended />
-        </View>
+            <View style={styles.middleGrid}>
+              <Pathway program={selectedProgram} />
+              <ProgramProgress program={selectedProgram} enrollment={selectedEnrollment} />
+            </View>
 
-        <Encouragement />
+            <View style={styles.bottomGrid}>
+              <CourseCategories />
+              <Recommended program={selectedProgram} />
+            </View>
+
+            <Encouragement />
+          </>
+        ) : null}
       </ScrollView>
     </View>
   );

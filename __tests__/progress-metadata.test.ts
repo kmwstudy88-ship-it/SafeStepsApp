@@ -1,4 +1,10 @@
-import { metadataEvidenceTitles, metadataTaskTitles } from "../lib/progressMetadata";
+import {
+  metadataEvidenceTitles,
+  metadataLessonId,
+  metadataQuizPassed,
+  metadataTaskTitles,
+  metadataVideoStepCount,
+} from "../lib/progressMetadata";
 
 describe("progress metadata helpers", () => {
   test("reads snake_case and camelCase task titles", () => {
@@ -26,5 +32,23 @@ describe("progress metadata helpers", () => {
         taskTitles: [false, "also valid"],
       }),
     ).toEqual(["valid", "also valid"]);
+  });
+
+  test("reads interactive video metadata", () => {
+    const metadata = {
+      lessonId: "strengthening-family-bond-v10",
+      videoStepCount: 10,
+      quizPassed: true,
+    };
+
+    expect(metadataLessonId(metadata)).toBe("strengthening-family-bond-v10");
+    expect(metadataVideoStepCount(metadata)).toBe(10);
+    expect(metadataQuizPassed(metadata)).toBe(true);
+  });
+
+  test("ignores malformed interactive video metadata", () => {
+    expect(metadataLessonId({ lessonId: 123 })).toBeNull();
+    expect(metadataVideoStepCount({ videoStepCount: "10" })).toBeNull();
+    expect(metadataQuizPassed({ quizPassed: "true" })).toBeNull();
   });
 });

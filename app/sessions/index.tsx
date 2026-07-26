@@ -2,98 +2,70 @@ import { useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
 import {
+  evaluateSessionAlerts,
   generateSessionAgenda,
-  sessionIsMissed,
+  listCaseSessions,
   type CaseSessionRecord,
 } from "../../lib/engines/sessionManagementEngine";
 
-const sampleSessions: CaseSessionRecord[] = [
-  {
-    id: "session-foundation-1",
-    case_id: "sample-case",
-    parent_user_id: null,
-    worker_user_id: null,
-    session_type: "worker_session",
-    scheduled_start_at: "2026-07-08T09:00:00.000Z",
-    scheduled_end_at: "2026-07-08T10:00:00.000Z",
-    status: "completed",
-    phase: "Foundation",
-    course_context: "Reunification Parenting Foundations",
-    agenda: generateSessionAgenda({
-      phase: "Foundation",
-      courseContext: "Reunification Parenting Foundations",
-      currentRiskBand: "Moderate",
-    }),
-    notes: "Reviewed accountability reflection and home routine evidence.",
-    parent_confirmed_at: "2026-07-07T20:00:00.000Z",
-    audio_consent: false,
-    audio_file_path: null,
-    transcript_text: null,
-    transcript_metadata: {},
-    rubric_score: 3,
-    missed_reason: null,
-    alert_generated: false,
-    created_at: "2026-07-07T00:00:00.000Z",
-  },
-  {
-    id: "session-risk-review",
-    case_id: "sample-case",
-    parent_user_id: null,
-    worker_user_id: null,
-    session_type: "contact_review",
-    scheduled_start_at: "2026-07-10T09:00:00.000Z",
-    scheduled_end_at: "2026-07-10T10:00:00.000Z",
-    status: "scheduled",
-    phase: "Generalisation",
-    course_context: "Safe Contact and Repair",
-    agenda: generateSessionAgenda({
-      phase: "Generalisation",
-      courseContext: "Safe Contact and Repair",
-      currentRiskBand: "High",
-    }),
-    notes: "",
-    parent_confirmed_at: null,
-    audio_consent: false,
-    audio_file_path: null,
-    transcript_text: null,
-    transcript_metadata: {},
-    rubric_score: null,
-    missed_reason: null,
-    alert_generated: false,
-    created_at: "2026-07-06T00:00:00.000Z",
-  },
-];
-
 export default function SessionsScreen() {
-  const [phase, setPhase] = useState("Foundation");
-  const [courseContext, setCourseContext] = useState("Reunification Parenting Foundations");
+  const [phase, setPhase] = useState("");
+  const [courseContext, setCourseContext] = useState("");
+  const [caseId, setCaseId] = useState("");
+  const [sessions, setSessions] = useState<CaseSessionRecord[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const agenda = useMemo(
-    () => generateSessionAgenda({ phase, courseContext, currentRiskBand: "High" }),
+    () =>
+      generateSessionAgenda({
+        phase: phase.trim() || "Current review phase",
+        courseContext: courseContext.trim() || "Current program or course focus",
+        currentRiskBand: "High",
+      }),
     [courseContext, phase],
   );
-  const missedSessions = sampleSessions.filter((session) => sessionIsMissed(session, new Date("2026-07-13T00:00:00.000Z")));
+  const alerts = evaluateSessionAlerts(sessions);
+  const completedCount = sessions.filter((session) => session.status === "completed").length;
+  const missedCount = sessions.filter((session) => session.status === "missed").length;
+
+  async function loadSessions() {
+    const trimmedCaseId = caseId.trim();
+    if (!trimmedCaseId) {
+      setErrorMessage("Enter a case ID before loading sessions.");
+      return;
+    }
+
+    setIsLoading(true);
+    setErrorMessage(null);
+    try {
+      setSessions(await listCaseSessions(trimmedCaseId));
+    } catch (error) {
+      setSessions([]);
+      setErrorMessage(error instanceof Error ? error.message : "Unable to load case sessions.");
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Session Management</Text>
       <Text style={styles.body}>
-        Schedule worker sessions, generate phase-based agendas, record notes, capture consented transcript details, score the session, and flag missed sessions.
+        Schedule worker sessions, generate phase-based agendas, record notes, capture consented transcript details, score
+        sessions, and flag missed sessions for worker and supervisor review.
       </Text>
 
-      <View style={styles.demoNotice}>
-        <Text style={styles.demoTitle}>Example records only</Text>
+      <View style={styles.readyNotice}>
+        <Text style={styles.noticeTitle}>Live records</Text>
         <Text style={styles.body}>
-          The records below are sample data for checking agenda and missed-session logic. Live session records should be loaded from the case database before this screen is used in production.
+          Enter a case ID to read saved sessions, consent metadata, missed-session prompts, rubric scores, and linked
+          evidence from the case database.
         </Text>
-      </View>
-
-      <View style={missedSessions.length > 0 ? styles.alertCard : styles.card}>
-        <Text style={styles.cardTitle}>Example missed-session monitoring</Text>
-        <Text style={styles.body}>
-          {missedSessions.length > 0
-            ? `${missedSessions.length} scheduled session needs worker/supervisor review.`
-            : "No missed scheduled sessions in the current view."}
-        </Text>
+        <Input value={caseId} onChangeText={setCaseId} placeholder="Case ID" />
+        <Pressable style={styles.button} onPress={loadSessions} disabled={isLoading}>
+          <Text style={styles.buttonText}>{isLoading ? "Loading..." : "Load sessions"}</Text>
+        </Pressable>
+        {errorMessage ? <Text style={styles.errorText}>{errorMessage}</Text> : null}
       </View>
 
       <View style={styles.card}>
@@ -110,22 +82,37 @@ export default function SessionsScreen() {
       </View>
 
       <View style={styles.card}>
-        <Text style={styles.cardTitle}>Example session records</Text>
-        {sampleSessions.map((session) => (
-          <View key={session.id} style={styles.sessionRow}>
-            <View style={{ flex: 1, gap: 5 }}>
-              <Text style={styles.sessionTitle}>{session.phase} - {session.session_type.replace(/_/g, " ")}</Text>
-              <Text style={styles.body}>{new Date(session.scheduled_start_at).toLocaleString()}</Text>
-              <Text style={styles.statusText}>Status: {session.status}</Text>
-              <Text style={styles.body}>Agenda items: {session.agenda.length}</Text>
-              <Text style={styles.body}>Audio consent: {session.audio_consent ? "Yes" : "No"}</Text>
-              <Text style={styles.body}>Rubric score: {session.rubric_score ?? "Not scored"}</Text>
+        <Text style={styles.cardTitle}>Live session records</Text>
+        {sessions.length > 0 ? (
+          <>
+            <View style={styles.summaryGrid}>
+              <Metric label="Total" value={sessions.length} />
+              <Metric label="Completed" value={completedCount} />
+              <Metric label="Missed" value={missedCount} />
+              <Metric label="Alerts" value={alerts.length} />
             </View>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttonText}>Open</Text>
-            </Pressable>
-          </View>
-        ))}
+            {alerts.map((alert) => (
+              <View key={alert.type} style={styles.alertBox}>
+                <Text style={styles.alertTitle}>{alert.title}</Text>
+                <Text style={styles.body}>{alert.body}</Text>
+              </View>
+            ))}
+            {sessions.map((session) => (
+              <View key={session.id} style={styles.sessionRow}>
+                <Text style={styles.agendaTitle}>{session.session_type}</Text>
+                <Text style={styles.body}>
+                  {session.status} - {new Date(session.scheduled_start_at).toLocaleString()}
+                </Text>
+                <Text style={styles.body}>
+                  {session.audio_consent ? "Audio consent recorded." : "No audio consent recorded."}
+                  {session.rubric_score !== null ? ` Rubric score: ${session.rubric_score}.` : ""}
+                </Text>
+              </View>
+            ))}
+          </>
+        ) : (
+          <Text style={styles.body}>No live session records are loaded in this view yet.</Text>
+        )}
       </View>
     </ScrollView>
   );
@@ -153,31 +140,23 @@ const styles = StyleSheet.create({
   card: {
     gap: 12,
     padding: 16,
-    borderRadius: 14,
+    borderRadius: 8,
     borderWidth: 1,
     borderColor: "#D6E2D8",
     backgroundColor: "#FFFFFF",
   },
-  demoNotice: {
+  readyNotice: {
     gap: 8,
     padding: 14,
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: "#B45309",
-    backgroundColor: "#FFFBEB",
+    borderColor: "#9FCBBA",
+    backgroundColor: "#E7F3EE",
   },
-  demoTitle: {
-    color: "#92400E",
+  noticeTitle: {
+    color: "#1F5A48",
     fontSize: 16,
     fontWeight: "900",
-  },
-  alertCard: {
-    gap: 12,
-    padding: 16,
-    borderRadius: 14,
-    borderWidth: 1,
-    borderColor: "#D56A4D",
-    backgroundColor: "#FFF2ED",
   },
   cardTitle: {
     color: "#102033",
@@ -188,9 +167,65 @@ const styles = StyleSheet.create({
     minHeight: 46,
     borderWidth: 1,
     borderColor: "#D6E2D8",
-    borderRadius: 12,
+    borderRadius: 8,
     padding: 12,
     backgroundColor: "#FBFDFB",
+  },
+  button: {
+    alignSelf: "flex-start",
+    borderRadius: 8,
+    backgroundColor: "#1F5A48",
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 14,
+    fontWeight: "900",
+  },
+  errorText: {
+    color: "#B42318",
+    fontSize: 14,
+    fontWeight: "800",
+  },
+  summaryGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+  },
+  metric: {
+    minWidth: 112,
+    gap: 3,
+    borderRadius: 8,
+    backgroundColor: "#EEF5EF",
+    padding: 10,
+  },
+  metricValue: {
+    color: "#102033",
+    fontSize: 22,
+    fontWeight: "900",
+  },
+  metricLabel: {
+    color: "#4B5D55",
+    fontSize: 12,
+    fontWeight: "800",
+    textTransform: "uppercase",
+  },
+  alertBox: {
+    gap: 4,
+    borderRadius: 8,
+    backgroundColor: "#FFF7ED",
+    padding: 10,
+  },
+  alertTitle: {
+    color: "#9A3412",
+    fontWeight: "900",
+  },
+  sessionRow: {
+    gap: 5,
+    paddingVertical: 10,
+    borderTopWidth: 1,
+    borderTopColor: "#EDF2F0",
   },
   agendaRow: {
     gap: 5,
@@ -209,33 +244,13 @@ const styles = StyleSheet.create({
     color: "#102033",
     fontWeight: "900",
   },
-  sessionRow: {
-    flexDirection: "row",
-    gap: 12,
-    alignItems: "center",
-    paddingVertical: 12,
-    borderTopWidth: 1,
-    borderTopColor: "#EDF2F0",
-  },
-  sessionTitle: {
-    color: "#102033",
-    fontWeight: "900",
-    textTransform: "capitalize",
-  },
-  statusText: {
-    color: "#1F5A48",
-    fontWeight: "900",
-    textTransform: "capitalize",
-  },
-  button: {
-    minHeight: 40,
-    justifyContent: "center",
-    borderRadius: 10,
-    paddingHorizontal: 14,
-    backgroundColor: "#2F5F4A",
-  },
-  buttonText: {
-    color: "#FFFFFF",
-    fontWeight: "900",
-  },
 });
+
+function Metric({ label, value }: { label: string; value: number }) {
+  return (
+    <View style={styles.metric}>
+      <Text style={styles.metricValue}>{value}</Text>
+      <Text style={styles.metricLabel}>{label}</Text>
+    </View>
+  );
+}

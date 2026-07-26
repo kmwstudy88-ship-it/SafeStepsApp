@@ -45,11 +45,11 @@ const FEELINGS = [
   { label: "Confused", face: "?" },
 ];
 
-const SITUATIONS = [
-  "I lost something important.",
-  "Someone shared with me.",
-  "I felt nervous before speaking.",
-  "Someone yelled at me.",
+const FEELING_MATCHES = [
+  { feeling: "Sad", situation: "I lost something important." },
+  { feeling: "Happy", situation: "Someone shared with me." },
+  { feeling: "Anxious", situation: "I felt nervous before speaking." },
+  { feeling: "Frustrated", situation: "Someone yelled at me." },
 ];
 
 const lessonColors = safestepsLessonTheme.colors;
@@ -271,6 +271,60 @@ function ActivityScreen({
   onModeChange: (mode: LessonMode) => void;
   palette: SafeStepsLessonWatercolorPalette;
 }) {
+  const [selectedFeeling, setSelectedFeeling] = useState<string | null>(null);
+  const [matches, setMatches] = useState<Record<string, string>>({});
+  const [mismatchSituation, setMismatchSituation] = useState<string | null>(null);
+  const [feedback, setFeedback] = useState("Tap a feeling, then tap the situation it belongs with.");
+  const matchedFeelingLabels = new Set(Object.values(matches));
+  const completedCount = Object.keys(matches).length;
+  const activityComplete = completedCount === FEELING_MATCHES.length;
+
+  function chooseFeeling(label: string) {
+    if (matchedFeelingLabels.has(label)) return;
+    setSelectedFeeling(label);
+    setMismatchSituation(null);
+    setFeedback(`Now tap the situation that goes with ${label}.`);
+  }
+
+  function chooseSituation(match: (typeof FEELING_MATCHES)[number]) {
+    if (matches[match.situation]) {
+      const movedFeeling = matches[match.situation];
+
+      setMatches((current) => {
+        const next = { ...current };
+        delete next[match.situation];
+        return next;
+      });
+      setSelectedFeeling(movedFeeling);
+      setMismatchSituation(null);
+      setFeedback(`${movedFeeling} moved back. Choose the situation it belongs with.`);
+      return;
+    }
+
+    if (!selectedFeeling) {
+      setFeedback("Choose a feeling first, then choose a situation.");
+      return;
+    }
+
+    if (selectedFeeling === match.feeling) {
+      setMatches((current) => ({ ...current, [match.situation]: selectedFeeling }));
+      setSelectedFeeling(null);
+      setMismatchSituation(null);
+      setFeedback("That match fits. Keep going.");
+      return;
+    }
+
+    setMismatchSituation(match.situation);
+    setFeedback(`${selectedFeeling} is a real feeling, but it does not fit that situation best. Try another situation.`);
+  }
+
+  function resetActivity() {
+    setSelectedFeeling(null);
+    setMatches({});
+    setMismatchSituation(null);
+    setFeedback("Tap a feeling, then tap the situation it belongs with.");
+  }
+
   return (
     <View style={styles.panelCard}>
       <Text style={styles.eyebrow}>Activity</Text>
@@ -279,32 +333,87 @@ function ActivityScreen({
       <Text style={styles.centerLabel}>Feelings</Text>
       <View style={styles.tileGrid}>
         {FEELINGS.slice(0, 4).map((feeling) => (
-          <View key={feeling.label} style={styles.feelingCard}>
-            <Text style={[styles.feelingFace, { color: palette.accentDark }]}>{feeling.face}</Text>
-            <Text style={styles.feelingLabel}>{feeling.label}</Text>
-            <View style={styles.matchDot} />
-          </View>
+          <Pressable
+            accessibilityRole="button"
+            disabled={matchedFeelingLabels.has(feeling.label)}
+            key={feeling.label}
+            onPress={() => chooseFeeling(feeling.label)}
+            style={StyleSheet.flatten([
+              styles.feelingCard,
+              selectedFeeling === feeling.label && {
+                borderColor: palette.accentDark,
+                backgroundColor: palette.wash,
+              },
+              matchedFeelingLabels.has(feeling.label) ? styles.movedSourceCard : null,
+            ])}
+          >
+            {matchedFeelingLabels.has(feeling.label) ? (
+              <>
+                <Text style={styles.movedLabel}>Moved</Text>
+                <View style={styles.matchDotDone} />
+              </>
+            ) : (
+              <>
+                <Text style={[styles.feelingFace, { color: palette.accentDark }]}>{feeling.face}</Text>
+                <Text style={styles.feelingLabel}>{feeling.label}</Text>
+                <View style={styles.matchDot} />
+              </>
+            )}
+          </Pressable>
         ))}
       </View>
       <Text style={styles.centerLabel}>Situations</Text>
       <View style={styles.tileGrid}>
-        {SITUATIONS.map((situation) => (
-          <View key={situation} style={styles.situationCard}>
-            <View style={styles.matchDotTop} />
-            <Text style={styles.situationArt}>SAFE</Text>
-            <Text style={styles.situationText}>{situation}</Text>
-          </View>
-        ))}
+        {FEELING_MATCHES.map((match) => {
+          const matchedFeeling = matches[match.situation];
+          const mismatched = mismatchSituation === match.situation;
+
+          return (
+            <Pressable
+              accessibilityRole="button"
+              key={match.situation}
+              onPress={() => chooseSituation(match)}
+              style={StyleSheet.flatten([
+                styles.situationCard,
+                matchedFeeling ? styles.matchedCard : null,
+                mismatched ? styles.mismatchCard : null,
+              ])}
+            >
+              <Text style={styles.situationArt}>SAFE</Text>
+              <Text style={styles.situationText}>{match.situation}</Text>
+              {matchedFeeling ? (
+                <View style={styles.movedFeelingCard}>
+                  <Text style={[styles.movedFeelingFace, { color: palette.accentDark }]}>
+                    {FEELINGS.find((feeling) => feeling.label === matchedFeeling)?.face}
+                  </Text>
+                  <Text style={styles.matchResult}>{matchedFeeling}</Text>
+                  <Text style={styles.moveBackHint}>Tap to move back</Text>
+                </View>
+              ) : mismatched ? (
+                <Text style={styles.tryAgainText}>Try another one</Text>
+              ) : (
+                <Text style={styles.dropHint}>Move a feeling here</Text>
+              )}
+            </Pressable>
+          );
+        })}
       </View>
       <View style={styles.tipCard}>
+        <Text style={styles.matchProgressText}>{completedCount} of {FEELING_MATCHES.length} matched</Text>
+        <Text style={styles.feedbackText}>{activityComplete ? "All matched. You can check answers or try again." : feedback}</Text>
         <Text style={styles.tipText}>Tip: There are no wrong feelings. Every feeling is okay. What matters is how we respond.</Text>
       </View>
-      <Pressable onPress={() => onModeChange("quiz")} style={[styles.primaryCta, { backgroundColor: palette.accentDark }]}>
-        <Text style={styles.primaryCtaText}>Check Answers</Text>
+      <View style={styles.actionRow}>
+        <Pressable onPress={resetActivity} style={styles.secondaryCta}>
+          <Text style={styles.secondaryCtaText}>Reset</Text>
+        </Pressable>
+        <Pressable onPress={() => onModeChange("quiz")} style={[styles.primaryCta, { backgroundColor: palette.accentDark }]}>
+          <Text style={styles.primaryCtaText}>{activityComplete ? "Check Answers" : "Skip to Quiz"}</Text>
         <View style={styles.ctaArrow}>
           <Text style={styles.ctaArrowText}>{">"}</Text>
         </View>
-      </Pressable>
+        </Pressable>
+      </View>
     </View>
   );
 }
@@ -1041,19 +1150,23 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "800",
   },
+  movedLabel: {
+    color: "#225F47",
+    fontSize: 18,
+    fontWeight: "900",
+    textTransform: "uppercase",
+  },
   matchDot: {
     width: 20,
     height: 20,
     borderRadius: 10,
     backgroundColor: lessonColors.pink,
   },
-  matchDotTop: {
-    position: "absolute",
-    top: 12,
-    width: 20,
-    height: 20,
-    borderRadius: 10,
-    backgroundColor: lessonColors.pink,
+  matchDotDone: {
+    backgroundColor: "#2F7D5C",
+  },
+  matchDotTryAgain: {
+    backgroundColor: "#C45F39",
   },
   situationCard: {
     flexGrow: 1,
@@ -1068,6 +1181,19 @@ const styles = StyleSheet.create({
     gap: 10,
     backgroundColor: lessonColors.white,
   },
+  matchedCard: {
+    backgroundColor: "#EAF8F1",
+    borderColor: "#2F7D5C",
+  },
+  movedSourceCard: {
+    backgroundColor: "#F2F8F5",
+    borderColor: "#B8D9CA",
+    opacity: 0.72,
+  },
+  mismatchCard: {
+    backgroundColor: "#FFF2EA",
+    borderColor: "#C45F39",
+  },
   situationArt: {
     color: lessonColors.purple,
     fontWeight: "900",
@@ -1078,12 +1204,59 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 22,
   },
+  movedFeelingCard: {
+    alignItems: "center",
+    backgroundColor: lessonColors.white,
+    borderColor: "#2F7D5C",
+    borderRadius: lessonRadius.medium,
+    borderWidth: 1,
+    gap: 4,
+    minWidth: 110,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+  },
+  movedFeelingFace: {
+    fontSize: 30,
+    fontWeight: "900",
+  },
+  moveBackHint: {
+    color: lessonColors.muted,
+    fontSize: 12,
+    fontWeight: "800",
+  },
+  tryAgainText: {
+    color: "#9A4324",
+    fontSize: 14,
+    fontWeight: "900",
+  },
+  dropHint: {
+    color: lessonColors.muted,
+    fontSize: 14,
+    fontWeight: "800",
+  },
+  matchResult: {
+    color: "#225F47",
+    fontSize: 15,
+    fontWeight: "900",
+  },
   tipCard: {
     borderRadius: lessonRadius.medium,
     borderWidth: 1,
     borderColor: lessonColors.border,
     padding: 18,
     backgroundColor: lessonColors.card,
+    gap: 8,
+  },
+  matchProgressText: {
+    color: lessonColors.purpleDark,
+    fontSize: 16,
+    fontWeight: "900",
+  },
+  feedbackText: {
+    color: lessonColors.navy,
+    fontSize: 16,
+    fontWeight: "800",
+    lineHeight: 22,
   },
   tipText: {
     color: lessonColors.navy,

@@ -21,6 +21,18 @@ export default function DailyLessonPlayerScreen() {
   const weekSubTopic = String(params.weekSubTopic ?? "Weekly Sub Topic");
   const day = String(params.day ?? "0");
   const lessonTitle = String(params.lessonTitle ?? "Daily Lesson");
+  const lessonCheckpoint = String(
+    params.lessonCheckpoint ??
+      "Name one idea from this lesson that could help family growth, safety, or child wellbeing.",
+  );
+  const scenarioPrompt = String(
+    params.scenarioPrompt ??
+      "Imagine this lesson comes up during a stressful family moment. What would be a safe, respectful next step?",
+  );
+  const practiceTask = String(
+    params.practiceTask ??
+      "Practise one small real-world action from this lesson and record what happened factually.",
+  );
 
   const [startReflection, setStartReflection] = useState("");
   const [confidenceBefore, setConfidenceBefore] = useState("");
@@ -112,7 +124,7 @@ export default function DailyLessonPlayerScreen() {
   }) {
     return (
       <Text style={{ marginBottom: 4 }}>
-        {done ? "?" : "?"} {label}
+        {done ? "[x]" : "[ ]"} {label}
       </Text>
     );
   }
@@ -182,7 +194,7 @@ export default function DailyLessonPlayerScreen() {
       </Text>
 
       <Text style={{ marginBottom: 16 }}>
-        {programTitle} • Month {monthNumber} • Week {weekNumber} • Day {day}
+        {programTitle} - Month {monthNumber} - Week {weekNumber} - Day {day}
       </Text>
 
       <View
@@ -247,7 +259,7 @@ export default function DailyLessonPlayerScreen() {
 
       <Section title="Start of Daily Lesson">
         <Text style={{ fontWeight: "bold" }}>
-          What does today's lesson mean to you?
+          What does {lessonTitle.toLowerCase()} mean to you today?
         </Text>
 
         <Field
@@ -270,8 +282,12 @@ export default function DailyLessonPlayerScreen() {
 
       <Section title="30 Minute Lesson Content">
         <Text>
-          This is where the full daily lesson content will appear. The parent
-          must work through the lesson before completing the checkpoints.
+          Focus on one practical action from {monthTopic.toLowerCase()}. Connect it to the weekly focus,{" "}
+          {weekSubTopic.toLowerCase()}, and keep the practice small enough to complete safely.
+        </Text>
+        <Text style={{ marginTop: 8 }}>
+          Use this lesson to notice what your child may experience, what your body does under pressure, what support
+          you can use, and what evidence would show reliable change without promising any reunification outcome.
         </Text>
       </Section>
 
@@ -282,11 +298,11 @@ export default function DailyLessonPlayerScreen() {
         </Text>
 
         <Text style={{ fontWeight: "bold", marginBottom: 8 }}>
-          Example question:
+          Question:
         </Text>
 
         <Text style={{ marginBottom: 10 }}>
-          Why is this lesson important for family growth and child wellbeing?
+          {lessonCheckpoint}
         </Text>
 
         <Pressable
@@ -313,12 +329,11 @@ export default function DailyLessonPlayerScreen() {
         </Text>
 
         <Text style={{ fontWeight: "bold", marginBottom: 8 }}>
-          Example scenario:
+          Scenario:
         </Text>
 
         <Text style={{ marginBottom: 10 }}>
-          Your child becomes upset and refuses to talk. How could you respond in
-          a way that supports connection and safety?
+          {scenarioPrompt}
         </Text>
 
         <Pressable
@@ -344,8 +359,7 @@ export default function DailyLessonPlayerScreen() {
         </Text>
 
         <Text style={{ marginTop: 6 }}>
-          Example: I practised active listening with my child for 10 minutes, or
-          I used calm body language during a difficult conversation.
+          {practiceTask}
         </Text>
 
         <Field

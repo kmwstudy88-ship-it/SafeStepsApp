@@ -1,42 +1,46 @@
-import { Link, Redirect } from "expo-router";
+import { Redirect } from "expo-router";
 import { useEffect, useState } from "react";
+import { ActivityIndicator, Text, View } from "react-native";
+
 import {
-  ActivityIndicator,
-  Pressable,
-  ScrollView,
-  Text,
-  View,
-} from "react-native";
+  BrandMark,
+  NatureScene,
+  OnboardingShell,
+  PrimaryButton,
+  onboardingColors,
+  onboardingStyles,
+} from "../components/SafeStepsOnboardingUI";
 import { getCurrentSession } from "../lib/engines/authEngine";
 
 export default function AppEntryScreen() {
   const [loading, setLoading] = useState(true);
   const [signedIn, setSignedIn] = useState(false);
 
-  async function checkSession() {
-    setLoading(true);
-
-    try {
-      const session = await getCurrentSession();
-      setSignedIn(session !== null);
-    } catch {
-      setSignedIn(false);
-    } finally {
-      setLoading(false);
-    }
-  }
-
   useEffect(() => {
+    let active = true;
+
+    async function checkSession() {
+      try {
+        const session = await getCurrentSession();
+        if (active) setSignedIn(session !== null);
+      } catch {
+        if (active) setSignedIn(false);
+      } finally {
+        if (active) setLoading(false);
+      }
+    }
+
     checkSession();
+    return () => {
+      active = false;
+    };
   }, []);
 
   if (loading) {
     return (
-      <View style={{ flex: 1, padding: 20, justifyContent: "center" }}>
-        <ActivityIndicator />
-        <Text style={{ textAlign: "center", marginTop: 10 }}>
-          Loading SafeSteps...
-        </Text>
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center", gap: 12 }}>
+        <ActivityIndicator color={onboardingColors.teal} />
+        <Text style={{ color: onboardingColors.tealDark, fontWeight: "800" }}>Loading SafeSteps...</Text>
       </View>
     );
   }
@@ -46,60 +50,23 @@ export default function AppEntryScreen() {
   }
 
   return (
-    <ScrollView style={{ flex: 1, padding: 20 }}>
-      <Text style={{ fontSize: 34, fontWeight: "bold", marginBottom: 8 }}>
-        SafeSteps
-      </Text>
-
-      <Text style={{ fontSize: 16, marginBottom: 20 }}>
-        A structured family support platform for programs, courses, reflections,
-        evidence, tasks, progress and growth reports.
-      </Text>
-
-      <View
-        style={{
-          padding: 16,
-          backgroundColor: "#f1f5f3",
-          borderRadius: 12,
-          marginBottom: 16,
-        }}
-      >
-        <Text style={{ fontSize: 20, fontWeight: "bold" }}>
-          Welcome
+    <OnboardingShell compact>
+      <View style={{ gap: 12, alignItems: "center" }}>
+        <BrandMark large />
+        <Text style={{ color: onboardingColors.tealDark, fontSize: 18, fontWeight: "800", textAlign: "center" }}>
+          Small steps. Real change.
         </Text>
-
-        <Text style={{ marginTop: 8 }}>
-          Sign in to continue your SafeSteps pathway, or create an account to
-          begin.
+        <Text style={{ color: onboardingColors.tealDark, fontSize: 18, fontWeight: "800", textAlign: "center" }}>
+          Stronger families.
         </Text>
       </View>
-
-      <Link href="/login" asChild>
-        <Pressable
-          style={{
-            padding: 14,
-            backgroundColor: "#dcefe8",
-            borderRadius: 12,
-            alignItems: "center",
-            marginBottom: 12,
-          }}
-        >
-          <Text style={{ fontWeight: "bold" }}>Login</Text>
-        </Pressable>
-      </Link>
-
-      <Link href="/register" asChild>
-        <Pressable
-          style={{
-            padding: 14,
-            backgroundColor: "#f1f5f3",
-            borderRadius: 12,
-            alignItems: "center",
-          }}
-        >
-          <Text style={{ fontWeight: "bold" }}>Create Account</Text>
-        </Pressable>
-      </Link>
-    </ScrollView>
+      <NatureScene />
+      <View style={{ gap: 10 }}>
+        <PrimaryButton label="Continue" href="/welcome" />
+      </View>
+      <Text selectable style={[onboardingStyles.featureBody, { color: onboardingColors.muted }]}>
+        Support and tools for every step of your family journey.
+      </Text>
+    </OnboardingShell>
   );
 }

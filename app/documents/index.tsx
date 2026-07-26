@@ -1,132 +1,41 @@
 import { Link } from "expo-router";
-import type React from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
 import {
-  buildDocumentStoragePath,
   createDocumentManagementSummary,
   evaluateDocumentExpiryAlerts,
-  nextDocumentVersionNumber,
+  listCaseDocuments,
   type CaseDocumentRecord,
   type CaseDocumentRequest,
-  type CaseDocumentVersion,
 } from "../../lib/engines/documentManagementEngine";
 
-const now = new Date("2026-07-12T00:00:00.000Z");
-
-const sampleDocuments: CaseDocumentRecord[] = [
-  {
-    id: "doc-tenancy",
-    case_id: "case-demo",
-    parent_user_id: null,
-    worker_user_id: null,
-    current_version_id: "version-2",
-    linked_evidence_id: "evidence-tenancy",
-    linked_assessment_id: "assessment-home-stability",
-    document_type: "tenancy_agreement",
-    title: "Tenancy agreement",
-    status: "accepted",
-    expiry_date: "2026-07-20",
-    court_report_include: true,
-    notes: "Linked to home stability evidence and report appendix.",
-    created_by: null,
-    created_at: "2026-07-01T00:00:00.000Z",
-    updated_at: "2026-07-08T00:00:00.000Z",
-  },
-  {
-    id: "doc-service-letter",
-    case_id: "case-demo",
-    parent_user_id: null,
-    worker_user_id: null,
-    current_version_id: "version-1",
-    linked_evidence_id: null,
-    linked_assessment_id: "assessment-services",
-    document_type: "service_letter",
-    title: "Parenting service attendance letter",
-    status: "needs_update",
-    expiry_date: null,
-    court_report_include: false,
-    notes: "Current copy does not cover the latest attendance period.",
-    created_by: null,
-    created_at: "2026-07-02T00:00:00.000Z",
-    updated_at: "2026-07-09T00:00:00.000Z",
-  },
-  {
-    id: "doc-financial",
-    case_id: "case-demo",
-    parent_user_id: null,
-    worker_user_id: null,
-    current_version_id: null,
-    linked_evidence_id: null,
-    linked_assessment_id: null,
-    document_type: "financial",
-    title: "Income and budgeting statement",
-    status: "requested",
-    expiry_date: "2026-07-10",
-    court_report_include: false,
-    notes: "Requested for financial stability review.",
-    created_by: null,
-    created_at: "2026-07-06T00:00:00.000Z",
-    updated_at: "2026-07-06T00:00:00.000Z",
-  },
-];
-
-const sampleRequests: CaseDocumentRequest[] = [
-  {
-    id: "request-financial",
-    case_id: "case-demo",
-    document_id: "doc-financial",
-    parent_user_id: null,
-    requested_by: null,
-    document_type: "financial",
-    title: "Income and budgeting statement",
-    reason: "Required before next readiness review.",
-    due_at: "2026-07-15T00:00:00.000Z",
-    status: "requested",
-    created_at: "2026-07-06T00:00:00.000Z",
-    fulfilled_at: null,
-  },
-];
-
-const sampleVersions: CaseDocumentVersion[] = [
-  {
-    id: "version-1",
-    document_id: "doc-tenancy",
-    version_number: 1,
-    file_path: "case-documents/case-demo/doc-tenancy/v1-tenancy.pdf",
-    file_name: "tenancy.pdf",
-    mime_type: "application/pdf",
-    file_sha256: "b2c2f4a1",
-    uploaded_by: null,
-    uploaded_at: "2026-07-01T00:00:00.000Z",
-    review_status: "needs_update",
-    review_notes: "Older copy.",
-  },
-  {
-    id: "version-2",
-    document_id: "doc-tenancy",
-    version_number: 2,
-    file_path: "case-documents/case-demo/doc-tenancy/v2-tenancy-renewal.pdf",
-    file_name: "tenancy-renewal.pdf",
-    mime_type: "application/pdf",
-    file_sha256: "f6b805d2",
-    uploaded_by: null,
-    uploaded_at: "2026-07-08T00:00:00.000Z",
-    review_status: "accepted",
-    review_notes: "Current lease period confirmed.",
-  },
-];
-
 export default function DocumentsScreen() {
-  const summary = createDocumentManagementSummary(sampleDocuments, sampleRequests, now);
-  const alerts = evaluateDocumentExpiryAlerts(sampleDocuments, now);
-  const nextVersion = nextDocumentVersionNumber(sampleVersions);
-  const nextStoragePath = buildDocumentStoragePath({
-    caseId: "case-demo",
-    documentId: "doc-tenancy",
-    versionNumber: nextVersion,
-    fileName: "tenancy renewal signed.pdf",
-  });
+  const [caseId, setCaseId] = useState("");
+  const [documents, setDocuments] = useState<CaseDocumentRecord[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const summary = createDocumentManagementSummary(documents, [] as CaseDocumentRequest[]);
+  const alerts = evaluateDocumentExpiryAlerts(documents);
+
+  async function loadDocuments() {
+    const trimmedCaseId = caseId.trim();
+    if (!trimmedCaseId) {
+      setErrorMessage("Enter a case ID before loading documents.");
+      return;
+    }
+
+    setIsLoading(true);
+    setErrorMessage(null);
+    try {
+      setDocuments(await listCaseDocuments(trimmedCaseId));
+    } catch (error) {
+      setDocuments([]);
+      setErrorMessage(error instanceof Error ? error.message : "Unable to load case documents.");
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   return (
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
@@ -134,99 +43,81 @@ export default function DocumentsScreen() {
         <Text style={styles.eyebrow}>Document Management</Text>
         <Text style={styles.title}>Requests, versions, expiry checks, and report-ready evidence</Text>
         <Text style={styles.subtitle}>
-          Keep case documents tied to evidence records, assessment domains, and report appendices without treating uploads as
-          verified facts until a worker reviews them.
+          Keep case documents tied to evidence records, assessment domains, and report appendices without treating uploads
+          as verified facts until a worker reviews them.
         </Text>
       </View>
 
-      <View style={styles.demoNotice}>
-        <Text style={styles.demoTitle}>Example records only</Text>
-        <Text style={styles.subtitle}>
-          This screen is showing sample document records to verify expiry, version, and report-linking logic. It must be connected to live case documents before production use.
-        </Text>
-      </View>
-
-      <View style={styles.metricGrid}>
-        <Metric label="Documents" value={summary.totalDocuments} />
-        <Metric label="Accepted" value={summary.acceptedDocuments} />
-        <Metric label="Needs update" value={summary.needsUpdate} />
-        <Metric label="Expiry alerts" value={summary.expiringOrExpired} />
-        <Metric label="Open requests" value={summary.openRequests} />
-        <Metric label="Report ready" value={summary.reportReadyDocuments} />
-      </View>
-
-      <Section title="Example Expiry Review">
-        {alerts.map((alert) => (
-          <View key={alert.documentId} style={[styles.row, alert.severity === "high" && styles.highRow]}>
-            <Text style={styles.rowTitle}>{alert.title}</Text>
-            <Text style={styles.rowText}>{alert.body}</Text>
-            <Text style={styles.badge}>{alert.severity.toUpperCase()}</Text>
-          </View>
-        ))}
-      </Section>
-
-      <Section title="Example Active Documents">
-        {sampleDocuments.map((document) => (
-          <View key={document.id} style={styles.row}>
-            <View style={styles.rowHeader}>
-              <Text style={styles.rowTitle}>{document.title}</Text>
-              <Text style={styles.status}>{document.status.replace("_", " ")}</Text>
-            </View>
-            <Text style={styles.rowText}>{document.notes}</Text>
-            <Text style={styles.meta}>
-              Assessment link: {document.linked_assessment_id ?? "Not linked"} · Evidence link:{" "}
-              {document.linked_evidence_id ?? "Not linked"}
-            </Text>
-          </View>
-        ))}
-      </Section>
-
-      <Section title="Example Version Trail">
-        {sampleVersions.map((version) => (
-          <View key={version.id} style={styles.row}>
-            <Text style={styles.rowTitle}>Version {version.version_number}</Text>
-            <Text style={styles.rowText}>{version.file_name}</Text>
-            <Text style={styles.meta}>Hash: {version.file_sha256 ?? "Not recorded"} · {version.review_status}</Text>
-          </View>
-        ))}
-        <View style={styles.pathBox}>
-          <Text style={styles.pathLabel}>Next app-controlled path</Text>
-          <Text style={styles.path}>{nextStoragePath}</Text>
+      <View style={styles.intelligencePanel}>
+        <View style={styles.intelligenceCopy}>
+          <Text style={styles.intelligenceTitle}>Document Intelligence</Text>
+          <Text style={styles.rowText}>
+            Paste or upload document text for worker review across parent capacity, child wellbeing, safety, evidence
+            quality, and caseworker-context signals.
+          </Text>
         </View>
-      </Section>
+        <Link href="/assessment-system/document-intelligence" style={styles.actionLink}>
+          Open analysis
+        </Link>
+      </View>
 
-      <Section title="Example Open Requests">
-        {sampleRequests.map((request) => (
-          <View key={request.id} style={styles.row}>
-            <Text style={styles.rowTitle}>{request.title}</Text>
-            <Text style={styles.rowText}>{request.reason}</Text>
-            <Text style={styles.meta}>Due: {request.due_at ? new Date(request.due_at).toLocaleDateString() : "No due date"}</Text>
+      <View style={styles.emptyState}>
+        <Text style={styles.emptyTitle}>Load live case documents</Text>
+        <Text style={styles.rowText}>
+          Enter a case ID to read document status, expiry dates, review state, linked evidence, and report-appendix
+          selections from the case database.
+        </Text>
+        <TextInput
+          value={caseId}
+          onChangeText={setCaseId}
+          placeholder="Case ID"
+          placeholderTextColor="#6B7A76"
+          style={styles.input}
+        />
+        <Pressable style={styles.button} onPress={loadDocuments} disabled={isLoading}>
+          <Text style={styles.buttonText}>{isLoading ? "Loading..." : "Load documents"}</Text>
+        </Pressable>
+        {errorMessage ? <Text style={styles.errorText}>{errorMessage}</Text> : null}
+      </View>
+
+      {documents.length > 0 ? (
+        <View style={styles.card}>
+          <Text style={styles.emptyTitle}>Document summary</Text>
+          <View style={styles.summaryGrid}>
+            <Metric label="Total" value={summary.totalDocuments} />
+            <Metric label="Accepted" value={summary.acceptedDocuments} />
+            <Metric label="Needs update" value={summary.needsUpdate} />
+            <Metric label="Report ready" value={summary.reportReadyDocuments} />
           </View>
-        ))}
-      </Section>
+          {alerts.length > 0 ? (
+            <View style={styles.alertBox}>
+              <Text style={styles.alertTitle}>Expiry review prompts</Text>
+              {alerts.map((alert) => (
+                <Text key={alert.documentId} style={styles.rowText}>
+                  - {alert.body}
+                </Text>
+              ))}
+            </View>
+          ) : null}
+          {documents.map((document) => (
+            <View key={document.id} style={styles.recordRow}>
+              <Text style={styles.recordTitle}>{document.title}</Text>
+              <Text style={styles.rowText}>
+                {document.document_type} - {document.status}
+                {document.expiry_date ? ` - expires ${document.expiry_date}` : ""}
+              </Text>
+              <Text style={styles.rowText}>
+                {document.court_report_include ? "Selected for report appendix after review." : "Not selected for report appendix."}
+              </Text>
+            </View>
+          ))}
+        </View>
+      ) : null}
 
       <Link href="/assessment-system" style={styles.link}>
         Back to assessment system
       </Link>
     </ScrollView>
-  );
-}
-
-function Metric({ label, value }: { label: string; value: number }) {
-  return (
-    <View style={styles.metric}>
-      <Text style={styles.metricValue}>{value}</Text>
-      <Text style={styles.metricLabel}>{label}</Text>
-    </View>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <View style={styles.section}>
-      <Text style={styles.sectionTitle}>{title}</Text>
-      {children}
-    </View>
   );
 }
 
@@ -261,36 +152,104 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 22,
   },
-  metricGrid: {
+  intelligencePanel: {
     flexDirection: "row",
     flexWrap: "wrap",
-    gap: 10,
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 12,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#A7D8CE",
+    backgroundColor: "#E7F3F0",
+    padding: 14,
   },
-  metric: {
-    minWidth: 130,
+  intelligenceCopy: {
     flexGrow: 1,
+    flexBasis: 260,
+    gap: 6,
+  },
+  intelligenceTitle: {
+    color: "#0F766E",
+    fontSize: 17,
+    fontWeight: "900",
+  },
+  actionLink: {
+    borderRadius: 8,
+    overflow: "hidden",
+    backgroundColor: "#0F766E",
+    color: "#FFFFFF",
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    fontSize: 14,
+    fontWeight: "900",
+  },
+  rowText: {
+    color: "#52615D",
+    fontSize: 14,
+    lineHeight: 20,
+  },
+  emptyState: {
+    gap: 8,
     borderRadius: 8,
     borderWidth: 1,
     borderColor: "#D8E3DF",
     backgroundColor: "#FFFFFF",
     padding: 14,
   },
-  demoNotice: {
-    gap: 8,
+  emptyTitle: {
+    color: "#14231F",
+    fontSize: 18,
+    fontWeight: "900",
+  },
+  input: {
+    minHeight: 46,
+    borderWidth: 1,
+    borderColor: "#D8E3DF",
+    borderRadius: 8,
+    padding: 12,
+    backgroundColor: "#FBFDFB",
+  },
+  button: {
+    alignSelf: "flex-start",
+    borderRadius: 8,
+    backgroundColor: "#0F766E",
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 14,
+    fontWeight: "900",
+  },
+  errorText: {
+    color: "#B42318",
+    fontSize: 14,
+    fontWeight: "800",
+  },
+  card: {
+    gap: 12,
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: "#B45309",
-    backgroundColor: "#FFFBEB",
+    borderColor: "#D8E3DF",
+    backgroundColor: "#FFFFFF",
     padding: 14,
   },
-  demoTitle: {
-    color: "#92400E",
-    fontSize: 16,
-    fontWeight: "900",
+  summaryGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+  },
+  metric: {
+    minWidth: 118,
+    gap: 3,
+    borderRadius: 8,
+    backgroundColor: "#F4F7F6",
+    padding: 10,
   },
   metricValue: {
     color: "#14231F",
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: "900",
   },
   metricLabel: {
@@ -299,85 +258,26 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     textTransform: "uppercase",
   },
-  section: {
-    gap: 10,
+  alertBox: {
+    gap: 6,
+    borderRadius: 8,
+    backgroundColor: "#FFF7ED",
+    padding: 10,
   },
-  sectionTitle: {
-    color: "#14231F",
-    fontSize: 18,
+  alertTitle: {
+    color: "#9A3412",
     fontWeight: "900",
   },
-  row: {
-    gap: 7,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "#D8E3DF",
-    backgroundColor: "#FFFFFF",
-    padding: 14,
+  recordRow: {
+    gap: 5,
+    paddingTop: 10,
+    borderTopWidth: 1,
+    borderTopColor: "#EDF2F0",
   },
-  highRow: {
-    borderColor: "#D97706",
-    backgroundColor: "#FFF7ED",
-  },
-  rowHeader: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 8,
-  },
-  rowTitle: {
+  recordTitle: {
     color: "#14231F",
     fontSize: 16,
     fontWeight: "900",
-  },
-  rowText: {
-    color: "#52615D",
-    fontSize: 14,
-    lineHeight: 20,
-  },
-  badge: {
-    alignSelf: "flex-start",
-    borderRadius: 8,
-    overflow: "hidden",
-    backgroundColor: "#FEF3C7",
-    color: "#92400E",
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    fontSize: 12,
-    fontWeight: "900",
-  },
-  status: {
-    borderRadius: 8,
-    overflow: "hidden",
-    backgroundColor: "#DCFCE7",
-    color: "#166534",
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    fontSize: 12,
-    fontWeight: "900",
-    textTransform: "capitalize",
-  },
-  meta: {
-    color: "#697773",
-    fontSize: 12,
-    lineHeight: 18,
-  },
-  pathBox: {
-    gap: 6,
-    borderRadius: 8,
-    backgroundColor: "#E7F3F0",
-    padding: 12,
-  },
-  pathLabel: {
-    color: "#0F766E",
-    fontSize: 12,
-    fontWeight: "900",
-  },
-  path: {
-    color: "#14231F",
-    fontSize: 12,
-    fontWeight: "700",
   },
   link: {
     color: "#0F766E",
@@ -385,3 +285,12 @@ const styles = StyleSheet.create({
     fontWeight: "900",
   },
 });
+
+function Metric({ label, value }: { label: string; value: number }) {
+  return (
+    <View style={styles.metric}>
+      <Text style={styles.metricValue}>{value}</Text>
+      <Text style={styles.metricLabel}>{label}</Text>
+    </View>
+  );
+}

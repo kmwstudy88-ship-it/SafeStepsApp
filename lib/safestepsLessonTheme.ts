@@ -32,13 +32,7 @@ export const safestepsLessonTheme = {
   },
 
   shadow: {
-    shadowColor: "#5C437E",
-    shadowOpacity: 0.12,
-    shadowRadius: 12,
-    shadowOffset: {
-      width: 0,
-      height: 6,
-    },
+    boxShadow: "0 6px 12px rgba(92, 67, 126, 0.12)",
     elevation: 5,
   },
 } as const;

@@ -35,7 +35,7 @@ export function ChallengeRecommendations({
             } as unknown as Href}
             asChild
           >
-            <Pressable style={[styles.challengeCard, { backgroundColor: palette.wash }]}>
+            <Pressable style={StyleSheet.flatten([styles.challengeCard, { backgroundColor: palette.wash }])}>
               <View style={styles.inlineRow}>
                 <Text style={[styles.pill, { backgroundColor: palette.washStrong, color: palette.accentDark }]}>
                   {challenge.challengeType}

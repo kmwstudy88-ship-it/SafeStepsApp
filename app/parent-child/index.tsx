@@ -24,25 +24,13 @@ const navItems = [
   ["Evidence", "/evidence", "□"],
   ["Reports", "/reports", "▤"],
   ["Messages", "/parent-child/messages", "☏"],
-  ["Calendar", "/timeline", "◇"],
+  ["Games", "/parent-child/games", "◇"],
+  ["Family Challenges", "/parent-child/family-challenges", "◎"],
+  ["Weekend Activities", "/parent-child/weekend-activities", "☼"],
+  ["Family Calendar", "/parent-child/family-calendar", "◷"],
   ["Resources", "/resources", "▥"],
   ["Settings", "/settings", "⚙"],
   ["Help & Support", "/facilitator", "?"],
-] as const;
-
-const goals = [
-  ["Strengthen family relationships", 75],
-  ["Improve communication", 60],
-  ["Consistent routines", 40],
-  ["School engagement", 25],
-] as const;
-
-const wellbeing = [
-  ["☺", "Emotional\nWellbeing", "good"],
-  ["☼", "Family\nConnection", "good"],
-  ["⏱", "Daily\nRoutines", "watch"],
-  ["♨", "Stress\nManagement", "watch"],
-  ["♧", "School\nEngagement", "good"],
 ] as const;
 
 function Sidebar({ messageCount }: { messageCount: number }) {
@@ -113,17 +101,16 @@ function TopBar() {
         <Text style={styles.menuText}>☰</Text>
       </View>
       <View style={{ flex: 1 }}>
-        <Text style={styles.welcome}>Welcome back, Parent 👋</Text>
-        <Text style={styles.welcomeSub}>{"Here is an overview of your family's progress."}</Text>
+        <Text style={styles.welcome}>Parent-Child Workspace</Text>
+        <Text style={styles.welcomeSub}>Shared child records, requests, and monitored messages.</Text>
       </View>
       <View style={styles.bellWrap}>
         <Text style={styles.bell}>♧</Text>
-        <Text style={styles.bellBadge}>3</Text>
       </View>
       <View style={styles.parentAvatar}>
         <Text style={styles.avatarFace}>P</Text>
       </View>
-      <Text style={styles.parentName}>Parent Name⌄</Text>
+      <Text style={styles.parentName}>Parent view</Text>
     </View>
   );
 }
@@ -170,15 +157,12 @@ function SectionCard({
   );
 }
 
-function ProgressLine({ label, value }: { label: string; value: number }) {
+function MetricLine({ label, value }: { label: string; value: number }) {
   return (
     <View style={styles.goalRow}>
       <View style={styles.goalTop}>
         <Text style={styles.goalLabel}>{label}</Text>
-        <Text style={styles.goalValue}>{value}%</Text>
-      </View>
-      <View style={styles.goalTrack}>
-        <View style={[styles.goalFill, { width: `${value}%` }]} />
+        <Text style={styles.goalValue}>{value}</Text>
       </View>
     </View>
   );
@@ -186,6 +170,8 @@ function ProgressLine({ label, value }: { label: string; value: number }) {
 
 function FamilyProfile({ overview }: { overview: ParentChildOverview | null }) {
   const statusLabel = overview?.openRequestCount || overview?.openMessageCount ? "Needs review" : "Active";
+  const sharedCount = overview?.sharedItemCount ?? 0;
+  const requestCount = overview?.requestCount ?? 0;
 
   return (
     <View style={styles.profileGrid}>
@@ -196,25 +182,25 @@ function FamilyProfile({ overview }: { overview: ParentChildOverview | null }) {
             <View style={styles.largeAvatar}>
               <Text style={styles.largeAvatarText}>P</Text>
             </View>
-            <Text style={styles.personName}>Parent Name</Text>
-            <Text style={styles.personMeta}>Primary Parent</Text>
+            <Text style={styles.personName}>Parent record</Text>
+            <Text style={styles.personMeta}>Signed-in account</Text>
           </View>
           <View style={styles.childrenBlock}>
             <Text style={styles.smallLabel}>Children</Text>
             <View style={styles.childAvatars}>
               <View style={styles.childAvatar}>
-                <Text style={styles.childAvatarText}>8</Text>
+                <Text style={styles.childAvatarText}>{sharedCount}</Text>
               </View>
               <View style={styles.childAvatarPink}>
-                <Text style={styles.childAvatarText}>6</Text>
+                <Text style={styles.childAvatarText}>{requestCount}</Text>
               </View>
             </View>
-            <Text style={styles.childNames}>Child Name        Child Name</Text>
+            <Text style={styles.childNames}>Shared items        Requests</Text>
           </View>
         </View>
         <View style={styles.profileFacts}>
-          <Fact icon="⌂" label="Location" value="Springfield, IL" />
-          <Fact icon="□" label="Case Start Date" value="May 14, 2025" />
+          <Fact icon="□" label="Shared child records" value={`${sharedCount}`} />
+          <Fact icon="◇" label="Open requests" value={`${overview?.openRequestCount ?? 0}`} />
           <Fact icon="◇" label="Status" value={statusLabel} pill />
         </View>
       </View>
@@ -232,7 +218,7 @@ function FamilyProfile({ overview }: { overview: ParentChildOverview | null }) {
         <View style={styles.quoteCard}>
           <Text style={styles.quoteMark}>“</Text>
           <Text style={styles.quoteText}>
-            Every step forward, no matter how small, builds a stronger tomorrow.
+            Child-only material stays private unless it has been shared through the child voice pathway.
           </Text>
           <Text style={styles.quoteHeart}>♥</Text>
         </View>
@@ -257,24 +243,62 @@ function OverviewContent({ overview }: { overview: ParentChildOverview }) {
   const progress = useMemo(() => {
     const total = overview.sharedItemCount + overview.requestCount + overview.messageCount;
     const open = overview.openRequestCount + overview.openMessageCount;
-    if (total === 0) return 68;
+    if (total === 0) return 0;
     return Math.max(20, Math.min(95, Math.round(((total - open) / total) * 100)));
   }, [overview]);
 
   return (
     <>
       <View style={styles.shortcutRow}>
-        <Shortcut title="My Program" subtitle="View your program pathway" href="/programs/my-programs" icon="▤" />
-        <Shortcut title="Courses" subtitle="Browse and continue courses" href="/lessons" icon="□" />
+        <Shortcut
+          title="Child Shared Dashboard"
+          subtitle="Only child-shared records, not the private child space"
+          href="/parent-child/shared-items"
+          icon="▤"
+        />
+        <Shortcut
+          title="Monitored Messages"
+          subtitle="Messages shared through the parent-child pathway"
+          href="/parent-child/messages"
+          icon="☏"
+        />
+        <Shortcut
+          title="Parent-Child Games"
+          subtitle="Child-shared game requests and follow-up"
+          href="/parent-child/games"
+          icon="◇"
+        />
+        <Shortcut
+          title="Family Challenges"
+          subtitle="Shared challenges families can practise together"
+          href="/parent-child/family-challenges"
+          icon="◎"
+        />
+        <Shortcut
+          title="Weekend Activities"
+          subtitle="Activities, routines, and family tasks"
+          href="/parent-child/weekend-activities"
+          icon="☼"
+        />
+        <Shortcut
+          title="Family Calendar"
+          subtitle="Visits, activities, family tasks, and future games"
+          href="/parent-child/family-calendar"
+          icon="◷"
+        />
       </View>
 
       <FamilyProfile overview={overview} />
 
       <View style={styles.overallProgress}>
-        <Text style={styles.progressIcon}>◎</Text>
+          <Text style={styles.progressIcon}>◎</Text>
         <View style={{ flex: 1 }}>
-          <Text style={styles.overallTitle}>Overall Family Progress</Text>
-          <Text style={styles.overallSub}>{"You're making great progress."}</Text>
+          <Text style={styles.overallTitle}>Parent-Child Review Progress</Text>
+          <Text style={styles.overallSub}>
+            {overview.sharedItemCount + overview.requestCount + overview.messageCount === 0
+              ? "No shared child voice records are available yet."
+              : "Based on reviewed shared records, requests, and monitored messages."}
+          </Text>
         </View>
         <View style={styles.overallTrack}>
           <View style={[styles.overallFill, { width: `${progress}%` }]} />
@@ -288,20 +312,32 @@ function OverviewContent({ overview }: { overview: ParentChildOverview }) {
       </View>
 
       <View style={styles.threeColumn}>
-        <SectionCard title="Case Goals" subtitle="Working together toward our goals." icon="◎" tone="blue">
-          {goals.map(([label, value]) => (
-            <ProgressLine key={label} label={label} value={value} />
-          ))}
+        <SectionCard title="Review Queue" subtitle="Records available to the parent view." icon="◎" tone="blue">
+          <MetricLine label="Shared child items" value={overview.sharedItemCount} />
+          <MetricLine label="Child requests" value={overview.requestCount} />
+          <MetricLine label="Monitored messages" value={overview.messageCount} />
           <Link href="/parent-child/requests" asChild>
             <Pressable>
-              <Text style={styles.linkText}>View all goals ›</Text>
+              <Text style={styles.linkText}>View child requests ›</Text>
             </Pressable>
           </Link>
         </SectionCard>
 
         <SectionCard title="Child Voice" subtitle="What your child wants you to know." icon="☏" tone="green">
-          <VoiceBubble avatar="8" text={overview.latestRequest?.message || "I like when we play games together as a family."} />
-          <VoiceBubble avatar="6" text={overview.latestSharedItem?.item_title || "I feel happy when we go on walks together."} />
+          {overview.latestRequest?.message ? (
+            <VoiceBubble avatar="R" text={overview.latestRequest.message} />
+          ) : null}
+          {overview.latestSharedItem ? (
+            <VoiceBubble
+              avatar="S"
+              text={overview.latestSharedItem.summary_text || overview.latestSharedItem.item_title || "Shared child item"}
+            />
+          ) : null}
+          {!overview.latestRequest?.message && !overview.latestSharedItem ? (
+            <Text style={styles.emptyPanelText}>
+              No child-shared voice records are available in the parent view yet.
+            </Text>
+          ) : null}
           <Link href="/parent-child/shared-items" asChild>
             <Pressable>
               <Text style={styles.linkText}>View full summary ›</Text>
@@ -309,40 +345,30 @@ function OverviewContent({ overview }: { overview: ParentChildOverview }) {
           </Link>
         </SectionCard>
 
-        <SectionCard title="Support Contacts" subtitle="You can reach out to key contacts." icon="♙" tone="orange">
-          <ContactRow name="Case Worker" detail="Jordan Lee" phone="(217) 555-0134" />
-          <ContactRow name="Family Support Specialist" detail="Taylor Morgan" phone="(217) 555-0178" />
-          <ContactRow name="Therapist" detail="Dr. Alex Rivera" phone="(217) 555-0199" />
-          <Text style={styles.linkText}>View all contacts ›</Text>
+        <SectionCard title="Privacy Boundary" subtitle="Parent access is mediated by sharing controls." icon="♙" tone="orange">
+          <SafeguardRow label="Private child records" value="Hidden from parent view" />
+          <SafeguardRow label="Shared records" value="Visible when audience is parent or both" />
+          <SafeguardRow label="Parent replies" value="Child visibility must be selected" />
         </SectionCard>
       </View>
 
       <View style={styles.bottomGrid}>
-        <SectionCard title="Wellbeing Indicators" subtitle="Your family's wellbeing at a glance." icon="♡" tone="green">
-          <View style={styles.wellbeingRow}>
-            {wellbeing.map(([icon, label, state]) => (
-              <View key={label} style={styles.wellbeingItem}>
-                <View style={[styles.wellbeingCircle, state === "watch" ? styles.wellbeingWatch : null]}>
-                  <Text style={[styles.wellbeingIcon, state === "watch" ? styles.wellbeingWatchText : null]}>{icon}</Text>
-                </View>
-                <Text style={styles.wellbeingLabel}>{label}</Text>
-              </View>
-            ))}
-          </View>
-          <View style={styles.legendRow}>
-            <Legend color="#25A985" label="Doing well" />
-            <Legend color="#F2AA22" label="Needs attention" />
-            <Legend color="#E7584F" label="Needs support" />
-          </View>
+        <SectionCard title="Monitoring Status" subtitle="Open items that need human review." icon="♡" tone="green">
+          <SafeguardRow label="Open child requests" value={`${overview.openRequestCount}`} />
+          <SafeguardRow label="Open monitored messages" value={`${overview.openMessageCount}`} />
+          <SafeguardRow
+            label="Latest message"
+            value={overview.latestMessage ? new Date(overview.latestMessage.created_at).toLocaleString() : "None available"}
+          />
         </SectionCard>
 
-        <SectionCard title="Family Timeline" subtitle="Important milestones and upcoming activities." icon="◷" tone="purple">
-          <TimelineRow color="#25A985" title="Case opened" date="May 14, 2025" detail="Initial assessment completed and case plan created." />
-          <TimelineRow color="#2B83D3" title="Next review" date="Jun 20, 2025" detail="Progress review with your case team." />
-          <TimelineRow color="#7E66D9" title="Family activity" date="Jun 28, 2025" detail="Community family fun day, optional." />
-          <Link href="/timeline" asChild>
+        <SectionCard title="Next Actions" subtitle="Use real child-shared records before parent follow-up." icon="◷" tone="purple">
+          <TimelineRow color="#25A985" title="Review shared items" date={`${overview.sharedItemCount} available`} detail="Read only records the child chose to share." />
+          <TimelineRow color="#2B83D3" title="Respond to requests" date={`${overview.openRequestCount} open`} detail="Save calm parent notes and choose child visibility deliberately." />
+          <TimelineRow color="#7E66D9" title="Check family calendar" date="Shared only" detail="Review upcoming visits, activities, family tasks, and future requested games." />
+          <Link href="/parent-child/family-calendar" asChild>
             <Pressable>
-              <Text style={styles.linkText}>View full timeline ›</Text>
+              <Text style={styles.linkText}>Open family calendar ›</Text>
             </Pressable>
           </Link>
         </SectionCard>
@@ -364,27 +390,13 @@ function VoiceBubble({ avatar, text }: { avatar: string; text: string }) {
   );
 }
 
-function ContactRow({ name, detail, phone }: { name: string; detail: string; phone: string }) {
+function SafeguardRow({ label, value }: { label: string; value: string }) {
   return (
     <View style={styles.contactRow}>
-      <View style={styles.contactAvatar}>
-        <Text style={styles.contactAvatarText}>P</Text>
-      </View>
       <View style={{ flex: 1 }}>
-        <Text style={styles.contactName}>{name}</Text>
-        <Text style={styles.contactDetail}>{detail}</Text>
+        <Text style={styles.contactName}>{label}</Text>
+        <Text style={styles.contactDetail}>{value}</Text>
       </View>
-      <Text style={styles.contactPhone}>{phone}</Text>
-      <Text style={styles.contactMail}>✉</Text>
-    </View>
-  );
-}
-
-function Legend({ color, label }: { color: string; label: string }) {
-  return (
-    <View style={styles.legendItem}>
-      <View style={[styles.legendDot, { backgroundColor: color }]} />
-      <Text style={styles.legendText}>{label}</Text>
     </View>
   );
 }
@@ -1172,6 +1184,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 21,
     fontWeight: "800",
+  },
+  emptyPanelText: {
+    color: "#53665A",
+    fontSize: 14,
+    fontWeight: "800",
+    lineHeight: 21,
   },
   contactRow: {
     flexDirection: "row",

@@ -10,6 +10,15 @@ import {
   listCurriculumLessonsFromApi,
 } from "../../lib/curriculumApi";
 import type { ApiCurriculumCourseSummary, ApiCurriculumLessonSummary } from "../../lib/curriculumApi";
+import { formatInteractiveVideoCourseAssetStatus } from "../../lib/data/interactiveVideoCourse";
+import {
+  nervousSystemVideoCourse,
+} from "../../lib/data/nervousSystemVideoCourse";
+import {
+  strengtheningFamilyBondVideoCourse,
+  strengtheningFamilyBondTitle,
+  strengtheningFamilyBondVideoSteps,
+} from "../../lib/data/strengtheningFamilyBondVideoCourse";
 import { programs } from "../../lib/data/programs";
 import { appLessons } from "../../lib/lessonContent";
 import { globalStyles } from "../../lib/styles";
@@ -141,6 +150,32 @@ export default function CurriculumLibraryScreen() {
             </Pressable>
           ))}
         </View>
+      )}
+
+      {section === "courses" && (
+        <>
+          <Link href={"/parent-lessons/nervous-system-regulation" as Href} asChild>
+            <Pressable style={globalStyles.card}>
+              <Text style={globalStyles.cardTitle}>{nervousSystemVideoCourse.title}</Text>
+              <Text style={globalStyles.cardText}>{nervousSystemVideoCourse.description}</Text>
+              <Text style={globalStyles.mutedText}>
+                {nervousSystemVideoCourse.steps.length} videos | {formatInteractiveVideoCourseAssetStatus(nervousSystemVideoCourse)}
+              </Text>
+            </Pressable>
+          </Link>
+
+          <Link href={"/parent-lessons/strengthening-family-bond" as Href} asChild>
+            <Pressable style={globalStyles.card}>
+              <Text style={globalStyles.cardTitle}>{strengtheningFamilyBondTitle}</Text>
+              <Text style={globalStyles.cardText}>
+                Interactive 10-video course with reflections, a quiz checkpoint, and saved completion data.
+              </Text>
+              <Text style={globalStyles.mutedText}>
+                {strengtheningFamilyBondVideoSteps.length} videos | {formatInteractiveVideoCourseAssetStatus(strengtheningFamilyBondVideoCourse)}
+              </Text>
+            </Pressable>
+          </Link>
+        </>
       )}
 
       {section === "courses" &&

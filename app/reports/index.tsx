@@ -11,6 +11,7 @@ import {
 import { useAuth } from "../../lib/auth";
 import { getReportSummary, type ReportSummary } from "../../lib/platformData";
 import { auditReportViewed } from "../../lib/security/audit";
+import { metadataQuizPassed, metadataVideoStepCount } from "../../lib/progressMetadata";
 
 function StatCard({ label, value }: { label: string; value: string | number }) {
   return (
@@ -76,6 +77,12 @@ export default function ReportsScreen() {
   const draftEvidenceCount = summary?.evidence.filter((item) => item.status === "draft").length ?? 0;
   const storedEvidenceCount = summary?.evidence.filter((item) => item.status === "stored").length ?? 0;
   const sharedEvidenceCount = summary?.evidence.filter((item) => item.status === "shared").length ?? 0;
+  const interactiveVideoEvents = summary?.events.filter((event) => event.event_type === "interactive_video_lesson_completed") ?? [];
+  const interactiveVideoStepCount = interactiveVideoEvents.reduce(
+    (total, event) => total + (metadataVideoStepCount(event.metadata) ?? 0),
+    0,
+  );
+  const interactiveVideoQuizPassedCount = interactiveVideoEvents.filter((event) => metadataQuizPassed(event.metadata) === true).length;
 
   return (
     <ScrollView style={{ flex: 1, padding: 20 }}>
@@ -117,6 +124,9 @@ export default function ReportsScreen() {
               <StatCard label="Stored evidence records" value={storedEvidenceCount} />
               <StatCard label="Shared evidence records" value={sharedEvidenceCount} />
               <StatCard label="Program reflections saved" value={summary.reflections.length} />
+              <StatCard label="Interactive video lessons completed" value={interactiveVideoEvents.length} />
+              <StatCard label="Interactive video steps completed" value={interactiveVideoStepCount} />
+              <StatCard label="Interactive video quiz checkpoints passed" value={interactiveVideoQuizPassedCount} />
             </>
           ) : null}
 

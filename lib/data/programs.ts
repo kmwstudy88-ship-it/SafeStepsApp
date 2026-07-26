@@ -175,18 +175,20 @@ const reunificationMonthTopics = [
 ];
 
 const reunificationWeekFocus = [
-  "Building safety and predictability",
-  "Understanding your child's needs",
-  "Practising calm support under pressure",
-  "Reflecting on growth and next steps",
+  "Safety, accountability, and case-plan clarity",
+  "Child experience, attachment, and repair",
+  "Regulation, routines, and parenting under pressure",
+  "Evidence review, support coordination, and next steps",
 ];
 
 const reunificationLessonFocus = [
-  "Strengthening emotional safety",
-  "Supporting your child through change",
-  "Building predictable routines",
-  "Helping your child adjust",
-  "Reflecting on this week's progress",
+  "Understand the current reunification expectation",
+  "Name what this means for my child",
+  "Practise one safe parenting behaviour",
+  "Prepare for contact, transition, or home routine",
+  "Use support before stress escalates",
+  "Record factual evidence of safe change",
+  "Reflect on progress, repair, and next steps",
 ];
 
 const homeAgainMonthTopics = [
@@ -360,7 +362,7 @@ export const programs: ProgramPathway[] = [
     curation: {
       targetCohort: "Parents working toward safe reunification after child removal or extended separation.",
       riskLevel: "very_high",
-      entryCriteria: ["Child is not currently living with the parent", "A reunification or restoration goal is active", "Worker review confirms structured long-form support is appropriate"],
+      entryCriteria: ["Child not living with parent", "Reunification goal active", "Worker review confirms suitability"],
       assessmentTriggers: ["Safety and protective capacity", "Parent-child relationship repair", "Contact readiness", "Home stability", "Support network"],
       requiredCourseIds: ["parent-safety-and-stability", "child-safety-foundations", "protective-parenting-foundations", "demonstrating-change-self-managed-safety"],
       assessmentAssignedCourses: [
@@ -379,8 +381,8 @@ export const programs: ProgramPathway[] = [
           evidenceExpectation: "Contact preparation note, factual reflection, or worker-approved upload linked to the relevant week.",
         },
       ],
-      taskReflectionEvidenceProgressFlow: ["Assessment identifies priority domains", "Program month sets the focus", "Lesson reflection names parent meaning", "Challenge creates a real-world task", "Evidence upload or note documents practice", "Progress indicators update during review"],
-      reviewCadence: "Weekly reflection, monthly progress review, and formal 12-week worker review.",
+      taskReflectionEvidenceProgressFlow: ["Assessment identifies priority domains", "Program month sets the focus", "Lesson reflection names parent meaning", "Challenge creates a real-world task", "Evidence upload documents practice", "Progress indicators update during review"],
+      reviewCadence: "Weekly reflection, monthly review, 12-week worker review",
       completionRules: ["Required courses completed", "Monthly reflections and evidence are consistent", "Worker review confirms demonstrated safe change", "Transition or maintenance plan is documented"],
       transitionRules: ["Transition to Home Again after return home", "Continue intensive pathway if reunification is delayed", "Move to custom pathway if assessment identifies specialist needs outside the standard sequence"],
     },

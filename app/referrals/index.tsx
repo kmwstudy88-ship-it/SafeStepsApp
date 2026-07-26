@@ -1,100 +1,40 @@
 import { Link } from "expo-router";
-import type React from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
 import {
-  buildReferralEvidenceNote,
   createServiceReferralSummary,
   evaluateServiceReferralAlerts,
+  listCaseServiceReferrals,
   type ServiceReferralRecord,
 } from "../../lib/engines/serviceReferralEngine";
 
-const now = new Date("2026-07-12T00:00:00.000Z");
-
-const sampleReferrals: ServiceReferralRecord[] = [
-  {
-    id: "referral-parenting",
-    case_id: "case-demo",
-    parent_user_id: null,
-    worker_user_id: null,
-    provider_id: null,
-    service_type: "Parenting support",
-    provider_name: "Community Family Service",
-    referral_date: "2026-06-20",
-    status: "engaged",
-    completion_weight: 1,
-    due_date: "2026-07-05",
-    first_contact_at: "2026-06-23T00:00:00.000Z",
-    last_attended_at: "2026-07-03T00:00:00.000Z",
-    next_review_at: "2026-07-12T00:00:00.000Z",
-    consent_to_contact_provider: true,
-    attendance_verified: false,
-    linked_evidence_id: null,
-    linked_document_id: "doc-service-letter",
-    notes: "Parent reports attendance has started.",
-    review_notes: "",
-    alert_generated: false,
-    created_by: null,
-    created_at: "2026-06-20T00:00:00.000Z",
-    updated_at: "2026-07-03T00:00:00.000Z",
-  },
-  {
-    id: "referral-budget",
-    case_id: "case-demo",
-    parent_user_id: null,
-    worker_user_id: null,
-    provider_id: null,
-    service_type: "Financial counselling",
-    provider_name: "Money Help Centre",
-    referral_date: "2026-06-24",
-    status: "referred",
-    completion_weight: 0.8,
-    due_date: "2026-07-06",
-    first_contact_at: null,
-    last_attended_at: null,
-    next_review_at: null,
-    consent_to_contact_provider: false,
-    attendance_verified: false,
-    linked_evidence_id: null,
-    linked_document_id: null,
-    notes: "Referral sent; parent has not confirmed appointment.",
-    review_notes: "",
-    alert_generated: false,
-    created_by: null,
-    created_at: "2026-06-24T00:00:00.000Z",
-    updated_at: "2026-06-24T00:00:00.000Z",
-  },
-  {
-    id: "referral-legal",
-    case_id: "case-demo",
-    parent_user_id: null,
-    worker_user_id: null,
-    provider_id: null,
-    service_type: "Legal advice",
-    provider_name: "Community Legal Clinic",
-    referral_date: "2026-07-01",
-    status: "completed",
-    completion_weight: 0.7,
-    due_date: "2026-07-10",
-    first_contact_at: "2026-07-02T00:00:00.000Z",
-    last_attended_at: "2026-07-08T00:00:00.000Z",
-    next_review_at: null,
-    consent_to_contact_provider: true,
-    attendance_verified: true,
-    linked_evidence_id: "evidence-legal-letter",
-    linked_document_id: "doc-legal-letter",
-    notes: "Attendance letter uploaded.",
-    review_notes: "No further legal follow-up required this review period.",
-    alert_generated: false,
-    created_by: null,
-    created_at: "2026-07-01T00:00:00.000Z",
-    updated_at: "2026-07-08T00:00:00.000Z",
-  },
-];
-
 export default function ReferralsScreen() {
-  const summary = createServiceReferralSummary(sampleReferrals, now);
-  const alerts = evaluateServiceReferralAlerts(sampleReferrals, now);
+  const [caseId, setCaseId] = useState("");
+  const [referrals, setReferrals] = useState<ServiceReferralRecord[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const summary = createServiceReferralSummary(referrals);
+  const alerts = evaluateServiceReferralAlerts(referrals);
+
+  async function loadReferrals() {
+    const trimmedCaseId = caseId.trim();
+    if (!trimmedCaseId) {
+      setErrorMessage("Enter a case ID before loading referrals.");
+      return;
+    }
+
+    setIsLoading(true);
+    setErrorMessage(null);
+    try {
+      setReferrals(await listCaseServiceReferrals(trimmedCaseId));
+    } catch (error) {
+      setReferrals([]);
+      setErrorMessage(error instanceof Error ? error.message : "Unable to load case referrals.");
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   return (
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
@@ -106,81 +46,72 @@ export default function ReferralsScreen() {
         </Text>
       </View>
 
-      <View style={styles.demoNotice}>
-        <Text style={styles.demoTitle}>Example records only</Text>
-        <Text style={styles.subtitle}>
-          The referrals shown here are sample records for checking review prompts and evidence-linking behavior. Live referral data must come from the case database before production use.
+      <View style={styles.emptyState}>
+        <Text style={styles.emptyTitle}>Load live referral records</Text>
+        <Text style={styles.rowText}>
+          Enter a case ID to read referral status, provider-contact consent, attendance verification, follow-up due
+          dates, linked documents, linked evidence, and supervisor review prompts from the case database.
         </Text>
+        <TextInput
+          value={caseId}
+          onChangeText={setCaseId}
+          placeholder="Case ID"
+          placeholderTextColor="#667085"
+          style={styles.input}
+        />
+        <Pressable style={styles.button} onPress={loadReferrals} disabled={isLoading}>
+          <Text style={styles.buttonText}>{isLoading ? "Loading..." : "Load referrals"}</Text>
+        </Pressable>
+        {errorMessage ? <Text style={styles.errorText}>{errorMessage}</Text> : null}
       </View>
 
-      <View style={styles.metricGrid}>
-        <Metric label="Total" value={summary.total} />
-        <Metric label="Engaged or done" value={summary.engagedOrCompleted} />
-        <Metric label="Overdue" value={summary.overdue} />
-        <Metric label="Review due" value={summary.needsReview} />
-        <Metric label="Verified" value={summary.attendanceVerified} />
-        <Metric label="Consent" value={summary.providerContactAllowed} />
-      </View>
-
-      <Section title="Example Review Prompts">
-        {alerts.map((alert) => (
-          <View key={`${alert.referralId}-${alert.metadata.reason}`} style={[styles.row, alert.severity === "high" && styles.highRow]}>
-            <Text style={styles.rowTitle}>{alert.title}</Text>
-            <Text style={styles.rowText}>{alert.body}</Text>
-            <Text style={styles.badge}>{alert.severity.toUpperCase()}</Text>
+      {referrals.length > 0 ? (
+        <View style={styles.card}>
+          <Text style={styles.sectionTitle}>Referral summary</Text>
+          <View style={styles.summaryGrid}>
+            <Metric label="Total" value={summary.total} />
+            <Metric label="Engaged" value={summary.engagedOrCompleted} />
+            <Metric label="Overdue" value={summary.overdue} />
+            <Metric label="Review" value={summary.needsReview} />
           </View>
-        ))}
-      </Section>
-
-      <Section title="Example Referral Status">
-        {sampleReferrals.map((referral) => (
-          <View key={referral.id} style={styles.row}>
-            <View style={styles.rowHeader}>
-              <Text style={styles.rowTitle}>{referral.service_type}</Text>
-              <Text style={styles.status}>{referral.status.replace("_", " ")}</Text>
+          {alerts.length > 0 ? (
+            <View style={styles.alertBox}>
+              <Text style={styles.alertTitle}>Human-review prompts</Text>
+              {alerts.map((alert) => (
+                <Text key={`${alert.referralId}-${alert.title}`} style={styles.rowText}>
+                  - {alert.body}
+                </Text>
+              ))}
             </View>
-            <Text style={styles.rowText}>{referral.provider_name ?? "Provider not recorded"}</Text>
-            <Text style={styles.meta}>
-              Contact consent: {referral.consent_to_contact_provider ? "Yes" : "No"} · Attendance:{" "}
-              {referral.attendance_verified ? "Verified" : "Not verified"}
-            </Text>
-            <Text style={styles.note}>{buildReferralEvidenceNote(referral)}</Text>
-          </View>
-        ))}
-      </Section>
+          ) : null}
+          {referrals.map((referral) => (
+            <View key={referral.id} style={styles.recordRow}>
+              <Text style={styles.recordTitle}>{referral.service_type}</Text>
+              <Text style={styles.rowText}>
+                {referral.provider_name ?? "Provider not recorded"} - {referral.status}
+                {referral.due_date ? ` - due ${referral.due_date}` : ""}
+              </Text>
+              <Text style={styles.rowText}>
+                {referral.consent_to_contact_provider ? "Provider contact consent recorded." : "Provider contact consent not recorded."}
+                {referral.attendance_verified ? " Attendance verified." : " Attendance not verified."}
+              </Text>
+            </View>
+          ))}
+        </View>
+      ) : null}
 
-      <Section title="Example Evidence Links">
-        {sampleReferrals.map((referral) => (
-          <View key={`${referral.id}-links`} style={styles.row}>
-            <Text style={styles.rowTitle}>{referral.service_type}</Text>
-            <Text style={styles.meta}>Evidence: {referral.linked_evidence_id ?? "Not linked"}</Text>
-            <Text style={styles.meta}>Document: {referral.linked_document_id ?? "Not linked"}</Text>
-          </View>
-        ))}
-      </Section>
+      <View style={styles.checklist}>
+        <Text style={styles.sectionTitle}>Referral review must preserve</Text>
+        <Text style={styles.rowText}>- Consent before provider contact.</Text>
+        <Text style={styles.rowText}>- Attendance evidence separate from parent self-report.</Text>
+        <Text style={styles.rowText}>- Overdue follow-up prompts as human-review cues only.</Text>
+        <Text style={styles.rowText}>- Links to evidence, documents, and assessment domains before report use.</Text>
+      </View>
 
       <Link href="/assessment-system" style={styles.link}>
         Back to assessment system
       </Link>
     </ScrollView>
-  );
-}
-
-function Metric({ label, value }: { label: string; value: number }) {
-  return (
-    <View style={styles.metric}>
-      <Text style={styles.metricValue}>{value}</Text>
-      <Text style={styles.metricLabel}>{label}</Text>
-    </View>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <View style={styles.section}>
-      <Text style={styles.sectionTitle}>{title}</Text>
-      {children}
-    </View>
   );
 }
 
@@ -215,36 +146,75 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 22,
   },
-  metricGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 10,
-  },
-  metric: {
-    minWidth: 130,
-    flexGrow: 1,
+  emptyState: {
+    gap: 8,
     borderRadius: 8,
     borderWidth: 1,
     borderColor: "#D9E1DA",
     backgroundColor: "#FFFFFF",
     padding: 14,
   },
-  demoNotice: {
+  emptyTitle: {
+    color: "#17211D",
+    fontSize: 18,
+    fontWeight: "900",
+  },
+  checklist: {
     gap: 8,
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: "#B45309",
-    backgroundColor: "#FFFBEB",
+    borderColor: "#D9E1DA",
+    backgroundColor: "#EFF6FF",
     padding: 14,
   },
-  demoTitle: {
-    color: "#92400E",
-    fontSize: 16,
+  card: {
+    gap: 12,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#D9E1DA",
+    backgroundColor: "#FFFFFF",
+    padding: 14,
+  },
+  input: {
+    minHeight: 46,
+    borderWidth: 1,
+    borderColor: "#D9E1DA",
+    borderRadius: 8,
+    padding: 12,
+    backgroundColor: "#FBFDFB",
+  },
+  button: {
+    alignSelf: "flex-start",
+    borderRadius: 8,
+    backgroundColor: "#2563EB",
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+  },
+  buttonText: {
+    color: "#FFFFFF",
+    fontSize: 14,
     fontWeight: "900",
+  },
+  errorText: {
+    color: "#B42318",
+    fontSize: 14,
+    fontWeight: "800",
+  },
+  summaryGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+  },
+  metric: {
+    minWidth: 112,
+    gap: 3,
+    borderRadius: 8,
+    backgroundColor: "#F5F7F4",
+    padding: 10,
   },
   metricValue: {
     color: "#17211D",
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: "900",
   },
   metricLabel: {
@@ -253,36 +223,30 @@ const styles = StyleSheet.create({
     fontWeight: "800",
     textTransform: "uppercase",
   },
-  section: {
-    gap: 10,
+  alertBox: {
+    gap: 6,
+    borderRadius: 8,
+    backgroundColor: "#FFF7ED",
+    padding: 10,
+  },
+  alertTitle: {
+    color: "#9A3412",
+    fontWeight: "900",
+  },
+  recordRow: {
+    gap: 5,
+    paddingTop: 10,
+    borderTopWidth: 1,
+    borderTopColor: "#E6ECE8",
+  },
+  recordTitle: {
+    color: "#17211D",
+    fontSize: 16,
+    fontWeight: "900",
   },
   sectionTitle: {
     color: "#17211D",
     fontSize: 18,
-    fontWeight: "900",
-  },
-  row: {
-    gap: 7,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: "#D9E1DA",
-    backgroundColor: "#FFFFFF",
-    padding: 14,
-  },
-  highRow: {
-    borderColor: "#DC2626",
-    backgroundColor: "#FEF2F2",
-  },
-  rowHeader: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 8,
-  },
-  rowTitle: {
-    color: "#17211D",
-    fontSize: 16,
     fontWeight: "900",
   },
   rowText: {
@@ -290,45 +254,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
   },
-  badge: {
-    alignSelf: "flex-start",
-    borderRadius: 8,
-    overflow: "hidden",
-    backgroundColor: "#FEE2E2",
-    color: "#991B1B",
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    fontSize: 12,
-    fontWeight: "900",
-  },
-  status: {
-    borderRadius: 8,
-    overflow: "hidden",
-    backgroundColor: "#DBEAFE",
-    color: "#1D4ED8",
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    fontSize: 12,
-    fontWeight: "900",
-    textTransform: "capitalize",
-  },
-  meta: {
-    color: "#68736D",
-    fontSize: 12,
-    lineHeight: 18,
-  },
-  note: {
-    color: "#17211D",
-    borderRadius: 8,
-    overflow: "hidden",
-    backgroundColor: "#EEF6F2",
-    padding: 10,
-    fontSize: 13,
-    lineHeight: 19,
-  },
   link: {
     color: "#2563EB",
     fontSize: 15,
     fontWeight: "900",
   },
 });
+
+function Metric({ label, value }: { label: string; value: number }) {
+  return (
+    <View style={styles.metric}>
+      <Text style={styles.metricValue}>{value}</Text>
+      <Text style={styles.metricLabel}>{label}</Text>
+    </View>
+  );
+}
