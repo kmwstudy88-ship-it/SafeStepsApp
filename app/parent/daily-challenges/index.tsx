@@ -14,7 +14,7 @@ import {
   dailyChallengeColors,
   dailyChallengeStyles as styles,
   dailyChallengeSummary,
-} from "./_shared";
+} from "../../../components/dailyChallenges/shared";
 
 export default function DailyChallengesDashboard() {
   const { initializing, user } = useAuth();

@@ -10,7 +10,7 @@ import {
   DailyChallengeHeader,
   dailyChallengeColors,
   dailyChallengeStyles as styles,
-} from "./_shared";
+} from "../../../components/dailyChallenges/shared";
 
 export default function DailyChallengeEvidence() {
   const { initializing, user } = useAuth();

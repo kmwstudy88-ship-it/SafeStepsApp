@@ -3,8 +3,8 @@ import { Link, type Href } from "expo-router";
 import React from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-import { safestepsParentChallenges, type SafeStepsParentChallenge } from "../../../lib/data/safestepsParentChallenges";
-import type { UserTask } from "../../../lib/engines/taskEngine";
+import { safestepsParentChallenges, type SafeStepsParentChallenge } from "../../lib/data/safestepsParentChallenges";
+import type { UserTask } from "../../lib/engines/taskEngine";
 
 export type DailyChallengeTab = "all" | "todo" | "completed";
 export type IconName = React.ComponentProps<typeof MaterialCommunityIcons>["name"];

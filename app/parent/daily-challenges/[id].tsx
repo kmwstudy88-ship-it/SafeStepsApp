@@ -16,7 +16,7 @@ import {
   dailyChallengeStyles as styles,
   getDailyChallengeIcon,
   getDailyChallengePoints,
-} from "./_shared";
+} from "../../../components/dailyChallenges/shared";
 
 export default function DailyChallengeDetail() {
   const { initializing, user } = useAuth();

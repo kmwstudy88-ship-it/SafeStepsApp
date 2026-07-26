@@ -4,7 +4,7 @@ import { Pressable, ScrollView, Text, View } from "react-native";
 
 import { useAuth } from "../../../lib/auth";
 import { fetchUserTasks, type UserTask } from "../../../lib/engines/taskEngine";
-import { DailyChallengeHeader, dailyChallengeStyles as styles } from "./_shared";
+import { DailyChallengeHeader, dailyChallengeStyles as styles } from "../../../components/dailyChallenges/shared";
 
 export default function DailyChallengeHistory() {
   const { initializing, user } = useAuth();

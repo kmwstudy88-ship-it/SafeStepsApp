@@ -284,9 +284,7 @@ export default function ResourcesScreen() {
                   styles.resourceCard,
                   (hovered || pressed) && {
                     borderColor: section.accent,
-                    shadowColor: "#0D5C75",
-                    shadowOpacity: 0.14,
-                    shadowRadius: 10,
+                    boxShadow: "0 4px 10px rgba(13, 92, 117, 0.14)",
                     transform: [{ translateY: -2 }],
                   },
                 ]}
@@ -481,7 +479,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     minHeight: 68,
     padding: 12,
-    shadowOffset: { height: 4, width: 0 },
   },
   resourceTextBlock: {
     flex: 1,

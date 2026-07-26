@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Pressable, ScrollView, Switch, Text, View } from "react-native";
 
 import { useAuth } from "../../../lib/auth";
-import { DailyChallengeHeader, dailyChallengeStyles as styles } from "./_shared";
+import { DailyChallengeHeader, dailyChallengeStyles as styles } from "../../../components/dailyChallenges/shared";
 
 export default function DailyChallengeSettings() {
   const { initializing, user } = useAuth();

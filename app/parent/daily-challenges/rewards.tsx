@@ -5,7 +5,7 @@ import { Pressable, ScrollView, Text, View } from "react-native";
 
 import { useAuth } from "../../../lib/auth";
 import { fetchUserTasks, type UserTask } from "../../../lib/engines/taskEngine";
-import { DailyChallengeHeader, dailyChallengeColors, dailyChallengeStyles as styles, dailyChallengeSummary } from "./_shared";
+import { DailyChallengeHeader, dailyChallengeColors, dailyChallengeStyles as styles, dailyChallengeSummary } from "../../../components/dailyChallenges/shared";
 
 const rewards = [
   { label: "Bronze Reward", points: 250, icon: "treasure-chest" },
