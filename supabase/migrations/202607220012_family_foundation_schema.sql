@@ -91,6 +91,47 @@ create table if not exists public.children (
   unique (tenant_id, child_reference)
 );
 
+alter table public.children
+  add column if not exists tenant_id uuid references public.platform_tenants(id) on delete restrict,
+  add column if not exists family_member_id uuid references public.family_members(id) on delete cascade,
+  add column if not exists child_reference text,
+  add column if not exists developmental_stage text,
+  add column if not exists school_year_level text,
+  add column if not exists child_status text not null default 'active',
+  add column if not exists communication_preferences jsonb not null default '{}'::jsonb,
+  add column if not exists sensory_preferences jsonb not null default '{}'::jsonb,
+  add column if not exists accessibility_requirements jsonb not null default '[]'::jsonb,
+  add column if not exists child_account_status text not null default 'not_invited',
+  add column if not exists child_voice_enabled boolean not null default true,
+  add column if not exists independent_login_allowed boolean not null default false,
+  add column if not exists updated_at timestamptz not null default now();
+
+update public.children
+set child_reference = coalesce(child_reference, 'CHD-' || id::text),
+    child_status = coalesce(child_status, 'active'),
+    communication_preferences = coalesce(communication_preferences, '{}'::jsonb),
+    sensory_preferences = coalesce(sensory_preferences, '{}'::jsonb),
+    accessibility_requirements = coalesce(accessibility_requirements, '[]'::jsonb),
+    child_account_status = coalesce(child_account_status, 'not_invited'),
+    child_voice_enabled = coalesce(child_voice_enabled, true),
+    independent_login_allowed = coalesce(independent_login_allowed, false)
+where child_reference is null
+   or child_status is null
+   or communication_preferences is null
+   or sensory_preferences is null
+   or accessibility_requirements is null
+   or child_account_status is null
+   or child_voice_enabled is null
+   or independent_login_allowed is null;
+
+create unique index if not exists children_family_member_unique_idx
+  on public.children (family_member_id)
+  where family_member_id is not null;
+
+create unique index if not exists children_tenant_reference_unique_idx
+  on public.children (tenant_id, child_reference)
+  where tenant_id is not null and child_reference is not null;
+
 create table if not exists public.relationship_type_definitions (
   relationship_type_code text primary key,
   relationship_type_name text not null,

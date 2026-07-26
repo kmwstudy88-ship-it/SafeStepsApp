@@ -314,7 +314,7 @@ create policy program_pathway_rules_read on public.program_pathway_rules for sel
 
 -- Existing legacy rows are case-bound only where the owner has exactly one active parent/case-owner membership.
 with single_case as (
-  select user_id, min(case_id) as case_id
+  select user_id, (array_agg(case_id order by case_id::text))[1] as case_id
   from public.case_memberships
   where status = 'active' and membership_role in ('case_owner','parent')
   group by user_id
