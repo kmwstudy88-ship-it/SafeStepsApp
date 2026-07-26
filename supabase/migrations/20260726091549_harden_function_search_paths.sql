@@ -1,0 +1,24 @@
+-- Pin search_path for functions flagged by Supabase advisors as mutable.
+alter function public.calculate_developmental_stage(date) set search_path = public;
+alter function public.current_user_id() set search_path = public;
+alter function public.generate_adult_reference() set search_path = public;
+alter function public.generate_child_reference() set search_path = public;
+alter function public.generate_family_member_reference() set search_path = public;
+alter function public.generate_family_reference() set search_path = public;
+alter function public.prevent_child_disclosure_words_update() set search_path = public;
+alter function public.prevent_evidence_record_immutable_update() set search_path = public;
+alter function public.prevent_final_case_note_update() set search_path = public;
+alter function public.reject_assessment_scoring_mutation() set search_path = public;
+alter function public.reject_court_report_snapshot_mutation() set search_path = public;
+alter function public.reject_court_report_supervisor_approval_mutation() set search_path = public;
+alter function public.reject_evidence_audit_log_mutation() set search_path = public;
+alter function public.reject_evidence_chain_mutation() set search_path = public;
+alter function public.reject_sensitive_audit_mutation() set search_path = public;
+alter function public.reject_stored_evidence_immutable_fields() set search_path = public;
+alter function public.set_updated_at() set search_path = public;
+alter function public.sync_evidence_record_legal_hold() set search_path = public;
+alter function public.validate_adult_member_type() set search_path = public;
+alter function public.validate_child_member_type() set search_path = public;
+alter function public.validate_family_member_tenant() set search_path = public;
+alter function public.validate_family_relationship_tenant() set search_path = public;
+alter function public.validate_household_membership_family() set search_path = public;
