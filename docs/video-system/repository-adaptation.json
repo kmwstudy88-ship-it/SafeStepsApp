@@ -1,0 +1,22 @@
+{
+  "repository": "kmwstudy88-ship-it/SafeStepsApp",
+  "base_commit": "6320901961f28a6a61543b6823b7ae452a6240d8",
+  "branch": "feature/video-system-integration",
+  "application_layout": "single root Expo Router application",
+  "supabase_client": "lib/supabaseClient.ts",
+  "payload_file_count": 97,
+  "path_remapping": {
+    "frontend/app": "app",
+    "frontend/components": "components",
+    "frontend/lib": "lib"
+  },
+  "service_import_remapping": {
+    "from '../supabase'": "from '../supabaseClient'"
+  },
+  "required_expo_install": [
+    "react-native-webview",
+    "expo-notifications"
+  ],
+  "migration_mode": "review-first",
+  "main_branch_modified": false
+}
