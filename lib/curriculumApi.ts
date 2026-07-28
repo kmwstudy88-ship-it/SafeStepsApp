@@ -1,5 +1,3 @@
-const DEFAULT_API_URL = "http://localhost:3000";
-
 export type ApiCurriculumModuleSummary = {
   order: number;
   module: {
@@ -53,8 +51,23 @@ export type ApiCurriculumLessonSummary = {
   sourcePath: string;
 };
 
+export function isCurriculumApiEnabled() {
+  return (
+    process.env.EXPO_PUBLIC_SAFESTEPS_CURRICULUM_API_ENABLED === "true" &&
+    Boolean(process.env.EXPO_PUBLIC_SAFESTEPS_API_URL?.trim())
+  );
+}
+
 function apiBaseUrl() {
-  return (process.env.EXPO_PUBLIC_SAFESTEPS_API_URL ?? DEFAULT_API_URL).replace(/\/$/, "");
+  const configuredUrl = process.env.EXPO_PUBLIC_SAFESTEPS_API_URL?.trim();
+
+  if (!isCurriculumApiEnabled() || !configuredUrl) {
+    throw new Error(
+      "The external curriculum API is disabled. SafeSteps will use the built-in reviewed curriculum library.",
+    );
+  }
+
+  return configuredUrl.replace(/\/$/, "");
 }
 
 function isGenericCurriculumTitle(title: string) {
