@@ -3,7 +3,10 @@ import { spawn } from 'node:child_process';
 const baseUrl = process.env.EXPO_PUBLIC_SAFESTEPS_API_URL ?? 'http://localhost:3000';
 const server = spawn(process.execPath, ['backend/server.js'], {
   cwd: process.cwd(),
-  env: process.env,
+  env: {
+    ...process.env,
+    SAFESTEPS_ALLOW_UNAUTHENTICATED_LOCAL_API: 'true',
+  },
   stdio: ['ignore', 'pipe', 'pipe'],
 });
 

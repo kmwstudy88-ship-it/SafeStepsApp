@@ -1,6 +1,7 @@
 import express from 'express';
 import multer from 'multer';
 
+import { requireAuthenticatedUser } from '../../middleware/requireAuthenticatedUser.js';
 import {
   DOCUMENT_INTELLIGENCE_MAX_TEXT_CHARS,
   DOCUMENT_INTELLIGENCE_SCHEMA_VERSION,
@@ -28,7 +29,7 @@ router.get('/intelligence/schema', (_req, res) => {
   });
 });
 
-router.post('/analyze', upload.single('file'), async (req, res, next) => {
+router.post('/analyze', requireAuthenticatedUser, upload.single('file'), async (req, res, next) => {
   try {
     if (process.env.SAFESTEPS_OPENAI_CONFIGURED !== 'true') {
       throw serviceUnavailable('Set OPENAI_KEY or OPENAI_API_KEY before running document intelligence.');

@@ -1,6 +1,7 @@
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
+import { useSensitiveAccess } from "../../components/security/SensitiveRouteBoundary";
 import {
   evaluateSessionAlerts,
   generateSessionAgenda,
@@ -9,9 +10,10 @@ import {
 } from "../../lib/engines/sessionManagementEngine";
 
 export default function SessionsScreen() {
+  const access = useSensitiveAccess();
+  const caseId = access?.caseId ?? null;
   const [phase, setPhase] = useState("");
   const [courseContext, setCourseContext] = useState("");
-  const [caseId, setCaseId] = useState("");
   const [sessions, setSessions] = useState<CaseSessionRecord[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -28,42 +30,41 @@ export default function SessionsScreen() {
   const completedCount = sessions.filter((session) => session.status === "completed").length;
   const missedCount = sessions.filter((session) => session.status === "missed").length;
 
-  async function loadSessions() {
-    const trimmedCaseId = caseId.trim();
-    if (!trimmedCaseId) {
-      setErrorMessage("Enter a case ID before loading sessions.");
+  const loadSessions = useCallback(async () => {
+    if (!caseId) {
+      setSessions([]);
+      setErrorMessage("An authorised case must be selected before sessions can be loaded.");
       return;
     }
 
     setIsLoading(true);
     setErrorMessage(null);
     try {
-      setSessions(await listCaseSessions(trimmedCaseId));
+      setSessions(await listCaseSessions(caseId));
     } catch (error) {
       setSessions([]);
       setErrorMessage(error instanceof Error ? error.message : "Unable to load case sessions.");
     } finally {
       setIsLoading(false);
     }
-  }
+  }, [caseId]);
+
+  useEffect(() => {
+    void loadSessions();
+  }, [loadSessions]);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Session Management</Text>
       <Text style={styles.body}>
-        Schedule worker sessions, generate phase-based agendas, record notes, capture consented transcript details, score
-        sessions, and flag missed sessions for worker and supervisor review.
+        Session records are loaded only from the authorised case selected for this account. Notes, consent, scores, and missed-session prompts remain tied to that case.
       </Text>
 
       <View style={styles.readyNotice}>
-        <Text style={styles.noticeTitle}>Live records</Text>
-        <Text style={styles.body}>
-          Enter a case ID to read saved sessions, consent metadata, missed-session prompts, rubric scores, and linked
-          evidence from the case database.
-        </Text>
-        <Input value={caseId} onChangeText={setCaseId} placeholder="Case ID" />
-        <Pressable style={styles.button} onPress={loadSessions} disabled={isLoading}>
-          <Text style={styles.buttonText}>{isLoading ? "Loading..." : "Load sessions"}</Text>
+        <Text style={styles.noticeTitle}>Authorised case</Text>
+        <Text style={styles.body}>{caseId ?? "No active case is available."}</Text>
+        <Pressable style={styles.button} onPress={loadSessions} disabled={isLoading || !caseId}>
+          <Text style={styles.buttonText}>{isLoading ? "Loading..." : "Refresh sessions"}</Text>
         </Pressable>
         {errorMessage ? <Text style={styles.errorText}>{errorMessage}</Text> : null}
       </View>
@@ -92,7 +93,7 @@ export default function SessionsScreen() {
               <Metric label="Alerts" value={alerts.length} />
             </View>
             {alerts.map((alert) => (
-              <View key={alert.type} style={styles.alertBox}>
+              <View key={`${alert.type}-${alert.title}`} style={styles.alertBox}>
                 <Text style={styles.alertTitle}>{alert.title}</Text>
                 <Text style={styles.body}>{alert.body}</Text>
               </View>
@@ -110,9 +111,9 @@ export default function SessionsScreen() {
               </View>
             ))}
           </>
-        ) : (
-          <Text style={styles.body}>No live session records are loaded in this view yet.</Text>
-        )}
+        ) : !isLoading && !errorMessage ? (
+          <Text style={styles.body}>No live session records are saved for this authorised case.</Text>
+        ) : null}
       </View>
     </ScrollView>
   );
@@ -123,20 +124,9 @@ function Input(props: React.ComponentProps<typeof TextInput>) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    gap: 14,
-    padding: 20,
-    backgroundColor: "#EEF5EF",
-  },
-  title: {
-    color: "#102033",
-    fontSize: 28,
-    fontWeight: "900",
-  },
-  body: {
-    color: "#4B5D55",
-    lineHeight: 21,
-  },
+  container: { gap: 14, padding: 20, backgroundColor: "#EEF5EF" },
+  title: { color: "#102033", fontSize: 28, fontWeight: "900" },
+  body: { color: "#4B5D55", lineHeight: 21 },
   card: {
     gap: 12,
     padding: 16,
@@ -153,16 +143,8 @@ const styles = StyleSheet.create({
     borderColor: "#9FCBBA",
     backgroundColor: "#E7F3EE",
   },
-  noticeTitle: {
-    color: "#1F5A48",
-    fontSize: 16,
-    fontWeight: "900",
-  },
-  cardTitle: {
-    color: "#102033",
-    fontSize: 20,
-    fontWeight: "900",
-  },
+  noticeTitle: { color: "#1F5A48", fontSize: 16, fontWeight: "900" },
+  cardTitle: { color: "#102033", fontSize: 20, fontWeight: "900" },
   input: {
     minHeight: 46,
     borderWidth: 1,
@@ -178,72 +160,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 10,
   },
-  buttonText: {
-    color: "#FFFFFF",
-    fontSize: 14,
-    fontWeight: "900",
-  },
-  errorText: {
-    color: "#B42318",
-    fontSize: 14,
-    fontWeight: "800",
-  },
-  summaryGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 10,
-  },
-  metric: {
-    minWidth: 112,
-    gap: 3,
-    borderRadius: 8,
-    backgroundColor: "#EEF5EF",
-    padding: 10,
-  },
-  metricValue: {
-    color: "#102033",
-    fontSize: 22,
-    fontWeight: "900",
-  },
-  metricLabel: {
-    color: "#4B5D55",
-    fontSize: 12,
-    fontWeight: "800",
-    textTransform: "uppercase",
-  },
-  alertBox: {
-    gap: 4,
-    borderRadius: 8,
-    backgroundColor: "#FFF7ED",
-    padding: 10,
-  },
-  alertTitle: {
-    color: "#9A3412",
-    fontWeight: "900",
-  },
-  sessionRow: {
-    gap: 5,
-    paddingVertical: 10,
-    borderTopWidth: 1,
-    borderTopColor: "#EDF2F0",
-  },
-  agendaRow: {
-    gap: 5,
-    paddingVertical: 10,
-    borderTopWidth: 1,
-    borderTopColor: "#EDF2F0",
-  },
-  agendaSource: {
-    alignSelf: "flex-start",
-    color: "#1F5A48",
-    fontSize: 12,
-    fontWeight: "900",
-    textTransform: "uppercase",
-  },
-  agendaTitle: {
-    color: "#102033",
-    fontWeight: "900",
-  },
+  buttonText: { color: "#FFFFFF", fontSize: 14, fontWeight: "900" },
+  errorText: { color: "#B42318", fontSize: 14, fontWeight: "800" },
+  summaryGrid: { flexDirection: "row", flexWrap: "wrap", gap: 10 },
+  metric: { minWidth: 112, gap: 3, borderRadius: 8, backgroundColor: "#EEF5EF", padding: 10 },
+  metricValue: { color: "#102033", fontSize: 22, fontWeight: "900" },
+  metricLabel: { color: "#4B5D55", fontSize: 12, fontWeight: "800", textTransform: "uppercase" },
+  alertBox: { gap: 4, borderRadius: 8, backgroundColor: "#FFF7ED", padding: 10 },
+  alertTitle: { color: "#9A3412", fontWeight: "900" },
+  sessionRow: { gap: 5, paddingVertical: 10, borderTopWidth: 1, borderTopColor: "#EDF2F0" },
+  agendaRow: { gap: 5, paddingVertical: 10, borderTopWidth: 1, borderTopColor: "#EDF2F0" },
+  agendaSource: { alignSelf: "flex-start", color: "#1F5A48", fontSize: 12, fontWeight: "900", textTransform: "uppercase" },
+  agendaTitle: { color: "#102033", fontWeight: "900" },
 });
 
 function Metric({ label, value }: { label: string; value: number }) {

@@ -53,15 +53,15 @@ jest.mock("expo-file-system/legacy", () => ({
   deleteAsync: jest.fn(async () => undefined),
 }));
 
-async function makeVaultItem(
-  id: string,
-  previousHash: string,
-) {
+async function makeVaultItem(id: string, previousHash: string) {
   const base = {
     id,
     ownerId: "user-1",
     title: `Evidence ${id}`,
     notes: "Captured offline",
+    evidenceType: null,
+    purpose: null,
+    structuredData: null,
     attachment: null,
     createdAt: `2026-07-10T00:00:0${id}.000Z`,
     status: "queued" as const,
