@@ -37,8 +37,8 @@ describe("program curation metadata", () => {
     const lessonCount = courses.reduce((total, course) => total + course.lessons.length, 0);
 
     expect(programs).toHaveLength(7);
-    expect(courses).toHaveLength(38);
-    expect(lessonCount).toBe(341);
+    expect(courses).toHaveLength(39);
+    expect(lessonCount).toBe(385);
     expect(safestepsParentChallenges).toHaveLength(104);
   });
 
