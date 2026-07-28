@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
 import { router } from "expo-router";
+import { useMemo, useState } from "react";
 import {
   Pressable,
   ScrollView,
@@ -23,7 +23,6 @@ type ResourceSection = {
   category: string;
   icon: string;
   accent: string;
-  filters: ResourceFilter[];
   items: ResourceItem[];
 };
 
@@ -34,7 +33,6 @@ const resources: ResourceSection[] = [
     category: "Parenting Tools",
     icon: "🛠️",
     accent: "#0D5C75",
-    filters: ["Parenting"],
     items: [
       {
         title: "Family meeting template",
@@ -66,7 +64,6 @@ const resources: ResourceSection[] = [
     category: "Evidence Templates",
     icon: "📋",
     accent: "#4A6F3B",
-    filters: ["Templates"],
     items: [
       {
         title: "Weekly parenting practice log",
@@ -98,7 +95,6 @@ const resources: ResourceSection[] = [
     category: "Safety and Support",
     icon: "🛡️",
     accent: "#B54708",
-    filters: ["Safety"],
     items: [
       {
         title: "Emergency support contacts",
@@ -130,7 +126,6 @@ const resources: ResourceSection[] = [
     category: "Program Support",
     icon: "📘",
     accent: "#5B5B7A",
-    filters: ["Parenting"],
     items: [
       {
         title: "How SafeSteps programs work",
@@ -166,28 +161,29 @@ export default function ResourcesScreen() {
   const { width } = useWindowDimensions();
   const [query, setQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<ResourceFilter>("All");
-
   const isTwoColumn = width >= 840;
   const normalizedQuery = query.trim().toLowerCase();
 
   const filteredResources = useMemo(
     () =>
       resources
-        .map((section) => {
-          const items = section.items.filter((item) => {
+        .map((section) => ({
+          ...section,
+          items: section.items.filter((item) => {
             const matchesQuery =
               !normalizedQuery ||
               `${section.category} ${item.title} ${item.badge}`.toLowerCase().includes(normalizedQuery);
             const matchesFilter = activeFilter === "All" || item.filters.includes(activeFilter);
-
             return matchesQuery && matchesFilter;
-          });
-
-          return { ...section, items };
-        })
+          }),
+        }))
         .filter((section) => section.items.length > 0),
     [activeFilter, normalizedQuery],
   );
+
+  function openResource(href?: string) {
+    if (href) router.push(href as never);
+  }
 
   return (
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
@@ -211,16 +207,15 @@ export default function ResourcesScreen() {
         <View style={styles.filterRow}>
           {filters.map((filter) => {
             const active = activeFilter === filter;
-
             return (
               <Pressable
                 accessibilityRole="button"
                 key={filter}
                 onPress={() => setActiveFilter(filter)}
-                style={({ hovered, pressed }) => [
+                style={({ pressed }) => [
                   styles.filterPill,
                   active && styles.filterPillActive,
-                  (hovered || pressed) && styles.filterPillHovered,
+                  pressed && styles.filterPillPressed,
                 ]}
               >
                 <Text style={[styles.filterText, active && styles.filterTextActive]}>{filter}</Text>
@@ -243,13 +238,8 @@ export default function ResourcesScreen() {
             <Pressable
               accessibilityRole="link"
               key={item.title}
-              onPress={() => {
-                if (item.href) router.push(item.href as never);
-              }}
-              style={({ hovered, pressed }) => [
-                styles.safetyLink,
-                (hovered || pressed) && styles.safetyLinkHovered,
-              ]}
+              onPress={() => openResource(item.href)}
+              style={({ pressed }) => [styles.safetyLink, pressed && styles.safetyLinkPressed]}
             >
               <Text style={styles.safetyLinkText}>{item.title}</Text>
               <Text style={styles.cardChevron}>›</Text>
@@ -277,14 +267,11 @@ export default function ResourcesScreen() {
               <Pressable
                 accessibilityRole="link"
                 key={item.title}
-                onPress={() => {
-                  if (item.href) router.push(item.href as never);
-                }}
-                style={({ hovered, pressed }) => [
+                onPress={() => openResource(item.href)}
+                style={({ pressed }) => [
                   styles.resourceCard,
-                  (hovered || pressed) && {
+                  pressed && {
                     borderColor: section.accent,
-                    boxShadow: "0 4px 10px rgba(13, 92, 117, 0.14)",
                     transform: [{ translateY: -2 }],
                   },
                 ]}
@@ -314,29 +301,11 @@ export default function ResourcesScreen() {
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    backgroundColor: "#F7FAF8",
-    flex: 1,
-  },
-  content: {
-    padding: 20,
-    paddingBottom: 32,
-  },
-  header: {
-    marginBottom: 16,
-  },
-  title: {
-    color: "#12332B",
-    fontSize: 28,
-    fontWeight: "800",
-    marginBottom: 8,
-  },
-  intro: {
-    color: "#43534D",
-    fontSize: 15,
-    lineHeight: 22,
-    maxWidth: 820,
-  },
+  screen: { backgroundColor: "#F7FAF8", flex: 1 },
+  content: { padding: 20, paddingBottom: 32 },
+  header: { marginBottom: 16 },
+  title: { color: "#12332B", fontSize: 28, fontWeight: "800", marginBottom: 8 },
+  intro: { color: "#43534D", fontSize: 15, lineHeight: 22, maxWidth: 820 },
   searchPanel: {
     backgroundColor: "#FFFFFF",
     borderColor: "#DDE8E2",
@@ -355,12 +324,7 @@ const styles = StyleSheet.create({
     minHeight: 46,
     paddingHorizontal: 14,
   },
-  filterRow: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 8,
-    marginTop: 10,
-  },
+  filterRow: { flexDirection: "row", flexWrap: "wrap", gap: 8, marginTop: 10 },
   filterPill: {
     borderColor: "#C9D8D1",
     borderRadius: 999,
@@ -368,21 +332,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 8,
   },
-  filterPillActive: {
-    backgroundColor: "#0D5C75",
-    borderColor: "#0D5C75",
-  },
-  filterPillHovered: {
-    borderColor: "#0D5C75",
-  },
-  filterText: {
-    color: "#334740",
-    fontSize: 13,
-    fontWeight: "700",
-  },
-  filterTextActive: {
-    color: "#FFFFFF",
-  },
+  filterPillActive: { backgroundColor: "#0D5C75", borderColor: "#0D5C75" },
+  filterPillPressed: { opacity: 0.78 },
+  filterText: { color: "#334740", fontSize: 13, fontWeight: "700" },
+  filterTextActive: { color: "#FFFFFF" },
   safetyBanner: {
     backgroundColor: "#FFF7ED",
     borderColor: "#FDBA74",
@@ -391,31 +344,12 @@ const styles = StyleSheet.create({
     marginBottom: 18,
     padding: 14,
   },
-  safetyHeaderRow: {
-    alignItems: "center",
-    flexDirection: "row",
-    gap: 10,
-  },
-  safetyIcon: {
-    fontSize: 24,
-  },
-  safetyCopy: {
-    flex: 1,
-  },
-  safetyTitle: {
-    color: "#7C2D12",
-    fontSize: 17,
-    fontWeight: "800",
-  },
-  safetyText: {
-    color: "#8A4B22",
-    fontSize: 13,
-    marginTop: 2,
-  },
-  safetyLinks: {
-    gap: 8,
-    marginTop: 12,
-  },
+  safetyHeaderRow: { alignItems: "center", flexDirection: "row", gap: 10 },
+  safetyIcon: { fontSize: 24 },
+  safetyCopy: { flex: 1 },
+  safetyTitle: { color: "#7C2D12", fontSize: 17, fontWeight: "800" },
+  safetyText: { color: "#8A4B22", fontSize: 13, marginTop: 2 },
+  safetyLinks: { gap: 8, marginTop: 12 },
   safetyLink: {
     alignItems: "center",
     backgroundColor: "#FFFFFF",
@@ -427,21 +361,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 10,
   },
-  safetyLinkHovered: {
-    borderColor: "#B54708",
-    transform: [{ translateY: -2 }],
-  },
-  safetyLinkText: {
-    color: "#7C2D12",
-    flex: 1,
-    fontSize: 14,
-    fontWeight: "700",
-  },
-  grid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 14,
-  },
+  safetyLinkPressed: { borderColor: "#B54708", opacity: 0.82 },
+  safetyLinkText: { color: "#7C2D12", flex: 1, fontSize: 14, fontWeight: "700" },
+  grid: { flexDirection: "row", flexWrap: "wrap", gap: 14 },
   categoryCard: {
     backgroundColor: "#EEF5F1",
     borderRadius: 8,
@@ -449,25 +371,10 @@ const styles = StyleSheet.create({
     padding: 16,
     width: "100%",
   },
-  categoryCardTwoColumn: {
-    flexBasis: "48.8%",
-    flexGrow: 1,
-  },
-  categoryHeader: {
-    alignItems: "center",
-    flexDirection: "row",
-    gap: 8,
-    marginBottom: 12,
-  },
-  categoryIcon: {
-    fontSize: 20,
-  },
-  categoryTitle: {
-    color: "#183C33",
-    flex: 1,
-    fontSize: 20,
-    fontWeight: "800",
-  },
+  categoryCardTwoColumn: { flexBasis: "48.8%", flexGrow: 1 },
+  categoryHeader: { alignItems: "center", flexDirection: "row", gap: 8, marginBottom: 12 },
+  categoryIcon: { fontSize: 20 },
+  categoryTitle: { color: "#183C33", flex: 1, fontSize: 20, fontWeight: "800" },
   resourceCard: {
     alignItems: "center",
     backgroundColor: "#FFFFFF",
@@ -480,26 +387,10 @@ const styles = StyleSheet.create({
     minHeight: 68,
     padding: 12,
   },
-  resourceTextBlock: {
-    flex: 1,
-    paddingRight: 10,
-  },
-  resourceTitle: {
-    color: "#1E352E",
-    fontSize: 15,
-    fontWeight: "700",
-    lineHeight: 20,
-  },
-  resourceMeta: {
-    color: "#66756E",
-    fontSize: 12,
-    marginTop: 2,
-  },
-  resourceAction: {
-    alignItems: "center",
-    flexDirection: "row",
-    gap: 8,
-  },
+  resourceTextBlock: { flex: 1, paddingRight: 10 },
+  resourceTitle: { color: "#1E352E", fontSize: 15, fontWeight: "700", lineHeight: 20 },
+  resourceMeta: { color: "#66756E", fontSize: 12, marginTop: 2 },
+  resourceAction: { alignItems: "center", flexDirection: "row", gap: 8 },
   badge: {
     backgroundColor: "#EDF7F4",
     borderColor: "#C9E1D9",
@@ -512,12 +403,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 4,
   },
-  cardChevron: {
-    color: "#0D5C75",
-    fontSize: 24,
-    fontWeight: "700",
-    lineHeight: 24,
-  },
+  cardChevron: { color: "#0D5C75", fontSize: 24, fontWeight: "700", lineHeight: 24 },
   emptyState: {
     alignItems: "center",
     backgroundColor: "#FFFFFF",
@@ -527,15 +413,6 @@ const styles = StyleSheet.create({
     marginTop: 14,
     padding: 18,
   },
-  emptyTitle: {
-    color: "#183C33",
-    fontSize: 17,
-    fontWeight: "800",
-  },
-  emptyText: {
-    color: "#66756E",
-    fontSize: 13,
-    marginTop: 4,
-    textAlign: "center",
-  },
+  emptyTitle: { color: "#183C33", fontSize: 17, fontWeight: "800" },
+  emptyText: { color: "#66756E", fontSize: 13, marginTop: 4, textAlign: "center" },
 });
