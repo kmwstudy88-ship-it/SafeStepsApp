@@ -160,31 +160,34 @@ const resources: ResourceSection[] = [
   },
 ];
 
-const safetyItems = resources.find((section) => section.category === "Safety and Support")?.items.slice(0, 2) ?? [];
+const safetyItems =
+  resources
+    .find((section) => section.category === "Safety and Support")
+    ?.items.slice(0, 2) ?? [];
 
 export default function ResourcesScreen() {
   const { width } = useWindowDimensions();
   const [query, setQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState<ResourceFilter>("All");
-
   const isTwoColumn = width >= 840;
   const normalizedQuery = query.trim().toLowerCase();
 
   const filteredResources = useMemo(
     () =>
       resources
-        .map((section) => {
-          const items = section.items.filter((item) => {
+        .map((section) => ({
+          ...section,
+          items: section.items.filter((item) => {
             const matchesQuery =
               !normalizedQuery ||
-              `${section.category} ${item.title} ${item.badge}`.toLowerCase().includes(normalizedQuery);
-            const matchesFilter = activeFilter === "All" || item.filters.includes(activeFilter);
-
+              `${section.category} ${item.title} ${item.badge}`
+                .toLowerCase()
+                .includes(normalizedQuery);
+            const matchesFilter =
+              activeFilter === "All" || item.filters.includes(activeFilter);
             return matchesQuery && matchesFilter;
-          });
-
-          return { ...section, items };
-        })
+          }),
+        }))
         .filter((section) => section.items.length > 0),
     [activeFilter, normalizedQuery],
   );
@@ -194,8 +197,9 @@ export default function ResourcesScreen() {
       <View style={styles.header}>
         <Text style={styles.title}>Resources</Text>
         <Text style={styles.intro}>
-          Resources are available anytime. They are separate from Programs and Courses and can be used as support tools,
-          worksheets, templates, and guides.
+          Resources are available anytime. They are separate from Programs and
+          Courses and can be used as support tools, worksheets, templates, and
+          guides.
         </Text>
       </View>
 
@@ -211,19 +215,22 @@ export default function ResourcesScreen() {
         <View style={styles.filterRow}>
           {filters.map((filter) => {
             const active = activeFilter === filter;
-
             return (
               <Pressable
                 accessibilityRole="button"
                 key={filter}
                 onPress={() => setActiveFilter(filter)}
-                style={({ hovered, pressed }) => [
+                style={({ pressed }) => [
                   styles.filterPill,
                   active && styles.filterPillActive,
-                  (hovered || pressed) && styles.filterPillHovered,
+                  pressed && styles.filterPillPressed,
                 ]}
               >
-                <Text style={[styles.filterText, active && styles.filterTextActive]}>{filter}</Text>
+                <Text
+                  style={[styles.filterText, active && styles.filterTextActive]}
+                >
+                  {filter}
+                </Text>
               </Pressable>
             );
           })}
@@ -235,7 +242,9 @@ export default function ResourcesScreen() {
           <Text style={styles.safetyIcon}>🛡️</Text>
           <View style={styles.safetyCopy}>
             <Text style={styles.safetyTitle}>Safety resources</Text>
-            <Text style={styles.safetyText}>Quick access for urgent planning and support preparation.</Text>
+            <Text style={styles.safetyText}>
+              Quick access for urgent planning and support preparation.
+            </Text>
           </View>
         </View>
         <View style={styles.safetyLinks}>
@@ -243,12 +252,10 @@ export default function ResourcesScreen() {
             <Pressable
               accessibilityRole="link"
               key={item.title}
-              onPress={() => {
-                if (item.href) router.push(item.href as never);
-              }}
-              style={({ hovered, pressed }) => [
+              onPress={() => item.href && router.push(item.href as never)}
+              style={({ pressed }) => [
                 styles.safetyLink,
-                (hovered || pressed) && styles.safetyLinkHovered,
+                pressed && styles.safetyLinkPressed,
               ]}
             >
               <Text style={styles.safetyLinkText}>{item.title}</Text>
@@ -277,15 +284,13 @@ export default function ResourcesScreen() {
               <Pressable
                 accessibilityRole="link"
                 key={item.title}
-                onPress={() => {
-                  if (item.href) router.push(item.href as never);
-                }}
-                style={({ hovered, pressed }) => [
+                onPress={() => item.href && router.push(item.href as never)}
+                style={({ pressed }) => [
                   styles.resourceCard,
-                  (hovered || pressed) && {
+                  pressed && {
                     borderColor: section.accent,
-                    boxShadow: "0 4px 10px rgba(13, 92, 117, 0.14)",
-                    transform: [{ translateY: -2 }],
+                    opacity: 0.88,
+                    transform: [{ translateY: -1 }],
                   },
                 ]}
               >
@@ -303,40 +308,29 @@ export default function ResourcesScreen() {
         ))}
       </View>
 
-      {filteredResources.length === 0 ? (
+      {filteredResources.length === 0 && (
         <View style={styles.emptyState}>
           <Text style={styles.emptyTitle}>No resources found</Text>
-          <Text style={styles.emptyText}>Try a different search term or switch the filter back to All.</Text>
+          <Text style={styles.emptyText}>
+            Try a different search term or switch the filter back to All.
+          </Text>
         </View>
-      ) : null}
+      )}
     </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    backgroundColor: "#F7FAF8",
-    flex: 1,
-  },
-  content: {
-    padding: 20,
-    paddingBottom: 32,
-  },
-  header: {
-    marginBottom: 16,
-  },
+  screen: { backgroundColor: "#F7FAF8", flex: 1 },
+  content: { padding: 20, paddingBottom: 32 },
+  header: { marginBottom: 16 },
   title: {
     color: "#12332B",
     fontSize: 28,
     fontWeight: "800",
     marginBottom: 8,
   },
-  intro: {
-    color: "#43534D",
-    fontSize: 15,
-    lineHeight: 22,
-    maxWidth: 820,
-  },
+  intro: { color: "#43534D", fontSize: 15, lineHeight: 22, maxWidth: 820 },
   searchPanel: {
     backgroundColor: "#FFFFFF",
     borderColor: "#DDE8E2",
@@ -368,21 +362,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 8,
   },
-  filterPillActive: {
-    backgroundColor: "#0D5C75",
-    borderColor: "#0D5C75",
-  },
-  filterPillHovered: {
-    borderColor: "#0D5C75",
-  },
-  filterText: {
-    color: "#334740",
-    fontSize: 13,
-    fontWeight: "700",
-  },
-  filterTextActive: {
-    color: "#FFFFFF",
-  },
+  filterPillActive: { backgroundColor: "#0D5C75", borderColor: "#0D5C75" },
+  filterPillPressed: { borderColor: "#0D5C75", opacity: 0.82 },
+  filterText: { color: "#334740", fontSize: 13, fontWeight: "700" },
+  filterTextActive: { color: "#FFFFFF" },
   safetyBanner: {
     backgroundColor: "#FFF7ED",
     borderColor: "#FDBA74",
@@ -391,31 +374,12 @@ const styles = StyleSheet.create({
     marginBottom: 18,
     padding: 14,
   },
-  safetyHeaderRow: {
-    alignItems: "center",
-    flexDirection: "row",
-    gap: 10,
-  },
-  safetyIcon: {
-    fontSize: 24,
-  },
-  safetyCopy: {
-    flex: 1,
-  },
-  safetyTitle: {
-    color: "#7C2D12",
-    fontSize: 17,
-    fontWeight: "800",
-  },
-  safetyText: {
-    color: "#8A4B22",
-    fontSize: 13,
-    marginTop: 2,
-  },
-  safetyLinks: {
-    gap: 8,
-    marginTop: 12,
-  },
+  safetyHeaderRow: { alignItems: "center", flexDirection: "row", gap: 10 },
+  safetyIcon: { fontSize: 24 },
+  safetyCopy: { flex: 1 },
+  safetyTitle: { color: "#7C2D12", fontSize: 17, fontWeight: "800" },
+  safetyText: { color: "#8A4B22", fontSize: 13, marginTop: 2 },
+  safetyLinks: { gap: 8, marginTop: 12 },
   safetyLink: {
     alignItems: "center",
     backgroundColor: "#FFFFFF",
@@ -427,21 +391,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 10,
   },
-  safetyLinkHovered: {
-    borderColor: "#B54708",
-    transform: [{ translateY: -2 }],
-  },
+  safetyLinkPressed: { borderColor: "#B54708", opacity: 0.86 },
   safetyLinkText: {
     color: "#7C2D12",
     flex: 1,
     fontSize: 14,
     fontWeight: "700",
   },
-  grid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 14,
-  },
+  grid: { flexDirection: "row", flexWrap: "wrap", gap: 14 },
   categoryCard: {
     backgroundColor: "#EEF5F1",
     borderRadius: 8,
@@ -449,19 +406,14 @@ const styles = StyleSheet.create({
     padding: 16,
     width: "100%",
   },
-  categoryCardTwoColumn: {
-    flexBasis: "48.8%",
-    flexGrow: 1,
-  },
+  categoryCardTwoColumn: { flexBasis: "48.8%", flexGrow: 1 },
   categoryHeader: {
     alignItems: "center",
     flexDirection: "row",
     gap: 8,
     marginBottom: 12,
   },
-  categoryIcon: {
-    fontSize: 20,
-  },
+  categoryIcon: { fontSize: 20 },
   categoryTitle: {
     color: "#183C33",
     flex: 1,
@@ -480,26 +432,15 @@ const styles = StyleSheet.create({
     minHeight: 68,
     padding: 12,
   },
-  resourceTextBlock: {
-    flex: 1,
-    paddingRight: 10,
-  },
+  resourceTextBlock: { flex: 1, paddingRight: 10 },
   resourceTitle: {
     color: "#1E352E",
     fontSize: 15,
     fontWeight: "700",
     lineHeight: 20,
   },
-  resourceMeta: {
-    color: "#66756E",
-    fontSize: 12,
-    marginTop: 2,
-  },
-  resourceAction: {
-    alignItems: "center",
-    flexDirection: "row",
-    gap: 8,
-  },
+  resourceMeta: { color: "#66756E", fontSize: 12, marginTop: 2 },
+  resourceAction: { alignItems: "center", flexDirection: "row", gap: 8 },
   badge: {
     backgroundColor: "#EDF7F4",
     borderColor: "#C9E1D9",
@@ -527,11 +468,7 @@ const styles = StyleSheet.create({
     marginTop: 14,
     padding: 18,
   },
-  emptyTitle: {
-    color: "#183C33",
-    fontSize: 17,
-    fontWeight: "800",
-  },
+  emptyTitle: { color: "#183C33", fontSize: 17, fontWeight: "800" },
   emptyText: {
     color: "#66756E",
     fontSize: 13,
