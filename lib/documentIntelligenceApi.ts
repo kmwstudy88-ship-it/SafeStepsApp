@@ -1,3 +1,5 @@
+import { supabase } from "./supabaseClient";
+
 const DEFAULT_API_URL = "http://localhost:3000";
 
 export type DocumentIntelligenceSource = {
@@ -48,6 +50,24 @@ function apiBaseUrl() {
   return (process.env.EXPO_PUBLIC_SAFESTEPS_API_URL ?? DEFAULT_API_URL).replace(/\/$/, "");
 }
 
+async function authenticatedHeaders(extraHeaders: Record<string, string> = {}) {
+  const { data, error } = await supabase.auth.getSession();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  const accessToken = data.session?.access_token;
+  if (!accessToken) {
+    throw new Error("Sign in before using SafeSteps document intelligence.");
+  }
+
+  return {
+    ...extraHeaders,
+    Authorization: `Bearer ${accessToken}`,
+  };
+}
+
 async function readDocumentIntelligenceResponse(response: Response) {
   const payload = (await response.json().catch(() => null)) as { error?: string } | null;
 
@@ -61,9 +81,9 @@ async function readDocumentIntelligenceResponse(response: Response) {
 export async function analyzeDocumentText(text: string) {
   const response = await fetch(`${apiBaseUrl()}/documents/analyze`, {
     method: "POST",
-    headers: {
+    headers: await authenticatedHeaders({
       "Content-Type": "application/json",
-    },
+    }),
     body: JSON.stringify({ text }),
   });
 
@@ -87,6 +107,7 @@ export async function analyzeDocumentFile(file: DocumentIntelligenceFile, fallba
 
   const response = await fetch(`${apiBaseUrl()}/documents/analyze`, {
     method: "POST",
+    headers: await authenticatedHeaders(),
     body: formData,
   });
 
