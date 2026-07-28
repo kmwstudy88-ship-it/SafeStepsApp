@@ -10,7 +10,7 @@ jobs:
   validate:
     name: Validate app
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
 
     steps:
       - name: Checkout
@@ -31,6 +31,9 @@ jobs:
           set -o pipefail
           npx tsc --noEmit 2>&1 | tee tsc-output.log
 
+      - name: Expo dependency health
+        run: npx expo-doctor
+
       - name: Route hygiene audit
         run: npm run audit:routes
 
@@ -46,6 +49,18 @@ jobs:
           set -o pipefail
           npm test -- --json --outputFile=jest-results.json 2>&1 | tee jest-output.log
 
+      - name: Backend tests
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run test:backend 2>&1 | tee backend-test-output.log
+
+      - name: Document intelligence API smoke
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run smoke:document-intelligence 2>&1 | tee document-smoke-output.log
+
       - name: Upload diagnostics
         if: always()
         uses: actions/upload-artifact@v4
@@ -55,5 +70,7 @@ jobs:
             tsc-output.log
             jest-output.log
             jest-results.json
+            backend-test-output.log
+            document-smoke-output.log
           if-no-files-found: ignore
           retention-days: 7
