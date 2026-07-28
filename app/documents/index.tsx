@@ -1,7 +1,8 @@
 import { Link } from "expo-router";
-import { useState } from "react";
-import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { useCallback, useEffect, useState } from "react";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
+import { useSensitiveAccess } from "../../components/security/SensitiveRouteBoundary";
 import {
   createDocumentManagementSummary,
   evaluateDocumentExpiryAlerts,
@@ -11,31 +12,36 @@ import {
 } from "../../lib/engines/documentManagementEngine";
 
 export default function DocumentsScreen() {
-  const [caseId, setCaseId] = useState("");
+  const access = useSensitiveAccess();
+  const caseId = access?.caseId ?? null;
   const [documents, setDocuments] = useState<CaseDocumentRecord[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const summary = createDocumentManagementSummary(documents, [] as CaseDocumentRequest[]);
   const alerts = evaluateDocumentExpiryAlerts(documents);
 
-  async function loadDocuments() {
-    const trimmedCaseId = caseId.trim();
-    if (!trimmedCaseId) {
-      setErrorMessage("Enter a case ID before loading documents.");
+  const loadDocuments = useCallback(async () => {
+    if (!caseId) {
+      setDocuments([]);
+      setErrorMessage("An authorised case must be selected before documents can be loaded.");
       return;
     }
 
     setIsLoading(true);
     setErrorMessage(null);
     try {
-      setDocuments(await listCaseDocuments(trimmedCaseId));
+      setDocuments(await listCaseDocuments(caseId));
     } catch (error) {
       setDocuments([]);
       setErrorMessage(error instanceof Error ? error.message : "Unable to load case documents.");
     } finally {
       setIsLoading(false);
     }
-  }
+  }, [caseId]);
+
+  useEffect(() => {
+    void loadDocuments();
+  }, [loadDocuments]);
 
   return (
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
@@ -43,8 +49,7 @@ export default function DocumentsScreen() {
         <Text style={styles.eyebrow}>Document Management</Text>
         <Text style={styles.title}>Requests, versions, expiry checks, and report-ready evidence</Text>
         <Text style={styles.subtitle}>
-          Keep case documents tied to evidence records, assessment domains, and report appendices without treating uploads
-          as verified facts until a worker reviews them.
+          Documents are loaded only from the authorised case selected for this account. Uploads remain unverified until a worker reviews them.
         </Text>
       </View>
 
@@ -52,8 +57,7 @@ export default function DocumentsScreen() {
         <View style={styles.intelligenceCopy}>
           <Text style={styles.intelligenceTitle}>Document Intelligence</Text>
           <Text style={styles.rowText}>
-            Paste or upload document text for worker review across parent capacity, child wellbeing, safety, evidence
-            quality, and caseworker-context signals.
+            Paste or upload document text for authenticated worker review across parenting capacity, child wellbeing, safety, evidence quality, and case context.
           </Text>
         </View>
         <Link href="/assessment-system/document-intelligence" style={styles.actionLink}>
@@ -61,21 +65,11 @@ export default function DocumentsScreen() {
         </Link>
       </View>
 
-      <View style={styles.emptyState}>
-        <Text style={styles.emptyTitle}>Load live case documents</Text>
-        <Text style={styles.rowText}>
-          Enter a case ID to read document status, expiry dates, review state, linked evidence, and report-appendix
-          selections from the case database.
-        </Text>
-        <TextInput
-          value={caseId}
-          onChangeText={setCaseId}
-          placeholder="Case ID"
-          placeholderTextColor="#6B7A76"
-          style={styles.input}
-        />
-        <Pressable style={styles.button} onPress={loadDocuments} disabled={isLoading}>
-          <Text style={styles.buttonText}>{isLoading ? "Loading..." : "Load documents"}</Text>
+      <View style={styles.casePanel}>
+        <Text style={styles.emptyTitle}>Authorised case</Text>
+        <Text style={styles.rowText}>{caseId ?? "No active case is available."}</Text>
+        <Pressable style={styles.button} onPress={loadDocuments} disabled={isLoading || !caseId}>
+          <Text style={styles.buttonText}>{isLoading ? "Loading..." : "Refresh documents"}</Text>
         </Pressable>
         {errorMessage ? <Text style={styles.errorText}>{errorMessage}</Text> : null}
       </View>
@@ -107,10 +101,17 @@ export default function DocumentsScreen() {
                 {document.expiry_date ? ` - expires ${document.expiry_date}` : ""}
               </Text>
               <Text style={styles.rowText}>
-                {document.court_report_include ? "Selected for report appendix after review." : "Not selected for report appendix."}
+                {document.court_report_include
+                  ? "Selected for report appendix after review."
+                  : "Not selected for report appendix."}
               </Text>
             </View>
           ))}
+        </View>
+      ) : !isLoading && !errorMessage ? (
+        <View style={styles.card}>
+          <Text style={styles.emptyTitle}>No documents recorded</Text>
+          <Text style={styles.rowText}>This authorised case does not currently have document records.</Text>
         </View>
       ) : null}
 
@@ -122,36 +123,12 @@ export default function DocumentsScreen() {
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: "#F4F7F6",
-  },
-  content: {
-    gap: 18,
-    padding: 20,
-    paddingBottom: 44,
-  },
-  header: {
-    gap: 8,
-  },
-  eyebrow: {
-    color: "#0F766E",
-    fontSize: 12,
-    fontWeight: "900",
-    letterSpacing: 0,
-    textTransform: "uppercase",
-  },
-  title: {
-    color: "#14231F",
-    fontSize: 28,
-    fontWeight: "900",
-    lineHeight: 34,
-  },
-  subtitle: {
-    color: "#52615D",
-    fontSize: 15,
-    lineHeight: 22,
-  },
+  screen: { flex: 1, backgroundColor: "#F4F7F6" },
+  content: { gap: 18, padding: 20, paddingBottom: 44 },
+  header: { gap: 8 },
+  eyebrow: { color: "#0F766E", fontSize: 12, fontWeight: "900", textTransform: "uppercase" },
+  title: { color: "#14231F", fontSize: 28, fontWeight: "900", lineHeight: 34 },
+  subtitle: { color: "#52615D", fontSize: 15, lineHeight: 22 },
   intelligencePanel: {
     flexDirection: "row",
     flexWrap: "wrap",
@@ -164,16 +141,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#E7F3F0",
     padding: 14,
   },
-  intelligenceCopy: {
-    flexGrow: 1,
-    flexBasis: 260,
-    gap: 6,
-  },
-  intelligenceTitle: {
-    color: "#0F766E",
-    fontSize: 17,
-    fontWeight: "900",
-  },
+  intelligenceCopy: { flexGrow: 1, flexBasis: 260, gap: 6 },
+  intelligenceTitle: { color: "#0F766E", fontSize: 17, fontWeight: "900" },
   actionLink: {
     borderRadius: 8,
     overflow: "hidden",
@@ -184,12 +153,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "900",
   },
-  rowText: {
-    color: "#52615D",
-    fontSize: 14,
-    lineHeight: 20,
-  },
-  emptyState: {
+  rowText: { color: "#52615D", fontSize: 14, lineHeight: 20 },
+  casePanel: {
     gap: 8,
     borderRadius: 8,
     borderWidth: 1,
@@ -197,19 +162,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     padding: 14,
   },
-  emptyTitle: {
-    color: "#14231F",
-    fontSize: 18,
-    fontWeight: "900",
-  },
-  input: {
-    minHeight: 46,
-    borderWidth: 1,
-    borderColor: "#D8E3DF",
-    borderRadius: 8,
-    padding: 12,
-    backgroundColor: "#FBFDFB",
-  },
+  emptyTitle: { color: "#14231F", fontSize: 18, fontWeight: "900" },
   button: {
     alignSelf: "flex-start",
     borderRadius: 8,
@@ -217,16 +170,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 10,
   },
-  buttonText: {
-    color: "#FFFFFF",
-    fontSize: 14,
-    fontWeight: "900",
-  },
-  errorText: {
-    color: "#B42318",
-    fontSize: 14,
-    fontWeight: "800",
-  },
+  buttonText: { color: "#FFFFFF", fontSize: 14, fontWeight: "900" },
+  errorText: { color: "#B42318", fontSize: 14, fontWeight: "800" },
   card: {
     gap: 12,
     borderRadius: 8,
@@ -235,55 +180,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     padding: 14,
   },
-  summaryGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    gap: 10,
-  },
-  metric: {
-    minWidth: 118,
-    gap: 3,
-    borderRadius: 8,
-    backgroundColor: "#F4F7F6",
-    padding: 10,
-  },
-  metricValue: {
-    color: "#14231F",
-    fontSize: 22,
-    fontWeight: "900",
-  },
-  metricLabel: {
-    color: "#52615D",
-    fontSize: 12,
-    fontWeight: "800",
-    textTransform: "uppercase",
-  },
-  alertBox: {
-    gap: 6,
-    borderRadius: 8,
-    backgroundColor: "#FFF7ED",
-    padding: 10,
-  },
-  alertTitle: {
-    color: "#9A3412",
-    fontWeight: "900",
-  },
-  recordRow: {
-    gap: 5,
-    paddingTop: 10,
-    borderTopWidth: 1,
-    borderTopColor: "#EDF2F0",
-  },
-  recordTitle: {
-    color: "#14231F",
-    fontSize: 16,
-    fontWeight: "900",
-  },
-  link: {
-    color: "#0F766E",
-    fontSize: 15,
-    fontWeight: "900",
-  },
+  summaryGrid: { flexDirection: "row", flexWrap: "wrap", gap: 10 },
+  metric: { minWidth: 118, gap: 3, borderRadius: 8, backgroundColor: "#F4F7F6", padding: 10 },
+  metricValue: { color: "#14231F", fontSize: 22, fontWeight: "900" },
+  metricLabel: { color: "#52615D", fontSize: 12, fontWeight: "800", textTransform: "uppercase" },
+  alertBox: { gap: 6, borderRadius: 8, backgroundColor: "#FFF7ED", padding: 10 },
+  alertTitle: { color: "#9A3412", fontWeight: "900" },
+  recordRow: { gap: 5, paddingTop: 10, borderTopWidth: 1, borderTopColor: "#EDF2F0" },
+  recordTitle: { color: "#14231F", fontSize: 16, fontWeight: "900" },
+  link: { color: "#0F766E", fontSize: 15, fontWeight: "900" },
 });
 
 function Metric({ label, value }: { label: string; value: number }) {
