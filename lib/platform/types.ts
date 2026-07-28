@@ -252,7 +252,7 @@ export type LessonRecord = {
   learning_objectives?: string[];
   progression_rules?: Record<string, unknown>;
   accessibility_spec?: Record<string, unknown>;
-  production_content?: ProductionLessonContent | null;
+  production_content: ProductionLessonContent;
   screen_sequence?: string[];
   analytics_events?: string[];
   source_schema_version?: string | null;
