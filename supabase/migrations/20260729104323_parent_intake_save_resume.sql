@@ -98,31 +98,17 @@ begin
     raise exception 'A SafeSteps parent profile is required';
   end if;
 
-  if actor_profile.case_id is not null then
-    select rc.id
-    into target_case_id
-    from public.reunification_cases rc
-    join public.case_memberships cm
-      on cm.case_id = rc.id
-     and cm.user_id = actor_id
-     and cm.status = 'active'
-    where rc.id = actor_profile.case_id
-      and rc.status = 'active'
-    limit 1;
-  end if;
+  select count(distinct cm.case_id), min(cm.case_id)
+  into active_case_count, target_case_id
+  from public.case_memberships cm
+  join public.reunification_cases rc on rc.id = cm.case_id
+  where cm.user_id = actor_id
+    and cm.status = 'active'
+    and cm.membership_role in ('case_owner', 'parent')
+    and rc.status = 'active';
 
-  if target_case_id is null then
-    select count(distinct cm.case_id), min(cm.case_id)
-    into active_case_count, target_case_id
-    from public.case_memberships cm
-    join public.reunification_cases rc on rc.id = cm.case_id
-    where cm.user_id = actor_id
-      and cm.status = 'active'
-      and rc.status = 'active';
-
-    if active_case_count > 1 then
-      raise exception 'Select a case before continuing intake';
-    end if;
+  if active_case_count > 1 then
+    raise exception 'Select a case before continuing intake';
   end if;
 
   if target_case_id is null then
@@ -179,8 +165,7 @@ begin
   end if;
 
   update public.profiles
-  set case_id = target_case_id,
-      onboarding_status = 'intake_in_progress',
+  set onboarding_status = 'intake_in_progress',
       updated_at = now()
   where id = actor_id;
 
