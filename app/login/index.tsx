@@ -84,6 +84,12 @@ export default function LoginScreen() {
         }}
       />
 
+      <Link href="/forgot-password" asChild>
+        <Pressable style={{ alignSelf: "flex-end", minHeight: 44, justifyContent: "center" }}>
+          <Text style={{ color: "#006B66", fontWeight: "bold" }}>Forgot password?</Text>
+        </Pressable>
+      </Link>
+
       {error.length > 0 && (
         <View
           style={{
