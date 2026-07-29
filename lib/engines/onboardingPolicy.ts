@@ -2,12 +2,14 @@ export type ParentOnboardingStatus =
   | "not_started"
   | "account_protected"
   | "consent_recorded"
+  | "intake_in_progress"
   | "onboarding_complete";
 
 export type ParentOnboardingRoute =
   | "/onboarding/protect-account"
   | "/onboarding/consent-information-sharing"
   | "/onboarding/accessibility-preferences"
+  | "/intake"
   | "/dashboard";
 
 export type ParentAccessibilityPreferences = {
@@ -32,6 +34,7 @@ export function normaliseParentOnboardingStatus(value: unknown): ParentOnboardin
   switch (value) {
     case "account_protected":
     case "consent_recorded":
+    case "intake_in_progress":
     case "onboarding_complete":
       return value;
     default:
@@ -45,6 +48,8 @@ export function getParentOnboardingResumeRoute(value: unknown): ParentOnboarding
       return "/onboarding/consent-information-sharing";
     case "consent_recorded":
       return "/onboarding/accessibility-preferences";
+    case "intake_in_progress":
+      return "/intake";
     case "onboarding_complete":
       return "/dashboard";
     default:
