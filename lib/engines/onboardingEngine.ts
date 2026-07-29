@@ -32,7 +32,7 @@ async function requireCurrentUser() {
 async function readProfileFields(userId: string) {
   const { data, error } = await supabase
     .from("profiles")
-    .select("onboarding_status, accessibility_preferences, notification_preferences")
+    .select("role, onboarding_status, accessibility_preferences, notification_preferences")
     .eq("id", userId)
     .maybeSingle();
 
@@ -45,6 +45,8 @@ async function readProfileFields(userId: string) {
 export async function loadParentOnboardingStatus(): Promise<ParentOnboardingStatus> {
   const user = await requireCurrentUser();
   const profile = await readProfileFields(user.id);
+  if (profile.role !== "parent") return "onboarding_complete";
+
   const status = normaliseParentOnboardingStatus(profile.onboarding_status);
 
   if (status !== "account_protected") return status;
