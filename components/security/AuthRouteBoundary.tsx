@@ -4,11 +4,20 @@ import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 
 import { useAuth } from "../../lib/auth";
 
-const PUBLIC_ROUTES = new Set(["/", "/welcome", "/login", "/register", "/forgot-password", "/reset-password"]);
-const PUBLIC_PREFIXES = ["/onboarding/"];
+const PUBLIC_ROUTES = new Set([
+  "/",
+  "/welcome",
+  "/login",
+  "/register",
+  "/forgot-password",
+  "/reset-password",
+  "/onboarding/how-safesteps-works",
+  "/onboarding/privacy-parent-rights",
+  "/onboarding/verify-account",
+]);
 
 function isPublicRoute(pathname: string) {
-  return PUBLIC_ROUTES.has(pathname) || PUBLIC_PREFIXES.some((prefix) => pathname.startsWith(prefix));
+  return PUBLIC_ROUTES.has(pathname);
 }
 
 export function AuthRouteBoundary({ children }: { children: React.ReactNode }) {

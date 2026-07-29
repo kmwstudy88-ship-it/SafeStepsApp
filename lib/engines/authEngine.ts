@@ -14,10 +14,10 @@ function getAuthRedirectUrl() {
   }
 
   if (typeof window !== "undefined" && window.location.origin) {
-    return `${window.location.origin}/assessments`;
+    return window.location.origin + "/onboarding/verify-account";
   }
 
-  return undefined;
+  return Linking.createURL("/onboarding/verify-account");
 }
 
 function getPasswordResetRedirectUrl() {
@@ -88,6 +88,9 @@ export async function registerWithEmail(input: {
     password: input.password,
     options: {
       emailRedirectTo: getAuthRedirectUrl(),
+      data: {
+        display_name: input.displayName.trim(),
+      },
     },
   });
 
@@ -123,6 +126,47 @@ export async function signOut() {
   }
 }
 
+export async function verifyEmailOtp(email: string, token: string) {
+  const { data, error } = await supabase.auth.verifyOtp({
+    email: email.trim(),
+    token,
+    type: "email",
+  });
+
+  if (error) throw new Error(error.message);
+  return data.session;
+}
+
+export async function resendEmailVerification(email: string) {
+  const { error } = await supabase.auth.resend({
+    type: "signup",
+    email: email.trim(),
+    options: {
+      emailRedirectTo: getAuthRedirectUrl(),
+    },
+  });
+
+  if (error) throw new Error(error.message);
+}
+
+async function createSessionFromAuthUrl(url: string, invalidMessage: string) {
+  const tokens = parseAuthRecoveryUrl(url);
+
+  if (!tokens) throw new Error(invalidMessage);
+
+  const { data, error } = await supabase.auth.setSession(tokens);
+
+  if (error) throw new Error(error.message);
+  return data.session;
+}
+
+export async function createEmailVerificationSession(url: string) {
+  return await createSessionFromAuthUrl(
+    url,
+    "This email verification link is invalid or has expired.",
+  );
+}
+
 export async function requestPasswordReset(email: string) {
   const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
     redirectTo: getPasswordResetRedirectUrl(),
@@ -134,19 +178,10 @@ export async function requestPasswordReset(email: string) {
 }
 
 export async function createPasswordRecoverySession(url: string) {
-  const tokens = parseAuthRecoveryUrl(url);
-
-  if (!tokens) {
-    throw new Error("This password reset link is invalid or has expired.");
-  }
-
-  const { data, error } = await supabase.auth.setSession(tokens);
-
-  if (error) {
-    throw new Error(error.message);
-  }
-
-  return data.session;
+  return await createSessionFromAuthUrl(
+    url,
+    "This password reset link is invalid or has expired.",
+  );
 }
 
 export async function updatePassword(password: string) {

@@ -31,11 +31,16 @@ export default function RegisterScreen() {
     setError("");
 
     try {
-      await registerWithEmail({ displayName, email, password });
-      router.replace({
-        pathname: "/onboarding/verify-account",
-        params: { contact: email.trim() },
-      });
+      const registration = await registerWithEmail({ displayName, email, password });
+
+      if (registration.session) {
+        router.replace("/onboarding/protect-account");
+      } else {
+        router.replace({
+          pathname: "/onboarding/verify-account",
+          params: { contact: email.trim(), displayName: displayName.trim() },
+        });
+      }
     } catch (registerError) {
       setError(registerError instanceof Error ? registerError.message : "Could not create account.");
     } finally {

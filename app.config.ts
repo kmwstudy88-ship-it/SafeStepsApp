@@ -40,7 +40,13 @@ export default {
     },
     plugins: [
       "expo-router",
-      "expo-secure-store",
+      [
+        "expo-secure-store",
+        {
+          configureAndroidBackup: true,
+          faceIDPermission: "Allow SafeSteps to use Face ID to protect your account.",
+        },
+      ],
       "expo-sharing",
       "expo-video",
       [

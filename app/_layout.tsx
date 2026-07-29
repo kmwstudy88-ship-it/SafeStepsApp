@@ -3,6 +3,7 @@ import { Stack } from "expo-router";
 
 import { AdvancedAssessmentPreviewBoundary } from "../components/security/AdvancedAssessmentPreviewBoundary";
 import { AuthRouteBoundary } from "../components/security/AuthRouteBoundary";
+import { OnboardingRouteBoundary } from "../components/security/OnboardingRouteBoundary";
 import { ProgramEnrollmentBoundary } from "../components/security/ProgramEnrollmentBoundary";
 import { SensitiveRouteBoundary } from "../components/security/SensitiveRouteBoundary";
 import { AuthProvider } from "../lib/auth";
@@ -16,7 +17,8 @@ export default function RootLayout() {
   return (
     <AuthProvider>
       <AuthRouteBoundary>
-        <SensitiveRouteBoundary>
+        <OnboardingRouteBoundary>
+          <SensitiveRouteBoundary>
         <ProgramEnrollmentBoundary>
           <AdvancedAssessmentPreviewBoundary>
             <TenantProvider>
@@ -35,6 +37,7 @@ export default function RootLayout() {
                         <Stack.Screen name="onboarding/privacy-parent-rights" />
                         <Stack.Screen name="onboarding/verify-account" />
                         <Stack.Screen name="onboarding/protect-account" />
+                        <Stack.Screen name="onboarding/consent-information-sharing" />
                         <Stack.Screen name="onboarding/accessibility-preferences" />
                         <Stack.Screen name="dashboard/index" />
                         <Stack.Screen name="programs" />
@@ -120,7 +123,8 @@ export default function RootLayout() {
             </TenantProvider>
           </AdvancedAssessmentPreviewBoundary>
         </ProgramEnrollmentBoundary>
-        </SensitiveRouteBoundary>
+          </SensitiveRouteBoundary>
+        </OnboardingRouteBoundary>
       </AuthRouteBoundary>
     </AuthProvider>
   );
