@@ -4,7 +4,7 @@ import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 
 import { useAuth } from "../../lib/auth";
 
-const PUBLIC_ROUTES = new Set(["/", "/welcome", "/login", "/register"]);
+const PUBLIC_ROUTES = new Set(["/", "/welcome", "/login", "/register", "/forgot-password", "/reset-password"]);
 const PUBLIC_PREFIXES = ["/onboarding/"];
 
 function isPublicRoute(pathname: string) {
