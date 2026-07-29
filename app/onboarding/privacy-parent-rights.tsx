@@ -24,7 +24,7 @@ export default function PrivacyParentRightsScreen() {
         <InfoRow icon="heart" title="Built for Families" body="SafeSteps is designed to support families with care and respect." tone="coral" />
       </View>
       <Text selectable style={{ color: onboardingColors.ink, fontSize: 13, lineHeight: 19, textAlign: "center" }}>
-        By continuing, you agree to our Privacy Policy and Terms of Use.
+        This is your privacy notice. After your account is verified, SafeSteps will ask you to record required acknowledgements and optional information-sharing choices separately.
       </Text>
       <PrimaryButton label="Continue" href="/register" />
     </OnboardingShell>
