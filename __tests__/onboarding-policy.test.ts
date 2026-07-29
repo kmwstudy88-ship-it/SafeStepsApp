@@ -16,6 +16,7 @@ describe("parent onboarding policy", () => {
     expect(getParentOnboardingResumeRoute("consent_recorded")).toBe(
       "/onboarding/accessibility-preferences",
     );
+    expect(getParentOnboardingResumeRoute("intake_in_progress")).toBe("/intake");
     expect(getParentOnboardingResumeRoute("onboarding_complete")).toBe("/dashboard");
   });
 
