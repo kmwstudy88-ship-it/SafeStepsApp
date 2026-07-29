@@ -2,6 +2,7 @@ import React from "react";
 import { Stack } from "expo-router";
 
 import { AdvancedAssessmentPreviewBoundary } from "../components/security/AdvancedAssessmentPreviewBoundary";
+import { AuthRouteBoundary } from "../components/security/AuthRouteBoundary";
 import { ProgramEnrollmentBoundary } from "../components/security/ProgramEnrollmentBoundary";
 import { SensitiveRouteBoundary } from "../components/security/SensitiveRouteBoundary";
 import { AuthProvider } from "../lib/auth";
@@ -14,7 +15,8 @@ import { TenantProvider } from "../lib/contexts/TenantContext";
 export default function RootLayout() {
   return (
     <AuthProvider>
-      <SensitiveRouteBoundary>
+      <AuthRouteBoundary>
+        <SensitiveRouteBoundary>
         <ProgramEnrollmentBoundary>
           <AdvancedAssessmentPreviewBoundary>
             <TenantProvider>
@@ -116,7 +118,8 @@ export default function RootLayout() {
             </TenantProvider>
           </AdvancedAssessmentPreviewBoundary>
         </ProgramEnrollmentBoundary>
-      </SensitiveRouteBoundary>
+        </SensitiveRouteBoundary>
+      </AuthRouteBoundary>
     </AuthProvider>
   );
 }

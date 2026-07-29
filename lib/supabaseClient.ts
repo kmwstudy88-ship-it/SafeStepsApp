@@ -6,6 +6,8 @@ import Constants from 'expo-constants';
 const supabaseUrl =
   Constants.expoConfig?.extra?.supabaseUrl ?? process.env.EXPO_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey =
+  Constants.expoConfig?.extra?.supabasePublishableKey ??
+  process.env.EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
   Constants.expoConfig?.extra?.supabaseAnonKey ??
   Constants.expoConfig?.extra?.supabaseKey ??
   process.env.EXPO_PUBLIC_SUPABASE_KEY ??
@@ -75,6 +77,7 @@ export const supabase: SupabaseClient =
         auth: {
           persistSession: !isServerRender && !isTest,
           autoRefreshToken: !isServerRender && !isTest,
+          detectSessionInUrl: false,
           storage: getAuthStorage(),
         },
       })
