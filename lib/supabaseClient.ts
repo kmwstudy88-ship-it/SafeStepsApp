@@ -51,7 +51,19 @@ function makeMissingClient() {
         data: { user: null, session: null },
         error: new Error("Supabase is not configured for this environment."),
       }),
+      resetPasswordForEmail: async () => ({
+        data: {},
+        error: new Error("Supabase is not configured for this environment."),
+      }),
+      setSession: async () => ({
+        data: { user: null, session: null },
+        error: new Error("Supabase is not configured for this environment."),
+      }),
       signOut: async () => ({ error: null }),
+      updateUser: async () => ({
+        data: { user: null },
+        error: new Error("Supabase is not configured for this environment."),
+      }),
       signUp: async () => ({
         data: { user: null, session: null },
         error: new Error("Supabase is not configured for this environment."),
