@@ -32,7 +32,7 @@ async function requireCurrentParent() {
   const { data: profile, error: profileError } = await supabase
     .from("profiles")
     .select(
-      "id,role,display_name,preferred_name,primary_phone,preferred_language_code,story_goal,strengths,support_notes,case_id",
+      "id,role,display_name,preferred_name,primary_phone,preferred_language_code,story_goal,strengths,support_notes",
     )
     .eq("id", userData.user.id)
     .maybeSingle();
@@ -271,13 +271,23 @@ export async function completeParentIntake(caseId: string) {
 }
 
 export async function isParentIntakeComplete(): Promise<boolean> {
-  const { profile } = await requireCurrentParent();
-  if (!profile.case_id) return false;
+  const { user } = await requireCurrentParent();
+  const { data: memberships, error: membershipError } = await supabase
+    .from("case_memberships")
+    .select("case_id")
+    .eq("user_id", user.id)
+    .eq("status", "active")
+    .in("membership_role", ["case_owner", "parent"]);
+
+  if (membershipError) throw new Error(membershipError.message);
+  const caseIds = [...new Set((memberships ?? []).map((item) => String(item.case_id)))];
+  if (caseIds.length !== 1) return false;
 
   const { data, error } = await supabase
     .from("case_intake_status")
     .select("completed_at,completed_sections,total_sections")
-    .eq("case_id", profile.case_id)
+    .eq("case_id", caseIds[0])
+    .eq("parent_user_id", user.id)
     .maybeSingle();
 
   if (error) throw new Error(error.message);
