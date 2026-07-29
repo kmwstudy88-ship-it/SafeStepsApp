@@ -28,6 +28,8 @@ export default function RootLayout() {
                         <Stack.Screen name="index" />
                         <Stack.Screen name="login/index" />
                         <Stack.Screen name="register/index" />
+                        <Stack.Screen name="forgot-password/index" />
+                        <Stack.Screen name="reset-password/index" />
                         <Stack.Screen name="welcome" />
                         <Stack.Screen name="onboarding/how-safesteps-works" />
                         <Stack.Screen name="onboarding/privacy-parent-rights" />
