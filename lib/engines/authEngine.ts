@@ -1,4 +1,7 @@
+import * as Linking from "expo-linking";
+
 import { supabase } from "../supabase/client";
+import { parseAuthRecoveryUrl } from "./authRecoveryPolicy";
 import {
   defaultRepresentationPreferences,
   normaliseRepresentationPreferences,
@@ -15,6 +18,18 @@ function getAuthRedirectUrl() {
   }
 
   return undefined;
+}
+
+function getPasswordResetRedirectUrl() {
+  if (process.env.EXPO_PUBLIC_PASSWORD_RESET_REDIRECT_URL) {
+    return process.env.EXPO_PUBLIC_PASSWORD_RESET_REDIRECT_URL;
+  }
+
+  if (typeof window !== "undefined" && window.location.origin) {
+    return window.location.origin + "/reset-password";
+  }
+
+  return Linking.createURL("/reset-password");
 }
 
 export type SafeStepsProfile = {
@@ -102,6 +117,44 @@ export async function registerWithEmail(input: {
 
 export async function signOut() {
   const { error } = await supabase.auth.signOut();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+}
+
+export async function requestPasswordReset(email: string) {
+  const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+    redirectTo: getPasswordResetRedirectUrl(),
+  });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+}
+
+export async function createPasswordRecoverySession(url: string) {
+  const tokens = parseAuthRecoveryUrl(url);
+
+  if (!tokens) {
+    throw new Error("This password reset link is invalid or has expired.");
+  }
+
+  const { data, error } = await supabase.auth.setSession(tokens);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data.session;
+}
+
+export async function updatePassword(password: string) {
+  if (password.length < 8) {
+    throw new Error("Use at least 8 characters for your new password.");
+  }
+
+  const { error } = await supabase.auth.updateUser({ password });
 
   if (error) {
     throw new Error(error.message);
