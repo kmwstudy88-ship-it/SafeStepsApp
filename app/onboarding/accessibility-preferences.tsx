@@ -66,7 +66,7 @@ export default function AccessibilityPreferencesScreen() {
 
     try {
       await saveParentAccessibilityPreferences(preferences);
-      router.replace("/dashboard");
+      router.replace("/intake");
     } catch (saveError) {
       setError(
         saveError instanceof Error
