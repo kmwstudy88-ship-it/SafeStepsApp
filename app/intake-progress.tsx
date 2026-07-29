@@ -12,7 +12,13 @@ function statusLabel(done: boolean) {
 
 function formatDate(value: string | null) {
   if (!value) return "Not completed";
-  return new Intl.DateTimeFormat("en-AU", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(value));
+  return new Intl.DateTimeFormat("en-AU", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(new Date(value));
 }
 
 export default function IntakeProgressScreen() {
@@ -34,7 +40,7 @@ export default function IntakeProgressScreen() {
   }
 
   useEffect(() => {
-    if (user) loadProgress();
+    if (user) void loadProgress();
   }, [user]);
 
   if (initializing) return null;
@@ -43,7 +49,9 @@ export default function IntakeProgressScreen() {
   return (
     <ScrollView contentContainerStyle={styles.screen}>
       <Text style={styles.title}>Intake & Program Start</Text>
-      <Text style={styles.subtitle}>SafeSteps checks every required entry step before a program can begin.</Text>
+      <Text style={styles.subtitle}>
+        SafeSteps checks every required entry step before a program can begin.
+      </Text>
 
       {loading ? <ActivityIndicator /> : null}
       {error ? <Text style={styles.error}>{error}</Text> : null}
@@ -53,25 +61,44 @@ export default function IntakeProgressScreen() {
           <View style={styles.card}>
             <Text style={styles.cardTitle}>Intake progress</Text>
             <Text style={styles.percent}>{progress.percentComplete}%</Text>
-            <View style={styles.track}><View style={[styles.fill, { width: `${progress.percentComplete}%` }]} /></View>
-            <Text style={styles.body}>{progress.completedSections} of {progress.totalSections} required sections completed.</Text>
-            <Text style={styles.body}>Completed at: {formatDate(progress.intakeCompletedAt)}</Text>
+            <View style={styles.track}>
+              <View style={[styles.fill, { width: `${progress.percentComplete}%` }]} />
+            </View>
+            <Text style={styles.body}>
+              {progress.completedSections} of {progress.totalSections} required sections
+              completed.
+            </Text>
+            <Text style={styles.body}>
+              Completed at: {formatDate(progress.intakeCompletedAt)}
+            </Text>
           </View>
 
           <View style={styles.card}>
             <Text style={styles.cardTitle}>Program start requirements</Text>
             <Text style={styles.row}>Profile: {statusLabel(progress.profileComplete)}</Text>
-            <Text style={styles.row}>Case setup: {statusLabel(progress.caseSetupComplete)}</Text>
+            <Text style={styles.row}>
+              Family and case: {statusLabel(progress.caseSetupComplete)}
+            </Text>
             <Text style={styles.row}>Intake: {statusLabel(progress.intakeComplete)}</Text>
-            <Text style={styles.row}>Reviewer state: {progress.reviewerState.replace(/_/g, " ")}</Text>
-            {progress.reviewedAt ? <Text style={styles.body}>Reviewed: {formatDate(progress.reviewedAt)}</Text> : null}
-            {progress.reviewerNotes ? <Text style={styles.notice}>Reviewer note: {progress.reviewerNotes}</Text> : null}
+            <Text style={styles.row}>
+              Reviewer state: {progress.reviewerState.replace(/_/g, " ")}
+            </Text>
+            {progress.reviewedAt ? (
+              <Text style={styles.body}>Reviewed: {formatDate(progress.reviewedAt)}</Text>
+            ) : null}
+            {progress.reviewerNotes ? (
+              <Text style={styles.notice}>Reviewer note: {progress.reviewerNotes}</Text>
+            ) : null}
           </View>
 
           {progress.decision.blockers.length > 0 ? (
             <View style={styles.warning}>
               <Text style={styles.warningTitle}>Programs remain locked</Text>
-              {progress.decision.blockers.map((blocker) => <Text key={blocker} style={styles.body}>• {blockerMessage(blocker)}</Text>)}
+              {progress.decision.blockers.map((blocker) => (
+                <Text key={blocker} style={styles.body}>
+                  • {blockerMessage(blocker)}
+                </Text>
+              ))}
             </View>
           ) : (
             <View style={styles.success}>
@@ -81,11 +108,23 @@ export default function IntakeProgressScreen() {
           )}
 
           <View style={styles.actions}>
-            {!progress.profileComplete ? <Link href="/my-story" asChild><Pressable style={styles.button}><Text style={styles.buttonText}>Complete profile</Text></Pressable></Link> : null}
-            {!progress.caseSetupComplete ? <Link href="/assessment-system/case-setup" asChild><Pressable style={styles.button}><Text style={styles.buttonText}>Complete case setup</Text></Pressable></Link> : null}
-            {!progress.intakeComplete ? <Link href="/assessments" asChild><Pressable style={styles.button}><Text style={styles.buttonText}>Complete intake</Text></Pressable></Link> : null}
-            <Link href="/programs" asChild><Pressable style={styles.button}><Text style={styles.buttonText}>View programs</Text></Pressable></Link>
-            <Pressable onPress={loadProgress} style={styles.secondaryButton}><Text style={styles.secondaryText}>Refresh progress</Text></Pressable>
+            {!progress.intakeComplete ||
+            !progress.profileComplete ||
+            !progress.caseSetupComplete ? (
+              <Link href="/intake" asChild>
+                <Pressable style={styles.button}>
+                  <Text style={styles.buttonText}>Continue parent intake</Text>
+                </Pressable>
+              </Link>
+            ) : null}
+            <Link href="/programs" asChild>
+              <Pressable style={styles.button}>
+                <Text style={styles.buttonText}>View programs</Text>
+              </Pressable>
+            </Link>
+            <Pressable onPress={() => void loadProgress()} style={styles.secondaryButton}>
+              <Text style={styles.secondaryText}>Refresh progress</Text>
+            </Pressable>
           </View>
         </>
       ) : null}

@@ -79,6 +79,9 @@ export function OnboardingRouteBoundary({ children }: { children: React.ReactNod
   }
 
   const nextRoute = getParentOnboardingResumeRoute(status);
+  if (nextRoute === "/intake" && pathname.startsWith("/intake")) {
+    return <>{children}</>;
+  }
   if (nextRoute !== "/dashboard") return <Redirect href={nextRoute} />;
 
   return <>{children}</>;

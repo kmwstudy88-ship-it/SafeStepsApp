@@ -8,6 +8,7 @@ import {
   type ParentAccessibilityPreferences,
   type ParentOnboardingStatus,
 } from "./onboardingPolicy";
+import { isParentIntakeComplete } from "./parentIntakeEngine";
 
 export const PARENT_PRIVACY_NOTICE_VERSION = "2026-07-29.1";
 export const PARENT_TERMS_VERSION = "2026-07-29.1";
@@ -48,6 +49,12 @@ export async function loadParentOnboardingStatus(): Promise<ParentOnboardingStat
   if (profile.role !== "parent") return "onboarding_complete";
 
   const status = normaliseParentOnboardingStatus(profile.onboarding_status);
+
+  if (status === "onboarding_complete") {
+    return (await isParentIntakeComplete())
+      ? "onboarding_complete"
+      : "intake_in_progress";
+  }
 
   if (status !== "account_protected") return status;
 
@@ -191,7 +198,7 @@ export async function saveParentAccessibilityPreferences(
     .from("profiles")
     .update({
       accessibility_preferences: preferences,
-      onboarding_status: "onboarding_complete",
+      onboarding_status: "intake_in_progress",
       updated_at: new Date().toISOString(),
     })
     .eq("id", user.id);
