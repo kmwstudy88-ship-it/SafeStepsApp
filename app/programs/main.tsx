@@ -78,7 +78,7 @@ function ProgramCard({ program }: { program: ProgramPathway }) {
             alignItems: "center",
           }}
         >
-          <Text style={{ fontWeight: "bold" }}>Open Program</Text>
+          <Text style={{ fontWeight: "bold" }}>Review Program</Text>
         </Pressable>
       </Link>
     </View>
@@ -109,7 +109,7 @@ export default function BrowseProgramsScreen() {
       </Text>
 
       <Text style={{ marginBottom: 20 }}>
-        Start with official launch programs first. Structured drafts are available for review, but still need final curation before being treated as launch pathways.
+        Compare official launch pathways, structured drafts, and worker-built custom pathways. Browsing never creates an enrolment; enrolment starts from the recommendation saved from parent intake.
       </Text>
 
       <ProgramSection
@@ -132,3 +132,4 @@ export default function BrowseProgramsScreen() {
     </ScrollView>
   );
 }
+
