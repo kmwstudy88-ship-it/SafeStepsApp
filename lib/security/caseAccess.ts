@@ -59,8 +59,9 @@ export async function getCurrentSecurityRole(): Promise<SecurityRole> {
   const databaseRoles = (data ?? [])
     .map((item) => parseSecurityRole(item.role))
     .filter((role): role is SecurityRole => Boolean(role));
-  const metadataRole = parseSecurityRole(user.app_metadata?.role) ?? parseSecurityRole(user.user_metadata?.role);
-  const roles = metadataRole ? [...databaseRoles, metadataRole] : databaseRoles;
+  // Authorization must never trust user_metadata because users can edit it.
+  const appMetadataRole = parseSecurityRole(user.app_metadata?.role);
+  const roles = appMetadataRole ? [...databaseRoles, appMetadataRole] : databaseRoles;
   const role = ROLE_PRIORITY.find((candidate) => roles.includes(candidate));
 
   if (!role) throw new SensitiveAccessError("Your SafeSteps role has not been assigned.", "ROLE_REQUIRED");
@@ -126,3 +127,4 @@ export async function assertSensitiveRouteAccess(pathname: string, requestedCase
 
   return grant;
 }
+
