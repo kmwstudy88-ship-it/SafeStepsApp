@@ -66,16 +66,7 @@ export async function getCurrentUser() {
 }
 
 export async function signInWithEmail(email: string, password: string) {
-  const { data, error } = await supabase.auth.signInWithPassword({
-    email: email.trim(),
-    password,
-  });
-
-  if (error) {
-    throw new Error(error.message);
-  }
-
-  return data;
+  return await signInForAudience("parent", email, password);
 }
 
 export async function registerWithEmail(input: {
@@ -262,3 +253,4 @@ export async function upsertProfile(input: {
 
   return data as SafeStepsProfile;
 }
+
