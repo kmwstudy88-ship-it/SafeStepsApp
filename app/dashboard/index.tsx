@@ -217,6 +217,24 @@ export default function DashboardScreen() {
     user?.user_metadata?.full_name ||
     user?.email?.split("@")[0] ||
     "SafeSteps parent";
+  const programJourney = stats?.programJourney ?? null;
+  const programIsActive = programJourney?.recommendationStatus === "active";
+  const programHref = programIsActive
+    ? "/programs/my-programs"
+    : "/programs/recommendation";
+  const programActionLabel = programIsActive
+    ? "Continue My Program"
+    : "Review My Recommendation";
+  const programStage = !programJourney
+    ? "Complete intake to receive a recommendation"
+    : programIsActive
+      ? "Active enrolment"
+      : programJourney.recommendationStatus === "confirmed"
+        ? programJourney.reviewerState === "approved" ||
+          programJourney.reviewerState === "not_required"
+          ? "Confirmed — ready for the next start check"
+          : "Confirmed — waiting for required review"
+        : "Recommendation ready for your review";
 
   return (
     <ImageBackground
@@ -244,15 +262,18 @@ export default function DashboardScreen() {
             <View style={styles.heroCopy}>
               <Text style={styles.eyebrow}>Welcome back</Text>
               <Text style={styles.heroTitle}>
-                Keep your SafeSteps record moving.
+                {programIsActive
+                  ? "Keep your SafeSteps record moving."
+                  : "Your next program step is visible."}
               </Text>
               <Text style={styles.heroText}>
-                Continue your program, complete practical tasks, and save evidence
-                as your work builds over time.
+                {programIsActive
+                  ? "Continue your confirmed program, complete practical tasks, and save evidence as your work builds over time."
+                  : "Review the pathway saved from intake, its limits, and any worker or governance safeguards before enrolment."}
               </Text>
-              <Link href="/programs/my-programs" asChild>
+              <Link href={programHref as any} asChild>
                 <Pressable style={styles.primaryButton}>
-                  <Text style={styles.primaryButtonText}>View My Program</Text>
+                  <Text style={styles.primaryButtonText}>{programActionLabel}</Text>
                 </Pressable>
               </Link>
             </View>
@@ -278,21 +299,21 @@ export default function DashboardScreen() {
                   <Text style={styles.progressLabel}>Tasks</Text>
                 </View>
                 <View style={{ flex: 1, gap: 8 }}>
-                  <Text style={styles.stageTitle}>Active program record</Text>
-                  <Text style={styles.stageSubtitle}>
-                    {stats?.activePrograms
-                      ? `${stats.activePrograms} active program${stats.activePrograms === 1 ? "" : "s"}`
-                      : "No active program yet"}
+                  <Text style={styles.stageTitle}>
+                    {programJourney?.programTitle ?? "Program journey"}
                   </Text>
+                  <Text style={styles.stageSubtitle}>{programStage}</Text>
                   <Text style={styles.panelText}>
-                    Progress is built from saved tasks, reflections, evidence, and lesson activity.
+                    {programJourney
+                      ? `Saved intake pathway: ${programJourney.selectedStream}. Self-reported intake remains separate from assessment and evidence records.`
+                      : "Complete parent intake before SafeSteps can show a pathway recommendation."}
                   </Text>
                   <View style={styles.progressTrack}>
                     <View style={[styles.progressFill, { width: `${taskCompletionPercent}%` }]} />
                   </View>
-                  <Link href="/programs/my-programs" asChild>
+                  <Link href={programHref as any} asChild>
                     <Pressable>
-                      <Text style={styles.textLink}>View Program</Text>
+                      <Text style={styles.textLink}>{programActionLabel}</Text>
                     </Pressable>
                   </Link>
                 </View>
@@ -903,3 +924,4 @@ const styles = StyleSheet.create({
     color: "#8E2B21",
   },
 });
+
