@@ -1,6 +1,7 @@
 import * as Linking from "expo-linking";
 
 import { supabase } from "../supabase/client";
+import { signInForAudience } from "../safeStepsApi";
 import { parseAuthRecoveryUrl } from "./authRecoveryPolicy";
 import {
   defaultRepresentationPreferences,
