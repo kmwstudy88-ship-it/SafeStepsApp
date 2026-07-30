@@ -82,22 +82,6 @@ export async function startProgramEnrollment(
   if (existing) return existing;
 
   const progress = await assertProgramCanStart(programId);
-  const { data: confirmation, error: confirmationError } = await supabase
-    .from("program_recommendations")
-    .select("id")
-    .eq("case_id", progress.caseId)
-    .eq("parent_user_id", userId)
-    .eq("program_id", programId)
-    .eq("status", "confirmed")
-    .maybeSingle();
-
-  if (confirmationError) throw new Error(confirmationError.message);
-  if (!confirmation) {
-    throw new Error(
-      "Confirm the intake-based program recommendation before starting.",
-    );
-  }
-
   const { data, error } = await supabase.rpc("start_program_enrollment", {
     target_case_id: progress.caseId,
     target_program_id: programId,
