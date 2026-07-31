@@ -1,0 +1,105 @@
+{
+  "template_code": "AOD_MH_DFV_CASE_PLAN_v1",
+  "template_name": "Co-Occurring AOD, Mental Health & DFV Case Plan Template",
+  "version": "1.0",
+  "sequencing_phases": [
+    {
+      "phase": 1,
+      "phase_name": "Safety Stabilisation",
+      "description": "Must begin immediately, before or concurrent with treatment enrollment. Not gated behind AOD/MH treatment completion.",
+      "applies_when": "always"
+    },
+    {
+      "phase": 2,
+      "phase_name": "Concurrent Treatment",
+      "description": "AOD and mental health treatment run concurrently, not sequentially. Do not require AOD completion before starting trauma-informed MH work.",
+      "applies_when": "aod_or_mh_domain_score_above_25"
+    },
+    {
+      "phase": 3,
+      "phase_name": "Consolidation & Reunification Readiness",
+      "description": "Begins once Phase 1 safety goals are met and Phase 2 shows sustained improvement across two or more timepoints with no new critical overrides.",
+      "applies_when": "phase_1_complete_and_phase_2_stable"
+    }
+  ],
+  "tracks": {
+    "protective_parent_track": {
+      "description": "Victim-survivor / protective parent goals. Never combined with perpetrator track.",
+      "domains": ["DFV_SAFETY", "PROTECTIVE_CAPACITY", "CHILD_IMPACT"]
+    },
+    "perpetrator_track": {
+      "description": "Perpetrator accountability goals. Scored, case-planned, and reviewed entirely separately from the protective parent track. Never appears on the protective parent's case plan document.",
+      "domains": ["PERPETRATOR_ACCOUNTABILITY"]
+    },
+    "shared_functional_track": {
+      "description": "AOD, mental health, and coordination goals. Individually assigned per parent/caregiver being assessed; not shared as a single goal across two adults.",
+      "domains": ["AOD_IMPACT", "MH_FUNCTIONAL", "SERVICE_COORDINATION"]
+    }
+  },
+  "domain_goal_types": {
+    "DFV_SAFETY": {
+      "phase": 1,
+      "track": "protective_parent_track",
+      "goal_types": [
+        { "goal_type_code": "SAFETY_PLAN_ACTIVE", "goal_label": "Maintain and update dynamic safety plan", "trigger_condition": "any_score", "review_frequency_days": 14 },
+        { "goal_type_code": "DFV_SUPPORT_ENGAGEMENT", "goal_label": "Engage with DFV support service", "trigger_condition": "domain_score_above_25", "review_frequency_days": 30 },
+        { "goal_type_code": "PROTECTIVE_ORDER_COMPLIANCE", "goal_label": "Monitor compliance with any active protection order", "trigger_condition": "critical_override_active", "review_frequency_days": 7 }
+      ]
+    },
+    "AOD_IMPACT": {
+      "phase": 2,
+      "track": "shared_functional_track",
+      "goal_types": [
+        { "goal_type_code": "AOD_TREATMENT_ENGAGEMENT", "goal_label": "Enroll and actively engage in AOD treatment", "trigger_condition": "domain_score_above_25", "review_frequency_days": 30 },
+        { "goal_type_code": "RELAPSE_MANAGEMENT_PLAN", "goal_label": "Maintain relapse management plan tied directly to safety plan", "trigger_condition": "domain_score_above_25", "review_frequency_days": 30 }
+      ]
+    },
+    "MH_FUNCTIONAL": {
+      "phase": 2,
+      "track": "shared_functional_track",
+      "goal_types": [
+        { "goal_type_code": "MH_TREATMENT_ENGAGEMENT", "goal_label": "Engage in trauma-informed mental health treatment concurrent with AOD support", "trigger_condition": "domain_score_above_25", "review_frequency_days": 30 },
+        { "goal_type_code": "FUNCTIONAL_CAREGIVING_GOAL", "goal_label": "Demonstrate ability to respond to child distress", "trigger_condition": "domain_score_above_25", "review_frequency_days": 30 }
+      ]
+    },
+    "PROTECTIVE_CAPACITY": {
+      "phase": 1,
+      "track": "protective_parent_track",
+      "goal_types": [
+        { "goal_type_code": "SUPPORT_NETWORK_BUILDING", "goal_label": "Identify and strengthen non-offending support network", "trigger_condition": "domain_score_above_25", "review_frequency_days": 30 }
+      ]
+    },
+    "PERPETRATOR_ACCOUNTABILITY": {
+      "phase": 2,
+      "track": "perpetrator_track",
+      "goal_types": [
+        { "goal_type_code": "BEHAVIOUR_CHANGE_PROGRAM_ENROLLMENT", "goal_label": "Enroll and attend perpetrator behaviour change program", "trigger_condition": "any_score", "review_frequency_days": 30 },
+        { "goal_type_code": "INDEPENDENT_VERIFICATION", "goal_label": "Behaviour change verified independently, not by self-report alone", "trigger_condition": "domain_score_above_25", "review_frequency_days": 30 }
+      ]
+    },
+    "SERVICE_COORDINATION": {
+      "phase": 1,
+      "track": "shared_functional_track",
+      "goal_types": [
+        { "goal_type_code": "CROSS_SERVICE_INFO_SHARING", "goal_label": "Establish information-sharing agreement across DFV, AOD, and MH providers", "trigger_condition": "domain_score_above_25", "review_frequency_days": 30 }
+      ]
+    },
+    "CHILD_IMPACT": {
+      "phase": 1,
+      "track": "protective_parent_track",
+      "goal_types": [
+        { "goal_type_code": "CHILD_WELLBEING_CHECKIN", "goal_label": "Regular age-appropriate child wellbeing check-in", "trigger_condition": "domain_score_above_25", "review_frequency_days": 14 }
+      ]
+    }
+  },
+  "critical_override_response_rules": [
+    {
+      "rule": "Any active critical override forces creation of a Phase 1 safety review task within 48 hours, regardless of which domain triggered it.",
+      "applies_to_overrides": ["DFV1_HIGH", "DFV3_HIGH", "AOD4_HIGH", "MH2_HIGH", "PA3_HIGH"]
+    },
+    {
+      "rule": "PA3_HIGH override never generates or modifies a goal on the protective_parent_track.",
+      "applies_to_overrides": ["PA3_HIGH"]
+    }
+  ]
+}

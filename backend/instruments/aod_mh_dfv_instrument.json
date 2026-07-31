@@ -1,0 +1,96 @@
+{
+  "instrument_code": "AOD_MH_DFV_v1",
+  "instrument_name": "Co-Occurring AOD, Mental Health and DFV Risk & Capacity Assessment",
+  "version": "1.0",
+  "applies_to": "parent_caregiver",
+  "domains": [
+    {
+      "domain_code": "DFV_SAFETY",
+      "domain_name": "DFV Safety and Coercive Control",
+      "sequence": 1,
+      "items": [
+        { "item_code": "DFV1", "text": "Current physical safety risk to parent/caregiver from partner or ex-partner", "scale": "0-4", "critical": true },
+        { "item_code": "DFV2", "text": "Evidence of coercive control (isolation, financial control, monitoring, threats)", "scale": "0-4", "critical": true },
+        { "item_code": "DFV3", "text": "Child exposure to DFV incidents (witnessed, used as weapon, present in home)", "scale": "0-4", "critical": true },
+        { "item_code": "DFV4", "text": "Parent's current safety plan adequacy and use", "scale": "0-4", "critical": false }
+      ]
+    },
+    {
+      "domain_code": "AOD_IMPACT",
+      "domain_name": "AOD Impact on Caregiving Capacity",
+      "sequence": 2,
+      "items": [
+        { "item_code": "AOD1", "text": "Frequency/pattern of use impairing supervision or judgment", "scale": "0-4", "critical": true },
+        { "item_code": "AOD2", "text": "Engagement with AOD treatment (concurrent, not sequential to other goals)", "scale": "0-4", "critical": false },
+        { "item_code": "AOD3", "text": "Relapse risk indicators and relapse management plan tied to safety plan", "scale": "0-4", "critical": false },
+        { "item_code": "AOD4", "text": "Substance use directly implicated in prior safety incident", "scale": "0-4", "critical": true }
+      ]
+    },
+    {
+      "domain_code": "MH_FUNCTIONAL",
+      "domain_name": "Mental Health Functional Impact",
+      "sequence": 3,
+      "items": [
+        { "item_code": "MH1", "text": "Capacity to respond to child's emotional/physical distress", "scale": "0-4", "critical": false },
+        { "item_code": "MH2", "text": "Symptom-driven impairment to supervision or emotional availability", "scale": "0-4", "critical": true },
+        { "item_code": "MH3", "text": "Engagement with mental health treatment (trauma-informed, concurrent)", "scale": "0-4", "critical": false },
+        { "item_code": "MH4", "text": "Insight into how symptoms affect parenting decisions", "scale": "0-4", "critical": false }
+      ]
+    },
+    {
+      "domain_code": "PROTECTIVE_CAPACITY",
+      "domain_name": "Protective Capacity and Support Network",
+      "sequence": 4,
+      "items": [
+        { "item_code": "PC1", "text": "Availability of non-offending support network", "scale": "0-4", "critical": false },
+        { "item_code": "PC2", "text": "Parent's ability to prioritise child safety over relationship/substance pressures", "scale": "0-4", "critical": false },
+        { "item_code": "PC3", "text": "History of protective action taken when risk identified", "scale": "0-4", "critical": false }
+      ]
+    },
+    {
+      "domain_code": "PERPETRATOR_ACCOUNTABILITY",
+      "domain_name": "Perpetrator Accountability and Behaviour Change (where applicable)",
+      "sequence": 5,
+      "items": [
+        { "item_code": "PA1", "text": "Enrollment and attendance in men's/perpetrator behaviour change program", "scale": "0-4", "critical": false },
+        { "item_code": "PA2", "text": "Demonstrated behaviour change independent of self-report", "scale": "0-4", "critical": false },
+        { "item_code": "PA3", "text": "Ongoing risk indicators (breaches, contact violations, threats)", "scale": "0-4", "critical": true }
+      ]
+    },
+    {
+      "domain_code": "SERVICE_COORDINATION",
+      "domain_name": "Coordination and Service Engagement",
+      "sequence": 6,
+      "items": [
+        { "item_code": "SC1", "text": "Information sharing/coordination across DFV, AOD, MH providers in place", "scale": "0-4", "critical": false },
+        { "item_code": "SC2", "text": "Conflicting service requirements identified and resolved (e.g. confidentiality vs disclosure)", "scale": "0-4", "critical": false }
+      ]
+    },
+    {
+      "domain_code": "CHILD_IMPACT",
+      "domain_name": "Child Impact Indicators",
+      "sequence": 7,
+      "items": [
+        { "item_code": "CI1", "text": "Observed child behavioural/emotional impact attributable to household DFV/AOD/MH", "scale": "0-4", "critical": false },
+        { "item_code": "CI2", "text": "Child's expressed sense of safety in the home (age-appropriate)", "scale": "0-4", "critical": false }
+      ]
+    }
+  ],
+  "scoring_bands": [
+    { "band": "Low Concern", "min": 0, "max": 25 },
+    { "band": "Moderate Concern", "min": 26, "max": 50 },
+    { "band": "High Concern", "min": 51, "max": 75 },
+    { "band": "Critical Concern", "min": 76, "max": 100 }
+  ],
+  "critical_overrides": [
+    { "override_code": "DFV1_HIGH", "trigger_item": "DFV1", "trigger_condition": ">=3", "forces_band": "Critical Concern", "rationale": "Active physical safety risk overrides aggregate score" },
+    { "override_code": "DFV3_HIGH", "trigger_item": "DFV3", "trigger_condition": ">=3", "forces_band": "Critical Concern", "rationale": "Child direct exposure to DFV overrides aggregate score" },
+    { "override_code": "AOD4_HIGH", "trigger_item": "AOD4", "trigger_condition": ">=3", "forces_band": "Critical Concern", "rationale": "Substance use directly implicated in prior safety incident overrides aggregate score" },
+    { "override_code": "MH2_HIGH", "trigger_item": "MH2", "trigger_condition": ">=3", "forces_band": "Critical Concern", "rationale": "Symptom-driven supervision impairment overrides aggregate score" },
+    { "override_code": "PA3_HIGH", "trigger_item": "PA3", "trigger_condition": ">=3", "forces_band": "Critical Concern", "rationale": "Ongoing perpetrator risk indicators override aggregate score regardless of other domain trends" }
+  ],
+  "cross_domain_rules": [
+    { "rule_code": "DFV_OVERRIDES_AOD_TREND", "description": "An improving AOD trend across timepoints must not offset an active DFV critical override in RRI composite" },
+    { "rule_code": "SEPARATE_VICTIM_PERPETRATOR_PLANS", "description": "Victim-parent case plan and perpetrator accountability tracking must never share a single goal set or be scored as one unit" }
+  ]
+}

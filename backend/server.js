@@ -10,6 +10,7 @@ import { requestContext } from "./middleware/requestContext.js";
 const app = express();
 const port = process.env.PORT ?? 3000;
 const { default: authRoutes } = await import("./routes/auth/authRoutes.js");
+const { default: aodMhDfvRoutes } = await import("./routes/assessments/aodMhDfvRoutes.js");
 const { default: documentRoutes } = await import("./routes/documents/documentRoutes.js");
 const { default: userCurriculumRoutes } = await import("./routes/users/curriculumRoutes.js");
 const { default: worksheetRoutes } = await import("./routes/worksheets/worksheetRoutes.js");
@@ -60,6 +61,7 @@ app.get("/health", (req, res) => {
 });
 
 app.use("/auth", authRoutes);
+app.use("/assessments", requireAuthenticatedUser, aodMhDfvRoutes);
 app.use("/documents", documentRoutes);
 app.use("/worksheets", requireAuthenticatedUser, worksheetRoutes);
 app.use("/users", requireAuthenticatedUser, userCurriculumRoutes);

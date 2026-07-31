@@ -1,10 +1,18 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 
 import {
   AssessmentScreenShell,
   assessmentColors,
 } from "../../components/AssessmentSystemUI";
+import {
+  aodMhDfvCriticalOverrides,
+  aodMhDfvDefaultResponses,
+  aodMhDfvDomains,
+  aodMhDfvItems,
+  aodMhDfvScoringBands,
+  evaluateAodMhDfvCrossDomainRules,
+} from "../../lib/data/aodMhDfvAssessmentInstrument";
 import {
   safeStepsCriticalOverrides,
   safeStepsDefaultResponses,
@@ -21,6 +29,34 @@ import {
   type AssessmentResponse,
 } from "../../lib/engines/assessmentScoringEngine";
 
+type ScoringInstrumentKey = "protective-capacity" | "aod-mh-dfv";
+
+const scoringInstruments = {
+  "protective-capacity": {
+    label: "Protective Capacity",
+    subtitle: "Score safety, protective capacity, routines, child voice, service engagement, and evidence consistency.",
+    domains: safeStepsProtectiveCapacityDomains,
+    items: safeStepsProtectiveCapacityItems,
+    responses: safeStepsDefaultResponses,
+    overrides: safeStepsCriticalOverrides,
+    bands: safeStepsScoringBands,
+    scoreLabel: "Assessment score",
+    readinessEnabled: true,
+  },
+  "aod-mh-dfv": {
+    label: "AOD/MH/DFV Risk",
+    subtitle:
+      "Score co-occurring substance-use, mental-health, family-violence, perpetrator-accountability, and child-impact risks.",
+    domains: aodMhDfvDomains,
+    items: aodMhDfvItems,
+    responses: aodMhDfvDefaultResponses,
+    overrides: aodMhDfvCriticalOverrides,
+    bands: aodMhDfvScoringBands,
+    scoreLabel: "Concern score",
+    readinessEnabled: false,
+  },
+} as const;
+
 function responseMapFromList(responses: AssessmentResponse[]) {
   return Object.fromEntries(
     responses.map((response) => [response.itemId, response.selectedOptionId ?? ""]),
@@ -28,9 +64,15 @@ function responseMapFromList(responses: AssessmentResponse[]) {
 }
 
 export default function RubricScoringScreen() {
+  const [instrumentKey, setInstrumentKey] = useState<ScoringInstrumentKey>("protective-capacity");
+  const activeInstrument = scoringInstruments[instrumentKey];
   const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>(
-    responseMapFromList(safeStepsDefaultResponses),
+    responseMapFromList(activeInstrument.responses),
   );
+
+  useEffect(() => {
+    setSelectedOptions(responseMapFromList(activeInstrument.responses));
+  }, [activeInstrument]);
 
   const responses = useMemo<AssessmentResponse[]>(
     () =>
@@ -44,25 +86,40 @@ export default function RubricScoringScreen() {
   const scoreResult = useMemo(
     () =>
       scoreAssessment({
-        domains: safeStepsProtectiveCapacityDomains,
-        items: safeStepsProtectiveCapacityItems,
+        domains: activeInstrument.domains,
+        items: activeInstrument.items,
         responses,
-        overrides: safeStepsCriticalOverrides,
-        bands: safeStepsScoringBands,
+        overrides: activeInstrument.overrides,
+        bands: activeInstrument.bands,
       }),
-    [responses],
+    [activeInstrument, responses],
   );
 
+  const aodMhDfvRuleFlags = useMemo(() => {
+    if (instrumentKey !== "aod-mh-dfv") return [];
+
+    return evaluateAodMhDfvCrossDomainRules({
+      triggeredOverrideIds: scoreResult.override ? [scoreResult.override.id] : [],
+      currentDomainScores: Object.fromEntries(
+        scoreResult.domainScores.map((score) => [score.domainId, score.normalizedScore]),
+      ),
+      previousDomainScores: { AOD_IMPACT: 50 },
+    });
+  }, [instrumentKey, scoreResult]);
+
   const readiness = useMemo(
-    () =>
-      computeReadinessIndexFromSignals({
+    () => {
+      if (!activeInstrument.readinessEnabled) return null;
+
+      return computeReadinessIndexFromSignals({
         assessmentScore: scoreResult.overallScore,
         serviceReferrals: sampleServiceReferrals,
         visitations: sampleVisitations,
         milestones: sampleMilestones,
         activeCriticalOverride: scoreResult.overrideTriggered,
-      }),
-    [scoreResult],
+      });
+    },
+    [activeInstrument.readinessEnabled, scoreResult],
   );
 
   function selectOption(itemId: string, selectedOptionId: string) {
@@ -74,30 +131,60 @@ export default function RubricScoringScreen() {
 
   return (
     <AssessmentScreenShell
-      title="Protective Capacity Scoring"
-      subtitle="Score the SafeSteps assessment domains with weighted scoring, critical-item overrides, and reunification readiness support."
+      title="Assessment Scoring"
+      subtitle="Score SafeSteps instruments with weighted domains, critical overrides, and review gates that cannot average away active safety concerns."
     >
+      <View style={styles.instrumentTabs}>
+        {(Object.keys(scoringInstruments) as ScoringInstrumentKey[]).map((key) => {
+          const instrument = scoringInstruments[key];
+          const active = key === instrumentKey;
+
+          return (
+            <Pressable
+              key={key}
+              onPress={() => setInstrumentKey(key)}
+              style={active ? styles.instrumentTabActive : styles.instrumentTab}
+            >
+              <Text style={active ? styles.instrumentTabTextActive : styles.instrumentTabText}>
+                {instrument.label}
+              </Text>
+            </Pressable>
+          );
+        })}
+      </View>
+
       <View style={styles.exampleNotice}>
         <Text style={styles.exampleTitle}>Calibration preview only</Text>
         <Text style={styles.summaryText}>
-          This screen uses built-in calibration responses to verify scoring logic. Do not treat these scores as a live
-          case result until connected to saved assessment records and reviewed evidence.
+          {activeInstrument.subtitle} This screen uses built-in calibration responses to verify scoring logic. Do not
+          treat these scores as a live case result until connected to saved assessment records and reviewed evidence.
         </Text>
       </View>
 
       <View style={styles.summaryGrid}>
         <View style={styles.summaryCard}>
-          <Text style={styles.summaryLabel}>Assessment score</Text>
+          <Text style={styles.summaryLabel}>{activeInstrument.scoreLabel}</Text>
           <Text style={styles.summaryValue}>{scoreResult.overallScore}%</Text>
           <Text style={styles.summaryText}>{scoreResult.band?.label ?? "No band matched"}</Text>
         </View>
-        <View style={styles.summaryCard}>
-          <Text style={styles.summaryLabel}>Readiness index</Text>
-          <Text style={styles.summaryValue}>
-            {readiness.compositeScore == null ? "Review" : `${readiness.compositeScore}%`}
-          </Text>
-          <Text style={styles.summaryText}>{readiness.recommendation}</Text>
-        </View>
+        {readiness ? (
+          <View style={styles.summaryCard}>
+            <Text style={styles.summaryLabel}>Readiness index</Text>
+            <Text style={styles.summaryValue}>
+              {readiness.compositeScore == null ? "Review" : `${readiness.compositeScore}%`}
+            </Text>
+            <Text style={styles.summaryText}>{readiness.recommendation}</Text>
+          </View>
+        ) : (
+          <View style={styles.summaryCard}>
+            <Text style={styles.summaryLabel}>RRI handling</Text>
+            <Text style={styles.summaryValue}>Review</Text>
+            <Text style={styles.summaryText}>
+              AOD/MH/DFV concern scores are risk signals. Critical overrides cap readiness reliance and require
+              supervisor review before any reunification-level interpretation.
+            </Text>
+          </View>
+        )}
       </View>
 
       {scoreResult.overrideTriggered ? (
@@ -107,10 +194,21 @@ export default function RubricScoringScreen() {
         </View>
       ) : null}
 
+      {aodMhDfvRuleFlags.length ? (
+        <View style={styles.alertCard}>
+          <Text style={styles.alertTitle}>Cross-domain rule flags</Text>
+          {aodMhDfvRuleFlags.map((flag) => (
+            <Text key={flag.ruleCode} style={styles.alertText}>
+              {flag.ruleCode}: {flag.flagText}
+            </Text>
+          ))}
+        </View>
+      ) : null}
+
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>Domain scores</Text>
         {scoreResult.domainScores.map((domainScore) => {
-          const domain = safeStepsProtectiveCapacityDomains.find((item) => item.id === domainScore.domainId);
+          const domain = activeInstrument.domains.find((item) => item.id === domainScore.domainId);
           return (
             <View key={domainScore.domainId} style={styles.domainRow}>
               <View style={styles.domainCopy}>
@@ -126,7 +224,7 @@ export default function RubricScoringScreen() {
       </View>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.bandRow}>
-        {safeStepsScoringBands.map((band) => (
+        {activeInstrument.bands.map((band) => (
           <View key={band.id} style={band.id === scoreResult.band?.id ? styles.bandCardActive : styles.bandCard}>
             <Text style={styles.bandLabel}>{band.label}</Text>
             <Text style={styles.bandRange}>{band.minScore}-{band.maxScore}%</Text>
@@ -136,8 +234,8 @@ export default function RubricScoringScreen() {
       </ScrollView>
 
       <View style={styles.list}>
-        {safeStepsProtectiveCapacityItems.map((item) => {
-          const domain = safeStepsProtectiveCapacityDomains.find((candidate) => candidate.id === item.domainId);
+        {activeInstrument.items.map((item) => {
+          const domain = activeInstrument.domains.find((candidate) => candidate.id === item.domainId);
           const selectedOptionId = selectedOptions[item.id];
           return (
             <View key={item.id} style={styles.itemCard}>
@@ -166,6 +264,35 @@ export default function RubricScoringScreen() {
 }
 
 const styles = StyleSheet.create({
+  instrumentTabs: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8,
+  },
+  instrumentTab: {
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: assessmentColors.border,
+    backgroundColor: "#FFFFFF",
+  },
+  instrumentTabActive: {
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: assessmentColors.tealDark,
+    backgroundColor: assessmentColors.sage,
+  },
+  instrumentTabText: {
+    color: assessmentColors.muted,
+    fontWeight: "900",
+  },
+  instrumentTabTextActive: {
+    color: assessmentColors.tealDark,
+    fontWeight: "900",
+  },
   exampleNotice: {
     gap: 8,
     padding: 16,
