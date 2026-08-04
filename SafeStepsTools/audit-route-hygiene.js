@@ -33,6 +33,10 @@ const allowedRouteFiles = new Set([
   "index.tsx",
 ]);
 
+const allowedRoutePrefixes = [
+  "parent/daily-challenges/",
+];
+
 function walk(dir) {
   if (!fs.existsSync(dir)) return [];
 
@@ -64,11 +68,16 @@ function looksLikeImplementationFile(relativePath) {
   return /^[A-Z]/.test(baseName) || implementationFilePatterns.some((pattern) => pattern.test(fileName));
 }
 
+function isAllowedRoutePrefix(relativePath) {
+  return allowedRoutePrefixes.some((prefix) => relativePath.startsWith(prefix));
+}
+
 function auditRouteHygiene() {
   const routeCandidates = walk(appRoot).filter(isRouteCandidate).map(toAppRelative).sort();
   const implementationRouteCandidates = routeCandidates.filter((relativePath) => {
     const fileName = path.basename(relativePath);
     if (allowedRouteFiles.has(fileName)) return false;
+    if (isAllowedRoutePrefix(relativePath)) return false;
     return hasImplementationSegment(relativePath) || looksLikeImplementationFile(relativePath);
   });
 

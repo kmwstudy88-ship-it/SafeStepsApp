@@ -1,8 +1,4 @@
-import * as Linking from "expo-linking";
-
 import { supabase } from "../supabase/client";
-import { signInForAudience } from "../safeStepsApi";
-import { parseAuthRecoveryUrl } from "./authRecoveryPolicy";
 import {
   defaultRepresentationPreferences,
   normaliseRepresentationPreferences,
@@ -15,22 +11,40 @@ function getAuthRedirectUrl() {
   }
 
   if (typeof window !== "undefined" && window.location.origin) {
-    return window.location.origin + "/onboarding/verify-account";
+    return `${window.location.origin}/assessments`;
   }
 
-  return Linking.createURL("/onboarding/verify-account");
+  return undefined;
 }
 
-function getPasswordResetRedirectUrl() {
-  if (process.env.EXPO_PUBLIC_PASSWORD_RESET_REDIRECT_URL) {
-    return process.env.EXPO_PUBLIC_PASSWORD_RESET_REDIRECT_URL;
+function getPasswordRecoveryRedirectUrl() {
+  const baseUrl = getAuthRedirectUrl();
+
+  if (!baseUrl) {
+    return undefined;
   }
 
-  if (typeof window !== "undefined" && window.location.origin) {
-    return window.location.origin + "/reset-password";
+  try {
+    const url = new URL(baseUrl);
+    url.pathname = "/reset-password";
+    url.search = "";
+    url.hash = "";
+    return url.toString();
+  } catch {
+    return baseUrl.replace(/\/[^/]*$/, "/reset-password");
   }
+}
 
-  return Linking.createURL("/reset-password");
+function getUrlAuthParams(authUrl: string) {
+  const parsedUrl = new URL(authUrl);
+  const hashParams = new URLSearchParams(parsedUrl.hash.replace(/^#/, ""));
+  const queryParams = parsedUrl.searchParams;
+
+  return {
+    accessToken: hashParams.get("access_token") ?? queryParams.get("access_token"),
+    refreshToken: hashParams.get("refresh_token") ?? queryParams.get("refresh_token"),
+    code: queryParams.get("code") ?? hashParams.get("code"),
+  };
 }
 
 export type SafeStepsProfile = {
@@ -67,7 +81,16 @@ export async function getCurrentUser() {
 }
 
 export async function signInWithEmail(email: string, password: string) {
-  return await signInForAudience("parent", email, password);
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: email.trim(),
+    password,
+  });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
 }
 
 export async function registerWithEmail(input: {
@@ -80,9 +103,6 @@ export async function registerWithEmail(input: {
     password: input.password,
     options: {
       emailRedirectTo: getAuthRedirectUrl(),
-      data: {
-        display_name: input.displayName.trim(),
-      },
     },
   });
 
@@ -110,12 +130,84 @@ export async function registerWithEmail(input: {
   return data;
 }
 
-export async function signOut() {
-  const { error } = await supabase.auth.signOut();
+export async function requestPasswordReset(email: string) {
+  const { data, error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+    redirectTo: getPasswordRecoveryRedirectUrl(),
+  });
 
   if (error) {
     throw new Error(error.message);
   }
+
+  return data;
+}
+
+export async function createPasswordRecoverySession(recoveryUrl: string) {
+  const { accessToken, refreshToken, code } = getUrlAuthParams(recoveryUrl);
+
+  if (code) {
+    const { data, error } = await supabase.auth.exchangeCodeForSession(code);
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    return data.session;
+  }
+
+  if (!accessToken || !refreshToken) {
+    return null;
+  }
+
+  const { data, error } = await supabase.auth.setSession({
+    access_token: accessToken,
+    refresh_token: refreshToken,
+  });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data.session;
+}
+
+export async function updatePassword(password: string) {
+  const { data, error } = await supabase.auth.updateUser({ password });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
+}
+
+export async function createEmailVerificationSession(verificationUrl: string) {
+  const { accessToken, refreshToken, code } = getUrlAuthParams(verificationUrl);
+
+  if (code) {
+    const { data, error } = await supabase.auth.exchangeCodeForSession(code);
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    return data.session;
+  }
+
+  if (!accessToken || !refreshToken) {
+    return null;
+  }
+
+  const { data, error } = await supabase.auth.setSession({
+    access_token: accessToken,
+    refresh_token: refreshToken,
+  });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data.session;
 }
 
 export async function verifyEmailOtp(email: string, token: string) {
@@ -125,63 +217,31 @@ export async function verifyEmailOtp(email: string, token: string) {
     type: "email",
   });
 
-  if (error) throw new Error(error.message);
-  return data.session;
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
 }
 
 export async function resendEmailVerification(email: string) {
-  const { error } = await supabase.auth.resend({
-    type: "signup",
+  const { data, error } = await supabase.auth.resend({
     email: email.trim(),
+    type: "signup",
     options: {
       emailRedirectTo: getAuthRedirectUrl(),
     },
   });
 
-  if (error) throw new Error(error.message);
-}
-
-async function createSessionFromAuthUrl(url: string, invalidMessage: string) {
-  const tokens = parseAuthRecoveryUrl(url);
-
-  if (!tokens) throw new Error(invalidMessage);
-
-  const { data, error } = await supabase.auth.setSession(tokens);
-
-  if (error) throw new Error(error.message);
-  return data.session;
-}
-
-export async function createEmailVerificationSession(url: string) {
-  return await createSessionFromAuthUrl(
-    url,
-    "This email verification link is invalid or has expired.",
-  );
-}
-
-export async function requestPasswordReset(email: string) {
-  const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
-    redirectTo: getPasswordResetRedirectUrl(),
-  });
-
   if (error) {
     throw new Error(error.message);
   }
+
+  return data;
 }
 
-export async function createPasswordRecoverySession(url: string) {
-  return await createSessionFromAuthUrl(
-    url,
-    "This password reset link is invalid or has expired.",
-  );
-}
-
-export async function updatePassword(password: string) {
-  if (password.length < 8) {
-    throw new Error("Use at least 8 characters for your new password.");
-  }
-
-  const { error } = await supabase.auth.updateUser({ password });
+export async function signOut() {
+  const { error } = await supabase.auth.signOut();
 
   if (error) {
     throw new Error(error.message);
@@ -254,4 +314,3 @@ export async function upsertProfile(input: {
 
   return data as SafeStepsProfile;
 }
-
