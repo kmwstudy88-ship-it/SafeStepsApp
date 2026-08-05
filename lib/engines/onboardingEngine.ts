@@ -205,3 +205,18 @@ export async function saveParentAccessibilityPreferences(
 
   if (error) throw new Error(error.message);
 }
+
+export async function saveParentAccessibilityPreferencesFromSettings(
+  preferences: ParentAccessibilityPreferences,
+) {
+  const user = await requireCurrentUser();
+  const { error } = await supabase
+    .from("profiles")
+    .update({
+      accessibility_preferences: preferences,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", user.id);
+
+  if (error) throw new Error(error.message);
+}

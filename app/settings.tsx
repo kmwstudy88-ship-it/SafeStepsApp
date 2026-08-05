@@ -16,6 +16,14 @@ import {
   upsertProfile,
 } from "../lib/engines/authEngine";
 import {
+  loadParentAccessibilityPreferences,
+  saveParentAccessibilityPreferencesFromSettings,
+} from "../lib/engines/onboardingEngine";
+import {
+  defaultParentAccessibilityPreferences,
+  type ParentAccessibilityPreferences,
+} from "../lib/engines/onboardingPolicy";
+import {
   defaultRepresentationPreferences,
   parentCarerRoleOptions,
   parseCommaSeparatedPreferences,
@@ -73,6 +81,8 @@ export default function SettingsScreen() {
   const [representationPreferences, setRepresentationPreferences] = useState<RepresentationPreferences>(
     defaultRepresentationPreferences,
   );
+  const [accessibilityPreferences, setAccessibilityPreferences] =
+    useState<ParentAccessibilityPreferences>(defaultParentAccessibilityPreferences);
   const [languagesText, setLanguagesText] = useState("");
   const [householdText, setHouseholdText] = useState("");
   const [appearanceText, setAppearanceText] = useState("");
@@ -96,6 +106,7 @@ export default function SettingsScreen() {
       setStoryGoal(loadedProfile.story_goal ?? "");
       setStrengths(loadedProfile.strengths ?? "");
       setSupportNotes(loadedProfile.support_notes ?? "");
+      setAccessibilityPreferences(await loadParentAccessibilityPreferences());
       const loadedPreferences = loadedProfile.representation_preferences ?? defaultRepresentationPreferences;
       setRepresentationPreferences(loadedPreferences);
       setLanguagesText(loadedPreferences.languagesSpoken.join(", "));
@@ -132,9 +143,10 @@ export default function SettingsScreen() {
           updatedAt: new Date().toISOString(),
         },
       });
+      await saveParentAccessibilityPreferencesFromSettings(accessibilityPreferences);
 
       setProfile(savedProfile);
-      setSuccess("Profile saved.");
+      setSuccess("Settings saved.");
     } catch (saveError) {
       setError(
         saveError instanceof Error ? saveError.message : "Could not save profile."
@@ -187,6 +199,13 @@ export default function SettingsScreen() {
 
       return { ...current, [key]: nextValues.length > 0 ? nextValues : ["No preference"] };
     });
+  }
+
+  function updateAccessibilityPreference<K extends keyof ParentAccessibilityPreferences>(
+    key: K,
+    value: ParentAccessibilityPreferences[K],
+  ) {
+    setAccessibilityPreferences((current) => ({ ...current, [key]: value }));
   }
 
   return (
@@ -464,6 +483,81 @@ export default function SettingsScreen() {
                 - {safeguard}
               </Text>
             ))}
+          </View>
+
+          <View
+            style={{
+              padding: 16,
+              backgroundColor: "#f7faf8",
+              borderRadius: 12,
+              borderWidth: 1,
+              borderColor: "#cbd8d0",
+              marginBottom: 16,
+            }}
+          >
+            <Text style={{ fontSize: 22, fontWeight: "bold", marginBottom: 8 }}>
+              Accessibility Preferences
+            </Text>
+            <Text style={{ marginBottom: 12, lineHeight: 21 }}>
+              Update the display and reading supports you chose during onboarding.
+            </Text>
+
+            <Text style={{ fontWeight: "bold", marginBottom: 8 }}>Text Size</Text>
+            <View style={{ flexDirection: "row", gap: 8, marginBottom: 14 }}>
+              {(["small", "medium", "large"] as const).map((size) => {
+                const selected = accessibilityPreferences.textSize === size;
+                return (
+                  <Pressable
+                    key={size}
+                    onPress={() => updateAccessibilityPreference("textSize", size)}
+                    style={{
+                      alignItems: "center",
+                      backgroundColor: selected ? "#dcefe8" : "#ffffff",
+                      borderColor: selected ? "#0d655f" : "#cbd8d0",
+                      borderRadius: 10,
+                      borderWidth: 1,
+                      flex: 1,
+                      minHeight: 44,
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Text style={{ fontWeight: "900", textTransform: "capitalize" }}>
+                      {size}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+
+            {[
+              ["highContrast", "High Contrast"],
+              ["reducedMotion", "Reduced Motion"],
+              ["readAloud", "Read Aloud"],
+              ["captions", "Captions"],
+              ["simpleLanguage", "Simple Language"],
+            ].map(([key, label]) => {
+              const preferenceKey = key as keyof Omit<ParentAccessibilityPreferences, "textSize">;
+              const selected = accessibilityPreferences[preferenceKey];
+              return (
+                <Pressable
+                  key={key}
+                  onPress={() => updateAccessibilityPreference(preferenceKey, !selected)}
+                  style={{
+                    padding: 12,
+                    borderRadius: 10,
+                    borderWidth: 1,
+                    borderColor: selected ? "#0d655f" : "#cbd8d0",
+                    backgroundColor: selected ? "#dcefe8" : "#ffffff",
+                    marginBottom: 8,
+                  }}
+                >
+                  <Text style={{ fontWeight: "bold" }}>
+                    {selected ? "Selected: " : ""}
+                    {label}
+                  </Text>
+                </Pressable>
+              );
+            })}
           </View>
 
           <Pressable
