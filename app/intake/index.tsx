@@ -1,5 +1,5 @@
 import { Redirect, useRouter } from "expo-router";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   ActivityIndicator,
   Pressable,
@@ -67,7 +67,7 @@ export default function ParentIntakeScreen() {
     setError("");
   }
 
-  async function loadProgress() {
+  const loadProgress = useCallback(async () => {
     setLoading(true);
     setError("");
     try {
@@ -86,11 +86,11 @@ export default function ParentIntakeScreen() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [router]);
 
   useEffect(() => {
     if (user) void loadProgress();
-  }, [user?.id]);
+  }, [loadProgress, user]);
 
   if (initializing) return null;
   if (!user) return <Redirect href="/login" />;
