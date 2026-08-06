@@ -1,4 +1,5 @@
 import { supabase } from "./supabaseClient";
+import type { DocumentIntelligenceEngineResult } from "./engines/documentIntelligenceEngine";
 
 const DEFAULT_API_URL = "http://localhost:3000";
 
@@ -32,6 +33,12 @@ export type DocumentIntelligenceResult = {
   evidenceGaps: string[];
   workerReviewActions: string[];
   sections: Record<string, DocumentIntelligenceSection>;
+  /**
+   * Results from all nine Document Intelligence sub-engines.
+   * Populated when the server returns engine analysis or when the client
+   * runs the engines locally via runDocumentIntelligenceEngines().
+   */
+  engines?: DocumentIntelligenceEngineResult;
   disclaimer: string;
 };
 
