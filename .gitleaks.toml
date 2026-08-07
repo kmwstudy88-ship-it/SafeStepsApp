@@ -1,0 +1,14 @@
+title = "SafeStepsApp gitleaks baseline"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Template placeholders and non-secret examples"
+paths = [
+  '''^\.env\.example$''',
+]
+regexes = [
+  '''<YOUR_[A-Z0-9_]+>''',
+  '''https://<YOUR_[A-Z0-9_]+>''',
+]
