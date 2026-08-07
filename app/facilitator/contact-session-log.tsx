@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
+import { useSensitiveAccess } from "../../components/security/SensitiveRouteBoundary";
 import {
   saveContactSessionLog,
   type ContactSessionLogInput,
 } from "../../lib/engines/reunificationSupabaseEngine";
 import type { StageGatedContactStage } from "../../lib/engines/intensiveReunificationEngine";
 import { globalStyles } from "../../lib/styles";
+import {
+  loadContactSessionEntryContext,
+  type ContactSessionEntryContext,
+} from "../../lib/workerCaseReview";
 
 const stages: StageGatedContactStage[] = [
   "no_contact",
@@ -37,9 +42,10 @@ function parseCount(value: string) {
 }
 
 export default function FacilitatorContactSessionLogScreen() {
-  const [caseId, setCaseId] = useState("");
-  const [parentProfileId, setParentProfileId] = useState("");
-  const [facilitatorProfileId, setFacilitatorProfileId] = useState("");
+  const access = useSensitiveAccess();
+  const [entryContext, setEntryContext] = useState<ContactSessionEntryContext | null>(null);
+  const [contextStatus, setContextStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [contextMessage, setContextMessage] = useState("");
   const [stage, setStage] = useState<StageGatedContactStage>("supervised");
   const [durationMinutes, setDurationMinutes] = useState("60");
   const [comfortScore, setComfortScore] = useState("3");
@@ -53,16 +59,44 @@ export default function FacilitatorContactSessionLogScreen() {
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
   const [message, setMessage] = useState("");
 
-  const canSave = caseId.trim().length > 0 && parentProfileId.trim().length > 0 && Number(durationMinutes) > 0;
+  useEffect(() => {
+    let active = true;
+
+    async function loadContext() {
+      if (!access?.caseId) return;
+      setContextStatus("loading");
+      setContextMessage("");
+      try {
+        const nextContext = await loadContactSessionEntryContext(access.caseId);
+        if (active) {
+          setEntryContext(nextContext);
+          setContextStatus("ready");
+        }
+      } catch (error) {
+        if (active) {
+          setEntryContext(null);
+          setContextStatus("error");
+          setContextMessage(error instanceof Error ? error.message : "Unable to load the selected case.");
+        }
+      }
+    }
+
+    loadContext();
+    return () => {
+      active = false;
+    };
+  }, [access?.caseId]);
+
+  const canSave = contextStatus === "ready" && Boolean(entryContext) && Number(durationMinutes) > 0 && status !== "saving";
 
   function toggleSkill(key: keyof NonNullable<ContactSessionLogInput["skillEvidence"]>) {
     setSkillEvidence((current) => ({ ...current, [key]: !current?.[key] }));
   }
 
   async function handleSave() {
-    if (!canSave) {
+    if (!canSave || !entryContext) {
       setStatus("error");
-      setMessage("Enter a case ID, parent profile ID, and duration before saving.");
+      setMessage("The authorised case must be loaded and the session duration must be greater than zero before saving.");
       return;
     }
 
@@ -70,9 +104,9 @@ export default function FacilitatorContactSessionLogScreen() {
     setMessage("");
     try {
       await saveContactSessionLog({
-        caseId: caseId.trim(),
-        parentProfileId: parentProfileId.trim(),
-        facilitatorProfileId: facilitatorProfileId.trim() || null,
+        caseId: entryContext.caseId,
+        parentProfileId: entryContext.parentProfileId,
+        facilitatorProfileId: entryContext.facilitatorProfileId,
         stage,
         sessionDate: new Date().toISOString(),
         durationMinutes: parseCount(durationMinutes),
@@ -102,10 +136,22 @@ export default function FacilitatorContactSessionLogScreen() {
       </Text>
 
       <View style={globalStyles.card}>
-        <Text style={globalStyles.cardTitle}>Case links</Text>
-        <Input value={caseId} onChangeText={setCaseId} placeholder="Case ID" />
-        <Input value={parentProfileId} onChangeText={setParentProfileId} placeholder="Parent profile ID" />
-        <Input value={facilitatorProfileId} onChangeText={setFacilitatorProfileId} placeholder="Facilitator profile ID" />
+        <Text style={globalStyles.cardTitle}>Authorised case</Text>
+        {contextStatus === "loading" ? <Text style={styles.contextText}>Loading selected case…</Text> : null}
+        {contextStatus === "error" ? <Text style={styles.errorText}>{contextMessage}</Text> : null}
+        {entryContext ? (
+          <>
+            <Text style={styles.contextText}>
+              {entryContext.familyLabel || entryContext.parentCarerName || "SafeSteps family case"}
+            </Text>
+            <Text style={styles.contextMeta}>
+              {entryContext.caseNumber ? `Case ${entryContext.caseNumber}` : "Selected authorised case"}
+            </Text>
+            <Text style={styles.contextMeta}>
+              Case, parent and facilitator identities are supplied automatically from the protected case context.
+            </Text>
+          </>
+        ) : null}
       </View>
 
       <View style={globalStyles.card}>
@@ -181,7 +227,11 @@ export default function FacilitatorContactSessionLogScreen() {
         />
       </View>
 
-      <Pressable style={[styles.saveButton, !canSave && styles.disabledButton]} onPress={handleSave}>
+      <Pressable
+        disabled={!canSave}
+        style={[styles.saveButton, !canSave && styles.disabledButton]}
+        onPress={handleSave}
+      >
         <Text style={styles.saveText}>{status === "saving" ? "Saving..." : "Save Contact Session"}</Text>
       </Pressable>
       {message ? <Text style={status === "error" ? styles.errorText : styles.savedText}>{message}</Text> : null}
@@ -204,6 +254,16 @@ function Input({
 const styles = StyleSheet.create({
   grid: {
     gap: 10,
+  },
+  contextText: {
+    color: "#263238",
+    fontSize: 15,
+    fontWeight: "800",
+  },
+  contextMeta: {
+    color: "#5F6F68",
+    fontSize: 13,
+    lineHeight: 19,
   },
   input: {
     minHeight: 44,
