@@ -28,10 +28,19 @@ jobs:
       - name: Install current dependencies
         run: npm ci
 
-      - name: Align Expo SDK packages
+      - name: Align exact Expo SDK packages
         env:
           CI: "1"
-        run: npx expo install --fix
+        run: >-
+          npx expo install
+          @expo/ui@~56.0.25
+          expo@~56.0.19
+          expo-constants@~56.0.23
+          expo-file-system@~56.0.9
+          expo-image-picker@~56.0.23
+          expo-router@~56.2.18
+          expo-sharing@~56.0.24
+          expo-symbols@~56.0.7
 
       - name: Commit generated dependency files
         shell: bash
@@ -43,5 +52,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add package.json package-lock.json
-          git commit -m "Align Expo SDK 56 patch versions"
+          git commit -m "Align exact Expo SDK 56 patch versions"
           git push origin HEAD:stabilize/program-recommendation-main
