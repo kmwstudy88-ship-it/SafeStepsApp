@@ -96,6 +96,14 @@ export type ContactSessionLogInput = {
   skillEvidence?: SkillEvidence;
 };
 
+export function resolveCurrentContactStage(
+  profileStage: StageGatedContactStage | null | undefined,
+  latestOverride: ReunificationOverrideRow | null | undefined,
+): StageGatedContactStage {
+  if (latestOverride?.target_stage) return latestOverride.target_stage;
+  return profileStage ?? "supervised";
+}
+
 function asRiskFlags(value: unknown): RiskFlag[] {
   if (!Array.isArray(value)) return [];
   return value.filter((flag): flag is RiskFlag => {
@@ -194,7 +202,7 @@ export async function fetchReunificationEvaluationInput(
   return {
     parentProfileId: options.parentProfileId,
     caseId: options.caseId,
-    currentStage: profile?.contact_stage ?? latestOverride?.target_stage ?? "supervised",
+    currentStage: resolveCurrentContactStage(profile?.contact_stage, latestOverride),
     contactSessions: ((sessionsResponse.data ?? []) as ContactSessionRow[]).map(mapContactSession),
     assessmentRecords: ((assessmentResponse.data ?? []) as AssessmentRecordRow[]).map(mapAssessmentRecord),
     requiredLessonIds: options.requiredLessonIds,
