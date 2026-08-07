@@ -142,7 +142,7 @@ for delete
 to authenticated
 using (user_id = auth.uid());
 
-revoke all on table public.lesson_responses from public, anon;
+revoke all on table public.lesson_responses from public, anon, authenticated;
 grant select, insert, update, delete on table public.lesson_responses to authenticated;
 grant all on table public.lesson_responses to service_role;
 
