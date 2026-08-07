@@ -16,12 +16,13 @@ Please do **not** open public issues for security reports.
 ## Key rotation checklist
 Rotate and redeploy in this order where applicable:
 
-- Supabase anon key (`SUPABASE_ANON_KEY`)
-- Supabase service role key (`SUPABASE_SERVICE_ROLE_KEY`)
-- Supabase secret/publishable keys (`SUPABASE_SECRET_KEY`, `SUPABASE_PUBLISHABLE_KEY`)
-- Supabase DB password / connection string (`SUPABASE_DB_URL`)
-- Engine/API credentials (`SAFE_STEPS_*_KEY`, `OPENAI_KEY`, `OPENAI_API_KEY`)
-- Messaging and payments credentials (`SAFE_STEPS_EMAIL_API_KEY`, `SAFE_STEPS_SMS_API_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`)
+- Supabase anon/publishable client keys (`SUPABASE_ANON_KEY`, `SUPABASE_PUBLISHABLE_KEY` and corresponding `EXPO_PUBLIC_*` values).
+- Supabase service role key (`SUPABASE_SERVICE_ROLE_KEY`) — server only.
+- Supabase DB password / connection string (`SUPABASE_DB_URL`) — server only.
+- Engine/API credentials (`SAFE_STEPS_*_KEY`, `OPENAI_KEY`, `OPENAI_API_KEY`) — server only unless a specific key is explicitly designed for public client use.
+- Messaging and payment credentials (`SAFE_STEPS_EMAIL_API_KEY`, `SAFE_STEPS_SMS_API_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`) — server only.
+
+Never place service-role, database, OpenAI, messaging, payment, or other privileged credentials in `EXPO_PUBLIC_*` variables.
 
 ## Post-incident cleanup
 - Invalidate active sessions/tokens that relied on exposed credentials.
