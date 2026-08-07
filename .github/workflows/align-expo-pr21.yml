@@ -1,0 +1,47 @@
+name: Align Expo PR21
+
+on:
+  push:
+    branches:
+      - stabilize/program-recommendation-main
+
+permissions:
+  contents: write
+
+jobs:
+  align-expo:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: stabilize/program-recommendation-main
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install current dependencies
+        run: npm ci
+
+      - name: Align Expo SDK packages
+        env:
+          CI: "1"
+        run: npx expo install --fix
+
+      - name: Commit generated dependency files
+        shell: bash
+        run: |
+          if git diff --quiet -- package.json package-lock.json; then
+            echo "Expo dependencies already aligned."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json
+          git commit -m "Align Expo SDK 56 patch versions"
+          git push origin HEAD:stabilize/program-recommendation-main
