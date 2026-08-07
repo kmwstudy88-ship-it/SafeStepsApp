@@ -56,7 +56,7 @@ export default function CurriculumLibraryScreen() {
       displayedLessons.filter(
         (lesson) =>
           !search ||
-          `${lesson.title} ${"summary" in lesson ? lesson.summary : lesson.content ?? lesson.body ?? ""}`
+          `${lesson.title} ${lesson.summary}`
             .toLowerCase()
             .includes(search),
       ),
@@ -154,9 +154,7 @@ export default function CurriculumLibraryScreen() {
             <Pressable style={globalStyles.card}>
               <Text style={globalStyles.cardTitle}>{course.title}</Text>
               <Text style={globalStyles.cardText}>{course.description ?? "Generated SafeSteps curriculum course."}</Text>
-              <Text style={globalStyles.mutedText}>
-                {"lessons" in course ? `${course.lessons.length} lessons` : `${course.modules.length} modules from Prisma`}
-              </Text>
+              <Text style={globalStyles.mutedText}>{course.lessons.length} lessons</Text>
             </Pressable>
           </Link>
         ))}
@@ -178,19 +176,13 @@ export default function CurriculumLibraryScreen() {
         filteredLessons.map((lesson) => (
           <Link
             key={lesson.id}
-            href={"estimatedMinutes" in lesson ? { pathname: "/lessons/[lessonId]", params: { lessonId: lesson.id } } : ("/library" as Href)}
+            href={{ pathname: "/lessons/[lessonId]", params: { lessonId: lesson.id } }}
             asChild
           >
             <Pressable style={globalStyles.card}>
-              <Text style={globalStyles.cardTitle}>
-                {"week" in lesson ? `Week ${lesson.week}: ${lesson.title}` : lesson.title}
-              </Text>
-              <Text style={globalStyles.cardText}>
-                {"summary" in lesson ? lesson.summary : lesson.content ?? lesson.body ?? "Generated lesson content pending review."}
-              </Text>
-              <Text style={globalStyles.mutedText}>
-                {"estimatedMinutes" in lesson ? `${lesson.estimatedMinutes} minutes` : lesson.weekId ?? lesson.sourcePath}
-              </Text>
+              <Text style={globalStyles.cardTitle}>Week {lesson.week}: {lesson.title}</Text>
+              <Text style={globalStyles.cardText}>{lesson.summary}</Text>
+              <Text style={globalStyles.mutedText}>{lesson.estimatedMinutes} minutes</Text>
             </Pressable>
           </Link>
         ))}
