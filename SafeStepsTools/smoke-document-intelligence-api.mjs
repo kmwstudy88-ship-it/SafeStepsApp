@@ -37,10 +37,22 @@ try {
       throw new Error(`Expected document analysis to run, received ${response.status}: ${await response.text()}`);
     }
   } else {
-    const body = await response.text();
+    const bodyText = await response.text();
+    let body;
 
-    if (response.status !== 503 || !body.includes('Set OPENAI_KEY or OPENAI_API_KEY')) {
-      throw new Error(`Expected configured no-key 503, received ${response.status}: ${body}`);
+    try {
+      body = JSON.parse(bodyText);
+    } catch {
+      body = null;
+    }
+
+    const hasExpectedErrorEnvelope =
+      body?.error?.code === 'SERVICE_UNAVAILABLE' &&
+      typeof body?.error?.message === 'string' &&
+      typeof body?.error?.requestId === 'string';
+
+    if (response.status !== 503 || !hasExpectedErrorEnvelope) {
+      throw new Error(`Expected configured no-key 503 error envelope, received ${response.status}: ${bodyText}`);
     }
   }
 

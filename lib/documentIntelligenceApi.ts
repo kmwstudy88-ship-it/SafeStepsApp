@@ -1,6 +1,5 @@
-import { supabase } from "./supabaseClient";
-
-const DEFAULT_API_URL = "http://localhost:3000";
+import { resolveSingleActiveCaseId } from "./security/caseAccess";
+import { safeStepsApiRequest } from "./safeStepsApi";
 
 export type DocumentIntelligenceSource = {
   mode: "text" | "file";
@@ -35,9 +34,30 @@ export type DocumentIntelligenceResult = {
   disclaimer: string;
 };
 
+export type DocumentAnalysisRun = {
+  id: string;
+  case_id: string;
+  document_id: string | null;
+  document_version_id: string | null;
+  requested_by: string;
+  source_mode: "text" | "file";
+  source_metadata: DocumentIntelligenceSource;
+  status: "queued" | "processing" | "completed" | "failed";
+  schema_version: string;
+  model: string | null;
+  result: DocumentIntelligenceResult | null;
+  error_code: string | null;
+  error_message: string | null;
+  started_at: string | null;
+  completed_at: string | null;
+  created_at: string;
+};
+
 export type DocumentIntelligenceResponse = {
   source: DocumentIntelligenceSource;
   result: DocumentIntelligenceResult;
+  analysisId?: string;
+  documentId?: string | null;
 };
 
 export type DocumentIntelligenceFile = {
@@ -46,52 +66,30 @@ export type DocumentIntelligenceFile = {
   mimeType?: string | null;
 };
 
-function apiBaseUrl() {
-  return (process.env.EXPO_PUBLIC_SAFESTEPS_API_URL ?? DEFAULT_API_URL).replace(/\/$/, "");
-}
-
-async function authenticatedHeaders(extraHeaders: Record<string, string> = {}) {
-  const { data, error } = await supabase.auth.getSession();
-
-  if (error) {
-    throw new Error(error.message);
-  }
-
-  const accessToken = data.session?.access_token;
-  if (!accessToken) {
-    throw new Error("Sign in before using SafeSteps document intelligence.");
-  }
-
-  return {
-    ...extraHeaders,
-    Authorization: `Bearer ${accessToken}`,
-  };
-}
-
-async function readDocumentIntelligenceResponse(response: Response) {
-  const payload = (await response.json().catch(() => null)) as { error?: string } | null;
-
-  if (!response.ok) {
-    throw new Error(payload?.error ?? `SafeSteps document intelligence returned ${response.status}`);
-  }
-
-  return payload as DocumentIntelligenceResponse;
-}
-
-export async function analyzeDocumentText(text: string) {
-  const response = await fetch(`${apiBaseUrl()}/documents/analyze`, {
+export async function analyzeDocumentText(text: string, selectedCaseId?: string) {
+  const caseId = selectedCaseId ?? (await resolveSingleActiveCaseId());
+  const data = await safeStepsApiRequest<{
+    source: DocumentIntelligenceSource;
+    document: { id: string } | null;
+    documentVersion: { id: string } | null;
+    analysis: DocumentAnalysisRun;
+  }>("/documents/analyze", {
     method: "POST",
-    headers: await authenticatedHeaders({
-      "Content-Type": "application/json",
-    }),
-    body: JSON.stringify({ text }),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ caseId, text }),
   });
 
-  return readDocumentIntelligenceResponse(response);
+  return responseFromRun(data.source, data.analysis, data.document?.id ?? null);
 }
 
-export async function analyzeDocumentFile(file: DocumentIntelligenceFile, fallbackText = "") {
+export async function analyzeDocumentFile(
+  file: DocumentIntelligenceFile,
+  fallbackText = "",
+  selectedCaseId?: string,
+) {
+  const caseId = selectedCaseId ?? (await resolveSingleActiveCaseId());
   const formData = new FormData();
+  formData.append("caseId", caseId);
 
   if (!file.uri.startsWith("file:") && fallbackText.trim()) {
     formData.append("text", fallbackText.trim());
@@ -105,11 +103,71 @@ export async function analyzeDocumentFile(file: DocumentIntelligenceFile, fallba
     } as unknown as Blob);
   }
 
-  const response = await fetch(`${apiBaseUrl()}/documents/analyze`, {
+  const data = await safeStepsApiRequest<{
+    source: DocumentIntelligenceSource;
+    document: { id: string } | null;
+    documentVersion: { id: string } | null;
+    analysis: DocumentAnalysisRun;
+  }>("/documents/analyze", {
     method: "POST",
-    headers: await authenticatedHeaders(),
     body: formData,
   });
 
-  return readDocumentIntelligenceResponse(response);
+  return responseFromRun(data.source, data.analysis, data.document?.id ?? null);
+}
+
+export async function uploadDocumentFile(
+  file: DocumentIntelligenceFile,
+  input: {
+    caseId?: string;
+    documentId?: string;
+    documentType?: string;
+    title?: string;
+  } = {},
+) {
+  const caseId = input.caseId ?? (await resolveSingleActiveCaseId());
+  const formData = new FormData();
+  formData.append("caseId", caseId);
+  formData.append("documentType", input.documentType ?? "other");
+  formData.append("title", input.title ?? file.name);
+  if (input.documentId) formData.append("documentId", input.documentId);
+  formData.append("file", {
+    uri: file.uri,
+    name: file.name,
+    type: file.mimeType ?? "application/octet-stream",
+  } as unknown as Blob);
+
+  return safeStepsApiRequest<{
+    document: Record<string, unknown>;
+    version: Record<string, unknown>;
+  }>("/documents/upload", { method: "POST", body: formData });
+}
+
+export async function getDocumentAnalysis(analysisId: string) {
+  return safeStepsApiRequest<{ analysis: DocumentAnalysisRun }>(
+    `/documents/analyses/${encodeURIComponent(analysisId)}`,
+  );
+}
+
+export async function listDocumentAnalyses(documentId: string) {
+  return safeStepsApiRequest<{ analyses: DocumentAnalysisRun[] }>(
+    `/documents/${encodeURIComponent(documentId)}/analyses`,
+  );
+}
+
+function responseFromRun(
+  source: DocumentIntelligenceSource,
+  analysis: DocumentAnalysisRun,
+  documentId: string | null,
+): DocumentIntelligenceResponse {
+  if (!analysis.result) {
+    throw new Error(analysis.error_message ?? "SafeSteps did not return a document analysis result.");
+  }
+
+  return {
+    source,
+    result: analysis.result,
+    analysisId: analysis.id,
+    documentId,
+  };
 }
