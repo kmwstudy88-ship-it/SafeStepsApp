@@ -1,17 +1,25 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, ScrollView, Text, View } from "react-native";
-import { Link, Redirect } from "expo-router";
+import { Link } from "expo-router";
 
 import { AppBottomNav } from "../../components/AppBottomNav";
-import { useAuth } from "../../lib/auth";
+import { useSensitiveAccess } from "../../components/security/SensitiveRouteBoundary";
 import {
   getProgramTitle,
-  getReportSummary,
   safeStepsGrowthDimensions,
   safeStepsProgramEngines,
   type ReportSummary,
 } from "../../lib/platformData";
+import {
+  buildReportReadyDocumentAppendix,
+} from "../../lib/reportReadyCaseDocuments";
 import { globalStyles } from "../../lib/styles";
+import {
+  loadWorkerCaseReview,
+  type WorkerCaseContext,
+} from "../../lib/workerCaseReview";
+
+type ReportReadyAppendixItem = ReturnType<typeof buildReportReadyDocumentAppendix>[number];
 
 const emptySummary: ReportSummary = {
   tasks: [],
@@ -45,26 +53,40 @@ function reviewPriority(summary: ReportSummary) {
 }
 
 export default function FacilitatorWorkspaceScreen() {
-  const { initializing, user } = useAuth();
-  const userId = user?.id;
+  const access = useSensitiveAccess();
+  const caseId = access?.caseId ?? null;
   const [summary, setSummary] = useState<ReportSummary>(emptySummary);
+  const [caseContext, setCaseContext] = useState<WorkerCaseContext | null>(null);
+  const [reportReadyDocuments, setReportReadyDocuments] = useState<ReportReadyAppendixItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!userId) return;
+    if (!caseId) return;
 
     let active = true;
+    setLoading(true);
+    setError("");
 
-    getReportSummary(userId).then((nextSummary) => {
-      if (!active) return;
-      setSummary(nextSummary);
-      setLoading(false);
-    });
+    loadWorkerCaseReview(caseId)
+      .then((review) => {
+        if (!active) return;
+        setCaseContext(review.case);
+        setSummary(review.parentSummary);
+        setReportReadyDocuments(buildReportReadyDocumentAppendix(review.reportReadyDocuments));
+      })
+      .catch((loadError) => {
+        if (!active) return;
+        setError(loadError instanceof Error ? loadError.message : "Unable to load the assigned SafeSteps case.");
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
 
     return () => {
       active = false;
     };
-  }, [userId]);
+  }, [caseId]);
 
   const completedTasks = summary.tasks.filter((task) => task.status === "completed");
   const openTasks = summary.tasks.filter((task) => task.status !== "completed");
@@ -97,46 +119,56 @@ export default function FacilitatorWorkspaceScreen() {
       prompts.push("Review open tasks and agree on the next smallest achievable step.");
     }
 
+    if (reportReadyDocuments.length === 0) {
+      prompts.push("Check whether any reviewed case documents are ready to be included in formal reporting.");
+    }
+
     if (prompts.length === 0) {
-      prompts.push("Review the timeline for changes in language, confidence, and consistency.");
+      prompts.push("Review the timeline for changes in language, confidence, consistency, and verified evidence.");
     }
 
     return prompts;
-  }, [completedTasks.length, meaningReflections.length, objectiveEvidence.length, openTasks.length, weeklyGrowthNotes.length]);
-
-  if (initializing) {
-    return null;
-  }
-
-  if (!user) {
-    return <Redirect href="/login" />;
-  }
+  }, [completedTasks.length, meaningReflections.length, objectiveEvidence.length, openTasks.length, reportReadyDocuments.length, weeklyGrowthNotes.length]);
 
   return (
     <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={globalStyles.screen}>
-      <Text style={globalStyles.title}>Facilitator workspace</Text>
+      <Text style={globalStyles.title}>Worker case review</Text>
       <Text style={globalStyles.subtitle}>
-        A review surface for progress, reflections, evidence, and next-session prompts. Private facilitator notes should be added after role-based storage is available.
+        This workspace is restricted to authorised staff with active membership of the selected SafeSteps case.
       </Text>
 
       {loading ? <ActivityIndicator /> : null}
+      {error ? (
+        <View style={globalStyles.card}>
+          <Text style={globalStyles.cardTitle}>Could not load case review</Text>
+          <Text style={globalStyles.cardText}>{error}</Text>
+        </View>
+      ) : null}
+
+      {caseContext ? (
+        <View style={globalStyles.card}>
+          <Text style={globalStyles.cardTitle}>Selected case</Text>
+          <Text style={globalStyles.cardText}>Case: {caseContext.caseNumber || caseContext.id}</Text>
+          <Text style={globalStyles.cardText}>Family: {caseContext.familyLabel || "Not recorded"}</Text>
+          <Text style={globalStyles.cardText}>Parent/carer: {caseContext.parentCarerName || summary.profile?.display_name || "Not recorded"}</Text>
+          <Text style={globalStyles.cardText}>Case status: {caseContext.status}</Text>
+          <Text style={globalStyles.cardText}>Program stream: {caseContext.programStream || "Not recorded"}</Text>
+          <Text style={globalStyles.cardText}>Review due: {formatDate(caseContext.reviewDueDate)}</Text>
+          <Text style={globalStyles.cardText}>Court date: {formatDate(caseContext.courtDate)}</Text>
+        </View>
+      ) : null}
 
       <View style={globalStyles.card}>
         <Text style={globalStyles.cardTitle}>Contact progression evidence</Text>
         <Text style={globalStyles.cardText}>
           Log contact-session scores, child comfort, risk flags, and demonstrated skills for caseworker review.
         </Text>
-        <Link href="/facilitator/contact-session-log" style={globalStyles.link}>
+        <Link
+          href={{ pathname: "/facilitator/contact-session-log", params: caseId ? { caseId } : {} }}
+          style={globalStyles.link}
+        >
           Open contact session log
         </Link>
-      </View>
-
-      <View style={globalStyles.card}>
-        <Text style={globalStyles.cardTitle}>Participant overview</Text>
-        <Text style={globalStyles.cardText}>Name: {summary.profile?.display_name || user.email || "Signed-in participant"}</Text>
-        <Text style={globalStyles.cardText}>Role: {summary.profile?.role ?? "parent"}</Text>
-        <Text style={globalStyles.cardText}>Goal: {summary.profile?.story_goal || "Not recorded yet"}</Text>
-        <Text style={globalStyles.cardText}>Strengths: {summary.profile?.strengths || "Not recorded yet"}</Text>
       </View>
 
       <View style={globalStyles.card}>
@@ -148,22 +180,37 @@ export default function FacilitatorWorkspaceScreen() {
           <Text style={draftEvidence.length > 0 ? globalStyles.priorityHigh : globalStyles.pill}>
             {draftEvidence.length} draft evidence
           </Text>
-          <Text style={globalStyles.pill}>{objectiveEvidence.length} objective evidence</Text>
-          <Text style={globalStyles.pill}>{meaningReflections.length + weeklyGrowthNotes.length} reflection records</Text>
+          <Text style={globalStyles.pill}>{reportReadyDocuments.length} report-ready documents</Text>
         </View>
       </View>
 
       <View style={globalStyles.card}>
         <Text style={globalStyles.cardTitle}>Completion review</Text>
+        <Text style={globalStyles.cardText}>Tasks: {completedTasks.length} complete, {openTasks.length} open</Text>
         <Text style={globalStyles.cardText}>
-          Tasks: {completedTasks.length} complete, {openTasks.length} open
-        </Text>
-        <Text style={globalStyles.cardText}>
-          Evidence: {draftEvidence.length} draft, {storedEvidence.length} stored, {sharedEvidence.length} shared
+          Legacy evidence: {draftEvidence.length} draft, {storedEvidence.length} stored, {sharedEvidence.length} shared
         </Text>
         <Text style={globalStyles.cardText}>
           Daily home evidence: {summary.dailyHomeEvidenceHistory.completeDays}/{summary.dailyHomeEvidenceHistory.days.length || 7} days complete
         </Text>
+        <Text style={globalStyles.cardText}>Reviewed case documents ready for reporting: {reportReadyDocuments.length}</Text>
+      </View>
+
+      <View style={globalStyles.card}>
+        <Text style={globalStyles.cardTitle}>Report-ready case documents</Text>
+        {reportReadyDocuments.length === 0 ? (
+          <Text style={globalStyles.cardText}>No accepted documents are currently selected for report inclusion.</Text>
+        ) : (
+          reportReadyDocuments.slice(0, 6).map((document) => (
+            <View key={document.documentId} style={globalStyles.compactBlock}>
+              <Text style={globalStyles.cardText}>{document.title}</Text>
+              <Text style={globalStyles.mutedText}>
+                {document.fileName || "No current file"}{document.versionNumber ? ` - version ${document.versionNumber}` : ""}
+              </Text>
+              <Text style={globalStyles.mutedText}>SHA-256: {document.fileSha256 || "Not recorded"}</Text>
+            </View>
+          ))
+        )}
       </View>
 
       <View style={globalStyles.card}>
@@ -212,7 +259,7 @@ export default function FacilitatorWorkspaceScreen() {
       <View style={globalStyles.card}>
         <Text style={globalStyles.cardTitle}>Evidence review queue</Text>
         {objectiveEvidence.length === 0 ? (
-          <Text style={globalStyles.cardText}>No objective evidence saved yet.</Text>
+          <Text style={globalStyles.cardText}>No participant evidence saved yet.</Text>
         ) : (
           objectiveEvidence.slice(0, 6).map((item) => (
             <View key={item.id} style={globalStyles.compactBlock}>
