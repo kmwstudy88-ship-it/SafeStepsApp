@@ -153,10 +153,8 @@ router.get(
       const analysis = await getDocumentAnalysisRun(
         req.safeStepsAuth.supabase,
         req.params.analysisId,
+        req.safeStepsCaseId,
       );
-      if (analysis.case_id !== req.safeStepsCaseId) {
-        throw badRequest("The requested analysis does not belong to the selected SafeSteps case.");
-      }
       res.json({ data: { analysis }, meta: { requestId: req.id } });
     } catch (error) {
       next(error);
@@ -174,9 +172,9 @@ router.get(
       const analyses = await listDocumentAnalysisRuns(
         req.safeStepsAuth.supabase,
         req.params.documentId,
+        req.safeStepsCaseId,
       );
-      const caseAnalyses = analyses.filter((analysis) => analysis.case_id === req.safeStepsCaseId);
-      res.json({ data: { analyses: caseAnalyses }, meta: { requestId: req.id } });
+      res.json({ data: { analyses }, meta: { requestId: req.id } });
     } catch (error) {
       next(error);
     }
