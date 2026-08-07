@@ -1,3 +1,4 @@
+import { getSignedInUserId } from "./authSession";
 import { getReportSummary, type ReportSummary } from "./platformData";
 import {
   listReportReadyCaseDocuments,
@@ -21,6 +22,15 @@ export type WorkerCaseReview = {
   case: WorkerCaseContext;
   parentSummary: ReportSummary;
   reportReadyDocuments: ReportReadyCaseDocument[];
+};
+
+export type ContactSessionEntryContext = {
+  caseId: string;
+  parentProfileId: string;
+  facilitatorProfileId: string;
+  parentCarerName: string | null;
+  caseNumber: string | null;
+  familyLabel: string | null;
 };
 
 type WorkerCaseRow = {
@@ -53,7 +63,26 @@ export function workerCaseContextFromRow(row: WorkerCaseRow): WorkerCaseContext 
   };
 }
 
-export async function loadWorkerCaseReview(caseId: string): Promise<WorkerCaseReview> {
+export function contactSessionEntryContextFromRow(
+  row: WorkerCaseRow,
+  facilitatorProfileId: string,
+): ContactSessionEntryContext {
+  const caseContext = workerCaseContextFromRow(row);
+  if (!facilitatorProfileId) {
+    throw new Error("A signed-in facilitator profile is required to record contact sessions.");
+  }
+
+  return {
+    caseId: caseContext.id,
+    parentProfileId: caseContext.parentUserId,
+    facilitatorProfileId,
+    parentCarerName: caseContext.parentCarerName,
+    caseNumber: caseContext.caseNumber,
+    familyLabel: caseContext.familyLabel,
+  };
+}
+
+async function loadWorkerCaseRow(caseId: string): Promise<WorkerCaseRow> {
   const { data, error } = await supabase
     .from("reunification_cases")
     .select(
@@ -64,8 +93,11 @@ export async function loadWorkerCaseReview(caseId: string): Promise<WorkerCaseRe
 
   if (error) throw error;
   if (!data) throw new Error("The selected SafeSteps case could not be loaded.");
+  return data as WorkerCaseRow;
+}
 
-  const caseContext = workerCaseContextFromRow(data as WorkerCaseRow);
+export async function loadWorkerCaseReview(caseId: string): Promise<WorkerCaseReview> {
+  const caseContext = workerCaseContextFromRow(await loadWorkerCaseRow(caseId));
   const [parentSummary, reportReadyDocuments] = await Promise.all([
     getReportSummary(caseContext.parentUserId),
     listReportReadyCaseDocuments(caseId),
@@ -76,4 +108,15 @@ export async function loadWorkerCaseReview(caseId: string): Promise<WorkerCaseRe
     parentSummary,
     reportReadyDocuments,
   };
+}
+
+export async function loadContactSessionEntryContext(
+  caseId: string,
+): Promise<ContactSessionEntryContext> {
+  const [row, facilitatorProfileId] = await Promise.all([
+    loadWorkerCaseRow(caseId),
+    getSignedInUserId("recording a contact session"),
+  ]);
+
+  return contactSessionEntryContextFromRow(row, facilitatorProfileId);
 }

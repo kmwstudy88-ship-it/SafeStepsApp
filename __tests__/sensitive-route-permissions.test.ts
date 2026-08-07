@@ -16,6 +16,7 @@ const routeCases: Array<{ id: SensitiveRouteId; path: string; allowedRole: Secur
   { id: "documents", path: "/documents", allowedRole: "parent", deniedRole: "child" },
   { id: "sessions", path: "/sessions", allowedRole: "facilitator", deniedRole: "child" },
   { id: "referrals", path: "/referrals", allowedRole: "advocate", deniedRole: "child" },
+  { id: "contact_session_entry", path: "/facilitator/contact-session-log", allowedRole: "facilitator", deniedRole: "caseworker" },
   { id: "worker_workspace", path: "/facilitator", allowedRole: "caseworker", deniedRole: "parent" },
   { id: "parent_child_messages", path: "/parent-child/messages", allowedRole: "parent", deniedRole: "facilitator" },
 ];
@@ -51,6 +52,19 @@ describe("sensitive route policy", () => {
     expect(evaluateSensitiveRouteAccess({ pathname: path, role: deniedRole, hasCaseMembership: true })).toEqual({
       allowed: false,
       routeId: id,
+      reason: "role_denied",
+    });
+  });
+
+  test("contact session entry is more restrictive than the worker workspace", () => {
+    expect(getSensitiveRoutePolicy("/facilitator/contact-session-log")?.id).toBe("contact_session_entry");
+    expect(evaluateSensitiveRouteAccess({
+      pathname: "/facilitator/contact-session-log",
+      role: "caseworker",
+      hasCaseMembership: true,
+    })).toEqual({
+      allowed: false,
+      routeId: "contact_session_entry",
       reason: "role_denied",
     });
   });
