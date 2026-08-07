@@ -1,0 +1,11 @@
+title = "SafeStepsApp gitleaks baseline"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Template placeholder values only; tracked env templates remain scanned"
+regexes = [
+  '''<YOUR_[A-Z0-9_]+>''',
+  '''https://<YOUR_[A-Z0-9_]+>''',
+]

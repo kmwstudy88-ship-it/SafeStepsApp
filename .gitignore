@@ -148,6 +148,15 @@ supabase/migrations_disabled/
 
 expo-env.d.ts
 # @end expo-cli
+
+# Secrets and local environment files
 .env
 .env.local
-.env*.local
+.env.*.local
+.env.production
+.env.staging
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
