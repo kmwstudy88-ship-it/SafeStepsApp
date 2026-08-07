@@ -33,6 +33,15 @@ export type ContactSessionEntryContext = {
   familyLabel: string | null;
 };
 
+export type ContactProgressionReviewContext = {
+  caseId: string;
+  parentProfileId: string;
+  actorProfileId: string;
+  parentCarerName: string | null;
+  caseNumber: string | null;
+  familyLabel: string | null;
+};
+
 type WorkerCaseRow = {
   id: string;
   parent_user_id: string | null;
@@ -82,6 +91,25 @@ export function contactSessionEntryContextFromRow(
   };
 }
 
+export function contactProgressionReviewContextFromRow(
+  row: WorkerCaseRow,
+  actorProfileId: string,
+): ContactProgressionReviewContext {
+  const caseContext = workerCaseContextFromRow(row);
+  if (!actorProfileId) {
+    throw new Error("A signed-in worker profile is required to review contact progression.");
+  }
+
+  return {
+    caseId: caseContext.id,
+    parentProfileId: caseContext.parentUserId,
+    actorProfileId,
+    parentCarerName: caseContext.parentCarerName,
+    caseNumber: caseContext.caseNumber,
+    familyLabel: caseContext.familyLabel,
+  };
+}
+
 async function loadWorkerCaseRow(caseId: string): Promise<WorkerCaseRow> {
   const { data, error } = await supabase
     .from("reunification_cases")
@@ -119,4 +147,15 @@ export async function loadContactSessionEntryContext(
   ]);
 
   return contactSessionEntryContextFromRow(row, facilitatorProfileId);
+}
+
+export async function loadContactProgressionReviewContext(
+  caseId: string,
+): Promise<ContactProgressionReviewContext> {
+  const [row, actorProfileId] = await Promise.all([
+    loadWorkerCaseRow(caseId),
+    getSignedInUserId("reviewing contact progression"),
+  ]);
+
+  return contactProgressionReviewContextFromRow(row, actorProfileId);
 }
