@@ -20,7 +20,8 @@ export async function fetchMyProgramEnrollments() {
 
   if (userError) throw new Error(userError.message);
   const userId = userData.user?.id;
-  if (!userId) throw new Error("No logged-in user found. Sign in before viewing programs.");
+  if (!userId)
+    throw new Error("No logged-in user found. Sign in before viewing programs.");
 
   const { data, error } = await supabase
     .from("program_enrollments")
@@ -37,7 +38,10 @@ export async function fetchActiveProgramEnrollment(programId: string) {
 
   if (userError) throw new Error(userError.message);
   const userId = userData.user?.id;
-  if (!userId) throw new Error("No logged-in user found. Sign in before checking enrolment.");
+  if (!userId)
+    throw new Error(
+      "No logged-in user found. Sign in before checking enrolment.",
+    );
 
   const caseId = await resolveSingleActiveCaseId();
   const { data, error } = await supabase
@@ -53,17 +57,25 @@ export async function fetchActiveProgramEnrollment(programId: string) {
   return ((data ?? [])[0] ?? null) as ProgramEnrollment | null;
 }
 
-export async function startProgramEnrollment(programId: string, programTitle: string) {
+export async function startProgramEnrollment(
+  programId: string,
+  programTitle: string,
+) {
   const { data: userData, error: userError } = await supabase.auth.getUser();
 
   if (userError) throw new Error(userError.message);
   const userId = userData.user?.id;
-  if (!userId) throw new Error("No logged-in user found. Parent must be signed in before starting a program.");
+  if (!userId)
+    throw new Error(
+      "No logged-in user found. Parent must be signed in before starting a program.",
+    );
 
   const intakeComplete = await hasCompletedIntakeAssessment(userId);
 
   if (!intakeComplete) {
-    throw new Error("Complete the SafeSteps intake assessment before starting or continuing a program.");
+    throw new Error(
+      "Complete the SafeSteps intake assessment before starting or continuing a program.",
+    );
   }
 
   const existing = await fetchActiveProgramEnrollment(programId);
@@ -87,6 +99,7 @@ export async function startProgramEnrollment(programId: string, programTitle: st
       program_title: programTitle,
       intake_completed_at: progress.intakeCompletedAt,
       reviewer_state: progress.reviewerState,
+      recommendation_confirmed: true,
     },
   });
 
