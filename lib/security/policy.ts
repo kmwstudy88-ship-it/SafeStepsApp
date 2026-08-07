@@ -32,6 +32,7 @@ export type SensitiveRouteId =
   | "documents"
   | "sessions"
   | "referrals"
+  | "worker_workspace"
   | "parent_child_messages";
 
 export type SensitiveAction =
@@ -123,6 +124,13 @@ export const SENSITIVE_ROUTE_POLICIES: readonly SensitiveRoutePolicy[] = [
     id: "referrals",
     prefixes: ["/referrals"],
     allowedRoles: ["parent", "advocate", ...STAFF_CASE_ROLES],
+    requiresCaseMembership: true,
+    childBoundary: "none",
+  },
+  {
+    id: "worker_workspace",
+    prefixes: ["/facilitator"],
+    allowedRoles: STAFF_CASE_ROLES,
     requiresCaseMembership: true,
     childBoundary: "none",
   },
