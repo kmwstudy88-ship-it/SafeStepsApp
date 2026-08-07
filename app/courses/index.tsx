@@ -1,9 +1,7 @@
 import { Link, type Href } from "expo-router";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { courseAreas, courses, getCoursesForArea, getGoldStandardCourses } from "../../curriculum/courses";
-import { listCurriculumCoursesFromApi } from "../../lib/curriculumApi";
-import type { ApiCurriculumCourseSummary } from "../../lib/curriculumApi";
 import { formatInteractiveVideoCourseAssetStatus } from "../../lib/data/interactiveVideoCourse";
 import {
   nervousSystemVideoCourse,
@@ -16,10 +14,10 @@ import {
 import { getSafeStepsLessonWatercolorPalette, safestepsLessonTheme } from "../../lib/safestepsLessonTheme";
 
 type CourseView = "gold" | "areas" | "all";
-type DisplayCourse = (typeof courses)[number] | ApiCurriculumCourseSummary;
+type DisplayCourse = (typeof courses)[number];
 
 function CourseCard({ course }: { course: DisplayCourse }) {
-  const lessonCount = "lessons" in course ? `${course.lessons.length} lessons` : `${course.modules.length} modules`;
+  const lessonCount = `${course.lessons.length} lessons`;
   const palette = getSafeStepsLessonWatercolorPalette(course.id);
 
   return (
@@ -54,8 +52,6 @@ function CourseCard({ course }: { course: DisplayCourse }) {
 
 export default function CoursesScreen() {
   const [view, setView] = useState<CourseView>("gold");
-  const [apiCourses, setApiCourses] = useState<ApiCurriculumCourseSummary[]>([]);
-  const [apiReady, setApiReady] = useState(false);
   const goldStandardCourses = useMemo(() => getGoldStandardCourses(), []);
   const goldStandardLessonCount = useMemo(
     () => goldStandardCourses.reduce((total, course) => total + course.lessons.length, 0),
@@ -65,27 +61,7 @@ export default function CoursesScreen() {
     () => new Set(courseAreas.flatMap((area) => area.courseIds)).size,
     [],
   );
-  const allCourses = apiReady && apiCourses.length > 0 ? apiCourses : courses;
-
-  useEffect(() => {
-    let active = true;
-
-    listCurriculumCoursesFromApi()
-      .then((nextCourses) => {
-        if (!active) return;
-        setApiCourses(nextCourses);
-        setApiReady(true);
-      })
-      .catch(() => {
-        if (!active) return;
-        setApiCourses([]);
-        setApiReady(false);
-      });
-
-    return () => {
-      active = false;
-    };
-  }, []);
+  const allCourses = courses;
 
   return (
     <ScrollView contentContainerStyle={styles.screen}>
@@ -97,7 +73,7 @@ export default function CoursesScreen() {
         the areas a parent needs most right now.
       </Text>
       <Text style={styles.statusText}>
-        {apiReady ? "All Courses is reading from the local Prisma curriculum API." : "All Courses is using the built-in course library until the local API is available."}
+        All Courses uses the reviewed SafeSteps course library.
       </Text>
 
       <Link href={"/courses/video-series-pipeline" as Href} asChild>

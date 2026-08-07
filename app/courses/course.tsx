@@ -3,10 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { ImageBackground, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { CourseLessonContent } from "../../components/CourseLessonContent";
 import { ChallengeRecommendations } from "../../components/ChallengeRecommendations";
-import { SafeStepsLessonExperience } from "../../components/SafeStepsLessonExperience";
 import { areAllCourseLessonsViewed, getCourseById } from "../../curriculum/courses";
-import { getCurriculumCourseFromApi } from "../../lib/curriculumApi";
-import type { ApiCurriculumCourseDetail } from "../../lib/curriculumApi";
 import {
   CertificateRecord,
   findMatchingCertificate,
@@ -22,8 +19,6 @@ export default function CoursePlayerScreen() {
 
   const course = getCourseById(courseId);
 
-  const [apiCourse, setApiCourse] = useState<ApiCurriculumCourseDetail | null>(null);
-  const [apiCourseLoading, setApiCourseLoading] = useState(false);
   const [certificates, setCertificates] = useState<CertificateRecord[]>([]);
   const [issuing, setIssuing] = useState(false);
   const [message, setMessage] = useState("");
@@ -58,36 +53,6 @@ export default function CoursePlayerScreen() {
     loadCertificates();
   }, []);
 
-  useEffect(() => {
-    let active = true;
-
-    if (!courseId) {
-      setApiCourse(null);
-      return () => {
-        active = false;
-      };
-    }
-
-    setApiCourseLoading(true);
-    getCurriculumCourseFromApi(courseId)
-      .then((nextCourse) => {
-        if (!active) return;
-        setApiCourse(nextCourse);
-      })
-      .catch(() => {
-        if (!active) return;
-        setApiCourse(null);
-      })
-      .finally(() => {
-        if (!active) return;
-        setApiCourseLoading(false);
-      });
-
-    return () => {
-      active = false;
-    };
-  }, [courseId]);
-
   async function issueCourseCertificate() {
     if (!course || !allLessonsViewed || issuing) return;
 
@@ -112,31 +77,6 @@ export default function CoursePlayerScreen() {
     } finally {
       setIssuing(false);
     }
-  }
-
-  if (!apiCourse && !course && apiCourseLoading) {
-    return (
-      <ScrollView style={{ flex: 1, padding: 20 }}>
-        <Text style={{ fontSize: 28, fontWeight: "bold", marginBottom: 8 }}>
-          Loading course
-        </Text>
-        <Text>Checking the local SafeSteps curriculum API.</Text>
-      </ScrollView>
-    );
-  }
-
-  if (apiCourse) {
-    return (
-      <ImageBackground
-        source={require("../../assets/safesteps-course-background.png")}
-        resizeMode="cover"
-        style={globalStyles.courseBackground}
-      >
-        <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={globalStyles.courseScreen}>
-          <SafeStepsLessonExperience course={apiCourse} />
-        </ScrollView>
-      </ImageBackground>
-    );
   }
 
   if (!course) {

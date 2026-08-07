@@ -1,15 +1,10 @@
 import { Link, Redirect, type Href } from "expo-router";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Pressable, ScrollView, Text, TextInput, View } from "react-native";
 
 import { AppBottomNav } from "../../components/AppBottomNav";
 import { useAuth } from "../../lib/auth";
 import { courses, getGoldStandardCourses } from "../../curriculum/courses";
-import {
-  listCurriculumCoursesFromApi,
-  listCurriculumLessonsFromApi,
-} from "../../lib/curriculumApi";
-import type { ApiCurriculumCourseSummary, ApiCurriculumLessonSummary } from "../../lib/curriculumApi";
 import { formatInteractiveVideoCourseAssetStatus } from "../../lib/data/interactiveVideoCourse";
 import {
   nervousSystemVideoCourse,
@@ -31,44 +26,19 @@ export default function CurriculumLibraryScreen() {
   const [section, setSection] = useState<Section>("courses");
   const [courseScope, setCourseScope] = useState<CourseScope>("gold");
   const [query, setQuery] = useState("");
-  const [apiCourses, setApiCourses] = useState<ApiCurriculumCourseSummary[]>([]);
-  const [apiLessons, setApiLessons] = useState<ApiCurriculumLessonSummary[]>([]);
-  const [apiReady, setApiReady] = useState(false);
   const search = query.trim().toLowerCase();
 
-  useEffect(() => {
-    let active = true;
-
-    Promise.all([listCurriculumCoursesFromApi(), listCurriculumLessonsFromApi(100)])
-      .then(([nextCourses, nextLessons]) => {
-        if (!active) return;
-        setApiCourses(nextCourses);
-        setApiLessons(nextLessons);
-        setApiReady(true);
-      })
-      .catch(() => {
-        if (!active) return;
-        setApiCourses([]);
-        setApiLessons([]);
-        setApiReady(false);
-      });
-
-    return () => {
-      active = false;
-    };
-  }, []);
-
-  const displayedCourses = apiReady && apiCourses.length > 0 ? apiCourses : courses;
+  const displayedCourses = courses;
   const goldStandardCourses = useMemo(() => getGoldStandardCourses(), []);
   const goldStandardCourseIds = useMemo(
     () => new Set(goldStandardCourses.map((course) => course.id)),
     [goldStandardCourses],
   );
   const scopedCourses =
-    section === "courses" && courseScope === "gold" && !(apiReady && apiCourses.length > 0)
+    section === "courses" && courseScope === "gold"
       ? displayedCourses.filter((course) => goldStandardCourseIds.has(course.id))
       : displayedCourses;
-  const displayedLessons = apiReady && apiLessons.length > 0 ? apiLessons : appLessons;
+  const displayedLessons = appLessons;
 
   const filteredCourses = useMemo(
     () =>
@@ -103,7 +73,7 @@ export default function CurriculumLibraryScreen() {
         Browse structured programs, standalone courses, and the core SafeSteps lesson pathway.
       </Text>
       <Text style={globalStyles.mutedText}>
-        {apiReady ? "Showing Prisma-backed curriculum from the local SafeSteps API." : "Showing built-in curriculum while the local API is unavailable."}
+        Showing the reviewed SafeSteps curriculum library.
       </Text>
 
       <TextInput
