@@ -1,41 +1,31 @@
-import { createClient } from '@supabase/supabase-js';
+import { forbidden, unauthorized } from "../lib/apiError.js";
+import {
+  createSafeStepsClient,
+  ensureActiveSecuritySession,
+  resolveAuthorizationContext,
+} from "../lib/supabase.js";
 
-let authClient;
-
-function getAuthClient() {
-  if (authClient) return authClient;
-
-  const supabaseUrl = process.env.SUPABASE_URL ?? process.env.EXPO_PUBLIC_SUPABASE_URL;
-  const supabaseKey =
-    process.env.SUPABASE_PUBLISHABLE_KEY ??
-    process.env.EXPO_PUBLIC_SUPABASE_KEY ??
-    process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
-
-  if (!supabaseUrl || !supabaseKey) {
-    const error = new Error('SafeSteps API authentication is not configured.');
-    error.statusCode = 503;
-    throw error;
-  }
-
-  authClient = createClient(supabaseUrl, supabaseKey, {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
-  });
-
-  return authClient;
-}
-
-function bearerToken(authorizationHeader) {
-  if (typeof authorizationHeader !== 'string') return null;
+export function bearerToken(authorizationHeader) {
+  if (typeof authorizationHeader !== "string") return null;
   const match = authorizationHeader.match(/^Bearer\s+(.+)$/i);
   return match?.[1]?.trim() || null;
 }
 
 export async function requireAuthenticatedUser(req, _res, next) {
   try {
-    if (process.env.SAFESTEPS_ALLOW_UNAUTHENTICATED_LOCAL_API === 'true') {
+    if (
+      process.env.NODE_ENV !== "production" &&
+      process.env.SAFESTEPS_ALLOW_UNAUTHENTICATED_LOCAL_API === "true"
+    ) {
+      req.safeStepsAuth = {
+        accessToken: null,
+        user: null,
+        roles: ["caseworker"],
+        memberships: [],
+        sessionReference: null,
+        supabase: null,
+        isLocalBypass: true,
+      };
       req.safeStepsUser = null;
       next();
       return;
@@ -43,21 +33,36 @@ export async function requireAuthenticatedUser(req, _res, next) {
 
     const token = bearerToken(req.headers.authorization);
     if (!token) {
-      const error = new Error('Authentication required. Send a valid SafeSteps bearer token.');
-      error.statusCode = 401;
-      throw error;
+      throw unauthorized("AUTH_REQUIRED", "Authentication required. Send a valid SafeSteps bearer token.");
     }
 
-    const client = getAuthClient();
+    const client = createSafeStepsClient(token);
     const { data, error } = await client.auth.getUser(token);
-
     if (error || !data.user) {
-      const authError = new Error('The SafeSteps bearer token is invalid or expired.');
-      authError.statusCode = 401;
-      throw authError;
+      throw unauthorized("AUTH_INVALID", "The SafeSteps bearer token is invalid or expired.");
     }
+
+    const authorization = await resolveAuthorizationContext(client, data.user.id);
+    if (authorization.roles.length === 0) {
+      throw forbidden("ROLE_UNASSIGNED", "This account does not have an assigned SafeSteps role.");
+    }
+
+    const sessionReference = await ensureActiveSecuritySession(client, data.user, token, {
+      deviceReference: req.headers["x-device-id"],
+      platform: req.headers["x-client-platform"],
+      clientVersion: req.headers["x-client-version"],
+    });
 
     req.safeStepsUser = data.user;
+    req.safeStepsAuth = {
+      accessToken: token,
+      user: data.user,
+      roles: authorization.roles,
+      memberships: authorization.memberships,
+      sessionReference,
+      supabase: client,
+      isLocalBypass: false,
+    };
     next();
   } catch (error) {
     next(error);
