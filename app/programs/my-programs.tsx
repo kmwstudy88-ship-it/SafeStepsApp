@@ -504,8 +504,10 @@ function EmptyOrError({
     return (
       <View style={styles.statusPanel}>
         <Text style={styles.statusTitle}>No active program yet</Text>
-        <Text style={styles.statusText}>Browse programs and start one to make this dashboard personal.</Text>
-        <ButtonLink href="/programs/main" label="Browse Programs" />
+        <Text style={styles.statusText}>
+          Review and confirm the pathway saved from intake. SafeSteps will show any worker or governance safeguards before enrolment.
+        </Text>
+        <ButtonLink href="/programs/recommendation" label="Review Recommendation" />
       </View>
     );
   }
@@ -1442,3 +1444,4 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
 });
+
