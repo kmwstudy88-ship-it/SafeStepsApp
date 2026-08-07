@@ -10,12 +10,16 @@ import {
   safeStepsProgramEngines,
   type ReportSummary,
 } from "../../lib/platformData";
+import {
+  buildReportReadyDocumentAppendix,
+} from "../../lib/reportReadyCaseDocuments";
 import { globalStyles } from "../../lib/styles";
 import {
   loadWorkerCaseReview,
   type WorkerCaseContext,
 } from "../../lib/workerCaseReview";
-import type { ReportReadyCaseDocument } from "../../lib/reportReadyCaseDocuments";
+
+type ReportReadyAppendixItem = ReturnType<typeof buildReportReadyDocumentAppendix>[number];
 
 const emptySummary: ReportSummary = {
   tasks: [],
@@ -53,7 +57,7 @@ export default function FacilitatorWorkspaceScreen() {
   const caseId = access?.caseId ?? null;
   const [summary, setSummary] = useState<ReportSummary>(emptySummary);
   const [caseContext, setCaseContext] = useState<WorkerCaseContext | null>(null);
-  const [reportReadyDocuments, setReportReadyDocuments] = useState<ReportReadyCaseDocument[]>([]);
+  const [reportReadyDocuments, setReportReadyDocuments] = useState<ReportReadyAppendixItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -69,7 +73,7 @@ export default function FacilitatorWorkspaceScreen() {
         if (!active) return;
         setCaseContext(review.case);
         setSummary(review.parentSummary);
-        setReportReadyDocuments(review.reportReadyDocuments);
+        setReportReadyDocuments(buildReportReadyDocumentAppendix(review.reportReadyDocuments));
       })
       .catch((loadError) => {
         if (!active) return;
@@ -159,7 +163,10 @@ export default function FacilitatorWorkspaceScreen() {
         <Text style={globalStyles.cardText}>
           Log contact-session scores, child comfort, risk flags, and demonstrated skills for caseworker review.
         </Text>
-        <Link href={caseId ? `/facilitator/contact-session-log?caseId=${encodeURIComponent(caseId)}` : "/facilitator/contact-session-log"} style={globalStyles.link}>
+        <Link
+          href={{ pathname: "/facilitator/contact-session-log", params: caseId ? { caseId } : {} }}
+          style={globalStyles.link}
+        >
           Open contact session log
         </Link>
       </View>
