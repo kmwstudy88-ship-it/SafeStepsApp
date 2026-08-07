@@ -147,12 +147,16 @@ router.get(
   "/analyses/:analysisId",
   requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
+  requireCaseAccess,
   async (req, res, next) => {
     try {
       const analysis = await getDocumentAnalysisRun(
         req.safeStepsAuth.supabase,
         req.params.analysisId,
       );
+      if (analysis.case_id !== req.safeStepsCaseId) {
+        throw badRequest("The requested analysis does not belong to the selected SafeSteps case.");
+      }
       res.json({ data: { analysis }, meta: { requestId: req.id } });
     } catch (error) {
       next(error);
@@ -164,13 +168,15 @@ router.get(
   "/:documentId/analyses",
   requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
+  requireCaseAccess,
   async (req, res, next) => {
     try {
       const analyses = await listDocumentAnalysisRuns(
         req.safeStepsAuth.supabase,
         req.params.documentId,
       );
-      res.json({ data: { analyses }, meta: { requestId: req.id } });
+      const caseAnalyses = analyses.filter((analysis) => analysis.case_id === req.safeStepsCaseId);
+      res.json({ data: { analyses: caseAnalyses }, meta: { requestId: req.id } });
     } catch (error) {
       next(error);
     }
