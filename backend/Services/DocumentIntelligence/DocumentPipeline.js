@@ -67,11 +67,12 @@ export async function runDocumentIntelligencePipeline(input, options = {}) {
   }
 }
 
-export async function getDocumentAnalysisRun(client, analysisId) {
+export async function getDocumentAnalysisRun(client, analysisId, caseId) {
   const { data, error } = await client
     .from("document_analysis_runs")
     .select("*")
     .eq("id", analysisId)
+    .eq("case_id", caseId)
     .maybeSingle();
 
   if (error) throw error;
@@ -79,11 +80,12 @@ export async function getDocumentAnalysisRun(client, analysisId) {
   return data;
 }
 
-export async function listDocumentAnalysisRuns(client, documentId) {
+export async function listDocumentAnalysisRuns(client, documentId, caseId) {
   const { data, error } = await client
     .from("document_analysis_runs")
     .select("*")
     .eq("document_id", documentId)
+    .eq("case_id", caseId)
     .order("created_at", { ascending: false });
 
   if (error) throw error;

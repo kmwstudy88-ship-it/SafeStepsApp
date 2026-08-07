@@ -143,15 +143,19 @@ export async function uploadDocumentFile(
   }>("/documents/upload", { method: "POST", body: formData });
 }
 
-export async function getDocumentAnalysis(analysisId: string) {
+export async function getDocumentAnalysis(analysisId: string, selectedCaseId?: string) {
+  const caseId = selectedCaseId ?? (await resolveSingleActiveCaseId());
+  const params = new URLSearchParams({ caseId });
   return safeStepsApiRequest<{ analysis: DocumentAnalysisRun }>(
-    `/documents/analyses/${encodeURIComponent(analysisId)}`,
+    `/documents/analyses/${encodeURIComponent(analysisId)}?${params.toString()}`,
   );
 }
 
-export async function listDocumentAnalyses(documentId: string) {
+export async function listDocumentAnalyses(documentId: string, selectedCaseId?: string) {
+  const caseId = selectedCaseId ?? (await resolveSingleActiveCaseId());
+  const params = new URLSearchParams({ caseId });
   return safeStepsApiRequest<{ analyses: DocumentAnalysisRun[] }>(
-    `/documents/${encodeURIComponent(documentId)}/analyses`,
+    `/documents/${encodeURIComponent(documentId)}/analyses?${params.toString()}`,
   );
 }
 

@@ -147,11 +147,13 @@ router.get(
   "/analyses/:analysisId",
   requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
+  requireCaseAccess,
   async (req, res, next) => {
     try {
       const analysis = await getDocumentAnalysisRun(
         req.safeStepsAuth.supabase,
         req.params.analysisId,
+        req.safeStepsCaseId,
       );
       res.json({ data: { analysis }, meta: { requestId: req.id } });
     } catch (error) {
@@ -164,11 +166,13 @@ router.get(
   "/:documentId/analyses",
   requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
+  requireCaseAccess,
   async (req, res, next) => {
     try {
       const analyses = await listDocumentAnalysisRuns(
         req.safeStepsAuth.supabase,
         req.params.documentId,
+        req.safeStepsCaseId,
       );
       res.json({ data: { analyses }, meta: { requestId: req.id } });
     } catch (error) {
