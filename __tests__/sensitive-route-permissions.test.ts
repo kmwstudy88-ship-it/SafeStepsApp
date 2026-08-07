@@ -16,6 +16,7 @@ const routeCases: Array<{ id: SensitiveRouteId; path: string; allowedRole: Secur
   { id: "documents", path: "/documents", allowedRole: "parent", deniedRole: "child" },
   { id: "sessions", path: "/sessions", allowedRole: "facilitator", deniedRole: "child" },
   { id: "referrals", path: "/referrals", allowedRole: "advocate", deniedRole: "child" },
+  { id: "worker_workspace", path: "/facilitator", allowedRole: "caseworker", deniedRole: "parent" },
   { id: "parent_child_messages", path: "/parent-child/messages", allowedRole: "parent", deniedRole: "facilitator" },
 ];
 
