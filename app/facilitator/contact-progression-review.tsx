@@ -80,14 +80,15 @@ export default function ContactProgressionReviewScreen() {
   }
 
   useEffect(() => {
-    if (!caseId) return;
+    const selectedCaseId = caseId;
+    if (!selectedCaseId) return;
     let active = true;
     setLoading(true);
     setMessage("");
 
     async function load() {
       try {
-        const nextContext = await loadContactProgressionReviewContext(caseId);
+        const nextContext = await loadContactProgressionReviewContext(selectedCaseId);
         if (!active) return;
         setContext(nextContext);
         await reloadProgression(nextContext);
