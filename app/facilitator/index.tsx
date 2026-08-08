@@ -169,6 +169,12 @@ export default function FacilitatorWorkspaceScreen() {
         >
           Open contact session log
         </Link>
+        <Link
+          href={{ pathname: "/facilitator/contact-progression-review", params: caseId ? { caseId } : {} }}
+          style={globalStyles.link}
+        >
+          Review progression recommendation
+        </Link>
       </View>
 
       <View style={globalStyles.card}>
