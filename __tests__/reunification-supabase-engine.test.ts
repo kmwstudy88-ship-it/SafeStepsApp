@@ -7,8 +7,10 @@ jest.mock("../lib/supabase", () => ({
 import { supabase } from "../lib/supabase";
 import {
   evaluateAndSaveReunificationRecommendation,
+  fetchLatestReunificationOverride,
   fetchLatestReunificationRecommendation,
   fetchReunificationEvaluationInput,
+  resolveCurrentContactStage,
   saveContactSessionLog,
   saveReunificationOverride,
   saveReunificationRecommendation,
@@ -33,9 +35,30 @@ describe("reunification Supabase engine", () => {
     (supabase.from as jest.Mock).mockReset();
   });
 
+  test("uses caseworker target-stage override before session-derived stage", () => {
+    expect(
+      resolveCurrentContactStage(
+        { override_type: "force_regression", target_stage: "supervised" },
+        [{ stage: "unsupervised", session_date: "2026-08-01T10:00:00.000Z" }],
+      ),
+    ).toBe("supervised");
+  });
+
+  test("derives current stage from the latest contact session when there is no target override", () => {
+    expect(
+      resolveCurrentContactStage(null, [
+        { stage: "supervised", session_date: "2026-07-01T10:00:00.000Z" },
+        { stage: "semi_supervised", session_date: "2026-08-01T10:00:00.000Z" },
+      ]),
+    ).toBe("semi_supervised");
+  });
+
+  test("falls back safely when no progression records exist yet", () => {
+    expect(resolveCurrentContactStage(null, [])).toBe("supervised");
+  });
+
   test("maps Supabase contact sessions, assessment evidence, and manual holds into evaluation input", async () => {
     (supabase.from as jest.Mock)
-      .mockReturnValueOnce(queryResult({ contact_stage: "supervised" }))
       .mockReturnValueOnce(
         queryResult([
           {
@@ -192,7 +215,6 @@ describe("reunification Supabase engine", () => {
 
   test("loads, evaluates, and saves without escalating when a hard block is active", async () => {
     (supabase.from as jest.Mock)
-      .mockReturnValueOnce(queryResult({ contact_stage: "supervised" }))
       .mockReturnValueOnce(
         queryResult([
           {
@@ -248,6 +270,32 @@ describe("reunification Supabase engine", () => {
     ).resolves.toEqual(recommendation);
 
     expect(supabase.from).toHaveBeenCalledWith("reunification_recommendations");
+    expect(query.eq).toHaveBeenCalledWith("case_id", "case-1");
+    expect(query.eq).toHaveBeenCalledWith("parent_id", "parent-1");
+  });
+
+  test("fetches the latest caseworker override for a case and parent", async () => {
+    const override = {
+      id: "override-1",
+      case_id: "case-1",
+      parent_id: "parent-1",
+      caseworker_id: "caseworker-1",
+      override_type: "force_regression",
+      target_stage: "supervised",
+      reason: "Child distress increased.",
+      created_at: "2026-07-22T00:00:00.000Z",
+    };
+    const query = queryResult(override);
+    (supabase.from as jest.Mock).mockReturnValueOnce(query);
+
+    await expect(
+      fetchLatestReunificationOverride({
+        caseId: "case-1",
+        parentProfileId: "parent-1",
+      }),
+    ).resolves.toEqual(override);
+
+    expect(supabase.from).toHaveBeenCalledWith("reunification_overrides");
     expect(query.eq).toHaveBeenCalledWith("case_id", "case-1");
     expect(query.eq).toHaveBeenCalledWith("parent_id", "parent-1");
   });

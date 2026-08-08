@@ -17,6 +17,7 @@ const routeCases: Array<{ id: SensitiveRouteId; path: string; allowedRole: Secur
   { id: "sessions", path: "/sessions", allowedRole: "facilitator", deniedRole: "child" },
   { id: "referrals", path: "/referrals", allowedRole: "advocate", deniedRole: "child" },
   { id: "contact_session_entry", path: "/facilitator/contact-session-log", allowedRole: "facilitator", deniedRole: "caseworker" },
+  { id: "contact_progression_review", path: "/facilitator/contact-progression-review", allowedRole: "caseworker", deniedRole: "parent" },
   { id: "worker_workspace", path: "/facilitator", allowedRole: "caseworker", deniedRole: "parent" },
   { id: "parent_child_messages", path: "/parent-child/messages", allowedRole: "parent", deniedRole: "facilitator" },
 ];
@@ -66,6 +67,27 @@ describe("sensitive route policy", () => {
       allowed: false,
       routeId: "contact_session_entry",
       reason: "role_denied",
+    });
+  });
+
+  test("contact progression review permits facilitator and caseworker roles", () => {
+    expect(evaluateSensitiveRouteAccess({
+      pathname: "/facilitator/contact-progression-review",
+      role: "facilitator",
+      hasCaseMembership: true,
+    })).toEqual({
+      allowed: true,
+      routeId: "contact_progression_review",
+      reason: "allowed",
+    });
+    expect(evaluateSensitiveRouteAccess({
+      pathname: "/facilitator/contact-progression-review",
+      role: "caseworker",
+      hasCaseMembership: true,
+    })).toEqual({
+      allowed: true,
+      routeId: "contact_progression_review",
+      reason: "allowed",
     });
   });
 
