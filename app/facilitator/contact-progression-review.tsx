@@ -86,7 +86,7 @@ export default function ContactProgressionReviewScreen() {
     setLoading(true);
     setMessage("");
 
-    async function load() {
+    async function load(selectedCaseId: string) {
       try {
         const nextContext = await loadContactProgressionReviewContext(selectedCaseId);
         if (!active) return;
@@ -102,7 +102,7 @@ export default function ContactProgressionReviewScreen() {
       }
     }
 
-    load();
+    load(selectedCaseId);
     return () => {
       active = false;
     };
