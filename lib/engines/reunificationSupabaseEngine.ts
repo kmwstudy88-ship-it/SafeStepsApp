@@ -41,10 +41,6 @@ type AssessmentRecordRow = {
   evidence_payload: unknown;
 };
 
-type ParentProfileRow = {
-  contact_stage: StageGatedContactStage | null;
-};
-
 type ReunificationOverrideRow = {
   override_type: "hold" | "force_escalation" | "force_regression";
   target_stage: StageGatedContactStage | null;
@@ -77,6 +73,17 @@ export type ReunificationRecommendationRecord = {
   created_at: string;
 };
 
+export type ReunificationOverrideRecord = {
+  id: string;
+  case_id: string;
+  parent_id: string;
+  caseworker_id: string;
+  override_type: ReunificationOverrideType;
+  target_stage: StageGatedContactStage | null;
+  reason: string;
+  created_at: string;
+};
+
 export type ReunificationOverrideType = "hold" | "force_escalation" | "force_regression";
 
 export type ContactSessionLogInput = {
@@ -97,11 +104,12 @@ export type ContactSessionLogInput = {
 };
 
 export function resolveCurrentContactStage(
-  profileStage: StageGatedContactStage | null | undefined,
   latestOverride: ReunificationOverrideRow | null | undefined,
+  contactSessions: Array<Pick<ContactSessionRow, "stage" | "session_date">>,
+  fallback: StageGatedContactStage = "supervised",
 ): StageGatedContactStage {
   if (latestOverride?.target_stage) return latestOverride.target_stage;
-  return profileStage ?? "supervised";
+  return newestFirst(contactSessions)[0]?.stage ?? fallback;
 }
 
 function asRiskFlags(value: unknown): RiskFlag[] {
@@ -130,6 +138,14 @@ function asSkillEvidence(value: unknown): SkillEvidence {
 function numberOrDefault(value: number | string | null | undefined, fallback: number) {
   const numeric = Number(value);
   return Number.isFinite(numeric) ? numeric : fallback;
+}
+
+function newestFirst<T extends { session_date?: string; occurredAt?: string; createdAt?: string }>(items: T[]) {
+  return [...items].sort((left, right) =>
+    String(right.session_date ?? right.occurredAt ?? right.createdAt).localeCompare(
+      String(left.session_date ?? left.occurredAt ?? left.createdAt),
+    ),
+  );
 }
 
 function mapContactSession(row: ContactSessionRow): StageGatedContactSessionSignal {
@@ -163,8 +179,7 @@ function mapAssessmentRecord(row: AssessmentRecordRow): StageGatedAssessmentReco
 export async function fetchReunificationEvaluationInput(
   options: ReunificationEvaluationLoadOptions,
 ): Promise<EvaluateContactProgressionInput> {
-  const [profileResponse, sessionsResponse, assessmentResponse, overrideResponse] = await Promise.all([
-    supabase.from("profiles").select("contact_stage").eq("id", options.parentProfileId).maybeSingle(),
+  const [sessionsResponse, assessmentResponse, overrideResponse] = await Promise.all([
     supabase
       .from("contact_sessions")
       .select(
@@ -191,19 +206,18 @@ export async function fetchReunificationEvaluationInput(
       .maybeSingle(),
   ]);
 
-  if (profileResponse.error) throw profileResponse.error;
   if (sessionsResponse.error) throw sessionsResponse.error;
   if (assessmentResponse.error) throw assessmentResponse.error;
   if (overrideResponse.error) throw overrideResponse.error;
 
-  const profile = profileResponse.data as ParentProfileRow | null;
   const latestOverride = overrideResponse.data as ReunificationOverrideRow | null;
+  const contactSessionRows = (sessionsResponse.data ?? []) as ContactSessionRow[];
 
   return {
     parentProfileId: options.parentProfileId,
     caseId: options.caseId,
-    currentStage: resolveCurrentContactStage(profile?.contact_stage, latestOverride),
-    contactSessions: ((sessionsResponse.data ?? []) as ContactSessionRow[]).map(mapContactSession),
+    currentStage: resolveCurrentContactStage(latestOverride, contactSessionRows),
+    contactSessions: contactSessionRows.map(mapContactSession),
     assessmentRecords: ((assessmentResponse.data ?? []) as AssessmentRecordRow[]).map(mapAssessmentRecord),
     requiredLessonIds: options.requiredLessonIds,
     sessionWindow: options.sessionWindow,
@@ -281,6 +295,23 @@ export async function fetchLatestReunificationRecommendation(input: {
 
   if (error) throw error;
   return data as ReunificationRecommendationRecord | null;
+}
+
+export async function fetchLatestReunificationOverride(input: {
+  caseId: string;
+  parentProfileId: string;
+}): Promise<ReunificationOverrideRecord | null> {
+  const { data, error } = await supabase
+    .from("reunification_overrides")
+    .select("id,case_id,parent_id,caseworker_id,override_type,target_stage,reason,created_at")
+    .eq("case_id", input.caseId)
+    .eq("parent_id", input.parentProfileId)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (error) throw error;
+  return data as ReunificationOverrideRecord | null;
 }
 
 export async function saveReunificationOverride(input: {
