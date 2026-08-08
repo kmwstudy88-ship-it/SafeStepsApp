@@ -1,14 +1,14 @@
-const getUserMock = jest.fn();
-const rpcMock = jest.fn();
-const fromMock = jest.fn();
+const mockGetUser = jest.fn();
+const mockRpc = jest.fn();
+const mockFrom = jest.fn();
 
 jest.mock("../lib/supabase", () => ({
   supabase: {
     auth: {
-      getUser: getUserMock,
+      getUser: mockGetUser,
     },
-    rpc: rpcMock,
-    from: fromMock,
+    rpc: mockRpc,
+    from: mockFrom,
   },
 }));
 
@@ -24,11 +24,11 @@ function tableMock(returned: unknown = { id: "record-1" }) {
 }
 
 function mockSignedInChild() {
-  getUserMock.mockResolvedValue({ data: { user: { id: "child-user-1" } }, error: null });
+  mockGetUser.mockResolvedValue({ data: { user: { id: "child-user-1" } }, error: null });
 }
 
 function mockShareContext() {
-  rpcMock.mockResolvedValue({
+  mockRpc.mockResolvedValue({
     data: [{
       case_id: "case-1",
       parent_user_id: "parent-user-1",
@@ -41,15 +41,15 @@ function mockShareContext() {
 describe("child service share context", () => {
   beforeEach(() => {
     jest.resetModules();
-    getUserMock.mockReset();
-    rpcMock.mockReset();
-    fromMock.mockReset();
+    mockGetUser.mockReset();
+    mockRpc.mockReset();
+    mockFrom.mockReset();
   });
 
   test("keeps private feeling check-ins private and does not resolve share context", async () => {
     mockSignedInChild();
     const checkInTable = tableMock({ id: "checkin-1" });
-    fromMock.mockReturnValue(checkInTable);
+    mockFrom.mockReturnValue(checkInTable);
 
     const { saveChildFeelingCheckIn } = await import("../lib/child/childService");
 
@@ -60,8 +60,8 @@ describe("child service share context", () => {
       shareAudience: "private",
     });
 
-    expect(rpcMock).not.toHaveBeenCalled();
-    expect(fromMock).toHaveBeenCalledWith("child_feelings_checkins");
+    expect(mockRpc).not.toHaveBeenCalled();
+    expect(mockFrom).toHaveBeenCalledWith("child_feelings_checkins");
     expect(checkInTable.insert).toHaveBeenCalledWith(expect.objectContaining({
       child_user_id: "child-user-1",
       feeling: "Calm",
@@ -74,7 +74,7 @@ describe("child service share context", () => {
     mockShareContext();
     const requestTable = tableMock({ id: "request-1" });
     const sharedItemTable = tableMock({ id: "shared-1" });
-    fromMock
+    mockFrom
       .mockReturnValueOnce(requestTable)
       .mockReturnValueOnce(sharedItemTable);
 
@@ -86,7 +86,7 @@ describe("child service share context", () => {
       shareAudience: "both",
     });
 
-    expect(rpcMock).toHaveBeenCalledWith("get_child_case_share_context", {
+    expect(mockRpc).toHaveBeenCalledWith("get_child_case_share_context", {
       target_child_user_id: "child-user-1",
     });
     expect(requestTable.insert).toHaveBeenCalledWith(expect.objectContaining({
@@ -109,7 +109,7 @@ describe("child service share context", () => {
     mockShareContext();
     const messageTable = tableMock({ id: "message-1" });
     const sharedItemTable = tableMock({ id: "shared-message-1" });
-    fromMock
+    mockFrom
       .mockReturnValueOnce(messageTable)
       .mockReturnValueOnce(sharedItemTable);
 
@@ -136,7 +136,7 @@ describe("child service share context", () => {
 
   test("blocks parent sharing when the child case has no linked parent", async () => {
     mockSignedInChild();
-    rpcMock.mockResolvedValue({
+    mockRpc.mockResolvedValue({
       data: [{ case_id: "case-1", parent_user_id: null, caseworker_user_id: "caseworker-user-1" }],
       error: null,
     });
@@ -148,6 +148,6 @@ describe("child service share context", () => {
       shareAudience: "parent",
     })).rejects.toThrow("linked parent");
 
-    expect(fromMock).not.toHaveBeenCalled();
+    expect(mockFrom).not.toHaveBeenCalled();
   });
 });
