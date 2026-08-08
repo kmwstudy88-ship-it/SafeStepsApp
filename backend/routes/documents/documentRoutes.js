@@ -1,5 +1,6 @@
 import express from "express";
 import multer from "multer";
+import fairnessRoutes from "./fairnessRoutes.js";
 
 import {
   DOCUMENT_INTELLIGENCE_MAX_TEXT_CHARS,
@@ -35,6 +36,8 @@ const upload = multer({
     fields: 20,
   },
 });
+
+router.use("/analyze", fairnessRoutes);
 
 router.get("/intelligence/schema", (_req, res) => {
   res.json({

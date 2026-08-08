@@ -89,7 +89,7 @@ const steps: {
   {
     title: "Fairness & Reviewability",
     description:
-      "Check evidence reliability, protected disagreement, proportionality, service-system barriers, review triggers, and authorised decision packages.",
+      "Run document fairness detection for bias, coercion, discriminatory framing, and reviewability safeguards before report export.",
     href: "/assessment-system/fairness-review" as Href,
     status: "Safeguards",
   },
@@ -296,4 +296,3 @@ const styles = StyleSheet.create({
     fontWeight: "900",
   },
 });
-

@@ -46,6 +46,35 @@ Accepts either JSON:
 
 or multipart form data with a `file` field. Supported files are PDF, TXT, CSV, Markdown, and JSON. PDF support depends on extractable text.
 
+`POST /documents/analyze/fairness`
+
+Accepts JSON:
+
+```json
+{
+  "caseId": "uuid",
+  "text": "document text here",
+  "documentId": "uuid (optional evidence_record id)",
+  "caseContext": {
+    "case_type": "reunification",
+    "family_composition": "single_parent",
+    "child_ages": [5, 8],
+    "jurisdictions": ["VIC"]
+  }
+}
+```
+
+Returns structured fairness output with:
+
+- `fairness_score`
+- `bias_indicators`
+- `coercion_flags`
+- `discrimination_risks`
+- `framing_concerns`
+- `unrealistic_expectations`
+- `remediation_recommendations`
+- `limitations`
+
 ## Output Contract
 
 The response is a structured review envelope:
@@ -75,3 +104,4 @@ Confidence is `low`, `medium`, or `high`. Low confidence is expected when source
 - Do not use the output to trigger covert surveillance, automatic emergency action, or legal conclusions.
 - Preserve the submitted source text and any final worker decision separately if this becomes part of report generation.
 - Link any accepted finding back to source evidence, case notes, and supervisor review where applicable.
+- Fairness detection flags potential bias/coercion and must never be used as a standalone finding.
