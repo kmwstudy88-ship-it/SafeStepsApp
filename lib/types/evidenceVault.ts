@@ -35,3 +35,19 @@ export interface EvidenceVaultDashboard {
   pending_ai_review_count: number;
   integrity_warning_count: number;
 }
+
+export interface EvidenceFairnessAnalysis {
+  id: string;
+  evidence_record_id: string;
+  analysis_type: string;
+  fairness_score: number | null;
+  bias_indicators: Array<Record<string, unknown>>;
+  coercion_flags: Array<Record<string, unknown>>;
+  discrimination_risks: Array<Record<string, unknown>>;
+  framing_concerns: Array<Record<string, unknown>>;
+  unrealistic_expectations: Array<Record<string, unknown>>;
+  remediation_recommendations: Array<Record<string, unknown>>;
+  review_status: string;
+  worker_override: Record<string, unknown> | null;
+  analysed_at: string;
+}

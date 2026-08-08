@@ -1,5 +1,9 @@
 import { supabase } from "../supabase";
-import type { EvidenceRecord, EvidenceVaultDashboard } from "../types/evidenceVault";
+import type {
+  EvidenceFairnessAnalysis,
+  EvidenceRecord,
+  EvidenceVaultDashboard,
+} from "../types/evidenceVault";
 
 export async function getEvidenceForCase(caseId: string): Promise<EvidenceRecord[]> {
   const { data, error } = await supabase
@@ -45,4 +49,57 @@ export async function getEvidenceChainOfCustody(evidenceRecordId: string) {
   }
 
   return data ?? [];
+}
+
+export async function getEvidenceFairnessAnalyses(
+  evidenceRecordId: string,
+): Promise<EvidenceFairnessAnalysis[]> {
+  const { data, error } = await supabase
+    .from("evidence_ai_analyses")
+    .select(
+      "id, evidence_record_id, analysis_type, fairness_score, bias_indicators, coercion_flags, discrimination_risks, framing_concerns, unrealistic_expectations, remediation_recommendations, review_status, worker_override, analysed_at",
+    )
+    .eq("evidence_record_id", evidenceRecordId)
+    .eq("analysis_type", "fairness_detection")
+    .order("analysed_at", { ascending: false })
+    .returns<EvidenceFairnessAnalysis[]>();
+
+  if (error) {
+    throw new Error(`Unable to load fairness analysis: ${error.message}`);
+  }
+
+  return data ?? [];
+}
+
+export async function saveEvidenceFairnessReviewOutcome(
+  analysisId: string,
+  outcome: {
+    status: "pending_human_review" | "confirmed" | "rejected" | "superseded";
+    falsePositive?: boolean;
+    note?: string;
+    caseContextNote?: string;
+  },
+) {
+  const { data, error } = await supabase
+    .from("evidence_ai_analyses")
+    .update({
+      review_status: outcome.status,
+      worker_override: {
+        false_positive: Boolean(outcome.falsePositive),
+        note: outcome.note?.trim() ?? null,
+        case_context: outcome.caseContextNote?.trim() ?? null,
+        reviewed_at: new Date().toISOString(),
+      },
+    })
+    .eq("id", analysisId)
+    .select(
+      "id, evidence_record_id, analysis_type, fairness_score, bias_indicators, coercion_flags, discrimination_risks, framing_concerns, unrealistic_expectations, remediation_recommendations, review_status, worker_override, analysed_at",
+    )
+    .single();
+
+  if (error) {
+    throw new Error(`Unable to save fairness review outcome: ${error.message}`);
+  }
+
+  return data as EvidenceFairnessAnalysis;
 }
