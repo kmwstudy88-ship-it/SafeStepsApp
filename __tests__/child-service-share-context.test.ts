@@ -12,11 +12,11 @@ jest.mock("../lib/supabase", () => ({
   },
 }));
 
-import {
+const {
   saveChildFeelingCheckIn,
   saveChildRequest,
   sendChildMonitoredMessage,
-} from "../lib/child/childService";
+} = require("../lib/child/childService");
 
 function tableMock(returned: unknown = { id: "record-1" }) {
   const chain = {
