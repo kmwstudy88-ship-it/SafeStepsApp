@@ -117,8 +117,17 @@ async function fetchProgramJourney(
   const recommendation = getProgramRecommendationForStream(selectedStream);
   if (!recommendation) return null;
 
-  const activeEnrollment = enrollmentResult.data?.[0] ?? null;
-  const confirmed = confirmationResult.data;
+  const activeEnrollmentCandidate = enrollmentResult.data?.[0] ?? null;
+  const activeEnrollment =
+    activeEnrollmentCandidate?.program_id === recommendation.program.id
+      ? activeEnrollmentCandidate
+      : null;
+
+  const confirmedCandidate = confirmationResult.data;
+  const confirmed =
+    confirmedCandidate?.program_id === recommendation.program.id
+      ? confirmedCandidate
+      : null;
 
   return {
     caseId,

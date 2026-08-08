@@ -211,6 +211,12 @@ export default function ProgramRecommendationScreen() {
             Your confirmation is saved. This pathway is still in structured
             governance review, so SafeSteps will not create an enrolment yet.
           </Text>
+        ) : program.launchStatus === "custom" &&
+          intakeProgress.reviewerState !== "approved" ? (
+          <Text style={styles.notice}>
+            Your confirmation is saved. This custom pathway requires worker
+            approval before the program can start.
+          </Text>
         ) : !intakeProgress.decision.allowed ? (
           <>
             <Text style={styles.notice}>
