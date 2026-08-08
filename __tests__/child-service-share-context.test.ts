@@ -12,6 +12,12 @@ jest.mock("../lib/supabase", () => ({
   },
 }));
 
+import {
+  saveChildFeelingCheckIn,
+  saveChildRequest,
+  sendChildMonitoredMessage,
+} from "../lib/child/childService";
+
 function tableMock(returned: unknown = { id: "record-1" }) {
   const chain = {
     insert: jest.fn(() => chain),
@@ -40,7 +46,6 @@ function mockShareContext() {
 
 describe("child service share context", () => {
   beforeEach(() => {
-    jest.resetModules();
     mockGetUser.mockReset();
     mockRpc.mockReset();
     mockFrom.mockReset();
@@ -50,8 +55,6 @@ describe("child service share context", () => {
     mockSignedInChild();
     const checkInTable = tableMock({ id: "checkin-1" });
     mockFrom.mockReturnValue(checkInTable);
-
-    const { saveChildFeelingCheckIn } = await import("../lib/child/childService");
 
     await saveChildFeelingCheckIn({
       feeling: "Calm",
@@ -77,8 +80,6 @@ describe("child service share context", () => {
     mockFrom
       .mockReturnValueOnce(requestTable)
       .mockReturnValueOnce(sharedItemTable);
-
-    const { saveChildRequest } = await import("../lib/child/childService");
 
     await saveChildRequest({
       requestType: "Game Request",
@@ -113,8 +114,6 @@ describe("child service share context", () => {
       .mockReturnValueOnce(messageTable)
       .mockReturnValueOnce(sharedItemTable);
 
-    const { sendChildMonitoredMessage } = await import("../lib/child/childService");
-
     await sendChildMonitoredMessage({
       messageText: "I want Dad to listen more.",
       shareAudience: "parent",
@@ -140,8 +139,6 @@ describe("child service share context", () => {
       data: [{ case_id: "case-1", parent_user_id: null, caseworker_user_id: "caseworker-user-1" }],
       error: null,
     });
-
-    const { sendChildMonitoredMessage } = await import("../lib/child/childService");
 
     await expect(sendChildMonitoredMessage({
       messageText: "Please share this.",
