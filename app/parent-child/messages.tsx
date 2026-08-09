@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { useLocalSearchParams } from "expo-router";
 import { StyleSheet, Switch, Text, TextInput, View } from "react-native";
 import {
   BackToParentChildHome,
@@ -25,7 +26,14 @@ const statusLabels: Record<ParentChildMessage["monitoring_status"], string> = {
   closed: "Closed",
 };
 
+function firstParam(value: string | string[] | undefined) {
+  return Array.isArray(value) ? value[0] : value;
+}
+
 export default function ParentChildMessagesScreen() {
+  const params = useLocalSearchParams<{ caseId?: string | string[]; viewerRole?: string | string[] }>();
+  const caseId = firstParam(params.caseId) ?? null;
+  const viewerRole = firstParam(params.viewerRole) === "caseworker" ? "caseworker" : "parent";
   const [messages, setMessages] = useState<ParentChildMessage[]>([]);
   const [requests, setRequests] = useState<ChildRequest[]>([]);
   const [draft, setDraft] = useState("");
@@ -45,8 +53,8 @@ export default function ParentChildMessagesScreen() {
       setErrorMessage("");
 
       const [messageResult, requestResult] = await Promise.all([
-        getParentChildMessages(),
-        getParentChildRequests(),
+        getParentChildMessages(viewerRole, caseId),
+        getParentChildRequests(viewerRole, caseId),
       ]);
 
       setMessages(messageResult);
@@ -115,18 +123,22 @@ export default function ParentChildMessagesScreen() {
 
   useEffect(() => {
     loadMessages();
-  }, []);
+  }, [caseId, viewerRole]);
 
   return (
     <ParentChildShell
       title="Monitoring Messages"
-      subtitle="A monitored parent-child message space with visibility controls and review status."
+      subtitle={
+        viewerRole === "caseworker"
+          ? "Case-scoped child messages explicitly shared with the assigned caseworker."
+          : "A monitored parent-child message space with visibility controls and review status."
+      }
     >
       {loading ? <EmptyState message="Loading monitored messages..." /> : null}
 
       {!loading && errorMessage ? <ErrorState message={errorMessage} /> : null}
 
-      {!loading ? (
+      {!loading && viewerRole === "parent" ? (
         <ParentChildCard
           title="Send monitored message"
           description="Write a message connected to the child-shared parent-child record. Choose whether the child can see it."
@@ -208,7 +220,7 @@ export default function ParentChildMessagesScreen() {
         </ParentChildCard>
       ))}
 
-      <BackToParentChildHome />
+      {viewerRole === "parent" ? <BackToParentChildHome /> : null}
     </ParentChildShell>
   );
 }
