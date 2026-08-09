@@ -78,6 +78,7 @@ export default function RootLayout() {
                         <Stack.Screen name="parent-lessons/nervous-system-regulation" />
                         <Stack.Screen name="facilitator/index" />
                         <Stack.Screen name="facilitator/contact-session-log" />
+                        <Stack.Screen name="facilitator/evidence-review" />
                         <Stack.Screen name="child-protection/index" />
                         <Stack.Screen name="carer/index" />
                         <Stack.Screen name="advocate/index" />
