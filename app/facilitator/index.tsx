@@ -177,6 +177,21 @@ export default function FacilitatorWorkspaceScreen() {
         </Link>
       </View>
 
+      {access?.role === "caseworker" ? (
+        <View style={globalStyles.card}>
+          <Text style={globalStyles.cardTitle}>Child-shared records</Text>
+          <Text style={globalStyles.cardText}>
+            Review only the child records, requests, and monitored messages deliberately shared with you for this case.
+          </Text>
+          <Link
+            href={{ pathname: "/facilitator/child-shared-review", params: caseId ? { caseId } : {} }}
+            style={globalStyles.link}
+          >
+            Open child-shared review
+          </Link>
+        </View>
+      ) : null}
+
       <View style={globalStyles.card}>
         <Text style={globalStyles.cardTitle}>Review priority</Text>
         <View style={globalStyles.inlineRow}>
