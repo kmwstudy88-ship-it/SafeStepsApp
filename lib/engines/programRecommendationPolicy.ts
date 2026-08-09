@@ -41,3 +41,17 @@ export function getProgramRecommendationForStream(
 export function programCanAcceptNewEnrollments(program: ProgramPathway): boolean {
   return program.launchStatus === "launch" || program.launchStatus === "custom";
 }
+
+export function recordMatchesRecommendedProgram(
+  record: { program_id?: string | null } | null | undefined,
+  recommendedProgramId: string,
+): boolean {
+  return record?.program_id === recommendedProgramId;
+}
+
+export function customPathwayAwaitsWorkerApproval(
+  program: Pick<ProgramPathway, "launchStatus">,
+  reviewerState: string,
+): boolean {
+  return program.launchStatus === "custom" && reviewerState !== "approved";
+}
