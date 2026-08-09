@@ -148,3 +148,74 @@ revoke all on function public.review_case_document_version(uuid, uuid, uuid, tex
   from public, anon;
 grant execute on function public.review_case_document_version(uuid, uuid, uuid, text, boolean, text)
   to authenticated;
+
+
+create or replace function public.protect_case_document_review_fields()
+returns trigger
+language plpgsql
+security invoker
+set search_path = public
+as $$
+begin
+  if (
+    new.court_report_include is distinct from old.court_report_include
+    or (
+      new.status is distinct from old.status
+      and new.status in ('accepted', 'needs_update', 'excluded')
+    )
+  ) and not public.user_has_case_role(
+    old.case_id,
+    array['caseworker', 'supervisor', 'admin']::text[]
+  ) then
+    raise exception 'Only assigned reviewing staff can change evidence review or report-selection fields';
+  end if;
+
+  return new;
+end;
+$$;
+
+revoke all on function public.protect_case_document_review_fields() from public, anon, authenticated;
+
+drop trigger if exists protect_case_document_review_fields_trigger on public.case_documents;
+create trigger protect_case_document_review_fields_trigger
+before update on public.case_documents
+for each row
+execute function public.protect_case_document_review_fields();
+
+create or replace function public.protect_case_document_version_review_fields()
+returns trigger
+language plpgsql
+security invoker
+set search_path = public
+as $$
+declare
+  target_case_id uuid;
+begin
+  if (
+    new.review_status is distinct from old.review_status
+    or new.review_notes is distinct from old.review_notes
+  ) then
+    select document.case_id
+      into target_case_id
+    from public.case_documents as document
+    where document.id = old.document_id;
+
+    if target_case_id is null or not public.user_has_case_role(
+      target_case_id,
+      array['caseworker', 'supervisor', 'admin']::text[]
+    ) then
+      raise exception 'Only assigned reviewing staff can change document-version review fields';
+    end if;
+  end if;
+
+  return new;
+end;
+$$;
+
+revoke all on function public.protect_case_document_version_review_fields() from public, anon, authenticated;
+
+drop trigger if exists protect_case_document_version_review_fields_trigger on public.case_document_versions;
+create trigger protect_case_document_version_review_fields_trigger
+before update on public.case_document_versions
+for each row
+execute function public.protect_case_document_version_review_fields();
