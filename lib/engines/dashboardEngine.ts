@@ -1,6 +1,9 @@
 import { supabase } from "../supabase/client";
 import { resolveSingleActiveCaseId } from "../security/caseAccess";
-import { getProgramRecommendationForStream } from "./programRecommendationPolicy";
+import {
+  getProgramRecommendationForStream,
+  recordMatchesRecommendedProgram,
+} from "./programRecommendationPolicy";
 
 export type ProgramJourneySnapshot = {
   caseId: string;
@@ -117,8 +120,21 @@ async function fetchProgramJourney(
   const recommendation = getProgramRecommendationForStream(selectedStream);
   if (!recommendation) return null;
 
-  const activeEnrollment = enrollmentResult.data?.[0] ?? null;
-  const confirmed = confirmationResult.data;
+  const activeEnrollmentCandidate = enrollmentResult.data?.[0] ?? null;
+  const activeEnrollment = recordMatchesRecommendedProgram(
+    activeEnrollmentCandidate,
+    recommendation.program.id,
+  )
+    ? activeEnrollmentCandidate
+    : null;
+
+  const confirmedCandidate = confirmationResult.data;
+  const confirmed = recordMatchesRecommendedProgram(
+    confirmedCandidate,
+    recommendation.program.id,
+  )
+    ? confirmedCandidate
+    : null;
 
   return {
     caseId,
