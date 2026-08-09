@@ -19,6 +19,7 @@ const routeCases: Array<{ id: SensitiveRouteId; path: string; allowedRole: Secur
   { id: "contact_session_entry", path: "/facilitator/contact-session-log", allowedRole: "facilitator", deniedRole: "caseworker" },
   { id: "contact_progression_review", path: "/facilitator/contact-progression-review", allowedRole: "caseworker", deniedRole: "parent" },
   { id: "child_shared_review", path: "/facilitator/child-shared-review", allowedRole: "caseworker", deniedRole: "supervisor" },
+  { id: "evidence_review", path: "/facilitator/evidence-review", allowedRole: "supervisor", deniedRole: "parent" },
   { id: "worker_workspace", path: "/facilitator", allowedRole: "caseworker", deniedRole: "parent" },
   { id: "parent_child_messages", path: "/parent-child/messages", allowedRole: "parent", deniedRole: "facilitator" },
 ];

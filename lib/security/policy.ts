@@ -35,6 +35,7 @@ export type SensitiveRouteId =
   | "contact_session_entry"
   | "contact_progression_review"
   | "child_shared_review"
+  | "evidence_review"
   | "worker_workspace"
   | "parent_child_messages";
 
@@ -150,6 +151,13 @@ export const SENSITIVE_ROUTE_POLICIES: readonly SensitiveRoutePolicy[] = [
     allowedRoles: ["caseworker"],
     requiresCaseMembership: true,
     childBoundary: "child_shared",
+  },
+  {
+    id: "evidence_review",
+    prefixes: ["/facilitator/evidence-review"],
+    allowedRoles: ["caseworker", "supervisor", "admin"],
+    requiresCaseMembership: true,
+    childBoundary: "none",
   },
   {
     id: "worker_workspace",
