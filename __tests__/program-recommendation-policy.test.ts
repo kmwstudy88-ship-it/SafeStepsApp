@@ -1,6 +1,8 @@
 import {
+  customPathwayAwaitsWorkerApproval,
   getProgramRecommendationForStream,
   programCanAcceptNewEnrollments,
+  recordMatchesRecommendedProgram,
 } from "../lib/engines/programRecommendationPolicy";
 
 describe("program recommendation policy", () => {
@@ -29,5 +31,30 @@ describe("program recommendation policy", () => {
 
     expect(draft && programCanAcceptNewEnrollments(draft.program)).toBe(false);
     expect(launch && programCanAcceptNewEnrollments(launch.program)).toBe(true);
+  });
+
+  it("ignores enrolment and confirmation records for an old recommended program", () => {
+    expect(
+      recordMatchesRecommendedProgram(
+        { program_id: "back-on-track" },
+        "intensive-reunification",
+      ),
+    ).toBe(false);
+    expect(
+      recordMatchesRecommendedProgram(
+        { program_id: "intensive-reunification" },
+        "intensive-reunification",
+      ),
+    ).toBe(true);
+    expect(recordMatchesRecommendedProgram(null, "intensive-reunification")).toBe(false);
+  });
+
+  it("keeps a custom pathway pending until worker approval is recorded", () => {
+    const custom = getProgramRecommendationForStream("Custom Program");
+    const launch = getProgramRecommendationForStream("24 Month Reunification");
+
+    expect(custom && customPathwayAwaitsWorkerApproval(custom.program, "pending")).toBe(true);
+    expect(custom && customPathwayAwaitsWorkerApproval(custom.program, "approved")).toBe(false);
+    expect(launch && customPathwayAwaitsWorkerApproval(launch.program, "pending")).toBe(false);
   });
 });
