@@ -192,6 +192,21 @@ export default function FacilitatorWorkspaceScreen() {
         </View>
       ) : null}
 
+      {access && ["caseworker", "supervisor", "admin"].includes(access.role) ? (
+        <View style={globalStyles.card}>
+          <Text style={globalStyles.cardTitle}>Evidence V1 review</Text>
+          <Text style={globalStyles.cardText}>
+            Review the current file version, record limitations or corrections, and explicitly control report inclusion.
+          </Text>
+          <Link
+            href={{ pathname: "/facilitator/evidence-review", params: caseId ? { caseId } : {} }}
+            style={globalStyles.link}
+          >
+            Open evidence review queue
+          </Link>
+        </View>
+      ) : null}
+
       <View style={globalStyles.card}>
         <Text style={globalStyles.cardTitle}>Review priority</Text>
         <View style={globalStyles.inlineRow}>
