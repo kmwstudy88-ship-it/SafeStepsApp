@@ -6,7 +6,6 @@ import { AppBottomNav } from "../../components/AppBottomNav";
 import { useSensitiveAccess } from "../../components/security/SensitiveRouteBoundary";
 import {
   getParentChildMessages,
-  getParentChildOverview,
   getParentChildRequests,
   getParentChildSharedItems,
   type ChildRequest,
@@ -50,24 +49,41 @@ export default function ChildSharedReviewScreen() {
   const [messages, setMessages] = useState<ParentChildMessage[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const loadedSuccessfully = !loading && !error;
 
   useEffect(() => {
     let active = true;
     setLoading(true);
     setError("");
 
+    if (!caseId) {
+      setError("Select a case before reviewing child-shared records.");
+      setLoading(false);
+      return () => {
+        active = false;
+      };
+    }
+
     Promise.all([
-      getParentChildOverview("caseworker"),
-      getParentChildSharedItems("caseworker"),
-      getParentChildRequests("caseworker"),
-      getParentChildMessages("caseworker"),
+      getParentChildSharedItems("caseworker", caseId),
+      getParentChildRequests("caseworker", caseId),
+      getParentChildMessages("caseworker", caseId),
     ])
-      .then(([overviewResult, itemResult, requestResult, messageResult]) => {
+      .then(([itemResult, requestResult, messageResult]) => {
         if (!active) return;
-        setOverview(overviewResult);
         setItems(itemResult);
         setRequests(requestResult);
         setMessages(messageResult);
+        setOverview({
+          sharedItemCount: itemResult.length,
+          requestCount: requestResult.length,
+          openRequestCount: requestResult.filter((request) => request.status !== "completed").length,
+          messageCount: messageResult.length,
+          openMessageCount: messageResult.filter((message) => message.monitoring_status !== "closed").length,
+          latestSharedItem: itemResult[0] ?? null,
+          latestRequest: requestResult[0] ?? null,
+          latestMessage: messageResult[0] ?? null,
+        });
       })
       .catch((loadError) => {
         if (!active) return;
@@ -80,7 +96,7 @@ export default function ChildSharedReviewScreen() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [caseId]);
 
   const riskPrompts = useMemo(() => {
     const prompts = [];
@@ -119,6 +135,8 @@ export default function ChildSharedReviewScreen() {
         </View>
       ) : null}
 
+      {loadedSuccessfully ? (
+        <>
       <View style={globalStyles.card}>
         <Text style={globalStyles.cardTitle}>Caseworker review scope</Text>
         <Text style={globalStyles.cardText}>Case: {caseId || "Selected case from protected route context"}</Text>
@@ -167,7 +185,7 @@ export default function ChildSharedReviewScreen() {
         {requests.length === 0 ? (
           <Text style={globalStyles.cardText}>No child requests are addressed to this caseworker.</Text>
         ) : (
-          requests.slice(0, 6).map((request) => (
+          requests.map((request) => (
             <View key={request.id} style={globalStyles.compactBlock}>
               <Text style={globalStyles.cardText}>{request.request_type}</Text>
               <Text style={globalStyles.mutedText}>{request.message || "No message recorded"}</Text>
@@ -191,12 +209,17 @@ export default function ChildSharedReviewScreen() {
           ))
         )}
         <Link
-          href={{ pathname: "/parent-child/messages", params: caseId ? { caseId } : {} }}
+          href={{
+            pathname: "/parent-child/messages",
+            params: caseId ? { caseId, viewerRole: "caseworker" } : { viewerRole: "caseworker" },
+          }}
           style={globalStyles.link}
         >
           Open monitored-message workflow
         </Link>
       </View>
+        </>
+      ) : null}
 
       <AppBottomNav />
     </ScrollView>
