@@ -92,15 +92,41 @@ function sharedAudiencesForRole(viewerRole: ChildSharedReviewRole) {
   return viewerRole === "caseworker" ? ["caseworker", "both"] : ["parent", "both"];
 }
 
-export async function getParentChildSharedItems(viewerRole: ChildSharedReviewRole = "parent") {
-  const reviewerUserId = await getCurrentReviewerUserId("reviewing child shared items");
-
+async function getChildUserIdsForCase(caseId: string) {
   const { data, error } = await supabase
+    .from("child_profiles")
+    .select("child_user_id")
+    .eq("case_id", caseId);
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return (data ?? []).map((profile) => profile.child_user_id as string);
+}
+
+export async function getParentChildSharedItems(
+  viewerRole: ChildSharedReviewRole = "parent",
+  caseId?: string | null,
+) {
+  const reviewerUserId = await getCurrentReviewerUserId("reviewing child shared items");
+  const childUserIds = caseId ? await getChildUserIdsForCase(caseId) : null;
+
+  if (childUserIds?.length === 0) {
+    return [] as ChildSharedItem[];
+  }
+
+  let query = supabase
     .from("child_shared_items")
     .select("*")
     .in("share_audience", sharedAudiencesForRole(viewerRole))
-    .eq(recipientColumnForRole(viewerRole), reviewerUserId)
-    .order("created_at", { ascending: false });
+    .eq(recipientColumnForRole(viewerRole), reviewerUserId);
+
+  if (childUserIds) {
+    query = query.in("child_user_id", childUserIds);
+  }
+
+  const { data, error } = await query.order("created_at", { ascending: false });
 
   if (error) {
     throw new Error(error.message);
@@ -109,15 +135,28 @@ export async function getParentChildSharedItems(viewerRole: ChildSharedReviewRol
   return (data ?? []) as ChildSharedItem[];
 }
 
-export async function getParentChildRequests(viewerRole: ChildSharedReviewRole = "parent") {
+export async function getParentChildRequests(
+  viewerRole: ChildSharedReviewRole = "parent",
+  caseId?: string | null,
+) {
   const reviewerUserId = await getCurrentReviewerUserId("reviewing child requests");
+  const childUserIds = caseId ? await getChildUserIdsForCase(caseId) : null;
 
-  const { data, error } = await supabase
+  if (childUserIds?.length === 0) {
+    return [] as ChildRequest[];
+  }
+
+  let query = supabase
     .from("child_requests")
     .select("*")
     .in("share_audience", sharedAudiencesForRole(viewerRole))
-    .eq(recipientColumnForRole(viewerRole), reviewerUserId)
-    .order("created_at", { ascending: false });
+    .eq(recipientColumnForRole(viewerRole), reviewerUserId);
+
+  if (childUserIds) {
+    query = query.in("child_user_id", childUserIds);
+  }
+
+  const { data, error } = await query.order("created_at", { ascending: false });
 
   if (error) {
     throw new Error(error.message);
@@ -126,13 +165,26 @@ export async function getParentChildRequests(viewerRole: ChildSharedReviewRole =
   return (data ?? []) as ChildRequest[];
 }
 
-export async function getParentChildMessages(viewerRole: ChildSharedReviewRole = "parent") {
+export async function getParentChildMessages(
+  viewerRole: ChildSharedReviewRole = "parent",
+  caseId?: string | null,
+) {
   const reviewerUserId = await getCurrentReviewerUserId("reviewing child messages");
+  const childUserIds = caseId ? await getChildUserIdsForCase(caseId) : null;
+
+  if (childUserIds?.length === 0) {
+    return [] as ParentChildMessage[];
+  }
+
   let query = supabase
     .from("parent_child_messages")
     .select("*")
     .in("share_audience", sharedAudiencesForRole(viewerRole))
     .eq(recipientColumnForRole(viewerRole), reviewerUserId);
+
+  if (childUserIds) {
+    query = query.in("child_user_id", childUserIds);
+  }
 
   if (viewerRole === "parent") {
     query = query.eq("visible_to_parent", true);
@@ -147,11 +199,14 @@ export async function getParentChildMessages(viewerRole: ChildSharedReviewRole =
   return (data ?? []) as ParentChildMessage[];
 }
 
-export async function getParentChildOverview(viewerRole: ChildSharedReviewRole = "parent"): Promise<ParentChildOverview> {
+export async function getParentChildOverview(
+  viewerRole: ChildSharedReviewRole = "parent",
+  caseId?: string | null,
+): Promise<ParentChildOverview> {
   const [sharedItems, requests, messages] = await Promise.all([
-    getParentChildSharedItems(viewerRole),
-    getParentChildRequests(viewerRole),
-    getParentChildMessages(viewerRole),
+    getParentChildSharedItems(viewerRole, caseId),
+    getParentChildRequests(viewerRole, caseId),
+    getParentChildMessages(viewerRole, caseId),
   ]);
 
   return {
