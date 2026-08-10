@@ -1,3 +1,30 @@
+-- These legacy assessment tables existed in production before migration history
+-- was recorded. Recreate their production structure so fresh databases can
+-- replay this migration deterministically.
+create table if not exists public.assessments (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  description text,
+  created_at timestamp without time zone default now()
+);
+
+create table if not exists public.assessment_questions (
+  id uuid primary key default gen_random_uuid(),
+  assessment_id uuid not null,
+  question_number integer not null,
+  question_text text not null,
+  question_type text not null,
+  created_at timestamptz default now()
+);
+
+create table if not exists public.assessment_responses (
+  id uuid primary key default gen_random_uuid(),
+  assessment_id uuid references public.assessments(id),
+  user_id uuid references public.users(id),
+  responses jsonb,
+  created_at timestamp without time zone default now()
+);
+
 alter table public.assessments enable row level security;
 alter table public.assessment_questions enable row level security;
 alter table public.assessment_responses enable row level security;
