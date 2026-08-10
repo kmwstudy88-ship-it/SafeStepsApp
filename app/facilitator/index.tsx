@@ -207,6 +207,21 @@ export default function FacilitatorWorkspaceScreen() {
         </View>
       ) : null}
 
+      {access && ["supervisor", "admin"].includes(access.role) ? (
+        <View style={globalStyles.card}>
+          <Text style={globalStyles.cardTitle}>Independent report approval</Text>
+          <Text style={globalStyles.cardText}>
+            Review the locked current version, return corrections, approve independently, and release only a hashed PDF.
+          </Text>
+          <Link
+            href={{ pathname: "/facilitator/report-approval", params: caseId ? { caseId } : {} }}
+            style={globalStyles.link}
+          >
+            Open report approval and release
+          </Link>
+        </View>
+      ) : null}
+
       <View style={globalStyles.card}>
         <Text style={globalStyles.cardTitle}>Review priority</Text>
         <View style={globalStyles.inlineRow}>
