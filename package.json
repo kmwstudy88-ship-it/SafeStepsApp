@@ -89,7 +89,8 @@
     "audit:routes": "node SafeStepsTools/audit-route-hygiene.js",
     "import:father-course": "node SafeStepsTools/import-father-course.js",
     "lint": "expo lint",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "verify:staging": "node SafeStepsTools/verify-staging-journey.mjs"
   },
   "private": true,
   "allowScripts": {
