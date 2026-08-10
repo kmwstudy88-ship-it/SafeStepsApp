@@ -101,7 +101,7 @@ create table if not exists public.ai_feedback_records (
 create table if not exists public.ai_child_feedback_controls (
   id uuid primary key default gen_random_uuid(),
   feedback_record_id uuid not null references public.ai_feedback_records(id) on delete cascade,
-  child_id uuid references public.children(id) on delete set null,
+  child_id uuid,
   developmental_format text not null,
   child_understood_purpose boolean,
   trusted_adult_support_used boolean not null default false,
