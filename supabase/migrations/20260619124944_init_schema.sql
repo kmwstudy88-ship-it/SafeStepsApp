@@ -2,6 +2,9 @@
 -- SafeSteps Initial Schema (PostgreSQL)
 -- ============================================
 
+-- Required by the configured Data API before branch migration replay can continue.
+create schema if not exists api;
+
 -- USERS TABLE (linked to auth.users)
 create table users (
   id uuid primary key default gen_random_uuid(),
