@@ -1,0 +1,14 @@
+alter table public.case_notes add column if not exists user_id uuid;
+alter table public.case_notes add column if not exists family_id uuid;
+alter table public.case_notes add column if not exists note text;
+alter table public.case_plans add column if not exists family_id uuid;
+alter table public.case_plans add column if not exists goals jsonb;
+alter table public.children add column if not exists family_id uuid;
+alter table public.children add column if not exists first_name text;
+alter table public.children add column if not exists last_name text;
+alter table public.children add column if not exists date_of_birth date;
+alter table public.lessons add column if not exists week_id uuid;
+alter table public.lessons add column if not exists lesson_number integer;
+alter table public.lessons add column if not exists content jsonb;
+alter table public.notifications add column if not exists read boolean default false;
+alter table public.programs add column if not exists name text;
