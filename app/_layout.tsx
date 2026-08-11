@@ -84,7 +84,6 @@ export default function RootLayout() {
                         <Stack.Screen name="carer/index" />
                         <Stack.Screen name="advocate/index" />
                         <Stack.Screen name="assessments/index" />
-                        <Stack.Screen name="intake" />
                         <Stack.Screen name="intake-progress" />
                         <Stack.Screen name="intake-review" />
                         <Stack.Screen name="assessment-system/index" />
