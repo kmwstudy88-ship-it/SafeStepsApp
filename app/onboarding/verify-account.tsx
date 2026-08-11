@@ -40,7 +40,7 @@ export default function VerifyAccountScreen() {
   useEffect(() => {
     let active = true;
 
-    if (!linkingUrl || !linkingUrl.includes("access_token=")) {
+    if (!linkingUrl || !/[#?&](?:access_token|code)=/.test(linkingUrl)) {
       return () => {
         active = false;
       };
