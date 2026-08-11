@@ -31,16 +31,41 @@ async function requireCurrentUser() {
 }
 
 async function readProfileFields(userId: string) {
-  const { data, error } = await supabase
-    .from("profiles")
-    .select("role, onboarding_status, accessibility_preferences, notification_preferences")
-    .eq("id", userId)
-    .maybeSingle();
+  const selectProfile = () =>
+    supabase
+      .from("profiles")
+      .select("role, onboarding_status, accessibility_preferences, notification_preferences")
+      .eq("id", userId)
+      .maybeSingle();
 
-  if (error) throw new Error(error.message);
-  if (!data) throw new Error("Your SafeSteps parent profile is not ready yet.");
+  const firstAttempt = await selectProfile();
+  if (firstAttempt.error) throw new Error(firstAttempt.error.message);
+  if (firstAttempt.data) return firstAttempt.data;
 
-  return data;
+  // The auth trigger can finish after the first app render. Create the minimum
+  // parent profile idempotently so onboarding never dead-ends while waiting for it.
+  const { data: authData, error: authError } = await supabase.auth.getUser();
+  if (authError) throw new Error(authError.message);
+
+  const { error: profileError } = await supabase.from("profiles").upsert(
+    {
+      id: userId,
+      email: authData.user?.email ?? null,
+      display_name: authData.user?.user_metadata?.display_name ?? authData.user?.email ?? "Parent",
+      role: "parent",
+      onboarding_status: "not_started",
+      updated_at: new Date().toISOString(),
+    },
+    { onConflict: "id", ignoreDuplicates: true },
+  );
+
+  if (profileError) throw new Error(profileError.message);
+
+  const retry = await selectProfile();
+  if (retry.error) throw new Error(retry.error.message);
+  if (!retry.data) throw new Error("Your SafeSteps parent profile could not be prepared.");
+
+  return retry.data;
 }
 
 export async function loadParentOnboardingStatus(): Promise<ParentOnboardingStatus> {
@@ -81,13 +106,35 @@ export async function configureParentAccountProtection(input: {
   const profile = await readProfileFields(user.id);
   const secureStoreAvailable = await SecureStore.isAvailableAsync();
 
-  if (!secureStoreAvailable) {
-    throw new Error("SafeSteps device PIN protection is available in the Android and iPhone apps.");
-  }
-
-  const biometricAvailable = SecureStore.canUseBiometricAuthentication();
+  const biometricAvailable =
+    secureStoreAvailable && SecureStore.canUseBiometricAuthentication();
   if (input.preferBiometrics && !biometricAvailable) {
     throw new Error("Biometric protection is not available on this device. Turn it off to continue.");
+  }
+
+  // Web and some preview clients do not expose a secure device keystore. Do not
+  // store a PIN insecurely; record that native device protection is still pending
+  // and allow the account onboarding flow to continue.
+  if (!secureStoreAvailable) {
+    const notificationPreferences = {
+      ...(profile.notification_preferences ?? {}),
+      hide_sensitive_content: input.hideNotificationContent,
+      biometric_unlock_preferred: false,
+      local_pin_configured: false,
+      device_pin_pending: true,
+    };
+
+    const { error } = await supabase
+      .from("profiles")
+      .update({
+        notification_preferences: notificationPreferences,
+        onboarding_status: "account_protected",
+        updated_at: new Date().toISOString(),
+      })
+      .eq("id", user.id);
+
+    if (error) throw new Error(error.message);
+    return { deviceProtectionPending: true };
   }
 
   const saltBytes = await Crypto.getRandomBytesAsync(16);
@@ -129,6 +176,7 @@ export async function configureParentAccountProtection(input: {
     .eq("id", user.id);
 
   if (error) throw new Error(error.message);
+  return { deviceProtectionPending: false };
 }
 
 export async function recordParentOnboardingConsent(choices: ParentConsentChoices) {
