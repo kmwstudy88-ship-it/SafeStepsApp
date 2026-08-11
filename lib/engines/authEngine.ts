@@ -1,3 +1,5 @@
+import * as Linking from "expo-linking";
+
 import { supabase } from "../supabase/client";
 import {
   defaultRepresentationPreferences,
@@ -11,10 +13,10 @@ function getAuthRedirectUrl() {
   }
 
   if (typeof window !== "undefined" && window.location.origin) {
-    return `${window.location.origin}/assessments`;
+    return `${window.location.origin}/onboarding/verify-account`;
   }
 
-  return undefined;
+  return Linking.createURL("/onboarding/verify-account");
 }
 
 function getPasswordRecoveryRedirectUrl() {
