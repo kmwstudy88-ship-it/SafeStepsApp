@@ -21,7 +21,9 @@ async function runRole(role,checks){
  if(!session?.user?.id) throw new Error(`Controlled staging login for ${role} did not create a user session.`);
 
  for(const check of checks){
-  const {data,error}=await client.from(check.table).select(check.select??"id").eq(check.caseColumn??"case_id",check.caseId??caseId).limit(1);
+  const filterColumn=check.filterColumn??check.caseColumn??"case_id";
+  const filterValue=check.filterValue??check.caseId??caseId;
+  const {data,error}=await client.from(check.table).select(check.select??"id").eq(filterColumn,filterValue).limit(1);
   const rowCount=Array.isArray(data)?data.length:0;
   const passed=check.allow
    ? !error&&rowCount>0
@@ -43,7 +45,7 @@ await runRole("parent",[
  {name:"worker evidence decisions",table:"case_document_review_events",allow:false},
 ]);
 await runRole("child",[
- {name:"child private records",table:"child_private_records",allow:true},
+ {name:"child private records",table:"child_private_records",filterColumn:"title",filterValue:"Synthetic child-only boundary record",allow:true},
  {name:"report administration",table:"report_approvals",allow:false},
 ]);
 await runRole("caseworker",[
