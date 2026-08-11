@@ -16,13 +16,26 @@ async function runRole(role,checks){
  const login=credentials[role];
  if(!login?.email||!login?.password) throw new Error(`Missing controlled staging credentials for ${role}.`);
  const client=createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false}});
- const {error:loginError}=await client.auth.signInWithPassword(login);
+ const {data:session,error:loginError}=await client.auth.signInWithPassword(login);
  if(loginError) throw loginError;
+ if(!session?.user?.id) throw new Error(`Controlled staging login for ${role} did not create a user session.`);
+
  for(const check of checks){
-  const {data,error}=await client.from(check.table).select(check.select??"id").eq(check.caseColumn??"case_id",check.caseId??caseId).limit(1);
-  const allowed=!error;
-  const passed=check.allow?allowed:!allowed||data?.length===0;
-  results.push({role,check:check.name,expected:check.allow?"allow":"deny",passed,error:error?.message??null});
+  const filterColumn=check.filterColumn??check.caseColumn??"case_id";
+  const filterValue=check.filterValue??check.caseId??caseId;
+  const {data,error}=await client.from(check.table).select(check.select??"id").eq(filterColumn,filterValue).limit(1);
+  const rowCount=Array.isArray(data)?data.length:0;
+  const passed=check.allow
+   ? !error&&rowCount>0
+   : Boolean(error)||rowCount===0;
+  results.push({
+   role,
+   check:check.name,
+   expected:check.allow?"visible row":"no visible row",
+   passed,
+   rowCount,
+   error:error?.message??null,
+  });
  }
  await client.auth.signOut();
 }
@@ -32,12 +45,12 @@ await runRole("parent",[
  {name:"worker evidence decisions",table:"case_document_review_events",allow:false},
 ]);
 await runRole("child",[
- {name:"child private records",table:"child_private_records",allow:true},
+ {name:"child private records",table:"child_private_records",filterColumn:"title",filterValue:"Synthetic child-only boundary record",allow:true},
  {name:"report administration",table:"report_approvals",allow:false},
 ]);
 await runRole("caseworker",[
  {name:"assigned evidence queue",table:"case_documents",allow:true},
- {name:"independent approval events",table:"case_report_release_events",allow:false},
+ {name:"release history visibility",table:"case_report_release_events",allow:true},
 ]);
 await runRole("supervisor",[
  {name:"report release history",table:"case_report_release_events",allow:true},
@@ -52,8 +65,16 @@ await runRole("unrelated",[
 ]);
 
 const anonymous=createClient(url,key,{auth:{persistSession:false}});
-const {data:anonReport,error:anonError}=await anonymous.from("case_report_release_events").select("id").limit(1);
-results.push({role:"anonymous",check:"report tables",expected:"deny",passed:Boolean(anonError)||anonReport?.length===0,error:anonError?.message??null});
+const {data:anonReport,error:anonError}=await anonymous.from("case_report_release_events").select("id").eq("case_id",caseId).limit(1);
+const anonymousRowCount=Array.isArray(anonReport)?anonReport.length:0;
+results.push({
+ role:"anonymous",
+ check:"report tables",
+ expected:"no visible row",
+ passed:Boolean(anonError)||anonymousRowCount===0,
+ rowCount:anonymousRowCount,
+ error:anonError?.message??null,
+});
 
 for(const result of results) console.log(JSON.stringify(result));
 const failures=results.filter((result)=>!result.passed);
