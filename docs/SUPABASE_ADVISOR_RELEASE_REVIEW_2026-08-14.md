@@ -4,7 +4,7 @@ This review records the Supabase Security Advisor and Performance Advisor blocke
 
 ## Current state
 
-The local checkout at `C:\Users\SAFES\SafeStepsApp` is linked to the production Supabase project ref `yzxotxbwgxnxemkzigse`.
+The local checkout is linked to the production Supabase project ref `yzxotxbwgxnxemkzigse`.
 
 Do not run advisor, Auth-admin, migration, or database commands from that linked checkout for this closeout. Production must not be modified or probed as part of staging release verification.
 
