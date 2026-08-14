@@ -49,6 +49,27 @@ The bootstrap utility uses Supabase Auth admin APIs, refuses the production proj
 
 Run `npm run verify:staging`.
 
+## GitHub release environment
+
+Configure the GitHub Environment named `production-readiness` before relying on the release gate workflow.
+
+Required environment secrets:
+
+- `SAFESTEPS_STAGING_URL`
+- `SAFESTEPS_STAGING_PUBLISHABLE_KEY`
+- `SAFESTEPS_STAGING_CASE_ID`
+- `SAFESTEPS_STAGING_ROLE_CREDENTIALS_JSON`
+
+Required environment variables:
+
+- `SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT`
+- `SAFESTEPS_PERFORMANCE_ADVISOR_REVIEWED_AT`
+- `SAFESTEPS_STAGING_JOURNEY_VERIFIED_AT`
+- `SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT`
+- `SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT`
+
+Set the environment to require reviewer approval and restrict deployments to protected release refs. The workflow also refuses non-main manual dispatch refs before receiving staging credentials. Environment reviewers and allowed deployment refs are enforced by GitHub repository settings, not by workflow YAML alone.
+
 ## Journey completion evidence
 
 Record a pass/fail and trace ID for:
@@ -66,4 +87,4 @@ Record a pass/fail and trace ID for:
 11. authenticated private download and external delivery challenge
 12. consent withdrawal, reassignment, expiry and unrelated-user denials
 
-Production remains blocked until this matrix passes with synthetic staging data, the Security and Performance Advisors are reviewed, dependency-audit findings are classified, and exposed credentials are rotated. Set `SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT`, `SAFESTEPS_PERFORMANCE_ADVISOR_REVIEWED_AT`, `SAFESTEPS_STAGING_JOURNEY_VERIFIED_AT`, `SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT`, and `SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT` only after that evidence is complete, then run `npm run release:gate`.
+Production remains blocked until this matrix passes with synthetic staging data, the Security and Performance Advisors are reviewed, dependency-audit findings are classified, and exposed credentials are rotated. Review `docs/SUPABASE_ADVISOR_RELEASE_REVIEW_2026-08-14.md` before setting `SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT` or `SAFESTEPS_PERFORMANCE_ADVISOR_REVIEWED_AT`, review `docs/DEPENDENCY_AUDIT_RELEASE_REVIEW_2026-08-14.md` before setting `SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT`, and review `docs/CREDENTIAL_ROTATION_RELEASE_REVIEW_2026-08-14.md` before setting `SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT`. Set `SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT`, `SAFESTEPS_PERFORMANCE_ADVISOR_REVIEWED_AT`, `SAFESTEPS_STAGING_JOURNEY_VERIFIED_AT`, `SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT`, and `SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT` only after that evidence is complete, then run `npm run release:gate`.

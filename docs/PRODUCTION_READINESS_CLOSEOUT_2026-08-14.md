@@ -37,14 +37,17 @@ This note records the current release-blocking evidence after the hardened stagi
 2. Supabase Security and Performance Advisors were not run in this pass.
    - The available local link points to production ref `yzxotxbwgxnxemkzigse`.
    - Do not run advisor commands until the checkout is linked to staging or staging credentials are provided.
+   - See `docs/SUPABASE_ADVISOR_RELEASE_REVIEW_2026-08-14.md` before setting `SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT` or `SAFESTEPS_PERFORMANCE_ADVISOR_REVIEWED_AT`.
 
 3. Dependency audit is not fully clear.
    - Non-forced `npm audit fix --package-lock-only` reduced the report from 26 to 23 findings.
    - Remaining findings are through Expo/Metro tooling paths and npm recommends `npm audit fix --force`, which would install incompatible framework versions such as `react-native@0.72.17` or `expo@53.0.27` depending on the resolver path. This is not acceptable without a planned Expo/React Native compatibility pass.
    - Remaining advisory roots: `image-size` and `uuid`.
+   - See `docs/DEPENDENCY_AUDIT_RELEASE_REVIEW_2026-08-14.md` before setting `SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT`.
 
 4. Historical exposed credentials must be rotated.
    - Current tracked secret-looking values were removed from `ai/Safesteps- API Key, Firbebase, ect details.txt` and `upload.ps1`.
    - Rotation is still required for any real key previously committed.
+   - See `docs/CREDENTIAL_ROTATION_RELEASE_REVIEW_2026-08-14.md` before setting `SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT`.
 
 Production release remains blocked until staging Auth, real advisor review, dependency classification, and credential rotation are complete. Set `SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT` and `SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT` only after those release-blocking reviews are complete.
