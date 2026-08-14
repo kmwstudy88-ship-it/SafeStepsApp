@@ -7,6 +7,10 @@ import {
   resolveAuthorizationContext,
 } from "../../lib/supabase.js";
 import { requireAuthenticatedUser } from "../../middleware/requireAuthenticatedUser.js";
+import {
+  childSessionExpiresAt,
+  evaluateChildLoginEligibility,
+} from "../../security/childAccessPolicy.js";
 
 const router = express.Router();
 
@@ -77,11 +81,35 @@ function loginForAudience(audience) {
         );
       }
 
-      await ensureActiveSecuritySession(client, data.user, data.session.access_token, {
+      const deviceMetadata = {
         deviceReference: header(req, "x-device-id"),
         platform: header(req, "x-client-platform"),
         clientVersion: header(req, "x-client-version"),
-      });
+      };
+
+      let childRestrictions = null;
+      if (audience === "child") {
+        const eligibility = evaluateChildLoginEligibility({
+          roles: authorization.roles,
+          memberships: authorization.memberships,
+          metadata: deviceMetadata,
+        });
+        if (!eligibility.allowed) {
+          throw forbidden(
+            "CHILD_LOGIN_RESTRICTED",
+            childLoginMessage(eligibility.reason),
+          );
+        }
+
+        childRestrictions = {
+          sessionExpiresAt: childSessionExpiresAt(data.session.access_token),
+          allowedApiScope: "child_only",
+          requiresActiveCaseMembership: true,
+          adultCaseManagementAccess: false,
+        };
+      }
+
+      await ensureActiveSecuritySession(client, data.user, data.session.access_token, deviceMetadata);
 
       res.json({
         data: {
@@ -92,6 +120,7 @@ function loginForAudience(audience) {
           },
           roles: authorization.roles,
           memberships: authorization.memberships,
+          restrictions: childRestrictions,
           session: {
             accessToken: data.session.access_token,
             refreshToken: data.session.refresh_token,
@@ -108,7 +137,19 @@ function loginForAudience(audience) {
   };
 }
 
+function childLoginMessage(reason) {
+  switch (reason) {
+    case "child_membership_required":
+      return "This child account is not linked to an active SafeSteps case.";
+    case "child_device_metadata_required":
+      return "Child sign-in must use a registered SafeSteps app device.";
+    default:
+      return "This account is not configured as a restricted child account.";
+  }
+}
+
 function sessionResponse(auth) {
+  const isChild = auth.roles.includes("child");
   return {
     user: auth.user
       ? {
@@ -119,6 +160,14 @@ function sessionResponse(auth) {
     roles: auth.roles,
     memberships: auth.memberships,
     sessionReference: auth.sessionReference,
+    restrictions: isChild
+      ? {
+          sessionExpiresAt: childSessionExpiresAt(auth.accessToken),
+          allowedApiScope: "child_only",
+          requiresActiveCaseMembership: true,
+          adultCaseManagementAccess: false,
+        }
+      : null,
   };
 }
 
