@@ -37,6 +37,7 @@ This note records the current release-blocking evidence after the hardened stagi
 2. Supabase Security and Performance Advisors were not run in this pass.
    - The available local link points to production ref `yzxotxbwgxnxemkzigse`.
    - Do not run advisor commands until the checkout is linked to staging or staging credentials are provided.
+   - See `docs/SUPABASE_ADVISOR_RELEASE_REVIEW_2026-08-14.md` before setting `SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT` or `SAFESTEPS_PERFORMANCE_ADVISOR_REVIEWED_AT`.
 
 3. Dependency audit is not fully clear.
    - Non-forced `npm audit fix --package-lock-only` reduced the report from 26 to 23 findings.
