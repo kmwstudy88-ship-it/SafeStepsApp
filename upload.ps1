@@ -1,6 +1,10 @@
-$supabaseUrl = "<https://yzxotxbwgxnxemkzigse.supabase.co>"
-$anonKey = "<eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl6eG90eGJ3Z3hueGVta3ppZ3NlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE4NjcyMDMsImV4cCI6MjA5NzQ0MzIwM30.HnxyBE-mCACCp0IEzb8jUVGou2Fsgax238t7K88Xb8k>"
+$supabaseUrl = $env:SUPABASE_URL
+$anonKey = $env:SUPABASE_ANON_KEY
 $bucket = "challenges"
+
+if ([string]::IsNullOrWhiteSpace($supabaseUrl) -or [string]::IsNullOrWhiteSpace($anonKey)) {
+    throw "Set SUPABASE_URL and SUPABASE_ANON_KEY in your local environment before running upload.ps1."
+}
 
 $files = Get-ChildItem -Recurse -File -Filter *.json -Path ".\Challenges"
 

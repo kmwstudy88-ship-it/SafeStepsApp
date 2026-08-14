@@ -1,2 +1,6 @@
-OPEN AI PLATFORM
-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
+SafeSteps API key notes
+
+Do not store API keys, Supabase JWTs, Firebase credentials, or service-role secrets in this repository.
+
+Use local environment files that are ignored by Git, GitHub Actions secrets, or the provider dashboard secret store.
+Rotate any real key that was previously committed before treating a release candidate as clean.
