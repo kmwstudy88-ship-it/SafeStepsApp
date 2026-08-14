@@ -1,0 +1,39 @@
+{
+  "id": "game_10",
+  "title": "Kindness Relay",
+  "libraryType": "parent_child_interaction_assessment",
+  "curriculum": false,
+  "category": "family_connection",
+  "minPlayers": 2,
+  "maxPlayers": 6,
+  "recommendedModes": [
+    "live_family",
+    "contact_visit",
+    "worker_supported"
+  ],
+  "duration": "full_session",
+  "objective": "Complete small acts of kindness for one another and name what felt helpful.",
+  "observationDimensions": [
+    "responsiveness",
+    "shared_enjoyment"
+  ],
+  "childSafeguards": {
+    "voluntaryParticipation": true,
+    "mayPass": true,
+    "mayStop": true,
+    "noForcedDisclosure": true,
+    "childChoicesRespected": true,
+    "privateReflectionDefault": true
+  },
+  "facilitatorPrompts": [
+    "What did each person do that helped the activity feel connected or safe?",
+    "How were choices, boundaries and changes communicated?",
+    "Was there a moment of repair, support or shared enjoyment?"
+  ],
+  "completion": {
+    "winnerRequired": false,
+    "performanceRanked": false,
+    "professionalInterpretationRequired": true,
+    "snapshotCannotDetermineParentingCapacity": true
+  }
+}
