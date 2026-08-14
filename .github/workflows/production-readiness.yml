@@ -1,0 +1,37 @@
+name: Production Readiness Gate
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "release-*"
+
+jobs:
+  gate:
+    name: Fail closed until staging evidence is complete
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Production readiness gate
+        run: npm run release:gate
+        env:
+          SAFESTEPS_STAGING_URL: ${{ secrets.SAFESTEPS_STAGING_URL }}
+          SAFESTEPS_STAGING_PUBLISHABLE_KEY: ${{ secrets.SAFESTEPS_STAGING_PUBLISHABLE_KEY }}
+          SAFESTEPS_STAGING_CASE_ID: ${{ secrets.SAFESTEPS_STAGING_CASE_ID }}
+          SAFESTEPS_STAGING_ROLE_CREDENTIALS_JSON: ${{ secrets.SAFESTEPS_STAGING_ROLE_CREDENTIALS_JSON }}
+          SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT: ${{ vars.SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT }}
+          SAFESTEPS_PERFORMANCE_ADVISOR_REVIEWED_AT: ${{ vars.SAFESTEPS_PERFORMANCE_ADVISOR_REVIEWED_AT }}
+          SAFESTEPS_STAGING_JOURNEY_VERIFIED_AT: ${{ vars.SAFESTEPS_STAGING_JOURNEY_VERIFIED_AT }}
