@@ -49,6 +49,27 @@ The bootstrap utility uses Supabase Auth admin APIs, refuses the production proj
 
 Run `npm run verify:staging`.
 
+## GitHub release environment
+
+Configure the GitHub Environment named `production-readiness` before relying on the release gate workflow.
+
+Required environment secrets:
+
+- `SAFESTEPS_STAGING_URL`
+- `SAFESTEPS_STAGING_PUBLISHABLE_KEY`
+- `SAFESTEPS_STAGING_CASE_ID`
+- `SAFESTEPS_STAGING_ROLE_CREDENTIALS_JSON`
+
+Required environment variables:
+
+- `SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT`
+- `SAFESTEPS_PERFORMANCE_ADVISOR_REVIEWED_AT`
+- `SAFESTEPS_STAGING_JOURNEY_VERIFIED_AT`
+- `SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT`
+- `SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT`
+
+Set the environment to require reviewer approval and restrict deployments to protected release refs. Those protections are enforced by GitHub repository settings, not by workflow YAML alone.
+
 ## Journey completion evidence
 
 Record a pass/fail and trace ID for:
