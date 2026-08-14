@@ -1,0 +1,769 @@
+{
+  "schemaVersion": "1.0.0",
+  "libraryId": "parent_child_interaction_assessment_games",
+  "title": "SafeSteps Parent–Child and Family Interaction Games",
+  "libraryType": "relationship_assessment_and_bond_building",
+  "curriculum": false,
+  "purpose": "Support structured observation of parent–child interaction, family relationships, communication, repair and connection while also helping families build stronger bonds.",
+  "interpretationRules": {
+    "professionalReviewRequired": true,
+    "minimumSessionsForPatternReview": 3,
+    "multipleContextsRequired": true,
+    "singleGameCannotDetermineParentingCapacity": true,
+    "noAutomaticCaseDecision": true,
+    "childPrivateReflectionExcludedByDefault": true
+  },
+  "expectedGameCount": 150,
+  "games": [
+    {
+      "id": "game_1",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_1.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_2",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_2.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_3",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_3.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_4",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_4.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_5",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_5.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_6",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_6.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_7",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_7.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_8",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_8.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_9",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_9.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_10",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_10.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_11",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_11.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_12",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_12.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_13",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_13.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_14",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_14.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_15",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_15.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_16",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_16.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_17",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_17.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_18",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_18.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_19",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_19.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_20",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_20.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_21",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_21.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_22",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_22.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_23",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_23.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_24",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_24.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_25",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_25.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_26",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_26.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_27",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_27.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_28",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_28.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_29",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_29.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_30",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_30.json",
+      "inventoryStatus": "restored_structured"
+    },
+    {
+      "id": "game_31",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_31.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_32",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_32.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_33",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_33.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_34",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_34.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_35",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_35.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_36",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_36.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_37",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_37.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_38",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_38.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_39",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_39.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_40",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_40.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_41",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_41.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_42",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_42.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_43",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_43.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_44",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_44.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_45",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_45.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_46",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_46.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_47",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_47.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_48",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_48.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_49",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_49.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_50",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_50.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_51",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_51.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_52",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_52.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_53",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_53.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_54",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_54.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_55",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_55.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_56",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_56.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_57",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_57.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_58",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_58.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_59",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_59.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_60",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_60.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_61",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_61.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_62",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_62.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_63",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_63.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_64",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_64.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_65",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_65.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_66",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_66.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_67",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_67.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_68",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_68.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_69",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_69.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_70",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_70.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_71",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_71.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_72",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_72.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_73",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_73.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_74",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_74.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_75",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_75.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_76",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_76.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_77",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_77.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_78",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_78.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_79",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_79.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_80",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_80.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_81",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_81.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_82",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_82.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_83",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_83.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_84",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_84.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_85",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_85.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_86",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_86.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_87",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_87.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_88",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_88.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_89",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_89.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_90",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_90.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_91",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_91.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_92",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_92.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_93",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_93.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_94",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_94.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_95",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_95.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_96",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_96.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_97",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_97.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_98",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_98.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_99",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_99.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_100",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_100.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_101",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_101.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_102",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_102.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_103",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_103.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_104",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_104.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_105",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_105.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_106",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_106.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_107",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_107.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_108",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_108.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_109",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_109.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_110",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_110.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_111",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_111.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_112",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_112.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_113",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_113.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_114",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_114.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_115",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_115.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_116",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_116.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_117",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_117.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_118",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_118.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_119",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_119.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_120",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_120.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_121",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_121.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_122",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_122.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_123",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_123.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_124",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_124.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_125",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_125.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_126",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_126.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_127",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_127.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_128",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_128.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_129",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_129.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_130",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_130.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_131",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_131.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_132",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_132.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_133",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_133.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_134",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_134.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_135",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_135.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_136",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_136.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_137",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_137.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_138",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_138.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_139",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_139.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_140",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_140.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_141",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_141.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_142",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_142.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_143",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_143.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_144",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_144.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_145",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_145.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_146",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_146.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_147",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_147.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_148",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_148.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_149",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_149.json",
+      "inventoryStatus": "legacy_present"
+    },
+    {
+      "id": "game_150",
+      "path": "curriculum/source-imports/curriculum-archive/canonical-root-cleanup-20260726/games/game_150.json",
+      "inventoryStatus": "legacy_present"
+    }
+  ]
+}
