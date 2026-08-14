@@ -9,6 +9,7 @@ on:
 jobs:
   gate:
     name: Fail closed until staging evidence is complete
+    if: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/release-') }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     environment: production-readiness
