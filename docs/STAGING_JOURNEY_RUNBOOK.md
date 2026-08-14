@@ -68,7 +68,7 @@ Required environment variables:
 - `SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT`
 - `SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT`
 
-Set the environment to require reviewer approval and restrict deployments to protected release refs. The workflow also refuses non-main manual dispatch refs before receiving staging credentials. Environment reviewers and allowed deployment refs are enforced by GitHub repository settings, not by workflow YAML alone.
+Set the environment to require reviewer approval and restrict deployments to protected release refs. The workflow job `if:` gate runs only on `main` or `release-*` tag refs, so non-main manual dispatch refs never reach the staging verification steps. Environment reviewers and allowed deployment refs are enforced by GitHub repository settings, not by workflow YAML alone.
 
 ## Journey completion evidence
 
