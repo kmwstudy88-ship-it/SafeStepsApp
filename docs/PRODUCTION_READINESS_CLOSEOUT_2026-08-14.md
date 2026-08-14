@@ -12,7 +12,7 @@ This note records the current release-blocking evidence after the hardened stagi
 
 - `SafeStepsTools/staging-auth-bootstrap.mjs` uses Supabase Auth admin APIs for controlled staging-only fixture accounts.
 - `SafeStepsTools/production-readiness-gate.mjs` fails closed unless staging journey, advisor review, dependency audit review, and credential-rotation evidence is present.
-- `.github/workflows/production-readiness.yml` runs the gate manually or on `release-*` tags.
+- `.github/workflows/production-readiness.yml` runs `verify:staging` plus the gate manually or on `release-*` tags, scoped to the `production-readiness` GitHub Environment.
 - `react-native-reanimated` is pinned to `4.3.1`, matching `react-native-worklets@0.8.x`.
 
 ## Validation completed
@@ -31,7 +31,7 @@ This note records the current release-blocking evidence after the hardened stagi
 1. Real staging Auth verification is not complete.
    - Requires a non-production Supabase project.
    - Requires six controlled synthetic staging credentials.
-   - Run `npm run bootstrap:staging-auth`, then apply with `SAFESTEPS_STAGING_AUTH_BOOTSTRAP_APPLY=true` only after the dry run shows fixture identities.
+   - Run `npm run bootstrap:staging-auth`, then apply with `SAFESTEPS_STAGING_AUTH_BOOTSTRAP_APPLY=true` only after the dry run shows all fixture identities already exist.
    - Run `npm run verify:staging` after fixture passwords are controlled.
 
 2. Supabase Security and Performance Advisors were not run in this pass.

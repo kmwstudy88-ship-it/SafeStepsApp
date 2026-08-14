@@ -33,11 +33,19 @@ npm run bootstrap:staging-auth
 
 Apply it only after the dry run shows the six synthetic staging identities:
 
+PowerShell:
+
+```
+$env:SAFESTEPS_STAGING_AUTH_BOOTSTRAP_APPLY='true'; npm run bootstrap:staging-auth
+```
+
+Bash:
+
 ```
 SAFESTEPS_STAGING_AUTH_BOOTSTRAP_APPLY=true npm run bootstrap:staging-auth
 ```
 
-The bootstrap utility uses Supabase Auth admin APIs, refuses the production project ref, refuses production service-role JWTs, and only touches controlled fixture emails containing `synthetic`, `staging`, `fixture`, or `test`.
+The bootstrap utility uses Supabase Auth admin APIs, refuses the production project ref, refuses production service-role JWTs, and only resets controlled pre-seeded fixture emails containing `synthetic`, `staging`, `fixture`, or `test`. It refuses to create fresh Auth users because new IDs would not be linked to the synthetic case relationships required by `verify:staging`.
 
 Run `npm run verify:staging`.
 

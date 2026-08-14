@@ -6,7 +6,6 @@ const SYNTHETIC_EMAIL_PATTERN = /(^|[+._-])(synthetic|staging|fixture|test)([+._
 
 const url = process.env.SAFESTEPS_STAGING_URL;
 const serviceRoleKey = process.env.SAFESTEPS_STAGING_SERVICE_ROLE_KEY;
-const credentials = JSON.parse(process.env.SAFESTEPS_STAGING_ROLE_CREDENTIALS_JSON ?? "{}");
 const apply = process.env.SAFESTEPS_STAGING_AUTH_BOOTSTRAP_APPLY === "true";
 
 function fail(message) {
@@ -16,10 +15,22 @@ function fail(message) {
 
 function decodeJwtPayload(jwt) {
   const [, payload] = String(jwt).split(".");
-  if (!payload) return {};
+  if (!payload) fail("SAFESTEPS_STAGING_SERVICE_ROLE_KEY must be a valid JWT.");
   const normalized = payload.replace(/-/g, "+").replace(/_/g, "/");
   const padded = normalized.padEnd(Math.ceil(normalized.length / 4) * 4, "=");
-  return JSON.parse(Buffer.from(padded, "base64").toString("utf8"));
+  try {
+    return JSON.parse(Buffer.from(padded, "base64").toString("utf8"));
+  } catch {
+    fail("SAFESTEPS_STAGING_SERVICE_ROLE_KEY must contain a valid JWT payload.");
+  }
+}
+
+function parseCredentials() {
+  try {
+    return JSON.parse(process.env.SAFESTEPS_STAGING_ROLE_CREDENTIALS_JSON ?? "{}");
+  } catch {
+    fail("SAFESTEPS_STAGING_ROLE_CREDENTIALS_JSON must be valid JSON.");
+  }
 }
 
 function assertStagingTarget() {
@@ -27,7 +38,13 @@ function assertStagingTarget() {
     fail("Set SAFESTEPS_STAGING_URL and SAFESTEPS_STAGING_SERVICE_ROLE_KEY. Do not use production credentials.");
   }
 
-  const host = new URL(url).host;
+  let host;
+  try {
+    host = new URL(url).host;
+  } catch {
+    fail("SAFESTEPS_STAGING_URL must be a valid staging Supabase URL.");
+  }
+
   if (host.includes(LIVE_REF)) {
     fail("Refusing to run Auth bootstrap against the production SafeSteps project.");
   }
@@ -71,6 +88,7 @@ async function findUserByEmail(admin, email) {
 
 assertStagingTarget();
 
+const credentials = parseCredentials();
 for (const role of REQUIRED_ROLES) assertControlledCredential(role, credentials[role]);
 
 const admin = createClient(url, serviceRoleKey, {
@@ -84,31 +102,23 @@ for (const role of REQUIRED_ROLES) {
   const existing = await findUserByEmail(admin, credential.email);
 
   if (!apply) {
-    results.push({ role, email: credential.email, action: existing ? "would_reset_password" : "would_create_user" });
+    results.push({ role, email: credential.email, action: existing ? "would_reset_password" : "missing_preseeded_user" });
     continue;
   }
 
-  if (existing) {
-    const { error } = await admin.auth.admin.updateUserById(existing.id, {
-      password: credential.password,
-      email_confirm: true,
-      user_metadata: { ...(existing.user_metadata ?? {}), safesteps_fixture_role: role },
-      app_metadata: { ...(existing.app_metadata ?? {}), safesteps_fixture: true, safesteps_fixture_role: role },
-    });
-    if (error) throw error;
-    results.push({ role, email: credential.email, action: "reset_password", userId: existing.id });
-  } else {
-    const { data, error } = await admin.auth.admin.createUser({
-      email: credential.email,
-      password: credential.password,
-      email_confirm: true,
-      user_metadata: { safesteps_fixture_role: role },
-      app_metadata: { safesteps_fixture: true, safesteps_fixture_role: role },
-    });
-    if (error) throw error;
-    results.push({ role, email: credential.email, action: "created_user", userId: data.user?.id ?? null });
+  if (!existing) {
+    fail(`Refusing to create '${credential.email}'. Pre-seed and link fixture Auth users to staging case relationships before reset.`);
   }
+
+  const { error } = await admin.auth.admin.updateUserById(existing.id, {
+    password: credential.password,
+    email_confirm: true,
+    user_metadata: { ...(existing.user_metadata ?? {}), safesteps_fixture_role: role },
+    app_metadata: { ...(existing.app_metadata ?? {}), safesteps_fixture: true, safesteps_fixture_role: role },
+  });
+  if (error) throw error;
+  results.push({ role, email: credential.email, action: "reset_password", userId: existing.id });
 }
 
 for (const result of results) console.log(JSON.stringify(result));
-console.log(apply ? "Controlled staging Auth bootstrap complete." : "Dry run complete. Set SAFESTEPS_STAGING_AUTH_BOOTSTRAP_APPLY=true to apply.");
+console.log(apply ? "Controlled staging Auth password reset complete." : "Dry run complete. Pre-seed any missing fixture users before setting SAFESTEPS_STAGING_AUTH_BOOTSTRAP_APPLY=true.");

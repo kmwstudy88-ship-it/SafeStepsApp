@@ -18,7 +18,9 @@ function fail(message) {
 }
 
 function hasIsoDate(value) {
-  return typeof value === "string" && !Number.isNaN(Date.parse(value));
+  if (typeof value !== "string") return false;
+  if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/.test(value)) return false;
+  return !Number.isNaN(Date.parse(value));
 }
 
 for (const name of required) {
@@ -26,8 +28,12 @@ for (const name of required) {
 }
 
 if (process.env.SAFESTEPS_STAGING_URL) {
-  const host = new URL(process.env.SAFESTEPS_STAGING_URL).host;
-  if (host.includes(LIVE_REF)) fail("Release gate refuses production Supabase ref for staging verification.");
+  try {
+    const host = new URL(process.env.SAFESTEPS_STAGING_URL).host;
+    if (host.includes(LIVE_REF)) fail("Release gate refuses production Supabase ref for staging verification.");
+  } catch {
+    fail("SAFESTEPS_STAGING_URL must be a valid staging Supabase URL.");
+  }
 }
 
 for (const name of [
