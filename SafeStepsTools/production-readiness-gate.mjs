@@ -8,6 +8,8 @@ const required = [
   "SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT",
   "SAFESTEPS_PERFORMANCE_ADVISOR_REVIEWED_AT",
   "SAFESTEPS_STAGING_JOURNEY_VERIFIED_AT",
+  "SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT",
+  "SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT",
 ];
 
 function fail(message) {
@@ -32,6 +34,8 @@ for (const name of [
   "SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT",
   "SAFESTEPS_PERFORMANCE_ADVISOR_REVIEWED_AT",
   "SAFESTEPS_STAGING_JOURNEY_VERIFIED_AT",
+  "SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT",
+  "SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT",
 ]) {
   if (process.env[name] && !hasIsoDate(process.env[name])) {
     fail(`${name} must be an ISO-style date/time after the evidence has been reviewed.`);
@@ -54,4 +58,4 @@ if (process.exitCode) {
   process.exit(process.exitCode);
 }
 
-console.log("Production readiness gate passed required staging and advisor evidence checks.");
+console.log("Production readiness gate passed required staging, advisor, dependency, and credential-rotation evidence checks.");

@@ -11,7 +11,7 @@ This note records the current release-blocking evidence after the hardened stagi
 ## Added release controls
 
 - `SafeStepsTools/staging-auth-bootstrap.mjs` uses Supabase Auth admin APIs for controlled staging-only fixture accounts.
-- `SafeStepsTools/production-readiness-gate.mjs` fails closed unless staging journey and advisor review evidence is present.
+- `SafeStepsTools/production-readiness-gate.mjs` fails closed unless staging journey, advisor review, dependency audit review, and credential-rotation evidence is present.
 - `.github/workflows/production-readiness.yml` runs the gate manually or on `release-*` tags.
 - `react-native-reanimated` is pinned to `4.3.1`, matching `react-native-worklets@0.8.x`.
 
@@ -47,4 +47,4 @@ This note records the current release-blocking evidence after the hardened stagi
    - Current tracked secret-looking values were removed from `ai/Safesteps- API Key, Firbebase, ect details.txt` and `upload.ps1`.
    - Rotation is still required for any real key previously committed.
 
-Production release remains blocked until staging Auth, real advisor review, dependency classification, and credential rotation are complete.
+Production release remains blocked until staging Auth, real advisor review, dependency classification, and credential rotation are complete. Set `SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT` and `SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT` only after those release-blocking reviews are complete.
