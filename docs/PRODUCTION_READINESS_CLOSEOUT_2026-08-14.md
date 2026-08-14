@@ -47,5 +47,6 @@ This note records the current release-blocking evidence after the hardened stagi
 4. Historical exposed credentials must be rotated.
    - Current tracked secret-looking values were removed from `ai/Safesteps- API Key, Firbebase, ect details.txt` and `upload.ps1`.
    - Rotation is still required for any real key previously committed.
+   - See `docs/CREDENTIAL_ROTATION_RELEASE_REVIEW_2026-08-14.md` before setting `SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT`.
 
 Production release remains blocked until staging Auth, real advisor review, dependency classification, and credential rotation are complete. Set `SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT` and `SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT` only after those release-blocking reviews are complete.
