@@ -606,7 +606,7 @@ export function evaluateCaseManagementTier(input: {
 
 export function evaluateParentCapacityGrowth(input: {
   growthTrackerId: string;
-  records: Array<{ dimension: string; score: number; sequence: number }>;
+  records: { dimension: string; score: number; sequence: number }[];
 }): ParentCapacityGrowthEvaluation {
   const tracker = getGrowthTrackerById(input.growthTrackerId);
   if (!tracker) {

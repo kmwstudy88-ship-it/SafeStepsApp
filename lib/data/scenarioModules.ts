@@ -926,7 +926,7 @@ export type FamilyEmotionalArchitectureModule = {
   outcomes: string[];
 };
 
-const coreScenarioSeeds: Array<Pick<ScenarioModule, "category" | "type" | "title" | "description" | "tags" | "level" | "scenario">> = [
+const coreScenarioSeeds: Pick<ScenarioModule, "category" | "type" | "title" | "description" | "tags" | "level" | "scenario">[] = [
   {
     category: "parenting_response",
     type: "meltdown_response",

@@ -9,7 +9,7 @@ async function currentUserId() {
   return data.user.id;
 }
 
-function firstRole(roles: Array<{ role: AppRole }>): AppRole {
+function firstRole(roles: { role: AppRole }[]): AppRole {
   if (roles.some((item) => item.role === "admin")) return "admin";
   if (roles.some((item) => item.role === "facilitator")) return "facilitator";
   if (roles.some((item) => item.role === "caseworker")) return "caseworker";
@@ -23,7 +23,7 @@ export async function getMyRole(programId?: string | null): Promise<AppRole> {
   if (programId) query = query.or(`program_id.eq.${programId},program_id.is.null`);
   const { data, error } = await query;
   if (error) throw error;
-  return firstRole((data ?? []) as Array<{ role: AppRole }>);
+  return firstRole((data ?? []) as { role: AppRole }[]);
 }
 
 export async function listPrograms() {

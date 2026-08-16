@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useLocalSearchParams } from "expo-router";
 import { StyleSheet, Switch, Text, TextInput, View } from "react-native";
 import {
@@ -47,7 +47,7 @@ export default function ParentChildMessagesScreen() {
     return messages[0] ?? requests[0] ?? null;
   }, [messages, requests]);
 
-  async function loadMessages() {
+  const loadMessages = useCallback(async function loadMessages() {
     try {
       setLoading(true);
       setErrorMessage("");
@@ -64,7 +64,7 @@ export default function ParentChildMessagesScreen() {
     } finally {
       setLoading(false);
     }
-  }
+  }, [viewerRole, caseId]);
 
   async function sendMessage() {
     const messageText = draft.trim();
@@ -123,7 +123,7 @@ export default function ParentChildMessagesScreen() {
 
   useEffect(() => {
     loadMessages();
-  }, [caseId, viewerRole]);
+  }, [loadMessages]);
 
   return (
     <ParentChildShell

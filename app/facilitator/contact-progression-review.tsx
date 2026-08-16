@@ -106,6 +106,7 @@ export default function ContactProgressionReviewScreen() {
     return () => {
       active = false;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- reloadProgression is always called with an explicit nextContext arg inside this effect; adding it would create an infinite loop because the effect itself sets context.
   }, [caseId]);
 
   async function handleGenerateRecommendation() {

@@ -105,7 +105,7 @@ export type ContactSessionLogInput = {
 
 export function resolveCurrentContactStage(
   latestOverride: ReunificationOverrideRow | null | undefined,
-  contactSessions: Array<Pick<ContactSessionRow, "stage" | "session_date">>,
+  contactSessions: Pick<ContactSessionRow, "stage" | "session_date">[],
   fallback: StageGatedContactStage = "supervised",
 ): StageGatedContactStage {
   if (latestOverride?.target_stage) return latestOverride.target_stage;

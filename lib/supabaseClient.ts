@@ -33,6 +33,7 @@ function getAuthStorage() {
     return serverStorage;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-require-imports -- deferred import avoids loading the native AsyncStorage module in SSR/test environments
   return require("@react-native-async-storage/async-storage").default;
 }
 

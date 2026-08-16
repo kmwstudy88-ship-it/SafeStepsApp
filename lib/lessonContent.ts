@@ -12,10 +12,10 @@ export type AppLesson = {
   title: string;
   summary: string;
   estimatedMinutes: number;
-  sections: Array<{
+  sections: {
     heading: string;
     body: string;
-  }>;
+  }[];
   actions: string[];
 };
 

@@ -34,7 +34,7 @@ export type SafetyAlertRule = {
 export type SafetyAlertSignal = {
   missedDailyCheckIns?: number;
   consecutiveMissedCheckIns?: number;
-  regressedDomains?: Array<{ domainId: string; currentScore: number; previousScore?: number }>;
+  regressedDomains?: { domainId: string; currentScore: number; previousScore?: number }[];
   weeksSinceFinancialEvidence?: number;
   highSeverityContradiction?: boolean;
   childSafetyConcern?: boolean;

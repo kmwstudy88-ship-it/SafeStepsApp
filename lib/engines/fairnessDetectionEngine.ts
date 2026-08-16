@@ -222,7 +222,7 @@ function collectMatches(text: string, rules: Rule[]) {
 function matchRule(text: string, rule: Rule) {
   const flags = rule.pattern.flags.includes("g") ? rule.pattern.flags : `${rule.pattern.flags}g`;
   const expression = new RegExp(rule.pattern.source, flags);
-  const matches: Array<{ severity: FairnessSeverity; evidence: string; explanation: string }> = [];
+  const matches: { severity: FairnessSeverity; evidence: string; explanation: string }[] = [];
   let current: RegExpExecArray | null = expression.exec(text);
   while (current) {
     const index = current.index ?? text.indexOf(current[0]);

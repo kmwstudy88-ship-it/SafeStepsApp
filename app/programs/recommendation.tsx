@@ -16,10 +16,7 @@ import {
   fetchMyProgramRecommendation,
   type ProgramRecommendationJourney,
 } from "../../lib/engines/programRecommendationEngine";
-import {
-  customPathwayAwaitsWorkerApproval,
-  programCanAcceptNewEnrollments,
-} from "../../lib/engines/programRecommendationPolicy";
+import { programCanAcceptNewEnrollments } from "../../lib/engines/programRecommendationPolicy";
 
 function formatRisk(value: string) {
   return value.replaceAll("_", " ");

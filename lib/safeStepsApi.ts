@@ -79,7 +79,7 @@ export async function signInForAudience(
     audience: SafeStepsAudience;
     user: { id: string; email: string | null };
     roles: string[];
-    memberships: Array<{ caseId: string; membershipRole: string; status: "active" }>;
+    memberships: { caseId: string; membershipRole: string; status: "active" }[];
     session: {
       accessToken: string;
       refreshToken: string;
@@ -114,7 +114,7 @@ export async function getSafeStepsSessionContext() {
   return safeStepsApiRequest<{
     user: { id: string; email: string | null } | null;
     roles: string[];
-    memberships: Array<{ caseId: string; membershipRole: string; status: "active" }>;
+    memberships: { caseId: string; membershipRole: string; status: "active" }[];
     sessionReference: string | null;
   }>("/auth/session");
 }

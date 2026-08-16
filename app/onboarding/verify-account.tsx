@@ -1,6 +1,6 @@
 import { router, useLocalSearchParams } from "expo-router";
 import * as Linking from "expo-linking";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { ActivityIndicator, Pressable, Text, TextInput, View } from "react-native";
 
 import {
@@ -29,13 +29,13 @@ export default function VerifyAccountScreen() {
   const displayName = params.displayName?.trim() ?? "";
   const complete = useMemo(() => code.every((digit) => digit.length === 1), [code]);
 
-  async function finishVerification() {
+  const finishVerification = useCallback(async function finishVerification() {
     await upsertProfile({
       display_name: displayName || contact || "Parent",
       email: contact || null,
     });
     router.replace("/onboarding/protect-account");
-  }
+  }, [contact, displayName]);
 
   useEffect(() => {
     let active = true;
@@ -69,7 +69,7 @@ export default function VerifyAccountScreen() {
     return () => {
       active = false;
     };
-  }, [linkingUrl]);
+  }, [linkingUrl, finishVerification]);
 
   function updateCode(value: string, index: number) {
     const next = [...code];

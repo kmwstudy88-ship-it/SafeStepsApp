@@ -1,3 +1,4 @@
+import { supabase } from "../supabase";
 export type AiGovernanceVolumeId =
   | "foundation"
   | "model_lifecycle"
@@ -584,4 +585,3 @@ export async function getAiGovernanceLiveSummary(): Promise<AiGovernanceLiveSumm
     unavailableCount: metrics.filter((metric) => !metric.available).length,
   };
 }
-import { supabase } from "../supabase";

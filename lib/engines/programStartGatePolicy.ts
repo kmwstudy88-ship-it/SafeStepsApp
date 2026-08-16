@@ -22,13 +22,11 @@ export type ProgramStartGateSnapshot = {
 export type ProgramStartGateDecision = {
   allowed: boolean;
   requiresWorkerReview: boolean;
-  blockers: Array<
-    | "profile_required"
+  blockers: (| "profile_required"
     | "case_setup_required"
     | "intake_required"
     | "worker_review_pending"
-    | "worker_changes_required"
-  >;
+    | "worker_changes_required")[];
 };
 
 export function programRequiresWorkerReview(riskLevel: ProgramRiskLevel): boolean {

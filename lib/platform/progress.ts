@@ -9,7 +9,7 @@ type LessonLockInput = {
 export function computeLessonLocks(lessons: LessonLockInput[], completedLessonIds: string[]) {
   const completed = new Set(completedLessonIds);
   const sorted = [...lessons].sort((a, b) => (a.day_number ?? 0) - (b.day_number ?? 0));
-  const result: Array<{ lessonId: string; status: LessonProgressStatus; locked: boolean }> = [];
+  const result: { lessonId: string; status: LessonProgressStatus; locked: boolean }[] = [];
 
   for (let index = 0; index < sorted.length; index += 1) {
     const lesson = sorted[index];

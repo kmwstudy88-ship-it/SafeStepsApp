@@ -41,12 +41,12 @@ export interface EvidenceFairnessAnalysis {
   evidence_record_id: string;
   analysis_type: string;
   fairness_score: number | null;
-  bias_indicators: Array<Record<string, unknown>>;
-  coercion_flags: Array<Record<string, unknown>>;
-  discrimination_risks: Array<Record<string, unknown>>;
-  framing_concerns: Array<Record<string, unknown>>;
-  unrealistic_expectations: Array<Record<string, unknown>>;
-  remediation_recommendations: Array<Record<string, unknown>>;
+  bias_indicators: Record<string, unknown>[];
+  coercion_flags: Record<string, unknown>[];
+  discrimination_risks: Record<string, unknown>[];
+  framing_concerns: Record<string, unknown>[];
+  unrealistic_expectations: Record<string, unknown>[];
+  remediation_recommendations: Record<string, unknown>[];
   review_status: string;
   worker_override: Record<string, unknown> | null;
   analysed_at: string;
