@@ -2299,12 +2299,18 @@ export async function getDashboardCounts(userId: string) {
     };
   }
 
-  const [tasks, evidence, enrollments, lessons, checkIns] = await Promise.all([
+  const dateKey = getDateKey();
+  const [tasks, evidenceCount, dailyHomeEvidenceItems, enrollments, lessons, checkIns] = await Promise.all([
     supabase.from("user_tasks").select("id,status").eq("owner_id", userId),
     supabase
       .from("evidence_items")
-      .select("id,title,notes,file_path,status,created_at")
+      .select("id", { count: "exact", head: true })
       .eq("owner_id", userId),
+    supabase
+      .from("evidence_items")
+      .select("id,title,notes,file_path,status,created_at")
+      .eq("owner_id", userId)
+      .ilike("notes", `%date=${dateKey}%`),
     supabase
       .from("program_enrollments")
       .select("id,program_id,started_at")
@@ -2321,22 +2327,31 @@ export async function getDashboardCounts(userId: string) {
   ]);
 
   const taskRows = tasks.data ?? [];
-  const evidenceRows = (evidence.data ?? []) as EvidenceItem[];
+  const dailyHomeEvidence = buildDailyHomeEvidenceStatus(
+    (dailyHomeEvidenceItems.data ?? []) as EvidenceItem[],
+    dateKey,
+  );
   const activeEnrollment = enrollments.data?.[0] ?? null;
   const latestCheckIn = checkIns.data?.[0] ?? null;
-  const dailyHomeEvidence = buildDailyHomeEvidenceStatus(evidenceRows, getDateKey());
 
   return {
     taskCount: taskRows.length,
     completedTaskCount: taskRows.filter((task) => task.status === "completed").length,
-    evidenceCount: evidenceRows.length,
+    evidenceCount: evidenceCount.count ?? 0,
     dailyHomeEvidenceComplete: dailyHomeEvidence.complete,
     enrollmentCount: enrollments.data?.length ?? 0,
     completedLessonCount: lessons.data?.length ?? 0,
     activeProgramId: activeEnrollment?.program_id ?? null,
     activeProgramTitle: activeEnrollment?.program_id ? getProgramTitle(activeEnrollment.program_id) : null,
     latestCheckInAt: latestCheckIn?.created_at ?? null,
-    setupPending: Boolean(tasks.error || evidence.error || enrollments.error || lessons.error || checkIns.error),
+    setupPending: Boolean(
+      tasks.error ||
+        evidenceCount.error ||
+        dailyHomeEvidenceItems.error ||
+        enrollments.error ||
+        lessons.error ||
+        checkIns.error,
+    ),
   };
 }
 
