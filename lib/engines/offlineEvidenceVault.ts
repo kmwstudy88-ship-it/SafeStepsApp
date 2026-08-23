@@ -82,6 +82,10 @@ const INITIAL_HASH = "vault-root";
 const VAULT_DIRECTORY = `${FileSystem.documentDirectory ?? ""}safesteps-offline-evidence/`;
 const TEXT_ENCODER = new TextEncoder();
 const TEXT_DECODER = new TextDecoder();
+let cachedEnvelopeRaw: string | null = null;
+let cachedEnvelope: VaultEnvelope | null = null;
+let cachedVaultRaw: string | null = null;
+let cachedVaultItems: OfflineEvidenceVaultItem[] | null = null;
 
 function stableStringify(value: unknown): string {
   if (value === null || typeof value !== "object") {
@@ -181,8 +185,23 @@ async function getVaultEncryptionKey() {
   return generatedKey;
 }
 
-async function readEncryptedVault(raw: string) {
+function parseVaultEnvelope(raw: string) {
+  if (cachedEnvelopeRaw === raw && cachedEnvelope) {
+    return cachedEnvelope;
+  }
+
   const envelope = JSON.parse(raw) as VaultEnvelope;
+  cachedEnvelopeRaw = raw;
+  cachedEnvelope = envelope;
+  return envelope;
+}
+
+async function readEncryptedVault(raw: string) {
+  if (cachedVaultRaw === raw && cachedVaultItems) {
+    return cachedVaultItems;
+  }
+
+  const envelope = parseVaultEnvelope(raw);
   const key = await getVaultEncryptionKey();
   const sealedData = AESSealedData.fromCombined(envelope.ciphertext);
   const decrypted = await aesDecryptAsync(sealedData, key, {
@@ -190,7 +209,10 @@ async function readEncryptedVault(raw: string) {
     additionalData: TEXT_ENCODER.encode(envelope.aad),
   });
 
-  return JSON.parse(TEXT_DECODER.decode(decrypted as Uint8Array)) as OfflineEvidenceVaultItem[];
+  const items = JSON.parse(TEXT_DECODER.decode(decrypted as Uint8Array)) as OfflineEvidenceVaultItem[];
+  cachedVaultRaw = raw;
+  cachedVaultItems = items;
+  return items;
 }
 
 async function readVault() {
@@ -227,8 +249,13 @@ async function writeVault(items: OfflineEvidenceVaultItem[]) {
     aad,
     storedAt: new Date().toISOString(),
   };
+  const rawEnvelope = JSON.stringify(envelope);
 
-  await AsyncStorage.setItem(VAULT_STORAGE_KEY, JSON.stringify(envelope));
+  await AsyncStorage.setItem(VAULT_STORAGE_KEY, rawEnvelope);
+  cachedEnvelopeRaw = rawEnvelope;
+  cachedEnvelope = envelope;
+  cachedVaultRaw = rawEnvelope;
+  cachedVaultItems = items;
 }
 
 async function ensureVaultDirectory() {
@@ -409,7 +436,7 @@ export async function getOfflineEvidenceVaultSecurityStatus(): Promise<OfflineVa
   const items = await getOfflineEvidenceVaultItems();
 
   return {
-    encryptedEnvelope: raw ? (JSON.parse(raw) as VaultEnvelope).encrypted === true : keyAvailable,
+    encryptedEnvelope: raw ? parseVaultEnvelope(raw).encrypted === true : keyAvailable,
     secureStoreKey: keyAvailable,
     appControlledAttachmentCopies: items.every((item) => !item.attachment || Boolean(item.attachment.vaultUri)),
     sha256HashChain: await verifyOfflineEvidenceVaultChain(items),
