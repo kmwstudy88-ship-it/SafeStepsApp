@@ -1,6 +1,8 @@
 import { supabase } from "../supabase/client";
 import { getOptionalUserId } from "../authSession";
 
+const DAILY_LESSON_RECORD_LIMIT = 1000;
+
 export type SavedDailyLessonRecord = {
   id: string;
   owner_id: string;
@@ -43,7 +45,7 @@ export async function fetchDailyLessonRecords() {
 
   const { data, error } = await supabase
     .from("progress_events")
-    .select("*")
+    .select("id,owner_id,event_type,label,metadata,created_at")
     .eq("owner_id", userId)
     .in("event_type", [
       "daily_lesson_completed",
@@ -64,35 +66,59 @@ export async function fetchDailyLessonRecords() {
       "certificate_issued",
       "assessment_submitted",
     ])
-    .order("created_at", { ascending: true });
+    .order("created_at", { ascending: false })
+    .limit(DAILY_LESSON_RECORD_LIMIT);
 
   if (error) {
     throw new Error(error.message);
   }
 
-  return (data ?? []) as SavedDailyLessonRecord[];
+  return ((data ?? []) as SavedDailyLessonRecord[]).reverse();
 }
 
 export function calculateGrowthStats(records: SavedDailyLessonRecord[]): GrowthStats {
-  const completedLessonEvents = records.filter(
-    (record) => record.event_type === "daily_lesson_completed"
-  );
+  let completedLessons = 0;
+  let practicalActivities = 0;
+  let knowledgeCheckpoints = 0;
+  let scenarioCheckpoints = 0;
+  let beforeTotal = 0;
+  let beforeCount = 0;
+  let afterTotal = 0;
+  let afterCount = 0;
 
-  const completedLessons = completedLessonEvents.length;
+  records.forEach((record) => {
+    switch (record.event_type) {
+      case "daily_lesson_completed": {
+        completedLessons += 1;
 
-  const practicalActivities = records.filter(
-    (record) => record.event_type === "practical_activity_recorded"
-  ).length;
+        const confidenceBefore = Number(record.metadata.confidence_before ?? 0);
+        if (confidenceBefore > 0) {
+          beforeTotal += confidenceBefore;
+          beforeCount += 1;
+        }
 
-  const knowledgeCheckpoints = records.filter(
-    (record) => record.event_type === "knowledge_checkpoint_completed"
-  ).length;
+        const confidenceAfter = Number(record.metadata.confidence_after ?? 0);
+        if (confidenceAfter > 0) {
+          afterTotal += confidenceAfter;
+          afterCount += 1;
+        }
+        break;
+      }
+      case "practical_activity_recorded":
+        practicalActivities += 1;
+        break;
+      case "knowledge_checkpoint_completed":
+        knowledgeCheckpoints += 1;
+        break;
+      case "scenario_checkpoint_completed":
+        scenarioCheckpoints += 1;
+        break;
+      default:
+        break;
+    }
+  });
 
-  const scenarioCheckpoints = records.filter(
-    (record) => record.event_type === "scenario_checkpoint_completed"
-  ).length;
-
-  if (completedLessonEvents.length === 0) {
+  if (completedLessons === 0) {
     return {
       totalLessonsSaved: records.length,
       completedLessons,
@@ -105,25 +131,8 @@ export function calculateGrowthStats(records: SavedDailyLessonRecord[]): GrowthS
     };
   }
 
-  const beforeValues = completedLessonEvents
-    .map((record) => Number(record.metadata.confidence_before ?? 0))
-    .filter((value) => value > 0);
-
-  const afterValues = completedLessonEvents
-    .map((record) => Number(record.metadata.confidence_after ?? 0))
-    .filter((value) => value > 0);
-
-  const averageConfidenceBefore =
-    beforeValues.length === 0
-      ? 0
-      : beforeValues.reduce((total, value) => total + value, 0) /
-        beforeValues.length;
-
-  const averageConfidenceAfter =
-    afterValues.length === 0
-      ? 0
-      : afterValues.reduce((total, value) => total + value, 0) /
-        afterValues.length;
+  const averageConfidenceBefore = beforeCount === 0 ? 0 : beforeTotal / beforeCount;
+  const averageConfidenceAfter = afterCount === 0 ? 0 : afterTotal / afterCount;
 
   return {
     totalLessonsSaved: records.length,

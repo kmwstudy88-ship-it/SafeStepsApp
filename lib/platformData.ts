@@ -340,6 +340,10 @@ export type SafeStepsProfile = {
 };
 
 const DEMO_USER_ID = "00000000-0000-4000-8000-000000000000";
+const REPORT_SUMMARY_TASK_LIMIT = 500;
+const REPORT_SUMMARY_EVIDENCE_LIMIT = 500;
+const REPORT_SUMMARY_REFLECTION_LIMIT = 250;
+const REPORT_SUMMARY_ENROLLMENT_LIMIT = 100;
 
 const demoState: {
   tasks: SafeStepsTask[];
@@ -1726,31 +1730,34 @@ export async function getEvidence(userId: string) {
   return data as EvidenceItem[];
 }
 
-export async function getDailyHomeEvidenceStatus(userId: string, dateKey = getDateKey()): Promise<DailyHomeEvidenceStatus> {
-  const items = (await getEvidence(userId)).filter(
+function buildDailyHomeEvidenceStatus(items: EvidenceItem[], dateKey: string): DailyHomeEvidenceStatus {
+  const matchingItems = items.filter(
     (item) => isDailyHomeEvidence(item) && item.notes.includes(`date=${dateKey}`),
   );
 
-  const insideComplete = items.some((item) => hasDailyHomeCategory(item, "inside_home", dateKey));
-  const outsideComplete = items.some((item) => hasDailyHomeCategory(item, "outside_home", dateKey));
+  const insideComplete = matchingItems.some((item) => hasDailyHomeCategory(item, "inside_home", dateKey));
+  const outsideComplete = matchingItems.some((item) => hasDailyHomeCategory(item, "outside_home", dateKey));
 
   return {
     dateKey,
     insideComplete,
     outsideComplete,
     complete: insideComplete && outsideComplete,
-    items,
+    items: matchingItems,
   };
 }
 
+export async function getDailyHomeEvidenceStatus(userId: string, dateKey = getDateKey()): Promise<DailyHomeEvidenceStatus> {
+  return buildDailyHomeEvidenceStatus(await getEvidence(userId), dateKey);
+}
+
 export async function getDailyHomeEvidenceHistory(userId: string, dayCount = 7): Promise<DailyHomeEvidenceHistory> {
-  const days = await Promise.all(
-    Array.from({ length: dayCount }, (_, index) => {
-      const date = new Date();
-      date.setDate(date.getDate() - index);
-      return getDailyHomeEvidenceStatus(userId, getDateKey(date));
-    }),
-  );
+  const evidenceItems = await getEvidence(userId);
+  const days = Array.from({ length: dayCount }, (_, index) => {
+    const date = new Date();
+    date.setDate(date.getDate() - index);
+    return buildDailyHomeEvidenceStatus(evidenceItems, getDateKey(date));
+  });
   const completeDays = days.filter((day) => day.complete).length;
 
   return {
@@ -2292,9 +2299,18 @@ export async function getDashboardCounts(userId: string) {
     };
   }
 
-  const [tasks, evidence, enrollments, lessons, checkIns, dailyHomeEvidence] = await Promise.all([
+  const dateKey = getDateKey();
+  const [tasks, evidenceCount, dailyHomeEvidenceItems, enrollments, lessons, checkIns] = await Promise.all([
     supabase.from("user_tasks").select("id,status").eq("owner_id", userId),
-    supabase.from("evidence_items").select("id").eq("owner_id", userId),
+    supabase
+      .from("evidence_items")
+      .select("id", { count: "exact", head: true })
+      .eq("owner_id", userId),
+    supabase
+      .from("evidence_items")
+      .select("id,title,notes,file_path,status,created_at")
+      .eq("owner_id", userId)
+      .ilike("notes", `%date=${dateKey}%`),
     supabase
       .from("program_enrollments")
       .select("id,program_id,started_at")
@@ -2308,24 +2324,34 @@ export async function getDashboardCounts(userId: string) {
       .eq("event_type", "daily_check_in")
       .order("created_at", { ascending: false })
       .limit(1),
-    getDailyHomeEvidenceStatus(userId),
   ]);
 
   const taskRows = tasks.data ?? [];
+  const dailyHomeEvidence = buildDailyHomeEvidenceStatus(
+    (dailyHomeEvidenceItems.data ?? []) as EvidenceItem[],
+    dateKey,
+  );
   const activeEnrollment = enrollments.data?.[0] ?? null;
   const latestCheckIn = checkIns.data?.[0] ?? null;
 
   return {
     taskCount: taskRows.length,
     completedTaskCount: taskRows.filter((task) => task.status === "completed").length,
-    evidenceCount: evidence.data?.length ?? 0,
+    evidenceCount: evidenceCount.count ?? 0,
     dailyHomeEvidenceComplete: dailyHomeEvidence.complete,
     enrollmentCount: enrollments.data?.length ?? 0,
     completedLessonCount: lessons.data?.length ?? 0,
     activeProgramId: activeEnrollment?.program_id ?? null,
     activeProgramTitle: activeEnrollment?.program_id ? getProgramTitle(activeEnrollment.program_id) : null,
     latestCheckInAt: latestCheckIn?.created_at ?? null,
-    setupPending: Boolean(tasks.error || evidence.error || enrollments.error || lessons.error || checkIns.error),
+    setupPending: Boolean(
+      tasks.error ||
+        evidenceCount.error ||
+        dailyHomeEvidenceItems.error ||
+        enrollments.error ||
+        lessons.error ||
+        checkIns.error,
+    ),
   };
 }
 
@@ -2348,22 +2374,26 @@ export async function getReportSummary(userId: string): Promise<ReportSummary> {
       .from("user_tasks")
       .select("id,title,description,status,completed_at,due_at,priority,related_lesson_id,evidence_required,category")
       .eq("owner_id", userId)
-      .order("created_at"),
+      .order("created_at", { ascending: false })
+      .limit(REPORT_SUMMARY_TASK_LIMIT),
     supabase
       .from("evidence_items")
       .select("id,title,notes,file_path,status,created_at")
       .eq("owner_id", userId)
-      .order("created_at", { ascending: false }),
+      .order("created_at", { ascending: false })
+      .limit(REPORT_SUMMARY_EVIDENCE_LIMIT),
     supabase
       .from("program_reflections")
       .select("id,program_id,program_title,reflection_type,month_number,month_topic,week_number,week_in_month,day_number,lesson_title,prompt,response,metadata,created_at")
       .eq("owner_id", userId)
-      .order("created_at", { ascending: false }),
+      .order("created_at", { ascending: false })
+      .limit(REPORT_SUMMARY_REFLECTION_LIMIT),
     supabase
       .from("program_enrollments")
       .select("id,program_id,status,started_at,completed_at")
       .eq("owner_id", userId)
-      .order("started_at", { ascending: false }),
+      .order("started_at", { ascending: false })
+      .limit(REPORT_SUMMARY_ENROLLMENT_LIMIT),
     supabase
       .from("progress_events")
       .select("id,event_type,label,metadata,created_at")
@@ -2510,8 +2540,10 @@ export async function startProgramWeekWithBulkAdds(userId: string, programId: st
 
   if (!bulkPlan) return { taskCount: 0, evidenceCount: 0 };
 
-  const taskResult = await bulkAddTasks(userId, bulkPlan.tasks);
-  const evidenceResult = await bulkAddEvidenceNotes(userId, bulkPlan.evidence);
+  const [taskResult, evidenceResult] = await Promise.all([
+    bulkAddTasks(userId, bulkPlan.tasks),
+    bulkAddEvidenceNotes(userId, bulkPlan.evidence),
+  ]);
 
   await supabase.from("progress_events").insert({
     owner_id: userId,

@@ -22,13 +22,14 @@ const allowedOrigins = (
   .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);
+const allowedOriginSet = new Set(allowedOrigins);
 
 app.disable("x-powered-by");
 app.use(requestContext);
 app.use(requestLogger);
 app.use((req, res, next) => {
   const origin = req.headers.origin;
-  if (origin && !allowedOrigins.includes(origin)) {
+  if (origin && !allowedOriginSet.has(origin)) {
     next(new ApiError(403, "ORIGIN_FORBIDDEN", "This origin is not allowed to access SafeSteps."));
     return;
   }
