@@ -103,7 +103,7 @@ begin
   select * into target from public.personal_ai_flow_versions where id = target_id for update;
   if target.status <> 'approved' then raise exception 'Only approved versions can be activated'; end if;
   select count(distinct approver_user_id) into approval_count from public.personal_ai_flow_version_approvals where flow_version_id = target.id and decision = 'approved';
-  if approval_count < case when target.risk_level = 'critical' then 2 else 1 end then raise exception 'Required independent approvals are missing'; end if;
+  if approval_count < (case when target.risk_level = 'critical' then 2 else 1 end) then raise exception 'Required independent approvals are missing'; end if;
   if target.risk_level = 'critical' and not (target.release_checks @> '{"safety_tests":true,"clinical_signoff":true,"safeguarding_signoff":true,"jurisdiction_review":true,"rollback_tested":true}'::jsonb) then raise exception 'Critical release checklist is incomplete'; end if;
   select version into prior_version from public.personal_ai_flow_versions where flow_id = target.flow_id and status = 'active' for update;
   update public.personal_ai_flow_versions set status = 'deprecated', effective_to = now(), updated_at = now() where flow_id = target.flow_id and status = 'active';

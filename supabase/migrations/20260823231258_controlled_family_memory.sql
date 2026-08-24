@@ -1,4 +1,4 @@
-+begin;
+begin;
 
 create table if not exists public.personal_ai_memory_consents (
   id uuid primary key default gen_random_uuid(),

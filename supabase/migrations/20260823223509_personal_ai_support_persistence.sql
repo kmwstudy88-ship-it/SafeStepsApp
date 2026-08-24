@@ -209,12 +209,14 @@ create policy personal_ai_notes_owner_read on public.personal_ai_interaction_not
 using (exists (select 1 from public.personal_ai_conversations c where c.id = conversation_id and c.user_id = (select auth.uid())));
 create policy personal_ai_safety_events_owner on public.personal_ai_safety_events for select to authenticated
 using (exists (select 1 from public.personal_ai_conversations c where c.id = conversation_id and c.user_id = (select auth.uid())));
-create policy personal_ai_handoffs_owner_read on public.personal_ai_handoffs for select to authenticated
-using (user_id = (select auth.uid()));
+create policy personal_ai_handoffs_authorized_read on public.personal_ai_handoffs for select to authenticated
+using (
+  user_id = (select auth.uid())
+  or assigned_to_user_id = (select auth.uid())
+  or public.current_user_has_role('admin')
+);
 create policy personal_ai_handoffs_owner_insert on public.personal_ai_handoffs for insert to authenticated
 with check (user_id = (select auth.uid()) and user_consented_to_share = true and automatic_emergency_dispatch = false);
-create policy personal_ai_handoffs_assignee_read on public.personal_ai_handoffs for select to authenticated
-using (assigned_to_user_id = (select auth.uid()) or public.current_user_has_role('admin'));
 create policy personal_ai_handoffs_staff_update on public.personal_ai_handoffs for update to authenticated
 using (assigned_to_user_id = (select auth.uid()) or public.current_user_has_role('admin'))
 with check (assigned_to_user_id = (select auth.uid()) or public.current_user_has_role('admin'));
@@ -224,10 +226,16 @@ create policy personal_ai_retention_admin_read on public.personal_ai_retention_p
 using (public.current_user_has_role('admin'));
 create policy personal_ai_retention_admin_update on public.personal_ai_retention_policies for update to authenticated
 using (public.current_user_has_role('admin')) with check (public.current_user_has_role('admin'));
-create policy personal_ai_referrals_verified_read on public.personal_ai_referrals for select to authenticated
-using (status = 'active' and next_review_at >= now() and (not requires_two_person_approval or second_approved_by_user_id is not null));
-create policy personal_ai_referrals_admin_read on public.personal_ai_referrals for select to authenticated
-using (public.current_user_has_role('admin') or public.current_user_has_role('caseworker'));
+create policy personal_ai_referrals_authorized_read on public.personal_ai_referrals for select to authenticated
+using (
+  (
+    status = 'active'
+    and next_review_at >= now()
+    and (not requires_two_person_approval or second_approved_by_user_id is not null)
+  )
+  or public.current_user_has_role('admin')
+  or public.current_user_has_role('caseworker')
+);
 create policy personal_ai_referrals_admin_insert on public.personal_ai_referrals for insert to authenticated
 with check (public.current_user_has_role('admin'));
 create policy personal_ai_referrals_admin_update on public.personal_ai_referrals for update to authenticated

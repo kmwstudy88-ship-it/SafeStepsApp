@@ -1,4 +1,4 @@
-+begin;
+begin;
 
 create table if not exists public.personal_ai_incidents (
   id uuid primary key default gen_random_uuid(),
