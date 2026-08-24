@@ -44,7 +44,7 @@ const sidebarItems = [
   ["Calendar", "/timeline"],
   ["Messages", "/notifications"],
   ["Resources", "/resources"],
-  ["Support", "/facilitator"],
+  ["Support Guide", "/support-guide"],
   ["Profile", "/settings"],
   ["Settings", "/settings"],
 ] as const;
@@ -59,6 +59,9 @@ const quickActions = [
   ["View Reports", "/reports", "▣"],
   ["Messages", "/notifications", "☏"],
   ["Resources", "/resources", "?"],
+  ["Support Guide", "/support-guide", "♡"],
+  ["Parenting Coach", "/parenting-coach", "◌"],
+  ["Personal AI Support", "/personal-ai-support", "⌂"],
 ] as const;
 
 const evidenceUploadLinks = [
@@ -924,4 +927,3 @@ const styles = StyleSheet.create({
     color: "#8E2B21",
   },
 });
-

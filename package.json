@@ -83,6 +83,7 @@
     "db:new": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 NewMigration",
     "smoke:document-intelligence": "node SafeStepsTools/smoke-document-intelligence-api.mjs",
     "test:backend": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand --config jest.backend.config.cjs",
+    "test:personal-ai-safety": "node --test --test-reporter=spec __tests__/backend-node/personal-ai-release-safety.test.mjs",
     "audit:found-curriculum": "node SafeStepsTools/audit-found-curriculum.js",
     "audit:curriculum-titles": "node SafeStepsTools/audit-curriculum-titles.js",
     "import:curriculum-source": "node SafeStepsTools/import-curriculum-source.js",
@@ -90,6 +91,7 @@
     "import:father-course": "node SafeStepsTools/import-father-course.js",
     "lint": "expo lint",
     "test": "jest --runInBand",
+    "test:family-bridge-safety": "jest __tests__/family-bridge-clinical-engine.test.ts --runInBand",
     "verify:staging": "node SafeStepsTools/verify-staging-journey.mjs",
     "bootstrap:staging-auth": "node SafeStepsTools/staging-auth-bootstrap.mjs",
     "release:gate": "node SafeStepsTools/production-readiness-gate.mjs"

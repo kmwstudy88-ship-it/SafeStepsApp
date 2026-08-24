@@ -21,6 +21,7 @@ alter table public.video_deployment_checks add constraint video_deployment_check
 alter table public.video_feature_flags add constraint video_feature_flags_pkey PRIMARY KEY (flag_key);
 alter table public.video_lesson_contents add constraint video_lesson_contents_pkey PRIMARY KEY (id);
 alter table public.video_notification_delivery_attempts add constraint video_notification_delivery_attempts_pkey PRIMARY KEY (id);
+alter table public.video_notification_outbox add constraint video_notification_outbox_pkey PRIMARY KEY (id);
 alter table public.video_notification_devices add constraint video_notification_devices_pkey PRIMARY KEY (id);
 alter table public.video_notification_preferences add constraint video_notification_preferences_pkey PRIMARY KEY (user_id);
 alter table public.video_practice_tasks add constraint video_practice_tasks_pkey PRIMARY KEY (id);
@@ -31,6 +32,8 @@ alter table public.video_release_records add constraint video_release_records_pk
 alter table public.video_report_access_authorities add constraint video_report_access_authorities_pkey PRIMARY KEY (id);
 alter table public.video_report_access_grants add constraint video_report_access_grants_pkey PRIMARY KEY (id);
 alter table public.video_report_attestations add constraint video_report_attestations_pkey PRIMARY KEY (id);
+alter table public.video_report_deliveries add constraint video_report_deliveries_pkey PRIMARY KEY (id);
+alter table public.video_report_delivery_acknowledgements add constraint video_report_delivery_acknowledgements_pkey PRIMARY KEY (id);
 alter table public.video_report_delivery_events add constraint video_report_delivery_events_pkey PRIMARY KEY (id);
 alter table public.video_report_delivery_purposes add constraint video_report_delivery_purposes_pkey PRIMARY KEY (id);
 alter table public.video_report_dispute_responses add constraint video_report_dispute_responses_pkey PRIMARY KEY (id);
@@ -70,11 +73,15 @@ alter table public.video_case_assignments add constraint video_case_assignments_
 alter table public.video_curriculum_mappings add constraint video_curriculum_mappings_watch_percentage_required_check CHECK (watch_percentage_required >= 0 AND watch_percentage_required <= 100);
 alter table public.video_deployment_checks add constraint video_deployment_checks_check_status_check CHECK (check_status = ANY (ARRAY['pending'::text, 'passed'::text, 'failed'::text]));
 alter table public.video_lesson_contents add constraint video_lesson_contents_five_questions CHECK (jsonb_array_length(assessment_questions) = 5);
+alter table public.video_notification_outbox add constraint video_notification_outbox_notification_type_check CHECK (notification_type = ANY (ARRAY['review'::text, 'delivery'::text, 'dispute'::text]));
+alter table public.video_notification_outbox add constraint video_notification_outbox_status_check CHECK (status = ANY (ARRAY['pending'::text, 'sent'::text, 'failed'::text, 'skipped'::text]));
 alter table public.video_progress_report_snapshots add constraint video_progress_report_snapshots_evidence_access_scope_check CHECK (evidence_access_scope = ANY (ARRAY['video_progress'::text, 'video_progress_and_evidence'::text]));
 alter table public.video_release_records add constraint video_release_records_release_status_check CHECK (release_status = ANY (ARRAY['planned'::text, 'staging'::text, 'approved'::text, 'deployed'::text, 'rolled_back'::text]));
 alter table public.video_report_access_authorities add constraint video_report_access_authorities_access_scope_check CHECK (access_scope = ANY (ARRAY['video_progress'::text, 'video_progress_and_evidence'::text]));
 alter table public.video_report_access_authorities add constraint video_report_access_authorities_authority_type_check CHECK (authority_type = ANY (ARRAY['parent_consent'::text, 'parent_requested_professional'::text, 'organisational_case_assignment'::text, 'court_order'::text, 'statutory_authority'::text, 'emergency_safety_authority'::text]));
 alter table public.video_report_access_grants add constraint video_report_access_grants_access_scope_check CHECK (access_scope = ANY (ARRAY['video_progress'::text, 'video_progress_and_evidence'::text]));
+alter table public.video_report_deliveries add constraint video_report_deliveries_delivery_status_check CHECK (delivery_status = ANY (ARRAY['created'::text, 'sent'::text, 'opened'::text, 'acknowledged'::text, 'revoked'::text]));
+alter table public.video_report_deliveries add constraint video_report_deliveries_recipient_type_check CHECK (recipient_type = ANY (ARRAY['internal'::text, 'external'::text]));
 alter table public.video_report_dispute_responses add constraint video_report_dispute_responses_decision_check CHECK (decision = ANY (ARRAY['upheld'::text, 'partially_upheld'::text, 'not_upheld'::text]));
 alter table public.video_report_disputes add constraint video_report_disputes_dispute_type_check CHECK (dispute_type = ANY (ARRAY['factual_error'::text, 'missing_context'::text, 'incorrect_attribution'::text, 'privacy_access'::text, 'assessment_concern'::text]));
 alter table public.video_report_disputes add constraint video_report_disputes_status_check CHECK (status = ANY (ARRAY['submitted'::text, 'under_review'::text, 'upheld'::text, 'partially_upheld'::text, 'not_upheld'::text, 'closed'::text]));

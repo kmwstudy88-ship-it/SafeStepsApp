@@ -1,0 +1,20 @@
+import React, { useCallback, useEffect, useState } from "react";
+import { Pressable, RefreshControl, ScrollView, StyleSheet, Text, View } from "react-native";
+import { safeStepsApiRequest } from "../../lib/safeStepsApi";
+
+type Incident = { id:string; severity:"sev1"|"sev2"|"sev3"|"sev4"; title:string; summary:string; status:string; affected_component:string; user_impact:string; detected_at:string; mandatory_reporting_review_required:boolean; privacy_review_required:boolean };
+const severityColour={sev1:"#9f2d25",sev2:"#b85b20",sev3:"#776515",sev4:"#52675c"};
+
+export default function PersonalAiIncidentsScreen(){
+  const [rows,setRows]=useState<Incident[]>([]);const [loading,setLoading]=useState(false);const [error,setError]=useState("");
+  const load=useCallback(async()=>{setLoading(true);try{setError("");setRows(await safeStepsApiRequest<Incident[]>("/api/admin/incidents"));}catch(cause){setError(cause instanceof Error?cause.message:"Could not load incidents.");}finally{setLoading(false);}},[]);
+  useEffect(()=>{void load();},[load]);
+  const update=async(id:string,status:"contained"|"remediating"|"verified"|"closed")=>{try{await safeStepsApiRequest(`/api/admin/incidents/${id}`,{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify({status})});await load();}catch(cause){setError(cause instanceof Error?cause.message:"Could not update incident.");}};
+  return <ScrollView contentContainerStyle={s.container} refreshControl={<RefreshControl refreshing={loading} onRefresh={load}/>}>
+    <Text style={s.kicker}>Restricted operational record</Text><Text style={s.title}>Personal AI incidents</Text><Text style={s.body}>Contain first, preserve minimum necessary evidence, and do not copy raw disclosures into incident summaries.</Text>
+    {error?<Text style={s.error}>{error}</Text>:null}
+    {rows.map(row=><View key={row.id} style={s.card}><View style={s.line}><Text style={s.cardTitle}>{row.title}</Text><Text style={[s.badge,{backgroundColor:severityColour[row.severity]}]}>{row.severity.toUpperCase()}</Text></View><Text style={s.meta}>{row.status} · {row.affected_component} · {new Date(row.detected_at).toLocaleString()}</Text><Text style={s.body}>{row.summary}</Text><Text style={s.meta}>User impact: {row.user_impact}</Text>{row.mandatory_reporting_review_required?<Text style={s.warning}>Safeguarding/jurisdiction review required</Text>:null}{row.privacy_review_required?<Text style={s.warning}>Privacy/security review required</Text>:null}<View style={s.actions}>{row.status==="open"?<Pressable style={s.action} onPress={()=>void update(row.id,"contained")}><Text style={s.actionText}>Mark contained</Text></Pressable>:null}{row.status==="contained"?<Pressable style={s.action} onPress={()=>void update(row.id,"remediating")}><Text style={s.actionText}>Start remediation</Text></Pressable>:null}{row.status==="remediating"?<Pressable style={s.action} onPress={()=>void update(row.id,"verified")}><Text style={s.actionText}>Mark verified</Text></Pressable>:null}{row.status==="verified"?<Pressable style={s.action} onPress={()=>void update(row.id,"closed")}><Text style={s.actionText}>Close</Text></Pressable>:null}</View></View>)}
+    {!loading&&!rows.length?<Text style={s.body}>No incidents are visible in your assigned role.</Text>:null}
+  </ScrollView>;
+}
+const s=StyleSheet.create({container:{padding:20,gap:14,backgroundColor:"#f3f1ec"},kicker:{fontSize:13,fontWeight:"700",textTransform:"uppercase"},title:{fontSize:29,fontWeight:"800"},body:{fontSize:15,lineHeight:22},error:{color:"#9f2d25"},card:{backgroundColor:"white",padding:15,borderRadius:16,borderWidth:1,borderColor:"#ddd8cf",gap:7},line:{flexDirection:"row",justifyContent:"space-between",gap:10},cardTitle:{fontSize:17,fontWeight:"800",flex:1},badge:{color:"white",fontWeight:"800",paddingHorizontal:9,paddingVertical:4,borderRadius:999,overflow:"hidden"},meta:{fontSize:13,color:"#5f625e"},warning:{color:"#8b3c20",fontWeight:"700"},actions:{flexDirection:"row",marginTop:5},action:{backgroundColor:"#284f3e",padding:11,borderRadius:10},actionText:{color:"white",fontWeight:"800"}});

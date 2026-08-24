@@ -13,6 +13,8 @@ const { default: authRoutes } = await import("./routes/auth/authRoutes.js");
 const { default: documentRoutes } = await import("./routes/documents/documentRoutes.js");
 const { default: userCurriculumRoutes } = await import("./routes/users/curriculumRoutes.js");
 const { default: worksheetRoutes } = await import("./routes/worksheets/worksheetRoutes.js");
+const { default: supportGuideRoutes } = await import("./routes/supportGuide/supportGuideRoutes.js");
+const { default: personalAiSupportRoutes } = await import("./routes/personalAiSupport/personalAiSupportRoutes.js");
 
 const allowedOrigins = (
   process.env.SAFESTEPS_ALLOWED_ORIGINS ??
@@ -42,7 +44,7 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Headers",
     "Content-Type, Authorization, X-Request-Id, X-Device-Id, X-Client-Platform, X-Client-Version",
   );
-  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
 
   if (req.method === "OPTIONS") {
     res.sendStatus(204);
@@ -59,10 +61,22 @@ app.get("/health", (req, res) => {
   res.json({ ok: true, service: "safesteps-api", requestId: req.id });
 });
 
+app.get("/ready", (req, res) => {
+  const provider = process.env.SAFESTEPS_SUPPORT_MODEL_PROVIDER ?? "openai";
+  const supabaseConfigured = Boolean(process.env.SUPABASE_URL && (process.env.SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_ANON_KEY) && (process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY));
+  const modelConfigured = provider === "anthropic"
+    ? Boolean(process.env.ANTHROPIC_API_KEY && process.env.ANTHROPIC_SUPPORT_GUIDE_MODEL)
+    : Boolean(process.env.OPENAI_KEY && process.env.OPENAI_SUPPORT_GUIDE_MODEL);
+  const ready = supabaseConfigured && modelConfigured && process.env.SAFESTEPS_ALLOW_UNAUTHENTICATED_LOCAL_API !== "true";
+  res.status(ready ? 200 : 503).json({ ready, service: "safesteps-api", provider, checks: { supabaseConfigured, modelConfigured, authenticationRequired: process.env.SAFESTEPS_ALLOW_UNAUTHENTICATED_LOCAL_API !== "true" }, requestId: req.id });
+});
+
 app.use("/auth", authRoutes);
 app.use("/documents", documentRoutes);
 app.use("/worksheets", requireAuthenticatedUser, worksheetRoutes);
 app.use("/users", requireAuthenticatedUser, userCurriculumRoutes);
+app.use("/support-guide", requireAuthenticatedUser, supportGuideRoutes);
+app.use("/api", requireAuthenticatedUser, personalAiSupportRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

@@ -53,6 +53,7 @@ create policy video_lesson_contents_select_for_published_resources on public.vid
 create policy video_notification_delivery_attempts_owner_select on public.video_notification_delivery_attempts as PERMISSIVE for SELECT to authenticated using ((is_video_admin(ARRAY['super_admin'::text]) OR (EXISTS ( SELECT 1
    FROM video_notification_outbox outbox
   WHERE ((outbox.id = video_notification_delivery_attempts.outbox_id) AND (outbox.user_id = ( SELECT auth.uid() AS uid)))))));
+create policy video_notification_outbox_owner_select on public.video_notification_outbox as PERMISSIVE for SELECT to authenticated using (((user_id = ( SELECT auth.uid() AS uid)) OR is_video_admin(ARRAY['super_admin'::text])));
 create policy video_notification_devices_owner on public.video_notification_devices as PERMISSIVE for ALL to authenticated using ((user_id = ( SELECT auth.uid() AS uid))) with check ((user_id = ( SELECT auth.uid() AS uid)));
 create policy video_notification_preferences_owner on public.video_notification_preferences as PERMISSIVE for ALL to authenticated using ((user_id = ( SELECT auth.uid() AS uid))) with check ((user_id = ( SELECT auth.uid() AS uid)));
 create policy video_practice_tasks_owner_insert on public.video_practice_tasks as PERMISSIVE for INSERT to authenticated with check ((( SELECT auth.uid() AS uid) = user_id));
@@ -71,6 +72,10 @@ create policy video_report_access_grants_select on public.video_report_access_gr
 create policy video_report_attestations_select on public.video_report_attestations as PERMISSIVE for SELECT to authenticated using ((EXISTS ( SELECT 1
    FROM video_progress_report_snapshots snapshot
   WHERE ((snapshot.id = video_report_attestations.snapshot_id) AND can_access_video_report(snapshot.parent_user_id, snapshot.evidence_access_scope)))));
+create policy video_report_deliveries_select on public.video_report_deliveries as PERMISSIVE for SELECT to authenticated using (((internal_recipient_user_id = ( SELECT auth.uid() AS uid)) OR (created_by = ( SELECT auth.uid() AS uid)) OR is_video_admin(ARRAY['super_admin'::text])));
+create policy video_report_delivery_acknowledgements_select on public.video_report_delivery_acknowledgements as PERMISSIVE for SELECT to authenticated using ((EXISTS ( SELECT 1
+   FROM video_report_deliveries delivery
+  WHERE ((delivery.id = video_report_delivery_acknowledgements.delivery_id) AND ((delivery.internal_recipient_user_id = ( SELECT auth.uid() AS uid)) OR (delivery.created_by = ( SELECT auth.uid() AS uid)) OR is_video_admin(ARRAY['super_admin'::text]))))));
 create policy video_report_delivery_events_select on public.video_report_delivery_events as PERMISSIVE for SELECT to authenticated using ((is_video_admin(ARRAY['super_admin'::text]) OR (EXISTS ( SELECT 1
    FROM video_report_deliveries d
   WHERE ((d.id = video_report_delivery_events.delivery_id) AND ((d.internal_recipient_user_id = ( SELECT auth.uid() AS uid)) OR (d.created_by = ( SELECT auth.uid() AS uid))))))));

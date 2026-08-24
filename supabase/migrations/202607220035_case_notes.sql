@@ -23,6 +23,11 @@ create table if not exists public.case_notes (
 alter table public.case_notes
   add column if not exists tenant_id uuid references public.platform_tenants(id) on delete restrict,
   add column if not exists case_id uuid references public.cases(id) on delete cascade,
+  -- Compatibility columns used by the legacy backfill below. Fresh databases
+  -- do not necessarily have the pre-platform case_notes shape.
+  add column if not exists family_id uuid,
+  add column if not exists user_id uuid,
+  add column if not exists note text,
   add column if not exists note_reference text,
   add column if not exists note_type text,
   add column if not exists note_title text,

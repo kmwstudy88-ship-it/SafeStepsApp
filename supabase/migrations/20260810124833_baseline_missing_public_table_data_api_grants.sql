@@ -21,6 +21,7 @@ revoke all on table public.video_deployment_checks from public, anon, authentica
 revoke all on table public.video_feature_flags from public, anon, authenticated, service_role;
 revoke all on table public.video_lesson_contents from public, anon, authenticated, service_role;
 revoke all on table public.video_notification_delivery_attempts from public, anon, authenticated, service_role;
+revoke all on table public.video_notification_outbox from public, anon, authenticated, service_role;
 revoke all on table public.video_notification_devices from public, anon, authenticated, service_role;
 revoke all on table public.video_notification_preferences from public, anon, authenticated, service_role;
 revoke all on table public.video_practice_tasks from public, anon, authenticated, service_role;
@@ -31,6 +32,8 @@ revoke all on table public.video_release_records from public, anon, authenticate
 revoke all on table public.video_report_access_authorities from public, anon, authenticated, service_role;
 revoke all on table public.video_report_access_grants from public, anon, authenticated, service_role;
 revoke all on table public.video_report_attestations from public, anon, authenticated, service_role;
+revoke all on table public.video_report_deliveries from public, anon, authenticated, service_role;
+revoke all on table public.video_report_delivery_acknowledgements from public, anon, authenticated, service_role;
 revoke all on table public.video_report_delivery_events from public, anon, authenticated, service_role;
 revoke all on table public.video_report_delivery_purposes from public, anon, authenticated, service_role;
 revoke all on table public.video_report_dispute_responses from public, anon, authenticated, service_role;
@@ -98,6 +101,9 @@ grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table pub
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_notification_delivery_attempts to anon;
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_notification_delivery_attempts to authenticated;
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_notification_delivery_attempts to service_role;
+grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_notification_outbox to anon;
+grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_notification_outbox to authenticated;
+grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_notification_outbox to service_role;
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_notification_devices to anon;
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_notification_devices to authenticated;
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_notification_devices to service_role;
@@ -128,6 +134,12 @@ grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table pub
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_report_attestations to anon;
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_report_attestations to authenticated;
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_report_attestations to service_role;
+grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_report_deliveries to anon;
+grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_report_deliveries to authenticated;
+grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_report_deliveries to service_role;
+grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_report_delivery_acknowledgements to anon;
+grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_report_delivery_acknowledgements to authenticated;
+grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_report_delivery_acknowledgements to service_role;
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_report_delivery_events to anon;
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_report_delivery_events to authenticated;
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on table public.video_report_delivery_events to service_role;

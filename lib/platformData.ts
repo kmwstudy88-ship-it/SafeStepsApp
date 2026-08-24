@@ -204,6 +204,11 @@ export type DailyCheckInInput = {
   mood: "steady" | "stressed" | "overwhelmed";
   safety: "safe" | "watching" | "unsafe";
   note: string;
+  stress?: 1 | 2 | 3 | 4 | 5;
+  sleep?: "rested" | "limited" | "none";
+  conflict?: "low" | "rising" | "unsafe";
+  substanceRisk?: "none" | "thoughts" | "strong_urge" | "used";
+  childDependingNow?: boolean;
 };
 
 export type AssessmentQuestion = {
@@ -2553,6 +2558,11 @@ export async function saveDailyCheckIn(userId: string, input: DailyCheckInInput)
       mood: input.mood,
       safety: input.safety,
       note: input.note.trim(),
+      stress: input.stress,
+      sleep: input.sleep,
+      conflict: input.conflict,
+      substanceRisk: input.substanceRisk,
+      childDependingNow: input.childDependingNow,
     });
     return;
   }
@@ -2565,6 +2575,11 @@ export async function saveDailyCheckIn(userId: string, input: DailyCheckInInput)
       mood: input.mood,
       safety: input.safety,
       note: input.note.trim(),
+      stress: input.stress,
+      sleep: input.sleep,
+      conflict: input.conflict,
+      substanceRisk: input.substanceRisk,
+      childDependingNow: input.childDependingNow,
     },
   });
 

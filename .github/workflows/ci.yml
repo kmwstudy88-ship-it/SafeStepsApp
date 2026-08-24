@@ -45,6 +45,9 @@ jobs:
       - name: Intake and program start gate tests
         run: npx jest __tests__/program-start-gate.test.ts --runInBand
 
+      - name: FamilyBridge clinical safety regression gate
+        run: npm run test:family-bridge-safety
+
       - name: Unit tests
         shell: bash
         run: |

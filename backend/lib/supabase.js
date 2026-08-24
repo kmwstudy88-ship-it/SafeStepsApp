@@ -36,6 +36,13 @@ export function createSafeStepsClient(accessToken) {
   });
 }
 
+export function createSafeStepsServiceClient() {
+  const url = process.env.SUPABASE_URL ?? process.env.EXPO_PUBLIC_SUPABASE_URL;
+  const secretKey = process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !secretKey) throw serviceUnavailable("SafeSteps persistence is not configured.");
+  return createClient(url, secretKey, { auth: { autoRefreshToken: false, persistSession: false, detectSessionInUrl: false } });
+}
+
 export async function resolveAuthorizationContext(client, userId) {
   const [rolesResult, membershipsResult] = await Promise.all([
     client.from("user_roles").select("role").eq("user_id", userId),

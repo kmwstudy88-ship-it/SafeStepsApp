@@ -160,3 +160,4 @@ expo-env.d.ts
 *.key
 *.p12
 *.pfx
+node_modules

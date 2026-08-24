@@ -25,6 +25,7 @@ alter table public.video_curriculum_mappings add constraint video_curriculum_map
 alter table public.video_lesson_contents add constraint video_lesson_contents_video_resource_id_fkey FOREIGN KEY (video_resource_id) REFERENCES video_resources(id) ON DELETE CASCADE;
 alter table public.video_notification_delivery_attempts add constraint video_notification_delivery_attempts_device_id_fkey FOREIGN KEY (device_id) REFERENCES video_notification_devices(id) ON DELETE SET NULL;
 alter table public.video_notification_delivery_attempts add constraint video_notification_delivery_attempts_outbox_id_fkey FOREIGN KEY (outbox_id) REFERENCES video_notification_outbox(id) ON DELETE CASCADE;
+alter table public.video_notification_outbox add constraint video_notification_outbox_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE;
 alter table public.video_notification_devices add constraint video_notification_devices_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE;
 alter table public.video_notification_preferences add constraint video_notification_preferences_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE;
 alter table public.video_practice_tasks add constraint video_practice_tasks_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE;
@@ -45,6 +46,12 @@ alter table public.video_report_attestations add constraint video_report_attesta
 alter table public.video_report_attestations add constraint video_report_attestations_revoked_by_fkey FOREIGN KEY (revoked_by) REFERENCES auth.users(id) ON DELETE SET NULL;
 alter table public.video_report_attestations add constraint video_report_attestations_signer_user_id_fkey FOREIGN KEY (signer_user_id) REFERENCES auth.users(id) ON DELETE SET NULL;
 alter table public.video_report_attestations add constraint video_report_attestations_snapshot_id_fkey FOREIGN KEY (snapshot_id) REFERENCES video_progress_report_snapshots(id) ON DELETE RESTRICT;
+alter table public.video_report_deliveries add constraint video_report_deliveries_created_by_fkey FOREIGN KEY (created_by) REFERENCES auth.users(id) ON DELETE SET NULL;
+alter table public.video_report_deliveries add constraint video_report_deliveries_delivery_purpose_code_fkey FOREIGN KEY (delivery_purpose_code) REFERENCES video_report_delivery_purposes(purpose_code);
+alter table public.video_report_deliveries add constraint video_report_deliveries_export_file_id_fkey FOREIGN KEY (export_file_id) REFERENCES video_report_export_files(id) ON DELETE SET NULL;
+alter table public.video_report_deliveries add constraint video_report_deliveries_internal_recipient_user_id_fkey FOREIGN KEY (internal_recipient_user_id) REFERENCES auth.users(id) ON DELETE SET NULL;
+alter table public.video_report_deliveries add constraint video_report_deliveries_snapshot_id_fkey FOREIGN KEY (snapshot_id) REFERENCES video_progress_report_snapshots(id) ON DELETE RESTRICT;
+alter table public.video_report_delivery_acknowledgements add constraint video_report_delivery_acknowledgements_delivery_id_fkey FOREIGN KEY (delivery_id) REFERENCES video_report_deliveries(id) ON DELETE CASCADE;
 alter table public.video_report_delivery_events add constraint video_report_delivery_events_delivery_id_fkey FOREIGN KEY (delivery_id) REFERENCES video_report_deliveries(id) ON DELETE CASCADE;
 alter table public.video_report_dispute_responses add constraint video_report_dispute_responses_dispute_id_fkey FOREIGN KEY (dispute_id) REFERENCES video_report_disputes(id) ON DELETE CASCADE;
 alter table public.video_report_dispute_responses add constraint video_report_dispute_responses_reviewer_user_id_fkey FOREIGN KEY (reviewer_user_id) REFERENCES auth.users(id) ON DELETE SET NULL;

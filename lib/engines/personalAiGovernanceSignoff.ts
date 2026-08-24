@@ -1,0 +1,5 @@
+export type GovernanceDomain = "safeguarding"|"clinical"|"domestic_violence"|"substance_use"|"privacy_security"|"jurisdiction_legal"|"product_ux";
+export type GovernanceDecision = "approved"|"rejected"|"conditional";
+export interface GovernanceSignOff { id:string; version:string; domain:GovernanceDomain; reviewerName:string; reviewerRole:string; approvalStatus:GovernanceDecision; approvedAt?:string; scope:string; notes?:string; condition?:{text:string;ownerUserId:string;dueAt:string;resolvedAt?:string} }
+export interface ReleaseReviewPackage { version:string; changeSummary:string; priorVersionDiffReference:string; testResultsReference:string; knownRisks:string[]; rollbackPlanReference:string; jurisdictionNotesReference:string; escalationChangesReference:string; validatorChangesReference:string; referralUpdatesReference:string; memoryChangesReference:string; }
+export function governanceDecisionBlocksLaunch(decision:GovernanceDecision,conditionResolved=false){return decision==="rejected"||(decision==="conditional"&&!conditionResolved);}

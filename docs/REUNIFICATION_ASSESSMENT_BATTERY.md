@@ -1,5 +1,7 @@
 # Reunification Program Assessment Battery
 
+> Governance companion: [Australian Parenting Capacity and Capacity for Change Guide](./AU_PARENTING_CAPACITY_AND_CAPACITY_FOR_CHANGE_GUIDE.md). If the documents conflict, the stricter human-review, jurisdiction, licensing, privacy, and non-determination boundary applies.
+
 This battery supports SafeSteps reunification work by separating licensed clinical tools, worker-scored family functioning tools, program rubrics, parent-child observation, and final evidence reporting.
 
 SafeSteps should not reproduce, administer, or score restricted psychological instruments unless the service holds the required licence and the assessor is appropriately qualified. For restricted tools, SafeSteps should store metadata, score summaries, interpretation notes, and uploaded reports.

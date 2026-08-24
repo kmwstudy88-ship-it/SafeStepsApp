@@ -3,6 +3,11 @@ import { Pressable, ScrollView, StyleSheet, Text } from "react-native";
 import { router } from "expo-router";
 
 const items = [
+  { title: "Personal AI handoffs", href: "/admin/personal-ai-handoffs", description: "Review assignment-scoped, consented safety handoffs." },
+  { title: "Personal AI flow versions", href: "/admin/personal-ai-flow-versions", description: "Review immutable versions, approvals, release checks, and rollback history." },
+  { title: "Referral verification", href: "/admin/personal-ai-referrals", description: "Review contact evidence, due dates, safe-mode labels, and independent approvals." },
+  { title: "Personal AI incidents", href: "/admin/personal-ai-incidents", description: "Triage safety, privacy, referral, and operational incidents." },
+  { title: "Personal AI launch gate", href: "/admin/personal-ai-launch-readiness", description: "View the evidence-backed GO or NO-GO decision." },
   { title: "Create or edit content", href: "/admin/content", description: "Programs, courses, resources, lessons, and bundles." },
   { title: "Progress reports", href: "/reports/longitudinal", description: "Baseline vs month review vs final review." },
   { title: "Notifications", href: "/notifications", description: "Reminders and in-app notifications." },

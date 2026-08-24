@@ -204,6 +204,18 @@ create table if not exists public.video_lesson_contents (
   created_at timestamp with time zone default now() not null,
   updated_at timestamp with time zone default now() not null
 );
+create table if not exists public.video_notification_outbox (
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
+    user_id uuid NOT NULL,
+    notification_type text NOT NULL,
+    title text NOT NULL,
+    body text NOT NULL,
+    deep_link text,
+    status text DEFAULT 'pending'::text NOT NULL,
+    created_at timestamp with time zone DEFAULT now() NOT NULL,
+    sent_at timestamp with time zone
+);
+
 create table if not exists public.video_notification_delivery_attempts (
   id uuid default gen_random_uuid() not null,
   outbox_id uuid not null,
