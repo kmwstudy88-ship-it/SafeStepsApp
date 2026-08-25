@@ -232,29 +232,84 @@ const steps: {
   },
 ];
 
+const coreLaunchTitles = new Set([
+  "Case Setup",
+  "Assessment Records",
+  "Parent Profiles",
+  "Protective Capacity Scoring",
+  "Evidence Uploads",
+  "Document Intelligence",
+  "Fairness & Reviewability",
+  "Readiness Index",
+  "Contact Progression Review",
+  "Report Output",
+]);
+
 export default function AssessmentSystemHome() {
+  const coreSteps = steps.filter((step) => coreLaunchTitles.has(step.title));
+  const extendedSteps = steps.filter((step) => !coreLaunchTitles.has(step.title));
+
   return (
     <AssessmentScreenShell
       title="Assessment System"
       subtitle="A structured place to document case setup, assessment records, protective-capacity scoring, evidence, readiness, and report output."
     >
-      <View style={styles.grid}>
-        {steps.map((step) => (
-          <Link key={step.title} href={step.href} asChild>
-            <Pressable style={styles.card}>
-              <Text style={styles.badge}>{step.status}</Text>
-              <Text style={styles.cardTitle}>{step.title}</Text>
-              <Text style={styles.cardText}>{step.description}</Text>
-              <Text style={styles.linkText}>Open</Text>
-            </Pressable>
-          </Link>
-        ))}
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Core launch workflow</Text>
+        <Text style={styles.sectionText}>
+          Start with the minimum production slice: case setup, records, scoring, evidence, review, readiness, and report output.
+        </Text>
+        <View style={styles.grid}>
+          {coreSteps.map((step) => (
+            <Link key={step.title} href={step.href} asChild>
+              <Pressable style={styles.card}>
+                <Text style={styles.badge}>{step.status}</Text>
+                <Text style={styles.cardTitle}>{step.title}</Text>
+                <Text style={styles.cardText}>{step.description}</Text>
+                <Text style={styles.linkText}>Open</Text>
+              </Pressable>
+            </Link>
+          ))}
+        </View>
+      </View>
+
+      <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Extended design and governance areas</Text>
+        <Text style={styles.sectionText}>
+          These routes remain available for blueprint, governance, and deeper assessment-system exploration outside the parent-first launch path.
+        </Text>
+        <View style={styles.grid}>
+          {extendedSteps.map((step) => (
+            <Link key={step.title} href={step.href} asChild>
+              <Pressable style={styles.card}>
+                <Text style={styles.badge}>{step.status}</Text>
+                <Text style={styles.cardTitle}>{step.title}</Text>
+                <Text style={styles.cardText}>{step.description}</Text>
+                <Text style={styles.linkText}>Open</Text>
+              </Pressable>
+            </Link>
+          ))}
+        </View>
       </View>
     </AssessmentScreenShell>
   );
 }
 
 const styles = StyleSheet.create({
+  section: {
+    gap: 14,
+    marginBottom: 24,
+  },
+  sectionTitle: {
+    color: assessmentColors.charcoal,
+    fontSize: 24,
+    fontWeight: "900",
+  },
+  sectionText: {
+    color: assessmentColors.muted,
+    fontSize: 14,
+    lineHeight: 21,
+  },
   grid: {
     flexDirection: "row",
     flexWrap: "wrap",

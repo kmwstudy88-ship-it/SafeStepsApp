@@ -50,9 +50,9 @@ export default function WhySafeStepsScreen() {
         </Text>
       </View>
 
-      <Link href="/my-story" asChild>
+      <Link href="/welcome" asChild>
         <TouchableOpacity style={globalStyles.button}>
-          <Text style={globalStyles.buttonText}>Back to My Story</Text>
+          <Text style={globalStyles.buttonText}>Back to Welcome</Text>
         </TouchableOpacity>
       </Link>
     </ScrollView>
