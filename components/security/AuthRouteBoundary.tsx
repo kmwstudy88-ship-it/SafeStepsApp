@@ -3,22 +3,7 @@ import React from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 
 import { useAuth } from "../../lib/auth";
-
-const PUBLIC_ROUTES = new Set([
-  "/",
-  "/welcome",
-  "/login",
-  "/register",
-  "/forgot-password",
-  "/reset-password",
-  "/onboarding/how-safesteps-works",
-  "/onboarding/privacy-parent-rights",
-  "/onboarding/verify-account",
-]);
-
-function isPublicRoute(pathname: string) {
-  return PUBLIC_ROUTES.has(pathname);
-}
+import { isPublicLaunchRoute } from "../../lib/navigation/launchRoutes";
 
 export function AuthRouteBoundary({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -33,7 +18,7 @@ export function AuthRouteBoundary({ children }: { children: React.ReactNode }) {
     );
   }
 
-  if (!user && !isPublicRoute(pathname)) {
+  if (!user && !isPublicLaunchRoute(pathname)) {
     return <Redirect href="/login" />;
   }
 

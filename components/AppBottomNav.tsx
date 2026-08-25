@@ -2,38 +2,16 @@ import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
 import { Link, type Href, usePathname } from "expo-router";
 
+import { launchRouteIsActive, PARENT_MOBILE_NAV_ITEMS } from "../lib/navigation/launchRoutes";
 import { globalStyles } from "../lib/styles";
-
-const NAV_ITEMS = [
-  { label: "Home", href: "/dashboard" },
-  { label: "Programs", href: "/programs" },
-  { label: "Lessons", href: "/lessons" },
-  { label: "Library", href: "/library" },
-  { label: "Challenges", href: "/challenges" },
-  { label: "Resources", href: "/resources" },
-  { label: "Tasks", href: "/tasks" },
-  { label: "Visits", href: "/visits" },
-  { label: "Family meeting", href: "/family-meeting" },
-  { label: "Check-in", href: "/check-in" },
-  { label: "Daily evidence", href: "/daily-evidence" },
-  { label: "Evidence", href: "/evidence" },
-  { label: "Assessment system", href: "/assessment-system" },
-  { label: "Bulk setup", href: "/bulk-setup" },
-  { label: "Timeline", href: "/timeline" },
-  { label: "Facilitator", href: "/facilitator" },
-  { label: "CP", href: "/child-protection" },
-  { label: "Carer", href: "/carer" },
-  { label: "Advocate", href: "/advocate" },
-  { label: "Reports", href: "/reports" },
-] as const;
 
 export function AppBottomNav() {
   const pathname = usePathname();
 
   return (
     <View style={globalStyles.bottomNav}>
-      {NAV_ITEMS.map((item) => {
-        const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
+      {PARENT_MOBILE_NAV_ITEMS.map((item) => {
+        const active = launchRouteIsActive(pathname, item.href);
 
         return (
           <Link key={item.href} href={item.href as Href} asChild>

@@ -24,7 +24,7 @@ export default function WelcomeScreen() {
       <View style={{ gap: 12 }}>
         <PrimaryButton label="Get Started" href="/onboarding/how-safesteps-works" />
         <SecondaryButton label="Sign In" href="/login" />
-        <TextButton label="Explore SafeSteps" href="/dashboard" />
+        <TextButton label="Why SafeSteps?" href="/why-safesteps" />
       </View>
     </OnboardingShell>
   );
