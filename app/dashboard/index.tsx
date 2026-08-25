@@ -1,4 +1,4 @@
-import { Link, usePathname } from "expo-router";
+import { Link, type Href, usePathname } from "expo-router";
 import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
@@ -137,7 +137,7 @@ function PriorityRow({
   );
 }
 
-function QuickAction({ label, href, icon }: { label: string; href: string; icon: string }) {
+function QuickAction({ label, href, icon }: { label: string; href: Href; icon: string }) {
   return (
     <Link href={href as any} asChild>
       <Pressable style={styles.quickAction}>

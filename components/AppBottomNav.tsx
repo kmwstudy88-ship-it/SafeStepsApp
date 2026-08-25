@@ -14,7 +14,7 @@ export function AppBottomNav() {
         const active = launchRouteIsActive(pathname, item.href);
 
         return (
-          <Link key={item.href} href={item.href as Href} asChild>
+          <Link key={String(item.href)} href={item.href as Href} asChild>
             <TouchableOpacity style={active ? globalStyles.bottomNavItemActive : globalStyles.bottomNavItem}>
               <Text style={active ? globalStyles.bottomNavTextActive : globalStyles.bottomNavText}>
                 {item.label}
