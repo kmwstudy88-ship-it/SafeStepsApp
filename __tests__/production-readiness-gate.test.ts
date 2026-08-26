@@ -1,4 +1,6 @@
 import { spawnSync } from "node:child_process";
+import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 
 const scriptPath = path.join(process.cwd(), "SafeStepsTools", "production-readiness-gate.mjs");
@@ -27,6 +29,36 @@ function runGate(env: Record<string, string> = {}) {
     env: { PATH: process.env.PATH, ...env },
     encoding: "utf8",
   });
+}
+
+function makeRepoFixture({
+  dependencies,
+  sourceFile,
+}: {
+  dependencies?: Record<string, string>;
+  sourceFile?: { path: string; content: string };
+}) {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "safesteps-gate-"));
+  fs.writeFileSync(
+    path.join(root, "package.json"),
+    JSON.stringify(
+      {
+        name: "fixture",
+        version: "1.0.0",
+        dependencies: dependencies ?? {},
+      },
+      null,
+      2,
+    ),
+  );
+
+  if (sourceFile) {
+    const absolutePath = path.join(root, sourceFile.path);
+    fs.mkdirSync(path.dirname(absolutePath), { recursive: true });
+    fs.writeFileSync(absolutePath, sourceFile.content);
+  }
+
+  return root;
 }
 
 describe("production readiness gate", () => {
@@ -70,5 +102,30 @@ describe("production readiness gate", () => {
 
     expect(result.status).toBe(0);
     expect(result.stdout).toContain("Production readiness gate passed");
+  });
+
+  it("fails closed when firebase dependency is present", () => {
+    const repoRoot = makeRepoFixture({
+      dependencies: {
+        firebase: "^11.0.0",
+      },
+    });
+    const result = runGate({ ...completeEnv, SAFESTEPS_REPO_ROOT: repoRoot });
+
+    expect(result.status).toBe(1);
+    expect(result.stderr).toContain("Firebase dependency detected");
+  });
+
+  it("fails closed when firebase runtime import is present", () => {
+    const repoRoot = makeRepoFixture({
+      sourceFile: {
+        path: "app/firebase-leak.ts",
+        content: 'import { initializeApp } from "firebase/app";\nvoid initializeApp;\n',
+      },
+    });
+    const result = runGate({ ...completeEnv, SAFESTEPS_REPO_ROOT: repoRoot });
+
+    expect(result.status).toBe(1);
+    expect(result.stderr).toContain("Firebase runtime imports detected");
   });
 });

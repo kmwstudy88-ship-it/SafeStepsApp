@@ -1,4 +1,11 @@
+import fs from "node:fs";
+import path from "node:path";
+
 const LIVE_REF = "yzxotxbwgxnxemkzigse";
+const REPO_ROOT = process.env.SAFESTEPS_REPO_ROOT ?? process.cwd();
+const FIREBASE_DEPENDENCY_PREFIX = "@firebase/";
+const FIREBASE_IMPORT_PATTERN =
+  /\bfrom\s+["'](?:firebase(?:\/[^"']*)?|@firebase\/[^"']+)["']|\brequire\(\s*["'](?:firebase(?:\/[^"']*)?|@firebase\/[^"']+)["']\s*\)/;
 
 const required = [
   "SAFESTEPS_STAGING_URL",
@@ -15,6 +22,89 @@ const required = [
 function fail(message) {
   console.error(message);
   process.exitCode = 1;
+}
+
+function exists(path) {
+  try {
+    return fs.existsSync(path);
+  } catch {
+    return false;
+  }
+}
+
+function readFile(path) {
+  return fs.readFileSync(path, "utf8");
+}
+
+function listFiles(path) {
+  return fs.readdirSync(path, { withFileTypes: true });
+}
+
+function resolveRepoPath(...segments) {
+  return path.resolve(REPO_ROOT, ...segments);
+}
+
+function validateNoFirebaseDependencies() {
+  const packageJsonPath = resolveRepoPath("package.json");
+  if (!exists(packageJsonPath)) {
+    fail(`Release gate could not find package.json at ${packageJsonPath}.`);
+    return;
+  }
+
+  let packageJson;
+  try {
+    packageJson = JSON.parse(readFile(packageJsonPath));
+  } catch (error) {
+    fail(`Release gate could not parse package.json: ${error.message}`);
+    return;
+  }
+
+  const dependencyGroups = ["dependencies", "devDependencies", "peerDependencies", "optionalDependencies"];
+  for (const group of dependencyGroups) {
+    const deps = packageJson[group] ?? {};
+    for (const dependencyName of Object.keys(deps)) {
+      if (dependencyName === "firebase" || dependencyName.startsWith(FIREBASE_DEPENDENCY_PREFIX)) {
+        fail(`Firebase dependency detected in ${group}: ${dependencyName}.`);
+      }
+    }
+  }
+}
+
+function walkSourceFiles(rootPath, found = []) {
+  for (const entry of listFiles(rootPath)) {
+    const fullPath = path.join(rootPath, entry.name);
+    if (entry.isDirectory()) {
+      walkSourceFiles(fullPath, found);
+      continue;
+    }
+    if (!entry.isFile()) continue;
+    if (!/\.(?:ts|tsx|js|jsx|mjs|cjs)$/.test(entry.name)) continue;
+    found.push(fullPath);
+  }
+  return found;
+}
+
+function validateNoFirebaseRuntimeImports() {
+  const roots = ["app", "lib", "backend", "components", "utils"]
+    .map((segment) => resolveRepoPath(segment))
+    .filter((path) => exists(path));
+  const offenders = [];
+
+  for (const root of roots) {
+    for (const filePath of walkSourceFiles(root)) {
+      const content = readFile(filePath);
+      if (!FIREBASE_IMPORT_PATTERN.test(content)) continue;
+      offenders.push(filePath);
+      if (offenders.length >= 5) break;
+    }
+    if (offenders.length >= 5) break;
+  }
+
+  if (offenders.length > 0) {
+    fail(
+      `Firebase runtime imports detected in release build paths: ${offenders.join(", ")}.`,
+    );
+  }
 }
 
 function hasIsoDate(value) {
@@ -59,9 +149,14 @@ try {
   fail(`Invalid SAFESTEPS_STAGING_ROLE_CREDENTIALS_JSON: ${error.message}`);
 }
 
+validateNoFirebaseDependencies();
+validateNoFirebaseRuntimeImports();
+
 if (process.exitCode) {
   console.error("Production readiness gate failed closed.");
   process.exit(process.exitCode);
 }
 
-console.log("Production readiness gate passed required staging, advisor, dependency, and credential-rotation evidence checks.");
+console.log(
+  "Production readiness gate passed required staging, advisor, dependency, credential-rotation, and Firebase-removal checks.",
+);
