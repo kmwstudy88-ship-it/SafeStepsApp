@@ -35,6 +35,9 @@ export type ProgramPathway = {
   curationNote: string;
   curation: ProgramCuration;
   months: ProgramMonth[];
+  requiredLessonIds?: string[];
+  workshopIds?: string[];
+  featuredCourseIds?: string[];
 };
 
 export type CourseAssignmentRule = {

@@ -7,7 +7,9 @@ export {
   getCoursesForArea,
   getGoldStandardCourses,
   type CourseArea,
+  type CourseCategory,
   type CourseLesson,
+  type CourseLevel,
   type StandaloneCourse,
 } from "./courses";
 

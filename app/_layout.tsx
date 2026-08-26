@@ -54,6 +54,8 @@ export default function RootLayout() {
                         <Stack.Screen name="resources/safety-planning" />
                         <Stack.Screen name="resources/support-service-preparation" />
                         <Stack.Screen name="lessons/index" />
+                        <Stack.Screen name="workshops/index" />
+                        <Stack.Screen name="workshops/[workshopId]" />
                         <Stack.Screen name="tasks/index" />
                         <Stack.Screen name="sessions/index" />
                         <Stack.Screen name="documents/index" />

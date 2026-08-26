@@ -6,6 +6,15 @@ import {
 import { oneDriveLessonLibrary } from "./data/oneDriveLessonLibrary";
 import { oneDriveDeepLessonLibrary } from "./data/oneDriveDeepLessonLibrary";
 
+export type LessonDurationCategory = "short" | "standard" | "extended";
+export type LessonContentType = "lesson" | "workshop_activity" | "reflection";
+
+export function getLessonDurationCategory(minutes: number): LessonDurationCategory {
+  if (minutes <= 30) return "short";
+  if (minutes <= 60) return "standard";
+  return "extended";
+}
+
 export type AppLesson = {
   id: string;
   week: number;
@@ -17,6 +26,9 @@ export type AppLesson = {
     body: string;
   }>;
   actions: string[];
+  tags?: string[];
+  contentType?: LessonContentType;
+  standalone?: boolean;
 };
 
 const starterLessons: AppLesson[] = [

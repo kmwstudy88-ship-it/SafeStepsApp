@@ -9,6 +9,7 @@ export type CourseLesson = {
   title: string;
   durationMinutes: number;
   summary?: string;
+  foundationLessonId?: string;
   content?: {
     whyItMatters: string;
     parentMeaningPrompt?: string;
@@ -34,11 +35,28 @@ export type CourseLesson = {
   };
 };
 
+export type CourseLevel = "foundational" | "intermediate" | "advanced";
+export type CourseCategory =
+  | "Communication"
+  | "Child Safety"
+  | "Parenting Skills"
+  | "Emotional Regulation"
+  | "Attachment"
+  | "Behaviour"
+  | "Family Wellbeing"
+  | "Co-Parenting"
+  | "Trauma"
+  | "Life Skills"
+  | "Other";
+
 export type StandaloneCourse = {
   id: string;
   title: string;
   description: string;
   lessons: CourseLesson[];
+  category?: CourseCategory;
+  level?: CourseLevel;
+  composedFromLessonIds?: string[];
 };
 
 export type CourseArea = {
