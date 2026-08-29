@@ -57,6 +57,14 @@ Generate a structured list of follow-up tasks and deadlines for a case, derived 
 
 ---
 
+## Escalation Conditions
+
+- If any active escalation has `tier_1_immediate`, create at least one `priority: immediate` follow-up task due within 24 hours.
+- If any active escalation has `tier_2_urgent`, create at least one `priority: high` follow-up task due within 72 hours.
+- If only `tier_3_standard` escalations are active, create at least one `priority: standard` follow-up task due within 7 days.
+
+---
+
 ## Audit Fields
 
 - `run_meta.skill_version`, `run_meta.model`, `run_meta.timestamp_utc`

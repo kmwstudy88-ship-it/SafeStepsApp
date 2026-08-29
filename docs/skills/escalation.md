@@ -57,6 +57,14 @@ Evaluate case state against the deterministic escalation matrix (`policies/escal
 
 ---
 
+## Escalation Conditions
+
+- Trigger immediately when any `tier_1_immediate` rule in `policies/escalation_matrix.yaml` matches.
+- Trigger urgently when any `tier_2_urgent` rule matches and no tier_1 rule is active.
+- Trigger standard escalation when one or more `tier_3_standard` rules match.
+
+---
+
 ## Audit Fields
 
 - `run_meta.skill_version`, `run_meta.model`, `run_meta.timestamp_utc`
