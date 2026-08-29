@@ -1,0 +1,81 @@
+{
+  "case_id": "CASE-2026-00142",
+  "claims": [
+    {
+      "claim_id": "c-001",
+      "text": "On 14 March 2026 the mother observed bruising on the child's left forearm when collecting him from school.",
+      "type": "observation",
+      "date": "2026-03-14",
+      "date_precision": "exact",
+      "actors": ["mother", "child"],
+      "source_doc_id": "doc-affidavit-mother-001",
+      "source_span": {
+        "start": 1204,
+        "end": 1321
+      },
+      "confidence": 0.91
+    },
+    {
+      "claim_id": "c-002",
+      "text": "The school counsellor noted on 15 March 2026 that the child was withdrawn and reluctant to return home at the end of the school day.",
+      "type": "observation",
+      "date": "2026-03-15",
+      "date_precision": "exact",
+      "actors": ["school counsellor", "child"],
+      "source_doc_id": "doc-school-report-001",
+      "source_span": {
+        "start": 412,
+        "end": 545
+      },
+      "confidence": 0.88
+    },
+    {
+      "claim_id": "c-003",
+      "text": "The father states that the child sustained the bruising during a fall at the park on 13 March 2026.",
+      "type": "allegation",
+      "date": "2026-03-13",
+      "date_precision": "exact",
+      "actors": ["father", "child"],
+      "source_doc_id": "doc-affidavit-father-001",
+      "source_span": {
+        "start": 887,
+        "end": 981
+      },
+      "confidence": 0.85
+    },
+    {
+      "claim_id": "c-004",
+      "text": "The GP's report of 16 March 2026 noted bruising inconsistent with a fall, positioned on the inner aspect of the forearm.",
+      "type": "observation",
+      "date": "2026-03-16",
+      "date_precision": "exact",
+      "actors": ["GP", "child"],
+      "source_doc_id": "doc-medical-report-001",
+      "source_span": {
+        "start": 234,
+        "end": 356
+      },
+      "confidence": 0.94
+    },
+    {
+      "claim_id": "c-005",
+      "text": "As at the date of the parenting order (22 January 2026), the father has unsupervised overnight contact with the child each alternate weekend.",
+      "type": "order_term",
+      "date": "2026-01-22",
+      "date_precision": "exact",
+      "actors": ["father", "child"],
+      "source_doc_id": "doc-court-order-001",
+      "source_span": {
+        "start": 1102,
+        "end": 1245
+      },
+      "confidence": 0.97
+    }
+  ],
+  "quality_flags": [],
+  "run_meta": {
+    "skill_version": "1.0.0",
+    "model": "safesteps-extraction-v1",
+    "timestamp_utc": "2026-08-28T10:00:00Z"
+  }
+}

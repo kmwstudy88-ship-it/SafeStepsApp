@@ -1,0 +1,225 @@
+# SafeSteps Escalation Matrix
+# Version: 1.0.0
+# Deterministic trigger rules mapping case signals to escalation actions.
+# Rules are evaluated in tier priority order (tier_1 first).
+# ALL matching rules fire — there is no short-circuit.
+
+matrix_version: "1.0.0"
+last_updated: "2026-08-28"
+evaluation_order: "tier_priority_then_rule_id"
+
+# ─────────────────────────────────────────────
+# Tier 1 — Immediate (SLA: 15 minutes)
+# Imminent risk to life or safety.
+# Required actions: notify case_manager + team_leader + child_protection_authority
+# ─────────────────────────────────────────────
+tier_1_rules:
+  - id: ESC-T1-01
+    name: "Critical risk level"
+    description: "Risk Assessment output is critical."
+    trigger:
+      skill: risk_assessment
+      condition: "risk_level == 'critical'"
+    required_action: "Immediate professional review of case. Assess whether statutory notification is required. Do not take any case actions before review."
+    notification_roles: [case_manager, team_leader, child_protection_authority]
+    sla_minutes: 15
+    hold_pipeline: true
+
+  - id: ESC-T1-02
+    name: "Direct disclosure of abuse"
+    description: "Disclosure Sensitive skill detects direct disclosure of abuse."
+    trigger:
+      skill: disclosure_sensitive
+      condition: "disclosure_detected == true AND disclosure_flags[*].type == 'direct_disclosure' AND confidence >= 0.55"
+    required_action: "Review disclosure immediately. Determine whether mandatory reporting obligation is triggered under applicable jurisdiction legislation."
+    notification_roles: [case_manager, team_leader]
+    sla_minutes: 15
+    hold_pipeline: true
+
+  - id: ESC-T1-03
+    name: "Sexual abuse disclosure — any confidence"
+    description: "Any signal of sexual abuse, regardless of confidence."
+    trigger:
+      skill: disclosure_sensitive
+      condition: "disclosure_flags[*].harm_category == 'sexual_abuse'"
+    required_action: "Review disclosure immediately. Mandatory reporting assessment required."
+    notification_roles: [case_manager, team_leader, child_protection_authority]
+    sla_minutes: 15
+    hold_pipeline: true
+
+  - id: ESC-T1-04
+    name: "Imminent physical harm signal"
+    description: "Evidence extraction identifies an imminent physical harm claim."
+    trigger:
+      skill: evidence_extraction
+      condition: "claims[*].type == 'factual_claim' AND claims[*].actors contains 'child' AND confidence >= 0.70 AND imminent_harm_flag == true"
+    required_action: "Immediate professional review. Consider contacting emergency services if not already done."
+    notification_roles: [case_manager, team_leader]
+    sla_minutes: 15
+    hold_pipeline: true
+
+  - id: ESC-T1-05
+    name: "De-escalation skill: immediate safety concern"
+    description: "De-escalation strategy skill identifies an immediate safety concern."
+    trigger:
+      skill: de_escalation_strategy
+      condition: "immediate_safety_concern == true"
+    required_action: "Direct practitioner to call emergency services (000 in Australia) immediately."
+    notification_roles: [case_manager, team_leader]
+    sla_minutes: 15
+    hold_pipeline: true
+
+# ─────────────────────────────────────────────
+# Tier 2 — Urgent (SLA: 4 hours)
+# Significant risk requiring same-day professional response.
+# Required actions: notify case_manager + team_leader
+# ─────────────────────────────────────────────
+tier_2_rules:
+  - id: ESC-T2-01
+    name: "High risk level"
+    description: "Risk Assessment output is high."
+    trigger:
+      skill: risk_assessment
+      condition: "risk_level == 'high'"
+    required_action: "Professional review of case within 4 hours. Develop intervention plan."
+    notification_roles: [case_manager, team_leader]
+    sla_minutes: 240
+    hold_pipeline: false
+
+  - id: ESC-T2-02
+    name: "High family violence score"
+    description: "Family violence domain score is high with high risk level."
+    trigger:
+      skill: risk_assessment
+      condition: "risk_level == 'high' AND domain_scores.family_violence >= 0.70"
+    required_action: "Family violence safety check required within 4 hours. Review safety plan status."
+    notification_roles: [case_manager, team_leader]
+    sla_minutes: 240
+    hold_pipeline: false
+
+  - id: ESC-T2-03
+    name: "Critical contradiction in child safety matter"
+    description: "Critical significance contradiction detected in child safety domain."
+    trigger:
+      skill: contradiction_detection
+      condition: "contradictions[*].significance == 'critical' AND confidence >= 0.65"
+    required_action: "Review contradictions with practitioner before any case action. Determine which account requires further investigation."
+    notification_roles: [case_manager, team_leader]
+    sla_minutes: 240
+    hold_pipeline: false
+
+  - id: ESC-T2-04
+    name: "Critical procedural fairness failure"
+    description: "Fairness score below 0.30 indicating critical procedural failure."
+    trigger:
+      skill: fairness_detection
+      condition: "overall_fairness_score < 0.30"
+    required_action: "Review case for procedural fairness compliance before proceeding. Consider whether the affected party requires a remedy."
+    notification_roles: [case_manager, team_leader]
+    sla_minutes: 240
+    hold_pipeline: false
+
+  - id: ESC-T2-05
+    name: "Partial disclosure with medium confidence"
+    description: "Partial disclosure detected with at least medium confidence."
+    trigger:
+      skill: disclosure_sensitive
+      condition: "disclosure_flags[*].type == 'partial_disclosure' AND confidence >= 0.55"
+    required_action: "Practitioner to review potential partial disclosure within 4 hours and determine next steps."
+    notification_roles: [case_manager]
+    sla_minutes: 240
+    hold_pipeline: false
+
+  - id: ESC-T2-06
+    name: "Policy compliance — mandatory reporting threshold met"
+    description: "Policy interpretation skill identifies mandatory reporting threshold met."
+    trigger:
+      skill: policy_interpretation
+      condition: "policy_triggers[*].urgency == 'immediate'"
+    required_action: "Review mandatory policy obligations immediately. Practitioner to assess reporting requirement."
+    notification_roles: [case_manager, team_leader]
+    sla_minutes: 240
+    hold_pipeline: false
+
+  - id: ESC-T2-07
+    name: "Safety concern flag in behaviour interpretation"
+    description: "Behaviour interpretation skill raises a safety concern with medium+ confidence."
+    trigger:
+      skill: behaviour_message_interpretation
+      condition: "safety_concern_flag == true AND confidence >= 0.65"
+    required_action: "Practitioner to review behavioural safety concern and assess follow-up."
+    notification_roles: [case_manager]
+    sla_minutes: 240
+    hold_pipeline: false
+
+# ─────────────────────────────────────────────
+# Tier 3 — Standard (SLA: 24 hours)
+# Elevated risk or compliance concern requiring case review timeline response.
+# Required actions: notify case_manager
+# ─────────────────────────────────────────────
+tier_3_rules:
+  - id: ESC-T3-01
+    name: "Moderate risk level"
+    description: "Risk Assessment output is moderate."
+    trigger:
+      skill: risk_assessment
+      condition: "risk_level == 'moderate'"
+    required_action: "Include in next scheduled case review. Consider whether monitoring should be increased."
+    notification_roles: [case_manager]
+    sla_minutes: 1440
+    hold_pipeline: false
+
+  - id: ESC-T3-02
+    name: "High bias detection"
+    description: "Bias detection identifies high severity bias in a case document or output."
+    trigger:
+      skill: bias_discrimination_detection
+      condition: "bias_detected == true AND bias_flags[*].severity == 'high'"
+    required_action: "Flag document for senior review. Do not submit externally until reviewed."
+    notification_roles: [case_manager, team_leader]
+    sla_minutes: 1440
+    hold_pipeline: false
+
+  - id: ESC-T3-03
+    name: "High significance timeline gap"
+    description: "Timeline extraction identifies a significant unexplained gap during supervision."
+    trigger:
+      skill: timeline_extraction
+      condition: "gaps[*].significance == 'high'"
+    required_action: "Practitioner to investigate unexplained period and document findings."
+    notification_roles: [case_manager]
+    sla_minutes: 1440
+    hold_pipeline: false
+
+  - id: ESC-T3-04
+    name: "Cultural consultation required"
+    description: "Cultural safety skill identifies First Nations case needing cultural consultation."
+    trigger:
+      skill: cultural_safety
+      condition: "requires_cultural_consultation == true AND cultural_safety_issues[*].severity == 'high'"
+    required_action: "Engage cultural liaison or community representative before proceeding."
+    notification_roles: [case_manager, team_leader]
+    sla_minutes: 1440
+    hold_pipeline: false
+
+  - id: ESC-T3-05
+    name: "Child safe standards non-compliance"
+    description: "Child Safe Standards compliance check identifies non-compliance."
+    trigger:
+      skill: child_safe_standards_compliance
+      condition: "overall_status == 'non_compliant'"
+    required_action: "Report non-compliance to governance team for action planning."
+    notification_roles: [case_manager, team_leader]
+    sla_minutes: 1440
+    hold_pipeline: false
+
+  - id: ESC-T3-06
+    name: "Child distress flag"
+    description: "Emotion labeling detects intense distress in child-authored text."
+    trigger:
+      skill: emotion_labeling
+      condition: "distress_flag == true AND context.speaker_role == 'child'"
+    required_action: "Practitioner to check on child's wellbeing at next contact."
+    notification_roles: [case_manager]
+    sla_minutes: 1440
+    hold_pipeline: false
