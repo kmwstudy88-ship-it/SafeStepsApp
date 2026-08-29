@@ -37,6 +37,7 @@ type ReportSummaryRow = {
 
 export default function AssessmentReportsScreen() {
   const { user } = useAuth();
+  const userId = user?.id ?? null;
   const [caseId, setCaseId] = useState<string | null>(null);
   const [trajectory, setTrajectory] = useState<LongitudinalTrajectorySummary | null>(null);
   const [reports, setReports] = useState<ReportSummaryRow[]>([]);
@@ -44,15 +45,15 @@ export default function AssessmentReportsScreen() {
   const [message, setMessage] = useState("");
 
   const loadCaseId = useCallback(async () => {
-    if (!user?.id) return null;
+    if (!userId) return null;
     const { data } = await supabase
       .from("reunification_cases")
       .select("id")
-      .eq("owner_id", user.id)
+      .eq("owner_id", userId)
       .limit(1)
       .maybeSingle();
     return data?.id ?? null;
-  }, [user?.id]);
+  }, [userId]);
 
   useEffect(() => {
     let active = true;
