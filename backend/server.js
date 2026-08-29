@@ -4,6 +4,7 @@ import "./env.js";
 import { ApiError } from "./lib/apiError.js";
 import { requestLogger } from "./lib/logger.js";
 import { errorHandler, notFoundHandler } from "./middleware/errorHandler.js";
+import { requireAuthenticatedUser } from "./middleware/requireAuthenticatedUser.js";
 import { requestContext } from "./middleware/requestContext.js";
 import { universalApiProtection } from "./middleware/universalApiProtection.js";
 
@@ -11,6 +12,7 @@ const app = express();
 const port = process.env.PORT ?? 3000;
 const { default: authRoutes } = await import("./routes/auth/authRoutes.js");
 const { default: documentRoutes } = await import("./routes/documents/documentRoutes.js");
+const { default: agentSkillsRoutes } = await import("./routes/agent-skills/agentSkillsRoutes.js");
 const { default: userCurriculumRoutes } = await import("./routes/users/curriculumRoutes.js");
 const { default: worksheetRoutes } = await import("./routes/worksheets/worksheetRoutes.js");
 
@@ -22,13 +24,14 @@ const allowedOrigins = (
   .split(",")
   .map((origin) => origin.trim())
   .filter(Boolean);
+const allowedOriginSet = new Set(allowedOrigins);
 
 app.disable("x-powered-by");
 app.use(requestContext);
 app.use(requestLogger);
 app.use((req, res, next) => {
   const origin = req.headers.origin;
-  if (origin && !allowedOrigins.includes(origin)) {
+  if (origin && !allowedOriginSet.has(origin)) {
     next(new ApiError(403, "ORIGIN_FORBIDDEN", "This origin is not allowed to access SafeSteps."));
     return;
   }
@@ -63,8 +66,9 @@ app.get("/health", (req, res) => {
 
 app.use("/auth", authRoutes);
 app.use("/documents", documentRoutes);
-app.use("/worksheets", worksheetRoutes);
-app.use("/users", userCurriculumRoutes);
+app.use("/agent-skills", requireAuthenticatedUser, agentSkillsRoutes);
+app.use("/worksheets", requireAuthenticatedUser, worksheetRoutes);
+app.use("/users", requireAuthenticatedUser, userCurriculumRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
