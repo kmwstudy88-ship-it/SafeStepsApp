@@ -35,6 +35,7 @@ const ALIGNMENT_COLORS: Record<string, string> = {
 
 export default function CollateralsScreen() {
   const { user } = useAuth();
+  const userId = user?.id ?? null;
   const [caseId, setCaseId] = useState<string | null>(null);
   const [rows, setRows] = useState<CollateralRow[]>([]);
   const [loading, setLoading] = useState(true);
@@ -42,15 +43,15 @@ export default function CollateralsScreen() {
   const [message, setMessage] = useState("");
 
   const loadCaseId = useCallback(async () => {
-    if (!user?.id) return null;
+    if (!userId) return null;
     const { data } = await supabase
       .from("reunification_cases")
       .select("id")
-      .eq("owner_id", user.id)
+      .eq("owner_id", userId)
       .limit(1)
       .maybeSingle();
     return data?.id ?? null;
-  }, [user?.id]);
+  }, [userId]);
 
   const loadRows = useCallback(async (activeCaseId: string) => {
     const { data, error } = await supabase

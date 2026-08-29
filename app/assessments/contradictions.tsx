@@ -35,6 +35,7 @@ const SEVERITY_COLORS: Record<string, string> = {
 
 export default function ContradictionsScreen() {
   const { user } = useAuth();
+  const userId = user?.id ?? null;
   const [caseId, setCaseId] = useState<string | null>(null);
   const [rows, setRows] = useState<ContradictionRow[]>([]);
   const [loading, setLoading] = useState(true);
@@ -42,15 +43,15 @@ export default function ContradictionsScreen() {
   const [message, setMessage] = useState("");
 
   const loadCaseId = useCallback(async () => {
-    if (!user?.id) return null;
+    if (!userId) return null;
     const { data } = await supabase
       .from("reunification_cases")
       .select("id")
-      .eq("owner_id", user.id)
+      .eq("owner_id", userId)
       .limit(1)
       .maybeSingle();
     return data?.id ?? null;
-  }, [user?.id]);
+  }, [userId]);
 
   const loadRows = useCallback(
     async (activeCaseId: string) => {
@@ -117,9 +118,10 @@ export default function ContradictionsScreen() {
       <View style={globalStyles.card}>
         <Text style={globalStyles.cardTitle}>Purpose</Text>
         <Text style={globalStyles.cardText}>
-          Record inconsistencies between the parent's self-report, observed behaviour, and
-          collateral information. Use neutral language. Significant inconsistencies are
-          flagged for supervisor review and included in the assessment report.
+          Record inconsistencies between the parent&apos;s self-report, observed
+          behaviour, and collateral information. Use neutral language.
+          Significant inconsistencies are flagged for supervisor review and
+          included in the assessment report.
         </Text>
       </View>
 
