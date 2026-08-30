@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safesteps.app/schemas/skills/contradiction-detection.output.schema.json",
+  "title": "Contradiction Detection — Skill Output",
+  "description": "Output schema for the SafeSteps Contradiction Detection skill.",
+  "type": "object",
+  "required": ["case_id", "contradictions", "summary_count", "run_meta"],
+  "properties": {
+    "case_id": { "type": "string" },
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["contradiction_id", "type", "claim_a", "claim_b", "description", "significance", "confidence"],
+        "properties": {
+          "contradiction_id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["temporal", "factual", "source_conflict", "omission", "quantitative"]
+          },
+          "claim_a": {
+            "type": "object",
+            "required": ["claim_id", "source_doc_id", "source_span"],
+            "properties": {
+              "claim_id": { "type": "string" },
+              "source_doc_id": { "type": "string" },
+              "source_span": {
+                "type": "object",
+                "required": ["start", "end"],
+                "properties": {
+                  "start": { "type": "integer", "minimum": 0 },
+                  "end": { "type": "integer", "minimum": 0 }
+                },
+                "additionalProperties": false
+              },
+              "text_excerpt": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
+          "claim_b": {
+            "type": "object",
+            "required": ["claim_id", "source_doc_id", "source_span"],
+            "properties": {
+              "claim_id": { "type": "string" },
+              "source_doc_id": { "type": "string" },
+              "source_span": {
+                "type": "object",
+                "required": ["start", "end"],
+                "properties": {
+                  "start": { "type": "integer", "minimum": 0 },
+                  "end": { "type": "integer", "minimum": 0 }
+                },
+                "additionalProperties": false
+              },
+              "text_excerpt": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
+          "description": { "type": "string", "minLength": 1 },
+          "significance": { "type": "string", "enum": ["low", "moderate", "high", "critical"] },
+          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "uncertainty_disclosure": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary_count": {
+      "type": "object",
+      "properties": {
+        "total": { "type": "integer" },
+        "by_type": { "type": "object", "additionalProperties": { "type": "integer" } },
+        "by_significance": { "type": "object", "additionalProperties": { "type": "integer" } }
+      },
+      "additionalProperties": false
+    },
+    "run_meta": {
+      "type": "object",
+      "required": ["skill_version", "model", "timestamp_utc"],
+      "properties": {
+        "skill_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "model": { "type": "string" },
+        "timestamp_utc": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

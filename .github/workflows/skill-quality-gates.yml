@@ -1,0 +1,287 @@
+name: Skill Quality Gates
+
+on:
+  pull_request:
+    paths:
+      - "docs/skills/**"
+      - "schemas/**"
+      - "policies/**"
+      - "ontology/**"
+      - "quality/**"
+      - ".github/workflows/skill-quality-gates.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "schemas/**"
+      - "policies/**"
+      - "ontology/**"
+
+concurrency:
+  group: skill-quality-gates-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  schema-validation:
+    name: JSON Schema Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install AJV CLI
+        run: npm install -g ajv-cli ajv-formats
+
+      - name: Validate common.schema.json is well-formed
+        run: |
+          node -e "
+            const fs = require('fs');
+            const schema = JSON.parse(fs.readFileSync('schemas/common.schema.json', 'utf8'));
+            if (schema['\$schema'] !== 'https://json-schema.org/draft/2020-12/schema') {
+              console.error('common.schema.json is not draft 2020-12');
+              process.exit(1);
+            }
+            console.log('common.schema.json: OK');
+          "
+
+      - name: Validate all skill schemas are well-formed JSON
+        run: |
+          for schema in schemas/skills/*.schema.json; do
+            node -e "
+              const fs = require('fs');
+              try {
+                const s = JSON.parse(fs.readFileSync('$schema', 'utf8'));
+                if (s['\$schema'] !== 'https://json-schema.org/draft/2020-12/schema') {
+                  console.error('$schema: missing or incorrect \$schema declaration');
+                  process.exit(1);
+                }
+                if (!s.required || s.required.indexOf('run_meta') === -1) {
+                  console.error('$schema: missing run_meta in required fields');
+                  process.exit(1);
+                }
+                console.log('$schema: OK');
+              } catch(e) {
+                console.error('$schema: invalid JSON — ' + e.message);
+                process.exit(1);
+              }
+            "
+          done
+
+      - name: Validate taxonomy YAML is well-formed
+        run: |
+          python3 -c "
+          import yaml, sys
+          with open('ontology/safesteps_taxonomy.yaml') as f:
+              data = yaml.safe_load(f)
+          required_keys = ['taxonomy_version', 'concern_categories', 'risk_levels', 'evidence_quality',
+                           'contradiction_types', 'escalation_tiers', 'confidence_bands', 'audience_types']
+          missing = [k for k in required_keys if k not in data]
+          if missing:
+              print(f'taxonomy.yaml missing keys: {missing}', file=sys.stderr)
+              sys.exit(1)
+          print('safesteps_taxonomy.yaml: OK')
+          "
+
+      - name: Validate safety_rules.yaml is well-formed
+        run: |
+          python3 -c "
+          import yaml, sys
+          with open('policies/safety_rules.yaml') as f:
+              data = yaml.safe_load(f)
+          if 'rules_version' not in data:
+              print('safety_rules.yaml: missing rules_version', file=sys.stderr)
+              sys.exit(1)
+          print('safety_rules.yaml: OK')
+          "
+
+      - name: Validate escalation_matrix.yaml is well-formed
+        run: |
+          python3 -c "
+          import yaml, sys
+          with open('policies/escalation_matrix.yaml') as f:
+              data = yaml.safe_load(f)
+          required_keys = ['matrix_version', 'tier_1_rules', 'tier_2_rules', 'tier_3_rules']
+          missing = [k for k in required_keys if k not in data]
+          if missing:
+              print(f'escalation_matrix.yaml missing keys: {missing}', file=sys.stderr)
+              sys.exit(1)
+          # Verify all tier_1 rules have hold_pipeline: true
+          for rule in data['tier_1_rules']:
+              if not rule.get('hold_pipeline', False):
+                  print(f\"Tier 1 rule {rule['id']} missing hold_pipeline: true\", file=sys.stderr)
+                  sys.exit(1)
+          print('escalation_matrix.yaml: OK')
+          "
+
+      - name: Validate quality_gates.yaml is well-formed
+        run: |
+          python3 -c "
+          import yaml, sys
+          with open('quality/quality_gates.yaml') as f:
+              data = yaml.safe_load(f)
+          if 'quality_gates_version' not in data:
+              print('quality_gates.yaml: missing quality_gates_version', file=sys.stderr)
+              sys.exit(1)
+          # Check critical blocking gates exist
+          blocking_gate_ids = []
+          for section in data.values():
+              if isinstance(section, list):
+                  for gate in section:
+                      if isinstance(gate, dict) and gate.get('block'):
+                          blocking_gate_ids.append(gate.get('id'))
+          required_gates = ['QG-RA-01', 'QG-DE-01', 'QG-BR-01', 'QG-TT-01']
+          missing = [g for g in required_gates if g not in blocking_gate_ids]
+          if missing:
+              print(f'quality_gates.yaml: critical blocking gates missing: {missing}', file=sys.stderr)
+              sys.exit(1)
+          print('quality_gates.yaml: OK')
+          "
+
+  skill-docs-completeness:
+    name: Skill Documentation Completeness
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check all core skill specs exist
+        run: |
+          REQUIRED_SKILLS=(
+            "fairness-detection"
+            "contradiction-detection"
+            "evidence-extraction"
+            "requirement-extraction"
+            "timeline-extraction"
+            "risk-assessment"
+            "concern-classification"
+            "unrealistic-expectation-detection"
+            "multi-document-comparison"
+            "case-packet-builder"
+            "case-update"
+            "escalation"
+            "follow-up-scheduling"
+            "trauma-informed-communication"
+            "emotion-labeling"
+            "guided-discovery"
+            "behaviour-message-interpretation"
+            "de-escalation-strategy"
+            "child-safe-conversation"
+            "disclosure-sensitive"
+            "developmental-appropriateness"
+            "safety-planning"
+            "boundary-privacy"
+            "child-safe-standards-compliance"
+            "bias-discrimination-detection"
+            "cultural-safety"
+            "policy-interpretation"
+          )
+          MISSING=()
+          for skill in "${REQUIRED_SKILLS[@]}"; do
+            if [ ! -f "docs/skills/${skill}.md" ]; then
+              MISSING+=("${skill}")
+            fi
+          done
+          if [ ${#MISSING[@]} -gt 0 ]; then
+            echo "Missing skill spec files: ${MISSING[*]}"
+            exit 1
+          fi
+          echo "All skill spec files present: OK"
+
+      - name: Check required sections in each skill spec
+        run: |
+          REQUIRED_SECTIONS=("Purpose" "Inputs" "Outputs" "Safety Constraints" "Escalation Conditions" "Audit Fields" "Failure Modes")
+          FAILED=0
+          for spec in docs/skills/*.md; do
+            # Skip README
+            if [[ "$spec" == *"README"* ]]; then continue; fi
+            for section in "${REQUIRED_SECTIONS[@]}"; do
+              if ! grep -q "## ${section}" "$spec"; then
+                echo "MISSING section '${section}' in $spec"
+                FAILED=1
+              fi
+            done
+          done
+          if [ $FAILED -ne 0 ]; then
+            exit 1
+          fi
+          echo "All skill specs contain required sections: OK"
+
+      - name: Check all output schemas exist for core skills
+        run: |
+          REQUIRED_SCHEMAS=(
+            "evidence-extraction.output.schema.json"
+            "timeline-extraction.output.schema.json"
+            "requirement-extraction.output.schema.json"
+            "contradiction-detection.output.schema.json"
+            "fairness-detection.output.schema.json"
+            "concern-classification.output.schema.json"
+            "risk-assessment.output.schema.json"
+            "multi-document-comparison.output.schema.json"
+          )
+          MISSING=()
+          for schema in "${REQUIRED_SCHEMAS[@]}"; do
+            if [ ! -f "schemas/skills/${schema}" ]; then
+              MISSING+=("${schema}")
+            fi
+          done
+          if [ ${#MISSING[@]} -gt 0 ]; then
+            echo "Missing schema files: ${MISSING[*]}"
+            exit 1
+          fi
+          echo "All required schemas present: OK"
+
+  policy-consistency:
+    name: Policy Consistency Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check safety policy exists and has required sections
+        run: |
+          REQUIRED_SECTIONS=(
+            "Non-Diagnostic"
+            "Uncertainty Disclosure"
+            "Child Disclosure Escalation"
+            "PII Redaction"
+            "Trauma-Informed Language"
+            "Prohibited Output Patterns"
+          )
+          FAILED=0
+          for section in "${REQUIRED_SECTIONS[@]}"; do
+            if ! grep -q "$section" policies/safety_policy.md; then
+              echo "Missing section containing '$section' in safety_policy.md"
+              FAILED=1
+            fi
+          done
+          if [ $FAILED -ne 0 ]; then exit 1; fi
+          echo "safety_policy.md: OK"
+
+      - name: Verify Tier 1 escalation SLA is 15 minutes or less
+        run: |
+          python3 -c "
+          import yaml, sys
+          with open('policies/escalation_matrix.yaml') as f:
+              data = yaml.safe_load(f)
+          for rule in data.get('tier_1_rules', []):
+              sla = rule.get('sla_minutes', 999)
+              if sla > 15:
+                  print(f\"Tier 1 rule {rule['id']} has SLA > 15 minutes ({sla})\", file=sys.stderr)
+                  sys.exit(1)
+          print('Tier 1 SLA compliance: OK')
+          "
+
+      - name: Verify all Tier 1 rules have hold_pipeline true
+        run: |
+          python3 -c "
+          import yaml, sys
+          with open('policies/escalation_matrix.yaml') as f:
+              data = yaml.safe_load(f)
+          for rule in data.get('tier_1_rules', []):
+              if not rule.get('hold_pipeline', False):
+                  print(f\"Tier 1 rule {rule['id']} does not have hold_pipeline: true\", file=sys.stderr)
+                  sys.exit(1)
+          print('Tier 1 hold_pipeline: OK')
+          "
