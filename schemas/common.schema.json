@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safesteps.app/schemas/common.schema.json",
+  "title": "SafeSteps Common Definitions",
+  "description": "Shared definitions referenced across all SafeSteps skill schemas.",
+  "$defs": {
+    "SourceSpan": {
+      "type": "object",
+      "description": "Character-level span within a source document.",
+      "required": ["start", "end"],
+      "properties": {
+        "start": { "type": "integer", "minimum": 0 },
+        "end": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "DocumentSourceSpan": {
+      "type": "object",
+      "description": "Character-level span attributed to a specific document.",
+      "required": ["doc_id", "start", "end"],
+      "properties": {
+        "doc_id": { "type": "string" },
+        "start": { "type": "integer", "minimum": 0 },
+        "end": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "RunMeta": {
+      "type": "object",
+      "description": "Provenance metadata attached to every skill output.",
+      "required": ["skill_version", "model", "timestamp_utc"],
+      "properties": {
+        "skill_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "description": "Semantic version of the skill that produced this output."
+        },
+        "model": {
+          "type": "string",
+          "description": "AI model identifier used for this run."
+        },
+        "timestamp_utc": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 UTC timestamp of skill execution."
+        },
+        "taxonomy_version": {
+          "type": "string",
+          "description": "Taxonomy version used (if applicable)."
+        }
+      },
+      "additionalProperties": false
+    },
+    "Confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Confidence score from 0.0 (no confidence) to 1.0 (maximum confidence)."
+    },
+    "RiskLevel": {
+      "type": "string",
+      "enum": ["low", "moderate", "high", "critical"],
+      "description": "Risk level from SafeSteps taxonomy."
+    },
+    "Significance": {
+      "type": "string",
+      "enum": ["low", "moderate", "high", "critical"],
+      "description": "Significance level of a finding."
+    },
+    "Severity": {
+      "type": "string",
+      "enum": ["low", "moderate", "high", "critical"],
+      "description": "Severity of an issue or violation."
+    },
+    "DocumentRef": {
+      "type": "object",
+      "description": "Reference to a source document.",
+      "required": ["doc_id", "doc_type"],
+      "properties": {
+        "doc_id": { "type": "string" },
+        "doc_type": {
+          "type": "string",
+          "enum": [
+            "affidavit", "court_order", "consent_order", "parenting_plan",
+            "case_note", "report", "intake_form", "medical_record",
+            "school_report", "correspondence", "transcript", "other"
+          ]
+        },
+        "title": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "author_role": { "type": "string" },
+        "quality_flags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["ocr_poor", "incomplete", "redacted", "translated", "handwritten"]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "PartyRef": {
+      "type": "object",
+      "description": "Reference to a named party in the case.",
+      "required": ["party_id", "role"],
+      "properties": {
+        "party_id": { "type": "string" },
+        "role": {
+          "type": "string",
+          "enum": [
+            "applicant", "respondent", "child", "mother", "father",
+            "carer", "social_worker", "lawyer", "judicial_officer",
+            "teacher", "health_professional", "family_member", "other"
+          ]
+        },
+        "age_years": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "ClaimRef": {
+      "type": "object",
+      "description": "Reference to an extracted claim.",
+      "required": ["claim_id"],
+      "properties": {
+        "claim_id": { "type": "string" },
+        "source_doc_id": { "type": "string" },
+        "source_span": { "$ref": "#/$defs/SourceSpan" }
+      },
+      "additionalProperties": false
+    },
+    "ConcernCategory": {
+      "type": "string",
+      "enum": [
+        "safety", "wellbeing", "parenting_capacity", "violence_indicator",
+        "neglect", "substance_use", "mental_health", "compliance",
+        "housing", "education"
+      ],
+      "description": "Canonical concern category from SafeSteps taxonomy."
+    }
+  }
+}

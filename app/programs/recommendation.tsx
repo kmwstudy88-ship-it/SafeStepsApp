@@ -17,7 +17,6 @@ import {
   type ProgramRecommendationJourney,
 } from "../../lib/engines/programRecommendationEngine";
 import {
-  customPathwayAwaitsWorkerApproval,
   programCanAcceptNewEnrollments,
 } from "../../lib/engines/programRecommendationPolicy";
 

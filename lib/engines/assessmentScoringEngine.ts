@@ -460,3 +460,205 @@ export function computeReadinessIndexFromSignals({
     saferJudgement,
   });
 }
+
+// ---------------------------------------------------------------------------
+// Score regression detection
+// ---------------------------------------------------------------------------
+
+export type ScoreRegressionFlag = {
+  domainId: string;
+  previousScore: number;
+  currentScore: number;
+  drop: number;
+  severity: "minor" | "significant" | "critical";
+};
+
+/**
+ * Compare a previous set of domain scores against the current scores and
+ * return a list of domains where the score has dropped beyond a configurable
+ * threshold.  Drops are classified:
+ *   - minor:       5–14 points
+ *   - significant: 15–29 points
+ *   - critical:    30+ points
+ */
+export function flagScoreRegression(
+  previousScores: DomainScore[],
+  currentScores: DomainScore[],
+  minorThreshold = 5,
+  significantThreshold = 15,
+  criticalThreshold = 30,
+): ScoreRegressionFlag[] {
+  const prevByDomain = new Map(previousScores.map((d) => [d.domainId, d]));
+
+  const flags: ScoreRegressionFlag[] = [];
+
+  for (const current of currentScores) {
+    const prev = prevByDomain.get(current.domainId);
+    if (!prev) continue;
+
+    const prevNorm = prev.normalizedScore * 100;
+    const currNorm = current.normalizedScore * 100;
+    const drop = roundScore(prevNorm - currNorm);
+
+    if (drop < minorThreshold) continue;
+
+    let severity: ScoreRegressionFlag["severity"];
+    if (drop >= criticalThreshold) {
+      severity = "critical";
+    } else if (drop >= significantThreshold) {
+      severity = "significant";
+    } else {
+      severity = "minor";
+    }
+
+    flags.push({
+      domainId: current.domainId,
+      previousScore: roundScore(prevNorm),
+      currentScore: roundScore(currNorm),
+      drop,
+      severity,
+    });
+  }
+
+  return flags;
+}
+
+// ---------------------------------------------------------------------------
+// Domain trajectory summary
+// ---------------------------------------------------------------------------
+
+export type DomainTrajectoryPoint = {
+  assessmentId: string;
+  assessedAt: string;
+  normalizedScore: number;
+};
+
+export type DomainTrajectorySummary = {
+  domainId: string;
+  points: DomainTrajectoryPoint[];
+  firstScore: number | null;
+  latestScore: number | null;
+  peakScore: number | null;
+  direction: "improving" | "declining" | "stable" | "insufficient_data";
+  regressionFlags: ScoreRegressionFlag[];
+};
+
+export type LongitudinalTrajectorySummary = {
+  domains: DomainTrajectorySummary[];
+  overallDirection: "improving" | "declining" | "stable" | "insufficient_data";
+  assessmentCount: number;
+};
+
+/**
+ * Summarize the score trajectory for each domain across a series of
+ * historical assessment records.
+ *
+ * Each record is an object with `assessmentId`, `assessedAt`, and
+ * `domainScores` (an array of DomainScore).  Records must be provided in
+ * chronological order (oldest first).
+ */
+export function summarizeDomainTrajectory(
+  records: Array<{
+    assessmentId: string;
+    assessedAt: string;
+    domainScores: DomainScore[];
+  }>,
+): LongitudinalTrajectorySummary {
+  if (!records.length) {
+    return { domains: [], overallDirection: "insufficient_data", assessmentCount: 0 };
+  }
+
+  // Collect all domain IDs seen across all records
+  const domainIds = new Set<string>();
+  for (const record of records) {
+    for (const ds of record.domainScores) {
+      domainIds.add(ds.domainId);
+    }
+  }
+
+  const domains: DomainTrajectorySummary[] = [];
+
+  for (const domainId of domainIds) {
+    const points: DomainTrajectoryPoint[] = [];
+
+    for (const record of records) {
+      const ds = record.domainScores.find((d) => d.domainId === domainId);
+      if (!ds) continue;
+      points.push({
+        assessmentId: record.assessmentId,
+        assessedAt: record.assessedAt,
+        normalizedScore: roundScore(ds.normalizedScore * 100),
+      });
+    }
+
+    if (!points.length) {
+      domains.push({
+        domainId,
+        points: [],
+        firstScore: null,
+        latestScore: null,
+        peakScore: null,
+        direction: "insufficient_data",
+        regressionFlags: [],
+      });
+      continue;
+    }
+
+    const firstScore = points[0].normalizedScore;
+    const latestScore = points[points.length - 1].normalizedScore;
+    const peakScore = Math.max(...points.map((p) => p.normalizedScore));
+
+    let direction: DomainTrajectorySummary["direction"];
+    if (points.length < 2) {
+      direction = "insufficient_data";
+    } else {
+      const change = latestScore - firstScore;
+      if (change > 5) direction = "improving";
+      else if (change < -5) direction = "declining";
+      else direction = "stable";
+    }
+
+    // Build regression flags from consecutive pairs
+    const regressionFlags: ScoreRegressionFlag[] = [];
+    for (let i = 1; i < points.length; i++) {
+      const prevDs: DomainScore = {
+        domainId,
+        rawScore: 0,
+        maxPossible: 100,
+        normalizedScore: points[i - 1].normalizedScore / 100,
+      };
+      const currDs: DomainScore = {
+        domainId,
+        rawScore: 0,
+        maxPossible: 100,
+        normalizedScore: points[i].normalizedScore / 100,
+      };
+      const flags = flagScoreRegression([prevDs], [currDs]);
+      regressionFlags.push(...flags);
+    }
+
+    domains.push({ domainId, points, firstScore, latestScore, peakScore, direction, regressionFlags });
+  }
+
+  // Compute overall direction from domain directions
+  const dirCounts = { improving: 0, declining: 0, stable: 0 };
+  for (const d of domains) {
+    if (d.direction === "improving") dirCounts.improving++;
+    else if (d.direction === "declining") dirCounts.declining++;
+    else if (d.direction === "stable") dirCounts.stable++;
+  }
+
+  let overallDirection: LongitudinalTrajectorySummary["overallDirection"];
+  const tracked = domains.filter((d) => d.direction !== "insufficient_data").length;
+  if (!tracked) {
+    overallDirection = "insufficient_data";
+  } else if (dirCounts.improving > dirCounts.declining) {
+    overallDirection = "improving";
+  } else if (dirCounts.declining > dirCounts.improving) {
+    overallDirection = "declining";
+  } else {
+    overallDirection = "stable";
+  }
+
+  return { domains, overallDirection, assessmentCount: records.length };
+}

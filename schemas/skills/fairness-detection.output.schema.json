@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safesteps.app/schemas/skills/fairness-detection.output.schema.json",
+  "title": "Fairness Detection — Skill Output",
+  "description": "Output schema for the SafeSteps Fairness Detection skill.",
+  "type": "object",
+  "required": ["case_id", "fairness_issues", "overall_fairness_score", "run_meta"],
+  "properties": {
+    "case_id": { "type": "string" },
+    "fairness_issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["issue_id", "category", "description", "affected_party", "source_span", "confidence"],
+        "properties": {
+          "issue_id": { "type": "string" },
+          "category": {
+            "type": "string",
+            "enum": ["procedural", "informational", "representational", "institutional"]
+          },
+          "description": { "type": "string", "minLength": 1 },
+          "affected_party": { "type": "string" },
+          "source_span": {
+            "type": "object",
+            "required": ["doc_id", "start", "end"],
+            "properties": {
+              "doc_id": { "type": "string" },
+              "start": { "type": "integer", "minimum": 0 },
+              "end": { "type": "integer", "minimum": 0 }
+            },
+            "additionalProperties": false
+          },
+          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "uncertainty_disclosure": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "overall_fairness_score": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Aggregate fairness score: 0 = very unfair, 1 = fair."
+    },
+    "run_meta": {
+      "type": "object",
+      "required": ["skill_version", "model", "timestamp_utc"],
+      "properties": {
+        "skill_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "model": { "type": "string" },
+        "timestamp_utc": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

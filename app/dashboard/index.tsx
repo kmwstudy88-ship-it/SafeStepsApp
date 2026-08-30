@@ -1,4 +1,4 @@
-import { Link } from "expo-router";
+import { Link, type Href, usePathname } from "expo-router";
 import { useEffect, useState } from "react";
 import {
   ActivityIndicator,
@@ -17,6 +17,12 @@ import {
   DashboardStats,
   fetchDashboardStats,
 } from "../../lib/engines/dashboardEngine";
+import {
+  launchRouteIsActive,
+  PARENT_DASHBOARD_QUICK_ACTIONS,
+  PARENT_EVIDENCE_ENTRY_POINTS,
+  PARENT_PRIMARY_NAV_ITEMS,
+} from "../../lib/navigation/launchRoutes";
 
 const colors = {
   teal: "#008A84",
@@ -32,47 +38,13 @@ const colors = {
   green: "#2E7D50",
 };
 
-const sidebarItems = [
-  ["Dashboard", "/dashboard"],
-  ["My Program", "/programs/my-programs"],
-  ["Curriculum", "/library"],
-  ["Challenges", "/challenges"],
-  ["Tasks", "/tasks"],
-  ["Evidence", "/evidence"],
-  ["Assessments", "/assessment-system"],
-  ["Reports", "/reports"],
-  ["Calendar", "/timeline"],
-  ["Messages", "/notifications"],
-  ["Resources", "/resources"],
-  ["Support", "/facilitator"],
-  ["Profile", "/settings"],
-  ["Settings", "/settings"],
-] as const;
-
-const quickActions = [
-  ["Daily Challenges", "/parent/daily-challenges", "★"],
-  ["Curriculum", "/library", "▤"],
-  ["Challenges", "/challenges", "◎"],
-  ["Upload Evidence", "/evidence", "↑"],
-  ["Journal Entry", "/growth", "✎"],
-  ["Assessments", "/assessment-system", "⌁"],
-  ["View Reports", "/reports", "▣"],
-  ["Messages", "/notifications", "☏"],
-  ["Resources", "/resources", "?"],
-] as const;
-
-const evidenceUploadLinks = [
-  ["Daily task uploads", "/tasks"],
-  ["Evidence uploads", "/evidence"],
-  ["Reflection uploads", "/growth"],
-  ["Photo and document uploads", "/evidence-upload"],
-] as const;
-
 function pluralize(count: number, singular: string, plural = `${singular}s`) {
   return `${count} ${count === 1 ? singular : plural}`;
 }
 
 function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <View style={styles.sidebar}>
       <View style={styles.logoBlock}>
@@ -81,18 +53,18 @@ function Sidebar() {
       </View>
 
       <View style={styles.sideNav}>
-        {sidebarItems.map(([label, href], index) => {
-          const isActive = index === 0;
+        {PARENT_PRIMARY_NAV_ITEMS.map((item) => {
+          const isActive = launchRouteIsActive(pathname, item.href);
           const linkStyle = StyleSheet.flatten([
             styles.sideNavItem,
             isActive && styles.sideNavItemActive,
           ]);
 
           return (
-            <Link key={label} href={href as any} asChild>
+            <Link key={item.label} href={item.href} asChild>
               <Pressable style={linkStyle}>
                 <Text style={isActive ? styles.sideNavTextActive : styles.sideNavText}>
-                  {label}
+                  {item.label}
                 </Text>
               </Pressable>
             </Link>
@@ -104,11 +76,11 @@ function Sidebar() {
         <Text style={styles.supportIcon}>♡</Text>
         <Text style={styles.supportTitle}>Need Support?</Text>
         <Text style={styles.supportText}>
-          We are here to help. Reach out to your support team.
+          Review support pathways, service referrals, and preparation steps for your next conversation.
         </Text>
-        <Link href="/facilitator" asChild>
+        <Link href="/referrals" asChild>
           <Pressable style={styles.outlineButton}>
-            <Text style={styles.outlineButtonText}>Contact Support</Text>
+            <Text style={styles.outlineButtonText}>Open Referrals</Text>
           </Pressable>
         </Link>
       </View>
@@ -165,7 +137,7 @@ function PriorityRow({
   );
 }
 
-function QuickAction({ label, href, icon }: { label: string; href: string; icon: string }) {
+function QuickAction({ label, href, icon }: { label: string; href: Href; icon: string }) {
   return (
     <Link href={href as any} asChild>
       <Pressable style={styles.quickAction}>
@@ -367,10 +339,10 @@ export default function DashboardScreen() {
                     Keep your progress visible. Consistency builds trust.
                   </Text>
                   <View style={styles.evidenceUploadList}>
-                    {evidenceUploadLinks.map(([label, href]) => (
-                      <Link key={label} href={href} asChild>
+                    {PARENT_EVIDENCE_ENTRY_POINTS.map((item) => (
+                      <Link key={item.label} href={item.href} asChild>
                         <Pressable style={styles.evidenceUploadLink}>
-                          <Text style={styles.evidenceUploadItem}>{label}</Text>
+                          <Text style={styles.evidenceUploadItem}>{item.label}</Text>
                           <Text style={styles.evidenceUploadArrow}>›</Text>
                         </Pressable>
                       </Link>
@@ -393,8 +365,8 @@ export default function DashboardScreen() {
 
           <Panel title="Quick Actions">
             <View style={styles.quickGrid}>
-              {quickActions.map(([label, href, icon]) => (
-                <QuickAction key={label} label={label} href={href} icon={icon} />
+              {PARENT_DASHBOARD_QUICK_ACTIONS.map((item) => (
+                <QuickAction key={item.label} label={item.label} href={item.href} icon={item.icon} />
               ))}
             </View>
           </Panel>
@@ -924,4 +896,3 @@ const styles = StyleSheet.create({
     color: "#8E2B21",
   },
 });
-

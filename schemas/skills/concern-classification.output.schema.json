@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safesteps.app/schemas/skills/concern-classification.output.schema.json",
+  "title": "Concern Classification — Skill Output",
+  "description": "Output schema for the SafeSteps Concern Classification skill.",
+  "type": "object",
+  "required": ["case_id", "classified_concerns", "concern_summary", "run_meta"],
+  "properties": {
+    "case_id": { "type": "string" },
+    "classified_concerns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "categories", "primary_category", "confidence", "rationale"],
+        "properties": {
+          "claim_id": { "type": "string" },
+          "categories": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "enum": [
+                "safety", "wellbeing", "parenting_capacity", "violence_indicator",
+                "neglect", "substance_use", "mental_health", "compliance",
+                "housing", "education"
+              ]
+            }
+          },
+          "primary_category": {
+            "type": "string",
+            "enum": [
+              "safety", "wellbeing", "parenting_capacity", "violence_indicator",
+              "neglect", "substance_use", "mental_health", "compliance",
+              "housing", "education"
+            ]
+          },
+          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+          "rationale": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "concern_summary": {
+      "type": "object",
+      "description": "Count of classified concerns by category.",
+      "additionalProperties": { "type": "integer" }
+    },
+    "run_meta": {
+      "type": "object",
+      "required": ["skill_version", "model", "timestamp_utc"],
+      "properties": {
+        "skill_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "model": { "type": "string" },
+        "timestamp_utc": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

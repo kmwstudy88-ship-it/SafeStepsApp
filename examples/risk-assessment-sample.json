@@ -1,0 +1,56 @@
+{
+  "case_id": "CASE-2026-00142",
+  "risk_level": "high",
+  "risk_score": 0.72,
+  "domain_scores": {
+    "physical_safety": 0.85,
+    "emotional_wellbeing": 0.68,
+    "parenting_capacity": 0.55,
+    "family_violence": 0.40,
+    "substance_use": 0.10,
+    "support_network": 0.60
+  },
+  "contributing_factors": [
+    {
+      "factor_id": "cf-001",
+      "description": "Medical evidence of bruising inconsistent with the stated cause, raising concern about unexplained physical injury.",
+      "domain": "physical_safety",
+      "claim_ids": ["c-001", "c-004"],
+      "weight": 0.90
+    },
+    {
+      "factor_id": "cf-002",
+      "description": "Child presented as withdrawn and reluctant to return home after contact period with father.",
+      "domain": "emotional_wellbeing",
+      "claim_ids": ["c-002"],
+      "weight": 0.65
+    },
+    {
+      "factor_id": "cf-003",
+      "description": "Inconsistency between father's account (fall at park) and medical findings (bruising location and pattern).",
+      "domain": "physical_safety",
+      "claim_ids": ["c-003", "c-004"],
+      "weight": 0.80
+    }
+  ],
+  "protective_factors": [
+    {
+      "factor_id": "pf-001",
+      "description": "Child has engaged support worker at school; school is monitoring and reporting observations.",
+      "claim_ids": ["c-002"]
+    },
+    {
+      "factor_id": "pf-002",
+      "description": "Mother is actively involved, attended medical appointment promptly, and has sought legal advice.",
+      "claim_ids": ["c-001"]
+    }
+  ],
+  "confidence": 0.83,
+  "uncertainty_disclosure": false,
+  "disclaimer": "This risk assessment is AI-assisted and supports professional review. It does not constitute a statutory child protection determination or clinical assessment. A qualified professional must review this output before any action is taken.",
+  "run_meta": {
+    "skill_version": "1.0.0",
+    "model": "safesteps-risk-v1",
+    "timestamp_utc": "2026-08-28T10:02:00Z"
+  }
+}

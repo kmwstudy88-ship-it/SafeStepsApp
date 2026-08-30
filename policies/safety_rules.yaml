@@ -1,0 +1,207 @@
+# SafeSteps Safety Rules
+# Version: 1.0.0
+# Machine-readable enforcement rules for all SafeSteps AI skill outputs.
+# These rules are evaluated by the skill execution runtime before any output is returned.
+
+rules_version: "1.0.0"
+last_updated: "2026-08-28"
+
+# ─────────────────────────────────────────────
+# Non-Diagnostic / Non-Legal-Advice Rules
+# ─────────────────────────────────────────────
+non_diagnostic_rules:
+  - id: R-ND-01
+    name: "No diagnostic output"
+    description: "Output must not contain psychiatric, medical, or psychological diagnoses."
+    prohibited_patterns:
+      - regex: "\\b(has|is diagnosed with|suffers from|presents with)\\s+(ADHD|autism|BPD|borderline|narcissistic|bipolar|schizophrenia|depression|anxiety disorder)"
+        case_insensitive: true
+    action: block_and_flag
+    severity: critical
+
+  - id: R-ND-02
+    name: "No legal advice"
+    description: "Output must not constitute legal advice or state a legal outcome."
+    prohibited_patterns:
+      - regex: "\\b(you are|you are not|the court (will|should|must|is required to)|this (constitutes|does not constitute) (a breach|a violation|contempt))"
+        case_insensitive: true
+    action: block_and_flag
+    severity: critical
+
+  - id: R-ND-03
+    name: "No child protection determination"
+    description: "Output must not make a statutory child protection determination."
+    prohibited_patterns:
+      - regex: "\\b(the child (should|must|needs to) be (removed|taken|placed in care))"
+        case_insensitive: true
+      - regex: "\\b(recommend (removing|taking|removing) the child)"
+        case_insensitive: true
+    action: block_and_flag
+    severity: critical
+
+# ─────────────────────────────────────────────
+# Disclaimer Requirements
+# ─────────────────────────────────────────────
+disclaimer_rules:
+  - id: R-D-01
+    name: "Professional review disclaimer required"
+    description: "All skill outputs must include an appropriate professional review disclaimer."
+    applies_to: all_outputs
+    required_disclaimer_by_audience:
+      lawyer: "This AI-assisted summary supports professional review and does not constitute legal advice."
+      social_worker: "This AI-assisted output must be reviewed by a qualified professional before any action is taken."
+      parent: "This summary has been prepared to help you understand your case. Please speak with your lawyer or support worker before taking any action."
+      judicial_officer: "AI-assisted case summary. All findings require independent professional verification."
+      child: "This has been prepared to help the adults who are looking after you understand your situation."
+    action: add_disclaimer_if_absent
+    severity: high
+
+# ─────────────────────────────────────────────
+# Uncertainty Disclosure Rules
+# ─────────────────────────────────────────────
+uncertainty_rules:
+  - id: R-U-01
+    name: "Low confidence uncertainty disclosure"
+    description: "Any skill output with confidence < 0.50 must include an uncertainty disclosure."
+    condition: "confidence < 0.50"
+    required_field: "uncertainty_disclosure"
+    required_value: true
+    action: enforce_field
+    severity: high
+
+  - id: R-U-02
+    name: "Critical uncertainty disclosure text"
+    description: "When confidence < 0.20, output must include critical uncertainty text."
+    condition: "confidence < 0.20"
+    required_text: "Insufficient evidence for reliable assessment. Do not act on this output without professional review."
+    action: add_text_if_absent
+    severity: high
+
+# ─────────────────────────────────────────────
+# Child Disclosure Escalation Rules
+# ─────────────────────────────────────────────
+disclosure_rules:
+  - id: R-CD-01
+    name: "Halt on disclosure detection"
+    description: "When disclosure_detected is true, halt all downstream skill processing immediately."
+    condition: "disclosure_sensitive.disclosure_detected == true"
+    action: halt_pipeline
+    severity: critical
+
+  - id: R-CD-02
+    name: "Tier 1 escalation on disclosure"
+    description: "Generate Tier 1 escalation on any confirmed disclosure."
+    condition: "disclosure_sensitive.disclosure_detected == true AND confidence >= 0.55"
+    action: escalate_tier_1
+    notification_sla_minutes: 15
+    severity: critical
+
+  - id: R-CD-03
+    name: "Mandatory report notification"
+    description: "When mandatory_report_indicated is true, notify responsible practitioner."
+    condition: "disclosure_sensitive.mandatory_report_indicated == true"
+    action: notify_practitioner
+    notification_message: "A mandatory reporting obligation may have been triggered. Please review the disclosure and determine whether a report is required under your jurisdiction's legislation."
+    severity: critical
+
+  - id: R-CD-04
+    name: "Sexual abuse disclosure — no confidence threshold"
+    description: "Any detection of sexual abuse disclosure triggers escalation regardless of confidence."
+    condition: "disclosure_sensitive.disclosure_flags[*].harm_category == 'sexual_abuse'"
+    action: escalate_tier_1
+    notification_sla_minutes: 15
+    severity: critical
+
+# ─────────────────────────────────────────────
+# PII Redaction Rules
+# ─────────────────────────────────────────────
+pii_rules:
+  - id: R-PII-01
+    name: "Redact child full names in non-professional outputs"
+    description: "Child full names must be replaced with role labels in parent and child-facing outputs."
+    applies_to_audiences: ["parent", "child"]
+    pii_types: ["child_full_name"]
+    action: redact_with_role_label
+    severity: high
+
+  - id: R-PII-02
+    name: "Redact residential addresses in family violence cases"
+    description: "Residential addresses must be fully redacted when family_violence concern is active."
+    condition: "concerns contains 'violence_indicator'"
+    pii_types: ["residential_address"]
+    action: redact_entirely
+    severity: critical
+
+  - id: R-PII-03
+    name: "Remove contact details from all AI outputs"
+    description: "Phone numbers and email addresses must be removed from all AI outputs."
+    applies_to: all_outputs
+    pii_types: ["phone_number", "email_address"]
+    action: redact_entirely
+    severity: high
+
+  - id: R-PII-04
+    name: "Remove financial and government identifiers"
+    description: "Bank account numbers, Medicare numbers, Tax File Numbers must be removed."
+    applies_to: all_outputs
+    pii_types: ["bank_account", "medicare_number", "tax_file_number", "birth_certificate_number"]
+    action: redact_entirely
+    severity: critical
+
+# ─────────────────────────────────────────────
+# Trauma-Informed Language Rules
+# ─────────────────────────────────────────────
+trauma_language_rules:
+  - id: R-TL-01
+    name: "Trauma-informed tone gate for client-facing outputs"
+    description: "All outputs to clients/families must pass trauma-informed communication check."
+    applies_to_audiences: ["parent", "child"]
+    required_skill: "trauma_informed_communication"
+    required_tone_score: 0.70
+    action: block_if_score_below
+    severity: high
+
+  - id: R-TL-02
+    name: "Prohibit victim-blaming language"
+    description: "Language that implies a victim is responsible for violence or abuse is prohibited."
+    prohibited_patterns:
+      - regex: "\\b(provoked|caused|invited|led to|brought (it|this|the abuse) on)"
+        case_insensitive: true
+    action: block_and_flag
+    severity: critical
+
+  - id: R-TL-03
+    name: "Prohibit minimising language"
+    description: "Language that minimises or disbelieves a disclosure is prohibited."
+    prohibited_patterns:
+      - regex: "\\b(merely alleged|so-called|claims to|reportedly|supposedly) (abused|assaulted|hit|threatened)"
+        case_insensitive: true
+    action: flag_for_review
+    severity: high
+
+  - id: R-TL-04
+    name: "Prohibit diagnostic labels as character descriptors"
+    description: "Diagnostic terms must not be used as adjectives describing character."
+    prohibited_patterns:
+      - regex: "\\b(the (unstable|borderline|narcissistic|manipulative|toxic) (mother|father|parent|carer))"
+        case_insensitive: true
+    action: block_and_flag
+    severity: high
+
+# ─────────────────────────────────────────────
+# Escalation Gate Rules
+# ─────────────────────────────────────────────
+escalation_gate_rules:
+  - id: R-EG-01
+    name: "High and critical risk gate"
+    description: "High and critical risk outputs must be held for human review before delivery."
+    condition: "risk_assessment.risk_level in ['high', 'critical']"
+    action: hold_for_human_review
+    severity: critical
+
+  - id: R-EG-02
+    name: "Critical fairness failure gate"
+    description: "Critical fairness failures trigger review before case action."
+    condition: "fairness_detection.overall_fairness_score < 0.30"
+    action: escalate_tier_2
+    severity: high
