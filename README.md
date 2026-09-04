@@ -120,7 +120,7 @@ Record the date only after the entire journey passes.
 
 ## Production-readiness evidence
 
-The production gate requires the staging values above plus ISO UTC timestamps for:
+The production gate requires the staging values above plus ISO 8601 UTC timestamps in the form `YYYY-MM-DDTHH:MM:SSZ` (e.g. `2026-08-14T00:00:00Z`) for:
 
 - `SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT`
 - `SAFESTEPS_PERFORMANCE_ADVISOR_REVIEWED_AT`
