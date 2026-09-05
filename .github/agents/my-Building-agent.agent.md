@@ -1,7 +1,7 @@
 ---
 name: "SafeSteps Builder"
 description: "Agent that helps build, maintain, and evolve the SafeSteps platform. Handles architecture alignment, repo fixes, dependency repair, and automation of development tasks."
-model: "Claude Sonnet 4"
+model: "Claude Sonnet 5"
 tools:
   - codebase
   - terminal
