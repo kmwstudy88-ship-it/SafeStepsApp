@@ -5,6 +5,15 @@ pnpm-store/
 pnpm-store-codex-20260830/
 .npm-audit-result.json
 
+# Force-include SafeSteps core folders
+!backend/
+!app/
+!supabase/
+!schema/
+!scripts/
+!src/
+
+
 # Build artifacts
 dist/
 build/
