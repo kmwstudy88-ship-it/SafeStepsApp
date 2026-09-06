@@ -1,0 +1,21 @@
+{
+  "id": "module_specialist_interventions",
+  "title": "Specialist Interventions",
+  "description": "This module equips specialist DFV practitioners with advanced therapeutic and intersectional intervention skills. It focuses on specialist trauma support, working with cultural and contextual complexity, and applying intersectional practice in high‑risk DFV cases.",
+  "type": "module",
+  "level": "advanced",
+  "tags": [
+    "dfv",
+    "specialist practice",
+    "trauma",
+    "intersectionality",
+    "cultural complexity"
+  ],
+  "outcomes": [
+    "Provide specialist therapeutic support to clients experiencing complex trauma",
+    "Work effectively with cultural, linguistic, and contextual complexity in DFV cases",
+    "Apply intersectional practice to understand layered barriers and risks"
+  ],
+  "lessons": [],
+  "content": []
+}

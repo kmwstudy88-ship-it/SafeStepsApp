@@ -1,0 +1,21 @@
+{
+  "id": "module_long_term_recovery_stability_and_economic_empowerment",
+  "title": "Long-Term Recovery, Stability, and Economic Empowerment",
+  "description": "This module supports practitioners to help clients rebuild long-term stability after DFV. It focuses on economic empowerment, employment pathways, long-term housing, and sustainable recovery.",
+  "type": "module",
+  "level": "housing_economic_security",
+  "tags": [
+    "dfv",
+    "economic empowerment",
+    "long-term recovery",
+    "housing stability",
+    "employment"
+  ],
+  "outcomes": [
+    "Support long-term housing stability for victim-survivors",
+    "Promote economic empowerment and employment pathways",
+    "Strengthen long-term recovery and independence"
+  ],
+  "lessons": [],
+  "content": []
+}

@@ -1,0 +1,21 @@
+{
+  "id": "module_understanding_primary_prevention",
+  "title": "Understanding Primary Prevention",
+  "description": "This module introduces the foundations of primary prevention in domestic and family violence. It explains how primary prevention addresses the underlying drivers of violence, shifts social norms, and builds long-term cultural change.",
+  "type": "module",
+  "level": "prevention",
+  "tags": [
+    "dfv",
+    "primary prevention",
+    "social norms",
+    "drivers of violence",
+    "prevention strategies"
+  ],
+  "outcomes": [
+    "Understand what primary prevention is and how it differs from early intervention and response",
+    "Recognise the underlying drivers of DFV",
+    "Identify key prevention strategies that promote long-term cultural change"
+  ],
+  "lessons": [],
+  "content": []
+}

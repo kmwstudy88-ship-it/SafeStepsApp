@@ -1,0 +1,21 @@
+{
+  "id": "module_multi_agency_collaboration_and_information_sharing",
+  "title": "Multi-Agency Collaboration and Information Sharing",
+  "description": "This module supports practitioners and system partners to collaborate effectively across agencies. It focuses on safe information sharing, coordinated responses, and building shared understanding to improve safety outcomes.",
+  "type": "module",
+  "level": "systems",
+  "tags": [
+    "dfv",
+    "multi-agency collaboration",
+    "information sharing",
+    "coordination",
+    "systems"
+  ],
+  "outcomes": [
+    "Understand the purpose and value of multi-agency collaboration",
+    "Apply safe and lawful information-sharing principles",
+    "Participate effectively in coordinated DFV responses"
+  ],
+  "lessons": [],
+  "content": []
+}

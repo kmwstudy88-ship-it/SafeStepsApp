@@ -1,0 +1,21 @@
+{
+  "id": "module_foundations_of_dfv_capability",
+  "title": "Foundations of DFV Capability",
+  "description": "This module introduces the core knowledge, skills, and values required for safe and effective domestic and family violence practice. It establishes the foundational capabilities that underpin all roles across the DFV workforce.",
+  "type": "module",
+  "level": "workforce_capability",
+  "tags": [
+    "dfv",
+    "workforce capability",
+    "core skills",
+    "professional practice",
+    "foundations"
+  ],
+  "outcomes": [
+    "Understand the core capabilities required for DFV practice",
+    "Recognise the values and principles that underpin safe and ethical work",
+    "Identify the knowledge and skills needed across different workforce roles"
+  ],
+  "lessons": [],
+  "content": []
+}

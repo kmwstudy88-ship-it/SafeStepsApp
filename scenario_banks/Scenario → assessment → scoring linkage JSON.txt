@@ -1,0 +1,81 @@
+{
+  "linkage_id": "safesteps_scenario_assessment_scoring_linkage_v1",
+  "version": "1.0.0",
+  "modules": [
+    {
+      "module_id": "behaviour_change_emotional_regulation_v1",
+      "assessments": [
+        {
+          "assessment_id": "regulation_plan",
+          "type": "scenario_analysis",
+          "linked_scenarios": [
+            {
+              "scenario_id": "ER_001",
+              "difficulty_level": "L1",
+              "criteria_weights": {
+                "trigger_identification": 0.40,
+                "strategy_application": 0.35,
+                "repair_planning": 0.25
+              },
+              "scoring_rules": {
+                "full_match": 1.0,
+                "partial_match": 0.6,
+                "incorrect": 0.0
+              }
+            },
+            {
+              "scenario_id": "ER_003",
+              "difficulty_level": "L3",
+              "criteria_weights": {
+                "trigger_identification": 0.35,
+                "strategy_application": 0.40,
+                "repair_planning": 0.25
+              },
+              "scoring_rules": {
+                "full_match": 1.0,
+                "partial_match": 0.5,
+                "incorrect": 0.0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "module_id": "parenting_gaslighting_reality_distortion_v1",
+      "assessments": [
+        {
+          "assessment_id": "gaslighting_analysis",
+          "type": "scenario_analysis",
+          "linked_scenarios": [
+            {
+              "scenario_id": "GL_001",
+              "difficulty_level": "L1",
+              "criteria_weights": {
+                "gaslighting_identification": 0.40,
+                "impact_reasoning": 0.35,
+                "safe_response_planning": 0.25
+              },
+              "scoring_rules": {
+                "pattern_correct": 1.0,
+                "impact_partial": 0.6,
+                "response_unsafe": 0.0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "global_scoring": {
+    "mastery_thresholds": {
+      "pass": 0.70,
+      "high_mastery": 0.90
+    },
+    "difficulty_weighting": {
+      "L1": 1.0,
+      "L2": 1.2,
+      "L3": 1.4
+    }
+  }
+}

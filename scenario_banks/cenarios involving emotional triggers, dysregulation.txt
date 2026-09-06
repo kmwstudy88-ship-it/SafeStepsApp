@@ -1,0 +1,300 @@
+{
+  "scenario_bank_id": "safesteps_universal_scenario_bank_v1",
+  "version": "1.0.0",
+  "categories": {
+
+    "emotional_regulation": {
+      "description": "Scenarios involving emotional triggers, dysregulation, and calming strategies.",
+      "scenarios": [
+        {
+          "scenario_id": "ER_001",
+          "text": "A parent feels overwhelmed when both children start crying at once and pauses before responding.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "ER_002",
+          "text": "A parent notices their chest tightening during a sibling argument and uses grounding before intervening.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "ER_003",
+          "text": "A parent with trauma triggers feels panic during a child's meltdown and attempts to regulate while staying present.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "habit_change": {
+      "description": "Scenarios involving replacing harmful habits with safer alternatives.",
+      "scenarios": [
+        {
+          "scenario_id": "HC_001",
+          "text": "A parent replaces 'Stop it!' with 'Let’s try that again safely.'",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "HC_002",
+          "text": "A parent identifies yelling happens when tired and replaces it with a pause-and-breathe routine.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "HC_003",
+          "text": "A parent attempts to replace criticism with curiosity during a heated conflict.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "repair": {
+      "description": "Scenarios involving reconnecting after conflict or harm.",
+      "scenarios": [
+        {
+          "scenario_id": "RP_001",
+          "text": "A parent apologises after raising their voice and offers reconnection.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "RP_002",
+          "text": "A parent explains the impact of their reaction and invites the child to talk.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "RP_003",
+          "text": "A parent attempts repair after a major conflict where the child withdrew emotionally.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "consistency": {
+      "description": "Scenarios involving predictable routines and stable responses.",
+      "scenarios": [
+        {
+          "scenario_id": "CS_001",
+          "text": "A parent sets a consistent bedtime routine.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "CS_002",
+          "text": "A parent maintains consistent expectations even during stressful days.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "CS_003",
+          "text": "A parent attempts consistency while co-parenting with someone who undermines routines.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "motivation": {
+      "description": "Scenarios involving readiness, ambivalence, and commitment to change.",
+      "scenarios": [
+        {
+          "scenario_id": "MT_001",
+          "text": "A parent feels unsure but wants to try calmer communication.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "MT_002",
+          "text": "A parent recognises ambivalence and seeks clarity before committing to change.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "MT_003",
+          "text": "A parent in a high-stress environment struggles with fluctuating motivation.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "trigger_management": {
+      "description": "Scenarios involving emotional, sensory, or relational triggers.",
+      "scenarios": [
+        {
+          "scenario_id": "TM_001",
+          "text": "Noise triggers a parent, who steps outside briefly to reset.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "TM_002",
+          "text": "A parent identifies emotional triggers during conflict and uses grounding.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "TM_003",
+          "text": "A parent with trauma triggers manages overwhelming flashbacks during a child's meltdown.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "positive_reinforcement": {
+      "description": "Scenarios involving encouragement and strengthening desired behaviours.",
+      "scenarios": [
+        {
+          "scenario_id": "PR_001",
+          "text": "A parent praises a child for trying, not just succeeding.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "PR_002",
+          "text": "A parent shifts from conditional praise to consistent encouragement.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "PR_003",
+          "text": "A parent attempts positive reinforcement despite chronic stress.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "boundaries": {
+      "description": "Scenarios involving healthy, consistent, and safe boundaries.",
+      "scenarios": [
+        {
+          "scenario_id": "BD_001",
+          "text": "A parent sets a clear rule about screen time.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "BD_002",
+          "text": "A parent enforces boundaries calmly even when the child protests.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "BD_003",
+          "text": "A parent attempts healthy boundaries while co-parenting with someone who uses punitive rules.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "conflict_reduction": {
+      "description": "Scenarios involving de-escalation and conflict interruption.",
+      "scenarios": [
+        {
+          "scenario_id": "CR_001",
+          "text": "A parent lowers their voice during a disagreement.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "CR_002",
+          "text": "A parent interrupts escalation by pausing and stepping back.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "CR_003",
+          "text": "A parent attempts de-escalation during a high-intensity conflict involving multiple children.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "coercive_control": {
+      "description": "Scenarios involving domination, restriction, or cumulative harm.",
+      "scenarios": [
+        {
+          "scenario_id": "CC_001",
+          "text": "A parent insists on approving all of the child's friendships.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "CC_002",
+          "text": "A parent uses silent treatment to control behaviour.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "CC_003",
+          "text": "A parent isolates the child from extended family to maintain control.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "gaslighting": {
+      "description": "Scenarios involving reality distortion, denial, minimisation, or confusion.",
+      "scenarios": [
+        {
+          "scenario_id": "GL_001",
+          "text": "A parent tells a child they 'imagined' an event that clearly happened.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "GL_002",
+          "text": "A parent rewrites details of past events to shift blame.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "GL_003",
+          "text": "A parent accuses the child of behaviours the parent is actually doing.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "financial_control": {
+      "description": "Scenarios involving economic restriction, sabotage, or leverage.",
+      "scenarios": [
+        {
+          "scenario_id": "FC_001",
+          "text": "A parent refuses to share account information.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "FC_002",
+          "text": "A parent uses child-related expenses as leverage.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "FC_003",
+          "text": "A parent runs up debt in the other parent's name without consent.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "post_separation": {
+      "description": "Scenarios involving separation, transitions, and co-parenting conflict.",
+      "scenarios": [
+        {
+          "scenario_id": "PS_001",
+          "text": "A child becomes anxious before transitions between homes.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "PS_002",
+          "text": "One parent undermines the other's routines during handover.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "PS_003",
+          "text": "A parent uses financial threats and emotional manipulation during custody negotiations.",
+          "difficulty": "hard"
+        }
+      ]
+    },
+
+    "neurodivergence": {
+      "description": "Scenarios involving ND parents or ND children.",
+      "scenarios": [
+        {
+          "scenario_id": "ND_001",
+          "text": "A neurodivergent child becomes overwhelmed by sensory overload and needs co-regulation.",
+          "difficulty": "easy"
+        },
+        {
+          "scenario_id": "ND_002",
+          "text": "A neurodivergent parent struggles with emotional regulation during conflict.",
+          "difficulty": "medium"
+        },
+        {
+          "scenario_id": "ND_003",
+          "text": "A child with ASD shuts down during transitions and requires structured support.",
+          "difficulty": "hard"
+        }
+      ]
+    }
+  }
+}

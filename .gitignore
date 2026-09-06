@@ -1,0 +1,47 @@
+# Node
+node_modules/
+npm-cache/
+pnpm-store/
+pnpm-store-codex-20260830/
+.npm-audit-result.json
+
+# Build artifacts
+dist/
+build/
+.tmp/
+
+# SafeSteps backups
+.git.backup/
+.node_modules-incomplete-backup/
+.node_modules-after-npm-ci-backup/
+.worktrees/
+
+# Windows installers
+*.exe
+*.msi
+
+# Large binary files
+*.pdf
+*.docx
+*.odt
+*.rtf
+*.jpeg
+*.jpg
+*.png
+*.gif
+*.tgz
+
+# Environment files
+.env
+.env.local
+.env.copy.local
+
+# Logs
+*.log
+
+# Expo
+.expo/
+.expo-shared/
+
+# VS Code
+.vscode/

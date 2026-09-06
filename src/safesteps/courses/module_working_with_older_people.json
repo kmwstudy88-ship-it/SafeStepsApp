@@ -1,0 +1,21 @@
+{
+  "id": "module_working_with_older_people",
+  "title": "Working with Older People",
+  "description": "This module supports practitioners to recognise and respond to DFV affecting older people, including elder abuse, dependency dynamics, and age-related vulnerabilities. It focuses on safe engagement and tailored support.",
+  "type": "module",
+  "level": "specialist_populations",
+  "tags": [
+    "dfv",
+    "older people",
+    "elder abuse",
+    "vulnerability",
+    "safety"
+  ],
+  "outcomes": [
+    "Recognise DFV and elder abuse affecting older people",
+    "Understand age-related risks and dependency dynamics",
+    "Provide safe, respectful, and tailored support"
+  ],
+  "lessons": [],
+  "content": []
+}

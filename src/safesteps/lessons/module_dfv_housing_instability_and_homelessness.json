@@ -1,0 +1,21 @@
+{
+  "id": "module_dfv_housing_instability_and_homelessness",
+  "title": "DFV, Housing Instability, and Homelessness",
+  "description": "This module explores the relationship between domestic and family violence, housing instability, and homelessness. It supports practitioners to recognise risk factors, barriers to safe housing, and pathways to stability.",
+  "type": "module",
+  "level": "housing_economic_security",
+  "tags": [
+    "dfv",
+    "housing",
+    "homelessness",
+    "safety",
+    "crisis support"
+  ],
+  "outcomes": [
+    "Understand how DFV contributes to housing instability and homelessness",
+    "Recognise barriers to accessing safe housing",
+    "Identify pathways to safety and stability for victim-survivors"
+  ],
+  "lessons": [],
+  "content": []
+}

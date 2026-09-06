@@ -1,0 +1,21 @@
+{
+  "id": "module_working_with_police_and_justice_agencies",
+  "title": "Working with Police and Justice Agencies",
+  "description": "This module supports practitioners to collaborate effectively with police, courts, and justice agencies. It focuses on reporting pathways, evidence, risk assessment, and coordinated justice responses.",
+  "type": "module",
+  "level": "justice_legal",
+  "tags": [
+    "dfv",
+    "police",
+    "justice agencies",
+    "coordination",
+    "legal responses"
+  ],
+  "outcomes": [
+    "Understand police roles and responsibilities in DFV matters",
+    "Collaborate effectively with justice agencies",
+    "Support clients through reporting, evidence, and risk processes"
+  ],
+  "lessons": [],
+  "content": []
+}

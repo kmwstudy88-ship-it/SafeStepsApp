@@ -1,0 +1,21 @@
+{
+  "id": "module_assessment_and_response",
+  "title": "Assessment and Response",
+  "description": "This module builds practitioner capability in conducting safe, structured, and trauma‑informed DFV assessments. It covers initial screening, risk identification, and collaborative safety planning with clients.",
+  "type": "module",
+  "level": "practitioner",
+  "tags": [
+    "dfv",
+    "assessment",
+    "risk identification",
+    "safety planning",
+    "practitioner training"
+  ],
+  "outcomes": [
+    "Conduct safe and effective DFV screening and assessment",
+    "Identify key DFV risk indicators and patterns",
+    "Develop collaborative and practical safety plans with clients"
+  ],
+  "lessons": [],
+  "content": []
+}

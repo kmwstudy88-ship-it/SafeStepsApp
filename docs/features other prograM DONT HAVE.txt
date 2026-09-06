@@ -1,0 +1,123 @@
+Features Other Programs Almost Never Have
+1. Predictive Risk Modelling (not just retrospective scoring)
+Most programs only score what already happened. SafeSteps could flag trajectory, not just snapshots:
+
+Trend-line alerts — "this domain has declined 2 consecutive periods" before it hits crisis level
+Pattern matching against historical case outcomes (which combinations of indicators preceded past breakdowns)
+Useful caution: this needs careful design to avoid bias — flag for human review, never auto-decide
+
+2. Worker Wellbeing & Burnout Monitoring
+Almost no program tracks this, yet worker burnout directly degrades assessment quality:
+
+Caseload intensity tracking per worker
+Self-report wellbeing check-ins for workers themselves
+Automatic caseload rebalancing suggestions to admin
+
+3. Sibling & Whole-Family View
+Most systems are single-child or single-parent centric:
+
+A family-level dashboard showing all children and how they're tracking relative to each other
+Sibling relationship quality tracking (often ignored entirely)
+
+4. Two-Way Transparency Dashboard for Parents
+Parents are usually assessed on but rarely see how scoring works:
+
+A plain-language view showing exactly which indicators feed their score and why
+Builds trust and reduces the "black box" feeling that fuels disengagement and gaming
+
+5. Cultural & Language Adaptation Built into Scoring
+Most rubrics are culturally generic:
+
+Configurable rubric variants for cultural context (e.g. different "appropriate" indicators for Aboriginal kinship care models)
+Interpreter-flagged sessions automatically noted in evidence reports so scoring isn't misread as non-engagement
+
+6. Post-Reunification Early Warning Network
+Beyond Home Again's own monitoring — connecting outward:
+
+Optional opt-in links to school, GP, and childcare so attendance/health flags surface automatically rather than only via self-report
+Reduces reliance on the family to self-disclose problems
+
+7. De-Identified Aggregate Research Output
+No program in this space publishes outcome data well:
+
+Auto-generated de-identified program effectiveness data for continuous improvement and funding/evaluation reporting
+This is a major credibility differentiator for funders and courts
+
+8. Parent-Authored Voice in the Court Report
+Court reports are normally 100% professional-voice:
+
+A structured section where the parent's own reflections (in their words) sit alongside worker scoring — shows growth in their own language, which courts and CP often find compelling
+
+9. Digital Consent & Rights Literacy Module
+Parents are told they're being assessed but rarely taught their rights within that:
+
+A short, plain-language in-app module explaining what's collected, why, how it's used, and what rights they have to respond to or contest findings — builds legitimacy and reduces adversarial dynamics
+
+10. Graduated Trust/Privilege System
+Gamification done well, not punitively:
+
+Additional Features — Round 2
+11. Visit/Contact Logistics Layer
+Almost no program's app actually handles the logistics of contact visits themselves:
+
+In-app scheduling for supervised/unsupervised contact with calendar sync for parent, worker, carer, and child
+Carer-side check-in (foster/kinship carer notes on child's state before/after contact) — currently a totally missing data source in most systems
+Automatic handover logs (who dropped off, picked up, any incidents) timestamped and GPS-tagged
+
+12. Foster/Kinship Carer Portal — A Fifth User Type
+Carers are usually invisible to the system even though they hold huge amounts of relevant data:
+
+Carer daily/weekly observations on the child (sleep, mood, behaviour after contact)
+Carer-worker messaging
+Carer wellbeing/burnout check-ins (carer breakdown is a major unplanned disruption risk)
+
+13. Legal/Court Timeline Integration
+Court dates drive everything but are rarely embedded in the system itself:
+
+Court date tracker with automatic countdown and report-deadline alerts to workers
+Version-locked snapshot of all evidence "as at" each court date (so reports can't be retroactively altered post-hearing — critical for legal defensibility)
+Lawyer/legal guardian read-only access tier
+
+14. Multi-Agency Information Sharing Layer
+Most systems are silos; real cases involve many agencies:
+
+Structured, permissioned data-sharing exports formatted for police, health, education, and other CP-linked agencies (rather than ad hoc emails/PDFs)
+Consent-tracked sharing — who shared what with whom, when, under what authority
+
+15. Relapse/Crisis Re-Entry Pathway
+Most programs treat exit as final; real life isn't linear:
+
+A defined "step back in" workflow if a family needs to re-enter Reunification or Home Again after closure, preserving historical data rather than starting a blank new case
+Clear criteria and lighter-touch re-assessment rather than a full restart
+
+16. Child Participation in Decision-Making (not just check-ins)
+Most "child's voice" features are passive reporting. True participation goes further:
+
+Age-appropriate tools for the child to contribute to their own case plan goals
+Child feedback specifically on whether they feel decisions are being explained to them
+
+17. Bias & Equity Auditing on the Scoring Data Itself
+Almost no program checks whether its own tool is fair:
+
+Periodic aggregate analysis: do certain cultural groups, genders, or disability statuses score systematically lower on subjective rubric items, independent of outcomes?
+Flags to admin/program designers, not auto-correction — human review of potential rubric bias
+
+18. Worker Decision Rationale Capture
+Court and oversight bodies increasingly expect this:
+
+Mandatory short rationale field whenever a worker's score deviates significantly from automated/historical pattern — creates an audit trail of professional judgment, not just numbers
+
+19. Family Strengths Repository (separate from risk)
+Strengths usually get buried inside risk-framed rubrics:
+
+A standalone, continuously updated "strengths and protective factors" record that's structurally equal in visibility to the risk log — so reports don't read as purely deficit-based
+
+20. Independent Advocate/Support Person Access
+Parents in adversarial systems benefit from independent support:
+
+Optional read-only or limited access tier for a parent's chosen independent advocate or support person (not a worker, not CP) — common in best-practice family law contexts, rare in CP tech
+
+As domains sustain high scores, the app reduces submission burden automatically (e.g. daily check-ins drop to every second day) — visible, motivating, and reduces surveillance fatigue without a worker manually changing settings
+
+
+Most of these aren't curriculum — they're system design choices that address trust, sustainability, and fairness, which is exactly where most reunification programs are weakest. Want me to fold any of these into the functional specification document, or keep building the remaining courses first?You said: add them alli feel like there more missing

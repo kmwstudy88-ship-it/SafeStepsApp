@@ -1,0 +1,21 @@
+{
+  "id": "module_community_education_and_prevention_campaigns",
+  "title": "Community Education and Prevention Campaigns",
+  "description": "This module supports communities to design, deliver, and evaluate DFV prevention and awareness campaigns. It focuses on messaging, engagement strategies, and ensuring campaigns are safe, ethical, and culturally appropriate.",
+  "type": "module",
+  "level": "community",
+  "tags": [
+    "dfv",
+    "community education",
+    "prevention campaigns",
+    "awareness",
+    "public engagement"
+  ],
+  "outcomes": [
+    "Design community education activities that promote DFV awareness",
+    "Develop safe and ethical prevention messaging",
+    "Engage diverse community groups in prevention efforts"
+  ],
+  "lessons": [],
+  "content": []
+}

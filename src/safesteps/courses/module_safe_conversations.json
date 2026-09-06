@@ -1,0 +1,21 @@
+{
+  "id": "module_safe_conversations",
+  "title": "Safe Conversations",
+  "description": "This module builds the core communication skills peer mentors need to support survivors safely. It focuses on active listening, holding space without judgement, and avoiding retraumatisation during peer support conversations.",
+  "type": "module",
+  "level": "intermediate",
+  "tags": [
+    "dfv",
+    "peer support",
+    "communication",
+    "trauma-informed",
+    "safe conversations"
+  ],
+  "outcomes": [
+    "Use active listening skills to support survivors effectively",
+    "Hold space in a calm, grounded, and non-judgemental way",
+    "Avoid retraumatisation and maintain emotional safety during conversations"
+  ],
+  "lessons": [],
+  "content": []
+}

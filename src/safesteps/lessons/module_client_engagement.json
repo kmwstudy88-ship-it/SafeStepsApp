@@ -1,0 +1,21 @@
+{
+  "id": "module_client_engagement",
+  "title": "Trauma‑Informed Client Engagement",
+  "description": "This module strengthens practitioner capability in engaging clients using trauma‑informed, strengths‑based, and culturally safe approaches. It focuses on building trust, working with resistance, and supporting clients who may be overwhelmed, fearful, or ambivalent.",
+  "type": "module",
+  "level": "practitioner",
+  "tags": [
+    "dfv",
+    "trauma-informed practice",
+    "client engagement",
+    "strengths-based",
+    "practitioner training"
+  ],
+  "outcomes": [
+    "Engage clients using trauma‑informed principles",
+    "Recognise and respond safely to resistance and ambivalence",
+    "Use strengths‑based approaches to support client empowerment"
+  ],
+  "lessons": [],
+  "content": []
+}

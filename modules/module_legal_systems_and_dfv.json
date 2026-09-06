@@ -1,0 +1,21 @@
+{
+  "id": "module_legal_systems_and_dfv",
+  "title": "Legal Systems and DFV",
+  "description": "This module provides an overview of how legal systems respond to domestic and family violence. It covers protection orders, criminal processes, child protection intersections, and the role of courts in promoting safety.",
+  "type": "module",
+  "level": "systems",
+  "tags": [
+    "dfv",
+    "legal systems",
+    "courts",
+    "protection orders",
+    "justice responses"
+  ],
+  "outcomes": [
+    "Understand key legal responses to DFV",
+    "Recognise how protection orders and criminal processes operate",
+    "Identify intersections between DFV, child protection, and the justice system"
+  ],
+  "lessons": [],
+  "content": []
+}

@@ -1,0 +1,21 @@
+{
+  "id": "module_supporting_community_members_experiencing_dfv",
+  "title": "Supporting Community Members Experiencing DFV",
+  "description": "This module helps community members provide safe, respectful, and appropriate support to people experiencing DFV. It focuses on listening without judgement, validating experiences, and connecting people to appropriate services.",
+  "type": "module",
+  "level": "community",
+  "tags": [
+    "dfv",
+    "community support",
+    "help-seeking",
+    "trauma-informed",
+    "safety"
+  ],
+  "outcomes": [
+    "Provide safe and supportive responses to community members experiencing DFV",
+    "Use trauma-informed communication and validation",
+    "Connect people to appropriate services without creating additional risk"
+  ],
+  "lessons": [],
+  "content": []
+}

@@ -1,0 +1,21 @@
+{
+  "id": "module_collaboration_and_referral",
+  "title": "Collaboration and Referral Pathways",
+  "description": "This module builds practitioner capability in multi‑agency collaboration, referral processes, and effective documentation. It supports practitioners to work safely and efficiently within complex service systems while ensuring continuity of care for clients experiencing DFV.",
+  "type": "module",
+  "level": "practitioner",
+  "tags": [
+    "dfv",
+    "collaboration",
+    "referral pathways",
+    "multiagency work",
+    "case management"
+  ],
+  "outcomes": [
+    "Collaborate effectively with partner agencies and service systems",
+    "Use clear and accurate documentation to support client safety",
+    "Navigate referral pathways to connect clients with appropriate supports"
+  ],
+  "lessons": [],
+  "content": []
+}

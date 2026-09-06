@@ -1,0 +1,21 @@
+{
+  "id": "module_health_led_prevention_and_early_intervention",
+  "title": "Health-Led Prevention and Early Intervention",
+  "description": "This module supports health services to play a proactive role in DFV prevention and early intervention. It focuses on universal education, early identification, and health-led community partnerships.",
+  "type": "module",
+  "level": "health_wellbeing",
+  "tags": [
+    "dfv",
+    "prevention",
+    "early intervention",
+    "health promotion",
+    "community partnerships"
+  ],
+  "outcomes": [
+    "Understand the role of health services in DFV prevention",
+    "Identify early warning signs and intervene safely",
+    "Use health-led strategies to promote safety and wellbeing"
+  ],
+  "lessons": [],
+  "content": []
+}
