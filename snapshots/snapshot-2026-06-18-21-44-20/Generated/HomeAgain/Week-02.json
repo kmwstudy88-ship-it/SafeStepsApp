@@ -1,0 +1,96 @@
+﻿{
+    "programId":  "HOMEAGAIN-6-12M",
+    "week":  2,
+    "phaseId":  "PHASE-01",
+    "phaseName":  "Stabilisation",
+    "modules":  [
+                    {
+                        "id":  "PP-REUNIFY-02",
+                        "name":  "Safe Emotional Regulation",
+                        "goal":  "Reduce risk during stress.",
+                        "tasks":  [
+                                      "Practice STOP→THINK→ACT→REVIEW daily",
+                                      "Use grounding techniques when triggered",
+                                      "Call a support person instead of escalating"
+                                  ],
+                        "evidence":  [
+                                         "No new incidents",
+                                         "Improved contact behaviour"
+                                     ]
+                    },
+                    {
+                        "id":  "PP-ENGAGE-02",
+                        "name":  "STOP-THINK-ACT Model",
+                        "goal":  "Improve decision-making under stress.",
+                        "tasks":  [
+                                      "Pause before reacting to conflict",
+                                      "Identify possible risks before responding",
+                                      "Choose the safest possible action",
+                                      "Review what worked and what didn’t"
+                                  ],
+                        "evidence":  [
+                                         "Reduced incidents",
+                                         "Support person feedback"
+                                     ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "Practice STOP→THINK→ACT→REVIEW daily"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "Use grounding techniques when triggered"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "Call a support person instead of escalating"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "Pause before reacting to conflict"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "Identify possible risks before responding"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "Choose the safest possible action"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Review what worked and what didn’t"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+                                    "No new incidents",
+                                    "Reduced incidents"
+                                ],
+                     "insight":  [
+                                     "Support person feedback"
+                                 ],
+                     "behaviour":  [
+                                       "Improved contact behaviour"
+                                   ]
+                 }
+}

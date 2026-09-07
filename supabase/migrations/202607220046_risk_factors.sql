@@ -1,0 +1,22 @@
+create table if not exists public.safety_risk_factors (
+  id uuid primary key default gen_random_uuid(),
+  tenant_id uuid not null references public.platform_tenants(id) on delete restrict,
+  case_id uuid not null references public.cases(id) on delete cascade,
+  family_member_id uuid references public.family_members(id) on delete set null,
+  factor_reference text not null,
+  risk_type text not null,
+  risk_summary text not null,
+  severity_level text not null,
+  likelihood_level text not null,
+  frequency_level text,
+  evidence_summary text,
+  trend_direction text not null default 'stable',
+  reduced_by_protective_factor_ids uuid[] not null default '{}'::uuid[],
+  current_status text not null default 'active',
+  owner_user_id uuid references auth.users(id) on delete set null,
+  review_interval_days integer not null default 30,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (tenant_id, factor_reference),
+  constraint safety_risk_factors_severity_check check (severity_level in ('low','moderate','high','critical','imminent'))
+);
