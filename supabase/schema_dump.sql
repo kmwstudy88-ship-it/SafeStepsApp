@@ -1,0 +1,4 @@
+-- Placeholder schema dump.
+-- The authoritative SafeSteps database contract lives in supabase/migrations/ and supabase/tests/.
+-- Regenerate this file only from a verified environment snapshot and review it against the migration history
+-- before treating it as a usable schema export.

@@ -10,4 +10,6 @@
 !styles/
 !types/
 !utils/
-
+node_modules/
+.expo/
+dist/
