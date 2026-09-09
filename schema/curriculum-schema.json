@@ -1,96 +1,363 @@
 {
-  "programId": "string",
-  "programName": "string",
-  "description": "string",
-  "durationWeeks": "number",
-
-  "stages": [
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safesteps.app/schema/curriculum-schema.json",
+  "title": "SafeSteps curriculum records",
+  "description": "Validation schema for canonical curriculum records and the generated master content index.",
+  "oneOf": [
     {
-      "stageId": "string",
-      "stageName": "string",
-      "stageNumber": "number",
-      "description": "string",
-
-      "weeks": [
-        {
-          "weekId": "string",
-          "weekNumber": "number",
-          "weekName": "string",
-          "focus": "string",
-
-          "lessons": [
-            {
-              "lessonId": "string",
-              "lessonNumber": "number",
-              "title": "string",
-              "summary": "string",
-
-              "learningObjectives": [
-                "string"
-              ],
-
-              "skills": [
-                {
-                  "skillId": "string",
-                  "skillName": "string",
-                  "skillCategory": "string",
-                  "level": "beginner | intermediate | advanced"
-                }
-              ],
-
-              "content": [
-                {
-                  "type": "text | scenario | reflection | activity | checklist | video | audio",
-                  "body": "string"
-                }
-              ],
-
-              "activities": [
-                {
-                  "activityId": "string",
-                  "activityType": "worksheet | journaling | roleplay | scenario | practice",
-                  "instructions": "string",
-                  "expectedTimeMinutes": "number"
-                }
-              ],
-
-              "evidence": [
-                {
-                  "evidenceId": "string",
-                  "type": "photo | video | text | checklist | attendance | document",
-                  "description": "string",
-                  "required": "boolean"
-                }
-              ],
-
-              "caseworkerNotes": {
-                "riskIndicators": [
-                  "string"
-                ],
-                "protectiveFactors": [
-                  "string"
-                ],
-                "observationPrompts": [
-                  "string"
-                ]
-              },
-
-              "parentReflection": [
-                {
-                  "questionId": "string",
-                  "question": "string"
-                }
-              ],
-
-              "metadata": {
-                "createdAt": "string",
-                "updatedAt": "string",
-                "version": "number"
-              }
-            }
-          ]
-        }
-      ]
+      "$ref": "#/$defs/lesson"
+    },
+    {
+      "$ref": "#/$defs/module"
+    },
+    {
+      "$ref": "#/$defs/topic"
+    },
+    {
+      "$ref": "#/$defs/masterIndex"
     }
-  ]
+  ],
+  "$defs": {
+    "stringArray": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lessonSection": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "content"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "object",
+          "required": [
+            "title",
+            "overview"
+          ],
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "overview": {
+              "type": "string"
+            },
+            "psychoeducation": {
+              "type": "string"
+            },
+            "learning_goals": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "step_by_step": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "parent_scripts": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "practical_examples": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "reflection_questions": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "practice_ideas": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "closing_message": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "content_variants": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "safety_guidance": {
+          "type": "object",
+          "properties": {
+            "red_flags": {
+              "$ref": "#/$defs/stringArray"
+            },
+            "when_to_escalate": {
+              "$ref": "#/$defs/stringArray"
+            }
+          },
+          "additionalProperties": true
+        },
+        "trauma_informed": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "simplified_parent_version": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "lesson": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "sections"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/lessonSection"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "module": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "const": "module"
+        },
+        "level": {
+          "type": "string"
+        },
+        "tags": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "outcomes": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "lessons": {
+          "type": "array"
+        },
+        "content": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": true
+    },
+    "topic": {
+      "type": "object",
+      "required": [
+        "id",
+        "topicId",
+        "topicName"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "topicId": {
+          "type": "string"
+        },
+        "topicName": {
+          "type": "string"
+        },
+        "caseworkerSummary": {
+          "type": "string"
+        },
+        "modules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "sourceOfTruth": {
+      "type": "object",
+      "required": [
+        "lessons",
+        "modules",
+        "topics",
+        "storybooks",
+        "compatibilityExports",
+        "generatedImports"
+      ],
+      "properties": {
+        "lessons": {
+          "type": "string"
+        },
+        "modules": {
+          "type": "string"
+        },
+        "topics": {
+          "type": "string"
+        },
+        "storybooks": {
+          "type": "string"
+        },
+        "compatibilityExports": {
+          "type": "string"
+        },
+        "generatedImports": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "masterIndexItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "sourcePath"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "topicName": {
+          "type": "string"
+        },
+        "sectionCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lessonRefCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "contentBlockCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "moduleCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fileType": {
+          "type": "string"
+        },
+        "sourcePath": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "masterIndex": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "generatedAt",
+        "repositoryPurpose",
+        "sourceOfTruth",
+        "counts",
+        "lessons",
+        "modules",
+        "topics",
+        "storybooks"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "type": "string"
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "repositoryPurpose": {
+          "type": "string"
+        },
+        "sourceOfTruth": {
+          "$ref": "#/$defs/sourceOfTruth"
+        },
+        "counts": {
+          "type": "object",
+          "required": [
+            "lessons",
+            "modules",
+            "topics",
+            "storybookAssets"
+          ],
+          "properties": {
+            "lessons": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "modules": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "topics": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "storybookAssets": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "lessons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/masterIndexItem"
+          }
+        },
+        "modules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/masterIndexItem"
+          }
+        },
+        "topics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/masterIndexItem"
+          }
+        },
+        "storybooks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/masterIndexItem"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
 }

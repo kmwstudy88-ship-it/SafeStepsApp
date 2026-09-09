@@ -3,7 +3,7 @@ const path = require("path");
 const crypto = require("crypto");
 
 const repoRoot = path.resolve(__dirname, "..");
-const curriculumRoot = path.join(repoRoot, "curriculum");
+const importRoot = path.join(repoRoot, "src", "safesteps", "imports");
 const validKinds = new Set(["program", "course", "module"]);
 
 function parseArgs(argv) {
@@ -144,6 +144,11 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
 
+function readJsonIfExists(filePath) {
+  if (!fs.existsSync(filePath)) return null;
+  return readJson(filePath);
+}
+
 function main() {
   const args = parseArgs(process.argv.slice(2));
   const sourcePath = path.resolve(process.cwd(), args.source);
@@ -155,11 +160,12 @@ function main() {
   const sourceTitle = source.title || source.name || path.basename(sourcePath, path.extname(sourcePath));
   const sourceId = slugify(source.id || source.slug || sourceTitle, path.basename(sourcePath, path.extname(sourcePath)));
   const sourceSlug = slugify(source.slug || sourceId, sourceId);
+  const sourceHash = hashRecord(source);
   const importedAt = new Date().toISOString();
   const bucketName = `${args.kind}s`;
-  const sourceBucket = path.join(curriculumRoot, bucketName);
-  const copiedSourcePath = path.join(sourceBucket, `${sourceSlug}.json`);
-  const lessonBucket = path.join(curriculumRoot, "lessons", "extracted", sourceSlug);
+  const sourceBucket = path.join(importRoot, bucketName);
+  const copiedSourcePath = path.join(sourceBucket, `${sourceSlug}--${sourceHash}.json`);
+  const lessonBucket = path.join(importRoot, "lessons", "extracted", sourceSlug);
   const manifestPath = path.join(lessonBucket, "manifest.json");
   const collectedLessons = collectLessons(source);
 
@@ -174,11 +180,24 @@ function main() {
       importedAt,
       index,
     });
+    const lessonHash = normalized.curriculumSource.contentHash.slice(0, 8);
     return {
-      fileName: `${stableLessonId(normalized, sourceSlug, index)}.json`,
+      fileName: `${stableLessonId(normalized, sourceSlug, index)}--${lessonHash}.json`,
       lesson: normalized,
     };
   });
+
+  const duplicateFileNames = plannedLessons.reduce((duplicates, planned, index) => {
+    const previousIndex = plannedLessons.findIndex((entry) => entry.fileName === planned.fileName);
+    if (previousIndex !== -1 && previousIndex !== index && !duplicates.includes(planned.fileName)) {
+      duplicates.push(planned.fileName);
+    }
+    return duplicates;
+  }, []);
+
+  if (duplicateFileNames.length > 0) {
+    throw new Error(`Import generated duplicate lesson file names: ${duplicateFileNames.join(", ")}`);
+  }
 
   if (args.dryRun) {
     console.log(JSON.stringify({
@@ -186,7 +205,7 @@ function main() {
       kind: args.kind,
       destination: path.relative(repoRoot, copiedSourcePath),
       extractedLessonCount: plannedLessons.length,
-      lessonFiles: plannedLessons.map((item) => path.posix.join("curriculum/lessons/extracted", sourceSlug, item.fileName)),
+      lessonFiles: plannedLessons.map((item) => path.posix.join("src/safesteps/imports/lessons/extracted", sourceSlug, item.fileName)),
     }, null, 2));
     return;
   }
@@ -196,7 +215,12 @@ function main() {
   writeJson(copiedSourcePath, source);
 
   for (const planned of plannedLessons) {
-    writeJson(path.join(lessonBucket, planned.fileName), planned.lesson);
+    const targetPath = path.join(lessonBucket, planned.fileName);
+    const existing = readJsonIfExists(targetPath);
+    if (existing && JSON.stringify(existing) !== JSON.stringify(planned.lesson)) {
+      throw new Error(`Refusing to overwrite non-matching generated lesson file: ${path.relative(repoRoot, targetPath)}`);
+    }
+    writeJson(targetPath, planned.lesson);
   }
 
   writeJson(manifestPath, {
