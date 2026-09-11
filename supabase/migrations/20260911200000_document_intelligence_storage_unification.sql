@@ -334,3 +334,21 @@ from public.ai_retrieval_contradictions as contradiction;
 
 revoke all on public.document_entities from public, anon, authenticated;
 grant select on public.document_entities to authenticated;
+grant all on public.document_entities to service_role;
+
+revoke all on
+  public.document_text,
+  public.document_contradictions,
+  public.document_fairness,
+  public.document_risks,
+  public.document_timeline,
+  public.document_concerns
+from public, anon, authenticated;
+grant select on
+  public.document_text,
+  public.document_contradictions,
+  public.document_fairness,
+  public.document_risks,
+  public.document_timeline,
+  public.document_concerns
+to service_role;
