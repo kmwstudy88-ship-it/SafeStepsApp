@@ -173,7 +173,7 @@ function normalizeIncomingEventPayload(body = {}) {
   };
 }
 
-function buildEscalationAlerts({ caseId, snapshot, previousSnapshot, routedTo, eventIdempotencyKey, eventType }) {
+function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdempotencyKey, eventType }) {
   const alerts = [];
   if (snapshot.hard_escalation?.triggered) {
     for (const trigger of snapshot.hard_escalation.triggers || []) {
@@ -419,7 +419,6 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         supervisor_ids: assignments.filter((item) => item.assignment_role === 'supervisor').map((item) => item.user_id),
       };
       const alerts = buildEscalationAlerts({
-        caseId,
         snapshot,
         previousSnapshot,
         routedTo,
@@ -479,7 +478,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         case_worker_ids: assignments.filter((item) => item.assignment_role === 'case_worker').map((item) => item.user_id),
         supervisor_ids: assignments.filter((item) => item.assignment_role === 'supervisor').map((item) => item.user_id),
       };
-      const alerts = buildEscalationAlerts({ caseId, snapshot, previousSnapshot, routedTo, eventIdempotencyKey: null, eventType: 'risk_recompute' });
+      const alerts = buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdempotencyKey: null, eventType: 'risk_recompute' });
       const tasks = buildFollowUpTasks({ caseId, snapshot, previousSnapshot, assignments });
 
       const { data, error } = await adminClient.rpc('apply_case_risk_workflow', {

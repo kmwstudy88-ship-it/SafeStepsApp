@@ -2,7 +2,13 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useRouter } from 'expo-router';
 
-import { getSupervisorDashboard, type SupervisorDashboardResponse } from '../../lib/caseRiskApi';
+import {
+  getSupervisorDashboard,
+  type SupervisorDashboardAlertItem,
+  type SupervisorDashboardCaseItem,
+  type SupervisorDashboardResponse,
+  type SupervisorDashboardTaskItem,
+} from '../../lib/caseRiskApi';
 
 export default function SupervisorDashboardScreen() {
   const router = useRouter();
@@ -51,7 +57,7 @@ export default function SupervisorDashboardScreen() {
           title="Highest-Risk Open Cases"
           items={highestRiskCases}
           emptyText="No supervised cases with risk snapshots yet."
-          renderItem={(item) => (
+          renderItem={(item: SupervisorDashboardCaseItem) => (
             <TouchableOpacity key={item.case_id} style={styles.card} onPress={() => router.push(`/cases/${item.case_id}` as any)}>
               <Text style={styles.cardTitle}>{item.title}</Text>
               <Text style={styles.meta}>Risk: {item.latest_risk?.tier || 'n/a'} · Score {item.latest_risk?.score ?? 'n/a'}</Text>
@@ -65,11 +71,11 @@ export default function SupervisorDashboardScreen() {
           title="Rising-Risk Cases"
           items={risingRiskCases}
           emptyText="No recent positive risk deltas."
-          renderItem={(item) => (
+          renderItem={(item: SupervisorDashboardCaseItem) => (
             <TouchableOpacity key={item.case_id} style={styles.card} onPress={() => router.push(`/cases/${item.case_id}` as any)}>
               <Text style={styles.cardTitle}>{item.title}</Text>
               <Text style={styles.meta}>Delta: +{item.delta} · Current tier: {item.latest_risk?.tier || 'n/a'}</Text>
-              {(item.recent_events || []).map((event: any) => (
+              {(item.recent_events || []).map((event) => (
                 <Text key={event.id} style={styles.body}>• {event.event_type}: {event.note || 'Structured event'}</Text>
               ))}
             </TouchableOpacity>
@@ -80,7 +86,7 @@ export default function SupervisorDashboardScreen() {
           title="Open Escalations"
           items={openEscalations}
           emptyText="No open escalations."
-          renderItem={(item) => (
+          renderItem={(item: SupervisorDashboardAlertItem) => (
             <View key={item.id} style={styles.card}>
               <Text style={styles.cardTitle}>{item.trigger_type}</Text>
               <Text style={styles.meta}>Severity: {item.severity} · Status: {item.status}</Text>
@@ -93,7 +99,7 @@ export default function SupervisorDashboardScreen() {
           title="Overdue Follow-Ups"
           items={overdueFollowUps}
           emptyText="No overdue follow-up tasks."
-          renderItem={(item) => (
+          renderItem={(item: SupervisorDashboardTaskItem) => (
             <View key={item.id} style={styles.card}>
               <Text style={styles.cardTitle}>{item.title}</Text>
               <Text style={styles.meta}>Priority: {item.priority} · Status: {item.status}</Text>
@@ -106,11 +112,11 @@ export default function SupervisorDashboardScreen() {
   );
 }
 
-function DashboardSection({ title, items, emptyText, renderItem }: {
+function DashboardSection<T>({ title, items, emptyText, renderItem }: {
   title: string;
-  items: any[];
+  items: T[];
   emptyText: string;
-  renderItem: (item: any) => React.ReactNode;
+  renderItem: (item: T) => React.ReactNode;
 }) {
   return (
     <View style={styles.section}>

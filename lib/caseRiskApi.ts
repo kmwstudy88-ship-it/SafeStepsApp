@@ -32,13 +32,49 @@ export type CaseRiskHistoryResponse = {
   human_review_required: boolean;
 };
 
+export type SupervisorDashboardCaseItem = {
+  case_id: string;
+  title: string;
+  status: string;
+  updated_at: string;
+  latest_risk: {
+    score: number;
+    tier: string;
+    confidence: number;
+    rationale: string;
+    created_at: string;
+  } | null;
+  delta: number;
+  open_alert_count: number;
+  overdue_task_count: number;
+  recent_events: Array<{ id: string; event_type: string; note?: string }>;
+};
+
+export type SupervisorDashboardAlertItem = {
+  id: string;
+  case_id: string;
+  trigger_type: string;
+  severity: string;
+  status: string;
+  created_at: string;
+};
+
+export type SupervisorDashboardTaskItem = {
+  id: string;
+  case_id: string;
+  title: string;
+  priority: string;
+  status: string;
+  due_at: string;
+};
+
 export type SupervisorDashboardResponse = {
   generated_at: string;
-  highest_risk_open_cases: Array<any>;
-  rising_risk_cases: Array<any>;
-  open_escalations: Array<any>;
-  overdue_follow_ups: Array<any>;
-  case_summaries: Array<any>;
+  highest_risk_open_cases: SupervisorDashboardCaseItem[];
+  rising_risk_cases: SupervisorDashboardCaseItem[];
+  open_escalations: SupervisorDashboardAlertItem[];
+  overdue_follow_ups: SupervisorDashboardTaskItem[];
+  case_summaries: SupervisorDashboardCaseItem[];
 };
 
 export async function getCaseRiskHistory(caseId: string) {

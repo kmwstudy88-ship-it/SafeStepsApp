@@ -310,7 +310,14 @@ begin
       from public.follow_up_tasks fut
       where fut.case_id = p_case_id
         and fut.task_type = coalesce(v_task->>'task_type', '')
-        and fut.status in ('pending', 'in_progress', 'overdue')
+        and (
+          fut.status in ('pending', 'in_progress', 'overdue')
+          or (
+            coalesce((v_task->'detail'->>'reprioritized')::boolean, false) = true
+            and fut.status in ('completed', 'cancelled')
+          )
+        )
+      order by case when fut.status in ('pending', 'in_progress', 'overdue') then 0 else 1 end, fut.updated_at desc
       limit 1;
     end if;
 
