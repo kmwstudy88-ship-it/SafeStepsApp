@@ -333,7 +333,6 @@ select
 from public.ai_retrieval_contradictions as contradiction;
 
 revoke all on public.document_entities from public, anon, authenticated;
-grant select on public.document_entities to authenticated;
 grant all on public.document_entities to service_role;
 
 revoke all on
