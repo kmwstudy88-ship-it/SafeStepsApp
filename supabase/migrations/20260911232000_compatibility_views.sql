@@ -1,57 +1,61 @@
-do $migration$
+create or replace function public.__archive_compatibility_relation(target_name text, archive_base_name text)
+returns void
+language plpgsql
+set search_path = ''
+as $$
 declare
-  case_assignments_relkind "char";
-  archived_case_assignments_name text;
+  target_relkind "char";
+  archived_name text;
 begin
   select c.relkind
-  into case_assignments_relkind
+  into target_relkind
   from pg_catalog.pg_class c
   join pg_catalog.pg_namespace n on n.oid = c.relnamespace
   where n.nspname = 'public'
-    and c.relname = 'case_assignments';
+    and c.relname = target_name;
 
-  if case_assignments_relkind in ('r', 'p', 'f', 'v', 'm') then
-    if not exists (
-      select 1
-      from pg_catalog.pg_class c
-      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
-      where n.nspname = 'public'
-        and c.relname = 'case_assignments_legacy'
-    ) then
-      archived_case_assignments_name := 'case_assignments_legacy';
-    else
-      archived_case_assignments_name := format(
-        'case_assignments_legacy_%s',
-        to_char(pg_catalog.clock_timestamp(), 'YYYYMMDDHH24MISSMS')
-      );
-    end if;
-
-    if case_assignments_relkind in ('r', 'p') then
-      execute format(
-        'alter table public.case_assignments rename to %I',
-        archived_case_assignments_name
-      );
-    elsif case_assignments_relkind = 'f' then
-      execute format(
-        'alter foreign table public.case_assignments rename to %I',
-        archived_case_assignments_name
-      );
-    elsif case_assignments_relkind = 'v' then
-      execute format(
-        'alter view public.case_assignments rename to %I',
-        archived_case_assignments_name
-      );
-    elsif case_assignments_relkind = 'm' then
-      execute format(
-        'alter materialized view public.case_assignments rename to %I',
-        archived_case_assignments_name
-      );
-    end if;
-  elsif case_assignments_relkind is not null and case_assignments_relkind <> 'v' then
-    raise exception 'Cannot replace public.case_assignments with relation kind %', case_assignments_relkind;
+  if target_relkind is null then
+    return;
   end if;
-end
-$migration$;
+
+  if not exists (
+    select 1
+    from pg_catalog.pg_class c
+    join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+    where n.nspname = 'public'
+      and c.relname = archive_base_name
+  ) then
+    archived_name := archive_base_name;
+  else
+    archived_name := format(
+      '%s_%s',
+      archive_base_name,
+      to_char(pg_catalog.clock_timestamp(), 'YYYYMMDDHH24MISSMS')
+    );
+  end if;
+
+  if target_relkind in ('r', 'p') then
+    execute format('alter table public.%I rename to %I', target_name, archived_name);
+  elsif target_relkind = 'f' then
+    execute format('alter foreign table public.%I rename to %I', target_name, archived_name);
+  elsif target_relkind = 'v' then
+    execute format('alter view public.%I rename to %I', target_name, archived_name);
+  elsif target_relkind = 'm' then
+    execute format('alter materialized view public.%I rename to %I', target_name, archived_name);
+  else
+    raise exception 'Cannot archive public.% with relation kind %', target_name, target_relkind;
+  end if;
+end;
+$$;
+
+select public.__archive_compatibility_relation('case_assignments', 'case_assignments_legacy');
+select public.__archive_compatibility_relation('visits', 'visits_legacy');
+select public.__archive_compatibility_relation('messages', 'messages_legacy');
+select public.__archive_compatibility_relation('timeline_events', 'timeline_events_legacy');
+select public.__archive_compatibility_relation('risk_indicators', 'risk_indicators_legacy');
+select public.__archive_compatibility_relation('contradictions', 'contradictions_legacy');
+select public.__archive_compatibility_relation('fairness_analysis', 'fairness_analysis_legacy');
+select public.__archive_compatibility_relation('document_entities', 'document_entities_legacy');
 
 create view public.case_assignments
 with (security_invoker = true)
@@ -84,7 +88,7 @@ select
 from public.case_allocations ca
 left join public.users u on u.auth_user_id = ca.allocated_user_id;
 
-create or replace view public.visits
+create view public.visits
 with (security_invoker = true)
 as
 select
@@ -106,7 +110,7 @@ select
   created_at
 from public.case_visit_records_v19;
 
-create or replace view public.messages
+create view public.messages
 with (security_invoker = true)
 as
 select
@@ -117,7 +121,7 @@ select
   body
 from public.messaging_messages;
 
-create or replace view public.timeline_events
+create view public.timeline_events
 with (security_invoker = true)
 as
 select
@@ -134,7 +138,7 @@ select
   created_at
 from public.evidence_timeline_events;
 
-create or replace view public.risk_indicators
+create view public.risk_indicators
 with (security_invoker = true)
 as
 select
@@ -155,7 +159,7 @@ select
   created_at
 from public.ai_risk_signals;
 
-create or replace view public.contradictions
+create view public.contradictions
 with (security_invoker = true)
 as
 select
@@ -177,7 +181,7 @@ select
   created_by
 from public.assessment_contradictions;
 
-create or replace view public.fairness_analysis
+create view public.fairness_analysis
 with (security_invoker = true)
 as
 select
@@ -203,8 +207,6 @@ do $migration$
 declare
   ai_extracted_entities_columns text;
   ai_extracted_entities_relkind "char";
-  document_entities_relkind "char";
-  archived_document_entities_name text;
 begin
   select c.relkind
   into ai_extracted_entities_relkind
@@ -212,54 +214,6 @@ begin
   join pg_catalog.pg_namespace n on n.oid = c.relnamespace
   where n.nspname = 'public'
     and c.relname = 'ai_extracted_entities';
-
-  select c.relkind
-  into document_entities_relkind
-  from pg_catalog.pg_class c
-  join pg_catalog.pg_namespace n on n.oid = c.relnamespace
-  where n.nspname = 'public'
-    and c.relname = 'document_entities';
-
-  if document_entities_relkind in ('r', 'p', 'f', 'v', 'm') then
-    if not exists (
-      select 1
-      from pg_catalog.pg_class c
-      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
-      where n.nspname = 'public'
-        and c.relname = 'document_entities_legacy'
-    ) then
-      archived_document_entities_name := 'document_entities_legacy';
-    else
-      archived_document_entities_name := format(
-        'document_entities_legacy_%s',
-        to_char(pg_catalog.clock_timestamp(), 'YYYYMMDDHH24MISSMS')
-      );
-    end if;
-
-    if document_entities_relkind in ('r', 'p') then
-      execute format(
-        'alter table public.document_entities rename to %I',
-        archived_document_entities_name
-      );
-    elsif document_entities_relkind = 'f' then
-      execute format(
-        'alter foreign table public.document_entities rename to %I',
-        archived_document_entities_name
-      );
-    elsif document_entities_relkind = 'v' then
-      execute format(
-        'alter view public.document_entities rename to %I',
-        archived_document_entities_name
-      );
-    elsif document_entities_relkind = 'm' then
-      execute format(
-        'alter materialized view public.document_entities rename to %I',
-        archived_document_entities_name
-      );
-    end if;
-  elsif document_entities_relkind is not null then
-    raise exception 'Cannot replace public.document_entities with relation kind %', document_entities_relkind;
-  end if;
 
   if ai_extracted_entities_relkind in ('r', 'p', 'f', 'v', 'm') then
     select string_agg(format('  %I', a.attname), E',\n' order by a.attnum)
@@ -281,6 +235,7 @@ begin
     ) then
       raise exception 'public.document_entities still exists and cannot be replaced safely';
     end if;
+
     execute format($sql$
       create view public.document_entities
       with (security_invoker = true)
@@ -305,6 +260,15 @@ begin
     execute 'grant select on public.risk_indicators to authenticated';
     execute 'grant select on public.contradictions to authenticated';
     execute 'grant select on public.fairness_analysis to authenticated';
+    if exists (
+      select 1
+      from pg_catalog.pg_class c
+      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+      where n.nspname = 'public'
+        and c.relname = 'document_entities'
+    ) then
+      execute 'grant select on public.document_entities to authenticated';
+    end if;
   end if;
 
   if exists (select 1 from pg_catalog.pg_roles where rolname = 'service_role') then
@@ -315,25 +279,17 @@ begin
     execute 'grant select on public.risk_indicators to service_role';
     execute 'grant select on public.contradictions to service_role';
     execute 'grant select on public.fairness_analysis to service_role';
-  end if;
-end
-$migration$;
-
-do $migration$
-begin
-  if exists (
-    select 1
-    from pg_catalog.pg_class c
-    join pg_catalog.pg_namespace n on n.oid = c.relnamespace
-    where n.nspname = 'public'
-      and c.relname = 'document_entities'
-  ) then
-    if exists (select 1 from pg_catalog.pg_roles where rolname = 'authenticated') then
-      execute 'grant select on public.document_entities to authenticated';
-    end if;
-    if exists (select 1 from pg_catalog.pg_roles where rolname = 'service_role') then
+    if exists (
+      select 1
+      from pg_catalog.pg_class c
+      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+      where n.nspname = 'public'
+        and c.relname = 'document_entities'
+    ) then
       execute 'grant select on public.document_entities to service_role';
     end if;
   end if;
 end
 $migration$;
+
+drop function public.__archive_compatibility_relation(text, text);
