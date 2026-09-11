@@ -43,6 +43,7 @@ for (const rel of [
 
 const server = read('backend/server.js');
 for (const route of [
+  '/ready',
   '/documents/text',
   '/documents/upload',
   '/documents/analyze/fairness',
@@ -53,6 +54,8 @@ for (const route of [
 }
 if (!server.includes('authenticateBearer')) fail('Backend does not require authenticated bearer identity.');
 if (!server.includes('processNextJobs')) fail('Backend worker loop is not wired.');
+if (!server.includes('SUPABASE_SERVICE_ROLE_KEY')) fail('Readiness checks do not cover the Supabase service-role credential.');
+if (!server.includes('OPENAI_API_KEY') || !server.includes('ANTHROPIC_API_KEY')) fail('Readiness checks do not cover AI provider credentials.');
 
 const ai = read('backend/document-intelligence/ai.js');
 for (const skill of ['"evidence"', '"contradictions"', '"timeline"', '"risk"', '"bias"', '"fairness"']) {
