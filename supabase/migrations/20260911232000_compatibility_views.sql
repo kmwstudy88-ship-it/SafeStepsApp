@@ -58,6 +58,7 @@ select public.__archive_compatibility_relation('fairness_analysis', 'fairness_an
 select public.__archive_compatibility_relation('document_entities', 'document_entities_legacy');
 
 create view public.case_assignments
+with (security_invoker = false)
 as
 select
   ca.id,
@@ -88,6 +89,7 @@ from public.case_allocations ca
 left join public.users u on u.auth_user_id = ca.allocated_user_id;
 
 create view public.visits
+with (security_invoker = false)
 as
 select
   id,
@@ -109,6 +111,7 @@ select
 from public.case_visit_records_v19;
 
 create view public.messages
+with (security_invoker = false)
 as
 select
   id,
@@ -119,6 +122,7 @@ select
 from public.messaging_messages;
 
 create view public.timeline_events
+with (security_invoker = false)
 as
 select
   id,
@@ -135,6 +139,7 @@ select
 from public.evidence_timeline_events;
 
 create view public.risk_indicators
+with (security_invoker = false)
 as
 select
   id,
@@ -155,6 +160,7 @@ select
 from public.ai_risk_signals;
 
 create view public.contradictions
+with (security_invoker = false)
 as
 select
   id,
@@ -176,6 +182,7 @@ select
 from public.assessment_contradictions;
 
 create view public.fairness_analysis
+with (security_invoker = false)
 as
 select
   id,
@@ -225,7 +232,8 @@ begin
 
     execute format($sql$
       create view public.document_entities
-            as
+      with (security_invoker = false)
+      as
       select
 %s
       from public.ai_extracted_entities
