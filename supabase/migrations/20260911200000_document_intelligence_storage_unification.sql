@@ -37,6 +37,30 @@ using (
         or public.can_manage_assessments()
       )
   )
+  or exists (
+    select 1
+    from public.case_document_versions as version
+    join public.case_documents as document
+      on document.id = version.document_id
+    where version.id = document_entities.document_version_id
+      and (
+        document.parent_user_id = (select auth.uid())
+        or document.worker_user_id = (select auth.uid())
+        or document.created_by = (select auth.uid())
+        or public.can_manage_assessments()
+      )
+  )
+  or exists (
+    select 1
+    from public.case_documents as document
+    where document.case_id = document_entities.case_id
+      and (
+        document.parent_user_id = (select auth.uid())
+        or document.worker_user_id = (select auth.uid())
+        or document.created_by = (select auth.uid())
+        or public.can_manage_assessments()
+      )
+  )
 );
 
 create or replace view public.document_text
@@ -58,8 +82,8 @@ select
   version.review_status,
   version.review_notes,
   document.notes as document_notes,
-  parsed_document.extracted_text as text_content,
-  coalesce(parsed_document.created_at, version.uploaded_at) as source_created_at
+  coalesce(parsed_by_sha.extracted_text, parsed_by_path.extracted_text) as text_content,
+  coalesce(parsed_by_sha.created_at, parsed_by_path.created_at, version.uploaded_at) as source_created_at
 from public.case_document_versions as version
 join public.case_documents as document
   on document.id = version.document_id
@@ -68,14 +92,23 @@ left join lateral (
     d.extracted_text,
     d.created_at
   from public.documents as d
-  where (
-    (version.file_sha256 is not null and d.sha256 = version.file_sha256)
-    or d.storage_path = version.file_path
-  )
+  where version.file_sha256 is not null
+    and d.sha256 = version.file_sha256
   and (d.case_id is null or d.case_id = document.case_id)
   order by d.created_at desc
   limit 1
-) as parsed_document on true;
+) as parsed_by_sha on true
+left join lateral (
+  select
+    d.extracted_text,
+    d.created_at
+  from public.documents as d
+  where parsed_by_sha.created_at is null
+    and d.storage_path = version.file_path
+    and (d.case_id is null or d.case_id = document.case_id)
+  order by d.created_at desc
+  limit 1
+) as parsed_by_path on true;
 
 create or replace view public.document_contradictions
 with (security_invoker = true)
@@ -242,7 +275,7 @@ select
   contradiction.contradiction_summary as concern_summary,
   case when contradiction.requires_resolution then 'open' else 'closed' end as concern_status,
   contradiction.requires_resolution as requires_human_review,
-  contradiction.reviewed_at as resolved_at,
+  case when contradiction.requires_resolution then null::timestamptz else contradiction.reviewed_at end as resolved_at,
   contradiction.created_at as detected_at,
   'ai_retrieval_contradictions'::text as source_table,
   contradiction.id as source_record_id,
