@@ -20,6 +20,25 @@ create index if not exists idx_document_entities_case_document
 create index if not exists idx_document_entities_case
   on public.document_entities(case_id, detected_at desc);
 
+alter table public.document_entities enable row level security;
+
+drop policy if exists document_entities_select on public.document_entities;
+create policy document_entities_select on public.document_entities
+for select to authenticated
+using (
+  exists (
+    select 1
+    from public.case_documents as document
+    where document.id = document_entities.case_document_id
+      and (
+        document.parent_user_id = (select auth.uid())
+        or document.worker_user_id = (select auth.uid())
+        or document.created_by = (select auth.uid())
+        or public.can_manage_assessments()
+      )
+  )
+);
+
 create or replace view public.document_text
 with (security_invoker = true)
 as
@@ -243,6 +262,7 @@ left join public.case_documents as source_b_version_document
   on source_b_version_document.id = source_b_version.document_id;
 
 grant select on
+  public.document_entities,
   public.document_text,
   public.document_contradictions,
   public.document_fairness,
