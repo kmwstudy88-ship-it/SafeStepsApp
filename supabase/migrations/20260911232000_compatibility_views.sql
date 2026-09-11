@@ -380,6 +380,15 @@ begin
       and c.relkind in ('r', 'p', 'f', 'v', 'm')
   ) then
     execute format('revoke all on public.%I from public', target_name);
+    if exists (select 1 from pg_catalog.pg_roles where rolname = 'anon') then
+      execute format('revoke all on public.%I from anon', target_name);
+    end if;
+    if exists (select 1 from pg_catalog.pg_roles where rolname = 'authenticated') then
+      execute format('revoke all on public.%I from authenticated', target_name);
+    end if;
+    if exists (select 1 from pg_catalog.pg_roles where rolname = 'service_role') then
+      execute format('revoke all on public.%I from service_role', target_name);
+    end if;
   end if;
 end;
 $$;
