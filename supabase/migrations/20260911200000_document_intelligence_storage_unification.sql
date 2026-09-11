@@ -39,11 +39,24 @@ select
   version.review_status,
   version.review_notes,
   document.notes as document_notes,
-  null::text as text_content,
-  version.uploaded_at as source_created_at
+  parsed_document.extracted_text as text_content,
+  coalesce(parsed_document.created_at, version.uploaded_at) as source_created_at
 from public.case_document_versions as version
 join public.case_documents as document
-  on document.id = version.document_id;
+  on document.id = version.document_id
+left join lateral (
+  select
+    d.extracted_text,
+    d.created_at
+  from public.documents as d
+  where (
+    (version.file_sha256 is not null and d.sha256 = version.file_sha256)
+    or d.storage_path = version.file_path
+  )
+  and (d.case_id is null or d.case_id = document.case_id)
+  order by d.created_at desc
+  limit 1
+) as parsed_document on true;
 
 create or replace view public.document_contradictions
 with (security_invoker = true)
@@ -68,7 +81,12 @@ from public.assessment_contradictions as contradiction
 union all
 select
   contradiction.id,
-  null::uuid as case_id,
+  coalesce(
+    source_a_document.case_id,
+    source_b_document.case_id,
+    source_a_version_document.case_id,
+    source_b_version_document.case_id
+  ) as case_id,
   'ai_retrieval_contradictions'::text as source_table,
   contradiction.id as source_record_id,
   contradiction.contradiction_type,
@@ -82,7 +100,19 @@ select
   null::text as reviewer_notes,
   contradiction.reviewed_by,
   contradiction.created_at
-from public.ai_retrieval_contradictions as contradiction;
+from public.ai_retrieval_contradictions as contradiction
+left join public.case_documents as source_a_document
+  on source_a_document.id = contradiction.source_a_id
+left join public.case_documents as source_b_document
+  on source_b_document.id = contradiction.source_b_id
+left join public.case_document_versions as source_a_version
+  on source_a_version.id = contradiction.source_a_id
+left join public.case_document_versions as source_b_version
+  on source_b_version.id = contradiction.source_b_id
+left join public.case_documents as source_a_version_document
+  on source_a_version_document.id = source_a_version.document_id
+left join public.case_documents as source_b_version_document
+  on source_b_version_document.id = source_b_version.document_id;
 
 create or replace view public.document_fairness
 with (security_invoker = true)
@@ -181,7 +211,12 @@ from public.assessment_contradictions as contradiction
 union all
 select
   contradiction.id,
-  null::uuid as case_id,
+  coalesce(
+    source_a_document.case_id,
+    source_b_document.case_id,
+    source_a_version_document.case_id,
+    source_b_version_document.case_id
+  ) as case_id,
   'retrieval_contradiction'::text as concern_category,
   contradiction.contradiction_type as concern_type,
   contradiction.materiality as severity,
@@ -193,7 +228,19 @@ select
   'ai_retrieval_contradictions'::text as source_table,
   contradiction.id as source_record_id,
   contradiction.created_at
-from public.ai_retrieval_contradictions as contradiction;
+from public.ai_retrieval_contradictions as contradiction
+left join public.case_documents as source_a_document
+  on source_a_document.id = contradiction.source_a_id
+left join public.case_documents as source_b_document
+  on source_b_document.id = contradiction.source_b_id
+left join public.case_document_versions as source_a_version
+  on source_a_version.id = contradiction.source_a_id
+left join public.case_document_versions as source_b_version
+  on source_b_version.id = contradiction.source_b_id
+left join public.case_documents as source_a_version_document
+  on source_a_version_document.id = source_a_version.document_id
+left join public.case_documents as source_b_version_document
+  on source_b_version_document.id = source_b_version.document_id;
 
 grant select on
   public.document_text,
