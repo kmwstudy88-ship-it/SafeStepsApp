@@ -13,6 +13,7 @@
     "backend": "node backend/server.js",
     "verify:documents": "node tools/verify-document-intelligence.mjs",
     "smoke:documents": "node tools/verify-document-intelligence.mjs",
+    "smoke:documents:live": "node tools/smoke-document-intelligence-live.mjs",
     "smoke:backend": "node tools/verify-document-intelligence.mjs",
     "validate": "npx expo-doctor",
     "content:index": "node tools/build-content-index.mjs",
