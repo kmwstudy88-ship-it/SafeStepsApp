@@ -11,7 +11,13 @@ begin
     and c.relname = 'case_assignments';
 
   if case_assignments_relkind in ('r', 'p', 'f', 'm') then
-    if to_regclass('public.case_assignments_legacy') is null then
+    if not exists (
+      select 1
+      from pg_catalog.pg_class c
+      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+      where n.nspname = 'public'
+        and c.relname = 'case_assignments_legacy'
+    ) then
       archived_case_assignments_name := 'case_assignments_legacy';
     else
       archived_case_assignments_name := format(
@@ -122,7 +128,13 @@ begin
     and c.relname = 'document_entities';
 
   if document_entities_relkind in ('r', 'p', 'f', 'v', 'm') then
-    if to_regclass('public.document_entities_legacy') is null then
+    if not exists (
+      select 1
+      from pg_catalog.pg_class c
+      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+      where n.nspname = 'public'
+        and c.relname = 'document_entities_legacy'
+    ) then
       archived_document_entities_name := 'document_entities_legacy';
     else
       archived_document_entities_name := format(
@@ -157,7 +169,13 @@ begin
   end if;
 
   if to_regclass('public.ai_extracted_entities') is not null then
-    if to_regclass('public.document_entities') is not null then
+    if exists (
+      select 1
+      from pg_catalog.pg_class c
+      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+      where n.nspname = 'public'
+        and c.relname = 'document_entities'
+    ) then
       raise exception 'public.document_entities still exists and cannot be replaced safely';
     end if;
     execute $sql$
