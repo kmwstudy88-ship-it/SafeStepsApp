@@ -18,6 +18,7 @@ export default function CaseDetailScreen() {
   const [caseEvents, setCaseEvents] = useState<CaseRiskHistoryResponse['recent_events']>([]);
   const [openAlerts, setOpenAlerts] = useState<CaseRiskHistoryResponse['open_escalations']>([]);
   const [followUpTasks, setFollowUpTasks] = useState<CaseRiskHistoryResponse['follow_up_tasks']>([]);
+  const [riskError, setRiskError] = useState<string | null>(null);
   const [recomputingRisk, setRecomputingRisk] = useState(false);
 
   const loadCase = useCallback(async () => {
@@ -30,7 +31,7 @@ export default function CaseDetailScreen() {
         supabase.from('cases').select('*').eq('id', id).maybeSingle(),
         supabase.from('documents').select('id,file_name,processing_status,updated_at').eq('case_id', id).order('updated_at', { ascending: false }),
         supabase.from('analyses').select('id,provider,model,summary,created_at,risk_result').eq('case_id', id).order('created_at', { ascending: false }),
-        getCaseRiskHistory(id).catch(() => null),
+        getCaseRiskHistory(id).then((data) => ({ data, error: null })).catch((loadRiskError: any) => ({ data: null, error: loadRiskError })),
       ]);
 
       if (caseError) throw caseError;
@@ -40,10 +41,11 @@ export default function CaseDetailScreen() {
       setCaseRow(caseData);
       setDocuments(documentData || []);
       setAnalyses(analysisData || []);
-      setRiskHistory(riskPayload?.risk_history || []);
-      setCaseEvents(riskPayload?.recent_events || []);
-      setOpenAlerts(riskPayload?.open_escalations || []);
-      setFollowUpTasks(riskPayload?.follow_up_tasks || []);
+      setRiskHistory(riskPayload.data?.risk_history || []);
+      setCaseEvents(riskPayload.data?.recent_events || []);
+      setOpenAlerts(riskPayload.data?.open_escalations || []);
+      setFollowUpTasks(riskPayload.data?.follow_up_tasks || []);
+      setRiskError(riskPayload.error?.message || null);
     } catch (loadError: any) {
       setError(loadError?.message || 'Unable to load case details');
     } finally {
@@ -120,6 +122,7 @@ export default function CaseDetailScreen() {
 
         <View style={styles.card}>
           <Text style={styles.sectionTitle}>Latest Risk Snapshot</Text>
+          {riskError ? <Text style={styles.error}>Risk workflow data unavailable: {riskError}</Text> : null}
           {riskHistory[0] ? (
             <View style={styles.item}>
               <Text style={styles.itemTitle}>{riskHistory[0].tier.toUpperCase()} · Score {riskHistory[0].score}</Text>

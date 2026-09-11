@@ -63,19 +63,38 @@ test('buildDashboardPayload returns highest-risk, rising-risk, open escalation, 
     cases: [
       { id: 'case-a', title: 'Case A', status: 'open', updated_at: '2026-09-11T10:00:00.000Z' },
       { id: 'case-b', title: 'Case B', status: 'open', updated_at: '2026-09-11T11:00:00.000Z' },
+      { id: 'case-c', title: 'Case C', status: 'closed', updated_at: '2026-09-11T09:00:00.000Z' },
+      ...Array.from({ length: 11 }, (_, index) => ({
+        id: `case-extra-${index}`,
+        title: `Extra ${index}`,
+        status: 'open',
+        updated_at: `2026-09-11T0${index % 9}:00:00.000Z`,
+      })),
     ],
     snapshots: [
       { case_id: 'case-a', score: 84, tier: 'critical', confidence: 0.9, rationale: 'A latest', created_at: '2026-09-11T11:00:00.000Z' },
       { case_id: 'case-a', score: 60, tier: 'high', confidence: 0.8, rationale: 'A previous', created_at: '2026-09-10T11:00:00.000Z' },
       { case_id: 'case-b', score: 65, tier: 'high', confidence: 0.8, rationale: 'B latest', created_at: '2026-09-11T10:30:00.000Z' },
       { case_id: 'case-b', score: 64, tier: 'high', confidence: 0.8, rationale: 'B previous', created_at: '2026-09-10T10:30:00.000Z' },
+      { case_id: 'case-c', score: 99, tier: 'critical', confidence: 0.99, rationale: 'C latest', created_at: '2026-09-11T10:45:00.000Z' },
+      { case_id: 'case-c', score: 70, tier: 'high', confidence: 0.8, rationale: 'C previous', created_at: '2026-09-10T10:45:00.000Z' },
+      ...Array.from({ length: 11 }, (_, index) => ({
+        case_id: `case-extra-${index}`,
+        score: 50 - index,
+        tier: 'high',
+        confidence: 0.7,
+        rationale: `Extra ${index}`,
+        created_at: `2026-09-11T08:${String(index).padStart(2, '0')}:00.000Z`,
+      })),
     ],
     alerts: [
       { id: 'alert-1', case_id: 'case-a', status: 'open', severity: 'critical', created_at: '2026-09-11T11:05:00.000Z' },
+      { id: 'alert-2', case_id: 'case-b', status: 'acknowledged', severity: 'high', created_at: '2026-09-11T10:35:00.000Z' },
     ],
     tasks: [
       { id: 'task-1', case_id: 'case-a', title: 'A overdue', due_at: '2026-09-10T10:00:00.000Z', priority: 'urgent', status: 'pending' },
       { id: 'task-2', case_id: 'case-b', title: 'B active', due_at: '2099-09-12T10:00:00.000Z', priority: 'medium', status: 'pending' },
+      { id: 'task-3', case_id: 'case-b', title: 'B overdue', due_at: '2026-09-09T10:00:00.000Z', priority: 'high', status: 'overdue' },
     ],
     timelineByCase: new Map([
       ['case-a', [{ id: 'event-1', event_type: 'field_note', note: 'Recent note' }]],
@@ -85,6 +104,11 @@ test('buildDashboardPayload returns highest-risk, rising-risk, open escalation, 
   assert.equal(dashboard.highest_risk_open_cases[0].case_id, 'case-a');
   assert.equal(dashboard.rising_risk_cases[0].case_id, 'case-a');
   assert.equal(dashboard.open_escalations[0].id, 'alert-1');
-  assert.equal(dashboard.overdue_follow_ups[0].id, 'task-1');
+  assert.equal(dashboard.open_escalations[1].id, 'alert-2');
+  assert.equal(dashboard.overdue_follow_ups[0].id, 'task-3');
+  assert.equal(dashboard.overdue_follow_ups[1].id, 'task-1');
   assert.equal(dashboard.case_summaries.find((item) => item.case_id === 'case-a')?.recent_events.length, 1);
+  assert.equal(dashboard.highest_risk_open_cases.some((item) => item.case_id === 'case-c'), false);
+  assert.equal(dashboard.rising_risk_cases.some((item) => item.case_id === 'case-c'), false);
+  assert.equal(dashboard.highest_risk_open_cases.length, 10);
 });

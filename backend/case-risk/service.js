@@ -173,7 +173,7 @@ function normalizeIncomingEventPayload(body = {}) {
   };
 }
 
-function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdempotencyKey, eventType }) {
+function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdempotencyKey, eventType, rules = rulesFromEnv() }) {
   const alerts = [];
   if (snapshot.hard_escalation?.triggered) {
     for (const trigger of snapshot.hard_escalation.triggers || []) {
@@ -192,7 +192,7 @@ function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdem
     }
   }
 
-  if (snapshot.score >= 75) {
+  if (snapshot.score >= rules.thresholds.criticalAlertScore) {
     alerts.push({
       dedupe_key: 'threshold:critical',
       trigger_type: 'risk_threshold_critical',
@@ -201,7 +201,7 @@ function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdem
       routed_to: routedTo,
       detail: { score: snapshot.score, tier: snapshot.tier },
     });
-  } else if (snapshot.score >= 60) {
+  } else if (snapshot.score >= rules.thresholds.highAlertScore) {
     alerts.push({
       dedupe_key: 'threshold:high',
       trigger_type: 'risk_threshold_high',
@@ -399,6 +399,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
 
       const existingEvents = await loadRecentCaseEvents(adminClient, caseId, 50);
       const previousSnapshot = await loadLatestSnapshot(adminClient, caseId);
+      const rules = rulesFromEnv();
       const newEvent = {
         created_at: new Date().toISOString(),
         event_type: eventType,
@@ -412,7 +413,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         protectiveFactors: factors.protective,
         recentEvents: allEvents,
         hardFlags: factors.hardFlags,
-      });
+      }, { rules });
       const assignments = await loadCaseAssignments(adminClient, caseId);
       const routedTo = {
         case_worker_ids: assignments.filter((item) => item.assignment_role === 'case_worker').map((item) => item.user_id),
@@ -424,8 +425,9 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         routedTo,
         eventIdempotencyKey: body.idempotencyKey || body.idempotency_key || null,
         eventType,
+        rules,
       });
-      const tasks = buildFollowUpTasks({ caseId, snapshot, previousSnapshot, assignments });
+      const tasks = buildFollowUpTasks({ caseId, snapshot, previousSnapshot, assignments, rules });
 
       const { data, error } = await adminClient.rpc('apply_case_risk_workflow', {
         p_case_id: caseId,
@@ -465,6 +467,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
 
       const existingEvents = await loadRecentCaseEvents(adminClient, caseId, 50);
       const previousSnapshot = await loadLatestSnapshot(adminClient, caseId);
+      const rules = rulesFromEnv();
       const factors = aggregateFactorsFromEvents(existingEvents);
       const snapshot = scoreCaseRisk({
         behavioralCues: factors.behavioral,
@@ -472,14 +475,14 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         protectiveFactors: factors.protective,
         recentEvents: existingEvents,
         hardFlags: factors.hardFlags,
-      });
+      }, { rules });
       const assignments = await loadCaseAssignments(adminClient, caseId);
       const routedTo = {
         case_worker_ids: assignments.filter((item) => item.assignment_role === 'case_worker').map((item) => item.user_id),
         supervisor_ids: assignments.filter((item) => item.assignment_role === 'supervisor').map((item) => item.user_id),
       };
-      const alerts = buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdempotencyKey: null, eventType: 'risk_recompute' });
-      const tasks = buildFollowUpTasks({ caseId, snapshot, previousSnapshot, assignments });
+      const alerts = buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdempotencyKey: null, eventType: 'risk_recompute', rules });
+      const tasks = buildFollowUpTasks({ caseId, snapshot, previousSnapshot, assignments, rules });
 
       const { data, error } = await adminClient.rpc('apply_case_risk_workflow', {
         p_case_id: caseId,
@@ -546,31 +549,46 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         };
       }
 
-      const [casesResult, snapshotsResult, alertsResult, tasksResult, eventsResult] = await Promise.all([
-        adminClient.from('cases').select('id,title,status,updated_at').in('id', caseIds),
-        adminClient.from('risk_snapshots').select('*').in('case_id', caseIds).order('created_at', { ascending: false }).limit(Math.max(caseIds.length * 4, 20)),
-        adminClient.from('escalation_alerts').select('*').in('case_id', caseIds).order('created_at', { ascending: false }).limit(Math.max(caseIds.length * 4, 20)),
-        adminClient.from('follow_up_tasks').select('*').in('case_id', caseIds).order('due_at', { ascending: true }).limit(Math.max(caseIds.length * 4, 20)),
-        adminClient.from('case_events').select('id,case_id,event_type,note,created_at').in('case_id', caseIds).order('created_at', { ascending: false }).limit(Math.max(caseIds.length * 3, 15)),
-      ]);
-      if (casesResult.error) throw casesResult.error;
-      if (snapshotsResult.error) throw snapshotsResult.error;
-      if (alertsResult.error) throw alertsResult.error;
-      if (tasksResult.error) throw tasksResult.error;
-      if (eventsResult.error) throw eventsResult.error;
+      const { data: cases, error: casesError } = await adminClient.from('cases').select('id,title,status,updated_at').in('id', caseIds);
+      if (casesError) throw casesError;
+
+      const perCaseResults = await Promise.all(caseIds.map(async (currentCaseId) => {
+        const [snapshotsResult, alertsResult, tasksResult, eventsResult] = await Promise.all([
+          adminClient.from('risk_snapshots').select('*').eq('case_id', currentCaseId).order('created_at', { ascending: false }).limit(2),
+          adminClient.from('escalation_alerts').select('*').eq('case_id', currentCaseId).order('created_at', { ascending: false }).limit(10),
+          adminClient.from('follow_up_tasks').select('*').eq('case_id', currentCaseId).order('due_at', { ascending: true }).limit(10),
+          adminClient.from('case_events').select('id,case_id,event_type,note,created_at').eq('case_id', currentCaseId).order('created_at', { ascending: false }).limit(3),
+        ]);
+        if (snapshotsResult.error) throw snapshotsResult.error;
+        if (alertsResult.error) throw alertsResult.error;
+        if (tasksResult.error) throw tasksResult.error;
+        if (eventsResult.error) throw eventsResult.error;
+        return {
+          snapshots: snapshotsResult.data || [],
+          alerts: alertsResult.data || [],
+          tasks: tasksResult.data || [],
+          events: eventsResult.data || [],
+        };
+      }));
 
       const timelineByCase = new Map();
-      for (const event of eventsResult.data || []) {
-        const bucket = timelineByCase.get(event.case_id) || [];
-        if (bucket.length < 3) bucket.push(event);
-        timelineByCase.set(event.case_id, bucket);
+      const snapshots = [];
+      const alerts = [];
+      const tasks = [];
+      for (let index = 0; index < caseIds.length; index += 1) {
+        const currentCaseId = caseIds[index];
+        const result = perCaseResults[index];
+        timelineByCase.set(currentCaseId, result.events);
+        snapshots.push(...result.snapshots);
+        alerts.push(...result.alerts);
+        tasks.push(...result.tasks);
       }
 
       return buildDashboardPayload({
-        cases: casesResult.data || [],
-        snapshots: snapshotsResult.data || [],
-        alerts: alertsResult.data || [],
-        tasks: tasksResult.data || [],
+        cases: cases || [],
+        snapshots,
+        alerts,
+        tasks,
         timelineByCase,
       });
     },

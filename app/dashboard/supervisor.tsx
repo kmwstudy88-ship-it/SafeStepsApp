@@ -67,7 +67,7 @@ export default function SupervisorDashboardScreen() {
             <TouchableOpacity
               key={item.case_id}
               style={styles.card}
-              onPress={() => router.push(`/cases/${item.case_id}` as any)}
+              onPress={() => router.push({ pathname: '/cases/[id]', params: { id: item.case_id } })}
               accessibilityRole="button"
               accessibilityLabel={`${item.title}, ${item.latest_risk?.tier || 'unknown'} risk, score ${item.latest_risk?.score ?? 'not available'}`}
               accessibilityHint="Opens the case detail view for the latest risk rationale, alerts, and follow-up tasks."
@@ -88,7 +88,7 @@ export default function SupervisorDashboardScreen() {
             <TouchableOpacity
               key={item.case_id}
               style={styles.card}
-              onPress={() => router.push(`/cases/${item.case_id}` as any)}
+              onPress={() => router.push({ pathname: '/cases/[id]', params: { id: item.case_id } })}
               accessibilityRole="button"
               accessibilityLabel={`${item.title}, rising risk by ${item.delta}, current tier ${item.latest_risk?.tier || 'unknown'}`}
               accessibilityHint="Opens the case detail view for recent timeline events and updated risk rationale."
