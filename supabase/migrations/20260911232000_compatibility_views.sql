@@ -145,18 +145,39 @@ begin
 end
 $migration$;
 
-grant select on public.case_assignments to authenticated, service_role;
-grant select on public.visits to authenticated, service_role;
-grant select on public.messages to authenticated, service_role;
-grant select on public.timeline_events to authenticated, service_role;
-grant select on public.risk_indicators to authenticated, service_role;
-grant select on public.contradictions to authenticated, service_role;
-grant select on public.fairness_analysis to authenticated, service_role;
+do $migration$
+begin
+  if exists (select 1 from pg_catalog.pg_roles where rolname = 'authenticated') then
+    execute 'grant select on public.case_assignments to authenticated';
+    execute 'grant select on public.visits to authenticated';
+    execute 'grant select on public.messages to authenticated';
+    execute 'grant select on public.timeline_events to authenticated';
+    execute 'grant select on public.risk_indicators to authenticated';
+    execute 'grant select on public.contradictions to authenticated';
+    execute 'grant select on public.fairness_analysis to authenticated';
+  end if;
+
+  if exists (select 1 from pg_catalog.pg_roles where rolname = 'service_role') then
+    execute 'grant select on public.case_assignments to service_role';
+    execute 'grant select on public.visits to service_role';
+    execute 'grant select on public.messages to service_role';
+    execute 'grant select on public.timeline_events to service_role';
+    execute 'grant select on public.risk_indicators to service_role';
+    execute 'grant select on public.contradictions to service_role';
+    execute 'grant select on public.fairness_analysis to service_role';
+  end if;
+end
+$migration$;
 
 do $migration$
 begin
   if to_regclass('public.document_entities') is not null then
-    execute 'grant select on public.document_entities to authenticated, service_role';
+    if exists (select 1 from pg_catalog.pg_roles where rolname = 'authenticated') then
+      execute 'grant select on public.document_entities to authenticated';
+    end if;
+    if exists (select 1 from pg_catalog.pg_roles where rolname = 'service_role') then
+      execute 'grant select on public.document_entities to service_role';
+    end if;
   end if;
 end
 $migration$;
