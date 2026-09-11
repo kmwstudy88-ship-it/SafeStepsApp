@@ -34,16 +34,31 @@ Deno.serve(async (req: Request) => {
     if (authError || !authData.user) throw new Error("Authentication failed");
 
     const body = await req.json();
-    const actorUserId = body.actorUserId;
-    if (!actorUserId || !body.action || !body.resourceType) {
-      throw new Error("actorUserId, action, and resourceType are required");
+    if (!body.action || !body.resourceType) {
+      throw new Error("action and resourceType are required");
     }
 
-    const { data, error } = await admin
+    const { data: appUser, error: appUserError } = await admin
+      .from("users")
+      .select("id")
+      .eq("auth_user_id", authData.user.id)
+      .maybeSingle();
+    if (appUserError || !appUser?.id) throw new Error("Authenticated user is not mapped in users table");
+
+    if (body.caseId) {
+      const { data: caseRow, error: caseError } = await userClient
+        .from("cases")
+        .select("id")
+        .eq("id", body.caseId)
+        .maybeSingle();
+      if (caseError || !caseRow?.id) throw new Error("You do not have access to this case");
+    }
+
+    const { data, error } = await userClient
       .from("audit_logs")
       .insert({
         case_id: body.caseId ?? null,
-        actor_user_id: actorUserId,
+        actor_user_id: appUser.id,
         action: body.action,
         resource_type: body.resourceType,
         resource_id: body.resourceId ?? null,

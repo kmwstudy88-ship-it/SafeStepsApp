@@ -19,7 +19,7 @@ const APP_ROUTE_AUDIT = [
   { route: "/fairness", feature: "fairness analyzer", status: "live analyzer UI", backend: "Node local API" },
   { route: "/cases", feature: "case management", status: "authenticated list + realtime updates", backend: "Supabase auth + assignments" },
   { route: "/cases/[id]", feature: "case detail", status: "document + analysis status view", backend: "Supabase cases/documents/analyses" },
-  { route: "/documents/[id]", feature: "document pipeline", status: "upload + process flow", backend: "Node API + expo-document-picker" },
+  { route: "/cases/[id]/documents", feature: "document pipeline", status: "upload + process flow", backend: "Node API + expo-document-picker" },
   { route: "/contact-visit", feature: "contact visit companion", status: "static guidance UI", backend: "none" },
   { route: "/discreet", feature: "discreet mode", status: "device-local prototype", backend: "none" },
 ];

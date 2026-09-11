@@ -53,25 +53,31 @@ export default function CaseListScreen() {
       const mappedUserId = userRow?.id ?? null;
       setAppUserId(mappedUserId);
 
-      const { data: assignmentRows, error: assignmentError } = await supabase
-        .from('case_assignments')
-        .select('case_id')
-        .eq('user_id', mappedUserId)
-        .eq('is_active', true);
+      if (!mappedUserId) {
+        setCases([]);
+        setError('Your authenticated account is not yet linked in the users table. Contact an administrator.');
+      } else {
+        const { data: assignmentRows, error: assignmentError } = await supabase
+          .from('case_assignments')
+          .select('case_id')
+          .eq('user_id', mappedUserId)
+          .eq('is_active', true);
 
-      if (assignmentError) throw assignmentError;
+        if (assignmentError) throw assignmentError;
 
-      const assignedCaseIds = (assignmentRows || []).map((row: any) => row.case_id).filter(Boolean);
-
-      let caseQuery = supabase.from('cases').select('id,title,status,updated_at').order('updated_at', { ascending: false });
-      if (assignedCaseIds.length) {
-        caseQuery = caseQuery.in('id', assignedCaseIds);
+        const assignedCaseIds = (assignmentRows || []).map((row: any) => row.case_id).filter(Boolean);
+        if (!assignedCaseIds.length) {
+          setCases([]);
+        } else {
+          const { data: caseRows, error: caseError } = await supabase
+            .from('cases')
+            .select('id,title,status,updated_at')
+            .in('id', assignedCaseIds)
+            .order('updated_at', { ascending: false });
+          if (caseError) throw caseError;
+          setCases((caseRows || []) as CaseRow[]);
+        }
       }
-
-      const { data: caseRows, error: caseError } = await caseQuery;
-      if (caseError) throw caseError;
-
-      setCases((caseRows || []) as CaseRow[]);
     } catch (loadError: any) {
       setError(loadError?.message || 'Unable to load assigned cases');
     } finally {

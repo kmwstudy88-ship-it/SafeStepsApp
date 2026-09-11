@@ -52,7 +52,7 @@ Compatibility and generated areas live here:
 | `/fairness` | `lib/fairness/DocumentFairnessViewerScreen.tsx` | live fairness analyzer UI | Node API fairness endpoint |
 | `/cases` | `app/cases/index.tsx` | authenticated case list | Supabase auth, case assignments, realtime |
 | `/cases/[id]` | `app/cases/[id].tsx` | case detail + analysis status | Supabase cases/documents/analyses |
-| `/documents/[id]` | `app/documents/[id].tsx` | document upload + processing | `expo-document-picker` + Node analysis API |
+| `/cases/[id]/documents` | `app/cases/[id]/documents.tsx` | document upload + processing | `expo-document-picker` + Node analysis API |
 | `/contact-visit` | `lib/contactVisit/ContactVisitCompanionScreen.tsx` | static guidance UI | none |
 | `/discreet` | `lib/privacy/DiscreetModeScreen.tsx` | device-local disguise prototype | none |
 

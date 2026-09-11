@@ -74,9 +74,8 @@ try {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ text: 'quick check' }),
   });
-
-  if (!process.env.OPENAI_API_KEY && !process.env.OPENAI_KEY && analyzeResponse.status !== 503) {
-    throw new Error(`Expected /documents/analyze 503 without OpenAI key, got ${analyzeResponse.status}`);
+  if (!analyzeResponse.ok) {
+    throw new Error(`Expected /documents/analyze success, got ${analyzeResponse.status}`);
   }
 
   console.log('Backend pipeline smoke passed.');

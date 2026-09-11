@@ -40,6 +40,12 @@ Deno.serve(async (req: Request) => {
 
     const body = await req.json();
     const expirySeconds = Math.min(900, Math.max(60, Number(body.expirySeconds ?? 600)));
+    const { data: appUser, error: appUserError } = await admin
+      .from("users")
+      .select("id")
+      .eq("auth_user_id", authData.user.id)
+      .maybeSingle();
+    if (appUserError || !appUser?.id) throw new Error("Authenticated user is not mapped in users table");
 
     const { data: eventId, error: requestError } = await userClient.rpc("request_case_report_export", {
       p_case_id: body.caseId,
@@ -55,7 +61,7 @@ Deno.serve(async (req: Request) => {
       .from("case_report_export_events")
       .select("*,report_rendered_files(storage_bucket,storage_path,file_hash_sha256)")
       .eq("id", eventId)
-      .eq("requested_by", authData.user.id)
+      .eq("requested_by", appUser.id)
       .single();
 
     if (eventError || !event) throw new Error("Authorised export record not found");
@@ -67,16 +73,17 @@ Deno.serve(async (req: Request) => {
       .from(rendered.storage_bucket)
       .createSignedUrl(rendered.storage_path, expirySeconds, { download: true });
     if (signError || !signed?.signedUrl) throw new Error("Private download could not be issued");
+    const issuedExpiresAt = new Date(Date.now() + expirySeconds * 1000).toISOString();
 
     await admin.from("audit_logs").insert({
       case_id: body.caseId,
-      actor_user_id: authData.user.id,
+      actor_user_id: appUser.id,
       action: "secure_report_download_issued",
       resource_type: "report_export",
       resource_id: event.id,
       details: {
         report_version: event.report_version,
-        expires_at: event.signed_url_expires_at,
+        expires_at: issuedExpiresAt,
       },
     });
 
@@ -84,7 +91,7 @@ Deno.serve(async (req: Request) => {
       JSON.stringify({
         exportEventId: event.id,
         signedUrl: signed.signedUrl,
-        expiresAt: event.signed_url_expires_at,
+        expiresAt: issuedExpiresAt,
         reportVersion: event.report_version,
         fileSha256: rendered.file_hash_sha256,
       }),

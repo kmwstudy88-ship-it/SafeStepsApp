@@ -73,7 +73,7 @@ export default function CaseDetailScreen() {
           </View>
         ) : null}
 
-        <TouchableOpacity style={styles.button} onPress={() => router.push(`/documents/${id}` as any)}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push(`/cases/${id}/documents` as any)}>
           <Text style={styles.buttonText}>Open Document Viewer & Upload</Text>
         </TouchableOpacity>
 

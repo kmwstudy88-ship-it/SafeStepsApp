@@ -13,6 +13,14 @@ function cors(req: Request) {
   };
 }
 
+async function signPipelineContext(token: string, actorUserId: string, caseId: string, documentId: string) {
+  const payload = `${actorUserId}:${caseId}:${documentId}:${token}`;
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(payload));
+  return Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
+}
+
 Deno.serve(async (req: Request) => {
   const headers = cors(req);
   if (req.method === "OPTIONS") return new Response("ok", { headers });
@@ -34,23 +42,50 @@ Deno.serve(async (req: Request) => {
     if (authError || !authData.user) throw new Error("Authentication failed");
 
     const body = await req.json();
-    if (!body.documentId || !body.caseId || !body.actorUserId) {
-      throw new Error("documentId, caseId, and actorUserId are required");
+    if (!body.documentId || !body.caseId) {
+      throw new Error("documentId and caseId are required");
     }
+
+    const { data: appUser, error: appUserError } = await admin
+      .from("users")
+      .select("id")
+      .eq("auth_user_id", authData.user.id)
+      .maybeSingle();
+    if (appUserError || !appUser?.id) throw new Error("Authenticated user is not mapped in users table");
+
+    const { data: caseRow, error: caseError } = await userClient
+      .from("cases")
+      .select("id")
+      .eq("id", body.caseId)
+      .maybeSingle();
+    if (caseError || !caseRow?.id) throw new Error("You do not have access to this case");
+
+    const { data: documentRow, error: documentError } = await userClient
+      .from("documents")
+      .select("id")
+      .eq("id", body.documentId)
+      .eq("case_id", body.caseId)
+      .maybeSingle();
+    if (documentError || !documentRow?.id) throw new Error("You do not have access to this document");
+
+    const backendBaseUrl = Deno.env.get("SAFESTEPS_BACKEND_URL");
+    if (!backendBaseUrl) throw new Error("SAFESTEPS_BACKEND_URL is required");
+    const pipelineToken = Deno.env.get("SAFESTEPS_PIPELINE_TOKEN");
+    if (!pipelineToken) throw new Error("SAFESTEPS_PIPELINE_TOKEN is required");
 
     const queuePayload = {
       document_id: body.documentId,
       source: "edge-function",
       requested_at: new Date().toISOString(),
-      requested_by: body.actorUserId,
+      requested_by: appUser.id,
     };
 
-    const { data: eventRow, error: eventError } = await admin
+    const { data: eventRow, error: eventError } = await userClient
       .from("events")
       .insert({
         case_id: body.caseId,
         document_id: body.documentId,
-        actor_user_id: body.actorUserId,
+        actor_user_id: appUser.id,
         event_type: "document_processing_queued",
         event_payload: queuePayload,
       })
@@ -59,22 +94,49 @@ Deno.serve(async (req: Request) => {
 
     if (eventError) throw eventError;
 
-    const backendUrl = (Deno.env.get("SAFESTEPS_BACKEND_URL") ?? "http://localhost:3000").replace(/\/$/, "");
-    const processResponse = await fetch(`${backendUrl}/documents/process`, {
+    const processResponse = await fetch(`${backendBaseUrl.replace(/\/$/, "")}/documents/process`, {
+      headers: {
+        "Content-Type": "application/json",
+        "x-safesteps-pipeline-token": pipelineToken,
+        "x-safesteps-actor-user-id": appUser.id,
+        "x-safesteps-case-id": body.caseId,
+        "x-safesteps-document-id": body.documentId,
+        "x-safesteps-context-signature": await signPipelineContext(
+          pipelineToken,
+          appUser.id,
+          body.caseId,
+          body.documentId,
+        ),
+      },
       method: "POST",
-      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         documentId: body.documentId,
         caseId: body.caseId,
-        requestedBy: body.actorUserId,
+        requestedBy: appUser.id,
       }),
     });
 
     const processBody = await processResponse.json().catch(() => null);
+    if (!processResponse.ok) {
+      await userClient.from("events").insert({
+        case_id: body.caseId,
+        document_id: body.documentId,
+        actor_user_id: appUser.id,
+        event_type: "document_processing_failed",
+        event_payload: {
+          queue_event_id: eventRow.id,
+          backend_status: processResponse.status,
+          backend_response: processBody,
+        },
+      });
+      throw new Error(
+        `Backend processing failed (${processResponse.status}): ${JSON.stringify(processBody)}`,
+      );
+    }
 
-    const { error: auditError } = await admin.from("audit_logs").insert({
+    const { error: auditError } = await userClient.from("audit_logs").insert({
       case_id: body.caseId,
-      actor_user_id: body.actorUserId,
+      actor_user_id: appUser.id,
       action: "document_processing_requested",
       resource_type: "document",
       resource_id: body.documentId,

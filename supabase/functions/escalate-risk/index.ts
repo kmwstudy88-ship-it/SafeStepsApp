@@ -34,29 +34,45 @@ Deno.serve(async (req: Request) => {
     if (authError || !authData.user) throw new Error("Authentication failed");
 
     const body = await req.json();
-    if (!body.caseId || !body.actorUserId || body.riskScore == null || !body.riskLevel) {
-      throw new Error("caseId, actorUserId, riskScore, and riskLevel are required");
+    if (!body.caseId || body.riskScore == null || !body.riskLevel) {
+      throw new Error("caseId, riskScore, and riskLevel are required");
     }
+    const numericRiskScore = Number(body.riskScore);
+    if (!Number.isFinite(numericRiskScore)) throw new Error("riskScore must be a number");
 
-    const escalationRequired = ["high", "critical"].includes(String(body.riskLevel).toLowerCase()) || Number(body.riskScore) >= 65;
+    const { data: appUser, error: appUserError } = await admin
+      .from("users")
+      .select("id")
+      .eq("auth_user_id", authData.user.id)
+      .maybeSingle();
+    if (appUserError || !appUser?.id) throw new Error("Authenticated user is not mapped in users table");
+
+    const { data: caseRow, error: caseError } = await userClient
+      .from("cases")
+      .select("id")
+      .eq("id", body.caseId)
+      .maybeSingle();
+    if (caseError || !caseRow?.id) throw new Error("You do not have access to this case");
+
+    const escalationRequired = ["high", "critical"].includes(String(body.riskLevel).toLowerCase()) || numericRiskScore >= 65;
     if (!escalationRequired) {
       return new Response(JSON.stringify({ ok: true, escalated: false, reason: "Risk score below escalation threshold" }), { headers: { ...headers, ...jsonHeaders } });
     }
 
     const payload = {
-      risk_score: Number(body.riskScore),
+      risk_score: numericRiskScore,
       risk_level: body.riskLevel,
       analysis_id: body.analysisId ?? null,
       triggered_at: new Date().toISOString(),
       notes: body.notes ?? null,
     };
 
-    const { data: eventRow, error: eventError } = await admin
+    const { data: eventRow, error: eventError } = await userClient
       .from("events")
       .insert({
         case_id: body.caseId,
         analysis_id: body.analysisId ?? null,
-        actor_user_id: body.actorUserId,
+        actor_user_id: appUser.id,
         event_type: "risk_escalation_triggered",
         event_payload: payload,
       })
@@ -65,9 +81,9 @@ Deno.serve(async (req: Request) => {
 
     if (eventError) throw eventError;
 
-    const { error: auditError } = await admin.from("audit_logs").insert({
+    const { error: auditError } = await userClient.from("audit_logs").insert({
       case_id: body.caseId,
-      actor_user_id: body.actorUserId,
+      actor_user_id: appUser.id,
       action: "risk_escalation_triggered",
       resource_type: "risk_assessment",
       resource_id: body.analysisId ?? null,

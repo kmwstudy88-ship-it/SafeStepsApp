@@ -22,7 +22,7 @@ export default function RootLayout() {
         <Stack.Screen name="reports/index" options={{ title: 'Court Reports' }} />
         <Stack.Screen name="cases/index" options={{ title: 'Case List' }} />
         <Stack.Screen name="cases/[id]" options={{ title: 'Case Detail' }} />
-        <Stack.Screen name="documents/[id]" options={{ title: 'Document Viewer' }} />
+        <Stack.Screen name="cases/[id]/documents" options={{ title: 'Document Viewer' }} />
         <Stack.Screen name="voice-coach/index" options={{ title: 'Voice & Breathing' }} />
         <Stack.Screen name="sos/index" options={{ title: 'SOS Calming' }} />
         <Stack.Screen name="fairness/index" options={{ title: 'Fairness Analyzer' }} />

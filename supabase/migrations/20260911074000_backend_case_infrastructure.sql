@@ -257,10 +257,28 @@ for select to authenticated
 using (public.case_visible_to_current_user(case_id));
 
 drop policy if exists case_assignments_manage_by_supervisors on public.case_assignments;
-create policy case_assignments_manage_by_supervisors on public.case_assignments
-for all to authenticated
+drop policy if exists case_assignments_insert_manage_by_supervisors on public.case_assignments;
+drop policy if exists case_assignments_update_manage_by_supervisors on public.case_assignments;
+drop policy if exists case_assignments_delete_manage_by_supervisors on public.case_assignments;
+
+create policy case_assignments_insert_manage_by_supervisors on public.case_assignments
+for insert to authenticated
+with check (
+  coalesce(public.current_role_key(), '') = 'admin'
+  or (
+    coalesce(public.current_role_key(), '') = 'supervisor'
+    and public.case_visible_to_current_user(case_id)
+  )
+);
+
+create policy case_assignments_update_manage_by_supervisors on public.case_assignments
+for update to authenticated
 using (coalesce(public.current_role_key(), '') in ('supervisor', 'admin'))
 with check (coalesce(public.current_role_key(), '') in ('supervisor', 'admin'));
+
+create policy case_assignments_delete_manage_by_supervisors on public.case_assignments
+for delete to authenticated
+using (coalesce(public.current_role_key(), '') in ('supervisor', 'admin'));
 
 drop policy if exists cases_access_by_assignment_or_parent on public.cases;
 create policy cases_access_by_assignment_or_parent on public.cases
@@ -268,10 +286,42 @@ for select to authenticated
 using (public.case_visible_to_current_user(id));
 
 drop policy if exists cases_manage_by_supervisor_admin on public.cases;
+drop policy if exists cases_insert_by_supervisor_admin on public.cases;
+drop policy if exists cases_delete_by_supervisor_admin on public.cases;
+
+create policy cases_insert_by_supervisor_admin on public.cases
+for insert to authenticated
+with check (
+  coalesce(public.current_role_key(), '') = 'admin'
+  or coalesce(public.current_role_key(), '') = 'supervisor'
+);
+
 create policy cases_manage_by_supervisor_admin on public.cases
-for all to authenticated
-using (coalesce(public.current_role_key(), '') in ('supervisor', 'admin'))
-with check (coalesce(public.current_role_key(), '') in ('supervisor', 'admin'));
+for update to authenticated
+using (
+  coalesce(public.current_role_key(), '') = 'admin'
+  or (
+    coalesce(public.current_role_key(), '') = 'supervisor'
+    and public.case_visible_to_current_user(id)
+  )
+)
+with check (
+  coalesce(public.current_role_key(), '') = 'admin'
+  or (
+    coalesce(public.current_role_key(), '') = 'supervisor'
+    and public.case_visible_to_current_user(id)
+  )
+);
+
+create policy cases_delete_by_supervisor_admin on public.cases
+for delete to authenticated
+using (
+  coalesce(public.current_role_key(), '') = 'admin'
+  or (
+    coalesce(public.current_role_key(), '') = 'supervisor'
+    and public.case_visible_to_current_user(id)
+  )
+);
 
 drop policy if exists documents_case_access on public.documents;
 create policy documents_case_access on public.documents

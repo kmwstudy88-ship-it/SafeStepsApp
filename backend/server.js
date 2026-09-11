@@ -109,6 +109,13 @@ function requestId(prefix = 'req') {
   return `${prefix}_${crypto.randomUUID().replace(/-/g, '').slice(0, 16)}`;
 }
 
+function createPipelineContextSignature(token, actorUserId, caseId, documentId) {
+  return crypto
+    .createHash('sha256')
+    .update(`${actorUserId}:${caseId}:${documentId}:${token}`)
+    .digest('hex');
+}
+
 function hasOpenAiKey() {
   return Boolean(process.env.OPENAI_API_KEY || process.env.OPENAI_KEY);
 }
@@ -178,9 +185,10 @@ async function storeDocument(payload) {
   try {
     const row = await trySupabaseInsert('documents', record);
     return row || record;
-  } catch {
-    memory.documents.set(record.id, record);
-    return record;
+  } catch (error) {
+    throw new Error(
+      `Document persistence failed in Supabase: ${error instanceof Error ? error.message : 'unknown error'}`,
+    );
   }
 }
 
@@ -484,9 +492,10 @@ async function storeAnalysis(payload) {
   try {
     const row = await trySupabaseInsert('analyses', record);
     return row || record;
-  } catch {
-    memory.analyses.set(record.id, record);
-    return record;
+  } catch (error) {
+    throw new Error(
+      `Analysis persistence failed in Supabase: ${error instanceof Error ? error.message : 'unknown error'}`,
+    );
   }
 }
 
@@ -521,9 +530,10 @@ async function storeRiskAssessment(payload) {
   try {
     const row = await trySupabaseInsert('risk_assessments', record);
     return row || record;
-  } catch {
-    memory.risks.set(record.id, record);
-    return record;
+  } catch (error) {
+    throw new Error(
+      `Risk assessment persistence failed in Supabase: ${error instanceof Error ? error.message : 'unknown error'}`,
+    );
   }
 }
 
@@ -660,8 +670,62 @@ const server = http.createServer(async (req, res) => {
   }
 
   if (req.method === 'POST' && url.pathname === '/documents/process') {
+    const requiredPipelineToken = process.env.SAFESTEPS_PIPELINE_TOKEN;
+    if (requiredPipelineToken) {
+      const providedToken = req.headers['x-safesteps-pipeline-token'];
+      if (providedToken !== requiredPipelineToken) {
+        return sendJson(res, 401, {
+          error: { code: 'UNAUTHORIZED', message: 'Missing or invalid pipeline token' },
+        });
+      }
+
+      const actorUserId = req.headers['x-safesteps-actor-user-id'];
+      const caseIdHeader = req.headers['x-safesteps-case-id'];
+      const documentIdHeader = req.headers['x-safesteps-document-id'];
+      const signatureHeader = req.headers['x-safesteps-context-signature'];
+
+      if (
+        typeof actorUserId !== 'string' ||
+        typeof caseIdHeader !== 'string' ||
+        typeof documentIdHeader !== 'string' ||
+        typeof signatureHeader !== 'string'
+      ) {
+        return sendJson(res, 401, {
+          error: { code: 'UNAUTHORIZED', message: 'Missing pipeline identity headers' },
+        });
+      }
+
+      const expectedSignature = createPipelineContextSignature(
+        requiredPipelineToken,
+        actorUserId,
+        caseIdHeader,
+        documentIdHeader,
+      );
+
+      if (signatureHeader !== expectedSignature) {
+        return sendJson(res, 401, {
+          error: { code: 'UNAUTHORIZED', message: 'Invalid pipeline context signature' },
+        });
+      }
+    }
+
     const request = await parseBody(req);
     const body = request.json;
+    if (requiredPipelineToken) {
+      if (body.caseId && req.headers['x-safesteps-case-id'] !== body.caseId) {
+        return sendJson(res, 401, {
+          error: { code: 'UNAUTHORIZED', message: 'Pipeline case context mismatch' },
+        });
+      }
+      if (body.documentId && req.headers['x-safesteps-document-id'] !== body.documentId) {
+        return sendJson(res, 401, {
+          error: { code: 'UNAUTHORIZED', message: 'Pipeline document context mismatch' },
+        });
+      }
+      if (!body.requestedBy && typeof req.headers['x-safesteps-actor-user-id'] === 'string') {
+        body.requestedBy = req.headers['x-safesteps-actor-user-id'];
+      }
+    }
 
     const documentId = body.documentId || null;
     let sourceDocument = null;
@@ -911,16 +975,6 @@ const server = http.createServer(async (req, res) => {
     const id = requestId('req');
     const request = await parseBody(req);
     const body = request.json;
-
-    if (!hasOpenAiKey()) {
-      return sendJson(res, 503, {
-        error: {
-          code: 'SERVICE_UNAVAILABLE',
-          message: 'OpenAI API key not configured on server.',
-          requestId: id,
-        },
-      });
-    }
 
     const text = typeof body.text === 'string' ? body.text : '';
     const model = await runModelAnalysis(text);

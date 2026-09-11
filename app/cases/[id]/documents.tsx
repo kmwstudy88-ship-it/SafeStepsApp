@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
+import * as FileSystem from 'expo-file-system';
 import { useLocalSearchParams } from 'expo-router';
 
-import { supabase } from '../../lib/supabaseClient';
+import { supabase } from '../../../lib/supabaseClient';
 
-const { uploadDocument, processDocument, getAnalysis } = require('../../shared/apiClient');
+const { uploadDocument, processDocument, getAnalysis } = require('../../../shared/apiClient');
 
 export default function DocumentViewerScreen() {
   const { id: caseId } = useLocalSearchParams<{ id: string }>();
@@ -58,12 +59,24 @@ export default function DocumentViewerScreen() {
         appUserId = userRow?.id ?? null;
       }
 
+      const mimeType = selectedDocument.mimeType || 'application/octet-stream';
+      const shouldInlineContent =
+        mimeType.startsWith('text/') ||
+        mimeType === 'application/json' ||
+        mimeType === 'application/xml';
+      const contentBase64 = shouldInlineContent
+        ? await FileSystem.readAsStringAsync(selectedDocument.uri, {
+            encoding: FileSystem.EncodingType.Base64,
+          })
+        : undefined;
+
       const uploadResponse = await uploadDocument({
         caseId,
         uploadedBy: appUserId,
         fileName: selectedDocument.name,
-        mimeType: selectedDocument.mimeType || 'application/octet-stream',
+        mimeType,
         storagePath: selectedDocument.uri,
+        contentBase64,
         text:
           notesText.trim() ||
           `Document upload: ${selectedDocument.name}. Add extracted text for deeper section matching when available.`,

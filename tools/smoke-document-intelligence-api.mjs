@@ -32,28 +32,17 @@ try {
     body: JSON.stringify({ text: 'Parent attended a review session and brought a service letter.' }),
   });
 
-  if (process.env.OPENAI_KEY || process.env.OPENAI_API_KEY) {
-    if (!response.ok) {
-      throw new Error(`Expected document analysis to run, received ${response.status}: ${await response.text()}`);
-    }
-  } else {
-    const bodyText = await response.text();
-    let body;
+  if (!response.ok) {
+    throw new Error(`Expected document analysis to run, received ${response.status}: ${await response.text()}`);
+  }
 
-    try {
-      body = JSON.parse(bodyText);
-    } catch {
-      body = null;
-    }
-
-    const hasExpectedErrorEnvelope =
-      body?.error?.code === 'SERVICE_UNAVAILABLE' &&
-      typeof body?.error?.message === 'string' &&
-      typeof body?.error?.requestId === 'string';
-
-    if (response.status !== 503 || !hasExpectedErrorEnvelope) {
-      throw new Error(`Expected configured no-key 503 error envelope, received ${response.status}: ${bodyText}`);
-    }
+  const analysisBody = await response.json();
+  if (
+    typeof analysisBody?.analysis_id !== 'string' ||
+    typeof analysisBody?.provider !== 'string' ||
+    typeof analysisBody?.fairness_score !== 'number'
+  ) {
+    throw new Error(`Unexpected analysis payload: ${JSON.stringify(analysisBody)}`);
   }
 
   console.log(`Document intelligence API smoke passed (${response.status}).`);
