@@ -58,7 +58,6 @@ select public.__archive_compatibility_relation('fairness_analysis', 'fairness_an
 select public.__archive_compatibility_relation('document_entities', 'document_entities_legacy');
 
 create view public.case_assignments
-with (security_invoker = true)
 as
 select
   ca.id,
@@ -89,7 +88,6 @@ from public.case_allocations ca
 left join public.users u on u.auth_user_id = ca.allocated_user_id;
 
 create view public.visits
-with (security_invoker = true)
 as
 select
   id,
@@ -111,7 +109,6 @@ select
 from public.case_visit_records_v19;
 
 create view public.messages
-with (security_invoker = true)
 as
 select
   id,
@@ -122,7 +119,6 @@ select
 from public.messaging_messages;
 
 create view public.timeline_events
-with (security_invoker = true)
 as
 select
   id,
@@ -139,7 +135,6 @@ select
 from public.evidence_timeline_events;
 
 create view public.risk_indicators
-with (security_invoker = true)
 as
 select
   id,
@@ -160,7 +155,6 @@ select
 from public.ai_risk_signals;
 
 create view public.contradictions
-with (security_invoker = true)
 as
 select
   id,
@@ -182,7 +176,6 @@ select
 from public.assessment_contradictions;
 
 create view public.fairness_analysis
-with (security_invoker = true)
 as
 select
   id,
@@ -232,14 +225,50 @@ begin
 
     execute format($sql$
       create view public.document_entities
-      with (security_invoker = true)
-      as
+            as
       select
 %s
       from public.ai_extracted_entities
     $sql$, ai_extracted_entities_columns);
   elsif ai_extracted_entities_relkind is not null then
     raise exception 'public.ai_extracted_entities is not a selectable relation kind: %', ai_extracted_entities_relkind;
+  end if;
+end
+$migration$;
+
+do $migration$
+declare
+  actual_visits_columns text[];
+begin
+  select array_agg(a.attname order by a.attnum)
+  into actual_visits_columns
+  from pg_catalog.pg_attribute a
+  join pg_catalog.pg_class c on c.oid = a.attrelid
+  join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+  where n.nspname = 'public'
+    and c.relname = 'visits'
+    and a.attnum > 0
+    and not a.attisdropped;
+
+  if actual_visits_columns is distinct from array[
+    'id',
+    'visit_reference',
+    'case_id',
+    'visit_type',
+    'visit_location_type',
+    'scheduled_at',
+    'actual_start_at',
+    'actual_end_at',
+    'worker_user_id',
+    'participants_present',
+    'factual_observations',
+    'family_responses',
+    'safety_context',
+    'follow_up_required',
+    'human_review_status',
+    'created_at'
+  ]::text[] then
+    raise exception 'public.visits compatibility view columns do not match the expected contract';
   end if;
 end
 $migration$;
@@ -257,6 +286,7 @@ begin
        join pg_catalog.pg_namespace n on n.oid = c.relnamespace
        where n.nspname = 'public'
          and c.relname = target_name
+         and c.relkind in ('r', 'p', 'f', 'v', 'm')
      ) then
     execute format('grant select on public.%I to %I', target_name, grantee_name);
   end if;
@@ -265,15 +295,6 @@ $$;
 
 do $migration$
 begin
-  perform public.__grant_select_if_relation_exists('case_allocations', 'authenticated');
-  perform public.__grant_select_if_relation_exists('users', 'authenticated');
-  perform public.__grant_select_if_relation_exists('case_visit_records_v19', 'authenticated');
-  perform public.__grant_select_if_relation_exists('messaging_messages', 'authenticated');
-  perform public.__grant_select_if_relation_exists('evidence_timeline_events', 'authenticated');
-  perform public.__grant_select_if_relation_exists('ai_risk_signals', 'authenticated');
-  perform public.__grant_select_if_relation_exists('assessment_contradictions', 'authenticated');
-  perform public.__grant_select_if_relation_exists('ai_fairness_results', 'authenticated');
-  perform public.__grant_select_if_relation_exists('ai_extracted_entities', 'authenticated');
   perform public.__grant_select_if_relation_exists('case_assignments', 'authenticated');
   perform public.__grant_select_if_relation_exists('visits', 'authenticated');
   perform public.__grant_select_if_relation_exists('messages', 'authenticated');
@@ -283,15 +304,6 @@ begin
   perform public.__grant_select_if_relation_exists('fairness_analysis', 'authenticated');
   perform public.__grant_select_if_relation_exists('document_entities', 'authenticated');
 
-  perform public.__grant_select_if_relation_exists('case_allocations', 'service_role');
-  perform public.__grant_select_if_relation_exists('users', 'service_role');
-  perform public.__grant_select_if_relation_exists('case_visit_records_v19', 'service_role');
-  perform public.__grant_select_if_relation_exists('messaging_messages', 'service_role');
-  perform public.__grant_select_if_relation_exists('evidence_timeline_events', 'service_role');
-  perform public.__grant_select_if_relation_exists('ai_risk_signals', 'service_role');
-  perform public.__grant_select_if_relation_exists('assessment_contradictions', 'service_role');
-  perform public.__grant_select_if_relation_exists('ai_fairness_results', 'service_role');
-  perform public.__grant_select_if_relation_exists('ai_extracted_entities', 'service_role');
   perform public.__grant_select_if_relation_exists('case_assignments', 'service_role');
   perform public.__grant_select_if_relation_exists('visits', 'service_role');
   perform public.__grant_select_if_relation_exists('messages', 'service_role');
