@@ -178,7 +178,7 @@ select
   coalesce(contradiction.source_a_reference, contradiction.source_a_type) as source_a,
   coalesce(contradiction.source_b_reference, contradiction.source_b_type) as source_b,
   contradiction.materiality,
-  coalesce(contradiction.reviewed_at, contradiction.created_at) as detected_at,
+  contradiction.created_at as detected_at,
   contradiction.requires_resolution,
   null::timestamptz as resolved_at,
   null::text as reviewer_notes,
@@ -333,7 +333,7 @@ select
 from public.ai_retrieval_contradictions as contradiction;
 
 revoke all on public.document_entities from public, anon, authenticated;
-grant all on public.document_entities to service_role;
+grant select, insert, update on public.document_entities to service_role;
 
 revoke all on
   public.document_text,
