@@ -117,9 +117,17 @@ from public.ai_fairness_results;
 
 do $migration$
 declare
+  ai_extracted_entities_relkind "char";
   document_entities_relkind "char";
   archived_document_entities_name text;
 begin
+  select c.relkind
+  into ai_extracted_entities_relkind
+  from pg_catalog.pg_class c
+  join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+  where n.nspname = 'public'
+    and c.relname = 'ai_extracted_entities';
+
   select c.relkind
   into document_entities_relkind
   from pg_catalog.pg_class c
@@ -168,7 +176,7 @@ begin
     raise exception 'Cannot replace public.document_entities with relation kind %', document_entities_relkind;
   end if;
 
-  if to_regclass('public.ai_extracted_entities') is not null then
+  if ai_extracted_entities_relkind in ('r', 'p', 'f', 'v', 'm') then
     if exists (
       select 1
       from pg_catalog.pg_class c
@@ -185,6 +193,8 @@ begin
       select *
       from public.ai_extracted_entities
     $sql$;
+  elsif ai_extracted_entities_relkind is not null then
+    raise exception 'public.ai_extracted_entities is not a selectable relation kind: %', ai_extracted_entities_relkind;
   end if;
 end
 $migration$;
