@@ -1,4 +1,6 @@
 do $migration$
+declare
+  archived_case_assignments_name text;
 begin
   if exists (
     select 1
@@ -11,7 +13,14 @@ begin
     if to_regclass('public.case_assignments_legacy') is null then
       execute 'alter table public.case_assignments rename to case_assignments_legacy';
     else
-      execute 'drop table public.case_assignments';
+      archived_case_assignments_name := format(
+        'case_assignments_legacy_%s',
+        to_char(pg_catalog.clock_timestamp(), 'YYYYMMDDHH24MISSMS')
+      );
+      execute format(
+        'alter table public.case_assignments rename to %I',
+        archived_case_assignments_name
+      );
     end if;
   end if;
 end
@@ -85,8 +94,35 @@ select *
 from public.ai_fairness_results;
 
 do $migration$
+declare
+  document_entities_relkind "char";
+  archived_document_entities_name text;
 begin
+  select c.relkind
+  into document_entities_relkind
+  from pg_catalog.pg_class c
+  join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+  where n.nspname = 'public'
+    and c.relname = 'document_entities';
+
   if to_regclass('public.ai_extracted_entities') is not null then
+    if document_entities_relkind = 'r' then
+      if to_regclass('public.document_entities_legacy') is null then
+        execute 'alter table public.document_entities rename to document_entities_legacy';
+      else
+        archived_document_entities_name := format(
+          'document_entities_legacy_%s',
+          to_char(pg_catalog.clock_timestamp(), 'YYYYMMDDHH24MISSMS')
+        );
+        execute format(
+          'alter table public.document_entities rename to %I',
+          archived_document_entities_name
+        );
+      end if;
+    elsif document_entities_relkind = 'm' then
+      execute 'drop materialized view public.document_entities';
+    end if;
+
     execute $sql$
       create or replace view public.document_entities
       with (security_invoker = true)
@@ -95,7 +131,11 @@ begin
       from public.ai_extracted_entities
     $sql$;
   else
-    execute 'drop view if exists public.document_entities';
+    if document_entities_relkind = 'v' then
+      execute 'drop view public.document_entities';
+    elsif document_entities_relkind = 'm' then
+      execute 'drop materialized view public.document_entities';
+    end if;
   end if;
 end
 $migration$;
