@@ -332,5 +332,5 @@ select
   contradiction.created_at
 from public.ai_retrieval_contradictions as contradiction;
 
-revoke all on public.document_entities from public, anon;
+revoke all on public.document_entities from public, anon, authenticated;
 grant select on public.document_entities to authenticated;
