@@ -10,7 +10,7 @@ begin
   where n.nspname = 'public'
     and c.relname = 'case_assignments';
 
-  if case_assignments_relkind in ('r', 'p', 'f', 'm') then
+  if case_assignments_relkind in ('r', 'p', 'f', 'v', 'm') then
     if not exists (
       select 1
       from pg_catalog.pg_class c
@@ -36,6 +36,11 @@ begin
         'alter foreign table public.case_assignments rename to %I',
         archived_case_assignments_name
       );
+    elsif case_assignments_relkind = 'v' then
+      execute format(
+        'alter view public.case_assignments rename to %I',
+        archived_case_assignments_name
+      );
     elsif case_assignments_relkind = 'm' then
       execute format(
         'alter materialized view public.case_assignments rename to %I',
@@ -48,7 +53,7 @@ begin
 end
 $migration$;
 
-create or replace view public.case_assignments
+create view public.case_assignments
 with (security_invoker = true)
 as
 select
@@ -82,41 +87,121 @@ left join public.users u on u.auth_user_id = ca.allocated_user_id;
 create or replace view public.visits
 with (security_invoker = true)
 as
-select *
+select
+  id,
+  visit_reference,
+  case_id,
+  visit_type,
+  visit_location_type,
+  scheduled_at,
+  actual_start_at,
+  actual_end_at,
+  worker_user_id,
+  participants_present,
+  factual_observations,
+  family_responses,
+  safety_context,
+  follow_up_required,
+  human_review_status,
+  created_at
 from public.case_visit_records_v19;
 
 create or replace view public.messages
 with (security_invoker = true)
 as
-select *
+select
+  id,
+  thread_id,
+  created_at,
+  created_by,
+  body
 from public.messaging_messages;
 
 create or replace view public.timeline_events
 with (security_invoker = true)
 as
-select *
+select
+  id,
+  tenant_id,
+  case_id,
+  evidence_record_id,
+  event_type,
+  event_title,
+  event_summary,
+  event_occurred_at,
+  source_table,
+  source_record_id,
+  created_at
 from public.evidence_timeline_events;
 
 create or replace view public.risk_indicators
 with (security_invoker = true)
 as
-select *
+select
+  id,
+  tenant_id,
+  case_id,
+  child_id,
+  signal_reference,
+  signal_source,
+  signal_type,
+  severity_level,
+  confidence_score,
+  ai_explanation,
+  linked_evidence_ids,
+  review_status,
+  reviewer_user_id,
+  detected_at,
+  created_at
 from public.ai_risk_signals;
 
 create or replace view public.contradictions
 with (security_invoker = true)
 as
-select *
+select
+  id,
+  case_id,
+  parent_user_id,
+  worker_user_id,
+  detected_at,
+  phase,
+  contradiction_type,
+  description,
+  source_a,
+  source_b,
+  severity,
+  include_in_report,
+  supervisor_notified,
+  worker_notes,
+  resolved_at,
+  created_by
 from public.assessment_contradictions;
 
 create or replace view public.fairness_analysis
 with (security_invoker = true)
 as
-select *
+select
+  id,
+  evaluation_run_id,
+  metric_id,
+  reference_subgroup_id,
+  comparison_subgroup_id,
+  reference_value,
+  comparison_value,
+  absolute_difference,
+  relative_ratio,
+  confidence_interval_lower,
+  confidence_interval_upper,
+  disparity_threshold,
+  outcome,
+  materiality_assessment,
+  remediation_required,
+  calculated_at
 from public.ai_fairness_results;
 
 do $migration$
 declare
+  ai_extracted_entities_columns text;
   ai_extracted_entities_relkind "char";
   document_entities_relkind "char";
   archived_document_entities_name text;
@@ -177,6 +262,16 @@ begin
   end if;
 
   if ai_extracted_entities_relkind in ('r', 'p', 'f', 'v', 'm') then
+    select string_agg(format('  %I', a.attname), E',\n' order by a.attnum)
+    into ai_extracted_entities_columns
+    from pg_catalog.pg_attribute a
+    join pg_catalog.pg_class c on c.oid = a.attrelid
+    join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+    where n.nspname = 'public'
+      and c.relname = 'ai_extracted_entities'
+      and a.attnum > 0
+      and not a.attisdropped;
+
     if exists (
       select 1
       from pg_catalog.pg_class c
@@ -186,13 +281,14 @@ begin
     ) then
       raise exception 'public.document_entities still exists and cannot be replaced safely';
     end if;
-    execute $sql$
-      create or replace view public.document_entities
+    execute format($sql$
+      create view public.document_entities
       with (security_invoker = true)
       as
-      select *
+      select
+%s
       from public.ai_extracted_entities
-    $sql$;
+    $sql$, ai_extracted_entities_columns);
   elsif ai_extracted_entities_relkind is not null then
     raise exception 'public.ai_extracted_entities is not a selectable relation kind: %', ai_extracted_entities_relkind;
   end if;
@@ -225,7 +321,13 @@ $migration$;
 
 do $migration$
 begin
-  if to_regclass('public.document_entities') is not null then
+  if exists (
+    select 1
+    from pg_catalog.pg_class c
+    join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+    where n.nspname = 'public'
+      and c.relname = 'document_entities'
+  ) then
     if exists (select 1 from pg_catalog.pg_roles where rolname = 'authenticated') then
       execute 'grant select on public.document_entities to authenticated';
     end if;
