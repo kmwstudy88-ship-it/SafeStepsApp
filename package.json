@@ -12,6 +12,7 @@
     "web": "expo start --web",
     "backend": "node backend/server.js",
     "smoke:documents": "node tools/smoke-document-intelligence-api.mjs",
+    "smoke:backend": "node tools/smoke-backend-pipeline.mjs",
     "validate": "npx expo-doctor",
     "content:index": "node tools/build-content-index.mjs",
     "readiness": "node tools/production-readiness-gate.mjs"
@@ -21,6 +22,7 @@
     "@supabase/supabase-js": "^2.116.0",
     "expo": "~57.0.21",
     "expo-constants": "^57.0.17",
+    "expo-document-picker": "^57.0.1",
     "expo-image-picker": "^57.0.16",
     "expo-linking": "~57.0.9",
     "expo-print": "^57.0.1",

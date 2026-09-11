@@ -49,7 +49,10 @@ Compatibility and generated areas live here:
 | `/reports` | `lib/reports/ReportGeneratorScreen.tsx` | local PDF generation | none |
 | `/voice-coach` | `lib/voice/VoiceCalmingCoach.tsx` | device-local breathing tool | none |
 | `/sos` | `lib/support/SOSQuickRelieverScreen.tsx` | static support scripts | none |
-| `/fairness` | `lib/fairness/DocumentFairnessViewerScreen.tsx` | sample analyzer UI | Node API exists but screen is not wired to it |
+| `/fairness` | `lib/fairness/DocumentFairnessViewerScreen.tsx` | live fairness analyzer UI | Node API fairness endpoint |
+| `/cases` | `app/cases/index.tsx` | authenticated case list | Supabase auth, case assignments, realtime |
+| `/cases/[id]` | `app/cases/[id].tsx` | case detail + analysis status | Supabase cases/documents/analyses |
+| `/documents/[id]` | `app/documents/[id].tsx` | document upload + processing | `expo-document-picker` + Node analysis API |
 | `/contact-visit` | `lib/contactVisit/ContactVisitCompanionScreen.tsx` | static guidance UI | none |
 | `/discreet` | `lib/privacy/DiscreetModeScreen.tsx` | device-local disguise prototype | none |
 
@@ -63,6 +66,11 @@ Compatibility and generated areas live here:
 - `GET /documents/intelligence/schema`
 - `POST /documents/analyze`
 - `POST /documents/analyze/fairness`
+- `POST /documents/upload`
+- `POST /documents/process`
+- `GET /analyses/:id`
+- `POST /analyses/compare`
+- `POST /risk-assessment/compute`
 
 Use this backend for local smoke testing and heuristic document-analysis development.
 

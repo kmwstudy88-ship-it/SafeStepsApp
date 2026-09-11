@@ -1,12 +1,56 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import React, { useMemo, useState } from 'react';
+import { View, Text, StyleSheet, SafeAreaView, ScrollView, TextInput, TouchableOpacity, ActivityIndicator } from 'react-native';
+
+const { analyzeDocumentFairness } = require('../../shared/apiClient');
+
+type FairnessResponse = {
+  fairness_score: number;
+  bias_indicators: Array<{ category: string; severity: string; evidence: string; explanation: string }>;
+  framing_concerns: Array<{ category: string; severity: string; evidence: string; explanation: string }>;
+  remediation_recommendations: Array<{ concern: string; reframe: string }>;
+};
+
+const DEFAULT_TEXT =
+  'Mother failed to cooperate during the morning check. Mother refused to follow instructions and became emotionally hostile when questioned about attendance.';
 
 export function DocumentFairnessViewerScreen() {
-  const [inputText, setInputText] = useState(
-    "Mother failed to cooperate during the morning check. Mother refused to follow instructions and became emotionally hostile when questioned about attendance."
-  );
+  const [inputText, setInputText] = useState(DEFAULT_TEXT);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [result, setResult] = useState<FairnessResponse | null>(null);
 
-  const [analyzed, setAnalyzed] = useState(true);
+  const visibleFlags = useMemo(() => {
+    return [
+      ...(result?.bias_indicators || []).map((entry) => ({
+        title: `${entry.category}: "${entry.evidence}"`,
+        explanation: entry.explanation,
+      })),
+      ...(result?.framing_concerns || []).map((entry) => ({
+        title: `${entry.category}: "${entry.evidence}"`,
+        explanation: entry.explanation,
+      })),
+    ];
+  }, [result]);
+
+  async function handleAnalyze() {
+    if (!inputText.trim()) {
+      setError('Please enter case note text before analysis.');
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await analyzeDocumentFairness(inputText);
+      setResult(response);
+    } catch (analysisError: any) {
+      setError(analysisError?.message || 'Fairness analysis failed');
+      setResult(null);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -21,46 +65,51 @@ export function DocumentFairnessViewerScreen() {
 
         <View style={styles.inputCard}>
           <Text style={styles.inputTitle}>Case Document Note Text</Text>
-          <TextInput
-            style={styles.textArea}
-            value={inputText}
-            onChangeText={setInputText}
-            multiline
-          />
-          <TouchableOpacity style={styles.analyzeButton} onPress={() => setAnalyzed(true)}>
-            <Text style={styles.analyzeButtonText}>Analyze Framing & Detect Bias</Text>
+          <TextInput style={styles.textArea} value={inputText} onChangeText={setInputText} multiline />
+          <TouchableOpacity style={styles.analyzeButton} onPress={handleAnalyze} disabled={loading}>
+            {loading ? (
+              <ActivityIndicator color="#FFFFFF" />
+            ) : (
+              <Text style={styles.analyzeButtonText}>Analyze Framing & Detect Bias</Text>
+            )}
           </TouchableOpacity>
+          {error ? <Text style={styles.errorText}>{error}</Text> : null}
         </View>
 
-        {analyzed && (
+        {result ? (
           <View style={styles.resultsCard}>
             <Text style={styles.scoreTitle}>Fairness Analysis Overview</Text>
             <View style={styles.scoreRow}>
               <View style={styles.scoreBox}>
-                <Text style={styles.scoreVal}>42 / 100</Text>
+                <Text style={styles.scoreVal}>{result.fairness_score} / 100</Text>
                 <Text style={styles.scoreSub}>Objective Framing Score</Text>
               </View>
               <View style={styles.scoreBox}>
-                <Text style={[styles.scoreVal, { color: '#E53E3E' }]}>2 Flags</Text>
+                <Text style={[styles.scoreVal, { color: '#E53E3E' }]}>{visibleFlags.length} Flags</Text>
                 <Text style={styles.scoreSub}>Subjective Attribution</Text>
               </View>
             </View>
 
-            <View style={styles.flagItem}>
-              <Text style={styles.flagTag}>Subjective Labeling: "Failed to cooperate"</Text>
-              <Text style={styles.flagBody}>Does not describe the factual action. Lacks context of what occurred.</Text>
-              <Text style={styles.reframeTag}>Constructive Reframe Recommendation:</Text>
-              <Text style={styles.reframeBody}>"Mother requested to reschedule the conversation due to school drop-off time."</Text>
-            </View>
-
-            <View style={styles.flagItem}>
-              <Text style={styles.flagTag}>Hostility Attribution: "Became emotionally hostile"</Text>
-              <Text style={styles.flagBody}>Clinical term without objective observable behaviors (e.g. vocal volume, words spoken).</Text>
-              <Text style={styles.reframeTag}>Constructive Reframe Recommendation:</Text>
-              <Text style={styles.reframeBody}>"Mother spoke with raised volume and expressed distress regarding appointment conflicts."</Text>
-            </View>
+            {visibleFlags.length ? (
+              visibleFlags.map((item, index) => (
+                <View style={styles.flagItem} key={`${item.title}-${index}`}>
+                  <Text style={styles.flagTag}>{item.title}</Text>
+                  <Text style={styles.flagBody}>{item.explanation}</Text>
+                  {result.remediation_recommendations[index] ? (
+                    <>
+                      <Text style={styles.reframeTag}>Constructive Reframe Recommendation:</Text>
+                      <Text style={styles.reframeBody}>
+                        "{result.remediation_recommendations[index].reframe}"
+                      </Text>
+                    </>
+                  ) : null}
+                </View>
+              ))
+            ) : (
+              <Text style={styles.scoreSub}>No major framing concerns detected for this sample.</Text>
+            )}
           </View>
-        )}
+        ) : null}
       </ScrollView>
     </SafeAreaView>
   );
@@ -78,6 +127,7 @@ const styles = StyleSheet.create({
   textArea: { backgroundColor: '#F8FCFC', borderWidth: 1, borderColor: '#E2E8F0', borderRadius: 8, padding: 12, minHeight: 90, fontSize: 14, color: '#2D3748', textAlignVertical: 'top' },
   analyzeButton: { backgroundColor: '#208AEF', padding: 14, borderRadius: 10, alignItems: 'center' },
   analyzeButtonText: { color: '#FFFFFF', fontSize: 15, fontWeight: 'bold' },
+  errorText: { color: '#C53030', fontSize: 13 },
   resultsCard: { backgroundColor: '#FFFFFF', padding: 18, borderRadius: 14, borderWidth: 1, borderColor: '#E2E8F0', gap: 14 },
   scoreTitle: { fontSize: 16, fontWeight: '700', color: '#1A202C' },
   scoreRow: { flexDirection: 'row', gap: 12 },
