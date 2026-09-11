@@ -11,7 +11,7 @@ begin
     if to_regclass('public.case_assignments_legacy') is null then
       execute 'alter table public.case_assignments rename to case_assignments_legacy';
     else
-      execute 'drop table public.case_assignments cascade';
+      execute 'drop table public.case_assignments';
     end if;
   end if;
 end
@@ -28,8 +28,8 @@ select
   ca.allocated_user_id as auth_user_id,
   ca.allocated_team_id as team_id,
   case
-    when ca.allocation_role ilike '%supervisor%' then 'supervisor'
-    when ca.allocation_role ilike '%worker%' then 'case_worker'
+    when ca.allocation_role in ('primary_supervisor', 'clinical_supervisor') then 'supervisor'
+    when ca.allocation_role in ('primary_worker', 'secondary_worker', 'family_support_worker', 'child_specialist', 'provider_coordinator') then 'case_worker'
     else ca.allocation_role
   end as assignment_role,
   ca.allocation_role,
