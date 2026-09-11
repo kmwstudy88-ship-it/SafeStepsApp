@@ -105,24 +105,35 @@ begin
   where n.nspname = 'public'
     and c.relname = 'document_entities';
 
-  if to_regclass('public.ai_extracted_entities') is not null then
-    if document_entities_relkind = 'r' then
-      if to_regclass('public.document_entities_legacy') is null then
-        execute 'alter table public.document_entities rename to document_entities_legacy';
-      else
-        archived_document_entities_name := format(
-          'document_entities_legacy_%s',
-          to_char(pg_catalog.clock_timestamp(), 'YYYYMMDDHH24MISSMS')
-        );
-        execute format(
-          'alter table public.document_entities rename to %I',
-          archived_document_entities_name
-        );
-      end if;
-    elsif document_entities_relkind = 'm' then
-      execute 'drop materialized view public.document_entities';
+  if document_entities_relkind is not null then
+    if to_regclass('public.document_entities_legacy') is null then
+      archived_document_entities_name := 'document_entities_legacy';
+    else
+      archived_document_entities_name := format(
+        'document_entities_legacy_%s',
+        to_char(pg_catalog.clock_timestamp(), 'YYYYMMDDHH24MISSMS')
+      );
     end if;
 
+    if document_entities_relkind = 'r' then
+      execute format(
+        'alter table public.document_entities rename to %I',
+        archived_document_entities_name
+      );
+    elsif document_entities_relkind = 'v' then
+      execute format(
+        'alter view public.document_entities rename to %I',
+        archived_document_entities_name
+      );
+    elsif document_entities_relkind = 'm' then
+      execute format(
+        'alter materialized view public.document_entities rename to %I',
+        archived_document_entities_name
+      );
+    end if;
+  end if;
+
+  if to_regclass('public.ai_extracted_entities') is not null then
     execute $sql$
       create or replace view public.document_entities
       with (security_invoker = true)
@@ -130,12 +141,6 @@ begin
       select *
       from public.ai_extracted_entities
     $sql$;
-  else
-    if document_entities_relkind = 'v' then
-      execute 'drop view public.document_entities';
-    elsif document_entities_relkind = 'm' then
-      execute 'drop materialized view public.document_entities';
-    end if;
   end if;
 end
 $migration$;
