@@ -45,6 +45,17 @@ begin
   else
     raise exception 'Cannot archive public.% with relation kind %', target_name, target_relkind;
   end if;
+
+  execute format('revoke all on public.%I from public', archived_name);
+  if exists (select 1 from pg_catalog.pg_roles where rolname = 'anon') then
+    execute format('revoke all on public.%I from anon', archived_name);
+  end if;
+  if exists (select 1 from pg_catalog.pg_roles where rolname = 'authenticated') then
+    execute format('revoke all on public.%I from authenticated', archived_name);
+  end if;
+  if exists (select 1 from pg_catalog.pg_roles where rolname = 'service_role') then
+    execute format('revoke all on public.%I from service_role', archived_name);
+  end if;
 end;
 $$;
 
@@ -240,68 +251,44 @@ begin
 
   if ai_extracted_entities_relkind in ('r', 'p', 'f', 'v', 'm') then
     select string_agg(
-      format('  %I', a.attname),
-      E',\n'
-      order by array_position(
-        array[
-          'id',
-          'tenant_id',
-          'case_id',
-          'document_id',
-          'document_analysis_id',
-          'analysis_id',
-          'entity_type',
-          'entity_category',
-          'entity_label',
-          'entity_text',
-          'entity_value',
-          'normalized_value',
-          'confidence_score',
-          'source_text',
-          'source_span',
-          'page_number',
-          'start_offset',
-          'end_offset',
-          'metadata',
-          'created_at',
-          'updated_at'
-        ]::text[],
-        a.attname
-      )
+    format('  %I', allowed.column_name),
+    E',\n'
+    order by allowed.ordinality
     )
     into ai_extracted_entities_columns
-    from pg_catalog.pg_attribute a
+    from unnest(
+    array[
+      'id',
+      'tenant_id',
+      'case_id',
+      'document_id',
+      'document_analysis_id',
+      'analysis_id',
+      'entity_type',
+      'entity_category',
+      'entity_label',
+      'entity_text',
+      'entity_value',
+      'normalized_value',
+      'confidence_score',
+      'source_text',
+      'source_span',
+      'page_number',
+      'start_offset',
+      'end_offset',
+      'metadata',
+      'created_at',
+      'updated_at'
+    ]::text[]
+    ) with ordinality as allowed(column_name, ordinality)
+    join pg_catalog.pg_attribute a
+    on a.attname = allowed.column_name
     join pg_catalog.pg_class c on c.oid = a.attrelid
     join pg_catalog.pg_namespace n on n.oid = c.relnamespace
     where n.nspname = 'public'
-      and c.relname = 'ai_extracted_entities'
-      and a.attnum > 0
-    and not a.attisdropped
-    and a.attname = any (
-      array[
-        'id',
-        'tenant_id',
-        'case_id',
-        'document_id',
-        'document_analysis_id',
-        'analysis_id',
-        'entity_type',
-        'entity_category',
-        'entity_label',
-        'entity_text',
-        'entity_value',
-        'normalized_value',
-        'confidence_score',
-        'source_text',
-        'source_span',
-        'page_number',
-        'start_offset',
-        'end_offset',
-        'metadata',
-        'created_at',
-        'updated_at'
-      ]::text[]
-    );
+    and c.relname = 'ai_extracted_entities'
+    and a.attnum > 0
+    and not a.attisdropped;
 
     if ai_extracted_entities_columns is null then
       raise exception 'public.ai_extracted_entities has no selectable columns';
