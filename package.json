@@ -11,8 +11,10 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "backend": "node backend/server.js",
-    "smoke:documents": "node tools/smoke-document-intelligence-api.mjs",
-    "smoke:backend": "node tools/smoke-backend-pipeline.mjs",
+    "verify:documents": "node tools/verify-document-intelligence.mjs",
+    "smoke:documents": "node tools/verify-document-intelligence.mjs",
+    "smoke:documents:live": "node tools/smoke-document-intelligence-live.mjs",
+    "smoke:backend": "node tools/verify-document-intelligence.mjs",
     "validate": "npx expo-doctor",
     "content:index": "node tools/build-content-index.mjs",
     "readiness": "node tools/production-readiness-gate.mjs"

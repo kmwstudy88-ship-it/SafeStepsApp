@@ -83,6 +83,16 @@ function routeId(pathname, prefix) {
   return /^[0-9a-f-]{36}$/i.test(value) ? value : null;
 }
 
+function readiness() {
+  const provider = String(process.env.DOCUMENT_AI_PROVIDER || 'openai').toLowerCase() === 'anthropic' ? 'anthropic' : 'openai';
+  const checks = {
+    supabaseUrl: Boolean(process.env.SUPABASE_URL || process.env.EXPO_PUBLIC_SUPABASE_URL),
+    supabaseServiceRole: Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY),
+    providerKey: provider === 'anthropic' ? Boolean(process.env.ANTHROPIC_API_KEY) : Boolean(process.env.OPENAI_API_KEY),
+  };
+  return { ready: Object.values(checks).every(Boolean), provider, checks };
+}
+
 const server = http.createServer(async (req, res) => {
   setCors(req, res);
   if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
@@ -91,6 +101,11 @@ const server = http.createServer(async (req, res) => {
   try {
     if (req.method === 'GET' && url.pathname === '/health') {
       return sendJson(res, 200, { status: 'ok', documentIntelligence: true, timestamp: new Date().toISOString() });
+    }
+
+    if (req.method === 'GET' && url.pathname === '/ready') {
+      const state = readiness();
+      return sendJson(res, state.ready ? 200 : 503, { ...state, documentIntelligence: true, timestamp: new Date().toISOString() });
     }
 
     if (req.method === 'GET' && url.pathname === '/documents/intelligence/schema') {
