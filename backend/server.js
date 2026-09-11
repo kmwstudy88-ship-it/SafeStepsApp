@@ -30,6 +30,8 @@ const DOCUMENT_SECTIONS = [
   'Trauma-Informed Care Application', 'Urinalysis & Toxicology Logs', 'Police & Background Verifications',
   'Evidence Chain of Custody Registry', 'Fairness & Bias Analysis Layer', 'Coercion & Framing Checkpoints',
   'Remediation & Reframe Directives', 'CSO Supervisory Endorsements', 'Case Closure & Reunification Orders',
+  'Interagency Collaboration Notes', 'Parent-Child Attachment Indicators', 'Incident Escalation Trail',
+  'Compliance Obligations Tracking', 'Service Referral Timelines', 'Outcome Measurement Benchmarks',
 ];
 
 function setCors(req, res) {

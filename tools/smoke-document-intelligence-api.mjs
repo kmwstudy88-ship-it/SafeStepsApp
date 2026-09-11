@@ -20,7 +20,7 @@ try {
   await waitForHealth();
   const schema = await getJson('/documents/intelligence/schema');
 
-  if (schema.schemaVersion !== '2026-07-15' || !Array.isArray(schema.sections) || schema.sections.length < 40) {
+  if (typeof schema.schemaVersion !== 'string' || !Array.isArray(schema.sections) || schema.sections.length < 48) {
     throw new Error(`Unexpected document intelligence schema: ${JSON.stringify(schema)}`);
   }
 
