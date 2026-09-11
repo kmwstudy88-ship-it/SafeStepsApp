@@ -1,0 +1,122 @@
+'use strict';
+
+const ANALYSIS_SCHEMA_VERSION = 'document-intelligence-v1';
+const COMPARISON_SCHEMA_VERSION = 'document-comparison-v1';
+
+const ANALYSIS_INSTRUCTIONS = `You are SafeSteps Document Intelligence. Analyze child/family casework records as decision-support only.
+Return valid JSON only. Never infer a fact, diagnosis, motive, risk, or credibility finding that is not supported by the supplied material. Distinguish allegation, observation, opinion, and verified evidence. Preserve uncertainty. Do not make automated child-protection decisions.
+Required JSON shape:
+{
+  "summary": {"overview":"", "document_type":"", "key_points":[]},
+  "evidence": [{"claim":"", "evidence":"", "evidence_type":"observation|allegation|record|opinion|unknown", "confidence":0, "source_locator":""}],
+  "contradictions": [{"statement_a":"", "statement_b":"", "explanation":"", "severity":"low|medium|high", "confidence":0}],
+  "timeline": [{"date":"", "date_precision":"exact|approximate|unknown", "event":"", "actors":[], "source_locator":"", "confidence":0}],
+  "risk": {"score":0, "level":"low|moderate|high|critical|insufficient_evidence", "factors":[], "protective_factors":[], "uncertainties":[]},
+  "bias": {"score":100, "signals":[{"category":"", "language":"", "explanation":"", "severity":"low|medium|high"}]},
+  "fairness": {"score":100, "framing_concerns":[], "coercion_flags":[], "discrimination_risks":[], "unrealistic_expectations":[], "remediation_recommendations":[{"concern":"", "reframe":""}]},
+  "limitations": []
+}
+Scores are 0-100. Risk score is a document-content signal, not a case decision. Fairness/bias scores are higher when language is more objective and evidence-linked.`;
+
+const COMPARISON_INSTRUCTIONS = `You are SafeSteps multi-document comparison. Compare only the supplied documents/analyses. Return valid JSON only. Do not resolve disputed facts merely because one source repeats them more often.
+Required JSON shape:
+{
+ "overview":"",
+ "agreements":[{"topic":"","documents":[],"detail":"","confidence":0}],
+ "contradictions":[{"topic":"","documents":[],"statements":[],"detail":"","severity":"low|medium|high","confidence":0}],
+ "timeline_conflicts":[{"event":"","dates":[],"documents":[],"detail":""}],
+ "evidence_gaps":[{"topic":"","missing_or_unclear":"","affected_documents":[]}],
+ "bias_differences":[{"topic":"","documents":[],"detail":""}],
+ "risk_delta":{"detail":"","document_scores":[]},
+ "limitations":[]
+}`;
+
+function parseJson(text) {
+  const clean = String(text || '').trim().replace(/^```(?:json)?\s*/i, '').replace(/```$/i, '').trim();
+  try { return JSON.parse(clean); } catch (_) {
+    const start = clean.indexOf('{');
+    const end = clean.lastIndexOf('}');
+    if (start >= 0 && end > start) return JSON.parse(clean.slice(start, end + 1));
+    throw new Error('AI provider returned non-JSON output');
+  }
+}
+
+function openAIOutputText(payload) {
+  if (payload.output_text) return payload.output_text;
+  return (payload.output || []).flatMap(item => item.content || []).filter(x => x.type === 'output_text').map(x => x.text).join('\n');
+}
+
+async function openAIJson(instructions, input) {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) throw new Error('OPENAI_API_KEY is not configured');
+  const model = process.env.OPENAI_DOCUMENT_MODEL || 'gpt-5.6-terra';
+  const response = await fetch('https://api.openai.com/v1/responses', {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model,
+      instructions,
+      input,
+      text: { format: { type: 'json_object' } },
+      reasoning: { effort: process.env.OPENAI_DOCUMENT_REASONING || 'medium' },
+    }),
+  });
+  const payload = await response.json();
+  if (!response.ok) throw new Error(payload?.error?.message || `OpenAI request failed (${response.status})`);
+  return { provider: 'openai', model, result: parseJson(openAIOutputText(payload)), usage: payload.usage || {} };
+}
+
+async function anthropicJson(instructions, input) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) throw new Error('ANTHROPIC_API_KEY is not configured');
+  const model = process.env.ANTHROPIC_DOCUMENT_MODEL || 'claude-sonnet-4-5';
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({ model, max_tokens: 12000, system: instructions, messages: [{ role: 'user', content: input }] }),
+  });
+  const payload = await response.json();
+  if (!response.ok) throw new Error(payload?.error?.message || `Anthropic request failed (${response.status})`);
+  const text = (payload.content || []).filter(x => x.type === 'text').map(x => x.text).join('\n');
+  return { provider: 'anthropic', model, result: parseJson(text), usage: payload.usage || {} };
+}
+
+function providerName() {
+  return String(process.env.DOCUMENT_AI_PROVIDER || 'openai').toLowerCase() === 'anthropic' ? 'anthropic' : 'openai';
+}
+
+async function runJson(instructions, input) {
+  return providerName() === 'anthropic' ? anthropicJson(instructions, input) : openAIJson(instructions, input);
+}
+
+async function analyzeDocument(document) {
+  const body = [
+    `Document ID: ${document.id}`,
+    `File name: ${document.file_name || 'pasted-text.txt'}`,
+    `MIME type: ${document.mime_type || 'text/plain'}`,
+    '',
+    document.extracted_text || '',
+  ].join('\n');
+  if (!document.extracted_text) throw new Error('No extractable text is available for this document');
+  return runJson(ANALYSIS_INSTRUCTIONS, body);
+}
+
+async function compareDocuments(items) {
+  const body = items.map((item, index) => [
+    `--- DOCUMENT ${index + 1}: ${item.document.id} / ${item.document.file_name || 'text'} ---`,
+    item.document.extracted_text || JSON.stringify(item.analysis || {}),
+  ].join('\n')).join('\n\n');
+  return runJson(COMPARISON_INSTRUCTIONS, body);
+}
+
+module.exports = {
+  ANALYSIS_SCHEMA_VERSION,
+  COMPARISON_SCHEMA_VERSION,
+  providerName,
+  analyzeDocument,
+  compareDocuments,
+};
