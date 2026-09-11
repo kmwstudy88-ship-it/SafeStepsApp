@@ -262,6 +262,7 @@ function buildFollowUpTasks({ caseId, snapshot, previousSnapshot, assignments, r
 }
 
 function buildDashboardPayload({ cases, snapshots, alerts, tasks, timelineByCase }) {
+  const caseTitleById = new Map((cases || []).map((caseRow) => [caseRow.id, caseRow.title]));
   const snapshotByCase = new Map();
   for (const snapshot of sortByCreatedDesc(snapshots || [])) {
     if (!snapshotByCase.has(snapshot.case_id)) snapshotByCase.set(snapshot.case_id, snapshot);
@@ -283,7 +284,7 @@ function buildDashboardPayload({ cases, snapshots, alerts, tasks, timelineByCase
   for (const alert of alerts || []) {
     if (['open', 'acknowledged'].includes(alert.status)) {
       alertCounts.set(alert.case_id, (alertCounts.get(alert.case_id) || 0) + 1);
-      openEscalations.push(alert);
+      openEscalations.push({ ...alert, case_title: caseTitleById.get(alert.case_id) || alert.case_id });
     }
   }
 
@@ -292,7 +293,7 @@ function buildDashboardPayload({ cases, snapshots, alerts, tasks, timelineByCase
   for (const task of tasks || []) {
     if (task.status === 'overdue' || (['pending', 'in_progress'].includes(task.status) && Date.parse(task.due_at || 0) < Date.now())) {
       overdueCounts.set(task.case_id, (overdueCounts.get(task.case_id) || 0) + 1);
-      overdueFollowUps.push(task);
+      overdueFollowUps.push({ ...task, case_title: caseTitleById.get(task.case_id) || task.case_id });
     }
   }
 
@@ -549,46 +550,31 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         };
       }
 
-      const { data: cases, error: casesError } = await adminClient.from('cases').select('id,title,status,updated_at').in('id', caseIds);
-      if (casesError) throw casesError;
-
-      const perCaseResults = await Promise.all(caseIds.map(async (currentCaseId) => {
-        const [snapshotsResult, alertsResult, tasksResult, eventsResult] = await Promise.all([
-          adminClient.from('risk_snapshots').select('*').eq('case_id', currentCaseId).order('created_at', { ascending: false }).limit(2),
-          adminClient.from('escalation_alerts').select('*').eq('case_id', currentCaseId).order('created_at', { ascending: false }).limit(10),
-          adminClient.from('follow_up_tasks').select('*').eq('case_id', currentCaseId).order('due_at', { ascending: true }).limit(10),
-          adminClient.from('case_events').select('id,case_id,event_type,note,created_at').eq('case_id', currentCaseId).order('created_at', { ascending: false }).limit(3),
-        ]);
-        if (snapshotsResult.error) throw snapshotsResult.error;
-        if (alertsResult.error) throw alertsResult.error;
-        if (tasksResult.error) throw tasksResult.error;
-        if (eventsResult.error) throw eventsResult.error;
-        return {
-          snapshots: snapshotsResult.data || [],
-          alerts: alertsResult.data || [],
-          tasks: tasksResult.data || [],
-          events: eventsResult.data || [],
-        };
-      }));
+      const [casesResult, snapshotsResult, alertsResult, tasksResult, eventsResult] = await Promise.all([
+        adminClient.from('cases').select('id,title,status,updated_at').in('id', caseIds),
+        adminClient.from('risk_snapshots').select('*').in('case_id', caseIds).order('created_at', { ascending: false }),
+        adminClient.from('escalation_alerts').select('*').in('case_id', caseIds).order('created_at', { ascending: false }),
+        adminClient.from('follow_up_tasks').select('*').in('case_id', caseIds).order('due_at', { ascending: true }),
+        adminClient.from('case_events').select('id,case_id,event_type,note,created_at').in('case_id', caseIds).order('created_at', { ascending: false }),
+      ]);
+      if (casesResult.error) throw casesResult.error;
+      if (snapshotsResult.error) throw snapshotsResult.error;
+      if (alertsResult.error) throw alertsResult.error;
+      if (tasksResult.error) throw tasksResult.error;
+      if (eventsResult.error) throw eventsResult.error;
 
       const timelineByCase = new Map();
-      const snapshots = [];
-      const alerts = [];
-      const tasks = [];
-      for (let index = 0; index < caseIds.length; index += 1) {
-        const currentCaseId = caseIds[index];
-        const result = perCaseResults[index];
-        timelineByCase.set(currentCaseId, result.events);
-        snapshots.push(...result.snapshots);
-        alerts.push(...result.alerts);
-        tasks.push(...result.tasks);
+      for (const event of eventsResult.data || []) {
+        const bucket = timelineByCase.get(event.case_id) || [];
+        if (bucket.length < 3) bucket.push(event);
+        timelineByCase.set(event.case_id, bucket);
       }
 
       return buildDashboardPayload({
-        cases: cases || [],
-        snapshots,
-        alerts,
-        tasks,
+        cases: casesResult.data || [],
+        snapshots: snapshotsResult.data || [],
+        alerts: alertsResult.data || [],
+        tasks: tasksResult.data || [],
         timelineByCase,
       });
     },

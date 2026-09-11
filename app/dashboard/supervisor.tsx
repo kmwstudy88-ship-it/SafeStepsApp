@@ -110,7 +110,7 @@ export default function SupervisorDashboardScreen() {
             <View key={item.id} style={styles.card}>
               <Text style={styles.cardTitle}>{item.trigger_type}</Text>
               <Text style={styles.meta}>Severity: {item.severity} · Status: {item.status}</Text>
-              <Text style={styles.meta}>Case: {item.case_id}</Text>
+              <Text style={styles.meta}>Case: {item.case_title}</Text>
             </View>
           )}
         />
@@ -123,6 +123,7 @@ export default function SupervisorDashboardScreen() {
             <View key={item.id} style={styles.card}>
               <Text style={styles.cardTitle}>{item.title}</Text>
               <Text style={styles.meta}>Priority: {item.priority} · Status: {item.status}</Text>
+              <Text style={styles.meta}>Case: {item.case_title}</Text>
               <Text style={styles.meta}>Due: {item.due_at}</Text>
             </View>
           )}

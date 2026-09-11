@@ -3,6 +3,7 @@ import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, Touchabl
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import { getCaseRiskHistory, recomputeCaseRisk, type CaseRiskHistoryResponse } from '../../lib/caseRiskApi';
+import { buildCaseRiskSummary } from '../../lib/caseRiskPresentation';
 import { supabase } from '../../lib/supabaseClient';
 
 export default function CaseDetailScreen() {
@@ -20,6 +21,7 @@ export default function CaseDetailScreen() {
   const [followUpTasks, setFollowUpTasks] = useState<CaseRiskHistoryResponse['follow_up_tasks']>([]);
   const [riskError, setRiskError] = useState<string | null>(null);
   const [recomputingRisk, setRecomputingRisk] = useState(false);
+  const riskSummary = buildCaseRiskSummary({ riskHistory, riskError });
 
   const loadCase = useCallback(async () => {
     if (!id) return;
@@ -122,15 +124,15 @@ export default function CaseDetailScreen() {
 
         <View style={styles.card}>
           <Text style={styles.sectionTitle}>Latest Risk Snapshot</Text>
-          {riskError ? <Text style={styles.error}>Risk workflow data unavailable: {riskError}</Text> : null}
-          {riskHistory[0] ? (
+          {riskSummary.hasError ? <Text style={styles.error}>{riskSummary.errorText}</Text> : null}
+          {riskSummary.latest ? (
             <View style={styles.item}>
-              <Text style={styles.itemTitle}>{riskHistory[0].tier.toUpperCase()} · Score {riskHistory[0].score}</Text>
-              <Text style={styles.meta}>Confidence: {Math.round((riskHistory[0].confidence || 0) * 100)}%</Text>
-              <Text style={styles.meta}>{riskHistory[0].rationale}</Text>
-              <Text style={styles.meta}>Rules: {riskHistory[0].model_version}</Text>
+              <Text style={styles.itemTitle}>{riskSummary.latest.title}</Text>
+              <Text style={styles.meta}>{riskSummary.latest.confidenceText}</Text>
+              <Text style={styles.meta}>{riskSummary.latest.rationaleText}</Text>
+              <Text style={styles.meta}>{riskSummary.latest.rulesText}</Text>
             </View>
-          ) : <Text style={styles.meta}>No risk history available yet.</Text>}
+          ) : <Text style={styles.meta}>{riskSummary.emptyText || 'No risk history available yet.'}</Text>}
         </View>
 
         <View style={styles.card}>

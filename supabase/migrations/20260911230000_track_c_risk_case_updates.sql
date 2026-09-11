@@ -116,6 +116,11 @@ with check (
   and (actor_user_id is null or actor_user_id = public.current_app_user_id() or coalesce(public.current_role_key(), '') = 'admin')
 );
 
+drop policy if exists case_events_backend_insert on public.case_events;
+create policy case_events_backend_insert on public.case_events
+for insert to service_role, postgres
+with check (true);
+
 drop policy if exists risk_snapshots_case_access on public.risk_snapshots;
 create policy risk_snapshots_case_access on public.risk_snapshots
 for select to authenticated
@@ -123,7 +128,7 @@ using (public.case_visible_to_current_user(case_id));
 
 drop policy if exists risk_snapshots_backend_insert on public.risk_snapshots;
 create policy risk_snapshots_backend_insert on public.risk_snapshots
-for insert to service_role
+for insert to service_role, postgres
 with check (true);
 
 drop policy if exists escalation_alerts_case_access on public.escalation_alerts;
@@ -133,7 +138,7 @@ using (public.case_visible_to_current_user(case_id));
 
 drop policy if exists escalation_alerts_backend_manage on public.escalation_alerts;
 create policy escalation_alerts_backend_manage on public.escalation_alerts
-for all to service_role
+for all to service_role, postgres
 using (true)
 with check (true);
 
@@ -144,7 +149,7 @@ using (public.case_visible_to_current_user(case_id));
 
 drop policy if exists follow_up_tasks_backend_manage on public.follow_up_tasks;
 create policy follow_up_tasks_backend_manage on public.follow_up_tasks
-for all to service_role
+for all to service_role, postgres
 using (true)
 with check (true);
 
@@ -349,7 +354,7 @@ begin
           priority = coalesce(v_task->>'priority', priority),
           assignee = coalesce(nullif(v_task->>'assignee', '')::uuid, assignee),
           status = case
-            when status in ('completed', 'cancelled') then 'pending'
+            when status in ('completed', 'cancelled', 'overdue') then 'pending'
             else coalesce(v_task->>'status', status)
           end,
           detail = coalesce(v_task->'detail', detail),

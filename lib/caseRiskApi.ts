@@ -53,6 +53,7 @@ export type SupervisorDashboardCaseItem = {
 export type SupervisorDashboardAlertItem = {
   id: string;
   case_id: string;
+  case_title: string;
   trigger_type: string;
   severity: string;
   status: string;
@@ -62,6 +63,7 @@ export type SupervisorDashboardAlertItem = {
 export type SupervisorDashboardTaskItem = {
   id: string;
   case_id: string;
+  case_title: string;
   title: string;
   priority: string;
   status: string;
