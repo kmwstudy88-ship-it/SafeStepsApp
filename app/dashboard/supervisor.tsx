@@ -46,7 +46,13 @@ export default function SupervisorDashboardScreen() {
           <Text style={styles.subtitle}>Decision-support signals only. Human review is required before adverse action.</Text>
         </View>
 
-        <TouchableOpacity style={styles.refreshButton} onPress={loadDashboard}>
+        <TouchableOpacity
+          style={styles.refreshButton}
+          onPress={loadDashboard}
+          accessibilityRole="button"
+          accessibilityLabel="Refresh supervisor dashboard"
+          accessibilityHint="Reloads the latest risk, escalation, and follow-up data for supervised cases."
+        >
           <Text style={styles.refreshText}>Refresh Dashboard</Text>
         </TouchableOpacity>
 
@@ -58,7 +64,14 @@ export default function SupervisorDashboardScreen() {
           items={highestRiskCases}
           emptyText="No supervised cases with risk snapshots yet."
           renderItem={(item: SupervisorDashboardCaseItem) => (
-            <TouchableOpacity key={item.case_id} style={styles.card} onPress={() => router.push(`/cases/${item.case_id}` as any)}>
+            <TouchableOpacity
+              key={item.case_id}
+              style={styles.card}
+              onPress={() => router.push(`/cases/${item.case_id}` as any)}
+              accessibilityRole="button"
+              accessibilityLabel={`${item.title}, ${item.latest_risk?.tier || 'unknown'} risk, score ${item.latest_risk?.score ?? 'not available'}`}
+              accessibilityHint="Opens the case detail view for the latest risk rationale, alerts, and follow-up tasks."
+            >
               <Text style={styles.cardTitle}>{item.title}</Text>
               <Text style={styles.meta}>Risk: {item.latest_risk?.tier || 'n/a'} · Score {item.latest_risk?.score ?? 'n/a'}</Text>
               <Text style={styles.meta}>Alerts: {item.open_alert_count} · Overdue tasks: {item.overdue_task_count}</Text>
@@ -72,7 +85,14 @@ export default function SupervisorDashboardScreen() {
           items={risingRiskCases}
           emptyText="No recent positive risk deltas."
           renderItem={(item: SupervisorDashboardCaseItem) => (
-            <TouchableOpacity key={item.case_id} style={styles.card} onPress={() => router.push(`/cases/${item.case_id}` as any)}>
+            <TouchableOpacity
+              key={item.case_id}
+              style={styles.card}
+              onPress={() => router.push(`/cases/${item.case_id}` as any)}
+              accessibilityRole="button"
+              accessibilityLabel={`${item.title}, rising risk by ${item.delta}, current tier ${item.latest_risk?.tier || 'unknown'}`}
+              accessibilityHint="Opens the case detail view for recent timeline events and updated risk rationale."
+            >
               <Text style={styles.cardTitle}>{item.title}</Text>
               <Text style={styles.meta}>Delta: +{item.delta} · Current tier: {item.latest_risk?.tier || 'n/a'}</Text>
               {(item.recent_events || []).map((event) => (

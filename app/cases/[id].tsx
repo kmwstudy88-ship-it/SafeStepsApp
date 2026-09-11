@@ -106,7 +106,15 @@ export default function CaseDetailScreen() {
           <Text style={styles.buttonText}>Open Document Viewer & Upload</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.secondaryButton} onPress={handleRecomputeRisk} disabled={recomputingRisk}>
+        <TouchableOpacity
+          style={styles.secondaryButton}
+          onPress={handleRecomputeRisk}
+          disabled={recomputingRisk}
+          accessibilityRole="button"
+          accessibilityLabel="Recompute case risk snapshot"
+          accessibilityHint="Creates a new deterministic risk snapshot from the latest recorded case events."
+          accessibilityState={{ disabled: recomputingRisk, busy: recomputingRisk }}
+        >
           <Text style={styles.secondaryButtonText}>{recomputingRisk ? 'Recomputing risk...' : 'Recompute Risk Snapshot'}</Text>
         </TouchableOpacity>
 

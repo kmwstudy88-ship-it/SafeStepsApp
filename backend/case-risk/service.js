@@ -249,7 +249,7 @@ function buildFollowUpTasks({ caseId, snapshot, previousSnapshot, assignments, r
     due_at: addHours(template.due_in_hours),
     priority: template.priority,
     assignee: template.task_type.includes('supervisor') ? supervisorAssignee : workerAssignee,
-    status: riskIncreased ? 'pending' : 'pending',
+    status: 'pending',
     source: template.source,
     allow_duplicates: false,
     detail: {
