@@ -49,6 +49,7 @@ end;
 $$;
 
 select public.__archive_compatibility_relation('case_assignments', 'case_assignments_legacy');
+select public.__archive_compatibility_relation('case_visit_records', 'case_visit_records_legacy');
 select public.__archive_compatibility_relation('visits', 'visits_legacy');
 select public.__archive_compatibility_relation('messages', 'messages_legacy');
 select public.__archive_compatibility_relation('timeline_events', 'timeline_events_legacy');
@@ -88,7 +89,7 @@ select
 from public.case_allocations ca
 left join public.users u on u.auth_user_id = ca.allocated_user_id;
 
-create view public.visits
+create view public.case_visit_records
 with (security_invoker = false)
 as
 select
@@ -109,6 +110,28 @@ select
   human_review_status,
   created_at
 from public.case_visit_records_v19;
+
+create view public.visits
+with (security_invoker = false)
+as
+select
+  id,
+  visit_reference,
+  case_id,
+  visit_type,
+  visit_location_type,
+  scheduled_at,
+  actual_start_at,
+  actual_end_at,
+  worker_user_id,
+  participants_present,
+  factual_observations,
+  family_responses,
+  safety_context,
+  follow_up_required,
+  human_review_status,
+  created_at
+from public.case_visit_records;
 
 create view public.messages
 with (security_invoker = false)
@@ -216,7 +239,36 @@ begin
     and c.relname = 'ai_extracted_entities';
 
   if ai_extracted_entities_relkind in ('r', 'p', 'f', 'v', 'm') then
-    select string_agg(format('  %I', a.attname), E',\n' order by a.attnum)
+    select string_agg(
+      format('  %I', a.attname),
+      E',\n'
+      order by array_position(
+        array[
+          'id',
+          'tenant_id',
+          'case_id',
+          'document_id',
+          'document_analysis_id',
+          'analysis_id',
+          'entity_type',
+          'entity_category',
+          'entity_label',
+          'entity_text',
+          'entity_value',
+          'normalized_value',
+          'confidence_score',
+          'source_text',
+          'source_span',
+          'page_number',
+          'start_offset',
+          'end_offset',
+          'metadata',
+          'created_at',
+          'updated_at'
+        ]::text[],
+        a.attname
+      )
+    )
     into ai_extracted_entities_columns
     from pg_catalog.pg_attribute a
     join pg_catalog.pg_class c on c.oid = a.attrelid
@@ -224,7 +276,32 @@ begin
     where n.nspname = 'public'
       and c.relname = 'ai_extracted_entities'
       and a.attnum > 0
-      and not a.attisdropped;
+    and not a.attisdropped
+    and a.attname = any (
+      array[
+        'id',
+        'tenant_id',
+        'case_id',
+        'document_id',
+        'document_analysis_id',
+        'analysis_id',
+        'entity_type',
+        'entity_category',
+        'entity_label',
+        'entity_text',
+        'entity_value',
+        'normalized_value',
+        'confidence_score',
+        'source_text',
+        'source_span',
+        'page_number',
+        'start_offset',
+        'end_offset',
+        'metadata',
+        'created_at',
+        'updated_at'
+      ]::text[]
+    );
 
     if ai_extracted_entities_columns is null then
       raise exception 'public.ai_extracted_entities has no selectable columns';
