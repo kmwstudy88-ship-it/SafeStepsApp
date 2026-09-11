@@ -226,6 +226,10 @@ begin
       and a.attnum > 0
       and not a.attisdropped;
 
+    if ai_extracted_entities_columns is null then
+      raise exception 'public.ai_extracted_entities has no selectable columns';
+    end if;
+
     execute format($sql$
       create view public.document_entities
       with (security_invoker = true)
@@ -240,80 +244,64 @@ begin
 end
 $migration$;
 
+create or replace function public.__grant_select_if_relation_exists(target_name text, grantee_name text)
+returns void
+language plpgsql
+set search_path = ''
+as $$
+begin
+  if exists (select 1 from pg_catalog.pg_roles where rolname = grantee_name)
+     and exists (
+       select 1
+       from pg_catalog.pg_class c
+       join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+       where n.nspname = 'public'
+         and c.relname = target_name
+     ) then
+    execute format('grant select on public.%I to %I', target_name, grantee_name);
+  end if;
+end;
+$$;
+
 do $migration$
 begin
-  if exists (select 1 from pg_catalog.pg_roles where rolname = 'authenticated') then
-    execute 'grant select on public.case_allocations to authenticated';
-    execute 'grant select on public.users to authenticated';
-    execute 'grant select on public.case_visit_records_v19 to authenticated';
-    execute 'grant select on public.messaging_messages to authenticated';
-    execute 'grant select on public.evidence_timeline_events to authenticated';
-    execute 'grant select on public.ai_risk_signals to authenticated';
-    execute 'grant select on public.assessment_contradictions to authenticated';
-    execute 'grant select on public.ai_fairness_results to authenticated';
-    execute 'grant select on public.case_assignments to authenticated';
-    execute 'grant select on public.visits to authenticated';
-    execute 'grant select on public.messages to authenticated';
-    execute 'grant select on public.timeline_events to authenticated';
-    execute 'grant select on public.risk_indicators to authenticated';
-    execute 'grant select on public.contradictions to authenticated';
-    execute 'grant select on public.fairness_analysis to authenticated';
-    if exists (
-      select 1
-      from pg_catalog.pg_class c
-      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
-      where n.nspname = 'public'
-        and c.relname = 'ai_extracted_entities'
-    ) then
-      execute 'grant select on public.ai_extracted_entities to authenticated';
-    end if;
-    if exists (
-      select 1
-      from pg_catalog.pg_class c
-      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
-      where n.nspname = 'public'
-        and c.relname = 'document_entities'
-    ) then
-      execute 'grant select on public.document_entities to authenticated';
-    end if;
-  end if;
+  perform public.__grant_select_if_relation_exists('case_allocations', 'authenticated');
+  perform public.__grant_select_if_relation_exists('users', 'authenticated');
+  perform public.__grant_select_if_relation_exists('case_visit_records_v19', 'authenticated');
+  perform public.__grant_select_if_relation_exists('messaging_messages', 'authenticated');
+  perform public.__grant_select_if_relation_exists('evidence_timeline_events', 'authenticated');
+  perform public.__grant_select_if_relation_exists('ai_risk_signals', 'authenticated');
+  perform public.__grant_select_if_relation_exists('assessment_contradictions', 'authenticated');
+  perform public.__grant_select_if_relation_exists('ai_fairness_results', 'authenticated');
+  perform public.__grant_select_if_relation_exists('ai_extracted_entities', 'authenticated');
+  perform public.__grant_select_if_relation_exists('case_assignments', 'authenticated');
+  perform public.__grant_select_if_relation_exists('visits', 'authenticated');
+  perform public.__grant_select_if_relation_exists('messages', 'authenticated');
+  perform public.__grant_select_if_relation_exists('timeline_events', 'authenticated');
+  perform public.__grant_select_if_relation_exists('risk_indicators', 'authenticated');
+  perform public.__grant_select_if_relation_exists('contradictions', 'authenticated');
+  perform public.__grant_select_if_relation_exists('fairness_analysis', 'authenticated');
+  perform public.__grant_select_if_relation_exists('document_entities', 'authenticated');
 
-  if exists (select 1 from pg_catalog.pg_roles where rolname = 'service_role') then
-    execute 'grant select on public.case_allocations to service_role';
-    execute 'grant select on public.users to service_role';
-    execute 'grant select on public.case_visit_records_v19 to service_role';
-    execute 'grant select on public.messaging_messages to service_role';
-    execute 'grant select on public.evidence_timeline_events to service_role';
-    execute 'grant select on public.ai_risk_signals to service_role';
-    execute 'grant select on public.assessment_contradictions to service_role';
-    execute 'grant select on public.ai_fairness_results to service_role';
-    execute 'grant select on public.case_assignments to service_role';
-    execute 'grant select on public.visits to service_role';
-    execute 'grant select on public.messages to service_role';
-    execute 'grant select on public.timeline_events to service_role';
-    execute 'grant select on public.risk_indicators to service_role';
-    execute 'grant select on public.contradictions to service_role';
-    execute 'grant select on public.fairness_analysis to service_role';
-    if exists (
-      select 1
-      from pg_catalog.pg_class c
-      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
-      where n.nspname = 'public'
-        and c.relname = 'ai_extracted_entities'
-    ) then
-      execute 'grant select on public.ai_extracted_entities to service_role';
-    end if;
-    if exists (
-      select 1
-      from pg_catalog.pg_class c
-      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
-      where n.nspname = 'public'
-        and c.relname = 'document_entities'
-    ) then
-      execute 'grant select on public.document_entities to service_role';
-    end if;
-  end if;
+  perform public.__grant_select_if_relation_exists('case_allocations', 'service_role');
+  perform public.__grant_select_if_relation_exists('users', 'service_role');
+  perform public.__grant_select_if_relation_exists('case_visit_records_v19', 'service_role');
+  perform public.__grant_select_if_relation_exists('messaging_messages', 'service_role');
+  perform public.__grant_select_if_relation_exists('evidence_timeline_events', 'service_role');
+  perform public.__grant_select_if_relation_exists('ai_risk_signals', 'service_role');
+  perform public.__grant_select_if_relation_exists('assessment_contradictions', 'service_role');
+  perform public.__grant_select_if_relation_exists('ai_fairness_results', 'service_role');
+  perform public.__grant_select_if_relation_exists('ai_extracted_entities', 'service_role');
+  perform public.__grant_select_if_relation_exists('case_assignments', 'service_role');
+  perform public.__grant_select_if_relation_exists('visits', 'service_role');
+  perform public.__grant_select_if_relation_exists('messages', 'service_role');
+  perform public.__grant_select_if_relation_exists('timeline_events', 'service_role');
+  perform public.__grant_select_if_relation_exists('risk_indicators', 'service_role');
+  perform public.__grant_select_if_relation_exists('contradictions', 'service_role');
+  perform public.__grant_select_if_relation_exists('fairness_analysis', 'service_role');
+  perform public.__grant_select_if_relation_exists('document_entities', 'service_role');
 end
 $migration$;
 
 drop function public.__archive_compatibility_relation(text, text);
+drop function public.__grant_select_if_relation_exists(text, text);
