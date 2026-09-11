@@ -10,6 +10,7 @@ const {
   getComparisonForUser,
 } = require('./document-intelligence/pipeline');
 const { authenticateBearer } = require('./document-intelligence/supabase');
+const { createCaseRiskService } = require('./case-risk/service');
 
 const PORT = Number(process.env.PORT || 3000);
 const MAX_BODY_BYTES = 35 * 1024 * 1024;
@@ -33,6 +34,8 @@ const DOCUMENT_SECTIONS = [
   'Interagency Collaboration Notes', 'Parent-Child Attachment Indicators', 'Incident Escalation Trail',
   'Compliance Obligations Tracking', 'Service Referral Timelines', 'Outcome Measurement Benchmarks',
 ];
+
+const caseRiskService = createCaseRiskService();
 
 function setCors(req, res) {
   const allowed = (process.env.BACKEND_ALLOWED_ORIGINS || '*').split(',').map(x => x.trim());
@@ -81,6 +84,12 @@ function routeId(pathname, prefix) {
   if (!pathname.startsWith(prefix)) return null;
   const value = pathname.slice(prefix.length);
   return /^[0-9a-f-]{36}$/i.test(value) ? value : null;
+}
+
+function routeCaseSubpath(pathname) {
+  const match = pathname.match(/^\/cases\/([0-9a-f-]{36})\/([a-z-]+)$/i);
+  if (!match) return null;
+  return { caseId: match[1], action: match[2] };
 }
 
 function readiness() {
@@ -160,6 +169,42 @@ const server = http.createServer(async (req, res) => {
       const comparison = await getComparisonForUser(comparisonId, user.id);
       if (!comparison) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Comparison not found.' } });
       return sendJson(res, 200, { comparison });
+    }
+
+    const caseRoute = routeCaseSubpath(url.pathname);
+    if (caseRoute?.action === 'events' && req.method === 'POST') {
+      const user = await requireUser(req, res); if (!user) return;
+      const body = await parseBody(req);
+      const result = await caseRiskService.createCaseEventAndRecompute({
+        authUserId: user.id,
+        caseId: caseRoute.caseId,
+        body,
+      });
+      return sendJson(res, 201, result);
+    }
+
+    if (caseRoute?.action === 'recompute-risk' && req.method === 'POST') {
+      const user = await requireUser(req, res); if (!user) return;
+      const result = await caseRiskService.recomputeRisk({
+        authUserId: user.id,
+        caseId: caseRoute.caseId,
+      });
+      return sendJson(res, 200, result);
+    }
+
+    if (caseRoute?.action === 'risk-history' && req.method === 'GET') {
+      const user = await requireUser(req, res); if (!user) return;
+      const result = await caseRiskService.getCaseRiskHistory({
+        authUserId: user.id,
+        caseId: caseRoute.caseId,
+      });
+      return sendJson(res, 200, result);
+    }
+
+    if (req.method === 'GET' && url.pathname === '/dashboard/supervisor') {
+      const user = await requireUser(req, res); if (!user) return;
+      const dashboard = await caseRiskService.getSupervisorDashboard({ authUserId: user.id });
+      return sendJson(res, 200, dashboard);
     }
 
     return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Route not found.' } });
