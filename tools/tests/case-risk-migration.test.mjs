@@ -12,4 +12,8 @@ test('track C migration defines immutable risk history and workflow automation t
   assert.match(migration, /risk_snapshots are immutable/i);
   assert.match(migration, /apply_case_risk_workflow/i);
   assert.match(migration, /follow_up_tasks_active_unique_idx/i);
+  assert.match(migration, /create policy case_events_backend_insert on public\.case_events\s+for insert to service_role, postgres\s+with check \(true\);/i);
+  assert.match(migration, /create policy risk_snapshots_backend_insert on public\.risk_snapshots\s+for insert to service_role, postgres\s+with check \(true\);/i);
+  assert.match(migration, /create policy escalation_alerts_backend_manage on public\.escalation_alerts\s+for all to service_role, postgres\s+using \(true\)\s+with check \(true\);/i);
+  assert.match(migration, /create policy follow_up_tasks_backend_manage on public\.follow_up_tasks\s+for all to service_role, postgres\s+using \(true\)\s+with check \(true\);/i);
 });

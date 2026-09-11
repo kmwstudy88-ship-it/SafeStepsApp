@@ -525,7 +525,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         adminClient.from('risk_snapshots').select('*').eq('case_id', caseId).order('created_at', { ascending: false }).limit(25),
         adminClient.from('case_events').select('*').eq('case_id', caseId).order('created_at', { ascending: false }).limit(25),
         adminClient.from('escalation_alerts').select('*').eq('case_id', caseId).in('status', ['open', 'acknowledged']).order('created_at', { ascending: false }).limit(25),
-        adminClient.from('follow_up_tasks').select('*').eq('case_id', caseId).order('due_at', { ascending: true }).limit(25),
+        adminClient.from('follow_up_tasks').select('*').eq('case_id', caseId).in('status', ['pending', 'in_progress', 'overdue']).order('due_at', { ascending: true }).limit(25),
       ]);
       if (snapshotsResult.error) throw snapshotsResult.error;
       if (eventsResult.error) throw eventsResult.error;
