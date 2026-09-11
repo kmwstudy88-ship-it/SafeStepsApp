@@ -365,8 +365,37 @@ begin
 end;
 $$;
 
+create or replace function public.__revoke_public_if_relation_exists(target_name text)
+returns void
+language plpgsql
+set search_path = ''
+as $$
+begin
+  if exists (
+    select 1
+    from pg_catalog.pg_class c
+    join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+    where n.nspname = 'public'
+      and c.relname = target_name
+      and c.relkind in ('r', 'p', 'f', 'v', 'm')
+  ) then
+    execute format('revoke all on public.%I from public', target_name);
+  end if;
+end;
+$$;
+
 do $migration$
 begin
+  perform public.__revoke_public_if_relation_exists('case_assignments');
+  perform public.__revoke_public_if_relation_exists('case_visit_records');
+  perform public.__revoke_public_if_relation_exists('visits');
+  perform public.__revoke_public_if_relation_exists('messages');
+  perform public.__revoke_public_if_relation_exists('timeline_events');
+  perform public.__revoke_public_if_relation_exists('risk_indicators');
+  perform public.__revoke_public_if_relation_exists('contradictions');
+  perform public.__revoke_public_if_relation_exists('fairness_analysis');
+  perform public.__revoke_public_if_relation_exists('document_entities');
+
   perform public.__grant_select_if_relation_exists('case_assignments', 'authenticated');
   perform public.__grant_select_if_relation_exists('case_visit_records', 'authenticated');
   perform public.__grant_select_if_relation_exists('visits', 'authenticated');
@@ -391,3 +420,4 @@ $migration$;
 
 drop function public.__archive_compatibility_relation(text, text);
 drop function public.__grant_select_if_relation_exists(text, text);
+drop function public.__revoke_public_if_relation_exists(text);
