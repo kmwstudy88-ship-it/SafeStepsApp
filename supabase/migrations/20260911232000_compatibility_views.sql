@@ -226,16 +226,6 @@ begin
       and a.attnum > 0
       and not a.attisdropped;
 
-    if exists (
-      select 1
-      from pg_catalog.pg_class c
-      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
-      where n.nspname = 'public'
-        and c.relname = 'document_entities'
-    ) then
-      raise exception 'public.document_entities still exists and cannot be replaced safely';
-    end if;
-
     execute format($sql$
       create view public.document_entities
       with (security_invoker = true)
