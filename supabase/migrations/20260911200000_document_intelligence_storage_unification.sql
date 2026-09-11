@@ -125,7 +125,7 @@ select
   contradiction.source_a,
   contradiction.source_b,
   contradiction.severity as materiality,
-  contradiction.detected_at,
+  contradiction.created_at as detected_at,
   contradiction.include_in_report as requires_resolution,
   contradiction.resolved_at,
   contradiction.worker_notes as reviewer_notes,
@@ -275,7 +275,7 @@ select
   case when contradiction.resolved_at is null then 'open' else 'resolved' end as concern_status,
   contradiction.resolved_at is null as requires_human_review,
   contradiction.resolved_at,
-  contradiction.detected_at,
+  contradiction.created_at as detected_at,
   'assessment_contradictions'::text as source_table,
   contradiction.id as source_record_id,
   contradiction.created_at
@@ -333,7 +333,7 @@ select
 from public.ai_retrieval_contradictions as contradiction;
 
 revoke all on public.document_entities from public, anon, authenticated;
-grant select, insert, update on public.document_entities to service_role;
+grant insert, update on public.document_entities to service_role;
 
 revoke all on
   public.document_text,
