@@ -53,7 +53,9 @@ using (
   or exists (
     select 1
     from public.case_documents as document
-    where document.case_id = document_entities.case_id
+    where document_entities.case_document_id is null
+      and document_entities.document_version_id is null
+      and document.case_id = document_entities.case_id
       and (
         document.parent_user_id = (select auth.uid())
         or document.worker_user_id = (select auth.uid())
@@ -134,10 +136,40 @@ union all
 select
   contradiction.id,
   coalesce(
-    source_a_document.case_id,
-    source_b_document.case_id,
-    source_a_version_document.case_id,
-    source_b_version_document.case_id
+    case
+      when contradiction.source_a_type ilike '%version%' then (
+        select document.case_id
+        from public.case_document_versions as version
+        join public.case_documents as document
+          on document.id = version.document_id
+        where version.id = contradiction.source_a_id
+        limit 1
+      )
+      when contradiction.source_a_type ilike '%document%' then (
+        select document.case_id
+        from public.case_documents as document
+        where document.id = contradiction.source_a_id
+        limit 1
+      )
+      else null::uuid
+    end,
+    case
+      when contradiction.source_b_type ilike '%version%' then (
+        select document.case_id
+        from public.case_document_versions as version
+        join public.case_documents as document
+          on document.id = version.document_id
+        where version.id = contradiction.source_b_id
+        limit 1
+      )
+      when contradiction.source_b_type ilike '%document%' then (
+        select document.case_id
+        from public.case_documents as document
+        where document.id = contradiction.source_b_id
+        limit 1
+      )
+      else null::uuid
+    end
   ) as case_id,
   'ai_retrieval_contradictions'::text as source_table,
   contradiction.id as source_record_id,
@@ -152,19 +184,7 @@ select
   null::text as reviewer_notes,
   contradiction.reviewed_by,
   contradiction.created_at
-from public.ai_retrieval_contradictions as contradiction
-left join public.case_documents as source_a_document
-  on source_a_document.id = contradiction.source_a_id
-left join public.case_documents as source_b_document
-  on source_b_document.id = contradiction.source_b_id
-left join public.case_document_versions as source_a_version
-  on source_a_version.id = contradiction.source_a_id
-left join public.case_document_versions as source_b_version
-  on source_b_version.id = contradiction.source_b_id
-left join public.case_documents as source_a_version_document
-  on source_a_version_document.id = source_a_version.document_id
-left join public.case_documents as source_b_version_document
-  on source_b_version_document.id = source_b_version.document_id;
+from public.ai_retrieval_contradictions as contradiction;
 
 create or replace view public.document_fairness
 with (security_invoker = true)
@@ -264,10 +284,40 @@ union all
 select
   contradiction.id,
   coalesce(
-    source_a_document.case_id,
-    source_b_document.case_id,
-    source_a_version_document.case_id,
-    source_b_version_document.case_id
+    case
+      when contradiction.source_a_type ilike '%version%' then (
+        select document.case_id
+        from public.case_document_versions as version
+        join public.case_documents as document
+          on document.id = version.document_id
+        where version.id = contradiction.source_a_id
+        limit 1
+      )
+      when contradiction.source_a_type ilike '%document%' then (
+        select document.case_id
+        from public.case_documents as document
+        where document.id = contradiction.source_a_id
+        limit 1
+      )
+      else null::uuid
+    end,
+    case
+      when contradiction.source_b_type ilike '%version%' then (
+        select document.case_id
+        from public.case_document_versions as version
+        join public.case_documents as document
+          on document.id = version.document_id
+        where version.id = contradiction.source_b_id
+        limit 1
+      )
+      when contradiction.source_b_type ilike '%document%' then (
+        select document.case_id
+        from public.case_documents as document
+        where document.id = contradiction.source_b_id
+        limit 1
+      )
+      else null::uuid
+    end
   ) as case_id,
   'retrieval_contradiction'::text as concern_category,
   contradiction.contradiction_type as concern_type,
@@ -280,26 +330,6 @@ select
   'ai_retrieval_contradictions'::text as source_table,
   contradiction.id as source_record_id,
   contradiction.created_at
-from public.ai_retrieval_contradictions as contradiction
-left join public.case_documents as source_a_document
-  on source_a_document.id = contradiction.source_a_id
-left join public.case_documents as source_b_document
-  on source_b_document.id = contradiction.source_b_id
-left join public.case_document_versions as source_a_version
-  on source_a_version.id = contradiction.source_a_id
-left join public.case_document_versions as source_b_version
-  on source_b_version.id = contradiction.source_b_id
-left join public.case_documents as source_a_version_document
-  on source_a_version_document.id = source_a_version.document_id
-left join public.case_documents as source_b_version_document
-  on source_b_version_document.id = source_b_version.document_id;
+from public.ai_retrieval_contradictions as contradiction;
 
-grant select on
-  public.document_entities,
-  public.document_text,
-  public.document_contradictions,
-  public.document_fairness,
-  public.document_risks,
-  public.document_timeline,
-  public.document_concerns
-to authenticated;
+grant select on public.document_entities to authenticated;
