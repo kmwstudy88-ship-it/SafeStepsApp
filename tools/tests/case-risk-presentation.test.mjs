@@ -29,3 +29,14 @@ test('buildCaseRiskSummary surfaces risk workflow load failures without hiding t
   assert.equal(summary.errorText, 'Risk workflow data unavailable: Backend unavailable');
   assert.equal(summary.latest, null);
 });
+
+test('buildCaseRiskSummary tolerates partial snapshot payloads', () => {
+  const summary = buildCaseRiskSummary({
+    riskHistory: [{ score: null, tier: null, confidence: 0, rationale: '', model_version: null }],
+  });
+
+  assert.equal(summary.hasError, false);
+  assert.equal(summary.latest.title, 'UNKNOWN · Score n/a');
+  assert.equal(summary.latest.rationaleText, 'No rationale available.');
+  assert.equal(summary.latest.rulesText, 'Rules: unknown');
+});

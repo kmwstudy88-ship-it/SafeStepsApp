@@ -216,7 +216,7 @@ function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdem
   const delta = snapshot.score - previousScore;
   if (previousSnapshot && delta >= 15) {
     alerts.push({
-      dedupe_key: `delta:${snapshot.tier}`,
+      dedupe_key: eventIdempotencyKey ? `delta:${eventIdempotencyKey}` : `delta:${previousScore}->${snapshot.score}`,
       trigger_type: 'risk_score_delta',
       severity: snapshot.score >= 75 ? 'critical' : 'high',
       status: 'open',
@@ -321,12 +321,19 @@ function buildDashboardPayload({ cases, snapshots, alerts, tasks, timelineByCase
 
   const highestRiskCases = [...caseSummaries]
     .filter((item) => item.latest_risk && item.status !== 'closed')
-    .sort((a, b) => (b.latest_risk.score - a.latest_risk.score) || (b.open_alert_count - a.open_alert_count))
+    .sort((a, b) =>
+      (b.latest_risk.score - a.latest_risk.score)
+      || (b.open_alert_count - a.open_alert_count)
+      || (Date.parse(b.updated_at || 0) - Date.parse(a.updated_at || 0))
+      || String(a.case_id).localeCompare(String(b.case_id)))
     .slice(0, 10);
 
   const risingRiskCases = [...caseSummaries]
     .filter((item) => item.delta > 0 && item.status !== 'closed')
-    .sort((a, b) => b.delta - a.delta)
+    .sort((a, b) =>
+      (b.delta - a.delta)
+      || (Date.parse(b.updated_at || 0) - Date.parse(a.updated_at || 0))
+      || String(a.case_id).localeCompare(String(b.case_id)))
     .slice(0, 10);
 
   return {
@@ -517,7 +524,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
       const [snapshotsResult, eventsResult, alertsResult, tasksResult] = await Promise.all([
         adminClient.from('risk_snapshots').select('*').eq('case_id', caseId).order('created_at', { ascending: false }).limit(25),
         adminClient.from('case_events').select('*').eq('case_id', caseId).order('created_at', { ascending: false }).limit(25),
-        adminClient.from('escalation_alerts').select('*').eq('case_id', caseId).order('created_at', { ascending: false }).limit(25),
+        adminClient.from('escalation_alerts').select('*').eq('case_id', caseId).in('status', ['open', 'acknowledged']).order('created_at', { ascending: false }).limit(25),
         adminClient.from('follow_up_tasks').select('*').eq('case_id', caseId).order('due_at', { ascending: true }).limit(25),
       ]);
       if (snapshotsResult.error) throw snapshotsResult.error;
@@ -528,7 +535,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
       return {
         risk_history: snapshotsResult.data || [],
         recent_events: eventsResult.data || [],
-        open_escalations: (alertsResult.data || []).filter((item) => ['open', 'acknowledged'].includes(item.status)),
+        open_escalations: alertsResult.data || [],
         follow_up_tasks: tasksResult.data || [],
         human_review_required: true,
       };

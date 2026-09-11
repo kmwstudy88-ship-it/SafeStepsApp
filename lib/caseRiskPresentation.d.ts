@@ -1,9 +1,9 @@
 export type CaseRiskHistoryItem = {
-  score: number;
-  tier: string;
-  confidence: number;
-  rationale: string;
-  model_version: string;
+  score: number | null;
+  tier: string | null;
+  confidence: number | null;
+  rationale: string | null;
+  model_version: string | null;
 };
 
 export type CaseRiskSummary =

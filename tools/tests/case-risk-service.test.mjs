@@ -39,6 +39,7 @@ test('buildEscalationAlerts produces stable dedupe keys for duplicate triggering
 
   assert.deepEqual(first.map((item) => item.dedupe_key), second.map((item) => item.dedupe_key));
   assert.deepEqual(first.map((item) => item.trigger_type), ['weapon_access', 'risk_threshold_critical', 'risk_score_delta']);
+  assert.equal(first.at(-1)?.dedupe_key, 'delta:evt-123');
 });
 
 test('buildFollowUpTasks upgrades follow-up SLA and marks reprioritization after risk increases', () => {
@@ -111,4 +112,5 @@ test('buildDashboardPayload returns highest-risk, rising-risk, open escalation, 
   assert.equal(dashboard.highest_risk_open_cases.some((item) => item.case_id === 'case-c'), false);
   assert.equal(dashboard.rising_risk_cases.some((item) => item.case_id === 'case-c'), false);
   assert.equal(dashboard.highest_risk_open_cases.length, 10);
+  assert.equal(dashboard.rising_risk_cases[1].case_id, 'case-b');
 });
