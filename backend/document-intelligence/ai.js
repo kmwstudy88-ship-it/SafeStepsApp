@@ -52,7 +52,7 @@ async function openAIJson(instructions, input) {
   const model = process.env.OPENAI_DOCUMENT_MODEL || 'gpt-5.6-terra';
   const response = await fetch('https://api.openai.com/v1/responses', {
     method: 'POST',
-    headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
       model,
       instructions,
@@ -72,11 +72,7 @@ async function anthropicJson(instructions, input) {
   const model = process.env.ANTHROPIC_DOCUMENT_MODEL || 'claude-sonnet-4-5';
   const response = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
-    headers: {
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'content-type': 'application/json',
-    },
+    headers: { 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
     body: JSON.stringify({ model, max_tokens: 12000, system: instructions, messages: [{ role: 'user', content: input }] }),
   });
   const payload = await response.json();
@@ -93,16 +89,33 @@ async function runJson(instructions, input) {
   return providerName() === 'anthropic' ? anthropicJson(instructions, input) : openAIJson(instructions, input);
 }
 
-async function analyzeDocument(document) {
-  const body = [
-    `Document ID: ${document.id}`,
-    `File name: ${document.file_name || 'pasted-text.txt'}`,
-    `MIME type: ${document.mime_type || 'text/plain'}`,
-    '',
-    document.extracted_text || '',
-  ].join('\n');
-  if (!document.extracted_text) throw new Error('No extractable text is available for this document');
-  return runJson(ANALYSIS_INSTRUCTIONS, body);
+function metadataText(document) {
+  return `Analyze this SafeSteps casework document. Document ID: ${document.id}; file name: ${document.file_name || 'document'}; MIME type: ${document.mime_type || 'application/octet-stream'}.`;
+}
+
+async function analyzeDocument(document, fileBuffer = null) {
+  if (document.extracted_text) {
+    return runJson(ANALYSIS_INSTRUCTIONS, `${metadataText(document)}\n\n${document.extracted_text}`);
+  }
+  if (!fileBuffer) throw new Error('Document content is unavailable for analysis');
+
+  if (providerName() === 'openai') {
+    return openAIJson(ANALYSIS_INSTRUCTIONS, [{
+      role: 'user',
+      content: [
+        { type: 'input_text', text: metadataText(document) },
+        { type: 'input_file', filename: document.file_name || 'document', file_data: fileBuffer.toString('base64') },
+      ],
+    }]);
+  }
+
+  if (String(document.mime_type).toLowerCase() !== 'application/pdf') {
+    throw new Error('Anthropic direct binary analysis currently supports PDF documents; provide extractedText for other binary formats.');
+  }
+  return anthropicJson(ANALYSIS_INSTRUCTIONS, [
+    { type: 'document', source: { type: 'base64', media_type: 'application/pdf', data: fileBuffer.toString('base64') } },
+    { type: 'text', text: metadataText(document) },
+  ]);
 }
 
 async function compareDocuments(items) {
@@ -113,10 +126,4 @@ async function compareDocuments(items) {
   return runJson(COMPARISON_INSTRUCTIONS, body);
 }
 
-module.exports = {
-  ANALYSIS_SCHEMA_VERSION,
-  COMPARISON_SCHEMA_VERSION,
-  providerName,
-  analyzeDocument,
-  compareDocuments,
-};
+module.exports = { ANALYSIS_SCHEMA_VERSION, COMPARISON_SCHEMA_VERSION, providerName, analyzeDocument, compareDocuments };
