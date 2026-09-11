@@ -381,6 +381,7 @@ $$;
 do $migration$
 begin
   perform public.__grant_select_if_relation_exists('case_assignments', 'authenticated');
+  perform public.__grant_select_if_relation_exists('case_visit_records', 'authenticated');
   perform public.__grant_select_if_relation_exists('visits', 'authenticated');
   perform public.__grant_select_if_relation_exists('messages', 'authenticated');
   perform public.__grant_select_if_relation_exists('timeline_events', 'authenticated');
@@ -390,6 +391,7 @@ begin
   perform public.__grant_select_if_relation_exists('document_entities', 'authenticated');
 
   perform public.__grant_select_if_relation_exists('case_assignments', 'service_role');
+  perform public.__grant_select_if_relation_exists('case_visit_records', 'service_role');
   perform public.__grant_select_if_relation_exists('visits', 'service_role');
   perform public.__grant_select_if_relation_exists('messages', 'service_role');
   perform public.__grant_select_if_relation_exists('timeline_events', 'service_role');
