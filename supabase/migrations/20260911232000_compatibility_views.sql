@@ -125,23 +125,7 @@ from public.case_visit_records_v19;
 create view public.visits
 with (security_invoker = false)
 as
-select
-  id,
-  visit_reference,
-  case_id,
-  visit_type,
-  visit_location_type,
-  scheduled_at,
-  actual_start_at,
-  actual_end_at,
-  worker_user_id,
-  participants_present,
-  factual_observations,
-  family_responses,
-  safety_context,
-  follow_up_required,
-  human_review_status,
-  created_at
+select *
 from public.case_visit_records;
 
 create view public.messages
