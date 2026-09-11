@@ -243,6 +243,14 @@ $migration$;
 do $migration$
 begin
   if exists (select 1 from pg_catalog.pg_roles where rolname = 'authenticated') then
+    execute 'grant select on public.case_allocations to authenticated';
+    execute 'grant select on public.users to authenticated';
+    execute 'grant select on public.case_visit_records_v19 to authenticated';
+    execute 'grant select on public.messaging_messages to authenticated';
+    execute 'grant select on public.evidence_timeline_events to authenticated';
+    execute 'grant select on public.ai_risk_signals to authenticated';
+    execute 'grant select on public.assessment_contradictions to authenticated';
+    execute 'grant select on public.ai_fairness_results to authenticated';
     execute 'grant select on public.case_assignments to authenticated';
     execute 'grant select on public.visits to authenticated';
     execute 'grant select on public.messages to authenticated';
@@ -255,6 +263,15 @@ begin
       from pg_catalog.pg_class c
       join pg_catalog.pg_namespace n on n.oid = c.relnamespace
       where n.nspname = 'public'
+        and c.relname = 'ai_extracted_entities'
+    ) then
+      execute 'grant select on public.ai_extracted_entities to authenticated';
+    end if;
+    if exists (
+      select 1
+      from pg_catalog.pg_class c
+      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+      where n.nspname = 'public'
         and c.relname = 'document_entities'
     ) then
       execute 'grant select on public.document_entities to authenticated';
@@ -262,6 +279,14 @@ begin
   end if;
 
   if exists (select 1 from pg_catalog.pg_roles where rolname = 'service_role') then
+    execute 'grant select on public.case_allocations to service_role';
+    execute 'grant select on public.users to service_role';
+    execute 'grant select on public.case_visit_records_v19 to service_role';
+    execute 'grant select on public.messaging_messages to service_role';
+    execute 'grant select on public.evidence_timeline_events to service_role';
+    execute 'grant select on public.ai_risk_signals to service_role';
+    execute 'grant select on public.assessment_contradictions to service_role';
+    execute 'grant select on public.ai_fairness_results to service_role';
     execute 'grant select on public.case_assignments to service_role';
     execute 'grant select on public.visits to service_role';
     execute 'grant select on public.messages to service_role';
@@ -269,6 +294,15 @@ begin
     execute 'grant select on public.risk_indicators to service_role';
     execute 'grant select on public.contradictions to service_role';
     execute 'grant select on public.fairness_analysis to service_role';
+    if exists (
+      select 1
+      from pg_catalog.pg_class c
+      join pg_catalog.pg_namespace n on n.oid = c.relnamespace
+      where n.nspname = 'public'
+        and c.relname = 'ai_extracted_entities'
+    ) then
+      execute 'grant select on public.ai_extracted_entities to service_role';
+    end if;
     if exists (
       select 1
       from pg_catalog.pg_class c
