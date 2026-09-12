@@ -1,0 +1,28 @@
+name: Identity security
+on:
+  pull_request:
+    paths:
+      - 'supabase/migrations/**'
+      - 'tools/identity-security/**'
+      - 'docs/architecture/safesteps-schema-snapshot.json'
+      - '.github/workflows/identity-security.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'supabase/migrations/**'
+      - 'tools/identity-security/**'
+      - 'docs/architecture/safesteps-schema-snapshot.json'
+      - '.github/workflows/identity-security.yml'
+permissions:
+  contents: read
+jobs:
+  direct-client-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci --ignore-scripts --prefix tools/identity-security
+      - run: npm test --prefix tools/identity-security
