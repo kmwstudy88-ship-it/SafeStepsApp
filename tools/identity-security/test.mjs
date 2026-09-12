@@ -92,6 +92,7 @@ try {
     ['membership self-admission', "insert into platform_tenant_memberships(user_id,tenant_id) values ('11111111-1111-4111-8111-111111111111','22222222-2222-4222-8222-222222222222')"],
     ['membership deletion', "delete from platform_tenant_memberships"],
     ['compatibility-view role promotion', "update workers set role='admin'"],
+    ['compatibility-view display-name update', "update workers set display_name='Intrusion'"],
     ['compatibility-view insertion', "insert into workers(id,user_id,role) values ('22222222-2222-4222-8222-222222222222','11111111-1111-4111-8111-111111111111','admin')"],
     ['compatibility-view deletion', "delete from workers"]
   ]) await check('denies ' + label, () => denied(sql));
@@ -110,6 +111,7 @@ try {
   });
   await db.exec('reset role; set role anon');
   await check('anonymous profile changes denied', () => denied("update profiles set display_name='Intrusion'"));
+  await check('anonymous membership escalation remains denied after public-grant revocation', () => denied("update platform_tenant_memberships set membership_role='tenant_admin'"));
   await db.exec('reset role; set role service_role');
   await check('trusted service administration retained', async () => {
     await db.exec("update profiles set role='caseworker' where id='22222222-2222-4222-8222-222222222222'");
@@ -133,6 +135,24 @@ try {
     await db.exec('rollback');
     const result = await db.query("select has_table_privilege('authenticated','public.profiles','DELETE') as can_delete");
     assert.equal(result.rows[0].can_delete, true);
+    await db.exec('revoke inherited_identity_writer from authenticated');
+    await db.exec('revoke delete on profiles from inherited_identity_writer');
+    await db.exec('drop role inherited_identity_writer');
+  });
+  await check('migration aborts when inherited protected-column grants bypass boundaries', async () => {
+    await db.exec('create role inherited_identity_column_writer');
+    await db.exec('grant update(staff_role) on staff_profiles to inherited_identity_column_writer');
+    await db.exec('grant inherited_identity_column_writer to authenticated');
+    await assert.rejects(
+      db.exec(migration),
+      (e) => e.message?.includes('Unexpected client write privilege remains on staff_profiles.staff_role')
+    );
+    await db.exec('rollback');
+    const result = await db.query("select has_column_privilege('authenticated','public.staff_profiles','staff_role','UPDATE') as can_update");
+    assert.equal(result.rows[0].can_update, true);
+    await db.exec('revoke inherited_identity_column_writer from authenticated');
+    await db.exec('revoke update(staff_role) on staff_profiles from inherited_identity_column_writer');
+    await db.exec('drop role inherited_identity_column_writer');
   });
   await check('all non-allowlisted writes are absent from effective privileges', async () => {
     const allowed = {
