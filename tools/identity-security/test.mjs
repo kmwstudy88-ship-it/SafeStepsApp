@@ -167,6 +167,26 @@ try {
       }
     }
   });
+  await check('workers compatibility view stays write-blocked for client roles', async () => {
+    const columns = (await db.query(`
+      select attname
+      from pg_attribute
+      where attrelid = 'public.workers'::regclass
+        and attnum > 0 and not attisdropped
+      order by attnum
+    `)).rows.map((row) => row.attname);
+    for (const role of ['authenticated', 'anon']) {
+      assert.equal((await db.query(`select has_table_privilege($1,'public.workers','DELETE') as allowed`, [role])).rows[0].allowed, false);
+      for (const column of columns) {
+        const result = await db.query(
+          `select has_column_privilege($1,'public.workers',$2,'INSERT') as ins, has_column_privilege($1,'public.workers',$2,'UPDATE') as upd`,
+          [role, column]
+        );
+        assert.equal(result.rows[0].ins, false);
+        assert.equal(result.rows[0].upd, false);
+      }
+    }
+  });
   await check('migration aborts when required identity tables are missing', async () => {
     await db.exec('drop table platform_tenant_memberships');
     await assert.rejects(
