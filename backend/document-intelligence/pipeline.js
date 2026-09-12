@@ -126,7 +126,7 @@ function normalizeAnalysisRecord(analysis) {
   if (!analysis) return null;
   return {
     ...analysis,
-    media_assessment: analysis.raw_output?.media_assessment || analysis.risk?.media_assessment || createEmptyMediaAssessment(),
+    media_assessment: analysis.risk?.media_assessment || analysis.raw_output?.media_assessment || createEmptyMediaAssessment(),
   };
 }
 
