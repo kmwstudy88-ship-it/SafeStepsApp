@@ -429,6 +429,26 @@ Maintain a change history here rather than creating competing schema masters. Ot
 | 1.0.0 | Defined canonical ownership, deployed baseline, model boundaries, compatibility mappings, deprecations and RLS requirements. |
 | 1.1.0 | Added binding decision IDs, implementation gates, release evidence, operational requirements and cross-repository version control. |
 
+### 15.6 PG-01 implementation progress
+
+Repository migration `20260912092748_identity_client_write_boundaries.sql`
+implements the direct-client privilege boundary for `profiles`,
+`staff_profiles`, `platform_tenant_memberships` and the `workers` compatibility
+view. It removes direct client provisioning/deletion and permits only an explicit
+presentation-field UPDATE allowlist. Independent column grants are removed;
+unexpected inherited privileges abort the migration. Existing RLS remains in place.
+
+The isolated PostgreSQL suite in `tools/identity-security` reproduces the original
+self-promotion behavior and tests the corrected boundary. Its CI workflow runs
+on migration and test changes. Trusted backend/definer writes remain privileged
+and require separate authorization review.
+
+**PG-01 remains OPEN.** This is repository implementation, not evidence of
+production deployment. Before release, verify Auth provisioning, intake and
+administrative workflows in staging, inspect external consumers and audit
+privileged RPCs. The catalog snapshot remains the original baseline and must not
+be rewritten to imply that this migration has been applied.
+
 ## Appendix A. Complete observed public relation registry
 
 Classification is exhaustive for the inspected public schema. “Canonical/domain” means a named core or supporting table in this contract; “Transitional/deprecated” means section 4 applies; “Retained extension” means preserve its existing specialized domain contract and do not substitute it for a core model. All base tables below had RLS enabled; all views were security invoker. Supabase-managed schemas are outside this public registry.
