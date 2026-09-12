@@ -59,3 +59,15 @@ test('forensic criteria contradictions and bias reduce adjusted score and confid
   assert.equal(adjusted.confidence < baseline.confidence, true);
   assert.equal(adjusted.court_defensibility.status, 'review_required');
 });
+
+test('forensic criteria supports partial scoring and emits explicit zero-value flags', () => {
+  const result = scoreForensicCriteriaAssessment({
+    fear_index: 2,
+  });
+
+  assert.equal(typeof result.adjusted_concern_score, 'number');
+  assert.equal(result.coverage_score > 0, true);
+  assert.equal(result.ml_payload.feature_vector.interaction_distress_ignored, 0);
+  assert.equal(result.ml_payload.feature_vector.interaction_consistent_soothing, 0);
+  assert.equal(result.ml_payload.feature_vector.contradiction_observed_vs_reported, 0);
+});

@@ -78,7 +78,7 @@ export function ForensicCriteriaAssessmentScreen() {
 
             <View style={styles.noticeCard}>
               <Text style={styles.noticeTitle}>Child-centred priority domains</Text>
-              <Text style={styles.noticeBody}>{result.child_centred_priority_domains.join(', ')}</Text>
+              <Text style={styles.noticeBody}>{result.child_centred_priority_domains.map((domain: any) => domain.title).join(', ')}</Text>
             </View>
 
             {result.domains.map((domain: any) => (
@@ -91,10 +91,12 @@ export function ForensicCriteriaAssessmentScreen() {
                   Risk {domain.risk_weighted_score} · Protective {domain.protective_weighted_score} · Coverage {domain.coverage_score}%
                 </Text>
                 {!!domain.risk_flags_present.length && (
-                  <Text style={styles.flagSummary}>Risk flags: {domain.risk_flags_present.join(', ')}</Text>
+                  <Text style={styles.flagSummary}>Risk flags: {domain.risk_flags_present.map((flag: any) => flag.label).join(', ')}</Text>
                 )}
                 {!!domain.protective_flags_present.length && (
-                  <Text style={styles.protectiveSummary}>Protective flags: {domain.protective_flags_present.join(', ')}</Text>
+                  <Text style={styles.protectiveSummary}>
+                    Protective flags: {domain.protective_flags_present.map((flag: any) => flag.label).join(', ')}
+                  </Text>
                 )}
               </View>
             ))}

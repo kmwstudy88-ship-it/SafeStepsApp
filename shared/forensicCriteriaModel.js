@@ -220,8 +220,10 @@ function scoreForensicCriteriaAssessment(responses = {}) {
       risk_weighted_score: riskWeightedScore,
       protective_weighted_score: protectiveWeightedScore,
       coverage_score: coverageScore,
-      risk_flags_present: riskFlagsPresent.map((flag) => flag.id),
-      protective_flags_present: protectiveFlagsPresent.map((flag) => flag.id),
+      risk_flags_present: riskFlagsPresent.map((flag) => ({ id: flag.id, label: flag.label })),
+      protective_flags_present: protectiveFlagsPresent.map((flag) => ({ id: flag.id, label: flag.label })),
+      all_risk_flag_ids: domain.riskFlags.map((flag) => flag.id),
+      all_protective_flag_ids: domain.protectiveFlags.map((flag) => flag.id),
       observed_signals: observedSignals,
     });
   }
@@ -249,7 +251,7 @@ function scoreForensicCriteriaAssessment(responses = {}) {
     .slice()
     .sort((a, b) => (b.concern_score * b.child_centred_weight) - (a.concern_score * a.child_centred_weight))
     .slice(0, 3)
-    .map((domain) => domain.id);
+    .map((domain) => ({ id: domain.id, title: domain.title }));
 
   let level = 'low';
   if (adjustedConcernScore >= 75) level = 'critical';
@@ -269,12 +271,10 @@ function scoreForensicCriteriaAssessment(responses = {}) {
   const flatFeatures = {};
   for (const domain of domains) {
     for (const signal of domain.observed_signals) flatFeatures[signal.feature_id] = signal.value;
-    for (const flag of FORENSIC_CRITERIA_DOMAINS.find((item) => item.id === domain.id).riskFlags) {
-      flatFeatures[flag.id] = domain.risk_flags_present.includes(flag.id) ? 1 : 0;
-    }
-    for (const flag of FORENSIC_CRITERIA_DOMAINS.find((item) => item.id === domain.id).protectiveFlags) {
-      flatFeatures[flag.id] = domain.protective_flags_present.includes(flag.id) ? 1 : 0;
-    }
+    const presentRiskFlags = new Set(domain.risk_flags_present.map((flag) => flag.id));
+    const presentProtectiveFlags = new Set(domain.protective_flags_present.map((flag) => flag.id));
+    for (const flagId of domain.all_risk_flag_ids) flatFeatures[flagId] = presentRiskFlags.has(flagId) ? 1 : 0;
+    for (const flagId of domain.all_protective_flag_ids) flatFeatures[flagId] = presentProtectiveFlags.has(flagId) ? 1 : 0;
   }
   for (const flag of FORENSIC_RELIABILITY_MODIFIERS.contradictions) flatFeatures[flag.id] = boolValue(responses[flag.id]) ? 1 : 0;
   for (const flag of FORENSIC_RELIABILITY_MODIFIERS.bias) flatFeatures[flag.id] = boolValue(responses[flag.id]) ? 1 : 0;
