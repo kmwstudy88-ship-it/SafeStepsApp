@@ -49,7 +49,7 @@ export default function AssessmentsRoute() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F7FAFC' },
   selectorRow: { flexDirection: 'row', flexWrap: 'wrap', padding: 12, gap: 8, backgroundColor: '#FFFFFF', borderBottomWidth: 1, borderBottomColor: '#E2E8F0' },
-  tabBtn: { flex: 1, paddingVertical: 8, borderRadius: 8, backgroundColor: '#EDF2F7', alignItems: 'center' },
+  tabBtn: { minWidth: 88, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 8, backgroundColor: '#EDF2F7', alignItems: 'center' },
   tabBtnActive: { backgroundColor: '#208AEF' },
   tabText: { fontSize: 13, fontWeight: '600', color: '#4A5568' },
   tabTextActive: { color: '#FFFFFF', fontWeight: '700' },
