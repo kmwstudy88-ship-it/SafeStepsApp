@@ -1,6 +1,6 @@
 begin;
 
-select plan(26);
+select plan(28);
 
 select has_table('public', 'evidence_records', 'evidence_records exists');
 select has_table('public', 'evidence_files', 'evidence_files exists');
@@ -25,12 +25,20 @@ select col_is_fk('public', 'evidence_chain_of_custody', 'evidence_record_id', 'e
 select col_is_fk('public', 'court_bundle_exhibits', 'evidence_record_id', 'court_bundle_exhibits.evidence_record_id is foreign key');
 select col_is_fk('public', 'evidence_redactions', 'source_file_id', 'evidence_redactions.source_file_id is foreign key');
 select ok(
+  coalesce(not has_function_privilege('public', to_regprocedure('public.grant_parent_video_report_consent(uuid, text, text, timestamp with time zone)'), 'EXECUTE'), false),
+  'public cannot execute grant_parent_video_report_consent'
+);
+select ok(
   coalesce(not has_function_privilege('anon', to_regprocedure('public.grant_parent_video_report_consent(uuid, text, text, timestamp with time zone)'), 'EXECUTE'), false),
   'anon cannot execute grant_parent_video_report_consent'
 );
 select ok(
   coalesce(has_function_privilege('authenticated', to_regprocedure('public.grant_parent_video_report_consent(uuid, text, text, timestamp with time zone)'), 'EXECUTE'), false),
   'authenticated can execute grant_parent_video_report_consent'
+);
+select ok(
+  coalesce(not has_function_privilege('public', to_regprocedure('public.withdraw_parent_video_report_consent(uuid, text)'), 'EXECUTE'), false),
+  'public cannot execute withdraw_parent_video_report_consent'
 );
 select ok(
   coalesce(not has_function_privilege('anon', to_regprocedure('public.withdraw_parent_video_report_consent(uuid, text)'), 'EXECUTE'), false),
