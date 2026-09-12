@@ -37,6 +37,7 @@ export function ForensicCriteriaAssessmentScreen() {
   const totalQuestions = totalSignalCount() + totalModifierCount();
   const answeredQuestions = answeredSignals + answeredModifiers;
   const progressPercent = Math.round((answeredQuestions / totalQuestions) * 100);
+  const canScore = answeredSignals > 0;
 
   function setValue(id: string, value: boolean | number) {
     setResponses((prev) => ({ ...prev, [id]: value }));
@@ -218,9 +219,9 @@ export function ForensicCriteriaAssessmentScreen() {
         </View>
 
         <TouchableOpacity
-          style={[styles.submitButton, answeredQuestions < totalQuestions && styles.submitButtonDisabled]}
+          style={[styles.submitButton, !canScore && styles.submitButtonDisabled]}
           onPress={handleSubmit}
-          disabled={answeredQuestions < totalQuestions}
+          disabled={!canScore}
         >
           <Text style={styles.submitButtonText}>Score Forensic Criteria</Text>
         </TouchableOpacity>

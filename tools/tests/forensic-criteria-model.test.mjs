@@ -23,6 +23,8 @@ test('forensic criteria scoring returns ML-ready high concern output', () => {
   assert.equal(result.level, 'critical');
   assert.equal(result.adjusted_concern_score > 75, true);
   assert.equal(typeof result.ml_payload.feature_vector.fear_index, 'number');
+  assert.equal(result.ml_payload.feature_vector.interaction_distress_ignored, 1);
+  assert.equal(result.ml_payload.feature_vector.interaction_consistent_soothing, 0);
   assert.deepEqual(result.domains.length, FORENSIC_CRITERIA_DOMAINS.length);
 });
 

@@ -269,8 +269,12 @@ function scoreForensicCriteriaAssessment(responses = {}) {
   const flatFeatures = {};
   for (const domain of domains) {
     for (const signal of domain.observed_signals) flatFeatures[signal.feature_id] = signal.value;
-    for (const flagId of domain.risk_flags_present) flatFeatures[flagId] = 1;
-    for (const flagId of domain.protective_flags_present) flatFeatures[flagId] = 1;
+    for (const flag of FORENSIC_CRITERIA_DOMAINS.find((item) => item.id === domain.id).riskFlags) {
+      flatFeatures[flag.id] = domain.risk_flags_present.includes(flag.id) ? 1 : 0;
+    }
+    for (const flag of FORENSIC_CRITERIA_DOMAINS.find((item) => item.id === domain.id).protectiveFlags) {
+      flatFeatures[flag.id] = domain.protective_flags_present.includes(flag.id) ? 1 : 0;
+    }
   }
   for (const flag of FORENSIC_RELIABILITY_MODIFIERS.contradictions) flatFeatures[flag.id] = boolValue(responses[flag.id]) ? 1 : 0;
   for (const flag of FORENSIC_RELIABILITY_MODIFIERS.bias) flatFeatures[flag.id] = boolValue(responses[flag.id]) ? 1 : 0;
