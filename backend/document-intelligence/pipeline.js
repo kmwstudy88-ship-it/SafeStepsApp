@@ -110,7 +110,7 @@ async function processAnalysisJob(job) {
   const fileBuffer = document.extracted_text ? null : await loadBinary(document);
   const ai = await analyzeDocument(document, fileBuffer);
   const result = ai.result || {};
-  const mediaAssessment = result.media_assessment || createEmptyMediaAssessment();
+  const mediaAssessment = result.media_assessment || result.risk?.media_assessment || createEmptyMediaAssessment();
   const risk = result.risk && typeof result.risk === 'object' ? result.risk : {};
   const completedAt = new Date().toISOString();
   const { error } = await admin.from('document_analyses').update({
