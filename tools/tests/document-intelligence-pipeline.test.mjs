@@ -394,3 +394,43 @@ test('getDocumentForUser normalizes media assessment from persisted analysis pay
     assert.equal(result.analysis.media_assessment.domains[0].signals_observed[0], 'Metadata validation');
   });
 });
+
+test('getDocumentForUser falls back to nested raw_output risk media assessment', async () => {
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', user_id: 'user-1' }, error: null };
+    }
+    if (query.table === 'document_analyses' && query.op === 'select') {
+      return {
+        data: {
+          id: 'analysis-1',
+          status: 'completed',
+          risk: {},
+          raw_output: {
+            risk: {
+              media_assessment: {
+                domains: [{
+                  domain_id: 'contextual_reliability',
+                  domain_name: 'Contextual Reliability',
+                  signals_observed: ['Selective recording'],
+                  risk_flags: ['Biased recording intent'],
+                  protective_flags: [],
+                  notes: 'Context appears selectively clipped.',
+                  confidence: 0.56,
+                }],
+              },
+            },
+          },
+        },
+        error: null,
+      };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ getDocumentForUser }) => {
+    const result = await getDocumentForUser('doc-1', 'user-1');
+    assert.equal(result.analysis.media_assessment.domains[0].domain_id, 'contextual_reliability');
+    assert.equal(result.analysis.media_assessment.domains[0].risk_flags[0], 'Biased recording intent');
+  });
+});
