@@ -16,23 +16,29 @@ select has_table('public', 'evidence_sharing_grants', 'evidence_sharing_grants e
 select has_function('public', 'has_evidence_access', array['uuid'], 'has_evidence_access exists');
 select has_function('public', 'can_manage_evidence', array['uuid'], 'can_manage_evidence exists');
 select has_function('public', 'can_export_evidence', array['uuid'], 'can_export_evidence exists');
-select has_function('public', 'grant_parent_video_report_consent', array['uuid', 'text', 'text', 'timestamptz'], 'grant_parent_video_report_consent exists');
+select has_function('public', 'grant_parent_video_report_consent', array['uuid', 'text', 'text', 'timestamp with time zone'], 'grant_parent_video_report_consent exists');
 select has_function('public', 'withdraw_parent_video_report_consent', array['uuid', 'text'], 'withdraw_parent_video_report_consent exists');
+select col_is_pk('public', 'evidence_records', 'id', 'evidence_records.id is primary key');
+select col_is_fk('public', 'evidence_records', 'case_id', 'evidence_records.case_id is foreign key');
+select col_is_fk('public', 'evidence_files', 'evidence_record_id', 'evidence_files.evidence_record_id is foreign key');
+select col_is_fk('public', 'evidence_chain_of_custody', 'evidence_record_id', 'evidence_chain_of_custody.evidence_record_id is foreign key');
+select col_is_fk('public', 'court_bundle_exhibits', 'evidence_record_id', 'court_bundle_exhibits.evidence_record_id is foreign key');
+select col_is_fk('public', 'evidence_redactions', 'source_file_id', 'evidence_redactions.source_file_id is foreign key');
 select ok(
-  has_function_privilege('authenticated', 'public.grant_parent_video_report_consent(uuid,text,text,timestamptz)', 'EXECUTE'),
-  'authenticated can execute grant_parent_video_report_consent'
-);
-select ok(
-  not has_function_privilege('anon', 'public.grant_parent_video_report_consent(uuid,text,text,timestamptz)', 'EXECUTE'),
+  coalesce(not has_function_privilege('anon', to_regprocedure('public.grant_parent_video_report_consent(uuid, text, text, timestamp with time zone)'), 'EXECUTE'), false),
   'anon cannot execute grant_parent_video_report_consent'
 );
 select ok(
-  has_function_privilege('authenticated', 'public.withdraw_parent_video_report_consent(uuid,text)', 'EXECUTE'),
-  'authenticated can execute withdraw_parent_video_report_consent'
+  coalesce(has_function_privilege('authenticated', to_regprocedure('public.grant_parent_video_report_consent(uuid, text, text, timestamp with time zone)'), 'EXECUTE'), false),
+  'authenticated can execute grant_parent_video_report_consent'
 );
 select ok(
-  not has_function_privilege('anon', 'public.withdraw_parent_video_report_consent(uuid,text)', 'EXECUTE'),
+  coalesce(not has_function_privilege('anon', to_regprocedure('public.withdraw_parent_video_report_consent(uuid, text)'), 'EXECUTE'), false),
   'anon cannot execute withdraw_parent_video_report_consent'
+);
+select ok(
+  coalesce(has_function_privilege('authenticated', to_regprocedure('public.withdraw_parent_video_report_consent(uuid, text)'), 'EXECUTE'), false),
+  'authenticated can execute withdraw_parent_video_report_consent'
 );
 select ok(
   not exists (
@@ -64,12 +70,6 @@ select ok(
   ),
   'withdraw_parent_video_report_consent does not grant execute to public'
 );
-select col_is_pk('public', 'evidence_records', 'id', 'evidence_records.id is primary key');
-select col_is_fk('public', 'evidence_records', 'case_id', 'evidence_records.case_id is foreign key');
-select col_is_fk('public', 'evidence_files', 'evidence_record_id', 'evidence_files.evidence_record_id is foreign key');
-select col_is_fk('public', 'evidence_chain_of_custody', 'evidence_record_id', 'evidence_chain_of_custody.evidence_record_id is foreign key');
-select col_is_fk('public', 'court_bundle_exhibits', 'evidence_record_id', 'court_bundle_exhibits.evidence_record_id is foreign key');
-select col_is_fk('public', 'evidence_redactions', 'source_file_id', 'evidence_redactions.source_file_id is foreign key');
 
 select * from finish();
 

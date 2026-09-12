@@ -1,0 +1,28 @@
+name: Document Intelligence Verify
+
+on:
+  pull_request:
+    paths:
+      - 'backend/**'
+      - 'lib/documentIntelligenceApi.ts'
+      - 'lib/fairness/**'
+      - 'supabase/migrations/**document_intelligence**'
+      - 'tools/verify-document-intelligence.mjs'
+      - '.github/workflows/document-intelligence-verify.yml'
+  push:
+    branches:
+      - feature/track-b-document-intelligence
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify document intelligence pipeline
+        run: node tools/verify-document-intelligence.mjs
