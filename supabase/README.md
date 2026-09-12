@@ -6,4 +6,4 @@
 
 `supabase/schema_dump.sql` is retained as a documented placeholder only. It must not be treated as the source of truth unless it has been regenerated from a verified environment and reviewed alongside the migration history.
 
-Edge functions under `supabase/functions/` own authenticated, audited delivery paths such as secure report download and report-delivery challenge handling.
+Edge functions under `supabase/functions/` own authenticated, audited delivery paths such as `secure-report-download`, `escalate-risk`, `audit-log-entry`, `process-uploaded-document`, and report-delivery challenge handling.
