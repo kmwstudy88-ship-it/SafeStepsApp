@@ -92,7 +92,8 @@ try {
     ['membership self-admission', "insert into platform_tenant_memberships(user_id,tenant_id) values ('11111111-1111-4111-8111-111111111111','22222222-2222-4222-8222-222222222222')"],
     ['membership deletion', "delete from platform_tenant_memberships"],
     ['compatibility-view role promotion', "update workers set role='admin'"],
-    ['compatibility-view insertion', "insert into workers(id,user_id,role) values ('22222222-2222-4222-8222-222222222222','11111111-1111-4111-8111-111111111111','admin')"]
+    ['compatibility-view insertion', "insert into workers(id,user_id,role) values ('22222222-2222-4222-8222-222222222222','11111111-1111-4111-8111-111111111111','admin')"],
+    ['compatibility-view deletion', "delete from workers"]
   ]) await check('denies ' + label, () => denied(sql));
   await check('owner presentation update remains available', async () => {
     await db.exec("update profiles set display_name='Changed',preferred_name='Preferred',updated_at=now() where id=auth.uid()");
@@ -121,6 +122,18 @@ try {
     await denied("update profiles set future_authority='admin'");
     await db.exec('reset role');
   });
+  await check('migration aborts when inherited grants bypass boundaries', async () => {
+    await db.exec('create role inherited_identity_writer');
+    await db.exec('grant delete on profiles to inherited_identity_writer');
+    await db.exec('grant inherited_identity_writer to authenticated');
+    await assert.rejects(
+      db.exec(migration),
+      (e) => e.message?.includes('Inherited destructive client privilege remains on profiles')
+    );
+    await db.exec('rollback');
+    const result = await db.query("select has_table_privilege('authenticated','public.profiles','DELETE') as can_delete");
+    assert.equal(result.rows[0].can_delete, true);
+  });
   await check('all non-allowlisted writes are absent from effective privileges', async () => {
     const allowed = {
       profiles: ['display_name','preferred_name','avatar_url','avatar_storage_path','story_goal','strengths','representation_preferences','primary_phone','preferred_language_code','preferred_timezone','accessibility_preferences','notification_preferences','updated_at'],
@@ -133,6 +146,14 @@ try {
         assert.equal(result.rows[0].upd,allowed[table].includes(c.column_name));
       }
     }
+  });
+  await check('migration aborts when required identity tables are missing', async () => {
+    await db.exec('drop table platform_tenant_memberships');
+    await assert.rejects(
+      db.exec(migration),
+      (e) => e.message?.includes('Required identity table public.platform_tenant_memberships is missing')
+    );
+    await db.exec('rollback');
   });
   console.log('Passed ' + passed + ' isolated PostgreSQL checks. Production deployment not tested.');
 } finally {
