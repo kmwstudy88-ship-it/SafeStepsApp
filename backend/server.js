@@ -2,6 +2,10 @@
 
 const http = require('node:http');
 const {
+  ANALYSIS_SCHEMA_VERSION,
+  mediaSignalDomains,
+} = require('./document-intelligence/ai');
+const {
   createTextDocument,
   createUploadDocument,
   createComparison,
@@ -118,7 +122,14 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (req.method === 'GET' && url.pathname === '/documents/intelligence/schema') {
-      return sendJson(res, 200, { schemaVersion: 'document-intelligence-v1', sections: DOCUMENT_SECTIONS, totalSections: DOCUMENT_SECTIONS.length, timestamp: new Date().toISOString() });
+      return sendJson(res, 200, {
+        schemaVersion: ANALYSIS_SCHEMA_VERSION,
+        sections: DOCUMENT_SECTIONS,
+        totalSections: DOCUMENT_SECTIONS.length,
+        mediaSignalDomains,
+        totalMediaSignalDomains: mediaSignalDomains.length,
+        timestamp: new Date().toISOString(),
+      });
     }
 
     if (req.method === 'POST' && (url.pathname === '/documents/text' || url.pathname === '/documents/analyze' || url.pathname === '/documents/analyze/fairness')) {

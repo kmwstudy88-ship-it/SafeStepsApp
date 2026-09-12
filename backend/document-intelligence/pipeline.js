@@ -2,7 +2,14 @@
 
 const crypto = require('node:crypto');
 const { admin } = require('./supabase');
-const { ANALYSIS_SCHEMA_VERSION, COMPARISON_SCHEMA_VERSION, providerName, analyzeDocument, compareDocuments } = require('./ai');
+const {
+  ANALYSIS_SCHEMA_VERSION,
+  COMPARISON_SCHEMA_VERSION,
+  providerName,
+  analyzeDocument,
+  compareDocuments,
+  createEmptyMediaAssessment,
+} = require('./ai');
 
 const WORKER_ID = process.env.DOCUMENT_AI_WORKER_ID || `node-${process.pid}-${crypto.randomUUID().slice(0, 8)}`;
 const DEFAULT_MODEL = () => providerName() === 'anthropic'
@@ -103,14 +110,24 @@ async function processAnalysisJob(job) {
   const fileBuffer = document.extracted_text ? null : await loadBinary(document);
   const ai = await analyzeDocument(document, fileBuffer);
   const result = ai.result || {};
+  const mediaAssessment = result.media_assessment || createEmptyMediaAssessment();
+  const risk = result.risk && typeof result.risk === 'object' ? result.risk : {};
   const completedAt = new Date().toISOString();
   const { error } = await admin.from('document_analyses').update({
     provider: ai.provider, model: ai.model, status: 'completed', summary: result.summary || {}, evidence: result.evidence || [],
-    contradictions: result.contradictions || [], timeline: result.timeline || [], risk: result.risk || {}, bias: result.bias || {},
+    contradictions: result.contradictions || [], timeline: result.timeline || [], risk: { ...risk, media_assessment: mediaAssessment }, bias: result.bias || {},
     fairness: result.fairness || {}, limitations: result.limitations || [], raw_output: result, usage: ai.usage || {}, completed_at: completedAt,
   }).eq('id', analysisId);
   if (error) throw error;
   await admin.from('documents').update({ processing_status: 'completed', updated_at: completedAt }).eq('id', document.id);
+}
+
+function normalizeAnalysisRecord(analysis) {
+  if (!analysis) return null;
+  return {
+    ...analysis,
+    media_assessment: analysis.raw_output?.media_assessment || analysis.risk?.media_assessment || createEmptyMediaAssessment(),
+  };
 }
 
 async function processComparisonJob(job) {
@@ -170,7 +187,7 @@ async function getDocumentForUser(id, userId) {
   if (error) throw error;
   if (!document) return null;
   const { data: analysis } = await admin.from('document_analyses').select('*').eq('document_id', id).eq('user_id', userId).order('created_at', { ascending: false }).limit(1).maybeSingle();
-  return { document, analysis };
+  return { document, analysis: normalizeAnalysisRecord(analysis) };
 }
 
 async function getComparisonForUser(id, userId) {
