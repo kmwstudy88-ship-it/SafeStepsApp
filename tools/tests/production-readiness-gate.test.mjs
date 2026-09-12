@@ -23,7 +23,9 @@ const validCredentials = {
 function createFixture({ packageJson = { name: 'fixture', version: '1.0.0' }, appSource = 'export {};' } = {}) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'safesteps-gate-'));
   fs.mkdirSync(path.join(root, 'app'), { recursive: true });
-  fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify(packageJson, null, 2));
+  if (packageJson !== null) {
+    fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify(packageJson, null, 2));
+  }
   if (appSource !== null) {
     fs.writeFileSync(path.join(root, 'app', 'index.ts'), appSource);
   }
@@ -97,12 +99,55 @@ test('readiness gate fails closed when firebase dependencies are declared', () =
   }
 });
 
+test('readiness gate fails closed when scoped firebase dependencies are declared outside dependencies', () => {
+  const root = createFixture({
+    packageJson: {
+      name: 'fixture',
+      version: '1.0.0',
+      devDependencies: { '@firebase/app': '^1.0.0' },
+    },
+  });
+  try {
+    const result = runGate(root);
+    assert.equal(result.status, 1);
+    assert.match(result.stderr, /Firebase dependency detected in devDependencies: @firebase\/app/);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
 test('readiness gate fails closed when runtime code imports firebase modules', () => {
   const root = createFixture({ appSource: 'import firebase from "firebase/app";' });
   try {
     const result = runGate(root);
     assert.equal(result.status, 1);
     assert.match(result.stderr, /Firebase runtime imports detected/);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('readiness gate fails closed when the staging URL is malformed', () => {
+  const root = createFixture();
+  try {
+    const result = runGate(root, {
+      SAFESTEPS_STAGING_URL: 'not-a-url',
+    });
+    assert.equal(result.status, 1);
+    assert.match(result.stderr, /SAFESTEPS_STAGING_URL must be a valid staging Supabase URL/);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('readiness gate fails closed when advisor evidence timestamps are not ISO dates', () => {
+  const root = createFixture();
+  try {
+    const result = runGate(root, {
+      SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT: '09/01/2026',
+    });
+    assert.equal(result.status, 1);
+    assert.match(result.stderr, /SAFESTEPS_SECURITY_ADVISOR_REVIEWED_AT must be an ISO-style date\/time/);
   } finally {
     fs.rmSync(root, { recursive: true, force: true });
   }
@@ -123,6 +168,30 @@ test('readiness gate fails closed when controlled role credentials are incomplet
     });
     assert.equal(result.status, 1);
     assert.match(result.stderr, /Missing controlled staging credential for unrelated/);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('readiness gate fails closed when controlled role credentials are invalid JSON', () => {
+  const root = createFixture();
+  try {
+    const result = runGate(root, {
+      SAFESTEPS_STAGING_ROLE_CREDENTIALS_JSON: '{bad json',
+    });
+    assert.equal(result.status, 1);
+    assert.match(result.stderr, /Invalid SAFESTEPS_STAGING_ROLE_CREDENTIALS_JSON/);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('readiness gate fails closed when package.json is missing', () => {
+  const root = createFixture({ packageJson: null });
+  try {
+    const result = runGate(root);
+    assert.equal(result.status, 1);
+    assert.match(result.stderr, /Release gate could not find package\.json/);
   } finally {
     fs.rmSync(root, { recursive: true, force: true });
   }
