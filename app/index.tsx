@@ -17,6 +17,7 @@ export default function SafeStepsHub() {
       pillar: 'Pillar 2: Proof of Change & Documentation',
       items: [
         { title: 'Case Management Console', subtitle: 'Authenticated case assignments & realtime status', route: '/cases', icon: '🗂️', badge: 'Supabase' },
+        { title: 'Supervisor Risk Dashboard', subtitle: 'Highest-risk cases, rising risk, escalations, and follow-ups', route: '/dashboard/supervisor', icon: '🚦', badge: 'Safety' },
         { title: 'Clinical Assessments (CAPES / KEPS / PAFAS / FPS)', subtitle: 'Standardized progress & efficacy scoring', route: '/assessments', icon: '📊', badge: '4 Scales' },
         { title: 'Secure Evidence Vault', subtitle: 'Photo proof & routine milestone locker', route: '/evidence', icon: '🔐', badge: 'Vault' },
         { title: 'Court-Ready Progress Reports', subtitle: 'Cryptographically sealed PDF summaries', route: '/reports', icon: '⚖️', badge: 'PDF Export' },
