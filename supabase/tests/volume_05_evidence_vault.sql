@@ -1,6 +1,6 @@
 begin;
 
-select plan(26);
+select plan(28);
 
 select has_table('public', 'evidence_records', 'evidence_records exists');
 select has_table('public', 'evidence_files', 'evidence_files exists');
@@ -39,6 +39,36 @@ select ok(
 select ok(
   coalesce(has_function_privilege('authenticated', to_regprocedure('public.withdraw_parent_video_report_consent(uuid, text)'), 'EXECUTE'), false),
   'authenticated can execute withdraw_parent_video_report_consent'
+);
+select ok(
+  not exists (
+    select 1
+    from pg_proc proc
+    join pg_namespace ns on ns.oid = proc.pronamespace
+    join lateral aclexplode(coalesce(proc.proacl, acldefault('f', proc.proowner))) acl on true
+    where ns.nspname = 'public'
+      and proc.proname = 'grant_parent_video_report_consent'
+      and proc.pronargs = 4
+      and acl.grantee = 0
+      and acl.privilege_type = 'EXECUTE'
+      and acl.is_grantable = false
+  ),
+  'grant_parent_video_report_consent does not grant execute to public'
+);
+select ok(
+  not exists (
+    select 1
+    from pg_proc proc
+    join pg_namespace ns on ns.oid = proc.pronamespace
+    join lateral aclexplode(coalesce(proc.proacl, acldefault('f', proc.proowner))) acl on true
+    where ns.nspname = 'public'
+      and proc.proname = 'withdraw_parent_video_report_consent'
+      and proc.pronargs = 2
+      and acl.grantee = 0
+      and acl.privilege_type = 'EXECUTE'
+      and acl.is_grantable = false
+  ),
+  'withdraw_parent_video_report_consent does not grant execute to public'
 );
 
 select * from finish();
