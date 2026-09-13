@@ -38,9 +38,10 @@ function deriveAgeBand(context = {}) {
 
 function detectDisclosureSignals(message = '') {
   const text = String(message || '');
-  return Object.entries(DISCLOSURE_SIGNALS)
-    .filter(([, pattern]) => pattern.test(text))
-    .map(([signal]) => signal);
+  return Object.entries(DISCLOSURE_SIGNALS).flatMap(([signal, pattern]) => {
+    pattern.lastIndex = 0;
+    return pattern.test(text) ? [signal] : [];
+  });
 }
 
 function hasImmediateDanger(message = '') {
@@ -55,7 +56,7 @@ function privacyBoundaryNotice(ageBand) {
 }
 
 function confidentialityLine() {
-  return 'I keep this focused on your safety. If someone is in immediate danger, contact emergency services or a trusted safe adult now.';
+  return 'You can share only what you want. I cannot keep secrets when someone is in immediate danger, so contact emergency services or a trusted safe adult now if safety is urgent.';
 }
 
 function emotionalValidation(ageBand) {
@@ -113,7 +114,7 @@ function adaptDraftByDevelopment(draft, ageBand) {
 
 function buildChildSafeResponse({ userMessage, draftResponse, context = {} }) {
   const ageBand = deriveAgeBand(context);
-  const profile = DEVELOPMENT_PROFILES[ageBand];
+  const profile = DEVELOPMENT_PROFILES[ageBand] || DEVELOPMENT_PROFILES.unknown;
   const signals = detectDisclosureSignals(userMessage);
   const immediateDanger = hasImmediateDanger(userMessage);
   const disclosureSensitive = signals.length > 0;
