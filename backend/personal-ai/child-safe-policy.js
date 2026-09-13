@@ -1,8 +1,8 @@
 'use strict';
 
-const PRIVACY_REQUEST_PATTERN = /\b(full\s*name|surname|last\s*name|first\s*name|address|street|suburb|postcode|school|phone|email|social\s*media|photo|picture|where\s+you\s+live|who\s+you\s+live\s+with)\b/i;
+const PRIVACY_REQUEST_PATTERN = /\b(full\s*name|surname|last\s*name|first\s*name|address|street|suburb|postcode|school|phone|email|social\s*media|photo|picture|where\s+you\s+live|who\s+you\s+live\s+with)\b/ig;
 const IMMEDIATE_DANGER_PATTERN = /\b(now|right now|tonight|today|immediately|urgent|emergency|can't breathe|bleeding|hurt me|hurting me|kill me|suicide|self[-\s]?harm|unsafe at home)\b/i;
-const UNSAFE_TONE_PATTERN = /\b(your fault|you should have|prove it|why didn't you|details please|tell me exactly what happened|give me their name)\b/i;
+const UNSAFE_TONE_PATTERN = /\b(your fault|you should have|prove it|why didn't you|details please|tell me exactly what happened|give me their name)\b/ig;
 
 const DISCLOSURE_SIGNALS = {
   abuse: /\b(hit|hurt|abuse|abused|molest|touch me|violent|violence|threaten|threatened|yell at me|scream at me)\b/i,

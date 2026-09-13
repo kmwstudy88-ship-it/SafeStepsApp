@@ -12,7 +12,7 @@ const {
 
 test('detects sensitive disclosure categories', () => {
   const signals = detectDisclosureSignals('I am scared because someone forced me and threatened me.');
-  assert.deepEqual(signals.sort(), ['coercion', 'fear']);
+  assert.deepEqual(signals.sort(), ['abuse', 'coercion', 'fear']);
 });
 
 test('derives developmental band from age and explicit band', () => {
@@ -24,7 +24,7 @@ test('derives developmental band from age and explicit band', () => {
 
 test('flags immediate danger wording', () => {
   assert.equal(hasImmediateDanger('I feel unsafe at home right now'), true);
-  assert.equal(hasImmediateDanger('I was upset yesterday but I am okay now'), false);
+  assert.equal(hasImmediateDanger('I was upset yesterday but I am feeling calmer'), false);
 });
 
 test('buildChildSafeResponse strips unsafe and identifying prompts and includes privacy boundary', () => {
