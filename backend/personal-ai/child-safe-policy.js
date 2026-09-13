@@ -55,8 +55,11 @@ function privacyBoundaryNotice(ageBand) {
   return 'Share only what feels safe. You do not need to provide names, addresses, or identifying details.';
 }
 
-function confidentialityLine() {
-  return 'You can share only what you want. I cannot keep secrets when someone is in immediate danger, so contact emergency services or a trusted safe adult now if safety is urgent.';
+function confidentialityLine(immediateDanger) {
+  if (immediateDanger) {
+    return 'You can share only what you want. I cannot keep secrets when someone is in immediate danger, so contact emergency services or a trusted safe adult now.';
+  }
+  return 'You can share only what you want. I will focus on safety and encourage trusted adult support if risk increases.';
 }
 
 function emotionalValidation(ageBand) {
@@ -131,7 +134,7 @@ function buildChildSafeResponse({ userMessage, draftResponse, context = {} }) {
     base || '',
     ...safetyPlanLines({ immediateDanger, ageBand }),
     privacyBoundaryNotice(ageBand),
-    confidentialityLine(),
+    confidentialityLine(immediateDanger),
   ].filter(Boolean);
 
   const response = lines.join(' ');
