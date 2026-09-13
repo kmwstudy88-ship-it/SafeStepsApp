@@ -30,7 +30,7 @@ test('flags immediate danger wording', () => {
 test('buildChildSafeResponse strips unsafe and identifying prompts and includes privacy boundary', () => {
   const { response, metadata } = buildChildSafeResponse({
     userMessage: 'I feel scared at home.',
-    draftResponse: 'Tell me exactly what happened and give me your address and school.',
+    draftResponse: 'We can make a small plan together. Tell me exactly what happened and give me your address and school.',
     context: { ageYears: 10 },
   });
 
@@ -39,6 +39,8 @@ test('buildChildSafeResponse strips unsafe and identifying prompts and includes 
   assert.doesNotMatch(response, /exactly what happened/i);
   assert.doesNotMatch(response, /\baddress\b/i);
   assert.doesNotMatch(response, /\bschool\b/i);
+  assert.match(response, /small plan together/i);
+  assert.doesNotMatch(response, /\band give me your\b/i);
   assert.match(response, /do not need to provide names, addresses, or identifying details/i);
 });
 
@@ -53,6 +55,18 @@ test('buildChildSafeResponse escalates urgent disclosures and includes safety pl
   assert.equal(metadata.requiresHumanReview, true);
   assert.match(response, /contact a trusted adult|emergency services/i);
   assert.match(response, /grounding|slow breaths/i);
+});
+
+test('buildChildSafeResponse marks non-immediate disclosure categories for human review', () => {
+  const { metadata } = buildChildSafeResponse({
+    userMessage: 'Someone forced me and threatened me, and I am scared.',
+    draftResponse: 'I hear you.',
+    context: { ageBand: 'adolescent' },
+  });
+
+  assert.equal(metadata.immediateDanger, false);
+  assert.equal(metadata.disclosureSensitive, true);
+  assert.equal(metadata.requiresHumanReview, true);
 });
 
 test('buildChildSafeResponse uses simpler language for early child profile', () => {

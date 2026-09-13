@@ -94,8 +94,15 @@ function safetyPlanLines({ immediateDanger, ageBand }) {
 
 function removeUnsafePrompts(text = '') {
   return String(text || '')
-    .replace(UNSAFE_TONE_PATTERN, '')
-    .replace(PRIVACY_REQUEST_PATTERN, '')
+    .split(/(?<=[.!?])\s+/)
+    .map(sentence => sentence.trim())
+    .filter(Boolean)
+    .filter(sentence => {
+      UNSAFE_TONE_PATTERN.lastIndex = 0;
+      PRIVACY_REQUEST_PATTERN.lastIndex = 0;
+      return !UNSAFE_TONE_PATTERN.test(sentence) && !PRIVACY_REQUEST_PATTERN.test(sentence);
+    })
+    .join(' ')
     .replace(/\s{2,}/g, ' ')
     .trim();
 }
@@ -135,7 +142,7 @@ function buildChildSafeResponse({ userMessage, draftResponse, context = {} }) {
       disclosureSensitive,
       matchedSignals: signals,
       immediateDanger,
-      requiresHumanReview: immediateDanger || signals.includes('self_harm'),
+      requiresHumanReview: immediateDanger || disclosureSensitive,
       safetyPlanIncluded: true,
       boundaryNoticeIncluded: true,
     },
