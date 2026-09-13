@@ -125,9 +125,13 @@ async function processAnalysisJob(job) {
 function normalizeAnalysisRecord(analysis) {
   if (!analysis) return null;
   const requirements =
-    analysis.raw_output?.requirements || [];
+    analysis.requirements
+    || analysis.raw_output?.requirements
+    || [];
   const concernClassification =
-    analysis.raw_output?.concern_classification || { concerns: [] };
+    analysis.concern_classification
+    || analysis.raw_output?.concern_classification
+    || { concerns: [] };
   return {
     ...analysis,
     requirements,
