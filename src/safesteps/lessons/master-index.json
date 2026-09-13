@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2026-09-09",
-  "generatedAt": "2026-09-09T04:35:23.508Z",
+  "generatedAt": "2026-09-13T15:46:06.944Z",
   "repositoryPurpose": "SafeSteps is both a runnable Expo prototype and a curriculum/content repository with backend and Supabase support tooling.",
   "sourceOfTruth": {
     "lessons": "lessons/",
@@ -11,8 +11,8 @@
     "generatedImports": "src/safesteps/imports/"
   },
   "counts": {
-    "lessons": 195,
-    "modules": 82,
+    "lessons": 199,
+    "modules": 83,
     "topics": 291,
     "storybookAssets": 1
   },
@@ -240,6 +240,12 @@
       "sourcePath": "lessons/lesson_behavioural_and_emotional_signs.json"
     },
     {
+      "id": "lesson_bias_and_discrimination_detection",
+      "title": "Bias and Discrimination Detection",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_bias_and_discrimination_detection.json"
+    },
+    {
       "id": "lesson_building_local_partnerships",
       "title": "Building Local Partnerships",
       "sectionCount": 0,
@@ -322,6 +328,12 @@
       "title": "Child-Friendly Safety Planning",
       "sectionCount": 0,
       "sourcePath": "lessons/lesson_child_friendly_safety_planning.json"
+    },
+    {
+      "id": "lesson_child_safe_standards_compliance",
+      "title": "Child Safe Standards Compliance",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_child_safe_standards_compliance.json"
     },
     {
       "id": "lesson_civil_and_criminal_pathways",
@@ -472,6 +484,12 @@
       "title": "Cultural Safety and Respect",
       "sectionCount": 0,
       "sourcePath": "lessons/lesson_cultural_safety_and_respect.json"
+    },
+    {
+      "id": "lesson_cultural_safety_support",
+      "title": "Cultural Safety Support",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_cultural_safety_support.json"
     },
     {
       "id": "lesson_culturally_informed_accountability",
@@ -892,6 +910,12 @@
       "title": "Policy and System Influence",
       "sectionCount": 0,
       "sourcePath": "lessons/lesson_policy_and_system_influence.json"
+    },
+    {
+      "id": "lesson_policy_interpretation",
+      "title": "Policy Interpretation",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_policy_interpretation.json"
     },
     {
       "id": "lesson_positive_social_norms",
@@ -1342,6 +1366,13 @@
       "lessonRefCount": 0,
       "contentBlockCount": 0,
       "sourcePath": "modules/module_complex_casework.json"
+    },
+    {
+      "id": "module_compliance_and_safeguarding_skills",
+      "title": "Compliance and Safeguarding Skills",
+      "lessonRefCount": 4,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_compliance_and_safeguarding_skills.json"
     },
     {
       "id": "module_court_support_and_legal_processes",
