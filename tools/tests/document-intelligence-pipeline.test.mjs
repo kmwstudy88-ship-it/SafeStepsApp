@@ -300,3 +300,137 @@ test('processNextJobs marks terminal analysis failures on the document and analy
   assert.equal(analysisUpdate.payload.error_code, 'ANALYSIS_FAILED');
   assert.equal(analysisUpdate.payload.error_message, 'provider unavailable');
 });
+
+test('processNextJobs preserves upgraded media assessment domains in risk output', async () => {
+  const { admin, calls } = makeAdmin((query) => {
+    if (query.table === '__rpc__' && query.op === 'claim_document_analysis_jobs') {
+      return {
+        data: [{
+          id: 'job-1',
+          job_type: 'document_analysis',
+          document_id: 'doc-1',
+          user_id: 'user-1',
+          payload: { analysis_id: 'analysis-1' },
+          attempts: 0,
+          max_attempts: 2,
+          available_at: '2026-09-11T00:00:00.000Z',
+        }],
+        error: null,
+      };
+    }
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', extracted_text: 'sample text' }, error: null };
+    }
+    if (query.op === 'update') return { data: null, error: null };
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({
+    admin,
+    ai: {
+      analyzeDocument: async () => ({
+        provider: 'openai',
+        model: 'unit-model',
+        usage: {},
+        result: {
+          risk: { score: 12, level: 'low' },
+          media_assessment: {
+            domains: [{
+              domain_id: 'environmental_safety',
+              domain_name: 'Environmental Safety',
+              signals_observed: ['Hazard mapping (weapons, substances, clutter)'],
+              risk_flags: ['Unsafe sleeping setups'],
+              protective_flags: [],
+              notes: 'Observed clutter near sleep space.',
+              confidence: 0.62,
+            }],
+          },
+        },
+      }),
+    },
+  }, async ({ processNextJobs }) => {
+    assert.equal(await processNextJobs(1), 1);
+  });
+
+  const analysisUpdate = calls.queries.filter((query) => query.table === 'document_analyses' && query.op === 'update').at(-1);
+  assert.equal(analysisUpdate.payload.risk.media_assessment.domains[0].domain_id, 'environmental_safety');
+  assert.equal(analysisUpdate.payload.risk.media_assessment.domains[0].risk_flags[0], 'Unsafe sleeping setups');
+});
+
+test('getDocumentForUser normalizes media assessment from persisted analysis payloads', async () => {
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', user_id: 'user-1' }, error: null };
+    }
+    if (query.table === 'document_analyses' && query.op === 'select') {
+      return {
+        data: {
+          id: 'analysis-1',
+          status: 'completed',
+          risk: {},
+          raw_output: {
+            media_assessment: {
+              domains: [{
+                domain_id: 'digital_integrity_and_authenticity',
+                domain_name: 'Digital Integrity & Authenticity',
+                signals_observed: ['Metadata validation'],
+                risk_flags: ['Any tampering evidence'],
+                protective_flags: [],
+                notes: 'Metadata mismatch detected.',
+                confidence: 0.71,
+              }],
+            },
+          },
+        },
+        error: null,
+      };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ getDocumentForUser }) => {
+    const result = await getDocumentForUser('doc-1', 'user-1');
+    assert.equal(result.analysis.media_assessment.domains[0].domain_id, 'digital_integrity_and_authenticity');
+    assert.equal(result.analysis.media_assessment.domains[0].signals_observed[0], 'Metadata validation');
+  });
+});
+
+test('getDocumentForUser falls back to nested raw_output risk media assessment', async () => {
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', user_id: 'user-1' }, error: null };
+    }
+    if (query.table === 'document_analyses' && query.op === 'select') {
+      return {
+        data: {
+          id: 'analysis-1',
+          status: 'completed',
+          risk: {},
+          raw_output: {
+            risk: {
+              media_assessment: {
+                domains: [{
+                  domain_id: 'contextual_reliability',
+                  domain_name: 'Contextual Reliability',
+                  signals_observed: ['Selective recording'],
+                  risk_flags: ['Biased recording intent'],
+                  protective_flags: [],
+                  notes: 'Context appears selectively clipped.',
+                  confidence: 0.56,
+                }],
+              },
+            },
+          },
+        },
+        error: null,
+      };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ getDocumentForUser }) => {
+    const result = await getDocumentForUser('doc-1', 'user-1');
+    assert.equal(result.analysis.media_assessment.domains[0].domain_id, 'contextual_reliability');
+    assert.equal(result.analysis.media_assessment.domains[0].risk_flags[0], 'Biased recording intent');
+  });
+});

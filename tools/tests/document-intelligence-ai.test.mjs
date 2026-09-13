@@ -76,6 +76,9 @@ test('openai analysis sends base64 file input and parses JSON from output conten
       assert.equal(result.result.summary.overview, 'ok');
       assert.equal(requestBody.input[0].content[1].type, 'input_file');
       assert.equal(requestBody.input[0].content[1].file_data, Buffer.from('pdf-bytes').toString('base64'));
+      assert.match(requestBody.instructions, /"media_assessment"/);
+      assert.match(requestBody.instructions, /Environmental Safety/);
+      assert.match(requestBody.instructions, /Digital Integrity & Authenticity/);
     } finally {
       restoreFetch();
     }

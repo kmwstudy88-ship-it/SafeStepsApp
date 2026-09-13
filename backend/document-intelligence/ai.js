@@ -1,7 +1,10 @@
 'use strict';
 
-const ANALYSIS_SCHEMA_VERSION = 'document-intelligence-v1';
+const { mediaSignalDomains, createEmptyMediaAssessment } = require('../../shared/documentIntelligenceMediaSignals');
+
+const ANALYSIS_SCHEMA_VERSION = 'document-intelligence-v2';
 const COMPARISON_SCHEMA_VERSION = 'document-comparison-v1';
+const MEDIA_SIGNAL_GUIDANCE = JSON.stringify(mediaSignalDomains, null, 2);
 
 const ANALYSIS_INSTRUCTIONS = `You are SafeSteps Document Intelligence. Analyze child/family casework records as decision-support only.
 Return valid JSON only. Never infer a fact, diagnosis, motive, risk, or credibility finding that is not supported by the supplied material. Distinguish allegation, observation, opinion, and verified evidence. Preserve uncertainty. Do not make automated child-protection decisions.
@@ -14,9 +17,14 @@ Required JSON shape:
   "risk": {"score":0, "level":"low|moderate|high|critical|insufficient_evidence", "factors":[], "protective_factors":[], "uncertainties":[]},
   "bias": {"score":100, "signals":[{"category":"", "language":"", "explanation":"", "severity":"low|medium|high"}]},
   "fairness": {"score":100, "framing_concerns":[], "coercion_flags":[], "discrimination_risks":[], "unrealistic_expectations":[], "remediation_recommendations":[{"concern":"", "reframe":""}]},
+  "media_assessment": {"domains":[{"domain_id":"", "domain_name":"", "signals_observed":[], "risk_flags":[], "protective_flags":[], "notes":"", "confidence":0}]},
   "limitations": []
 }
-Scores are 0-100. Risk score is a document-content signal, not a case decision. Fairness/bias scores are higher when language is more objective and evidence-linked.`;
+Scores are 0-100. Risk score is a document-content signal, not a case decision. Fairness/bias scores are higher when language is more objective and evidence-linked.
+When the supplied material includes video, photos, transcripts of observed interaction, visit notes, or metadata, assess only the following upgraded media-signal domains and leave unsupported domains empty:
+${MEDIA_SIGNAL_GUIDANCE}
+Violence & Coercive Control Indicators is risk-only, so protective_flags must stay empty for that domain.
+If the supplied material does not support a domain, return that domain with empty arrays, blank notes, and confidence 0 rather than inventing content.`;
 
 const COMPARISON_INSTRUCTIONS = `You are SafeSteps multi-document comparison. Compare only the supplied documents/analyses. Return valid JSON only. Do not resolve disputed facts merely because one source repeats them more often.
 Required JSON shape:
@@ -126,4 +134,12 @@ async function compareDocuments(items) {
   return runJson(COMPARISON_INSTRUCTIONS, body);
 }
 
-module.exports = { ANALYSIS_SCHEMA_VERSION, COMPARISON_SCHEMA_VERSION, providerName, analyzeDocument, compareDocuments };
+module.exports = {
+  ANALYSIS_SCHEMA_VERSION,
+  COMPARISON_SCHEMA_VERSION,
+  mediaSignalDomains,
+  createEmptyMediaAssessment,
+  providerName,
+  analyzeDocument,
+  compareDocuments,
+};

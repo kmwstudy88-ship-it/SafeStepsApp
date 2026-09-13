@@ -10,6 +10,7 @@ const requiredFiles = [
   'backend/document-intelligence/supabase.js',
   'lib/documentIntelligenceApi.ts',
   'lib/fairness/DocumentFairnessViewerScreen.tsx',
+  'shared/documentIntelligenceMediaSignals.js',
   'supabase/migrations/20260911173000_document_intelligence_pipeline.sql',
 ];
 
@@ -58,12 +59,16 @@ if (!server.includes('SUPABASE_SERVICE_ROLE_KEY')) fail('Readiness checks do not
 if (!server.includes('OPENAI_API_KEY') || !server.includes('ANTHROPIC_API_KEY')) fail('Readiness checks do not cover AI provider credentials.');
 
 const ai = read('backend/document-intelligence/ai.js');
-for (const skill of ['"evidence"', '"contradictions"', '"timeline"', '"risk"', '"bias"', '"fairness"']) {
+for (const skill of ['"evidence"', '"contradictions"', '"timeline"', '"risk"', '"bias"', '"fairness"', '"media_assessment"']) {
   if (!ai.includes(skill)) fail(`AI schema missing analysis skill ${skill}.`);
 }
 if (!ai.includes('api.openai.com/v1/responses')) fail('OpenAI Responses API integration missing.');
 if (!ai.includes('api.anthropic.com/v1/messages')) fail('Anthropic Messages API integration missing.');
 if (!ai.includes('Do not make automated child-protection decisions')) fail('Human-decision safety instruction missing.');
+const sharedMediaSignals = read('shared/documentIntelligenceMediaSignals.js');
+if (!sharedMediaSignals.includes('Environmental Safety') || !sharedMediaSignals.includes('Digital Integrity & Authenticity')) {
+  fail('Upgraded media signal domains are missing from shared schema definitions.');
+}
 
 const pipeline = read('backend/document-intelligence/pipeline.js');
 for (const table of ['documents', 'document_analyses', 'document_comparisons', 'document_analysis_jobs']) {
