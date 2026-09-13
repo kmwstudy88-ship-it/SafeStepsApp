@@ -59,7 +59,7 @@ if (!server.includes('SUPABASE_SERVICE_ROLE_KEY')) fail('Readiness checks do not
 if (!server.includes('OPENAI_API_KEY') || !server.includes('ANTHROPIC_API_KEY')) fail('Readiness checks do not cover AI provider credentials.');
 
 const ai = read('backend/document-intelligence/ai.js');
-for (const skill of ['"evidence"', '"contradictions"', '"timeline"', '"risk"', '"bias"', '"fairness"', '"media_assessment"']) {
+for (const skill of ['"evidence"', '"contradictions"', '"requirements"', '"timeline"', '"concern_classification"', '"risk"', '"bias"', '"fairness"', '"unrealistic_expectations"', '"media_assessment"']) {
   if (!ai.includes(skill)) fail(`AI schema missing analysis skill ${skill}.`);
 }
 if (!ai.includes('api.openai.com/v1/responses')) fail('OpenAI Responses API integration missing.');

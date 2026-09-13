@@ -111,11 +111,18 @@ async function processAnalysisJob(job) {
   const ai = await analyzeDocument(document, fileBuffer);
   const result = ai.result || {};
   const mediaAssessment = result.media_assessment || result.risk?.media_assessment || createEmptyMediaAssessment();
+  const requirements = Array.isArray(result.requirements) ? result.requirements : [];
+  const concernClassification = result.concern_classification && typeof result.concern_classification === 'object'
+    ? result.concern_classification
+    : { concerns: [] };
   const risk = result.risk && typeof result.risk === 'object' ? result.risk : {};
+  const summary = result.summary && typeof result.summary === 'object'
+    ? result.summary
+    : {};
   const completedAt = new Date().toISOString();
   const { error } = await admin.from('document_analyses').update({
-    provider: ai.provider, model: ai.model, status: 'completed', summary: result.summary || {}, evidence: result.evidence || [],
-    contradictions: result.contradictions || [], timeline: result.timeline || [], risk: { ...risk, media_assessment: mediaAssessment }, bias: result.bias || {},
+    provider: ai.provider, model: ai.model, status: 'completed', summary: { ...summary, requirements }, evidence: result.evidence || [],
+    contradictions: result.contradictions || [], timeline: result.timeline || [], risk: { ...risk, concern_classification: concernClassification, media_assessment: mediaAssessment }, bias: result.bias || {},
     fairness: result.fairness || {}, limitations: result.limitations || [], raw_output: result, usage: ai.usage || {}, completed_at: completedAt,
   }).eq('id', analysisId);
   if (error) throw error;
@@ -124,8 +131,18 @@ async function processAnalysisJob(job) {
 
 function normalizeAnalysisRecord(analysis) {
   if (!analysis) return null;
+  const requirements =
+    analysis.summary?.requirements
+    || analysis.raw_output?.requirements
+    || [];
+  const concernClassification =
+    analysis.risk?.concern_classification
+    || analysis.raw_output?.concern_classification
+    || { concerns: [] };
   return {
     ...analysis,
+    requirements,
+    concern_classification: concernClassification,
     media_assessment:
       analysis.risk?.media_assessment
       || analysis.raw_output?.media_assessment
