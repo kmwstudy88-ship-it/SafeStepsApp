@@ -371,8 +371,8 @@ test('processNextJobs preserves upgraded media assessment domains in risk output
   });
 
   const analysisUpdate = calls.queries.filter((query) => query.table === 'document_analyses' && query.op === 'update').at(-1);
-  assert.equal(analysisUpdate.payload.summary.requirements[0].category, 'case_plan');
-  assert.equal(analysisUpdate.payload.risk.concern_classification.concerns[0].category, 'engagement');
+  assert.equal(analysisUpdate.payload.raw_output.requirements[0].category, 'case_plan');
+  assert.equal(analysisUpdate.payload.raw_output.concern_classification.concerns[0].category, 'engagement');
   assert.equal(analysisUpdate.payload.risk.media_assessment.domains[0].domain_id, 'environmental_safety');
   assert.equal(analysisUpdate.payload.risk.media_assessment.domains[0].risk_flags[0], 'Unsafe sleeping setups');
 });
@@ -387,7 +387,8 @@ test('getDocumentForUser normalizes media assessment from persisted analysis pay
         data: {
           id: 'analysis-1',
           status: 'completed',
-          summary: {
+          risk: {},
+          raw_output: {
             requirements: [{
               requirement: 'Provide school attendance update',
               category: 'documentation',
@@ -396,8 +397,6 @@ test('getDocumentForUser normalizes media assessment from persisted analysis pay
               source_locator: 'school-note:2',
               confidence: 0.67,
             }],
-          },
-          risk: {
             concern_classification: {
               concerns: [{
                 concern: 'Attendance verification missing',
@@ -408,8 +407,6 @@ test('getDocumentForUser normalizes media assessment from persisted analysis pay
                 confidence: 0.65,
               }],
             },
-          },
-          raw_output: {
             media_assessment: {
               domains: [{
                 domain_id: 'digital_integrity_and_authenticity',
