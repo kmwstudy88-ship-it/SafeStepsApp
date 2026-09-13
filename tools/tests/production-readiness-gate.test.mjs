@@ -41,6 +41,8 @@ function baseEnv() {
     SAFESTEPS_STAGING_JOURNEY_VERIFIED_AT: '2026-09-01T00:00:00Z',
     SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT: '2026-09-01T00:00:00Z',
     SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT: '2026-09-01T00:00:00Z',
+    SAFESTEPS_CHILD_SAFE_POLICY_REVIEWED_AT: '2026-09-01T00:00:00Z',
+    SAFESTEPS_CHILD_SAFE_HUMAN_REVIEW_SIGNOFF_AT: '2026-09-01T00:00:00Z',
   };
 }
 
@@ -61,7 +63,7 @@ test('readiness gate passes with valid evidence, credentials, and no firebase us
   try {
     const result = runGate(root);
     assert.equal(result.status, 0);
-    assert.match(result.stdout, /Production readiness gate passed required staging/);
+    assert.match(result.stdout, /child-safe review/);
   } finally {
     fs.rmSync(root, { recursive: true, force: true });
   }
@@ -123,6 +125,19 @@ test('readiness gate fails closed when controlled role credentials are incomplet
     });
     assert.equal(result.status, 1);
     assert.match(result.stderr, /Missing controlled staging credential for unrelated/);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('readiness gate fails closed when child-safe human review evidence is missing', () => {
+  const root = createFixture();
+  try {
+    const result = runGate(root, {
+      SAFESTEPS_CHILD_SAFE_HUMAN_REVIEW_SIGNOFF_AT: '',
+    });
+    assert.equal(result.status, 1);
+    assert.match(result.stderr, /Missing release gate evidence: SAFESTEPS_CHILD_SAFE_HUMAN_REVIEW_SIGNOFF_AT/);
   } finally {
     fs.rmSync(root, { recursive: true, force: true });
   }
