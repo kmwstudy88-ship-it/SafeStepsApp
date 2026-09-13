@@ -5,6 +5,7 @@ export * from './storybooks/StorybookReaderScreen';
 export * from './offline/offlineSyncService';
 export * from './assessments/assessmentDefinitions';
 export * from './assessments/AssessmentRunnerScreen';
+export * from './assessments/ForensicCriteriaAssessmentScreen';
 export * from './reports/courtReportGenerator';
 export * from './reports/ReportGeneratorScreen';
 export * from './evidence/EvidenceVaultScreen';

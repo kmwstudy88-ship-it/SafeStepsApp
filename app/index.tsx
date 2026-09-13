@@ -18,7 +18,7 @@ export default function SafeStepsHub() {
       items: [
         { title: 'Case Management Console', subtitle: 'Authenticated case assignments & realtime status', route: '/cases', icon: '🗂️', badge: 'Supabase' },
         { title: 'Supervisor Risk Dashboard', subtitle: 'Highest-risk cases, rising risk, escalations, and follow-ups', route: '/dashboard/supervisor', icon: '🚦', badge: 'Safety' },
-        { title: 'Clinical Assessments (CAPES / KEPS / PAFAS / FPS)', subtitle: 'Standardized progress & efficacy scoring', route: '/assessments', icon: '📊', badge: '4 Scales' },
+        { title: 'Assessments & Forensic Criteria', subtitle: 'Standardized scales plus child-centred forensic scoring', route: '/assessments', icon: '📊', badge: '5 Instruments' },
         { title: 'Secure Evidence Vault', subtitle: 'Photo proof & routine milestone locker', route: '/evidence', icon: '🔐', badge: 'Vault' },
         { title: 'Court-Ready Progress Reports', subtitle: 'Cryptographically sealed PDF summaries', route: '/reports', icon: '⚖️', badge: 'PDF Export' },
       ],
