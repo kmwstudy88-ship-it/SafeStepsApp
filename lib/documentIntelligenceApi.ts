@@ -2,6 +2,18 @@ import Constants from 'expo-constants';
 import { supabase } from './supabaseClient';
 
 export type FairnessRecommendation = { concern: string; reframe: string };
+export type MediaAssessmentDomainResult = {
+  domain_id?: string;
+  domain_name?: string;
+  signals_observed?: string[];
+  risk_flags?: string[];
+  protective_flags?: string[];
+  notes?: string;
+  confidence?: number;
+};
+export type MediaAssessmentResult = {
+  domains?: MediaAssessmentDomainResult[];
+};
 export type FairnessResult = {
   score?: number;
   framing_concerns?: Array<{ category?: string; language?: string; explanation?: string; severity?: string }>;
@@ -19,7 +31,9 @@ export type DocumentAnalysis = {
   evidence?: unknown[];
   contradictions?: unknown[];
   timeline?: unknown[];
-  risk?: Record<string, unknown>;
+  risk?: Record<string, unknown> & { media_assessment?: MediaAssessmentResult };
+  media_assessment?: MediaAssessmentResult;
+  raw_output?: Record<string, unknown>;
   limitations?: string[];
   error_message?: string | null;
 };
