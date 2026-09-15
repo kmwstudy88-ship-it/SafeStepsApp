@@ -76,6 +76,29 @@ test("routes decide_version requests to the approval RPC", async () => {
   });
 });
 
+test("rejects decide_version requests with missing required fields", async () => {
+  const response = await handleCaseReportGovernance(
+    makeRequest({
+      action: "decide_version",
+      reportId: "report-1",
+      reportVersionId: "version-1",
+      decision: "approved",
+    }),
+    {
+      envGet,
+      createUserClient() {
+        return makeUserClient(async () => ({ data: "unexpected", error: null }));
+      },
+    },
+  );
+
+  assert.equal(response.status, 400);
+  assert.deepEqual(await response.json(), {
+    ok: false,
+    error: "caseId is required",
+  });
+});
+
 test("answers CORS preflight requests without a JSON body", async () => {
   const response = await handleCaseReportGovernance(
     makeRequest({}, { method: "OPTIONS" }),
@@ -133,6 +156,29 @@ test("routes release_version requests to the release RPC", async () => {
   });
 });
 
+test("rejects release_version requests with missing required fields", async () => {
+  const response = await handleCaseReportGovernance(
+    makeRequest({
+      action: "release_version",
+      caseId: "case-1",
+      reportId: "report-1",
+      reportVersionId: "version-1",
+    }),
+    {
+      envGet,
+      createUserClient() {
+        return makeUserClient(async () => ({ data: "unexpected", error: null }));
+      },
+    },
+  );
+
+  assert.equal(response.status, 400);
+  assert.deepEqual(await response.json(), {
+    ok: false,
+    error: "renderedFileId is required",
+  });
+});
+
 test("rejects unsupported HTTP methods", async () => {
   const response = await handleCaseReportGovernance(
     makeRequest({}, { method: "GET" }),
@@ -165,6 +211,33 @@ test("rejects unsupported actions", async () => {
   assert.deepEqual(await response.json(), {
     ok: false,
     error: "Unsupported action",
+  });
+});
+
+test("sanitizes downstream RPC failures", async () => {
+  const response = await handleCaseReportGovernance(
+    makeRequest({
+      action: "decide_version",
+      caseId: "case-1",
+      reportId: "report-1",
+      reportVersionId: "version-1",
+      decision: "approved",
+    }),
+    {
+      envGet,
+      createUserClient() {
+        return makeUserClient(async () => ({
+          data: null,
+          error: new Error("database internal detail"),
+        }));
+      },
+    },
+  );
+
+  assert.equal(response.status, 500);
+  assert.deepEqual(await response.json(), {
+    ok: false,
+    error: "Request failed",
   });
 });
 

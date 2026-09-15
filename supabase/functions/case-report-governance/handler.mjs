@@ -40,7 +40,6 @@ export function requireString(value, field) {
 }
 
 const authErrorMessages = new Set([
-  "Method not allowed",
   "Authentication required",
   "Authentication failed",
 ]);
