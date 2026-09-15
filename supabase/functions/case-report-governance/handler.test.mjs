@@ -132,3 +132,43 @@ test("rejects unsupported actions", async () => {
     error: "Unsupported action",
   });
 });
+
+test("rejects disallowed origins with explicit response headers", async () => {
+  const response = await handleCaseReportGovernance(
+    makeRequest({ action: "decide_version" }, {
+      headers: { origin: "https://blocked.test" },
+    }),
+    {
+      envGet,
+      createUserClient() {
+        throw new Error("should not be called");
+      },
+    },
+  );
+
+  assert.equal(response.status, 403);
+  assert.equal(response.headers.get("access-control-allow-origin"), "https://blocked.test");
+  assert.deepEqual(await response.json(), {
+    error: "Origin not allowed",
+  });
+});
+
+test("rejects missing bearer tokens before RPC dispatch", async () => {
+  const response = await handleCaseReportGovernance(
+    makeRequest({ action: "decide_version" }, {
+      headers: { authorization: "" },
+    }),
+    {
+      envGet,
+      createUserClient() {
+        throw new Error("should not be called");
+      },
+    },
+  );
+
+  assert.equal(response.status, 400);
+  assert.deepEqual(await response.json(), {
+    ok: false,
+    error: "Authentication required",
+  });
+});

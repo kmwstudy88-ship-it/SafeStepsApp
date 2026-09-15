@@ -32,6 +32,20 @@ export function requireString(value, field) {
   return text;
 }
 
+const safeErrorMessages = new Set([
+  "Origin not allowed",
+  "Method not allowed",
+  "Authentication required",
+  "Authentication failed",
+  "Unsupported action",
+  "action is required",
+  "caseId is required",
+  "reportId is required",
+  "reportVersionId is required",
+  "decision is required",
+  "renderedFileId is required",
+]);
+
 export async function handleCaseReportGovernance(req, { envGet, createUserClient }) {
   const cors = corsHeaders(req, envGet);
   if (!cors) {
@@ -91,7 +105,9 @@ export async function handleCaseReportGovernance(req, { envGet, createUserClient
 
     throw new Error("Unsupported action");
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Request failed";
+    const message = error instanceof Error && safeErrorMessages.has(error.message)
+      ? error.message
+      : "Request failed";
     return new Response(JSON.stringify({ ok: false, error: message }), { status: 400, headers: { ...cors, ...jsonHeaders } });
   }
 }
