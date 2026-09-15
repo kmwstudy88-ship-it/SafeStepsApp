@@ -4,15 +4,16 @@ import assert from "node:assert/strict";
 import { handleCaseReportGovernance } from "./handler.mjs";
 
 function makeRequest(body, init = {}) {
+  const method = init.method ?? "POST";
   return new Request("https://example.test/functions/v1/case-report-governance", {
-    method: init.method ?? "POST",
+    method,
     headers: {
       authorization: "******",
       "content-type": "application/json",
       origin: "https://app.test",
       ...(init.headers ?? {}),
     },
-    body: init.method === "OPTIONS" ? undefined : JSON.stringify(body),
+    body: method === "POST" ? JSON.stringify(body) : undefined,
   });
 }
 
@@ -75,6 +76,23 @@ test("routes decide_version requests to the approval RPC", async () => {
   });
 });
 
+test("answers CORS preflight requests without a JSON body", async () => {
+  const response = await handleCaseReportGovernance(
+    makeRequest({}, { method: "OPTIONS" }),
+    {
+      envGet,
+      createUserClient() {
+        throw new Error("should not be called");
+      },
+    },
+  );
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("cache-control"), "no-store");
+  assert.equal(response.headers.get("content-type"), null);
+  assert.equal(await response.text(), "");
+});
+
 test("routes release_version requests to the release RPC", async () => {
   let rpcName = null;
   let rpcArgs = null;
@@ -112,6 +130,23 @@ test("routes release_version requests to the release RPC", async () => {
     ok: true,
     action: "release_version",
     releaseEventId: "release-1",
+  });
+});
+
+test("rejects unsupported HTTP methods", async () => {
+  const response = await handleCaseReportGovernance(
+    makeRequest({}, { method: "GET" }),
+    {
+      envGet,
+      createUserClient() {
+        throw new Error("should not be called");
+      },
+    },
+  );
+
+  assert.equal(response.status, 405);
+  assert.deepEqual(await response.json(), {
+    error: "Method not allowed",
   });
 });
 
@@ -166,9 +201,36 @@ test("rejects missing bearer tokens before RPC dispatch", async () => {
     },
   );
 
-  assert.equal(response.status, 400);
+  assert.equal(response.status, 401);
   assert.deepEqual(await response.json(), {
     ok: false,
     error: "Authentication required",
+  });
+});
+
+test("rejects invalid authenticated sessions", async () => {
+  const response = await handleCaseReportGovernance(
+    makeRequest({ action: "decide_version" }),
+    {
+      envGet,
+      createUserClient() {
+        return {
+          auth: {
+            async getUser() {
+              return { data: { user: null }, error: new Error("bad token") };
+            },
+          },
+          rpc() {
+            throw new Error("should not be called");
+          },
+        };
+      },
+    },
+  );
+
+  assert.equal(response.status, 401);
+  assert.deepEqual(await response.json(), {
+    ok: false,
+    error: "Authentication failed",
   });
 });

@@ -26,17 +26,26 @@ export function rejectionHeaders(origin) {
   };
 }
 
+export function preflightHeaders(cors) {
+  return {
+    ...cors,
+    "Cache-Control": "no-store",
+  };
+}
+
 export function requireString(value, field) {
   const text = String(value ?? "").trim();
   if (!text) throw new Error(`${field} is required`);
   return text;
 }
 
-const safeErrorMessages = new Set([
-  "Origin not allowed",
+const authErrorMessages = new Set([
   "Method not allowed",
   "Authentication required",
   "Authentication failed",
+]);
+
+const validationErrorMessages = new Set([
   "Unsupported action",
   "action is required",
   "caseId is required",
@@ -54,7 +63,7 @@ export async function handleCaseReportGovernance(req, { envGet, createUserClient
       { status: 403, headers: rejectionHeaders(req.headers.get("origin")) },
     );
   }
-  if (req.method === "OPTIONS") return new Response("ok", { headers: { ...cors, ...jsonHeaders } });
+  if (req.method === "OPTIONS") return new Response(null, { headers: preflightHeaders(cors) });
   if (req.method !== "POST") {
     return new Response(
       JSON.stringify({ error: "Method not allowed" }),
@@ -105,9 +114,15 @@ export async function handleCaseReportGovernance(req, { envGet, createUserClient
 
     throw new Error("Unsupported action");
   } catch (error) {
-    const message = error instanceof Error && safeErrorMessages.has(error.message)
-      ? error.message
+    const message = error instanceof Error ? error.message : "Request failed";
+    const safeMessage = authErrorMessages.has(message) || validationErrorMessages.has(message)
+      ? message
       : "Request failed";
-    return new Response(JSON.stringify({ ok: false, error: message }), { status: 400, headers: { ...cors, ...jsonHeaders } });
+    const status = authErrorMessages.has(message)
+      ? 401
+      : validationErrorMessages.has(message)
+      ? 400
+      : 500;
+    return new Response(JSON.stringify({ ok: false, error: safeMessage }), { status, headers: { ...cors, ...jsonHeaders } });
   }
 }
