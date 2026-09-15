@@ -41,7 +41,13 @@ function_flags as (
     ) as search_path_locked,
     coalesce(has_function_privilege('anon', cf.oid, 'EXECUTE'), false) as exposed_to_anon,
     coalesce(has_function_privilege('authenticated', cf.oid, 'EXECUTE'), false) as exposed_to_authenticated,
-    coalesce(has_function_privilege('service_role', cf.oid, 'EXECUTE'), false) as exposed_to_service_role
+    coalesce(has_function_privilege('service_role', cf.oid, 'EXECUTE'), false) as exposed_to_service_role,
+    pg_catalog.regexp_replace(
+      cf.function_name,
+      '([][(){}.*+?^$|\\-])',
+      '\\\1',
+      'g'
+    ) as escaped_function_name
   from catalogued_functions cf
 )
 select
@@ -412,7 +418,15 @@ select
 from policy_text p
 join safesteps_security.function_security_inventory fi
   on fi.function_schema = 'public'
- and p.policy_expression ~ format('(^|[^a-zA-Z0-9_])%s\\s*\\(', fi.function_name);
+ and p.policy_expression ~ format(
+   '(^|[^a-zA-Z0-9_])%s\\s*\\(',
+   pg_catalog.regexp_replace(
+     fi.function_name,
+     '([][(){}.*+?^$|\\-])',
+     '\\\1',
+     'g'
+   )
+ );
 
 comment on view safesteps_security.function_security_inventory is
   'Security review inventory for public/private functions, including execute exposure, fixed search_path status and review classification.';
@@ -454,5 +468,10 @@ as $function$
       )
     );
 $function$;
+
+revoke execute on function public.can_access_video_report(uuid, text)
+  from public, anon;
+grant execute on function public.can_access_video_report(uuid, text)
+  to authenticated, service_role;
 
 commit;

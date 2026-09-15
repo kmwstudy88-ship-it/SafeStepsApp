@@ -53,6 +53,7 @@
 ### Added
 
 - `supabase/tests/volume_06_security_hardening.sql`
+- `supabase/functions/case-report-governance/handler.test.mjs`
 
 ### Coverage
 
@@ -61,6 +62,7 @@
 - `service_role` retains explicit admin-helper execution
 - child-private helper dependencies are inventoried before grant changes
 - parent, child, worker, supervisor, administrator, cross-tenant, cross-case, and child-private boundaries are asserted through pgTAP metadata checks
+- Edge Function routing coverage checks `decide_version`, `release_version`, and unsupported-action rejection for `case-report-governance`
 
 ## Edge Functions
 
