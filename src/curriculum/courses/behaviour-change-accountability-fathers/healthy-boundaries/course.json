@@ -1,0 +1,25 @@
+{
+  "id": "healthy-boundaries",
+  "title": "Healthy Boundaries (Father-Focused)",
+  "description": "This course supports fathers to understand boundaries in parenting and relationships, and how respecting boundaries creates safety for children and partners.",
+  "learningOutcomes": [
+    "Understand boundaries in the context of fatherhood.",
+    "Recognise boundary violations that harm children or partners.",
+    "Learn how to set and respect boundaries safely.",
+    "Develop behaviours that support emotional and physical safety."
+  ],
+  "modules": [
+    {
+      "title": "Boundaries in Fathering",
+      "content": "Explores emotional and physical boundaries with children."
+    },
+    {
+      "title": "Recognising Violations",
+      "content": "Shows how coercion and pressure harm family safety."
+    },
+    {
+      "title": "Safe Boundary Practices",
+      "content": "Provides tools for respectful, safe interactions."
+    }
+  ]
+}

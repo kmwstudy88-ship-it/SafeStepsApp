@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "DFV often damages confidence and selfâ€‘belief. Healing includes rebuilding your sense of self."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Abusive behaviour can erode identity through criticism, control, and isolation."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn strengthsâ€‘based reflection and small steps toward selfâ€‘trust."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "List three strengths you have shown during difficult times."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Confidence grows through small, consistent acts of selfâ€‘respect."
+                     }
+                 ]
+}

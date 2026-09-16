@@ -1,0 +1,1255 @@
+{
+  "domain": {
+    "id": "dfv",
+    "title": "Domestic and Family Violence",
+    "version": "1.0.0",
+    "description": "The complete DFV domain for SafeSteps, including all courses, streams, modules, lessons, and metadata.",
+    "tags": [
+      "dfv",
+      "domestic violence",
+      "family violence",
+      "coercive control",
+      "safety planning",
+      "parenting",
+      "behaviour change",
+      "trauma",
+      "relationships"
+    ],
+    "streams": {
+      "courses": [{
+  "id": "course_understanding_dfv",
+  "file": "understanding_dfv.json",
+  "title": "Understanding Domestic and Family Violence",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_what_is_dfv",
+      "title": "What Is DFV?",
+      "lessons": [
+        "definitions_and_terms",
+        "types_of_abuse",
+        "patterns_and_cycles"
+      ]
+    },
+    {
+      "id": "module_impacts",
+      "title": "Impacts of DFV",
+      "lessons": [
+        "impacts_on_adults",
+        "impacts_on_children",
+        "long_term_effects"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of DFV definitions",
+    "Ability to recognise abuse patterns",
+    "Awareness of impacts on adults and children"
+  ]
+},
+{
+  "id": "course_coercive_control",
+  "file": "coercive_control.json",
+  "title": "Coercive Control",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_control_dynamics",
+      "title": "Control Dynamics",
+      "lessons": [
+        "what_is_coercive_control",
+        "power_and_control_tactics",
+        "invisible_abuse_patterns"
+      ]
+    },
+    {
+      "id": "module_impacts_coercive",
+      "title": "Impacts of Coercive Control",
+      "lessons": [
+        "psychological_harm",
+        "social_isolation",
+        "identity_erosion"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of coercive control",
+    "Ability to identify non‑physical abuse",
+    "Increased awareness of psychological harm"
+  ]
+},
+{
+  "id": "course_physical_abuse",
+  "file": "physical_abuse.json",
+  "title": "Physical Abuse",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_physical_harm",
+      "title": "Physical Harm",
+      "lessons": [
+        "what_is_physical_abuse",
+        "patterns_of_physical_violence",
+        "risk_factors"
+      ]
+    },
+    {
+      "id": "module_safety_responses_physical",
+      "title": "Safety Responses",
+      "lessons": [
+        "recognising_escalation",
+        "immediate_safety_steps",
+        "seeking_medical_support"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of physical abuse",
+    "Ability to recognise escalation",
+    "Increased confidence in safety responses"
+  ]
+},
+{
+  "id": "course_emotional_abuse",
+  "file": "emotional_abuse.json",
+  "title": "Emotional Abuse",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_emotional_harm",
+      "title": "Emotional Harm",
+      "lessons": [
+        "what_is_emotional_abuse",
+        "gaslighting",
+        "verbal_degradation"
+      ]
+    },
+    {
+      "id": "module_rebuilding_self",
+      "title": "Rebuilding Self",
+      "lessons": [
+        "self_esteem_recovery",
+        "identity_rebuilding",
+        "support_networks"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of emotional abuse",
+    "Ability to recognise gaslighting",
+    "Increased confidence in emotional recovery support"
+  ]
+},
+{
+  "id": "course_financial_abuse",
+  "file": "financial_abuse.json",
+  "title": "Financial Abuse",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_financial_control",
+      "title": "Financial Control",
+      "lessons": [
+        "what_is_financial_abuse",
+        "restricting_access_to_money",
+        "forced_debt"
+      ]
+    },
+    {
+      "id": "module_financial_recovery",
+      "title": "Financial Recovery",
+      "lessons": [
+        "budgeting_after_abuse",
+        "accessing_financial_support",
+        "rebuilding_independence"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of financial abuse",
+    "Ability to recognise financial control tactics",
+    "Increased confidence in supporting financial recovery"
+  ]
+}{
+  "id": "course_understanding_dfv",
+  "file": "understanding_dfv.json",
+  "title": "Understanding Domestic and Family Violence",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_what_is_dfv",
+      "title": "What Is DFV?",
+      "lessons": [
+        "definitions_and_terms",
+        "types_of_abuse",
+        "patterns_and_cycles"
+      ]
+    },
+    {
+      "id": "module_impacts",
+      "title": "Impacts of DFV",
+      "lessons": [
+        "impacts_on_adults",
+        "impacts_on_children",
+        "long_term_effects"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding DFV definitions",
+    "Recognise abuse patterns",
+    "Awareness of impacts on adults and children"
+  ]
+},
+{
+  "id": "course_coercive_control",
+  "file": "coercive_control.json",
+  "title": "Coercive Control",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_control_dynamics",
+      "title": "Control Dynamics",
+      "lessons": [
+        "what_is_coercive_control",
+        "power_and_control_tactics",
+        "invisible_abuse_patterns"
+      ]
+    },
+    {
+      "id": "module_impacts_coercive",
+      "title": "Impacts of Coercive Control",
+      "lessons": [
+        "psychological_harm",
+        "social_isolation",
+        "identity_erosion"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Identify coercive control",
+    "Recognise non‑physical abuse",
+    "Understand psychological harm"
+  ]
+},
+{
+  "id": "course_physical_abuse",
+  "file": "physical_abuse.json",
+  "title": "Physical Abuse",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_physical_harm",
+      "title": "Physical Harm",
+      "lessons": [
+        "what_is_physical_abuse",
+        "patterns_of_physical_violence",
+        "risk_factors"
+      ]
+    },
+    {
+      "id": "module_safety_responses_physical",
+      "title": "Safety Responses",
+      "lessons": [
+        "recognising_escalation",
+        "immediate_safety_steps",
+        "seeking_medical_support"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Recognise physical abuse",
+    "Identify escalation",
+    "Support immediate safety responses"
+  ]
+},
+{
+  "id": "course_emotional_abuse",
+  "file": "emotional_abuse.json",
+  "title": "Emotional Abuse",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_emotional_harm",
+      "title": "Emotional Harm",
+      "lessons": [
+        "what_is_emotional_abuse",
+        "gaslighting",
+        "verbal_degradation"
+      ]
+    },
+    {
+      "id": "module_rebuilding_self",
+      "title": "Rebuilding Self",
+      "lessons": [
+        "self_esteem_recovery",
+        "identity_rebuilding",
+        "support_networks"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Recognise emotional abuse",
+    "Identify gaslighting",
+    "Support emotional recovery"
+  ]
+},
+{
+  "id": "course_financial_abuse",
+  "file": "financial_abuse.json",
+  "title": "Financial Abuse",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_financial_control",
+      "title": "Financial Control",
+      "lessons": [
+        "what_is_financial_abuse",
+        "restricting_access_to_money",
+        "forced_debt"
+      ]
+    },
+    {
+      "id": "module_financial_recovery",
+      "title": "Financial Recovery",
+      "lessons": [
+        "budgeting_after_abuse",
+        "accessing_financial_support",
+        "rebuilding_independence"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Recognise financial abuse",
+    "Identify financial control tactics",
+    "Support financial recovery"
+  ]
+},
+{
+  "id": "course_sexual_abuse",
+  "file": "sexual_abuse.json",
+  "title": "Sexual Abuse",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_sexual_violence",
+      "title": "Sexual Violence",
+      "lessons": [
+        "what_is_sexual_abuse",
+        "consent_and_coercion",
+        "sexual_violence_patterns"
+      ]
+    },
+    {
+      "id": "module_support_responses_sexual",
+      "title": "Support Responses",
+      "lessons": [
+        "medical_support",
+        "legal_options",
+        "trauma_informed_response"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understand sexual abuse",
+    "Recognise coercion",
+    "Support trauma‑informed responses"
+  ]
+},
+{
+  "id": "course_tech_facilitated_abuse",
+  "file": "tech_facilitated_abuse.json",
+  "title": "Technology‑Facilitated Abuse",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_digital_control",
+      "title": "Digital Control",
+      "lessons": [
+        "what_is_tech_abuse",
+        "surveillance_and_monitoring",
+        "digital_harassment"
+      ]
+    },
+    {
+      "id": "module_digital_safety",
+      "title": "Digital Safety",
+      "lessons": [
+        "securing_devices",
+        "privacy_settings",
+        "safe_online_behaviours"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Recognise tech‑facilitated abuse",
+    "Identify digital control tactics",
+    "Support digital safety"
+  ]
+},
+{
+  "id": "course_child_exposure_dfv",
+  "file": "child_exposure_dfv.json",
+  "title": "Children’s Exposure to DFV",
+  "level": "foundational",
+  "modules": [
+    {
+      "id": "module_child_impacts",
+      "title": "Child Impacts",
+      "lessons": [
+        "developmental_impacts",
+        "emotional_responses",
+        "behavioural_changes"
+      ]
+    },
+    {
+      "id": "module_supporting_children",
+      "title": "Supporting Children",
+      "lessons": [
+        "communication_strategies",
+        "safety_planning_with_children",
+        "building_resilience"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understand child impacts",
+    "Support child safety",
+    "Promote resilience"
+  ]
+},
+{
+  "id": "course_risk_assessment",
+  "file": "risk_assessment.json",
+  "title": "DFV Risk Assessment",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_identifying_risk",
+      "title": "Identifying Risk",
+      "lessons": [
+        "risk_factors",
+        "lethality_indicators",
+        "high_risk_behaviours"
+      ]
+    },
+    {
+      "id": "module_risk_management",
+      "title": "Risk Management",
+      "lessons": [
+        "risk_planning",
+        "multiagency_collaboration",
+        "monitoring_risk"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Identify DFV risk",
+    "Recognise lethality indicators",
+    "Support risk management"
+  ]
+},
+{
+  "id": "course_safety_planning",
+  "file": "safety_planning.json",
+  "title": "Safety Planning",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_safety_strategies",
+      "title": "Safety Strategies",
+      "lessons": [
+        "creating_safety_plans",
+        "planning_for_escalation",
+        "safe_exit_strategies"
+      ]
+    },
+    {
+      "id": "module_support_networks",
+      "title": "Support Networks",
+      "lessons": [
+        "building_support_systems",
+        "community_resources",
+        "professional_support"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Create safety plans",
+    "Support safe exits",
+    "Build support networks"
+  ]
+},
+{
+  "id": "course_legal_frameworks_dfv",
+  "file": "legal_frameworks_dfv.json",
+  "title": "Legal Frameworks in DFV",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_laws_and_orders",
+      "title": "DFV Laws and Orders",
+      "lessons": [
+        "dfv_legislation_overview",
+        "protection_orders",
+        "reporting_processes"
+      ]
+    },
+    {
+      "id": "module_legal_support",
+      "title": "Legal Support Pathways",
+      "lessons": [
+        "legal_rights",
+        "accessing_legal_services",
+        "court_processes"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understand DFV legislation",
+    "Support clients through legal processes",
+    "Identify legal rights and protections"
+  ]
+},
+{
+  "id": "course_trauma_informed_practice",
+  "file": "trauma_informed_practice.json",
+  "title": "Trauma‑Informed Practice",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_trauma_basics",
+      "title": "Trauma Basics",
+      "lessons": [
+        "what_is_trauma",
+        "trauma_responses",
+        "complex_trauma"
+      ]
+    },
+    {
+      "id": "module_trauma_skills",
+      "title": "Trauma‑Informed Skills",
+      "lessons": [
+        "creating_safety",
+        "building_trust",
+        "avoiding_retraumatisation"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understand trauma responses",
+    "Apply trauma‑informed principles",
+    "Reduce risk of retraumatisation"
+  ]
+},
+{
+  "id": "course_working_with_survivors",
+  "file": "working_with_survivors.json",
+  "title": "Working With Survivors",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_support_principles",
+      "title": "Support Principles",
+      "lessons": [
+        "active_listening",
+        "validation_skills",
+        "strengths_based_support"
+      ]
+    },
+    {
+      "id": "module_practical_support",
+      "title": "Practical Support",
+      "lessons": [
+        "safety_support",
+        "referrals",
+        "case_notes"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Provide survivor‑centred support",
+    "Use strengths‑based approaches",
+    "Make effective referrals"
+  ]
+},
+{
+  "id": "course_working_with_children",
+  "file": "working_with_children.json",
+  "title": "Working With Children Experiencing DFV",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_child_engagement",
+      "title": "Child Engagement",
+      "lessons": [
+        "communicating_with_children",
+        "age_appropriate_support",
+        "building_safety"
+      ]
+    },
+    {
+      "id": "module_child_recovery",
+      "title": "Child Recovery",
+      "lessons": [
+        "emotional_regulation",
+        "trauma_recovery_for_children",
+        "supporting_caregivers"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Engage children safely",
+    "Support emotional regulation",
+    "Promote recovery for children"
+  ]
+},
+{
+  "id": "course_working_with_men",
+  "file": "working_with_men.json",
+  "title": "Working With Men Who Use Violence",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_accountability",
+      "title": "Accountability",
+      "lessons": [
+        "understanding_motivations",
+        "challenging_minimisation",
+        "responsibility_frameworks"
+      ]
+    },
+    {
+      "id": "module_change_process",
+      "title": "Change Process",
+      "lessons": [
+        "behaviour_change_models",
+        "motivational_interviewing",
+        "relapse_prevention"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understand drivers of violence",
+    "Promote accountability",
+    "Support behaviour change"
+  ]
+},
+{
+  "id": "course_cultural_safety_dfv",
+  "file": "cultural_safety_dfv.json",
+  "title": "Cultural Safety in DFV Practice",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_cultural_awareness",
+      "title": "Cultural Awareness",
+      "lessons": [
+        "cultural_bias",
+        "cultural_humility",
+        "working_with_diverse_communities"
+      ]
+    },
+    {
+      "id": "module_culturally_safe_practice",
+      "title": "Culturally Safe Practice",
+      "lessons": [
+        "inclusive_practice",
+        "community_led_support",
+        "cultural_consultation"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Apply cultural humility",
+    "Deliver culturally safe support",
+    "Engage respectfully with diverse communities"
+  ]
+},
+{
+  "id": "course_lgbtqia_dfv",
+  "file": "lgbtqia_dfv.json",
+  "title": "DFV in LGBTQIA+ Communities",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_lgbtqia_dynamics",
+      "title": "LGBTQIA+ DFV Dynamics",
+      "lessons": [
+        "unique_risks",
+        "identity_based_abuse",
+        "barriers_to_support"
+      ]
+    },
+    {
+      "id": "module_affirming_practice",
+      "title": "Affirming Practice",
+      "lessons": [
+        "inclusive_language",
+        "affirming_support",
+        "specialist_services"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understand LGBTQIA+ DFV dynamics",
+    "Identify identity‑based abuse",
+    "Provide affirming support"
+  ]
+},
+{
+  "id": "course_elder_abuse",
+  "file": "elder_abuse.json",
+  "title": "Elder Abuse",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_elder_abuse_types",
+      "title": "Types of Elder Abuse",
+      "lessons": [
+        "financial_exploitation",
+        "neglect",
+        "psychological_abuse"
+      ]
+    },
+    {
+      "id": "module_elder_support",
+      "title": "Supporting Older People",
+      "lessons": [
+        "capacity_and_consent",
+        "safety_planning_for_elders",
+        "community_supports"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Recognise elder abuse",
+    "Support older people safely",
+    "Understand capacity and consent"
+  ]
+},
+{
+  "id": "course_multidisciplinary_collaboration",
+  "file": "multidisciplinary_collaboration.json",
+  "title": "Multidisciplinary Collaboration in DFV",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_collaboration_models",
+      "title": "Collaboration Models",
+      "lessons": [
+        "multiagency_frameworks",
+        "information_sharing",
+        "joint_risk_assessment"
+      ]
+    },
+    {
+      "id": "module_effective_partnerships",
+      "title": "Effective Partnerships",
+      "lessons": [
+        "communication_skills",
+        "shared_responsibility",
+        "coordinated_responses"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Work effectively across agencies",
+    "Share information safely",
+    "Support coordinated DFV responses"
+  ]
+},
+{
+  "id": "course_case_management_dfv",
+  "file": "case_management_dfv.json",
+  "title": "Case Management in DFV",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_case_planning",
+      "title": "Case Planning",
+      "lessons": [
+        "assessment_skills",
+        "goal_setting",
+        "case_review"
+      ]
+    },
+    {
+      "id": "module_case_coordination",
+      "title": "Case Coordination",
+      "lessons": [
+        "service_navigation",
+        "advocacy_skills",
+        "documentation"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Plan DFV casework",
+    "Coordinate services",
+    "Document effectively"
+  ]
+},
+{
+  "id": "course_housing_and_homelessness_dfv",
+  "file": "housing_and_homelessness_dfv.json",
+  "title": "Housing and Homelessness in DFV",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_housing_barriers",
+      "title": "Housing Barriers",
+      "lessons": [
+        "housing_insecurity",
+        "system_navigation",
+        "crisis_accommodation"
+      ]
+    },
+    {
+      "id": "module_long_term_housing",
+      "title": "Long‑Term Housing",
+      "lessons": [
+        "tenancy_rights",
+        "sustainable_housing",
+        "support_services"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understand DFV housing barriers",
+    "Support crisis accommodation",
+    "Navigate long‑term housing pathways"
+  ]
+},
+{
+  "id": "course_substance_use_and_dfv",
+  "file": "substance_use_and_dfv.json",
+  "title": "Substance Use and DFV",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_substance_dynamics",
+      "title": "Substance Use Dynamics",
+      "lessons": [
+        "substance_use_patterns",
+        "co_occurring_risks",
+        "impact_on_safety"
+      ]
+    },
+    {
+      "id": "module_supporting_clients_substance",
+      "title": "Supporting Clients",
+      "lessons": [
+        "harm_reduction",
+        "referral_pathways",
+        "integrated_support"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understand substance use dynamics",
+    "Identify co‑occurring risks",
+    "Support harm‑reduction approaches"
+  ]
+},
+{
+  "id": "course_mental_health_and_dfv",
+  "file": "mental_health_and_dfv.json",
+  "title": "Mental Health and DFV",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_mh_impacts",
+      "title": "Mental Health Impacts",
+      "lessons": [
+        "mh_conditions_related_to_dfv",
+        "trauma_symptoms",
+        "crisis_responses"
+      ]
+    },
+    {
+      "id": "module_supporting_mh",
+      "title": "Supporting Mental Health",
+      "lessons": [
+        "mh_first_aid",
+        "referral_processes",
+        "collaborative_care"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Recognise DFV‑related MH impacts",
+    "Support MH first aid",
+    "Navigate MH referral pathways"
+  ]
+},
+{
+  "id": "course_refugee_and_migrant_dfv",
+  "file": "refugee_and_migrant_dfv.json",
+  "title": "DFV in Refugee and Migrant Communities",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_migrant_dynamics",
+      "title": "Migrant DFV Dynamics",
+      "lessons": [
+        "visa_dependency",
+        "language_barriers",
+        "cultural_factors"
+      ]
+    },
+    {
+      "id": "module_supporting_migrant_clients",
+      "title": "Supporting Migrant Clients",
+      "lessons": [
+        "interpreters",
+        "specialist_services",
+        "rights_information"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understand migrant DFV dynamics",
+    "Identify visa‑related risks",
+    "Support culturally informed responses"
+  ]
+},
+{
+  "id": "course_disability_and_dfv",
+  "file": "disability_and_dfv.json",
+  "title": "DFV and Disability",
+  "level": "intermediate",
+  "modules": [
+    {
+      "id": "module_disability_risks",
+      "title": "Disability‑Specific Risks",
+      "lessons": [
+        "carer_abuse",
+        "dependency_risks",
+        "communication_barriers"
+      ]
+    },
+    {
+      "id": "module_accessible_support",
+      "title": "Accessible Support",
+      "lessons": [
+        "accessible_safety_planning",
+        "assistive_technology",
+        "inclusive_practice"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Recognise disability‑specific DFV risks",
+    "Provide accessible support",
+    "Use inclusive communication"
+  ]
+},
+{
+  "id": "course_perpetrator_patterns",
+  "file": "perpetrator_patterns.json",
+  "title": "Perpetrator Patterns and Behaviour",
+  "level": "advanced",
+  "modules": [
+    {
+      "id": "module_perpetrator_motives",
+      "title": "Motives and Drivers",
+      "lessons": [
+        "entitlement",
+        "control_motives",
+        "belief_systems"
+      ]
+    },
+    {
+      "id": "module_perpetrator_tactics",
+      "title": "Tactics and Strategies",
+      "lessons": [
+        "manipulation",
+        "minimisation",
+        "system_abuse"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understand perpetrator motives",
+    "Identify manipulation tactics",
+    "Recognise system abuse"
+  ]
+},
+{
+  "id": "course_high_risk_cases",
+  "file": "high_risk_cases.json",
+  "title": "High‑Risk DFV Cases",
+  "level": "advanced",
+  "modules": [
+    {
+      "id": "module_high_risk_indicators",
+      "title": "High‑Risk Indicators",
+      "lessons": [
+        "stalking",
+        "strangulation",
+        "weapons_risk"
+      ]
+    },
+    {
+      "id": "module_high_risk_responses",
+      "title": "High‑Risk Responses",
+      "lessons": [
+        "urgent_safety_planning",
+        "multiagency_high_risk_response",
+        "legal_interventions"
+],
+      "dfv_parent": [{
+  "id": "dfv_parent_stream",
+  "file": "dfv_parent_stream.json",
+  "title": "DFV Parent Support Stream",
+  "description": "Support for parents experiencing domestic and family violence, focusing on safety, parenting capacity, and child wellbeing.",
+  "modules": [
+    {
+      "id": "module_parent_safety",
+      "title": "Parent Safety and Stability",
+      "lessons": [
+        "recognising_risk_as_a_parent",
+        "safety_planning_with_children",
+        "building_safe_routines"
+      ]
+    },
+    {
+      "id": "module_parenting_under_stress",
+      "title": "Parenting Under DFV Stress",
+      "lessons": [
+        "managing_parental_stress",
+        "supporting_children_emotionally",
+        "maintaining_parent_child_connection"
+      ]
+    },
+    {
+      "id": "module_child_healing",
+      "title": "Supporting Child Healing",
+      "lessons": [
+        "understanding_child_trauma",
+        "age_appropriate_support",
+        "building_resilience_in_children"
+      ]
+    },
+    {
+      "id": "module_rebuilding_family_life",
+      "title": "Rebuilding Family Life After DFV",
+      "lessons": [
+        "restoring_routines",
+        "strengthening_family_bonds",
+        "long_term_recovery_planning"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Support parents to increase safety",
+    "Strengthen parent‑child connection",
+    "Promote child healing and resilience",
+    "Build long‑term family stability"
+  ]
+}
+],
+      "dfv_pwuv": [{
+  "id": "dfv_pwuv_stream",
+  "file": "dfv_pwuv_stream.json",
+  "title": "DFV Behaviour‑Change Stream (People Who Use Violence)",
+  "description": "A structured behaviour‑change stream designed for people who use violence, focusing on accountability, insight development, emotional regulation, and safe behaviour change.",
+  "modules": [
+    {
+      "id": "module_accountability_foundations",
+      "title": "Accountability Foundations",
+      "lessons": [
+        "understanding_harm",
+        "taking_responsibility",
+        "challenging_minimisation"
+      ]
+    },
+    {
+      "id": "module_emotional_regulation",
+      "title": "Emotional Regulation and Self‑Management",
+      "lessons": [
+        "recognising_triggers",
+        "regulation_strategies",
+        "interrupting_violent_patterns"
+      ]
+    },
+    {
+      "id": "module_relationship_skills",
+      "title": "Respectful Relationship Skills",
+      "lessons": [
+        "communication_skills",
+        "conflict_management",
+        "building_empathy"
+      ]
+    },
+    {
+      "id": "module_sustainable_change",
+      "title": "Sustainable Behaviour Change",
+      "lessons": [
+        "relapse_prevention",
+        "building_new_patterns",
+        "long_term_accountability"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Increase accountability for harmful behaviour",
+    "Develop emotional regulation skills",
+    "Build respectful relationship practices",
+    "Support long‑term behaviour change"
+  ]
+}
+],
+      "dfv_peer_mentor": [{
+  "id": "dfv_peer_mentor_stream",
+  "file": "dfv_peer_mentor_stream.json",
+  "title": "DFV Peer Mentor Stream",
+  "description": "Training for lived‑experience peer mentors supporting survivors through empathy, boundaries, and safe practice.",
+  "modules": [
+    {
+      "id": "module_peer_role_foundations",
+      "title": "Peer Mentor Role Foundations",
+      "lessons": [
+        "what_is_peer_support",
+        "using_lived_experience_safely",
+        "scope_and_limitations"
+      ]
+    },
+    {
+      "id": "module_safe_conversations",
+      "title": "Safe Conversations",
+      "lessons": [
+        "active_listening",
+        "holding_space",
+        "avoiding_retraumatisation"
+      ]
+    },
+    {
+      "id": "module_boundaries_and_safety",
+      "title": "Boundaries and Safety",
+      "lessons": [
+        "maintaining_boundaries",
+        "self_care_for_peers",
+        "supervision_and_support"
+      ]
+    },
+    {
+      "id": "module_supporting_survivors",
+      "title": "Supporting Survivors",
+      "lessons": [
+        "strengths_based_support",
+        "navigating_services",
+        "encouraging_help_seeking"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understand the peer mentor role",
+    "Use lived experience safely",
+    "Maintain boundaries and wellbeing",
+    "Support survivors through safe peer practice"
+  ]
+}
+],
+      "dfv_practitioner": [{
+  "id": "dfv_practitioner_stream",
+  "file": "dfv_practitioner_stream.json",
+  "title": "DFV Practitioner Stream",
+  "description": "Core training for frontline DFV practitioners working with survivors, children, and families.",
+  "modules": [
+    {
+      "id": "module_practitioner_foundations",
+      "title": "Practitioner Foundations",
+      "lessons": [
+        "dfv_frameworks",
+        "ethical_practice",
+        "professional_responsibilities"
+      ]
+    },
+    {
+      "id": "module_assessment_and_response",
+      "title": "Assessment and Response",
+      "lessons": [
+        "initial_assessment",
+        "risk_identification",
+        "safety_planning"
+      ]
+    },
+    {
+      "id": "module_client_engagement",
+      "title": "Client Engagement",
+      "lessons": [
+        "trauma_informed_engagement",
+        "working_with_resistance",
+        "strengths_based_practice"
+      ]
+    },
+    {
+      "id": "module_collaboration_and_referral",
+      "title": "Collaboration and Referral",
+      "lessons": [
+        "multiagency_work",
+        "referral_pathways",
+        "documentation_and_case_notes"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Apply DFV practice frameworks",
+    "Conduct safe assessments",
+    "Engage clients using trauma‑informed practice",
+    "Collaborate effectively across services"
+  ]
+}
+],
+      "dfv_specialist": [{
+  "id": "dfv_specialist_stream",
+  "file": "dfv_specialist_stream.json",
+  "title": "DFV Specialist Stream",
+  "description": "Advanced training for specialist DFV workers handling complex, high‑risk, and multi‑layered cases.",
+  "modules": [
+    {
+      "id": "module_complex_casework",
+      "title": "Complex Casework",
+      "lessons": [
+        "working_with_high_risk_cases",
+        "multi_layered_trauma",
+        "complex_family_dynamics"
+      ]
+    },
+    {
+      "id": "module_advanced_risk_management",
+      "title": "Advanced Risk Management",
+      "lessons": [
+        "lethality_assessment",
+        "multiagency_risk_panels",
+        "monitoring_dynamic_risk"
+      ]
+    },
+    {
+      "id": "module_specialist_interventions",
+      "title": "Specialist Interventions",
+      "lessons": [
+        "specialist_therapeutic_support",
+        "cultural_complexity",
+        "intersectional_practice"
+      ]
+    },
+    {
+      "id": "module_system_navigation",
+      "title": "System Navigation and Advocacy",
+      "lessons": [
+        "navigating_complex_systems",
+        "advocacy_skills",
+        "supporting_clients_through_system_barriers"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Manage complex DFV cases",
+    "Conduct advanced risk assessments",
+    "Deliver specialist interventions",
+    "Navigate systems and advocate effectively"
+  ]
+}

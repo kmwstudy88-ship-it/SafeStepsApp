@@ -1,0 +1,67 @@
+{
+  "id": "course_module_economic_abuse_and_financial_security",
+  "title": "Economic Abuse and Financial Security",
+  "description": "Auto-generated course for module module_economic_abuse_and_financial_security",
+  "lessons": [
+    {
+      "id": "lesson_understanding_economic_abuse",
+      "title": "Understanding Economic Abuse",
+      "sections": [
+        {
+          "id": "section_lesson_understanding_economic_abuse_01"
+        },
+        {
+          "id": "section_lesson_understanding_economic_abuse_02"
+        },
+        {
+          "id": "section_lesson_understanding_economic_abuse_03"
+        },
+        {
+          "id": "section_lesson_understanding_economic_abuse_04"
+        },
+        {
+          "id": "section_lesson_understanding_economic_abuse_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_supporting_financial_safety",
+      "title": "Supporting Financial Safety",
+      "sections": [
+        {
+          "id": "section_lesson_supporting_financial_safety_01"
+        },
+        {
+          "id": "section_lesson_supporting_financial_safety_02"
+        },
+        {
+          "id": "section_lesson_supporting_financial_safety_03"
+        },
+        {
+          "id": "section_lesson_supporting_financial_safety_04"
+        },
+        {
+          "id": "section_lesson_supporting_financial_safety_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_pathways_to_financial_independence",
+      "title": "Pathways to Financial Independence",
+      "sections": [
+        {
+          "id": "section_lesson_pathways_to_financial_independence_01"
+        },
+        {
+          "id": "section_lesson_pathways_to_financial_independence_02"
+        },
+        {
+          "id": "section_lesson_pathways_to_financial_independence_03"
+        },
+        {
+          "id": "section_lesson_pathways_to_financial_independence_04"
+        }
+      ]
+    }
+  ]
+}

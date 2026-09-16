@@ -1,0 +1,105 @@
+{
+  "program_id": "PARENT-ACC-103",
+  "program_title": "Rebuilding Trust & Restorative Repair",
+  "version": "1.0",
+  "metadata": {
+    "target_audience": "Parents of school-aged children and teenagers (Ages 6–17)",
+    "estimated_duration": "90–120 minutes",
+    "delivery_format": "Self-paced or Facilitated Module",
+    "core_objective": "Transition from arbitrary punishment to restorative action that actively rebuilds broken trust.",
+    "key_deliverable": "Customized Trust Restoration Roadmap & Restorative Agreement Contract"
+  },
+  "modules": [
+    {
+      "section_id": 1,
+      "section_title": "Core Learning Content",
+      "topics": [
+        {
+          "topic_id": "3.1",
+          "title": "The Myth of the Clean Slate",
+          "summary": "Avoiding indefinite penalties and immediate resets in favor of systematic trust building.",
+          "key_concepts": [
+            {
+              "concept": "Indefinite Penalty Trap",
+              "description": "Grounding without a clear pathway leads to hopelessness, resentment, and covert actions."
+            },
+            {
+              "concept": "Immediate Reset Trap",
+              "description": "Expecting instant restoration of privileges right after an apology without evidence of behavioral change."
+            },
+            {
+              "concept": "Restorative Accountability",
+              "description": "Forgiveness is given freely, but trust must be systematically earned through actionable steps."
+            }
+          ]
+        },
+        {
+          "topic_id": "3.2",
+          "title": "The 4 Steps of Restorative Repair",
+          "steps": [
+            {
+              "step": 1,
+              "name": "Acknowledge Harm",
+              "description": "Child explicitly states who was affected and how their actions impacted others."
+            },
+            {
+              "step": 2,
+              "name": "Make Direct Amends",
+              "description": "Tangible efforts to repair damage (e.g., replacement costs, restoration labor)."
+            },
+            {
+              "step": 3,
+              "name": "Define Probationary Horizon",
+              "description": "A structured, time-bound period of reduced privileges paired with clear earning criteria."
+            },
+            {
+              "step": 4,
+              "name": "Demonstrated Consistency",
+              "description": "Incremental restoration of privileges contingent on meeting micro-agreements."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section_title": "Lesson Activities",
+      "activities": [
+        {
+          "activity_id": "ACT-301",
+          "title": "Designing a Trust Restoration Roadmap",
+          "type": "Case Study Mapping",
+          "instructions": "Break down major infractions into harm repair, short-term constraints, and incremental restoration milestones."
+        }
+      ]
+    },
+    {
+      "section_id": 3,
+      "section_title": "Implementation Tasks",
+      "tasks": [
+        {
+          "task_id": "TSK-301",
+          "title": "Restorative Agreement Contract Execution",
+          "action": "Co-create a formal agreement outlining incident impact, concrete repair steps, and review dates."
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section_title": "Assessments & Quizzes",
+      "quiz": [
+        {
+          "id": "Q1",
+          "question": "Why are indefinite groundings ('You're grounded until I can trust you again') ineffective?",
+          "options": [
+            "A) They are too short to teach a lesson.",
+            "B) They lack a defined pathway for the child to actively earn back trust, leading to despair or rebellion.",
+            "C) Children do not care about being grounded.",
+            "D) Parents always forget to enforce them."
+          ],
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

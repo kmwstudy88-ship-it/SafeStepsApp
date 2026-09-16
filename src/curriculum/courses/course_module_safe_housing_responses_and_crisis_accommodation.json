@@ -1,0 +1,67 @@
+{
+  "id": "course_module_safe_housing_responses_and_crisis_accommodation",
+  "title": "Safe Housing Responses and Crisis Accommodation",
+  "description": "Auto-generated course for module module_safe_housing_responses_and_crisis_accommodation",
+  "lessons": [
+    {
+      "id": "lesson_crisis_accommodation_models",
+      "title": "Crisis Accommodation Models",
+      "sections": [
+        {
+          "id": "section_lesson_crisis_accommodation_models_01"
+        },
+        {
+          "id": "section_lesson_crisis_accommodation_models_02"
+        },
+        {
+          "id": "section_lesson_crisis_accommodation_models_03"
+        },
+        {
+          "id": "section_lesson_crisis_accommodation_models_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_trauma_informed_housing_support",
+      "title": "Trauma-Informed Housing Support",
+      "sections": [
+        {
+          "id": "section_lesson_trauma_informed_housing_support_01"
+        },
+        {
+          "id": "section_lesson_trauma_informed_housing_support_02"
+        },
+        {
+          "id": "section_lesson_trauma_informed_housing_support_03"
+        },
+        {
+          "id": "section_lesson_trauma_informed_housing_support_04"
+        },
+        {
+          "id": "section_lesson_trauma_informed_housing_support_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_coordinated_housing_responses",
+      "title": "Coordinated Housing Responses",
+      "sections": [
+        {
+          "id": "section_lesson_coordinated_housing_responses_01"
+        },
+        {
+          "id": "section_lesson_coordinated_housing_responses_02"
+        },
+        {
+          "id": "section_lesson_coordinated_housing_responses_03"
+        },
+        {
+          "id": "section_lesson_coordinated_housing_responses_04"
+        },
+        {
+          "id": "section_lesson_coordinated_housing_responses_05"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Course",
+  "type": "object",
+  "properties": {
+    "courseId": {
+      "type": "string"
+    },
+    "topicId": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "learningObjectives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "lessonCount": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "courseId",
+    "topicId",
+    "title",
+    "lessonCount"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "program_id": "PARENT-ACC-109",
+  "program_title": "Academic Accountability & School-Home Systems",
+  "version": "1.0",
+  "metadata": {
+    "target_audience": "Parents of school-aged children and teenagers (Ages 6–18)",
+    "estimated_duration": "60–90 minutes",
+    "delivery_format": "Self-paced or Facilitated Add-On Module",
+    "core_objective": "Shift from micromanaging homework to building sustainable study systems, self-advocacy skills, and academic ownership.",
+    "key_deliverable": "Family Academic Routine & Self-Advocacy Contract"
+  },
+  "modules": [
+    {
+      "section_id": 1,
+      "section_title": "Core Learning Content",
+      "topics": [
+        {
+          "topic_id": "9.1",
+          "title": "From Homework Police to Academic Architect",
+          "summary": "Transferring ownership of school performance from parents to students through structured environments.",
+          "key_principles": [
+            "Daily portal checking creates over-reliance and parental anxiety.",
+            "Architects build routines, launchpads, and time-boxing frameworks."
+          ]
+        },
+        {
+          "topic_id": "9.2",
+          "title": "Executive Functioning & Self-Advocacy",
+          "summary": "Building organizational habits and teaching students to communicate directly with educators.",
+          "strategies": [
+            "The Launchpad for overnight preparedness.",
+            "3-step student self-advocacy script.",
+            "Weekly predictable grade check-in windows."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section_title": "Lesson Activities",
+      "activities": [
+        {
+          "activity_id": "ACT-901",
+          "title": "The Study Environment & Habit Audit",
+          "type": "Worksheet",
+          "instructions": "Identify physical and organizational friction points in your home study routine."
+        },
+        {
+          "activity_id": "ACT-902",
+          "title": "Scripting Student Self-Advocacy",
+          "type": "Roleplay Exercise",
+          "instructions": "Practice coaching children to initiate academic conversations directly with teachers."
+        }
+      ]
+    },
+    {
+      "section_id": 3,
+      "section_title": "Implementation Tasks",
+      "tasks": [
+        {
+          "task_id": "TSK-901",
+          "title": "Academic Check-In Protocol Setup",
+          "action": "Establish a weekly Sunday grade review time and pause daily portal surveillance."
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section_title": "Assessments & Quizzes",
+      "quiz": [
+        {
+          "id": "AQ1",
+          "question": "What is the main problem with a parent constantly checking online grade portals multiple times a day?",
+          "options": [
+            "A) It causes the school's online server to crash.",
+            "B) It shifts academic ownership and anxiety from the student to the parent, leading to nagging and reduced student self-reliance.",
+            "C) Teachers prefer parents to check grades every hour.",
+            "D) It makes the student study twice as fast."
+          ],
+          "correct_answer": "B"
+        },
+        {
+          "id": "AQ2",
+          "question": "How should a parent handle a middle-schooler who leaves their completed science project on the kitchen counter?",
+          "options": [
+            "A) Drive it to school immediately and leave it at the main office with an excuse note.",
+            "B) Call the school principal to complain about homework policies.",
+            "C) Leave the project at home, allowing the student to experience the natural consequence and practice self-advocacy with the teacher.",
+            "D) Throw the project away to teach a lesson."
+          ],
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

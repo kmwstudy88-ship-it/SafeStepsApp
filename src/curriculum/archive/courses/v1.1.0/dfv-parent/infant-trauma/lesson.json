@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Babies are deeply affected by DFV, even though they cannot speak or understand events."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Infants absorb stress through disrupted routines, loud noises, fear, and caregiver distress."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn to rebuild safety through calm routines, closeness, and predictable care."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Reflect on your babyâ€™s cuesâ€”crying, clinginess, sleep changes."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Infants heal through safe, consistent, loving care."
+                     }
+                 ]
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "mh_general_screening",
+    "category": "mental_health",
+    "name": "General Mental Health Screening",
+    "description": "Brief screening of overall mental health and wellbeing.",
+    "tags": ["screening", "mental_health"],
+    "validatedTool": null
+  },
+  {
+    "id": "mh_check_in",
+    "category": "mental_health",
+    "name": "Mental Health Check-In",
+    "description": "Quick self-report check-in on current emotional state.",
+    "tags": ["check-in", "mental_health"],
+    "validatedTool": null
+  },
+  {
+    "id": "mh_k10",
+    "category": "mental_health",
+    "name": "Psychological Distress Assessment (K10)",
+    "description": "Kessler-10 measure of psychological distress.",
+    "tags": ["screening", "distress", "k10"],
+    "validatedTool": "K10"
+  },
+  {
+    "id": "mh_phq9",
+    "category": "mental_health",
+    "name": "Depression Screening (PHQ-9)",
+    "description": "Patient Health Questionnaire-9 depression screening.",
+    "tags": ["screening", "depression", "phq9"],
+    "validatedTool": "PHQ-9"
+  },
+  {
+    "id": "mh_gad7",
+    "category": "mental_health",
+    "name": "Anxiety Screening (GAD-7)",
+    "description": "Generalised Anxiety Disorder-7 anxiety screening.",
+    "tags": ["screening", "anxiety", "gad7"],
+    "validatedTool": "GAD-7"
+  },
+  {
+    "id": "mh_stress",
+    "category": "mental_health",
+    "name": "Stress Assessment",
+    "description": "Measures perceived stress levels and coping capacity.",
+    "tags": ["stress", "coping"],
+    "validatedTool": null
+  },
+  {
+    "id": "mh_emotional_wellbeing",
+    "category": "mental_health",
+    "name": "Emotional Wellbeing Assessment",
+    "description": "Assesses emotional stability, mood, and wellbeing.",
+    "tags": ["emotional", "wellbeing"],
+    "validatedTool": null
+  },
+  {
+    "id": "mh_suicide_risk",
+    "category": "mental_health",
+    "name": "Suicide Risk Screening",
+    "description": "Identifies risk factors and warning signs for suicide.",
+    "tags": ["suicide", "risk"],
+    "validatedTool": null
+  },
+  {
+    "id": "mh_self_harm",
+    "category": "mental_health",
+    "name": "Self-Harm Risk Assessment",
+    "description": "Assesses risk of self-harm behaviours.",
+    "tags": ["self-harm", "risk"],
+    "validatedTool": null
+  },
+  {
+    "id": "mh_recovery",
+    "category": "mental_health",
+    "name": "Mental Health Recovery Assessment",
+    "description": "Measures recovery progress and readiness.",
+    "tags": ["recovery", "mental_health"],
+    "validatedTool": null
+  },
+  {
+    "id": "mh_resilience",
+    "category": "mental_health",
+    "name": "Resilience Assessment",
+    "description": "Assesses resilience, adaptability, and coping strengths.",
+    "tags": ["resilience", "strengths"],
+    "validatedTool": null
+  },
+  {
+    "id": "mh_coping_skills",
+    "category": "mental_health",
+    "name": "Coping Skills Assessment",
+    "description": "Evaluates coping strategies and stress responses.",
+    "tags": ["coping", "skills"],
+    "validatedTool": null
+  },
+  {
+    "id": "mh_quality_of_life",
+    "category": "mental_health",
+    "name": "Quality of Life Assessment",
+    "description": "Assesses life satisfaction and wellbeing across domains.",
+    "tags": ["quality_of_life", "wellbeing"],
+    "validatedTool": null
+  },
+  {
+    "id": "mh_hope_motivation",
+    "category": "mental_health",
+    "name": "Hope and Motivation Scale",
+    "description": "Measures hopefulness, motivation, and future orientation.",
+    "tags": ["hope", "motivation"],
+    "validatedTool": null
+  },
+  {
+    "id": "mh_life_satisfaction",
+    "category": "mental_health",
+    "name": "Life Satisfaction Assessment",
+    "description": "Assesses satisfaction with life across multiple domains.",
+    "tags": ["life_satisfaction", "wellbeing"],
+    "validatedTool": null
+  }
+]

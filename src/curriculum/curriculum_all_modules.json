@@ -1,0 +1,2658 @@
+[
+  {
+    "id": "module_accountability_foundations",
+    "title": "Accountability Foundations",
+    "level": "general",
+    "lessons": []
+  },
+  {
+    "id": "module_advanced_dfv_practice_and_leadership",
+    "title": "Advanced DFV Practice and Leadership",
+    "description": "This module supports experienced practitioners and leaders to strengthen advanced DFV capabilities. It focuses on complex case practice, supervision, system leadership, and driving high-quality, evidence-informed responses.",
+    "type": "module",
+    "level": "workforce_capability",
+    "tags": [
+      "dfv",
+      "leadership",
+      "advanced practice",
+      "supervision",
+      "evidence-informed"
+    ],
+    "outcomes": [
+      "Apply advanced DFV practice in complex situations",
+      "Provide effective supervision and practice leadership",
+      "Lead system improvements and evidence-informed practice"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_complex_case_practice",
+        "title": "Complex Case Practice"
+      },
+      {
+        "id": "lesson_supervision_and_practice_leadership",
+        "title": "Supervision and Practice Leadership"
+      },
+      {
+        "id": "lesson_leading_system_improvement",
+        "title": "Leading System Improvement"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_advanced_risk_management",
+    "title": "Advanced Risk Management",
+    "description": "This module equips specialist DFV practitioners with advanced skills in assessing, monitoring, and responding to high-risk and rapidly changing domestic and family violence situations. It focuses on lethality assessment, multi-agency risk panels, and dynamic risk monitoring.",
+    "type": "module",
+    "level": "advanced",
+    "tags": [
+      "dfv",
+      "risk assessment",
+      "high risk",
+      "lethality",
+      "multiagency",
+      "specialist practice"
+    ],
+    "outcomes": [
+      "Conduct advanced lethality assessments using specialist frameworks",
+      "Participate effectively in multi-agency risk panels and high-risk teams",
+      "Monitor and respond to dynamic and rapidly changing DFV risk"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_lethality_assessment",
+        "title": "Lethality Assessment"
+      },
+      {
+        "id": "lesson_multiagency_risk_panels",
+        "title": "Multi-Agency Risk Panels"
+      },
+      {
+        "id": "lesson_monitoring_dynamic_risk",
+        "title": "Monitoring Dynamic Risk"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_assessment_and_response",
+    "title": "Assessment and Response",
+    "description": "This module builds practitioner capability in conducting safe, structured, and trauma‑informed DFV assessments. It covers initial screening, risk identification, and collaborative safety planning with clients.",
+    "type": "module",
+    "level": "practitioner",
+    "tags": [
+      "dfv",
+      "assessment",
+      "risk identification",
+      "safety planning",
+      "practitioner training"
+    ],
+    "outcomes": [
+      "Conduct safe and effective DFV screening and assessment",
+      "Identify key DFV risk indicators and patterns",
+      "Develop collaborative and practical safety plans with clients"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_initial_assessment",
+        "title": "Initial Assessment"
+      },
+      {
+        "id": "lesson_risk_identification",
+        "title": "Risk Identification"
+      },
+      {
+        "id": "lesson_safety_planning",
+        "title": "Safety Planning"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_boundaries_and_safety",
+    "title": "Boundaries and Safety",
+    "description": "This module supports peer mentors to maintain strong personal and professional boundaries while providing safe, ethical, and sustainable peer support. It covers boundary-setting, self-care, and the use of supervision to prevent burnout and vicarious trauma.",
+    "type": "module",
+    "level": "intermediate",
+    "tags": [
+      "dfv",
+      "peer support",
+      "boundaries",
+      "self-care",
+      "supervision",
+      "safety"
+    ],
+    "outcomes": [
+      "Maintain clear and consistent boundaries in peer support relationships",
+      "Use self-care strategies to manage emotional load and prevent burnout",
+      "Engage in supervision and support structures to ensure safe practice"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_maintaining_boundaries",
+        "title": "Maintaining Boundaries"
+      },
+      {
+        "id": "lesson_self_care_for_peers",
+        "title": "Self-Care for Peers"
+      },
+      {
+        "id": "lesson_supervision_and_support",
+        "title": "Supervision and Support"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_building_respectful_communities",
+    "title": "Building Respectful Communities",
+    "description": "This module supports communities to build cultures of respect, equality, and safety. It focuses on positive social norms, community leadership, and everyday actions that prevent violence.",
+    "type": "module",
+    "level": "prevention",
+    "tags": [
+      "dfv",
+      "respect",
+      "community culture",
+      "prevention",
+      "social norms"
+    ],
+    "outcomes": [
+      "Promote respect and equality in community settings",
+      "Identify positive norms that prevent violence",
+      "Engage community members in everyday prevention actions"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_positive_social_norms",
+        "title": "Positive Social Norms"
+      },
+      {
+        "id": "lesson_community_leadership_for_respect",
+        "title": "Community Leadership for Respect"
+      },
+      {
+        "id": "lesson_everyday_prevention_actions",
+        "title": "Everyday Prevention Actions"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_bystander_action_and_community_safety",
+    "title": "Bystander Action and Community Safety",
+    "description": "This module equips community members with the skills to take safe, ethical, and effective bystander action when they witness or suspect DFV. It focuses on recognising warning signs, choosing safe intervention options, and promoting community responsibility.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "bystander action",
+      "community safety",
+      "prevention",
+      "public intervention"
+    ],
+    "outcomes": [
+      "Recognise signs that someone may be experiencing or using DFV",
+      "Choose safe and appropriate bystander actions",
+      "Promote community responsibility for preventing DFV"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_recognising_warning_signs",
+        "title": "Recognising Warning Signs"
+      },
+      {
+        "id": "lesson_safe_bystander_actions",
+        "title": "Safe Bystander Actions"
+      },
+      {
+        "id": "lesson_building_safe_communities",
+        "title": "Building Safe Communities"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_case_review_and_reflective_practice",
+    "title": "Case Review and Reflective Practice",
+    "description": "This module supports specialist DFV practitioners to engage in structured case review, reflective practice, and continuous improvement. It focuses on analysing complex cases, identifying learning themes, and strengthening professional judgement through reflective frameworks.",
+    "type": "module",
+    "level": "advanced",
+    "tags": [
+      "dfv",
+      "reflective practice",
+      "case review",
+      "professional development",
+      "specialist practice"
+    ],
+    "outcomes": [
+      "Use structured case review processes to analyse complex DFV cases",
+      "Apply reflective practice frameworks to strengthen professional judgement",
+      "Identify learning themes and integrate them into ongoing practice improvement"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_structured_case_review",
+        "title": "Structured Case Review"
+      },
+      {
+        "id": "lesson_reflective_practice_frameworks",
+        "title": "Reflective Practice Frameworks"
+      },
+      {
+        "id": "lesson_continuous_improvement",
+        "title": "Continuous Improvement"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_challenging_gender_inequality_and_harmful_norms",
+    "title": "Challenging Gender Inequality and Harmful Norms",
+    "description": "This module explores how gender inequality and harmful social norms drive domestic and family violence. It supports learners to identify, challenge, and shift attitudes, beliefs, and structures that enable violence.",
+    "type": "module",
+    "level": "prevention",
+    "tags": [
+      "dfv",
+      "gender inequality",
+      "social norms",
+      "prevention",
+      "attitudes and beliefs"
+    ],
+    "outcomes": [
+      "Understand how gender inequality drives DFV",
+      "Recognise harmful norms and stereotypes",
+      "Apply strategies to challenge and shift harmful norms"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_understanding_gender_inequality",
+        "title": "Understanding Gender Inequality"
+      },
+      {
+        "id": "lesson_harmful_norms_and_stereotypes",
+        "title": "Harmful Norms and Stereotypes"
+      },
+      {
+        "id": "lesson_shifting_attitudes_and_beliefs",
+        "title": "Shifting Attitudes and Beliefs"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_child_centred_and_family_focused_practice",
+    "title": "Child-Centred and Family-Focused Practice",
+    "description": "This module supports practitioners to place children at the centre of DFV responses while working with the whole family system. It focuses on balancing safety, accountability, and relational healing.",
+    "type": "module",
+    "level": "children_young_people",
+    "tags": [
+      "dfv",
+      "child-centred",
+      "family-focused",
+      "safety",
+      "practice"
+    ],
+    "outcomes": [
+      "Apply child-centred principles in DFV practice",
+      "Work with families while maintaining safety and accountability",
+      "Support relational healing and stability"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_child_centred_principles",
+        "title": "Child-Centred Principles"
+      },
+      {
+        "id": "lesson_working_with_family_systems",
+        "title": "Working with Family Systems"
+      },
+      {
+        "id": "lesson_supporting_relational_healing",
+        "title": "Supporting Relational Healing"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_child_healing",
+    "title": "Supporting Child Healing",
+    "description": "This module helps parents understand how domestic and family violence affects children emotionally, behaviourally, and developmentally. It provides practical, age‑appropriate strategies to support children’s healing, resilience, and sense of safety.",
+    "type": "module",
+    "level": "foundational",
+    "tags": [
+      "dfv",
+      "child wellbeing",
+      "trauma",
+      "healing",
+      "parenting"
+    ],
+    "outcomes": [
+      "Understand how DFV impacts children at different developmental stages",
+      "Provide age‑appropriate emotional support to children recovering from DFV",
+      "Strengthen children’s resilience and sense of safety"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_understanding_child_trauma",
+        "title": "Understanding Child Trauma"
+      },
+      {
+        "id": "lesson_age_appropriate_support",
+        "title": "Age‑Appropriate Support"
+      },
+      {
+        "id": "lesson_building_resilience_in_children",
+        "title": "Building Resilience in Children"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_client_engagement",
+    "title": "Trauma‑Informed Client Engagement",
+    "description": "This module strengthens practitioner capability in engaging clients using trauma‑informed, strengths‑based, and culturally safe approaches. It focuses on building trust, working with resistance, and supporting clients who may be overwhelmed, fearful, or ambivalent.",
+    "type": "module",
+    "level": "practitioner",
+    "tags": [
+      "dfv",
+      "trauma-informed practice",
+      "client engagement",
+      "strengths-based",
+      "practitioner training"
+    ],
+    "outcomes": [
+      "Engage clients using trauma‑informed principles",
+      "Recognise and respond safely to resistance and ambivalence",
+      "Use strengths‑based approaches to support client empowerment"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_trauma_informed_engagement",
+        "title": "Trauma‑Informed Engagement"
+      },
+      {
+        "id": "lesson_working_with_resistance",
+        "title": "Working With Resistance"
+      },
+      {
+        "id": "lesson_strengths_based_practice",
+        "title": "Strengths‑Based Practice"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_collaboration_and_referral",
+    "title": "Collaboration and Referral Pathways",
+    "description": "This module builds practitioner capability in multi‑agency collaboration, referral processes, and effective documentation. It supports practitioners to work safely and efficiently within complex service systems while ensuring continuity of care for clients experiencing DFV.",
+    "type": "module",
+    "level": "practitioner",
+    "tags": [
+      "dfv",
+      "collaboration",
+      "referral pathways",
+      "multiagency work",
+      "case management"
+    ],
+    "outcomes": [
+      "Collaborate effectively with partner agencies and service systems",
+      "Use clear and accurate documentation to support client safety",
+      "Navigate referral pathways to connect clients with appropriate supports"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_multiagency_work",
+        "title": "Multi‑Agency Work"
+      },
+      {
+        "id": "lesson_referral_pathways",
+        "title": "Referral Pathways"
+      },
+      {
+        "id": "lesson_documentation_and_case_notes",
+        "title": "Documentation and Case Notes"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_community_accountability_and_collective_action",
+    "title": "Community Accountability and Collective Action",
+    "description": "This module supports communities to take collective responsibility for preventing DFV and promoting safety. It focuses on shared accountability, community norms, and coordinated action to challenge violence and support survivors.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "community accountability",
+      "collective action",
+      "prevention",
+      "community norms"
+    ],
+    "outcomes": [
+      "Understand the role of community accountability in preventing DFV",
+      "Promote community norms that challenge violence and support safety",
+      "Coordinate collective action to strengthen community responses"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_shared_accountability",
+        "title": "Shared Accountability"
+      },
+      {
+        "id": "lesson_shifting_community_norms",
+        "title": "Shifting Community Norms"
+      },
+      {
+        "id": "lesson_coordinated_collective_action",
+        "title": "Coordinated Collective Action"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_community_advocacy_and_awareness",
+    "title": "Community Advocacy and Awareness",
+    "description": "This module supports community members, volunteers, and local leaders to advocate for DFV awareness and prevention. It focuses on community campaigns, local partnerships, and amplifying survivor voices safely and ethically.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "community advocacy",
+      "awareness campaigns",
+      "prevention",
+      "community leadership"
+    ],
+    "outcomes": [
+      "Participate in or lead community DFV awareness activities",
+      "Build partnerships that strengthen local DFV prevention efforts",
+      "Amplify survivor voices safely, ethically, and without harm"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_community_campaigns",
+        "title": "Community Campaigns"
+      },
+      {
+        "id": "lesson_local_partnerships",
+        "title": "Local Partnerships"
+      },
+      {
+        "id": "lesson_ethical_storytelling",
+        "title": "Ethical Storytelling"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_community_crisis_response_and_safety_planning",
+    "title": "Community Crisis Response and Safety Planning",
+    "description": "This module equips community members and local groups to respond safely and effectively during DFV-related crises. It focuses on recognising immediate danger, supporting safety planning, and knowing when and how to escalate concerns.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "crisis response",
+      "safety planning",
+      "community safety",
+      "emergency response"
+    ],
+    "outcomes": [
+      "Recognise signs of immediate danger or escalating DFV risk",
+      "Support basic safety planning in community contexts",
+      "Know when and how to escalate concerns to services or authorities"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_recognising_crisis_situations",
+        "title": "Recognising Crisis Situations"
+      },
+      {
+        "id": "lesson_supporting_safety_planning",
+        "title": "Supporting Safety Planning"
+      },
+      {
+        "id": "lesson_escalation_and_emergency_response",
+        "title": "Escalation and Emergency Response"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_community_education_and_prevention_campaigns",
+    "title": "Community Education and Prevention Campaigns",
+    "description": "This module supports communities to design, deliver, and evaluate DFV prevention and awareness campaigns. It focuses on messaging, engagement strategies, and ensuring campaigns are safe, ethical, and culturally appropriate.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "community education",
+      "prevention campaigns",
+      "awareness",
+      "public engagement"
+    ],
+    "outcomes": [
+      "Design community education activities that promote DFV awareness",
+      "Develop safe and ethical prevention messaging",
+      "Engage diverse community groups in prevention efforts"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_designing_prevention_campaigns",
+        "title": "Designing Prevention Campaigns"
+      },
+      {
+        "id": "lesson_safe_and_ethical_messaging",
+        "title": "Safe and Ethical Messaging"
+      },
+      {
+        "id": "lesson_engaging_community_groups",
+        "title": "Engaging Community Groups"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_community_healing_and_collective_recovery",
+    "title": "Community Healing and Collective Recovery",
+    "description": "This module supports communities to understand and participate in collective healing after domestic and family violence. It focuses on trauma-aware community practices, rebuilding trust, and creating environments that support long-term recovery and resilience.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "community healing",
+      "collective recovery",
+      "trauma-aware",
+      "resilience"
+    ],
+    "outcomes": [
+      "Understand how communities experience and recover from collective trauma",
+      "Participate in trauma-aware community healing practices",
+      "Support environments that promote long-term recovery, resilience, and reconnection"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_understanding_collective_trauma",
+        "title": "Understanding Collective Trauma"
+      },
+      {
+        "id": "lesson_trauma_aware_community_practices",
+        "title": "Trauma-Aware Community Practices"
+      },
+      {
+        "id": "lesson_building_resilient_communities",
+        "title": "Building Resilient Communities"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_community_leadership_for_change",
+    "title": "Community Leadership for Change",
+    "description": "This module supports community leaders, volunteers, and local influencers to drive positive change in preventing domestic and family violence. It focuses on leadership behaviours, mobilising communities, and sustaining long-term prevention efforts.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "community leadership",
+      "prevention",
+      "local action",
+      "social change"
+    ],
+    "outcomes": [
+      "Understand the role of community leadership in DFV prevention",
+      "Mobilise community members to participate in safety and prevention initiatives",
+      "Sustain long-term community-led change efforts"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_leadership_for_prevention",
+        "title": "Leadership for Prevention"
+      },
+      {
+        "id": "lesson_mobilising_communities",
+        "title": "Mobilising Communities"
+      },
+      {
+        "id": "lesson_sustaining_change",
+        "title": "Sustaining Change"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_community_led_prevention_strategies",
+    "title": "Community-Led Prevention Strategies",
+    "description": "This module supports communities to design and lead their own DFV prevention strategies. It focuses on grassroots leadership, community strengths, and localised approaches that reflect cultural, social, and environmental contexts.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "community-led",
+      "prevention",
+      "grassroots leadership",
+      "local action"
+    ],
+    "outcomes": [
+      "Understand the value of community-led DFV prevention",
+      "Identify strengths and resources within local communities",
+      "Develop and implement community-driven prevention strategies"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_community_strengths_and_assets",
+        "title": "Community Strengths and Assets"
+      },
+      {
+        "id": "lesson_designing_local_prevention_strategies",
+        "title": "Designing Local Prevention Strategies"
+      },
+      {
+        "id": "lesson_implementing_and_evaluating_strategies",
+        "title": "Implementing and Evaluating Strategies"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_community_partnerships_and_local_action",
+    "title": "Community Partnerships and Local Action",
+    "description": "This module supports communities to build partnerships and coordinate local action to prevent domestic and family violence. It focuses on collaboration between community groups, services, and local leaders to create safer, more connected environments.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "community partnerships",
+      "local action",
+      "collaboration",
+      "prevention"
+    ],
+    "outcomes": [
+      "Build effective partnerships between community groups, services, and local leaders",
+      "Coordinate local DFV prevention and safety initiatives",
+      "Strengthen community capacity to respond collectively to DFV"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_building_local_partnerships",
+        "title": "Building Local Partnerships"
+      },
+      {
+        "id": "lesson_coordinating_local_initiatives",
+        "title": "Coordinating Local Initiatives"
+      },
+      {
+        "id": "lesson_strengthening_community_capacity",
+        "title": "Strengthening Community Capacity"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_complex_casework",
+    "title": "Complex Casework",
+    "description": "This module prepares practitioners to work with high‑risk, multi‑layered, and complex DFV cases. It covers advanced risk factors, trauma complexity, and navigating challenging family dynamics while maintaining safety, clarity, and professional boundaries.",
+    "type": "module",
+    "level": "practitioner",
+    "tags": [
+      "dfv",
+      "complex casework",
+      "high risk",
+      "trauma complexity",
+      "family dynamics"
+    ],
+    "outcomes": [
+      "Identify and respond to high‑risk and complex DFV presentations",
+      "Work effectively with clients experiencing multi‑layered trauma",
+      "Navigate complex family dynamics while maintaining safety and clarity"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_working_with_high_risk_cases",
+        "title": "Working With High‑Risk Cases"
+      },
+      {
+        "id": "lesson_multi_layered_trauma",
+        "title": "Multi‑Layered Trauma"
+      },
+      {
+        "id": "lesson_complex_family_dynamics",
+        "title": "Complex Family Dynamics"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_court_support_and_legal_processes",
+    "title": "Court Support and Legal Processes",
+    "description": "This module equips specialist DFV practitioners with the knowledge and skills needed to support clients through court processes, protection order applications, and legal pathways. It focuses on preparing clients for court, understanding legal options, and ensuring safety throughout the process.",
+    "type": "module",
+    "level": "advanced",
+    "tags": [
+      "dfv",
+      "legal processes",
+      "court support",
+      "protection orders",
+      "specialist practice",
+      "justice system"
+    ],
+    "outcomes": [
+      "Support clients to understand and navigate DFV-related legal processes",
+      "Prepare clients for court in a trauma-informed and safety-focused way",
+      "Work effectively with legal services, police, and court stakeholders"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_understanding_legal_options",
+        "title": "Understanding Legal Options"
+      },
+      {
+        "id": "lesson_preparing_clients_for_court",
+        "title": "Preparing Clients for Court"
+      },
+      {
+        "id": "lesson_working_with_legal_services",
+        "title": "Working With Legal Services"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_cultural_safety_in_community_responses",
+    "title": "Cultural Safety in Community Responses",
+    "description": "This module supports community members, volunteers, and local leaders to respond to DFV in culturally safe, respectful, and community-led ways. It focuses on understanding cultural contexts, avoiding assumptions, and building trust with diverse communities.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "cultural safety",
+      "community responses",
+      "diversity",
+      "inclusion"
+    ],
+    "outcomes": [
+      "Understand the importance of cultural safety in DFV responses",
+      "Recognise how cultural context shapes experiences of DFV and help-seeking",
+      "Engage respectfully and safely with diverse communities"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_understanding_cultural_contexts",
+        "title": "Understanding Cultural Contexts"
+      },
+      {
+        "id": "lesson_avoiding_assumptions",
+        "title": "Avoiding Assumptions"
+      },
+      {
+        "id": "lesson_building_trust_with_communities",
+        "title": "Building Trust with Communities"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_designing_and_evaluating_prevention_initiatives",
+    "title": "Designing and Evaluating Prevention Initiatives",
+    "description": "This module supports learners to design, implement, and evaluate primary prevention initiatives. It focuses on evidence-informed planning, monitoring, and continuous improvement.",
+    "type": "module",
+    "level": "prevention",
+    "tags": [
+      "dfv",
+      "prevention initiatives",
+      "evaluation",
+      "program design",
+      "evidence-informed practice"
+    ],
+    "outcomes": [
+      "Design evidence-informed prevention initiatives",
+      "Monitor and evaluate prevention activities",
+      "Use data and feedback to improve prevention outcomes"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_designing_prevention_programs",
+        "title": "Designing Prevention Programs"
+      },
+      {
+        "id": "lesson_monitoring_and_evaluation",
+        "title": "Monitoring and Evaluation"
+      },
+      {
+        "id": "lesson_continuous_improvement",
+        "title": "Continuous Improvement"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_dfv_and_health_impacts",
+    "title": "DFV and Health Impacts",
+    "description": "This module provides an overview of the physical, psychological, reproductive, and long-term health impacts of domestic and family violence. It supports health and community workers to recognise DFV-related health presentations.",
+    "type": "module",
+    "level": "health_wellbeing",
+    "tags": [
+      "dfv",
+      "health impacts",
+      "trauma",
+      "injury",
+      "wellbeing"
+    ],
+    "outcomes": [
+      "Recognise the health impacts of DFV across multiple domains",
+      "Identify DFV-related health presentations",
+      "Understand long-term health consequences of trauma and violence"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_physical_health_impacts",
+        "title": "Physical Health Impacts"
+      },
+      {
+        "id": "lesson_psychological_and_emotional_impacts",
+        "title": "Psychological and Emotional Impacts"
+      },
+      {
+        "id": "lesson_long_term_health_consequences",
+        "title": "Long-Term Health Consequences"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_dfv_housing_instability_and_homelessness",
+    "title": "DFV, Housing Instability, and Homelessness",
+    "description": "This module explores the relationship between domestic and family violence, housing instability, and homelessness. It supports practitioners to recognise risk factors, barriers to safe housing, and pathways to stability.",
+    "type": "module",
+    "level": "housing_economic_security",
+    "tags": [
+      "dfv",
+      "housing",
+      "homelessness",
+      "safety",
+      "crisis support"
+    ],
+    "outcomes": [
+      "Understand how DFV contributes to housing instability and homelessness",
+      "Recognise barriers to accessing safe housing",
+      "Identify pathways to safety and stability for victim-survivors"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_dfv_and_housing_risks",
+        "title": "DFV and Housing Risks"
+      },
+      {
+        "id": "lesson_barriers_to_safe_housing",
+        "title": "Barriers to Safe Housing"
+      },
+      {
+        "id": "lesson_pathways_to_stability",
+        "title": "Pathways to Stability"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_dfv_in_health_settings",
+    "title": "DFV in Health Settings",
+    "description": "This module supports health professionals to recognise DFV indicators, respond safely, and integrate DFV awareness into routine health practice. It focuses on screening, disclosure, and safe documentation.",
+    "type": "module",
+    "level": "health_wellbeing",
+    "tags": [
+      "dfv",
+      "health settings",
+      "screening",
+      "disclosure",
+      "documentation"
+    ],
+    "outcomes": [
+      "Recognise DFV indicators in health presentations",
+      "Respond safely to disclosures in clinical settings",
+      "Use safe documentation and referral pathways"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_recognising_indicators",
+        "title": "Recognising Indicators"
+      },
+      {
+        "id": "lesson_safe_clinical_responses",
+        "title": "Safe Clinical Responses"
+      },
+      {
+        "id": "lesson_documentation_and_referral",
+        "title": "Documentation and Referral"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_digital_safety_and_online_communities",
+    "title": "Digital Safety and Online Communities",
+    "description": "This module supports communities to understand digital safety risks related to DFV, including online abuse, tech-facilitated coercion, and unsafe digital behaviours. It focuses on building safer online communities, recognising digital red flags, and supporting people experiencing digital forms of abuse.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "digital safety",
+      "online abuse",
+      "technology-facilitated coercion",
+      "community safety"
+    ],
+    "outcomes": [
+      "Recognise digital risks and online behaviours associated with DFV",
+      "Support safer online practices within communities",
+      "Identify and respond to tech-facilitated abuse in safe and appropriate ways"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_recognising_digital_red_flags",
+        "title": "Recognising Digital Red Flags"
+      },
+      {
+        "id": "lesson_safer_online_practices",
+        "title": "Safer Online Practices"
+      },
+      {
+        "id": "lesson_responding_to_tech_facilitated_abuse",
+        "title": "Responding to Tech-Facilitated Abuse"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_economic_abuse_and_financial_security",
+    "title": "Economic Abuse and Financial Security",
+    "description": "This module explores economic abuse as a form of DFV and supports practitioners to recognise financial control, exploitation, and deprivation. It focuses on supporting financial safety, independence, and recovery.",
+    "type": "module",
+    "level": "housing_economic_security",
+    "tags": [
+      "dfv",
+      "economic abuse",
+      "financial security",
+      "independence",
+      "safety"
+    ],
+    "outcomes": [
+      "Recognise economic abuse and financial control tactics",
+      "Support financial safety and independence",
+      "Connect clients to financial counselling and economic resources"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_understanding_economic_abuse",
+        "title": "Understanding Economic Abuse"
+      },
+      {
+        "id": "lesson_supporting_financial_safety",
+        "title": "Supporting Financial Safety"
+      },
+      {
+        "id": "lesson_pathways_to_financial_independence",
+        "title": "Pathways to Financial Independence"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_emotional_regulation",
+    "title": "Emotional Regulation",
+    "level": "general",
+    "lessons": []
+  },
+  {
+    "id": "module_engaging_young_people_in_prevention",
+    "title": "Engaging Young People in Prevention and Respectful Relationships",
+    "description": "This module supports practitioners and educators to engage young people in DFV prevention, respectful relationships education, and peer-led initiatives. It focuses on empowerment, communication, and challenging harmful norms.",
+    "type": "module",
+    "level": "children_young_people",
+    "tags": [
+      "dfv",
+      "youth",
+      "prevention",
+      "respectful relationships",
+      "education"
+    ],
+    "outcomes": [
+      "Engage young people in DFV prevention and respectful relationships education",
+      "Challenge harmful norms and promote equality",
+      "Support youth-led initiatives and leadership"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_youth_engagement_strategies",
+        "title": "Youth Engagement Strategies"
+      },
+      {
+        "id": "lesson_challenging_harmful_norms",
+        "title": "Challenging Harmful Norms"
+      },
+      {
+        "id": "lesson_youth_led_initiatives",
+        "title": "Youth-Led Initiatives"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_faith_communities_and_dfv_prevention",
+    "title": "Faith Communities and DFV Prevention",
+    "description": "This module supports faith leaders and community members to understand and respond to DFV in ways that are safe, ethical, and aligned with trauma-informed practice. It focuses on recognising harmful interpretations, supporting survivors, and building safe faith environments.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "faith communities",
+      "prevention",
+      "community safety",
+      "ethical leadership"
+    ],
+    "outcomes": [
+      "Recognise how DFV can be hidden or minimised within faith contexts",
+      "Respond safely and ethically to disclosures within faith communities",
+      "Promote faith environments that support safety, dignity, and equality"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_dfv_in_faith_contexts",
+        "title": "DFV in Faith Contexts"
+      },
+      {
+        "id": "lesson_safe_and_ethical_responses",
+        "title": "Safe and Ethical Responses"
+      },
+      {
+        "id": "lesson_building_safe_faith_environments",
+        "title": "Building Safe Faith Environments"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_foundations_of_dfv_capability",
+    "title": "Foundations of DFV Capability",
+    "description": "This module introduces the core knowledge, skills, and values required for safe and effective domestic and family violence practice. It establishes the foundational capabilities that underpin all roles across the DFV workforce.",
+    "type": "module",
+    "level": "workforce_capability",
+    "tags": [
+      "dfv",
+      "workforce capability",
+      "core skills",
+      "professional practice",
+      "foundations"
+    ],
+    "outcomes": [
+      "Understand the core capabilities required for DFV practice",
+      "Recognise the values and principles that underpin safe and ethical work",
+      "Identify the knowledge and skills needed across different workforce roles"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_core_capabilities",
+        "title": "Core Capabilities"
+      },
+      {
+        "id": "lesson_values_and_principles",
+        "title": "Values and Principles"
+      },
+      {
+        "id": "lesson_workforce_roles_and_skills",
+        "title": "Workforce Roles and Skills"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_health_led_prevention_and_early_intervention",
+    "title": "Health-Led Prevention and Early Intervention",
+    "description": "This module supports health services to play a proactive role in DFV prevention and early intervention. It focuses on universal education, early identification, and health-led community partnerships.",
+    "type": "module",
+    "level": "health_wellbeing",
+    "tags": [
+      "dfv",
+      "prevention",
+      "early intervention",
+      "health promotion",
+      "community partnerships"
+    ],
+    "outcomes": [
+      "Understand the role of health services in DFV prevention",
+      "Identify early warning signs and intervene safely",
+      "Use health-led strategies to promote safety and wellbeing"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_universal_education",
+        "title": "Universal Education"
+      },
+      {
+        "id": "lesson_early_identification",
+        "title": "Early Identification"
+      },
+      {
+        "id": "lesson_health_led_strategies",
+        "title": "Health-Led Strategies"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_leading_safe_practice",
+    "title": "Leading Safe Practice",
+    "description": "This module supports leaders to create and maintain safe, ethical, and trauma-informed practice environments within DFV services. It focuses on leadership responsibilities, modelling safe practice, and building cultures that prioritise safety and wellbeing.",
+    "type": "module",
+    "level": "leadership",
+    "tags": [
+      "dfv",
+      "leadership",
+      "safe practice",
+      "organisational culture",
+      "trauma-informed"
+    ],
+    "outcomes": [
+      "Understand leadership responsibilities in maintaining safe DFV practice",
+      "Model trauma-informed and ethical behaviour across teams",
+      "Build organisational cultures that prioritise safety, wellbeing, and accountability"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_leadership_responsibilities",
+        "title": "Leadership Responsibilities"
+      },
+      {
+        "id": "lesson_modelling_safe_practice",
+        "title": "Modelling Safe Practice"
+      },
+      {
+        "id": "lesson_building_safe_cultures",
+        "title": "Building Safe Cultures"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_legal_advocacy_and_supporting_clients",
+    "title": "Legal Advocacy and Supporting Clients Through the System",
+    "description": "This module supports practitioners to provide safe, ethical, and empowering legal advocacy for clients navigating DFV legal systems. It focuses on rights, informed decision-making, and trauma-informed support.",
+    "type": "module",
+    "level": "justice_legal",
+    "tags": [
+      "dfv",
+      "legal advocacy",
+      "client support",
+      "justice system",
+      "rights"
+    ],
+    "outcomes": [
+      "Provide safe and ethical legal advocacy",
+      "Support clients to understand their rights and options",
+      "Use trauma-informed approaches in legal contexts"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_advocacy_principles",
+        "title": "Advocacy Principles"
+      },
+      {
+        "id": "lesson_supporting_informed_decision_making",
+        "title": "Supporting Informed Decision-Making"
+      },
+      {
+        "id": "lesson_trauma_informed_legal_support",
+        "title": "Trauma-Informed Legal Support"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_legal_systems_and_dfv",
+    "title": "Legal Systems and DFV",
+    "description": "This module provides an overview of how legal systems respond to domestic and family violence. It covers protection orders, criminal processes, child protection intersections, and the role of courts in promoting safety.",
+    "type": "module",
+    "level": "systems",
+    "tags": [
+      "dfv",
+      "legal systems",
+      "courts",
+      "protection orders",
+      "justice responses"
+    ],
+    "outcomes": [
+      "Understand key legal responses to DFV",
+      "Recognise how protection orders and criminal processes operate",
+      "Identify intersections between DFV, child protection, and the justice system"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_legal_responses_to_dfv",
+        "title": "Legal Responses to DFV"
+      },
+      {
+        "id": "lesson_protection_orders_and_courts",
+        "title": "Protection Orders and Courts"
+      },
+      {
+        "id": "lesson_justice_system_intersections",
+        "title": "Justice System Intersections"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_long_term_recovery_stability_and_economic_empowerment",
+    "title": "Long-Term Recovery, Stability, and Economic Empowerment",
+    "description": "This module supports practitioners to help clients rebuild long-term stability after DFV. It focuses on economic empowerment, employment pathways, long-term housing, and sustainable recovery.",
+    "type": "module",
+    "level": "housing_economic_security",
+    "tags": [
+      "dfv",
+      "economic empowerment",
+      "long-term recovery",
+      "housing stability",
+      "employment"
+    ],
+    "outcomes": [
+      "Support long-term housing stability for victim-survivors",
+      "Promote economic empowerment and employment pathways",
+      "Strengthen long-term recovery and independence"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_long_term_housing_stability",
+        "title": "Long-Term Housing Stability"
+      },
+      {
+        "id": "lesson_economic_empowerment_strategies",
+        "title": "Economic Empowerment Strategies"
+      },
+      {
+        "id": "lesson_sustainable_recovery",
+        "title": "Sustainable Recovery"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_managing_complex_teams",
+    "title": "Managing Complex Teams",
+    "description": "This module supports DFV leaders to manage multidisciplinary, high‑pressure teams working in emotionally demanding environments. It focuses on communication, conflict resolution, psychological safety, and leading teams through complexity and change.",
+    "type": "module",
+    "level": "leadership",
+    "tags": [
+      "dfv",
+      "leadership",
+      "team management",
+      "psychological safety",
+      "conflict resolution",
+      "organisational leadership"
+    ],
+    "outcomes": [
+      "Lead multidisciplinary teams effectively in high‑stress DFV environments",
+      "Build psychological safety and support team wellbeing",
+      "Manage conflict, communication challenges, and complex team dynamics"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_leading_multidisciplinary_teams",
+        "title": "Leading Multidisciplinary Teams"
+      },
+      {
+        "id": "lesson_psychological_safety",
+        "title": "Psychological Safety"
+      },
+      {
+        "id": "lesson_managing_conflict_and_complexity",
+        "title": "Managing Conflict and Complexity"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_mental_health_trauma_and_recovery",
+    "title": "Mental Health, Trauma, and Recovery",
+    "description": "This module explores the mental health impacts of DFV, including trauma responses, coping strategies, and pathways to recovery. It supports practitioners to respond safely and promote healing.",
+    "type": "module",
+    "level": "health_wellbeing",
+    "tags": [
+      "dfv",
+      "mental health",
+      "trauma",
+      "recovery",
+      "healing"
+    ],
+    "outcomes": [
+      "Understand trauma responses related to DFV",
+      "Recognise mental health impacts and coping strategies",
+      "Support recovery through safe, trauma-informed practice"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_understanding_trauma_responses",
+        "title": "Understanding Trauma Responses"
+      },
+      {
+        "id": "lesson_mental_health_impacts",
+        "title": "Mental Health Impacts"
+      },
+      {
+        "id": "lesson_supporting_recovery",
+        "title": "Supporting Recovery"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_multi_agency_collaboration_and_information_sharing",
+    "title": "Multi-Agency Collaboration and Information Sharing",
+    "description": "This module supports practitioners and system partners to collaborate effectively across agencies. It focuses on safe information sharing, coordinated responses, and building shared understanding to improve safety outcomes.",
+    "type": "module",
+    "level": "systems",
+    "tags": [
+      "dfv",
+      "multi-agency collaboration",
+      "information sharing",
+      "coordination",
+      "systems"
+    ],
+    "outcomes": [
+      "Understand the purpose and value of multi-agency collaboration",
+      "Apply safe and lawful information-sharing principles",
+      "Participate effectively in coordinated DFV responses"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_collaboration_principles",
+        "title": "Collaboration Principles"
+      },
+      {
+        "id": "lesson_safe_information_sharing",
+        "title": "Safe Information Sharing"
+      },
+      {
+        "id": "lesson_coordinated_responses",
+        "title": "Coordinated Responses"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_organisational_change_and_improvement",
+    "title": "Organisational Change and Improvement",
+    "description": "This module supports DFV leaders to drive organisational change, embed trauma-informed practice, and lead continuous improvement. It focuses on change leadership, quality systems, and building structures that support safe, ethical, and sustainable DFV service delivery.",
+    "type": "module",
+    "level": "leadership",
+    "tags": [
+      "dfv",
+      "leadership",
+      "organisational change",
+      "continuous improvement",
+      "quality systems",
+      "trauma-informed"
+    ],
+    "outcomes": [
+      "Lead organisational change processes that strengthen DFV practice",
+      "Embed trauma-informed and ethical frameworks across teams and systems",
+      "Use quality improvement systems to drive sustainable organisational growth"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_change_leadership",
+        "title": "Change Leadership"
+      },
+      {
+        "id": "lesson_embedding_trauma_informed_practice",
+        "title": "Embedding Trauma-Informed Practice"
+      },
+      {
+        "id": "lesson_quality_and_improvement_systems",
+        "title": "Quality and Improvement Systems"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_parent_safety",
+    "title": "Parent Safety and Stability",
+    "description": "This module supports parents experiencing domestic and family violence to build safety, stability, and confidence. It focuses on recognising risk, creating safe routines, and developing practical strategies to protect both the parent and their children.",
+    "type": "module",
+    "level": "foundational",
+    "tags": [
+      "dfv",
+      "parenting",
+      "safety",
+      "stability",
+      "child wellbeing"
+    ],
+    "outcomes": [
+      "Recognise DFV risk factors that impact parents and children",
+      "Develop personalised safety strategies for the home and daily routines",
+      "Increase parental confidence in responding to unsafe situations"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_recognising_risk_as_a_parent",
+        "title": "Recognising Risk as a Parent"
+      },
+      {
+        "id": "lesson_safety_planning_with_children",
+        "title": "Safety Planning With Children"
+      },
+      {
+        "id": "lesson_building_safe_routines",
+        "title": "Building Safe Routines"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_parenting_under_stress",
+    "title": "Parenting Under DFV Stress",
+    "description": "This module supports parents who are navigating the challenges of parenting while experiencing domestic and family violence. It focuses on managing parental stress, supporting children’s emotional needs, and maintaining connection during instability.",
+    "type": "module",
+    "level": "foundational",
+    "tags": [
+      "dfv",
+      "parenting",
+      "stress",
+      "child wellbeing",
+      "emotional support"
+    ],
+    "outcomes": [
+      "Understand how DFV impacts parental stress and capacity",
+      "Support children’s emotional needs during instability",
+      "Maintain parent–child connection even in high‑stress environments"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_managing_parental_stress",
+        "title": "Managing Parental Stress"
+      },
+      {
+        "id": "lesson_supporting_children_emotionally",
+        "title": "Supporting Children Emotionally"
+      },
+      {
+        "id": "lesson_maintaining_parent_child_connection",
+        "title": "Maintaining Parent–Child Connection"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_peer_role_foundations",
+    "title": "Peer Mentor Role Foundations",
+    "description": "This module introduces the core principles of lived‑experience peer mentoring in the DFV context. It supports peer mentors to understand their role, use lived experience safely, and maintain clear scope and boundaries.",
+    "type": "module",
+    "level": "intermediate",
+    "tags": [
+      "dfv",
+      "peer support",
+      "lived experience",
+      "boundaries",
+      "ethical practice"
+    ],
+    "outcomes": [
+      "Understand the purpose and responsibilities of the peer mentor role",
+      "Use lived experience safely, ethically, and without retraumatisation",
+      "Recognise the scope and limitations of peer support in DFV contexts"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_what_is_peer_support",
+        "title": "What Is Peer Support"
+      },
+      {
+        "id": "lesson_using_lived_experience_safely",
+        "title": "Using Lived Experience Safely"
+      },
+      {
+        "id": "lesson_scope_and_limitations",
+        "title": "Scope and Limitations"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_practitioner_foundations",
+    "title": "Practitioner Foundations",
+    "description": "This module provides the essential foundations for domestic and family violence practitioners. It covers core frameworks, ethical practice, and professional responsibilities required for safe and effective DFV work.",
+    "type": "module",
+    "level": "practitioner",
+    "tags": [
+      "dfv",
+      "practitioner training",
+      "foundations",
+      "ethical practice",
+      "professional responsibilities"
+    ],
+    "outcomes": [
+      "Understand the core frameworks that guide DFV practice",
+      "Apply ethical and professional standards in DFV work",
+      "Recognise the responsibilities and boundaries of the practitioner role"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_dfv_frameworks",
+        "title": "DFV Frameworks"
+      },
+      {
+        "id": "lesson_ethical_practice",
+        "title": "Ethical Practice"
+      },
+      {
+        "id": "lesson_professional_responsibilities",
+        "title": "Professional Responsibilities"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_prevention_in_schools_workplaces_and_community_settings",
+    "title": "Prevention in Schools, Workplaces, and Community Settings",
+    "description": "This module supports organisations to embed primary prevention in schools, workplaces, and community environments. It focuses on structured programs, policy alignment, and safe implementation.",
+    "type": "module",
+    "level": "prevention",
+    "tags": [
+      "dfv",
+      "prevention",
+      "schools",
+      "workplaces",
+      "community settings"
+    ],
+    "outcomes": [
+      "Understand how prevention can be embedded in different settings",
+      "Implement structured prevention programs safely",
+      "Align organisational policies with prevention goals"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_prevention_in_schools",
+        "title": "Prevention in Schools"
+      },
+      {
+        "id": "lesson_prevention_in_workplaces",
+        "title": "Prevention in Workplaces"
+      },
+      {
+        "id": "lesson_prevention_in_community_settings",
+        "title": "Prevention in Community Settings"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_professional_boundaries_ethics_and_self_care",
+    "title": "Professional Boundaries, Ethics, and Self-Care",
+    "description": "This module supports practitioners to maintain ethical, safe, and sustainable DFV practice. It focuses on boundaries, confidentiality, reflective practice, and strategies to prevent burnout and vicarious trauma.",
+    "type": "module",
+    "level": "workforce_capability",
+    "tags": [
+      "dfv",
+      "professional boundaries",
+      "ethics",
+      "self-care",
+      "vicarious trauma"
+    ],
+    "outcomes": [
+      "Maintain safe and ethical professional boundaries",
+      "Recognise and manage vicarious trauma and burnout",
+      "Use reflective practice to support wellbeing and sustainability"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_ethical_and_safe_boundaries",
+        "title": "Ethical and Safe Boundaries"
+      },
+      {
+        "id": "lesson_vicarious_trauma_and_burnout",
+        "title": "Vicarious Trauma and Burnout"
+      },
+      {
+        "id": "lesson_reflective_practice_and_self_care",
+        "title": "Reflective Practice and Self-Care"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_protection_orders_and_court_processes",
+    "title": "Protection Orders and Court Processes",
+    "description": "This module explains how protection orders work, what they can include, and how court processes operate in DFV matters. It supports practitioners to guide clients safely and confidently through legal steps.",
+    "type": "module",
+    "level": "justice_legal",
+    "tags": [
+      "dfv",
+      "protection orders",
+      "courts",
+      "legal processes",
+      "safety"
+    ],
+    "outcomes": [
+      "Understand how protection orders are made and enforced",
+      "Support clients through DFV-related court processes",
+      "Recognise safety considerations in legal proceedings"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_understanding_protection_orders",
+        "title": "Understanding Protection Orders"
+      },
+      {
+        "id": "lesson_court_processes_and_procedures",
+        "title": "Court Processes and Procedures"
+      },
+      {
+        "id": "lesson_safety_in_legal_contexts",
+        "title": "Safety in Legal Contexts"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_rebuilding_family_life",
+    "title": "Rebuilding Family Life After DFV",
+    "description": "This module supports parents in rebuilding safety, stability, and connection after experiencing domestic and family violence. It focuses on restoring routines, strengthening family bonds, and planning for long‑term recovery and resilience.",
+    "type": "module",
+    "level": "foundational",
+    "tags": [
+      "dfv",
+      "parenting",
+      "recovery",
+      "family healing",
+      "stability"
+    ],
+    "outcomes": [
+      "Restore safe and predictable routines for children",
+      "Strengthen family connection and emotional security",
+      "Develop a long‑term recovery plan that supports stability and wellbeing"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_restoring_routines",
+        "title": "Restoring Routines"
+      },
+      {
+        "id": "lesson_strengthening_family_bonds",
+        "title": "Strengthening Family Bonds"
+      },
+      {
+        "id": "lesson_long_term_recovery_planning",
+        "title": "Long‑Term Recovery Planning"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_relationship_skills",
+    "title": "Relationship Skills",
+    "level": "general",
+    "lessons": []
+  },
+  {
+    "id": "module_safe_conversations",
+    "title": "Safe Conversations",
+    "description": "This module builds the core communication skills peer mentors need to support survivors safely. It focuses on active listening, holding space without judgement, and avoiding retraumatisation during peer support conversations.",
+    "type": "module",
+    "level": "intermediate",
+    "tags": [
+      "dfv",
+      "peer support",
+      "communication",
+      "trauma-informed",
+      "safe conversations"
+    ],
+    "outcomes": [
+      "Use active listening skills to support survivors effectively",
+      "Hold space in a calm, grounded, and non-judgemental way",
+      "Avoid retraumatisation and maintain emotional safety during conversations"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_active_listening",
+        "title": "Active Listening"
+      },
+      {
+        "id": "lesson_holding_space",
+        "title": "Holding Space"
+      },
+      {
+        "id": "lesson_avoiding_retraumatisation",
+        "title": "Avoiding Retraumatisation"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_safe_housing_responses_and_crisis_accommodation",
+    "title": "Safe Housing Responses and Crisis Accommodation",
+    "description": "This module supports practitioners to understand crisis accommodation options, safety considerations, and housing pathways for people experiencing DFV. It focuses on coordinated responses and trauma-informed housing support.",
+    "type": "module",
+    "level": "housing_economic_security",
+    "tags": [
+      "dfv",
+      "crisis accommodation",
+      "safe housing",
+      "trauma-informed",
+      "support"
+    ],
+    "outcomes": [
+      "Understand crisis accommodation models and pathways",
+      "Support safe and trauma-informed housing responses",
+      "Coordinate with housing and DFV services to promote safety"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_crisis_accommodation_models",
+        "title": "Crisis Accommodation Models"
+      },
+      {
+        "id": "lesson_trauma_informed_housing_support",
+        "title": "Trauma-Informed Housing Support"
+      },
+      {
+        "id": "lesson_coordinated_housing_responses",
+        "title": "Coordinated Housing Responses"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_specialist_interventions",
+    "title": "Specialist Interventions",
+    "description": "This module equips specialist DFV practitioners with advanced therapeutic and intersectional intervention skills. It focuses on specialist trauma support, working with cultural and contextual complexity, and applying intersectional practice in high‑risk DFV cases.",
+    "type": "module",
+    "level": "advanced",
+    "tags": [
+      "dfv",
+      "specialist practice",
+      "trauma",
+      "intersectionality",
+      "cultural complexity"
+    ],
+    "outcomes": [
+      "Provide specialist therapeutic support to clients experiencing complex trauma",
+      "Work effectively with cultural, linguistic, and contextual complexity in DFV cases",
+      "Apply intersectional practice to understand layered barriers and risks"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_specialist_therapeutic_support",
+        "title": "Specialist Therapeutic Support"
+      },
+      {
+        "id": "lesson_cultural_complexity",
+        "title": "Cultural Complexity"
+      },
+      {
+        "id": "lesson_intersectional_practice",
+        "title": "Intersectional Practice"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_strategic_partnerships_and_sector_leadership",
+    "title": "Strategic Partnerships and Sector Leadership",
+    "description": "This module supports DFV leaders to build strategic partnerships, influence sector-wide practice, and contribute to systemic improvement. It focuses on collaboration, cross-sector leadership, and shaping policy and practice environments that strengthen safety and wellbeing.",
+    "type": "module",
+    "level": "leadership",
+    "tags": [
+      "dfv",
+      "leadership",
+      "sector leadership",
+      "strategic partnerships",
+      "collaboration",
+      "policy influence"
+    ],
+    "outcomes": [
+      "Build and maintain strategic partnerships that strengthen DFV responses",
+      "Provide sector leadership through collaboration, influence, and advocacy",
+      "Contribute to policy, system improvement, and cross-sector coordination"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_building_strategic_partnerships",
+        "title": "Building Strategic Partnerships"
+      },
+      {
+        "id": "lesson_sector_leadership",
+        "title": "Sector Leadership"
+      },
+      {
+        "id": "lesson_policy_and_system_influence",
+        "title": "Policy and System Influence"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_supporting_childrens_safety_and_wellbeing",
+    "title": "Supporting Children’s Safety and Wellbeing",
+    "description": "This module supports practitioners to respond safely and effectively to children affected by DFV. It focuses on safety planning, emotional support, and strengthening protective relationships.",
+    "type": "module",
+    "level": "children_young_people",
+    "tags": [
+      "dfv",
+      "children",
+      "safety planning",
+      "wellbeing",
+      "support"
+    ],
+    "outcomes": [
+      "Support children’s emotional and physical safety",
+      "Use child-friendly communication and engagement strategies",
+      "Strengthen protective relationships with safe caregivers"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_child_friendly_safety_planning",
+        "title": "Child-Friendly Safety Planning"
+      },
+      {
+        "id": "lesson_supportive_communication",
+        "title": "Supportive Communication"
+      },
+      {
+        "id": "lesson_strengthening_protective_relationships",
+        "title": "Strengthening Protective Relationships"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_supporting_community_members_experiencing_dfv",
+    "title": "Supporting Community Members Experiencing DFV",
+    "description": "This module helps community members provide safe, respectful, and appropriate support to people experiencing DFV. It focuses on listening without judgement, validating experiences, and connecting people to appropriate services.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "community support",
+      "help-seeking",
+      "trauma-informed",
+      "safety"
+    ],
+    "outcomes": [
+      "Provide safe and supportive responses to community members experiencing DFV",
+      "Use trauma-informed communication and validation",
+      "Connect people to appropriate services without creating additional risk"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_safe_supportive_responses",
+        "title": "Safe Supportive Responses"
+      },
+      {
+        "id": "lesson_trauma_informed_communication",
+        "title": "Trauma-Informed Communication"
+      },
+      {
+        "id": "lesson_connecting_to_services",
+        "title": "Connecting to Services"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_supporting_health_professionals_responding_to_dfv",
+    "title": "Supporting Health Professionals Responding to DFV",
+    "description": "This module supports health professionals to manage the emotional, ethical, and practical challenges of responding to DFV. It focuses on professional boundaries, vicarious trauma, and reflective practice.",
+    "type": "module",
+    "level": "health_wellbeing",
+    "tags": [
+      "dfv",
+      "health professionals",
+      "vicarious trauma",
+      "professional boundaries",
+      "wellbeing"
+    ],
+    "outcomes": [
+      "Maintain professional boundaries while responding to DFV",
+      "Recognise and manage vicarious trauma",
+      "Use reflective practice to support safe and sustainable work"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_professional_boundaries",
+        "title": "Professional Boundaries"
+      },
+      {
+        "id": "lesson_vicarious_trauma_and_burnout",
+        "title": "Vicarious Trauma and Burnout"
+      },
+      {
+        "id": "lesson_reflective_practice",
+        "title": "Reflective Practice"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_supporting_survivors",
+    "title": "Supporting Survivors",
+    "description": "This module equips peer mentors with the practical skills needed to support survivors of domestic and family violence safely and effectively. It focuses on strengths-based support, navigating services, and encouraging help-seeking without stepping outside the peer role.",
+    "type": "module",
+    "level": "intermediate",
+    "tags": [
+      "dfv",
+      "peer support",
+      "survivor support",
+      "strengths-based",
+      "service navigation"
+    ],
+    "outcomes": [
+      "Provide strengths-based emotional support to survivors",
+      "Help survivors understand and navigate available services",
+      "Encourage safe and appropriate help-seeking without giving advice outside the peer role"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_strengths_based_support",
+        "title": "Strengths-Based Support"
+      },
+      {
+        "id": "lesson_navigating_services",
+        "title": "Navigating Services"
+      },
+      {
+        "id": "lesson_encouraging_help_seeking",
+        "title": "Encouraging Help-Seeking"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_sustainable_change",
+    "title": "Sustainable Change",
+    "level": "general",
+    "lessons": []
+  },
+  {
+    "id": "module_system_navigation_and_advocacy",
+    "title": "System Navigation and Advocacy",
+    "description": "This module equips specialist DFV practitioners with advanced skills in navigating complex service systems, statutory processes, and legal pathways. It focuses on advocacy, coordinated case responses, and supporting clients through systems that may feel overwhelming or unsafe.",
+    "type": "module",
+    "level": "advanced",
+    "tags": [
+      "dfv",
+      "advocacy",
+      "system navigation",
+      "legal pathways",
+      "specialist practice",
+      "case coordination"
+    ],
+    "outcomes": [
+      "Navigate legal, statutory, and service systems relevant to DFV",
+      "Advocate effectively for clients in complex or unsafe system interactions",
+      "Coordinate multi‑service responses to support client safety and wellbeing"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_navigating_systems",
+        "title": "Navigating Systems"
+      },
+      {
+        "id": "lesson_advocacy_skills",
+        "title": "Advocacy Skills"
+      },
+      {
+        "id": "lesson_coordinated_case_responses",
+        "title": "Coordinated Case Responses"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_system_navigation",
+    "title": "System Navigation",
+    "level": "general",
+    "lessons": []
+  },
+  {
+    "id": "module_system_reform_and_continuous_improvement",
+    "title": "System Reform and Continuous Improvement",
+    "description": "This module supports learners to understand how DFV systems evolve through reform, evaluation, and continuous improvement. It focuses on system-level change, evidence-informed practice, and building more effective and equitable DFV responses.",
+    "type": "module",
+    "level": "systems",
+    "tags": [
+      "dfv",
+      "system reform",
+      "continuous improvement",
+      "evaluation",
+      "evidence-informed practice"
+    ],
+    "outcomes": [
+      "Understand how DFV systems change and improve over time",
+      "Use evidence and evaluation to inform system improvements",
+      "Contribute to system reform through collaboration and feedback"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_understanding_system_reform",
+        "title": "Understanding System Reform"
+      },
+      {
+        "id": "lesson_evidence_and_evaluation",
+        "title": "Evidence and Evaluation"
+      },
+      {
+        "id": "lesson_contributing_to_system_improvement",
+        "title": "Contributing to System Improvement"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_trauma_attachment_and_child_development",
+    "title": "Trauma, Attachment, and Child Development",
+    "description": "This module explores how trauma and disrupted attachment affect child development. It supports practitioners to recognise trauma responses and promote healing, stability, and secure relationships.",
+    "type": "module",
+    "level": "children_young_people",
+    "tags": [
+      "dfv",
+      "trauma",
+      "attachment",
+      "child development",
+      "healing"
+    ],
+    "outcomes": [
+      "Understand how trauma and attachment disruptions affect development",
+      "Recognise trauma responses in children",
+      "Support healing and secure attachment"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_trauma_and_brain_development",
+        "title": "Trauma and Brain Development"
+      },
+      {
+        "id": "lesson_attachment_and_relationships",
+        "title": "Attachment and Relationships"
+      },
+      {
+        "id": "lesson_promoting_healing_and_stability",
+        "title": "Promoting Healing and Stability"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_trauma_informed_and_culturally_safe_practice",
+    "title": "Trauma-Informed and Culturally Safe Practice",
+    "description": "This module supports practitioners to apply trauma-informed, culturally safe, and person-centred approaches in DFV work. It focuses on safety, trust, empowerment, and respect for cultural identity and lived experience.",
+    "type": "module",
+    "level": "workforce_capability",
+    "tags": [
+      "dfv",
+      "trauma-informed practice",
+      "cultural safety",
+      "person-centred",
+      "professional practice"
+    ],
+    "outcomes": [
+      "Apply trauma-informed principles in DFV practice",
+      "Work in culturally safe and respectful ways",
+      "Promote empowerment, choice, and safety for clients"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_trauma_informed_principles",
+        "title": "Trauma-Informed Principles"
+      },
+      {
+        "id": "lesson_cultural_safety_and_respect",
+        "title": "Cultural Safety and Respect"
+      },
+      {
+        "id": "lesson_empowerment_and_choice",
+        "title": "Empowerment and Choice"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_understanding_dfv_impacts_on_children",
+    "title": "Understanding DFV Impacts on Children",
+    "description": "This module provides an overview of how domestic and family violence affects children across developmental stages. It focuses on emotional, behavioural, relational, and developmental impacts, and highlights the importance of safety and stability.",
+    "type": "module",
+    "level": "children_young_people",
+    "tags": [
+      "dfv",
+      "children",
+      "development",
+      "trauma",
+      "safety"
+    ],
+    "outcomes": [
+      "Understand how DFV affects children at different ages",
+      "Recognise behavioural and emotional indicators of DFV exposure",
+      "Identify protective factors that support recovery"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_developmental_impacts",
+        "title": "Developmental Impacts"
+      },
+      {
+        "id": "lesson_behavioural_and_emotional_signs",
+        "title": "Behavioural and Emotional Signs"
+      },
+      {
+        "id": "lesson_protective_factors",
+        "title": "Protective Factors"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_understanding_dfv_in_the_community",
+    "title": "Understanding DFV in the Community",
+    "description": "This module builds community-level understanding of domestic and family violence, including its drivers, patterns, and impacts. It supports community members to recognise DFV, understand myths and misconceptions, and contribute to safer environments.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "community education",
+      "awareness",
+      "prevention",
+      "public understanding"
+    ],
+    "outcomes": [
+      "Understand the drivers and patterns of DFV in the community",
+      "Recognise common myths and misconceptions about DFV",
+      "Identify ways communities can contribute to safety and prevention"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_dfv_patterns_and_drivers",
+        "title": "DFV Patterns and Drivers"
+      },
+      {
+        "id": "lesson_myths_and_misconceptions",
+        "title": "Myths and Misconceptions"
+      },
+      {
+        "id": "lesson_community_roles_in_prevention",
+        "title": "Community Roles in Prevention"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_understanding_dfv_legal_responses",
+    "title": "Understanding DFV Legal Responses",
+    "description": "This module provides an overview of the legal responses available in domestic and family violence matters. It covers civil and criminal pathways, legal definitions, and the role of justice agencies in promoting safety.",
+    "type": "module",
+    "level": "justice_legal",
+    "tags": [
+      "dfv",
+      "legal responses",
+      "justice system",
+      "law",
+      "safety"
+    ],
+    "outcomes": [
+      "Understand key legal responses to DFV",
+      "Recognise the difference between civil and criminal pathways",
+      "Identify how legal systems promote safety and accountability"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_legal_definitions_and_frameworks",
+        "title": "Legal Definitions and Frameworks"
+      },
+      {
+        "id": "lesson_civil_and_criminal_pathways",
+        "title": "Civil and Criminal Pathways"
+      },
+      {
+        "id": "lesson_role_of_justice_agencies",
+        "title": "Role of Justice Agencies"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_understanding_dfv_systems_and_pathways",
+    "title": "Understanding DFV Systems and Pathways",
+    "description": "This module provides an overview of the domestic and family violence service system, including key pathways, service types, and coordination points. It helps learners understand how people access support, how services interact, and how systems work together to promote safety.",
+    "type": "module",
+    "level": "systems",
+    "tags": [
+      "dfv",
+      "systems",
+      "service pathways",
+      "coordination",
+      "sector overview"
+    ],
+    "outcomes": [
+      "Understand the structure and components of the DFV service system",
+      "Recognise key pathways for victim-survivors, children, and people using violence",
+      "Identify how services coordinate and interact to support safety"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_dfv_system_overview",
+        "title": "DFV System Overview"
+      },
+      {
+        "id": "lesson_service_pathways",
+        "title": "Service Pathways"
+      },
+      {
+        "id": "lesson_coordination_and_system_interaction",
+        "title": "Coordination and System Interaction"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_understanding_primary_prevention",
+    "title": "Understanding Primary Prevention",
+    "description": "This module introduces the foundations of primary prevention in domestic and family violence. It explains how primary prevention addresses the underlying drivers of violence, shifts social norms, and builds long-term cultural change.",
+    "type": "module",
+    "level": "prevention",
+    "tags": [
+      "dfv",
+      "primary prevention",
+      "social norms",
+      "drivers of violence",
+      "prevention strategies"
+    ],
+    "outcomes": [
+      "Understand what primary prevention is and how it differs from early intervention and response",
+      "Recognise the underlying drivers of DFV",
+      "Identify key prevention strategies that promote long-term cultural change"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_what_is_primary_prevention",
+        "title": "What Is Primary Prevention?"
+      },
+      {
+        "id": "lesson_drivers_of_violence",
+        "title": "Drivers of Violence"
+      },
+      {
+        "id": "lesson_prevention_strategies",
+        "title": "Prevention Strategies"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_working_with_adolescents_experiencing_or_using_violence",
+    "title": "Working with Adolescents Experiencing or Using Violence",
+    "description": "This module supports practitioners to work safely with adolescents who are experiencing DFV or using violence in the home or relationships. It focuses on adolescent development, risk assessment, and safe behaviour change engagement.",
+    "type": "module",
+    "level": "children_young_people",
+    "tags": [
+      "dfv",
+      "adolescents",
+      "youth violence",
+      "risk assessment",
+      "behaviour change"
+    ],
+    "outcomes": [
+      "Understand DFV dynamics specific to adolescents",
+      "Engage safely with adolescents using or experiencing violence",
+      "Support behaviour change and safety planning"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_adolescent_dfv_dynamics",
+        "title": "Adolescent DFV Dynamics"
+      },
+      {
+        "id": "lesson_safe_engagement_with_young_people",
+        "title": "Safe Engagement with Young People"
+      },
+      {
+        "id": "lesson_supporting_behaviour_change",
+        "title": "Supporting Behaviour Change"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_working_with_cald_communities",
+    "title": "Working with Culturally and Linguistically Diverse Communities",
+    "description": "This module supports practitioners to work safely and respectfully with people from culturally and linguistically diverse (CALD) backgrounds. It focuses on cultural humility, migration-related barriers, and safe, trauma-informed engagement.",
+    "type": "module",
+    "level": "specialist_populations",
+    "tags": [
+      "dfv",
+      "cald",
+      "cultural safety",
+      "diversity",
+      "inclusion"
+    ],
+    "outcomes": [
+      "Understand how culture, migration, and language shape DFV experiences",
+      "Apply culturally safe and trauma-informed approaches",
+      "Engage CALD communities respectfully and effectively"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_cultural_contexts_and_migration",
+        "title": "Cultural Contexts and Migration"
+      },
+      {
+        "id": "lesson_barriers_and_risks",
+        "title": "Barriers and Risks"
+      },
+      {
+        "id": "lesson_culturally_safe_practice",
+        "title": "Culturally Safe Practice"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_working_with_first_nations_peoples",
+    "title": "Working with First Nations Peoples",
+    "description": "This module supports practitioners to work respectfully and safely with Aboriginal and Torres Strait Islander peoples. It focuses on cultural safety, intergenerational trauma, community-led responses, and strengths-based practice.",
+    "type": "module",
+    "level": "specialist_populations",
+    "tags": [
+      "dfv",
+      "first nations",
+      "cultural safety",
+      "trauma",
+      "community-led"
+    ],
+    "outcomes": [
+      "Understand the impacts of colonisation and intergenerational trauma",
+      "Apply culturally safe and community-led approaches",
+      "Work respectfully with First Nations families and communities"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_historical_and_cultural_contexts",
+        "title": "Historical and Cultural Contexts"
+      },
+      {
+        "id": "lesson_community_led_responses",
+        "title": "Community-Led Responses"
+      },
+      {
+        "id": "lesson_strengths_based_practice",
+        "title": "Strengths-Based Practice"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_working_with_lgbtqia_communities",
+    "title": "Working with LGBTQIA+ Communities",
+    "description": "This module supports practitioners to understand and respond to DFV within LGBTQIA+ communities. It focuses on identity-based risks, safe disclosure environments, and inclusive, affirming practice.",
+    "type": "module",
+    "level": "specialist_populations",
+    "tags": [
+      "dfv",
+      "lgbtqia",
+      "inclusion",
+      "affirming practice",
+      "diversity"
+    ],
+    "outcomes": [
+      "Understand DFV dynamics specific to LGBTQIA+ communities",
+      "Create safe and inclusive environments for disclosure",
+      "Apply affirming, respectful, and identity-safe practice"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_identity_and_safety",
+        "title": "Identity and Safety"
+      },
+      {
+        "id": "lesson_inclusive_practice",
+        "title": "Inclusive Practice"
+      },
+      {
+        "id": "lesson_responding_to_lgbtqia_dfv",
+        "title": "Responding to LGBTQIA+ DFV"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_working_with_older_people",
+    "title": "Working with Older People",
+    "description": "This module supports practitioners to recognise and respond to DFV affecting older people, including elder abuse, dependency dynamics, and age-related vulnerabilities. It focuses on safe engagement and tailored support.",
+    "type": "module",
+    "level": "specialist_populations",
+    "tags": [
+      "dfv",
+      "older people",
+      "elder abuse",
+      "vulnerability",
+      "safety"
+    ],
+    "outcomes": [
+      "Recognise DFV and elder abuse affecting older people",
+      "Understand age-related risks and dependency dynamics",
+      "Provide safe, respectful, and tailored support"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_understanding_elder_abuse",
+        "title": "Understanding Elder Abuse"
+      },
+      {
+        "id": "lesson_age_related_risks",
+        "title": "Age-Related Risks"
+      },
+      {
+        "id": "lesson_supporting_older_people",
+        "title": "Supporting Older People"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_working_with_people_using_violence_diverse_backgrounds",
+    "title": "Working with People Using Violence from Diverse Backgrounds",
+    "description": "This module supports practitioners to work safely and effectively with people using violence from diverse cultural, social, and identity backgrounds. It focuses on accountability, cultural context, and safe behaviour change engagement.",
+    "type": "module",
+    "level": "specialist_populations",
+    "tags": [
+      "dfv",
+      "people using violence",
+      "diversity",
+      "accountability",
+      "behaviour change"
+    ],
+    "outcomes": [
+      "Understand how cultural and identity factors shape the use of violence",
+      "Engage safely with people using violence from diverse backgrounds",
+      "Promote accountability and behaviour change in culturally informed ways"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_cultural_contexts_of_violence",
+        "title": "Cultural Contexts of Violence"
+      },
+      {
+        "id": "lesson_safe_engagement",
+        "title": "Safe Engagement"
+      },
+      {
+        "id": "lesson_culturally_informed_accountability",
+        "title": "Culturally Informed Accountability"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_working_with_people_with_disability",
+    "title": "Working with People with Disability",
+    "description": "This module supports practitioners to work safely and respectfully with people with disability experiencing DFV. It focuses on disability-specific risks, communication needs, and accessible, rights-based practice.",
+    "type": "module",
+    "level": "specialist_populations",
+    "tags": [
+      "dfv",
+      "disability",
+      "accessibility",
+      "rights-based practice",
+      "inclusion"
+    ],
+    "outcomes": [
+      "Recognise disability-specific DFV risks and barriers",
+      "Apply accessible and rights-based approaches",
+      "Support safe communication and autonomy"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_disability_specific_risks",
+        "title": "Disability-Specific Risks"
+      },
+      {
+        "id": "lesson_accessible_practice",
+        "title": "Accessible Practice"
+      },
+      {
+        "id": "lesson_supporting_autonomy_and_safety",
+        "title": "Supporting Autonomy and Safety"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_working_with_perpetrators",
+    "title": "Working With Perpetrators",
+    "description": "This module equips specialist DFV practitioners with the skills required to safely and ethically engage with people who use violence. It focuses on accountability frameworks, behaviour change principles, and risk‑aware engagement strategies that prioritise victim‑survivor safety.",
+    "type": "module",
+    "level": "advanced",
+    "tags": [
+      "dfv",
+      "perpetrator interventions",
+      "accountability",
+      "behaviour change",
+      "specialist practice",
+      "risk management"
+    ],
+    "outcomes": [
+      "Engage safely and ethically with people who use violence",
+      "Apply accountability‑focused approaches that prioritise survivor safety",
+      "Understand behaviour change principles and their limitations in DFV contexts"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_safe_engagement",
+        "title": "Safe Engagement"
+      },
+      {
+        "id": "lesson_accountability_frameworks",
+        "title": "Accountability Frameworks"
+      },
+      {
+        "id": "lesson_behaviour_change_principles",
+        "title": "Behaviour Change Principles"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_working_with_police_and_justice_agencies",
+    "title": "Working with Police and Justice Agencies",
+    "description": "This module supports practitioners to collaborate effectively with police, courts, and justice agencies. It focuses on reporting pathways, evidence, risk assessment, and coordinated justice responses.",
+    "type": "module",
+    "level": "justice_legal",
+    "tags": [
+      "dfv",
+      "police",
+      "justice agencies",
+      "coordination",
+      "legal responses"
+    ],
+    "outcomes": [
+      "Understand police roles and responsibilities in DFV matters",
+      "Collaborate effectively with justice agencies",
+      "Support clients through reporting, evidence, and risk processes"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_police_roles_and_responses",
+        "title": "Police Roles and Responses"
+      },
+      {
+        "id": "lesson_working_with_justice_partners",
+        "title": "Working with Justice Partners"
+      },
+      {
+        "id": "lesson_evidence_and_risk_processes",
+        "title": "Evidence and Risk Processes"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_workplace_and_community_organisation_responses",
+    "title": "Workplace and Community Organisation Responses",
+    "description": "This module equips workplaces, clubs, and community organisations to recognise DFV, support affected members, and create safe organisational cultures. It focuses on policies, safe responses, and building supportive environments.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "workplace responses",
+      "community organisations",
+      "policy",
+      "safety"
+    ],
+    "outcomes": [
+      "Recognise DFV indicators within workplaces and community organisations",
+      "Respond safely and appropriately to disclosures or concerns",
+      "Develop policies and practices that promote safety and support"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_recognising_dfv_in_organisations",
+        "title": "Recognising DFV in Organisations"
+      },
+      {
+        "id": "lesson_safe_responses_in_organisations",
+        "title": "Safe Responses in Organisations"
+      },
+      {
+        "id": "lesson_building_safe_organisational_cultures",
+        "title": "Building Safe Organisational Cultures"
+      }
+    ],
+    "content": []
+  },
+  {
+    "id": "module_youth_leadership_and_dfv_prevention",
+    "title": "Youth Leadership and DFV Prevention",
+    "description": "This module empowers young people to take active roles in preventing domestic and family violence within their communities. It focuses on youth leadership, respectful relationships, and building peer-led initiatives that promote safety and equality.",
+    "type": "module",
+    "level": "community",
+    "tags": [
+      "dfv",
+      "youth leadership",
+      "prevention",
+      "respectful relationships",
+      "peer education"
+    ],
+    "outcomes": [
+      "Understand the role of young people in DFV prevention",
+      "Promote respectful relationships and challenge harmful norms",
+      "Lead or participate in youth-driven DFV prevention initiatives"
+    ],
+    "lessons": [
+      {
+        "id": "lesson_youth_as_change_makers",
+        "title": "Youth as Change-Makers"
+      },
+      {
+        "id": "lesson_promoting_respectful_relationships",
+        "title": "Promoting Respectful Relationships"
+      },
+      {
+        "id": "lesson_peer_led_prevention_initiatives",
+        "title": "Peer-Led Prevention Initiatives"
+      }
+    ],
+    "content": []
+  }
+]

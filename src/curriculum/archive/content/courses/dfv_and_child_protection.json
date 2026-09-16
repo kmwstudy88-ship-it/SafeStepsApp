@@ -1,0 +1,40 @@
+{
+  "id": "course_dfv_and_child_protection",
+  "domain": "dfv",
+  "level": "intermediate",
+  "title": "DFV and Child Protection Systems",
+  "modules": [
+    {
+      "id": "module_understanding_systems",
+      "title": "Understanding Child Protection Systems",
+      "lessons": [
+        "how_child_protection_responds_to_dfv",
+        "mandatory_reporting_requirements",
+        "system_limitations_and_strengths"
+      ]
+    },
+    {
+      "id": "module_parenting_in_dfv_contexts",
+      "title": "Parenting in DFV Contexts",
+      "lessons": [
+        "protective_parenting_behaviours",
+        "impacts_of_dfv_on_parenting_capacity",
+        "supporting_non_offending_parents"
+      ]
+    },
+    {
+      "id": "module_working_with_systems",
+      "title": "Working with Child Protection",
+      "lessons": [
+        "navigating_case_plans",
+        "collaborating_with_caseworkers",
+        "advocating_for_family_safety"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of child protection responses to DFV",
+    "Ability to support parents navigating child protection",
+    "Increased confidence in advocating for safe outcomes"
+  ]
+}

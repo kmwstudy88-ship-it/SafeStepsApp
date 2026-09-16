@@ -1,0 +1,61 @@
+{
+  "id": "course_module_collaboration_and_referral",
+  "title": "Collaboration and Referral Pathways",
+  "description": "Auto-generated course for module module_collaboration_and_referral",
+  "lessons": [
+    {
+      "id": "lesson_multiagency_work",
+      "title": "Multi‑Agency Work",
+      "sections": [
+        {
+          "id": "section_lesson_multiagency_work_01"
+        },
+        {
+          "id": "section_lesson_multiagency_work_02"
+        },
+        {
+          "id": "section_lesson_multiagency_work_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_referral_pathways",
+      "title": "Referral Pathways",
+      "sections": [
+        {
+          "id": "section_lesson_referral_pathways_01"
+        },
+        {
+          "id": "section_lesson_referral_pathways_02"
+        },
+        {
+          "id": "section_lesson_referral_pathways_03"
+        },
+        {
+          "id": "section_lesson_referral_pathways_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_documentation_and_case_notes",
+      "title": "Documentation and Case Notes",
+      "sections": [
+        {
+          "id": "section_lesson_documentation_and_case_notes_01"
+        },
+        {
+          "id": "section_lesson_documentation_and_case_notes_02"
+        },
+        {
+          "id": "section_lesson_documentation_and_case_notes_03"
+        },
+        {
+          "id": "section_lesson_documentation_and_case_notes_04"
+        },
+        {
+          "id": "section_lesson_documentation_and_case_notes_05"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Life Skills Development",
+  "description": "",
+  "estimatedTimeMinutes": 60,
+  "difficultyLevel": "beginner",
+  "learningOutcomes": [
+    "Understand the key ideas behind life skills development and why this topic matters for child development.",
+    "Learn practical skills and strategies that help apply life skills development in everyday parenting situations.",
+    "Build confidence using life skills development to support connection, safety, and positive family routines."
+  ],
+  "modules": [
+    {
+      "title": "Understanding the Topic",
+      "description": "Learn what life skills development means and why it matters for child development.",
+      "id": "module-1"
+    },
+    {
+      "title": "Core Skills and Strategies",
+      "description": "Explore practical skills and strategies for applying life skills development in everyday parenting.",
+      "id": "module-2"
+    },
+    {
+      "title": "Real-Life Application",
+      "description": "See how life skills development works in real situations with examples and simple scripts.",
+      "id": "module-3"
+    },
+    {
+      "title": "Reflection and Integration",
+      "description": "Reflect on your learning and plan how to use life skills development in daily family life.",
+      "id": "module-4"
+    }
+  ],
+  "metadata": {
+    "audience": "parents",
+    "tags": [],
+    "jurisdiction": "AU"
+  },
+  "caseworkerSummary": "This topic helps parents build practical skills related to life skills development. It supports safer, more consistent caregiving by improving understanding, strengthening emotional connection, and reducing stress in daily routines. This topic is suitable for parents who need guidance in applying positive parenting strategies and may benefit families working toward stability, reunification, or improved home safety.",
+  "topics": [
+    "life"
+  ]
+}

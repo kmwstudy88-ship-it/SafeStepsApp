@@ -1,0 +1,25 @@
+{
+  "title": "Recognising Abuse",
+  "description": "Helps parents identify the full spectrum of abusive behaviours, including those that are subtle, hidden, or normalised.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Identify different types of abuse.",
+    "Recognise early warning signs.",
+    "Understand how abuse escalates over time."
+  ],
+  "modules": [
+    "Types of Abuse",
+    "Warning Signs and Red Flags"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "DFV Basics",
+    "tags": [
+      "abuse",
+      "warning signs",
+      "safety"
+    ]
+  },
+  "caseworkerSummary": "Supports parents to recognise abusive behaviours that may have been minimised or normalised."
+}

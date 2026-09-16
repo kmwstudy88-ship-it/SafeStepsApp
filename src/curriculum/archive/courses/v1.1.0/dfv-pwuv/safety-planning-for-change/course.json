@@ -1,0 +1,25 @@
+{
+  "title": "Safety Planning for Change",
+  "description": "Supports participants to develop safety plans that prevent harm and support ongoing behaviour change.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand the purpose of safety planning.",
+    "Recognise situations that increase risk.",
+    "Apply strategies to prevent harm and maintain safety."
+  ],
+  "modules": [
+    "Understanding Safety Planning",
+    "Building a Personal Safety Plan"
+  ],
+  "metadata": {
+    "stream": "dfv-pwuv",
+    "category": "Safety",
+    "tags": [
+      "safety",
+      "planning",
+      "prevention"
+    ]
+  },
+  "caseworkerSummary": "Supports participants to create safety plans that reduce risk and prevent harm."
+}

@@ -1,0 +1,3069 @@
+{
+  "manifest": {
+    "SchemaVersion": "1.0.0",
+    "CourseId": "SAFE-ADO-FOUNDATIONS-01",
+    "CourseTitle": "SafeSteps Adolescence: Connection, Boundaries, Wellbeing and Safety",
+    "CourseType": "Parent and Carer Learning Module",
+    "LessonRange": "21-25",
+    "LessonCount": 5,
+    "EstimatedTotalDuration": "6 hours 15 minutes to 7 hours 55 minutes, plus home-practice periods",
+    "ProductionStatus": "Complete learning content; video scripts require media production",
+    "GeneratedDate": "2026-07-25",
+    "TargetAudience": "Parents and carers of adolescents, including families involved with support or statutory services",
+    "DeliveryModes": [
+      "Mobile app",
+      "Web app",
+      "Facilitated group",
+      "Supported self-paced learning"
+    ],
+    "CompletionStandard": {
+      "DefinitionGateMinimumCharacters": 80,
+      "RequiredVideoWatchPercent": 95,
+      "QuizPassPercent": 80,
+      "FormalAssessmentRequired": true,
+      "EvidenceTaskRequired": true,
+      "FinalReflectionRequired": true,
+      "CriticalSafetyQuestionsMustBeCorrect": true
+    },
+    "SafetyNotice": "This educational course does not diagnose, replace professional advice or replace emergency services. In Australia call 000 for immediate danger. Lifeline: 13 11 14. Kids Helpline: 1800 55 1800.",
+    "PrivacyStandard": "Use fictional or de-identified examples by default. Never require a child to perform distress or surrender private messages unrelated to a specific safety concern.",
+    "VideoAssetNotice": "Every video has a complete narration script, visual direction, on-screen wording, captions/transcript requirements, interaction and accessibility notes. Rendered MP4 assets are not included."
+  },
+  "lessons": [
+    {
+      "SchemaVersion": "2.0",
+      "LessonNumber": "21",
+      "CourseSequence": 1,
+      "Title": "Understanding the Adolescent Brain, Body and Drive for Independence",
+      "Subtitle": "See development beneath behaviour without excusing unsafe choices.",
+      "Category": "Adolescence",
+      "Module": "Child Development",
+      "Course": "Adolescence: Connected, Safe and Supported",
+      "Audience": "Parents, carers and family-support participants caring for adolescents.",
+      "Level": "Foundation to Applied",
+      "EstimatedDuration": "75–95 minutes plus a 3–7 day home-practice task",
+      "ProductionStatus": "Complete learning content and interaction specification; ready for content, clinical, safeguarding and accessibility review.",
+      "LearningObjectives": [
+        "Describe physical, cognitive, emotional and social changes that can occur during adolescence.",
+        "Distinguish a developmental need from a skill gap, stress response or deliberate unsafe choice.",
+        "Use the SafeSteps Need–Skill–Stress–Environment behaviour decoder.",
+        "Choose responses that combine connection, clear limits and opportunities to practise responsibility.",
+        "Create an observation-and-response plan for a recurring low-risk behaviour."
+      ],
+      "SafetyAndScope": {
+        "Scope": "Education and skill development only. This lesson does not diagnose a young person or replace medical, mental-health, legal or child-safety advice.",
+        "TraumaInformedUse": "Learners may pause, save and return. Personal disclosure is never required to pass. Fictional or de-identified responses are accepted.",
+        "UrgentRisk": "In Australia, call Triple Zero (000) for immediate danger. Lifeline: 13 11 14. Kids Helpline for ages 5–25: 1800 55 1800.",
+        "EvidencePrivacy": "No task requires images, audio or video of a young person. Use de-identified, simulated or parent-created evidence."
+      },
+      "DefinitionGate": {
+        "ScreenTitle": "Before You Begin",
+        "Prompt": "In your own words, what does adolescence mean, and what does a teenager need most from a parent or carer during this stage?",
+        "WhyItMatters": "This records the learner's starting understanding. It is not graded and is shown again in the final reflection.",
+        "MinimumCharacters": 80,
+        "MaximumCharacters": 1200,
+        "AllowVoiceResponse": true,
+        "MinimumVoiceSeconds": 20,
+        "ExampleShownAfterSubmission": "A balanced definition recognises rapid change, increasing independence, continuing need for connection and calm, age-appropriate limits.",
+        "CompletionRequiredBeforeVideo": true
+      },
+      "ProgressionRules": {
+        "SequentialLocking": true,
+        "DefinitionGateRequired": true,
+        "MandatoryVideoWatchPercent": 95,
+        "AllKnowledgeChecksRequired": true,
+        "ScenarioResponseRequired": true,
+        "HomePracticePlanRequired": true,
+        "FormalAssessmentRequired": true,
+        "QuizPassPercent": 80,
+        "QuizAttemptsAllowed": "Unlimited",
+        "CriticalSafetyQuestionsMustBeCorrect": true,
+        "RetryBehaviour": "Display objective-linked feedback, preserve the highest score and randomise question and option order on retry.",
+        "FinalReflectionRequired": true,
+        "CertificateRule": "Complete every mandatory step, pass the assessment, achieve at least 80% on the quiz and correctly answer all critical safety questions."
+      },
+      "Accessibility": {
+        "ReadingLevel": "Plain English with expandable detail",
+        "Features": [
+          "Captions and transcripts for every video",
+          "Audio narration for teaching text",
+          "Keyboard and screen-reader accessible interactions",
+          "No colour-only meaning",
+          "Save-and-return at every activity",
+          "Text, voice or structured-choice response options",
+          "Low-stimulation mode",
+          "Inclusive family, culture, disability and neurodiversity examples"
+        ]
+      },
+      "Introduction": "Adolescence is not a single behaviour problem to solve. It is a stage of rapid physical, thinking, emotional and social development. A young person is managing a changing body, stronger social pressures, identity questions, increased responsibility and a growing wish to make independent choices.\n\nDevelopment does not occur at the same speed in every area. A young person can reason maturely in one situation and still need substantial help with planning, impulse control or coping with rejection in another. Culture, disability, neurodivergence, trauma, family stress, health and opportunity can shape how adolescence is experienced.\n\nThe goal is not to excuse harmful behaviour. It is to improve accuracy. When an adult understands what may be driving behaviour, they are more likely to protect safety, teach a missing skill and preserve the relationship.",
+      "Videos": [
+        {
+          "VideoId": "ADO-21-V1",
+          "Title": "Adolescence Is Development, Not Defiance",
+          "EstimatedDuration": "2 minutes 25 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Replace blame-based interpretations with a developmentally informed and safety-aware view.",
+          "VisualDirection": "Watercolour silhouettes moving from childhood toward adulthood. Show body changes, school demands, peers, identity, home and decision pathways.",
+          "NarrationScript": "When a young person starts questioning rules, wanting privacy or reacting strongly, adults can experience the change as rejection or disrespect. Adolescence, however, is a development stage, not a decision to become difficult.\n\nA teenager is building identity, learning where they belong, managing puberty, developing values and practising independence. Their ability to plan, pause and consider consequences grows through experience. Stress, tiredness, shame and peer pressure can reduce access to skills they may use well at other times.\n\nDevelopment does not remove accountability. If a teenager lies, threatens, damages property or places someone at risk, the behaviour still needs a clear response. An effective response asks two questions: what must stop for safety, and what skill or support is needed so the young person can manage this better next time?\n\nThe parent role changes rather than disappears. Adolescents need coaching, negotiation and opportunities to earn trust. They still need adults who notice changes, provide limits and make it safe to ask for help.\n\nA useful starting position is curiosity with boundaries: I will not assume the worst about you, and I will not ignore unsafe behaviour.",
+          "OnScreenText": [
+            "Development, not a character flaw",
+            "Connection and limits can exist together",
+            "What must stop? What skill is missing?"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "WrittenResponse",
+            "Prompt": "Name one behaviour you have interpreted as personal disrespect. Give one developmental or situational explanation you could consider without excusing it.",
+            "MinimumCharacters": 80
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-21-V2",
+          "Title": "Four Changes Happening at the Same Time",
+          "EstimatedDuration": "2 minutes 25 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Teach the physical, cognitive, emotional and social domains of development.",
+          "VisualDirection": "Four-panel animation labelled Body, Thinking, Feelings and Relationships. Panels merge into one whole-person image.",
+          "NarrationScript": "Adolescent behaviour makes more sense when we look at four areas together.\n\nPhysical development includes puberty, growth, changing sleep needs, body image and energy. A teenager may need more sleep while also resisting routines that support sleep.\n\nThinking development includes more abstract thought, stronger opinions about fairness and greater ability to imagine future possibilities. Judgement may still be less reliable when the young person is highly emotional, rushed, tired or surrounded by peers.\n\nEmotional development includes learning to notice, name and manage intense feelings. The goal is not to stop emotion. The goal is to express and regulate it without causing harm.\n\nSocial development includes belonging, peer acceptance, romantic interest, exclusion and online interaction. An event that appears minor to an adult may feel like a threat to identity or belonging.\n\nThe areas interact. A young person who slept poorly, feels embarrassed, believes a friend is excluding them and is then asked about homework may react more strongly than the homework question alone would explain.\n\nSudden, severe or persistent changes in mood, sleep, eating, school participation, safety or daily functioning deserve calm attention and, where needed, professional advice.",
+          "OnScreenText": [
+            "Body",
+            "Thinking",
+            "Feelings",
+            "Relationships",
+            "Look at patterns, intensity and impact"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "Sorting",
+            "Prompt": "Sort the examples into the main domain. More than one domain may apply.",
+            "Items": [
+              "Needing more sleep",
+              "Questioning whether a rule is fair",
+              "Feeling excluded from a group chat",
+              "Strong embarrassment after a mistake"
+            ]
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-21-V3",
+          "Title": "The SafeSteps Behaviour Decoder",
+          "EstimatedDuration": "2 minutes 15 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Provide a repeatable framework for understanding behaviour before selecting a response.",
+          "VisualDirection": "Four stepping stones labelled Need, Skill, Stress and Environment, followed by a permanent Safety shield.",
+          "NarrationScript": "Before deciding on a consequence, use the SafeSteps behaviour decoder.\n\nFirst, identify the possible developmental need. Is the young person seeking independence, belonging, privacy, competence, identity or fairness?\n\nSecond, identify the skill. Do they know how to plan, communicate, refuse peer pressure, regulate anger, repair harm or ask for help?\n\nThird, identify stress. Are tiredness, fear, shame, grief, conflict, trauma reminders, learning difficulty or sensory overload reducing capacity?\n\nFourth, identify the environment. Consider peers, unclear rules, adult modelling, access to devices or substances, transport problems, school demands and whether the expectation was realistic.\n\nThen apply the safety filter. Understanding a driver never means accepting violence, coercion, abuse, dangerous driving, exploitation or other serious harm. Safety action comes first when risk is immediate.\n\nInstead of saying, “You are irresponsible,” an adult can say, “You missed the agreed check-in and I could not confirm you were safe. The next outing will pause until we make and practise a reliable backup-contact plan.”\n\nThat response describes the behaviour, protects safety and provides a pathway back to trust.",
+          "OnScreenText": [
+            "Need",
+            "Skill",
+            "Stress",
+            "Environment",
+            "Safety filter"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "FrameworkPractice",
+            "Prompt": "Apply the decoder to a 14-year-old who slams the bedroom door after being asked to stop gaming and begin homework.",
+            "RequiredFields": [
+              "Possible need",
+              "Possible skill gap",
+              "Possible stressor",
+              "Environmental factor",
+              "Immediate safety issue, if any"
+            ]
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-21-V4",
+          "Title": "From Control to Guided Independence",
+          "EstimatedDuration": "2 minutes 5 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Show how adult involvement changes according to risk, skill and demonstrated responsibility.",
+          "VisualDirection": "Three zones: Adult Decides, Shared Decision, Young Person Decides. Examples move between zones.",
+          "NarrationScript": "Independence grows best with demonstrated responsibility. This is different from total control or total freedom.\n\nSome decisions remain adult responsibilities because they involve immediate safety, legal duties or essential care. Other decisions can be shared, such as routines, transport plans and reasonable device boundaries. Many preferences should increasingly belong to the young person, including interests, style and how they organise age-appropriate responsibilities.\n\nA useful phrase is: “You deserve more say as you grow, and my job is still to protect safety. Let us decide what is fixed, what we can negotiate and what would show you are ready for more responsibility.”\n\nGuided independence also requires adults to tolerate ordinary mistakes. When risk is manageable, logical consequences, repair and practice teach more than shame.\n\nTrust should be defined through observable behaviour: checking in, returning on time, telling the truth, following a safety plan and asking for help early. This gives the young person a clear route to rebuild it.",
+          "OnScreenText": [
+            "Adult decides",
+            "Shared decision",
+            "Young person decides",
+            "Trust = observable behaviour"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "Choice",
+            "Prompt": "Which response best supports guided independence after a first missed non-urgent check-in?",
+            "Options": [
+              "Ban all outings indefinitely",
+              "Ignore it",
+              "Review what happened, apply a proportionate limit and rehearse a backup plan",
+              "Tell the young person they can never be trusted"
+            ],
+            "CorrectAnswer": "Review what happened, apply a proportionate limit and rehearse a backup plan"
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        }
+      ],
+      "TeachingSections": [
+        {
+          "SectionId": "ADO-21-S1",
+          "Title": "Describe Behaviour, Not Character",
+          "EstimatedMinutes": 10,
+          "Content": "Labels such as lazy, manipulative, dramatic, selfish or bad collapse a complex pattern into a judgement about character. They do not show what occurred, how often it occurred or what support may be needed.\n\nReplace a label with observable information: what happened, when it happened, the context, frequency, impact and what happened next. “She is irresponsible” cannot be measured. “She completed two of five agreed check-ins this week and returned late once without contacting an adult” can be discussed, supported and reviewed.\n\nObjective language supports fairness. It is especially important where information may be shared with schools, health providers, courts or child-safety professionals. Record facts, distinguish the young person’s account from the adult’s interpretation and identify what remains uncertain.\n\nEarly physical development does not guarantee adult judgement. Strong verbal ability also does not mean the young person can consistently regulate, plan or resist peer pressure. Expectations should consider developmental stage, demonstrated skills, disability, neurodivergence, stress and the seriousness of the decision.",
+          "KeyTakeaways": [
+            "Development is uneven across domains and situations.",
+            "Objective descriptions improve fairness and review.",
+            "Match independence to skill, risk and demonstrated responsibility."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "Which statement is most objective?",
+            "Options": [
+              "He is manipulative",
+              "She never cares",
+              "They missed two agreed check-ins this week",
+              "Teenagers are selfish"
+            ],
+            "CorrectAnswer": "They missed two agreed check-ins this week",
+            "Feedback": "It identifies observable behaviour and frequency without assigning a fixed character label."
+          }
+        },
+        {
+          "SectionId": "ADO-21-S2",
+          "Title": "Development Is Not a Free Pass",
+          "EstimatedMinutes": 10,
+          "Content": "A developmental explanation addresses why behaviour may be more likely. Accountability addresses what happens next. Both are required.\n\nA complete response:\n1. Regulate yourself enough to avoid threat or humiliation.\n2. Stop immediate danger or harm.\n3. Describe the behaviour and impact.\n4. Listen to the young person’s account and use the decoder.\n5. Apply repair, teaching, support and a proportionate consequence where needed.\n\nConsequences should be related, time-limited, achievable and explained. Device misuse may require revised device access and supervised practice, not the removal of unrelated possessions. Property damage may require repair or a developmentally appropriate contribution to replacement.\n\nThreats, violence, exploitation, sexual abuse, dangerous intoxication, access to weapons, suicidal intent or disappearance may require emergency or professional action. A calm relationship matters, but it is not a substitute for protection.",
+          "KeyTakeaways": [
+            "Understand the driver and hold the limit.",
+            "Use related, proportionate consequences.",
+            "Escalate serious risk appropriately."
+          ],
+          "KnowledgeCheck": {
+            "Type": "MultiSelect",
+            "Prompt": "Select the two parts that belong in an accountable developmental response.",
+            "Options": [
+              "Name the impact",
+              "Assume it is normal",
+              "Identify the missing skill",
+              "Remove every privilege indefinitely"
+            ],
+            "CorrectAnswers": [
+              "Name the impact",
+              "Identify the missing skill"
+            ],
+            "Feedback": "Impact and skill-building support accountability and future safety."
+          }
+        },
+        {
+          "SectionId": "ADO-21-S3",
+          "Title": "What Adolescents Still Need From Adults",
+          "EstimatedMinutes": 9,
+          "Content": "Adolescents may seek less visible closeness while still relying heavily on adult connection. Connection can look like practical support, shared humour, transport, food, interest in music or games, predictable check-ins and availability without forced disclosure.\n\nProtective adult behaviour includes warmth, clear expectations, awareness of friends and routines, noticing changes, taking concerns seriously and repairing after conflict. Monitoring works best through relationship and agreed check-ins rather than routine secret surveillance.\n\nRespect does not mean adults and adolescents have identical authority. It means the adult avoids humiliation, threats, discrimination, coercion and unnecessary invasion of privacy. A firm limit can still include a safety reason, the young person’s input and a review point.\n\nThe long-term question is not “How do I make this teenager obey?” It is “How do I help this young person become safe, capable, connected and increasingly responsible?”",
+          "KeyTakeaways": [
+            "Connection often becomes less direct, not less important.",
+            "Privacy and safety require balance.",
+            "The goal is safe, capable independence."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "Which action best combines connection and monitoring?",
+            "Options": [
+              "Demand every password without explanation",
+              "Agree on the plan, companions, transport and check-in times",
+              "Avoid all questions",
+              "Secretly track ordinary daily movement"
+            ],
+            "CorrectAnswer": "Agree on the plan, companions, transport and check-in times",
+            "Feedback": "Agreed, proportionate monitoring protects safety while preserving dignity."
+          }
+        }
+      ],
+      "InteractiveActivities": [
+        {
+          "ActivityId": "ADO-21-A1",
+          "Title": "From Label to Observation",
+          "Type": "Rewrite",
+          "EstimatedMinutes": 7,
+          "Instructions": "Rewrite each label as an observable description that includes context and impact.",
+          "Items": [
+            {
+              "Label": "Lazy",
+              "ModelAnswer": "Did not begin the assignment during two planned study periods and said they did not know where to start."
+            },
+            {
+              "Label": "Disrespectful",
+              "ModelAnswer": "Raised their voice, used an insult and left while the boundary was being explained."
+            },
+            {
+              "Label": "Manipulative",
+              "ModelAnswer": "Gave different accounts to two adults in an attempt to change the outing decision."
+            }
+          ],
+          "CompletionRule": "Submit all three rewrites before model answers appear."
+        },
+        {
+          "ActivityId": "ADO-21-A2",
+          "Title": "Independence Zones",
+          "Type": "ThreeColumnSort",
+          "EstimatedMinutes": 6,
+          "Columns": [
+            "Adult safety decision",
+            "Shared decision",
+            "Young person decision"
+          ],
+          "Items": [
+            "Preferred hairstyle",
+            "Transport home from a late event",
+            "Seatbelt use",
+            "Homework organisation within a deadline",
+            "Choice of hobby",
+            "Access to a dangerous substance"
+          ],
+          "AnswerGuide": {
+            "Adult safety decision": [
+              "Seatbelt use",
+              "Access to a dangerous substance"
+            ],
+            "Shared decision": [
+              "Transport home from a late event",
+              "Homework organisation within a deadline"
+            ],
+            "Young person decision": [
+              "Preferred hairstyle",
+              "Choice of hobby"
+            ]
+          }
+        }
+      ],
+      "CaseStudy": {
+        "Title": "Jordan Comes Home Late",
+        "Scenario": "Jordan is 14. The agreement was to return by 8:30 pm and message if plans changed. Jordan arrives at 9:10 pm without messaging. The parent has called twice and is frightened. The parent says, “You are selfish and completely irresponsible.” Jordan replies, “My phone died. You always overreact,” then slams the door.\n\nThe next morning, the parent learns that the friend’s older sibling changed the transport plan and Jordan felt embarrassed asking to borrow a phone.",
+        "LearnerQuestions": [
+          "Describe the behaviour and impact without a character label.",
+          "Apply Need, Skill, Stress and Environment.",
+          "What immediate or short-term limit would be proportionate?",
+          "Write a four-sentence repair-and-planning conversation."
+        ],
+        "ModelResponse": "Jordan returned 40 minutes late and did not make the agreed contact, leaving the parent unable to confirm safety. Possible drivers include peer belonging, difficulty problem-solving when transport changed, embarrassment and a flat phone. A proportionate response could pause the next unsupervised outing until Jordan develops and practises a backup-contact plan.\n\nThe parent could say: “I was frightened because you were late and I could not contact you. I should not have called you selfish, and I am sorry for that label. The check-in agreement still matters, so we need a backup plan before the next outing. Tell me what would make it easier to contact me if your phone is unavailable.”",
+        "CompletionRule": "Minimum 250 characters across all responses. Model response unlocks after submission."
+      },
+      "HomePracticeTask": {
+        "TaskId": "ADO-21-T1",
+        "Title": "Seven-Day Behaviour Decoder Log",
+        "Duration": "3–7 days",
+        "Instructions": [
+          "Choose one recurring, non-emergency behaviour.",
+          "Record three examples using only observable facts.",
+          "For each, note possible need, skill gap, stressor and environmental factor.",
+          "Record the adult response and young person response.",
+          "Identify one connection, teaching, routine or boundary adjustment to test."
+        ],
+        "EvidenceOptions": [
+          "De-identified typed log",
+          "Photo of handwritten log with names removed",
+          "2–4 minute voice reflection",
+          "Simulated example"
+        ],
+        "SuccessCriteria": [
+          "Three entries",
+          "No character labels",
+          "Plausible decoder analysis",
+          "One specific adjustment",
+          "Reflection on outcome"
+        ],
+        "PrivacyReminder": "Do not upload private messages, clinical records or identifying information."
+      },
+      "FormalAssessment": {
+        "AssessmentId": "ADO-21-AS1",
+        "Title": "Developmental Lens and Accountable Response",
+        "FormatOptions": [
+          "Written response 600–900 words",
+          "Audio response 6–8 minutes",
+          "Structured form"
+        ],
+        "Prompt": "Analyse a fictional or de-identified adolescent behaviour using the four development domains and the SafeSteps decoder. Design a response that protects safety, names impact, teaches a skill, uses a proportionate limit and creates a path to rebuild trust. Include a review measure.",
+        "Rubric": [
+          {
+            "Criterion": "Developmental understanding",
+            "WeightPercent": 25,
+            "HighStandard": "Explains at least three relevant domains without excusing harm."
+          },
+          {
+            "Criterion": "Behaviour decoder",
+            "WeightPercent": 25,
+            "HighStandard": "Distinguishes need, skill, stress and environment."
+          },
+          {
+            "Criterion": "Safety and accountability",
+            "WeightPercent": 25,
+            "HighStandard": "Uses a clear, related and proportionate response."
+          },
+          {
+            "Criterion": "Relationship and skill building",
+            "WeightPercent": 15,
+            "HighStandard": "Includes respectful communication, repair and practice."
+          },
+          {
+            "Criterion": "Review plan",
+            "WeightPercent": 10,
+            "HighStandard": "Defines observable indicators and a review point."
+          }
+        ],
+        "PassPercent": 70,
+        "AssessorFlags": [
+          "Humiliation or blame",
+          "Excuses serious harm",
+          "Violent or degrading punishment",
+          "Invasive evidence unrelated to safety"
+        ]
+      },
+      "Quiz": {
+        "QuizId": "ADO-21-QZ",
+        "Title": "Adolescent Development and Behaviour",
+        "PassPercent": 80,
+        "RandomiseQuestions": true,
+        "RandomiseOptions": true,
+        "Questions": [
+          {
+            "QuestionId": "ADO21-Q1",
+            "Type": "MultipleChoice",
+            "Prompt": "Which best describes adolescent development?",
+            "Options": [
+              "All areas mature together",
+              "Development can be uneven across domains and situations",
+              "Puberty creates adult judgement",
+              "Strong emotion always means defiance"
+            ],
+            "CorrectAnswer": "Development can be uneven across domains and situations",
+            "Explanation": "A young person may be advanced in one setting and need support in another.",
+            "Objective": "Developmental variation",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO21-Q2",
+            "Type": "MultipleChoice",
+            "Prompt": "Why use observable language?",
+            "Options": [
+              "To sound more serious",
+              "To avoid consequences",
+              "To describe behaviour accurately without a fixed character label",
+              "To prove the young person is wrong"
+            ],
+            "CorrectAnswer": "To describe behaviour accurately without a fixed character label",
+            "Explanation": "Objective descriptions support fairness and planning.",
+            "Objective": "Objective description",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO21-Q3",
+            "Type": "MultiSelect",
+            "Prompt": "Which two questions belong in an effective response?",
+            "Options": [
+              "What must stop for safety?",
+              "How do I win?",
+              "What skill or support is needed?",
+              "Which unrelated privilege can I remove?"
+            ],
+            "CorrectAnswers": [
+              "What must stop for safety?",
+              "What skill or support is needed?"
+            ],
+            "Explanation": "Safety and skill-building are both required.",
+            "Objective": "Safety and development",
+            "Points": 2,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO21-Q4",
+            "Type": "MultipleChoice",
+            "Prompt": "What may be behind arguing about a rule?",
+            "Options": [
+              "A wish for fairness or independence",
+              "Proof of bad character",
+              "A diagnosis",
+              "Permission to ignore it"
+            ],
+            "CorrectAnswer": "A wish for fairness or independence",
+            "Explanation": "A need may explain the argument without deciding the outcome.",
+            "Objective": "Developmental needs",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO21-Q5",
+            "Type": "MultipleChoice",
+            "Prompt": "Which consequence is logical after device misuse?",
+            "Options": [
+              "Remove all social contact for six months",
+              "Revise device access and practise safe use",
+              "Destroy the device",
+              "Ignore the event"
+            ],
+            "CorrectAnswer": "Revise device access and practise safe use",
+            "Explanation": "The response relates directly to the behaviour.",
+            "Objective": "Logical consequences",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO21-Q6",
+            "Type": "MultipleChoice",
+            "Prompt": "What does Environment examine?",
+            "Options": [
+              "Only personality",
+              "Peers, rules, access, demands and adult modelling",
+              "The final punishment",
+              "Only school"
+            ],
+            "CorrectAnswer": "Peers, rules, access, demands and adult modelling",
+            "Explanation": "Behaviour occurs in a context that can increase or reduce risk.",
+            "Objective": "Environmental analysis",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO21-Q7",
+            "Type": "MultipleChoice",
+            "Prompt": "Which supports guided independence?",
+            "Options": [
+              "Adults decide everything until 18",
+              "Freedom grows without check-ins",
+              "Decision-making shifts with safety, skill and demonstrated responsibility",
+              "All decisions transfer at puberty"
+            ],
+            "CorrectAnswer": "Decision-making shifts with safety, skill and demonstrated responsibility",
+            "Explanation": "Adult involvement changes according to risk and capability.",
+            "Objective": "Guided independence",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO21-Q8",
+            "Type": "MultiSelect",
+            "Prompt": "Which two changes deserve closer attention?",
+            "Options": [
+              "New music preference",
+              "Sudden severe drop in functioning",
+              "Different hairstyle",
+              "Persistent major changes in mood, sleep or safety"
+            ],
+            "CorrectAnswers": [
+              "Sudden severe drop in functioning",
+              "Persistent major changes in mood, sleep or safety"
+            ],
+            "Explanation": "Persistence, intensity and impact matter.",
+            "Objective": "Concerning patterns",
+            "Points": 2,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO21-Q9",
+            "Type": "MultipleChoice",
+            "Prompt": "How should trust be defined?",
+            "Options": [
+              "Permanent character judgement",
+              "A feeling that cannot return",
+              "Observable behaviours such as honesty and check-ins",
+              "Complete access to every conversation"
+            ],
+            "CorrectAnswer": "Observable behaviours such as honesty and check-ins",
+            "Explanation": "Behavioural definitions create a path to rebuild trust.",
+            "Objective": "Trust",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO21-Q10",
+            "Type": "MultipleChoice",
+            "Prompt": "What takes priority in immediate danger?",
+            "Options": [
+              "Finishing the lesson",
+              "Keeping the issue private",
+              "Immediate safety action and appropriate help",
+              "Waiting until tomorrow"
+            ],
+            "CorrectAnswer": "Immediate safety action and appropriate help",
+            "Explanation": "Immediate risk requires protective action.",
+            "Objective": "Safety escalation",
+            "Points": 1,
+            "CriticalSafetyQuestion": true
+          }
+        ],
+        "FeedbackByScore": {
+          "Below50": "Repeat the development domains, decoder and safety sections.",
+          "From50To79": "Review the objectives linked to missed questions, then retry.",
+          "From80To100": "Passed if the critical safety question is correct."
+        }
+      },
+      "FinalReflection": {
+        "Prompt": "Return to your opening definition. What has changed? Name one label you will replace with observable language and one response you will practise.",
+        "MinimumCharacters": 180,
+        "AllowVoiceResponse": true,
+        "MinimumVoiceSeconds": 45,
+        "CompletionMessage": "Development does not remove accountability; it helps the adult choose a safer and more effective response."
+      },
+      "ScreenSequence": [
+        "01-definition-gate",
+        "02-video-development-not-defiance",
+        "03-teaching-objective-language",
+        "04-video-four-domains",
+        "05-activity-label-to-observation",
+        "06-video-behaviour-decoder",
+        "07-teaching-accountability",
+        "08-case-study-jordan",
+        "09-video-guided-independence",
+        "10-activity-independence-zones",
+        "11-home-practice",
+        "12-formal-assessment",
+        "13-quiz",
+        "14-final-reflection"
+      ],
+      "AnalyticsEvents": [
+        "lesson_started",
+        "definition_submitted",
+        "video_completed",
+        "knowledge_check_completed",
+        "activity_submitted",
+        "scenario_submitted",
+        "home_practice_planned",
+        "assessment_submitted",
+        "quiz_passed",
+        "lesson_completed"
+      ],
+      "References": [
+        "World Health Organization — Adolescent health and promoting adolescent well-being.",
+        "Australian Institute of Family Studies — Young people and their parents: Supporting families through changes that occur in adolescence.",
+        "Australian Institute of Family Studies — Parenting pre-teens: A pivotal time for children and parents."
+      ]
+    },
+    {
+      "SchemaVersion": "2.0",
+      "LessonNumber": "22",
+      "CourseSequence": 2,
+      "Title": "Communication That Keeps Adolescents Connected",
+      "Subtitle": "Listen, validate, set limits and repair without surrendering the adult role.",
+      "Category": "Adolescence",
+      "Module": "Child Development",
+      "Course": "Adolescence: Connected, Safe and Supported",
+      "Audience": "Parents, carers and family-support participants caring for adolescents.",
+      "Level": "Foundation to Applied",
+      "EstimatedDuration": "75–95 minutes plus a 3–7 day home-practice task",
+      "ProductionStatus": "Complete learning content and interaction specification; ready for content, clinical, safeguarding and accessibility review.",
+      "LearningObjectives": [
+        "Explain how timing, tone and regulation affect whether a young person can hear a message.",
+        "Use the Listen–Name–Limit–Plan conversation sequence.",
+        "Validate emotion without agreeing with unsafe behaviour.",
+        "Replace escalation phrases with specific, respectful language.",
+        "Complete a repair conversation and a ten-minute connection practice."
+      ],
+      "SafetyAndScope": {
+        "Scope": "Education and skill development only. This lesson does not diagnose a young person or replace medical, mental-health, legal or child-safety advice.",
+        "TraumaInformedUse": "Learners may pause, save and return. Personal disclosure is never required to pass. Fictional or de-identified responses are accepted.",
+        "UrgentRisk": "In Australia, call Triple Zero (000) for immediate danger. Lifeline: 13 11 14. Kids Helpline for ages 5–25: 1800 55 1800.",
+        "EvidencePrivacy": "No task requires images, audio or video of a young person. Use de-identified, simulated or parent-created evidence."
+      },
+      "DefinitionGate": {
+        "ScreenTitle": "Before You Begin",
+        "Prompt": "What does respectful communication with a teenager look and sound like when you disagree or need to hold a boundary?",
+        "WhyItMatters": "This records the learner's starting understanding. It is not graded and is shown again in the final reflection.",
+        "MinimumCharacters": 80,
+        "MaximumCharacters": 1200,
+        "AllowVoiceResponse": true,
+        "MinimumVoiceSeconds": 20,
+        "ExampleShownAfterSubmission": "Respectful communication can include listening, disagreement and clear limits. It avoids humiliation, contempt, threats and personal labels.",
+        "CompletionRequiredBeforeVideo": true
+      },
+      "ProgressionRules": {
+        "SequentialLocking": true,
+        "DefinitionGateRequired": true,
+        "MandatoryVideoWatchPercent": 95,
+        "AllKnowledgeChecksRequired": true,
+        "ScenarioResponseRequired": true,
+        "HomePracticePlanRequired": true,
+        "FormalAssessmentRequired": true,
+        "QuizPassPercent": 80,
+        "QuizAttemptsAllowed": "Unlimited",
+        "CriticalSafetyQuestionsMustBeCorrect": true,
+        "RetryBehaviour": "Display objective-linked feedback, preserve the highest score and randomise question and option order on retry.",
+        "FinalReflectionRequired": true,
+        "CertificateRule": "Complete every mandatory step, pass the assessment, achieve at least 80% on the quiz and correctly answer all critical safety questions."
+      },
+      "Accessibility": {
+        "ReadingLevel": "Plain English with expandable detail",
+        "Features": [
+          "Captions and transcripts for every video",
+          "Audio narration for teaching text",
+          "Keyboard and screen-reader accessible interactions",
+          "No colour-only meaning",
+          "Save-and-return at every activity",
+          "Text, voice or structured-choice response options",
+          "Low-stimulation mode",
+          "Inclusive family, culture, disability and neurodiversity examples"
+        ]
+      },
+      "Introduction": "Communication often breaks down when the issue matters most. The adult is worried and wants an immediate answer. The adolescent feels accused, controlled or embarrassed and becomes defensive, silent or aggressive. Each person then reacts to the other's reaction.\n\nEffective communication is not permissive. It increases the chance that important information is heard, disclosed and acted on. A parent can listen fully and still say no, validate a feeling and still require repair, or apologise for shouting without removing the boundary.\n\nThis lesson provides a repeatable conversation structure for ordinary conflict, difficult disclosures and post-conflict repair. It also identifies when a discussion should pause because someone is too escalated to participate safely.",
+      "Videos": [
+        {
+          "VideoId": "ADO-22-V1",
+          "Title": "Connection Before Correction",
+          "EstimatedDuration": "2 minutes 25 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Show why brief connection improves the effectiveness of correction.",
+          "VisualDirection": "Split-screen comparison: accusation and escalation versus calm observation, listening and a maintained expectation.",
+          "NarrationScript": "Connection before correction does not mean the boundary disappears. It means the adult creates enough emotional safety for the young person to process the message.\n\nA teenager arrives home upset and snaps when asked about a missed chore. An escalation response is, “Do not use that tone with me. You only care about yourself.” A connected response is, “You look upset. I want to hear what happened. The chore still needs a plan, but we can talk after ten minutes to settle.”\n\nThe second response notices the young person, avoids a character attack, keeps the expectation visible and chooses a better time for problem-solving.\n\nConnection can be brief: a calm voice, an accurate reflection, privacy from siblings, water, food or permission to pause. It is not a reward for poor behaviour. It helps the thinking part of the conversation return.\n\nIf the young person is threatening, violent or unsafe, do not continue a face-to-face debate. Create distance, protect others and seek help as required. Connection never requires remaining in danger.\n\nWhen safety allows, communicate both truths: you matter to me, and this problem still needs to be addressed.",
+          "OnScreenText": [
+            "You matter",
+            "The problem still matters",
+            "Regulate before problem-solving",
+            "Do not remain in danger"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "Choice",
+            "Prompt": "Which opening best supports connection and accountability?",
+            "Options": [
+              "You are impossible to talk to",
+              "I can see you are upset. I will listen, and we still need to address what happened",
+              "Forget it; do what you want",
+              "Tell me now or lose everything"
+            ],
+            "CorrectAnswer": "I can see you are upset. I will listen, and we still need to address what happened"
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-22-V2",
+          "Title": "Listen–Name–Limit–Plan",
+          "EstimatedDuration": "2 minutes 45 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Teach a four-step conversation sequence that preserves voice, safety and adult responsibility.",
+          "VisualDirection": "Four animated cards with sample speech: Listen, Name, Limit, Plan.",
+          "NarrationScript": "Use Listen–Name–Limit–Plan when a problem needs discussion.\n\nListen: ask an open question and let the young person finish. “Tell me what happened from your point of view.” Listening is not agreement. It gives the adult information and reduces the need to fight for a hearing.\n\nName: summarise the feeling, concern or need you heard. “You felt embarrassed when the plan changed and did not want your friends to think you were controlled.” Use tentative language so the young person can correct you.\n\nLimit: state the non-negotiable behaviour or safety boundary in one or two sentences. “It is okay to feel embarrassed. It is not okay to disappear without contact. I need to know you are safe.”\n\nPlan: invite the young person into a practical next step. “What could you do if your phone dies? Here are two options I can support.” A plan identifies who will do what, by when, and what happens if the plan fails.\n\nIf the young person refuses to talk, keep the door open without chasing. “We need to resolve this. We will try again at seven. You can write your view if talking feels too hard.”\n\nThe sequence communicates that the young person's voice matters, the limit is real and there is a way forward.",
+          "OnScreenText": [
+            "1 Listen",
+            "2 Name",
+            "3 Limit",
+            "4 Plan",
+            "Listening is not agreeing"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "Sequence",
+            "Prompt": "Put the four steps in order.",
+            "Items": [
+              "Plan",
+              "Limit",
+              "Listen",
+              "Name"
+            ],
+            "CorrectOrder": [
+              "Listen",
+              "Name",
+              "Limit",
+              "Plan"
+            ]
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-22-V3",
+          "Title": "Validation Without Giving In",
+          "EstimatedDuration": "2 minutes 10 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Differentiate validating emotion from approving behaviour or changing a decision.",
+          "VisualDirection": "Two parallel tracks: Feeling and Experience; Behaviour and Boundary.",
+          "NarrationScript": "Validation communicates that the young person's experience makes sense from their point of view. It does not mean every belief is accurate or every action is acceptable.\n\nAn adult can say, “I understand why you are disappointed,” while keeping the answer no. They can say, “Being excluded from the group chat hurt,” without agreeing that retaliation was justified. They can say, “You were frightened I would be angry,” while still addressing a lie.\n\nA validating sentence often names the likely feeling, links it to the situation and leaves room for correction: “It sounds like you felt trapped when both adults questioned you at once. Have I understood that?”\n\nAvoid sarcastic or false validation. “I understand” followed immediately by a lecture will not feel respectful.\n\nValidate strengths as well as feelings. “You wanted to protect your friend.” Then hold the limit: “Protecting a friend does not include hiding an overdose or serious danger from adults.”\n\nEmotion can be accepted. Harmful behaviour still requires action.",
+          "OnScreenText": [
+            "Validate feelings and experience",
+            "Do not validate harm",
+            "Use tentative language"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "Rewrite",
+            "Prompt": "Rewrite “Stop being dramatic; it is only a party” as validation plus a maintained limit.",
+            "ModelAnswer": "I can see missing the party feels important and disappointing. The transport plan is still unsafe, so the answer is no tonight. We can plan a safer option next time."
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-22-V4",
+          "Title": "Repair After Conflict",
+          "EstimatedDuration": "2 minutes 15 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Teach adults to take responsibility for their part while maintaining the original issue.",
+          "VisualDirection": "A cracked watercolour line repaired in five visible steps.",
+          "NarrationScript": "Every family has conflict. Relationship safety is created not by never making mistakes, but by repairing them.\n\nA complete adult repair has five parts. Name what you did: “I shouted and called you selfish.” Acknowledge the impact: “That was hurtful and made it harder for you to tell me what happened.” Take responsibility without adding “but you made me.” State what you will do differently: “Next time I will pause before the conversation.” Return to the unresolved issue: “We still need a safe plan for getting home.”\n\nAn apology does not cancel a boundary. It strengthens credibility because the adult applies accountability to themselves as well as the young person.\n\nDo not demand immediate forgiveness. The young person may need time. Say, “You do not have to respond now. I wanted to take responsibility.”\n\nThen invite, rather than force, their repair: “When you are ready, we need to discuss the insult and broken agreement.”\n\nRepair teaches that people can be responsible for harm, change behaviour and remain connected.",
+          "OnScreenText": [
+            "Name it",
+            "Acknowledge impact",
+            "Own it",
+            "Change it",
+            "Return to the issue"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "WrittenResponse",
+            "Prompt": "Write a two-sentence adult apology that does not remove the original boundary.",
+            "MinimumCharacters": 80
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        }
+      ],
+      "TeachingSections": [
+        {
+          "SectionId": "ADO-22-S1",
+          "Title": "Timing, Privacy and Regulation",
+          "EstimatedMinutes": 10,
+          "Content": "A conversation is unlikely to succeed when either person is shouting, threatening, freezing, repeatedly interrupting, pacing or unable to process information. A pause should include a return point: “We are both too escalated to solve this safely. We will take twenty minutes and return at 7:30.”\n\nAn indefinite walk-away can feel like abandonment or avoidance. A timed pause protects both the relationship and the task.\n\nSensitive discussions should usually occur in private. Correcting a teenager in front of siblings, peers or extended family increases shame and defensiveness. Avoid beginning major discussions at bedtime, immediately before school or in a car where the young person cannot leave, unless safety requires immediate action.\n\nPrepare the one message that matters most. Long lectures invite argument about minor details and reduce understanding. State the observation, impact and required next step.",
+          "KeyTakeaways": [
+            "Pause with a return time.",
+            "Use privacy and appropriate timing.",
+            "Deliver one clear message."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "Which pause is most effective?",
+            "Options": [
+              "I am done talking to you",
+              "We will never discuss this again",
+              "We are both escalated. Let us pause for twenty minutes and return at 7:30",
+              "Leave until I decide otherwise"
+            ],
+            "CorrectAnswer": "We are both escalated. Let us pause for twenty minutes and return at 7:30",
+            "Feedback": "An effective pause includes a reason and a specific return point."
+          }
+        },
+        {
+          "SectionId": "ADO-22-S2",
+          "Title": "Questions That Open and Questions That Close",
+          "EstimatedMinutes": 9,
+          "Content": "Open questions invite useful information: “What happened next?” “What were you worried would happen?” “What do you need me to understand?” Accusatory questions such as “Why are you always lying?” usually invite defence.\n\nAsk one question and wait. Silence may be thinking time rather than disrespect.\n\nWhen facts are disputed, separate what is known from what is uncertain: “I know the message was sent from your account. I do not yet know who typed it. I need to protect everyone while we clarify that.”\n\nWhen a disclosure involves abuse, exploitation, self-harm or immediate danger, do not promise secrecy. Explain that privacy will be respected as much as possible, but enough information may need to be shared to protect safety.",
+          "KeyTakeaways": [
+            "Ask one open question at a time.",
+            "Separate facts from assumptions.",
+            "Do not promise secrecy where safety action may be required."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "Which question is most likely to invite useful information?",
+            "Options": [
+              "Why are you always lying?",
+              "What were you worried would happen if you told me?",
+              "Do you think I am stupid?",
+              "How could you embarrass me?"
+            ],
+            "CorrectAnswer": "What were you worried would happen if you told me?",
+            "Feedback": "It focuses on the barrier to honesty without shaming."
+          }
+        },
+        {
+          "SectionId": "ADO-22-S3",
+          "Title": "Hold Boundaries in Few Words",
+          "EstimatedMinutes": 8,
+          "Content": "A clear boundary identifies the behaviour, the safety or responsibility reason, the current action and the review point.\n\nExample: “Driving with a person who has been drinking is unsafe. I will collect you at any time without an argument in the car. We will discuss the rest tomorrow.”\n\nAvoid threats that are extreme or unenforceable. A teenager who expects humiliation or indefinite punishment may be less likely to disclose danger.\n\nWhen debate becomes circular, use a calm broken-record response: “I hear that you disagree. The answer for tonight is no because the transport plan is unsafe. We can review future options tomorrow.”\n\nWhere appropriate, offer limited choices inside the boundary. “You can complete the task before dinner or between seven and eight. Which works better?” Choice supports autonomy without making the requirement optional.",
+          "KeyTakeaways": [
+            "State behaviour, reason, action and review.",
+            "Avoid empty or extreme threats.",
+            "Offer choices inside the boundary."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "Which boundary is clearest?",
+            "Options": [
+              "Because I said so",
+              "You never listen",
+              "The transport plan is unsafe, so the outing cannot proceed tonight. We will review a safer plan tomorrow",
+              "Maybe; stop asking"
+            ],
+            "CorrectAnswer": "The transport plan is unsafe, so the outing cannot proceed tonight. We will review a safer plan tomorrow",
+            "Feedback": "It identifies the issue, current decision and review point."
+          }
+        }
+      ],
+      "InteractiveActivities": [
+        {
+          "ActivityId": "ADO-22-A1",
+          "Title": "Escalator or Regulator?",
+          "Type": "ClassificationAndRewrite",
+          "EstimatedMinutes": 7,
+          "Items": [
+            {
+              "Phrase": "You always ruin everything.",
+              "Classification": "Escalator",
+              "ModelRewrite": "The agreement was broken tonight, and we need to address the impact."
+            },
+            {
+              "Phrase": "Tell me what happened from your point of view.",
+              "Classification": "Regulator",
+              "ModelRewrite": "No rewrite needed."
+            },
+            {
+              "Phrase": "I hear that you disagree. The answer for tonight is still no.",
+              "Classification": "Regulator",
+              "ModelRewrite": "No rewrite needed."
+            },
+            {
+              "Phrase": "Keep talking and you will lose everything.",
+              "Classification": "Escalator",
+              "ModelRewrite": "We are becoming too escalated. We will pause and return at 7:30."
+            }
+          ],
+          "CompletionRule": "Classify every phrase and rewrite both escalators."
+        },
+        {
+          "ActivityId": "ADO-22-A2",
+          "Title": "Build the Four-Step Conversation",
+          "Type": "StructuredWriting",
+          "EstimatedMinutes": 8,
+          "Prompt": "Use Listen–Name–Limit–Plan for an adolescent who insults a sibling after being excluded by friends.",
+          "RequiredFields": [
+            "Open listening question",
+            "Tentative validation",
+            "Clear limit",
+            "Practical repair plan"
+          ],
+          "ModelAnswer": "Tell me what happened before the argument. It sounds like you felt rejected and carried that hurt into the interaction with your sibling. Feeling rejected is understandable; insulting them is not acceptable. What repair can you make tonight, and what can you do next time you need space?"
+        }
+      ],
+      "CaseStudy": {
+        "Title": "Mia Shuts Down After School",
+        "Scenario": "Mia is 15. She comes home, drops her bag and goes to her room. Her parent follows and asks about a school message regarding an incomplete assignment. Mia says, “Get out. You only care about grades.” The parent replies, “After everything I do for you, this is how you act?” Mia puts on headphones and refuses to answer.\n\nLater, the parent learns that Mia was laughed at during a class presentation and has been dreading the assignment.",
+        "LearnerQuestions": [
+          "What made the original timing and opening ineffective?",
+          "Write a Listen–Name–Limit–Plan response for later that evening.",
+          "What boundary is needed around the way Mia spoke?",
+          "Write an adult repair for the guilt-based statement."
+        ],
+        "ModelResponse": "The parent approached immediately, followed Mia into a private space without checking readiness and led with the school problem. Later they could say: “Can you tell me what happened at school and what made the assignment feel impossible today? It sounds like the presentation was humiliating and you expected me to focus only on the grade. You may ask for space, but telling me to get out that way is not acceptable. Let us agree on a respectful signal for space and then make a small assignment plan.”\n\nRepair: “I said ‘after everything I do for you,’ which used guilt instead of listening. I am sorry. The assignment still needs a plan, and I want to understand what support would help.”",
+        "CompletionRule": "Address all four questions with at least 300 characters."
+      },
+      "HomePracticeTask": {
+        "TaskId": "ADO-22-T1",
+        "Title": "Ten-Minute Connection and One Repair",
+        "Duration": "Complete within 7 days",
+        "Instructions": [
+          "Choose a low-pressure ten-minute activity led by the young person's interests.",
+          "Do not use the time to question, correct or teach.",
+          "Complete one repair for a recent minor communication mistake.",
+          "Record what you said, the response and what you will repeat or change."
+        ],
+        "EvidenceOptions": [
+          "De-identified written reflection",
+          "2–3 minute voice reflection",
+          "Simulated repair script"
+        ],
+        "SuccessCriteria": [
+          "Connection activity completed or planned",
+          "Adult behaviour and impact named",
+          "No blame-shifting apology",
+          "Boundary retained",
+          "Specific next step"
+        ]
+      },
+      "FormalAssessment": {
+        "AssessmentId": "ADO-22-AS1",
+        "Title": "Difficult Conversation Script and Analysis",
+        "FormatOptions": [
+          "Written script and commentary 700–1000 words",
+          "Audio role-play 7–10 minutes",
+          "Structured interactive response"
+        ],
+        "Prompt": "Create a difficult parent–adolescent conversation. Write the ineffective version, identify at least four escalation points, then rewrite it using regulation, an open question, validation, a concise boundary, collaborative planning and repair. Explain how the improved version protects safety and dignity.",
+        "Rubric": [
+          {
+            "Criterion": "Escalation analysis",
+            "WeightPercent": 20,
+            "HighStandard": "Identifies tone, timing, assumptions, labels or threats and explains impact."
+          },
+          {
+            "Criterion": "Listening and validation",
+            "WeightPercent": 25,
+            "HighStandard": "Uses open questions and tentative validation without confusing it with agreement."
+          },
+          {
+            "Criterion": "Boundary quality",
+            "WeightPercent": 25,
+            "HighStandard": "Boundary is specific, proportionate and enforceable."
+          },
+          {
+            "Criterion": "Repair and planning",
+            "WeightPercent": 20,
+            "HighStandard": "Adult takes responsibility and creates a clear next step."
+          },
+          {
+            "Criterion": "Safety and privacy",
+            "WeightPercent": 10,
+            "HighStandard": "Recognises when to pause, escalate or limit secrecy."
+          }
+        ],
+        "PassPercent": 70
+      },
+      "Quiz": {
+        "QuizId": "ADO-22-QZ",
+        "Title": "Connected Communication",
+        "PassPercent": 80,
+        "RandomiseQuestions": true,
+        "RandomiseOptions": true,
+        "Questions": [
+          {
+            "QuestionId": "ADO22-Q1",
+            "Type": "MultipleChoice",
+            "Prompt": "What does connection before correction mean?",
+            "Options": [
+              "Ignore behaviour",
+              "Create enough emotional safety for the message to be heard while keeping the issue visible",
+              "Agree with everything",
+              "Delay every limit"
+            ],
+            "CorrectAnswer": "Create enough emotional safety for the message to be heard while keeping the issue visible",
+            "Explanation": "Connection supports processing without removing accountability.",
+            "Objective": "Connection",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO22-Q2",
+            "Type": "MultipleChoice",
+            "Prompt": "What is the first Listen–Name–Limit–Plan step?",
+            "Options": [
+              "State the consequence",
+              "Hear the young person's account",
+              "Explain why the adult is right",
+              "Demand an apology"
+            ],
+            "CorrectAnswer": "Hear the young person's account",
+            "Explanation": "Listening provides information and reduces the need to fight for a hearing.",
+            "Objective": "Conversation sequence",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO22-Q3",
+            "Type": "MultipleChoice",
+            "Prompt": "Which validates emotion while keeping a limit?",
+            "Options": [
+              "The rule was stupid",
+              "Stop overreacting",
+              "I understand you are disappointed. The unsafe transport still means no tonight",
+              "Do what you want"
+            ],
+            "CorrectAnswer": "I understand you are disappointed. The unsafe transport still means no tonight",
+            "Explanation": "The feeling is recognised without approving the plan.",
+            "Objective": "Validation",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO22-Q4",
+            "Type": "MultiSelect",
+            "Prompt": "Which two make a pause effective?",
+            "Options": [
+              "A reason related to regulation or safety",
+              "No planned return",
+              "A specific return time",
+              "Silent treatment"
+            ],
+            "CorrectAnswers": [
+              "A reason related to regulation or safety",
+              "A specific return time"
+            ],
+            "Explanation": "A clear reason and return point protect the conversation.",
+            "Objective": "Safe pause",
+            "Points": 2,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO22-Q5",
+            "Type": "MultipleChoice",
+            "Prompt": "Which question is least defensive?",
+            "Options": [
+              "Why are you selfish?",
+              "What were you worried would happen if you told me?",
+              "Are you lying again?",
+              "Do you enjoy making me angry?"
+            ],
+            "CorrectAnswer": "What were you worried would happen if you told me?",
+            "Explanation": "It seeks information without attacking character.",
+            "Objective": "Open questions",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO22-Q6",
+            "Type": "MultipleChoice",
+            "Prompt": "What should an adult do when facts are uncertain?",
+            "Options": [
+              "State assumptions as facts",
+              "Separate what is known from what still needs clarification",
+              "Ignore risk",
+              "Punish first"
+            ],
+            "CorrectAnswer": "Separate what is known from what still needs clarification",
+            "Explanation": "Accuracy protects fairness and safety.",
+            "Objective": "Facts and assumptions",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO22-Q7",
+            "Type": "MultipleChoice",
+            "Prompt": "Which apology is complete?",
+            "Options": [
+              "Sorry you felt that way",
+              "I am sorry I shouted and called you lazy. That was hurtful. Next time I will pause; the issue still needs a plan",
+              "Sorry, but you caused it",
+              "We both made mistakes"
+            ],
+            "CorrectAnswer": "I am sorry I shouted and called you lazy. That was hurtful. Next time I will pause; the issue still needs a plan",
+            "Explanation": "It names the action, impact and change without cancelling the issue.",
+            "Objective": "Repair",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO22-Q8",
+            "Type": "MultipleChoice",
+            "Prompt": "When should secrecy not be promised?",
+            "Options": [
+              "When the topic is boring",
+              "When serious harm or danger may require protective help",
+              "Whenever privacy is requested",
+              "Only in public"
+            ],
+            "CorrectAnswer": "When serious harm or danger may require protective help",
+            "Explanation": "Safety duties may require limited sharing.",
+            "Objective": "Privacy",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO22-Q9",
+            "Type": "MultiSelect",
+            "Prompt": "Which two are concise boundaries?",
+            "Options": [
+              "You are just like your father",
+              "The answer tonight is no because the transport is unsafe",
+              "You never do anything right",
+              "You may complete the task before dinner or from seven to eight"
+            ],
+            "CorrectAnswers": [
+              "The answer tonight is no because the transport is unsafe",
+              "You may complete the task before dinner or from seven to eight"
+            ],
+            "Explanation": "Both state a requirement without character attack.",
+            "Objective": "Boundaries",
+            "Points": 2,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO22-Q10",
+            "Type": "MultipleChoice",
+            "Prompt": "If discussion is becoming violent, what is the priority?",
+            "Options": [
+              "Win the argument",
+              "Continue until fault is admitted",
+              "Create safety and distance, then seek appropriate help",
+              "Film it"
+            ],
+            "CorrectAnswer": "Create safety and distance, then seek appropriate help",
+            "Explanation": "No communication method requires remaining in danger.",
+            "Objective": "Immediate safety",
+            "Points": 1,
+            "CriticalSafetyQuestion": true
+          }
+        ],
+        "FeedbackByScore": {
+          "Below50": "Repeat the communication sequence and repair videos.",
+          "From50To79": "Review missed objectives and practise one model script.",
+          "From80To100": "Passed if the critical safety question is correct."
+        }
+      },
+      "FinalReflection": {
+        "Prompt": "Compare your opening definition with what you know now. Write one sentence you will stop using, its replacement and one repair you need to make or rehearse.",
+        "MinimumCharacters": 180,
+        "AllowVoiceResponse": true,
+        "MinimumVoiceSeconds": 45,
+        "CompletionMessage": "Listening and validation strengthen boundaries when they support understanding, disclosure and planning."
+      },
+      "ScreenSequence": [
+        "01-definition-gate",
+        "02-video-connection",
+        "03-teaching-timing",
+        "04-video-four-step-sequence",
+        "05-activity-escalator-regulator",
+        "06-teaching-open-questions",
+        "07-video-validation",
+        "08-activity-conversation-builder",
+        "09-teaching-concise-boundaries",
+        "10-case-study-mia",
+        "11-video-repair",
+        "12-home-practice",
+        "13-formal-assessment",
+        "14-quiz",
+        "15-final-reflection"
+      ],
+      "AnalyticsEvents": [
+        "lesson_started",
+        "definition_submitted",
+        "video_completed",
+        "knowledge_check_completed",
+        "communication_activity_submitted",
+        "repair_practice_submitted",
+        "assessment_submitted",
+        "quiz_passed",
+        "lesson_completed"
+      ],
+      "References": [
+        "Australian Institute of Family Studies — Tuning in to Teens program profile.",
+        "Australian Institute of Family Studies — Young people and their parents.",
+        "World Health Organization — Promoting adolescent well-being."
+      ]
+    },
+    {
+      "SchemaVersion": "2.0",
+      "LessonNumber": "23",
+      "CourseSequence": 3,
+      "Title": "Firm, Fair Boundaries and Growing Independence",
+      "Subtitle": "Use predictable limits, shared agreements and logical consequences to build responsibility.",
+      "Category": "Adolescence",
+      "Module": "Child Development",
+      "Course": "Adolescence: Connected, Safe and Supported",
+      "Audience": "Parents, carers and family-support participants caring for adolescents.",
+      "Level": "Foundation to Applied",
+      "EstimatedDuration": "75–95 minutes plus a 3–7 day home-practice task",
+      "ProductionStatus": "Complete learning content and interaction specification; ready for content, clinical, safeguarding and accessibility review.",
+      "LearningObjectives": [
+        "Sort adolescent decisions into adult safety decisions, shared decisions and young-person decisions.",
+        "Write clear, related, proportionate, enforceable and reviewable boundaries.",
+        "Distinguish safety monitoring from controlling or humiliating surveillance.",
+        "Use logical consequences, repair and a trust-rebuilding pathway.",
+        "Create a family agreement with responsibilities, supports and a review date."
+      ],
+      "SafetyAndScope": {
+        "Scope": "Education and skill development only. This lesson does not diagnose a young person or replace medical, mental-health, legal or child-safety advice.",
+        "TraumaInformedUse": "Learners may pause, save and return. Personal disclosure is never required to pass. Fictional or de-identified responses are accepted.",
+        "UrgentRisk": "In Australia, call Triple Zero (000) for immediate danger. Lifeline: 13 11 14. Kids Helpline for ages 5–25: 1800 55 1800.",
+        "EvidencePrivacy": "No task requires images, audio or video of a young person. Use de-identified, simulated or parent-created evidence."
+      },
+      "DefinitionGate": {
+        "ScreenTitle": "Before You Begin",
+        "Prompt": "What makes a boundary fair and effective for an adolescent, and how should freedom change as responsibility grows?",
+        "WhyItMatters": "This records the learner's starting understanding. It is not graded and is shown again in the final reflection.",
+        "MinimumCharacters": 80,
+        "MaximumCharacters": 1200,
+        "AllowVoiceResponse": true,
+        "MinimumVoiceSeconds": 20,
+        "ExampleShownAfterSubmission": "A fair boundary is connected to safety or responsibility, stated clearly, enforced predictably and reviewed as skills grow.",
+        "CompletionRequiredBeforeVideo": true
+      },
+      "ProgressionRules": {
+        "SequentialLocking": true,
+        "DefinitionGateRequired": true,
+        "MandatoryVideoWatchPercent": 95,
+        "AllKnowledgeChecksRequired": true,
+        "ScenarioResponseRequired": true,
+        "HomePracticePlanRequired": true,
+        "FormalAssessmentRequired": true,
+        "QuizPassPercent": 80,
+        "QuizAttemptsAllowed": "Unlimited",
+        "CriticalSafetyQuestionsMustBeCorrect": true,
+        "RetryBehaviour": "Display objective-linked feedback, preserve the highest score and randomise question and option order on retry.",
+        "FinalReflectionRequired": true,
+        "CertificateRule": "Complete every mandatory step, pass the assessment, achieve at least 80% on the quiz and correctly answer all critical safety questions."
+      },
+      "Accessibility": {
+        "ReadingLevel": "Plain English with expandable detail",
+        "Features": [
+          "Captions and transcripts for every video",
+          "Audio narration for teaching text",
+          "Keyboard and screen-reader accessible interactions",
+          "No colour-only meaning",
+          "Save-and-return at every activity",
+          "Text, voice or structured-choice response options",
+          "Low-stimulation mode",
+          "Inclusive family, culture, disability and neurodiversity examples"
+        ]
+      },
+      "Introduction": "Adolescents need limits and increasing influence over their own lives. Problems arise when adults respond with either rigid control or sudden withdrawal of guidance.\n\nA strong boundary system is transparent. The young person knows what is fixed, what can be negotiated, what behaviour will rebuild trust and when the decision will be reviewed. The adult avoids changing consequences in anger or using unrelated losses to force compliance.\n\nThis lesson applies to curfews, transport, devices, privacy, household responsibilities and outings. The same principles can be adapted to other family situations. Adult legal and protective responsibilities remain even when the young person disagrees.",
+      "Videos": [
+        {
+          "VideoId": "ADO-23-V1",
+          "Title": "Freedom Grows With Responsibility",
+          "EstimatedDuration": "2 minutes 15 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Frame independence as a gradual transfer supported by skill and observable behaviour.",
+          "VisualDirection": "A bridge built from blocks labelled planning, honesty, check-ins, repair and help-seeking.",
+          "NarrationScript": "Adolescents need genuine opportunities to choose and practise judgement. Freedom without preparation, however, can expose a young person to risks they are not ready to manage.\n\nUse graduated responsibility. Break trust into behaviours: communicating plans, following check-ins, returning at the agreed time, reporting changes, using a safe-exit plan and repairing harm.\n\nState the pathway before a problem occurs. “When you complete three outings with reliable check-ins and return times, we will discuss a later curfew.” This is clearer than “We will see whether I can trust you.”\n\nWhen an agreement is broken, adjust only the freedom connected to the risk, provide skill practice and set a review date. Avoid permanent statements such as “You will never go out again.” Permanent threats remove hope and do not define success.\n\nAdults must also provide supports. A young person cannot meet a curfew without safe transport. Responsibility is shared when adults control access to transport, money, medication or devices.\n\nThe goal is not obedience for its own sake. It is demonstrated capacity for safer independence.",
+          "OnScreenText": [
+            "Freedom + skill + support",
+            "Trust = observable behaviour",
+            "Use a review date",
+            "Avoid permanent threats"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "WrittenResponse",
+            "Prompt": "Choose one adolescent freedom and list two observable behaviours that would show readiness.",
+            "MinimumCharacters": 80
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-23-V2",
+          "Title": "The Five-Part Boundary",
+          "EstimatedDuration": "1 minute 50 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Teach a standard format for clear and reviewable boundaries.",
+          "VisualDirection": "Five cards labelled Behaviour, Reason, Action, Support and Review.",
+          "NarrationScript": "A strong boundary has five parts.\n\nBehaviour: “Contact me if the location or transport changes.”\n\nReason: “I need to know you are safe and where to collect you.”\n\nAction: “The next unsupervised outing will pause if contact is not made.”\n\nSupport: “You can borrow a phone, call a trusted adult or use the agreed code word.”\n\nReview: “We will review after you practise the backup plan and complete two reliable check-ins.”\n\nThe action must be enforceable and proportionate. A low-risk first mistake usually requires a smaller response than repeated deception or serious danger.\n\nExplain boundaries when everyone is calm, not only after a breach. Ask the young person what may get in the way and what support would help. The adult may retain the final safety decision, but participation improves clarity and commitment.",
+          "OnScreenText": [
+            "Behaviour",
+            "Reason",
+            "Action",
+            "Support",
+            "Review"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "Sequence",
+            "Prompt": "Put the five boundary parts in order.",
+            "Items": [
+              "Support",
+              "Behaviour",
+              "Review",
+              "Reason",
+              "Action"
+            ],
+            "CorrectOrder": [
+              "Behaviour",
+              "Reason",
+              "Action",
+              "Support",
+              "Review"
+            ]
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-23-V3",
+          "Title": "Monitoring, Privacy and Safety",
+          "EstimatedDuration": "2 minutes 20 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Help parents choose the least intrusive monitoring that adequately addresses risk.",
+          "VisualDirection": "A scale from ordinary check-ins to targeted protective monitoring, with privacy and safety symbols.",
+          "NarrationScript": "Adolescents need privacy, and adults retain responsibility for safety. The balance should be based on specific risk rather than fear alone.\n\nOrdinary monitoring may include knowing the plan, companions, transport, return time and how contact will occur. This works best through agreed communication.\n\nMore intrusive monitoring may be justified where there is a credible and specific concern such as exploitation, disappearance, dangerous substance use, serious self-harm risk or contact with a known unsafe person. Even then, use the least intrusive action that can reasonably protect safety and involve relevant professionals when needed.\n\nRoutine secret surveillance can damage trust, drive behaviour underground and capture private information about other young people. Permanent demands for every password are not a substitute for online-safety education.\n\nA useful statement is: “I will respect your privacy. If I have a serious reason to believe someone is unsafe, I may need to check or share information to protect them. I will be as open with you as safety allows.”\n\nPrivacy does not require secrecy around abuse or danger. Safety does not permit unlimited control.",
+          "OnScreenText": [
+            "Agreed check-ins first",
+            "Match monitoring to specific risk",
+            "Least intrusive effective action",
+            "Privacy does not conceal danger"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "Scale",
+            "Prompt": "Rate this response: secretly reading every message after one late homework submission.",
+            "Scale": "1 = clearly disproportionate; 5 = proportionate",
+            "CorrectRange": [
+              1,
+              2
+            ],
+            "Feedback": "The monitoring is unrelated to the concern and unnecessarily intrusive."
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-23-V4",
+          "Title": "Consequences, Repair and Rebuilding Trust",
+          "EstimatedDuration": "2 minutes",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Show how consequences can teach and include a clear route back.",
+          "VisualDirection": "A cycle: breach, safety, consequence, repair, practice, review, restored responsibility.",
+          "NarrationScript": "A consequence is most useful when it teaches the skill connected to the problem.\n\nNatural consequences occur without adult creation, provided it is safe to allow them. A missed deadline may result in school follow-up. Natural consequences should not be allowed when serious harm is possible.\n\nLogical consequences are created by the adult and directly related. Unsafe device use may lead to revised access and supervised practice. Damaging shared property may lead to repair or an age-appropriate contribution toward replacement.\n\nRepair addresses impact. It may include restoring property, correcting misinformation, checking on someone harmed, apologising or making a prevention plan.\n\nTrust rebuilding must be specific and time-limited. “For the next two outings, use a seven o’clock check-in and confirmed lift. If both go to plan, we return to the previous arrangement.”\n\nDo not extend a consequence because the adult remains angry. Review it according to behaviour and safety. Predictability teaches more than power.",
+          "OnScreenText": [
+            "Related",
+            "Proportionate",
+            "Time-limited",
+            "Repair",
+            "Clear path back"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "Choice",
+            "Prompt": "Which response provides the clearest trust pathway?",
+            "Options": [
+              "Grounded until I feel better",
+              "No change",
+              "Complete two outings with agreed check-ins and transport, then review the curfew",
+              "You can never be trusted"
+            ],
+            "CorrectAnswer": "Complete two outings with agreed check-ins and transport, then review the curfew"
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        }
+      ],
+      "TeachingSections": [
+        {
+          "SectionId": "ADO-23-S1",
+          "Title": "Three Decision Zones",
+          "EstimatedMinutes": 9,
+          "Content": "Adult safety decisions cover areas where adults hold legal or protective responsibility, including immediate danger, emergency medical care, safe transport, protection from abuse and access to weapons or dangerous substances.\n\nShared decisions are appropriate where safety and autonomy both matter, such as curfews, routines, device plans, household contribution, study support and transport arrangements.\n\nYoung-person decisions include preferences and identity choices where no serious safety concern exists, such as hairstyle, music, hobbies, clothing within practical requirements and room organisation.\n\nThe zone can change. Demonstrated skill may move a decision toward greater independence. A credible exploitation concern may temporarily move an online-contact issue into the adult safety zone.\n\nExplain why a decision is in a particular zone and what would allow movement. This reduces arbitrary power struggles.",
+          "KeyTakeaways": [
+            "Separate safety authority from preference.",
+            "Use shared decisions to teach responsibility.",
+            "Review zones as risk and skill change."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "Which is usually a young-person decision when no safety issue exists?",
+            "Options": [
+              "Seatbelt use",
+              "Emergency medical care",
+              "Preferred hairstyle",
+              "Access to a loaded weapon"
+            ],
+            "CorrectAnswer": "Preferred hairstyle",
+            "Feedback": "Personal style is generally the young person's decision when safety and practical needs are met."
+          }
+        },
+        {
+          "SectionId": "ADO-23-S2",
+          "Title": "Fairness Is Not Sameness",
+          "EstimatedMinutes": 8,
+          "Content": "Fair boundaries consider age, maturity, disability, neurodivergence, past behaviour, current risk and support needs. Siblings may have different plans for valid reasons. Explain the reason without sharing another child's private information.\n\nAdults must meet their side of the agreement. If the adult promises transport, a review date or a calm conversation, failure to follow through affects trust and requires repair.\n\nCultural values can shape family contribution, privacy and independence. A culturally responsive boundary can retain family values while ensuring the young person is heard, safe and not subjected to degrading or discriminatory treatment.\n\nCulture must never be used to justify violence, coercion, forced relationships or denial of essential care.",
+          "KeyTakeaways": [
+            "Relevant differences can justify different supports.",
+            "Adults are accountable for their side.",
+            "Culture informs boundaries but does not justify harm."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "Why might siblings have different curfews?",
+            "Options": [
+              "One is loved more",
+              "Fairness may consider age, responsibility, transport and risk",
+              "Rules should change daily",
+              "Differences are never valid"
+            ],
+            "CorrectAnswer": "Fairness may consider age, responsibility, transport and risk",
+            "Feedback": "Fairness responds to relevant differences rather than treating everyone identically."
+          }
+        },
+        {
+          "SectionId": "ADO-23-S3",
+          "Title": "When an Agreement Fails",
+          "EstimatedMinutes": 9,
+          "Content": "A failed agreement provides information. Ask whether the expectation was clear, realistic and supported. Did the young person have the required planning skill, transport, device access and adult support? Was there deliberate concealment or a serious safety event?\n\nDo not negotiate during an emergency. Protect safety or obtain medical help first. Debrief later when everyone can think.\n\nFor non-emergencies, review what was agreed, what happened, what got in the way, the impact, repair, adjustment and review date. The young person should be able to state the new plan in their own words.\n\nRepeated breaches may require increased structure and professional assessment, not simply larger punishment. Consider learning difficulty, substance use, exploitation, mental-health concerns, family violence, trauma and transport barriers.",
+          "KeyTakeaways": [
+            "Safety first, debrief later.",
+            "Use failure as data.",
+            "Repeated problems may show unmet needs."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "What is the best first response when an outing becomes immediately unsafe?",
+            "Options": [
+              "Debate responsibility by text",
+              "Protect safety and teach later",
+              "Wait for a natural consequence",
+              "Post about it"
+            ],
+            "CorrectAnswer": "Protect safety and teach later",
+            "Feedback": "Immediate risk requires action before reflection or consequence."
+          }
+        }
+      ],
+      "InteractiveActivities": [
+        {
+          "ActivityId": "ADO-23-A1",
+          "Title": "Boundary Quality Check",
+          "Type": "ChecklistReview",
+          "EstimatedMinutes": 7,
+          "Prompt": "Review: “If you embarrass me again, you will lose your phone forever.”",
+          "Checklist": [
+            "Specific behaviour",
+            "Clear reason",
+            "Related action",
+            "Proportionate",
+            "Enforceable",
+            "Support",
+            "Review point"
+          ],
+          "ModelRewrite": "Posting identifying family information without consent can affect privacy and safety. Remove the post now. Public posting will pause for one week while we review privacy settings and make an agreement. We will review next Saturday."
+        },
+        {
+          "ActivityId": "ADO-23-A2",
+          "Title": "Build a Trust Pathway",
+          "Type": "PlanBuilder",
+          "EstimatedMinutes": 8,
+          "Scenario": "A 16-year-old twice missed agreed check-ins during evening outings but returned safely.",
+          "RequiredFields": [
+            "Specific risk",
+            "Temporary adjustment",
+            "Two trust behaviours",
+            "Adult support",
+            "Review date",
+            "What follows success"
+          ],
+          "ModelAnswer": "Risk: safety and transport could not be confirmed. Adjustment: next outing uses confirmed transport and two check-ins. Rebuild: complete both check-ins and report plan changes. Support: portable charger and backup adult number. Review after two outings. Success returns to the previous arrangement."
+        }
+      ],
+      "CaseStudy": {
+        "Title": "The Party and the Changing Plan",
+        "Scenario": "Ari is 16 and asks to attend a party. The original plan is that a known parent will be home and Ari will be collected at 10:30 pm. At 9:45 pm Ari messages that the party has moved to another house and asks to stay until midnight. The parent does not know the new address or the adults present. Ari says, “Everyone else is allowed. If you make me leave, I will never tell you anything again.”",
+        "LearnerQuestions": [
+          "Which parts are adult safety decisions and which could be negotiated?",
+          "Write a five-part boundary for tonight.",
+          "How can the parent protect future disclosure without agreeing to the unsafe change?",
+          "What planning step could support future parties?"
+        ],
+        "ModelResponse": "The new location, unknown supervision and transport are immediate safety issues. The parent can say: “The location and supervision changed, and I cannot confirm the new plan is safe. I am collecting you now at the original address or another public location you give me. You are not in trouble for telling me the plan changed; contacting me was the right action. Tomorrow we will review what information and backup plan would be required for a future event.”",
+        "CompletionRule": "Address all four questions with at least 300 characters."
+      },
+      "HomePracticeTask": {
+        "TaskId": "ADO-23-T1",
+        "Title": "One Family Responsibility Agreement",
+        "Duration": "Complete and review within 7 days",
+        "Instructions": [
+          "Choose check-ins, devices, transport, household contribution, study or another low-risk responsibility.",
+          "Write behaviour, reason, action, support and review date.",
+          "Ask the young person to identify barriers and one suggestion.",
+          "Identify fixed and negotiable parts.",
+          "Record both adult and young-person responsibilities."
+        ],
+        "TemplateFields": [
+          "Topic",
+          "Shared goal",
+          "Young-person responsibilities",
+          "Adult responsibilities",
+          "Safety limit",
+          "Choices",
+          "Response to a missed agreement",
+          "Repair",
+          "Path to more freedom",
+          "Review date"
+        ],
+        "EvidenceOptions": [
+          "De-identified agreement",
+          "Photo with names removed",
+          "Audio explanation",
+          "Simulated plan"
+        ],
+        "SuccessCriteria": [
+          "Five parts present",
+          "Responsibilities on both sides",
+          "Proportionate response",
+          "Path to greater freedom",
+          "Review date"
+        ]
+      },
+      "FormalAssessment": {
+        "AssessmentId": "ADO-23-AS1",
+        "Title": "Boundary and Independence Plan",
+        "FormatOptions": [
+          "Written plan 700–1000 words",
+          "Agreement plus 400-word rationale",
+          "Audio presentation 7–9 minutes"
+        ],
+        "Prompt": "Design a boundary and independence plan for a fictional or de-identified situation. Include decision zone, risk, strengths, responsibilities, supports, logical consequence, repair, monitoring level, privacy safeguards and review pathway. Explain why it is the least restrictive option that adequately protects safety.",
+        "Rubric": [
+          {
+            "Criterion": "Decision-zone reasoning",
+            "WeightPercent": 20,
+            "HighStandard": "Correctly distinguishes adult, shared and young-person decisions."
+          },
+          {
+            "Criterion": "Boundary quality",
+            "WeightPercent": 25,
+            "HighStandard": "Includes all five parts in enforceable language."
+          },
+          {
+            "Criterion": "Proportionality and privacy",
+            "WeightPercent": 20,
+            "HighStandard": "Monitoring and consequences are related and no more intrusive than necessary."
+          },
+          {
+            "Criterion": "Skill and support",
+            "WeightPercent": 20,
+            "HighStandard": "Defines adult support, practice and observable trust behaviour."
+          },
+          {
+            "Criterion": "Review and repair",
+            "WeightPercent": 15,
+            "HighStandard": "Includes repair, measurable success and a dated review."
+          }
+        ],
+        "PassPercent": 70
+      },
+      "Quiz": {
+        "QuizId": "ADO-23-QZ",
+        "Title": "Boundaries and Independence",
+        "PassPercent": 80,
+        "RandomiseQuestions": true,
+        "RandomiseOptions": true,
+        "Questions": [
+          {
+            "QuestionId": "ADO23-Q1",
+            "Type": "MultipleChoice",
+            "Prompt": "What is graduated responsibility?",
+            "Options": [
+              "Remove adult involvement immediately",
+              "Transfer freedom as skills and safe behaviour are demonstrated",
+              "Use identical rules for all",
+              "Prevent every mistake"
+            ],
+            "CorrectAnswer": "Transfer freedom as skills and safe behaviour are demonstrated",
+            "Explanation": "Independence develops through supported practice.",
+            "Objective": "Graduated responsibility",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO23-Q2",
+            "Type": "MultipleChoice",
+            "Prompt": "Which is one of the five boundary parts?",
+            "Options": [
+              "Character judgement",
+              "Public embarrassment",
+              "Review point",
+              "Unrelated punishment"
+            ],
+            "CorrectAnswer": "Review point",
+            "Explanation": "A review point shows when and how the plan can change.",
+            "Objective": "Five-part boundary",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO23-Q3",
+            "Type": "MultiSelect",
+            "Prompt": "Which two are observable trust behaviours?",
+            "Options": [
+              "Being a good person",
+              "Sending agreed check-ins",
+              "Never disagreeing",
+              "Reporting transport changes"
+            ],
+            "CorrectAnswers": [
+              "Sending agreed check-ins",
+              "Reporting transport changes"
+            ],
+            "Explanation": "Trust is clearer when linked to actions.",
+            "Objective": "Trust behaviour",
+            "Points": 2,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO23-Q4",
+            "Type": "MultipleChoice",
+            "Prompt": "What is proportionate ordinary monitoring?",
+            "Options": [
+              "Permanent secret surveillance",
+              "Agreed information about plan, companions, transport and check-ins",
+              "Reading every message",
+              "No adult awareness"
+            ],
+            "CorrectAnswer": "Agreed information about plan, companions, transport and check-ins",
+            "Explanation": "Agreed monitoring is usually the least intrusive effective option.",
+            "Objective": "Monitoring",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO23-Q5",
+            "Type": "MultipleChoice",
+            "Prompt": "When may more intrusive monitoring be justified?",
+            "Options": [
+              "Whenever a parent is curious",
+              "When there is a credible specific serious safety concern and action is necessary",
+              "After any disagreement",
+              "To collect embarrassing information"
+            ],
+            "CorrectAnswer": "When there is a credible specific serious safety concern and action is necessary",
+            "Explanation": "Intrusion should be tied to concrete risk and limited to protection.",
+            "Objective": "Protective monitoring",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO23-Q6",
+            "Type": "MultipleChoice",
+            "Prompt": "Which is a logical consequence?",
+            "Options": [
+              "Remove sport after device misuse",
+              "Revise device access after unsafe device use",
+              "Cancel a birthday after lateness",
+              "Withhold food"
+            ],
+            "CorrectAnswer": "Revise device access after unsafe device use",
+            "Explanation": "It is directly related and does not violate basic needs.",
+            "Objective": "Logical consequence",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO23-Q7",
+            "Type": "MultipleChoice",
+            "Prompt": "What comes first in an immediate safety event?",
+            "Options": [
+              "A lecture",
+              "Safety protection and necessary help",
+              "A written apology",
+              "A family vote"
+            ],
+            "CorrectAnswer": "Safety protection and necessary help",
+            "Explanation": "Protect first; teach later.",
+            "Objective": "Immediate safety",
+            "Points": 1,
+            "CriticalSafetyQuestion": true
+          },
+          {
+            "QuestionId": "ADO23-Q8",
+            "Type": "MultipleChoice",
+            "Prompt": "Why is “grounded until I feel better” weak?",
+            "Options": [
+              "It is too specific",
+              "It has no behavioural success criteria or review date",
+              "It offers freedom",
+              "It is natural"
+            ],
+            "CorrectAnswer": "It has no behavioural success criteria or review date",
+            "Explanation": "Consequences should depend on behaviour and safety, not adult mood.",
+            "Objective": "Boundary quality",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO23-Q9",
+            "Type": "MultiSelect",
+            "Prompt": "Which two support fairness?",
+            "Options": [
+              "Adults meet their side",
+              "Every sibling has identical rules",
+              "Relevant differences are explained respectfully",
+              "Consequences change with anger"
+            ],
+            "CorrectAnswers": [
+              "Adults meet their side",
+              "Relevant differences are explained respectfully"
+            ],
+            "Explanation": "Fairness includes adult accountability and relevant differences.",
+            "Objective": "Fairness",
+            "Points": 2,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO23-Q10",
+            "Type": "MultipleChoice",
+            "Prompt": "What is best after repeated agreement failure?",
+            "Options": [
+              "Increase punishment forever",
+              "Look for skill, support, health, safety or environmental factors and adjust",
+              "Assume bad character",
+              "Stop monitoring"
+            ],
+            "CorrectAnswer": "Look for skill, support, health, safety or environmental factors and adjust",
+            "Explanation": "Repeated failure may reveal unmet needs or an unworkable plan.",
+            "Objective": "Review",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          }
+        ],
+        "FeedbackByScore": {
+          "Below50": "Repeat the five-part boundary and monitoring videos.",
+          "From50To79": "Review decision zones, proportionality and trust pathways.",
+          "From80To100": "Passed if the critical safety question is correct."
+        }
+      },
+      "FinalReflection": {
+        "Prompt": "Name one boundary you will make clearer, fairer or more reviewable. State the fixed safety part, the part the young person can influence and the path toward more freedom.",
+        "MinimumCharacters": 200,
+        "AllowVoiceResponse": true,
+        "MinimumVoiceSeconds": 50,
+        "CompletionMessage": "A strong boundary protects safety, teaches responsibility and shows how trust can grow."
+      },
+      "ScreenSequence": [
+        "01-definition-gate",
+        "02-video-freedom-responsibility",
+        "03-teaching-decision-zones",
+        "04-video-five-part-boundary",
+        "05-activity-boundary-quality",
+        "06-teaching-fairness",
+        "07-video-monitoring-privacy",
+        "08-activity-trust-pathway",
+        "09-teaching-failed-agreements",
+        "10-case-study-party",
+        "11-video-consequences-repair",
+        "12-home-practice",
+        "13-formal-assessment",
+        "14-quiz",
+        "15-final-reflection"
+      ],
+      "AnalyticsEvents": [
+        "lesson_started",
+        "definition_submitted",
+        "video_completed",
+        "decision_zone_check",
+        "boundary_activity_submitted",
+        "trust_plan_submitted",
+        "agreement_created",
+        "assessment_submitted",
+        "quiz_passed",
+        "lesson_completed"
+      ],
+      "References": [
+        "Australian Institute of Family Studies — Parenting influences on adolescent alcohol use.",
+        "Australian Institute of Family Studies — Parenting in Australian families.",
+        "Australian Institute of Family Studies — What works with adolescents?"
+      ]
+    },
+    {
+      "SchemaVersion": "2.0",
+      "LessonNumber": "24",
+      "CourseSequence": 4,
+      "Title": "Emotional Regulation, Mental Health and Help-Seeking",
+      "Subtitle": "Notice patterns, ask directly and connect young people with appropriate support.",
+      "Category": "Adolescence",
+      "Module": "Child Development",
+      "Course": "Adolescence: Connected, Safe and Supported",
+      "Audience": "Parents, carers and family-support participants caring for adolescents.",
+      "Level": "Foundation to Applied",
+      "EstimatedDuration": "75–95 minutes plus a 3–7 day home-practice task",
+      "ProductionStatus": "Complete learning content and interaction specification; ready for content, clinical, safeguarding and accessibility review.",
+      "LearningObjectives": [
+        "Distinguish ordinary emotional variation from persistent, severe, unsafe or function-impairing change.",
+        "Use a calm wellbeing conversation and direct safety questions.",
+        "Create a practical regulation and support plan without attempting to diagnose.",
+        "Identify circumstances requiring urgent emergency action or prompt professional assessment.",
+        "Build a support map that includes the young person's preferences and backup options."
+      ],
+      "SafetyAndScope": {
+        "Scope": "Education and skill development only. This lesson does not diagnose a young person or replace medical, mental-health, legal or child-safety advice.",
+        "TraumaInformedUse": "Learners may pause, save and return. Personal disclosure is never required to pass. Fictional or de-identified responses are accepted.",
+        "UrgentRisk": "In Australia, call Triple Zero (000) for immediate danger. Lifeline: 13 11 14. Kids Helpline for ages 5–25: 1800 55 1800.",
+        "EvidencePrivacy": "No task requires images, audio or video of a young person. Use de-identified, simulated or parent-created evidence."
+      },
+      "DefinitionGate": {
+        "ScreenTitle": "Before You Begin",
+        "Prompt": "How would you know an adolescent may need more support than ordinary reassurance or discipline, and what would you do first?",
+        "WhyItMatters": "This records the learner's starting understanding. It is not graded and is shown again in the final reflection.",
+        "MinimumCharacters": 80,
+        "MaximumCharacters": 1200,
+        "AllowVoiceResponse": true,
+        "MinimumVoiceSeconds": 20,
+        "ExampleShownAfterSubmission": "Look at duration, intensity, daily functioning and safety. Ask directly, listen calmly and connect the young person with appropriate help.",
+        "CompletionRequiredBeforeVideo": true
+      },
+      "ProgressionRules": {
+        "SequentialLocking": true,
+        "DefinitionGateRequired": true,
+        "MandatoryVideoWatchPercent": 95,
+        "AllKnowledgeChecksRequired": true,
+        "ScenarioResponseRequired": true,
+        "HomePracticePlanRequired": true,
+        "FormalAssessmentRequired": true,
+        "QuizPassPercent": 80,
+        "QuizAttemptsAllowed": "Unlimited",
+        "CriticalSafetyQuestionsMustBeCorrect": true,
+        "RetryBehaviour": "Display objective-linked feedback, preserve the highest score and randomise question and option order on retry.",
+        "FinalReflectionRequired": true,
+        "CertificateRule": "Complete every mandatory step, pass the assessment, achieve at least 80% on the quiz and correctly answer all critical safety questions."
+      },
+      "Accessibility": {
+        "ReadingLevel": "Plain English with expandable detail",
+        "Features": [
+          "Captions and transcripts for every video",
+          "Audio narration for teaching text",
+          "Keyboard and screen-reader accessible interactions",
+          "No colour-only meaning",
+          "Save-and-return at every activity",
+          "Text, voice or structured-choice response options",
+          "Low-stimulation mode",
+          "Inclusive family, culture, disability and neurodiversity examples"
+        ]
+      },
+      "Introduction": "Adolescence includes strong emotion, changing sleep, social stress and periods of withdrawal. It is also a stage when mental-health difficulties can emerge or become more visible. Parents need to avoid two errors: treating every emotion as illness, and dismissing significant warning signs as attention-seeking or normal teenage behaviour.\n\nParents and carers are not expected to diagnose. Their role is to notice patterns, ask, listen, protect immediate safety, reduce barriers to support and follow through. Direct questions about self-harm or suicide do not create the idea. Asked calmly, they can open a path to help.\n\nThis lesson contains safety content. Fictional examples are accepted. In Australia, call Triple Zero (000) when a young person is in immediate danger, has acted on suicidal intent, cannot be kept safe, is severely intoxicated, has a serious injury or is experiencing another emergency.",
+      "Videos": [
+        {
+          "VideoId": "ADO-24-V1",
+          "Title": "Strong Feelings or a Pattern Needing Help?",
+          "EstimatedDuration": "2 minutes 30 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Teach the Duration–Intensity–Function–Safety framework.",
+          "VisualDirection": "Four gauges labelled Duration, Intensity, Function and Safety. Use non-alarming imagery.",
+          "NarrationScript": "A single bad day does not usually tell us enough. Look at four factors: duration, intensity, function and safety.\n\nDuration asks how long the change has continued and whether it is becoming more frequent. Intensity asks how overwhelming or extreme it is. Function asks whether the young person can still participate in sleep, eating, school, relationships, interests and self-care. Safety asks whether there is self-harm, suicidal thinking, violence, severe risk-taking, exploitation, intoxication or inability to meet basic needs.\n\nCompare the young person with their own usual pattern, not a stereotype or sibling. A young person who has always preferred quiet time may not be withdrawing. A sudden loss of interest, marked drop in functioning or persistent hopelessness is different.\n\nConsider context: grief, bullying, discrimination, family conflict, trauma, chronic pain, neurodivergence, school pressure, sleep loss, relationship breakdown and online harm.\n\nDo not wait for certainty before asking. A calm opening is: “I have noticed you have stopped seeing friends, are sleeping much of the day and have missed school. You are not in trouble. I want to understand how you are going and whether you feel safe.”\n\nObservation plus care is more useful than a label.",
+          "OnScreenText": [
+            "Duration",
+            "Intensity",
+            "Function",
+            "Safety",
+            "Compare with the young person's usual pattern"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "FourFactorCheck",
+            "Prompt": "Apply the four factors to one evening of sadness after a friendship conflict when normal activities resume the next day and the young person feels safe.",
+            "ModelAnswer": "Short duration, limited intensity, function maintained and no identified safety issue. Offer support and keep noticing."
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-24-V2",
+          "Title": "Ask Directly and Stay Calm",
+          "EstimatedDuration": "2 minutes 50 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Model a direct wellbeing and suicide-safety conversation.",
+          "VisualDirection": "Two seated silhouettes with exact model questions and a clear emergency action card.",
+          "NarrationScript": "When warning signs are present, ask directly using plain words and a steady voice.\n\nBegin with observations: “I have noticed you have been talking about being a burden and giving things away.” Then ask: “Have you been thinking about hurting yourself?” If needed, ask: “Have you been thinking about suicide or ending your life?”\n\nIf the answer is yes, do not argue, shame or demand a promise. Thank the young person for telling you. Ask whether they are in immediate danger, whether they have a current plan or access to something they could use, and whether they have already acted. These questions help identify urgency but do not replace a professional assessment.\n\nIf danger is immediate, call 000, stay with the young person if it is safe to do so and reduce access to obvious means without placing yourself in danger. Do not leave them alone while urgent help is being arranged.\n\nIf there is no immediate danger, the disclosure still deserves prompt professional support and a near-term safety plan. In Australia, Lifeline is available on 13 11 14 and Kids Helpline on 1800 55 1800 for ages 5 to 25.\n\nDo not promise secrecy. Say, “I will respect your privacy, and I need to involve enough help to keep you safe. I will explain what happens next.”",
+          "OnScreenText": [
+            "Ask directly",
+            "Thank them",
+            "Assess immediate danger",
+            "Do not promise secrecy",
+            "Call 000 for immediate danger"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "Choice",
+            "Prompt": "A young person reports a current suicide plan and immediate intent. What is the safest response?",
+            "Options": [
+              "Tell them not to be silly",
+              "Leave them to calm down",
+              "Stay with them if safe and call 000",
+              "Wait for school tomorrow"
+            ],
+            "CorrectAnswer": "Stay with them if safe and call 000"
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-24-V3",
+          "Title": "Co-Regulation and Everyday Coping",
+          "EstimatedDuration": "2 minutes 20 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Teach personalised regulation support without replacing professional care.",
+          "VisualDirection": "A choice menu: movement, reduced questions, sensory support, food, water, breathing, music, safe person and professional help.",
+          "NarrationScript": "Regulation tools can help a young person move from overwhelm toward enough stability to take the next safe step. They are not a cure and should not delay professional help when risk or impairment is significant.\n\nBegin with co-regulation. Lower your voice, reduce questions, create physical space and offer one or two choices: “Would it help if I sit nearby, or would you prefer ten minutes and a check-back?”\n\nBuild a personalised menu. Some young people regulate through movement, paced breathing, music, pressure or weighted sensory input, drawing, routine, food, hydration, time with a safe person or reduced stimulation. Neurodivergent young people may have specific sensory and communication needs.\n\nAvoid forcing a strategy during peak distress. “Just breathe” can feel dismissive. Instead say, “Your body looks overwhelmed. Would you like to walk outside, use the breathing track or sit quietly?”\n\nLater, identify early warning signs, helpful actions, unhelpful adult responses and people to contact. Practise when calm.\n\nCoping skills are only one layer. Sleep, medical care, therapy, school support, safety from violence and stable relationships may also be needed.",
+          "OnScreenText": [
+            "Offer choices",
+            "Personalise",
+            "Practise when calm",
+            "Coping does not replace treatment"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "PlanBuilder",
+            "Prompt": "Select three regulation options and name one adult response that would make distress worse.",
+            "Options": [
+              "Quiet company",
+              "Movement",
+              "Reduced questions",
+              "Music",
+              "Sensory tool",
+              "Water or snack",
+              "Breathing",
+              "Contact a safe person"
+            ]
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-24-V4",
+          "Title": "Build the Support Team",
+          "EstimatedDuration": "2 minutes 15 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Create a specific, youth-inclusive pathway to professional and community support.",
+          "VisualDirection": "A support circle showing family, GP, school support, counsellor, cultural or community support and emergency services.",
+          "NarrationScript": "“Get help” is not a complete plan. A support map identifies who, how, when and what to do if the first option is unavailable.\n\nInvite the young person's preferences: “Would you rather begin with the GP, school counsellor, another trusted adult or a youth service?” Choice matters, but adults may need to act without agreement when risk is serious.\n\nAsk about barriers. The young person may fear judgement, cost, transport, confidentiality, discrimination, cultural misunderstanding or loss of control. Address one barrier at a time. Offer to make the call together, attend, wait outside, arrange transport or help write what the young person wants to say.\n\nInclude culturally safe and identity-affirming supports where relevant. Do not assume one service fits every family.\n\nFollow up after contact. Ask whether the young person felt heard, whether the service was suitable and what comes next. If a service is unavailable or unsuitable, try another pathway.\n\nThe plan must include urgent escalation: who to call, where to go and how to reduce immediate danger.",
+          "OnScreenText": [
+            "Who",
+            "How",
+            "When",
+            "Barriers",
+            "Backup",
+            "Urgent escalation"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "WrittenResponse",
+            "Prompt": "Name one barrier to help-seeking and one practical way an adult could reduce it.",
+            "MinimumCharacters": 80
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        }
+      ],
+      "TeachingSections": [
+        {
+          "SectionId": "ADO-24-S1",
+          "Title": "Notice Without Diagnosing",
+          "EstimatedMinutes": 10,
+          "Content": "Record changes using observable information: sleep, attendance, appetite, social contact, concentration, self-care, statements of hopelessness, self-harm, substance use and safety. Include dates and context.\n\nAvoid diagnosing from a checklist. Similar changes can have different causes, including physical illness, medication effects, sleep problems, bullying, grief, trauma, learning difficulty, substance use or mental-health conditions. A GP or qualified professional can assess.\n\nAsk the young person what they think is happening: “What has changed?” “When is it worst?” “What makes it slightly easier?” “What are you afraid adults will do if you tell us?”\n\nDo not dismiss a disclosure as attention-seeking. Seeking attention may itself communicate unmet need, but the response should focus on safety and support rather than motive.",
+          "KeyTakeaways": [
+            "Observe patterns and impact.",
+            "Do not diagnose from behaviour alone.",
+            "Ask the young person what the change means."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "Which note is most useful for a professional?",
+            "Options": [
+              "She is crazy",
+              "He is dramatic",
+              "For twelve days they slept during the day, missed four school days and stopped football",
+              "Typical teenager"
+            ],
+            "CorrectAnswer": "For twelve days they slept during the day, missed four school days and stopped football",
+            "Feedback": "Dates, duration and impact are useful without making a diagnosis."
+          }
+        },
+        {
+          "SectionId": "ADO-24-S2",
+          "Title": "Self-Harm and Suicide Concerns",
+          "EstimatedMinutes": 11,
+          "Content": "Warning signs can include talk of death or being a burden, giving away valued items, sudden severe behaviour change, withdrawal, self-harm, dangerous risk-taking or a sudden calm after intense distress. No single sign proves suicidal intent, and risk may exist without visible signs.\n\nAsk directly when concerned. If the young person is in immediate danger, has a current plan and intent, has already acted, is seriously injured or cannot be kept safe, call 000 or attend an emergency department. Do not leave them alone while arranging urgent help if it is safe for you to remain.\n\nReduce access to obvious means where this can be done safely. Never place yourself at risk attempting to remove a weapon or dangerous item; call emergency services.\n\nAfter an emergency, follow-up matters. A single appointment or promise is not a complete safety plan. Coordinate with professionals, follow recommendations and maintain supportive contact.\n\nDo not punish a disclosure or self-harm. Separate harmful behaviour may still require accountability, but disclosure should lead to care and protection.",
+          "KeyTakeaways": [
+            "Ask directly and calmly.",
+            "Immediate danger requires emergency action.",
+            "Do not punish disclosure.",
+            "Follow-up is essential."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "What should happen when there is a current suicide plan and immediate intent?",
+            "Options": [
+              "Ask for a promise and go to bed",
+              "Call 000 and stay if safe while help is arranged",
+              "Remove the phone and leave",
+              "Wait one month"
+            ],
+            "CorrectAnswer": "Call 000 and stay if safe while help is arranged",
+            "Feedback": "Current plan and immediate intent are an emergency."
+          }
+        },
+        {
+          "SectionId": "ADO-24-S3",
+          "Title": "Support Daily Functioning",
+          "EstimatedMinutes": 9,
+          "Content": "When functioning drops, reduce demands into manageable steps. Support sleep routines, food, hydration, medication as prescribed, school communication, movement and low-pressure connection. Routine alone is not a cure.\n\nWork with schools or training providers on reasonable adjustments where appropriate. The young person may need a reduced workload, staged return, a safe person, sensory supports or a clear catch-up plan.\n\nMaintain expectations that protect dignity and participation, but adjust them to current capacity. Significant distress may require smaller tasks and more support rather than punishment for symptoms.\n\nParents also need support. Caring for a distressed adolescent can be frightening and exhausting. Use trusted adults, professional guidance and respite where available. Do not make the young person responsible for the adult's emotional stability.",
+          "KeyTakeaways": [
+            "Break demands into manageable steps.",
+            "Coordinate home, health and education.",
+            "Support the carer without burdening the young person."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "Which response best supports functioning during significant distress?",
+            "Options": [
+              "Remove all expectations forever",
+              "Use smaller achievable steps and professional guidance",
+              "Punish missed school without asking why",
+              "Tell them to think positively"
+            ],
+            "CorrectAnswer": "Use smaller achievable steps and professional guidance",
+            "Feedback": "Adjusted expectations can preserve participation while support addresses the cause."
+          }
+        }
+      ],
+      "InteractiveActivities": [
+        {
+          "ActivityId": "ADO-24-A1",
+          "Title": "Duration–Intensity–Function–Safety",
+          "Type": "ScenarioMatrix",
+          "EstimatedMinutes": 8,
+          "Scenarios": [
+            {
+              "Scenario": "One evening of sadness after conflict; normal activity resumes and the young person feels safe.",
+              "ResponseLevel": "Support, check in and monitor."
+            },
+            {
+              "Scenario": "Three weeks of withdrawal, school refusal, major sleep change and hopeless statements.",
+              "ResponseLevel": "Prompt professional assessment and direct safety questions."
+            },
+            {
+              "Scenario": "Current suicide plan, access and stated intent.",
+              "ResponseLevel": "Call 000 and maintain immediate safety."
+            }
+          ],
+          "CompletionRule": "Select a response level and explain one reason for each scenario."
+        },
+        {
+          "ActivityId": "ADO-24-A2",
+          "Title": "Write the First Two Minutes",
+          "Type": "ConversationScript",
+          "EstimatedMinutes": 8,
+          "Prompt": "Write the start of a wellbeing conversation after persistent withdrawal and hopeless comments.",
+          "RequiredElements": [
+            "Two observations",
+            "Non-punitive purpose",
+            "Open question",
+            "Direct safety question",
+            "Privacy explanation"
+          ],
+          "ModelAnswer": "I have noticed you stopped seeing friends and have said several times that nothing will improve. You are not in trouble; I am concerned. How have things been feeling? Have you been thinking about hurting yourself or suicide? I will respect your privacy as much as possible, but I will involve help if needed to keep you safe."
+        }
+      ],
+      "CaseStudy": {
+        "Title": "Noah Is “Just Tired”",
+        "Scenario": "Noah is 16. Over three weeks he has stopped attending sport, missed five school days, sleeps much of the day and says, “Everyone would be better without me.” He says he is only tired and tells the parent not to make a big deal. Yesterday he gave a valued game console to a friend.\n\nThe parent worries that asking directly about suicide will put the idea in Noah's head.",
+        "LearnerQuestions": [
+          "Apply Duration, Intensity, Function and Safety.",
+          "Write the exact direct safety question.",
+          "What information would make this an emergency?",
+          "List two immediate support steps if Noah denies current intent but remains distressed."
+        ],
+        "ModelResponse": "The change is persistent, affects school and interests, and includes hopelessness and giving away a valued item. Direct safety questions and prompt professional help are warranted. Ask: “Have you been thinking about suicide or ending your life?” A current plan, immediate intent, access to means, an attempt, serious injury or inability to maintain safety requires emergency action. If there is no immediate intent, arrange prompt professional assessment, increase supportive contact, reduce access to obvious means safely and make a short-term safety plan.",
+        "CompletionRule": "Answer all four questions. Safety wording must be direct and non-shaming."
+      },
+      "HomePracticeTask": {
+        "TaskId": "ADO-24-T1",
+        "Title": "Wellbeing and Support Map",
+        "Duration": "Complete within 7 days, or sooner if current concern exists",
+        "Instructions": [
+          "Create a fictional or family-appropriate list of early signs, regulation options, trusted people, professional supports and emergency actions.",
+          "Include the young person's preferred support entry point where appropriate.",
+          "Identify one help-seeking barrier and a practical response.",
+          "Add a backup if the first support is unavailable.",
+          "Store the plan privately but accessibly."
+        ],
+        "RequiredFields": [
+          "Early signs",
+          "What helps",
+          "What worsens distress",
+          "Trusted adults",
+          "Professional entry point",
+          "Emergency action",
+          "Transport/contact",
+          "Backup"
+        ],
+        "EvidenceOptions": [
+          "De-identified support map",
+          "Simulated map",
+          "Voice explanation without personal health detail"
+        ],
+        "SuccessCriteria": [
+          "Correct emergency action",
+          "Young-person preference included or planned",
+          "At least two support layers",
+          "Barrier and solution",
+          "No unsupported diagnosis"
+        ]
+      },
+      "FormalAssessment": {
+        "AssessmentId": "ADO-24-AS1",
+        "Title": "Wellbeing Concern Response Plan",
+        "FormatOptions": [
+          "Written response 800–1100 words",
+          "Audio response 8–10 minutes",
+          "Structured safety-response form"
+        ],
+        "Prompt": "Respond to a fictional scenario involving persistent functional change and possible safety risk. Use observable evidence, the four-factor framework, direct questions, immediate and non-immediate actions, regulation support, professional referral, privacy limits and follow-up. Explain what you would not do and why.",
+        "Rubric": [
+          {
+            "Criterion": "Observation and four-factor analysis",
+            "WeightPercent": 20,
+            "HighStandard": "Uses duration, intensity, function and safety without diagnosing."
+          },
+          {
+            "Criterion": "Direct safety response",
+            "WeightPercent": 30,
+            "HighStandard": "Uses direct language and correct emergency thresholds."
+          },
+          {
+            "Criterion": "Support and referral",
+            "WeightPercent": 20,
+            "HighStandard": "Defines entry points, barrier reduction and backup support."
+          },
+          {
+            "Criterion": "Regulation and functioning",
+            "WeightPercent": 15,
+            "HighStandard": "Provides personalised support without replacing treatment."
+          },
+          {
+            "Criterion": "Privacy and follow-up",
+            "WeightPercent": 15,
+            "HighStandard": "Explains secrecy limits, avoids punishment and schedules review."
+          }
+        ],
+        "PassPercent": 75,
+        "CriticalFailRules": [
+          "Does not recommend emergency action for current plan and immediate intent",
+          "Recommends leaving a high-risk young person alone",
+          "Punishes or humiliates disclosure",
+          "Promises secrecy despite immediate danger"
+        ]
+      },
+      "Quiz": {
+        "QuizId": "ADO-24-QZ",
+        "Title": "Adolescent Wellbeing and Help-Seeking",
+        "PassPercent": 80,
+        "RandomiseQuestions": true,
+        "RandomiseOptions": true,
+        "Questions": [
+          {
+            "QuestionId": "ADO24-Q1",
+            "Type": "MultipleChoice",
+            "Prompt": "Which four factors organise concern?",
+            "Options": [
+              "Age, height, grades, hobbies",
+              "Duration, intensity, function, safety",
+              "Rules, rewards, punishment, privacy",
+              "Sleep, food, sport, devices only"
+            ],
+            "CorrectAnswer": "Duration, intensity, function, safety",
+            "Explanation": "They organise observation without diagnosis.",
+            "Objective": "Four-factor framework",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO24-Q2",
+            "Type": "MultipleChoice",
+            "Prompt": "Which description is most useful?",
+            "Options": [
+              "Attention-seeking",
+              "Mentally ill",
+              "For three weeks she stopped sport, missed school and slept during the day",
+              "Typical teenager"
+            ],
+            "CorrectAnswer": "For three weeks she stopped sport, missed school and slept during the day",
+            "Explanation": "It includes duration and functional impact.",
+            "Objective": "Observable evidence",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO24-Q3",
+            "Type": "MultipleChoice",
+            "Prompt": "How should suicide be asked about?",
+            "Options": [
+              "Avoid the word",
+              "Ask directly and calmly",
+              "Ask a friend to guess",
+              "Threaten consequences"
+            ],
+            "CorrectAnswer": "Ask directly and calmly",
+            "Explanation": "Direct questions can support disclosure and assessment.",
+            "Objective": "Direct question",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO24-Q4",
+            "Type": "MultiSelect",
+            "Prompt": "Which two responses support disclosure?",
+            "Options": [
+              "Thank the young person",
+              "Promise never to tell",
+              "Explain enough help will be involved for safety",
+              "Punish them"
+            ],
+            "CorrectAnswers": [
+              "Thank the young person",
+              "Explain enough help will be involved for safety"
+            ],
+            "Explanation": "Calm appreciation and clear privacy limits support safety.",
+            "Objective": "Disclosure response",
+            "Points": 2,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO24-Q5",
+            "Type": "MultipleChoice",
+            "Prompt": "Current suicide plan, access and immediate intent: what action?",
+            "Options": [
+              "Routine appointment next month",
+              "Call 000, stay if safe and arrange emergency help",
+              "Ask for a promise and leave",
+              "Remove privileges"
+            ],
+            "CorrectAnswer": "Call 000, stay if safe and arrange emergency help",
+            "Explanation": "This is an immediate emergency.",
+            "Objective": "Emergency response",
+            "Points": 1,
+            "CriticalSafetyQuestion": true
+          },
+          {
+            "QuestionId": "ADO24-Q6",
+            "Type": "MultipleChoice",
+            "Prompt": "What is the role of regulation tools?",
+            "Options": [
+              "Replace professional care",
+              "Help reach enough stability for the next safe step",
+              "Prove distress is minor",
+              "Force calm"
+            ],
+            "CorrectAnswer": "Help reach enough stability for the next safe step",
+            "Explanation": "Coping supports but does not replace care.",
+            "Objective": "Regulation",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO24-Q7",
+            "Type": "MultipleChoice",
+            "Prompt": "How can an adult reduce a help-seeking barrier?",
+            "Options": [
+              "Say there is nothing to fear",
+              "Offer transport, help make the call and discuss confidentiality",
+              "Make help a punishment",
+              "Post publicly"
+            ],
+            "CorrectAnswer": "Offer transport, help make the call and discuss confidentiality",
+            "Explanation": "Practical support reduces barriers.",
+            "Objective": "Help-seeking",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO24-Q8",
+            "Type": "MultipleChoice",
+            "Prompt": "Why compare with the young person's usual pattern?",
+            "Options": [
+              "All teenagers are the same",
+              "Baseline differences make sudden change informative",
+              "Only grades matter",
+              "Parents can diagnose"
+            ],
+            "CorrectAnswer": "Baseline differences make sudden change informative",
+            "Explanation": "Individual change is more useful than stereotype.",
+            "Objective": "Baseline",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO24-Q9",
+            "Type": "MultiSelect",
+            "Prompt": "Which two belong in crisis follow-up?",
+            "Options": [
+              "Assume it is over",
+              "Coordinate professional support",
+              "Review the safety plan and continue contact",
+              "Use disclosure in arguments"
+            ],
+            "CorrectAnswers": [
+              "Coordinate professional support",
+              "Review the safety plan and continue contact"
+            ],
+            "Explanation": "Ongoing support and review are essential.",
+            "Objective": "Follow-up",
+            "Points": 2,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO24-Q10",
+            "Type": "MultipleChoice",
+            "Prompt": "What if removing a dangerous item would place the adult at risk?",
+            "Options": [
+              "Attempt alone anyway",
+              "Call emergency services and prioritise safety",
+              "Ignore it",
+              "Ask a child to help"
+            ],
+            "CorrectAnswer": "Call emergency services and prioritise safety",
+            "Explanation": "Do not place yourself in danger.",
+            "Objective": "Safe means reduction",
+            "Points": 1,
+            "CriticalSafetyQuestion": true
+          }
+        ],
+        "FeedbackByScore": {
+          "Below50": "Repeat the direct-question and emergency-response sections.",
+          "From50To79": "Review missed objectives and both critical safety questions.",
+          "From80To100": "Passed only if both critical safety questions are correct."
+        }
+      },
+      "FinalReflection": {
+        "Prompt": "What signs would move you from ordinary support to prompt professional help, and what signs require immediate emergency action? Write your first direct wellbeing sentence.",
+        "MinimumCharacters": 220,
+        "AllowVoiceResponse": true,
+        "MinimumVoiceSeconds": 60,
+        "CompletionMessage": "Notice patterns, ask directly, protect immediate safety and make help-seeking practical."
+      },
+      "ScreenSequence": [
+        "01-definition-gate",
+        "02-video-pattern-needing-help",
+        "03-teaching-observation",
+        "04-activity-four-factor",
+        "05-video-ask-directly",
+        "06-teaching-suicide-safety",
+        "07-activity-first-two-minutes",
+        "08-video-co-regulation",
+        "09-teaching-functioning",
+        "10-case-study-noah",
+        "11-video-support-team",
+        "12-home-practice-support-map",
+        "13-formal-assessment",
+        "14-quiz",
+        "15-final-reflection"
+      ],
+      "AnalyticsEvents": [
+        "lesson_started",
+        "definition_submitted",
+        "video_completed",
+        "wellbeing_matrix_completed",
+        "safety_script_submitted",
+        "support_map_created",
+        "assessment_submitted",
+        "critical_quiz_passed",
+        "lesson_completed"
+      ],
+      "References": [
+        "World Health Organization — Mental health of adolescents.",
+        "Healthdirect Australia — Youth suicide and mental health crisis support.",
+        "Kids Helpline — 24/7 counselling for young people aged 5–25.",
+        "Lifeline Australia — 24/7 crisis support on 13 11 14."
+      ]
+    },
+    {
+      "SchemaVersion": "2.0",
+      "LessonNumber": "25",
+      "CourseSequence": 5,
+      "Title": "Risk, Online Safety, Relationships and Protective Planning",
+      "Subtitle": "Keep communication open while building practical protection for physical and digital risk.",
+      "Category": "Adolescence",
+      "Module": "Child Development",
+      "Course": "Adolescence: Connected, Safe and Supported",
+      "Audience": "Parents, carers and family-support participants caring for adolescents.",
+      "Level": "Foundation to Applied",
+      "EstimatedDuration": "75–95 minutes plus a 3–7 day home-practice task",
+      "ProductionStatus": "Complete learning content and interaction specification; ready for content, clinical, safeguarding and accessibility review.",
+      "LearningObjectives": [
+        "Use a risk–protective factor framework instead of relying only on punishment or surveillance.",
+        "Hold age-appropriate conversations about online contact, image sharing, coercion, substances, parties and transport.",
+        "Teach consent, pressure recognition, refusal and safe-exit strategies.",
+        "Respond to risky disclosure in a way that protects safety and encourages future help-seeking.",
+        "Create a family safety plan with a code word, transport backup, trusted adults, reporting steps and later accountability."
+      ],
+      "SafetyAndScope": {
+        "Scope": "Education and skill development only. This lesson does not diagnose a young person or replace medical, mental-health, legal or child-safety advice.",
+        "TraumaInformedUse": "Learners may pause, save and return. Personal disclosure is never required to pass. Fictional or de-identified responses are accepted.",
+        "UrgentRisk": "In Australia, call Triple Zero (000) for immediate danger. Lifeline: 13 11 14. Kids Helpline for ages 5–25: 1800 55 1800.",
+        "EvidencePrivacy": "No task requires images, audio or video of a young person. Use de-identified, simulated or parent-created evidence."
+      },
+      "DefinitionGate": {
+        "ScreenTitle": "Before You Begin",
+        "Prompt": "What can a parent or carer do to reduce adolescent risk without driving problems underground?",
+        "WhyItMatters": "This records the learner's starting understanding. It is not graded and is shown again in the final reflection.",
+        "MinimumCharacters": 80,
+        "MaximumCharacters": 1200,
+        "AllowVoiceResponse": true,
+        "MinimumVoiceSeconds": 20,
+        "ExampleShownAfterSubmission": "Risk reduction combines connection, clear standards, practical skills, safer environments, agreed monitoring and reliable help when danger occurs.",
+        "CompletionRequiredBeforeVideo": true
+      },
+      "ProgressionRules": {
+        "SequentialLocking": true,
+        "DefinitionGateRequired": true,
+        "MandatoryVideoWatchPercent": 95,
+        "AllKnowledgeChecksRequired": true,
+        "ScenarioResponseRequired": true,
+        "HomePracticePlanRequired": true,
+        "FormalAssessmentRequired": true,
+        "QuizPassPercent": 80,
+        "QuizAttemptsAllowed": "Unlimited",
+        "CriticalSafetyQuestionsMustBeCorrect": true,
+        "RetryBehaviour": "Display objective-linked feedback, preserve the highest score and randomise question and option order on retry.",
+        "FinalReflectionRequired": true,
+        "CertificateRule": "Complete every mandatory step, pass the assessment, achieve at least 80% on the quiz and correctly answer all critical safety questions."
+      },
+      "Accessibility": {
+        "ReadingLevel": "Plain English with expandable detail",
+        "Features": [
+          "Captions and transcripts for every video",
+          "Audio narration for teaching text",
+          "Keyboard and screen-reader accessible interactions",
+          "No colour-only meaning",
+          "Save-and-return at every activity",
+          "Text, voice or structured-choice response options",
+          "Low-stimulation mode",
+          "Inclusive family, culture, disability and neurodiversity examples"
+        ]
+      },
+      "Introduction": "Adolescents encounter risk in physical and digital environments. Risk may involve transport, substances, parties, sexual pressure, coercion, bullying, image sharing, scams, grooming, exploitation and unsafe online communities.\n\nRules alone are incomplete. Young people also need skills to notice pressure, refuse, leave, seek help, preserve evidence safely, block or report contact and support a friend without taking on adult responsibility. They need confidence that asking for urgent help will not trigger immediate humiliation or uncontrolled punishment.\n\nThis lesson is educational and does not provide legal advice. Laws and platform requirements change, so SafeSteps should link to current Australian eSafety and emergency guidance. Immediate danger requires emergency action.",
+      "Videos": [
+        {
+          "VideoId": "ADO-25-V1",
+          "Title": "Risk Reduces Through Connection and Preparation",
+          "EstimatedDuration": "2 minutes 15 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Teach protective factors and the importance of preserving disclosure.",
+          "VisualDirection": "A safety net made from connection, skills, standards, transport, trusted adults and services.",
+          "NarrationScript": "Risk does not disappear because a rule is strict. It reduces when several protections work together.\n\nProtective factors include a connected adult relationship, clear family standards, practical refusal and exit skills, safe transport, trusted adults, accurate information, positive activities, appropriate monitoring and access to health or specialist support.\n\nOne critical protection is disclosure. A young person who expects screaming, shame or indefinite punishment may hide danger. Create a safety promise: “If you are unsafe, call me. I will focus first on getting you safe. We will discuss the decisions honestly later.”\n\nThis is not a no-consequence promise. It separates emergency rescue from later accountability. The car ride home is not the time for interrogation.\n\nRehearse real situations before they occur. What if the driver has been drinking? What if a friend becomes unconscious? What if someone threatens to share an image? What if the party moves?\n\nPreparation is not permission. It is risk reduction. Young people make safer decisions when they have a script, a backup and an adult who will answer.",
+          "OnScreenText": [
+            "Connection",
+            "Skills",
+            "Clear standards",
+            "Safe transport",
+            "Trusted adults",
+            "Help first; accountability later"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "WrittenResponse",
+            "Prompt": "Write a one-sentence safety promise that encourages a call for help without removing later accountability.",
+            "MinimumCharacters": 70
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-25-V2",
+          "Title": "Digital Safety Conversations That Work",
+          "EstimatedDuration": "2 minutes 25 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Provide a non-shaming framework for harmful contact, image-based abuse and online exploitation.",
+          "VisualDirection": "Phone and laptop silhouettes with Pause, Preserve, Block or Report, and Tell a Safe Adult.",
+          "NarrationScript": "Digital safety is more than screen-time limits. Young people need to recognise manipulation, pressure, scams, cyberbullying, image-based abuse and grooming.\n\nTalk regularly, not only after a problem. Ask which apps, games and group chats matter, what is positive, what pressure occurs and how the young person would handle unwanted contact. Avoid mocking online relationships; digital experiences can have real emotional impact.\n\nWarning signs include rapid intensity, requests for secrecy, private images, gifts, moving to a less visible platform, threats of exposure, impersonation or pressure to meet.\n\nWhen harm occurs, do not blame the young person for trusting, replying or sharing. Preserve useful evidence without repeatedly viewing or redistributing harmful content. Stop contact where safe, use platform tools and seek current guidance from the Australian eSafety Commissioner or police when threats, exploitation or crime may be involved.\n\nDo not force confrontation. Do not share intimate material with family or friends as evidence.\n\nA strong first response is: “I am glad you told me. You are not in trouble for asking for help. Let us stop contact, keep what is needed safely and work out who should be involved.”",
+          "OnScreenText": [
+            "Talk regularly",
+            "Notice secrecy and pressure",
+            "Do not blame",
+            "Preserve evidence safely",
+            "Use official help"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "Choice",
+            "Prompt": "What is the best first response to online sexual blackmail?",
+            "Options": [
+              "Blame the young person",
+              "Pay immediately without advice",
+              "Thank them, stop contact, preserve necessary evidence safely and seek official help",
+              "Post the messages publicly"
+            ],
+            "CorrectAnswer": "Thank them, stop contact, preserve necessary evidence safely and seek official help"
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-25-V3",
+          "Title": "Consent, Pressure and Respectful Relationships",
+          "EstimatedDuration": "2 minutes 10 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Teach parents how to discuss consent, coercion and relationship safety inclusively.",
+          "VisualDirection": "Equal silhouettes with speech bubbles for yes, no, unsure and changed mind. Warning symbols show threats, isolation and monitoring.",
+          "NarrationScript": "Respectful relationships are based on equality, communication, freedom and consent. Consent must be voluntary, informed, specific and able to be withdrawn. Silence, fear, intoxication, pressure or previous agreement do not create consent.\n\nTeach both giving and receiving boundaries. A young person needs to know how to say no, notice uncertainty, stop when consent changes and seek help after a boundary has been crossed.\n\nCoercion warning signs include threats, guilt, repeated pressure, demands for passwords, controlling clothing or friendships, unwanted location monitoring, isolation, sexual pressure, reproductive control and threats to share private information or images.\n\nDo not assume partner gender or judge safety from identity. Focus on behaviour.\n\nIf a young person discloses abuse, take the disclosure seriously enough to protect safety and obtain appropriate advice. Avoid interrogation or confronting an alleged person in a way that increases danger. Explain what may need to be shared.\n\nParents can state family values while providing accurate safety information. Silence removes guidance; it does not prevent relationships.",
+          "OnScreenText": [
+            "Consent is voluntary and can change",
+            "Pressure is not consent",
+            "Focus on behaviour",
+            "Protect and seek advice"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "MultiSelect",
+            "Prompt": "Select all signs of coercive control.",
+            "Options": [
+              "Respecting a no",
+              "Demanding passwords",
+              "Threatening to share images",
+              "Supporting friendships",
+              "Repeated sexual pressure"
+            ],
+            "CorrectAnswers": [
+              "Demanding passwords",
+              "Threatening to share images",
+              "Repeated sexual pressure"
+            ]
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        },
+        {
+          "VideoId": "ADO-25-V4",
+          "Title": "The Safe Exit Plan",
+          "EstimatedDuration": "2 minutes 5 seconds",
+          "Mandatory": true,
+          "MinimumWatchPercent": 95,
+          "Purpose": "Create a practical plan for unsafe transport, substances, violence and other urgent situations.",
+          "VisualDirection": "A wallet-sized plan card showing code word, trusted contacts, pickup points and emergency actions.",
+          "NarrationScript": "A safe-exit plan must work when the young person is frightened, embarrassed, intoxicated, pressured or unable to explain openly.\n\nChoose a code word or neutral message that means “Collect me now” or “Call me with an excuse.” Agree that the adult will focus on safe pickup first. Identify two trusted adults in case the parent cannot answer.\n\nPlan transport. The young person should never ride with an impaired or unsafe driver. Agree on public pickup points, phone or backup contact, emergency money where appropriate and what to do if the location changes.\n\nFor unconsciousness, breathing problems, suspected overdose, serious violence or immediate danger, call 000. Do not leave a seriously unwell person alone or avoid help because of fear of punishment.\n\nAfter the event, regulate and obtain needed medical or specialist support. Later, review what happened, identify protective actions, address harmful choices and adjust the plan.\n\nPractise the plan when calm so it is easier to use under pressure.",
+          "OnScreenText": [
+            "Code word",
+            "Two trusted adults",
+            "Safe transport",
+            "Public pickup",
+            "Call 000 for serious emergency",
+            "Debrief later"
+          ],
+          "CaptionsRequired": true,
+          "TranscriptIncluded": true,
+          "AudioDescriptionRequired": true,
+          "PostVideoInteraction": {
+            "Type": "PlanBuilder",
+            "Prompt": "Enter a fictional code word, two backup roles and one safe pickup option.",
+            "PrivacyMode": "Do not upload real phone numbers as lesson evidence."
+          },
+          "AssetStatus": "Production script complete; MP4, voiceover and final animation/rendering not included."
+        }
+      ],
+      "TeachingSections": [
+        {
+          "SectionId": "ADO-25-S1",
+          "Title": "Risk and Protective Factors",
+          "EstimatedMinutes": 10,
+          "Content": "Risk factors increase the likelihood of harm but do not prove what a young person will do. Protective factors reduce risk or improve recovery. Both can exist together.\n\nRisk factors may include peer pressure, substance availability, unsafe transport, coercive relationships, bullying, discrimination, family violence, school disengagement, online exploitation, impulsivity, poor sleep and lack of trusted adults. Protective factors include connection, belonging, monitoring matched to risk, skills, routines, cultural identity, positive activities, safe adults, access to services and hope.\n\nAvoid “high-risk teenager” as a permanent character label. Describe the situation: “There have been two incidents of riding with an unlicensed driver and no reliable transport plan.” Then identify the required protection.\n\nRespond at several levels: young-person skill, adult support, environmental change and professional help.",
+          "KeyTakeaways": [
+            "Risk is not destiny.",
+            "Describe the situation, not the young person as a risk label.",
+            "Build protection across skills, relationships and environment."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "Which is a protective factor?",
+            "Options": [
+              "No safe adult",
+              "A rehearsed pickup plan and trusted adult",
+              "Easy access to substances",
+              "Fear of punishment"
+            ],
+            "CorrectAnswer": "A rehearsed pickup plan and trusted adult",
+            "Feedback": "Practical help-seeking and trusted relationships reduce harm."
+          }
+        },
+        {
+          "SectionId": "ADO-25-S2",
+          "Title": "Responding to Disclosure",
+          "EstimatedMinutes": 10,
+          "Content": "The first adult response can affect future disclosure. Use Thank, Protect, Explain, Act and Follow Up.\n\nThank: “I am glad you told me.” Protect: assess immediate danger and stop contact or arrange emergency care. Explain: state privacy limits and what will happen next. Act: involve the appropriate service, school, platform, eSafety, police, health or child-protection pathway. Follow up: check safety, emotional impact and whether the response helped.\n\nDo not interrogate. Obtain only enough information to protect immediate safety and follow specialist guidance, especially after possible abuse or exploitation. Do not confront an alleged person if that may increase danger or compromise an investigation.\n\nDo not automatically remove the young person's entire safe social world after online harm. Temporary restrictions may be needed, but preserve healthy support and teach protective use.\n\nDocument factual information and actions privately. Do not circulate harmful material.",
+          "KeyTakeaways": [
+            "Thank, protect, explain, act, follow up.",
+            "Avoid blame and interrogation.",
+            "Use specialist pathways.",
+            "Preserve safe support."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "What should come first after risky disclosure?",
+            "Options": [
+              "A lecture",
+              "Immediate safety assessment and a calm thank-you",
+              "Public confrontation",
+              "Delete everything without advice"
+            ],
+            "CorrectAnswer": "Immediate safety assessment and a calm thank-you",
+            "Feedback": "Safety and continued disclosure are the first priorities."
+          }
+        },
+        {
+          "SectionId": "ADO-25-S3",
+          "Title": "Substances, Parties and Peer Emergencies",
+          "EstimatedMinutes": 10,
+          "Content": "Set clear family standards about alcohol, drugs, unsafe driving and supplying substances. Also teach emergency action. Call 000 for unconsciousness, breathing difficulty, suspected overdose, severe injury or serious danger.\n\nFear of punishment must not delay medical help. Tell the young person: “Call for help first. We will deal with the rest after everyone is safe.”\n\nPractise refusal and exit lines: “No, I have training tomorrow.” “I am not getting in that car.” “My parent is already coming.” “I need to stay with my friend until help arrives.”\n\nA young person should not carry sole responsibility for a peer crisis. Involve adults and emergency services. They can care about a friend without keeping dangerous secrets.\n\nAfter an event, review access, supervision, transport, peer context and health support. Larger punishment alone will not address dependence, coercion, exploitation or repeated high-risk use.",
+          "KeyTakeaways": [
+            "Clear standards and emergency education belong together.",
+            "Medical help must not be delayed.",
+            "Young people should involve adults in peer crises."
+          ],
+          "KnowledgeCheck": {
+            "Prompt": "A friend is unconscious after possible substance use. What is the correct action?",
+            "Options": [
+              "Let them sleep",
+              "Hide it",
+              "Call 000 and follow emergency instructions",
+              "Post online"
+            ],
+            "CorrectAnswer": "Call 000 and follow emergency instructions",
+            "Feedback": "Unconsciousness after possible substance use is a medical emergency."
+          }
+        }
+      ],
+      "InteractiveActivities": [
+        {
+          "ActivityId": "ADO-25-A1",
+          "Title": "Protective Factor Builder",
+          "Type": "ScenarioPlan",
+          "EstimatedMinutes": 8,
+          "Scenario": "A 15-year-old attends gatherings where transport changes and adults are not always present.",
+          "RequiredFields": [
+            "Two risks",
+            "Two strengths",
+            "Skill to practise",
+            "Adult support",
+            "Environmental change",
+            "Emergency backup"
+          ],
+          "ModelAnswer": "Risks: unknown drivers and changing locations. Strengths: contacts parent and stays with a known friend. Skill: refuse unsafe rides and use a code word. Adult support: guaranteed pickup. Environment: confirm address and supervising adult. Backup: second trusted adult and 000 for emergency."
+        },
+        {
+          "ActivityId": "ADO-25-A2",
+          "Title": "Disclosure Response Rehearsal",
+          "Type": "BranchingDialogue",
+          "EstimatedMinutes": 9,
+          "Opening": "A young person says, “Someone online says they will send my picture to everyone if I do not pay.”",
+          "BestFirstResponse": "I am glad you told me. You are not in trouble for asking for help. Do not send more money or content. Let us stop contact, keep what is needed safely and get official advice.",
+          "PoorResponses": [
+            "How could you be so stupid?",
+            "Pay them",
+            "I am taking every device forever",
+            "Send me the image so I can show the family"
+          ],
+          "RequiredNextSteps": [
+            "Assess immediate danger",
+            "Preserve necessary evidence safely",
+            "Block or report when advised",
+            "Use current eSafety or police guidance",
+            "Provide emotional support"
+          ]
+        }
+      ],
+      "CaseStudy": {
+        "Title": "The Code Word Message",
+        "Scenario": "Leah is 17 and has an agreed code word for pickup. At 11:20 pm she sends only the code word. The parent calls, but Leah does not answer. Location sharing shows the general area of a party but not the exact house. The parent feels angry because Leah agreed to provide the address. When Leah is found at a service station, she says a driver had been drinking and another young person was pressuring her to get into the car.\n\nOn the drive home, the parent wants to demand every detail and announce a month-long grounding.",
+        "LearnerQuestions": [
+          "What should the parent do during pickup and the drive home?",
+          "Which protective actions did Leah take?",
+          "What needs to be addressed later?",
+          "Design a proportionate follow-up and revised plan."
+        ],
+        "ModelResponse": "During pickup, confirm immediate safety, check whether anyone needs emergency help and avoid interrogation in the car. Leah used the code word, refused an unsafe ride and moved to a public location. Later, review the missing address, how the plan changed, whether anyone remains at risk and what support Leah needs after the pressure. A proportionate plan may require confirmed addresses and transport for future events, backup-call practice and a short review period. Do not punish Leah for using the code word.",
+        "CompletionRule": "Answer all four questions and clearly separate rescue from later accountability."
+      },
+      "HomePracticeTask": {
+        "TaskId": "ADO-25-T1",
+        "Title": "Family Safe Exit and Digital Help Plan",
+        "Duration": "Complete within 7 days",
+        "Instructions": [
+          "Choose a code word or neutral urgent message.",
+          "Identify two trusted backup adults without uploading real contact details.",
+          "Agree on safe transport and a public pickup option.",
+          "Write steps for impaired driving, unconsciousness, violence, online threats and image-based abuse.",
+          "State the adult's first-response promise and later review process.",
+          "Practise one scenario aloud."
+        ],
+        "TemplateFields": [
+          "Code word",
+          "Primary adult action",
+          "Backup roles",
+          "Transport",
+          "Digital harm steps",
+          "Medical emergency steps",
+          "Protected disclosure",
+          "Possible later accountability",
+          "Review date"
+        ],
+        "EvidenceOptions": [
+          "De-identified plan",
+          "Simulated plan",
+          "Audio rehearsal with fictional names"
+        ],
+        "SuccessCriteria": [
+          "Correct emergency action",
+          "No punishment for urgent disclosure",
+          "Digital and physical risk covered",
+          "Two backup pathways",
+          "Proportionate later accountability"
+        ]
+      },
+      "FormalAssessment": {
+        "AssessmentId": "ADO-25-AS1",
+        "Title": "Integrated Adolescent Safety Plan",
+        "FormatOptions": [
+          "Written plan 900–1200 words",
+          "Audio presentation 9–11 minutes",
+          "Structured safety-plan submission"
+        ],
+        "Prompt": "Create an integrated safety plan covering one physical-world risk and one digital or relationship risk. Include risk and protective factors, family standards, consent or pressure education, disclosure response, safe-exit steps, emergency escalation, privacy safeguards, logical follow-up and review. Explain how communication remains open without removing accountability.",
+        "Rubric": [
+          {
+            "Criterion": "Risk and protective analysis",
+            "WeightPercent": 20,
+            "HighStandard": "Identifies specific factors without labelling the young person."
+          },
+          {
+            "Criterion": "Practical safety steps",
+            "WeightPercent": 25,
+            "HighStandard": "Includes code word, transport, backups, emergency action and rehearsal."
+          },
+          {
+            "Criterion": "Digital and relationship safety",
+            "WeightPercent": 20,
+            "HighStandard": "Addresses coercion, consent, evidence handling, reporting and privacy."
+          },
+          {
+            "Criterion": "Disclosure and accountability",
+            "WeightPercent": 20,
+            "HighStandard": "Separates immediate rescue from later proportionate action."
+          },
+          {
+            "Criterion": "Review and inclusion",
+            "WeightPercent": 15,
+            "HighStandard": "Includes youth input, safe supports, least-intrusive monitoring and review date."
+          }
+        ],
+        "PassPercent": 75,
+        "CriticalFailRules": [
+          "Delays emergency care to avoid consequences",
+          "Blames a victim of exploitation",
+          "Redistributes intimate material",
+          "Punishes use of the code word"
+        ]
+      },
+      "Quiz": {
+        "QuizId": "ADO-25-QZ",
+        "Title": "Risk and Protective Planning",
+        "PassPercent": 80,
+        "RandomiseQuestions": true,
+        "RandomiseOptions": true,
+        "Questions": [
+          {
+            "QuestionId": "ADO25-Q1",
+            "Type": "MultiSelect",
+            "Prompt": "Which two are protective factors?",
+            "Options": [
+              "Fear of punishment",
+              "Trusted adult pickup",
+              "Rehearsed code word",
+              "Unknown transport"
+            ],
+            "CorrectAnswers": [
+              "Trusted adult pickup",
+              "Rehearsed code word"
+            ],
+            "Explanation": "Connection and practical exits reduce harm.",
+            "Objective": "Protective factors",
+            "Points": 2,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO25-Q2",
+            "Type": "MultipleChoice",
+            "Prompt": "Why use “help first, accountability later”?",
+            "Options": [
+              "Remove all consequences",
+              "Encourage urgent disclosure and rescue before later review",
+              "Allow unsafe behaviour",
+              "Prevent questions forever"
+            ],
+            "CorrectAnswer": "Encourage urgent disclosure and rescue before later review",
+            "Explanation": "It reduces secrecy and delay.",
+            "Objective": "Disclosure",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO25-Q3",
+            "Type": "MultipleChoice",
+            "Prompt": "Which may be a grooming warning sign?",
+            "Options": [
+              "Respecting boundaries",
+              "Requests for secrecy and moving to a hidden platform",
+              "Encouraging safe adults",
+              "Accepting no"
+            ],
+            "CorrectAnswer": "Requests for secrecy and moving to a hidden platform",
+            "Explanation": "Secrecy and isolation can signal manipulation.",
+            "Objective": "Online risk",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO25-Q4",
+            "Type": "MultipleChoice",
+            "Prompt": "Best first response to image-based blackmail?",
+            "Options": [
+              "Blame",
+              "Thank them, stop contact, preserve necessary evidence safely and seek official help",
+              "Pay without advice",
+              "Share it"
+            ],
+            "CorrectAnswer": "Thank them, stop contact, preserve necessary evidence safely and seek official help",
+            "Explanation": "Protective response avoids further distribution.",
+            "Objective": "Digital disclosure",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO25-Q5",
+            "Type": "MultipleChoice",
+            "Prompt": "Someone is unconscious after suspected substance use. What happens?",
+            "Options": [
+              "Let them sleep",
+              "Call 000 and follow emergency instructions",
+              "Wait",
+              "Hide it"
+            ],
+            "CorrectAnswer": "Call 000 and follow emergency instructions",
+            "Explanation": "This is a medical emergency.",
+            "Objective": "Medical emergency",
+            "Points": 1,
+            "CriticalSafetyQuestion": true
+          },
+          {
+            "QuestionId": "ADO25-Q6",
+            "Type": "MultiSelect",
+            "Prompt": "Which two statements about consent are correct?",
+            "Options": [
+              "Previous consent is permanent",
+              "Consent can be withdrawn",
+              "Pressure and fear undermine consent",
+              "Silence means yes"
+            ],
+            "CorrectAnswers": [
+              "Consent can be withdrawn",
+              "Pressure and fear undermine consent"
+            ],
+            "Explanation": "Consent must be voluntary and ongoing.",
+            "Objective": "Consent",
+            "Points": 2,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO25-Q7",
+            "Type": "MultipleChoice",
+            "Prompt": "Why avoid mocking online relationships?",
+            "Options": [
+              "They are never real",
+              "Mocking can reduce disclosure even though online experiences have real impact",
+              "It improves devices",
+              "Parents must approve every contact"
+            ],
+            "CorrectAnswer": "Mocking can reduce disclosure even though online experiences have real impact",
+            "Explanation": "Respectful curiosity preserves communication.",
+            "Objective": "Online communication",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO25-Q8",
+            "Type": "MultipleChoice",
+            "Prompt": "A code word is used for urgent pickup. Best response?",
+            "Options": [
+              "Demand explanation first",
+              "Collect and assess safety first; review later",
+              "Refuse",
+              "Share publicly"
+            ],
+            "CorrectAnswer": "Collect and assess safety first; review later",
+            "Explanation": "The code word must reliably trigger help.",
+            "Objective": "Safe exit",
+            "Points": 1,
+            "CriticalSafetyQuestion": true
+          },
+          {
+            "QuestionId": "ADO25-Q9",
+            "Type": "MultipleChoice",
+            "Prompt": "How should harmful intimate material be handled?",
+            "Options": [
+              "Forward to family",
+              "Repeatedly view it",
+              "Follow official guidance, preserve only what is necessary safely and do not redistribute",
+              "Post it"
+            ],
+            "CorrectAnswer": "Follow official guidance, preserve only what is necessary safely and do not redistribute",
+            "Explanation": "Redistribution can cause further harm and may be unlawful.",
+            "Objective": "Evidence handling",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          },
+          {
+            "QuestionId": "ADO25-Q10",
+            "Type": "MultipleChoice",
+            "Prompt": "Which follow-up is proportionate after a changed party plan?",
+            "Options": [
+              "Permanent isolation",
+              "Review transport, address, supervision and check-ins, then use a dated trial plan",
+              "Ignore it",
+              "Punish the call for help"
+            ],
+            "CorrectAnswer": "Review transport, address, supervision and check-ins, then use a dated trial plan",
+            "Explanation": "It targets the actual risk and preserves disclosure.",
+            "Objective": "Follow-up",
+            "Points": 1,
+            "CriticalSafetyQuestion": false
+          }
+        ],
+        "FeedbackByScore": {
+          "Below50": "Repeat the digital disclosure and safe-exit videos.",
+          "From50To79": "Review emergency action, consent and evidence handling.",
+          "From80To100": "Passed only if both critical safety questions are correct."
+        }
+      },
+      "FinalReflection": {
+        "Prompt": "Write your safety promise, one code-word action, one digital-safety response and one issue that may still require later accountability.",
+        "MinimumCharacters": 220,
+        "AllowVoiceResponse": true,
+        "MinimumVoiceSeconds": 60,
+        "CompletionMessage": "Strong safety planning combines connection, skills, clear limits, practical backups and reliable adult action."
+      },
+      "ScreenSequence": [
+        "01-definition-gate",
+        "02-video-risk-preparation",
+        "03-teaching-risk-protection",
+        "04-activity-protective-builder",
+        "05-video-digital-safety",
+        "06-teaching-disclosure",
+        "07-activity-disclosure-rehearsal",
+        "08-video-consent",
+        "09-teaching-peer-emergencies",
+        "10-case-study-code-word",
+        "11-video-safe-exit",
+        "12-home-practice",
+        "13-formal-assessment",
+        "14-quiz",
+        "15-final-reflection"
+      ],
+      "AnalyticsEvents": [
+        "lesson_started",
+        "definition_submitted",
+        "video_completed",
+        "protective_factor_plan_submitted",
+        "digital_disclosure_rehearsed",
+        "safe_exit_plan_created",
+        "assessment_submitted",
+        "critical_quiz_passed",
+        "course_completed"
+      ],
+      "References": [
+        "eSafety Commissioner — Parent resources and online safety guidance.",
+        "eSafety Commissioner — Online safety for every family.",
+        "Australian Institute of Family Studies — Young people and relationships.",
+        "Healthdirect Australia — Calling Triple Zero and youth emergency guidance."
+      ]
+    }
+  ]
+}

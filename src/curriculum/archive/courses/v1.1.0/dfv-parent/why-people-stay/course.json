@@ -1,0 +1,25 @@
+{
+  "title": "Why People Stay",
+  "description": "Explores the complex reasons why people remain in abusive relationships, reducing shame and increasing understanding.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand the barriers to leaving abusive relationships.",
+    "Recognise the role of fear, coercion, and survival strategies.",
+    "Reduce selfâ€‘blame and shame."
+  ],
+  "modules": [
+    "Barriers to Leaving",
+    "Understanding Survival Responses"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "DFV Basics",
+    "tags": [
+      "leaving",
+      "survival",
+      "coercive control"
+    ]
+  },
+  "caseworkerSummary": "Supports parents to understand that staying is often a survival strategy, not a failure."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "course_intimidation_and_threats",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Intimidation and Threats",
+  "modules": [
+    {
+      "id": "module_understanding_intimidation",
+      "title": "Understanding Intimidation",
+      "lessons": [
+        "what_is_intimidation",
+        "how_intimidation_functions_in_dfv",
+        "impacts_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_threat_tactics",
+      "title": "Threat Tactics",
+      "lessons": [
+        "direct_and_indirect_threats",
+        "threats_to_children_or_pets",
+        "property_damage_and_symbolic_violence"
+      ]
+    },
+    {
+      "id": "module_safety_and_response",
+      "title": "Safety and Response",
+      "lessons": [
+        "responding_to_threats_safely",
+        "documenting_incidents",
+        "building_a_threat_safety_plan"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of intimidation and threats in DFV",
+    "Ability to recognise threat-based control tactics",
+    "Increased confidence in responding safely and documenting incidents"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "module-what-is-trauma",
+  "title": "What Is Trauma",
+  "moduleId": "what-is-trauma",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand what trauma is and how it affects children.",
+  "microLesson": "Trauma is an overwhelming experience that exceeds a child’s ability to cope. It can come from violence, neglect, instability, or frightening events. Trauma affects behaviour, emotions, and relationships. Understanding trauma helps parents respond with empathy and safety.",
+  "activity": "Write a reflection on one way trauma may have affected your child’s behaviour.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "trauma-awareness"
+  ],
+  "resources": [
+    {
+      "title": "Trauma Basics Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

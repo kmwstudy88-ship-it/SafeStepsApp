@@ -1,0 +1,10 @@
+{
+    "topic":  "safety-and-escalation",
+    "version":  "1.1.0",
+    "stream":  "dfv-peer-mentor",
+    "content":  "Lesson content for safety-and-escalation.",
+    "type":  "lesson",
+    "id":  "Lesson -  $args[0].Value.ToUpper() afety  $args[0].Value.ToUpper() nd  $args[0].Value.ToUpper() scalation",
+    "name":  "Lesson -  $args[0].Value.ToUpper() afety  $args[0].Value.ToUpper() nd  $args[0].Value.ToUpper() scalation",
+    "title":  "Lesson -  $args[0].Value.ToUpper() afety  $args[0].Value.ToUpper() nd  $args[0].Value.ToUpper() scalation"
+}

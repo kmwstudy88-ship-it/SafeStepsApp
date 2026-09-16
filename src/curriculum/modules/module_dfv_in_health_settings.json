@@ -1,0 +1,21 @@
+{
+  "id": "module_dfv_in_health_settings",
+  "title": "DFV in Health Settings",
+  "description": "This module supports health professionals to recognise DFV indicators, respond safely, and integrate DFV awareness into routine health practice. It focuses on screening, disclosure, and safe documentation.",
+  "type": "module",
+  "level": "health_wellbeing",
+  "tags": [
+    "dfv",
+    "health settings",
+    "screening",
+    "disclosure",
+    "documentation"
+  ],
+  "outcomes": [
+    "Recognise DFV indicators in health presentations",
+    "Respond safely to disclosures in clinical settings",
+    "Use safe documentation and referral pathways"
+  ],
+  "lessons": [],
+  "content": []
+}

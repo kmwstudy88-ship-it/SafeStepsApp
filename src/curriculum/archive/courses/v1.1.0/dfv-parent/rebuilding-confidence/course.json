@@ -1,0 +1,25 @@
+{
+  "title": "Rebuilding Confidence",
+  "description": "Supports parents to rebuild selfâ€‘worth, identity, and confidence after experiencing DFV.",
+  "estimatedTimeMinutes": 40,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Recognise how DFV impacts confidence.",
+    "Identify strengths and personal values.",
+    "Apply strategies to rebuild selfâ€‘belief."
+  ],
+  "modules": [
+    "Understanding Confidence Loss",
+    "Rebuilding Selfâ€‘Worth"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Recovery",
+    "tags": [
+      "confidence",
+      "healing",
+      "identity"
+    ]
+  },
+  "caseworkerSummary": "Helps parents rebuild confidence and identity after DFV."
+}

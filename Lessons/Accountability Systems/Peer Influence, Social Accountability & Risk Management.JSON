@@ -1,0 +1,90 @@
+{
+  "program_id": "PARENT-ACC-110",
+  "program_title": "Peer Influence, Social Accountability & Risk Management",
+  "version": "1.0",
+  "metadata": {
+    "target_audience": "Parents of pre-teens and teenagers (Ages 12–18)",
+    "estimated_duration": "60–90 minutes",
+    "delivery_format": "Self-paced or Facilitated Add-On Module",
+    "core_objective": "Build proactive safety protocols and peer-pressure exit strategies while holding firm accountability for high-risk behaviors.",
+    "key_deliverable": "Family Safety Code & Risk Management Protocol"
+  },
+  "modules": [
+    {
+      "section_id": 1,
+      "section_title": "Core Learning Content",
+      "topics": [
+        {
+          "topic_id": "10.1",
+          "title": "Adolescent Social Brain & Peer Gravitation",
+          "summary": "Understanding neurobiological peer susceptibility and building exit strategies.",
+          "key_principles": [
+            "Limbic sensitivity heightens risk-taking in peer environments.",
+            "Low-social-cost scripts lower barriers to exiting unsafe situations."
+          ]
+        },
+        {
+          "topic_id": "10.2",
+          "title": "The No-Questions-Asked Safety Code",
+          "summary": "Establishing an unconditional safety net for emergency transportation and physical protection.",
+          "protocol_steps": [
+            "Establish a secret code word or emoji.",
+            "Immediate parent pickup with script deflection.",
+            "24-hour cooling-off period before consequence debrief."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section_title": "Lesson Activities",
+      "activities": [
+        {
+          "activity_id": "ACT-1001",
+          "title": "Designing Social Exit Scripts",
+          "type": "Roleplay & Scripting",
+          "instructions": "Co-create subtle, socially acceptable excuse scripts for high-pressure peer scenarios."
+        }
+      ]
+    },
+    {
+      "section_id": 3,
+      "section_title": "Implementation Tasks",
+      "tasks": [
+        {
+          "task_id": "TSK-1001",
+          "title": "Safety Code Agreement Setup",
+          "action": "Finalize code word, emergency response steps, and the 24-hour debrief rule with youth."
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section_title": "Assessments & Quizzes",
+      "quiz": [
+        {
+          "id": "PQ1",
+          "question": "Why is equipping teenagers with 'low-social-cost' exit scripts more effective than simply telling them to 'just say no'?",
+          "options": [
+            "A) Teenagers do not know how to speak clearly.",
+            "B) Adolescent brains prioritize peer acceptance; exit scripts allow them to escape unsafe situations without risking social rejection.",
+            "C) It saves time for parents.",
+            "D) Exit scripts guarantee that teenagers will never make mistakes."
+          ],
+          "correct_answer": "B"
+        },
+        {
+          "id": "PQ2",
+          "question": "What is the primary purpose of a 'No-Questions-Asked' Safety Code?",
+          "options": [
+            "A) To allow teenagers to break every family rule without facing any consequences ever.",
+            "B) To prioritize physical safety during an emergency by ensuring the youth gets home safely before any disciplinary debrief occurs.",
+            "C) To spy on what the teenager's friends are doing.",
+            "D) To eliminate the need for curfews."
+          ],
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

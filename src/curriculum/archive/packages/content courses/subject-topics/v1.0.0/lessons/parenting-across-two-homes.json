@@ -1,0 +1,25 @@
+{
+  "id": "module-parenting-across-two-homes",
+  "title": "Parenting Across Two Homes",
+  "moduleId": "parenting-across-two-homes",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents create consistency and stability for children living across two households.",
+  "microLesson": "Children feel secure when routines, expectations, and communication remain consistent across homes. Parents can reduce stress by sharing key information, keeping rules similar, and avoiding conflict in front of children.",
+  "activity": "Identify one routine you can align across both homes. Reflect on how this will support your child.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "co-parenting"
+  ],
+  "resources": [
+    {
+      "title": "Two Homes Parenting Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

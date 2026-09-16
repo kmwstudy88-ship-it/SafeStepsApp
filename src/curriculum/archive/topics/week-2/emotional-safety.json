@@ -1,0 +1,15 @@
+{
+  "id": "DFV-W2-D5",
+  "week": 2,
+  "day": 5,
+  "title": "Emotional Safety",
+  "duration_minutes": 13,
+  "learning_goal": "Learn how to create emotional safety for children during instability.",
+  "content": {
+    "micro_lesson": "Emotional safety is created through predictability, calm tone, routines, co-regulation, and helping children name emotions. Small consistent actions matter.",
+    "activity": "Build a 'safe routine plan' for mornings or bedtime.",
+    "evidence_required": "Uploaded routine plan.",
+    "caseworker_flags": "No stable caregiver available.",
+    "escalation_trigger": "Caregiver unable to provide basic emotional safety triggers clinical support referral."
+  }
+}

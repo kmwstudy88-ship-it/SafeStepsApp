@@ -1,0 +1,61 @@
+{
+  "id": "course_module_multi_agency_collaboration_and_information_sharing",
+  "title": "Multi-Agency Collaboration and Information Sharing",
+  "description": "Auto-generated course for module module_multi_agency_collaboration_and_information_sharing",
+  "lessons": [
+    {
+      "id": "lesson_collaboration_principles",
+      "title": "Collaboration Principles",
+      "sections": [
+        {
+          "id": "section_lesson_collaboration_principles_01"
+        },
+        {
+          "id": "section_lesson_collaboration_principles_02"
+        },
+        {
+          "id": "section_lesson_collaboration_principles_03"
+        },
+        {
+          "id": "section_lesson_collaboration_principles_04"
+        },
+        {
+          "id": "section_lesson_collaboration_principles_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_safe_information_sharing",
+      "title": "Safe Information Sharing",
+      "sections": [
+        {
+          "id": "section_lesson_safe_information_sharing_01"
+        },
+        {
+          "id": "section_lesson_safe_information_sharing_02"
+        },
+        {
+          "id": "section_lesson_safe_information_sharing_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_coordinated_responses",
+      "title": "Coordinated Responses",
+      "sections": [
+        {
+          "id": "section_lesson_coordinated_responses_01"
+        },
+        {
+          "id": "section_lesson_coordinated_responses_02"
+        },
+        {
+          "id": "section_lesson_coordinated_responses_03"
+        },
+        {
+          "id": "section_lesson_coordinated_responses_04"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "course_module_parenting_under_stress",
+  "title": "Parenting Under DFV Stress",
+  "description": "Auto-generated course for module module_parenting_under_stress",
+  "lessons": [
+    {
+      "id": "lesson_managing_parental_stress",
+      "title": "Managing Parental Stress",
+      "sections": [
+        {
+          "id": "section_lesson_managing_parental_stress_01"
+        },
+        {
+          "id": "section_lesson_managing_parental_stress_02"
+        },
+        {
+          "id": "section_lesson_managing_parental_stress_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_supporting_children_emotionally",
+      "title": "Supporting Children Emotionally",
+      "sections": [
+        {
+          "id": "section_lesson_supporting_children_emotionally_01"
+        },
+        {
+          "id": "section_lesson_supporting_children_emotionally_02"
+        },
+        {
+          "id": "section_lesson_supporting_children_emotionally_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_maintaining_parent_child_connection",
+      "title": "Maintaining Parent–Child Connection",
+      "sections": [
+        {
+          "id": "section_lesson_maintaining_parent_child_connection_01"
+        },
+        {
+          "id": "section_lesson_maintaining_parent_child_connection_02"
+        },
+        {
+          "id": "section_lesson_maintaining_parent_child_connection_03"
+        }
+      ]
+    }
+  ]
+}

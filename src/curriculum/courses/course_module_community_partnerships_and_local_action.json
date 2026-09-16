@@ -1,0 +1,61 @@
+{
+  "id": "course_module_community_partnerships_and_local_action",
+  "title": "Community Partnerships and Local Action",
+  "description": "Auto-generated course for module module_community_partnerships_and_local_action",
+  "lessons": [
+    {
+      "id": "lesson_building_local_partnerships",
+      "title": "Building Local Partnerships",
+      "sections": [
+        {
+          "id": "section_lesson_building_local_partnerships_01"
+        },
+        {
+          "id": "section_lesson_building_local_partnerships_02"
+        },
+        {
+          "id": "section_lesson_building_local_partnerships_03"
+        },
+        {
+          "id": "section_lesson_building_local_partnerships_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_coordinating_local_initiatives",
+      "title": "Coordinating Local Initiatives",
+      "sections": [
+        {
+          "id": "section_lesson_coordinating_local_initiatives_01"
+        },
+        {
+          "id": "section_lesson_coordinating_local_initiatives_02"
+        },
+        {
+          "id": "section_lesson_coordinating_local_initiatives_03"
+        },
+        {
+          "id": "section_lesson_coordinating_local_initiatives_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_strengthening_community_capacity",
+      "title": "Strengthening Community Capacity",
+      "sections": [
+        {
+          "id": "section_lesson_strengthening_community_capacity_01"
+        },
+        {
+          "id": "section_lesson_strengthening_community_capacity_02"
+        },
+        {
+          "id": "section_lesson_strengthening_community_capacity_03"
+        },
+        {
+          "id": "section_lesson_strengthening_community_capacity_04"
+        }
+      ]
+    }
+  ]
+}

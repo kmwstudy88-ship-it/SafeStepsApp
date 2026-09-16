@@ -1,0 +1,25 @@
+{
+  "id": "minimising-and-denial",
+  "title": "Minimising and Denial (Father-Focused)",
+  "description": "This course supports fathers to recognise denial and minimising behaviours that prevent accountability and harm children’s emotional safety.",
+  "learningOutcomes": [
+    "Identify father-specific avoidance patterns.",
+    "Understand how denial affects children’s sense of safety.",
+    "Recognise the impact of minimising on partners and family stability.",
+    "Develop responsibility and honest self-reflection."
+  ],
+  "modules": [
+    {
+      "title": "Avoidance in Fathering",
+      "content": "Explores denial and justification in parenting contexts."
+    },
+    {
+      "title": "Impact on Children and Partner",
+      "content": "Shows how avoidance harms emotional safety."
+    },
+    {
+      "title": "Practising Honesty",
+      "content": "Provides tools for truthful reflection and accountability."
+    }
+  ]
+}

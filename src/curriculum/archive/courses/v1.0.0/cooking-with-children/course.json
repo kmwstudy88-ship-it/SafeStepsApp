@@ -1,0 +1,42 @@
+{
+  "title": "Cooking With Children",
+  "description": "",
+  "estimatedTimeMinutes": 60,
+  "difficultyLevel": "beginner",
+  "learningOutcomes": [
+    "Understand the key ideas behind cooking with children and why this topic matters for child development.",
+    "Learn practical skills and strategies that help apply cooking with children in everyday parenting situations.",
+    "Build confidence using cooking with children to support connection, safety, and positive family routines."
+  ],
+  "modules": [
+    {
+      "title": "Understanding the Topic",
+      "description": "Learn what cooking with children means and why it matters for child development.",
+      "id": "module-1"
+    },
+    {
+      "title": "Core Skills and Strategies",
+      "description": "Explore practical skills and strategies for applying cooking with children in everyday parenting.",
+      "id": "module-2"
+    },
+    {
+      "title": "Real-Life Application",
+      "description": "See how cooking with children works in real situations with examples and simple scripts.",
+      "id": "module-3"
+    },
+    {
+      "title": "Reflection and Integration",
+      "description": "Reflect on your learning and plan how to use cooking with children in daily family life.",
+      "id": "module-4"
+    }
+  ],
+  "metadata": {
+    "audience": "parents",
+    "tags": [],
+    "jurisdiction": "AU"
+  },
+  "caseworkerSummary": "This topic helps parents build practical skills related to cooking with children. It supports safer, more consistent caregiving by improving understanding, strengthening emotional connection, and reducing stress in daily routines. This topic is suitable for parents who need guidance in applying positive parenting strategies and may benefit families working toward stability, reunification, or improved home safety.",
+  "topics": [
+    "cooking"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "course_module_dfv_and_health_impacts",
+  "title": "DFV and Health Impacts",
+  "description": "Auto-generated course for module module_dfv_and_health_impacts",
+  "lessons": [
+    {
+      "id": "lesson_physical_health_impacts",
+      "title": "Physical Health Impacts",
+      "sections": [
+        {
+          "id": "section_lesson_physical_health_impacts_01"
+        },
+        {
+          "id": "section_lesson_physical_health_impacts_02"
+        },
+        {
+          "id": "section_lesson_physical_health_impacts_03"
+        },
+        {
+          "id": "section_lesson_physical_health_impacts_04"
+        },
+        {
+          "id": "section_lesson_physical_health_impacts_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_psychological_and_emotional_impacts",
+      "title": "Psychological and Emotional Impacts",
+      "sections": [
+        {
+          "id": "section_lesson_psychological_and_emotional_impacts_01"
+        },
+        {
+          "id": "section_lesson_psychological_and_emotional_impacts_02"
+        },
+        {
+          "id": "section_lesson_psychological_and_emotional_impacts_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_long_term_health_consequences",
+      "title": "Long-Term Health Consequences",
+      "sections": [
+        {
+          "id": "section_lesson_long_term_health_consequences_01"
+        },
+        {
+          "id": "section_lesson_long_term_health_consequences_02"
+        },
+        {
+          "id": "section_lesson_long_term_health_consequences_03"
+        }
+      ]
+    }
+  ]
+}

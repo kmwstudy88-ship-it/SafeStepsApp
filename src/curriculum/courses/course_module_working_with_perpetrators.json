@@ -1,0 +1,61 @@
+{
+  "id": "course_module_working_with_perpetrators",
+  "title": "Working With Perpetrators",
+  "description": "Auto-generated course for module module_working_with_perpetrators",
+  "lessons": [
+    {
+      "id": "lesson_safe_engagement",
+      "title": "Safe Engagement",
+      "sections": [
+        {
+          "id": "section_lesson_safe_engagement_01"
+        },
+        {
+          "id": "section_lesson_safe_engagement_02"
+        },
+        {
+          "id": "section_lesson_safe_engagement_03"
+        },
+        {
+          "id": "section_lesson_safe_engagement_04"
+        },
+        {
+          "id": "section_lesson_safe_engagement_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_accountability_frameworks",
+      "title": "Accountability Frameworks",
+      "sections": [
+        {
+          "id": "section_lesson_accountability_frameworks_01"
+        },
+        {
+          "id": "section_lesson_accountability_frameworks_02"
+        },
+        {
+          "id": "section_lesson_accountability_frameworks_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_behaviour_change_principles",
+      "title": "Behaviour Change Principles",
+      "sections": [
+        {
+          "id": "section_lesson_behaviour_change_principles_01"
+        },
+        {
+          "id": "section_lesson_behaviour_change_principles_02"
+        },
+        {
+          "id": "section_lesson_behaviour_change_principles_03"
+        },
+        {
+          "id": "section_lesson_behaviour_change_principles_04"
+        }
+      ]
+    }
+  ]
+}

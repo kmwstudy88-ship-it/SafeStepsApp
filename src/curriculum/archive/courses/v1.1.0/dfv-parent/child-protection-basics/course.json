@@ -1,0 +1,25 @@
+{
+  "title": "Child Protection Basics",
+  "description": "Explains how child protection systems work, why they become involved, and what parents can expect.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand the role of child protection.",
+    "Recognise why DFV triggers involvement.",
+    "Identify ways to work constructively with services."
+  ],
+  "modules": [
+    "Understanding Child Protection",
+    "Working With Services"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Child Protection",
+    "tags": [
+      "child protection",
+      "safety",
+      "services"
+    ]
+  },
+  "caseworkerSummary": "Helps parents understand child protection processes and expectations."
+}

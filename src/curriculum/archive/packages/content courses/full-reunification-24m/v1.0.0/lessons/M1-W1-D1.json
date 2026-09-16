@@ -1,0 +1,20 @@
+{
+  "id": "M1-W1-D1",
+  "week": 1,
+  "resources": [],
+  "month": 1,
+  "evidenceTypes": [],
+  "title": "",
+  "microLesson": "",
+  "activity": "",
+  "learningGoal": "",
+  "version": "1.0.0",
+  "metadata": {
+    "sensitivity": "general",
+    "language": "en-AU"
+  },
+  "durationMinutes": 0,
+  "caseworkerFlags": [],
+  "day": 1,
+  "moduleId": "module-1"
+}

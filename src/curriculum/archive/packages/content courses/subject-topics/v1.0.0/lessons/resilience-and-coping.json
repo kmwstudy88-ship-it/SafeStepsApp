@@ -1,0 +1,25 @@
+{
+  "id": "module-resilience-and-coping",
+  "title": "Resilience and Coping",
+  "moduleId": "resilience-and-coping",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents teach children coping skills and emotional strength.",
+  "microLesson": "Resilience grows through supportive relationships, problem‑solving opportunities, and emotional coaching. Parents strengthen resilience by validating feelings, encouraging effort, and modelling calm responses to stress.",
+  "activity": "Help your child reflect on a recent challenge. Write how you supported their coping.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "coping-skills"
+  ],
+  "resources": [
+    {
+      "title": "Resilience Toolkit",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

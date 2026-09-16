@@ -1,0 +1,25 @@
+{
+  "id": "fathers-court-ordered-programs",
+  "title": "Fathers Navigating Court-Ordered Programs",
+  "description": "This course helps fathers understand the purpose of court-ordered programs, what courts look for, and how to engage in a way that demonstrates accountability and genuine behaviour change. It supports fathers to meet requirements safely, respectfully, and consistently.",
+  "learningOutcomes": [
+    "Understand why courts order programs and what they aim to achieve.",
+    "Recognise behaviours that demonstrate accountability and progress.",
+    "Learn how to communicate respectfully with facilitators and caseworkers.",
+    "Develop strategies to complete programs consistently and safely."
+  ],
+  "modules": [
+    {
+      "title": "Why Courts Order Programs",
+      "content": "Explains safety concerns, risk factors, and the role of mandated intervention."
+    },
+    {
+      "title": "Engaging Safely and Respectfully",
+      "content": "Covers attendance, participation, emotional regulation, and accountability."
+    },
+    {
+      "title": "Demonstrating Change",
+      "content": "Provides practical steps for showing progress, insight, and responsibility."
+    }
+  ]
+}

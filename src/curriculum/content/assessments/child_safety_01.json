@@ -1,0 +1,49 @@
+{
+  "created_at": "2026-06-07T12:23:42.5338262+10:00",
+  "completed_at": null,
+  "recommendations": [],
+  "assessor": "Caseworker",
+  "updated_at": "2026-06-07T12:23:42.5338262+10:00",
+  "type": "child_safety",
+  "overall_risk": null,
+  "id": "child_safety_01",
+  "overall_strength": null,
+  "domains": [
+    {
+      "label": "Immediate danger",
+      "notes": null,
+      "id": "immediate_danger",
+      "score": null
+    },
+    {
+      "label": "Supervision",
+      "notes": null,
+      "id": "supervision",
+      "score": null
+    },
+    {
+      "label": "Basic needs",
+      "notes": null,
+      "id": "basic_needs",
+      "score": null
+    },
+    {
+      "label": "Exposure to violence",
+      "notes": null,
+      "id": "exposure_to_violence",
+      "score": null
+    },
+    {
+      "label": "Safe housing",
+      "notes": null,
+      "id": "safe_housing",
+      "score": null
+    },
+    {
+      "label": "Safety planning",
+      "notes": null,
+      "id": "safety_planning",
+      "score": null
+    }
+  ]
+}

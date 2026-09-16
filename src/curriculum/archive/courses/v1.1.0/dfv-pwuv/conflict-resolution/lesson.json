@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Conflict is normal, but how we handle it determines whether harm occurs."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Unresolved conflict can escalate into harmful behaviour."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn negotiation, compromise, and deâ€‘escalation skills."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify a conflict pattern you want to change."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Healthy conflict resolution strengthens relationships."
+                     }
+                 ]
+}

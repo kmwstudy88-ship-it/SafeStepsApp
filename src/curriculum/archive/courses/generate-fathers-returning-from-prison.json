@@ -1,0 +1,25 @@
+{
+  "id": "fathers-returning-from-prison",
+  "title": "Fathers Returning From Prison",
+  "description": "This course supports fathers transitioning back into family and community life after incarceration. It focuses on rebuilding trust, understanding children’s needs, managing expectations, and creating safe, stable routines that support long-term change.",
+  "learningOutcomes": [
+    "Understand the emotional and practical challenges of returning from prison.",
+    "Recognise the impact of incarceration on children and family relationships.",
+    "Learn strategies for rebuilding trust and stability.",
+    "Develop safe routines and behaviour patterns that support long-term change."
+  ],
+  "modules": [
+    {
+      "title": "The Transition Home",
+      "content": "Explores emotional, social, and practical challenges fathers face after release."
+    },
+    {
+      "title": "Reconnecting With Children",
+      "content": "Focuses on child safety, emotional needs, and rebuilding trust slowly and respectfully."
+    },
+    {
+      "title": "Building Safe Routines",
+      "content": "Provides tools for structure, accountability, and long-term behaviour change."
+    }
+  ]
+}

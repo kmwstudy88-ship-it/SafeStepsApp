@@ -1,0 +1,25 @@
+{
+  "id": "healthy-boundaries",
+  "title": "Healthy Boundaries",
+  "description": "This course helps participants understand boundaries, personal space, and respect for autonomy in relationships.",
+  "learningOutcomes": [
+    "Understand what healthy boundaries are.",
+    "Recognise boundary violations and their impact.",
+    "Learn how to set and respect boundaries.",
+    "Develop behaviours that support emotional and physical safety."
+  ],
+  "modules": [
+    {
+      "title": "What Are Boundaries?",
+      "content": "Defines emotional, physical, and relational boundaries."
+    },
+    {
+      "title": "Recognising Boundary Violations",
+      "content": "Explores coercion, pressure, and disrespect."
+    },
+    {
+      "title": "Building Healthy Boundaries",
+      "content": "Provides tools for safe, respectful interactions."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "taking-responsibility",
+  "title": "Taking Responsibility",
+  "description": "This course helps participants understand what it means to take responsibility for behaviour, impact, and change.",
+  "learningOutcomes": [
+    "Understand responsibility vs blame.",
+    "Recognise avoidance behaviours.",
+    "Learn how responsibility supports safety.",
+    "Develop habits of accountable behaviour."
+  ],
+  "modules": [
+    {
+      "title": "What Responsibility Means",
+      "content": "Explores ownership, accountability, and integrity."
+    },
+    {
+      "title": "Avoidance and Blame",
+      "content": "Identifies patterns that block responsibility."
+    },
+    {
+      "title": "Practising Responsibility",
+      "content": "Provides tools for consistent, accountable behaviour."
+    }
+  ]
+}

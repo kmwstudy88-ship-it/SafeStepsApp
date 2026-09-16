@@ -1,0 +1,25 @@
+{
+  "id": "module-feeding-challenges",
+  "title": "Feeding Challenges",
+  "moduleId": "feeding-challenges",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand common feeding challenges and how to support healthy eating habits.",
+  "microLesson": "Feeding challenges may include refusal, sensory issues, or anxiety around food. Children respond best to calm mealtimes, predictable routines, and low‑pressure exposure to new foods. Parents can support progress by modelling healthy eating and avoiding power struggles.",
+  "activity": "Identify one feeding challenge and try a low‑pressure strategy (e.g., exposure without forcing). Reflect on the outcome.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "nutrition"
+  ],
+  "resources": [
+    {
+      "title": "Feeding Support Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

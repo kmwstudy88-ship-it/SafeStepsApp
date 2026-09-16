@@ -1,0 +1,26 @@
+{
+  "id": "module-independence-and-life-skills",
+  "title": "Independence and Life Skills",
+  "moduleId": "independence-and-life-skills",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to build independence through age‑appropriate responsibilities and skill-building.",
+  "microLesson": "Children develop independence through practice, encouragement, and predictable routines. Life skills—such as dressing, organising belongings, or helping with chores—build confidence and competence. Parents support independence by breaking tasks into steps, offering choices, and praising effort.",
+  "activity": "Choose one life skill to teach your child. Support them step-by-step and reflect on their progress.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "independence"
+  ],
+  "resources": [
+    {
+      "title": "Life Skills Checklist",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Longâ€‘term change requires consistency, support, and ongoing selfâ€‘awareness."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Relapse risks include stress, isolation, and unaddressed triggers."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn maintenance planning, support networks, and relapseâ€‘prevention strategies."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify one longâ€‘term goal that supports your change."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Longâ€‘term change is built through daily choices."
+                     }
+                 ]
+}

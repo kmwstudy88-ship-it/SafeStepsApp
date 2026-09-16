@@ -1,0 +1,25 @@
+{
+  "title": "Infant Trauma and DFV",
+  "description": "Explores how domestic and family violence affects babies, including attachment, development, and stress responses.",
+  "estimatedTimeMinutes": 40,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand how infants experience trauma.",
+    "Recognise signs of stress in babies.",
+    "Identify ways to support infant safety and bonding."
+  ],
+  "modules": [
+    "How Infants Experience DFV",
+    "Supporting Infant Recovery"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Infants",
+    "tags": [
+      "infants",
+      "trauma",
+      "attachment"
+    ]
+  },
+  "caseworkerSummary": "Helps parents understand how DFV affects babies and how to support early recovery."
+}

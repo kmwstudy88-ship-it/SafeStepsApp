@@ -1,0 +1,25 @@
+{
+  "id": "empathy-development",
+  "title": "Empathy Development (Father-Focused)",
+  "description": "This course supports fathers to build empathy for their children and partners, strengthening emotional safety and connection.",
+  "learningOutcomes": [
+    "Understand empathy in the context of fatherhood.",
+    "Recognise how lack of empathy harms children.",
+    "Learn how to understand children’s emotional experiences.",
+    "Develop compassionate, safe relational habits."
+  ],
+  "modules": [
+    {
+      "title": "Empathy in Fathering",
+      "content": "Explores how empathy supports children’s emotional development."
+    },
+    {
+      "title": "Barriers to Empathy",
+      "content": "Identifies patterns that block emotional understanding."
+    },
+    {
+      "title": "Building Empathy",
+      "content": "Provides tools for perspective-taking and compassion."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "goal_01",
+  "description": "Keep kitchen clean",
+  "progress": [
+    {
+      "timestamp": "2026-06-07T11:25:43.9611802+10:00",
+      "entry": "Cleaned kitchen today"
+    }
+  ],
+  "completed_at": null,
+  "created_at": "2026-06-07T11:25:43.8830712+10:00",
+  "updated_at": "2026-06-07T11:25:43.9611802+10:00"
+}

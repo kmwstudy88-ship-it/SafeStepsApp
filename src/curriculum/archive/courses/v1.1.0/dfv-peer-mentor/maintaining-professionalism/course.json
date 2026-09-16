@@ -1,0 +1,8 @@
+{
+  "topic": "maintaining-professionalism",
+  "version": "1.1.0",
+  "stream": "dfv-peer-mentor",
+  "description": "Peer Mentor training module on maintaining-professionalism.",
+  "type": "course",
+  "title": " $args[0].Value.ToUpper() aintaining  $args[0].Value.ToUpper() rofessionalism"
+}

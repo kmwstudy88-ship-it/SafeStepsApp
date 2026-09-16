@@ -1,0 +1,40 @@
+{
+  "id": "course_emotional_coaching_for_parents",
+  "domain": "parenting",
+  "level": "foundational",
+  "title": "Emotional Coaching for Parents",
+  "modules": [
+    {
+      "id": "module_understanding_child_emotions",
+      "title": "Understanding Children's Emotions",
+      "lessons": [
+        "why_children_have_big_feelings",
+        "how_emotions_develop",
+        "common_emotional_triggers"
+      ]
+    },
+    {
+      "id": "module_coaching_steps",
+      "title": "The Emotional Coaching Steps",
+      "lessons": [
+        "step_1_notice_and_name",
+        "step_2_validate_and_accept",
+        "step_3_guide_and_teach"
+      ]
+    },
+    {
+      "id": "module_practical_skills",
+      "title": "Practical Coaching Skills",
+      "lessons": [
+        "coaching_during_tantrums",
+        "coaching_during_conflict",
+        "coaching_for_anxiety"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved ability to support children's emotional development",
+    "Stronger parent–child connection during difficult moments",
+    "Increased confidence in responding to big feelings"
+  ]
+}

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "DFV-W7-D1",
+    "week": 7,
+    "day": 1,
+    "title": "Strengthening Daily Routines",
+    "duration_minutes": 12,
+    "learning_goal": "Rebuild predictable routines that support child safety and emotional stability.",
+    "content": {
+      "micro_lesson": "Predictable routines reduce stress and help children feel safe. Even small routines—morning steps, bedtime flow, meal patterns—create stability after DFV disruption.",
+      "activity": "Create a simple morning or bedtime routine with 4–6 steps.",
+      "evidence_required": "Uploaded routine plan.",
+      "caseworker_flags": "No consistent routines at home; child showing stress behaviours.",
+      "escalation_trigger": "Caregiver reports inability to maintain basic routines due to ongoing conflict."
+    }
+  },
+  {
+    "id": "DFV-W7-D2",
+    "week": 7,
+    "day": 2,
+    "title": "Emotional Co‑Regulation",
+    "duration_minutes": 14,
+    "learning_goal": "Learn how to help children regulate emotions through calm, connected responses.",
+    "content": {
+      "micro_lesson": "Children borrow regulation from adults. Co‑regulation uses calm tone, physical presence, naming emotions, and predictable responses to help children settle.",
+      "activity": "Practice a 5‑minute co‑regulation exercise with your child.",
+      "evidence_required": "Short reflection (100 words).",
+      "caseworker_flags": "Child unable to settle; caregiver overwhelmed.",
+      "escalation_trigger": "Signs of severe emotional dysregulation in child or caregiver."
+    }
+  },
+  {
+    "id": "DFV-W7-D3",
+    "week": 7,
+    "day": 3,
+    "title": "Managing Triggers at Home",
+    "duration_minutes": 13,
+    "learning_goal": "Identify personal and child triggers and develop strategies to manage them safely.",
+    "content": {
+      "micro_lesson": "Triggers can be sounds, tones, routines, or memories. Recognising early signs helps prevent escalation and supports emotional safety.",
+      "activity": "Complete a trigger‑mapping worksheet.",
+      "evidence_required": "Uploaded trigger map.",
+      "caseworker_flags": "Frequent triggers linked to past DFV events.",
+      "escalation_trigger": "Triggers leading to unsafe behaviour or emotional shutdown."
+    }
+  },
+  {
+    "id": "DFV-W7-D4",
+    "week": 7,
+    "day": 4,
+    "title": "Positive Parenting Under Stress",
+    "duration_minutes": 15,
+    "learning_goal": "Strengthen positive parenting skills during stressful periods.",
+    "content": {
+      "micro_lesson": "Positive parenting includes warmth, clear expectations, calm correction, and predictable consequences. Stress makes this harder, but small consistent actions help.",
+      "activity": "Identify one positive parenting strategy to practice this week.",
+      "evidence_required": "100–150 word reflection.",
+      "caseworker_flags": "Caregiver reports feeling overwhelmed or unable to cope.",
+      "escalation_trigger": "Any disclosure of unsafe parenting conditions."
+    }
+  },
+  {
+    "id": "DFV-W7-D5",
+    "week": 7,
+    "day": 5,
+    "title": "Strengthening Parent–Child Connection",
+    "duration_minutes": 12,
+    "learning_goal": "Rebuild trust and connection through small, meaningful interactions.",
+    "content": {
+      "micro_lesson": "Connection grows through shared attention, play, gentle touch, and emotional presence. Even 10 minutes a day strengthens attachment.",
+      "activity": "Complete a 10‑minute connection activity with your child.",
+      "evidence_required": "Short reflection.",
+      "caseworker_flags": "Child avoids contact or shows fear.",
+      "escalation_trigger": "Signs of attachment rupture requiring therapeutic support."
+    }
+  },
+  {
+    "id": "DFV-W7-D6",
+    "week": 7,
+    "day": 6,
+    "title": "Reducing Household Stress",
+    "duration_minutes": 13,
+    "learning_goal": "Identify stressors in the home and create a plan to reduce them.",
+    "content": {
+      "micro_lesson": "Stressors may include noise, conflict, clutter, unpredictable routines, or financial pressure. Reducing even one stressor improves family wellbeing.",
+      "activity": "Choose one household stressor and create a reduction plan.",
+      "evidence_required": "Uploaded stress‑reduction plan.",
+      "caseworker_flags": "High household stress affecting children.",
+      "escalation_trigger": "Stress linked to ongoing DFV or unsafe conditions."
+    }
+  },
+  {
+    "id": "DFV-W7-D7",
+    "week": 7,
+    "day": 7,
+    "title": "Weekly Reflection & Stability Check",
+    "duration_minutes": 10,
+    "learning_goal": "Reflect on progress and identify areas needing support.",
+    "content": {
+      "micro_lesson": "Weekly reflection helps track stability, routines, emotional safety, and parenting progress. Small improvements matter.",
+      "activity": "Write a 150‑word reflection on what improved and what still feels hard.",
+      "evidence_required": "Weekly reflection upload.",
+      "caseworker_flags": "New stressors, instability, or emotional overwhelm.",
+      "escalation_trigger": "Any disclosure of new risk or regression in safety."
+    }
+  }
+]

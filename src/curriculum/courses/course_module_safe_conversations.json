@@ -1,0 +1,61 @@
+{
+  "id": "course_module_safe_conversations",
+  "title": "Safe Conversations",
+  "description": "Auto-generated course for module module_safe_conversations",
+  "lessons": [
+    {
+      "id": "lesson_active_listening",
+      "title": "Active Listening",
+      "sections": [
+        {
+          "id": "section_lesson_active_listening_01"
+        },
+        {
+          "id": "section_lesson_active_listening_02"
+        },
+        {
+          "id": "section_lesson_active_listening_03"
+        },
+        {
+          "id": "section_lesson_active_listening_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_holding_space",
+      "title": "Holding Space",
+      "sections": [
+        {
+          "id": "section_lesson_holding_space_01"
+        },
+        {
+          "id": "section_lesson_holding_space_02"
+        },
+        {
+          "id": "section_lesson_holding_space_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_avoiding_retraumatisation",
+      "title": "Avoiding Retraumatisation",
+      "sections": [
+        {
+          "id": "section_lesson_avoiding_retraumatisation_01"
+        },
+        {
+          "id": "section_lesson_avoiding_retraumatisation_02"
+        },
+        {
+          "id": "section_lesson_avoiding_retraumatisation_03"
+        },
+        {
+          "id": "section_lesson_avoiding_retraumatisation_04"
+        },
+        {
+          "id": "section_lesson_avoiding_retraumatisation_05"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "course_module_assessment_and_response",
+  "title": "Assessment and Response",
+  "description": "Auto-generated course for module module_assessment_and_response",
+  "lessons": [
+    {
+      "id": "lesson_initial_assessment",
+      "title": "Initial Assessment",
+      "sections": [
+        {
+          "id": "section_lesson_initial_assessment_01"
+        },
+        {
+          "id": "section_lesson_initial_assessment_02"
+        },
+        {
+          "id": "section_lesson_initial_assessment_03"
+        },
+        {
+          "id": "section_lesson_initial_assessment_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_risk_identification",
+      "title": "Risk Identification",
+      "sections": [
+        {
+          "id": "section_lesson_risk_identification_01"
+        },
+        {
+          "id": "section_lesson_risk_identification_02"
+        },
+        {
+          "id": "section_lesson_risk_identification_03"
+        },
+        {
+          "id": "section_lesson_risk_identification_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_safety_planning",
+      "title": "Safety Planning",
+      "sections": [
+        {
+          "id": "section_lesson_safety_planning_01"
+        },
+        {
+          "id": "section_lesson_safety_planning_02"
+        },
+        {
+          "id": "section_lesson_safety_planning_03"
+        }
+      ]
+    }
+  ]
+}

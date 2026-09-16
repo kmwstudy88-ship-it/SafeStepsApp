@@ -1,0 +1,25 @@
+{
+  "id": "fathers-in-prison-connection",
+  "title": "Fathers in Prison: Maintaining Safe Connection",
+  "description": "This course supports fathers who are currently incarcerated to maintain safe, child-centred connection with their children. It focuses on emotional presence, respectful communication, and understanding the child’s experience during parental imprisonment.",
+  "learningOutcomes": [
+    "Understand how imprisonment affects children emotionally and developmentally.",
+    "Learn safe ways to maintain connection through letters, calls, or supervised visits.",
+    "Recognise behaviours that support or harm a child’s sense of safety.",
+    "Develop skills for emotional presence and respectful communication."
+  ],
+  "modules": [
+    {
+      "title": "Understanding the Child’s Experience",
+      "content": "Explores how children process parental imprisonment and what they need to feel safe."
+    },
+    {
+      "title": "Maintaining Safe Connection",
+      "content": "Covers letters, calls, supervised visits, and child-centred communication."
+    },
+    {
+      "title": "Preparing for Reconnection",
+      "content": "Provides guidance on emotional readiness, accountability, and safe expectations."
+    }
+  ]
+}

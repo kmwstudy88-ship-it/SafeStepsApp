@@ -1,0 +1,26 @@
+{
+  "id": "module-online-safety",
+  "title": "Online Safety",
+  "moduleId": "online-safety",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to protect children from online risks and promote safe digital habits.",
+  "microLesson": "Children face risks online including cyberbullying, inappropriate content, and unsafe contact. Parents can protect children by setting boundaries, using parental controls, and having open conversations about online behaviour. Staying involved is key.",
+  "activity": "Review your child’s device settings and enable one new safety feature. Reflect on why you chose it.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "online-safety"
+  ],
+  "resources": [
+    {
+      "title": "Online Safety Checklist",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

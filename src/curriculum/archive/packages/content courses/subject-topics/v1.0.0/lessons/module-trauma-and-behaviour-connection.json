@@ -1,0 +1,25 @@
+{
+  "id": "module-trauma-and-behaviour-connection",
+  "title": "Trauma and Behaviour Connection",
+  "moduleId": "trauma-and-behaviour-connection",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how trauma influences behaviour, emotions, and relationships.",
+  "microLesson": "Trauma can make children more reactive, fearful, or withdrawn. Behaviours that look like defiance may actually be survival responses. Understanding the trauma‑behaviour link helps parents respond with empathy and safety instead of punishment.",
+  "activity": "Reflect on one behaviour your child shows that may be linked to stress or trauma. Write how you can respond with safety and connection.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "trauma-awareness"
+  ],
+  "resources": [
+    {
+      "title": "Trauma and Behaviour Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

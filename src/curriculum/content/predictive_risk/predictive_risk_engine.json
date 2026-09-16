@@ -1,0 +1,38 @@
+{
+  "id": "predictive_risk_engine",
+  "updated_at": "2026-06-07T12:30:56.4153321+10:00",
+  "created_at": "2026-06-07T12:30:56.4152438+10:00",
+  "forecast": {
+    "next_90_days": null,
+    "next_30_days": null,
+    "next_7_days": null
+  },
+  "warnings": [
+    {
+      "active": false,
+      "id": "rapid_risk_increase"
+    },
+    {
+      "active": false,
+      "id": "declining_parenting_capacity"
+    },
+    {
+      "active": false,
+      "id": "substance_use_relapse_pattern"
+    },
+    {
+      "active": false,
+      "id": "mental_health_deterioration"
+    },
+    {
+      "active": false,
+      "id": "housing_instability_pattern"
+    }
+  ],
+  "history": {
+    "risk_scores": [],
+    "incidents": [],
+    "strength_scores": [],
+    "assessment_changes": []
+  }
+}

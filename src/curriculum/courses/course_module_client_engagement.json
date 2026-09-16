@@ -1,0 +1,61 @@
+{
+  "id": "course_module_client_engagement",
+  "title": "Trauma‑Informed Client Engagement",
+  "description": "Auto-generated course for module module_client_engagement",
+  "lessons": [
+    {
+      "id": "lesson_trauma_informed_engagement",
+      "title": "Trauma‑Informed Engagement",
+      "sections": [
+        {
+          "id": "section_lesson_trauma_informed_engagement_01"
+        },
+        {
+          "id": "section_lesson_trauma_informed_engagement_02"
+        },
+        {
+          "id": "section_lesson_trauma_informed_engagement_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_working_with_resistance",
+      "title": "Working With Resistance",
+      "sections": [
+        {
+          "id": "section_lesson_working_with_resistance_01"
+        },
+        {
+          "id": "section_lesson_working_with_resistance_02"
+        },
+        {
+          "id": "section_lesson_working_with_resistance_03"
+        },
+        {
+          "id": "section_lesson_working_with_resistance_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_strengths_based_practice",
+      "title": "Strengths-Based Practice",
+      "sections": [
+        {
+          "id": "section_lesson_strengths_based_practice_01"
+        },
+        {
+          "id": "section_lesson_strengths_based_practice_02"
+        },
+        {
+          "id": "section_lesson_strengths_based_practice_03"
+        },
+        {
+          "id": "section_lesson_strengths_based_practice_04"
+        },
+        {
+          "id": "section_lesson_strengths_based_practice_05"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "fathers-navigating-shame",
+  "title": "Fathers Navigating Shame After Violence",
+  "description": "This course supports fathers to understand and work through the deep shame that often follows the use of violence. It explores how shame affects identity, relationships, parenting, and behaviour change. Fathers learn how to move from avoidance and defensiveness toward accountability, repair, and safe reconnection with children and family.",
+  "learningOutcomes": [
+    "Understand how shame develops after the use of violence and why it is a barrier to change.",
+    "Recognise how shame-driven behaviours impact children, partners, and co‑parents.",
+    "Learn strategies to move from shame and avoidance toward accountability and repair.",
+    "Build skills for safe emotional expression and self‑reflection."
+  ],
+  "modules": [
+    {
+      "title": "Understanding Shame After Violence",
+      "content": "Explores the psychology of shame, how it develops, and how it affects identity and behaviour."
+    },
+    {
+      "title": "Shame, Parenting, and Child Safety",
+      "content": "Examines how shame-driven reactions impact children and co‑parents, and how to shift toward accountability."
+    },
+    {
+      "title": "Moving Toward Repair and Responsibility",
+      "content": "Provides practical tools for emotional regulation, self‑reflection, and safe reconnection with children."
+    }
+  ]
+}

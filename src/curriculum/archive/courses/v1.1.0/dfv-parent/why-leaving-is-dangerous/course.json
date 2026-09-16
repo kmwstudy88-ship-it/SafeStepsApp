@@ -1,0 +1,25 @@
+{
+  "title": "Why Leaving Can Be Dangerous",
+  "description": "Explains why the period around separation is often the most dangerous time for victim-survivors and how to plan for safety.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand why risk increases during separation.",
+    "Recognise common escalation patterns.",
+    "Identify strategies for safer planning."
+  ],
+  "modules": [
+    "Understanding Escalation Risk",
+    "Planning for Safer Separation"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Safety",
+    "tags": [
+      "separation",
+      "risk",
+      "safety"
+    ]
+  },
+  "caseworkerSummary": "Helps parents understand why separation increases risk and how to plan for safety."
+}

@@ -1,0 +1,70 @@
+{
+  "id": "course_module_understanding_dfv_in_the_community",
+  "title": "Understanding DFV in the Community",
+  "description": "Auto-generated course for module module_understanding_dfv_in_the_community",
+  "lessons": [
+    {
+      "id": "lesson_dfv_patterns_and_drivers",
+      "title": "DFV Patterns and Drivers",
+      "sections": [
+        {
+          "id": "section_lesson_dfv_patterns_and_drivers_01"
+        },
+        {
+          "id": "section_lesson_dfv_patterns_and_drivers_02"
+        },
+        {
+          "id": "section_lesson_dfv_patterns_and_drivers_03"
+        },
+        {
+          "id": "section_lesson_dfv_patterns_and_drivers_04"
+        },
+        {
+          "id": "section_lesson_dfv_patterns_and_drivers_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_myths_and_misconceptions",
+      "title": "Myths and Misconceptions",
+      "sections": [
+        {
+          "id": "section_lesson_myths_and_misconceptions_01"
+        },
+        {
+          "id": "section_lesson_myths_and_misconceptions_02"
+        },
+        {
+          "id": "section_lesson_myths_and_misconceptions_03"
+        },
+        {
+          "id": "section_lesson_myths_and_misconceptions_04"
+        },
+        {
+          "id": "section_lesson_myths_and_misconceptions_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_community_roles_in_prevention",
+      "title": "Community Roles in Prevention",
+      "sections": [
+        {
+          "id": "section_lesson_community_roles_in_prevention_01"
+        },
+        {
+          "id": "section_lesson_community_roles_in_prevention_02"
+        },
+        {
+          "id": "section_lesson_community_roles_in_prevention_03"
+        },
+        {
+          "id": "section_lesson_community_roles_in_prevention_04"
+        },
+        {
+          "id": "section_lesson_community_roles_in_prevention_05"
+        }
+      ]
+    }
+  ]
+}

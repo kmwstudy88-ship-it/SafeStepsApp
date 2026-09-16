@@ -1,0 +1,25 @@
+{
+  "id": "module-parenting-capacity",
+  "title": "Parenting Capacity",
+  "moduleId": "parenting-capacity",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand the core elements of safe, capable parenting.",
+  "microLesson": "Parenting capacity includes emotional regulation, consistency, supervision, safety awareness, and meeting children’s needs. Parents who reflect on their strengths and challenges can make meaningful improvements.",
+  "activity": "Identify one area of parenting capacity you want to strengthen. Reflect on a small step you can take this week.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "parenting-capacity"
+  ],
+  "resources": [
+    {
+      "title": "Parenting Capacity Framework",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

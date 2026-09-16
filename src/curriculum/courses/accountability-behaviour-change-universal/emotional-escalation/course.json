@@ -1,0 +1,25 @@
+{
+  "id": "emotional-escalation",
+  "title": "Emotional Escalation Awareness",
+  "description": "This course helps participants recognise emotional escalation patterns and develop strategies to prevent harm.",
+  "learningOutcomes": [
+    "Identify personal escalation patterns.",
+    "Recognise early signs of emotional overload.",
+    "Understand how escalation affects others.",
+    "Develop strategies for de-escalation."
+  ],
+  "modules": [
+    {
+      "title": "Understanding Escalation",
+      "content": "Explores emotional triggers and escalation cycles."
+    },
+    {
+      "title": "Impact on Others",
+      "content": "Shows how escalation creates fear and instability."
+    },
+    {
+      "title": "De-escalation Tools",
+      "content": "Provides grounding, breathing, and self-regulation strategies."
+    }
+  ]
+}

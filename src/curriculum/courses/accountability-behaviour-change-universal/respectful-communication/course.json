@@ -1,0 +1,25 @@
+{
+  "id": "respectful-communication",
+  "title": "Respectful Communication Skills",
+  "description": "This course teaches participants how to communicate respectfully, listen actively, and express needs without causing harm.",
+  "learningOutcomes": [
+    "Learn the foundations of respectful communication.",
+    "Understand how listening improves safety and trust.",
+    "Develop skills for expressing needs without aggression.",
+    "Recognise how respectful communication supports children’s wellbeing."
+  ],
+  "modules": [
+    {
+      "title": "Foundations of Respectful Communication",
+      "content": "Explores tone, timing, and intention."
+    },
+    {
+      "title": "Active Listening Skills",
+      "content": "Teaches presence, validation, and non-defensive listening."
+    },
+    {
+      "title": "Expressing Needs Safely",
+      "content": "Provides tools for assertive, non-harmful communication."
+    }
+  ]
+}

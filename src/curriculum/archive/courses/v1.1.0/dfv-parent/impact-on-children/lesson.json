@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Children are deeply affected by DFV, even when they do not see the violence directly."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Children may show fear, anxiety, aggression, withdrawal, or developmental delays."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn how to respond with safety, predictability, and emotional support."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Think about how your child reacts during stress. What might they be communicating?"
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Understanding childrenâ€™s responses helps parents support healing."
+                     }
+                 ]
+}

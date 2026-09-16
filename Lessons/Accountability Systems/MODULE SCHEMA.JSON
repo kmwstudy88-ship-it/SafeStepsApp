@@ -1,0 +1,90 @@
+{
+  "program_id": "PARENT-ACC-111",
+  "program_title": "Neurodiversity, Trauma-Informed Practice & Complex Behavioral Needs",
+  "version": "1.0",
+  "metadata": {
+    "target_audience": "Parents and caregivers of neurodivergent youth, traumatized youth, or children with complex behavioral needs (Ages 4–18)",
+    "estimated_duration": "60–90 minutes",
+    "delivery_format": "Self-paced or Facilitated Add-On Module",
+    "core_objective": "Differentiate skill deficits from willful defiance, adapt boundaries for executive dysfunction, and apply trauma-informed co-regulation.",
+    "key_deliverable": "Accommodated Accountability Plan & Collaborative Problem-Solving Worksheet"
+  },
+  "modules": [
+    {
+      "section_id": 1,
+      "section_title": "Core Learning Content",
+      "topics": [
+        {
+          "topic_id": "11.1",
+          "title": "Skill Deficit vs. Willful Defiance",
+          "summary": "Re-framing non-compliance as executive dysfunction or neurological overload.",
+          "key_principles": [
+            "Kids do well if they can (Dr. Ross Greene framework).",
+            "Executive function deficits require structural scaffolding rather than punitive measures."
+          ]
+        },
+        {
+          "topic_id": "11.2",
+          "title": "Trauma-Informed Boundaries & Meltdown Management",
+          "summary": "Differentiating tantrums from involuntary neurological meltdowns and maintaining connection before correction.",
+          "core_strategies": [
+            "Connection before correction.",
+            "Low-arousal verbal and physical posture.",
+            "Collaborative problem-solving for demand avoidance."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section_title": "Lesson Activities",
+      "activities": [
+        {
+          "activity_id": "ACT-1101",
+          "title": "The Defiance vs. Skill Deficit Audit",
+          "type": "Worksheet",
+          "instructions": "Re-evaluate recurring conflict flashpoints through a neuro-affirming lens and build environmental accommodations."
+        }
+      ]
+    },
+    {
+      "section_id": 3,
+      "section_title": "Implementation Tasks",
+      "tasks": [
+        {
+          "task_id": "TSK-1101",
+          "title": "Collaborative & Proactive Solutions (CPS) Execution",
+          "action": "Complete a 3-step CPS plan (Empathy, Adult Concern, Invitation) for a chronic household struggle."
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section_title": "Assessments & Quizzes",
+      "quiz": [
+        {
+          "id": "NQ1",
+          "question": "How does a sensory/neurological meltdown differ fundamentally from a tantrum?",
+          "options": [
+            "A) Meltdowns only occur in teenagers; tantrums occur in toddlers.",
+            "B) A tantrum is goal-directed and driven by the conscious brain, whereas a meltdown is an involuntary fight-or-flight overload response.",
+            "C) Meltdowns require harsher consequences to prevent repetition.",
+            "D) There is no difference between the two terms."
+          ],
+          "correct_answer": "B"
+        },
+        {
+          "id": "NQ2",
+          "question": "What is the most effective initial approach when holding a trauma-impacted child accountable after a boundary violation?",
+          "options": [
+            "A) Removing all privileges immediately for 30 days.",
+            "B) Establishing felt emotional safety ('Connection Before Correction') before addressing the behavior.",
+            "C) Speaking louder so they understand the severity of their mistake.",
+            "D) Sending them to their room until they write an essay."
+          ],
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

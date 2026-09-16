@@ -1,0 +1,58 @@
+{
+  "id": "course_module_specialist_interventions",
+  "title": "Specialist Interventions",
+  "description": "Auto-generated course for module module_specialist_interventions",
+  "lessons": [
+    {
+      "id": "lesson_specialist_therapeutic_support",
+      "title": "Specialist Therapeutic Support",
+      "sections": [
+        {
+          "id": "section_lesson_specialist_therapeutic_support_01"
+        },
+        {
+          "id": "section_lesson_specialist_therapeutic_support_02"
+        },
+        {
+          "id": "section_lesson_specialist_therapeutic_support_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_cultural_complexity",
+      "title": "Cultural Complexity",
+      "sections": [
+        {
+          "id": "section_lesson_cultural_complexity_01"
+        },
+        {
+          "id": "section_lesson_cultural_complexity_02"
+        },
+        {
+          "id": "section_lesson_cultural_complexity_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_intersectional_practice",
+      "title": "Intersectional Practice",
+      "sections": [
+        {
+          "id": "section_lesson_intersectional_practice_01"
+        },
+        {
+          "id": "section_lesson_intersectional_practice_02"
+        },
+        {
+          "id": "section_lesson_intersectional_practice_03"
+        },
+        {
+          "id": "section_lesson_intersectional_practice_04"
+        },
+        {
+          "id": "section_lesson_intersectional_practice_05"
+        }
+      ]
+    }
+  ]
+}

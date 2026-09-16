@@ -1,0 +1,25 @@
+{
+  "id": "communication-harm",
+  "title": "Understanding Harmful Communication (Father-Focused)",
+  "description": "This course supports fathers to recognise communication behaviours that create fear or emotional instability for partners and children.",
+  "learningOutcomes": [
+    "Identify harmful communication patterns used in parenting and relationships.",
+    "Understand how tone and language affect children’s emotional security.",
+    "Recognise intimidation, sarcasm, and verbal pressure.",
+    "Develop safe, respectful communication habits."
+  ],
+  "modules": [
+    {
+      "title": "Fathering and Communication",
+      "content": "Explores how communication shapes children’s emotional world."
+    },
+    {
+      "title": "Impact on Partner and Children",
+      "content": "Shows how harmful communication creates fear and instability."
+    },
+    {
+      "title": "Safe and Respectful Communication",
+      "content": "Provides tools for calm, clear, and respectful interactions."
+    }
+  ]
+}

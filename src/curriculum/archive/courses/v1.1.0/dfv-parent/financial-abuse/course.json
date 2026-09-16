@@ -1,0 +1,25 @@
+{
+  "title": "Financial Abuse",
+  "description": "Explains how financial control, restriction, and exploitation are used as forms of domestic and family violence.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Recognise forms of financial abuse.",
+    "Understand how financial control limits safety.",
+    "Identify strategies to increase financial independence."
+  ],
+  "modules": [
+    "Understanding Financial Abuse",
+    "Building Financial Safety"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Financial Abuse",
+    "tags": [
+      "money",
+      "control",
+      "safety"
+    ]
+  },
+  "caseworkerSummary": "Helps parents identify financial abuse and begin planning for financial safety."
+}

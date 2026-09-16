@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Trust is rebuilt through consistent actions, not promises."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Trust requires safety, honesty, accountability, and time."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn reliability, transparency, and followâ€‘through behaviours."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify one behaviour that could help rebuild trust."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Rebuilding trust is a longâ€‘term commitment."
+                     }
+                 ]
+}

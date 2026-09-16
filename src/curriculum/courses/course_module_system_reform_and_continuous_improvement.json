@@ -1,0 +1,64 @@
+{
+  "id": "course_module_system_reform_and_continuous_improvement",
+  "title": "System Reform and Continuous Improvement",
+  "description": "Auto-generated course for module module_system_reform_and_continuous_improvement",
+  "lessons": [
+    {
+      "id": "lesson_understanding_system_reform",
+      "title": "Understanding System Reform",
+      "sections": [
+        {
+          "id": "section_lesson_understanding_system_reform_01"
+        },
+        {
+          "id": "section_lesson_understanding_system_reform_02"
+        },
+        {
+          "id": "section_lesson_understanding_system_reform_03"
+        },
+        {
+          "id": "section_lesson_understanding_system_reform_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_evidence_and_evaluation",
+      "title": "Evidence and Evaluation",
+      "sections": [
+        {
+          "id": "section_lesson_evidence_and_evaluation_01"
+        },
+        {
+          "id": "section_lesson_evidence_and_evaluation_02"
+        },
+        {
+          "id": "section_lesson_evidence_and_evaluation_03"
+        },
+        {
+          "id": "section_lesson_evidence_and_evaluation_04"
+        },
+        {
+          "id": "section_lesson_evidence_and_evaluation_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_contributing_to_system_improvement",
+      "title": "Contributing to System Improvement",
+      "sections": [
+        {
+          "id": "section_lesson_contributing_to_system_improvement_01"
+        },
+        {
+          "id": "section_lesson_contributing_to_system_improvement_02"
+        },
+        {
+          "id": "section_lesson_contributing_to_system_improvement_03"
+        },
+        {
+          "id": "section_lesson_contributing_to_system_improvement_04"
+        }
+      ]
+    }
+  ]
+}

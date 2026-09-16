@@ -1,0 +1,10 @@
+{
+    "topic":  "recognising-risk",
+    "version":  "1.1.0",
+    "stream":  "dfv-peer-mentor",
+    "content":  "Lesson content for recognising-risk.",
+    "type":  "lesson",
+    "id":  "Lesson -  $args[0].Value.ToUpper() ecognising  $args[0].Value.ToUpper() isk",
+    "name":  "Lesson -  $args[0].Value.ToUpper() ecognising  $args[0].Value.ToUpper() isk",
+    "title":  "Lesson -  $args[0].Value.ToUpper() ecognising  $args[0].Value.ToUpper() isk"
+}

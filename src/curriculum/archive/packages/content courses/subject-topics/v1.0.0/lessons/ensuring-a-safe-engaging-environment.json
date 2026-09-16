@@ -1,0 +1,29 @@
+{
+  "id": "module-ensuring-a-safe-engaging-environment",
+  "title": "Ensuring a Safe, Engaging Environment",
+  "moduleId": "ensuring-a-safe-engaging-environment",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how to create a safe, predictable, and engaging home environment that supports healthy child development and reduces behavioural risks.",
+  "microLesson": "Children thrive in environments that feel safe, predictable, and emotionally warm. A safe environment is not only about physical safety—such as removing hazards or supervising appropriately—but also about emotional safety. Emotional safety means children feel seen, heard, and valued. Predictability helps children regulate their emotions and behaviour because they know what to expect. An engaging environment includes age‑appropriate activities, routines, and opportunities for learning. When parents intentionally shape the home environment, children experience fewer behavioural challenges and develop stronger self‑regulation skills.",
+  "activity": "Walk through your home and identify three areas where safety or engagement could be improved. Examples include securing furniture, creating a calm corner, organising toys, or establishing a morning routine station. Write down what you changed and how your child responded.",
+  "evidenceTypes": [
+    "photo",
+    "reflection",
+    "caseworker-verification"
+  ],
+  "caseworkerFlags": [
+    "home-safety",
+    "supervision",
+    "environmental-risk"
+  ],
+  "resources": [
+    {
+      "title": "Home Safety Checklist",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

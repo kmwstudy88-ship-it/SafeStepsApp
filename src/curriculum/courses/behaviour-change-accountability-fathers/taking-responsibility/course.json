@@ -1,0 +1,25 @@
+{
+  "id": "taking-responsibility",
+  "title": "Taking Responsibility (Father-Focused)",
+  "description": "This course supports fathers to take responsibility for behaviour that affects partners and children, and to understand how responsibility supports child safety.",
+  "learningOutcomes": [
+    "Understand responsibility in the context of fatherhood.",
+    "Recognise avoidance patterns that harm children.",
+    "Learn how responsibility supports safe parenting.",
+    "Develop consistent accountable behaviour."
+  ],
+  "modules": [
+    {
+      "title": "Fatherhood and Responsibility",
+      "content": "Explores responsibility in parenting and relationships."
+    },
+    {
+      "title": "Avoidance and Harm",
+      "content": "Shows how blame and excuses affect family safety."
+    },
+    {
+      "title": "Practising Accountability",
+      "content": "Provides tools for consistent, responsible behaviour."
+    }
+  ]
+}

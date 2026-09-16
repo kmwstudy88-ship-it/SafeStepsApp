@@ -1,0 +1,167 @@
+{
+  "trackId": "parenting-core",
+  "title": "Parenting Skills Core Track",
+  "topics": [
+    {
+      "topicId": "foundations-of-safe-and-effective-parenting",
+      "title": "Foundations of Safe and Effective Parenting",
+      "description": "Core principles of safe, consistent, and nurturing parenting.",
+      "weekNumber": 1,
+      "isCore": true
+    },
+    {
+      "topicId": "understanding-child-development",
+      "title": "Understanding Child Development",
+      "description": "How children grow emotionally, socially, and cognitively.",
+      "weekNumber": 2,
+      "isCore": true
+    },
+    {
+      "topicId": "emotional-regulation-for-parents",
+      "title": "Emotional Regulation for Parents",
+      "description": "Managing your own emotions to model calm and safety.",
+      "weekNumber": 3,
+      "isCore": true
+    },
+    {
+      "topicId": "building-secure-attachment",
+      "title": "Building Secure Attachment",
+      "description": "Creating trust, connection, and emotional safety.",
+      "weekNumber": 4,
+      "isCore": true
+    },
+    {
+      "topicId": "positive-communication-skills",
+      "title": "Positive Communication Skills",
+      "description": "How to speak so children listen and feel understood.",
+      "weekNumber": 5,
+      "isCore": true
+    },
+    {
+      "topicId": "healthy-boundaries-and-routines",
+      "title": "Healthy Boundaries and Routines",
+      "description": "Structure, predictability, and safe limits.",
+      "weekNumber": 6,
+      "isCore": true
+    },
+    {
+      "topicId": "managing-challenging-behaviour",
+      "title": "Managing Challenging Behaviour",
+      "description": "Evidence‑based strategies for behaviour without harm.",
+      "weekNumber": 7,
+      "isCore": true
+    },
+    {
+      "topicId": "strengthening-parent-child-connection",
+      "title": "Strengthening Parent–Child Connection",
+      "description": "Repairing, nurturing, and deepening the relationship.",
+      "weekNumber": 8,
+      "isCore": true
+    },
+    {
+      "topicId": "co-parenting-and-shared-care",
+      "title": "Co‑Parenting and Shared Care",
+      "description": "Working together even when relationships are strained.",
+      "weekNumber": 9,
+      "isCore": true
+    },
+    {
+      "topicId": "supporting-children-through-stress",
+      "title": "Supporting Children Through Stress",
+      "description": "Helping kids cope with anxiety, change, and big feelings.",
+      "weekNumber": 10,
+      "isCore": true
+    },
+    {
+      "topicId": "cultural-family-and-community-strengths",
+      "title": "Cultural, Family, and Community Strengths",
+      "description": "Honouring identity, culture, and support networks.",
+      "weekNumber": 11,
+      "isCore": true
+    },
+    {
+      "topicId": "parent-growth-and-long-term-change",
+      "title": "Parent Growth and Long‑Term Change",
+      "description": "Sustaining progress and building a safe family future.",
+      "weekNumber": 12,
+      "isCore": true
+    },
+    {
+      "topicId": "pc-01",
+      "title": "Foundations of Safe and Effective Parenting",
+      "description": "Core principles of safe, consistent, and nurturing parenting.",
+      "weekNumber": 1,
+      "isCore": true
+    },
+    {
+      "topicId": "pc-02",
+      "title": "Understanding Child Development",
+      "description": "How children grow emotionally, socially, and cognitively.",
+      "weekNumber": 2,
+      "isCore": true
+    },
+    {
+      "topicId": "pc-03",
+      "title": "Emotional Regulation for Parents",
+      "description": "Managing your own emotions to model calm and safety.",
+      "weekNumber": 3,
+      "isCore": true
+    },
+    {
+      "topicId": "pc-05",
+      "title": "Positive Communication Skills",
+      "description": "How to speak so children listen and feel understood.",
+      "weekNumber": 5,
+      "isCore": true
+    },
+    {
+      "topicId": "pc-06",
+      "title": "Healthy Boundaries and Routines",
+      "description": "Structure, predictability, and safe limits.",
+      "weekNumber": 6,
+      "isCore": true
+    },
+    {
+      "topicId": "pc-07",
+      "title": "Managing Challenging Behaviour",
+      "description": "Evidence‑based strategies for behaviour without harm.",
+      "weekNumber": 7,
+      "isCore": true
+    },
+    {
+      "topicId": "pc-08",
+      "title": "Strengthening Parent–Child Connection",
+      "description": "Repairing, nurturing, and deepening the relationship.",
+      "weekNumber": 8,
+      "isCore": true
+    },
+    {
+      "topicId": "pc-09",
+      "title": "Co‑Parenting and Shared Care",
+      "description": "Working together even when relationships are strained.",
+      "weekNumber": 9,
+      "isCore": true
+    },
+    {
+      "topicId": "pc-01",
+      "title": "Foundations of Safe and Effective Parenting",
+      "description": "Core principles of safe, consistent, and nurturing parenting.",
+      "weekNumber": 1,
+      "isCore": true
+    },
+    {
+      "topicId": "pc-02",
+      "title": "Understanding Child Development",
+      "description": "How children grow emotionally, socially, and cognitively.",
+      "weekNumber": 2,
+      "isCore": true
+    },
+    {
+      "topicId": "pc-03",
+      "title": "Emotional Regulation for Parents",
+      "description": "Managing your own emotions to model calm and safety.",
+      "weekNumber": 3,
+      "isCore": true
+    }
+  ]
+}

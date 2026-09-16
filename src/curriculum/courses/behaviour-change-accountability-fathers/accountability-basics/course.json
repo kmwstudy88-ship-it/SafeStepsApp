@@ -1,0 +1,25 @@
+{
+  "id": "accountability-basics",
+  "title": "Accountability Foundations (Father-Focused)",
+  "description": "This course supports fathers to take responsibility for their behaviour and understand how accountability strengthens child safety and family stability.",
+  "learningOutcomes": [
+    "Understand accountability in the context of fatherhood.",
+    "Recognise how avoidance behaviours harm children and partners.",
+    "Learn how accountability supports safe parenting.",
+    "Develop responsibility for repairing harm."
+  ],
+  "modules": [
+    {
+      "title": "Fatherhood and Accountability",
+      "content": "Explores responsibility in parenting and relationships."
+    },
+    {
+      "title": "Avoidance and Harm",
+      "content": "Shows how denial and minimising affect children’s safety."
+    },
+    {
+      "title": "Practising Accountability",
+      "content": "Provides tools for honest reflection and safe behaviour change."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "module-rebuilding-trust-with-children",
+  "title": "Rebuilding Trust with Children",
+  "moduleId": "rebuilding-trust-with-children",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents rebuild trust after conflict, separation, or inconsistent parenting.",
+  "microLesson": "Trust grows when children experience safety, predictability, and emotional presence. When trust has been damaged, children may become withdrawn, anxious, or oppositional. Rebuilding trust requires consistent follow‑through, calm communication, and repairing moments of disconnection. Small, repeated positive interactions create long‑term healing.",
+  "activity": "Spend 10 minutes doing a child‑led activity. Reflect on how your child responded to your presence.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "attachment",
+    "emotional-safety"
+  ],
+  "resources": [
+    {
+      "title": "Trust Repair Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "domains": [
+    {
+      "label": "Immediate danger",
+      "score": 3,
+      "id": "immediate_danger",
+      "notes": "Police callout last week"
+    },
+    {
+      "label": "Supervision",
+      "score": null,
+      "id": "supervision",
+      "notes": null
+    },
+    {
+      "label": "Basic needs",
+      "score": null,
+      "id": "basic_needs",
+      "notes": null
+    },
+    {
+      "label": "Exposure to violence",
+      "score": null,
+      "id": "exposure_to_violence",
+      "notes": null
+    },
+    {
+      "label": "Safe housing",
+      "score": null,
+      "id": "safe_housing",
+      "notes": null
+    },
+    {
+      "label": "Safety planning",
+      "score": null,
+      "id": "safety_planning",
+      "notes": null
+    }
+  ],
+  "id": "assess_cs_01",
+  "type": "child_safety",
+  "overall_strength": 2,
+  "assessor": "Caseworker A",
+  "created_at": "2026-06-07T12:13:33.4368038+10:00",
+  "overall_risk": 3,
+  "recommendations": [
+    "Intensive safety planning and supervised contact"
+  ],
+  "updated_at": "2026-06-07T12:13:33.670842+10:00",
+  "completed_at": "2026-06-07T12:13:33.670842+10:00"
+}

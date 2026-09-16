@@ -1,0 +1,25 @@
+{
+  "id": "trigger-awareness",
+  "title": "Trigger Awareness (Father-Focused)",
+  "description": "This course supports fathers to identify emotional triggers that affect their behaviour toward partners and children, and to develop safe responses.",
+  "learningOutcomes": [
+    "Identify father-specific emotional triggers.",
+    "Understand how triggers affect children’s sense of safety.",
+    "Recognise escalation patterns in parenting contexts.",
+    "Develop safe strategies for managing triggers."
+  ],
+  "modules": [
+    {
+      "title": "Triggers in Fathering",
+      "content": "Explores how parenting stress activates emotional responses."
+    },
+    {
+      "title": "Impact on Children and Partner",
+      "content": "Shows how triggered behaviour creates fear or instability."
+    },
+    {
+      "title": "Safe Trigger Management",
+      "content": "Provides tools for grounding, pausing, and safe behaviour."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "module-promoting-a-positive-learning-environment",
+  "title": "Promoting a Positive Learning Environment",
+  "moduleId": "promoting-a-positive-learning-environment",
+  "durationMinutes": 60,
+  "learningGoal": "Support parents to create a home environment that encourages curiosity, learning, and positive behaviour.",
+  "microLesson": "A positive learning environment is one where children feel encouraged to explore, ask questions, and make mistakes safely. Parents play a key role in shaping this environment by modelling curiosity, offering praise for effort, and providing opportunities for hands‑on learning. Children learn best when they feel emotionally supported and when learning is connected to their interests. Simple routines—like reading together, having a homework space, or involving children in daily tasks—build confidence and strengthen the parent‑child relationship.",
+  "activity": "Create a small learning space in your home. This could be a table, a reading corner, or a quiet area for homework. Add one item that encourages learning, such as books, puzzles, or art supplies. Take a photo and describe how your child used the space.",
+  "evidenceTypes": [
+    "photo",
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "education-support",
+    "parent-engagement"
+  ],
+  "resources": [
+    {
+      "title": "Positive Learning Environment Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

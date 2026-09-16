@@ -1,0 +1,42 @@
+{
+  "title": "Breaking Generational Cycles",
+  "description": "",
+  "estimatedTimeMinutes": 60,
+  "difficultyLevel": "beginner",
+  "learningOutcomes": [
+    "Understand the key ideas behind breaking generational cycles and why this topic matters for child development.",
+    "Learn practical skills and strategies that help apply breaking generational cycles in everyday parenting situations.",
+    "Build confidence using breaking generational cycles to support connection, safety, and positive family routines."
+  ],
+  "modules": [
+    {
+      "title": "Understanding the Topic",
+      "description": "Learn what breaking generational cycles means and why it matters for child development.",
+      "id": "module-1"
+    },
+    {
+      "title": "Core Skills and Strategies",
+      "description": "Explore practical skills and strategies for applying breaking generational cycles in everyday parenting.",
+      "id": "module-2"
+    },
+    {
+      "title": "Real-Life Application",
+      "description": "See how breaking generational cycles works in real situations with examples and simple scripts.",
+      "id": "module-3"
+    },
+    {
+      "title": "Reflection and Integration",
+      "description": "Reflect on your learning and plan how to use breaking generational cycles in daily family life.",
+      "id": "module-4"
+    }
+  ],
+  "metadata": {
+    "audience": "parents",
+    "tags": [],
+    "jurisdiction": "AU"
+  },
+  "caseworkerSummary": "This topic helps parents build practical skills related to breaking generational cycles. It supports safer, more consistent caregiving by improving understanding, strengthening emotional connection, and reducing stress in daily routines. This topic is suitable for parents who need guidance in applying positive parenting strategies and may benefit families working toward stability, reunification, or improved home safety.",
+  "topics": [
+    "breaking"
+  ]
+}

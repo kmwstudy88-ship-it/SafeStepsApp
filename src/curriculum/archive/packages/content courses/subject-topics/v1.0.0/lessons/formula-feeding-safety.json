@@ -1,0 +1,26 @@
+{
+  "id": "module-formula-feeding-safety",
+  "title": "Formula Feeding Safety",
+  "moduleId": "formula-feeding-safety",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to safely prepare, store, and feed infant formula.",
+  "microLesson": "Formula feeding requires careful preparation to prevent illness. This includes sterilising bottles, using safe water temperatures, and following storage guidelines. Responsive feeding—watching for hunger and fullness cues—supports bonding and healthy development.",
+  "activity": "Review safe formula preparation steps and write a reflection on one improvement you can make.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "infant-care",
+    "nutrition"
+  ],
+  "resources": [
+    {
+      "title": "Formula Feeding Safety Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

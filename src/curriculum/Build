@@ -1,0 +1,71 @@
+$root = "C:\Users\SAFES\SafeStepsProject\safesteps-curriculum"
+
+# Load bundle
+$bundlePath = Join-Path $root "SafeSteps.bundle.json"
+$bundle = Get-Content $bundlePath -Raw | ConvertFrom-Json
+
+# Prepare search index
+$searchIndex = @{}
+
+function Add-ToIndex($keyword, $entry) {
+    $key = $keyword.ToLower()
+    if (-not $searchIndex.ContainsKey($key)) {
+        $searchIndex[$key] = @()
+    }
+    $searchIndex[$key] += $entry
+}
+
+function Extract-Keywords($text) {
+    if (-not $text) { return @() }
+    $words = $text -split "\W+" | Where-Object { $_ -ne "" }
+    return $words | Select-Object -Unique
+}
+
+# ---- Lessons ----
+foreach ($lesson in $bundle.lessons) {
+    $keywords = @()
+    $keywords += Extract-Keywords($lesson.title)
+    $keywords += Extract-Keywords($lesson.summary)
+    $keywords += Extract-Keywords($lesson.content)
+
+    foreach ($word in $keywords) {
+        Add-ToIndex $word @{
+            type = "lesson"
+            id   = $lesson.id
+        }
+    }
+}
+
+# ---- Section Lessons ----
+foreach ($section in $bundle.sectionLessons) {
+    $keywords = @()
+    $keywords += Extract-Keywords($section.title)
+    $keywords += Extract-Keywords($section.summary)
+    $keywords += Extract-Keywords($section.content)
+
+    foreach ($word in $keywords) {
+        Add-ToIndex $word @{
+            type = "section"
+            id   = $section.id
+        }
+    }
+}
+
+# ---- Course Lessons ----
+foreach ($course in $bundle.courseLessons) {
+    $keywords = @()
+    $keywords += Extract-Keywords($course.title)
+    $keywords += Extract-Keywords($course.summary)
+    $keywords += Extract-Keywords($course.content)
+
+    foreach ($word in $keywords) {
+        Add-ToIndex $word @{
+            type = "course"
+            id   = $course.id
+        }
+    }
+}
+
+# Save search index
+$searchPath = Join-Path $root "SafeSteps.search.index.json"
+$searchIndex | ConvertTo-Json -Depth 10 | Set-Conte

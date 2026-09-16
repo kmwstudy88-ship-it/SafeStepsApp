@@ -1,0 +1,10 @@
+{
+    "topic":  "communication-for-support",
+    "version":  "1.1.0",
+    "stream":  "dfv-peer-mentor",
+    "content":  "Lesson content for communication-for-support.",
+    "type":  "lesson",
+    "id":  "Lesson -  $args[0].Value.ToUpper() ommunication  $args[0].Value.ToUpper() or  $args[0].Value.ToUpper() upport",
+    "name":  "Lesson -  $args[0].Value.ToUpper() ommunication  $args[0].Value.ToUpper() or  $args[0].Value.ToUpper() upport",
+    "title":  "Lesson -  $args[0].Value.ToUpper() ommunication  $args[0].Value.ToUpper() or  $args[0].Value.ToUpper() upport"
+}

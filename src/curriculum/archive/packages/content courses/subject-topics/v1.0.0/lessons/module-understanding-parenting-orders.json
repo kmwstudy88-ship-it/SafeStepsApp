@@ -1,0 +1,25 @@
+{
+  "id": "module-understanding-parenting-orders",
+  "title": "Understanding Parenting Orders",
+  "moduleId": "understanding-parenting-orders",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand the purpose of parenting orders and how to follow them safely.",
+  "microLesson": "Parenting orders outline responsibilities, contact arrangements, and safety requirements. Following orders consistently shows insight, reliability, and commitment to the child’s wellbeing. Clear communication and cooperation reduce conflict.",
+  "activity": "Identify one part of your parenting order you can follow more consistently. Reflect on why it matters.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "legal-awareness"
+  ],
+  "resources": [
+    {
+      "title": "Parenting Orders Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

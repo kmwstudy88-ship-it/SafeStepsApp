@@ -1,0 +1,8 @@
+{
+  "topic": "mentoring-ethics",
+  "version": "1.1.0",
+  "stream": "dfv-peer-mentor",
+  "description": "Peer Mentor training module on mentoring-ethics.",
+  "type": "course",
+  "title": " $args[0].Value.ToUpper() entoring  $args[0].Value.ToUpper() thics"
+}

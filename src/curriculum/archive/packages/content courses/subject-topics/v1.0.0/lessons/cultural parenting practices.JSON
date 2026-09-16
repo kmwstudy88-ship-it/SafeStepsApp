@@ -1,0 +1,25 @@
+{
+  "id": "module-cultural-parenting-practices",
+  "title": "Cultural Parenting Practices",
+  "moduleId": "cultural-parenting-practices",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how cultural values shape parenting and how to integrate cultural strengths into daily routines.",
+  "microLesson": "Culture influences communication, discipline, routines, and expectations. Children benefit when parents honour cultural identity while also adapting to the child’s individual needs. Cultural strengths—such as storytelling, community support, and shared responsibility—can enhance connection and resilience. Parents can blend traditional practices with modern strategies to create a balanced, supportive environment.",
+  "activity": "Identify one cultural practice you want to continue or strengthen at home. Describe how you will include it in your weekly routine.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "cultural-safety"
+  ],
+  "resources": [
+    {
+      "title": "Cultural Parenting Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

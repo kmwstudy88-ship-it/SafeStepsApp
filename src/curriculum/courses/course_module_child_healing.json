@@ -1,0 +1,67 @@
+{
+  "id": "course_module_child_healing",
+  "title": "Supporting Child Healing",
+  "description": "Auto-generated course for module module_child_healing",
+  "lessons": [
+    {
+      "id": "lesson_understanding_child_trauma",
+      "title": "Understanding Child Trauma",
+      "sections": [
+        {
+          "id": "section_lesson_understanding_child_trauma_01"
+        },
+        {
+          "id": "section_lesson_understanding_child_trauma_02"
+        },
+        {
+          "id": "section_lesson_understanding_child_trauma_03"
+        },
+        {
+          "id": "section_lesson_understanding_child_trauma_04"
+        },
+        {
+          "id": "section_lesson_understanding_child_trauma_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_age_appropriate_support",
+      "title": "Age‑Appropriate Support",
+      "sections": [
+        {
+          "id": "section_lesson_age_appropriate_support_01"
+        },
+        {
+          "id": "section_lesson_age_appropriate_support_02"
+        },
+        {
+          "id": "section_lesson_age_appropriate_support_03"
+        },
+        {
+          "id": "section_lesson_age_appropriate_support_04"
+        },
+        {
+          "id": "section_lesson_age_appropriate_support_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_building_resilience_in_children",
+      "title": "Building Resilience in Children",
+      "sections": [
+        {
+          "id": "section_lesson_building_resilience_in_children_01"
+        },
+        {
+          "id": "section_lesson_building_resilience_in_children_02"
+        },
+        {
+          "id": "section_lesson_building_resilience_in_children_03"
+        },
+        {
+          "id": "section_lesson_building_resilience_in_children_04"
+        }
+      ]
+    }
+  ]
+}

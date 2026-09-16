@@ -1,0 +1,26 @@
+{
+  "id": "module-helping-children-adjust-to-family-change",
+  "title": "Helping Children Adjust to Family Change",
+  "moduleId": "helping-children-adjust-to-family-change",
+  "durationMinutes": 60,
+  "learningGoal": "Support parents to help children cope with changes such as separation, moving homes, or new family structures.",
+  "microLesson": "Children cope best with change when parents provide reassurance, stability, and open communication. Predictable routines and emotional validation help children feel secure. Avoiding conflict in front of children protects their emotional wellbeing.",
+  "activity": "Talk with your child about a recent change. Reflect on what they shared and how you supported them.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "separation",
+    "emotional-support"
+  ],
+  "resources": [
+    {
+      "title": "Family Change Support Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

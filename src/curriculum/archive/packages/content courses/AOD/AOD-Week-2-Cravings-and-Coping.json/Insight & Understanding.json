@@ -1,0 +1,18 @@
+{
+  "id": "AOD-W2-D1",
+  "title": "What Are Cravings?",
+  "moduleId": "module-aod",
+  "week": 2,
+  "day": 1,
+  "durationMinutes": 10,
+  "learningGoal": "Understand what cravings are and why they happen.",
+  "microLesson": "Cravings are intense urges that come from the brain seeking relief, comfort, or familiarity. They can feel physical, emotional, or both. Today is about understanding what cravings actually are so you can respond instead of react.",
+  "activity": "Describe what cravings feel like for you: physical sensations, thoughts, and emotions.",
+  "evidenceTypes": [
+    "text"
+  ],
+  "caseworkerFlags": [
+    "aod-cravings"
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "course_module_supporting_survivors",
+  "title": "Supporting Survivors",
+  "description": "Auto-generated course for module module_supporting_survivors",
+  "lessons": [
+    {
+      "id": "lesson_strengths_based_support",
+      "title": "Strengths-Based Support",
+      "sections": [
+        {
+          "id": "section_lesson_strengths_based_support_01"
+        },
+        {
+          "id": "section_lesson_strengths_based_support_02"
+        },
+        {
+          "id": "section_lesson_strengths_based_support_03"
+        },
+        {
+          "id": "section_lesson_strengths_based_support_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_navigating_services",
+      "title": "Navigating Services",
+      "sections": [
+        {
+          "id": "section_lesson_navigating_services_01"
+        },
+        {
+          "id": "section_lesson_navigating_services_02"
+        },
+        {
+          "id": "section_lesson_navigating_services_03"
+        },
+        {
+          "id": "section_lesson_navigating_services_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_encouraging_help_seeking",
+      "title": "Encouraging Help-Seeking",
+      "sections": [
+        {
+          "id": "section_lesson_encouraging_help_seeking_01"
+        },
+        {
+          "id": "section_lesson_encouraging_help_seeking_02"
+        },
+        {
+          "id": "section_lesson_encouraging_help_seeking_03"
+        }
+      ]
+    }
+  ]
+}

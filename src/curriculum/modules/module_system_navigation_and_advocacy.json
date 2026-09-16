@@ -1,0 +1,22 @@
+{
+  "id": "module_system_navigation_and_advocacy",
+  "title": "System Navigation and Advocacy",
+  "description": "This module equips specialist DFV practitioners with advanced skills in navigating complex service systems, statutory processes, and legal pathways. It focuses on advocacy, coordinated case responses, and supporting clients through systems that may feel overwhelming or unsafe.",
+  "type": "module",
+  "level": "advanced",
+  "tags": [
+    "dfv",
+    "advocacy",
+    "system navigation",
+    "legal pathways",
+    "specialist practice",
+    "case coordination"
+  ],
+  "outcomes": [
+    "Navigate legal, statutory, and service systems relevant to DFV",
+    "Advocate effectively for clients in complex or unsafe system interactions",
+    "Coordinate multi‑service responses to support client safety and wellbeing"
+  ],
+  "lessons": [],
+  "content": []
+}

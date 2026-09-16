@@ -1,0 +1,28 @@
+{
+  "id": "module-chores-and-responsibilities",
+  "title": "Chores and Responsibilities",
+  "moduleId": "chores-and-responsibilities",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents teach children responsibility, independence, and cooperation through age-appropriate chores.",
+  "microLesson": "Chores help children develop responsibility, confidence, and life skills. When chores are introduced gradually and matched to the child’s age and ability, they build independence rather than stress. Children respond best when expectations are clear, routines are predictable, and praise focuses on effort rather than perfection. Using visual charts, modelling tasks, and working alongside children can reduce resistance. Chores should never be used as punishment; instead, they are opportunities for learning, contribution, and connection.",
+  "activity": "Choose one age-appropriate chore for your child. Show them how to do it step-by-step, then reflect on how they responded and what support helped them succeed.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "independence",
+    "daily-routines",
+    "life-skills"
+  ],
+  "resources": [
+    {
+      "title": "Age-Appropriate Chores Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

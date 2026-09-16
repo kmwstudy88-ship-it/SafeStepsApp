@@ -1,0 +1,571 @@
+{
+  "id": "course_dfv_and_family_court",
+  "domain": "dfv",
+  "level": "intermediate",
+  "title": "DFV and Family Court Dynamics",
+  "modules": [
+    {
+      "id": "module_understanding_family_court",
+      "title": "Understanding Family Court",
+      "lessons": [
+        "how_family_court_handles_dfv",
+        "misuse_of_court_processes",
+        "parenting_orders_and_risk"
+      ]
+    },
+    {
+      "id": "module_common_challenges",
+      "title": "Common Challenges in DFV Cases",
+      "lessons": [
+        "legal_system_abuse_in_court",
+        "evidence_challenges",
+        "child_safety_and_contact_arrangements"
+      ]
+    },
+    {
+      "id": "module_supporting_families",
+      "title": "Supporting Families Through Court",
+      "lessons": [
+        "preparing_for_court_processes",
+        "working_with_lawyers_and_services",
+        "supporting_children_during_court_disputes"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of DFV in family court contexts",
+    "Ability to recognise court‑based abuse tactics",
+    "Increased confidence in supporting families through legal processes"
+  ]
+}
+{
+  "id": "course_physical_abuse",
+  "file": "physical_abuse.json",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Physical Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_physical_abuse",
+      "title": "Understanding Physical Abuse",
+      "lessons": [
+        "what_is_physical_abuse",
+        "patterns_of_physical_violence",
+        "impacts_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_common_tactics",
+      "title": "Common Tactics",
+      "lessons": [
+        "intimidation_and_threats",
+        "property_damage",
+        "physical_force_and_assault"
+      ]
+    },
+    {
+      "id": "module_safety_and_support",
+      "title": "Safety and Support",
+      "lessons": [
+        "responding_to_physical_abuse",
+        "medical_and_legal_support",
+        "building_a_physical_safety_plan"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of physical abuse patterns",
+    "Ability to recognise escalation and risk",
+    "Increased confidence in supporting physical safety"
+  ]
+}
+{
+  "id": "course_sexual_abuse",
+  "file": "sexual_abuse.json",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Sexual Abuse and Consent Violations",
+  "modules": [
+    {
+      "id": "module_understanding_sexual_abuse",
+      "title": "Understanding Sexual Abuse",
+      "lessons": [
+        "what_is_sexual_abuse",
+        "consent_and_coercion",
+        "impacts_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_sexual_control_tactics",
+      "title": "Sexual Control Tactics",
+      "lessons": [
+        "pressure_and_coercion",
+        "sexual_humiliation",
+        "reproductive_coercion"
+      ]
+    },
+    {
+      "id": "module_support_and_healing",
+      "title": "Support and Healing",
+      "lessons": [
+        "responding_to_disclosure",
+        "accessing_specialist_support",
+        "building_safety_and_boundaries"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of sexual abuse and consent",
+    "Ability to recognise sexual coercion tactics",
+    "Increased confidence in supporting survivors"
+  ]
+}
+{
+  "id": "course_technology_facilitated_abuse",
+  "file": "technology_facilitated_abuse.json",
+  "domain": "dfv",
+  "level": "intermediate",
+  "title": "Technology-Facilitated Abuse (Advanced)",
+  "modules": [
+    {
+      "id": "module_advanced_digital_tactics",
+      "title": "Advanced Digital Tactics",
+      "lessons": [
+        "device_compromise",
+        "spyware_and_stalkerware",
+        "location_tracking_and_geofencing"
+      ]
+    },
+    {
+      "id": "module_digital_forensics_basics",
+      "title": "Digital Forensics Basics",
+      "lessons": [
+        "identifying_digital_evidence",
+        "preserving_digital_safety",
+        "working_with_police_and_services"
+      ]
+    },
+    {
+      "id": "module_advanced_digital_safety",
+      "title": "Advanced Digital Safety",
+      "lessons": [
+        "securing_high_risk_accounts",
+        "safe_device_recovery",
+        "long_term_digital_safety_planning"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of advanced digital abuse tactics",
+    "Ability to identify high‑risk digital threats",
+    "Increased confidence in digital safety planning"
+  ]
+}
+{
+  "id": "course_gaslighting",
+  "file": "gaslighting.json",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Gaslighting and Psychological Manipulation",
+  "modules": [
+    {
+      "id": "module_understanding_gaslighting",
+      "title": "Understanding Gaslighting",
+      "lessons": [
+        "what_is_gaslighting",
+        "how_gaslighting_functions",
+        "impacts_on_reality_and_self_trust"
+      ]
+    },
+    {
+      "id": "module_common_patterns",
+      "title": "Common Patterns",
+      "lessons": [
+        "denial_and_minimisation",
+        "distortion_and_confusion",
+        "blame_shifting"
+      ]
+    },
+    {
+      "id": "module_recovery_and_validation",
+      "title": "Recovery and Validation",
+      "lessons": [
+        "rebuilding_self_trust",
+        "seeking_validation_and_support",
+        "healing_from_psychological_manipulation"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of gaslighting dynamics",
+    "Ability to recognise manipulation patterns",
+    "Increased confidence in supporting survivors"
+  ]
+}
+{
+  "id": "course_post_separation_abuse",
+  "file": "post_separation_abuse.json",
+  "domain": "dfv",
+  "level": "intermediate",
+  "title": "Post-Separation Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_post_separation_abuse",
+      "title": "Understanding Post-Separation Abuse",
+      "lessons": [
+        "what_is_post_separation_abuse",
+        "why_abuse_escalates_after_leaving",
+        "impacts_on_children_and_safety"
+      ]
+    },
+    {
+      "id": "module_common_tactics",
+      "title": "Common Tactics",
+      "lessons": [
+        "legal_system_abuse",
+        "financial_retaliation",
+        "ongoing_surveillance_and_threats"
+      ]
+    },
+    {
+      "id": "module_safety_and_support",
+      "title": "Safety and Support",
+      "lessons": [
+        "post_separation_safety_planning",
+        "working_with_services",
+        "supporting_children_through_transitions"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of post-separation risks",
+    "Ability to recognise ongoing coercive control",
+    "Increased confidence in supporting long-term safety"
+  ]
+}
+{
+  "id": "course_child_exposure_dfv",
+  "file": "child_exposure_dfv.json",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Child Exposure to Domestic and Family Violence",
+  "modules": [
+    {
+      "id": "module_understanding_child_exposure",
+      "title": "Understanding Child Exposure",
+      "lessons": [
+        "how_children_experience_dfv",
+        "developmental_impacts",
+        "trauma_responses_in_children"
+      ]
+    },
+    {
+      "id": "module_supporting_children",
+      "title": "Supporting Children",
+      "lessons": [
+        "creating_safe_environments",
+        "supporting_emotional_regulation",
+        "child_focused_safety_planning"
+      ]
+    },
+    {
+      "id": "module_working_with_parents",
+      "title": "Working with Parents",
+      "lessons": [
+        "supporting_protective_parents",
+        "reducing_parental_shame",
+        "strengthening_parent_child_connections"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of child exposure to DFV",
+    "Ability to recognise trauma responses",
+    "Increased confidence in supporting children and parents"
+  ]
+}
+{
+  "id": "course_intimidation_and_threats",
+  "file": "intimidation_and_threats.json",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Intimidation and Threats",
+  "modules": [
+    {
+      "id": "module_understanding_intimidation",
+      "title": "Understanding Intimidation",
+      "lessons": [
+        "what_is_intimidation",
+        "fear_as_a_control_tool",
+        "impacts_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_threat_tactics",
+      "title": "Threat Tactics",
+      "lessons": [
+        "verbal_threats",
+        "property_damage",
+        "threats_to_children_or_pets"
+      ]
+    },
+    {
+      "id": "module_safety_responses",
+      "title": "Safety Responses",
+      "lessons": [
+        "recognising_escalation",
+        "documenting_threats",
+        "building_a_threat_safety_plan"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of intimidation and threat dynamics",
+    "Ability to recognise escalation patterns",
+    "Increased confidence in supporting safety planning"
+  ]
+}
+{
+  "id": "course_coercive_control",
+  "file": "coercive_control.json",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Coercive Control",
+  "modules": [
+    {
+      "id": "module_understanding_coercive_control",
+      "title": "Understanding Coercive Control",
+      "lessons": [
+        "what_is_coercive_control",
+        "how_it_differs_from_physical_violence",
+        "impacts_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_common_tactics",
+      "title": "Common Coercive Control Tactics",
+      "lessons": [
+        "isolation_and_monitoring",
+        "financial_control",
+        "emotional_abuse_and_gaslighting"
+      ]
+    },
+    {
+      "id": "module_safety_and_support",
+      "title": "Safety and Support in Coercive Control Situations",
+      "lessons": [
+        "responding_to_coercive_control_safely",
+        "working_with_services_to_address_control_tactics",{
+  "id": "course_social_isolation",
+  "file": "social_isolation.json",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Social Isolation and Control",
+  "modules": [
+    {
+      "id": "module_understanding_isolation",
+      "title": "Understanding Social Isolation",
+      "lessons": [
+        "what_is_social_isolation",
+        "cutting_off_support_networks",
+        "impacts_on_mental_health_and_safety"
+      ]
+    },
+    {
+      "id": "module_isolation_tactics",
+      "title": "Isolation Tactics",
+      "lessons": [
+        "monitoring_movements",
+        "controlling_social_interactions",
+        "restricting_access_to_family_and_friends"
+      ]
+    },
+    {
+      "id": "module_reconnection_and_support",
+      "title": "Reconnection and Support",
+      "lessons": [
+        "rebuilding_support_networks",
+        "safe_reconnection_strategies",
+        "community_and_service_support"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of social isolation tactics",
+    "Ability to recognise isolation patterns",
+    "Increased confidence in supporting reconnection"
+  ]
+}
+        "building_safety_plans_for_control_situations"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of coercive control dynamics",
+    "Ability to recognise non-physical abuse patterns",
+    "Increased confidence in supporting safety in control situations"
+  ]
+}{
+  "id": "course_stalking_and_monitoring",
+  "file": "stalking_and_monitoring.json",
+  "domain": "dfv",
+  "level": "intermediate",
+  "title": "Stalking and Monitoring",
+  "modules": [
+    {
+      "id": "module_understanding_stalking",
+      "title": "Understanding Stalking",
+      "lessons": [
+        "what_is_stalking",
+        "patterns_of_monitoring",
+        "impacts_on_safety_and_wellbeing"
+      ]
+    },
+    {
+      "id": "module_stalking_tactics",
+      "title": "Stalking Tactics",
+      "lessons": [
+        "physical_surveillance",
+        "digital_tracking",
+        "third_party_monitoring"
+      ]
+    },
+    {
+      "id": "module_safety_and_reporting",
+      "title": "Safety and Reporting",
+      "lessons": [
+        "documenting_incidents",
+        "working_with_police",
+        "stalking_safety_plans"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of stalking behaviours",
+    "Ability to recognise monitoring tactics",
+    "Increased confidence in supporting safety and reporting"
+  ]
+}
+{
+  "id": "course_legal_system_abuse",
+  "file": "legal_system_abuse.json",
+  "domain": "dfv",
+  "level": "intermediate",
+  "title": "Legal System Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_legal_abuse",
+      "title": "Understanding Legal System Abuse",
+      "lessons": [
+        "what_is_legal_system_abuse",
+        "misuse_of_court_processes",
+        "impacts_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_common_legal_tactics",
+      "title": "Common Legal Tactics",
+      "lessons": [
+        "vexatious_litigation",
+        "withholding_information",
+        "using_court_to_exert_control"
+      ]
+    },
+    {
+      "id": "module_supporting_victims",
+      "title": "Supporting Victims",
+      "lessons": [
+        "working_with_legal_services",
+        "preparing_for_court",
+        "reducing_legal_harm"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of legal system abuse",
+    "Ability to recognise court‑based coercive control",
+    "Increased confidence in supporting victims through legal processes"
+  ]
+}
+{
+  "id": "course_emotional_regulation_dfv",
+  "file": "emotional_regulation_dfv.json",
+  "domain": "dfv",
+  "level": "intermediate",
+  "title": "Emotional Regulation and DFV Dynamics",
+  "modules": [
+    {
+      "id": "module_understanding_emotional_regulation",
+      "title": "Understanding Emotional Regulation",
+      "lessons": [
+        "what_is_emotional_regulation",
+        "trauma_and_emotional_responses",
+        "dysregulation_in_dfv_contexts"
+      ]
+    },
+    {
+      "id": "module_impacts_on_relationships",
+      "title": "Impacts on Relationships",
+      "lessons": [
+        "emotional_triggers",
+        "conflict_patterns",
+        "cycles_of_escalation"
+      ]
+    },
+    {
+      "id": "module_supporting_regulation",
+      "title": "Supporting Regulation",
+      "lessons": [
+        "grounding_and_stabilisation",
+        "supporting_safe_communication",
+        "reducing_emotional_harm"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of emotional regulation in DFV",
+    "Ability to recognise dysregulation patterns",
+    "Increased confidence in supporting emotional safety"
+  ]
+}
+{
+  "id": "course_dfv_lgbtqia",
+  "file": "dfv_lgbtqia.json",
+  "domain": "dfv",
+  "level": "intermediate",
+  "title": "DFV in LGBTQIA+ Relationships",
+  "modules": [
+    {
+      "id": "module_understanding_lgbtqia_dfv",
+      "title": "Understanding DFV in LGBTQIA+ Relationships",
+      "lessons": [
+        "unique_dynamics_in_lgbtqia_dfv",
+        "identity_based_abuse",
+        "barriers_to_support"
+      ]
+    },
+    {
+      "id": "module_common_tactics",
+      "title": "Common Tactics",
+      "lessons": [
+        "outing_as_control",
+        "community_isolation",
+        "identity_invalidation"
+      ]
+    },
+    {
+      "id": "module_supporting_lgbtqia_survivors",
+      "title": "Supporting LGBTQIA+ Survivors",
+      "lessons": [
+        "affirming_practice",
+        "safe_service_navigation",
+        "building_inclusive_safety_plans"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Understanding of DFV in LGBTQIA+ contexts",
+    "Ability to recognise identity‑based abuse",
+    "Increased confidence in supporting LGBTQIA+ survivors"
+  ]
+}

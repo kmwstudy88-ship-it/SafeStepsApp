@@ -1,0 +1,26 @@
+{
+  "id": "module-brain-development-and-critical-periods",
+  "title": "Brain Development and Critical Periods",
+  "moduleId": "brain-development-and-critical-periods",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how the brain develops and why early experiences shape long-term outcomes.",
+  "microLesson": "Children’s brains grow rapidly in the early years. Experiences during these ‘critical periods’ shape neural pathways for learning, emotional regulation, and behaviour. Positive experiences—such as play, connection, and predictable routines—strengthen healthy development. Stress, chaos, or neglect can disrupt these pathways. Parents who understand brain development can make intentional choices that support their child’s growth.",
+  "activity": "Choose one daily interaction (e.g., reading, play, talking). Do it intentionally for 10 minutes and reflect on how your child engaged.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "child-development",
+    "brain-development"
+  ],
+  "resources": [
+    {
+      "title": "Brain Development Overview",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "course_module_designing_and_evaluating_prevention_initiatives",
+  "title": "Designing and Evaluating Prevention Initiatives",
+  "description": "Auto-generated course for module module_designing_and_evaluating_prevention_initiatives",
+  "lessons": [
+    {
+      "id": "lesson_designing_prevention_programs",
+      "title": "Designing Prevention Programs",
+      "sections": [
+        {
+          "id": "section_lesson_designing_prevention_programs_01"
+        },
+        {
+          "id": "section_lesson_designing_prevention_programs_02"
+        },
+        {
+          "id": "section_lesson_designing_prevention_programs_03"
+        },
+        {
+          "id": "section_lesson_designing_prevention_programs_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_monitoring_and_evaluation",
+      "title": "Monitoring and Evaluation",
+      "sections": [
+        {
+          "id": "section_lesson_monitoring_and_evaluation_01"
+        },
+        {
+          "id": "section_lesson_monitoring_and_evaluation_02"
+        },
+        {
+          "id": "section_lesson_monitoring_and_evaluation_03"
+        },
+        {
+          "id": "section_lesson_monitoring_and_evaluation_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_continuous_improvement",
+      "title": "Continuous Improvement",
+      "sections": [
+        {
+          "id": "section_lesson_continuous_improvement_01"
+        },
+        {
+          "id": "section_lesson_continuous_improvement_02"
+        },
+        {
+          "id": "section_lesson_continuous_improvement_03"
+        },
+        {
+          "id": "section_lesson_continuous_improvement_04"
+        }
+      ]
+    }
+  ]
+}

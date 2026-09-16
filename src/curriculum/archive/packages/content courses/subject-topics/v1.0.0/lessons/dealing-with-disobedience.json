@@ -1,0 +1,27 @@
+{
+  "id": "module-dealing-with-disobedience",
+  "title": "Dealing with Disobedience",
+  "moduleId": "dealing-with-disobedience",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand why disobedience occurs and how to respond calmly, consistently, and effectively.",
+  "microLesson": "Disobedience is a normal part of child development. Children test limits to understand boundaries, gain independence, and express emotions they cannot yet regulate. Parents often react emotionally, which can escalate the behaviour. Effective responses include staying calm, giving clear instructions, offering choices, and following through with predictable consequences. When parents respond consistently, children learn that boundaries are firm and safe, reducing power struggles over time.",
+  "activity": "Choose one situation where your child is often disobedient. Write down a clear instruction you will use next time, along with a calm consequence. Practice this approach and reflect on how the interaction changed.",
+  "evidenceTypes": [
+    "reflection",
+    "caseworker-verification"
+  ],
+  "caseworkerFlags": [
+    "behaviour-guidance",
+    "parenting-capacity"
+  ],
+  "resources": [
+    {
+      "title": "Managing Disobedience Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

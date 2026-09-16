@@ -1,0 +1,61 @@
+{
+  "id": "course_module_trauma_attachment_and_child_development",
+  "title": "Trauma, Attachment, and Child Development",
+  "description": "Auto-generated course for module module_trauma_attachment_and_child_development",
+  "lessons": [
+    {
+      "id": "lesson_trauma_and_brain_development",
+      "title": "Trauma and Brain Development",
+      "sections": [
+        {
+          "id": "section_lesson_trauma_and_brain_development_01"
+        },
+        {
+          "id": "section_lesson_trauma_and_brain_development_02"
+        },
+        {
+          "id": "section_lesson_trauma_and_brain_development_03"
+        },
+        {
+          "id": "section_lesson_trauma_and_brain_development_04"
+        },
+        {
+          "id": "section_lesson_trauma_and_brain_development_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_attachment_and_relationships",
+      "title": "Attachment and Relationships",
+      "sections": [
+        {
+          "id": "section_lesson_attachment_and_relationships_01"
+        },
+        {
+          "id": "section_lesson_attachment_and_relationships_02"
+        },
+        {
+          "id": "section_lesson_attachment_and_relationships_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_promoting_healing_and_stability",
+      "title": "Promoting Healing and Stability",
+      "sections": [
+        {
+          "id": "section_lesson_promoting_healing_and_stability_01"
+        },
+        {
+          "id": "section_lesson_promoting_healing_and_stability_02"
+        },
+        {
+          "id": "section_lesson_promoting_healing_and_stability_03"
+        },
+        {
+          "id": "section_lesson_promoting_healing_and_stability_04"
+        }
+      ]
+    }
+  ]
+}

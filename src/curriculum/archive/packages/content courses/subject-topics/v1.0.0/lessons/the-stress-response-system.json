@@ -1,0 +1,25 @@
+{
+  "id": "module-the-stress-response-system",
+  "title": "The Stress Response System",
+  "moduleId": "the-stress-response-system",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how stress affects children's brains, behaviour, and emotional regulation.",
+  "microLesson": "The stress response system activates when children feel unsafe, overwhelmed, or confused. In this state, they may fight, freeze, or shut down. Chronic stress can make children more reactive. Parents can help by staying calm, offering reassurance, and creating predictable routines that reduce stress triggers.",
+  "activity": "Identify one situation that triggers stress for your child. Reflect on how you can reduce or prevent that trigger.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "trauma-awareness"
+  ],
+  "resources": [
+    {
+      "title": "Stress Response Overview",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

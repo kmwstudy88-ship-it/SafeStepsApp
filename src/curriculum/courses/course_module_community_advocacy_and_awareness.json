@@ -1,0 +1,70 @@
+{
+  "id": "course_module_community_advocacy_and_awareness",
+  "title": "Community Advocacy and Awareness",
+  "description": "Auto-generated course for module module_community_advocacy_and_awareness",
+  "lessons": [
+    {
+      "id": "lesson_community_campaigns",
+      "title": "Community Campaigns",
+      "sections": [
+        {
+          "id": "section_lesson_community_campaigns_01"
+        },
+        {
+          "id": "section_lesson_community_campaigns_02"
+        },
+        {
+          "id": "section_lesson_community_campaigns_03"
+        },
+        {
+          "id": "section_lesson_community_campaigns_04"
+        },
+        {
+          "id": "section_lesson_community_campaigns_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_local_partnerships",
+      "title": "Local Partnerships",
+      "sections": [
+        {
+          "id": "section_lesson_local_partnerships_01"
+        },
+        {
+          "id": "section_lesson_local_partnerships_02"
+        },
+        {
+          "id": "section_lesson_local_partnerships_03"
+        },
+        {
+          "id": "section_lesson_local_partnerships_04"
+        },
+        {
+          "id": "section_lesson_local_partnerships_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_ethical_storytelling",
+      "title": "Ethical Storytelling",
+      "sections": [
+        {
+          "id": "section_lesson_ethical_storytelling_01"
+        },
+        {
+          "id": "section_lesson_ethical_storytelling_02"
+        },
+        {
+          "id": "section_lesson_ethical_storytelling_03"
+        },
+        {
+          "id": "section_lesson_ethical_storytelling_04"
+        },
+        {
+          "id": "section_lesson_ethical_storytelling_05"
+        }
+      ]
+    }
+  ]
+}

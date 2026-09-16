@@ -1,0 +1,40 @@
+{
+  "id": "course_dfv_safety_planning_advanced",
+  "domain": "dfv",
+  "level": "intermediate",
+  "title": "DFV Safety Planning (Advanced)",
+  "modules": [
+    {
+      "id": "module_advanced_risk_understanding",
+      "title": "Advanced Risk Understanding",
+      "lessons": [
+        "recognising_high_risk_scenarios",
+        "lethality_risk_factors",
+        "dynamic_risk_changes"
+      ]
+    },
+    {
+      "id": "module_complex_safety_planning",
+      "title": "Complex Safety Planning",
+      "lessons": [
+        "safety_planning_with_children",
+        "safety_planning_in_rural_or_remote_areas",
+        "safety_planning_with_multiple_systems"
+      ]
+    },
+    {
+      "id": "module_specialised_contexts",
+      "title": "Specialised Contexts",
+      "lessons": [
+        "safety_planning_for_technology_abuse",
+        "safety_planning_for_high_control_cases",
+        "safety_planning_during_separation"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved ability to create advanced DFV safety plans",
+    "Understanding of complex and high‑risk scenarios",
+    "Increased confidence in multi‑system safety planning"
+  ]
+}

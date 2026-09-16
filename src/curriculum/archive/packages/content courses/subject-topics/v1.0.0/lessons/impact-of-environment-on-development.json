@@ -1,0 +1,28 @@
+{
+  "id": "module-impact-of-environment-on-development",
+  "title": "Impact of Environment on Development",
+  "moduleId": "impact-of-environment-on-development",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how a child’s physical, emotional, and social environment shapes their development, behaviour, and long-term wellbeing.",
+  "microLesson": "Children grow and learn within the environments around them. Safe, predictable, and nurturing environments support healthy brain development, emotional regulation, and social skills. Chaotic, stressful, or unsafe environments can activate a child’s stress response system, making learning and behaviour more difficult. Factors such as routines, noise levels, emotional climate, caregiver responses, and access to play all influence development. When parents create calm, structured, and emotionally safe spaces, children feel secure and are better able to thrive.",
+  "activity": "Choose one part of your home environment (morning routine, bedtime space, play area, or emotional climate). Make one small change to increase predictability or calmness. Write a reflection on how your child responded.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "child-development",
+    "environmental-safety",
+    "emotional-regulation"
+  ],
+  "resources": [
+    {
+      "title": "Creating Supportive Home Environments",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

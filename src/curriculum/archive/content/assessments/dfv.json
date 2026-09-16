@@ -1,0 +1,98 @@
+[
+  {
+    "id": "dfv_family_violence_screening",
+    "category": "dfv",
+    "name": "Family Violence Screening",
+    "description": "Initial screening for indicators of domestic and family violence.",
+    "tags": ["dfv", "screening", "safety"],
+    "validatedTool": null
+  },
+  {
+    "id": "dfv_coercive_control",
+    "category": "dfv",
+    "name": "Coercive Control Assessment",
+    "description": "Assesses patterns of coercive, controlling, or dominating behaviour.",
+    "tags": ["coercive_control", "dfv"],
+    "validatedTool": null
+  },
+  {
+    "id": "dfv_victim_safety",
+    "category": "dfv",
+    "name": "Victim Safety Assessment",
+    "description": "Evaluates immediate and ongoing safety risks for victim-survivors.",
+    "tags": ["safety", "victim"],
+    "validatedTool": null
+  },
+  {
+    "id": "dfv_perpetrator_behaviour",
+    "category": "dfv",
+    "name": "Perpetrator Behaviour Assessment",
+    "description": "Assesses harmful behaviours, accountability, and risk of further violence.",
+    "tags": ["perpetrator", "behaviour", "risk"],
+    "validatedTool": null
+  },
+  {
+    "id": "dfv_risk_escalation",
+    "category": "dfv",
+    "name": "Risk Escalation Assessment",
+    "description": "Identifies increasing risk factors and signs of escalating violence.",
+    "tags": ["risk", "escalation"],
+    "validatedTool": null
+  },
+  {
+    "id": "dfv_child_exposure",
+    "category": "dfv",
+    "name": "Child Exposure to Violence Assessment",
+    "description": "Assesses the extent and impact of children's exposure to DFV.",
+    "tags": ["child", "exposure", "dfv"],
+    "validatedTool": null
+  },
+  {
+    "id": "dfv_post_separation_abuse",
+    "category": "dfv",
+    "name": "Post-Separation Abuse Assessment",
+    "description": "Assesses ongoing abuse after separation, including stalking and coercion.",
+    "tags": ["post_separation", "abuse"],
+    "validatedTool": null
+  },
+  {
+    "id": "dfv_tech_abuse",
+    "category": "dfv",
+    "name": "Technology-Facilitated Abuse Assessment",
+    "description": "Assesses digital harassment, surveillance, and technology-based abuse.",
+    "tags": ["technology", "abuse"],
+    "validatedTool": null
+  },
+  {
+    "id": "dfv_stalking",
+    "category": "dfv",
+    "name": "Stalking Assessment",
+    "description": "Evaluates stalking behaviours, patterns, and associated risks.",
+    "tags": ["stalking", "risk"],
+    "validatedTool": null
+  },
+  {
+    "id": "dfv_financial_abuse",
+    "category": "dfv",
+    "name": "Financial Abuse Assessment",
+    "description": "Assesses financial control, exploitation, and economic dependency.",
+    "tags": ["financial", "abuse"],
+    "validatedTool": null
+  },
+  {
+    "id": "dfv_emotional_abuse",
+    "category": "dfv",
+    "name": "Emotional Abuse Assessment",
+    "description": "Assesses emotional manipulation, intimidation, and psychological harm.",
+    "tags": ["emotional", "abuse"],
+    "validatedTool": null
+  },
+  {
+    "id": "dfv_safety_planning",
+    "category": "dfv",
+    "name": "Safety Planning Assessment",
+    "description": "Evaluates safety needs and readiness for safety planning.",
+    "tags": ["safety", "planning"],
+    "validatedTool": null
+  }
+]

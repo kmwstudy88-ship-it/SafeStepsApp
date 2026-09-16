@@ -1,0 +1,25 @@
+{
+  "title": "Selfâ€‘Reflection",
+  "description": "Supports participants to reflect honestly on their behaviour, beliefs, and the impacts of their actions.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand the role of selfâ€‘reflection in behaviour change.",
+    "Identify personal beliefs and patterns that contribute to harm.",
+    "Apply reflective practices to support accountability."
+  ],
+  "modules": [
+    "Understanding Selfâ€‘Reflection",
+    "Reflective Practice Skills"
+  ],
+  "metadata": {
+    "stream": "dfv-pwuv",
+    "category": "Behaviour Change",
+    "tags": [
+      "reflection",
+      "insight",
+      "change"
+    ]
+  },
+  "caseworkerSummary": "Encourages participants to reflect on their behaviour and develop insight into patterns of harm."
+}

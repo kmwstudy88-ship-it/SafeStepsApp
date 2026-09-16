@@ -1,0 +1,21 @@
+{
+  "id": "module_building_respectful_communities",
+  "title": "Building Respectful Communities",
+  "description": "This module supports communities to build cultures of respect, equality, and safety. It focuses on positive social norms, community leadership, and everyday actions that prevent violence.",
+  "type": "module",
+  "level": "prevention",
+  "tags": [
+    "dfv",
+    "respect",
+    "community culture",
+    "prevention",
+    "social norms"
+  ],
+  "outcomes": [
+    "Promote respect and equality in community settings",
+    "Identify positive norms that prevent violence",
+    "Engage community members in everyday prevention actions"
+  ],
+  "lessons": [],
+  "content": []
+}

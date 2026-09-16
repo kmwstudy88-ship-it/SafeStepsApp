@@ -1,0 +1,29 @@
+{
+  "week": 21,
+  "lessons": [
+    {
+      "id": "home-again-w21-l1",
+      "title": "Lesson 1",
+      "week": 21,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "home-again-w21-l2",
+      "title": "Lesson 2",
+      "week": 21,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "home-again-w21-l3",
+      "title": "Lesson 3",
+      "week": 21,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "home-again-w21-l4",
+      "title": "Lesson 4",
+      "week": 21,
+      "content": "Lesson content goes here."
+    }
+  ]
+}

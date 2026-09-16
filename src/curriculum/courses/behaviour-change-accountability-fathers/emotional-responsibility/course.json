@@ -1,0 +1,25 @@
+{
+  "id": "emotional-responsibility",
+  "title": "Emotional Responsibility (Father-Focused)",
+  "description": "This course helps fathers understand how their emotional responses influence family safety, stability, and children’s wellbeing.",
+  "learningOutcomes": [
+    "Understand emotional responsibility in the context of fatherhood.",
+    "Recognise emotional triggers that affect parenting behaviour.",
+    "Learn safe emotional regulation strategies.",
+    "Develop responsibility for emotional impact on children."
+  ],
+  "modules": [
+    {
+      "title": "Fathering and Emotions",
+      "content": "Explores how emotional responses affect children’s sense of safety."
+    },
+    {
+      "title": "Triggers and Escalation",
+      "content": "Identifies patterns that lead to harmful behaviour."
+    },
+    {
+      "title": "Safe Emotional Regulation",
+      "content": "Provides tools for grounding, pausing, and safe emotional expression."
+    }
+  ]
+}

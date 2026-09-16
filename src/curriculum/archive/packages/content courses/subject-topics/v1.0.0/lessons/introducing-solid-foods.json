@@ -1,0 +1,27 @@
+{
+  "id": "module-introducing-solid-foods",
+  "title": "Introducing Solid Foods",
+  "moduleId": "introducing-solid-foods",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents safely introduce solid foods and recognise developmental readiness.",
+  "microLesson": "Babies are usually ready for solids around six months when they show signs such as sitting with support, good head control, and interest in food. Introducing solids is about exploration, not volume. Offering a variety of textures and flavours supports healthy eating habits.",
+  "activity": "Offer a new food and observe your baby’s cues. Reflect on what they enjoyed or found challenging.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "infant-care",
+    "nutrition"
+  ],
+  "resources": [
+    {
+      "title": "Introducing Solids Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

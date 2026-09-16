@@ -1,0 +1,146 @@
+[
+  {
+    "courseId": "foundations-of-safe-and-effective-parenting",
+    "topicId": "foundations-of-safe-and-effective-parenting",
+    "title": "Foundations of Safe and Effective Parenting",
+    "learningObjectives": [
+      "Understand the core principles of safe parenting",
+      "Identify harmful vs healthy parenting behaviours",
+      "Build a foundation for consistent, nurturing care"
+    ],
+    "summary": "This course introduces the essential principles of safe, stable, and nurturing parenting.",
+    "lessonCount": 4
+  },
+  {
+    "courseId": "understanding-child-development",
+    "topicId": "understanding-child-development",
+    "title": "Understanding Child Development",
+    "learningObjectives": [
+      "Recognise key stages of child development",
+      "Understand emotional, social, and cognitive growth",
+      "Adapt parenting strategies to developmental needs"
+    ],
+    "summary": "A practical guide to how children grow and what they need at each stage.",
+    "lessonCount": 4
+  },
+  {
+    "courseId": "emotional-regulation-for-parents",
+    "topicId": "emotional-regulation-for-parents",
+    "title": "Emotional Regulation for Parents",
+    "learningObjectives": [
+      "Identify personal emotional triggers",
+      "Use regulation strategies to stay calm",
+      "Model emotional safety for children"
+    ],
+    "summary": "Parents learn to manage their own emotions so they can respond safely and predictably.",
+    "lessonCount": 4
+  },
+  {
+    "courseId": "building-secure-attachment",
+    "topicId": "building-secure-attachment",
+    "title": "Building Secure Attachment",
+    "learningObjectives": [
+      "Understand attachment styles",
+      "Strengthen trust and connection",
+      "Repair attachment ruptures"
+    ],
+    "summary": "A deep dive into creating emotional safety and secure bonds with children.",
+    "lessonCount": 4
+  },
+  {
+    "courseId": "positive-communication-skills",
+    "topicId": "positive-communication-skills",
+    "title": "Positive Communication Skills",
+    "learningObjectives": [
+      "Use communication that builds connection",
+      "Reduce conflict and misunderstandings",
+      "Help children feel heard and valued"
+    ],
+    "summary": "Parents learn practical communication tools that improve cooperation and trust.",
+    "lessonCount": 4
+  },
+  {
+    "courseId": "healthy-boundaries-and-routines",
+    "topicId": "healthy-boundaries-and-routines",
+    "title": "Healthy Boundaries and Routines",
+    "learningObjectives": [
+      "Set safe and consistent boundaries",
+      "Create predictable routines",
+      "Use structure to reduce stress"
+    ],
+    "summary": "A practical course on creating stability, predictability, and safe limits.",
+    "lessonCount": 4
+  },
+  {
+    "courseId": "managing-challenging-behaviour",
+    "topicId": "managing-challenging-behaviour",
+    "title": "Managing Challenging Behaviour",
+    "learningObjectives": [
+      "Understand the causes of challenging behaviour",
+      "Use non-harmful behaviour strategies",
+      "Respond calmly and effectively"
+    ],
+    "summary": "Evidence‑based tools for managing behaviour without punishment or harm.",
+    "lessonCount": 4
+  },
+  {
+    "courseId": "strengthening-parent-child-connection",
+    "topicId": "strengthening-parent-child-connection",
+    "title": "Strengthening Parent–Child Connection",
+    "learningObjectives": [
+      "Build deeper emotional connection",
+      "Repair relationship ruptures",
+      "Increase warmth and trust"
+    ],
+    "summary": "Parents learn connection‑building strategies that improve long‑term outcomes.",
+    "lessonCount": 4
+  },
+  {
+    "courseId": "co-parenting-and-shared-care",
+    "topicId": "co-parenting-and-shared-care",
+    "title": "Co‑Parenting and Shared Care",
+    "learningObjectives": [
+      "Communicate effectively with co‑parents",
+      "Reduce conflict around parenting",
+      "Create consistent care across households"
+    ],
+    "summary": "Tools for working together even when relationships are strained or separated.",
+    "lessonCount": 4
+  },
+  {
+    "courseId": "supporting-children-through-stress",
+    "topicId": "supporting-children-through-stress",
+    "title": "Supporting Children Through Stress",
+    "learningObjectives": [
+      "Recognise signs of stress in children",
+      "Use calming and grounding strategies",
+      "Support children through change and uncertainty"
+    ],
+    "summary": "Parents learn how to help children cope with anxiety, transitions, and big feelings.",
+    "lessonCount": 4
+  },
+  {
+    "courseId": "cultural-family-and-community-strengths",
+    "topicId": "cultural-family-and-community-strengths",
+    "title": "Cultural, Family, and Community Strengths",
+    "learningObjectives": [
+      "Recognise cultural strengths",
+      "Use community supports",
+      "Build identity and belonging"
+    ],
+    "summary": "A strengths‑based course that honours culture, identity, and community support.",
+    "lessonCount": 4
+  },
+  {
+    "courseId": "parent-growth-and-long-term-change",
+    "topicId": "parent-growth-and-long-term-change",
+    "title": "Parent Growth and Long‑Term Change",
+    "learningObjectives": [
+      "Reflect on progress",
+      "Identify long‑term goals",
+      "Build sustainable change"
+    ],
+    "summary": "A future‑focused course that helps parents maintain growth and build a safe family future.",
+    "lessonCount": 4
+  }
+]

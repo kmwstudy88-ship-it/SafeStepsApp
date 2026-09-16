@@ -1,0 +1,64 @@
+{
+  "id": "course_module_understanding_dfv_impacts_on_children",
+  "title": "Understanding DFV Impacts on Children",
+  "description": "Auto-generated course for module module_understanding_dfv_impacts_on_children",
+  "lessons": [
+    {
+      "id": "lesson_developmental_impacts",
+      "title": "Developmental Impacts",
+      "sections": [
+        {
+          "id": "section_lesson_developmental_impacts_01"
+        },
+        {
+          "id": "section_lesson_developmental_impacts_02"
+        },
+        {
+          "id": "section_lesson_developmental_impacts_03"
+        },
+        {
+          "id": "section_lesson_developmental_impacts_04"
+        },
+        {
+          "id": "section_lesson_developmental_impacts_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_behavioural_and_emotional_signs",
+      "title": "Behavioural and Emotional Signs",
+      "sections": [
+        {
+          "id": "section_lesson_behavioural_and_emotional_signs_01"
+        },
+        {
+          "id": "section_lesson_behavioural_and_emotional_signs_02"
+        },
+        {
+          "id": "section_lesson_behavioural_and_emotional_signs_03"
+        },
+        {
+          "id": "section_lesson_behavioural_and_emotional_signs_04"
+        },
+        {
+          "id": "section_lesson_behavioural_and_emotional_signs_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_protective_factors",
+      "title": "Protective Factors",
+      "sections": [
+        {
+          "id": "section_lesson_protective_factors_01"
+        },
+        {
+          "id": "section_lesson_protective_factors_02"
+        },
+        {
+          "id": "section_lesson_protective_factors_03"
+        }
+      ]
+    }
+  ]
+}

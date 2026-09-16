@@ -1,0 +1,64 @@
+{
+  "id": "course_module_working_with_adolescents_experiencing_or_using_violence",
+  "title": "Working with Adolescents Experiencing or Using Violence",
+  "description": "Auto-generated course for module module_working_with_adolescents_experiencing_or_using_violence",
+  "lessons": [
+    {
+      "id": "lesson_adolescent_dfv_dynamics",
+      "title": "Adolescent DFV Dynamics",
+      "sections": [
+        {
+          "id": "section_lesson_adolescent_dfv_dynamics_01"
+        },
+        {
+          "id": "section_lesson_adolescent_dfv_dynamics_02"
+        },
+        {
+          "id": "section_lesson_adolescent_dfv_dynamics_03"
+        },
+        {
+          "id": "section_lesson_adolescent_dfv_dynamics_04"
+        },
+        {
+          "id": "section_lesson_adolescent_dfv_dynamics_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_safe_engagement_with_young_people",
+      "title": "Safe Engagement with Young People",
+      "sections": [
+        {
+          "id": "section_lesson_safe_engagement_with_young_people_01"
+        },
+        {
+          "id": "section_lesson_safe_engagement_with_young_people_02"
+        },
+        {
+          "id": "section_lesson_safe_engagement_with_young_people_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_supporting_behaviour_change",
+      "title": "Supporting Behaviour Change",
+      "sections": [
+        {
+          "id": "section_lesson_supporting_behaviour_change_01"
+        },
+        {
+          "id": "section_lesson_supporting_behaviour_change_02"
+        },
+        {
+          "id": "section_lesson_supporting_behaviour_change_03"
+        },
+        {
+          "id": "section_lesson_supporting_behaviour_change_04"
+        },
+        {
+          "id": "section_lesson_supporting_behaviour_change_05"
+        }
+      ]
+    }
+  ]
+}

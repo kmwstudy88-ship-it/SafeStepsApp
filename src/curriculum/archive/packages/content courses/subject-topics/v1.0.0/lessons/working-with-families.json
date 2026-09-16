@@ -1,0 +1,25 @@
+{
+  "id": "module-working-with-families",
+  "title": "Working with Families",
+  "moduleId": "working-with-families",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand the importance of collaboration with professionals and family supports.",
+  "microLesson": "Working with family services, schools, and support networks strengthens outcomes for children. Collaboration builds consistency, improves communication, and ensures children receive the right support at the right time.",
+  "activity": "Identify one professional or support person you can communicate with this week. Reflect on why this connection matters.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "collaboration"
+  ],
+  "resources": [
+    {
+      "title": "Family Collaboration Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

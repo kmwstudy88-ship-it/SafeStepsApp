@@ -1,0 +1,51 @@
+{
+  "id": "dfv_specialist_stream",
+  "title": "DFV Specialist Intervention Stream",
+  "description": "An advanced training pathway for specialist DFV practitioners working with high‑risk, complex, and multi‑layered domestic and family violence cases. This stream focuses on lethality assessment, multi‑agency risk panels, advanced trauma practice, and system navigation for clients facing intersecting barriers.",
+  "type": "stream",
+  "level": "advanced",
+  "tags": [
+    "dfv",
+    "specialist practice",
+    "high risk",
+    "complex trauma",
+    "system navigation"
+  ],
+  "outcomes": [
+    "Conduct advanced lethality and dynamic risk assessments",
+    "Manage complex DFV cases involving multiple risk factors",
+    "Work effectively within multi‑agency risk panels",
+    "Support clients navigating intersecting systemic barriers",
+    "Apply advanced trauma‑informed specialist interventions"
+  ],
+  "modules": [
+    {
+      "id": "module_advanced_risk_management",
+      "title": "Advanced Risk Management",
+      "lessons": [
+        "lethality_assessment",
+        "multiagency_risk_panels",
+        "monitoring_dynamic_risk"
+      ]
+    },
+    {
+      "id": "module_specialist_interventions",
+      "title": "Specialist Interventions",
+      "lessons": [
+        "specialist_therapeutic_support",
+        "cultural_complexity",
+        "intersectional_practice"
+      ]
+    },
+    {
+      "id": "module_system_navigation",
+      "title": "System Navigation and Advocacy",
+      "lessons": [
+        "navigating_complex_systems",
+        "advocacy_skills",
+        "supporting_clients_through_system_barriers"
+      ]
+    }
+  ],
+  "content": []
+}

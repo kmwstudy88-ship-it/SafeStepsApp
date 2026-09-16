@@ -1,0 +1,28 @@
+{
+  "id": "module-screen-time-management",
+  "title": "Screen Time Management",
+  "moduleId": "screen-time-management",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents create healthy screen time routines that support regulation, learning, and balanced daily habits.",
+  "microLesson": "Screens are a normal part of modern life, but too much screen time can affect sleep, behaviour, attention, and emotional regulation. Children need a balance of movement, play, rest, and connection. Screen time becomes a problem when it replaces these essential activities or leads to overstimulation. Healthy screen habits include predictable limits, device‑free routines (like mealtimes and bedtime), and choosing age‑appropriate content. Parents support balance by modelling healthy habits, offering engaging alternatives, and using screens intentionally rather than as a default.",
+  "activity": "Choose one screen time boundary to strengthen this week (e.g., no screens before school, device‑free meals, a set daily limit). Implement it for one day and write a reflection on how your child responded.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "routines",
+    "regulation",
+    "healthy-habits"
+  ],
+  "resources": [
+    {
+      "title": "Healthy Screen Time Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

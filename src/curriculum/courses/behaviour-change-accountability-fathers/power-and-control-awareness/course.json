@@ -1,0 +1,25 @@
+{
+  "id": "power-and-control-awareness",
+  "title": "Power and Control Awareness (Father-Focused)",
+  "description": "This course supports fathers to recognise controlling behaviours that harm partners and children, and to develop respectful, non-dominating relationship practices.",
+  "learningOutcomes": [
+    "Identify father-specific control behaviours.",
+    "Understand how control affects children’s emotional safety.",
+    "Recognise subtle dominance patterns in parenting.",
+    "Develop respectful, equitable behaviour."
+  ],
+  "modules": [
+    {
+      "title": "Power in Fathering",
+      "content": "Explores how control affects children’s development and safety."
+    },
+    {
+      "title": "Forms of Control",
+      "content": "Identifies emotional, financial, and coercive control."
+    },
+    {
+      "title": "Respectful Equality",
+      "content": "Provides tools for shared decision-making and safe behaviour."
+    }
+  ]
+}

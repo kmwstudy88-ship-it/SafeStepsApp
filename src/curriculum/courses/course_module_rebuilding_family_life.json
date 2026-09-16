@@ -1,0 +1,61 @@
+{
+  "id": "course_module_rebuilding_family_life",
+  "title": "Rebuilding Family Life After DFV",
+  "description": "Auto-generated course for module module_rebuilding_family_life",
+  "lessons": [
+    {
+      "id": "lesson_restoring_routines",
+      "title": "Restoring Routines",
+      "sections": [
+        {
+          "id": "section_lesson_restoring_routines_01"
+        },
+        {
+          "id": "section_lesson_restoring_routines_02"
+        },
+        {
+          "id": "section_lesson_restoring_routines_03"
+        },
+        {
+          "id": "section_lesson_restoring_routines_04"
+        },
+        {
+          "id": "section_lesson_restoring_routines_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_strengthening_family_bonds",
+      "title": "Strengthening Family Bonds",
+      "sections": [
+        {
+          "id": "section_lesson_strengthening_family_bonds_01"
+        },
+        {
+          "id": "section_lesson_strengthening_family_bonds_02"
+        },
+        {
+          "id": "section_lesson_strengthening_family_bonds_03"
+        },
+        {
+          "id": "section_lesson_strengthening_family_bonds_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_long_term_recovery_planning",
+      "title": "Long‑Term Recovery Planning",
+      "sections": [
+        {
+          "id": "section_lesson_long_term_recovery_planning_01"
+        },
+        {
+          "id": "section_lesson_long_term_recovery_planning_02"
+        },
+        {
+          "id": "section_lesson_long_term_recovery_planning_03"
+        }
+      ]
+    }
+  ]
+}

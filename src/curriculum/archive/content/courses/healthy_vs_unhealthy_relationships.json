@@ -1,0 +1,40 @@
+{
+  "id": "course_healthy_vs_unhealthy_relationships",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Healthy vs Unhealthy Relationship Dynamics",
+  "modules": [
+    {
+      "id": "module_relationship_basics",
+      "title": "Relationship Basics",
+      "lessons": [
+        "what_is_a_healthy_relationship",
+        "what_is_an_unhealthy_relationship",
+        "relationship_spectrums"
+      ]
+    },
+    {
+      "id": "module_warning_signs",
+      "title": "Warning Signs and Red Flags",
+      "lessons": [
+        "early_warning_signs",
+        "controlling_behaviours",
+        "emotional_and_psychological_red_flags"
+      ]
+    },
+    {
+      "id": "module_building_healthy_patterns",
+      "title": "Building Healthy Patterns",
+      "lessons": [
+        "communication_skills",
+        "respect_and_boundaries",
+        "mutual_support_and_safety"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Ability to identify healthy vs unhealthy relationship patterns",
+    "Improved awareness of early warning signs",
+    "Understanding of how to build safe, respectful relationships"
+  ]
+}

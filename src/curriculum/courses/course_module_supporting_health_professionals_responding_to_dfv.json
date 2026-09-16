@@ -1,0 +1,67 @@
+{
+  "id": "course_module_supporting_health_professionals_responding_to_dfv",
+  "title": "Supporting Health Professionals Responding to DFV",
+  "description": "Auto-generated course for module module_supporting_health_professionals_responding_to_dfv",
+  "lessons": [
+    {
+      "id": "lesson_professional_boundaries",
+      "title": "Professional Boundaries",
+      "sections": [
+        {
+          "id": "section_lesson_professional_boundaries_01"
+        },
+        {
+          "id": "section_lesson_professional_boundaries_02"
+        },
+        {
+          "id": "section_lesson_professional_boundaries_03"
+        },
+        {
+          "id": "section_lesson_professional_boundaries_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_vicarious_trauma_and_burnout",
+      "title": "Vicarious Trauma and Burnout",
+      "sections": [
+        {
+          "id": "section_lesson_vicarious_trauma_and_burnout_01"
+        },
+        {
+          "id": "section_lesson_vicarious_trauma_and_burnout_02"
+        },
+        {
+          "id": "section_lesson_vicarious_trauma_and_burnout_03"
+        },
+        {
+          "id": "section_lesson_vicarious_trauma_and_burnout_04"
+        },
+        {
+          "id": "section_lesson_vicarious_trauma_and_burnout_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_reflective_practice",
+      "title": "Reflective Practice",
+      "sections": [
+        {
+          "id": "section_lesson_reflective_practice_01"
+        },
+        {
+          "id": "section_lesson_reflective_practice_02"
+        },
+        {
+          "id": "section_lesson_reflective_practice_03"
+        },
+        {
+          "id": "section_lesson_reflective_practice_04"
+        },
+        {
+          "id": "section_lesson_reflective_practice_05"
+        }
+      ]
+    }
+  ]
+}

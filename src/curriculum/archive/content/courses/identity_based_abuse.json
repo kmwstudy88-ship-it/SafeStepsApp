@@ -1,0 +1,40 @@
+{
+  "id": "course_identity_based_abuse",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Identity-Based Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_identity_abuse",
+      "title": "Understanding Identity-Based Abuse",
+      "lessons": [
+        "what_is_identity_based_abuse",
+        "how_identity_is_used_as_a_control_tool",
+        "impacts_on_self_worth_and_safety"
+      ]
+    },
+    {
+      "id": "module_types_of_identity_abuse",
+      "title": "Types of Identity-Based Abuse",
+      "lessons": [
+        "cultural_and_racial_abuse",
+        "gender_and_sexuality_based_abuse",
+        "disability_and_health_related_abuse"
+      ]
+    },
+    {
+      "id": "module_support_and_empowerment",
+      "title": "Support and Empowerment",
+      "lessons": [
+        "affirming_identity_and_strengths",
+        "accessing_culturally_safe_support",
+        "building_resilience_and_autonomy"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of identity-based abuse",
+    "Ability to recognise culturally or identity-targeted harm",
+    "Increased confidence in supporting identity safety and empowerment"
+  ]
+}

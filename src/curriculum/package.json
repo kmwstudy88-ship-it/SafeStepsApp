@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "ajv": "^6.15.0",
+    "ajv-formats": "^3.0.1",
+    "expo": "^56.0.11",
+    "react-dom": "19.2.3"
+  }
+}

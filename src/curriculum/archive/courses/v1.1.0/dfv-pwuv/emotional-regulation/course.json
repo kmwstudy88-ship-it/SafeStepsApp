@@ -1,0 +1,25 @@
+{
+  "title": "Emotional Regulation",
+  "description": "Helps participants understand emotional triggers, responses, and strategies to regulate emotions safely.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Recognise emotional triggers and responses.",
+    "Understand how dysregulation contributes to harmful behaviour.",
+    "Apply emotional regulation strategies."
+  ],
+  "modules": [
+    "Understanding Emotions",
+    "Regulation Strategies"
+  ],
+  "metadata": {
+    "stream": "dfv-pwuv",
+    "category": "Emotions",
+    "tags": [
+      "emotions",
+      "regulation",
+      "skills"
+    ]
+  },
+  "caseworkerSummary": "Supports participants to understand and regulate emotions to reduce harm."
+}

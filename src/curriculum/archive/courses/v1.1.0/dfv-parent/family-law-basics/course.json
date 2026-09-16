@@ -1,0 +1,25 @@
+{
+  "title": "Family Law Basics",
+  "description": "Provides an overview of family law processes, parenting arrangements, and how DFV is considered in legal decisions.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand key family law concepts.",
+    "Recognise how DFV affects legal decisions.",
+    "Identify ways to prepare for legal processes."
+  ],
+  "modules": [
+    "Understanding Family Law",
+    "DFV and Legal Decisions"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Legal",
+    "tags": [
+      "family law",
+      "legal",
+      "parenting arrangements"
+    ]
+  },
+  "caseworkerSummary": "Gives parents a basic understanding of family law and how DFV is considered."
+}

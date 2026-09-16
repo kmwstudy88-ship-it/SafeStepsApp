@@ -1,0 +1,52 @@
+{
+  "id": "course_module_faith_communities_and_dfv_prevention",
+  "title": "Faith Communities and DFV Prevention",
+  "description": "Auto-generated course for module module_faith_communities_and_dfv_prevention",
+  "lessons": [
+    {
+      "id": "lesson_dfv_in_faith_contexts",
+      "title": "DFV in Faith Contexts",
+      "sections": [
+        {
+          "id": "section_lesson_dfv_in_faith_contexts_01"
+        },
+        {
+          "id": "section_lesson_dfv_in_faith_contexts_02"
+        },
+        {
+          "id": "section_lesson_dfv_in_faith_contexts_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_safe_and_ethical_responses",
+      "title": "Safe and Ethical Responses",
+      "sections": [
+        {
+          "id": "section_lesson_safe_and_ethical_responses_01"
+        },
+        {
+          "id": "section_lesson_safe_and_ethical_responses_02"
+        },
+        {
+          "id": "section_lesson_safe_and_ethical_responses_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_building_safe_faith_environments",
+      "title": "Building Safe Faith Environments",
+      "sections": [
+        {
+          "id": "section_lesson_building_safe_faith_environments_01"
+        },
+        {
+          "id": "section_lesson_building_safe_faith_environments_02"
+        },
+        {
+          "id": "section_lesson_building_safe_faith_environments_03"
+        }
+      ]
+    }
+  ]
+}

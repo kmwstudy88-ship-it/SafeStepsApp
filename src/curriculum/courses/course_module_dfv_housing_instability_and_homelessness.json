@@ -1,0 +1,61 @@
+{
+  "id": "course_module_dfv_housing_instability_and_homelessness",
+  "title": "DFV, Housing Instability, and Homelessness",
+  "description": "Auto-generated course for module module_dfv_housing_instability_and_homelessness",
+  "lessons": [
+    {
+      "id": "lesson_dfv_and_housing_risks",
+      "title": "DFV and Housing Risks",
+      "sections": [
+        {
+          "id": "section_lesson_dfv_and_housing_risks_01"
+        },
+        {
+          "id": "section_lesson_dfv_and_housing_risks_02"
+        },
+        {
+          "id": "section_lesson_dfv_and_housing_risks_03"
+        },
+        {
+          "id": "section_lesson_dfv_and_housing_risks_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_barriers_to_safe_housing",
+      "title": "Barriers to Safe Housing",
+      "sections": [
+        {
+          "id": "section_lesson_barriers_to_safe_housing_01"
+        },
+        {
+          "id": "section_lesson_barriers_to_safe_housing_02"
+        },
+        {
+          "id": "section_lesson_barriers_to_safe_housing_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_pathways_to_stability",
+      "title": "Pathways to Stability",
+      "sections": [
+        {
+          "id": "section_lesson_pathways_to_stability_01"
+        },
+        {
+          "id": "section_lesson_pathways_to_stability_02"
+        },
+        {
+          "id": "section_lesson_pathways_to_stability_03"
+        },
+        {
+          "id": "section_lesson_pathways_to_stability_04"
+        },
+        {
+          "id": "section_lesson_pathways_to_stability_05"
+        }
+      ]
+    }
+  ]
+}

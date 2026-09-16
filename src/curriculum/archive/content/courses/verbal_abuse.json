@@ -1,0 +1,40 @@
+{
+  "id": "course_verbal_abuse",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Verbal Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_verbal_abuse",
+      "title": "Understanding Verbal Abuse",
+      "lessons": [
+        "what_is_verbal_abuse",
+        "how_words_are_used_as_weapons",
+        "impacts_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_tactics_and_patterns",
+      "title": "Tactics and Patterns",
+      "lessons": [
+        "insults_and_name_calling",
+        "yelling_and_intimidation",
+        "humiliation_and_degradation"
+      ]
+    },
+    {
+      "id": "module_healing_and_boundaries",
+      "title": "Healing and Boundaries",
+      "lessons": [
+        "rebuilding_self_respect",
+        "setting_healthy_boundaries",
+        "seeking_support_and_validation"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of verbal abuse",
+    "Ability to recognise harmful communication patterns",
+    "Increased confidence in setting boundaries and seeking support"
+  ]
+}

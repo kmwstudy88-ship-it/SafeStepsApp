@@ -1,0 +1,21 @@
+{
+  "id": "module_prevention_in_schools_workplaces_and_community_settings",
+  "title": "Prevention in Schools, Workplaces, and Community Settings",
+  "description": "This module supports organisations to embed primary prevention in schools, workplaces, and community environments. It focuses on structured programs, policy alignment, and safe implementation.",
+  "type": "module",
+  "level": "prevention",
+  "tags": [
+    "dfv",
+    "prevention",
+    "schools",
+    "workplaces",
+    "community settings"
+  ],
+  "outcomes": [
+    "Understand how prevention can be embedded in different settings",
+    "Implement structured prevention programs safely",
+    "Align organisational policies with prevention goals"
+  ],
+  "lessons": [],
+  "content": []
+}

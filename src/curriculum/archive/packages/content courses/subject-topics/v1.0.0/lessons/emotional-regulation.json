@@ -1,0 +1,25 @@
+{
+  "id": "module-emotional-regulation",
+  "title": "Emotional Regulation",
+  "moduleId": "emotional-regulation",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents teach children how to understand and manage emotions.",
+  "microLesson": "Children learn emotional regulation through co‑regulation—borrowing calm from a parent. Naming feelings, modelling calm behaviour, and offering predictable routines help children develop self‑control.",
+  "activity": "Help your child name a feeling during a difficult moment. Reflect on how naming the emotion changed the situation.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "emotional-regulation"
+  ],
+  "resources": [
+    {
+      "title": "Emotion Coaching Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

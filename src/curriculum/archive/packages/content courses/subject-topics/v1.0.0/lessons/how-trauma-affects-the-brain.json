@@ -1,0 +1,27 @@
+{
+  "id": "module-how-trauma-affects-the-brain",
+  "title": "How Trauma Affects the Brain",
+  "moduleId": "how-trauma-affects-the-brain",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how trauma impacts a child’s brain, behaviour, emotions, and development, and how supportive caregiving promotes healing.",
+  "microLesson": "Trauma changes the way a child’s brain processes information, responds to stress, and interprets the world. When children experience fear, instability, or overwhelming stress, their brain shifts into survival mode. This can lead to behaviours such as hypervigilance, emotional outbursts, withdrawal, difficulty concentrating, or challenges with trust. These behaviours are not defiance—they are adaptations to stress. Healing occurs when children experience safety, predictability, calm caregivers, and supportive relationships. Over time, consistent nurturing helps the brain rewire toward regulation and resilience.",
+  "activity": "Reflect on one behaviour your child shows that may be linked to stress or past experiences. Write a reflection on how you can respond with safety, calmness, and connection rather than punishment.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "trauma-awareness",
+    "emotional-regulation",
+    "child-development"
+  ],
+  "resources": [
+    {
+      "title": "Understanding Trauma and the Brain",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

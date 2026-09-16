@@ -1,0 +1,25 @@
+{
+  "id": "honesty-and-transparency",
+  "title": "Honesty and Transparency",
+  "description": "This course teaches participants how honesty, openness, and transparency support trust, accountability, and safe relationships.",
+  "learningOutcomes": [
+    "Understand the role of honesty in safe relationships.",
+    "Recognise behaviours that undermine trust.",
+    "Learn how to communicate transparently.",
+    "Develop habits that support accountability."
+  ],
+  "modules": [
+    {
+      "title": "Foundations of Honesty",
+      "content": "Explores truthfulness, openness, and integrity."
+    },
+    {
+      "title": "Behaviours That Break Trust",
+      "content": "Identifies secrecy, avoidance, and manipulation."
+    },
+    {
+      "title": "Practising Transparency",
+      "content": "Provides tools for open, accountable communication."
+    }
+  ]
+}

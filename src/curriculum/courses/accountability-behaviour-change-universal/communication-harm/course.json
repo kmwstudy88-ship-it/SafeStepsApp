@@ -1,0 +1,25 @@
+{
+  "id": "communication-harm",
+  "title": "Understanding Harmful Communication",
+  "description": "This course helps participants recognise communication patterns that create fear, confusion, or emotional harm. It supports the development of respectful, safe, and clear communication.",
+  "learningOutcomes": [
+    "Identify harmful communication behaviours.",
+    "Understand how tone, language, and intent affect others.",
+    "Recognise how communication impacts children’s emotional safety.",
+    "Develop respectful communication habits."
+  ],
+  "modules": [
+    {
+      "title": "Harmful Communication Patterns",
+      "content": "Explores criticism, threats, sarcasm, and intimidation."
+    },
+    {
+      "title": "Impact on Emotional Safety",
+      "content": "Shows how communication affects trust and wellbeing."
+    },
+    {
+      "title": "Building Respectful Communication",
+      "content": "Provides tools for clarity, calmness, and respect."
+    }
+  ]
+}

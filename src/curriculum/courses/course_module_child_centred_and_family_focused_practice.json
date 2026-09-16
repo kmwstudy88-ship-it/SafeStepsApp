@@ -1,0 +1,61 @@
+{
+  "id": "course_module_child_centred_and_family_focused_practice",
+  "title": "Child-Centred and Family-Focused Practice",
+  "description": "Auto-generated course for module module_child_centred_and_family_focused_practice",
+  "lessons": [
+    {
+      "id": "lesson_child_centred_principles",
+      "title": "Child-Centred Principles",
+      "sections": [
+        {
+          "id": "section_lesson_child_centred_principles_01"
+        },
+        {
+          "id": "section_lesson_child_centred_principles_02"
+        },
+        {
+          "id": "section_lesson_child_centred_principles_03"
+        },
+        {
+          "id": "section_lesson_child_centred_principles_04"
+        },
+        {
+          "id": "section_lesson_child_centred_principles_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_working_with_family_systems",
+      "title": "Working with Family Systems",
+      "sections": [
+        {
+          "id": "section_lesson_working_with_family_systems_01"
+        },
+        {
+          "id": "section_lesson_working_with_family_systems_02"
+        },
+        {
+          "id": "section_lesson_working_with_family_systems_03"
+        },
+        {
+          "id": "section_lesson_working_with_family_systems_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_supporting_relational_healing",
+      "title": "Supporting Relational Healing",
+      "sections": [
+        {
+          "id": "section_lesson_supporting_relational_healing_01"
+        },
+        {
+          "id": "section_lesson_supporting_relational_healing_02"
+        },
+        {
+          "id": "section_lesson_supporting_relational_healing_03"
+        }
+      ]
+    }
+  ]
+}

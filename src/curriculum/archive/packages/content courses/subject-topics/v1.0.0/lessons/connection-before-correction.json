@@ -1,0 +1,27 @@
+{
+  "id": "module-connection-before-correction",
+  "title": "Connection Before Correction",
+  "moduleId": "connection-before-correction",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand why emotional connection must come before discipline, and how connection improves behaviour and cooperation.",
+  "microLesson": "Children learn and behave better when they feel connected, understood, and emotionally safe. When a child is upset, overwhelmed, or dysregulated, their brain is in a stress state and cannot learn from correction. Connection—through calm tone, empathy, eye contact, and validation—helps bring the child back into a regulated state. Once the child feels safe, they are far more able to listen, problem-solve, and accept guidance. Connection does not mean permissiveness; it means creating the emotional conditions where correction can actually work.",
+  "activity": "During your next challenging moment with your child, pause and connect first—use a calm voice, validate their feelings, and offer reassurance. After they settle, guide them through the correction. Write a reflection on how the situation changed when you connected first.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "emotional-regulation",
+    "relationship-building",
+    "positive-parenting"
+  ],
+  "resources": [
+    {
+      "title": "Connection-Based Parenting Strategies",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

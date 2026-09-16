@@ -1,0 +1,40 @@
+{
+  "id": "course_physical_abuse",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Physical Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_physical_abuse",
+      "title": "Understanding Physical Abuse",
+      "lessons": [
+        "what_is_physical_abuse",
+        "how_physical_abuse_fits_into_coercive_control",
+        "impacts_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_patterns_and_risk",
+      "title": "Patterns and Risk Factors",
+      "lessons": [
+        "cycles_of_violence",
+        "risk_escalation_patterns",
+        "link_between_physical_abuse_and_lethality"
+      ]
+    },
+    {
+      "id": "module_safety_and_support",
+      "title": "Safety and Support",
+      "lessons": [
+        "responding_to_physical_abuse",
+        "seeking_medical_and_legal_support",
+        "protecting_children_and_family_members"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of physical abuse within DFV",
+    "Ability to recognise risk and escalation patterns",
+    "Increased confidence in responding safely and seeking support"
+  ]
+}

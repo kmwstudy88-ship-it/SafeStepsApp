@@ -1,0 +1,43 @@
+{
+  "created_at": "2026-06-07T12:23:42.5338262+10:00",
+  "completed_at": null,
+  "recommendations": [],
+  "assessor": "Caseworker",
+  "updated_at": "2026-06-07T12:23:42.5338262+10:00",
+  "type": "family_strengths",
+  "overall_risk": null,
+  "id": "family_strengths_01",
+  "overall_strength": null,
+  "domains": [
+    {
+      "label": "Safe adults",
+      "notes": null,
+      "id": "safe_adults",
+      "score": null
+    },
+    {
+      "label": "Routines",
+      "notes": null,
+      "id": "routines",
+      "score": null
+    },
+    {
+      "label": "Cultural strengths",
+      "notes": null,
+      "id": "cultural_strengths",
+      "score": null
+    },
+    {
+      "label": "Problem solving",
+      "notes": null,
+      "id": "problem_solving",
+      "score": null
+    },
+    {
+      "label": "Motivation to change",
+      "notes": null,
+      "id": "motivation_to_change",
+      "score": null
+    }
+  ]
+}

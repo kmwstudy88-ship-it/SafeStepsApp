@@ -1,0 +1,70 @@
+{
+  "id": "course_module_professional_boundaries_ethics_and_self_care",
+  "title": "Professional Boundaries, Ethics, and Self-Care",
+  "description": "Auto-generated course for module module_professional_boundaries_ethics_and_self_care",
+  "lessons": [
+    {
+      "id": "lesson_ethical_and_safe_boundaries",
+      "title": "Ethical and Safe Boundaries",
+      "sections": [
+        {
+          "id": "section_lesson_ethical_and_safe_boundaries_01"
+        },
+        {
+          "id": "section_lesson_ethical_and_safe_boundaries_02"
+        },
+        {
+          "id": "section_lesson_ethical_and_safe_boundaries_03"
+        },
+        {
+          "id": "section_lesson_ethical_and_safe_boundaries_04"
+        },
+        {
+          "id": "section_lesson_ethical_and_safe_boundaries_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_vicarious_trauma_and_burnout",
+      "title": "Vicarious Trauma and Burnout",
+      "sections": [
+        {
+          "id": "section_lesson_vicarious_trauma_and_burnout_01"
+        },
+        {
+          "id": "section_lesson_vicarious_trauma_and_burnout_02"
+        },
+        {
+          "id": "section_lesson_vicarious_trauma_and_burnout_03"
+        },
+        {
+          "id": "section_lesson_vicarious_trauma_and_burnout_04"
+        },
+        {
+          "id": "section_lesson_vicarious_trauma_and_burnout_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_reflective_practice_and_self_care",
+      "title": "Reflective Practice and Self-Care",
+      "sections": [
+        {
+          "id": "section_lesson_reflective_practice_and_self_care_01"
+        },
+        {
+          "id": "section_lesson_reflective_practice_and_self_care_02"
+        },
+        {
+          "id": "section_lesson_reflective_practice_and_self_care_03"
+        },
+        {
+          "id": "section_lesson_reflective_practice_and_self_care_04"
+        },
+        {
+          "id": "section_lesson_reflective_practice_and_self_care_05"
+        }
+      ]
+    }
+  ]
+}

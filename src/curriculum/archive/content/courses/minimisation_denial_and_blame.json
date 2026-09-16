@@ -1,0 +1,40 @@
+{
+  "id": "course_minimisation_denial_and_blame",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Minimisation, Denial and Blame",
+  "modules": [
+    {
+      "id": "module_understanding_mdb",
+      "title": "Understanding Minimisation, Denial and Blame",
+      "lessons": [
+        "what_is_minimisation",
+        "what_is_denial",
+        "what_is_blame_shifting"
+      ]
+    },
+    {
+      "id": "module_how_mdb_functions",
+      "title": "How MDB Functions in DFV",
+      "lessons": [
+        "avoiding_responsibility",
+        "distorting_events_and_realities",
+        "impact_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_accountability_and_change",
+      "title": "Accountability and Change",
+      "lessons": [
+        "recognising_mdb_patterns",
+        "building_responsibility_skills",
+        "supporting_behaviour_change"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of minimisation, denial and blame",
+    "Ability to recognise accountability‑avoidance tactics",
+    "Increased confidence in supporting responsibility and change"
+  ]
+}

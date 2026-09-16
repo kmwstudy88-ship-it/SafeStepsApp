@@ -1,0 +1,25 @@
+{
+  "id": "empathy-development",
+  "title": "Empathy Development",
+  "description": "This course helps participants build empathy, understand others’ experiences, and develop compassionate behaviour.",
+  "learningOutcomes": [
+    "Understand what empathy is.",
+    "Recognise barriers to empathy.",
+    "Learn how to understand others’ perspectives.",
+    "Develop compassionate relational habits."
+  ],
+  "modules": [
+    {
+      "title": "Understanding Empathy",
+      "content": "Explores emotional and cognitive empathy."
+    },
+    {
+      "title": "Barriers to Empathy",
+      "content": "Identifies patterns that block understanding."
+    },
+    {
+      "title": "Building Empathy",
+      "content": "Provides tools for perspective-taking and compassion."
+    }
+  ]
+}

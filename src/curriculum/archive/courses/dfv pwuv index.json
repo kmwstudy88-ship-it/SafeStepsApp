@@ -1,0 +1,82 @@
+[
+  {
+    "id": "pwuv-001",
+    "title": "Accountability and Responsibility",
+    "description": "Understanding personal responsibility in the use of violence.",
+    "keywords": ["accountability", "responsibility"],
+    "difficulty": "intro",
+    "order": 1
+  },
+  {
+    "id": "pwuv-002",
+    "title": "Understanding Coercive Control",
+    "description": "Recognising patterns of control and their impact.",
+    "keywords": ["coercive control", "patterns"],
+    "difficulty": "core",
+    "order": 2
+  },
+  {
+    "id": "pwuv-003",
+    "title": "Impact on Children",
+    "description": "How violence affects children’s wellbeing and development.",
+    "keywords": ["children", "impact"],
+    "difficulty": "core",
+    "order": 3
+  },
+  {
+    "id": "pwuv-004",
+    "title": "Impact on Partners",
+    "description": "Understanding the emotional and physical effects on partners.",
+    "keywords": ["partners", "impact"],
+    "difficulty": "core",
+    "order": 4
+  },
+  {
+    "id": "pwuv-005",
+    "title": "Respectful Relationships",
+    "description": "Building relationships based on respect and equality.",
+    "keywords": ["respect", "relationships"],
+    "difficulty": "intro",
+    "order": 5
+  },
+  {
+    "id": "pwuv-006",
+    "title": "Healthy Communication",
+    "description": "Developing non-violent communication skills.",
+    "keywords": ["communication", "skills"],
+    "difficulty": "core",
+    "order": 6
+  },
+  {
+    "id": "pwuv-007",
+    "title": "Emotional Regulation",
+    "description": "Managing anger, stress, and emotional triggers.",
+    "keywords": ["regulation", "anger"],
+    "difficulty": "core",
+    "order": 7
+  },
+  {
+    "id": "pwuv-008",
+    "title": "Conflict Resolution",
+    "description": "Learning safe and respectful ways to resolve conflict.",
+    "keywords": ["conflict", "resolution"],
+    "difficulty": "core",
+    "order": 8
+  },
+  {
+    "id": "pwuv-009",
+    "title": "Relapse Prevention",
+    "description": "Strategies to prevent returning to harmful behaviour.",
+    "keywords": ["relapse", "prevention"],
+    "difficulty": "advanced",
+    "order": 9
+  },
+  {
+    "id": "pwuv-010",
+    "title": "Long-Term Behaviour Change",
+    "description": "Sustaining respectful behaviour over time.",
+    "keywords": ["change", "behaviour"],
+    "difficulty": "advanced",
+    "order": 10
+  }
+]

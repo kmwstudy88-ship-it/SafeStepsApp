@@ -1,0 +1,50 @@
+﻿[
+    {
+        "id":  "BehaviourAsCommunication",
+        "path":  "BehaviourDecoder/BehaviourAsCommunication.json"
+    },
+    {
+        "id":  "BehaviourDecoderToolkit",
+        "path":  "BehaviourDecoder/BehaviourDecoderToolkit.json"
+    },
+    {
+        "id":  "BrainBehindBehaviour",
+        "path":  "BrainBehindBehaviour/BrainBehindBehaviour.json"
+    },
+    {
+        "id":  "BuildingCooperation",
+        "path":  "BuildingCooperation/BuildingCooperation.json"
+    },
+    {
+        "id":  "ConnectionBasedSupport",
+        "path":  "ConnectionBasedSupport/ConnectionBasedSupport.json"
+    },
+    {
+        "id":  "LongTermBehaviourChange",
+        "path":  "LongTermBehaviourChange/LongTermBehaviourChange.json"
+    },
+    {
+        "id":  "NaturalLogicalConsequences",
+        "path":  "NaturalLogicalConsequences/NaturalLogicalConsequences.json"
+    },
+    {
+        "id":  "PreventingEscalation",
+        "path":  "PreventingEscalation/PreventingEscalation.json"
+    },
+    {
+        "id":  "RespondingToAggression",
+        "path":  "RespondingToAggression/RespondingToAggression.json"
+    },
+    {
+        "id":  "SupportingSensoryNeeds",
+        "path":  "SupportingSensoryNeeds/SupportingSensoryNeeds.json"
+    },
+    {
+        "id":  "TeachingSkills",
+        "path":  "TeachingSkills/TeachingSkills.json"
+    },
+    {
+        "id":  "TriggersAndPatterns",
+        "path":  "TriggersAndPatterns/TriggersAndPatterns.json"
+    }
+]

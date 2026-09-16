@@ -1,0 +1,422 @@
+{
+  "streams": [
+    {
+      "id": "advanced",
+      "title": "Advanced",
+      "modules": [
+        {
+          "id": "module_advanced_risk_management",
+          "title": "Advanced Risk Management"
+        },
+        {
+          "id": "module_case_review_and_reflective_practice",
+          "title": "Case Review and Reflective Practice"
+        },
+        {
+          "id": "module_court_support_and_legal_processes",
+          "title": "Court Support and Legal Processes"
+        },
+        {
+          "id": "module_specialist_interventions",
+          "title": "Specialist Interventions"
+        },
+        {
+          "id": "module_system_navigation_and_advocacy",
+          "title": "System Navigation and Advocacy"
+        },
+        {
+          "id": "module_working_with_perpetrators",
+          "title": "Working With Perpetrators"
+        }
+      ]
+    },
+    {
+      "id": "children_young_people",
+      "title": "Children young people",
+      "modules": [
+        {
+          "id": "module_child_centred_and_family_focused_practice",
+          "title": "Child-Centred and Family-Focused Practice"
+        },
+        {
+          "id": "module_engaging_young_people_in_prevention",
+          "title": "Engaging Young People in Prevention and Respectful Relationships"
+        },
+        {
+          "id": "module_supporting_childrens_safety_and_wellbeing",
+          "title": "Supporting Children’s Safety and Wellbeing"
+        },
+        {
+          "id": "module_trauma_attachment_and_child_development",
+          "title": "Trauma, Attachment, and Child Development"
+        },
+        {
+          "id": "module_understanding_dfv_impacts_on_children",
+          "title": "Understanding DFV Impacts on Children"
+        },
+        {
+          "id": "module_working_with_adolescents_experiencing_or_using_violence",
+          "title": "Working with Adolescents Experiencing or Using Violence"
+        }
+      ]
+    },
+    {
+      "id": "community",
+      "title": "Community",
+      "modules": [
+        {
+          "id": "module_bystander_action_and_community_safety",
+          "title": "Bystander Action and Community Safety"
+        },
+        {
+          "id": "module_community_accountability_and_collective_action",
+          "title": "Community Accountability and Collective Action"
+        },
+        {
+          "id": "module_community_advocacy_and_awareness",
+          "title": "Community Advocacy and Awareness"
+        },
+        {
+          "id": "module_community_crisis_response_and_safety_planning",
+          "title": "Community Crisis Response and Safety Planning"
+        },
+        {
+          "id": "module_community_education_and_prevention_campaigns",
+          "title": "Community Education and Prevention Campaigns"
+        },
+        {
+          "id": "module_community_healing_and_collective_recovery",
+          "title": "Community Healing and Collective Recovery"
+        },
+        {
+          "id": "module_community_leadership_for_change",
+          "title": "Community Leadership for Change"
+        },
+        {
+          "id": "module_community_partnerships_and_local_action",
+          "title": "Community Partnerships and Local Action"
+        },
+        {
+          "id": "module_community_led_prevention_strategies",
+          "title": "Community-Led Prevention Strategies"
+        },
+        {
+          "id": "module_cultural_safety_in_community_responses",
+          "title": "Cultural Safety in Community Responses"
+        },
+        {
+          "id": "module_digital_safety_and_online_communities",
+          "title": "Digital Safety and Online Communities"
+        },
+        {
+          "id": "module_faith_communities_and_dfv_prevention",
+          "title": "Faith Communities and DFV Prevention"
+        },
+        {
+          "id": "module_supporting_community_members_experiencing_dfv",
+          "title": "Supporting Community Members Experiencing DFV"
+        },
+        {
+          "id": "module_understanding_dfv_in_the_community",
+          "title": "Understanding DFV in the Community"
+        },
+        {
+          "id": "module_workplace_and_community_organisation_responses",
+          "title": "Workplace and Community Organisation Responses"
+        },
+        {
+          "id": "module_youth_leadership_and_dfv_prevention",
+          "title": "Youth Leadership and DFV Prevention"
+        }
+      ]
+    },
+    {
+      "id": "foundational",
+      "title": "Foundational",
+      "modules": [
+        {
+          "id": "module_parent_safety",
+          "title": "Parent Safety and Stability"
+        },
+        {
+          "id": "module_parenting_under_stress",
+          "title": "Parenting Under DFV Stress"
+        },
+        {
+          "id": "module_rebuilding_family_life",
+          "title": "Rebuilding Family Life After DFV"
+        },
+        {
+          "id": "module_child_healing",
+          "title": "Supporting Child Healing"
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "title": "General",
+      "modules": [
+        {
+          "id": "module_accountability_foundations",
+          "title": "Accountability Foundations"
+        },
+        {
+          "id": "module_emotional_regulation",
+          "title": "Emotional Regulation"
+        },
+        {
+          "id": "module_relationship_skills",
+          "title": "Relationship Skills"
+        },
+        {
+          "id": "module_sustainable_change",
+          "title": "Sustainable Change"
+        },
+        {
+          "id": "module_system_navigation",
+          "title": "System Navigation"
+        }
+      ]
+    },
+    {
+      "id": "health_wellbeing",
+      "title": "Health wellbeing",
+      "modules": [
+        {
+          "id": "module_dfv_and_health_impacts",
+          "title": "DFV and Health Impacts"
+        },
+        {
+          "id": "module_dfv_in_health_settings",
+          "title": "DFV in Health Settings"
+        },
+        {
+          "id": "module_health_led_prevention_and_early_intervention",
+          "title": "Health-Led Prevention and Early Intervention"
+        },
+        {
+          "id": "module_mental_health_trauma_and_recovery",
+          "title": "Mental Health, Trauma, and Recovery"
+        },
+        {
+          "id": "module_supporting_health_professionals_responding_to_dfv",
+          "title": "Supporting Health Professionals Responding to DFV"
+        }
+      ]
+    },
+    {
+      "id": "housing_economic_security",
+      "title": "Housing economic security",
+      "modules": [
+        {
+          "id": "module_dfv_housing_instability_and_homelessness",
+          "title": "DFV, Housing Instability, and Homelessness"
+        },
+        {
+          "id": "module_economic_abuse_and_financial_security",
+          "title": "Economic Abuse and Financial Security"
+        },
+        {
+          "id": "module_long_term_recovery_stability_and_economic_empowerment",
+          "title": "Long-Term Recovery, Stability, and Economic Empowerment"
+        },
+        {
+          "id": "module_safe_housing_responses_and_crisis_accommodation",
+          "title": "Safe Housing Responses and Crisis Accommodation"
+        }
+      ]
+    },
+    {
+      "id": "intermediate",
+      "title": "Intermediate",
+      "modules": [
+        {
+          "id": "module_boundaries_and_safety",
+          "title": "Boundaries and Safety"
+        },
+        {
+          "id": "module_peer_role_foundations",
+          "title": "Peer Mentor Role Foundations"
+        },
+        {
+          "id": "module_safe_conversations",
+          "title": "Safe Conversations"
+        },
+        {
+          "id": "module_supporting_survivors",
+          "title": "Supporting Survivors"
+        }
+      ]
+    },
+    {
+      "id": "justice_legal",
+      "title": "Justice legal",
+      "modules": [
+        {
+          "id": "module_legal_advocacy_and_supporting_clients",
+          "title": "Legal Advocacy and Supporting Clients Through the System"
+        },
+        {
+          "id": "module_protection_orders_and_court_processes",
+          "title": "Protection Orders and Court Processes"
+        },
+        {
+          "id": "module_understanding_dfv_legal_responses",
+          "title": "Understanding DFV Legal Responses"
+        },
+        {
+          "id": "module_working_with_police_and_justice_agencies",
+          "title": "Working with Police and Justice Agencies"
+        }
+      ]
+    },
+    {
+      "id": "leadership",
+      "title": "Leadership",
+      "modules": [
+        {
+          "id": "module_leading_safe_practice",
+          "title": "Leading Safe Practice"
+        },
+        {
+          "id": "module_managing_complex_teams",
+          "title": "Managing Complex Teams"
+        },
+        {
+          "id": "module_organisational_change_and_improvement",
+          "title": "Organisational Change and Improvement"
+        },
+        {
+          "id": "module_strategic_partnerships_and_sector_leadership",
+          "title": "Strategic Partnerships and Sector Leadership"
+        }
+      ]
+    },
+    {
+      "id": "practitioner",
+      "title": "Practitioner",
+      "modules": [
+        {
+          "id": "module_assessment_and_response",
+          "title": "Assessment and Response"
+        },
+        {
+          "id": "module_collaboration_and_referral",
+          "title": "Collaboration and Referral Pathways"
+        },
+        {
+          "id": "module_complex_casework",
+          "title": "Complex Casework"
+        },
+        {
+          "id": "module_practitioner_foundations",
+          "title": "Practitioner Foundations"
+        },
+        {
+          "id": "module_client_engagement",
+          "title": "Trauma‑Informed Client Engagement"
+        }
+      ]
+    },
+    {
+      "id": "prevention",
+      "title": "Prevention",
+      "modules": [
+        {
+          "id": "module_building_respectful_communities",
+          "title": "Building Respectful Communities"
+        },
+        {
+          "id": "module_challenging_gender_inequality_and_harmful_norms",
+          "title": "Challenging Gender Inequality and Harmful Norms"
+        },
+        {
+          "id": "module_designing_and_evaluating_prevention_initiatives",
+          "title": "Designing and Evaluating Prevention Initiatives"
+        },
+        {
+          "id": "module_prevention_in_schools_workplaces_and_community_settings",
+          "title": "Prevention in Schools, Workplaces, and Community Settings"
+        },
+        {
+          "id": "module_understanding_primary_prevention",
+          "title": "Understanding Primary Prevention"
+        }
+      ]
+    },
+    {
+      "id": "specialist_populations",
+      "title": "Specialist populations",
+      "modules": [
+        {
+          "id": "module_working_with_cald_communities",
+          "title": "Working with Culturally and Linguistically Diverse Communities"
+        },
+        {
+          "id": "module_working_with_first_nations_peoples",
+          "title": "Working with First Nations Peoples"
+        },
+        {
+          "id": "module_working_with_lgbtqia_communities",
+          "title": "Working with LGBTQIA+ Communities"
+        },
+        {
+          "id": "module_working_with_older_people",
+          "title": "Working with Older People"
+        },
+        {
+          "id": "module_working_with_people_using_violence_diverse_backgrounds",
+          "title": "Working with People Using Violence from Diverse Backgrounds"
+        },
+        {
+          "id": "module_working_with_people_with_disability",
+          "title": "Working with People with Disability"
+        }
+      ]
+    },
+    {
+      "id": "systems",
+      "title": "Systems",
+      "modules": [
+        {
+          "id": "module_legal_systems_and_dfv",
+          "title": "Legal Systems and DFV"
+        },
+        {
+          "id": "module_multi_agency_collaboration_and_information_sharing",
+          "title": "Multi-Agency Collaboration and Information Sharing"
+        },
+        {
+          "id": "module_system_reform_and_continuous_improvement",
+          "title": "System Reform and Continuous Improvement"
+        },
+        {
+          "id": "module_understanding_dfv_systems_and_pathways",
+          "title": "Understanding DFV Systems and Pathways"
+        }
+      ]
+    },
+    {
+      "id": "workforce_capability",
+      "title": "Workforce capability",
+      "modules": [
+        {
+          "id": "module_advanced_dfv_practice_and_leadership",
+          "title": "Advanced DFV Practice and Leadership"
+        },
+        {
+          "id": "module_foundations_of_dfv_capability",
+          "title": "Foundations of DFV Capability"
+        },
+        {
+          "id": "module_professional_boundaries_ethics_and_self_care",
+          "title": "Professional Boundaries, Ethics, and Self-Care"
+        },
+        {
+          "id": "module_trauma_informed_and_culturally_safe_practice",
+          "title": "Trauma-Informed and Culturally Safe Practice"
+        }
+      ]
+    }
+  ]
+}

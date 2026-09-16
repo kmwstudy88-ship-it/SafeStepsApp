@@ -1,0 +1,40 @@
+{
+  "id": "course_social_isolation_and_control",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Social Isolation and Control",
+  "modules": [
+    {
+      "id": "module_understanding_isolation",
+      "title": "Understanding Social Isolation",
+      "lessons": [
+        "what_is_social_isolation",
+        "how_isolation_functions_in_dfv",
+        "impacts_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_tactics_of_isolation",
+      "title": "Tactics of Isolation and Control",
+      "lessons": [
+        "cutting_off_support_networks",
+        "controlling_information_and_movement",
+        "creating_dependency_and_fear"
+      ]
+    },
+    {
+      "id": "module_rebuilding_connection",
+      "title": "Rebuilding Connection and Support",
+      "lessons": [
+        "reconnecting_with_supportive_people",
+        "building_safe_social_networks",
+        "reducing_dependency_and_increasing_autonomy"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of social isolation as a DFV tactic",
+    "Ability to recognise isolation and control behaviours",
+    "Increased confidence in rebuilding safe social connections"
+  ]
+}

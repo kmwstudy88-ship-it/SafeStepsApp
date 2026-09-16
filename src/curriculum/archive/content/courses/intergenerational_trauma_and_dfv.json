@@ -1,0 +1,40 @@
+{
+  "id": "course_intergenerational_trauma_and_dfv",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Intergenerational Trauma and DFV",
+  "modules": [
+    {
+      "id": "module_understanding_intergenerational_trauma",
+      "title": "Understanding Intergenerational Trauma",
+      "lessons": [
+        "what_is_intergenerational_trauma",
+        "how_trauma_is_transmitted_across_generations",
+        "links_between_trauma_and_dfv"
+      ]
+    },
+    {
+      "id": "module_impacts_on_families",
+      "title": "Impacts on Families",
+      "lessons": [
+        "effects_on_children_and_parents",
+        "trauma_responses_in_family_systems",
+        "cycles_of_harm_and_healing"
+      ]
+    },
+    {
+      "id": "module_breaking_the_cycle",
+      "title": "Breaking the Cycle",
+      "lessons": [
+        "building_safety_and_stability",
+        "supporting_healing_and_resilience",
+        "creating_trauma_informed_family_practices"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of intergenerational trauma",
+    "Ability to recognise trauma patterns in families",
+    "Increased confidence in supporting healing and safety"
+  ]
+}

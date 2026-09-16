@@ -1,0 +1,25 @@
+{
+  "id": "module-public-behaviour",
+  "title": "Public Behaviour",
+  "moduleId": "public-behaviour",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to guide behaviour in public settings using preparation, clear expectations, and calm responses.",
+  "microLesson": "Public behaviour challenges often come from overstimulation, boredom, or unclear expectations. Preparing children ahead of time, offering choices, and praising positive behaviour reduces stress for everyone.",
+  "activity": "Before your next outing, set one clear expectation. Reflect on how your child responded.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "public-behaviour"
+  ],
+  "resources": [
+    {
+      "title": "Public Behaviour Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "stage-11",
+  "weeks": [
+    {
+      "id": "week-01",
+      "lessons": [],
+      "sectionLessons": [],
+      "courseLessons": []
+    },
+    {
+      "id": "week-02",
+      "lessons": [],
+      "sectionLessons": [],
+      "courseLessons": []
+    },
+    {
+      "id": "week-03",
+      "lessons": [],
+      "sectionLessons": [],
+      "courseLessons": []
+    },
+    {
+      "id": "week-04",
+      "lessons": [],
+      "sectionLessons": [],
+      "courseLessons": []
+    },
+    {
+      "id": "week-05",
+      "lessons": [],
+      "sectionLessons": [],
+      "courseLessons": []
+    },
+    {
+      "id": "week-06",
+      "lessons": [],
+      "sectionLessons": [],
+      "courseLessons": []
+    },
+    {
+      "id": "week-07",
+      "lessons": [],
+      "sectionLessons": [],
+      "courseLessons": []
+    },
+    {
+      "id": "week-08",
+      "lessons": [],
+      "sectionLessons": [],
+      "courseLessons": []
+    }
+  ]
+}

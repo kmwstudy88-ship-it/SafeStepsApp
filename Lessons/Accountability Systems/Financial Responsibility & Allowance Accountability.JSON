@@ -1,0 +1,90 @@
+{
+  "program_id": "PARENT-ACC-108",
+  "program_title": "Financial Responsibility & Allowance Accountability",
+  "version": "1.0",
+  "metadata": {
+    "target_audience": "Parents of children and teenagers (Ages 7–18)",
+    "estimated_duration": "60–90 minutes",
+    "delivery_format": "Self-paced or Facilitated Add-On Module",
+    "core_objective": "Teach financial autonomy by separating basic family contributions from earned money and using financial restitution as a real-world consequence.",
+    "key_deliverable": "Household Citizenship & Earned Commission Framework"
+  },
+  "modules": [
+    {
+      "section_id": 1,
+      "section_title": "Core Learning Content",
+      "topics": [
+        {
+          "topic_id": "8.1",
+          "title": "Citizenship Duties vs. Earned Commissions",
+          "summary": "Differentiating baseline household responsibilities from earned financial tasks.",
+          "key_principles": [
+            "Citizenship duties are unpaid expectations required for living in a shared home.",
+            "Commissions are optional, value-add tasks that compensate effort and labor."
+          ]
+        },
+        {
+          "topic_id": "8.2",
+          "title": "Financial Restitution & Money Management",
+          "summary": "Using financial repair for property damage and instilling the 3-bucket money allocation model.",
+          "buckets": [
+            "Save (40%): Long-term future goals",
+            "Spend (50%): Immediate discretionary use",
+            "Give (10%): Charitable empathy building"
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section_title": "Lesson Activities",
+      "activities": [
+        {
+          "activity_id": "ACT-801",
+          "title": "Citizen vs. Commission Audit",
+          "type": "Worksheet",
+          "instructions": "Categorize household chores into unpaid expectations versus paid commission jobs."
+        }
+      ]
+    },
+    {
+      "section_id": 3,
+      "section_title": "Implementation Tasks",
+      "tasks": [
+        {
+          "task_id": "TSK-801",
+          "title": "Household Bank & Restitution System Setup",
+          "action": "Publish baseline expectations, extra commission opportunities, and financial debt repair labor rates."
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section_title": "Assessments & Quizzes",
+      "quiz": [
+        {
+          "id": "FQ1",
+          "question": "Why is it problematic to pay children an allowance for basic self-care tasks like making their bed or picking up their toys?",
+          "options": [
+            "A) It costs parents too much money.",
+            "B) It teaches children that basic household participation is optional if they decide they don't need the money.",
+            "C) Children do not understand monetary value until age 16.",
+            "D) It takes too long to track daily payouts."
+          ],
+          "correct_answer": "B"
+        },
+        {
+          "id": "FQ2",
+          "question": "What is the proper implementation of 'Financial Restitution' when a teenager accidentally breaks a household item during careless horseplay?",
+          "options": [
+            "A) Grounding them for a month without addressing the broken item.",
+            "B) Forgiving the incident completely and paying for the replacement yourself without discussion.",
+            "C) Calculating the replacement/repair cost and allowing the teenager to pay from savings or work off the cost through extra commission tasks.",
+            "D) Yelling at them until they feel remorseful."
+          ],
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

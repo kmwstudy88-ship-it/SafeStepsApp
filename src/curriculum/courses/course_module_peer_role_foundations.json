@@ -1,0 +1,61 @@
+{
+  "id": "course_module_peer_role_foundations",
+  "title": "Peer Mentor Role Foundations",
+  "description": "Auto-generated course for module module_peer_role_foundations",
+  "lessons": [
+    {
+      "id": "lesson_what_is_peer_support",
+      "title": "What Is Peer Support",
+      "sections": [
+        {
+          "id": "section_lesson_what_is_peer_support_01"
+        },
+        {
+          "id": "section_lesson_what_is_peer_support_02"
+        },
+        {
+          "id": "section_lesson_what_is_peer_support_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_using_lived_experience_safely",
+      "title": "Using Lived Experience Safely",
+      "sections": [
+        {
+          "id": "section_lesson_using_lived_experience_safely_01"
+        },
+        {
+          "id": "section_lesson_using_lived_experience_safely_02"
+        },
+        {
+          "id": "section_lesson_using_lived_experience_safely_03"
+        },
+        {
+          "id": "section_lesson_using_lived_experience_safely_04"
+        },
+        {
+          "id": "section_lesson_using_lived_experience_safely_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_scope_and_limitations",
+      "title": "Scope and Limitations",
+      "sections": [
+        {
+          "id": "section_lesson_scope_and_limitations_01"
+        },
+        {
+          "id": "section_lesson_scope_and_limitations_02"
+        },
+        {
+          "id": "section_lesson_scope_and_limitations_03"
+        },
+        {
+          "id": "section_lesson_scope_and_limitations_04"
+        }
+      ]
+    }
+  ]
+}

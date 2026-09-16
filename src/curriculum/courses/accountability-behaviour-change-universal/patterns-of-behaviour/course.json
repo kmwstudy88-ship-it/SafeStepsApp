@@ -1,0 +1,25 @@
+{
+  "id": "patterns-of-behaviour",
+  "title": "Understanding Patterns of Harmful Behaviour",
+  "description": "This course helps participants identify patterns of behaviour that create harm, conflict, or fear in relationships. It supports insight, accountability, and recognition of how behaviour affects others, including children.",
+  "learningOutcomes": [
+    "Identify patterns of behaviour that create harm or instability.",
+    "Understand how behaviour impacts partners, family members, and children.",
+    "Recognise early warning signs of escalation.",
+    "Develop insight into personal responsibility and change."
+  ],
+  "modules": [
+    {
+      "title": "Recognising Behaviour Patterns",
+      "content": "Explores cycles, triggers, and repeated behaviours."
+    },
+    {
+      "title": "Impact on Others",
+      "content": "Shows how behaviour affects emotional safety and wellbeing."
+    },
+    {
+      "title": "Building Insight and Responsibility",
+      "content": "Provides tools for reflection and accountability."
+    }
+  ]
+}

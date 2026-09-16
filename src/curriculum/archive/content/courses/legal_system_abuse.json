@@ -1,0 +1,40 @@
+{
+  "id": "course_legal_system_abuse",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Legal System Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_legal_abuse",
+      "title": "Understanding Legal System Abuse",
+      "lessons": [
+        "what_is_legal_system_abuse",
+        "how_the_legal_system_can_be_misused",
+        "patterns_of_legal_harassment"
+      ]
+    },
+    {
+      "id": "module_common_tactics",
+      "title": "Common Tactics Used in Legal Abuse",
+      "lessons": [
+        "vexatious_applications",
+        "dragging_out_proceedings",
+        "using_court_orders_as_control"
+      ]
+    },
+    {
+      "id": "module_protective_strategies",
+      "title": "Protective Strategies",
+      "lessons": [
+        "documenting_behaviours",
+        "working_with_support_services",
+        "protecting_children_in_legal_processes"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of how abusers misuse legal systems",
+    "Ability to recognise legal harassment tactics",
+    "Increased confidence in protective strategies during legal processes"
+  ]
+}

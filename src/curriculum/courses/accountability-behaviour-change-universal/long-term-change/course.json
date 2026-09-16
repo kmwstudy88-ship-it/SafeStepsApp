@@ -1,0 +1,25 @@
+{
+  "id": "long-term-change",
+  "title": "Long-Term Change",
+  "description": "This course helps participants understand what sustainable behaviour change looks like and how to maintain it.",
+  "learningOutcomes": [
+    "Understand the components of long-term change.",
+    "Recognise barriers to maintaining change.",
+    "Learn strategies for sustainable behaviour shifts.",
+    "Develop habits that support long-term safety."
+  ],
+  "modules": [
+    {
+      "title": "Foundations of Change",
+      "content": "Explores motivation, commitment, and consistency."
+    },
+    {
+      "title": "Barriers to Change",
+      "content": "Identifies patterns that undermine progress."
+    },
+    {
+      "title": "Sustaining Change",
+      "content": "Provides tools for long-term behavioural stability."
+    }
+  ]
+}

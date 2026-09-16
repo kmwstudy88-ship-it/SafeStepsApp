@@ -1,0 +1,25 @@
+{
+  "title": "Triggers and Patterns",
+  "description": "Helps participants identify emotional, cognitive, and situational triggers that lead to harmful behaviour.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Recognise personal triggers.",
+    "Identify behaviour patterns that lead to harm.",
+    "Apply strategies to interrupt harmful patterns."
+  ],
+  "modules": [
+    "Understanding Triggers",
+    "Breaking Harmful Patterns"
+  ],
+  "metadata": {
+    "stream": "dfv-pwuv",
+    "category": "Behaviour Change",
+    "tags": [
+      "triggers",
+      "patterns",
+      "regulation"
+    ]
+  },
+  "caseworkerSummary": "Supports participants to identify triggers and interrupt harmful behaviour cycles."
+}

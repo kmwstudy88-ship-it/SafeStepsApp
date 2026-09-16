@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Emotions are natural, but how we respond to them affects others."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Dysregulation can lead to harmful behaviour, while regulation supports safety."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn grounding, breathing, and pause techniques."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify one emotional trigger you experience."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Regulation is a skill that improves with practice."
+                     }
+                 ]
+}

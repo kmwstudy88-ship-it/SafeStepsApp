@@ -1,0 +1,90 @@
+{
+  "program_id": "PARENT-ACC-106",
+  "program_title": "Digital Wellness & Screen Time Accountability",
+  "version": "1.0",
+  "metadata": {
+    "target_audience": "Parents of children and teenagers (Ages 8–18)",
+    "estimated_duration": "60–90 minutes",
+    "delivery_format": "Self-paced or Facilitated Add-On Module",
+    "core_objective": "Establish healthy, self-regulated digital boundaries without relying on constant policing or total bans.",
+    "key_deliverable": "Family Digital Wellness Agreement & Tech-Free Zone Map"
+  },
+  "modules": [
+    {
+      "section_id": 1,
+      "section_title": "Core Learning Content",
+      "topics": [
+        {
+          "topic_id": "6.1",
+          "title": "Neurobiology of Screens & Transitions",
+          "summary": "Understanding dopamine loops and the physiological resistance to sudden disengagement.",
+          "key_principles": [
+            "Screen disengagement causes acute dopamine drops.",
+            "Visual warnings and buffer windows reduce fight-or-flight reactions."
+          ]
+        },
+        {
+          "topic_id": "6.2",
+          "title": "Digital Mentor Framework",
+          "summary": "Shifting from stealth surveillance to collaborative boundaries and clear accountability.",
+          "anchors": [
+            "Centralized overnight charging stations.",
+            "Tech-free meal and family zones.",
+            "Privilege-based high-speed Wi-Fi access."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section_title": "Lesson Activities",
+      "activities": [
+        {
+          "activity_id": "ACT-601",
+          "title": "The Digital Boundary Audit",
+          "type": "Worksheet",
+          "instructions": "Map out high-conflict tech scenarios and assign clear, logical consequences."
+        }
+      ]
+    },
+    {
+      "section_id": 3,
+      "section_title": "Implementation Tasks",
+      "tasks": [
+        {
+          "task_id": "TSK-601",
+          "title": "Family Digital Wellness Agreement",
+          "action": "Co-author a binding device agreement establishing curfews, transition cues, and red-line protocols."
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section_title": "Assessments & Quizzes",
+      "quiz": [
+        {
+          "id": "DQ1",
+          "question": "Why does abrupt screen removal often lead to severe emotional outbursts?",
+          "options": [
+            "A) Children are naturally uncooperative.",
+            "B) Devices create high dopamine engagement; sudden disconnection triggers a rapid neurological crash and fight-or-flight response.",
+            "C) Children do not understand household rules.",
+            "D) Screens permanently alter personality traits."
+          ],
+          "correct_answer": "B"
+        },
+        {
+          "id": "DQ2",
+          "question": "What is the most effective approach for managing nighttime device usage?",
+          "options": [
+            "A) Trusting youth to keep phones under their pillows on silent.",
+            "B) Centralizing device charging in a common household area outside of bedrooms overnight.",
+            "C) Cutting off household electricity at 10:00 PM.",
+            "D) Banning all digital devices until high school graduation."
+          ],
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

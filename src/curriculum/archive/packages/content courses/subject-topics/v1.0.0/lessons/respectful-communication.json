@@ -1,0 +1,27 @@
+{
+  "id": "module-respectful-communication",
+  "title": "Respectful Communication",
+  "moduleId": "respectful-communication",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents build respectful, calm, and effective communication habits that strengthen relationships and reduce conflict.",
+  "microLesson": "Respectful communication creates safety, trust, and cooperation. Children respond best when adults speak calmly, use clear language, and show empathy. Respectful communication is not permissive—it simply removes shame, blame, and criticism so children can stay regulated enough to listen and learn. Key skills include active listening, using 'I' statements, validating feelings, and giving instructions in simple, positive terms. When parents model respectful communication, children learn how to express themselves safely, manage conflict, and build healthy relationships.",
+  "activity": "Choose one communication moment today (giving an instruction, responding to frustration, or setting a limit). Use respectful communication strategies—calm tone, clear words, validation. Write a reflection on how the interaction changed.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "communication",
+    "relationship-building",
+    "emotional-regulation"
+  ],
+  "resources": [
+    {
+      "title": "Respectful Communication Skills Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

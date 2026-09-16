@@ -1,0 +1,25 @@
+{
+  "id": "emotional-escalation",
+  "title": "Emotional Escalation Awareness (Father-Focused)",
+  "description": "This course supports fathers to recognise escalation patterns that create fear or instability for children and partners.",
+  "learningOutcomes": [
+    "Identify escalation patterns that impact children.",
+    "Recognise how emotional intensity affects family safety.",
+    "Understand escalation triggers in parenting contexts.",
+    "Develop safe de-escalation strategies."
+  ],
+  "modules": [
+    {
+      "title": "Escalation and Fathering",
+      "content": "Explores how escalation affects children’s emotional security."
+    },
+    {
+      "title": "Impact on Family Safety",
+      "content": "Shows how escalation creates fear and unpredictability."
+    },
+    {
+      "title": "Safe De-escalation",
+      "content": "Provides tools for grounding, pausing, and safe emotional regulation."
+    }
+  ]
+}

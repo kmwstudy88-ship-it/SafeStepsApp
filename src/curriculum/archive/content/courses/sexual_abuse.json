@@ -1,0 +1,40 @@
+{
+  "id": "course_sexual_abuse",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Sexual Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_sexual_abuse",
+      "title": "Understanding Sexual Abuse",
+      "lessons": [
+        "what_is_sexual_abuse",
+        "consent_and_coercion",
+        "sexual_abuse_within_coercive_control"
+      ]
+    },
+    {
+      "id": "module_impacts_and_trauma",
+      "title": "Impacts and Trauma",
+      "lessons": [
+        "emotional_and_psychological_impacts",
+        "trauma_responses",
+        "effects_on_children_and_family"
+      ]
+    },
+    {
+      "id": "module_support_and_safety",
+      "title": "Support and Safety",
+      "lessons": [
+        "seeking_support_and_services",
+        "creating_safety_after_sexual_abuse",
+        "supporting_survivors_with_respect_and_care"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of sexual abuse within DFV",
+    "Ability to recognise coercion and non-consensual behaviours",
+    "Increased confidence in supporting safety and recovery"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "topic": "active-listening-skills",
+  "version": "1.1.0",
+  "stream": "dfv-peer-mentor",
+  "description": "Peer Mentor training module on active-listening-skills.",
+  "type": "course",
+  "title": " $args[0].Value.ToUpper() ctive  $args[0].Value.ToUpper() istening  $args[0].Value.ToUpper() kills"
+}

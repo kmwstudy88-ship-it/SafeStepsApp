@@ -1,0 +1,40 @@
+{
+  "id": "course_reproductive_coercion",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Reproductive Coercion",
+  "modules": [
+    {
+      "id": "module_understanding_reproductive_coercion",
+      "title": "Understanding Reproductive Coercion",
+      "lessons": [
+        "what_is_reproductive_coercion",
+        "pregnancy_pressure_and_control",
+        "interference_with_contraception"
+      ]
+    },
+    {
+      "id": "module_impacts_and_risks",
+      "title": "Impacts and Risks",
+      "lessons": [
+        "health_and_emotional_impacts",
+        "risks_to_children_and_family",
+        "link_to_coercive_control"
+      ]
+    },
+    {
+      "id": "module_support_and_choices",
+      "title": "Support and Choices",
+      "lessons": [
+        "accessing_healthcare_and_support",
+        "safety_planning_for_reproductive_control",
+        "restoring_autonomy_and_choice"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of reproductive coercion",
+    "Ability to recognise pregnancy-related control tactics",
+    "Increased confidence in supporting autonomy and safety"
+  ]
+}

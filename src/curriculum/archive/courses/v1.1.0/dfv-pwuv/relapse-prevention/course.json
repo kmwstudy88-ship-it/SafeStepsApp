@@ -1,0 +1,25 @@
+{
+  "title": "Relapse Prevention",
+  "description": "Helps participants identify risks for returning to harmful behaviour and develop strategies to prevent relapse.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Recognise relapse warning signs.",
+    "Understand factors that increase risk.",
+    "Apply strategies to prevent relapse and maintain change."
+  ],
+  "modules": [
+    "Understanding Relapse",
+    "Preventing Harmful Behaviour"
+  ],
+  "metadata": {
+    "stream": "dfv-pwuv",
+    "category": "Behaviour Change",
+    "tags": [
+      "relapse",
+      "prevention",
+      "change"
+    ]
+  },
+  "caseworkerSummary": "Supports participants to prevent relapse and maintain longâ€‘term behaviour change."
+}

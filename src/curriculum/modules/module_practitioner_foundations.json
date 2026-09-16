@@ -1,0 +1,21 @@
+{
+  "id": "module_practitioner_foundations",
+  "title": "Practitioner Foundations",
+  "description": "This module provides the essential foundations for domestic and family violence practitioners. It covers core frameworks, ethical practice, and professional responsibilities required for safe and effective DFV work.",
+  "type": "module",
+  "level": "practitioner",
+  "tags": [
+    "dfv",
+    "practitioner training",
+    "foundations",
+    "ethical practice",
+    "professional responsibilities"
+  ],
+  "outcomes": [
+    "Understand the core frameworks that guide DFV practice",
+    "Apply ethical and professional standards in DFV work",
+    "Recognise the responsibilities and boundaries of the practitioner role"
+  ],
+  "lessons": [],
+  "content": []
+}

@@ -1,0 +1,67 @@
+{
+  "id": "course_module_leading_safe_practice",
+  "title": "Leading Safe Practice",
+  "description": "Auto-generated course for module module_leading_safe_practice",
+  "lessons": [
+    {
+      "id": "lesson_leadership_responsibilities",
+      "title": "Leadership Responsibilities",
+      "sections": [
+        {
+          "id": "section_lesson_leadership_responsibilities_01"
+        },
+        {
+          "id": "section_lesson_leadership_responsibilities_02"
+        },
+        {
+          "id": "section_lesson_leadership_responsibilities_03"
+        },
+        {
+          "id": "section_lesson_leadership_responsibilities_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_modelling_safe_practice",
+      "title": "Modelling Safe Practice",
+      "sections": [
+        {
+          "id": "section_lesson_modelling_safe_practice_01"
+        },
+        {
+          "id": "section_lesson_modelling_safe_practice_02"
+        },
+        {
+          "id": "section_lesson_modelling_safe_practice_03"
+        },
+        {
+          "id": "section_lesson_modelling_safe_practice_04"
+        },
+        {
+          "id": "section_lesson_modelling_safe_practice_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_building_safe_cultures",
+      "title": "Building Safe Cultures",
+      "sections": [
+        {
+          "id": "section_lesson_building_safe_cultures_01"
+        },
+        {
+          "id": "section_lesson_building_safe_cultures_02"
+        },
+        {
+          "id": "section_lesson_building_safe_cultures_03"
+        },
+        {
+          "id": "section_lesson_building_safe_cultures_04"
+        },
+        {
+          "id": "section_lesson_building_safe_cultures_05"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "module_bystander_action_and_community_safety",
+  "title": "Bystander Action and Community Safety",
+  "description": "This module equips community members with the skills to take safe, ethical, and effective bystander action when they witness or suspect DFV. It focuses on recognising warning signs, choosing safe intervention options, and promoting community responsibility.",
+  "type": "module",
+  "level": "community",
+  "tags": [
+    "dfv",
+    "bystander action",
+    "community safety",
+    "prevention",
+    "public intervention"
+  ],
+  "outcomes": [
+    "Recognise signs that someone may be experiencing or using DFV",
+    "Choose safe and appropriate bystander actions",
+    "Promote community responsibility for preventing DFV"
+  ],
+  "lessons": [],
+  "content": []
+}

@@ -1,0 +1,40 @@
+{
+  "id": "course_emotional_abuse",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Emotional Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_emotional_abuse",
+      "title": "Understanding Emotional Abuse",
+      "lessons": [
+        "what_is_emotional_abuse",
+        "how_emotional_abuse_differs_from_conflict",
+        "impacts_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_common_tactics",
+      "title": "Common Emotional Abuse Tactics",
+      "lessons": [
+        "gaslighting_and_confusion",
+        "blame_shift_and_minimisation",
+        "verbal_attacks_and_character_assassination"
+      ]
+    },
+    {
+      "id": "module_healing_and_recovery",
+      "title": "Healing and Recovery",
+      "lessons": [
+        "rebuilding_self_worth",
+        "creating_emotional_safety",
+        "support_networks_and_services"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of emotional abuse and its impacts",
+    "Ability to recognise emotional abuse tactics",
+    "Increased confidence in supporting recovery and emotional safety"
+  ]
+}

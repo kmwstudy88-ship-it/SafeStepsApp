@@ -1,0 +1,61 @@
+{
+  "id": "course_module_legal_systems_and_dfv",
+  "title": "Legal Systems and DFV",
+  "description": "Auto-generated course for module module_legal_systems_and_dfv",
+  "lessons": [
+    {
+      "id": "lesson_legal_responses_to_dfv",
+      "title": "Legal Responses to DFV",
+      "sections": [
+        {
+          "id": "section_lesson_legal_responses_to_dfv_01"
+        },
+        {
+          "id": "section_lesson_legal_responses_to_dfv_02"
+        },
+        {
+          "id": "section_lesson_legal_responses_to_dfv_03"
+        },
+        {
+          "id": "section_lesson_legal_responses_to_dfv_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_protection_orders_and_courts",
+      "title": "Protection Orders and Courts",
+      "sections": [
+        {
+          "id": "section_lesson_protection_orders_and_courts_01"
+        },
+        {
+          "id": "section_lesson_protection_orders_and_courts_02"
+        },
+        {
+          "id": "section_lesson_protection_orders_and_courts_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_justice_system_intersections",
+      "title": "Justice System Intersections",
+      "sections": [
+        {
+          "id": "section_lesson_justice_system_intersections_01"
+        },
+        {
+          "id": "section_lesson_justice_system_intersections_02"
+        },
+        {
+          "id": "section_lesson_justice_system_intersections_03"
+        },
+        {
+          "id": "section_lesson_justice_system_intersections_04"
+        },
+        {
+          "id": "section_lesson_justice_system_intersections_05"
+        }
+      ]
+    }
+  ]
+}

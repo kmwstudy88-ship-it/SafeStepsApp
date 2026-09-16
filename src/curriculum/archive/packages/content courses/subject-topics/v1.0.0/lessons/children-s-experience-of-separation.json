@@ -1,0 +1,27 @@
+{
+  "id": "module-childrens-experience-of-separation",
+  "title": "Children’s Experience of Separation",
+  "moduleId": "childrens-experience-of-separation",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how separation affects children emotionally and behaviourally, and how to support them through change.",
+  "microLesson": "Separation can be confusing and distressing for children. They may feel responsible, worried, or torn between parents. Behaviour changes—such as regression, anger, clinginess, or withdrawal—are common responses to stress. Children cope best when parents provide reassurance, stability, and consistent routines. Avoiding conflict in front of children and keeping communication child-focused protects their emotional wellbeing. When parents validate feelings and maintain predictable contact, children feel safer and more secure during transitions.",
+  "activity": "Talk with your child about how recent family changes have felt for them. Write a reflection on what they expressed and how you supported their feelings.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "separation",
+    "emotional-support",
+    "child-wellbeing"
+  ],
+  "resources": [
+    {
+      "title": "Supporting Children Through Separation",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

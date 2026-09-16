@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DFV Curriculum Tree Schema",
+  "type": "object",
+  "required": [
+    "dfv"
+  ],
+  "properties": {
+    "dfv": {
+      "type": "object",
+      "required": [
+        "streams"
+      ],
+      "properties": {
+        "streams": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "title",
+              "topics"
+            ],
+            "properties": {
+              "name": "@{type=string}",
+              "title": "@{type=string}",
+              "topics": "@{type=array; items=}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

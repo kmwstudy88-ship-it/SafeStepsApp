@@ -1,0 +1,58 @@
+{
+  "id": "course_module_community_crisis_response_and_safety_planning",
+  "title": "Community Crisis Response and Safety Planning",
+  "description": "Auto-generated course for module module_community_crisis_response_and_safety_planning",
+  "lessons": [
+    {
+      "id": "lesson_recognising_crisis_situations",
+      "title": "Recognising Crisis Situations",
+      "sections": [
+        {
+          "id": "section_lesson_recognising_crisis_situations_01"
+        },
+        {
+          "id": "section_lesson_recognising_crisis_situations_02"
+        },
+        {
+          "id": "section_lesson_recognising_crisis_situations_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_supporting_safety_planning",
+      "title": "Supporting Safety Planning",
+      "sections": [
+        {
+          "id": "section_lesson_supporting_safety_planning_01"
+        },
+        {
+          "id": "section_lesson_supporting_safety_planning_02"
+        },
+        {
+          "id": "section_lesson_supporting_safety_planning_03"
+        },
+        {
+          "id": "section_lesson_supporting_safety_planning_04"
+        },
+        {
+          "id": "section_lesson_supporting_safety_planning_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_escalation_and_emergency_response",
+      "title": "Escalation and Emergency Response",
+      "sections": [
+        {
+          "id": "section_lesson_escalation_and_emergency_response_01"
+        },
+        {
+          "id": "section_lesson_escalation_and_emergency_response_02"
+        },
+        {
+          "id": "section_lesson_escalation_and_emergency_response_03"
+        }
+      ]
+    }
+  ]
+}

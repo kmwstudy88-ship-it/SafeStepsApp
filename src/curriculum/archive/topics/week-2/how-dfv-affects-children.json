@@ -1,0 +1,15 @@
+{
+  "id": "DFV-W2-D1",
+  "week": 2,
+  "day": 1,
+  "title": "How DFV Affects Children",
+  "duration_minutes": 12,
+  "learning_goal": "Understand emotional, behavioural, and developmental impacts of DFV exposure.",
+  "content": {
+    "micro_lesson": "Children experience DFV even when they do not directly witness incidents. Exposure includes hearing conflict, sensing tension, seeing injuries, or living in an unpredictable environment. Impacts include anxiety, hypervigilance, sleep issues, regression, and school difficulties.",
+    "activity": "Identify three behaviours from a case vignette and link them to DFV exposure.",
+    "evidence_required": "150-word written response.",
+    "caseworker_flags": "Child showing fear of a specific parent, regression, or nightmares.",
+    "escalation_trigger": "Any disclosure of direct harm triggers mandatory child protection pathway."
+  }
+}

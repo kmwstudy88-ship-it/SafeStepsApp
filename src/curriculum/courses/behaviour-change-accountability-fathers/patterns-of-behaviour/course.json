@@ -1,0 +1,25 @@
+{
+  "id": "patterns-of-behaviour",
+  "title": "Understanding Patterns of Harmful Behaviour (Father-Focused)",
+  "description": "This course supports fathers to recognise behaviour patterns that create fear, instability, or emotional harm within the family environment. It emphasises accountability and the impact on children.",
+  "learningOutcomes": [
+    "Identify harmful behaviour cycles that affect partners and children.",
+    "Understand how children experience and internalise behaviour patterns.",
+    "Recognise escalation points and early warning signs.",
+    "Develop responsibility for creating a safe home environment."
+  ],
+  "modules": [
+    {
+      "title": "Fathering and Behaviour Patterns",
+      "content": "Explores how behaviour affects children’s emotional development."
+    },
+    {
+      "title": "Impact on Partner and Children",
+      "content": "Shows how behaviour shapes family safety and wellbeing."
+    },
+    {
+      "title": "Accountability and Change",
+      "content": "Provides tools for reflection, responsibility, and safe behaviour change."
+    }
+  ]
+}

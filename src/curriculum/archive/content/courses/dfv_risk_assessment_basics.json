@@ -1,0 +1,40 @@
+{
+  "id": "course_dfv_risk_assessment_basics",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "DFV Risk Assessment Basics",
+  "modules": [
+    {
+      "id": "module_understanding_risk",
+      "title": "Understanding DFV Risk",
+      "lessons": [
+        "what_is_dfv_risk",
+        "key_risk_factors",
+        "lethality_indicators"
+      ]
+    },
+    {
+      "id": "module_assessment_process",
+      "title": "Risk Assessment Process",
+      "lessons": [
+        "gathering_information_safely",
+        "using_risk_frameworks",
+        "recognising_escalation_patterns"
+      ]
+    },
+    {
+      "id": "module_safety_planning",
+      "title": "Safety Planning Based on Risk",
+      "lessons": [
+        "matching_safety_plans_to_risk_levels",
+        "working_with_services",
+        "supporting_children_in_high_risk_situations"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of DFV risk assessment",
+    "Ability to recognise key risk and lethality indicators",
+    "Increased confidence in linking risk to safety planning"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "course_module_strategic_partnerships_and_sector_leadership",
+  "title": "Strategic Partnerships and Sector Leadership",
+  "description": "Auto-generated course for module module_strategic_partnerships_and_sector_leadership",
+  "lessons": [
+    {
+      "id": "lesson_building_strategic_partnerships",
+      "title": "Building Strategic Partnerships",
+      "sections": [
+        {
+          "id": "section_lesson_building_strategic_partnerships_01"
+        },
+        {
+          "id": "section_lesson_building_strategic_partnerships_02"
+        },
+        {
+          "id": "section_lesson_building_strategic_partnerships_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_sector_leadership",
+      "title": "Sector Leadership",
+      "sections": [
+        {
+          "id": "section_lesson_sector_leadership_01"
+        },
+        {
+          "id": "section_lesson_sector_leadership_02"
+        },
+        {
+          "id": "section_lesson_sector_leadership_03"
+        },
+        {
+          "id": "section_lesson_sector_leadership_04"
+        },
+        {
+          "id": "section_lesson_sector_leadership_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_policy_and_system_influence",
+      "title": "Policy and System Influence",
+      "sections": [
+        {
+          "id": "section_lesson_policy_and_system_influence_01"
+        },
+        {
+          "id": "section_lesson_policy_and_system_influence_02"
+        },
+        {
+          "id": "section_lesson_policy_and_system_influence_03"
+        }
+      ]
+    }
+  ]
+}

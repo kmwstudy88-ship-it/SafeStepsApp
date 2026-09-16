@@ -1,0 +1,58 @@
+{
+  "updated_at": "2026-06-07T12:28:57.3673026+10:00",
+  "rules": [
+    {
+      "enabled": true,
+      "label": "Risk score increased",
+      "id": "risk_increase"
+    },
+    {
+      "enabled": true,
+      "label": "Task overdue",
+      "id": "missed_task"
+    },
+    {
+      "enabled": true,
+      "label": "Appointment missed",
+      "id": "missed_appointment"
+    },
+    {
+      "enabled": true,
+      "label": "New evidence added",
+      "id": "new_evidence"
+    },
+    {
+      "enabled": true,
+      "label": "Assessment score dropped",
+      "id": "assessment_drop"
+    },
+    {
+      "enabled": true,
+      "label": "Contact session concern",
+      "id": "contact_concern"
+    },
+    {
+      "enabled": true,
+      "label": "Safety plan breach",
+      "id": "safety_breach"
+    },
+    {
+      "enabled": true,
+      "label": "Substance use relapse indicator",
+      "id": "relapse_indicator"
+    },
+    {
+      "enabled": true,
+      "label": "Mental health decline",
+      "id": "mental_health_decline"
+    },
+    {
+      "enabled": true,
+      "label": "Housing instability detected",
+      "id": "housing_instability"
+    }
+  ],
+  "alerts": [],
+  "id": "alerts_engine",
+  "created_at": "2026-06-07T12:28:57.3672372+10:00"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "module-communication-frameworks",
+  "title": "Communication Frameworks",
+  "moduleId": "communication-frameworks",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents structured communication models that improve clarity, reduce conflict, and support child-focused interactions.",
+  "microLesson": "Communication frameworks give parents predictable, calm ways to express needs, set boundaries, and support children’s emotional development. Models such as the 'Feel–Say–Do' approach, 'I statements', and 'Name–Acknowledge–Guide' help reduce defensiveness and increase cooperation. When parents use structured communication, children feel safer, understand expectations more clearly, and are more willing to engage. Frameworks also help adults stay regulated during stressful moments, preventing escalation and modelling healthy communication.",
+  "activity": "Choose one communication framework (e.g., I statements). Use it during a conversation with your child. Write a reflection on how the interaction changed when you used the framework.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "communication",
+    "emotional-regulation",
+    "conflict-reduction"
+  ],
+  "resources": [
+    {
+      "title": "Communication Frameworks Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

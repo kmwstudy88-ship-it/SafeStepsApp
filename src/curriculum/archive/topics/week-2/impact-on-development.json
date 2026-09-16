@@ -1,0 +1,15 @@
+{
+  "id": "DFV-W2-D4",
+  "week": 2,
+  "day": 4,
+  "title": "Impact on Development",
+  "duration_minutes": 15,
+  "learning_goal": "Understand how DFV affects brain development, learning, and emotional regulation.",
+  "content": {
+    "micro_lesson": "Chronic stress disrupts brain development, affecting memory, emotional regulation, and executive functioning. Children may struggle with concentration, impulse control, and learning.",
+    "activity": "Complete a 'stress ladder' mapping exercise.",
+    "evidence_required": "Uploaded stress ladder.",
+    "caseworker_flags": "Developmental delays or speech regression.",
+    "escalation_trigger": "Child under 5 showing regression plus DFV exposure triggers mandatory referral."
+  }
+}

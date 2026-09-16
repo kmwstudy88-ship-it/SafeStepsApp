@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Safety planning helps children know what to do during unsafe moments."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Plans must be simple, ageâ€‘appropriate, and focused on getting to safetyâ€”not intervening."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn how to create safe rooms, exit routes, and code words."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Draft a simple safety plan for your child based on their age."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Safety planning empowers children without placing responsibility on them."
+                     }
+                 ]
+}

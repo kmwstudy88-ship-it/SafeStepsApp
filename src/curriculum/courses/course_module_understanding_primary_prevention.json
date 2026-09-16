@@ -1,0 +1,61 @@
+{
+  "id": "course_module_understanding_primary_prevention",
+  "title": "Understanding Primary Prevention",
+  "description": "Auto-generated course for module module_understanding_primary_prevention",
+  "lessons": [
+    {
+      "id": "lesson_what_is_primary_prevention",
+      "title": "What Is Primary Prevention?",
+      "sections": [
+        {
+          "id": "section_lesson_what_is_primary_prevention_01"
+        },
+        {
+          "id": "section_lesson_what_is_primary_prevention_02"
+        },
+        {
+          "id": "section_lesson_what_is_primary_prevention_03"
+        },
+        {
+          "id": "section_lesson_what_is_primary_prevention_04"
+        },
+        {
+          "id": "section_lesson_what_is_primary_prevention_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_drivers_of_violence",
+      "title": "Drivers of Violence",
+      "sections": [
+        {
+          "id": "section_lesson_drivers_of_violence_01"
+        },
+        {
+          "id": "section_lesson_drivers_of_violence_02"
+        },
+        {
+          "id": "section_lesson_drivers_of_violence_03"
+        },
+        {
+          "id": "section_lesson_drivers_of_violence_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_prevention_strategies",
+      "title": "Prevention Strategies",
+      "sections": [
+        {
+          "id": "section_lesson_prevention_strategies_01"
+        },
+        {
+          "id": "section_lesson_prevention_strategies_02"
+        },
+        {
+          "id": "section_lesson_prevention_strategies_03"
+        }
+      ]
+    }
+  ]
+}

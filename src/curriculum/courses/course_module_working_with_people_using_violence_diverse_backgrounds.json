@@ -1,0 +1,67 @@
+{
+  "id": "course_module_working_with_people_using_violence_diverse_backgrounds",
+  "title": "Working with People Using Violence from Diverse Backgrounds",
+  "description": "Auto-generated course for module module_working_with_people_using_violence_diverse_backgrounds",
+  "lessons": [
+    {
+      "id": "lesson_cultural_contexts_of_violence",
+      "title": "Cultural Contexts of Violence",
+      "sections": [
+        {
+          "id": "section_lesson_cultural_contexts_of_violence_01"
+        },
+        {
+          "id": "section_lesson_cultural_contexts_of_violence_02"
+        },
+        {
+          "id": "section_lesson_cultural_contexts_of_violence_03"
+        },
+        {
+          "id": "section_lesson_cultural_contexts_of_violence_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_safe_engagement",
+      "title": "Safe Engagement",
+      "sections": [
+        {
+          "id": "section_lesson_safe_engagement_01"
+        },
+        {
+          "id": "section_lesson_safe_engagement_02"
+        },
+        {
+          "id": "section_lesson_safe_engagement_03"
+        },
+        {
+          "id": "section_lesson_safe_engagement_04"
+        },
+        {
+          "id": "section_lesson_safe_engagement_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_culturally_informed_accountability",
+      "title": "Culturally Informed Accountability",
+      "sections": [
+        {
+          "id": "section_lesson_culturally_informed_accountability_01"
+        },
+        {
+          "id": "section_lesson_culturally_informed_accountability_02"
+        },
+        {
+          "id": "section_lesson_culturally_informed_accountability_03"
+        },
+        {
+          "id": "section_lesson_culturally_informed_accountability_04"
+        },
+        {
+          "id": "section_lesson_culturally_informed_accountability_05"
+        }
+      ]
+    }
+  ]
+}

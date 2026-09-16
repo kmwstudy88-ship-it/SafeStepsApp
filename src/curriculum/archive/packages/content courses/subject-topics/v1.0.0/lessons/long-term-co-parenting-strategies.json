@@ -1,0 +1,28 @@
+{
+  "id": "module-long-term-co-parenting-strategies",
+  "title": "Long‑Term Co‑Parenting Strategies",
+  "moduleId": "long-term-co-parenting-strategies",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents build sustainable, child‑focused co‑parenting practices that support stability, reduce conflict, and promote long‑term wellbeing.",
+  "microLesson": "Long‑term co‑parenting requires consistency, communication, and a shared commitment to the child’s needs. Even when parents disagree or have a strained relationship, they can still create a stable environment by keeping routines predictable, communicating respectfully, and focusing on solutions rather than past conflict. Over time, small acts of cooperation build trust and reduce tension. Long‑term strategies include using neutral communication tools, maintaining similar expectations across homes, planning ahead for transitions, and reviewing agreements as children grow. The goal is not to be perfect, but to stay child‑focused and reliable.",
+  "activity": "Identify one long‑term co‑parenting strategy you want to strengthen (e.g., consistent routines, communication method, shared expectations, transition planning). Write a reflection describing how you will implement it and how it supports your child’s stability.",
+  "evidenceTypes": [
+    "reflection",
+    "document"
+  ],
+  "caseworkerFlags": [
+    "co-parenting",
+    "conflict-reduction",
+    "child-stability"
+  ],
+  "resources": [
+    {
+      "title": "Long‑Term Co‑Parenting Planning Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

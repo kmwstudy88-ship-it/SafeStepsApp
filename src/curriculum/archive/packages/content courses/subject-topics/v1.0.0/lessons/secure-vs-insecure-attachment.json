@@ -1,0 +1,25 @@
+{
+  "id": "module-secure-vs-insecure-attachment",
+  "title": "Secure vs Insecure Attachment",
+  "moduleId": "secure-vs-insecure-attachment",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand the difference between secure and insecure attachment patterns.",
+  "microLesson": "Secure attachment forms when parents are warm, predictable, and responsive. Insecure attachment may develop when care is inconsistent, frightening, or emotionally unavailable. Understanding attachment helps parents make changes that strengthen connection.",
+  "activity": "Reflect on one way you can increase predictability or emotional presence with your child.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "attachment"
+  ],
+  "resources": [
+    {
+      "title": "Attachment Patterns Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "course_module_understanding_dfv_legal_responses",
+  "title": "Understanding DFV Legal Responses",
+  "description": "Auto-generated course for module module_understanding_dfv_legal_responses",
+  "lessons": [
+    {
+      "id": "lesson_legal_definitions_and_frameworks",
+      "title": "Legal Definitions and Frameworks",
+      "sections": [
+        {
+          "id": "section_lesson_legal_definitions_and_frameworks_01"
+        },
+        {
+          "id": "section_lesson_legal_definitions_and_frameworks_02"
+        },
+        {
+          "id": "section_lesson_legal_definitions_and_frameworks_03"
+        },
+        {
+          "id": "section_lesson_legal_definitions_and_frameworks_04"
+        },
+        {
+          "id": "section_lesson_legal_definitions_and_frameworks_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_civil_and_criminal_pathways",
+      "title": "Civil and Criminal Pathways",
+      "sections": [
+        {
+          "id": "section_lesson_civil_and_criminal_pathways_01"
+        },
+        {
+          "id": "section_lesson_civil_and_criminal_pathways_02"
+        },
+        {
+          "id": "section_lesson_civil_and_criminal_pathways_03"
+        },
+        {
+          "id": "section_lesson_civil_and_criminal_pathways_04"
+        },
+        {
+          "id": "section_lesson_civil_and_criminal_pathways_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_role_of_justice_agencies",
+      "title": "Role of Justice Agencies",
+      "sections": [
+        {
+          "id": "section_lesson_role_of_justice_agencies_01"
+        },
+        {
+          "id": "section_lesson_role_of_justice_agencies_02"
+        },
+        {
+          "id": "section_lesson_role_of_justice_agencies_03"
+        },
+        {
+          "id": "section_lesson_role_of_justice_agencies_04"
+        },
+        {
+          "id": "section_lesson_role_of_justice_agencies_05"
+        }
+      ]
+    }
+  ]
+}

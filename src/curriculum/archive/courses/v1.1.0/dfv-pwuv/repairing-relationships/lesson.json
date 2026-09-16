@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Repair requires acknowledging harm and taking responsibility."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Repair is not about fixing the other person â€” it is about changing your behaviour."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn meaningful apology, restitution, and behavioural repair."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Reflect on a time you attempted repair. What was missing?"
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Repair is shown through consistent respectful behaviour."
+                     }
+                 ]
+}

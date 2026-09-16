@@ -1,0 +1,52 @@
+{
+  "id": "course_module_digital_safety_and_online_communities",
+  "title": "Digital Safety and Online Communities",
+  "description": "Auto-generated course for module module_digital_safety_and_online_communities",
+  "lessons": [
+    {
+      "id": "lesson_recognising_digital_red_flags",
+      "title": "Recognising Digital Red Flags",
+      "sections": [
+        {
+          "id": "section_lesson_recognising_digital_red_flags_01"
+        },
+        {
+          "id": "section_lesson_recognising_digital_red_flags_02"
+        },
+        {
+          "id": "section_lesson_recognising_digital_red_flags_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_safer_online_practices",
+      "title": "Safer Online Practices",
+      "sections": [
+        {
+          "id": "section_lesson_safer_online_practices_01"
+        },
+        {
+          "id": "section_lesson_safer_online_practices_02"
+        },
+        {
+          "id": "section_lesson_safer_online_practices_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_responding_to_tech_facilitated_abuse",
+      "title": "Responding to Tech-Facilitated Abuse",
+      "sections": [
+        {
+          "id": "section_lesson_responding_to_tech_facilitated_abuse_01"
+        },
+        {
+          "id": "section_lesson_responding_to_tech_facilitated_abuse_02"
+        },
+        {
+          "id": "section_lesson_responding_to_tech_facilitated_abuse_03"
+        }
+      ]
+    }
+  ]
+}

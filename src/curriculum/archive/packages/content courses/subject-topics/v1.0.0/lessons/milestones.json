@@ -1,0 +1,25 @@
+{
+  "id": "module-milestones",
+  "title": "Milestones",
+  "moduleId": "milestones",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand developmental milestones and when to seek support.",
+  "microLesson": "Milestones track typical development in areas such as speech, movement, and social skills. Every child develops at their own pace, but large delays may signal the need for support. Parents who understand milestones can respond early and confidently.",
+  "activity": "Identify one milestone your child has recently reached. Reflect on how you supported their progress.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "developmental-awareness"
+  ],
+  "resources": [
+    {
+      "title": "Milestones Chart",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

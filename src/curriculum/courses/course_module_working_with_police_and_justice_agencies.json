@@ -1,0 +1,70 @@
+{
+  "id": "course_module_working_with_police_and_justice_agencies",
+  "title": "Working with Police and Justice Agencies",
+  "description": "Auto-generated course for module module_working_with_police_and_justice_agencies",
+  "lessons": [
+    {
+      "id": "lesson_police_roles_and_responses",
+      "title": "Police Roles and Responses",
+      "sections": [
+        {
+          "id": "section_lesson_police_roles_and_responses_01"
+        },
+        {
+          "id": "section_lesson_police_roles_and_responses_02"
+        },
+        {
+          "id": "section_lesson_police_roles_and_responses_03"
+        },
+        {
+          "id": "section_lesson_police_roles_and_responses_04"
+        },
+        {
+          "id": "section_lesson_police_roles_and_responses_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_working_with_justice_partners",
+      "title": "Working with Justice Partners",
+      "sections": [
+        {
+          "id": "section_lesson_working_with_justice_partners_01"
+        },
+        {
+          "id": "section_lesson_working_with_justice_partners_02"
+        },
+        {
+          "id": "section_lesson_working_with_justice_partners_03"
+        },
+        {
+          "id": "section_lesson_working_with_justice_partners_04"
+        },
+        {
+          "id": "section_lesson_working_with_justice_partners_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_evidence_and_risk_processes",
+      "title": "Evidence and Risk Processes",
+      "sections": [
+        {
+          "id": "section_lesson_evidence_and_risk_processes_01"
+        },
+        {
+          "id": "section_lesson_evidence_and_risk_processes_02"
+        },
+        {
+          "id": "section_lesson_evidence_and_risk_processes_03"
+        },
+        {
+          "id": "section_lesson_evidence_and_risk_processes_04"
+        },
+        {
+          "id": "section_lesson_evidence_and_risk_processes_05"
+        }
+      ]
+    }
+  ]
+}

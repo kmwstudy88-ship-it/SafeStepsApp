@@ -1,0 +1,25 @@
+{
+  "title": "Rebuilding Trust",
+  "description": "Explores how trust is damaged through DFV and what is required to rebuild it safely and respectfully.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand how DFV damages trust.",
+    "Recognise behaviours that rebuild or undermine trust.",
+    "Apply strategies to rebuild trust over time."
+  ],
+  "modules": [
+    "Understanding Trust",
+    "Rebuilding Through Action"
+  ],
+  "metadata": {
+    "stream": "dfv-pwuv",
+    "category": "Relationships",
+    "tags": [
+      "trust",
+      "repair",
+      "respect"
+    ]
+  },
+  "caseworkerSummary": "Supports participants to understand how trust is rebuilt through consistent, respectful behaviour."
+}

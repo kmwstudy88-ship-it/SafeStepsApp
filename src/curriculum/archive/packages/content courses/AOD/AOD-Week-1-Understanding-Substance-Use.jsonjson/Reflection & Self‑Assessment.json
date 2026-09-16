@@ -1,0 +1,18 @@
+{
+  "id": "AOD-W1-D3",
+  "title": "Your Substance Use Patterns",
+  "moduleId": "module-aod",
+  "week": 1,
+  "day": 3,
+  "durationMinutes": 10,
+  "learningGoal": "Reflect on your personal patterns, habits, and the role substance use plays in your life.",
+  "microLesson": "Everyone’s relationship with substances is different. Some use to cope with stress, others to numb emotions, and some out of routine. Today is about honestly exploring your own patterns without judgement.",
+  "activity": "Describe when you most commonly use substances: time of day, emotional state, and who you’re usually with.",
+  "evidenceTypes": [
+    "text"
+  ],
+  "caseworkerFlags": [
+    "aod-reflection"
+  ],
+  "version": "1.0.0"
+}

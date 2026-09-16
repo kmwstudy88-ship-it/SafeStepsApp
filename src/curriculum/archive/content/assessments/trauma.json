@@ -1,0 +1,82 @@
+[
+  {
+    "id": "trauma_childhood_trauma",
+    "category": "trauma",
+    "name": "Childhood Trauma Assessment",
+    "description": "Assesses the presence and impact of childhood trauma experiences.",
+    "tags": ["childhood", "trauma"],
+    "validatedTool": null
+  },
+  {
+    "id": "trauma_ace",
+    "category": "trauma",
+    "name": "Adverse Childhood Experiences (ACE) Assessment",
+    "description": "Measures exposure to adverse childhood experiences using the ACE framework.",
+    "tags": ["ace", "childhood", "trauma"],
+    "validatedTool": "ACE"
+  },
+  {
+    "id": "trauma_ptsd",
+    "category": "trauma",
+    "name": "PTSD Screening",
+    "description": "Screens for symptoms of post-traumatic stress disorder.",
+    "tags": ["ptsd", "trauma"],
+    "validatedTool": null
+  },
+  {
+    "id": "trauma_complex",
+    "category": "trauma",
+    "name": "Complex Trauma Assessment",
+    "description": "Assesses long-term, repeated, or relational trauma impacts.",
+    "tags": ["complex_trauma", "trauma"],
+    "validatedTool": null
+  },
+  {
+    "id": "trauma_intergenerational",
+    "category": "trauma",
+    "name": "Intergenerational Trauma Assessment",
+    "description": "Assesses trauma passed across generations within families.",
+    "tags": ["intergenerational", "trauma"],
+    "validatedTool": null
+  },
+  {
+    "id": "trauma_family",
+    "category": "trauma",
+    "name": "Family Trauma Assessment",
+    "description": "Evaluates trauma within the family system and its impacts.",
+    "tags": ["family", "trauma"],
+    "validatedTool": null
+  },
+  {
+    "id": "trauma_grief_loss",
+    "category": "trauma",
+    "name": "Grief and Loss Assessment",
+    "description": "Assesses grief, bereavement, and loss-related emotional impacts.",
+    "tags": ["grief", "loss"],
+    "validatedTool": null
+  },
+  {
+    "id": "trauma_vicarious",
+    "category": "trauma",
+    "name": "Vicarious Trauma Assessment",
+    "description": "Assesses trauma symptoms resulting from exposure to others' trauma.",
+    "tags": ["vicarious_trauma", "secondary_trauma"],
+    "validatedTool": null
+  },
+  {
+    "id": "trauma_emotional_regulation",
+    "category": "trauma",
+    "name": "Emotional Regulation Assessment",
+    "description": "Assesses ability to manage and regulate emotions under stress.",
+    "tags": ["emotional_regulation", "trauma"],
+    "validatedTool": null
+  },
+  {
+    "id": "trauma_trigger_identification",
+    "category": "trauma",
+    "name": "Trigger Identification Assessment",
+    "description": "Identifies trauma triggers and emotional activation patterns.",
+    "tags": ["triggers", "trauma"],
+    "validatedTool": null
+  }
+]

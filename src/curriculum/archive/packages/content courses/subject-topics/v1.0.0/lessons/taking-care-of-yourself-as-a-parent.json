@@ -1,0 +1,26 @@
+{
+  "id": "module-taking-care-of-yourself-as-a-parent",
+  "title": "Taking Care of Yourself as a Parent",
+  "moduleId": "taking-care-of-yourself-as-a-parent",
+  "durationMinutes": 60,
+  "learningGoal": "Support parents to recognise the importance of self‑care and emotional regulation in effective parenting.",
+  "microLesson": "Parenting is emotionally demanding, and children rely on adults to model calmness and stability. When parents are overwhelmed, stressed, or exhausted, it becomes harder to respond patiently or consistently. Self‑care is not selfish—it is essential. It includes rest, healthy routines, emotional support, and time to recharge. When parents take care of themselves, they are better able to meet their child’s needs, manage conflict, and create a positive home environment.",
+  "activity": "Identify one self‑care action you can take today (e.g., a walk, a break, a conversation with a friend). Do it, then write a short reflection on how it affected your mood and your interactions with your child.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "parent-wellbeing",
+    "emotional-regulation"
+  ],
+  "resources": [
+    {
+      "title": "Parent Self-Care Toolkit",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "updated_at": "2026-06-07T10:27:03.6616675+10:00",
+  "id": "aod_program",
+  "created_at": "2026-06-07T10:26:52.4513763+10:00",
+  "weeks": [
+    {
+      "lessons": [
+        {
+          "added_at": "2026-06-07T10:27:03.6616675+10:00",
+          "completed_at": null,
+          "lesson_id": "lesson_01",
+          "started_at": null
+        }
+      ],
+      "started_at": null,
+      "week_number": 1,
+      "completed_at": null,
+      "created_at": "2026-06-07T10:26:59.343694+10:00",
+      "title": "Foundations",
+      "updated_at": "2026-06-07T10:26:59.343694+10:00"
+    }
+  ],
+  "title": "AOD Parenting Capacity Program",
+  "started_at": null,
+  "completed_at": null,
+  "synced_at": null
+}

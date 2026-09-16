@@ -1,0 +1,18 @@
+{
+  "id": "AOD-W1-D5",
+  "title": "Staying Safe",
+  "moduleId": "module-aod",
+  "week": 1,
+  "day": 5,
+  "durationMinutes": 10,
+  "learningGoal": "Understand harm minimisation and create a basic personal safety plan.",
+  "microLesson": "Harm minimisation is about staying as safe as possible, even if you’re not ready to stop using. This includes using less, using slower, avoiding mixing substances, and having support available.",
+  "activity": "Write three harm‑minimisation strategies you can use immediately.",
+  "evidenceTypes": [
+    "text"
+  ],
+  "caseworkerFlags": [
+    "aod-safety"
+  ],
+  "version": "1.0.0"
+}

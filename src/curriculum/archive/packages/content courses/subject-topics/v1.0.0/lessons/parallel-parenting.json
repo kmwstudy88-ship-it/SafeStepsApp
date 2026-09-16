@@ -1,0 +1,28 @@
+{
+  "id": "module-parallel-parenting",
+  "title": "Parallel Parenting",
+  "moduleId": "parallel-parenting",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand parallel parenting as a structured, low‑conflict approach that protects children when cooperation between adults is limited.",
+  "microLesson": "Parallel parenting is a child‑focused approach used when communication between parents is high‑conflict or emotionally charged. Instead of trying to coordinate closely, each parent manages their own household independently while following court orders and agreed‑upon routines. This reduces arguments, protects children from exposure to conflict, and allows both parents to meet the child’s needs without ongoing disputes. Parallel parenting uses clear boundaries, written communication, predictable schedules, and minimal direct contact. Over time, as conflict decreases, some families transition toward more cooperative co‑parenting.",
+  "activity": "Identify one area where parallel parenting could reduce conflict (e.g., transitions, communication, routines). Write a reflection describing how you will implement a clearer boundary or structure to support your child’s stability.",
+  "evidenceTypes": [
+    "reflection",
+    "document"
+  ],
+  "caseworkerFlags": [
+    "co-parenting",
+    "conflict-reduction",
+    "child-stability"
+  ],
+  "resources": [
+    {
+      "title": "Parallel Parenting Structure Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

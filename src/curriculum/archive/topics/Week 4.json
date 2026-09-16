@@ -1,0 +1,107 @@
+[
+  {
+    "id": "DFV-W4-D1",
+    "week": 4,
+    "day": 1,
+    "title": "Understanding Your Rights",
+    "duration_minutes": 12,
+    "learning_goal": "Learn about legal, safety, and personal rights for people experiencing DFV.",
+    "content": {
+      "micro_lesson": "Everyone has the right to safety, autonomy, privacy, and freedom from violence. DFV laws protect victims through intervention orders, police responses, and child safety frameworks.",
+      "activity": "Identify three rights that apply to your situation and explain why they matter.",
+      "evidence_required": "150-word written reflection.",
+      "caseworker_flags": "Learner expresses belief they have 'no rights' or cannot seek help.",
+      "escalation_trigger": "Disclosure of blocked access to legal protections triggers urgent triage."
+    }
+  },
+  {
+    "id": "DFV-W4-D2",
+    "week": 4,
+    "day": 2,
+    "title": "Building a Support Network",
+    "duration_minutes": 14,
+    "learning_goal": "Identify safe people and services that can provide emotional or practical support.",
+    "content": {
+      "micro_lesson": "Support networks may include friends, family, neighbours, caseworkers, IDVAs, counsellors, and community groups. Safe support reduces isolation and increases safety.",
+      "activity": "Create a support network map using the template.",
+      "evidence_required": "Uploaded support network map.",
+      "caseworker_flags": "Learner reports having no safe contacts.",
+      "escalation_trigger": "Total isolation or blocked communication triggers immediate safety review."
+    }
+  },
+  {
+    "id": "DFV-W4-D3",
+    "week": 4,
+    "day": 3,
+    "title": "Healthy Boundaries",
+    "duration_minutes": 13,
+    "learning_goal": "Understand what healthy boundaries look like and how to set them safely.",
+    "content": {
+      "micro_lesson": "Boundaries protect emotional and physical wellbeing. Examples include limits on communication, privacy, personal space, and emotional labour.",
+      "activity": "Write three boundaries you want to set and identify potential risks.",
+      "evidence_required": "Boundary list and risk notes.",
+      "caseworker_flags": "Learner expresses fear of retaliation for setting boundaries.",
+      "escalation_trigger": "Any boundary-setting attempt that triggers threats requires immediate triage."
+    }
+  },
+  {
+    "id": "DFV-W4-D4",
+    "week": 4,
+    "day": 4,
+    "title": "Emotional Regulation",
+    "duration_minutes": 15,
+    "learning_goal": "Learn grounding and regulation techniques to manage stress and trauma responses.",
+    "content": {
+      "micro_lesson": "Trauma affects the nervous system. Regulation tools include breathing exercises, grounding, sensory resets, and self-compassion practices.",
+      "activity": "Complete a 5-minute grounding exercise and reflect on the experience.",
+      "evidence_required": "Short reflection (100 words).",
+      "caseworker_flags": "Learner reports panic attacks or inability to regulate emotions.",
+      "escalation_trigger": "Severe dysregulation or dissociation triggers clinical referral."
+    }
+  },
+  {
+    "id": "DFV-W4-D5",
+    "week": 4,
+    "day": 5,
+    "title": "Help-Seeking Pathways",
+    "duration_minutes": 12,
+    "learning_goal": "Understand how to access professional support safely and effectively.",
+    "content": {
+      "micro_lesson": "Help-seeking includes contacting DFV services, IDVAs, police, legal aid, housing services, and counselling. Safety considerations include timing, privacy, and technology safety.",
+      "activity": "Identify two services you may need and outline how you would contact them safely.",
+      "evidence_required": "Service plan upload.",
+      "caseworker_flags": "Learner reports being blocked from contacting services.",
+      "escalation_trigger": "Any interference with help-seeking triggers urgent safety intervention."
+    }
+  },
+  {
+    "id": "DFV-W4-D6",
+    "week": 4,
+    "day": 6,
+    "title": "Rebuilding Confidence",
+    "duration_minutes": 14,
+    "learning_goal": "Recognise strengths and rebuild self-worth after DFV.",
+    "content": {
+      "micro_lesson": "DFV erodes confidence through criticism, control, and isolation. Rebuilding involves recognising strengths, achievements, and personal values.",
+      "activity": "Complete a strengths-identification worksheet.",
+      "evidence_required": "Uploaded strengths worksheet.",
+      "caseworker_flags": "Learner expresses extreme self-blame or hopelessness.",
+      "escalation_trigger": "Statements indicating inability to function or care for children trigger triage."
+    }
+  },
+  {
+    "id": "DFV-W4-D7",
+    "week": 4,
+    "day": 7,
+    "title": "Reflection & Next Steps",
+    "duration_minutes": 10,
+    "learning_goal": "Consolidate Week 4 learning and identify next steps for safety and wellbeing.",
+    "content": {
+      "micro_lesson": "This lesson reviews rights, boundaries, support networks, and emotional regulation. Learners identify one action to take in the next week.",
+      "activity": "Write a 200-word reflection and choose one next-step action.",
+      "evidence_required": "Reflection and action plan.",
+      "caseworker_flags": "Learner reports worsening risk or new threats.",
+      "escalation_trigger": "Any new high-risk disclosure triggers immediate safety response."
+    }
+  }
+]

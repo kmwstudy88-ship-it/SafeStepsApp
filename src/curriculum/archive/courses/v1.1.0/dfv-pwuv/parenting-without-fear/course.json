@@ -1,0 +1,25 @@
+{
+  "title": "Parenting Without Fear",
+  "description": "Explores how DFV affects children and how to parent in ways that promote safety, connection, and emotional wellbeing.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Recognise how DFV impacts childrenâ€™s sense of safety.",
+    "Understand the role of fear in parenting dynamics.",
+    "Apply strategies to parent safely and respectfully."
+  ],
+  "modules": [
+    "Understanding Parenting and Fear",
+    "Building Safe Parenting Practices"
+  ],
+  "metadata": {
+    "stream": "dfv-pwuv",
+    "category": "Parenting",
+    "tags": [
+      "parenting",
+      "children",
+      "safety"
+    ]
+  },
+  "caseworkerSummary": "Supports participants to parent in ways that reduce fear and promote safety."
+}

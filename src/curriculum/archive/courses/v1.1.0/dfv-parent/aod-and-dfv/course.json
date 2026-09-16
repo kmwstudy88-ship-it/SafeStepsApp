@@ -1,0 +1,25 @@
+{
+  "title": "Alcohol and Other Drugs (AOD) and DFV",
+  "description": "Explores how substance use and DFV interact, including risk, safety, and support options.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand the relationship between AOD and DFV.",
+    "Recognise increased risks for parents and children.",
+    "Identify support options for safety and recovery."
+  ],
+  "modules": [
+    "Understanding AOD and DFV",
+    "Safety and Support Options"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "AOD",
+    "tags": [
+      "aod",
+      "substance use",
+      "safety"
+    ]
+  },
+  "caseworkerSummary": "Helps parents understand how AOD and DFV interact and how to seek support."
+}

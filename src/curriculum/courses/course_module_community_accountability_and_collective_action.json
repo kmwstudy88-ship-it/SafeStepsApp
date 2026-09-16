@@ -1,0 +1,64 @@
+{
+  "id": "course_module_community_accountability_and_collective_action",
+  "title": "Community Accountability and Collective Action",
+  "description": "Auto-generated course for module module_community_accountability_and_collective_action",
+  "lessons": [
+    {
+      "id": "lesson_shared_accountability",
+      "title": "Shared Accountability",
+      "sections": [
+        {
+          "id": "section_lesson_shared_accountability_01"
+        },
+        {
+          "id": "section_lesson_shared_accountability_02"
+        },
+        {
+          "id": "section_lesson_shared_accountability_03"
+        },
+        {
+          "id": "section_lesson_shared_accountability_04"
+        },
+        {
+          "id": "section_lesson_shared_accountability_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_shifting_community_norms",
+      "title": "Shifting Community Norms",
+      "sections": [
+        {
+          "id": "section_lesson_shifting_community_norms_01"
+        },
+        {
+          "id": "section_lesson_shifting_community_norms_02"
+        },
+        {
+          "id": "section_lesson_shifting_community_norms_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_coordinated_collective_action",
+      "title": "Coordinated Collective Action",
+      "sections": [
+        {
+          "id": "section_lesson_coordinated_collective_action_01"
+        },
+        {
+          "id": "section_lesson_coordinated_collective_action_02"
+        },
+        {
+          "id": "section_lesson_coordinated_collective_action_03"
+        },
+        {
+          "id": "section_lesson_coordinated_collective_action_04"
+        },
+        {
+          "id": "section_lesson_coordinated_collective_action_05"
+        }
+      ]
+    }
+  ]
+}

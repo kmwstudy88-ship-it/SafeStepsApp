@@ -1,0 +1,28 @@
+{
+  "id": "module-supporting-children-through-change",
+  "title": "Supporting Children Through Change",
+  "moduleId": "supporting-children-through-change",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how to support children during transitions, uncertainty, and family changes in ways that protect emotional safety and promote resilience.",
+  "microLesson": "Children experience change differently from adults. Even positive changes can feel overwhelming when routines shift or when children don’t fully understand what is happening. Common reactions include clinginess, regression, big emotions, or withdrawal. These behaviours are signs of stress, not misbehaviour. Parents can support children by offering predictable routines, simple explanations, extra reassurance, and opportunities to express feelings safely. Staying calm, consistent, and emotionally available helps children feel secure and adapt more confidently to new situations.",
+  "activity": "Identify one change your child is currently experiencing (e.g., new routine, separation, school transition). Write a reflection describing how you can support your child with predictability, reassurance, or emotional connection.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "transitions",
+    "emotional-safety",
+    "resilience"
+  ],
+  "resources": [
+    {
+      "title": "Supporting Children Through Change Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

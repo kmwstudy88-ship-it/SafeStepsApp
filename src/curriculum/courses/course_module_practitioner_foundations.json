@@ -1,0 +1,61 @@
+{
+  "id": "course_module_practitioner_foundations",
+  "title": "Practitioner Foundations",
+  "description": "Auto-generated course for module module_practitioner_foundations",
+  "lessons": [
+    {
+      "id": "lesson_dfv_frameworks",
+      "title": "DFV Frameworks",
+      "sections": [
+        {
+          "id": "section_lesson_dfv_frameworks_01"
+        },
+        {
+          "id": "section_lesson_dfv_frameworks_02"
+        },
+        {
+          "id": "section_lesson_dfv_frameworks_03"
+        },
+        {
+          "id": "section_lesson_dfv_frameworks_04"
+        },
+        {
+          "id": "section_lesson_dfv_frameworks_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_ethical_practice",
+      "title": "Ethical Practice",
+      "sections": [
+        {
+          "id": "section_lesson_ethical_practice_01"
+        },
+        {
+          "id": "section_lesson_ethical_practice_02"
+        },
+        {
+          "id": "section_lesson_ethical_practice_03"
+        },
+        {
+          "id": "section_lesson_ethical_practice_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_professional_responsibilities",
+      "title": "Professional Responsibilities",
+      "sections": [
+        {
+          "id": "section_lesson_professional_responsibilities_01"
+        },
+        {
+          "id": "section_lesson_professional_responsibilities_02"
+        },
+        {
+          "id": "section_lesson_professional_responsibilities_03"
+        }
+      ]
+    }
+  ]
+}

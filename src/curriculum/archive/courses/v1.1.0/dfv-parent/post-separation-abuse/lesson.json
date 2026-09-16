@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Abuse often continues after separation through new tactics."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Common tactics include harassment, stalking, legal abuse, and using children as tools of control."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn documentation, boundaries, and safe communication strategies."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Reflect on any behaviours that continued or escalated after separation."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Awareness helps parents protect themselves and their children."
+                     }
+                 ]
+}

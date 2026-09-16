@@ -1,0 +1,14 @@
+{
+  "updated_at": "2026-06-07T12:34:17.8328168+10:00",
+  "data_points": [],
+  "id": "progress_heatmap",
+  "created_at": "2026-06-07T12:34:17.8327276+10:00",
+  "dimensions": [
+    "safety",
+    "parenting",
+    "substance_use",
+    "mental_health",
+    "housing",
+    "contact"
+  ]
+}

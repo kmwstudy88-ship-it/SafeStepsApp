@@ -1,0 +1,25 @@
+{
+  "title": "Protective Parenting",
+  "description": "Explains how parents can take protective actions to support childrenâ€™s safety, stability, and emotional wellbeing after DFV.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand what protective parenting means.",
+    "Recognise protective behaviours.",
+    "Apply strategies to support childrenâ€™s safety."
+  ],
+  "modules": [
+    "Understanding Protective Parenting",
+    "Practical Protective Strategies"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Children",
+    "tags": [
+      "protective parenting",
+      "safety",
+      "children"
+    ]
+  },
+  "caseworkerSummary": "Supports parents to understand and demonstrate protective behaviours."
+}

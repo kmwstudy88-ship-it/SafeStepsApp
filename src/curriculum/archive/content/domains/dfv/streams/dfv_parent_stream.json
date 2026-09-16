@@ -1,0 +1,59 @@
+{
+  "id": "dfv_parent_stream",
+  "title": "DFV Parent Support Stream",
+  "description": "A structured support pathway for parents experiencing domestic and family violence. This stream strengthens safety, parenting capacity, emotional stability, and child wellbeing through practical, trauma‑informed modules.",
+  "type": "stream",
+  "level": "foundational",
+  "tags": [
+    "dfv",
+    "parenting",
+    "safety",
+    "child wellbeing",
+    "trauma-informed"
+  ],
+  "outcomes": [
+    "Increase parental safety and stability",
+    "Strengthen parent–child connection",
+    "Support children’s emotional recovery",
+    "Build long‑term family resilience"
+  ],
+  "modules": [
+    {
+      "id": "module_parent_safety",
+      "title": "Parent Safety and Stability",
+      "lessons": [
+        "recognising_risk_as_a_parent",
+        "safety_planning_with_children",
+        "building_safe_routines"
+      ]
+    },
+    {
+      "id": "module_parenting_under_stress",
+      "title": "Parenting Under DFV Stress",
+      "lessons": [
+        "managing_parental_stress",
+        "supporting_children_emotionally",
+        "maintaining_parent_child_connection"
+      ]
+    },
+    {
+      "id": "module_child_healing",
+      "title": "Supporting Child Healing",
+      "lessons": [
+        "understanding_child_trauma",
+        "age_appropriate_support",
+        "building_resilience_in_children"
+      ]
+    },
+    {
+      "id": "module_rebuilding_family_life",
+      "title": "Rebuilding Family Life After DFV",
+      "lessons": [
+        "restoring_routines",
+        "strengthening_family_bonds",
+        "long_term_recovery_planning"
+      ]
+    }
+  ],
+  "content": []
+}

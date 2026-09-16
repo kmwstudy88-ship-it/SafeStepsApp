@@ -1,0 +1,25 @@
+{
+  "id": "respectful-communication",
+  "title": "Respectful Communication Skills (Father-Focused)",
+  "description": "This course supports fathers to communicate respectfully with partners and children, reducing fear and improving emotional safety.",
+  "learningOutcomes": [
+    "Learn respectful communication in parenting contexts.",
+    "Understand how listening supports children’s emotional needs.",
+    "Develop skills for expressing needs without aggression.",
+    "Recognise how communication shapes family safety."
+  ],
+  "modules": [
+    {
+      "title": "Fathering and Communication",
+      "content": "Explores how communication affects children’s emotional world."
+    },
+    {
+      "title": "Listening to Children and Partner",
+      "content": "Teaches validation and non-defensive listening."
+    },
+    {
+      "title": "Safe Expression of Needs",
+      "content": "Provides tools for assertive, respectful communication."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "safe-decision-making",
+  "title": "Safe Decision-Making",
+  "description": "This course teaches participants how to make decisions that prioritise safety, respect, and emotional wellbeing for everyone involved.",
+  "learningOutcomes": [
+    "Understand how decisions affect others.",
+    "Recognise unsafe decision-making patterns.",
+    "Learn how to make respectful, safe choices.",
+    "Develop long-term safe decision habits."
+  ],
+  "modules": [
+    {
+      "title": "Understanding Decision Impact",
+      "content": "Explores how choices affect partners and children."
+    },
+    {
+      "title": "Unsafe Decision Patterns",
+      "content": "Identifies impulsive, coercive, or harmful decisions."
+    },
+    {
+      "title": "Safe Decision Strategies",
+      "content": "Provides tools for thoughtful, respectful choices."
+    }
+  ]
+}

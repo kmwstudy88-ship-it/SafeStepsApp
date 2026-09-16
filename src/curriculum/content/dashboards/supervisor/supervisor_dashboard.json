@@ -1,0 +1,9 @@
+{
+  "id": "supervisor_dashboard",
+  "updated_at": "2026-06-07T12:34:17.8022414+10:00",
+  "created_at": "2026-06-07T12:34:17.8021278+10:00",
+  "metrics": [],
+  "alerts": [],
+  "workload": [],
+  "risk_overview": []
+}

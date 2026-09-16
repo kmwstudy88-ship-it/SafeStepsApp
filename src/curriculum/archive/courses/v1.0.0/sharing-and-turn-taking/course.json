@@ -1,0 +1,42 @@
+{
+  "title": "Sharing and Turn-Taking",
+  "description": "",
+  "estimatedTimeMinutes": 60,
+  "difficultyLevel": "beginner",
+  "learningOutcomes": [
+    "Understand the key ideas behind sharing and turn taking and why this topic matters for child development.",
+    "Learn practical skills and strategies that help apply sharing and turn taking in everyday parenting situations.",
+    "Build confidence using sharing and turn taking to support connection, safety, and positive family routines."
+  ],
+  "modules": [
+    {
+      "title": "Understanding the Topic",
+      "description": "Learn what sharing and turn taking means and why it matters for child development.",
+      "id": "module-1"
+    },
+    {
+      "title": "Core Skills and Strategies",
+      "description": "Explore practical skills and strategies for applying sharing and turn taking in everyday parenting.",
+      "id": "module-2"
+    },
+    {
+      "title": "Real-Life Application",
+      "description": "See how sharing and turn taking works in real situations with examples and simple scripts.",
+      "id": "module-3"
+    },
+    {
+      "title": "Reflection and Integration",
+      "description": "Reflect on your learning and plan how to use sharing and turn taking in daily family life.",
+      "id": "module-4"
+    }
+  ],
+  "metadata": {
+    "audience": "parents",
+    "tags": [],
+    "jurisdiction": "AU"
+  },
+  "caseworkerSummary": "This topic helps parents build practical skills related to sharing and turn taking. It supports safer, more consistent caregiving by improving understanding, strengthening emotional connection, and reducing stress in daily routines. This topic is suitable for parents who need guidance in applying positive parenting strategies and may benefit families working toward stability, reunification, or improved home safety.",
+  "topics": [
+    "sharing"
+  ]
+}

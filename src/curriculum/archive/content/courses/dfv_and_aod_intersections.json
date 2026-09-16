@@ -1,0 +1,40 @@
+{
+  "id": "course_dfv_and_aod_intersections",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "DFV and Alcohol/Drug Use Intersections",
+  "modules": [
+    {
+      "id": "module_understanding_aod_intersections",
+      "title": "Understanding AOD and DFV Intersections",
+      "lessons": [
+        "how_aod_use_interacts_with_dfv",
+        "aod_as_a_risk_factor",
+        "aod_as_a_control_tactic"
+      ]
+    },
+    {
+      "id": "module_impacts_and_patterns",
+      "title": "Impacts and Patterns",
+      "lessons": [
+        "increased_risk_and_escalation",
+        "impacts_on_children_and_family",
+        "barriers_to_help_seeking"
+      ]
+    },
+    {
+      "id": "module_support_and_safety",
+      "title": "Support and Safety",
+      "lessons": [
+        "responding_to_aod_related_dfv",
+        "coordinating_with_aod_services",
+        "creating_safety_plans_in_aod_contexts"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of DFV and AOD intersections",
+    "Ability to recognise AOD-related risk patterns",
+    "Increased confidence in supporting safety in AOD contexts"
+  ]
+}

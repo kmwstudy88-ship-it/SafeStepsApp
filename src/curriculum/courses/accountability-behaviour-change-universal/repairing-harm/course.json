@@ -1,0 +1,25 @@
+{
+  "id": "repairing-harm",
+  "title": "Repairing Harm",
+  "description": "This course teaches participants how to acknowledge harm, take responsibility, and engage in meaningful repair.",
+  "learningOutcomes": [
+    "Understand what meaningful repair looks like.",
+    "Recognise the impact of harm on others.",
+    "Learn how to apologise safely and respectfully.",
+    "Develop long-term repair behaviours."
+  ],
+  "modules": [
+    {
+      "title": "Understanding Harm",
+      "content": "Explores emotional, relational, and psychological harm."
+    },
+    {
+      "title": "Accountability in Repair",
+      "content": "Shows how responsibility supports healing."
+    },
+    {
+      "title": "Repair Tools",
+      "content": "Provides strategies for safe, meaningful repair."
+    }
+  ]
+}

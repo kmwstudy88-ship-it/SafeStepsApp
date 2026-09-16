@@ -1,0 +1,28 @@
+{
+  "id": "module-supporting-social-development",
+  "title": "Supporting Social Development",
+  "moduleId": "supporting-social-development",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how children develop social skills and how to support cooperation, empathy, and positive peer relationships.",
+  "microLesson": "Social development begins at home. Children learn how to share, take turns, solve problems, and communicate by watching the adults around them. Warm, responsive interactions help children feel safe enough to explore relationships with others. Parents can support social growth by modelling respectful communication, coaching children through conflicts, and praising cooperative behaviour. When children feel understood and guided rather than criticised, they develop stronger social confidence and empathy. These skills form the foundation for friendships, school success, and long-term wellbeing.",
+  "activity": "Choose one social skill to support today (sharing, turn‑taking, problem‑solving, or empathy). Coach your child through a real moment and write a reflection describing what you did and how your child responded.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "social-development",
+    "empathy",
+    "cooperation"
+  ],
+  "resources": [
+    {
+      "title": "Supporting Social Skills in Children",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,106 @@
+{
+    "$id":  "https://safesteps.example/schemas/lesson.schema.json",
+    "$schema":  "http://json-schema.org/draft-07/schema#",
+    "type":  "object",
+    "required":  [
+                     "id",
+                     "title",
+                     "moduleId",
+                     "week",
+                     "day",
+                     "durationMinutes",
+                     "learningGoal",
+                     "microLesson",
+                     "activity",
+                     "evidenceTypes",
+                     "caseworkerFlags",
+                     "version"
+                 ],
+    "properties":  {
+                       "id":  {
+                                  "type":  "string"
+                              },
+                       "title":  {
+                                     "type":  "string"
+                                 },
+                       "moduleId":  {
+                                        "type":  "string"
+                                    },
+                       "week":  {
+                                    "type":  "integer"
+                                },
+                       "day":  {
+                                   "type":  "integer"
+                               },
+                       "month":  {
+                                     "type":  "integer"
+                                 },
+                       "durationMinutes":  {
+                                               "type":  "integer"
+                                           },
+                       "learningGoal":  {
+                                            "type":  "string"
+                                        },
+                       "microLesson":  {
+                                           "type":  "string"
+                                       },
+                       "activity":  {
+                                        "type":  "string"
+                                    },
+                       "evidenceTypes":  {
+                                             "type":  "array",
+                                             "items":  {
+                                                           "type":  "string"
+                                                       }
+                                         },
+                       "caseworkerFlags":  {
+                                               "type":  "array",
+                                               "items":  {
+                                                             "type":  "string"
+                                                         }
+                                           },
+                       "resources":  {
+                                         "type":  "array",
+                                         "items":  {
+                                                       "type":  "object",
+                                                       "properties":  {
+                                                                          "type":  {
+                                                                                       "type":  "string"
+                                                                                   },
+                                                                          "title":  {
+                                                                                        "type":  "string"
+                                                                                    },
+                                                                          "url":  {
+                                                                                      "type":  "string"
+                                                                                  }
+                                                                      },
+                                                       "required":  [
+                                                                        "type",
+                                                                        "title"
+                                                                    ]
+                                                   }
+                                     },
+                       "metadata":  {
+                                        "type":  "object",
+                                        "properties":  {
+                                                           "sensitivity":  {
+                                                                               "type":  "string",
+                                                                               "enum":  [
+                                                                                            "general",
+                                                                                            "sensitive",
+                                                                                            "restricted"
+                                                                                        ]
+                                                                           },
+                                                           "language":  {
+                                                                            "type":  "string"
+                                                                        }
+                                                       }
+                                    },
+                       "version":  {
+                                       "type":  "string"
+                                   }
+                   },
+    "id":  "Lesson",
+    "name":  "Lesson",
+    "title":  "Lesson"
+}

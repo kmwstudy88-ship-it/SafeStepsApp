@@ -1,0 +1,25 @@
+{
+  "id": "safe-decision-making",
+  "title": "Safe Decision-Making (Father-Focused)",
+  "description": "This course supports fathers to make decisions that prioritise child safety, emotional stability, and respectful relationships.",
+  "learningOutcomes": [
+    "Understand decision-making in the context of fatherhood.",
+    "Recognise unsafe choices that harm children or partners.",
+    "Learn strategies for safe, respectful decisions.",
+    "Develop long-term safe decision habits."
+  ],
+  "modules": [
+    {
+      "title": "Fathering and Decision Impact",
+      "content": "Explores how decisions shape children’s safety and wellbeing."
+    },
+    {
+      "title": "Unsafe Decision Patterns",
+      "content": "Identifies impulsive, coercive, or harmful choices."
+    },
+    {
+      "title": "Safe Decision Strategies",
+      "content": "Provides tools for thoughtful, respectful decision-making."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+import React from 'react';
+import { ScrollView, Text, View, StyleSheet } from 'react-native';
+import library from '../../assets/SafeSteps.library.json';
+
+export default function LessonsScreen() {
+  const lessons = library.program.courses.flatMap(course => course.lessons);
+
+  return (
+    <ScrollView style={styles.container}>
+      <Text style={styles.title}>Lessons Library</Text>
+      {lessons.map((lesson, index) => (
+        <View key={index} style={styles.card}>
+          <Text style={styles.cardTitle}>{lesson.title}</Text>
+          <Text style={styles.cardSubtitle}>From: {lesson.topics?.[0]?.title || 'No topic listed'}</Text>
+        </View>
+      ))}
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { padding: 20, backgroundColor: '#fff' },
+  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 15 },
+  card: { marginBottom: 15, padding: 15, backgroundColor: '#f9f9f9', borderRadius: 8 },
+  cardTitle: { fontSize: 18, fontWeight: '600' },
+  cardSubtitle: { fontSize: 14, color: '#555' },
+});

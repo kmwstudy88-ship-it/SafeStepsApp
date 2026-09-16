@@ -1,0 +1,52 @@
+{
+  "id": "course_module_supporting_childrens_safety_and_wellbeing",
+  "title": "Supporting Children’s Safety and Wellbeing",
+  "description": "Auto-generated course for module module_supporting_childrens_safety_and_wellbeing",
+  "lessons": [
+    {
+      "id": "lesson_child_friendly_safety_planning",
+      "title": "Child-Friendly Safety Planning",
+      "sections": [
+        {
+          "id": "section_lesson_child_friendly_safety_planning_01"
+        },
+        {
+          "id": "section_lesson_child_friendly_safety_planning_02"
+        },
+        {
+          "id": "section_lesson_child_friendly_safety_planning_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_supportive_communication",
+      "title": "Supportive Communication",
+      "sections": [
+        {
+          "id": "section_lesson_supportive_communication_01"
+        },
+        {
+          "id": "section_lesson_supportive_communication_02"
+        },
+        {
+          "id": "section_lesson_supportive_communication_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_strengthening_protective_relationships",
+      "title": "Strengthening Protective Relationships",
+      "sections": [
+        {
+          "id": "section_lesson_strengthening_protective_relationships_01"
+        },
+        {
+          "id": "section_lesson_strengthening_protective_relationships_02"
+        },
+        {
+          "id": "section_lesson_strengthening_protective_relationships_03"
+        }
+      ]
+    }
+  ]
+}

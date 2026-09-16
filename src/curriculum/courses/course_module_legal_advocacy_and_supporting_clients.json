@@ -1,0 +1,61 @@
+{
+  "id": "course_module_legal_advocacy_and_supporting_clients",
+  "title": "Legal Advocacy and Supporting Clients Through the System",
+  "description": "Auto-generated course for module module_legal_advocacy_and_supporting_clients",
+  "lessons": [
+    {
+      "id": "lesson_advocacy_principles",
+      "title": "Advocacy Principles",
+      "sections": [
+        {
+          "id": "section_lesson_advocacy_principles_01"
+        },
+        {
+          "id": "section_lesson_advocacy_principles_02"
+        },
+        {
+          "id": "section_lesson_advocacy_principles_03"
+        },
+        {
+          "id": "section_lesson_advocacy_principles_04"
+        },
+        {
+          "id": "section_lesson_advocacy_principles_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_supporting_informed_decision_making",
+      "title": "Supporting Informed Decision-Making",
+      "sections": [
+        {
+          "id": "section_lesson_supporting_informed_decision_making_01"
+        },
+        {
+          "id": "section_lesson_supporting_informed_decision_making_02"
+        },
+        {
+          "id": "section_lesson_supporting_informed_decision_making_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_trauma_informed_legal_support",
+      "title": "Trauma-Informed Legal Support",
+      "sections": [
+        {
+          "id": "section_lesson_trauma_informed_legal_support_01"
+        },
+        {
+          "id": "section_lesson_trauma_informed_legal_support_02"
+        },
+        {
+          "id": "section_lesson_trauma_informed_legal_support_03"
+        },
+        {
+          "id": "section_lesson_trauma_informed_legal_support_04"
+        }
+      ]
+    }
+  ]
+}

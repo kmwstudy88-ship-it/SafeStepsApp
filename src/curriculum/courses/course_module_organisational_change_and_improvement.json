@@ -1,0 +1,55 @@
+{
+  "id": "course_module_organisational_change_and_improvement",
+  "title": "Organisational Change and Improvement",
+  "description": "Auto-generated course for module module_organisational_change_and_improvement",
+  "lessons": [
+    {
+      "id": "lesson_change_leadership",
+      "title": "Change Leadership",
+      "sections": [
+        {
+          "id": "section_lesson_change_leadership_01"
+        },
+        {
+          "id": "section_lesson_change_leadership_02"
+        },
+        {
+          "id": "section_lesson_change_leadership_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_embedding_trauma_informed_practice",
+      "title": "Embedding Trauma-Informed Practice",
+      "sections": [
+        {
+          "id": "section_lesson_embedding_trauma_informed_practice_01"
+        },
+        {
+          "id": "section_lesson_embedding_trauma_informed_practice_02"
+        },
+        {
+          "id": "section_lesson_embedding_trauma_informed_practice_03"
+        },
+        {
+          "id": "section_lesson_embedding_trauma_informed_practice_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_quality_and_improvement_systems",
+      "title": "Quality and Improvement Systems",
+      "sections": [
+        {
+          "id": "section_lesson_quality_and_improvement_systems_01"
+        },
+        {
+          "id": "section_lesson_quality_and_improvement_systems_02"
+        },
+        {
+          "id": "section_lesson_quality_and_improvement_systems_03"
+        }
+      ]
+    }
+  ]
+}

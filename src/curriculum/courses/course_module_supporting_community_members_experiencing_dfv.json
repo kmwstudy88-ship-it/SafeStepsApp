@@ -1,0 +1,61 @@
+{
+  "id": "course_module_supporting_community_members_experiencing_dfv",
+  "title": "Supporting Community Members Experiencing DFV",
+  "description": "Auto-generated course for module module_supporting_community_members_experiencing_dfv",
+  "lessons": [
+    {
+      "id": "lesson_safe_supportive_responses",
+      "title": "Safe Supportive Responses",
+      "sections": [
+        {
+          "id": "section_lesson_safe_supportive_responses_01"
+        },
+        {
+          "id": "section_lesson_safe_supportive_responses_02"
+        },
+        {
+          "id": "section_lesson_safe_supportive_responses_03"
+        },
+        {
+          "id": "section_lesson_safe_supportive_responses_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_trauma_informed_communication",
+      "title": "Trauma-Informed Communication",
+      "sections": [
+        {
+          "id": "section_lesson_trauma_informed_communication_01"
+        },
+        {
+          "id": "section_lesson_trauma_informed_communication_02"
+        },
+        {
+          "id": "section_lesson_trauma_informed_communication_03"
+        },
+        {
+          "id": "section_lesson_trauma_informed_communication_04"
+        },
+        {
+          "id": "section_lesson_trauma_informed_communication_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_connecting_to_services",
+      "title": "Connecting to Services",
+      "sections": [
+        {
+          "id": "section_lesson_connecting_to_services_01"
+        },
+        {
+          "id": "section_lesson_connecting_to_services_02"
+        },
+        {
+          "id": "section_lesson_connecting_to_services_03"
+        }
+      ]
+    }
+  ]
+}

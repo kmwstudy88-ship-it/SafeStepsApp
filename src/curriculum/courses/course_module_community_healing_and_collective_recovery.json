@@ -1,0 +1,61 @@
+{
+  "id": "course_module_community_healing_and_collective_recovery",
+  "title": "Community Healing and Collective Recovery",
+  "description": "Auto-generated course for module module_community_healing_and_collective_recovery",
+  "lessons": [
+    {
+      "id": "lesson_understanding_collective_trauma",
+      "title": "Understanding Collective Trauma",
+      "sections": [
+        {
+          "id": "section_lesson_understanding_collective_trauma_01"
+        },
+        {
+          "id": "section_lesson_understanding_collective_trauma_02"
+        },
+        {
+          "id": "section_lesson_understanding_collective_trauma_03"
+        },
+        {
+          "id": "section_lesson_understanding_collective_trauma_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_trauma_aware_community_practices",
+      "title": "Trauma-Aware Community Practices",
+      "sections": [
+        {
+          "id": "section_lesson_trauma_aware_community_practices_01"
+        },
+        {
+          "id": "section_lesson_trauma_aware_community_practices_02"
+        },
+        {
+          "id": "section_lesson_trauma_aware_community_practices_03"
+        },
+        {
+          "id": "section_lesson_trauma_aware_community_practices_04"
+        },
+        {
+          "id": "section_lesson_trauma_aware_community_practices_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_building_resilient_communities",
+      "title": "Building Resilient Communities",
+      "sections": [
+        {
+          "id": "section_lesson_building_resilient_communities_01"
+        },
+        {
+          "id": "section_lesson_building_resilient_communities_02"
+        },
+        {
+          "id": "section_lesson_building_resilient_communities_03"
+        }
+      ]
+    }
+  ]
+}

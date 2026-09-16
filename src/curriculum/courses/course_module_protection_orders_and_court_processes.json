@@ -1,0 +1,52 @@
+{
+  "id": "course_module_protection_orders_and_court_processes",
+  "title": "Protection Orders and Court Processes",
+  "description": "Auto-generated course for module module_protection_orders_and_court_processes",
+  "lessons": [
+    {
+      "id": "lesson_understanding_protection_orders",
+      "title": "Understanding Protection Orders",
+      "sections": [
+        {
+          "id": "section_lesson_understanding_protection_orders_01"
+        },
+        {
+          "id": "section_lesson_understanding_protection_orders_02"
+        },
+        {
+          "id": "section_lesson_understanding_protection_orders_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_court_processes_and_procedures",
+      "title": "Court Processes and Procedures",
+      "sections": [
+        {
+          "id": "section_lesson_court_processes_and_procedures_01"
+        },
+        {
+          "id": "section_lesson_court_processes_and_procedures_02"
+        },
+        {
+          "id": "section_lesson_court_processes_and_procedures_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_safety_in_legal_contexts",
+      "title": "Safety in Legal Contexts",
+      "sections": [
+        {
+          "id": "section_lesson_safety_in_legal_contexts_01"
+        },
+        {
+          "id": "section_lesson_safety_in_legal_contexts_02"
+        },
+        {
+          "id": "section_lesson_safety_in_legal_contexts_03"
+        }
+      ]
+    }
+  ]
+}

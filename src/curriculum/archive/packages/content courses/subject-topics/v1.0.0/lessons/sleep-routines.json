@@ -1,0 +1,28 @@
+{
+  "id": "module-sleep-routines",
+  "title": "Sleep Routines",
+  "moduleId": "sleep-routines",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents create predictable, calming sleep routines that support regulation, healthy development, and smoother bedtimes.",
+  "microLesson": "Sleep is essential for a child’s emotional regulation, behaviour, learning, and physical health. Children settle more easily when bedtime is predictable and calm. A consistent routine signals to the brain that it is time to wind down, helping the body shift from alertness to rest. Good sleep routines include reducing stimulation before bed, using a consistent sequence of steps, and creating a safe, quiet sleep environment. When parents stay calm and predictable, children feel secure and bedtime becomes smoother over time.",
+  "activity": "Choose one part of your bedtime routine to strengthen (e.g., reducing screens before bed, adding a calming step, keeping the same bedtime). Implement it for one night and write a reflection on how your child responded.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "routines",
+    "regulation",
+    "healthy-habits"
+  ],
+  "resources": [
+    {
+      "title": "Healthy Sleep Routine Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "DFV-W6-D1",
+    "week": 6,
+    "day": 1,
+    "title": "Long-Term Safety Planning",
+    "duration_minutes": 14,
+    "learning_goal": "Develop a long-term safety plan that supports stability after DFV.",
+    "content": {
+      "micro_lesson": "Long-term safety includes stable housing, financial planning, safe communication, ongoing risk monitoring, and maintaining support networks. Safety evolves over time and requires regular review.",
+      "activity": "Complete the long-term safety plan template.",
+      "evidence_required": "Uploaded long-term safety plan.",
+      "caseworker_flags": "Learner reports unstable housing or ongoing contact with perpetrator.",
+      "escalation_trigger": "Any new high-risk disclosure triggers immediate triage."
+    }
+  },
+  {
+    "id": "DFV-W6-D2",
+    "week": 6,
+    "day": 2,
+    "title": "Rebuilding Identity",
+    "duration_minutes": 13,
+    "learning_goal": "Explore personal identity beyond the DFV experience.",
+    "content": {
+      "micro_lesson": "DFV often erodes identity through control, criticism, and isolation. Rebuilding involves reconnecting with values, interests, strengths, and personal goals.",
+      "activity": "Complete a values and identity worksheet.",
+      "evidence_required": "Uploaded identity worksheet.",
+      "caseworker_flags": "Expressions of extreme self-blame or loss of identity.",
+      "escalation_trigger": "Statements indicating inability to function or care for children trigger support referral."
+    }
+  },
+  {
+    "id": "DFV-W6-D3",
+    "week": 6,
+    "day": 3,
+    "title": "Financial Independence",
+    "duration_minutes": 15,
+    "learning_goal": "Learn strategies for financial stability and independence after DFV.",
+    "content": {
+      "micro_lesson": "Financial abuse can create long-term barriers. Recovery includes budgeting, rebuilding credit, accessing financial support services, and planning for future independence.",
+      "activity": "Create a basic financial plan using the provided template.",
+      "evidence_required": "Uploaded financial plan.",
+      "caseworker_flags": "Learner reports no access to income or financial control by perpetrator.",
+      "escalation_trigger": "Active financial control or sabotage triggers urgent safety review."
+    }
+  },
+  {
+    "id": "DFV-W6-D4",
+    "week": 6,
+    "day": 4,
+    "title": "Healthy Relationships",
+    "duration_minutes": 12,
+    "learning_goal": "Understand the characteristics of healthy, respectful relationships.",
+    "content": {
+      "micro_lesson": "Healthy relationships include respect, trust, communication, boundaries, equality, and emotional safety. Recognising red flags helps prevent future harm.",
+      "activity": "Compare past relationship patterns with healthy relationship principles.",
+      "evidence_required": "Uploaded comparison worksheet.",
+      "caseworker_flags": "Learner expresses fear of future relationships or repeats harmful patterns.",
+      "escalation_trigger": "Any indication of returning to a dangerous relationship triggers safety intervention."
+    }
+  },
+  {
+    "id": "DFV-W6-D5",
+    "week": 6,
+    "day": 5,
+    "title": "Emotional Healing",
+    "duration_minutes": 14,
+    "learning_goal": "Learn emotional healing strategies for recovery after DFV.",
+    "content": {
+      "micro_lesson": "Healing involves processing trauma, rebuilding self-worth, reconnecting socially, and developing coping strategies. Support may include counselling, peer groups, or cultural healing practices.",
+      "activity": "Complete a guided emotional-healing reflection.",
+      "evidence_required": "150-word reflection.",
+      "caseworker_flags": "Signs of severe emotional distress or trauma symptoms.",
+      "escalation_trigger": "Expressions of hopelessness or inability to cope trigger clinical referral."
+    }
+  },
+  {
+    "id": "DFV-W6-D6",
+    "week": 6,
+    "day": 6,
+    "title": "Future Planning",
+    "duration_minutes": 13,
+    "learning_goal": "Create a future plan that supports safety, wellbeing, and personal goals.",
+    "content": {
+      "micro_lesson": "Future planning includes education, employment, housing, parenting goals, and ongoing support. Setting achievable steps builds confidence and stability.",
+      "activity": "Write a 6‑month personal development plan.",
+      "evidence_required": "Uploaded development plan.",
+      "caseworker_flags": "Unrealistic goals or lack of support systems.",
+      "escalation_trigger": "Any barrier that threatens safety or stability triggers caseworker review."
+    }
+  },
+  {
+    "id": "DFV-W6-D7",
+    "week": 6,
+    "day": 7,
+    "title": "Program Reflection & Next Steps",
+    "duration_minutes": 12,
+    "learning_goal": "Reflect on the 6‑week program and identify ongoing support needs.",
+    "content": {
+      "micro_lesson": "This final lesson reviews key learnings across all weeks: understanding DFV, child impact, safety planning, support networks, accountability, and long-term recovery.",
+      "activity": "Write a 250‑word reflection summarising progress and next steps.",
+      "evidence_required": "Final program reflection.",
+      "caseworker_flags": "Any new disclosures of risk or instability.",
+      "escalation_trigger": "Any high-risk content in final reflection triggers immediate triage."
+    }
+  }
+]

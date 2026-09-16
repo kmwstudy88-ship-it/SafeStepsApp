@@ -1,0 +1,25 @@
+{
+  "title": "Recovery and Healing",
+  "description": "Helps parents understand the healing process after DFV and how to support themselves and their children.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand the stages of healing.",
+    "Recognise emotional and physical recovery needs.",
+    "Apply strategies for longâ€‘term wellbeing."
+  ],
+  "modules": [
+    "Understanding the Healing Journey",
+    "Supporting Longâ€‘Term Recovery"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Recovery",
+    "tags": [
+      "healing",
+      "recovery",
+      "wellbeing"
+    ]
+  },
+  "caseworkerSummary": "Supports parents to understand healing and build longâ€‘term wellbeing."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "module-ethics-and-social-justice",
+  "title": "Ethics and Social Justice",
+  "moduleId": "ethics-and-social-justice",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand fairness, respect, and social responsibility in family life.",
+  "microLesson": "Children learn values through modelling. When parents demonstrate fairness, empathy, and respect, children internalise these behaviours. Social justice in parenting means teaching children to treat others with dignity and recognise inequality.",
+  "activity": "Discuss fairness with your child using a real example. Reflect on what they understood.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "values",
+    "ethics"
+  ],
+  "resources": [
+    {
+      "title": "Family Values Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

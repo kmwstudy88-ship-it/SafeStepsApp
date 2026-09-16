@@ -1,0 +1,23 @@
+{
+  "id": "AOD-W1-D1",
+  "title": "Understanding Substance Use",
+  "moduleId": "module-aod",
+  "week": 1,
+  "day": 1,
+  "durationMinutes": 10,
+  "learningGoal": "Understand what substance use is and why patterns develop.",
+  "microLesson": "Overview of substance use, reasons people use, and how habits form.",
+  "activity": "Write down your personal goals for this AOD program.",
+  "evidenceTypes": [
+    "text"
+  ],
+  "caseworkerFlags": [
+    "aod"
+  ],
+  "resources": [],
+  "metadata": {
+    "sensitivity": "restricted",
+    "language": "en-AU"
+  },
+  "version": "1.0.0"
+}

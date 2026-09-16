@@ -1,0 +1,9 @@
+{
+  "id": "{{id}}",
+  "slug": "{{slug}}",
+  "title": "",
+  "focus": "",
+  "tasks": [],
+  "milestones": [],
+  "evidence": []
+}

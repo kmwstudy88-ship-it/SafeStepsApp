@@ -1,0 +1,25 @@
+{
+  "id": "emotional-responsibility",
+  "title": "Emotional Responsibility",
+  "description": "This course supports participants in understanding their emotional responses and taking responsibility for how those emotions influence behaviour.",
+  "learningOutcomes": [
+    "Understand the difference between emotions and behaviour.",
+    "Recognise emotional triggers and patterns.",
+    "Learn strategies for emotional regulation.",
+    "Develop responsibility for emotional impact on others."
+  ],
+  "modules": [
+    {
+      "title": "Emotions vs Behaviour",
+      "content": "Explains how feelings do not justify harmful actions."
+    },
+    {
+      "title": "Recognising Triggers",
+      "content": "Identifies emotional patterns and escalation points."
+    },
+    {
+      "title": "Regulation Strategies",
+      "content": "Provides grounding, breathing, and self-awareness tools."
+    }
+  ]
+}

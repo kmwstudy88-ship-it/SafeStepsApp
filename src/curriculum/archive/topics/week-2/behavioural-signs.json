@@ -1,0 +1,15 @@
+{
+  "id": "DFV-W2-D3",
+  "week": 2,
+  "day": 3,
+  "title": "Behavioural Signs",
+  "duration_minutes": 12,
+  "learning_goal": "Identify behavioural red flags linked to DFV exposure.",
+  "content": {
+    "micro_lesson": "Common signs include aggression, withdrawal, perfectionism, clinginess, school refusal, and unexplained physical symptoms. Behaviour is communication.",
+    "activity": "Complete a behaviour-tracking exercise using the provided template.",
+    "evidence_required": "Uploaded behaviour log.",
+    "caseworker_flags": "Sudden aggression or extreme withdrawal.",
+    "escalation_trigger": "Child expressing fear of going home triggers immediate safety check."
+  }
+}

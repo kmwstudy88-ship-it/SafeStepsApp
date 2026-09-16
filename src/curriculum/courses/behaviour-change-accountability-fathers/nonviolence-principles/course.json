@@ -1,0 +1,25 @@
+{
+  "id": "nonviolence-principles",
+  "title": "Principles of Nonviolence (Father-Focused)",
+  "description": "This course supports fathers to practise nonviolence in all interactions, prioritising child safety, emotional stability, and respectful relationships.",
+  "learningOutcomes": [
+    "Understand nonviolence in the context of fatherhood.",
+    "Recognise behaviours that create fear or harm.",
+    "Learn how to practise nonviolence daily.",
+    "Develop long-term safe behaviour habits."
+  ],
+  "modules": [
+    {
+      "title": "Nonviolence in Fathering",
+      "content": "Explores how nonviolence supports children’s safety."
+    },
+    {
+      "title": "Violence Awareness",
+      "content": "Identifies physical, emotional, and psychological harm."
+    },
+    {
+      "title": "Practising Nonviolence",
+      "content": "Provides tools for safe, respectful behaviour."
+    }
+  ]
+}

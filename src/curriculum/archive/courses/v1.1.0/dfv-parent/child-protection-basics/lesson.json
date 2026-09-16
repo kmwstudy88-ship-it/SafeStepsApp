@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Child protection involvement can feel frightening. This lesson explains why it happens."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "DFV is a major risk factor because it affects childrenâ€™s safety and wellbeing."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn how to communicate with workers and demonstrate protective actions."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Reflect on what you want child protection to understand about your situation."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Understanding the system helps reduce fear and build collaboration."
+                     }
+                 ]
+}

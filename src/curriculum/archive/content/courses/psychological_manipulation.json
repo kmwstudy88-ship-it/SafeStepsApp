@@ -1,0 +1,40 @@
+{
+  "id": "course_psychological_manipulation",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Psychological Manipulation",
+  "modules": [
+    {
+      "id": "module_understanding_manipulation",
+      "title": "Understanding Psychological Manipulation",
+      "lessons": [
+        "what_is_psychological_manipulation",
+        "how_manipulation_differs_from_conflict",
+        "why_manipulation_is_used_in_dfv"
+      ]
+    },
+    {
+      "id": "module_common_manipulation_tactics",
+      "title": "Common Manipulation Tactics",
+      "lessons": [
+        "gaslighting_and_reality_distortion",
+        "love_bombing_and_idealisation",
+        "fear_guilt_and_obligation_cycles"
+      ]
+    },
+    {
+      "id": "module_resisting_and_recovering",
+      "title": "Resisting and Recovering from Manipulation",
+      "lessons": [
+        "recognising_manipulation_patterns",
+        "rebuilding_self_trust",
+        "creating_boundaries_and_support_networks"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of psychological manipulation in DFV",
+    "Ability to recognise manipulation tactics early",
+    "Increased confidence in resisting and recovering from manipulation"
+  ]
+}

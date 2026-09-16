@@ -1,0 +1,797 @@
+[
+    {
+        "lessonId":  "foundations-of-safe-and-effective-parenting-lesson-1",
+        "courseId":  "foundations-of-safe-and-effective-parenting",
+        "title":  "What Children Need to Feel Safe",
+        "content":  "Children thrive when their world feels predictable, warm, and emotionally safe. This lesson explores the core needs that form the foundation of healthy parenting. Safety is not only about physical protection; it includes emotional safety, consistency, and the sense that a parent is reliable and present.\n\nMany parents were not raised with these models themselves, so learning these skills as an adult is an act of strength, not failure. Safe parenting begins with understanding that children interpret the world through the behaviour of the adults around them.\n\nThis lesson helps parents identify what safety looks like in daily life and how small changes in tone, routine, and presence can dramatically improve a child’s sense of security.",
+        "activities":  [
+                           "Observe your child for one day and note moments when they seem calm versus tense.",
+                           "Choose one daily routine and make it more predictable for the next three days."
+                       ],
+        "reflectionQuestions":  [
+                                    "When do you notice your child feeling safest around you?",
+                                    "What parts of your own childhood shape how you think about safety?",
+                                    "What is one small change you can make this week to increase predictability?"
+                                ]
+    },
+    {
+        "lessonId":  "foundations-of-safe-and-effective-parenting-lesson-2",
+        "courseId":  "foundations-of-safe-and-effective-parenting",
+        "title":  "Understanding Harmful vs Healthy Parenting Behaviours",
+        "content":  "Parenting behaviours fall into patterns that either build safety or undermine it. Healthy behaviours include calm communication, consistent boundaries, and emotional availability. Harmful behaviours often come from stress, exhaustion, or repeating what we experienced growing up.\n\nThis lesson helps parents recognise these patterns without shame. Behaviour change begins with awareness, not blame.\n\nWe explore how children interpret parental behaviour and how even small shifts—like pausing before responding—can dramatically change the emotional climate of the home.",
+        "activities":  [
+                           "Identify one behaviour you want to reduce and one you want to increase.",
+                           "Practice a 10‑second pause before responding when stressed."
+                       ],
+        "reflectionQuestions":  [
+                                    "What behaviours did you learn growing up that you want to change?",
+                                    "How does stress influence the way you respond to your child?",
+                                    "What healthy behaviour do you want to model more consistently?"
+                                ]
+    },
+    {
+        "lessonId":  "foundations-of-safe-and-effective-parenting-lesson-3",
+        "courseId":  "foundations-of-safe-and-effective-parenting",
+        "title":  "Consistency and Predictability",
+        "content":  "Children feel safest when they know what to expect. Predictability reduces anxiety and helps children regulate their emotions. Consistency does not mean perfection; it means responding in similar ways to similar situations.\n\nThis lesson explores how inconsistency—often caused by stress or overwhelm—can confuse children and lead to challenging behaviour.\n\nParents learn practical strategies for becoming more consistent, even during difficult days.",
+        "activities":  [
+                           "Choose one boundary to keep consistent for the next week.",
+                           "Create a simple morning or bedtime routine and follow it for three days."
+                       ],
+        "reflectionQuestions":  [
+                                    "Where in your parenting do you feel most consistent?",
+                                    "What situations make consistency difficult?",
+                                    "How does your child respond when routines are predictable?"
+                                ]
+    },
+    {
+        "lessonId":  "foundations-of-safe-and-effective-parenting-lesson-4",
+        "courseId":  "foundations-of-safe-and-effective-parenting",
+        "title":  "Building a Safe Parenting Mindset",
+        "content":  "A safe parenting mindset is built on self‑reflection, emotional awareness, and the willingness to grow. Parenting is not about being perfect; it is about being present, learning from mistakes, and repairing when things go wrong.\n\nThis lesson explores how mindset influences daily interactions. When parents shift from reacting to responding, they create a calmer environment.\n\nWe explore how to build a mindset that supports long‑term change, resilience, and emotional safety.",
+        "activities":  [
+                           "Write down one belief about parenting you want to let go of and one you want to strengthen.",
+                           "Practice a repair conversation after a moment of tension."
+                       ],
+        "reflectionQuestions":  [
+                                    "What mindset do you want to bring into your parenting?",
+                                    "How do you want your child to feel around you?",
+                                    "What does ‘safe parenting’ mean to you personally?"
+                                ]
+    },
+    {
+        "lessonId":  "understanding-child-development-lesson-1",
+        "courseId":  "understanding-child-development",
+        "title":  "Understanding Developmental Stages",
+        "content":  "Children grow in predictable patterns, but each child develops at their own pace. Understanding developmental stages helps parents set realistic expectations and respond with patience.\n\nThis lesson explores how children’s brains develop and how parents can support growth by offering guidance that matches their child’s abilities.\n\nWhen expectations align with development, conflict decreases and connection increases.",
+        "activities":  [
+                           "Read a summary of milestones for your child’s age and note three that stand out.",
+                           "Observe one behaviour today and reinterpret it through a developmental lens."
+                       ],
+        "reflectionQuestions":  [
+                                    "What behaviours have you misunderstood in the past?",
+                                    "How does knowing your child’s stage change your expectations?",
+                                    "What support does your child need at this stage?"
+                                ]
+    },
+    {
+        "lessonId":  "understanding-child-development-lesson-2",
+        "courseId":  "understanding-child-development",
+        "title":  "How the Brain Develops",
+        "content":  "A child’s brain develops from the bottom up: survival systems first, emotional systems next, and thinking skills last. This explains why children often react emotionally before they can think logically.\n\nThis lesson explores how stress, chaos, and harsh discipline disrupt development, while calm, predictable parenting strengthens emotional regulation.\n\nParents learn why meltdowns and impulsive behaviour are often signs of a developing brain, not intentional misbehaviour.",
+        "activities":  [
+                           "Notice one moment when your child reacts emotionally before thinking.",
+                           "Practice responding with a calm tone during a stressful moment."
+                       ],
+        "reflectionQuestions":  [
+                                    "How does understanding brain development change your perspective?",
+                                    "What helps you stay calm when your child is overwhelmed?",
+                                    "What daily interactions strengthen your child’s emotional brain?"
+                                ]
+    },
+    {
+        "lessonId":  "understanding-child-development-lesson-3",
+        "courseId":  "understanding-child-development",
+        "title":  "Emotional Development and Big Feelings",
+        "content":  "Children experience emotions intensely because their regulation systems are still developing. They rely on adults to help them calm down and understand their feelings.\n\nThis lesson explores how parents can become emotional coaches, helping children name feelings and recover from difficult moments.\n\nParents learn how to respond to big feelings with empathy rather than frustration.",
+        "activities":  [
+                           "Help your child name one feeling today.",
+                           "Create a calm‑down space together."
+                       ],
+        "reflectionQuestions":  [
+                                    "How were emotions handled in your childhood?",
+                                    "What feelings are hardest for you to support?",
+                                    "How does your child respond when you stay calm?"
+                                ]
+    },
+    {
+        "lessonId":  "understanding-child-development-lesson-4",
+        "courseId":  "understanding-child-development",
+        "title":  "Supporting Growth Through Connection",
+        "content":  "Connection is the foundation of healthy development. When children feel connected, they are more confident, cooperative, and resilient.\n\nThis lesson explores how everyday interactions—shared play, gentle touch, listening—shape emotional and cognitive growth.\n\nParents learn how to use connection as a tool for guiding behaviour and reducing conflict.",
+        "activities":  [
+                           "Spend 10 minutes in child‑led play.",
+                           "Offer one moment of connection during a stressful time."
+                       ],
+        "reflectionQuestions":  [
+                                    "What moments help you feel connected to your child?",
+                                    "How does your child behave when disconnected?",
+                                    "What daily habit could strengthen connection?"
+                                ]
+    },
+    {
+        "lessonId":  "emotional-regulation-for-parents-lesson-1",
+        "courseId":  "emotional-regulation-for-parents",
+        "title":  "Why Emotional Regulation Matters",
+        "content":  "Parents are the emotional anchors of the home. When adults stay calm, children feel safe. Emotional regulation is not about suppressing feelings; it is about slowing down reactions and choosing responses that support connection.\n\nThis lesson reframes regulation as a skill that can be learned at any age.\n\nWhen parents regulate themselves, children learn to regulate too.",
+        "activities":  [
+                           "Pause and take three slow breaths during one stressful moment.",
+                           "Write down the physical signs you feel when overwhelmed."
+                       ],
+        "reflectionQuestions":  [
+                                    "How did your family handle emotions?",
+                                    "What situations trigger strong emotions for you?",
+                                    "How does your child react when you stay calm?"
+                                ]
+    },
+    {
+        "lessonId":  "emotional-regulation-for-parents-lesson-2",
+        "courseId":  "emotional-regulation-for-parents",
+        "title":  "Identifying Triggers and Patterns",
+        "content":  "Every parent has emotional triggers—moments that spark frustration or fear. These triggers often come from past experiences or unmet needs.\n\nThis lesson helps parents identify patterns in their emotional responses and prepare for difficult moments.\n\nUnderstanding triggers allows parents to respond intentionally instead of reacting automatically.",
+        "activities":  [
+                           "Write down three situations that trigger strong emotions.",
+                           "Track your emotional reactions for one day."
+                       ],
+        "reflectionQuestions":  [
+                                    "What patterns do you notice?",
+                                    "How do your triggers affect your parenting?",
+                                    "What support do you need to handle these moments differently?"
+                                ]
+    },
+    {
+        "lessonId":  "emotional-regulation-for-parents-lesson-3",
+        "courseId":  "emotional-regulation-for-parents",
+        "title":  "Practical Regulation Strategies",
+        "content":  "Emotional regulation improves with practice. Parents can use strategies like deep breathing, grounding, and positive self‑talk to calm their nervous system.\n\nThis lesson explores how the body responds to stress and how parents can interrupt the stress cycle.\n\nRegulation is not about being emotionless—it is about staying steady enough to guide children.",
+        "activities":  [
+                           "Practice a grounding technique today.",
+                           "Use one regulation strategy during a stressful moment."
+                       ],
+        "reflectionQuestions":  [
+                                    "Which strategies feel natural?",
+                                    "How does your body feel when calming down?",
+                                    "How might these strategies change interactions with your child?"
+                                ]
+    },
+    {
+        "lessonId":  "emotional-regulation-for-parents-lesson-4",
+        "courseId":  "emotional-regulation-for-parents",
+        "title":  "Repairing After Emotional Mistakes",
+        "content":  "All parents lose their temper sometimes. What matters is what happens afterward. Repair teaches children that relationships can recover.\n\nThis lesson explores how to acknowledge mistakes, take responsibility, and reconnect.\n\nRepair is a sign of strength, not weakness.",
+        "activities":  [
+                           "Practice a repair statement from a recent moment.",
+                           "Notice how your child responds to repair."
+                       ],
+        "reflectionQuestions":  [
+                                    "How was repair handled in your childhood?",
+                                    "What makes apologising difficult?",
+                                    "How does your child respond when you take responsibility?"
+                                ]
+    },
+    {
+        "lessonId":  "building-secure-attachment-lesson-1",
+        "courseId":  "building-secure-attachment",
+        "title":  "What Secure Attachment Really Means",
+        "content":  "Secure attachment is the deep sense a child has that their caregiver is emotionally available, responsive, and safe. It is not about being perfect; it is about being consistent enough that a child trusts you will return, listen, and care.\n\nMany parents worry they have already damaged attachment, but attachment is flexible and repairable. Even if mistakes were made, secure attachment can still form through repeated moments of connection.\n\nThis lesson helps parents understand the foundations of secure attachment and why it is one of the strongest predictors of emotional wellbeing.",
+        "activities":  [
+                           "Spend five minutes giving your child full attention with no distractions.",
+                           "Identify one moment this week when your child sought comfort and reflect on your response."
+                       ],
+        "reflectionQuestions":  [
+                                    "What does safety mean to you in relationships?",
+                                    "How did your caregivers respond to your emotions?",
+                                    "What moments help your child feel most connected to you?"
+                                ]
+    },
+    {
+        "lessonId":  "building-secure-attachment-lesson-2",
+        "courseId":  "building-secure-attachment",
+        "title":  "The Power of Attunement",
+        "content":  "Attunement is the ability to notice, understand, and respond to your child’s emotional state. When a parent is attuned, the child feels seen and understood.\n\nChildren who experience attunement learn that their feelings matter. When attunement is missing, children may feel confused or alone.\n\nThis lesson teaches parents how to slow down, observe cues, and respond in ways that build emotional connection.",
+        "activities":  [
+                           "Watch your child for two minutes without speaking and observe their cues.",
+                           "Respond to one emotional cue with a validating phrase."
+                       ],
+        "reflectionQuestions":  [
+                                    "How easy is it for you to notice your child’s emotional cues?",
+                                    "What gets in the way of attunement?",
+                                    "How does your child react when they feel understood?"
+                                ]
+    },
+    {
+        "lessonId":  "building-secure-attachment-lesson-3",
+        "courseId":  "building-secure-attachment",
+        "title":  "Repairing Attachment Ruptures",
+        "content":  "Attachment ruptures happen in every family. A rupture is a moment of disconnection—yelling, shutting down, or misunderstanding. Ruptures are not failures; they are opportunities.\n\nRepair teaches children that relationships can recover and that mistakes do not break love.\n\nThis lesson helps parents repair in ways that strengthen attachment.",
+        "activities":  [
+                           "Think of a recent rupture and practice a repair statement.",
+                           "Notice how your child responds when repair is quick vs delayed."
+                       ],
+        "reflectionQuestions":  [
+                                    "How were ruptures handled in your childhood?",
+                                    "What makes repair difficult?",
+                                    "How does your child behave after repair?"
+                                ]
+    },
+    {
+        "lessonId":  "building-secure-attachment-lesson-4",
+        "courseId":  "building-secure-attachment",
+        "title":  "Building Long‑Term Connection",
+        "content":  "Connection is built through small, repeated moments of warmth and presence. Long‑term connection grows when parents show interest in their child’s world and create shared experiences.\n\nThis lesson explores how routines, rituals, and daily interactions strengthen connection.\n\nParents learn how to create a home environment where connection is part of the rhythm of daily life.",
+        "activities":  [
+                           "Create a small daily ritual with your child.",
+                           "Spend five minutes doing an activity your child enjoys."
+                       ],
+        "reflectionQuestions":  [
+                                    "What moments help you feel connected?",
+                                    "How does your child show they want connection?",
+                                    "What ritual could strengthen your relationship?"
+                                ]
+    },
+    {
+        "lessonId":  "positive-communication-skills-lesson-1",
+        "courseId":  "positive-communication-skills",
+        "title":  "Speaking So Children Feel Safe",
+        "content":  "Communication is more than words—it is tone, body language, and emotional presence. Children are sensitive to how adults speak to them.\n\nThis lesson explores how calm, warm communication builds trust and reduces defensiveness.\n\nParents learn how to shift from reactive communication to intentional communication.",
+        "activities":  [
+                           "Give one instruction today using a calm, slow tone.",
+                           "Record yourself speaking during a stressful moment and reflect on your tone."
+                       ],
+        "reflectionQuestions":  [
+                                    "How did adults speak to you as a child?",
+                                    "What tone do you use when stressed?",
+                                    "How does your child respond when you speak calmly?"
+                                ]
+    },
+    {
+        "lessonId":  "positive-communication-skills-lesson-2",
+        "courseId":  "positive-communication-skills",
+        "title":  "Listening to Understand, Not to React",
+        "content":  "Children communicate through words, behaviour, and emotion. Listening deeply means paying attention to what your child is trying to express.\n\nThis lesson teaches parents how to validate feelings and reflect back what they hear.\n\nWhen children feel heard, their emotional intensity decreases and cooperation increases.",
+        "activities":  [
+                           "Reflect back one thing your child says using \u0027What I hear you saying is…\u0027",
+                           "Listen for one full minute without interrupting."
+                       ],
+        "reflectionQuestions":  [
+                                    "How does your child behave when they feel unheard?",
+                                    "What makes listening difficult?",
+                                    "How does your child respond when validated?"
+                                ]
+    },
+    {
+        "lessonId":  "positive-communication-skills-lesson-3",
+        "courseId":  "positive-communication-skills",
+        "title":  "Reducing Conflict Through Clear Communication",
+        "content":  "Many conflicts come from unclear expectations. Children need simple, direct communication that matches their developmental level.\n\nThis lesson teaches parents how to give clear instructions and avoid communication habits that escalate conflict.\n\nClear communication reduces power struggles and misunderstandings.",
+        "activities":  [
+                           "Give one instruction using ten words or fewer.",
+                           "Ask your child to repeat back an instruction in their own words."
+                       ],
+        "reflectionQuestions":  [
+                                    "What communication habits escalate conflict?",
+                                    "How does your child respond when instructions are simple?",
+                                    "What changes could reduce misunderstandings?"
+                                ]
+    },
+    {
+        "lessonId":  "positive-communication-skills-lesson-4",
+        "courseId":  "positive-communication-skills",
+        "title":  "Building Cooperation Through Connection",
+        "content":  "Children are more cooperative when they feel connected. Communication rooted in connection creates a sense of teamwork.\n\nThis lesson explores how warmth, eye contact, and positive phrasing increase cooperation.\n\nParents learn how to invite cooperation rather than demand compliance.",
+        "activities":  [
+                           "Connect with your child before giving an instruction.",
+                           "Use positive phrasing such as \u0027Walk next to me\u0027 instead of \u0027Don’t run.\u0027"
+                       ],
+        "reflectionQuestions":  [
+                                    "How does your child respond when you connect first?",
+                                    "What communication habits help your child feel respected?",
+                                    "How can you bring more connection into daily interactions?"
+                                ]
+    },
+    {
+        "lessonId":  "healthy-boundaries-and-routines-lesson-1",
+        "courseId":  "healthy-boundaries-and-routines",
+        "title":  "Why Boundaries Create Safety",
+        "content":  "Boundaries are not about control—they are about safety, predictability, and emotional security. Children feel safer when they know what to expect.\n\nThis lesson reframes boundaries as an act of care, not punishment.\n\nWhen boundaries are clear and warm, children thrive.",
+        "activities":  [
+                           "Identify one boundary to strengthen this week.",
+                           "Observe moments when unclear boundaries lead to confusion."
+                       ],
+        "reflectionQuestions":  [
+                                    "How were boundaries handled in your childhood?",
+                                    "What makes setting boundaries difficult?",
+                                    "How does your child respond to clear boundaries?"
+                                ]
+    },
+    {
+        "lessonId":  "healthy-boundaries-and-routines-lesson-2",
+        "courseId":  "healthy-boundaries-and-routines",
+        "title":  "Creating Predictable Routines",
+        "content":  "Routines help children feel grounded and secure. Predictability reduces stress and supports emotional regulation.\n\nThis lesson explores how routines reduce power struggles and improve cooperation.\n\nParents learn how to build simple routines that fit their family.",
+        "activities":  [
+                           "Write a simple 3–5 step routine and practice it for three days.",
+                           "Create a visual routine chart with your child."
+                       ],
+        "reflectionQuestions":  [
+                                    "Which parts of the day feel chaotic?",
+                                    "How does your child behave with predictable routines?",
+                                    "What routine would make the biggest difference?"
+                                ]
+    },
+    {
+        "lessonId":  "healthy-boundaries-and-routines-lesson-3",
+        "courseId":  "healthy-boundaries-and-routines",
+        "title":  "Following Through With Boundaries",
+        "content":  "Setting boundaries is only half the work—following through makes them effective. Children test boundaries to understand where limits truly are.\n\nThis lesson helps parents stay steady without becoming harsh.\n\nConsistency builds trust and reduces conflict.",
+        "activities":  [
+                           "Choose one boundary and follow through every time for three days.",
+                           "Write down a calm response you will use when the boundary is tested."
+                       ],
+        "reflectionQuestions":  [
+                                    "What makes follow‑through challenging?",
+                                    "How does your child react when you stay consistent?",
+                                    "What support do you need to maintain boundaries?"
+                                ]
+    },
+    {
+        "lessonId":  "healthy-boundaries-and-routines-lesson-4",
+        "courseId":  "healthy-boundaries-and-routines",
+        "title":  "Balancing Flexibility and Structure",
+        "content":  "Healthy parenting requires both structure and flexibility. Too much rigidity creates fear; too much flexibility creates chaos.\n\nThis lesson explores how to offer choices within boundaries and adapt routines when needed.\n\nFlexibility is not the opposite of structure—it is structure with empathy.",
+        "activities":  [
+                           "Offer your child a choice within a routine.",
+                           "Reflect on a moment when you were too rigid or too flexible."
+                       ],
+        "reflectionQuestions":  [
+                                    "Do you lean more toward rigidity or flexibility?",
+                                    "How does your child respond to choices?",
+                                    "What does a healthy balance look like for your family?"
+                                ]
+    },
+    {
+        "lessonId":  "managing-challenging-behaviour-lesson-1",
+        "courseId":  "managing-challenging-behaviour",
+        "title":  "Understanding the Causes of Challenging Behaviour",
+        "content":  "Challenging behaviour is often a child’s way of communicating unmet needs or overwhelming emotions. It is not about defiance or manipulation.\n\nThis lesson helps parents see behaviour through a compassionate lens and identify the underlying causes.",
+        "activities":  [
+                           "Observe one instance of challenging behaviour and write down possible triggers.",
+                           "Reflect on how your response may have influenced the behaviour."
+                       ],
+        "reflectionQuestions":  [
+                                    "What do you think your child is trying to communicate?",
+                                    "How does stress influence behaviour?",
+                                    "What patterns do you notice in challenging moments?"
+                                ]
+    },
+    {
+        "lessonId":  "managing-challenging-behaviour-lesson-2",
+        "courseId":  "managing-challenging-behaviour",
+        "title":  "Behaviour as Communication",
+        "content":  "Challenging behaviour is often a child’s way of communicating unmet needs, overwhelming emotions, or developmental limitations. Children do not yet have the skills to express themselves clearly, so behaviour becomes their language.\n\nThis lesson explores how behaviour signals needs such as connection, rest, regulation, or predictability. When parents shift from seeing behaviour as defiance to seeing it as communication, they respond with more empathy and effectiveness.\n\nParents learn how to observe patterns, identify triggers, and respond to the need behind the behaviour rather than reacting to the behaviour itself.",
+        "activities":  [
+                           "Observe one challenging behaviour today and write down what might have triggered it.",
+                           "Identify the unmet need behind a recent behaviour and respond to the need instead of the behaviour."
+                       ],
+        "reflectionQuestions":  [
+                                    "What behaviours are hardest for you to understand?",
+                                    "How does your child behave when overwhelmed?",
+                                    "What unmet needs might be driving recent behaviours?"
+                                ]
+    },
+    {
+        "lessonId":  "managing-challenging-behaviour-lesson-2",
+        "courseId":  "managing-challenging-behaviour",
+        "title":  "Staying Calm in Difficult Moments",
+        "content":  "When children escalate, parents often escalate too. This is a natural nervous system response. However, a parent’s calm presence is the most powerful tool for de-escalating challenging behaviour.\n\nThis lesson teaches parents how to pause, breathe, and ground themselves before responding. Staying calm does not mean ignoring behaviour—it means responding from a place of clarity rather than stress.\n\nParents learn how to use tone, body language, and simple phrases to guide children through difficult moments without adding fuel to the fire.",
+        "activities":  [
+                           "Practice a 10-second pause before responding to a challenging behaviour.",
+                           "Use a grounding technique during a stressful moment."
+                       ],
+        "reflectionQuestions":  [
+                                    "What behaviours trigger strong reactions in you?",
+                                    "How does your child respond when you stay calm?",
+                                    "What helps you regulate your emotions in difficult moments?"
+                                ]
+    },
+    {
+        "lessonId":  "managing-challenging-behaviour-lesson-3",
+        "courseId":  "managing-challenging-behaviour",
+        "title":  "Teaching Skills, Not Punishing Behaviour",
+        "content":  "Punishment may stop behaviour temporarily, but it does not teach the skills children need to behave differently in the future. Challenging behaviour often comes from skill gaps—children may lack emotional regulation, problem-solving, communication, or impulse control.\n\nThis lesson reframes discipline as teaching. Parents learn how to model skills, practice them with their child, and reinforce positive behaviour.\n\nSkill-building creates long-term change and strengthens the parent-child relationship.",
+        "activities":  [
+                           "Identify one skill your child needs help with and practice it together.",
+                           "Use positive reinforcement to acknowledge a moment of good behaviour."
+                       ],
+        "reflectionQuestions":  [
+                                    "What skills does your child struggle with most?",
+                                    "How did adults respond to your behaviour growing up?",
+                                    "What teaching approach feels most natural to you?"
+                                ]
+    },
+    {
+        "lessonId":  "managing-challenging-behaviour-lesson-4",
+        "courseId":  "managing-challenging-behaviour",
+        "title":  "Creating a Behaviour Plan That Works",
+        "content":  "A behaviour plan helps parents stay consistent and calm during challenging moments. It outlines how to respond to specific behaviours, what boundaries to set, and what skills to teach.\n\nThis lesson guides parents through creating a personalised behaviour plan that fits their child’s needs and developmental stage.\n\nA clear plan reduces stress, increases confidence, and helps children understand expectations.",
+        "activities":  [
+                           "Choose one behaviour to focus on this week and write a simple plan for how you will respond.",
+                           "Share the plan with another caregiver to ensure consistency."
+                       ],
+        "reflectionQuestions":  [
+                                    "What behaviour causes the most stress in your home?",
+                                    "How consistent are your current responses?",
+                                    "What support do you need to follow your plan?"
+                                ]
+    },
+    {
+        "lessonId":  "strengthening-parent-child-connection-lesson-1",
+        "courseId":  "strengthening-parent-child-connection",
+        "title":  "The Foundation of Connection",
+        "content":  "Connection is the emotional glue that holds relationships together. Children who feel connected to their caregivers are more cooperative, resilient, and confident.\n\nThis lesson explores how connection forms and why it is essential for healthy development. Parents learn how to create moments of connection even during busy or stressful days.\n\nConnection is not about perfection—it is about showing up consistently with care.",
+        "activities":  [
+                           "Spend 10 minutes in child-led play today.",
+                           "Offer one moment of connection during a stressful time."
+                       ],
+        "reflectionQuestions":  [
+                                    "What moments help you feel connected to your child?",
+                                    "How does your child show they need connection?",
+                                    "What gets in the way of connection in your home?"
+                                ]
+    },
+    {
+        "lessonId":  "strengthening-parent-child-connection-lesson-2",
+        "courseId":  "strengthening-parent-child-connection",
+        "title":  "Building Emotional Safety",
+        "content":  "Emotional safety is the feeling that it is safe to express feelings, make mistakes, and be vulnerable. Children thrive when they know their parent will respond with empathy rather than judgment.\n\nThis lesson teaches parents how to create emotional safety through validation, gentle tone, and predictable responses.\n\nWhen children feel emotionally safe, they open up more, behave better, and trust more deeply.",
+        "activities":  [
+                           "Validate one feeling your child expresses today.",
+                           "Practice responding to big emotions with a calm, steady tone."
+                       ],
+        "reflectionQuestions":  [
+                                    "How was emotional safety handled in your childhood?",
+                                    "What feelings are hardest for you to support?",
+                                    "How does your child behave when they feel emotionally safe?"
+                                ]
+    },
+    {
+        "lessonId":  "strengthening-parent-child-connection-lesson-3",
+        "courseId":  "strengthening-parent-child-connection",
+        "title":  "Repairing Disconnection",
+        "content":  "Disconnection happens in every relationship. What matters is how quickly and gently parents repair. Repair teaches children that relationships can recover and that mistakes do not break love.\n\nThis lesson explores how to repair after conflict, misunderstandings, or emotional overwhelm.\n\nRepair strengthens trust and deepens connection over time.",
+        "activities":  [
+                           "Practice a repair statement after a moment of tension.",
+                           "Reflect on a recent rupture and identify how you might repair differently next time."
+                       ],
+        "reflectionQuestions":  [
+                                    "How did adults repair with you growing up?",
+                                    "What makes repair difficult for you?",
+                                    "How does your child respond when you repair quickly?"
+                                ]
+    },
+    {
+        "lessonId":  "strengthening-parent-child-connection-lesson-4",
+        "courseId":  "strengthening-parent-child-connection",
+        "title":  "Creating Connection Rituals",
+        "content":  "Connection rituals are small, repeated moments that strengthen the bond between parent and child. These rituals create predictability, warmth, and shared joy.\n\nThis lesson helps parents design rituals that fit their family’s culture, schedule, and values.\n\nRituals help children feel grounded and loved.",
+        "activities":  [
+                           "Create one new connection ritual with your child.",
+                           "Practice the ritual daily for one week."
+                       ],
+        "reflectionQuestions":  [
+                                    "What rituals did you have growing up?",
+                                    "What rituals does your child enjoy most?",
+                                    "What new ritual would strengthen your relationship?"
+                                ]
+    },
+    {
+        "lessonId":  "co-parenting-and-shared-care-lesson-1",
+        "courseId":  "co-parenting-and-shared-care",
+        "title":  "Putting Children First",
+        "content":  "Co‑parenting works best when both adults focus on the child’s needs rather than past conflict. Children thrive when they experience stability, predictability, and emotional safety across households.\n\nThis lesson helps parents shift from adult-centered conflict to child-centered cooperation.\n\nParents learn how to separate personal feelings from parenting decisions and prioritise the child’s emotional needs.",
+        "activities":  [
+                           "Write down three things your child needs most during transitions between homes.",
+                           "Identify one area where you can reduce conflict for your child’s sake."
+                       ],
+        "reflectionQuestions":  [
+                                    "How does conflict between adults affect your child?",
+                                    "What helps your child feel secure during transitions?",
+                                    "What does ‘putting the child first’ look like in your situation?"
+                                ]
+    },
+    {
+        "lessonId":  "co-parenting-and-shared-care-lesson-2",
+        "courseId":  "co-parenting-and-shared-care",
+        "title":  "Communication That Reduces Conflict",
+        "content":  "Effective co‑parenting requires clear, respectful communication. This does not mean the adults must be friends—it means they must communicate in ways that protect the child from tension.\n\nThis lesson teaches parents how to use neutral language, stick to facts, and avoid emotional triggers.\n\nHealthy communication reduces stress for everyone involved, especially the child.",
+        "activities":  [
+                           "Rewrite a recent message to your co‑parent using neutral, child-focused language.",
+                           "Practice using short, clear statements when discussing parenting issues."
+                       ],
+        "reflectionQuestions":  [
+                                    "What communication patterns increase conflict?",
+                                    "How does your child react when adults communicate calmly?",
+                                    "What boundaries do you need to protect your peace?"
+                                ]
+    },
+    {
+        "lessonId":  "co-parenting-and-shared-care-lesson-3",
+        "courseId":  "co-parenting-and-shared-care",
+        "title":  "Creating Consistency Across Homes",
+        "content":  "Children feel safer when rules, routines, and expectations are similar across households. Total agreement is not necessary, but basic consistency helps children transition more smoothly.\n\nThis lesson explores how co‑parents can align on key areas such as bedtime, homework, screen time, and discipline.\n\nConsistency reduces confusion and helps children feel secure.",
+        "activities":  [
+                           "Identify three routines you want to keep consistent across homes.",
+                           "Discuss one routine with your co‑parent using calm, neutral language."
+                       ],
+        "reflectionQuestions":  [
+                                    "What routines matter most for your child’s stability?",
+                                    "Where can you be flexible?",
+                                    "How does your child behave when routines are consistent?"
+                                ]
+    },
+    {
+        "lessonId":  "co-parenting-and-shared-care-lesson-4",
+        "courseId":  "co-parenting-and-shared-care",
+        "title":  "Navigating Conflict and Repair",
+        "content":  "Conflict is common in co‑parenting, but how adults handle conflict determines how it affects the child. Children feel safest when adults manage disagreements calmly and privately.\n\nThis lesson teaches parents how to de-escalate conflict, set boundaries, and repair communication breakdowns.\n\nRepair strengthens the co‑parenting relationship and reduces stress for the child.",
+        "activities":  [
+                           "Reflect on a recent conflict and identify what triggered it.",
+                           "Practice a repair statement such as \u0027Let’s reset and focus on what’s best for our child.\u0027"
+                       ],
+        "reflectionQuestions":  [
+                                    "How does conflict affect your child emotionally?",
+                                    "What helps you stay calm during disagreements?",
+                                    "What repair strategies feel most natural to you?"
+                                ]
+    },
+    {
+        "lessonId":  "supporting-children-through-stress-lesson-1",
+        "courseId":  "supporting-children-through-stress",
+        "title":  "Recognising Signs of Stress in Children",
+        "content":  "Children often show stress through behaviour rather than words. Recognising the signs of stress helps parents respond with empathy and support.\n\nThis lesson explores common stress behaviours such as withdrawal, aggression, regression, and somatic complaints.\n\nParents learn how to identify when their child is struggling and what they can do to help.",
+        "activities":  [
+                           "Observe your child for signs of stress today and write down what you notice.",
+                           "Reflect on a recent moment when your child seemed stressed and how you responded."
+                       ],
+        "reflectionQuestions":  [
+                                    "What signs of stress do you see in your child?",
+                                    "How does your child behave when overwhelmed?",
+                                    "What support does your child need when stressed?"
+                                ]
+    },
+    {
+        "lessonId":  "supporting-children-through-stress-lesson-2",
+        "courseId":  "supporting-children-through-stress",
+        "title":  "Helping Children Regulate Stress",
+        "content":  "When children are stressed, their nervous system is in overdrive. Parents can help regulate their child’s stress by providing calm presence, physical comfort, and predictable routines.\n\nThis lesson teaches parents how to use co-regulation strategies to help children calm down and feel safe.\n\nRegulating stress together strengthens the parent-child bond and builds resilience.",
+        "activities":  [
+                           "Practice a co-regulation strategy such as deep breathing or gentle touch during a stressful moment.",
+                           "Create a calming routine for your child to use when they feel overwhelmed."
+                       ],
+        "reflectionQuestions":  [
+                                    "How do you typically respond when your child is stressed?",
+                                    "What co-regulation strategies feel most natural to you?",
+                                    "How does your child respond when you help them regulate?"
+                                ]
+    },
+    {
+        "lessonId":  "supporting-children-through-stress-lesson-3",
+        "courseId":  "supporting-children-through-stress",
+        "title":  "Building Resilience Through Connection",
+        "content":  "Resilience is not about toughening children up—it is about helping them feel safe enough to face challenges. Connection is the foundation of resilience.\n\nThis lesson explores how parents can build resilience by providing emotional support, encouraging problem-solving, and fostering a growth mindset.\n\nWhen children feel connected and supported, they are more likely to bounce back from adversity.",
+        "activities":  [
+                           "Encourage your child to solve a small problem today with your support.",
+                           "Praise your child’s effort and resilience rather than just outcomes."
+                       ],
+        "reflectionQuestions":  [
+                                    "How do you define resilience?",
+                                    "What messages about failure and success did you receive growing up?",
+                                    "How can you foster a growth mindset in your child?"
+                                ]
+    },
+    {
+        "lessonId":  "supporting-children-through-stress-lesson-4",
+        "courseId":  "supporting-children-through-stress",
+        "title":  "Taking Care of Yourself to Support Your Child",
+        "content":  "Parents cannot pour from an empty cup. Taking care of your own emotional wellbeing is essential for supporting your child through stress.\n\nThis lesson teaches parents how to prioritise self-care, set boundaries, and seek support when needed.\n\nWhen parents take care of themselves, they are better equipped to be present and supportive for their children.",
+        "activities":  [
+                           "Identify one self-care activity that replenishes you and schedule it this week.",
+                           "Set a boundary that protects your emotional wellbeing."
+                       ],
+        "reflectionQuestions":  [
+                                    "What self-care practices help you recharge?",
+                                    "How does your emotional state affect your parenting?",
+                                    "What support do you need to take better care of yourself?"
+                                ]
+    },
+    {
+        "lessonId":  "supporting-children-through-stress-lesson-1",
+        "courseId":  "supporting-children-through-stress",
+        "title":  "Understanding Stress Responses",
+        "content":  "Children experience stress in ways that are often invisible to adults. Their bodies react quickly, and their behaviour becomes the signal that something is wrong. Stress responses may look like anger, withdrawal, clinginess, or hyperactivity.\n\nThis lesson helps parents understand the fight, flight, and freeze responses in children and how these reactions are rooted in the nervous system.\n\nWhen parents recognise stress early, they can support their child before behaviour escalates.",
+        "activities":  [
+                           "Observe your child for signs of stress today and write down what you notice.",
+                           "Identify one situation that consistently triggers stress for your child."
+                       ],
+        "reflectionQuestions":  [
+                                    "How does your child show they are stressed?",
+                                    "What situations overwhelm them most?",
+                                    "How do you respond when your child is stressed?"
+                                ]
+    },
+    {
+        "lessonId":  "supporting-children-through-stress-lesson-2",
+        "courseId":  "supporting-children-through-stress",
+        "title":  "Helping Children Calm Their Bodies",
+        "content":  "Children need help regulating their nervous system. They learn calmness through co-regulation—borrowing the adult’s steady presence.\n\nThis lesson teaches parents simple grounding and calming strategies that help children recover from stress.\n\nParents learn how to use tone, touch, breathing, and environment to support regulation.",
+        "activities":  [
+                           "Practice a calming strategy with your child today.",
+                           "Create a calm-down space together."
+                       ],
+        "reflectionQuestions":  [
+                                    "What helps your child calm down?",
+                                    "How does your presence affect their stress?",
+                                    "What calming strategies feel natural to you?"
+                                ]
+    },
+    {
+        "lessonId":  "supporting-children-through-stress-lesson-3",
+        "courseId":  "supporting-children-through-stress",
+        "title":  "Supporting Children Through Change and Uncertainty",
+        "content":  "Transitions, changes, and uncertainty can be overwhelming for children. Even positive changes can trigger stress.\n\nThis lesson explores how to prepare children for transitions, offer reassurance, and maintain routines during uncertain times.\n\nParents learn how to communicate clearly and provide emotional safety during change.",
+        "activities":  [
+                           "Prepare your child for an upcoming transition using simple, clear language.",
+                           "Create a predictable routine for a stressful part of the day."
+                       ],
+        "reflectionQuestions":  [
+                                    "How does your child react to change?",
+                                    "What helps them feel secure during transitions?",
+                                    "What routines support them during uncertainty?"
+                                ]
+    },
+    {
+        "lessonId":  "supporting-children-through-stress-lesson-4",
+        "courseId":  "supporting-children-through-stress",
+        "title":  "Building Long-Term Resilience",
+        "content":  "Resilience is not about avoiding stress—it is about recovering from it. Children build resilience through supportive relationships, predictable routines, and opportunities to practice coping skills.\n\nThis lesson helps parents understand how to strengthen resilience through connection, encouragement, and emotional coaching.\n\nParents learn how to help children feel capable and confident in handling challenges.",
+        "activities":  [
+                           "Praise your child for effort rather than outcome.",
+                           "Help your child reflect on a time they overcame something difficult."
+                       ],
+        "reflectionQuestions":  [
+                                    "What helps your child bounce back from challenges?",
+                                    "How do you model resilience?",
+                                    "What resilience-building habits can you add to daily life?"
+                                ]
+    },
+    {
+        "lessonId":  "cultural-family-and-community-strengths-lesson-1",
+        "courseId":  "cultural-family-and-community-strengths",
+        "title":  "Honouring Cultural Identity",
+        "content":  "Children develop a strong sense of self when their cultural identity is recognised and celebrated. Culture provides belonging, pride, and connection.\n\nThis lesson explores how parents can honour their child’s cultural background through stories, traditions, language, and community.\n\nParents learn how cultural strengths support emotional wellbeing.",
+        "activities":  [
+                           "Share a cultural story, song, or tradition with your child.",
+                           "Talk about something you value from your cultural background."
+                       ],
+        "reflectionQuestions":  [
+                                    "What cultural strengths do you want to pass on?",
+                                    "How does your child connect with their cultural identity?",
+                                    "What traditions bring your family together?"
+                                ]
+    },
+    {
+        "lessonId":  "cultural-family-and-community-strengths-lesson-2",
+        "courseId":  "cultural-family-and-community-strengths",
+        "title":  "Family Strengths and Traditions",
+        "content":  "Every family has strengths—rituals, values, humour, resilience, or ways of supporting one another. These strengths help children feel grounded and connected.\n\nThis lesson helps parents identify and build on their family’s unique strengths.\n\nParents learn how to create traditions that support belonging and stability.",
+        "activities":  [
+                           "Identify three strengths your family already has.",
+                           "Create or continue a simple family tradition this week."
+                       ],
+        "reflectionQuestions":  [
+                                    "What strengths helped your family through hard times?",
+                                    "What traditions do you want to continue?",
+                                    "How does your child show pride in your family?"
+                                ]
+    },
+    {
+        "lessonId":  "cultural-family-and-community-strengths-lesson-3",
+        "courseId":  "cultural-family-and-community-strengths",
+        "title":  "Community Support and Connection",
+        "content":  "Children thrive when surrounded by a supportive community. Community provides role models, belonging, and practical help.\n\nThis lesson explores how parents can build a network of support through extended family, neighbours, schools, and cultural groups.\n\nParents learn how to ask for help and how to strengthen community ties.",
+        "activities":  [
+                           "Reach out to one supportive person this week.",
+                           "Identify a community space or group that could support your family."
+                       ],
+        "reflectionQuestions":  [
+                                    "Who is part of your support network?",
+                                    "What community spaces feel safe and welcoming?",
+                                    "How does community support help your child?"
+                                ]
+    },
+    {
+        "lessonId":  "cultural-family-and-community-strengths-lesson-4",
+        "courseId":  "cultural-family-and-community-strengths",
+        "title":  "Building Identity and Belonging",
+        "content":  "A strong sense of identity helps children feel confident and secure. Identity is shaped by culture, family, community, and personal experiences.\n\nThis lesson explores how parents can help children build a positive sense of self through encouragement, representation, and connection.\n\nParents learn how to support belonging in both family and community spaces.",
+        "activities":  [
+                           "Talk with your child about what makes them unique.",
+                           "Share stories about your family’s history or strengths."
+                       ],
+        "reflectionQuestions":  [
+                                    "What helps your child feel proud of who they are?",
+                                    "How do you support belonging in your home?",
+                                    "What identity-building experiences can you offer?"
+                                ]
+    },
+    {
+        "lessonId":  "parent-growth-and-long-term-change-lesson-1",
+        "courseId":  "parent-growth-and-long-term-change",
+        "title":  "Reflecting on Your Parenting Journey",
+        "content":  "Growth begins with reflection. Parents change when they understand their patterns, strengths, and challenges.\n\nThis lesson helps parents reflect on how far they’ve come and what they want to continue improving.\n\nReflection builds self-awareness and supports long-term change.",
+        "activities":  [
+                           "Write down three ways you have grown as a parent.",
+                           "Identify one area you want to continue improving."
+                       ],
+        "reflectionQuestions":  [
+                                    "What are you proud of in your parenting?",
+                                    "What challenges have you overcome?",
+                                    "What growth do you want to focus on next?"
+                                ]
+    },
+    {
+        "lessonId":  "parent-growth-and-long-term-change-lesson-2",
+        "courseId":  "parent-growth-and-long-term-change",
+        "title":  "Setting Long-Term Parenting Goals",
+        "content":  "Long-term change requires clear goals. Parenting goals help guide daily decisions and keep families moving toward healthier patterns.\n\nThis lesson helps parents set realistic, meaningful goals that support their child’s wellbeing.\n\nParents learn how to break big goals into small, achievable steps.",
+        "activities":  [
+                           "Write one long-term parenting goal and break it into three steps.",
+                           "Share your goal with someone who can support you."
+                       ],
+        "reflectionQuestions":  [
+                                    "What long-term changes do you want for your family?",
+                                    "What steps can you take this month?",
+                                    "Who can support your growth?"
+                                ]
+    },
+    {
+        "lessonId":  "parent-growth-and-long-term-change-lesson-3",
+        "courseId":  "parent-growth-and-long-term-change",
+        "title":  "Building Sustainable Habits",
+        "content":  "Parenting change sticks when it becomes habit. Small, repeated actions create long-term transformation.\n\nThis lesson explores how to build habits that support calm, connection, and consistency.\n\nParents learn how to stay motivated even when progress feels slow.",
+        "activities":  [
+                           "Choose one habit to practice daily for one week.",
+                           "Track your progress in a simple checklist."
+                       ],
+        "reflectionQuestions":  [
+                                    "What habits support your best parenting?",
+                                    "What gets in the way of consistency?",
+                                    "How can you make habits easier to maintain?"
+                                ]
+    },
+    {
+        "lessonId":  "parent-growth-and-long-term-change-lesson-4",
+        "courseId":  "parent-growth-and-long-term-change",
+        "title":  "Maintaining Growth Over Time",
+        "content":  "Parenting is a lifelong journey. Growth continues as children grow and family needs change.\n\nThis lesson helps parents build systems for ongoing reflection, support, and adaptation.\n\nParents learn how to stay grounded, flexible, and committed to long-term wellbeing.",
+        "activities":  [
+                           "Create a monthly reflection routine.",
+                           "Identify one support or resource you want to add to your life."
+                       ],
+        "reflectionQuestions":  [
+                                    "What helps you stay committed to growth?",
+                                    "How do you adapt when parenting becomes challenging?",
+                                    "What long-term vision do you have for your family?"
+                                ]
+    }
+]

@@ -1,0 +1,8 @@
+{
+  "topic": "communication-for-support",
+  "version": "1.1.0",
+  "stream": "dfv-peer-mentor",
+  "description": "Peer Mentor training module on communication-for-support.",
+  "type": "course",
+  "title": " $args[0].Value.ToUpper() ommunication  $args[0].Value.ToUpper() or  $args[0].Value.ToUpper() upport"
+}

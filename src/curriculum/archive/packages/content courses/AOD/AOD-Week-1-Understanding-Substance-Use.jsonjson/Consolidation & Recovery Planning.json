@@ -1,0 +1,18 @@
+{
+  "id": "AOD-W1-D7",
+  "title": "Weekly Reflection & Next Steps",
+  "moduleId": "module-aod",
+  "week": 1,
+  "day": 7,
+  "durationMinutes": 10,
+  "learningGoal": "Consolidate learning from Week 1 and prepare for Week 2.",
+  "microLesson": "You’ve spent the week building insight into your patterns, triggers, and safety strategies. Today is about pulling everything together and setting yourself up for next week’s focus on cravings and coping skills.",
+  "activity": "Write one thing you learned this week and one goal you want to focus on next week.",
+  "evidenceTypes": [
+    "text"
+  ],
+  "caseworkerFlags": [
+    "aod-weekly"
+  ],
+  "version": "1.0.0"
+}

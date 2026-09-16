@@ -1,0 +1,25 @@
+{
+  "id": "module-developmental-stages",
+  "title": "Developmental Stages",
+  "moduleId": "developmental-stages",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand age‑appropriate behaviour and developmental milestones.",
+  "microLesson": "Children grow through predictable stages—physical, emotional, social, and cognitive. Understanding these stages helps parents set realistic expectations and respond with patience. When behaviour is viewed through a developmental lens, parents can support growth instead of reacting with frustration.",
+  "activity": "Choose one behaviour your child shows. Identify which developmental stage it relates to and reflect on how this changes your response.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "developmental-awareness"
+  ],
+  "resources": [
+    {
+      "title": "Developmental Milestones Chart",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

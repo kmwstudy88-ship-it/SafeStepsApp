@@ -1,0 +1,82 @@
+[
+  {
+    "id": "aod_substance_use_screening",
+    "category": "aod",
+    "name": "Substance Use Screening",
+    "description": "Initial screening for alcohol and drug use patterns.",
+    "tags": ["aod", "screening"],
+    "validatedTool": null
+  },
+  {
+    "id": "aod_drug_dependency",
+    "category": "aod",
+    "name": "Drug Dependency Assessment",
+    "description": "Assesses dependency, tolerance, and patterns of drug use.",
+    "tags": ["drug", "dependency"],
+    "validatedTool": null
+  },
+  {
+    "id": "aod_alcohol_dependency",
+    "category": "aod",
+    "name": "Alcohol Dependency Assessment",
+    "description": "Assesses alcohol use, dependency, and risk behaviours.",
+    "tags": ["alcohol", "dependency"],
+    "validatedTool": null
+  },
+  {
+    "id": "aod_recovery_readiness",
+    "category": "aod",
+    "name": "Recovery Readiness Assessment",
+    "description": "Measures motivation, readiness, and commitment to recovery.",
+    "tags": ["recovery", "readiness"],
+    "validatedTool": null
+  },
+  {
+    "id": "aod_relapse_risk",
+    "category": "aod",
+    "name": "Relapse Risk Assessment",
+    "description": "Assesses risk factors and triggers for relapse.",
+    "tags": ["relapse", "risk"],
+    "validatedTool": null
+  },
+  {
+    "id": "aod_harm_reduction",
+    "category": "aod",
+    "name": "Harm Reduction Assessment",
+    "description": "Evaluates harm reduction practices and safety strategies.",
+    "tags": ["harm_reduction", "safety"],
+    "validatedTool": null
+  },
+  {
+    "id": "aod_family_impact",
+    "category": "aod",
+    "name": "Family Impact Assessment",
+    "description": "Assesses the impact of substance use on family functioning.",
+    "tags": ["family", "impact"],
+    "validatedTool": null
+  },
+  {
+    "id": "aod_parenting_capacity",
+    "category": "aod",
+    "name": "Parenting Capacity and Substance Use Assessment",
+    "description": "Evaluates how substance use affects parenting capacity and child safety.",
+    "tags": ["parenting", "capacity", "aod"],
+    "validatedTool": null
+  },
+  {
+    "id": "aod_dual_diagnosis",
+    "category": "aod",
+    "name": "Dual Diagnosis Assessment",
+    "description": "Assesses co-occurring mental health and substance use issues.",
+    "tags": ["dual_diagnosis", "mental_health", "aod"],
+    "validatedTool": null
+  },
+  {
+    "id": "aod_craving",
+    "category": "aod",
+    "name": "Craving Assessment",
+    "description": "Measures intensity, frequency, and triggers of cravings.",
+    "tags": ["cravings", "aod"],
+    "validatedTool": null
+  }
+]

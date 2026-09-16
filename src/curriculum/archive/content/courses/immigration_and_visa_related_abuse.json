@@ -1,0 +1,40 @@
+{
+  "id": "course_immigration_and_visa_related_abuse",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Immigration and Visa-Related Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_immigration_abuse",
+      "title": "Understanding Immigration and Visa-Related Abuse",
+      "lessons": [
+        "what_is_immigration_related_abuse",
+        "how_visa_status_is_used_as_control",
+        "impacts_on_safety_and_help_seeking"
+      ]
+    },
+    {
+      "id": "module_common_tactics",
+      "title": "Common Tactics",
+      "lessons": [
+        "threats_of_deportation",
+        "withholding_documents",
+        "misinformation_about_rights"
+      ]
+    },
+    {
+      "id": "module_support_and_rights",
+      "title": "Support and Rights",
+      "lessons": [
+        "understanding_legal_rights",
+        "accessing_support_services",
+        "building_a_safety_plan_for_migrants"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of immigration-related abuse",
+    "Ability to recognise visa-based control tactics",
+    "Increased confidence in supporting migrant victim-survivors"
+  ]
+}

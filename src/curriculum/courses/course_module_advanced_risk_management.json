@@ -1,0 +1,64 @@
+{
+  "id": "course_module_advanced_risk_management",
+  "title": "Advanced Risk Management",
+  "description": "Auto-generated course for module module_advanced_risk_management",
+  "lessons": [
+    {
+      "id": "lesson_lethality_assessment",
+      "title": "Lethality Assessment",
+      "sections": [
+        {
+          "id": "section_lesson_lethality_assessment_01"
+        },
+        {
+          "id": "section_lesson_lethality_assessment_02"
+        },
+        {
+          "id": "section_lesson_lethality_assessment_03"
+        },
+        {
+          "id": "section_lesson_lethality_assessment_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_multiagency_risk_panels",
+      "title": "Multi-Agency Risk Panels",
+      "sections": [
+        {
+          "id": "section_lesson_multiagency_risk_panels_01"
+        },
+        {
+          "id": "section_lesson_multiagency_risk_panels_02"
+        },
+        {
+          "id": "section_lesson_multiagency_risk_panels_03"
+        },
+        {
+          "id": "section_lesson_multiagency_risk_panels_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_monitoring_dynamic_risk",
+      "title": "Monitoring Dynamic Risk",
+      "sections": [
+        {
+          "id": "section_lesson_monitoring_dynamic_risk_01"
+        },
+        {
+          "id": "section_lesson_monitoring_dynamic_risk_02"
+        },
+        {
+          "id": "section_lesson_monitoring_dynamic_risk_03"
+        },
+        {
+          "id": "section_lesson_monitoring_dynamic_risk_04"
+        },
+        {
+          "id": "section_lesson_monitoring_dynamic_risk_05"
+        }
+      ]
+    }
+  ]
+}

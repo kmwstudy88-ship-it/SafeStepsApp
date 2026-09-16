@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Children thrive when they feel safe, supported, and respected."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Fearâ€‘based parenting harms childrenâ€™s emotional development."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn calm communication, emotional coaching, and safe boundaries."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Reflect on one parenting behaviour you want to change."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Safe parenting strengthens connection and trust."
+                     }
+                 ]
+}

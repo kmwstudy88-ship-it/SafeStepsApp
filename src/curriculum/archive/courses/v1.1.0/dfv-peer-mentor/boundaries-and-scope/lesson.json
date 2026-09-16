@@ -1,0 +1,10 @@
+{
+    "topic":  "boundaries-and-scope",
+    "version":  "1.1.0",
+    "stream":  "dfv-peer-mentor",
+    "content":  "Lesson content for boundaries-and-scope.",
+    "type":  "lesson",
+    "id":  "Lesson -  $args[0].Value.ToUpper() oundaries  $args[0].Value.ToUpper() nd  $args[0].Value.ToUpper() cope",
+    "name":  "Lesson -  $args[0].Value.ToUpper() oundaries  $args[0].Value.ToUpper() nd  $args[0].Value.ToUpper() cope",
+    "title":  "Lesson -  $args[0].Value.ToUpper() oundaries  $args[0].Value.ToUpper() nd  $args[0].Value.ToUpper() cope"
+}

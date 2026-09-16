@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DFV Topic Index Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "title",
+      "description",
+      "keywords",
+      "difficulty",
+      "order"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "difficulty": {
+        "type": "string",
+        "enum": [
+          "intro",
+          "core",
+          "advanced"
+        ]
+      },
+      "order": {
+        "type": "number"
+      }
+    }
+  }
+}

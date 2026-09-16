@@ -1,0 +1,72 @@
+﻿[
+    {
+        "series":  "BehaviourSupport",
+        "id":  "BehaviourDecoder",
+        "path":  "BehaviourSupport/BehaviourDecoder/BehaviourAsCommunication.json"
+    },
+    {
+        "series":  "BehaviourSupport",
+        "id":  "BrainBehindBehaviour",
+        "path":  "BehaviourSupport/BrainBehindBehaviour/BrainBehindBehaviour.json"
+    },
+    {
+        "series":  "BehaviourSupport",
+        "id":  "BuildingCooperation",
+        "path":  "BehaviourSupport/BuildingCooperation/BuildingCooperation.json"
+    },
+    {
+        "series":  "BehaviourSupport",
+        "id":  "ConnectionBasedSupport",
+        "path":  "BehaviourSupport/ConnectionBasedSupport/ConnectionBasedSupport.json"
+    },
+    {
+        "series":  "BehaviourSupport",
+        "id":  "LongTermBehaviourChange",
+        "path":  "BehaviourSupport/LongTermBehaviourChange/LongTermBehaviourChange.json"
+    },
+    {
+        "series":  "BehaviourSupport",
+        "id":  "NaturalLogicalConsequences",
+        "path":  "BehaviourSupport/NaturalLogicalConsequences/NaturalLogicalConsequences.json"
+    },
+    {
+        "series":  "BehaviourSupport",
+        "id":  "PreventingEscalation",
+        "path":  "BehaviourSupport/PreventingEscalation/PreventingEscalation.json"
+    },
+    {
+        "series":  "BehaviourSupport",
+        "id":  "RespondingToAggression",
+        "path":  "BehaviourSupport/RespondingToAggression/RespondingToAggression.json"
+    },
+    {
+        "series":  "BehaviourSupport",
+        "id":  "SupportingSensoryNeeds",
+        "path":  "BehaviourSupport/SupportingSensoryNeeds/SupportingSensoryNeeds.json"
+    },
+    {
+        "series":  "BehaviourSupport",
+        "id":  "TeachingSkills",
+        "path":  "BehaviourSupport/TeachingSkills/TeachingSkills.json"
+    },
+    {
+        "series":  "BehaviourSupport",
+        "id":  "TriggersAndPatterns",
+        "path":  "BehaviourSupport/TriggersAndPatterns/TriggersAndPatterns.json"
+    },
+    {
+        "series":  "CoParenting",
+        "id":  "cp-intro",
+        "path":  "CoParenting/cp-intro/cp-intro.json"
+    },
+    {
+        "series":  "TestSeries",
+        "id":  "test-1",
+        "path":  "TestSeries/test-1/test-1.json"
+    },
+    {
+        "series":  "TestSeries",
+        "id":  "test-lesson",
+        "path":  "TestSeries/test-lesson/test-lesson.json"
+    }
+]

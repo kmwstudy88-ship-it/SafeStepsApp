@@ -1,0 +1,27 @@
+{
+  "id": "module-disability-and-neurodiversity-considerations",
+  "title": "Disability and Neurodiversity Considerations",
+  "moduleId": "disability-and-neurodiversity-considerations",
+  "durationMinutes": 60,
+  "learningGoal": "Support parents to understand disability, neurodiversity, and how to adapt parenting strategies.",
+  "microLesson": "Neurodiverse children may communicate, learn, or regulate emotions differently. Disability‑informed parenting focuses on strengths, sensory needs, and predictable routines. Parents can reduce stress by adjusting expectations, using visual supports, and creating calm environments.",
+  "activity": "Identify one accommodation that helps your child (e.g., visual schedule, sensory tool). Use it for two days and reflect on the impact.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "neurodiversity",
+    "disability-support"
+  ],
+  "resources": [
+    {
+      "title": "Neurodiversity Support Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

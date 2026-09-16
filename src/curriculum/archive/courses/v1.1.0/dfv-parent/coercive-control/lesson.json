@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Coercive control is one of the most harmful forms of DFV. It often happens without physical violence."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Coercive control includes monitoring, isolation, threats, manipulation, and restricting freedom or choices."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn to map controlling behaviours and understand how they create fear and dependency."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify behaviours that made you feel small, scared, or controlled. These may be signs of coercive control."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Recognising coercive control helps parents understand their experiences and seek appropriate support."
+                     }
+                 ]
+}

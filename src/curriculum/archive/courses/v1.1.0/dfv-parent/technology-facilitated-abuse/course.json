@@ -1,0 +1,25 @@
+{
+  "title": "Technologyâ€‘Facilitated Abuse",
+  "description": "Explains how technology can be used to monitor, control, or harm parents and children, and how to increase digital safety.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Recognise forms of techâ€‘based abuse.",
+    "Identify risks in devices and accounts.",
+    "Apply practical digital safety strategies."
+  ],
+  "modules": [
+    "Understanding Tech Abuse",
+    "Digital Safety Strategies"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Technology",
+    "tags": [
+      "technology",
+      "safety",
+      "monitoring"
+    ]
+  },
+  "caseworkerSummary": "Helps parents understand techâ€‘based abuse and improve digital safety."
+}

@@ -1,0 +1,10 @@
+{
+    "topic":  "building-trust-with-parents",
+    "version":  "1.1.0",
+    "stream":  "dfv-peer-mentor",
+    "content":  "Lesson content for building-trust-with-parents.",
+    "type":  "lesson",
+    "id":  "Lesson -  $args[0].Value.ToUpper() uilding  $args[0].Value.ToUpper() rust  $args[0].Value.ToUpper() ith  $args[0].Value.ToUpper() arents",
+    "name":  "Lesson -  $args[0].Value.ToUpper() uilding  $args[0].Value.ToUpper() rust  $args[0].Value.ToUpper() ith  $args[0].Value.ToUpper() arents",
+    "title":  "Lesson -  $args[0].Value.ToUpper() uilding  $args[0].Value.ToUpper() rust  $args[0].Value.ToUpper() ith  $args[0].Value.ToUpper() arents"
+}

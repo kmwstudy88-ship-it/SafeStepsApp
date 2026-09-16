@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Protective parenting helps children feel safe, supported, and understood."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Protective actions include emotional availability, predictable routines, and safe boundaries."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn how to respond calmly, validate feelings, and create safe environments."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify one protective action you already use with your child."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Protective parenting strengthens healing and resilience."
+                     }
+                 ]
+}

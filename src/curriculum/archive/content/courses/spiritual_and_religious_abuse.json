@@ -1,0 +1,40 @@
+{
+  "id": "course_spiritual_and_religious_abuse",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Spiritual and Religious Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_spiritual_abuse",
+      "title": "Understanding Spiritual and Religious Abuse",
+      "lessons": [
+        "what_is_spiritual_abuse",
+        "misuse_of_beliefs_and_scripture",
+        "impacts_on_identity_and_belonging"
+      ]
+    },
+    {
+      "id": "module_common_tactics",
+      "title": "Common Tactics",
+      "lessons": [
+        "using_faith_to_control_behaviour",
+        "shame_guilt_and_condemnation",
+        "restricting_access_to_community"
+      ]
+    },
+    {
+      "id": "module_support_and_healing",
+      "title": "Support and Healing",
+      "lessons": [
+        "finding_safe_faith_communities",
+        "rebuilding_spiritual_identity",
+        "supporting_survivors_with_respect"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of spiritual and religious abuse",
+    "Ability to recognise faith-based control tactics",
+    "Increased confidence in supporting spiritual safety and healing"
+  ]
+}

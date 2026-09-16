@@ -1,0 +1,40 @@
+{
+  "id": "course_impact_of_dfv_on_parenting",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Impact of DFV on Parenting",
+  "modules": [
+    {
+      "id": "module_parenting_under_stress",
+      "title": "Parenting Under DFV Stress",
+      "lessons": [
+        "how_dfv_affects_parenting_capacity",
+        "emotional_load_and_survival_parenting",
+        "impacts_on_parent_child_relationships"
+      ]
+    },
+    {
+      "id": "module_parenting_behaviours_in_dfv",
+      "title": "Parenting Behaviours in DFV Contexts",
+      "lessons": [
+        "protective_parenting",
+        "harmful_parenting_patterns",
+        "co_parenting_with_an_abusive_partner"
+      ]
+    },
+    {
+      "id": "module_supporting_safe_parenting",
+      "title": "Supporting Safe Parenting",
+      "lessons": [
+        "building_safe_parenting_practices",
+        "supporting_children_through_dfv",
+        "strengthening_parent_child_bonds"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of how DFV impacts parenting",
+    "Ability to recognise parenting patterns shaped by DFV",
+    "Increased confidence in supporting safe, stable parenting"
+  ]
+}

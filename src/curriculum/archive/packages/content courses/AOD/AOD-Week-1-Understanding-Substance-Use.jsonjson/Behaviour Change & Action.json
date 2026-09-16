@@ -1,0 +1,18 @@
+{
+  "id": "AOD-W1-D4",
+  "title": "Small Changes, Big Impact",
+  "moduleId": "module-aod",
+  "week": 1,
+  "day": 4,
+  "durationMinutes": 10,
+  "learningGoal": "Learn how small behaviour changes can reduce harm and increase control.",
+  "microLesson": "Change doesn’t have to be dramatic to be meaningful. Even small shifts—like delaying use, reducing quantity, or changing your environment—can create momentum. Today you’ll choose one small change to try.",
+  "activity": "Write down one small change you can make this week to reduce harm or increase control.",
+  "evidenceTypes": [
+    "text"
+  ],
+  "caseworkerFlags": [
+    "aod-change"
+  ],
+  "version": "1.0.0"
+}

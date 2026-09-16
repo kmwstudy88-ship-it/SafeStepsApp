@@ -1,0 +1,25 @@
+{
+  "title": "Managing Anger",
+  "description": "Explores anger as an emotion, how it can escalate into harmful behaviour, and how to manage it safely.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand anger as a normal emotion.",
+    "Recognise escalation patterns.",
+    "Apply strategies to manage anger safely."
+  ],
+  "modules": [
+    "Understanding Anger",
+    "Managing Escalation"
+  ],
+  "metadata": {
+    "stream": "dfv-pwuv",
+    "category": "Anger",
+    "tags": [
+      "anger",
+      "regulation",
+      "safety"
+    ]
+  },
+  "caseworkerSummary": "Supports participants to manage anger and prevent escalation into harmful behaviour."
+}

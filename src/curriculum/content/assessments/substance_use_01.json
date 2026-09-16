@@ -1,0 +1,43 @@
+{
+  "created_at": "2026-06-07T12:23:42.5338262+10:00",
+  "completed_at": null,
+  "recommendations": [],
+  "assessor": "Caseworker",
+  "updated_at": "2026-06-07T12:23:42.5338262+10:00",
+  "type": "substance_use",
+  "overall_risk": null,
+  "id": "substance_use_01",
+  "overall_strength": null,
+  "domains": [
+    {
+      "label": "Pattern of use",
+      "notes": null,
+      "id": "pattern_of_use",
+      "score": null
+    },
+    {
+      "label": "Impact on parenting",
+      "notes": null,
+      "id": "impact_on_parenting",
+      "score": null
+    },
+    {
+      "label": "Triggers",
+      "notes": null,
+      "id": "triggers",
+      "score": null
+    },
+    {
+      "label": "Treatment history",
+      "notes": null,
+      "id": "treatment_history",
+      "score": null
+    },
+    {
+      "label": "Relapse risk",
+      "notes": null,
+      "id": "relapse_risk",
+      "score": null
+    }
+  ]
+}

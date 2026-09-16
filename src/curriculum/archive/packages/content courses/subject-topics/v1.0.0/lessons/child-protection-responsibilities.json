@@ -1,0 +1,25 @@
+{
+  "id": "module-child-protection-responsibilities",
+  "title": "Child Protection Responsibilities",
+  "moduleId": "child-protection-responsibilities",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand their role in keeping children safe and responding to concerns.",
+  "microLesson": "Parents have a responsibility to protect children from harm, supervise appropriately, and respond to safety concerns. Understanding signs of risk and knowing when to seek help strengthens child safety and wellbeing.",
+  "activity": "Identify one safety responsibility you can strengthen this week. Reflect on why it matters.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "child-safety"
+  ],
+  "resources": [
+    {
+      "title": "Child Protection Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "week": 10,
+  "lessons": [
+    {
+      "id": "parenting-skills-w10-l1",
+      "title": "Lesson 1",
+      "week": 10,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "parenting-skills-w10-l2",
+      "title": "Lesson 2",
+      "week": 10,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "parenting-skills-w10-l3",
+      "title": "Lesson 3",
+      "week": 10,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "parenting-skills-w10-l4",
+      "title": "Lesson 4",
+      "week": 10,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "parenting-skills-w10-l5",
+      "title": "Lesson 5",
+      "week": 10,
+      "content": "Lesson content goes here."
+    }
+  ]
+}

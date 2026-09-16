@@ -1,0 +1,26 @@
+{
+  "id": "module-parenting-children-with-adhd",
+  "title": "Parenting Children with ADHD",
+  "moduleId": "parenting-children-with-adhd",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents strategies to support children with ADHD using structure, predictability, and positive reinforcement.",
+  "microLesson": "Children with ADHD often struggle with attention, impulsivity, and emotional regulation. Predictable routines, visual schedules, and clear expectations help them succeed. Positive reinforcement is more effective than punishment.",
+  "activity": "Create a simple visual schedule for one part of the day. Reflect on how your child responded.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "neurodiversity"
+  ],
+  "resources": [
+    {
+      "title": "ADHD Parenting Toolkit",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

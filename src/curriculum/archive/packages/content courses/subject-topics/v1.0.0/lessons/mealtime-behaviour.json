@@ -1,0 +1,28 @@
+{
+  "id": "module-mealtime-behaviour",
+  "title": "Mealtime Behaviour",
+  "moduleId": "mealtime-behaviour",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand why mealtime challenges occur and how to create calm, predictable routines that support positive behaviour and healthy eating.",
+  "microLesson": "Mealtime behaviour is strongly influenced by a child’s emotional state, sensory needs, hunger cues, and the overall environment. Children may refuse food, leave the table, or become upset when routines are inconsistent or when mealtimes feel stressful. A calm, predictable mealtime routine helps children feel safe and reduces power struggles. Parents can support positive behaviour by offering simple choices, using neutral language, avoiding pressure to eat, and modelling relaxed eating habits. When mealtimes are predictable and low‑stress, children are more willing to try foods and stay engaged.",
+  "activity": "Choose one mealtime routine to improve (e.g., reducing distractions, offering choices, setting a calm tone). Implement it for one meal and write a reflection on how your child responded.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "behaviour-support",
+    "routines",
+    "positive-parenting"
+  ],
+  "resources": [
+    {
+      "title": "Positive Mealtime Strategies",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

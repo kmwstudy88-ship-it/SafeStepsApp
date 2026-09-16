@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "AOD and DFV often overlap, increasing risk for families."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Substance use does not cause DFV, but it can escalate harm and reduce safety."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn how to access AOD support and plan for safety."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Reflect on how AOD has affected safety in your family."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Understanding the connection helps parents make informed choices."
+                     }
+                 ]
+}

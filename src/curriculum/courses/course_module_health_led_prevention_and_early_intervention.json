@@ -1,0 +1,58 @@
+{
+  "id": "course_module_health_led_prevention_and_early_intervention",
+  "title": "Health-Led Prevention and Early Intervention",
+  "description": "Auto-generated course for module module_health_led_prevention_and_early_intervention",
+  "lessons": [
+    {
+      "id": "lesson_universal_education",
+      "title": "Universal Education",
+      "sections": [
+        {
+          "id": "section_lesson_universal_education_01"
+        },
+        {
+          "id": "section_lesson_universal_education_02"
+        },
+        {
+          "id": "section_lesson_universal_education_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_early_identification",
+      "title": "Early Identification",
+      "sections": [
+        {
+          "id": "section_lesson_early_identification_01"
+        },
+        {
+          "id": "section_lesson_early_identification_02"
+        },
+        {
+          "id": "section_lesson_early_identification_03"
+        },
+        {
+          "id": "section_lesson_early_identification_04"
+        },
+        {
+          "id": "section_lesson_early_identification_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_health_led_strategies",
+      "title": "Health-Led Strategies",
+      "sections": [
+        {
+          "id": "section_lesson_health_led_strategies_01"
+        },
+        {
+          "id": "section_lesson_health_led_strategies_02"
+        },
+        {
+          "id": "section_lesson_health_led_strategies_03"
+        }
+      ]
+    }
+  ]
+}

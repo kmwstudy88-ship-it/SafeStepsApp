@@ -1,0 +1,289 @@
+﻿[
+    {
+        "id":  "topic-communication-skills-for-parents",
+        "title":  "Communication Skills for Parents",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "communication",
+                     "connection",
+                     "clarity"
+                 ],
+        "programsUsedIn":  [
+                               "24m",
+                               "Foundations"
+                           ],
+        "description":  "How to communicate clearly and respectfully with children.",
+        "relatedTopics":  [
+                              "topic-effective-instructions"
+                          ]
+    },
+    {
+        "id":  "topic-dealing-with-disobedience",
+        "title":  "Dealing with Disobedience",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "behaviour",
+                     "boundaries",
+                     "consistency"
+                 ],
+        "programsUsedIn":  [
+                               "24m",
+                               "Foundations"
+                           ],
+        "description":  "How to respond calmly and consistently when children refuse instructions.",
+        "relatedTopics":  [
+                              "topic-assertive-discipline",
+                              "topic-maintaining-expectations"
+                          ]
+    },
+    {
+        "id":  "topic-follow-through",
+        "title":  "Following Through Consistently",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "consistency",
+                     "boundaries",
+                     "behaviour"
+                 ],
+        "programsUsedIn":  [
+                               "24m"
+                           ],
+        "description":  "Why consistent followâ€‘through matters and how to maintain it.",
+        "relatedTopics":  [
+                              "topic-assertive-discipline"
+                          ]
+    },
+    {
+        "id":  "topic-effective-instructions",
+        "title":  "Giving Effective Instructions",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "communication",
+                     "behaviour",
+                     "clarity"
+                 ],
+        "programsUsedIn":  [
+                               "24m",
+                               "Foundations"
+                           ],
+        "description":  "How to give clear, simple instructions children can follow.",
+        "relatedTopics":  [
+                              "topic-maintaining-expectations"
+                          ]
+    },
+    {
+        "id":  "topic-maintaining-expectations",
+        "title":  "Maintaining Reasonable Expectations",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "development",
+                     "behaviour",
+                     "realistic-goals"
+                 ],
+        "programsUsedIn":  [
+                               "24m",
+                               "Foundations"
+                           ],
+        "description":  "Understanding what children can realistically do at different ages.",
+        "relatedTopics":  [
+                              "topic-child-development",
+                              "topic-assertive-discipline"
+                          ]
+    },
+    {
+        "id":  "topic-managing-aggression",
+        "title":  "Managing Fighting and Aggression",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "conflict",
+                     "behaviour",
+                     "calming"
+                 ],
+        "programsUsedIn":  [
+                               "24m",
+                               "DFV"
+                           ],
+        "description":  "Strategies for reducing aggression and teaching children safe conflict skills.",
+        "relatedTopics":  [
+                              "topic-emotional-regulation",
+                              "topic-assertive-discipline"
+                          ]
+    },
+    {
+        "id":  "topic-problem-solving-with-children",
+        "title":  "Problemâ€‘Solving with Children",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "communication",
+                     "conflict-resolution",
+                     "learning"
+                 ],
+        "programsUsedIn":  [
+                               "24m",
+                               "Foundations"
+                           ],
+        "description":  "How to teach children collaborative problemâ€‘solving skills.",
+        "relatedTopics":  [
+                              "topic-emotional-regulation"
+                          ]
+    },
+    {
+        "id":  "topic-boundaries-and-consistency",
+        "title":  "Setting Boundaries and Staying Consistent",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "boundaries",
+                     "structure",
+                     "behaviour"
+                 ],
+        "programsUsedIn":  [
+                               "24m",
+                               "DFV"
+                           ],
+        "description":  "How to set healthy boundaries and maintain consistency.",
+        "relatedTopics":  [
+                              "topic-assertive-discipline"
+                          ]
+    },
+    {
+        "id":  "topic-strength-based-parenting",
+        "title":  "Strengthâ€‘Based Parenting",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "strengths",
+                     "motivation",
+                     "growth"
+                 ],
+        "programsUsedIn":  [
+                               "24m"
+                           ],
+        "description":  "Focusing on strengths to build confidence and resilience.",
+        "relatedTopics":  [
+                              "topic-building-resilience"
+                          ]
+    },
+    {
+        "id":  "topic-supporting-independence",
+        "title":  "Supporting Independence",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "independence",
+                     "confidence",
+                     "growth"
+                 ],
+        "programsUsedIn":  [
+                               "24m"
+                           ],
+        "description":  "Helping children build independence in ageâ€‘appropriate ways.",
+        "relatedTopics":  [
+                              "topic-child-development"
+                          ]
+    },
+    {
+        "id":  "topic-teaching-empathy",
+        "title":  "Teaching Empathy",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "empathy",
+                     "social-skills",
+                     "connection"
+                 ],
+        "programsUsedIn":  [
+                               "24m"
+                           ],
+        "description":  "Helping children understand and respond to othersâ€™ feelings.",
+        "relatedTopics":  [
+                              "topic-emotional-literacy"
+                          ]
+    },
+    {
+        "id":  "topic-teaching-responsibility",
+        "title":  "Teaching Responsibility",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "responsibility",
+                     "learning",
+                     "behaviour"
+                 ],
+        "programsUsedIn":  [
+                               "24m"
+                           ],
+        "description":  "How to help children take responsibility for their actions.",
+        "relatedTopics":  [
+                              "topic-logical-consequences"
+                          ]
+    },
+    {
+        "id":  "topic-assertive-discipline",
+        "title":  "Using Assertive Discipline",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "boundaries",
+                     "behaviour",
+                     "consistency"
+                 ],
+        "programsUsedIn":  [
+                               "24m",
+                               "Foundations",
+                               "DFV"
+                           ],
+        "description":  "How to set clear, predictable boundaries using calm, consistent discipline.",
+        "relatedTopics":  [
+                              "topic-maintaining-expectations",
+                              "topic-managing-aggression"
+                          ]
+    },
+    {
+        "id":  "topic-logical-consequences",
+        "title":  "Using Logical Consequences",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "boundaries",
+                     "learning",
+                     "behaviour"
+                 ],
+        "programsUsedIn":  [
+                               "24m"
+                           ],
+        "description":  "How to use natural and logical consequences to teach responsibility.",
+        "relatedTopics":  [
+                              "topic-assertive-discipline"
+                          ]
+    },
+    {
+        "id":  "topic-positive-attention",
+        "title":  "Using Positive Attention",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "connection",
+                     "behaviour",
+                     "reinforcement"
+                 ],
+        "programsUsedIn":  [
+                               "24m",
+                               "Foundations"
+                           ],
+        "description":  "How to use positive attention to strengthen cooperation and reduce conflict.",
+        "relatedTopics":  [
+                              "topic-strengthening-connection"
+                          ]
+    },
+    {
+        "id":  "topic-praise-and-encouragement",
+        "title":  "Using Praise and Encouragement",
+        "category":  "Parenting Skills",
+        "tags":  [
+                     "motivation",
+                     "behaviour",
+                     "connection"
+                 ],
+        "programsUsedIn":  [
+                               "24m",
+                               "Foundations"
+                           ],
+        "description":  "How to use praise effectively to reinforce positive behaviour.",
+        "relatedTopics":  [
+                              "topic-positive-attention"
+                          ]
+    }
+]

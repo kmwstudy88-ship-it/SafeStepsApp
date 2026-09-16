@@ -1,0 +1,15 @@
+﻿SafeSteps Curriculum Engine - Processing Report
+Generated: 2026-06-03 08:18:09
+
+Summary:
+ - Total topic folders processed: 291
+ - Total topics generated: 291
+
+Detailed Log:
+Loaded 291 topics from folders.
+Identified 291 topics from topic folders.
+Constructed 291 topic objects from course + lesson JSON.
+Normalized all topics.
+Generated topics.json with 291 topics.
+Validation completed with no structural issues.
+

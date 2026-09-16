@@ -1,0 +1,28 @@
+{
+  "id": "module-managing-fighting-and-aggression",
+  "title": "Managing Fighting and Aggression",
+  "moduleId": "managing-fighting-and-aggression",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand the causes of aggression and learn safe, calm strategies to reduce conflict.",
+  "microLesson": "Aggression often comes from frustration, unmet needs, sensory overload, or difficulty expressing emotions. Children may hit, yell, or fight when they lack the skills to cope. Parents can reduce aggression by staying calm, separating children safely, and teaching emotional regulation skills. Clear rules, predictable consequences, and positive reinforcement help children learn safer ways to express themselves. Over time, children develop better self-control when parents model calm behaviour.",
+  "activity": "Identify a recent moment of aggression. Write down what triggered it, how you responded, and one calmer strategy you will use next time. Practice the new strategy and reflect on the outcome.",
+  "evidenceTypes": [
+    "reflection",
+    "caseworker-verification"
+  ],
+  "caseworkerFlags": [
+    "aggression",
+    "safety",
+    "emotional-regulation"
+  ],
+  "resources": [
+    {
+      "title": "Aggression Management Toolkit",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

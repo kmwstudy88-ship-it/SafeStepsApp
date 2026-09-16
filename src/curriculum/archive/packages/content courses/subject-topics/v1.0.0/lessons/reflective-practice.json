@@ -1,0 +1,25 @@
+{
+  "id": "module-reflective-practice",
+  "title": "Reflective Practice",
+  "moduleId": "reflective-practice",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to reflect on their behaviour, emotions, and decisions to improve parenting.",
+  "microLesson": "Reflective practice means stepping back to understand what happened, why it happened, and how to respond differently next time. Parents who reflect build insight, emotional regulation, and stronger relationships with their children.",
+  "activity": "Reflect on a recent parenting moment. Write what went well, what was hard, and what you might try next time.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "parenting-capacity"
+  ],
+  "resources": [
+    {
+      "title": "Reflective Parenting Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

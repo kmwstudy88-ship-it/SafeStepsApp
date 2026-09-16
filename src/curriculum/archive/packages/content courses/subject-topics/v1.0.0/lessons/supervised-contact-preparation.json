@@ -1,0 +1,25 @@
+{
+  "id": "module-supervised-contact-preparation",
+  "title": "Supervised Contact Preparation",
+  "moduleId": "supervised-contact-preparation",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents prepare for supervised contact in a way that supports safety and connection.",
+  "microLesson": "Supervised contact can feel stressful for both parent and child. Preparing emotionally, planning child‑led activities, and focusing on warmth helps the child feel safe. Staying calm and child‑focused supports positive interactions.",
+  "activity": "Plan one child‑led activity for your next contact session. Reflect on why you chose it.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "supervised-contact"
+  ],
+  "resources": [
+    {
+      "title": "Supervised Contact Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

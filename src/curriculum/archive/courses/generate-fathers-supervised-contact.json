@@ -1,0 +1,25 @@
+{
+  "id": "fathers-supervised-contact",
+  "title": "Fathers Navigating Supervised Contact",
+  "description": "This course supports fathers to understand the purpose of supervised contact, how to engage safely, and how to use supervised time to rebuild trust with children. It focuses on emotional regulation, child‑centred behaviour, and working respectfully with supervisors.",
+  "learningOutcomes": [
+    "Understand the purpose and safety role of supervised contact.",
+    "Learn how to engage in supervised visits in a child‑centred and respectful way.",
+    "Recognise behaviours that build or damage trust during supervised time.",
+    "Develop emotional regulation strategies to stay calm and present."
+  ],
+  "modules": [
+    {
+      "title": "Why Supervised Contact Happens",
+      "content": "Explains safety concerns, court decisions, and the role of supervision in protecting children."
+    },
+    {
+      "title": "Making the Most of Supervised Time",
+      "content": "Focuses on child‑centred behaviour, emotional presence, and building trust."
+    },
+    {
+      "title": "Working With Supervisors",
+      "content": "Provides guidance on respectful communication, following instructions, and demonstrating accountability."
+    }
+  ]
+}

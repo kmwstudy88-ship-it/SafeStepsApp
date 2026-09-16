@@ -1,0 +1,23 @@
+{
+  "week": 12,
+  "lessons": [
+    {
+      "id": "child-protection-awareness-w12-l1",
+      "title": "Lesson 1",
+      "week": 12,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "child-protection-awareness-w12-l2",
+      "title": "Lesson 2",
+      "week": 12,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "child-protection-awareness-w12-l3",
+      "title": "Lesson 3",
+      "week": 12,
+      "content": "Lesson content goes here."
+    }
+  ]
+}

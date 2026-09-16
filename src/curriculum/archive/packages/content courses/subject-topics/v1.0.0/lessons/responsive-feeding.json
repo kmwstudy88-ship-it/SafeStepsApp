@@ -1,0 +1,25 @@
+{
+  "id": "module-responsive-feeding",
+  "title": "Responsive Feeding",
+  "moduleId": "responsive-feeding",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to follow children’s hunger and fullness cues to support healthy eating.",
+  "microLesson": "Responsive feeding means watching for cues instead of forcing or restricting food. Children learn to trust their bodies when parents respond calmly to hunger, fullness, and sensory preferences. This reduces mealtime stress and supports long‑term healthy habits.",
+  "activity": "Observe your child’s hunger or fullness cues during one meal. Reflect on how you responded.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "nutrition"
+  ],
+  "resources": [
+    {
+      "title": "Responsive Feeding Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

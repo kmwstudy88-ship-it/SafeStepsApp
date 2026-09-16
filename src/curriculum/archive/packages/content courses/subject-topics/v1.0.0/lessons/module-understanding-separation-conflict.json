@@ -1,0 +1,26 @@
+{
+  "id": "module-understanding-separation-conflict",
+  "title": "Understanding Separation Conflict",
+  "moduleId": "understanding-separation-conflict",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how conflict during separation affects children and how to reduce harm.",
+  "microLesson": "Children are highly sensitive to conflict. Even small arguments can create stress and insecurity. Parents can reduce harm by keeping communication calm, avoiding blame, and focusing on the child’s needs.",
+  "activity": "Rewrite a conflict‑related message using neutral, child‑focused language. Reflect on the difference.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "separation",
+    "co-parenting"
+  ],
+  "resources": [
+    {
+      "title": "Separation Conflict Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

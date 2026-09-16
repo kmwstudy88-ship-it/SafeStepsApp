@@ -1,0 +1,64 @@
+{
+  "id": "course_module_managing_complex_teams",
+  "title": "Managing Complex Teams",
+  "description": "Auto-generated course for module module_managing_complex_teams",
+  "lessons": [
+    {
+      "id": "lesson_leading_multidisciplinary_teams",
+      "title": "Leading Multidisciplinary Teams",
+      "sections": [
+        {
+          "id": "section_lesson_leading_multidisciplinary_teams_01"
+        },
+        {
+          "id": "section_lesson_leading_multidisciplinary_teams_02"
+        },
+        {
+          "id": "section_lesson_leading_multidisciplinary_teams_03"
+        },
+        {
+          "id": "section_lesson_leading_multidisciplinary_teams_04"
+        },
+        {
+          "id": "section_lesson_leading_multidisciplinary_teams_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_psychological_safety",
+      "title": "Psychological Safety",
+      "sections": [
+        {
+          "id": "section_lesson_psychological_safety_01"
+        },
+        {
+          "id": "section_lesson_psychological_safety_02"
+        },
+        {
+          "id": "section_lesson_psychological_safety_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_managing_conflict_and_complexity",
+      "title": "Managing Conflict and Complexity",
+      "sections": [
+        {
+          "id": "section_lesson_managing_conflict_and_complexity_01"
+        },
+        {
+          "id": "section_lesson_managing_conflict_and_complexity_02"
+        },
+        {
+          "id": "section_lesson_managing_conflict_and_complexity_03"
+        },
+        {
+          "id": "section_lesson_managing_conflict_and_complexity_04"
+        },
+        {
+          "id": "section_lesson_managing_conflict_and_complexity_05"
+        }
+      ]
+    }
+  ]
+}

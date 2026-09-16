@@ -1,0 +1,18 @@
+{
+  "id": "AOD-W1-D6",
+  "title": "How Substance Use Affects Relationships",
+  "moduleId": "module-aod",
+  "week": 1,
+  "day": 6,
+  "durationMinutes": 10,
+  "learningGoal": "Explore how substance use impacts relationships, communication, and trust.",
+  "microLesson": "Substance use can strain relationships, especially when communication breaks down or trust is damaged. Today is about recognising these impacts without blame, and identifying where repair may be needed.",
+  "activity": "Write one relationship you want to improve and one step you could take to rebuild trust.",
+  "evidenceTypes": [
+    "text"
+  ],
+  "caseworkerFlags": [
+    "aod-relationships"
+  ],
+  "version": "1.0.0"
+}

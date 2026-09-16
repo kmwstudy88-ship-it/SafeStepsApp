@@ -1,0 +1,25 @@
+{
+  "id": "module-sleep-training-approaches",
+  "title": "Sleep Training Approaches",
+  "moduleId": "sleep-training-approaches",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents different sleep training methods and how to choose an approach that fits their child.",
+  "microLesson": "Sleep training includes gentle methods, gradual withdrawal, and routine‑based approaches. The best method depends on the child’s temperament and the parent’s comfort. Consistency and calmness are key to success.",
+  "activity": "Choose one sleep strategy to try for two nights. Reflect on how your child responded.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "sleep"
+  ],
+  "resources": [
+    {
+      "title": "Sleep Training Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

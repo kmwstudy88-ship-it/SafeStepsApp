@@ -1,0 +1,40 @@
+{
+  "id": "course_elder_abuse_in_dfv",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Elder Abuse in DFV Contexts",
+  "modules": [
+    {
+      "id": "module_understanding_elder_abuse",
+      "title": "Understanding Elder Abuse",
+      "lessons": [
+        "what_is_elder_abuse",
+        "unique_vulnerabilities_of_older_people",
+        "intergenerational_power_dynamics"
+      ]
+    },
+    {
+      "id": "module_types_of_elder_abuse",
+      "title": "Types of Elder Abuse",
+      "lessons": [
+        "financial_and_property_abuse",
+        "neglect_and_withholding_care",
+        "emotional_and_psychological_harm"
+      ]
+    },
+    {
+      "id": "module_support_and_protection",
+      "title": "Support and Protection",
+      "lessons": [
+        "recognising_signs_in_elder_victims",
+        "legal_and_service_support_options",
+        "creating_safety_plans_for_older_people"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of elder abuse within DFV",
+    "Ability to recognise harm directed at older people",
+    "Increased confidence in supporting and protecting elder victim-survivors"
+  ]
+}

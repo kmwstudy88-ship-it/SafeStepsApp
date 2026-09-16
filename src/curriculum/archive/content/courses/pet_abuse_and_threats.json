@@ -1,0 +1,40 @@
+{
+  "id": "course_pet_abuse_and_threats",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Pet Abuse and Threats",
+  "modules": [
+    {
+      "id": "module_understanding_pet_abuse",
+      "title": "Understanding Pet Abuse",
+      "lessons": [
+        "what_is_pet_abuse",
+        "how_animals_are_used_as_control",
+        "impacts_on_victims_children_and_pets"
+      ]
+    },
+    {
+      "id": "module_common_tactics",
+      "title": "Common Tactics",
+      "lessons": [
+        "threats_to_harm_or_kill_pets",
+        "using_pets_to_instil_fear",
+        "withholding_care_or_resources"
+      ]
+    },
+    {
+      "id": "module_safety_and_support",
+      "title": "Safety and Support",
+      "lessons": [
+        "creating_a_pet_safety_plan",
+        "working_with_vets_and_services",
+        "protecting_children_and_animals"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of pet abuse as a DFV tactic",
+    "Ability to recognise threats and harm directed at animals",
+    "Increased confidence in planning for pet and family safety"
+  ]
+}

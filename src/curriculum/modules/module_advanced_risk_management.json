@@ -1,0 +1,22 @@
+{
+  "id": "module_advanced_risk_management",
+  "title": "Advanced Risk Management",
+  "description": "This module equips specialist DFV practitioners with advanced skills in assessing, monitoring, and responding to high-risk and rapidly changing domestic and family violence situations. It focuses on lethality assessment, multi-agency risk panels, and dynamic risk monitoring.",
+  "type": "module",
+  "level": "advanced",
+  "tags": [
+    "dfv",
+    "risk assessment",
+    "high risk",
+    "lethality",
+    "multiagency",
+    "specialist practice"
+  ],
+  "outcomes": [
+    "Conduct advanced lethality assessments using specialist frameworks",
+    "Participate effectively in multi-agency risk panels and high-risk teams",
+    "Monitor and respond to dynamic and rapidly changing DFV risk"
+  ],
+  "lessons": [],
+  "content": []
+}

@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Financial abuse is one of the most common and powerful forms of DFV."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "It includes restricting access to money, monitoring spending, debt manipulation, and sabotaging employment."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn steps like securing documents, opening safe accounts, and tracking income."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify any financial behaviours that made you feel controlled or restricted."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Financial safety is a key part of longâ€‘term independence."
+                     }
+                 ]
+}

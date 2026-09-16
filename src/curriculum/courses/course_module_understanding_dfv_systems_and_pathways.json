@@ -1,0 +1,67 @@
+{
+  "id": "course_module_understanding_dfv_systems_and_pathways",
+  "title": "Understanding DFV Systems and Pathways",
+  "description": "Auto-generated course for module module_understanding_dfv_systems_and_pathways",
+  "lessons": [
+    {
+      "id": "lesson_dfv_system_overview",
+      "title": "DFV System Overview",
+      "sections": [
+        {
+          "id": "section_lesson_dfv_system_overview_01"
+        },
+        {
+          "id": "section_lesson_dfv_system_overview_02"
+        },
+        {
+          "id": "section_lesson_dfv_system_overview_03"
+        },
+        {
+          "id": "section_lesson_dfv_system_overview_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_service_pathways",
+      "title": "Service Pathways",
+      "sections": [
+        {
+          "id": "section_lesson_service_pathways_01"
+        },
+        {
+          "id": "section_lesson_service_pathways_02"
+        },
+        {
+          "id": "section_lesson_service_pathways_03"
+        },
+        {
+          "id": "section_lesson_service_pathways_04"
+        },
+        {
+          "id": "section_lesson_service_pathways_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_coordination_and_system_interaction",
+      "title": "Coordination and System Interaction",
+      "sections": [
+        {
+          "id": "section_lesson_coordination_and_system_interaction_01"
+        },
+        {
+          "id": "section_lesson_coordination_and_system_interaction_02"
+        },
+        {
+          "id": "section_lesson_coordination_and_system_interaction_03"
+        },
+        {
+          "id": "section_lesson_coordination_and_system_interaction_04"
+        },
+        {
+          "id": "section_lesson_coordination_and_system_interaction_05"
+        }
+      ]
+    }
+  ]
+}

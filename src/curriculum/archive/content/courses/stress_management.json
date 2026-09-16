@@ -1,0 +1,40 @@
+{
+  "id": "course_stress_management",
+  "domain": "mental_health",
+  "level": "foundational",
+  "title": "Stress Management Basics",
+  "modules": [
+    {
+      "id": "module_understanding_stress",
+      "title": "Understanding Stress",
+      "lessons": [
+        "what_is_stress",
+        "types_of_stress",
+        "stress_and_the_body"
+      ]
+    },
+    {
+      "id": "module_stress_reduction_skills",
+      "title": "Stress Reduction Skills",
+      "lessons": [
+        "breathing_for_stress",
+        "progressive_muscle_relaxation",
+        "mindfulness_for_stress"
+      ]
+    },
+    {
+      "id": "module_daily_habits",
+      "title": "Daily Habits for Lower Stress",
+      "lessons": [
+        "sleep_and_stress",
+        "nutrition_and_stress",
+        "movement_and_stress"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of stress responses",
+    "Ability to use basic stress reduction techniques",
+    "Increased resilience in daily life"
+  ]
+}

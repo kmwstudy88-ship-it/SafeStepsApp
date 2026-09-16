@@ -1,0 +1,26 @@
+{
+  "id": "module-building-resilience",
+  "title": "Building Resilience",
+  "moduleId": "building-resilience",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to help children develop resilience, coping skills, and confidence.",
+  "microLesson": "Resilience is the ability to cope with challenges, adapt to change, and recover from setbacks. Children build resilience through supportive relationships, problem‑solving opportunities, and encouragement. Parents can strengthen resilience by praising effort, allowing children to try again after mistakes, and modelling calm responses to stress. When children feel supported and capable, they develop confidence and emotional strength that lasts into adulthood.",
+  "activity": "Choose one challenge your child recently faced. Help them reflect on what they learned and how they overcame it. Write a short reflection describing the conversation.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "emotional-development",
+    "coping-skills"
+  ],
+  "resources": [
+    {
+      "title": "Resilience Building Activities",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

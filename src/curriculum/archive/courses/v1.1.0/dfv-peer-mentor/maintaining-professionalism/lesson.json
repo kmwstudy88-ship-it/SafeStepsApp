@@ -1,0 +1,10 @@
+{
+    "topic":  "maintaining-professionalism",
+    "version":  "1.1.0",
+    "stream":  "dfv-peer-mentor",
+    "content":  "Lesson content for maintaining-professionalism.",
+    "type":  "lesson",
+    "id":  "Lesson -  $args[0].Value.ToUpper() aintaining  $args[0].Value.ToUpper() rofessionalism",
+    "name":  "Lesson -  $args[0].Value.ToUpper() aintaining  $args[0].Value.ToUpper() rofessionalism",
+    "title":  "Lesson -  $args[0].Value.ToUpper() aintaining  $args[0].Value.ToUpper() rofessionalism"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "dfv_peer_mentor_stream",
+  "title": "DFV Peer Mentor Stream",
+  "description": "Training for lived‑experience peer mentors supporting survivors of domestic and family violence. This stream builds safe peer‑support skills, boundaries, emotional safety, and trauma‑informed communication.",
+  "type": "stream",
+  "level": "intermediate",
+  "tags": [
+    "dfv",
+    "peer support",
+    "lived experience",
+    "boundaries",
+    "trauma-informed"
+  ],
+  "outcomes": [
+    "Understand the peer mentor role and its limitations",
+    "Use lived experience safely and ethically",
+    "Maintain strong boundaries and personal wellbeing",
+    "Support survivors through safe, strengths‑based peer practice"
+  ],
+  "modules": [
+    {
+      "id": "module_peer_role_foundations",
+      "title": "Peer Mentor Role Foundations",
+      "lessons": [
+        "what_is_peer_support",
+        "using_lived_experience_safely",
+        "scope_and_limitations"
+      ]
+    },
+    {
+      "id": "module_safe_conversations",
+      "title": "Safe Conversations",
+      "lessons": [
+        "active_listening",
+        "holding_space",
+        "avoiding_retraumatisation"
+      ]
+    },
+    {
+      "id": "module_boundaries_and_safety",
+      "title": "Boundaries and Safety",
+      "lessons": [
+        "maintaining_boundaries",
+        "self_care_for_peers",
+        "supervision_and_support"
+      ]
+    },
+    {
+      "id": "module_supporting_survivors",
+      "title": "Supporting Survivors",
+      "lessons": [
+        "strengths_based_support",
+        "navigating_services",
+        "encouraging_help_seeking"
+      ]
+    }
+  ],
+  "content": []
+}

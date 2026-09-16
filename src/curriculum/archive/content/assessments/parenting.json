@@ -1,0 +1,106 @@
+[
+  {
+    "id": "parenting_stress_index",
+    "category": "parenting",
+    "name": "Parenting Stress Index",
+    "description": "Measures stress related to parenting demands and child behaviour.",
+    "tags": ["parenting", "stress"],
+    "validatedTool": null
+  },
+  {
+    "id": "parent_capacity",
+    "category": "parenting",
+    "name": "Parent Capacity Assessment",
+    "description": "Assesses a parent's ability to meet the physical, emotional, and developmental needs of their child.",
+    "tags": ["capacity", "parenting"],
+    "validatedTool": null
+  },
+  {
+    "id": "emotional_availability",
+    "category": "parenting",
+    "name": "Emotional Availability Assessment",
+    "description": "Evaluates emotional connection, responsiveness, and attunement between parent and child.",
+    "tags": ["emotional", "availability"],
+    "validatedTool": null
+  },
+  {
+    "id": "parent_child_relationship",
+    "category": "parenting",
+    "name": "Parent-Child Relationship Assessment",
+    "description": "Assesses the quality of the relationship between parent and child.",
+    "tags": ["relationship", "parenting"],
+    "validatedTool": null
+  },
+  {
+    "id": "child_centred_parenting",
+    "category": "parenting",
+    "name": "Child-Centred Parenting Assessment",
+    "description": "Measures how well a parent prioritises the child's needs and wellbeing.",
+    "tags": ["child-centred", "parenting"],
+    "validatedTool": null
+  },
+  {
+    "id": "parenting_confidence",
+    "category": "parenting",
+    "name": "Parenting Confidence Assessment",
+    "description": "Assesses a parent's confidence in their ability to parent effectively.",
+    "tags": ["confidence", "parenting"],
+    "validatedTool": null
+  },
+  {
+    "id": "attachment_assessment",
+    "category": "parenting",
+    "name": "Attachment Assessment",
+    "description": "Evaluates attachment patterns and bonding between parent and child.",
+    "tags": ["attachment", "bonding"],
+    "validatedTool": null
+  },
+  {
+    "id": "co_parenting",
+    "category": "parenting",
+    "name": "Co-Parenting Assessment",
+    "description": "Assesses cooperation, communication, and shared parenting responsibilities.",
+    "tags": ["co-parenting", "communication"],
+    "validatedTool": null
+  },
+  {
+    "id": "safe_parenting",
+    "category": "parenting",
+    "name": "Safe Parenting Assessment",
+    "description": "Evaluates safety practices, supervision, and risk awareness in parenting.",
+    "tags": ["safety", "parenting"],
+    "validatedTool": null
+  },
+  {
+    "id": "trauma_informed_parenting",
+    "category": "parenting",
+    "name": "Trauma-Informed Parenting Assessment",
+    "description": "Assesses a parent's understanding of trauma and ability to respond safely.",
+    "tags": ["trauma", "parenting"],
+    "validatedTool": null
+  },
+  {
+    "id": "father_engagement",
+    "category": "parenting",
+    "name": "Father Engagement Assessment",
+    "description": "Measures the level of engagement, involvement, and responsiveness of fathers.",
+    "tags": ["fatherhood", "engagement"],
+    "validatedTool": null
+  },
+  {
+    "id": "protective_parenting",
+    "category": "parenting",
+    "name": "Protective Parenting Assessment",
+    "description": "Assesses a parent's ability to protect their child from harm and respond to risks.",
+    "tags": ["protective", "safety"],
+    "validatedTool": null
+  },
+    {
+        "id": "parenting_knowledge",
+        "category": "parenting",
+        "name": "Parenting Knowledge Assessment",
+        "description": "Evaluates a parent's knowledge of child development, safety, and effective parenting strategies.",
+        "tags": ["knowledge", "parenting"],
+        "validatedTool": null
+    }
+]

@@ -1,0 +1,64 @@
+{
+  "id": "course_module_bystander_action_and_community_safety",
+  "title": "Bystander Action and Community Safety",
+  "description": "Auto-generated course for module module_bystander_action_and_community_safety",
+  "lessons": [
+    {
+      "id": "lesson_recognising_warning_signs",
+      "title": "Recognising Warning Signs",
+      "sections": [
+        {
+          "id": "section_lesson_recognising_warning_signs_01"
+        },
+        {
+          "id": "section_lesson_recognising_warning_signs_02"
+        },
+        {
+          "id": "section_lesson_recognising_warning_signs_03"
+        },
+        {
+          "id": "section_lesson_recognising_warning_signs_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_safe_bystander_actions",
+      "title": "Safe Bystander Actions",
+      "sections": [
+        {
+          "id": "section_lesson_safe_bystander_actions_01"
+        },
+        {
+          "id": "section_lesson_safe_bystander_actions_02"
+        },
+        {
+          "id": "section_lesson_safe_bystander_actions_03"
+        },
+        {
+          "id": "section_lesson_safe_bystander_actions_04"
+        },
+        {
+          "id": "section_lesson_safe_bystander_actions_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_building_safe_communities",
+      "title": "Building Safe Communities",
+      "sections": [
+        {
+          "id": "section_lesson_building_safe_communities_01"
+        },
+        {
+          "id": "section_lesson_building_safe_communities_02"
+        },
+        {
+          "id": "section_lesson_building_safe_communities_03"
+        },
+        {
+          "id": "section_lesson_building_safe_communities_04"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "module-risk-taking-behaviour",
+  "title": "Risk-Taking Behaviour",
+  "moduleId": "risk-taking-behaviour",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand why children take risks and how to guide safer choices.",
+  "microLesson": "Risk‑taking increases during adolescence due to brain development and peer influence. Parents can reduce harm by setting clear boundaries, staying connected, and teaching decision‑making skills. Open communication is key.",
+  "activity": "Talk with your child about a risky situation. Reflect on how you supported safer choices.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "adolescent-development",
+    "safety"
+  ],
+  "resources": [
+    {
+      "title": "Risk Behaviour Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

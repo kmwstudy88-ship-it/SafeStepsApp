@@ -1,0 +1,58 @@
+{
+  "id": "course_module_community_leadership_for_change",
+  "title": "Community Leadership for Change",
+  "description": "Auto-generated course for module module_community_leadership_for_change",
+  "lessons": [
+    {
+      "id": "lesson_leadership_for_prevention",
+      "title": "Leadership for Prevention",
+      "sections": [
+        {
+          "id": "section_lesson_leadership_for_prevention_01"
+        },
+        {
+          "id": "section_lesson_leadership_for_prevention_02"
+        },
+        {
+          "id": "section_lesson_leadership_for_prevention_03"
+        },
+        {
+          "id": "section_lesson_leadership_for_prevention_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_mobilising_communities",
+      "title": "Mobilising Communities",
+      "sections": [
+        {
+          "id": "section_lesson_mobilising_communities_01"
+        },
+        {
+          "id": "section_lesson_mobilising_communities_02"
+        },
+        {
+          "id": "section_lesson_mobilising_communities_03"
+        },
+        {
+          "id": "section_lesson_mobilising_communities_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_sustaining_change",
+      "title": "Sustaining Change",
+      "sections": [
+        {
+          "id": "section_lesson_sustaining_change_01"
+        },
+        {
+          "id": "section_lesson_sustaining_change_02"
+        },
+        {
+          "id": "section_lesson_sustaining_change_03"
+        }
+      ]
+    }
+  ]
+}

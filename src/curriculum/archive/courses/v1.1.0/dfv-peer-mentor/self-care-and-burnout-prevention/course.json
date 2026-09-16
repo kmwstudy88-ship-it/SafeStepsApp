@@ -1,0 +1,8 @@
+{
+  "topic": "self-care-and-burnout-prevention",
+  "version": "1.1.0",
+  "stream": "dfv-peer-mentor",
+  "description": "Peer Mentor training module on self-care-and-burnout-prevention.",
+  "type": "course",
+  "title": " $args[0].Value.ToUpper() elf  $args[0].Value.ToUpper() are  $args[0].Value.ToUpper() nd  $args[0].Value.ToUpper() urnout  $args[0].Value.ToUpper() revention"
+}

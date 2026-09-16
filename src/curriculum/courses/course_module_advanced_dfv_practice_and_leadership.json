@@ -1,0 +1,70 @@
+{
+  "id": "course_module_advanced_dfv_practice_and_leadership",
+  "title": "Advanced DFV Practice and Leadership",
+  "description": "Auto-generated course for module module_advanced_dfv_practice_and_leadership",
+  "lessons": [
+    {
+      "id": "lesson_complex_case_practice",
+      "title": "Complex Case Practice",
+      "sections": [
+        {
+          "id": "section_lesson_complex_case_practice_01"
+        },
+        {
+          "id": "section_lesson_complex_case_practice_02"
+        },
+        {
+          "id": "section_lesson_complex_case_practice_03"
+        },
+        {
+          "id": "section_lesson_complex_case_practice_04"
+        },
+        {
+          "id": "section_lesson_complex_case_practice_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_supervision_and_practice_leadership",
+      "title": "Supervision and Practice Leadership",
+      "sections": [
+        {
+          "id": "section_lesson_supervision_and_practice_leadership_01"
+        },
+        {
+          "id": "section_lesson_supervision_and_practice_leadership_02"
+        },
+        {
+          "id": "section_lesson_supervision_and_practice_leadership_03"
+        },
+        {
+          "id": "section_lesson_supervision_and_practice_leadership_04"
+        },
+        {
+          "id": "section_lesson_supervision_and_practice_leadership_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_leading_system_improvement",
+      "title": "Leading System Improvement",
+      "sections": [
+        {
+          "id": "section_lesson_leading_system_improvement_01"
+        },
+        {
+          "id": "section_lesson_leading_system_improvement_02"
+        },
+        {
+          "id": "section_lesson_leading_system_improvement_03"
+        },
+        {
+          "id": "section_lesson_leading_system_improvement_04"
+        },
+        {
+          "id": "section_lesson_leading_system_improvement_05"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "module-emotional-and-social-development",
+  "title": "Emotional and Social Development",
+  "moduleId": "emotional-and-social-development",
+  "durationMinutes": 60,
+  "learningGoal": "Support parents to understand how children develop emotional and social skills, and how to nurture confidence, resilience, and healthy relationships.",
+  "microLesson": "Children learn emotional and social skills through everyday interactions with caregivers. Emotional development includes recognising feelings, expressing them safely, and learning to regulate strong emotions. Social development includes sharing, turn‑taking, empathy, problem‑solving, and building friendships. Parents support this growth by modelling calm behaviour, validating feelings, setting predictable routines, and guiding children through conflict rather than punishing emotional expression. When children feel understood and supported, they develop resilience, confidence, and stronger relationships.",
+  "activity": "Choose one moment this week to help your child name and understand a feeling (e.g., frustration, excitement, disappointment). Write a reflection on how your child responded and what you noticed about their emotional or social skills.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "emotional-development",
+    "social-skills",
+    "resilience"
+  ],
+  "resources": [
+    {
+      "title": "Supporting Emotional and Social Development Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

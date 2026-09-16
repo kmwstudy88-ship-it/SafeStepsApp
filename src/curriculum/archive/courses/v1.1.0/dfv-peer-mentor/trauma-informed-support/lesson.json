@@ -1,0 +1,10 @@
+{
+    "topic":  "trauma-informed-support",
+    "version":  "1.1.0",
+    "stream":  "dfv-peer-mentor",
+    "content":  "Lesson content for trauma-informed-support.",
+    "type":  "lesson",
+    "id":  "Lesson -  $args[0].Value.ToUpper() rauma  $args[0].Value.ToUpper() nformed  $args[0].Value.ToUpper() upport",
+    "name":  "Lesson -  $args[0].Value.ToUpper() rauma  $args[0].Value.ToUpper() nformed  $args[0].Value.ToUpper() upport",
+    "title":  "Lesson -  $args[0].Value.ToUpper() rauma  $args[0].Value.ToUpper() nformed  $args[0].Value.ToUpper() upport"
+}

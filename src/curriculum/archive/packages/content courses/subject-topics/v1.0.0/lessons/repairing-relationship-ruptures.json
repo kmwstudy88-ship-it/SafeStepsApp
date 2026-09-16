@@ -1,0 +1,26 @@
+{
+  "id": "module-repairing-relationship-ruptures",
+  "title": "Repairing Relationship Ruptures",
+  "moduleId": "repairing-relationship-ruptures",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents repair emotional ruptures after conflict or disconnection.",
+  "microLesson": "Ruptures happen in every relationship. Repairing them teaches children that relationships can recover. Repair involves acknowledging feelings, apologising sincerely, and reconnecting with warmth. This strengthens attachment and emotional resilience.",
+  "activity": "Repair a small rupture with your child. Reflect on how they responded to your repair attempt.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "attachment",
+    "emotional-regulation"
+  ],
+  "resources": [
+    {
+      "title": "Rupture and Repair Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

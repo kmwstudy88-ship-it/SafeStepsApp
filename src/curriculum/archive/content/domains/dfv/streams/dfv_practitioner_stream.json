@@ -1,0 +1,69 @@
+{
+  "id": "dfv_practitioner_stream",
+  "title": "DFV Practitioner Stream",
+  "description": "A comprehensive training pathway for frontline domestic and family violence practitioners. This stream builds foundational DFV knowledge, assessment skills, trauma‑informed engagement, case management capability, and multi‑agency collaboration skills.",
+  "type": "stream",
+  "level": "practitioner",
+  "tags": [
+    "dfv",
+    "practitioner training",
+    "risk assessment",
+    "trauma-informed practice",
+    "case management"
+  ],
+  "outcomes": [
+    "Develop strong foundational DFV knowledge",
+    "Conduct safe and effective DFV assessments",
+    "Engage clients using trauma‑informed practice",
+    "Collaborate effectively across services",
+    "Manage complex DFV cases with confidence"
+  ],
+  "modules": [
+    {
+      "id": "module_practitioner_foundations",
+      "title": "Practitioner Foundations",
+      "lessons": [
+        "dfv_frameworks",
+        "ethical_practice",
+        "professional_responsibilities"
+      ]
+    },
+    {
+      "id": "module_assessment_and_response",
+      "title": "Assessment and Response",
+      "lessons": [
+        "initial_assessment",
+        "risk_identification",
+        "safety_planning"
+      ]
+    },
+    {
+      "id": "module_client_engagement",
+      "title": "Trauma‑Informed Client Engagement",
+      "lessons": [
+        "trauma_informed_engagement",
+        "working_with_resistance",
+        "strengths_based_practice"
+      ]
+    },
+    {
+      "id": "module_collaboration_and_referral",
+      "title": "Collaboration and Referral Pathways",
+      "lessons": [
+        "multiagency_work",
+        "referral_pathways",
+        "documentation_and_case_notes"
+      ]
+    },
+    {
+      "id": "module_complex_casework",
+      "title": "Complex Casework",
+      "lessons": [
+        "working_with_high_risk_cases",
+        "multi_layered_trauma",
+        "complex_family_dynamics"
+      ]
+    }
+  ],
+  "content": []
+}

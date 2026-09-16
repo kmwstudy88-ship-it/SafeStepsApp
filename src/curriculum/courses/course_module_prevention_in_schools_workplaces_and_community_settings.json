@@ -1,0 +1,58 @@
+{
+  "id": "course_module_prevention_in_schools_workplaces_and_community_settings",
+  "title": "Prevention in Schools, Workplaces, and Community Settings",
+  "description": "Auto-generated course for module module_prevention_in_schools_workplaces_and_community_settings",
+  "lessons": [
+    {
+      "id": "lesson_prevention_in_schools",
+      "title": "Prevention in Schools",
+      "sections": [
+        {
+          "id": "section_lesson_prevention_in_schools_01"
+        },
+        {
+          "id": "section_lesson_prevention_in_schools_02"
+        },
+        {
+          "id": "section_lesson_prevention_in_schools_03"
+        },
+        {
+          "id": "section_lesson_prevention_in_schools_04"
+        },
+        {
+          "id": "section_lesson_prevention_in_schools_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_prevention_in_workplaces",
+      "title": "Prevention in Workplaces",
+      "sections": [
+        {
+          "id": "section_lesson_prevention_in_workplaces_01"
+        },
+        {
+          "id": "section_lesson_prevention_in_workplaces_02"
+        },
+        {
+          "id": "section_lesson_prevention_in_workplaces_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_prevention_in_community_settings",
+      "title": "Prevention in Community Settings",
+      "sections": [
+        {
+          "id": "section_lesson_prevention_in_community_settings_01"
+        },
+        {
+          "id": "section_lesson_prevention_in_community_settings_02"
+        },
+        {
+          "id": "section_lesson_prevention_in_community_settings_03"
+        }
+      ]
+    }
+  ]
+}

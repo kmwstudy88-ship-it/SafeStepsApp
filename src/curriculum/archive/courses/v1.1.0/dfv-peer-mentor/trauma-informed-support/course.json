@@ -1,0 +1,8 @@
+{
+  "topic": "trauma-informed-support",
+  "version": "1.1.0",
+  "stream": "dfv-peer-mentor",
+  "description": "Peer Mentor training module on trauma-informed-support.",
+  "type": "course",
+  "title": " $args[0].Value.ToUpper() rauma  $args[0].Value.ToUpper() nformed  $args[0].Value.ToUpper() upport"
+}

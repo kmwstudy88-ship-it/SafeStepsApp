@@ -1,0 +1,10 @@
+{
+    "topic":  "mentoring-ethics",
+    "version":  "1.1.0",
+    "stream":  "dfv-peer-mentor",
+    "content":  "Lesson content for mentoring-ethics.",
+    "type":  "lesson",
+    "id":  "Lesson -  $args[0].Value.ToUpper() entoring  $args[0].Value.ToUpper() thics",
+    "name":  "Lesson -  $args[0].Value.ToUpper() entoring  $args[0].Value.ToUpper() thics",
+    "title":  "Lesson -  $args[0].Value.ToUpper() entoring  $args[0].Value.ToUpper() thics"
+}

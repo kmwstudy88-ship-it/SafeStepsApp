@@ -1,0 +1,64 @@
+{
+  "id": "course_module_court_support_and_legal_processes",
+  "title": "Court Support and Legal Processes",
+  "description": "Auto-generated course for module module_court_support_and_legal_processes",
+  "lessons": [
+    {
+      "id": "lesson_understanding_legal_options",
+      "title": "Understanding Legal Options",
+      "sections": [
+        {
+          "id": "section_lesson_understanding_legal_options_01"
+        },
+        {
+          "id": "section_lesson_understanding_legal_options_02"
+        },
+        {
+          "id": "section_lesson_understanding_legal_options_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_preparing_clients_for_court",
+      "title": "Preparing Clients for Court",
+      "sections": [
+        {
+          "id": "section_lesson_preparing_clients_for_court_01"
+        },
+        {
+          "id": "section_lesson_preparing_clients_for_court_02"
+        },
+        {
+          "id": "section_lesson_preparing_clients_for_court_03"
+        },
+        {
+          "id": "section_lesson_preparing_clients_for_court_04"
+        },
+        {
+          "id": "section_lesson_preparing_clients_for_court_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_working_with_legal_services",
+      "title": "Working With Legal Services",
+      "sections": [
+        {
+          "id": "section_lesson_working_with_legal_services_01"
+        },
+        {
+          "id": "section_lesson_working_with_legal_services_02"
+        },
+        {
+          "id": "section_lesson_working_with_legal_services_03"
+        },
+        {
+          "id": "section_lesson_working_with_legal_services_04"
+        },
+        {
+          "id": "section_lesson_working_with_legal_services_05"
+        }
+      ]
+    }
+  ]
+}

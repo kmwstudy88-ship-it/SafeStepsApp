@@ -1,0 +1,61 @@
+{
+  "id": "course_module_youth_leadership_and_dfv_prevention",
+  "title": "Youth Leadership and DFV Prevention",
+  "description": "Auto-generated course for module module_youth_leadership_and_dfv_prevention",
+  "lessons": [
+    {
+      "id": "lesson_youth_as_change_makers",
+      "title": "Youth as Change-Makers",
+      "sections": [
+        {
+          "id": "section_lesson_youth_as_change_makers_01"
+        },
+        {
+          "id": "section_lesson_youth_as_change_makers_02"
+        },
+        {
+          "id": "section_lesson_youth_as_change_makers_03"
+        },
+        {
+          "id": "section_lesson_youth_as_change_makers_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_promoting_respectful_relationships",
+      "title": "Promoting Respectful Relationships",
+      "sections": [
+        {
+          "id": "section_lesson_promoting_respectful_relationships_01"
+        },
+        {
+          "id": "section_lesson_promoting_respectful_relationships_02"
+        },
+        {
+          "id": "section_lesson_promoting_respectful_relationships_03"
+        },
+        {
+          "id": "section_lesson_promoting_respectful_relationships_04"
+        },
+        {
+          "id": "section_lesson_promoting_respectful_relationships_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_peer_led_prevention_initiatives",
+      "title": "Peer-Led Prevention Initiatives",
+      "sections": [
+        {
+          "id": "section_lesson_peer_led_prevention_initiatives_01"
+        },
+        {
+          "id": "section_lesson_peer_led_prevention_initiatives_02"
+        },
+        {
+          "id": "section_lesson_peer_led_prevention_initiatives_03"
+        }
+      ]
+    }
+  ]
+}

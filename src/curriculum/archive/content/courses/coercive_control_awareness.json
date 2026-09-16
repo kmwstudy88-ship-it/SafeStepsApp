@@ -1,0 +1,40 @@
+{
+  "id": "course_coercive_control_awareness",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Coercive Control Awareness",
+  "modules": [
+    {
+      "id": "module_understanding_coercive_control",
+      "title": "Understanding Coercive Control",
+      "lessons": [
+        "what_is_coercive_control",
+        "patterns_of_control",
+        "impacts_on_victims"
+      ]
+    },
+    {
+      "id": "module_tactics_and_behaviours",
+      "title": "Tactics and Behaviours",
+      "lessons": [
+        "emotional_abuse_tactics",
+        "financial_control_tactics",
+        "isolation_and_monitoring"
+      ]
+    },
+    {
+      "id": "module_recognising_risk",
+      "title": "Recognising Risk and Escalation",
+      "lessons": [
+        "early_warning_signs",
+        "risk_escalation_patterns",
+        "link_to_child_safety"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of coercive control dynamics",
+    "Ability to identify controlling behaviours early",
+    "Increased awareness of risk and escalation patterns"
+  ]
+}

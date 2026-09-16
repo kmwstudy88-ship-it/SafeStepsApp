@@ -1,0 +1,127 @@
+{
+  "generatedAt": "2026-06-07T20:49:01",
+  "curriculum": null,
+  "programIndex": null,
+  "communityPrograms": {
+    "generatedAt": "2026-06-07T20:48:51",
+    "totalPrograms": 12,
+    "categories": [
+      {
+        "category": "AOD",
+        "programs": [
+          {
+            "provider": "Queensland Health",
+            "description": "24/7 confidential alcohol and drug counselling, information, and referral.",
+            "link": "https://adis.health.qld.gov.au",
+            "category": "AOD",
+            "name": "ADIS Queensland",
+            "id": 2
+          },
+          {
+            "provider": "Queensland Health",
+            "description": "Support for families affected by alcohol and other drug use.",
+            "link": "https://www.qld.gov.au/health/mental-health/help-lines/breakthrough-for-families",
+            "category": "AOD",
+            "name": "Breakthrough for Families",
+            "id": 4
+          },
+          {
+            "provider": "SMART Recovery Australia",
+            "description": "Peer-led support groups for people wanting to change addictive behaviours.",
+            "link": "https://smartrecoveryaustralia.com.au",
+            "category": "AOD",
+            "name": "SMART Recovery",
+            "id": 11
+          }
+        ]
+      },
+      {
+        "category": "DFV",
+        "programs": [
+          {
+            "provider": "ANROWS",
+            "description": "Australia’s national research organisation for women’s safety, providing evidence on DFV and sexual violence.",
+            "link": "https://www.anrows.org.au",
+            "category": "DFV",
+            "name": "ANROWS",
+            "id": 3
+          },
+          {
+            "provider": "QCDFVR",
+            "description": "Queensland Centre for Domestic and Family Violence Research providing training, resources, and evidence summaries.",
+            "link": "https://www.novi.qld.edu.au/qcdfvr",
+            "category": "DFV",
+            "name": "QCDFVR",
+            "id": 8
+          },
+          {
+            "provider": "Queensland Government",
+            "description": "Queensland’s whole-of-community DFV reform strategy focusing on prevention, intervention, and recovery.",
+            "link": "https://www.qld.gov.au/community/getting-support-health-social-issue/domestic-family-violence",
+            "category": "DFV",
+            "name": "Safer Families, Safer Communities (QLD DFV Strategy)",
+            "id": 10
+          }
+        ]
+      },
+      {
+        "category": "Mental Health",
+        "programs": [
+          {
+            "provider": "Australian Government",
+            "description": "National mental health supports including hubs, phone services, and digital tools.",
+            "link": "https://www.medicarementalhealth.gov.au",
+            "category": "Mental Health",
+            "name": "Medicare Mental Health",
+            "id": 6
+          },
+          {
+            "provider": "Queensland Health",
+            "description": "Statewide mental health supports including 1300 MH CALL, crisis lines, and community hubs.",
+            "link": "https://www.qld.gov.au/health/mental-health",
+            "category": "Mental Health",
+            "name": "Queensland Mental Health Services",
+            "id": 9
+          }
+        ]
+      },
+      {
+        "category": "Parenting",
+        "programs": [
+          {
+            "provider": "Parenting Ideas",
+            "description": "Behaviour management program for parents of children aged 2–12.",
+            "link": "https://www.parentingideas.com.au",
+            "category": "Parenting",
+            "name": "1-2-3 Magic & Emotion Coaching",
+            "id": 1
+          },
+          {
+            "provider": "COSI",
+            "description": "Attachment-based parenting program focused on strengthening parent–child relationships.",
+            "link": "https://www.circleofsecurityinternational.com",
+            "category": "Parenting",
+            "name": "Circle of Security Parenting (COSP)",
+            "id": 5
+          },
+          {
+            "provider": "University of Sydney",
+            "description": "Free online evidence-based parenting program for parents of children aged 2–17.",
+            "link": "https://parentworks.org.au",
+            "category": "Parenting",
+            "name": "ParentWorks",
+            "id": 7
+          },
+          {
+            "provider": "Triple P International",
+            "description": "World-leading parenting program with modules for babies, children, teens, anxiety, and behaviour.",
+            "link": "https://www.triplep-parenting.net.au",
+            "category": "Parenting",
+            "name": "Triple P – Positive Parenting Program",
+            "id": 12
+          }
+        ]
+      }
+    ]
+  }
+}

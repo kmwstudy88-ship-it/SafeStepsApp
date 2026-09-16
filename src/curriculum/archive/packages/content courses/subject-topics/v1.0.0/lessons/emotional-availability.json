@@ -1,0 +1,26 @@
+{
+  "id": "module-emotional-availability",
+  "title": "Emotional Availability",
+  "moduleId": "emotional-availability",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how emotional presence strengthens attachment and behaviour.",
+  "microLesson": "Emotional availability means being present, responsive, and attuned to your child’s needs. Children feel safe when parents notice their cues, offer comfort, and stay calm during distress. This builds secure attachment and reduces behavioural challenges.",
+  "activity": "Spend 10 minutes of uninterrupted connection time with your child. Reflect on how they responded.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "attachment",
+    "emotional-safety"
+  ],
+  "resources": [
+    {
+      "title": "Emotional Availability Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

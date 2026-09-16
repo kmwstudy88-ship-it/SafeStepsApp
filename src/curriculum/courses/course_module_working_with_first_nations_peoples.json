@@ -1,0 +1,67 @@
+{
+  "id": "course_module_working_with_first_nations_peoples",
+  "title": "Working with First Nations Peoples",
+  "description": "Auto-generated course for module module_working_with_first_nations_peoples",
+  "lessons": [
+    {
+      "id": "lesson_historical_and_cultural_contexts",
+      "title": "Historical and Cultural Contexts",
+      "sections": [
+        {
+          "id": "section_lesson_historical_and_cultural_contexts_01"
+        },
+        {
+          "id": "section_lesson_historical_and_cultural_contexts_02"
+        },
+        {
+          "id": "section_lesson_historical_and_cultural_contexts_03"
+        },
+        {
+          "id": "section_lesson_historical_and_cultural_contexts_04"
+        },
+        {
+          "id": "section_lesson_historical_and_cultural_contexts_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_community_led_responses",
+      "title": "Community-Led Responses",
+      "sections": [
+        {
+          "id": "section_lesson_community_led_responses_01"
+        },
+        {
+          "id": "section_lesson_community_led_responses_02"
+        },
+        {
+          "id": "section_lesson_community_led_responses_03"
+        },
+        {
+          "id": "section_lesson_community_led_responses_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_strengths_based_practice",
+      "title": "Strengths-Based Practice",
+      "sections": [
+        {
+          "id": "section_lesson_strengths_based_practice_01"
+        },
+        {
+          "id": "section_lesson_strengths_based_practice_02"
+        },
+        {
+          "id": "section_lesson_strengths_based_practice_03"
+        },
+        {
+          "id": "section_lesson_strengths_based_practice_04"
+        },
+        {
+          "id": "section_lesson_strengths_based_practice_05"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": "section_h_aod_parenting_capacity",
+  "code": "H",
+  "title": "Section H – AOD Parenting Capacity Assessment",
+  "focus": "Observable parenting capacity and child safety while using alcohol or other drugs.",
+  "groups": [
+    {
+      "id": "substance_use",
+      "title": "Substance Use Assessment",
+      "items": [
+        "Substances used (type and route).",
+        "Frequency and quantity of use.",
+        "Recent use and current level of impairment.",
+        "History of overdose, blackouts, or severe intoxication.",
+        "Previous treatment or recovery efforts.",
+        "Impact of substance use on daily functioning."
+      ]
+    },
+    {
+      "id": "child_safety",
+      "title": "Child Safety Assessment",
+      "items": [
+        "Are basic needs met? (food, hygiene, supervision, medical care, education).",
+        "Has the child ever been left unsupervised?",
+        "Has the child been exposed to dangerous situations?",
+        "Is there access to hazardous substances, needles, or medications?"
+      ]
+    },
+    {
+      "id": "parenting_capacity",
+      "title": "Parenting Capacity Assessment",
+      "items": [
+        "Recognises children’s needs.",
+        "Responds appropriately to distress.",
+        "Maintains predictable routines.",
+        "Provides emotional support.",
+        "Exercises sound judgment and decision-making.",
+        "Manages emergencies safely."
+      ]
+    },
+    {
+      "id": "functional_impairment",
+      "title": "Functional Impairment Assessment",
+      "items": [
+        "Alertness.",
+        "Memory.",
+        "Concentration.",
+        "Coordination.",
+        "Emotional regulation.",
+        "Ability to make safe decisions."
+      ]
+    },
+    {
+      "id": "home_environment",
+      "title": "Home Environment Assessment",
+      "items": [
+        "Cleanliness and physical safety of the home.",
+        "Availability of food and basic necessities.",
+        "Presence of drug paraphernalia.",
+        "Safe sleeping arrangements for children.",
+        "Presence of domestic violence or high conflict.",
+        "Other adults in the home and their influence."
+      ]
+    },
+    {
+      "id": "protective_factors",
+      "title": "Protective Factors",
+      "items": [
+        "Supportive family members or social network.",
+        "Sober caregivers available to assist.",
+        "Engagement with treatment or recovery supports.",
+        "Stable housing.",
+        "Positive parent–child attachment.",
+        "Insight into substance-related risks to children."
+      ]
+    },
+    {
+      "id": "risk_indicators",
+      "title": "Risk Indicators",
+      "items": [
+        "Frequent intoxication while caring for children.",
+        "Driving under the influence with children present.",
+        "History of neglect or prior child protection involvement.",
+        "Domestic violence in the household.",
+        "Child injuries related to supervision failures.",
+        "Refusal of treatment despite ongoing impairment.",
+        "Very young children requiring constant supervision."
+      ]
+    },
+    {
+      "id": "observation_rating",
+      "title": "Observation-Based Rating",
+      "scale": [
+        "No Concern",
+        "Mild Concern",
+        "Moderate Concern",
+        "High Concern"
+      ],
+      "domains": [
+        "Supervision",
+        "Safety Awareness",
+        "Emotional Availability",
+        "Judgment While Using",
+        "Meeting Basic Needs"
+      ]
+    },
+    {
+      "id": "assessment_conclusion",
+      "title": "Assessment Conclusion",
+      "guidance": [
+        "Base conclusions on observable evidence, not assumptions about substance use alone.",
+        "Consider current level of impairment, parenting functioning, and impact on child safety.",
+        "Weigh protective factors alongside risk indicators.",
+        "Determine overall risk level (e.g., low, moderate, high) and required response."
+      ]
+    }
+  ]
+}

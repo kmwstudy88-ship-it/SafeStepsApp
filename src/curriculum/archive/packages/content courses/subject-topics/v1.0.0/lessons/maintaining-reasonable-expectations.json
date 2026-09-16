@@ -1,0 +1,26 @@
+{
+  "id": "module-maintaining-reasonable-expectations",
+  "title": "Maintaining Reasonable Expectations",
+  "moduleId": "maintaining-reasonable-expectations",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand age‑appropriate expectations and adjust their parenting approach to match their child’s developmental stage.",
+  "microLesson": "Children’s abilities grow over time, and expectations must grow with them. When expectations are too high, children may feel overwhelmed or criticised. When expectations are too low, children may not develop independence or responsibility. Understanding developmental stages helps parents set realistic goals for behaviour, chores, emotional regulation, and learning. Reasonable expectations reduce frustration for both parent and child and create a more positive home environment.",
+  "activity": "Choose one expectation you currently have for your child. Compare it to typical developmental abilities for their age. Adjust the expectation if needed and describe how this change affected your child’s behaviour or confidence.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "developmental-awareness",
+    "parenting-capacity"
+  ],
+  "resources": [
+    {
+      "title": "Age-Appropriate Expectations Chart",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

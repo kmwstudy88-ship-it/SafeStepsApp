@@ -1,0 +1,25 @@
+{
+  "id": "safe-conflict-skills",
+  "title": "Safe Conflict Skills (Father-Focused)",
+  "description": "This course supports fathers to manage conflict safely, reducing fear and emotional harm for children and partners.",
+  "learningOutcomes": [
+    "Understand conflict in the context of fatherhood.",
+    "Recognise escalation patterns that affect children.",
+    "Learn safe conflict communication skills.",
+    "Develop long-term respectful conflict habits."
+  ],
+  "modules": [
+    {
+      "title": "Fathering and Conflict",
+      "content": "Explores how conflict affects children’s emotional safety."
+    },
+    {
+      "title": "Escalation Awareness",
+      "content": "Identifies patterns that create fear or instability."
+    },
+    {
+      "title": "Safe Conflict Tools",
+      "content": "Provides strategies for calm, respectful disagreement."
+    }
+  ]
+}

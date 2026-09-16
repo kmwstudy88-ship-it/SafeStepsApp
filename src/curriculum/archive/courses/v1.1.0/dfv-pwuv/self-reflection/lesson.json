@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Selfâ€‘reflection helps you understand why you behave the way you do."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Reflection involves honesty, curiosity, and willingness to examine beliefs and actions."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn journaling, pauseâ€‘andâ€‘review, and impact awareness techniques."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Reflect on a recent behaviour. What belief influenced your choice?"
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Insight is the foundation of meaningful change."
+                     }
+                 ]
+}

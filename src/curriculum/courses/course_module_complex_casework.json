@@ -1,0 +1,58 @@
+{
+  "id": "course_module_complex_casework",
+  "title": "Complex Casework",
+  "description": "Auto-generated course for module module_complex_casework",
+  "lessons": [
+    {
+      "id": "lesson_working_with_high_risk_cases",
+      "title": "Working With High‑Risk Cases",
+      "sections": [
+        {
+          "id": "section_lesson_working_with_high_risk_cases_01"
+        },
+        {
+          "id": "section_lesson_working_with_high_risk_cases_02"
+        },
+        {
+          "id": "section_lesson_working_with_high_risk_cases_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_multi_layered_trauma",
+      "title": "Multi‑Layered Trauma",
+      "sections": [
+        {
+          "id": "section_lesson_multi_layered_trauma_01"
+        },
+        {
+          "id": "section_lesson_multi_layered_trauma_02"
+        },
+        {
+          "id": "section_lesson_multi_layered_trauma_03"
+        },
+        {
+          "id": "section_lesson_multi_layered_trauma_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_complex_family_dynamics",
+      "title": "Complex Family Dynamics",
+      "sections": [
+        {
+          "id": "section_lesson_complex_family_dynamics_01"
+        },
+        {
+          "id": "section_lesson_complex_family_dynamics_02"
+        },
+        {
+          "id": "section_lesson_complex_family_dynamics_03"
+        },
+        {
+          "id": "section_lesson_complex_family_dynamics_04"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "topic": "group-facilitation-basics",
+  "version": "1.1.0",
+  "stream": "dfv-peer-mentor",
+  "description": "Peer Mentor training module on group-facilitation-basics.",
+  "type": "course",
+  "title": " $args[0].Value.ToUpper() roup  $args[0].Value.ToUpper() acilitation  $args[0].Value.ToUpper() asics"
+}

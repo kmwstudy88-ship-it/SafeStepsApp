@@ -1,0 +1,30 @@
+﻿[
+    {
+        "modules":  [
+                        {
+                            "title":  "example Module",
+                            "lessonIds":  [
+                                              "lesson-000001"
+                                          ],
+                            "id":  "parenting-example"
+                        }
+                    ],
+        "title":  "Parenting Course",
+        "description":  "Automatically generated course for domain: Parenting",
+        "id":  "parenting"
+    },
+    {
+        "modules":  [
+                        {
+                            "title":  "example Module",
+                            "lessonIds":  [
+                                              "lesson-000001"
+                                          ],
+                            "id":  "mh-example"
+                        }
+                    ],
+        "title":  "MH Course",
+        "description":  "Automatically generated course for domain: MH",
+        "id":  "mh"
+    }
+]

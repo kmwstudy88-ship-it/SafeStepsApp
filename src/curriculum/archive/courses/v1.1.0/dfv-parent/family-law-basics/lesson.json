@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Family law can feel overwhelming. This lesson explains the basics."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Topics include parenting orders, mediation, and how DFV influences decisions."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn how to prepare documents, timelines, and evidence."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "List any legal questions or concerns you have."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Understanding the system helps reduce fear and confusion."
+                     }
+                 ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "module-demonstrating-safe-parenting",
+  "title": "Demonstrating Safe Parenting",
+  "moduleId": "demonstrating-safe-parenting",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand what professionals and courts look for when assessing safe parenting capacity, and how to demonstrate consistent, child-focused care.",
+  "microLesson": "Safe parenting is shown through daily actions that protect a child’s physical, emotional, and developmental wellbeing. Courts and professionals look for predictability, emotional regulation, stable routines, and the ability to meet a child’s needs without exposing them to conflict or risk. Demonstrating safe parenting means following through on commitments, using calm and consistent discipline, maintaining a safe home environment, and prioritising the child’s experience over adult disagreements. Progress is shown through behaviour, not promises—small, consistent changes matter most.",
+  "activity": "Identify one area where you can strengthen your demonstration of safe parenting (e.g., routines, emotional regulation, communication, supervision). Write a reflection describing the change you will make and how it supports your child’s safety and wellbeing.",
+  "evidenceTypes": [
+    "reflection",
+    "photo",
+    "document"
+  ],
+  "caseworkerFlags": [
+    "court-expectations",
+    "child-safety",
+    "parenting-capacity"
+  ],
+  "resources": [
+    {
+      "title": "Safe Parenting Capacity Checklist",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

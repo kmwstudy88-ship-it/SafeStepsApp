@@ -1,0 +1,90 @@
+{
+  "program_id": "PARENT-ACC-107",
+  "program_title": "Co-Parenting Across Separate Households",
+  "version": "1.0",
+  "metadata": {
+    "target_audience": "Co-parents, separated/divorced parents, and blended family caregivers (Ages 4–18)",
+    "estimated_duration": "60–90 minutes",
+    "delivery_format": "Self-paced or Facilitated Add-On Module",
+    "core_objective": "Maintain effective accountability systems without adult conflict, triangulation, or double standards between homes.",
+    "key_deliverable": "Two-Household Alignment Framework"
+  },
+  "modules": [
+    {
+      "section_id": 1,
+      "section_title": "Core Learning Content",
+      "topics": [
+        {
+          "topic_id": "7.1",
+          "title": "Parallel Parenting vs. Co-Parenting",
+          "summary": "Establishing stability and predictability within your own home environment regardless of the other household's structure.",
+          "key_principles": [
+            "Children do not require identical environments; they require predictability within each environment.",
+            "Neutral re-anchoring prevents child triangulation between homes."
+          ]
+        },
+        {
+          "topic_id": "7.2",
+          "title": "The Unified Core Threshold",
+          "summary": "Identifying non-negotiable safety, academic, and restorative standards across households.",
+          "core_areas": [
+            "Restorative repair for major trust violations.",
+            "Overnight digital device management.",
+            "Schoolwork and medical consistency."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section_title": "Lesson Activities",
+      "activities": [
+        {
+          "activity_id": "ACT-701",
+          "title": "Core Boundary Alignment Audit",
+          "type": "Worksheet",
+          "instructions": "Differentiate between local household rules and cross-household core standards."
+        }
+      ]
+    },
+    {
+      "section_id": 3,
+      "section_title": "Implementation Tasks",
+      "tasks": [
+        {
+          "task_id": "TSK-701",
+          "title": "Shared Logistics Protocol",
+          "action": "Establish business-like, fact-based communication routines for major discipline and restorative updates."
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section_title": "Assessments & Quizzes",
+      "quiz": [
+        {
+          "id": "CPQ1",
+          "question": "What is the most constructive response when a child states that the other parent has much looser rules?",
+          "options": [
+            "A) Criticize the other parent so the child understands why their rules are bad.",
+            "B) Immediately loosen your own rules so the child doesn't favor the other parent.",
+            "C) State calmly that different households have different rules, and re-anchor to your home's expectations.",
+            "D) Call the other parent immediately to argue while the child watches."
+          ],
+          "correct_answer": "C"
+        },
+        {
+          "id": "CPQ2",
+          "question": "What defines 'Parallel Parenting'?",
+          "options": [
+            "A) Parents host daily meetings together to coordinate every meal and bedtime.",
+            "B) Parents in high-conflict situations disengage from one another while maintaining independent, consistent rules within their own respective homes.",
+            "C) Parents live in the same house but stay in different rooms.",
+            "D) Grandparents take over all disciplinary decisions."
+          ],
+          "correct_answer": "B"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+    "topic":  "working-with-diverse-families",
+    "version":  "1.1.0",
+    "stream":  "dfv-peer-mentor",
+    "content":  "Lesson content for working-with-diverse-families.",
+    "type":  "lesson",
+    "id":  "Lesson -  $args[0].Value.ToUpper() orking  $args[0].Value.ToUpper() ith  $args[0].Value.ToUpper() iverse  $args[0].Value.ToUpper() amilies",
+    "name":  "Lesson -  $args[0].Value.ToUpper() orking  $args[0].Value.ToUpper() ith  $args[0].Value.ToUpper() iverse  $args[0].Value.ToUpper() amilies",
+    "title":  "Lesson -  $args[0].Value.ToUpper() orking  $args[0].Value.ToUpper() ith  $args[0].Value.ToUpper() iverse  $args[0].Value.ToUpper() amilies"
+}

@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Technology can be used to support safetyâ€”or to cause harm."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Tech abuse includes tracking, monitoring, hacking, impersonation, and harassment."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn to secure accounts, update passwords, and check devices for risks."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Review your devices and accounts. Identify any that may need securing."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Digital safety is an important part of overall safety planning."
+                     }
+                 ]
+}

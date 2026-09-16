@@ -1,0 +1,18 @@
+{
+  "id": "AOD-W1-D2",
+  "title": "Understanding Triggers",
+  "moduleId": "module-aod",
+  "week": 1,
+  "day": 2,
+  "durationMinutes": 10,
+  "learningGoal": "Identify internal and external triggers that influence substance use.",
+  "microLesson": "Triggers can be people, places, emotions, or situations that increase the urge to use. Learning to spot them early gives you more control. Today you’ll explore the triggers that show up most often in your life.",
+  "activity": "List three internal triggers (thoughts or feelings) and three external triggers (people, places, or situations) that affect you.",
+  "evidenceTypes": [
+    "text"
+  ],
+  "caseworkerFlags": [
+    "aod-triggers"
+  ],
+  "version": "1.0.0"
+}

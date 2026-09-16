@@ -1,0 +1,26 @@
+{
+  "id": "module-domestic-violence-impacts",
+  "title": "Domestic Violence Impacts",
+  "moduleId": "domestic-violence-impacts",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how exposure to violence affects children and how to rebuild safety.",
+  "microLesson": "Children exposed to violence may show fear, aggression, withdrawal, or regression. They need emotional safety, predictable routines, and reassurance. Parents can support healing by staying calm, validating feelings, and avoiding conflict in front of children.",
+  "activity": "Write a reflection on one way you can increase emotional safety at home this week.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "family-violence",
+    "child-safety"
+  ],
+  "resources": [
+    {
+      "title": "Domestic Violence Support Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

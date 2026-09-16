@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Communication can build connection or cause harm depending on how it is used."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Healthy communication includes listening, clarity, honesty, and emotional regulation."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn skills such as using \u0027I\u0027 statements and active listening."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Reflect on a recent conversation. What communication pattern did you use?"
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Healthy communication requires awareness and practice."
+                     }
+                 ]
+}

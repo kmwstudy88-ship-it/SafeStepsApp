@@ -1,0 +1,67 @@
+{
+  "id": "course_module_case_review_and_reflective_practice",
+  "title": "Case Review and Reflective Practice",
+  "description": "Auto-generated course for module module_case_review_and_reflective_practice",
+  "lessons": [
+    {
+      "id": "lesson_structured_case_review",
+      "title": "Structured Case Review",
+      "sections": [
+        {
+          "id": "section_lesson_structured_case_review_01"
+        },
+        {
+          "id": "section_lesson_structured_case_review_02"
+        },
+        {
+          "id": "section_lesson_structured_case_review_03"
+        },
+        {
+          "id": "section_lesson_structured_case_review_04"
+        },
+        {
+          "id": "section_lesson_structured_case_review_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_reflective_practice_frameworks",
+      "title": "Reflective Practice Frameworks",
+      "sections": [
+        {
+          "id": "section_lesson_reflective_practice_frameworks_01"
+        },
+        {
+          "id": "section_lesson_reflective_practice_frameworks_02"
+        },
+        {
+          "id": "section_lesson_reflective_practice_frameworks_03"
+        },
+        {
+          "id": "section_lesson_reflective_practice_frameworks_04"
+        },
+        {
+          "id": "section_lesson_reflective_practice_frameworks_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_continuous_improvement",
+      "title": "Continuous Improvement",
+      "sections": [
+        {
+          "id": "section_lesson_continuous_improvement_01"
+        },
+        {
+          "id": "section_lesson_continuous_improvement_02"
+        },
+        {
+          "id": "section_lesson_continuous_improvement_03"
+        },
+        {
+          "id": "section_lesson_continuous_improvement_04"
+        }
+      ]
+    }
+  ]
+}

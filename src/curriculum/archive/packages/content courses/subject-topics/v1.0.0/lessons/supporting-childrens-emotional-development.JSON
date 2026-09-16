@@ -1,0 +1,28 @@
+{
+  "id": "module-supporting-childrens-emotional-development",
+  "title": "Supporting Children’s Emotional Development",
+  "moduleId": "supporting-childrens-emotional-development",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how children develop emotional skills and how to support emotional literacy, expression, and regulation.",
+  "microLesson": "Children learn about emotions through the adults who care for them. Emotional development includes recognising feelings, naming them, expressing them safely, and learning how to calm the body when overwhelmed. Young children rely heavily on co-regulation—borrowing the adult’s calm—before they can self-regulate. When parents validate feelings, stay present during big emotions, and model healthy coping strategies, children build emotional literacy and resilience. Punishment or dismissal of emotions can increase stress and dysregulation, while connection and coaching strengthen long-term emotional wellbeing.",
+  "activity": "Choose one moment today when your child shows a strong emotion. Practice naming the feeling and offering co-regulation (e.g., calm voice, slow breathing, gentle presence). Write a reflection on how your child responded.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "emotional-development",
+    "regulation",
+    "attachment"
+  ],
+  "resources": [
+    {
+      "title": "Emotion Coaching for Parents",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

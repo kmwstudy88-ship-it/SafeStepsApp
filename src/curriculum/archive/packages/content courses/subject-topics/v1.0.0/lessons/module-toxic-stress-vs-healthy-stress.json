@@ -1,0 +1,28 @@
+{
+  "id": "module-toxic-stress-vs-healthy-stress",
+  "title": "Toxic Stress vs Healthy Stress",
+  "moduleId": "toxic-stress-vs-healthy-stress",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand the difference between healthy stress that supports growth and toxic stress that harms development, and how to create environments that protect children from overwhelming stress.",
+  "microLesson": "Not all stress is harmful. Healthy stress—like learning new skills, solving problems, or adapting to small challenges—helps children grow resilience and confidence. Toxic stress occurs when a child faces overwhelming or ongoing stress without enough emotional support. This can activate the brain’s stress response system for long periods, affecting behaviour, learning, and emotional regulation. Children exposed to toxic stress may seem anxious, withdrawn, reactive, or easily overwhelmed. Parents can buffer stress by offering predictability, calm responses, emotional connection, and supportive routines that help the nervous system feel safe.",
+  "activity": "Reflect on one situation where your child may have experienced stress recently. Write a reflection describing whether it was healthy or overwhelming, and how you can support your child’s regulation and sense of safety next time.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "trauma-awareness",
+    "emotional-regulation",
+    "child-safety"
+  ],
+  "resources": [
+    {
+      "title": "Understanding Stress and the Developing Brain",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

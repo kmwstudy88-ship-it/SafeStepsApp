@@ -1,0 +1,26 @@
+{
+  "id": "module-bedtime-routines",
+  "title": "Bedtime Routines",
+  "moduleId": "bedtime-routines",
+  "durationMinutes": 60,
+  "learningGoal": "Support parents to create predictable, calming bedtime routines that improve sleep and reduce conflict.",
+  "microLesson": "Children rely on routine to feel secure. A consistent bedtime routine helps their bodies and minds prepare for sleep. Effective routines include calming activities such as reading, dimming lights, and reducing screen time. When parents follow the same steps each night, children settle more easily and bedtime battles decrease. Sleep is essential for emotional regulation, learning, and behaviour, making bedtime routines a key part of healthy development.",
+  "activity": "Create a simple 3-step bedtime routine (e.g., bath → story → lights out). Use it for three nights and write a reflection on how your child responded.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "daily-routines",
+    "sleep"
+  ],
+  "resources": [
+    {
+      "title": "Healthy Sleep Routine Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

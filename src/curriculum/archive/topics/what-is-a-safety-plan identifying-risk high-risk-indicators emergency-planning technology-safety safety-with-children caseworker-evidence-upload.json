@@ -1,0 +1,107 @@
+[
+  {
+    "id": "DFV-W3-D1",
+    "week": 3,
+    "day": 1,
+    "title": "What Is a Safety Plan?",
+    "duration_minutes": 12,
+    "learning_goal": "Understand the purpose of a safety plan and how it reduces risk during DFV situations.",
+    "content": {
+      "micro_lesson": "A safety plan is a personalised, practical plan that outlines steps to increase safety during escalating conflict, separation, or emergencies. It includes safe contacts, escape routes, code words, essential documents, and technology safety.",
+      "activity": "Complete the safety plan template with at least five personalised safety actions.",
+      "evidence_required": "Uploaded safety plan (PDF or screenshot).",
+      "caseworker_flags": "Learner reports no safe contacts or no access to essential documents.",
+      "escalation_trigger": "Learner indicates immediate danger or inability to leave safely."
+    }
+  },
+  {
+    "id": "DFV-W3-D2",
+    "week": 3,
+    "day": 2,
+    "title": "Identifying Risk",
+    "duration_minutes": 14,
+    "learning_goal": "Recognise key DFV risk indicators and understand how risk escalates.",
+    "content": {
+      "micro_lesson": "Risk indicators include threats, stalking, strangulation, pregnancy, separation, access to weapons, and escalating jealousy. Risk is dynamic and can change quickly.",
+      "activity": "Complete a risk‑indicator checklist based on a fictional scenario.",
+      "evidence_required": "Uploaded checklist.",
+      "caseworker_flags": "Any disclosure of weapons, strangulation, or threats to kill.",
+      "escalation_trigger": "Presence of high‑risk indicators triggers immediate MARAC/IDVA pathway."
+    }
+  },
+  {
+    "id": "DFV-W3-D3",
+    "week": 3,
+    "day": 3,
+    "title": "High‑Risk Indicators",
+    "duration_minutes": 15,
+    "learning_goal": "Identify high‑risk DFV factors that require urgent intervention.",
+    "content": {
+      "micro_lesson": "High‑risk factors include strangulation, threats to kill, stalking, sexual violence, pregnancy, recent separation, and obsessive jealousy. These factors significantly increase the likelihood of serious harm.",
+      "activity": "Analyse a case study and highlight all high‑risk indicators.",
+      "evidence_required": "Case study analysis upload.",
+      "caseworker_flags": "Any admission of strangulation or threats to kill.",
+      "escalation_trigger": "Strangulation or threats to kill require immediate high‑risk response."
+    }
+  },
+  {
+    "id": "DFV-W3-D4",
+    "week": 3,
+    "day": 4,
+    "title": "Emergency Planning",
+    "duration_minutes": 13,
+    "learning_goal": "Create an emergency plan for rapid exit during DFV escalation.",
+    "content": {
+      "micro_lesson": "Emergency planning includes identifying exits, preparing a go‑bag, rehearsing escape routes, establishing code words, and knowing safe locations. Planning increases survival in high‑risk situations.",
+      "activity": "Complete the emergency plan checklist.",
+      "evidence_required": "Uploaded emergency plan.",
+      "caseworker_flags": "Learner reports no safe exit routes or no access to transportation.",
+      "escalation_trigger": "Learner indicates imminent risk or inability to escape safely."
+    }
+  },
+  {
+    "id": "DFV-W3-D5",
+    "week": 3,
+    "day": 5,
+    "title": "Technology Safety",
+    "duration_minutes": 12,
+    "learning_goal": "Understand how technology can be used for harm and how to stay safe online.",
+    "content": {
+      "micro_lesson": "Technology‑enabled abuse includes tracking devices, spyware, account access, location sharing, and monitoring messages. Safety steps include password resets, two‑factor authentication, checking devices, and reviewing app permissions.",
+      "activity": "Complete a tech‑safety audit using the provided checklist.",
+      "evidence_required": "Uploaded tech‑safety audit.",
+      "caseworker_flags": "Evidence of spyware, tracking, or unauthorised account access.",
+      "escalation_trigger": "Active surveillance or stalking triggers immediate tech‑safety intervention."
+    }
+  },
+  {
+    "id": "DFV-W3-D6",
+    "week": 3,
+    "day": 6,
+    "title": "Safety With Children",
+    "duration_minutes": 14,
+    "learning_goal": "Learn how to create safety plans that include children during DFV incidents.",
+    "content": {
+      "micro_lesson": "Children need simple, rehearsed safety steps: safe rooms, code words, emergency contacts, and knowing not to intervene. Safety plans must be age‑appropriate and trauma‑informed.",
+      "activity": "Create a child‑inclusive safety plan using the template.",
+      "evidence_required": "Uploaded child safety plan.",
+      "caseworker_flags": "Child expresses fear of a parent or unsafe home environment.",
+      "escalation_trigger": "Any child‑related risk triggers mandatory child protection referral."
+    }
+  },
+  {
+    "id": "DFV-W3-D7",
+    "week": 3,
+    "day": 7,
+    "title": "Caseworker Evidence Upload",
+    "duration_minutes": 10,
+    "learning_goal": "Compile and submit safety‑related evidence for caseworker review.",
+    "content": {
+      "micro_lesson": "This lesson consolidates all Week 3 safety planning materials. Learners upload finalised safety plans, risk checklists, and emergency plans for caseworker review.",
+      "activity": "Upload all Week 3 evidence items.",
+      "evidence_required": "Safety plan, risk checklist, emergency plan, tech‑safety audit.",
+      "caseworker_flags": "Missing safety plan or incomplete high‑risk documentation.",
+      "escalation_trigger": "Any high‑risk indicator found in uploads triggers immediate triage."
+    }
+  }
+]

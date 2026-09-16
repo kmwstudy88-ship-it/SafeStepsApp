@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Healing from DFV takes time, support, and compassion."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Healing is not linear. It includes emotional, physical, and relational recovery."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn grounding, selfâ€‘care, and supportâ€‘seeking strategies."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify one healing activity that helps you feel calmer or stronger."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Recovery is a journey, not a destination."
+                     }
+                 ]
+}

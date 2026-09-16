@@ -1,0 +1,67 @@
+{
+  "id": "course_module_building_respectful_communities",
+  "title": "Building Respectful Communities",
+  "description": "Auto-generated course for module module_building_respectful_communities",
+  "lessons": [
+    {
+      "id": "lesson_positive_social_norms",
+      "title": "Positive Social Norms",
+      "sections": [
+        {
+          "id": "section_lesson_positive_social_norms_01"
+        },
+        {
+          "id": "section_lesson_positive_social_norms_02"
+        },
+        {
+          "id": "section_lesson_positive_social_norms_03"
+        },
+        {
+          "id": "section_lesson_positive_social_norms_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_community_leadership_for_respect",
+      "title": "Community Leadership for Respect",
+      "sections": [
+        {
+          "id": "section_lesson_community_leadership_for_respect_01"
+        },
+        {
+          "id": "section_lesson_community_leadership_for_respect_02"
+        },
+        {
+          "id": "section_lesson_community_leadership_for_respect_03"
+        },
+        {
+          "id": "section_lesson_community_leadership_for_respect_04"
+        },
+        {
+          "id": "section_lesson_community_leadership_for_respect_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_everyday_prevention_actions",
+      "title": "Everyday Prevention Actions",
+      "sections": [
+        {
+          "id": "section_lesson_everyday_prevention_actions_01"
+        },
+        {
+          "id": "section_lesson_everyday_prevention_actions_02"
+        },
+        {
+          "id": "section_lesson_everyday_prevention_actions_03"
+        },
+        {
+          "id": "section_lesson_everyday_prevention_actions_04"
+        },
+        {
+          "id": "section_lesson_everyday_prevention_actions_05"
+        }
+      ]
+    }
+  ]
+}

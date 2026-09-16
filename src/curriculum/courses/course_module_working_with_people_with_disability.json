@@ -1,0 +1,55 @@
+{
+  "id": "course_module_working_with_people_with_disability",
+  "title": "Working with People with Disability",
+  "description": "Auto-generated course for module module_working_with_people_with_disability",
+  "lessons": [
+    {
+      "id": "lesson_disability_specific_risks",
+      "title": "Disability-Specific Risks",
+      "sections": [
+        {
+          "id": "section_lesson_disability_specific_risks_01"
+        },
+        {
+          "id": "section_lesson_disability_specific_risks_02"
+        },
+        {
+          "id": "section_lesson_disability_specific_risks_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_accessible_practice",
+      "title": "Accessible Practice",
+      "sections": [
+        {
+          "id": "section_lesson_accessible_practice_01"
+        },
+        {
+          "id": "section_lesson_accessible_practice_02"
+        },
+        {
+          "id": "section_lesson_accessible_practice_03"
+        },
+        {
+          "id": "section_lesson_accessible_practice_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_supporting_autonomy_and_safety",
+      "title": "Supporting Autonomy and Safety",
+      "sections": [
+        {
+          "id": "section_lesson_supporting_autonomy_and_safety_01"
+        },
+        {
+          "id": "section_lesson_supporting_autonomy_and_safety_02"
+        },
+        {
+          "id": "section_lesson_supporting_autonomy_and_safety_03"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Change is possible when you understand what drives your behaviour."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Behaviour change requires motivation, consistency, and accountability."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn habitâ€‘building, goalâ€‘setting, and selfâ€‘monitoring techniques."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify one behaviour you want to change and why."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Change is a process, not a single decision."
+                     }
+                 ]
+}

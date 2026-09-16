@@ -1,0 +1,27 @@
+{
+  "id": "module-autism-and-parenting-strategies",
+  "title": "Autism and Parenting Strategies",
+  "moduleId": "autism-and-parenting-strategies",
+  "durationMinutes": 60,
+  "learningGoal": "Support parents to understand autism, reduce sensory overload, and use strengths-based parenting strategies.",
+  "microLesson": "Autistic children often experience the world differently. They may have sensory sensitivities, communication differences, or strong interests. Behaviour is often a form of communication, not defiance. Parents can support autistic children by reducing sensory triggers, using visual supports, offering predictable routines, and celebrating strengths. A calm, patient, and structured approach helps children feel safe and understood.",
+  "activity": "Identify one sensory trigger your child experiences (noise, lights, textures). Make one small adjustment and reflect on how it affected your child.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "neurodiversity",
+    "sensory-needs"
+  ],
+  "resources": [
+    {
+      "title": "Autism Support Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

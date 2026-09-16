@@ -1,0 +1,40 @@
+{
+  "id": "course_dfv_and_mental_health_intersections",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "DFV and Mental Health Intersections",
+  "modules": [
+    {
+      "id": "module_understanding_intersections",
+      "title": "Understanding DFV and Mental Health Intersections",
+      "lessons": [
+        "how_dfv_affects_mental_health",
+        "mental_health_as_a_risk_factor",
+        "misuse_of_mental_health_in_coercive_control"
+      ]
+    },
+    {
+      "id": "module_common_impacts",
+      "title": "Common Mental Health Impacts",
+      "lessons": [
+        "anxiety_and_hypervigilance",
+        "depression_and_low_self_worth",
+        "trauma_responses_and_dissociation"
+      ]
+    },
+    {
+      "id": "module_support_and_safety",
+      "title": "Support and Safety",
+      "lessons": [
+        "responding_with_trauma_informed_practice",
+        "supporting_access_to_services",
+        "building_mental_health_safety_plans"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of DFV and mental health intersections",
+    "Ability to recognise mental health impacts of DFV",
+    "Increased confidence in trauma-informed support"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "course_module_system_navigation_and_advocacy",
+  "title": "System Navigation and Advocacy",
+  "description": "Auto-generated course for module module_system_navigation_and_advocacy",
+  "lessons": [
+    {
+      "id": "lesson_navigating_systems",
+      "title": "Navigating Systems",
+      "sections": [
+        {
+          "id": "section_lesson_navigating_systems_01"
+        },
+        {
+          "id": "section_lesson_navigating_systems_02"
+        },
+        {
+          "id": "section_lesson_navigating_systems_03"
+        },
+        {
+          "id": "section_lesson_navigating_systems_04"
+        },
+        {
+          "id": "section_lesson_navigating_systems_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_advocacy_skills",
+      "title": "Advocacy Skills",
+      "sections": [
+        {
+          "id": "section_lesson_advocacy_skills_01"
+        },
+        {
+          "id": "section_lesson_advocacy_skills_02"
+        },
+        {
+          "id": "section_lesson_advocacy_skills_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_coordinated_case_responses",
+      "title": "Coordinated Case Responses",
+      "sections": [
+        {
+          "id": "section_lesson_coordinated_case_responses_01"
+        },
+        {
+          "id": "section_lesson_coordinated_case_responses_02"
+        },
+        {
+          "id": "section_lesson_coordinated_case_responses_03"
+        },
+        {
+          "id": "section_lesson_coordinated_case_responses_04"
+        }
+      ]
+    }
+  ]
+}

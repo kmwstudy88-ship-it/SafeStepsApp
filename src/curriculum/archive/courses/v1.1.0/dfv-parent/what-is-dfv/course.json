@@ -1,0 +1,26 @@
+{
+  "title": "What Is Domestic and Family Violence?",
+  "description": "An introduction to domestic and family violence, explaining the different forms it can take and how it affects parents, children, and families.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand the definition and forms of domestic and family violence.",
+    "Recognise the difference between conflict and abuse.",
+    "Identify early warning signs of controlling or harmful behaviour."
+  ],
+  "modules": [
+    "Understanding DFV",
+    "Recognising Patterns of Harm"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "DFV Basics",
+    "tags": [
+      "dfv",
+      "abuse",
+      "safety",
+      "parenting"
+    ]
+  },
+  "caseworkerSummary": "Provides parents with a foundational understanding of DFV, including types of abuse and early indicators of risk."
+}

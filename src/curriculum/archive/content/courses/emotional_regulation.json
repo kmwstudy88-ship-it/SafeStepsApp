@@ -1,0 +1,31 @@
+{
+  "id": "course_emotional_regulation",
+  "domain": "mental_health",
+  "level": "foundational",
+  "title": "Emotional Regulation",
+  "modules": [
+    {
+      "id": "module_understanding_emotions",
+      "title": "Understanding Emotions",
+      "lessons": [
+        "what_are_emotions",
+        "how_emotions_work",
+        "why_emotions_matter"
+      ]
+    },
+    {
+      "id": "module_regulation_skills",
+      "title": "Regulation Skills",
+      "lessons": [
+        "breathing_skills",
+        "grounding_skills",
+        "soothing_skills"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved emotional awareness",
+    "Better ability to regulate stress",
+    "Increased coping capacity"
+  ]
+}

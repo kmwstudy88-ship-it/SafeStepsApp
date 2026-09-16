@@ -1,0 +1,107 @@
+[
+  {
+    "id": "How DFV Affects Children",
+    "week": 2,
+    "day": 1,
+    "title": "How DFV Affects Children",
+    "duration_minutes": 12,
+    "learning_goal": "Understand emotional, behavioural, and developmental impacts of DFV exposure.",
+    "content": {
+      "micro_lesson": "Children experience DFV even when they do not directly witness incidents. Exposure includes hearing conflict, sensing tension, seeing injuries, or living in an unpredictable environment. Impacts include anxiety, hypervigilance, sleep issues, regression, and school difficulties.",
+      "activity": "Identify three behaviours from a case vignette and link them to DFV exposure.",
+      "evidence_required": "150-word written response.",
+      "caseworker_flags": "Child showing fear of a specific parent, regression, or nightmares.",
+      "escalation_trigger": "Any disclosure of direct harm triggers mandatory child protection pathway."
+    }
+  },
+  {
+    "id": "Trauma Responses in Children",
+    "week": 2,
+    "day": 2,
+    "title": "Trauma Responses in Children",
+    "duration_minutes": 14,
+    "learning_goal": "Recognise trauma responses such as fight, flight, freeze, and fawn in children.",
+    "content": {
+      "micro_lesson": "Trauma alters the nervous system. Children may appear aggressive, avoidant, shut down, overly compliant, or hyperactive. These behaviours are survival responses, not misbehaviour.",
+      "activity": "Match behaviours to trauma responses using a worksheet.",
+      "evidence_required": "Completed worksheet upload.",
+      "caseworker_flags": "Freeze or fawn responses toward a perpetrator.",
+      "escalation_trigger": "Child dissociation or shutdown triggers urgent clinical referral."
+    }
+  },
+  {
+    "id": "Behavioural Signs",
+    "week": 2,
+    "day": 3,
+    "title": "Behavioural Signs",
+    "duration_minutes": 12,
+    "learning_goal": "Identify behavioural red flags linked to DFV exposure.",
+    "content": {
+      "micro_lesson": "Common signs include aggression, withdrawal, perfectionism, clinginess, school refusal, and unexplained physical symptoms. Behaviour is communication.",
+      "activity": "Complete a behaviour-tracking exercise using the provided template.",
+      "evidence_required": "Uploaded behaviour log.",
+      "caseworker_flags": "Sudden aggression or extreme withdrawal.",
+      "escalation_trigger": "Child expressing fear of going home triggers immediate safety check."
+    }
+  },
+  {
+    "id": "Impact on Development",
+    "week": 2,
+    "day": 4,
+    "title": "Impact on Development",
+    "duration_minutes": 15,
+    "learning_goal": "Understand how DFV affects brain development, learning, and emotional regulation.",
+    "content": {
+      "micro_lesson": "Chronic stress disrupts brain development, affecting memory, emotional regulation, and executive functioning. Children may struggle with concentration, impulse control, and learning.",
+      "activity": "Complete a 'stress ladder' mapping exercise.",
+      "evidence_required": "Uploaded stress ladder.",
+      "caseworker_flags": "Developmental delays or speech regression.",
+      "escalation_trigger": "Child under 5 showing regression plus DFV exposure triggers mandatory referral."
+    }
+  },
+  {
+    "id": "Emotional Safety",
+    "week": 2,
+    "day": 5,
+    "title": "Emotional Safety",
+    "duration_minutes": 13,
+    "learning_goal": "Learn how to create emotional safety for children during instability.",
+    "content": {
+      "micro_lesson": "Emotional safety is created through predictability, calm tone, routines, co-regulation, and helping children name emotions. Small consistent actions matter.",
+      "activity": "Build a 'safe routine plan' for mornings or bedtime.",
+      "evidence_required": "Uploaded routine plan.",
+      "caseworker_flags": "No stable caregiver available.",
+      "escalation_trigger": "Caregiver unable to provide basic emotional safety triggers clinical support referral."
+    }
+  },
+  {
+    "id": "Repairing Attachment",
+    "week": 2,
+    "day": 6,
+    "title": "Repairing Attachment",
+    "duration_minutes": 14,
+    "learning_goal": "Understand how to repair attachment after DFV exposure.",
+    "content": {
+      "micro_lesson": "Attachment repair is possible through consistent presence, attunement, predictable responses, and safe emotional expression. Small moments of connection rebuild trust.",
+      "activity": "Complete a 10-minute guided 'connection task' with the child.",
+      "evidence_required": "Short reflection on the connection task.",
+      "caseworker_flags": "Child avoids all physical contact or caregiver emotionally unavailable.",
+      "escalation_trigger": "Signs of attachment rupture trigger therapeutic referral."
+    }
+  },
+  {
+    "id": "Parenting Under DFV Stress",
+    "week": 2,
+    "day": 7,
+    "title": "Parenting Under DFV Stress",
+    "duration_minutes": 15,
+    "learning_goal": "Recognise how DFV affects parenting capacity and how to stabilise routines.",
+    "content": {
+      "micro_lesson": "DFV-related stress reduces patience, consistency, and emotional bandwidth. Parents may feel guilt or shame. Stabilising routines helps children feel safe.",
+      "activity": "Identify one stressor and one stabilising action to implement.",
+      "evidence_required": "200-word reflection.",
+      "caseworker_flags": "Parent expresses hopelessness or inability to cope.",
+      "escalation_trigger": "Parent reports inability to keep child safe triggers immediate triage."
+    }
+  }
+]

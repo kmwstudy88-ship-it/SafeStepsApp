@@ -1,0 +1,58 @@
+{
+  "id": "course_module_foundations_of_dfv_capability",
+  "title": "Foundations of DFV Capability",
+  "description": "Auto-generated course for module module_foundations_of_dfv_capability",
+  "lessons": [
+    {
+      "id": "lesson_core_capabilities",
+      "title": "Core Capabilities",
+      "sections": [
+        {
+          "id": "section_lesson_core_capabilities_01"
+        },
+        {
+          "id": "section_lesson_core_capabilities_02"
+        },
+        {
+          "id": "section_lesson_core_capabilities_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_values_and_principles",
+      "title": "Values and Principles",
+      "sections": [
+        {
+          "id": "section_lesson_values_and_principles_01"
+        },
+        {
+          "id": "section_lesson_values_and_principles_02"
+        },
+        {
+          "id": "section_lesson_values_and_principles_03"
+        },
+        {
+          "id": "section_lesson_values_and_principles_04"
+        },
+        {
+          "id": "section_lesson_values_and_principles_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_workforce_roles_and_skills",
+      "title": "Workforce Roles and Skills",
+      "sections": [
+        {
+          "id": "section_lesson_workforce_roles_and_skills_01"
+        },
+        {
+          "id": "section_lesson_workforce_roles_and_skills_02"
+        },
+        {
+          "id": "section_lesson_workforce_roles_and_skills_03"
+        }
+      ]
+    }
+  ]
+}

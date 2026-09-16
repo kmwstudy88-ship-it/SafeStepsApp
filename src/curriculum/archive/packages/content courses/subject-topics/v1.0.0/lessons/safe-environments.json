@@ -1,0 +1,26 @@
+{
+  "id": "module-safe-environments",
+  "title": "Safe Environments",
+  "moduleId": "safe-environments",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to create physically and emotionally safe environments for children.",
+  "microLesson": "Safe environments include supervision, hazard reduction, emotional warmth, and predictable routines. Children thrive when they feel protected and supported. Parents can reduce risks by staying attentive and maintaining a calm, structured home.",
+  "activity": "Identify one safety improvement you can make at home. Reflect on why it matters.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "child-safety"
+  ],
+  "resources": [
+    {
+      "title": "Home Safety Checklist",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Triggers are cues that set off emotional or behavioural reactions."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Patterns develop over time and can become automatic unless interrupted."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn mapping, earlyâ€‘warning signs, and circuitâ€‘breaker strategies."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify one trigger and the pattern that follows it."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Awareness of patterns creates opportunities for change."
+                     }
+                 ]
+}

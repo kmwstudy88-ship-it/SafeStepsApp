@@ -1,0 +1,25 @@
+{
+  "id": "repairing-harm",
+  "title": "Repairing Harm (Father-Focused)",
+  "description": "This course supports fathers to understand how their behaviour harms children and partners, and how to engage in meaningful, safe repair.",
+  "learningOutcomes": [
+    "Understand harm in the context of fatherhood.",
+    "Recognise how behaviour affects children’s emotional safety.",
+    "Learn how to apologise safely and respectfully.",
+    "Develop long-term repair behaviours."
+  ],
+  "modules": [
+    {
+      "title": "Harm and Fathering",
+      "content": "Explores how children experience harm from fathers."
+    },
+    {
+      "title": "Accountability in Repair",
+      "content": "Shows how responsibility supports healing and safety."
+    },
+    {
+      "title": "Repair Tools",
+      "content": "Provides strategies for safe, meaningful repair."
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "program_id": "PARENT-ACC-105",
+  "program_title": "Capstone Implementation & Final Assessment",
+  "version": "1.0",
+  "metadata": {
+    "target_audience": "Parents, Parenting Coaches, and Facilitators",
+    "estimated_duration": "90–120 minutes",
+    "delivery_format": "Self-paced or Facilitated Capstone",
+    "core_objective": "Integrate concepts across all modules into a unified family governance framework.",
+    "key_deliverable": "The Complete Family Accountability Manual"
+  },
+  "modules": [
+    {
+      "section_id": 1,
+      "section_title": "Core Learning Content & Adaptations",
+      "topics": [
+        {
+          "topic_id": "5.1",
+          "title": "Program Integration Lifecycle",
+          "summary": "Synthesis of expectations, emotional regulation, restorative repair, and autonomy transition."
+        },
+        {
+          "topic_id": "5.2",
+          "title": "Neurodiversity & Executive Function Adaptations",
+          "summary": "Tailoring accountability for ADHD and executive dysfunction.",
+          "strategies": [
+            "Externalize memory through visual checklists and timers.",
+            "Shorten feedback loops for immediate cause-and-effect recognition.",
+            "Differentiate wilful defiance from skill deficits."
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section_title": "Capstone Project",
+      "project": {
+        "title": "The Complete Family Accountability Manual",
+        "components": [
+          "Core Family Values & Rights Statement",
+          "Expectation & Privilege Ledger",
+          "De-escalation Protocol",
+          "Restorative Repair Roadmap",
+          "Autonomy Milestone Chart"
+        ]
+      }
+    },
+    {
+      "section_id": 3,
+      "section_title": "Cumulative Assessment",
+      "assessment": {
+        "multiple_choice_exam": [
+          {
+            "id": "C1",
+            "question": "Which sequence correctly describes the 3-step de-escalation framework?",
+            "options": [
+              "A) Reason -> Regulate -> Relate",
+              "B) Regulate -> Relate -> Reason",
+              "C) Relate -> Reason -> Regulate",
+              "D) Regulate -> Reason -> Relate"
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "id": "C2",
+            "question": "How does a logical consequence differ from a punishment?",
+            "options": [
+              "A) Logical consequences are directly connected to the behavior and focus on repair; punishments focus on making the child suffer.",
+              "B) Logical consequences are always mild, while punishments are always severe.",
+              "C) Punishments are designed for teenagers; logical consequences are only for young children.",
+              "D) There is no functional difference."
+            ],
+            "correct_answer": "A"
+          },
+          {
+            "id": "C3",
+            "question": "What is the primary risk of using 'Indefinite Grounding' after a trust breach?",
+            "options": [
+              "A) It makes parents look weak.",
+              "B) It deprives the child of a clear, actionable pathway to earn trust back, often leading to resentment and secrecy.",
+              "C) It requires too much paperwork.",
+              "D) It causes children to forget what rule they broke."
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "id": "C4",
+            "question": "In the 'Gradual Release Framework', what is the main role of a parent during the 'Consultant Phase'?",
+            "options": [
+              "A) To manage daily routines and enforce strict curfews directly.",
+              "B) To step back completely and ignore dangerous behavior.",
+              "C) To offer guidance and reflective questions while transferring problem-solving responsibility to the youth.",
+              "D) To pay for all expenses without asking questions."
+            ],
+            "correct_answer": "C"
+          },
+          {
+            "id": "C5",
+            "question": "What adjustment is essential when applying accountability systems to a child with ADHD?",
+            "options": [
+              "A) Eliminating all boundaries and consequences.",
+              "B) Extending the delay between the behavior and the consequence.",
+              "C) Externalizing expectations using visual tools and keeping feedback loops immediate.",
+              "D) Relying exclusively on verbal lectures."
+            ],
+            "correct_answer": "C"
+          }
+        ],
+        "scenario_analysis": {
+          "id": "C6",
+          "prompt": "Synthesize a response to late-night electronics misuse using De-escalation, Logical Consequence, Restorative Repair, and Autonomy Benchmarks."
+        }
+      }
+    }
+  ]
+}

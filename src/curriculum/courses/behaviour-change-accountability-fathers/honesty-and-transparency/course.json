@@ -1,0 +1,25 @@
+{
+  "id": "honesty-and-transparency",
+  "title": "Honesty and Transparency (Father-Focused)",
+  "description": "This course supports fathers to practise honesty and transparency in ways that build trust, safety, and emotional stability for children and partners.",
+  "learningOutcomes": [
+    "Understand honesty in the context of fatherhood.",
+    "Recognise how secrecy harms family trust.",
+    "Learn transparent communication skills.",
+    "Develop habits that support accountability and safety."
+  ],
+  "modules": [
+    {
+      "title": "Honesty in Fathering",
+      "content": "Explores how openness supports children’s emotional security."
+    },
+    {
+      "title": "Behaviours That Break Trust",
+      "content": "Identifies secrecy, avoidance, and manipulation."
+    },
+    {
+      "title": "Practising Transparency",
+      "content": "Provides tools for open, accountable communication."
+    }
+  ]
+}

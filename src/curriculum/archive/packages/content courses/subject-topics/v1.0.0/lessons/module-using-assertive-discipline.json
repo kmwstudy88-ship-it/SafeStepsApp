@@ -1,0 +1,27 @@
+{
+  "id": "module-using-assertive-discipline",
+  "title": "Using Assertive Discipline",
+  "moduleId": "using-assertive-discipline",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to use calm, consistent, and predictable discipline strategies that guide behaviour without harshness.",
+  "microLesson": "Assertive discipline is firm, fair, and consistent. It is not aggressive or punitive. Instead, it focuses on teaching children what to do, not just what to stop doing. Assertive parents set clear rules, follow through with consequences, and stay calm during conflict. This approach helps children feel secure because expectations are predictable. It also reduces power struggles and supports long‑term behaviour change. Assertive discipline works best when paired with positive attention and clear communication.",
+  "activity": "Choose one behaviour you want to improve. Write a clear rule and a simple consequence. Practice stating the rule calmly to your child. Record how the child responded and how you stayed consistent.",
+  "evidenceTypes": [
+    "reflection",
+    "caseworker-verification"
+  ],
+  "caseworkerFlags": [
+    "behaviour-guidance",
+    "discipline-consistency"
+  ],
+  "resources": [
+    {
+      "title": "Assertive Discipline Quick Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

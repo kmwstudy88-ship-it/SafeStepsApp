@@ -1,0 +1,12 @@
+﻿[
+  {
+    "id": "lesson-000001",
+    "title": "Example Lesson",
+    "summary": "Short description.",
+    "content": "Full lesson content goes here.",
+    "domains": ["Parenting", "MH"],
+    "tags": ["example"],
+    "level": "foundational",
+    "estimatedMinutes": 20
+  }
+]

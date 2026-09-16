@@ -1,0 +1,10 @@
+{
+    "topic":  "supporting-parenting-challenges",
+    "version":  "1.1.0",
+    "stream":  "dfv-peer-mentor",
+    "content":  "Lesson content for supporting-parenting-challenges.",
+    "type":  "lesson",
+    "id":  "Lesson -  $args[0].Value.ToUpper() upporting  $args[0].Value.ToUpper() arenting  $args[0].Value.ToUpper() hallenges",
+    "name":  "Lesson -  $args[0].Value.ToUpper() upporting  $args[0].Value.ToUpper() arenting  $args[0].Value.ToUpper() hallenges",
+    "title":  "Lesson -  $args[0].Value.ToUpper() upporting  $args[0].Value.ToUpper() arenting  $args[0].Value.ToUpper() hallenges"
+}

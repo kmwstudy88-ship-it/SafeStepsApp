@@ -1,0 +1,25 @@
+{
+  "id": "impacts-on-children",
+  "title": "Impacts on Children (Father-Focused)",
+  "description": "This course supports fathers to understand how their behaviour directly affects their children’s emotional safety, development, and long-term wellbeing.",
+  "learningOutcomes": [
+    "Recognise how children experience harmful behaviour.",
+    "Understand the emotional and developmental impacts on children.",
+    "Identify signs of fear, withdrawal, or distress.",
+    "Develop safe, consistent parenting behaviours."
+  ],
+  "modules": [
+    {
+      "title": "Fathering and Child Impact",
+      "content": "Explores how children internalise their father’s behaviour."
+    },
+    {
+      "title": "Emotional and Developmental Harm",
+      "content": "Shows how harmful behaviour affects children long-term."
+    },
+    {
+      "title": "Safe Fathering Practices",
+      "content": "Provides tools for stability, safety, and emotional support."
+    }
+  ]
+}

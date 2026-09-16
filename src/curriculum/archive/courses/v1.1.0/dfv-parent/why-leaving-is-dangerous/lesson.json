@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Leaving an abusive relationship is often the most dangerous time. This lesson explains why risk increases."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Abusive partners may escalate threats, stalking, or violence when they feel they are losing control."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn strategies for safer planning, including timing, support networks, and documentation."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Reflect on any behaviours that escalated during past attempts to leave."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Understanding risk helps parents make informed, safer decisions."
+                     }
+                 ]
+}

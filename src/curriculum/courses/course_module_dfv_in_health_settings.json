@@ -1,0 +1,55 @@
+{
+  "id": "course_module_dfv_in_health_settings",
+  "title": "DFV in Health Settings",
+  "description": "Auto-generated course for module module_dfv_in_health_settings",
+  "lessons": [
+    {
+      "id": "lesson_recognising_indicators",
+      "title": "Recognising Indicators",
+      "sections": [
+        {
+          "id": "section_lesson_recognising_indicators_01"
+        },
+        {
+          "id": "section_lesson_recognising_indicators_02"
+        },
+        {
+          "id": "section_lesson_recognising_indicators_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_safe_clinical_responses",
+      "title": "Safe Clinical Responses",
+      "sections": [
+        {
+          "id": "section_lesson_safe_clinical_responses_01"
+        },
+        {
+          "id": "section_lesson_safe_clinical_responses_02"
+        },
+        {
+          "id": "section_lesson_safe_clinical_responses_03"
+        },
+        {
+          "id": "section_lesson_safe_clinical_responses_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_documentation_and_referral",
+      "title": "Documentation and Referral",
+      "sections": [
+        {
+          "id": "section_lesson_documentation_and_referral_01"
+        },
+        {
+          "id": "section_lesson_documentation_and_referral_02"
+        },
+        {
+          "id": "section_lesson_documentation_and_referral_03"
+        }
+      ]
+    }
+  ]
+}

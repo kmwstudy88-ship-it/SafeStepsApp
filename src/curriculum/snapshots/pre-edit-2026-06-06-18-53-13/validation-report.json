@@ -1,0 +1,28 @@
+{
+  "missing_files": [],
+  "empty_files": [],
+  "invalid_json": [],
+  "missing_tasks": [],
+  "missing_milestones": [],
+  "missing_evidence": [],
+  "missing_daily": [],
+  "missing_stage_meta": [
+    "stage-01",
+    "stage-02",
+    "stage-03",
+    "stage-04",
+    "stage-05",
+    "stage-06",
+    "stage-07",
+    "stage-08",
+    "stage-09",
+    "stage-10",
+    "stage-11",
+    "stage-12"
+  ],
+  "missing_phase_meta": [
+    "phase-01",
+    "phase-02",
+    "phase-03"
+  ]
+}

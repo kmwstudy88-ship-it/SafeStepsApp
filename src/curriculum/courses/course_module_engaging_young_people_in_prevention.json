@@ -1,0 +1,70 @@
+{
+  "id": "course_module_engaging_young_people_in_prevention",
+  "title": "Engaging Young People in Prevention and Respectful Relationships",
+  "description": "Auto-generated course for module module_engaging_young_people_in_prevention",
+  "lessons": [
+    {
+      "id": "lesson_youth_engagement_strategies",
+      "title": "Youth Engagement Strategies",
+      "sections": [
+        {
+          "id": "section_lesson_youth_engagement_strategies_01"
+        },
+        {
+          "id": "section_lesson_youth_engagement_strategies_02"
+        },
+        {
+          "id": "section_lesson_youth_engagement_strategies_03"
+        },
+        {
+          "id": "section_lesson_youth_engagement_strategies_04"
+        },
+        {
+          "id": "section_lesson_youth_engagement_strategies_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_challenging_harmful_norms",
+      "title": "Challenging Harmful Norms",
+      "sections": [
+        {
+          "id": "section_lesson_challenging_harmful_norms_01"
+        },
+        {
+          "id": "section_lesson_challenging_harmful_norms_02"
+        },
+        {
+          "id": "section_lesson_challenging_harmful_norms_03"
+        },
+        {
+          "id": "section_lesson_challenging_harmful_norms_04"
+        },
+        {
+          "id": "section_lesson_challenging_harmful_norms_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_youth_led_initiatives",
+      "title": "Youth-Led Initiatives",
+      "sections": [
+        {
+          "id": "section_lesson_youth_led_initiatives_01"
+        },
+        {
+          "id": "section_lesson_youth_led_initiatives_02"
+        },
+        {
+          "id": "section_lesson_youth_led_initiatives_03"
+        },
+        {
+          "id": "section_lesson_youth_led_initiatives_04"
+        },
+        {
+          "id": "section_lesson_youth_led_initiatives_05"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "id": "course_module_long_term_recovery_stability_and_economic_empowerment",
+  "title": "Long-Term Recovery, Stability, and Economic Empowerment",
+  "description": "Auto-generated course for module module_long_term_recovery_stability_and_economic_empowerment",
+  "lessons": [
+    {
+      "id": "lesson_long_term_housing_stability",
+      "title": "Long-Term Housing Stability",
+      "sections": [
+        {
+          "id": "section_lesson_long_term_housing_stability_01"
+        },
+        {
+          "id": "section_lesson_long_term_housing_stability_02"
+        },
+        {
+          "id": "section_lesson_long_term_housing_stability_03"
+        },
+        {
+          "id": "section_lesson_long_term_housing_stability_04"
+        },
+        {
+          "id": "section_lesson_long_term_housing_stability_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_economic_empowerment_strategies",
+      "title": "Economic Empowerment Strategies",
+      "sections": [
+        {
+          "id": "section_lesson_economic_empowerment_strategies_01"
+        },
+        {
+          "id": "section_lesson_economic_empowerment_strategies_02"
+        },
+        {
+          "id": "section_lesson_economic_empowerment_strategies_03"
+        },
+        {
+          "id": "section_lesson_economic_empowerment_strategies_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_sustainable_recovery",
+      "title": "Sustainable Recovery",
+      "sections": [
+        {
+          "id": "section_lesson_sustainable_recovery_01"
+        },
+        {
+          "id": "section_lesson_sustainable_recovery_02"
+        },
+        {
+          "id": "section_lesson_sustainable_recovery_03"
+        }
+      ]
+    }
+  ]
+}

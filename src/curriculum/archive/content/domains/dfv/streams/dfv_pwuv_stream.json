@@ -1,0 +1,59 @@
+{
+  "id": "dfv_pwuv_stream",
+  "title": "DFV Behaviour‑Change Stream (People Who Use Violence)",
+  "description": "A structured behaviour‑change pathway designed for people who use violence. This stream focuses on accountability, insight development, emotional regulation, respectful relationship skills, and sustainable behaviour change.",
+  "type": "stream",
+  "level": "intermediate",
+  "tags": [
+    "dfv",
+    "behaviour change",
+    "accountability",
+    "violence prevention",
+    "emotional regulation"
+  ],
+  "outcomes": [
+    "Increase accountability for harmful behaviour",
+    "Develop emotional regulation and self‑management skills",
+    "Build respectful relationship practices",
+    "Support long‑term behaviour change and relapse prevention"
+  ],
+  "modules": [
+    {
+      "id": "module_accountability_foundations",
+      "title": "Accountability Foundations",
+      "lessons": [
+        "understanding_harm",
+        "taking_responsibility",
+        "challenging_minimisation"
+      ]
+    },
+    {
+      "id": "module_emotional_regulation",
+      "title": "Emotional Regulation and Self‑Management",
+      "lessons": [
+        "recognising_triggers",
+        "regulation_strategies",
+        "interrupting_violent_patterns"
+      ]
+    },
+    {
+      "id": "module_relationship_skills",
+      "title": "Respectful Relationship Skills",
+      "lessons": [
+        "communication_skills",
+        "conflict_management",
+        "building_empathy"
+      ]
+    },
+    {
+      "id": "module_sustainable_change",
+      "title": "Sustainable Behaviour Change",
+      "lessons": [
+        "relapse_prevention",
+        "building_new_patterns",
+        "long_term_accountability"
+      ]
+    }
+  ],
+  "content": []
+}

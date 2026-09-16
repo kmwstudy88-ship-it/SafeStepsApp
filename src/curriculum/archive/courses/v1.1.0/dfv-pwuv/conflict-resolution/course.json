@@ -1,0 +1,25 @@
+{
+  "title": "Conflict Resolution",
+  "description": "Provides strategies for resolving conflict safely, respectfully, and without using power or control.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Recognise healthy and unhealthy conflict patterns.",
+    "Understand how conflict escalates.",
+    "Apply strategies for safe conflict resolution."
+  ],
+  "modules": [
+    "Understanding Conflict",
+    "Resolving Conflict Safely"
+  ],
+  "metadata": {
+    "stream": "dfv-pwuv",
+    "category": "Conflict",
+    "tags": [
+      "conflict",
+      "resolution",
+      "safety"
+    ]
+  },
+  "caseworkerSummary": "Supports participants to resolve conflict without using violence or control."
+}

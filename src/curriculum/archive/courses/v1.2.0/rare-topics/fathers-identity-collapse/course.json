@@ -1,0 +1,25 @@
+{
+  "id": "fathers-identity-collapse",
+  "title": "Fathers and Identity Collapse",
+  "description": "This course explores the experience of identity collapse that many fathers face after using violence, separation, child protection involvement, or major life disruption. It supports fathers to understand how identity is shaped, why it can fall apart, and how to rebuild a safe, stable, and accountable sense of self that supports healthy parenting and behaviour change.",
+  "learningOutcomes": [
+    "Understand how identity is shaped by family history, masculinity, trauma, and life experiences.",
+    "Recognise how violence, separation, or child protection involvement can trigger identity collapse.",
+    "Learn strategies to rebuild a safe, accountable, and stable sense of self.",
+    "Develop skills for grounding, emotional regulation, and healthy fatherhood identity."
+  ],
+  "modules": [
+    {
+      "title": "How Identity Forms and Why It Breaks Down",
+      "content": "Explores the foundations of identity, the impact of trauma and masculinity, and how major life events can destabilise a father’s sense of self."
+    },
+    {
+      "title": "Identity Collapse and Parenting",
+      "content": "Examines how identity collapse affects parenting, relationships, emotional regulation, and behaviour change."
+    },
+    {
+      "title": "Rebuilding a Safe and Accountable Identity",
+      "content": "Provides practical tools for grounding, self-reflection, accountability, and developing a healthy fatherhood identity."
+    }
+  ]
+}

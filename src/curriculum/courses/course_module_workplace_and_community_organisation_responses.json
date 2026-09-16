@@ -1,0 +1,64 @@
+{
+  "id": "course_module_workplace_and_community_organisation_responses",
+  "title": "Workplace and Community Organisation Responses",
+  "description": "Auto-generated course for module module_workplace_and_community_organisation_responses",
+  "lessons": [
+    {
+      "id": "lesson_recognising_dfv_in_organisations",
+      "title": "Recognising DFV in Organisations",
+      "sections": [
+        {
+          "id": "section_lesson_recognising_dfv_in_organisations_01"
+        },
+        {
+          "id": "section_lesson_recognising_dfv_in_organisations_02"
+        },
+        {
+          "id": "section_lesson_recognising_dfv_in_organisations_03"
+        },
+        {
+          "id": "section_lesson_recognising_dfv_in_organisations_04"
+        },
+        {
+          "id": "section_lesson_recognising_dfv_in_organisations_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_safe_responses_in_organisations",
+      "title": "Safe Responses in Organisations",
+      "sections": [
+        {
+          "id": "section_lesson_safe_responses_in_organisations_01"
+        },
+        {
+          "id": "section_lesson_safe_responses_in_organisations_02"
+        },
+        {
+          "id": "section_lesson_safe_responses_in_organisations_03"
+        },
+        {
+          "id": "section_lesson_safe_responses_in_organisations_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_building_safe_organisational_cultures",
+      "title": "Building Safe Organisational Cultures",
+      "sections": [
+        {
+          "id": "section_lesson_building_safe_organisational_cultures_01"
+        },
+        {
+          "id": "section_lesson_building_safe_organisational_cultures_02"
+        },
+        {
+          "id": "section_lesson_building_safe_organisational_cultures_03"
+        },
+        {
+          "id": "section_lesson_building_safe_organisational_cultures_04"
+        }
+      ]
+    }
+  ]
+}

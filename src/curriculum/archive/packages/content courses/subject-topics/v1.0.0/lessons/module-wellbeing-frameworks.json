@@ -1,0 +1,25 @@
+{
+  "id": "module-wellbeing-frameworks",
+  "title": "Wellbeing Frameworks",
+  "moduleId": "wellbeing-frameworks",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to support children’s wellbeing across emotional, physical, social, and cognitive domains.",
+  "microLesson": "Wellbeing includes safety, connection, learning, health, and emotional regulation. Parents support wellbeing by creating routines, offering warmth, encouraging learning, and modelling healthy coping.",
+  "activity": "Identify one wellbeing area to strengthen this week. Reflect on the action you took.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "wellbeing"
+  ],
+  "resources": [
+    {
+      "title": "Child Wellbeing Framework",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "course_module_boundaries_and_safety",
+  "title": "Boundaries and Safety",
+  "description": "Auto-generated course for module module_boundaries_and_safety",
+  "lessons": [
+    {
+      "id": "lesson_maintaining_boundaries",
+      "title": "Maintaining Boundaries",
+      "sections": [
+        {
+          "id": "section_lesson_maintaining_boundaries_01"
+        },
+        {
+          "id": "section_lesson_maintaining_boundaries_02"
+        },
+        {
+          "id": "section_lesson_maintaining_boundaries_03"
+        },
+        {
+          "id": "section_lesson_maintaining_boundaries_04"
+        },
+        {
+          "id": "section_lesson_maintaining_boundaries_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_self_care_for_peers",
+      "title": "Self-Care for Peers",
+      "sections": [
+        {
+          "id": "section_lesson_self_care_for_peers_01"
+        },
+        {
+          "id": "section_lesson_self_care_for_peers_02"
+        },
+        {
+          "id": "section_lesson_self_care_for_peers_03"
+        },
+        {
+          "id": "section_lesson_self_care_for_peers_04"
+        },
+        {
+          "id": "section_lesson_self_care_for_peers_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_supervision_and_support",
+      "title": "Supervision and Support",
+      "sections": [
+        {
+          "id": "section_lesson_supervision_and_support_01"
+        },
+        {
+          "id": "section_lesson_supervision_and_support_02"
+        },
+        {
+          "id": "section_lesson_supervision_and_support_03"
+        }
+      ]
+    }
+  ]
+}

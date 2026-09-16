@@ -1,0 +1,40 @@
+{
+  "id": "course_positive_parenting_foundations",
+  "domain": "parenting",
+  "level": "foundational",
+  "title": "Positive Parenting Foundations",
+  "modules": [
+    {
+      "id": "module_parenting_mindset",
+      "title": "Parenting Mindset",
+      "lessons": [
+        "what_is_positive_parenting",
+        "understanding_parenting_styles",
+        "building_a_supportive_mindset"
+      ]
+    },
+    {
+      "id": "module_connection_first",
+      "title": "Connection Before Correction",
+      "lessons": [
+        "why_connection_matters",
+        "attunement_and_presence",
+        "building_secure_attachment"
+      ]
+    },
+    {
+      "id": "module_guidance_not_punishment",
+      "title": "Guidance, Not Punishment",
+      "lessons": [
+        "effective_guidance_principles",
+        "natural_vs_logical_consequences",
+        "avoiding_harsh_discipline"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of positive parenting principles",
+    "Stronger parent–child connection",
+    "Ability to guide behaviour without harshness"
+  ]
+}

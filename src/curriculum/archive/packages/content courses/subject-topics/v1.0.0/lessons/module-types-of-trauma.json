@@ -1,0 +1,25 @@
+{
+  "id": "module-types-of-trauma",
+  "title": "Types of Trauma",
+  "moduleId": "types-of-trauma",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand different forms of trauma and how they affect children.",
+  "microLesson": "Trauma can be acute (single event), chronic (ongoing), or complex (multiple forms over time). Each type affects children differently. Recognising trauma helps parents respond with empathy and create healing environments.",
+  "activity": "Reflect on one type of trauma relevant to your child’s experience. Write how you can support healing.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "trauma-awareness"
+  ],
+  "resources": [
+    {
+      "title": "Trauma Types Overview",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

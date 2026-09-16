@@ -1,0 +1,25 @@
+{
+  "id": "module-toilet-training",
+  "title": "Toilet Training",
+  "moduleId": "toilet-training",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents support children through toilet training using calm, consistent routines.",
+  "microLesson": "Toilet training works best when children show readiness signs such as staying dry, showing awareness, or copying adults. Pressure or punishment can create fear and setbacks. Calm encouragement, predictable routines, and praise for effort help children succeed.",
+  "activity": "Create a simple toilet routine (e.g., sitting after meals). Reflect on how your child responded.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "daily-routines"
+  ],
+  "resources": [
+    {
+      "title": "Toilet Training Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

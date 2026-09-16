@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "After DFV, it can be hard to trust again. This lesson explores what healthy relationships look like."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Healthy relationships include respect, communication, boundaries, and equality."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn to identify red flags and green flags in future relationships."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "List qualities you want in future relationships."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "You deserve relationships that are safe, respectful, and supportive."
+                     }
+                 ]
+}

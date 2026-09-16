@@ -1,0 +1,443 @@
+{
+  "id": "fathers-ptsd",
+  "title": "Fathers With PTSD or Complex Trauma",
+  "description": "This course supports fathers living with PTSD or complex trauma. It explores how trauma affects emotional regulation, communication, parenting, and relationships. Fathers learn strategies to stay grounded, reduce triggers, and parent safely while managing trauma symptoms.",
+  "learningOutcomes": [
+    "Understand how PTSD and complex trauma affect emotions, behaviour, and parenting.",
+    "Recognise personal triggers and trauma responses.",
+    "Learn grounding and regulation strategies to stay present with children.",
+    "Develop safe communication and parenting practices during stress."
+  ],
+  "modules": [
+    {
+      "title": "Understanding Trauma Responses",
+      "content": "Explains how PTSD and complex trauma shape emotional reactions, behaviour, and relationships."
+    },
+    {
+      "title": "Parenting While Managing Trauma",
+      "content": "Covers emotional safety, predictable routines, and child‑centred communication."
+    },
+    {
+      "title": "Grounding and Regulation Skills",
+      "content": "Provides practical tools for managing triggers, staying present, and reducing conflict."
+    } 
+  ]
+},
+{
+  "id": "fathers-chronic-illness",
+  "title": "Fathers With Chronic Illness or Disability",
+  "description": "This course supports fathers living with chronic illness or disability. It explores how physical limitations, fatigue, pain, or disability affect parenting, emotional wellbeing, and family relationships. Fathers learn strategies to parent safely, communicate needs, and build supportive routines.",
+  "learningOutcomes": [
+    "Understand how chronic illness or disability affects parenting and family dynamics.",
+    "Recognise the emotional impact of physical limitations on fathers and children.",
+    "Learn strategies for safe, consistent, and adaptive parenting.",
+    "Develop communication skills to express needs and set healthy boundaries."
+  ],
+  "modules": [
+    {
+      "title": "Parenting With Physical Limitations",
+      "content": "Explores the emotional and practical challenges of illness or disability in fatherhood."
+    },
+    {
+      "title": "Adaptive and Safe Parenting Strategies",
+      "content": "Covers routines, communication, and child‑centred adjustments."
+    },
+    {
+      "title": "Building Support and Stability",
+      "content": "Provides tools for seeking support, managing fatigue, and maintaining emotional connection."
+    }
+  ]
+},
+{
+  "id": "fathers-gambling-harm",
+  "title": "Fathers With Gambling Harm",
+  "description": "This course supports fathers experiencing gambling harm or recovery. It explores how gambling affects finances, trust, relationships, and child safety. Fathers learn strategies to reduce harm, rebuild stability, and restore trust with children and family.",
+  "learningOutcomes": [
+    "Understand how gambling harm affects children, partners, and family stability.",
+    "Recognise triggers, urges, and patterns that lead to gambling behaviour.",
+    "Learn strategies to reduce harm and rebuild financial and emotional stability.",
+    "Develop tools for rebuilding trust through accountability and consistent behaviour."
+  ],
+  "modules": [
+    {
+      "title": "Understanding Gambling Harm",
+      "content": "Explains the emotional, financial, and relational impacts of gambling on families."
+    },
+    {
+      "title": "Managing Triggers and Urges",
+      "content": "Covers strategies for recognising patterns, reducing risk, and staying accountable."
+    },
+    {
+      "title": "Rebuilding Trust and Stability",
+      "content": "Provides practical steps for financial repair, emotional safety, and consistent behaviour change."
+    }
+  ]
+},
+{
+  "id": "fathers-patterns-of-behaviour",
+  "title": "Understanding Patterns of Harmful Behaviour",
+  "description": "This course helps fathers identify patterns of behaviour that create harm, conflict, or fear in relationships. It supports insight, accountability, and recognition of how behaviour affects partners and children.",
+  "learningOutcomes": [
+    "Identify patterns of behaviour that create harm or instability.",
+    "Understand how behaviour impacts partners and children.",
+    "Recognise early warning signs of escalation.",
+    "Develop insight into personal responsibility and change."
+  ],
+  "modules": [
+    { "title": "Recognising Behaviour Patterns", "content": "Explores cycles, triggers, and repeated behaviours." },
+    { "title": "Impact on Partners and Children", "content": "Shows how behaviour affects emotional safety and wellbeing." },
+    { "title": "Building Insight and Responsibility", "content": "Provides tools for reflection and accountability." }
+  ]
+},
+{
+  "id": "fathers-accountability-basics",
+  "title": "Accountability Foundations for Fathers",
+  "description": "This course introduces the foundations of accountability, responsibility, and ownership of behaviour. Fathers learn how accountability supports safety, trust, and long-term change.",
+  "learningOutcomes": [
+    "Understand what accountability means in relationships.",
+    "Recognise avoidance, minimising, and blame-shifting behaviours.",
+    "Learn how accountability builds trust and safety.",
+    "Develop strategies for taking responsibility consistently."
+  ],
+  "modules": [
+    { "title": "What Accountability Really Means", "content": "Defines responsibility, honesty, and ownership." },
+    { "title": "Avoidance and Blame Patterns", "content": "Identifies minimising, excuses, and deflection." },
+    { "title": "Practising Accountability Daily", "content": "Provides tools for consistent responsible behaviour." }
+  ]
+},
+{
+  "id": "fathers-emotional-escalation",
+  "title": "Understanding Emotional Escalation",
+  "description": "This course helps fathers recognise emotional escalation, triggers, and the early signs of losing control. It supports emotional safety and prevention of harmful behaviour.",
+  "learningOutcomes": [
+    "Identify early signs of emotional escalation.",
+    "Understand how escalation affects partners and children.",
+    "Learn strategies to interrupt escalation safely.",
+    "Develop emotional awareness and self-regulation."
+  ],
+  "modules": [
+    { "title": "Recognising Escalation", "content": "Explores physical, emotional, and behavioural signs." },
+    { "title": "Impact of Escalation", "content": "Shows how escalation harms relationships and safety." },
+    { "title": "Interrupting Escalation", "content": "Provides grounding and de-escalation tools." }
+  ]
+},
+{
+  "id": "fathers-impacts-on-children",
+  "title": "Understanding the Impact of Behaviour on Children",
+  "description": "This course helps fathers understand how their behaviour—positive or harmful—affects children’s emotional, social, and developmental wellbeing.",
+  "learningOutcomes": [
+    "Understand how conflict and harmful behaviour affect children.",
+    "Recognise signs of stress, fear, or withdrawal in children.",
+    "Learn child-centred communication strategies.",
+    "Develop safe, predictable parenting behaviours."
+  ],
+  "modules": [
+    { "title": "Children’s Experience of Conflict", "content": "Explores emotional and developmental impacts." },
+    { "title": "Recognising Child Stress Signals", "content": "Identifies fear, withdrawal, and behavioural changes." },
+    { "title": "Safe Parenting Practices", "content": "Provides tools for emotional safety and stability." }
+  ]
+},
+{
+  "id": "fathers-impacts-on-children",
+  "title": "Understanding the Impact of Behaviour on Children",
+  "description": "This course helps fathers understand how their behaviour—positive or harmful—affects children’s emotional, social, and developmental wellbeing.",
+  "learningOutcomes": [
+    "Understand how conflict and harmful behaviour affect children.",
+    "Recognise signs of stress, fear, or withdrawal in children.",
+    "Learn child-centred communication strategies.",
+    "Develop safe, predictable parenting behaviours."
+  ],
+  "modules": [
+    { "title": "Children’s Experience of Conflict", "content": "Explores emotional and developmental impacts." },
+    { "title": "Recognising Child Stress Signals", "content": "Identifies fear, withdrawal, and behavioural changes." },
+    { "title": "Safe Parenting Practices", "content": "Provides tools for emotional safety and stability." }
+  ]
+},
+{
+  "id": "fathers-minimising-and-denial",
+  "title": "Minimising, Denial, and Avoidance",
+  "description": "This course helps fathers recognise minimising, denial, and avoidance patterns that block accountability and harm relationships. It supports honest reflection and responsibility.",
+  "learningOutcomes": [
+    "Identify minimising, denial, and avoidance behaviours.",
+    "Understand how these patterns harm trust and safety.",
+    "Learn strategies to replace avoidance with responsibility.",
+    "Develop honest self-reflection skills."
+  ],
+  "modules": [
+    { "title": "Recognising Avoidance Patterns", "content": "Explores denial, excuses, and minimising behaviour." },
+    { "title": "Impact on Relationships", "content": "Shows how avoidance harms trust and emotional safety." },
+    { "title": "Practising Honest Accountability", "content": "Provides tools for responsibility and transparency." }
+  ]
+},
+{
+  "id": "fathers-blame-shifting",
+  "title": "Understanding Blame-Shifting",
+  "description": "This course helps fathers recognise blame-shifting behaviours and understand how they undermine accountability, trust, and emotional safety.",
+  "learningOutcomes": [
+    "Identify blame-shifting patterns.",
+    "Understand how blame harms partners and children.",
+    "Learn strategies to take responsibility without defensiveness.",
+    "Develop insight into personal accountability."
+  ],
+  "modules": [
+    { "title": "What Blame-Shifting Looks Like", "content": "Explores common blame patterns and excuses." },
+    { "title": "Impact on Family Safety", "content": "Shows how blame erodes trust and emotional security." },
+    { "title": "Replacing Blame with Responsibility", "content": "Provides tools for owning behaviour and repairing harm." }
+  ]
+},
+{
+  "id": "fathers-blame-shifting",
+  "title": "Understanding Blame-Shifting",
+  "description": "This course helps fathers recognise blame-shifting behaviours and understand how they undermine accountability, trust, and emotional safety.",
+  "learningOutcomes": [
+    "Identify blame-shifting patterns.",
+    "Understand how blame harms partners and children.",
+    "Learn strategies to take responsibility without defensiveness.",
+    "Develop insight into personal accountability."
+  ],
+  "modules": [
+    { "title": "What Blame-Shifting Looks Like", "content": "Explores common blame patterns and excuses." },
+    { "title": "Impact on Family Safety", "content": "Shows how blame erodes trust and emotional security." },
+    { "title": "Replacing Blame with Responsibility", "content": "Provides tools for owning behaviour and repairing harm." }
+  ]
+},
+{
+  "id": "fathers-emotional-responsibility",
+  "title": "Emotional Responsibility for Fathers",
+  "description": "This course supports fathers to take responsibility for their emotional reactions, triggers, and behaviours. It focuses on emotional maturity and safe expression.",
+  "learningOutcomes": [
+    "Understand emotional responsibility and self-control.",
+    "Recognise triggers and emotional patterns.",
+    "Learn safe ways to express difficult emotions.",
+    "Develop emotional maturity and stability."
+  ],
+  "modules": [
+    { "title": "Understanding Emotional Responsibility", "content": "Defines emotional ownership and self-regulation." },
+    { "title": "Recognising Triggers", "content": "Explores emotional patterns and escalation points." },
+    { "title": "Safe Emotional Expression", "content": "Provides tools for healthy communication and grounding." }
+  ]
+},
+{
+  "id": "fathers-communication-harm",
+  "title": "Harmful Communication Patterns",
+  "description": "This course helps fathers identify harmful communication patterns such as intimidation, sarcasm, threats, or controlling language, and replace them with safe, respectful communication.",
+  "learningOutcomes": [
+    "Identify harmful communication behaviours.",
+    "Understand how communication affects emotional safety.",
+    "Learn respectful communication strategies.",
+    "Develop tools for conflict-safe conversations."
+  ],
+  "modules": [
+    { "title": "Recognising Harmful Communication", "content": "Explores tone, language, and intimidation patterns." },
+    { "title": "Impact on Partners and Children", "content": "Shows how communication shapes emotional safety." },
+    { "title": "Building Respectful Communication", "content": "Provides tools for safe, calm, and clear conversations." }
+  ]
+},
+{
+  "id": "fathers-power-and-control",
+  "title": "Understanding Power and Control",
+  "description": "This course helps fathers understand how power and control behaviours create fear, instability, and harm in relationships. It supports insight and responsibility.",
+  "learningOutcomes": [
+    "Understand power and control dynamics.",
+    "Recognise controlling behaviours and their impacts.",
+    "Learn strategies to replace control with respect.",
+    "Develop insight into safe relationship practices."
+  ],
+  "modules": [
+    { "title": "Power and Control Dynamics", "content": "Explores how control shows up in relationships." },
+    { "title": "Impact on Family Safety", "content": "Shows how control harms emotional wellbeing." },
+    { "title": "Building Respectful Relationships", "content": "Provides tools for equality, respect, and safety." }
+  ]
+},
+{
+  "id": "fathers-healthy-boundaries",
+  "title": "Building Healthy Boundaries",
+  "description": "This course supports fathers to understand and practise healthy boundaries in relationships. It focuses on respect, emotional safety, and preventing controlling or intrusive behaviour.",
+  "learningOutcomes": [
+    "Understand what healthy boundaries look like.",
+    "Recognise boundary violations and their impacts.",
+    "Learn strategies for setting and respecting boundaries.",
+    "Develop tools for safe, respectful relationship practices."
+  ],
+  "modules": [
+    { "title": "Understanding Boundaries", "content": "Defines emotional, physical, and relational boundaries." },
+    { "title": "Recognising Boundary Violations", "content": "Explores controlling, intrusive, or disrespectful behaviours." },
+    { "title": "Practising Healthy Boundaries", "content": "Provides tools for respectful communication and limits." }
+  ]
+},
+{
+  "id": "fathers-respectful-relationships",
+  "title": "Building Respectful Relationships",
+  "description": "This course helps fathers understand the foundations of respectful relationships, including equality, emotional safety, and shared decision-making.",
+  "learningOutcomes": [
+    "Understand the principles of respectful relationships.",
+    "Recognise behaviours that undermine respect.",
+    "Learn strategies for equality and shared decision-making.",
+    "Develop tools for maintaining emotional safety."
+  ],
+  "modules": [
+    { "title": "Principles of Respect", "content": "Explores equality, safety, and mutual care." },
+    { "title": "Recognising Disrespectful Behaviour", "content": "Identifies harmful patterns and their impacts." },
+    { "title": "Practising Respect Daily", "content": "Provides tools for consistent respectful behaviour." }
+  ]
+},
+{
+  "id": "fathers-trigger-awareness",
+  "title": "Trigger Awareness and Self-Control",
+  "description": "This course helps fathers identify emotional triggers and develop strategies to maintain control, prevent escalation, and protect family safety.",
+  "learningOutcomes": [
+    "Identify personal emotional triggers.",
+    "Understand how triggers lead to escalation.",
+    "Learn strategies to interrupt triggered responses.",
+    "Develop long-term emotional regulation skills."
+  ],
+  "modules": [
+    { "title": "Recognising Triggers", "content": "Explores emotional, physical, and situational triggers." },
+    { "title": "Understanding Triggered Behaviour", "content": "Shows how triggers lead to harmful reactions." },
+    { "title": "Managing Triggers Safely", "content": "Provides grounding and self-regulation tools." }
+  ]
+},
+{
+  "id": "fathers-honesty-and-transparency",
+  "title": "Honesty and Transparency in Relationships",
+  "description": "This course supports fathers to practise honesty, transparency, and openness as foundations for trust, safety, and accountability.",
+  "learningOutcomes": [
+    "Understand the role of honesty in safe relationships.",
+    "Recognise behaviours that undermine trust.",
+    "Learn strategies for transparent communication.",
+    "Develop tools for consistent honesty and responsibility."
+  ],
+  "modules": [
+    { "title": "Why Honesty Matters", "content": "Explores trust, safety, and emotional stability." },
+    { "title": "Recognising Dishonesty Patterns", "content": "Identifies lying, omission, and manipulation." },
+    { "title": "Practising Transparency", "content": "Provides tools for open, responsible communication." }
+  ]
+},
+{
+  "id": "fathers-taking-responsibility",
+  "title": "Taking Responsibility for Behaviour",
+  "description": "This course helps fathers understand the importance of taking responsibility for their actions, choices, and impacts on others.",
+  "learningOutcomes": [
+    "Understand what responsibility means in relationships.",
+    "Recognise avoidance and deflection behaviours.",
+    "Learn strategies for owning behaviour and repairing harm.",
+    "Develop long-term responsibility habits."
+  ],
+  "modules": [
+    { "title": "Understanding Responsibility", "content": "Defines ownership, accountability, and integrity." },
+    { "title": "Avoidance and Deflection", "content": "Explores excuses, minimising, and blame." },
+    { "title": "Practising Responsibility", "content": "Provides tools for repair, apology, and change." }
+  ]
+},
+{
+  "id": "fathers-safe-decision-making",
+  "title": "Safe and Respectful Decision-Making",
+  "description": "This course supports fathers to make safe, respectful, and child-centred decisions, especially during conflict or emotional stress.",
+  "learningOutcomes": [
+    "Understand how decisions affect family safety.",
+    "Recognise unsafe decision-making patterns.",
+    "Learn strategies for calm, respectful choices.",
+    "Develop tools for child-centred decision-making."
+  ],
+  "modules": [
+    { "title": "Understanding Safe Decisions", "content": "Explores emotional, relational, and safety impacts." },
+    { "title": "Recognising Unsafe Patterns", "content": "Identifies impulsive, controlling, or harmful choices." },
+    { "title": "Making Safe Decisions", "content": "Provides tools for calm, thoughtful decision-making." }
+  ]
+},
+{
+  "id": "fathers-safe-conflict-skills",
+  "title": "Safe Conflict Skills for Fathers",
+  "description": "This course teaches fathers how to manage conflict safely, respectfully, and without escalation. It focuses on emotional regulation, communication, and child-centred decision-making.",
+  "learningOutcomes": [
+    "Understand how conflict affects partners and children.",
+    "Recognise unsafe conflict behaviours.",
+    "Learn strategies for calm, respectful conflict resolution.",
+    "Develop tools for preventing escalation."
+  ],
+  "modules": [
+    { "title": "Understanding Conflict Impacts", "content": "Explores emotional and relational effects of conflict." },
+    { "title": "Recognising Unsafe Conflict Patterns", "content": "Identifies escalation, intimidation, and withdrawal." },
+    { "title": "Safe Conflict Skills", "content": "Provides tools for calm communication and de-escalation." }
+  ]
+},
+{
+  "id": "fathers-long-term-change",
+  "title": "Long-Term Behaviour Change",
+  "description": "This course supports fathers to build long-term behaviour change through insight, accountability, emotional regulation, and consistent safe actions.",
+  "learningOutcomes": [
+    "Understand what long-term change requires.",
+    "Recognise barriers to maintaining change.",
+    "Learn strategies for consistency and accountability.",
+    "Develop tools for ongoing self-reflection."
+  ],
+  "modules": [
+    { "title": "Foundations of Long-Term Change", "content": "Explores insight, responsibility, and commitment." },
+    { "title": "Barriers to Change", "content": "Identifies triggers, stress, and old patterns." },
+    { "title": "Maintaining Change", "content": "Provides tools for consistency and accountability." }
+  ]
+},
+{
+  "id": "fathers-long-term-change",
+  "title": "Long-Term Behaviour Change",
+  "description": "This course supports fathers to build long-term behaviour change through insight, accountability, emotional regulation, and consistent safe actions.",
+  "learningOutcomes": [
+    "Understand what long-term change requires.",
+    "Recognise barriers to maintaining change.",
+    "Learn strategies for consistency and accountability.",
+    "Develop tools for ongoing self-reflection."
+  ],
+  "modules": [
+    { "title": "Foundations of Long-Term Change", "content": "Explores insight, responsibility, and commitment." },
+    { "title": "Barriers to Change", "content": "Identifies triggers, stress, and old patterns." },
+    { "title": "Maintaining Change", "content": "Provides tools for consistency and accountability." }
+  ]
+},
+{
+  "id": "fathers-repairing-harm",
+  "title": "Repairing Harm and Rebuilding Trust",
+  "description": "This course helps fathers understand how to repair harm, rebuild trust, and demonstrate accountability through consistent safe behaviour.",
+  "learningOutcomes": [
+    "Understand what repair means in relationships.",
+    "Recognise the difference between apology and accountability.",
+    "Learn strategies for rebuilding trust over time.",
+    "Develop tools for consistent, safe behaviour."
+  ],
+  "modules": [
+    { "title": "Understanding Repair", "content": "Defines repair, accountability, and responsibility." },
+    { "title": "Apology vs Accountability", "content": "Explores meaningful repair actions." },
+    { "title": "Rebuilding Trust", "content": "Provides tools for consistency and long-term safety." }
+  ]
+},
+{
+  "id": "fathers-empathy-development",
+  "title": "Developing Empathy and Understanding",
+  "description": "This course supports fathers to build empathy, understand others’ experiences, and respond with care, respect, and emotional awareness.",
+  "learningOutcomes": [
+    "Understand what empathy is and why it matters.",
+    "Recognise barriers to empathy.",
+    "Learn strategies for listening and understanding others.",
+    "Develop tools for compassionate, respectful behaviour."
+  ],
+  "modules": [
+    { "title": "What Empathy Really Means", "content": "Explores emotional understanding and perspective-taking." },
+    { "title": "Barriers to Empathy", "content": "Identifies defensiveness, stress, and emotional shutdown." },
+    { "title": "Practising Empathy", "content": "Provides tools for listening, reflection, and connection." }
+  ]
+},
+{
+  "id": "fathers-nonviolence-principles",
+  "title": "Principles of Non‑Violence",
+  "description": "This course teaches fathers the principles of non‑violence, emotional safety, and respectful behaviour in all relationships.",
+  "learningOutcomes": [
+    "Understand the principles of non‑violence.",
+    "Recognise behaviours that create fear or harm.",
+    "Learn strategies for safe, respectful behaviour.",
+    "Develop tools for living non‑violently every day."
+  ],
+  "modules": [
+    { "title": "Understanding Non‑Violence", "content": "Defines safety, respect, and emotional stability." },
+    { "title": "Recognising Harmful Behaviour", "content": "Explores intimidation, control, and emotional harm." },
+    { "title": "Living Non‑Violently", "content": "Provides tools for daily safe behaviour and accountability." }
+  ]
+},

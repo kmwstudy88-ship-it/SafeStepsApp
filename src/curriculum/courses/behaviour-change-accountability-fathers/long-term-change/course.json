@@ -1,0 +1,25 @@
+{
+  "id": "long-term-change",
+  "title": "Long-Term Change (Father-Focused)",
+  "description": "This course supports fathers to build sustainable behaviour change that strengthens child safety, emotional stability, and family wellbeing.",
+  "learningOutcomes": [
+    "Understand long-term change in the context of fatherhood.",
+    "Recognise barriers that disrupt safe parenting.",
+    "Learn strategies for maintaining safe behaviour.",
+    "Develop habits that support long-term family safety."
+  ],
+  "modules": [
+    {
+      "title": "Fathering and Change",
+      "content": "Explores how consistent behaviour supports children’s development."
+    },
+    {
+      "title": "Barriers to Safe Parenting",
+      "content": "Identifies patterns that undermine progress."
+    },
+    {
+      "title": "Sustaining Safe Behaviour",
+      "content": "Provides tools for long-term behavioural stability."
+    }
+  ]
+}

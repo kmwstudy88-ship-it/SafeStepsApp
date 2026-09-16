@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Topic",
+  "type": "object",
+  "properties": {
+    "topicId": {
+      "type": "string"
+    },
+    "trackId": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "weekNumber": {
+      "type": "integer"
+    },
+    "isCore": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "topicId",
+    "trackId",
+    "title",
+    "weekNumber"
+  ]
+}

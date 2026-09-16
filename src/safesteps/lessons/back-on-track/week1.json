@@ -1,0 +1,29 @@
+{
+  "week": 1,
+  "lessons": [
+    {
+      "id": "back-on-track-w1-l1",
+      "title": "Lesson 1",
+      "week": 1,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "back-on-track-w1-l2",
+      "title": "Lesson 2",
+      "week": 1,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "back-on-track-w1-l3",
+      "title": "Lesson 3",
+      "week": 1,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "back-on-track-w1-l4",
+      "title": "Lesson 4",
+      "week": 1,
+      "content": "Lesson content goes here."
+    }
+  ]
+}

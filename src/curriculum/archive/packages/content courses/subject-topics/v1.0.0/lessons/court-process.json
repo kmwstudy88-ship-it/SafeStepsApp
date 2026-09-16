@@ -1,0 +1,28 @@
+{
+  "id": "module-court-process",
+  "title": "Understanding the Court Process",
+  "moduleId": "court-process",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand the family court process, expectations, timelines, and how to participate in a way that supports child safety and wellbeing.",
+  "microLesson": "The family court process can feel overwhelming, especially during times of stress or conflict. Understanding how decisions are made helps parents stay focused on what matters most: the child’s safety, stability, and emotional wellbeing. Courts look for evidence of consistent parenting, cooperation, insight, and the ability to meet a child’s needs. Parents who stay organised, communicate respectfully, follow orders, and demonstrate progress are better positioned to support positive outcomes. The goal of the court is not to punish parents, but to ensure children are safe and supported.",
+  "activity": "Write a short summary of your current stage in the court process. Identify one expectation you need to meet and describe how you will demonstrate progress toward it.",
+  "evidenceTypes": [
+    "reflection",
+    "document"
+  ],
+  "caseworkerFlags": [
+    "legal-awareness",
+    "court-compliance",
+    "child-safety"
+  ],
+  "resources": [
+    {
+      "title": "Family Court Expectations Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "module_community_partnerships_and_local_action",
+  "title": "Community Partnerships and Local Action",
+  "description": "This module supports communities to build partnerships and coordinate local action to prevent domestic and family violence. It focuses on collaboration between community groups, services, and local leaders to create safer, more connected environments.",
+  "type": "module",
+  "level": "community",
+  "tags": [
+    "dfv",
+    "community partnerships",
+    "local action",
+    "collaboration",
+    "prevention"
+  ],
+  "outcomes": [
+    "Build effective partnerships between community groups, services, and local leaders",
+    "Coordinate local DFV prevention and safety initiatives",
+    "Strengthen community capacity to respond collectively to DFV"
+  ],
+  "lessons": [],
+  "content": []
+}

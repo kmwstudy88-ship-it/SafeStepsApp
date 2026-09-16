@@ -1,0 +1,25 @@
+{
+  "id": "nonviolence-principles",
+  "title": "Principles of Nonviolence",
+  "description": "This course teaches participants the foundations of nonviolence, respect, and safety in relationships.",
+  "learningOutcomes": [
+    "Understand the principles of nonviolence.",
+    "Recognise behaviours that violate safety.",
+    "Learn how to practise nonviolence daily.",
+    "Develop long-term nonviolent behaviour habits."
+  ],
+  "modules": [
+    {
+      "title": "Foundations of Nonviolence",
+      "content": "Explores respect, safety, and harm prevention."
+    },
+    {
+      "title": "Violence Awareness",
+      "content": "Identifies physical, emotional, and psychological harm."
+    },
+    {
+      "title": "Practising Nonviolence",
+      "content": "Provides tools for safe, respectful behaviour."
+    }
+  ]
+}

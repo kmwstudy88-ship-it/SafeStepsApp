@@ -1,0 +1,61 @@
+{
+  "id": "course_module_challenging_gender_inequality_and_harmful_norms",
+  "title": "Challenging Gender Inequality and Harmful Norms",
+  "description": "Auto-generated course for module module_challenging_gender_inequality_and_harmful_norms",
+  "lessons": [
+    {
+      "id": "lesson_understanding_gender_inequality",
+      "title": "Understanding Gender Inequality",
+      "sections": [
+        {
+          "id": "section_lesson_understanding_gender_inequality_01"
+        },
+        {
+          "id": "section_lesson_understanding_gender_inequality_02"
+        },
+        {
+          "id": "section_lesson_understanding_gender_inequality_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_harmful_norms_and_stereotypes",
+      "title": "Harmful Norms and Stereotypes",
+      "sections": [
+        {
+          "id": "section_lesson_harmful_norms_and_stereotypes_01"
+        },
+        {
+          "id": "section_lesson_harmful_norms_and_stereotypes_02"
+        },
+        {
+          "id": "section_lesson_harmful_norms_and_stereotypes_03"
+        },
+        {
+          "id": "section_lesson_harmful_norms_and_stereotypes_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_shifting_attitudes_and_beliefs",
+      "title": "Shifting Attitudes and Beliefs",
+      "sections": [
+        {
+          "id": "section_lesson_shifting_attitudes_and_beliefs_01"
+        },
+        {
+          "id": "section_lesson_shifting_attitudes_and_beliefs_02"
+        },
+        {
+          "id": "section_lesson_shifting_attitudes_and_beliefs_03"
+        },
+        {
+          "id": "section_lesson_shifting_attitudes_and_beliefs_04"
+        },
+        {
+          "id": "section_lesson_shifting_attitudes_and_beliefs_05"
+        }
+      ]
+    }
+  ]
+}

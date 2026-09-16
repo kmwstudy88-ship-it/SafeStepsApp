@@ -1,0 +1,90 @@
+{
+  "version": "1.0.0",
+  "tracks": [
+    {
+      "id": "parenting-general",
+      "title": "General Parenting Library",
+      "source": "v1.0.0"
+    },
+    {
+      "id": "dfv-parent",
+      "title": "DFV Parent Program",
+      "source": "v1.1.0/dfv-parent"
+    },
+    {
+      "id": "dfv-pwuv",
+      "title": "DFV PWUV Program",
+      "source": "v1.1.0/dfv-pwuv"
+    },
+    {
+      "id": "dfv-peer-mentor",
+      "title": "DFV Peer Mentor Program",
+      "source": "v1.1.0/dfv-peer-mentor"
+    },
+    {
+      "id": "dfv-practitioner",
+      "title": "DFV Practitioner Training",
+      "source": "v1.1.0/dfv-practitioner"
+    },
+    {
+      "id": "father-identity",
+      "title": "Father Identity & Responsibility",
+      "source": "future"
+    },
+    {
+      "id": "father-emotional-regulation",
+      "title": "Father Emotional Regulation",
+      "source": "future"
+    },
+    {
+      "id": "father-communication",
+      "title": "Father Communication Skills",
+      "source": "future"
+    },
+    {
+      "id": "father-healthy-relationships",
+      "title": "Healthy Relationships for Fathers",
+      "source": "future"
+    },
+    {
+      "id": "father-trauma-healing",
+      "title": "Trauma & Healing for Fathers",
+      "source": "future"
+    },
+    {
+      "id": "father-life-skills",
+      "title": "Life Skills for Fathers",
+      "source": "future"
+    },
+    {
+      "id": "parenting-reunification",
+      "title": "Parenting & Reunification",
+      "source": "future"
+    },
+    {
+      "id": "mental-health",
+      "title": "Mental Health for Parents & Fathers",
+      "source": "future"
+    },
+    {
+      "id": "aod",
+      "title": "Alcohol & Other Drugs",
+      "source": "future"
+    },
+    {
+      "id": "child-protection",
+      "title": "Child Protection & Safety",
+      "source": "future"
+    },
+    {
+      "id": "cultural-community",
+      "title": "Cultural & Community Fatherhood",
+      "source": "future"
+    },
+    {
+      "id": "rare-topics",
+      "title": "Rare but Valuable Topics",
+      "source": "v1.2.0/rare-topics"
+    }
+  ]
+}

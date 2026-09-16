@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Abuse is not always obvious. Many parents only recognise it after learning the signs."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Abuse can be emotional, financial, sexual, physical, or digital. It often escalates gradually."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn to identify patterns such as gaslighting, intimidation, and financial restriction."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "List behaviours that made you feel unsafe or controlled. Compare them to the categories of abuse."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Recognising abuse is a powerful step toward safety and healing."
+                     }
+                 ]
+}

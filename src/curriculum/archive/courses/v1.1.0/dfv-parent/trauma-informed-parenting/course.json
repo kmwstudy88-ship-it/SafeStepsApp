@@ -1,0 +1,25 @@
+{
+  "title": "Traumaâ€‘Informed Parenting",
+  "description": "Helps parents understand trauma responses in themselves and their children, and how to create safety, connection, and predictability.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand trauma responses in adults and children.",
+    "Recognise triggers and stress reactions.",
+    "Apply traumaâ€‘informed strategies at home."
+  ],
+  "modules": [
+    "Understanding Trauma Responses",
+    "Building Traumaâ€‘Informed Routines"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Trauma",
+    "tags": [
+      "trauma",
+      "parenting",
+      "healing"
+    ]
+  },
+  "caseworkerSummary": "Supports parents to understand trauma and apply traumaâ€‘informed strategies at home."
+}

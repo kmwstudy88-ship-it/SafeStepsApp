@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Safety planning helps prevent harm before it occurs."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Risk increases during stress, conflict, or emotional dysregulation."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn triggers, earlyâ€‘warning signs, and safety strategies."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify one situation where safety planning is needed."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Safety planning supports accountability and change."
+                     }
+                 ]
+}

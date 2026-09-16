@@ -1,0 +1,98 @@
+[
+  {
+    "id": "peer-001",
+    "title": "Role of a Peer Mentor",
+    "description": "Understanding the purpose and boundaries of peer mentoring.",
+    "keywords": ["mentor", "role"],
+    "difficulty": "intro",
+    "order": 1
+  },
+  {
+    "id": "peer-002",
+    "title": "Boundaries and Scope",
+    "description": "Maintaining safe and ethical boundaries.",
+    "keywords": ["boundaries", "ethics"],
+    "difficulty": "core",
+    "order": 2
+  },
+  {
+    "id": "peer-003",
+    "title": "Trauma-Informed Support",
+    "description": "Providing support with awareness of trauma impacts.",
+    "keywords": ["trauma", "support"],
+    "difficulty": "core",
+    "order": 3
+  },
+  {
+    "id": "peer-004",
+    "title": "Active Listening Skills",
+    "description": "Developing deep listening and empathy.",
+    "keywords": ["listening", "empathy"],
+    "difficulty": "intro",
+    "order": 4
+  },
+  {
+    "id": "peer-005",
+    "title": "Communication for Support",
+    "description": "Using communication to empower and validate.",
+    "keywords": ["communication", "support"],
+    "difficulty": "core",
+    "order": 5
+  },
+  {
+    "id": "peer-006",
+    "title": "Recognising Risk",
+    "description": "Identifying when someone may be unsafe.",
+    "keywords": ["risk", "safety"],
+    "difficulty": "core",
+    "order": 6
+  },
+  {
+    "id": "peer-007",
+    "title": "Responding to Disclosure",
+    "description": "How to respond safely when someone shares harm.",
+    "keywords": ["disclosure", "response"],
+    "difficulty": "advanced",
+    "order": 7
+  },
+  {
+    "id": "peer-008",
+    "title": "Cultural Awareness",
+    "description": "Supporting families from diverse backgrounds.",
+    "keywords": ["culture", "diversity"],
+    "difficulty": "core",
+    "order": 8
+  },
+  {
+    "id": "peer-009",
+    "title": "Supporting Parenting Challenges",
+    "description": "Helping parents navigate stress and overwhelm.",
+    "keywords": ["parenting", "support"],
+    "difficulty": "core",
+    "order": 9
+  },
+  {
+    "id": "peer-010",
+    "title": "Group Facilitation Basics",
+    "description": "Skills for leading safe and inclusive groups.",
+    "keywords": ["facilitation", "groups"],
+    "difficulty": "advanced",
+    "order": 10
+  },
+  {
+    "id": "peer-011",
+    "title": "Mentoring Ethics",
+    "description": "Ethical decision-making in peer support.",
+    "keywords": ["ethics", "mentoring"],
+    "difficulty": "advanced",
+    "order": 11
+  },
+  {
+    "id": "peer-012",
+    "title": "Maintaining Professionalism",
+    "description": "Balancing empathy with professional boundaries.",
+    "keywords": ["professionalism", "boundaries"],
+    "difficulty": "core",
+    "order": 12
+  }
+]

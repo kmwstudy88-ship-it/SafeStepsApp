@@ -1,0 +1,26 @@
+{
+  "id": "module-managing-conflict-between-parents",
+  "title": "Managing Conflict Between Parents",
+  "moduleId": "managing-conflict-between-parents",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to reduce conflict and protect children from emotional harm.",
+  "microLesson": "Conflict between parents can create stress, fear, and confusion for children. Even small arguments can impact emotional wellbeing. Parents can reduce harm by keeping communication calm, avoiding blame, and never involving children in adult issues. Child‑focused communication protects children and improves cooperation.",
+  "activity": "Rewrite a recent conflict-related message using calm, neutral, child-focused language. Reflect on how it changes the tone.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "co-parenting",
+    "emotional-safety"
+  ],
+  "resources": [
+    {
+      "title": "Conflict Reduction Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

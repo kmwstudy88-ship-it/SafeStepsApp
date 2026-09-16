@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Leaving an abusive relationship is complex. Many parents stay because it feels safer than leaving."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Barriers include fear, financial dependence, threats, manipulation, and concern for childrenâ€™s safety."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn to identify survival strategies and understand their own choices with compassion."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Reflect on reasons that made leaving difficult. These are valid and understandable."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Understanding why people stay reduces shame and opens the door to safer planning."
+                     }
+                 ]
+}

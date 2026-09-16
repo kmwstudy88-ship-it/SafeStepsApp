@@ -1,0 +1,28 @@
+{
+  "id": "module-diversity-and-cultural-safety",
+  "title": "Diversity and Cultural Safety",
+  "moduleId": "diversity-and-cultural-safety",
+  "durationMinutes": 60,
+  "learningGoal": "Support parents to understand cultural safety, respect diversity, and create an inclusive environment that protects children’s identity and wellbeing.",
+  "microLesson": "Cultural safety means creating an environment where children and families feel respected, valued, and free from discrimination. It goes beyond cultural awareness—cultural safety requires recognising power imbalances, listening without judgement, and honouring each family’s identity, traditions, and lived experiences. Children thrive when their cultural background is celebrated and woven into daily life. Parents can promote cultural safety by being curious, open, and respectful, and by ensuring children see their identity reflected positively in their home, community, and relationships.",
+  "activity": "Identify one cultural value, tradition, or practice that is important to your family. Write a reflection on how you can strengthen or reintroduce this in your child’s daily life.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "cultural-safety",
+    "identity-development",
+    "inclusion"
+  ],
+  "resources": [
+    {
+      "title": "Cultural Safety and Inclusion Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

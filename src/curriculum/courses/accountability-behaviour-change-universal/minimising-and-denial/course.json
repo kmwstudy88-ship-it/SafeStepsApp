@@ -1,0 +1,25 @@
+{
+  "id": "minimising-and-denial",
+  "title": "Minimising and Denial",
+  "description": "This course helps participants recognise avoidance behaviours that block accountability and prevent change.",
+  "learningOutcomes": [
+    "Identify minimising, denial, and justification patterns.",
+    "Understand how avoidance harms relationships.",
+    "Recognise the impact of denial on children.",
+    "Develop responsibility and honesty."
+  ],
+  "modules": [
+    {
+      "title": "Avoidance Patterns",
+      "content": "Explores denial, excuses, and justification."
+    },
+    {
+      "title": "Impact on Others",
+      "content": "Shows how avoidance harms trust and safety."
+    },
+    {
+      "title": "Building Honesty",
+      "content": "Provides tools for truthful reflection and responsibility."
+    }
+  ]
+}

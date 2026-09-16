@@ -1,0 +1,26 @@
+{
+  "id": "module-adverse-childhood-experiences",
+  "title": "Adverse Childhood Experiences",
+  "moduleId": "adverse-childhood-experiences",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how early adversity affects brain development, behaviour, and long-term wellbeing.",
+  "microLesson": "Adverse Childhood Experiences (ACEs) include exposure to violence, neglect, substance misuse, mental illness, or instability at home. ACEs can shape how a child’s brain develops, making them more sensitive to stress and more likely to struggle with emotions or behaviour. The good news is that safe, stable, nurturing relationships can buffer these effects. Parents who understand ACEs can respond with empathy and create healing environments.",
+  "activity": "Reflect on one ACE-related behaviour your child shows (e.g., fear, anger, withdrawal). Write how you can respond with safety and connection instead of punishment.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "trauma-awareness",
+    "emotional-regulation"
+  ],
+  "resources": [
+    {
+      "title": "ACEs Overview",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

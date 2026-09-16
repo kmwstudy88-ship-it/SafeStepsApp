@@ -1,0 +1,58 @@
+{
+  "id": "course_module_mental_health_trauma_and_recovery",
+  "title": "Mental Health, Trauma, and Recovery",
+  "description": "Auto-generated course for module module_mental_health_trauma_and_recovery",
+  "lessons": [
+    {
+      "id": "lesson_understanding_trauma_responses",
+      "title": "Understanding Trauma Responses",
+      "sections": [
+        {
+          "id": "section_lesson_understanding_trauma_responses_01"
+        },
+        {
+          "id": "section_lesson_understanding_trauma_responses_02"
+        },
+        {
+          "id": "section_lesson_understanding_trauma_responses_03"
+        },
+        {
+          "id": "section_lesson_understanding_trauma_responses_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_mental_health_impacts",
+      "title": "Mental Health Impacts",
+      "sections": [
+        {
+          "id": "section_lesson_mental_health_impacts_01"
+        },
+        {
+          "id": "section_lesson_mental_health_impacts_02"
+        },
+        {
+          "id": "section_lesson_mental_health_impacts_03"
+        },
+        {
+          "id": "section_lesson_mental_health_impacts_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_supporting_recovery",
+      "title": "Supporting Recovery",
+      "sections": [
+        {
+          "id": "section_lesson_supporting_recovery_01"
+        },
+        {
+          "id": "section_lesson_supporting_recovery_02"
+        },
+        {
+          "id": "section_lesson_supporting_recovery_03"
+        }
+      ]
+    }
+  ]
+}

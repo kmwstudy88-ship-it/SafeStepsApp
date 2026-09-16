@@ -1,0 +1,40 @@
+{
+  "id": "course_stalking_and_monitoring",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Stalking and Monitoring",
+  "modules": [
+    {
+      "id": "module_understanding_stalking",
+      "title": "Understanding Stalking",
+      "lessons": [
+        "what_is_stalking",
+        "how_stalking_is_used_in_dfv",
+        "psychological_impacts_on_victims"
+      ]
+    },
+    {
+      "id": "module_monitoring_behaviours",
+      "title": "Monitoring Behaviours",
+      "lessons": [
+        "physical_surveillance",
+        "digital_and_location_tracking",
+        "third_party_monitoring"
+      ]
+    },
+    {
+      "id": "module_safety_and_protection",
+      "title": "Safety and Protection",
+      "lessons": [
+        "responding_to_stalking",
+        "legal_and_support_options",
+        "creating_a_monitoring_safety_plan"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of stalking and monitoring behaviours",
+    "Ability to recognise surveillance tactics",
+    "Increased confidence in safety planning and seeking support"
+  ]
+}

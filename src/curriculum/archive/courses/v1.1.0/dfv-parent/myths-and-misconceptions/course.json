@@ -1,0 +1,25 @@
+{
+  "title": "Myths and Misconceptions About DFV",
+  "description": "Challenges common myths about domestic and family violence to help parents understand the truth behind harmful stereotypes.",
+  "estimatedTimeMinutes": 40,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Identify common myths about DFV.",
+    "Understand how myths harm survivors.",
+    "Recognise the realities of DFV dynamics."
+  ],
+  "modules": [
+    "Common Myths",
+    "Understanding the Truth"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "DFV Basics",
+    "tags": [
+      "myths",
+      "misconceptions",
+      "education"
+    ]
+  },
+  "caseworkerSummary": "Helps parents challenge internalised myths that may prevent helpâ€‘seeking or selfâ€‘recognition."
+}

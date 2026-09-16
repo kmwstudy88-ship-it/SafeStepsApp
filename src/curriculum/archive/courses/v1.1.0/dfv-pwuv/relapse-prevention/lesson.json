@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Relapse prevention helps you stay committed to nonâ€‘violence."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Relapse often begins with stress, isolation, or unaddressed triggers."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn maintenance planning, support networks, and earlyâ€‘warning strategies."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify one relapse warning sign you experience."
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Preventing relapse protects your progress and the safety of others."
+                     }
+                 ]
+}

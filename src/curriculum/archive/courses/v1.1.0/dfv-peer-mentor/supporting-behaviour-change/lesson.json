@@ -1,0 +1,10 @@
+{
+    "topic":  "supporting-behaviour-change",
+    "version":  "1.1.0",
+    "stream":  "dfv-peer-mentor",
+    "content":  "Lesson content for supporting-behaviour-change.",
+    "type":  "lesson",
+    "id":  "Lesson -  $args[0].Value.ToUpper() upporting  $args[0].Value.ToUpper() ehaviour  $args[0].Value.ToUpper() hange",
+    "name":  "Lesson -  $args[0].Value.ToUpper() upporting  $args[0].Value.ToUpper() ehaviour  $args[0].Value.ToUpper() hange",
+    "title":  "Lesson -  $args[0].Value.ToUpper() upporting  $args[0].Value.ToUpper() ehaviour  $args[0].Value.ToUpper() hange"
+}

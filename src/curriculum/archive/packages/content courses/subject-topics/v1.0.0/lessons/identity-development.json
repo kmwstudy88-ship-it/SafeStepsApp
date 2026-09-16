@@ -1,0 +1,25 @@
+{
+  "id": "module-identity-development",
+  "title": "Identity Development",
+  "moduleId": "identity-development",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand how children form identity and how to support confidence, belonging, and self-worth.",
+  "microLesson": "Identity develops through relationships, culture, experiences, and the messages children receive about themselves. When parents provide acceptance, encouragement, and opportunities for self-expression, children build a strong sense of who they are. Criticism, comparison, or inconsistency can weaken identity formation. Parents play a key role in helping children feel valued and capable.",
+  "activity": "Ask your child to share something they feel proud of. Reflect on how you responded and how it supported their identity.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "emotional-development"
+  ],
+  "resources": [
+    {
+      "title": "Identity Development Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Child Safety Planning",
+  "description": "Provides practical strategies for creating safety plans with and for children during DFV situations.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand what child safety planning involves.",
+    "Identify ageâ€‘appropriate strategies.",
+    "Create a personalised safety plan."
+  ],
+  "modules": [
+    "Understanding Child Safety",
+    "Building a Safety Plan"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Safety",
+    "tags": [
+      "child safety",
+      "planning",
+      "dfv"
+    ]
+  },
+  "caseworkerSummary": "Supports parents to create practical, ageâ€‘appropriate safety plans for children."
+}

@@ -1,0 +1,64 @@
+{
+  "id": "course_module_trauma_informed_and_culturally_safe_practice",
+  "title": "Trauma-Informed and Culturally Safe Practice",
+  "description": "Auto-generated course for module module_trauma_informed_and_culturally_safe_practice",
+  "lessons": [
+    {
+      "id": "lesson_trauma_informed_principles",
+      "title": "Trauma-Informed Principles",
+      "sections": [
+        {
+          "id": "section_lesson_trauma_informed_principles_01"
+        },
+        {
+          "id": "section_lesson_trauma_informed_principles_02"
+        },
+        {
+          "id": "section_lesson_trauma_informed_principles_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_cultural_safety_and_respect",
+      "title": "Cultural Safety and Respect",
+      "sections": [
+        {
+          "id": "section_lesson_cultural_safety_and_respect_01"
+        },
+        {
+          "id": "section_lesson_cultural_safety_and_respect_02"
+        },
+        {
+          "id": "section_lesson_cultural_safety_and_respect_03"
+        },
+        {
+          "id": "section_lesson_cultural_safety_and_respect_04"
+        },
+        {
+          "id": "section_lesson_cultural_safety_and_respect_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_empowerment_and_choice",
+      "title": "Empowerment and Choice",
+      "sections": [
+        {
+          "id": "section_lesson_empowerment_and_choice_01"
+        },
+        {
+          "id": "section_lesson_empowerment_and_choice_02"
+        },
+        {
+          "id": "section_lesson_empowerment_and_choice_03"
+        },
+        {
+          "id": "section_lesson_empowerment_and_choice_04"
+        },
+        {
+          "id": "section_lesson_empowerment_and_choice_05"
+        }
+      ]
+    }
+  ]
+}

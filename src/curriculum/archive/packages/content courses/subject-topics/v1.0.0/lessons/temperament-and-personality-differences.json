@@ -1,0 +1,25 @@
+{
+  "id": "module-temperament-and-personality-differences",
+  "title": "Temperament and Personality Differences",
+  "moduleId": "temperament-and-personality-differences",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand temperament traits and how to adapt parenting to their child's personality.",
+  "microLesson": "Temperament describes a child’s natural style—how they react, adapt, and regulate emotions. Some children are cautious, others energetic; some need routine, others are flexible. Understanding temperament helps parents respond with empathy instead of frustration. When parents adapt their approach to the child’s personality, behaviour improves and conflict decreases.",
+  "activity": "Identify one temperament trait your child shows (e.g., sensitive, active, cautious). Reflect on how you can adapt your parenting to support that trait.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "emotional-development"
+  ],
+  "resources": [
+    {
+      "title": "Temperament Traits Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

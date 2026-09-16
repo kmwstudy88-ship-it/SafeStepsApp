@@ -1,0 +1,47 @@
+{
+  "week": 55,
+  "lessons": [
+    {
+      "id": "reunification-w55-l1",
+      "title": "Lesson 1",
+      "week": 55,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "reunification-w55-l2",
+      "title": "Lesson 2",
+      "week": 55,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "reunification-w55-l3",
+      "title": "Lesson 3",
+      "week": 55,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "reunification-w55-l4",
+      "title": "Lesson 4",
+      "week": 55,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "reunification-w55-l5",
+      "title": "Lesson 5",
+      "week": 55,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "reunification-w55-l6",
+      "title": "Lesson 6",
+      "week": 55,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "reunification-w55-l7",
+      "title": "Lesson 7",
+      "week": 55,
+      "content": "Lesson content goes here."
+    }
+  ]
+}

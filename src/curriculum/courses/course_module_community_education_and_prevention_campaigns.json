@@ -1,0 +1,58 @@
+{
+  "id": "course_module_community_education_and_prevention_campaigns",
+  "title": "Community Education and Prevention Campaigns",
+  "description": "Auto-generated course for module module_community_education_and_prevention_campaigns",
+  "lessons": [
+    {
+      "id": "lesson_designing_prevention_campaigns",
+      "title": "Designing Prevention Campaigns",
+      "sections": [
+        {
+          "id": "section_lesson_designing_prevention_campaigns_01"
+        },
+        {
+          "id": "section_lesson_designing_prevention_campaigns_02"
+        },
+        {
+          "id": "section_lesson_designing_prevention_campaigns_03"
+        },
+        {
+          "id": "section_lesson_designing_prevention_campaigns_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_safe_and_ethical_messaging",
+      "title": "Safe and Ethical Messaging",
+      "sections": [
+        {
+          "id": "section_lesson_safe_and_ethical_messaging_01"
+        },
+        {
+          "id": "section_lesson_safe_and_ethical_messaging_02"
+        },
+        {
+          "id": "section_lesson_safe_and_ethical_messaging_03"
+        },
+        {
+          "id": "section_lesson_safe_and_ethical_messaging_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_engaging_community_groups",
+      "title": "Engaging Community Groups",
+      "sections": [
+        {
+          "id": "section_lesson_engaging_community_groups_01"
+        },
+        {
+          "id": "section_lesson_engaging_community_groups_02"
+        },
+        {
+          "id": "section_lesson_engaging_community_groups_03"
+        }
+      ]
+    }
+  ]
+}

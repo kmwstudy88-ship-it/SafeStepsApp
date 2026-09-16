@@ -1,0 +1,15 @@
+{
+  "id": "DFV-W2-D2",
+  "week": 2,
+  "day": 2,
+  "title": "Trauma Responses in Children",
+  "duration_minutes": 14,
+  "learning_goal": "Recognise trauma responses such as fight, flight, freeze, and fawn in children.",
+  "content": {
+    "micro_lesson": "Trauma alters the nervous system. Children may appear aggressive, avoidant, shut down, overly compliant, or hyperactive. These behaviours are survival responses, not misbehaviour.",
+    "activity": "Match behaviours to trauma responses using a worksheet.",
+    "evidence_required": "Completed worksheet upload.",
+    "caseworker_flags": "Freeze or fawn responses toward a perpetrator.",
+    "escalation_trigger": "Child dissociation or shutdown triggers urgent clinical referral."
+  }
+}

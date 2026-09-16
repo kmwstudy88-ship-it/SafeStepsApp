@@ -1,0 +1,24 @@
+{
+  "tracks": [
+    {
+      "trackId": "parenting-core",
+      "title": "Parenting Skills Core Track"
+    },
+    {
+      "trackId": "fatherhood",
+      "title": "Fatherhood Track"
+    },
+    {
+      "trackId": "coparenting",
+      "title": "Co‑Parenting Skills Track"
+    },
+    {
+      "trackId": "universal",
+      "title": "Universal Accountability Track"
+    },
+    {
+      "trackId": "rare-topics",
+      "title": "Rare & Sensitive Topics Track"
+    }
+  ]
+}

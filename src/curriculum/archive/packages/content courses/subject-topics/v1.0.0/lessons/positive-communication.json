@@ -1,0 +1,25 @@
+{
+  "id": "module-positive-communication",
+  "title": "Positive Communication",
+  "moduleId": "positive-communication",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to communicate in ways that build cooperation and emotional safety.",
+  "microLesson": "Positive communication includes calm tone, clear instructions, praise, and empathy. Children respond best when they feel heard and respected. Avoiding criticism and threats reduces fear and improves behaviour.",
+  "activity": "Use positive communication during one challenging moment. Reflect on how your child responded.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "communication"
+  ],
+  "resources": [
+    {
+      "title": "Positive Communication Toolkit",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

@@ -1,0 +1,32 @@
+{
+    "sections":  [
+                     {
+                         "content":  "This lesson introduces managing disobedience in a warm, supportive way. Many parents struggle with this area, and it is completely normal. You will learn why this topic matters, how it affects your child\u0027s development, and what you can expect to gain from the lesson.",
+                         "id":  "welcome",
+                         "title":  "Welcome and Orientation"
+                     },
+                     {
+                         "content":  "This section explains the core ideas behind managing disobedience in simple, parent-friendly language. You will learn what the concept means, why it matters, how it affects your child\u0027s brain and behavior, and how stress or trauma can influence this area.",
+                         "id":  "core-concepts",
+                         "title":  "Core Concepts"
+                     },
+                     {
+                         "content":  "Here you will find practical, step-by-step strategies for applying managing disobedience in real life. These skills are designed to be clear, doable, and supportive. You will get examples, scripts you can use with your child, and guidance for staying calm and consistent.",
+                         "id":  "practical-skills",
+                         "title":  "Practical Skills and Strategies"
+                     },
+                     {
+                         "content":  "This activity helps you and your child practice managing disobedience together. It is simple, achievable, and designed to build connection. You will receive a guided exercise and a reflection prompt to help you notice what worked well.",
+                         "id":  "practice-activity",
+                         "title":  "Parent Child Practice Activity"
+                     },
+                     {
+                         "content":  "This final section helps you integrate managing disobedience into everyday life. You will reflect on what you learned, choose one small action to try this week, and consider how the skill can support your family\u0027s wellbeing.",
+                         "id":  "reflection",
+                         "title":  "Reflection and Integration"
+                     }
+                 ],
+    "id":  "managing disobedience",
+    "name":  "managing disobedience",
+    "title":  "managing disobedience"
+}

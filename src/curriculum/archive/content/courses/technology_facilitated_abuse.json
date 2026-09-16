@@ -1,0 +1,40 @@
+{
+  "id": "course_technology_facilitated_abuse",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Technology-Facilitated Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_tech_abuse",
+      "title": "Understanding Technology-Facilitated Abuse",
+      "lessons": [
+        "what_is_technology_facilitated_abuse",
+        "how_technology_is_used_to_control",
+        "impacts_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_common_methods",
+      "title": "Common Methods and Tactics",
+      "lessons": [
+        "monitoring_and_surveillance",
+        "location_tracking_and_stalking",
+        "digital_harassment_and_threats"
+      ]
+    },
+    {
+      "id": "module_protection_and_safety",
+      "title": "Digital Protection and Safety",
+      "lessons": [
+        "securing_devices_and_accounts",
+        "recognising_digital_red_flags",
+        "creating_a_technology_safety_plan"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of technology-facilitated abuse",
+    "Ability to recognise digital control and surveillance tactics",
+    "Increased confidence in digital safety and protection strategies"
+  ]
+}

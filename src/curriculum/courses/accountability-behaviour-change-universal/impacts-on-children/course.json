@@ -1,0 +1,25 @@
+{
+  "id": "impacts-on-children",
+  "title": "Impacts on Children",
+  "description": "This course helps participants understand how harmful behaviour affects children’s emotional, psychological, and developmental wellbeing.",
+  "learningOutcomes": [
+    "Understand how children experience conflict and harm.",
+    "Recognise behavioural and emotional impacts on children.",
+    "Identify signs of distress in children.",
+    "Develop behaviours that support child safety."
+  ],
+  "modules": [
+    {
+      "title": "Children’s Experiences",
+      "content": "Explores how children interpret adult behaviour."
+    },
+    {
+      "title": "Emotional and Developmental Impacts",
+      "content": "Shows how harm affects children long-term."
+    },
+    {
+      "title": "Supporting Child Safety",
+      "content": "Provides tools for safe, stable parenting."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "id": "cp_child_safety",
+    "category": "child_protection",
+    "name": "Child Safety Assessment",
+    "description": "Evaluates immediate and ongoing safety risks to the child.",
+    "tags": ["child_safety", "risk"],
+    "validatedTool": null
+  },
+  {
+    "id": "cp_child_development",
+    "category": "child_protection",
+    "name": "Child Development Assessment",
+    "description": "Assesses developmental milestones, delays, and needs.",
+    "tags": ["development", "child"],
+    "validatedTool": null
+  },
+  {
+    "id": "cp_child_wellbeing",
+    "category": "child_protection",
+    "name": "Child Wellbeing Assessment",
+    "description": "Evaluates emotional, physical, and social wellbeing of the child.",
+    "tags": ["wellbeing", "child"],
+    "validatedTool": null
+  },
+  {
+    "id": "cp_protective_capacity",
+    "category": "child_protection",
+    "name": "Protective Capacity Assessment",
+    "description": "Assesses a parent's ability to protect the child from harm.",
+    "tags": ["protective_capacity", "safety"],
+    "validatedTool": null
+  },
+  {
+    "id": "cp_family_functioning",
+    "category": "child_protection",
+    "name": "Family Functioning Assessment",
+    "description": "Evaluates family dynamics, routines, communication, and stability.",
+    "tags": ["family", "functioning"],
+    "validatedTool": null
+  },
+  {
+    "id": "cp_family_strengths",
+    "category": "child_protection",
+    "name": "Family Strengths Assessment",
+    "description": "Identifies strengths, supports, and protective factors within the family.",
+    "tags": ["strengths", "family"],
+    "validatedTool": null
+  },
+  {
+    "id": "cp_reunification_readiness",
+    "category": "child_protection",
+    "name": "Reunification Readiness Assessment",
+    "description": "Assesses whether conditions are safe and stable enough for reunification.",
+    "tags": ["reunification", "readiness"],
+    "validatedTool": null
+  },
+  {
+    "id": "cp_risk_of_harm",
+    "category": "child_protection",
+    "name": "Risk of Harm Assessment",
+    "description": "Evaluates likelihood of harm due to neglect, abuse, or unsafe environments.",
+    "tags": ["risk", "harm"],
+    "validatedTool": null
+  },
+  {
+    "id": "cp_household_stability",
+    "category": "child_protection",
+    "name": "Household Stability Assessment",
+    "description": "Assesses housing stability, routines, and environmental safety.",
+    "tags": ["household", "stability"],
+    "validatedTool": null
+  },
+  {
+    "id": "cp_child_emotional_wellbeing",
+    "category": "child_protection",
+    "name": "Child Emotional Wellbeing Assessment",
+    "description": "Evaluates emotional regulation, behaviour, and psychological wellbeing.",
+    "tags": ["emotional", "child"],
+    "validatedTool": null
+  },
+  {
+        "id": "cp_parenting_capacity",
+        "category": "child_protection",
+        "name": "Parenting Capacity Assessment",
+        "description": "Assesses a parent's ability to meet the child's needs and ensure safety.",
+        "tags": ["parenting", "capacity"],
+        "validatedTool": null
+    },
+    {
+        "id": "cp_protective_parenting",
+        "category": "child_protection",
+        "name": "Protective Parenting Assessment",
+        "description": "Evaluates a parent's ability to protect their child from harm and respond to risks.",
+        "tags": ["protective", "safety"],
+        "validatedTool": null
+    },
+    {
+        "id": "cp_parenting_knowledge",
+        "category": "child_protection",
+        "name": "Parenting Knowledge Assessment",
+        "description": "Evaluates a parent's knowledge of child development, safety, and effective parenting strategies.",
+        "tags": ["knowledge", "parenting"],
+        "validatedTool": null
+    }
+]

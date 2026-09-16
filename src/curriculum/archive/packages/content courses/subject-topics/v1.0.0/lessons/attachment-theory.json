@@ -1,0 +1,26 @@
+{
+  "id": "module-attachment-theory",
+  "title": "Attachment Theory",
+  "moduleId": "attachment-theory",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how secure attachment forms and why it is essential for emotional and behavioural development.",
+  "microLesson": "Attachment theory explains how children form emotional bonds with caregivers. A secure attachment develops when parents are warm, predictable, and responsive. Children with secure attachment feel safe exploring the world and returning for comfort when needed. Insecure attachment can form when care is inconsistent, frightening, or emotionally unavailable. The good news is that attachment can be strengthened at any age through connection, repair, and emotional presence.",
+  "activity": "Spend 10 minutes of uninterrupted ‘connection time’ with your child. Describe what you did and how your child responded.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "attachment",
+    "emotional-availability"
+  ],
+  "resources": [
+    {
+      "title": "Attachment Basics",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

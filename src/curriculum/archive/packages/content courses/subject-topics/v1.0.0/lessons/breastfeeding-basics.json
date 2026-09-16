@@ -1,0 +1,26 @@
+{
+  "id": "module-breastfeeding-basics",
+  "title": "Breastfeeding Basics",
+  "moduleId": "breastfeeding-basics",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand the fundamentals of breastfeeding, including positioning, attachment, and recognising feeding cues.",
+  "microLesson": "Breastfeeding supports nutrition, bonding, and emotional security. Many early challenges come from positioning or attachment issues rather than milk supply. Watching for early feeding cues—such as rooting, hand-to-mouth movements, or restlessness—helps prevent distress. A calm environment, skin-to-skin contact, and responsive feeding support success. Parents should seek help early if feeding becomes painful or stressful; support makes a significant difference.",
+  "activity": "Identify two early feeding cues your baby shows. During one feeding session, respond to those cues and write a reflection on how your baby reacted.",
+  "evidenceTypes": [
+    \"reflection\"
+  ],
+  "caseworkerFlags": [
+    \"infant-care\",
+    \"nutrition\"
+  ],
+  "resources": [
+    {
+      "title": "Breastfeeding Support Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

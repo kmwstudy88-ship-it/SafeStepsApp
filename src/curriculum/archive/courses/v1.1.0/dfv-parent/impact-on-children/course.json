@@ -1,0 +1,25 @@
+{
+  "title": "Impact of DFV on Children",
+  "description": "Helps parents understand how domestic and family violence affects children emotionally, physically, and developmentally.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Recognise how DFV affects children.",
+    "Understand behavioural and emotional responses.",
+    "Identify ways to support childrenâ€™s healing."
+  ],
+  "modules": [
+    "How Children Experience DFV",
+    "Supporting Children After Harm"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Children",
+    "tags": [
+      "children",
+      "trauma",
+      "healing"
+    ]
+  },
+  "caseworkerSummary": "Supports parents to understand the effects of DFV on children and how to respond supportively."
+}

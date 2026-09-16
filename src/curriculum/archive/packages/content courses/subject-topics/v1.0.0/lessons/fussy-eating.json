@@ -1,0 +1,25 @@
+{
+  "id": "module-fussy-eating",
+  "title": "Fussy Eating",
+  "moduleId": "fussy-eating",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand picky eating and how to encourage healthy food exploration.",
+  "microLesson": "Fussy eating is common and often linked to sensory sensitivity or developmental stages. Children need repeated, low‑pressure exposure to new foods. Parents can model trying new foods, offer choices, and avoid forcing or bribing.",
+  "activity": "Offer a new food alongside a familiar one. Reflect on your child’s reaction and your own response.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "nutrition"
+  ],
+  "resources": [
+    {
+      "title": "Fussy Eating Strategies",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

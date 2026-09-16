@@ -1,0 +1,25 @@
+{
+  "id": "module-preparing-for-adulthood",
+  "title": "Preparing for Adulthood",
+  "moduleId": "preparing-for-adulthood",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents support teenagers in developing independence, responsibility, and future planning skills.",
+  "microLesson": "Adolescents need guidance, boundaries, and opportunities to practice independence. Parents can support them by teaching life skills, encouraging decision-making, and maintaining open communication.",
+  "activity": "Discuss one future goal with your teen. Reflect on how you supported their planning.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "adolescent-development"
+  ],
+  "resources": [
+    {
+      "title": "Adulthood Preparation Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

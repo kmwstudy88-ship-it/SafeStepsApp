@@ -1,0 +1,21 @@
+{
+  "id": "module_community_healing_and_collective_recovery",
+  "title": "Community Healing and Collective Recovery",
+  "description": "This module supports communities to understand and participate in collective healing after domestic and family violence. It focuses on trauma-aware community practices, rebuilding trust, and creating environments that support long-term recovery and resilience.",
+  "type": "module",
+  "level": "community",
+  "tags": [
+    "dfv",
+    "community healing",
+    "collective recovery",
+    "trauma-aware",
+    "resilience"
+  ],
+  "outcomes": [
+    "Understand how communities experience and recover from collective trauma",
+    "Participate in trauma-aware community healing practices",
+    "Support environments that promote long-term recovery, resilience, and reconnection"
+  ],
+  "lessons": [],
+  "content": []
+}

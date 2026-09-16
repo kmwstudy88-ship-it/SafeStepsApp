@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Anger is normal, but using anger to control or harm others is not."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Anger often masks other emotions such as fear, shame, or hurt."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Participants learn timeâ€‘out strategies, deâ€‘escalation, and emotional awareness."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Reflect on a time anger escalated. What signs did you notice?"
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Managing anger is essential for safe behaviour."
+                     }
+                 ]
+}

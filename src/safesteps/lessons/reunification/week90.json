@@ -1,0 +1,47 @@
+{
+  "week": 90,
+  "lessons": [
+    {
+      "id": "reunification-w90-l1",
+      "title": "Lesson 1",
+      "week": 90,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "reunification-w90-l2",
+      "title": "Lesson 2",
+      "week": 90,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "reunification-w90-l3",
+      "title": "Lesson 3",
+      "week": 90,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "reunification-w90-l4",
+      "title": "Lesson 4",
+      "week": 90,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "reunification-w90-l5",
+      "title": "Lesson 5",
+      "week": 90,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "reunification-w90-l6",
+      "title": "Lesson 6",
+      "week": 90,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "reunification-w90-l7",
+      "title": "Lesson 7",
+      "week": 90,
+      "content": "Lesson content goes here."
+    }
+  ]
+}

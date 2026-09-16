@@ -1,0 +1,40 @@
+{
+  "id": "course_financial_abuse",
+  "domain": "dfv",
+  "level": "foundational",
+  "title": "Financial Abuse",
+  "modules": [
+    {
+      "id": "module_understanding_financial_abuse",
+      "title": "Understanding Financial Abuse",
+      "lessons": [
+        "what_is_financial_abuse",
+        "how_financial_control_is_used",
+        "impacts_on_victims_and_children"
+      ]
+    },
+    {
+      "id": "module_common_tactics",
+      "title": "Common Financial Abuse Tactics",
+      "lessons": [
+        "restricting_access_to_money",
+        "coerced_debt_and_financial_sabotage",
+        "monitoring_or_controlling_spending"
+      ]
+    },
+    {
+      "id": "module_rebuilding_financial_independence",
+      "title": "Rebuilding Financial Independence",
+      "lessons": [
+        "creating_a_basic_budget",
+        "accessing_support_services",
+        "steps_to_financial_safety_and_recovery"
+      ]
+    }
+  ],
+  "outcomes": [
+    "Improved understanding of financial abuse and its impacts",
+    "Ability to recognise financial control tactics",
+    "Increased confidence in rebuilding financial independence"
+  ]
+}

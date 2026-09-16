@@ -1,0 +1,64 @@
+{
+  "id": "course_module_parent_safety",
+  "title": "Parent Safety and Stability",
+  "description": "Auto-generated course for module module_parent_safety",
+  "lessons": [
+    {
+      "id": "lesson_recognising_risk_as_a_parent",
+      "title": "Recognising Risk as a Parent",
+      "sections": [
+        {
+          "id": "section_lesson_recognising_risk_as_a_parent_01"
+        },
+        {
+          "id": "section_lesson_recognising_risk_as_a_parent_02"
+        },
+        {
+          "id": "section_lesson_recognising_risk_as_a_parent_03"
+        },
+        {
+          "id": "section_lesson_recognising_risk_as_a_parent_04"
+        },
+        {
+          "id": "section_lesson_recognising_risk_as_a_parent_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_safety_planning_with_children",
+      "title": "Safety Planning With Children",
+      "sections": [
+        {
+          "id": "section_lesson_safety_planning_with_children_01"
+        },
+        {
+          "id": "section_lesson_safety_planning_with_children_02"
+        },
+        {
+          "id": "section_lesson_safety_planning_with_children_03"
+        },
+        {
+          "id": "section_lesson_safety_planning_with_children_04"
+        },
+        {
+          "id": "section_lesson_safety_planning_with_children_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_building_safe_routines",
+      "title": "Building Safe Routines",
+      "sections": [
+        {
+          "id": "section_lesson_building_safe_routines_01"
+        },
+        {
+          "id": "section_lesson_building_safe_routines_02"
+        },
+        {
+          "id": "section_lesson_building_safe_routines_03"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "compliance_engine",
+  "overdue_items": [],
+  "compliance_items": [
+    {
+      "status": "unknown",
+      "id": "court_orders",
+      "last_checked": null
+    },
+    {
+      "status": "unknown",
+      "id": "safety_plan",
+      "last_checked": null
+    },
+    {
+      "status": "unknown",
+      "id": "case_plan",
+      "last_checked": null
+    },
+    {
+      "status": "unknown",
+      "id": "contact_requirements",
+      "last_checked": null
+    },
+    {
+      "status": "unknown",
+      "id": "program_participation",
+      "last_checked": null
+    },
+    {
+      "status": "unknown",
+      "id": "evidence_requirements",
+      "last_checked": null
+    }
+  ],
+  "audit_log": [],
+  "created_at": "2026-06-07T13:13:45.8068432+10:00",
+  "missing_items": [],
+  "updated_at": "2026-06-07T13:13:45.8068432+10:00"
+}

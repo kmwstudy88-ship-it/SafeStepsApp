@@ -1,0 +1,25 @@
+{
+  "id": "trigger-awareness",
+  "title": "Trigger Awareness",
+  "description": "This course helps participants identify emotional triggers and understand how they influence behaviour, escalation, and relational safety.",
+  "learningOutcomes": [
+    "Identify personal emotional triggers.",
+    "Understand how triggers influence behaviour.",
+    "Recognise early signs of escalation.",
+    "Develop strategies for managing triggers safely."
+  ],
+  "modules": [
+    {
+      "title": "Understanding Triggers",
+      "content": "Explores emotional origins and patterns."
+    },
+    {
+      "title": "Impact on Behaviour",
+      "content": "Shows how triggers lead to escalation or harm."
+    },
+    {
+      "title": "Managing Triggers Safely",
+      "content": "Provides grounding and self-regulation tools."
+    }
+  ]
+}

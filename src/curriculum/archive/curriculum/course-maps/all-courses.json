@@ -1,0 +1,5129 @@
+[
+  {
+    "courseId": "emotional-regulation-basics",
+    "title": "Emotional Regulation Basics",
+    "track": "emotional-skills",
+    "topics": [
+      "emotional-regulation",
+      "managing-big-feelings",
+      "emotional-literacy",
+      "mindfulness",
+      "triggers-and-warning-signs"
+    ],
+    "difficulty": "beginner",
+    "duration": "4-6 hours"
+  },
+  {
+    "courseId": "managing-anger-frustration",
+    "title": "Managing Anger & Frustration",
+    "track": "emotional-skills",
+    "topics": [
+      "anger-awareness",
+      "anger-cycles",
+      "emotional-flooding",
+      "impulse-control",
+      "de-escalation-skills"
+    ],
+    "difficulty": "beginner",
+    "duration": "4-6 hours"
+  },
+  {
+    "courseId": "shame-guilt-self-compassion",
+    "title": "Shame, Guilt & Self‑Compassion",
+    "track": "emotional-skills",
+    "topics": [
+      "shame-awareness",
+      "guilt-patterns",
+      "self-compassion",
+      "emotional-avoidance",
+      "emotional-repair"
+    ],
+    "difficulty": "intermediate",
+    "duration": "4-6 hours"
+  },
+  {
+    "courseId": "trauma-emotional-responses",
+    "title": "Trauma & Emotional Responses",
+    "track": "emotional-skills",
+    "topics": [
+      "trauma-triggers",
+      "hyperarousal",
+      "shutdown-patterns",
+      "grounding-skills",
+      "emotional-safety"
+    ],
+    "difficulty": "intermediate",
+    "duration": "4-6 hours"
+  },
+  {
+    "courseId": "building-emotional-intelligence",
+    "title": "Building Emotional Intelligence",
+    "track": "emotional-skills",
+    "topics": [
+      "empathy",
+      "perspective-taking",
+      "emotional-communication",
+      "reflective-listening",
+      "emotional-insight"
+    ],
+    "difficulty": "intermediate",
+    "duration": "4-6 hours"
+  },
+{
+  "courseId": "emotional-regulation-basics",
+  "title": "Emotional Regulation Basics",
+  "track": "emotional-skills",
+  "topics": [
+    "emotional-regulation",
+    "emotional-literacy",
+    "managing-big-feelings",
+    "mindfulness",
+    "triggers-and-warning-signs"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "managing-anger-frustration",
+  "title": "Managing Anger & Frustration",
+  "track": "emotional-skills",
+  "topics": [
+    "anger-awareness",
+    "anger-cycles",
+    "emotional-flooding",
+    "impulse-control",
+    "de-escalation-skills"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "shame-guilt-self-compassion",
+  "title": "Shame, Guilt & Self‑Compassion",
+  "track": "emotional-skills",
+  "topics": [
+    "shame-awareness",
+    "guilt-patterns",
+    "self-compassion",
+    "emotional-avoidance",
+    "emotional-repair"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-emotional-responses",
+  "title": "Trauma & Emotional Responses",
+  "track": "emotional-skills",
+  "topics": [
+    "trauma-triggers",
+    "hyperarousal",
+    "shutdown-patterns",
+    "grounding-skills",
+    "emotional-safety"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "building-emotional-intelligence",
+  "title": "Building Emotional Intelligence",
+  "track": "emotional-skills",
+  "topics": [
+    "empathy",
+    "perspective-taking",
+    "emotional-communication",
+    "reflective-listening",
+    "emotional-insight"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "positive-parenting-foundations",
+  "title": "Positive Parenting Foundations",
+  "track": "parenting-skills",
+  "topics": [
+    "positive-parenting",
+    "behaviour-as-communication",
+    "reinforcement-theory",
+    "connection-before-correction",
+    "modelling-behaviour"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-guidance-boundaries",
+  "title": "Behaviour Guidance & Boundaries",
+  "track": "parenting-skills",
+  "topics": [
+    "behaviour-guidance",
+    "consistent-consequences",
+    "boundaries",
+    "routines-and-structure",
+    "problem-solving"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "understanding-child-development",
+  "title": "Understanding Child Development",
+  "track": "parenting-skills",
+  "topics": [
+    "developmental-stages",
+    "brain-development",
+    "emotional-development",
+    "age-appropriate-expectations",
+    "sensory-needs"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "strengthening-parent-child-connection",
+  "title": "Strengthening Parent‑Child Connection",
+  "track": "parenting-skills",
+  "topics": [
+    "attachment",
+    "attunement",
+    "play-based-connection",
+    "emotional-coaching",
+    "empathy"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-under-stress",
+  "title": "Parenting Under Stress",
+  "track": "parenting-skills",
+  "topics": [
+    "stress-management",
+    "burnout-prevention",
+    "emotional-regulation",
+    "coping-skills",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "co-parenting-foundations",
+  "title": "Co‑Parenting Foundations",
+  "track": "co-parenting",
+  "topics": [
+    "co-parenting-basics",
+    "child-focused-language",
+    "shared-parenting-values",
+    "boundaries",
+    "communication-basics"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "co-parenting-communication-conflict",
+  "title": "Communication & Conflict Reduction",
+  "track": "co-parenting",
+  "topics": [
+    "conflict-de-escalation",
+    "i-messages",
+    "communication-roadblocks",
+    "active-listening",
+    "repair-conversations"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "co-parenting-plans-agreements",
+  "title": "Parenting Plans & Agreements",
+  "track": "co-parenting",
+  "topics": [
+    "parenting-plans",
+    "routines-and-structure",
+    "decision-making",
+    "transitions-between-homes",
+    "expectations-and-consistency"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "co-parenting-safety-respect",
+  "title": "Safety & Respect in Co‑Parenting",
+  "track": "co-parenting",
+  "topics": [
+    "safety-planning",
+    "coercive-control-awareness",
+    "emotional-safety",
+    "respectful-communication",
+    "accountability"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "supporting-children-through-separation",
+  "title": "Supporting Children Through Separation",
+  "track": "co-parenting",
+  "topics": [
+    "child-development",
+    "attachment",
+    "emotional-support",
+    "behaviour-changes",
+    "resilience-building"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-trauma-reenactment",
+  "title": "Relationship Trauma Re‑Enactment Patterns",
+  "track": "rare-topics",
+  "topics": [
+    "trauma-triggers",
+    "relationship-patterns",
+    "emotional-flooding",
+    "shutdown-patterns",
+    "repair-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-failure",
+  "title": "Fathers Navigating Fear of Failure",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "self-worth",
+    "shame-awareness",
+    "avoidance-behaviours",
+    "emotional-regulation"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-flooding",
+  "title": "Managing Emotional Flooding as a Father",
+  "track": "rare-topics",
+  "topics": [
+    "emotional-flooding",
+    "hyperarousal",
+    "grounding-skills",
+    "impulse-control",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-identity-fracture",
+  "title": "Identity Fracture in Fatherhood",
+  "track": "rare-topics",
+  "topics": [
+    "identity-development",
+    "self-concept",
+    "trauma-history",
+    "emotional-avoidance",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-power-struggles",
+  "title": "Power Struggles in Relationships",
+  "track": "rare-topics",
+  "topics": [
+    "power-dynamics",
+    "coercive-control-awareness",
+    "communication-roadblocks",
+    "conflict-de-escalation",
+    "accountability"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-rejection",
+  "title": "Fathers Navigating Fear of Rejection",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "shame-awareness",
+    "avoidance-behaviours",
+    "emotional-regulation",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-dependency",
+  "title": "Understanding Emotional Dependency in Fatherhood",
+  "track": "rare-topics",
+  "topics": [
+    "attachment",
+    "identity-development",
+    "emotional-avoidance",
+    "relationship-patterns",
+    "boundaries"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-sabotage",
+  "title": "Relationship Sabotage Behaviours in Fathers",
+  "track": "rare-topics",
+  "topics": [
+    "self-sabotage",
+    "fear-patterns",
+    "communication-roadblocks",
+    "conflict-de-escalation",
+    "accountability"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-triggered-behaviours",
+  "title": "Trauma‑Triggered Behaviours in Fatherhood",
+  "track": "rare-topics",
+  "topics": [
+    "trauma-triggers",
+    "hyperarousal",
+    "shutdown-patterns",
+    "grounding-skills",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-withdrawal-patterns",
+  "title": "Relationship Withdrawal Patterns in Fathers",
+  "track": "rare-topics",
+  "topics": [
+    "emotional-withdrawal",
+    "avoidance-behaviours",
+    "shutdown-patterns",
+    "emotional-literacy",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-intimacy",
+  "title": "Fear of Intimacy in Fatherhood",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "attachment",
+    "emotional-avoidance",
+    "relationship-patterns",
+    "emotional-regulation"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-rigidity",
+  "title": "Emotional Rigidity in Fathers",
+  "track": "rare-topics",
+  "topics": [
+    "emotional-rigidity",
+    "shutdown-patterns",
+    "identity-development",
+    "emotional-literacy",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-jealousy",
+  "title": "Trauma‑Driven Jealousy",
+  "track": "rare-topics",
+  "topics": [
+    "trauma-triggers",
+    "fear-patterns",
+    "emotional-flooding",
+    "impulse-control",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-closure-difficulties",
+  "title": "Difficulty with Relationship Closure",
+  "track": "rare-topics",
+  "topics": [
+    "relationship-patterns",
+    "avoidance-behaviours",
+    "identity-development",
+    "emotional-avoidance",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-losing-control",
+  "title": "Fear of Losing Control",
+  "track": "rare-topics",
+  "topics": [
+    "power-dynamics",
+    "coercive-control-awareness",
+    "fear-patterns",
+    "emotional-regulation",
+    "accountability"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-disengagement",
+  "title": "Emotional Disengagement in Fathers",
+  "track": "rare-topics",
+  "topics": [
+    "emotional-withdrawal",
+    "shutdown-patterns",
+    "avoidance-behaviours",
+    "emotional-literacy",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-perfectionism",
+  "title": "Trauma‑Driven Perfectionism",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "identity-development",
+    "self-worth",
+    "emotional-rigidity",
+    "stress-management"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-disengagement",
+  "title": "Emotional Disengagement in Fathers",
+  "track": "rare-topics",
+  "topics": [
+    "emotional-withdrawal",
+    "shutdown-patterns",
+    "avoidance-behaviours",
+    "emotional-literacy",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-perfectionism",
+  "title": "Trauma‑Driven Perfectionism",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "identity-development",
+    "self-worth",
+    "emotional-rigidity",
+    "stress-management"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-vulnerability",
+  "title": "Fear of Vulnerability",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "attachment",
+    "emotional-avoidance",
+    "emotional-literacy",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-ambivalence",
+  "title": "Relationship Ambivalence in Fathers",
+  "track": "rare-topics",
+  "topics": [
+    "relationship-patterns",
+    "identity-development",
+    "avoidance-behaviours",
+    "emotional-regulation",
+    "decision-making"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-linked-anger",
+  "title": "Trauma‑Linked Anger",
+  "track": "rare-topics",
+  "topics": [
+    "trauma-triggers",
+    "anger-awareness",
+    "emotional-flooding",
+    "impulse-control",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-parental-inadequacy",
+  "title": "Fear of Parental Inadequacy",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "self-worth",
+    "identity-development",
+    "emotional-regulation",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-instability-cycles",
+  "title": "Emotional Instability Cycles",
+  "track": "rare-topics",
+  "topics": [
+    "emotional-flooding",
+    "shutdown-patterns",
+    "impulse-control",
+    "grounding-skills",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-miscommunication",
+  "title": "Trauma‑Driven Miscommunication",
+  "track": "rare-topics",
+  "topics": [
+    "communication-roadblocks",
+    "trauma-triggers",
+    "emotional-avoidance",
+    "conflict-de-escalation",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-identity-fragmentation-patterns",
+  "title": "Identity Fragmentation Patterns",
+  "track": "rare-topics",
+  "topics": [
+    "identity-development",
+    "self-concept",
+    "trauma-history",
+    "emotional-avoidance",
+    "emotional-insight"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-emotional-loss",
+  "title": "Fear of Emotional Loss",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "attachment",
+    "emotional-avoidance",
+    "relationship-patterns",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-avoidant-attachment-patterns",
+  "title": "Avoidant Attachment Patterns in Fathers",
+  "track": "rare-topics",
+  "topics": [
+    "attachment",
+    "emotional-withdrawal",
+    "avoidance-behaviours",
+    "emotional-literacy",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-defensiveness",
+  "title": "Trauma‑Driven Defensiveness",
+  "track": "rare-topics",
+  "topics": [
+    "trauma-triggers",
+    "fear-patterns",
+    "emotional-flooding",
+    "impulse-control",
+    "accountability"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-frustration-patterns",
+  "title": "Emotional Frustration Patterns",
+  "track": "rare-topics",
+  "topics": [
+    "anger-awareness",
+    "emotional-rigidity",
+    "stress-management",
+    "emotional-regulation",
+    "problem-solving"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-fear-cycles",
+  "title": "Relationship Fear Cycles",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "relationship-patterns",
+    "avoidance-behaviours",
+    "emotional-regulation",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-impulsivity",
+  "title": "Emotional Impulsivity in Fatherhood",
+  "track": "rare-topics",
+  "topics": [
+    "impulse-control",
+    "emotional-flooding",
+    "grounding-skills",
+    "stress-management",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-control-patterns",
+  "title": "Trauma‑Driven Control Patterns",
+  "track": "rare-topics",
+  "topics": [
+    "power-dynamics",
+    "coercive-control-awareness",
+    "fear-patterns",
+    "emotional-regulation",
+    "accountability"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-displacement",
+  "title": "Emotional Displacement in Fathers",
+  "track": "rare-topics",
+  "topics": [
+    "anger-awareness",
+    "stress-management",
+    "emotional-flooding",
+    "grounding-skills",
+    "behaviour-guidance"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-linked-shutdown",
+  "title": "Trauma‑Linked Shutdown Responses",
+  "track": "rare-topics",
+  "topics": [
+    "shutdown-patterns",
+    "trauma-triggers",
+    "emotional-withdrawal",
+    "grounding-skills",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-emotional-intensity",
+  "title": "Fear of Emotional Intensity",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "emotional-flooding",
+    "emotional-avoidance",
+    "mindfulness",
+    "emotional-regulation"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-avoidance-cycles",
+  "title": "Relationship Avoidance Cycles",
+  "track": "rare-topics",
+  "topics": [
+    "avoidance-behaviours",
+    "relationship-patterns",
+    "emotional-withdrawal",
+    "identity-development",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-people-pleasing",
+  "title": "Trauma‑Driven People Pleasing",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "self-worth",
+    "boundaries",
+    "identity-development",
+    "emotional-regulation"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-numbing",
+  "title": "Emotional Numbing in Fathers",
+  "track": "rare-topics",
+  "topics": [
+    "shutdown-patterns",
+    "emotional-withdrawal",
+    "trauma-triggers",
+    "emotional-literacy",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-overthinking",
+  "title": "Trauma‑Driven Overthinking",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "identity-development",
+    "stress-management",
+    "emotional-regulation",
+    "problem-solving"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-parental-judgment",
+  "title": "Fear of Parental Judgment",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "self-worth",
+    "identity-development",
+    "emotional-avoidance",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-overcompensation",
+  "title": "Relationship Overcompensation Patterns",
+  "track": "rare-topics",
+  "topics": [
+    "self-sabotage",
+    "identity-development",
+    "emotional-flooding",
+    "behaviour-guidance",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-withdrawal",
+  "title": "Trauma‑Driven Withdrawal",
+  "track": "rare-topics",
+  "topics": [
+    "emotional-withdrawal",
+    "shutdown-patterns",
+    "trauma-triggers",
+    "grounding-skills",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-being-overwhelmed",
+  "title": "Fear of Being Overwhelmed",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "stress-management",
+    "emotional-flooding",
+    "mindfulness",
+    "coping-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-resentment-patterns",
+  "title": "Emotional Resentment Patterns",
+  "track": "rare-topics",
+  "topics": [
+    "anger-awareness",
+    "emotional-rigidity",
+    "identity-development",
+    "emotional-regulation",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-relationship-chasing",
+  "title": "Trauma‑Driven Relationship Chasing",
+  "track": "rare-topics",
+  "topics": [
+    "attachment",
+    "fear-patterns",
+    "identity-development",
+    "emotional-avoidance",
+    "boundaries"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-emotional-responsibility",
+  "title": "Fear of Emotional Responsibility",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "accountability",
+    "identity-development",
+    "emotional-literacy",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-competition",
+  "title": "Trauma‑Driven Competition in Relationships",
+  "track": "rare-topics",
+  "topics": [
+    "power-dynamics",
+    "fear-patterns",
+    "identity-development",
+    "emotional-rigidity",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-detachment-patterns",
+  "title": "Emotional Detachment Patterns",
+  "track": "rare-topics",
+  "topics": [
+    "emotional-withdrawal",
+    "shutdown-patterns",
+    "avoidance-behaviours",
+    "emotional-literacy",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-blame-cycles",
+  "title": "Trauma‑Driven Blame Cycles",
+  "track": "rare-topics",
+  "topics": [
+    "accountability",
+    "fear-patterns",
+    "anger-awareness",
+    "communication-roadblocks",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-emotional-dependence",
+  "title": "Fear of Emotional Dependence",
+  "track": "rare-topics",
+  "topics": [
+    "attachment",
+    "fear-patterns",
+    "identity-development",
+    "emotional-avoidance",
+    "boundaries"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-idealisation-cycles",
+  "title": "Relationship Idealisation Cycles",
+  "track": "rare-topics",
+ "topics": [
+    "relationship-patterns",
+    "identity-development",
+    "emotional-flooding",
+    "self-worth",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-control-avoidance",
+  "title": "Trauma‑Driven Control Avoidance",
+  "track": "rare-topics",
+  "topics": [
+    "power-dynamics",
+    "coercive-control-awareness",
+    "fear-patterns",
+    "emotional-regulation",
+    "accountability"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-reassurance-seeking",
+  "title": "Trauma‑Driven Reassurance Seeking",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "attachment",
+    "identity-development",
+    "emotional-avoidance",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-hypervigilance",
+  "title": "Emotional Hypervigilance in Fathers",
+  "track": "rare-topics",
+  "topics": [
+    "hyperarousal",
+    "trauma-triggers",
+    "fear-patterns",
+    "grounding-skills",
+    "emotional-regulation"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-withholding",
+  "title": "Trauma‑Driven Emotional Withholding",
+  "track": "rare-topics",
+  "topics": [
+    "emotional-withdrawal",
+    "shutdown-patterns",
+    "avoidance-behaviours",
+    "emotional-literacy",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-being-seen",
+  "title": "Fear of Being Seen",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "shame-awareness",
+    "identity-development",
+    "emotional-avoidance",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-rollercoaster-patterns",
+  "title": "Relationship Rollercoaster Patterns",
+  "track": "rare-topics",
+  "topics": [
+    "emotional-flooding",
+    "shutdown-patterns",
+    "relationship-patterns",
+    "impulse-control",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-avoidance-of-commitment",
+  "title": "Trauma‑Driven Avoidance of Commitment",
+  "track": "rare-topics",
+  "topics": [
+    "avoidance-behaviours",
+    "fear-patterns",
+    "identity-development",
+    "attachment",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-overidentification",
+  "title": "Emotional Over‑Identification",
+  "track": "rare-topics",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "emotional-flooding",
+    "grounding-skills",
+    "boundaries"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-relationship-testing",
+  "title": "Trauma‑Driven Relationship Testing",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "relationship-patterns",
+    "self-sabotage",
+    "emotional-regulation",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-emotional-stability",
+  "title": "Fear of Emotional Stability",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "identity-development",
+    "emotional-rigidity",
+    "emotional-literacy",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-boundary-collapse",
+  "title": "Relationship Boundary Collapse",
+  "track": "rare-topics",
+  "topics": [
+    "boundaries",
+    "attachment",
+    "identity-development",
+    "emotional-avoidance",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-overcontrol",
+  "title": "Emotional Over‑Control in Fathers",
+  "track": "rare-topics",
+  "topics": [
+    "emotional-rigidity",
+    "power-dynamics",
+    "stress-management",
+    "emotional-regulation",
+    "accountability"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-testing-behaviours",
+  "title": "Trauma‑Driven Testing Behaviours",
+  "track": "rare-topics",
+  "topics": [
+    "self-sabotage",
+    "fear-patterns",
+    "relationship-patterns",
+    "emotional-avoidance",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-emotional-commitment",
+  "title": "Fear of Emotional Commitment",
+  "track": "rare-topics",
+  "topics": [
+    "avoidance-behaviours",
+    "attachment",
+    "identity-development",
+    "fear-patterns",
+    "boundaries"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-instability-patterns",
+  "title": "Relationship Instability Patterns",
+  "track": "rare-topics",
+  "topics": [
+    "relationship-patterns",
+    "emotional-flooding",
+    "shutdown-patterns",
+    "impulse-control",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-identity-merging",
+  "title": "Trauma‑Driven Identity Merging",
+  "track": "rare-topics",
+  "topics": [
+    "identity-development",
+    "attachment",
+    "self-worth",
+    "boundaries",
+    "emotional-literacy"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-avoidance-escalation",
+  "title": "Emotional Avoidance Escalation",
+  "track": "rare-topics",
+  "topics": [
+    "avoidance-behaviours",
+    "shutdown-patterns",
+    "trauma-triggers",
+    "grounding-skills",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-validation-seeking",
+  "title": "Trauma‑Driven Validation Seeking",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "self-worth",
+    "identity-development",
+    "attachment",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-emotional-predictability",
+  "title": "Fear of Emotional Predictability",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "identity-development",
+    "emotional-rigidity",
+    "stress-management",
+    "emotional-regulation"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-attachment-flipping",
+  "title": "Attachment Flipping in Relationships",
+  "track": "rare-topics",
+  "topics": [
+    "attachment",
+    "relationship-patterns",
+    "emotional-flooding",
+    "avoidance-behaviours",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-identity-collapse",
+  "title": "Trauma‑Driven Identity Collapse",
+  "track": "rare-topics",
+  "topics": [
+    "identity-development",
+    "self-concept",
+    "trauma-history",
+    "emotional-avoidance",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-emotional-chaos-patterns",
+  "title": "Emotional Chaos Patterns",
+  "track": "rare-topics",
+  "topics": [
+    "emotional-flooding",
+    "impulse-control",
+    "stress-management",
+    "grounding-skills",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-trauma-driven-relationship-avoidance",
+  "title": "Trauma‑Driven Relationship Avoidance",
+  "track": "rare-topics",
+  "topics": [
+    "avoidance-behaviours",
+    "fear-patterns",
+    "relationship-patterns",
+    "identity-development",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-fear-of-emotional-connection",
+  "title": "Fear of Emotional Connection",
+  "track": "rare-topics",
+  "topics": [
+    "fear-patterns",
+    "attachment",
+    "emotional-avoidance",
+    "emotional-literacy",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fathers-relationship-emotional-repair-deficits",
+  "title": "Emotional Repair Deficits in Relationships",
+  "track": "rare-topics",
+  "topics": [
+    "repair-conversations",
+    "communication-roadblocks",
+    "emotional-literacy",
+    "accountability",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-foundations",
+  "title": "Foundations of Behaviour Change",
+  "track": "behaviour-change",
+  "topics": [
+    "behaviour-as-communication",
+    "reinforcement-theory",
+    "habit-loops",
+    "motivation-basics",
+    "behaviour-guidance"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "understanding-habit-patterns",
+  "title": "Understanding Habit Patterns",
+  "track": "behaviour-change",
+  "topics": [
+    "habit-loops",
+    "triggers-and-warning-signs",
+    "stress-management",
+    "problem-solving",
+    "coping-skills"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "breaking-unhelpful-patterns",
+  "title": "Breaking Unhelpful Behaviour Patterns",
+  "track": "behaviour-change",
+  "topics": [
+    "self-sabotage",
+    "avoidance-behaviours",
+    "impulse-control",
+    "grounding-skills",
+    "accountability"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "building-new-healthy-habits",
+  "title": "Building New Healthy Habits",
+  "track": "behaviour-change",
+  "topics": [
+    "habit-loops",
+    "motivation-basics",
+    "routines-and-structure",
+    "reinforcement-theory",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-maintenance",
+  "title": "Maintaining Behaviour Change Over Time",
+  "track": "behaviour-change",
+  "topics": [
+    "relapse-prevention",
+    "stress-management",
+    "identity-development",
+    "problem-solving",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-emotional-drivers",
+  "title": "Emotional Drivers of Behaviour",
+  "track": "behaviour-change",
+  "topics": [
+    "emotional-regulation",
+    "triggers-and-warning-signs",
+    "fear-patterns",
+    "anger-awareness",
+    "emotional-literacy"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-cognitive-patterns",
+  "title": "Cognitive Patterns That Shape Behaviour",
+  "track": "behaviour-change",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "problem-solving",
+    "avoidance-behaviours",
+    "stress-management"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-impulse-regulation",
+  "title": "Impulse Regulation & Behaviour Control",
+  "track": "behaviour-change",
+  "topics": [
+    "impulse-control",
+    "emotional-flooding",
+    "grounding-skills",
+    "mindfulness",
+    "coping-skills"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-environment-shaping",
+  "title": "Shaping Environments for Behaviour Success",
+  "track": "behaviour-change",
+  "topics": [
+    "routines-and-structure",
+    "behaviour-guidance",
+    "habit-loops",
+    "reinforcement-theory",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-motivation-systems",
+  "title": "Motivation Systems & Behaviour Activation",
+  "track": "behaviour-change",
+  "topics": [
+    "motivation-basics",
+    "self-worth",
+    "identity-development",
+    "reinforcement-theory",
+    "problem-solving"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-relapse-patterns",
+  "title": "Understanding Relapse Patterns",
+  "track": "behaviour-change",
+  "topics": [
+    "relapse-prevention",
+    "stress-management",
+    "triggers-and-warning-signs",
+    "avoidance-behaviours",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-emotional-avoidance-cycles",
+  "title": "Emotional Avoidance Cycles",
+  "track": "behaviour-change",
+  "topics": [
+    "avoidance-behaviours",
+    "shutdown-patterns",
+    "emotional-withdrawal",
+    "grounding-skills",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-self-sabotage-patterns",
+  "title": "Self‑Sabotage Behaviour Patterns",
+  "track": "behaviour-change",
+  "topics": [
+    "self-sabotage",
+    "fear-patterns",
+    "identity-development",
+    "emotional-regulation",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-communication-breakdowns",
+  "title": "Communication Breakdowns & Behaviour",
+  "track": "behaviour-change",
+  "topics": [
+    "communication-roadblocks",
+    "conflict-de-escalation",
+    "i-messages",
+    "active-listening",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-emotional-repair",
+  "title": "Emotional Repair & Behaviour Reset",
+  "track": "behaviour-change",
+  "topics": [
+    "repair-conversations",
+    "emotional-literacy",
+    "accountability",
+    "emotional-safety",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-trauma-linked-patterns",
+  "title": "Trauma‑Linked Behaviour Patterns",
+  "track": "behaviour-change",
+  "topics": [
+    "trauma-triggers",
+    "hyperarousal",
+    "shutdown-patterns",
+    "emotional-flooding",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-identity-shifts",
+  "title": "Identity Shifts & Behaviour Transformation",
+  "track": "behaviour-change",
+  "topics": [
+    "identity-development",
+    "self-concept",
+    "self-worth",
+    "motivation-basics",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-boundary-formation",
+  "title": "Boundary Formation & Behaviour Stability",
+  "track": "behaviour-change",
+  "topics": [
+    "boundaries",
+    "attachment",
+    "emotional-regulation",
+    "communication-roadblocks",
+    "accountability"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-long-term-stability",
+  "title": "Long‑Term Behaviour Stability",
+  "track": "behaviour-change",
+  "topics": [
+    "relapse-prevention",
+    "routines-and-structure",
+    "stress-management",
+    "problem-solving",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-integrated-skills",
+  "title": "Integrated Behaviour Change Skills",
+  "track": "behaviour-change",
+  "topics": [
+    "emotional-regulation",
+    "habit-loops",
+    "identity-development",
+    "reinforcement-theory",
+    "coping-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "behaviour-change-family-dynamics",
+  "title": "Family Dynamics & Behaviour Change",
+  "track": "behaviour-change",
+  "topics": [
+    "family-systems",
+    "communication-roadblocks",
+    "attachment",
+    "emotional-regulation",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-stabilisation-basics",
+  "title": "Trauma Stabilisation Basics",
+  "track": "trauma-skills",
+  "topics": [
+    "trauma-triggers",
+    "grounding-skills",
+    "emotional-regulation",
+    "hyperarousal",
+    "shutdown-patterns"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-understanding-triggers",
+  "title": "Understanding Trauma Triggers",
+  "track": "trauma-skills",
+  "topics": [
+    "trauma-triggers",
+    "triggers-and-warning-signs",
+    "emotional-flooding",
+    "mindfulness",
+    "emotional-safety"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-grounding-techniques",
+  "title": "Grounding Techniques for Trauma",
+  "track": "trauma-skills",
+  "topics": [
+    "grounding-skills",
+    "mindfulness",
+    "coping-skills",
+    "stress-management",
+    "emotional-regulation"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-emotional-safety",
+  "title": "Building Emotional Safety",
+  "track": "trauma-skills",
+  "topics": [
+    "emotional-safety",
+    "attachment",
+    "empathy",
+    "communication-roadblocks",
+    "repair-conversations"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-stress-response-systems",
+  "title": "Understanding Stress Response Systems",
+  "track": "trauma-skills",
+  "topics": [
+    "hyperarousal",
+    "shutdown-patterns",
+    "emotional-flooding",
+    "identity-development",
+    "coping-skills"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-hyperarousal-management",
+  "title": "Managing Hyperarousal",
+  "track": "trauma-skills",
+  "topics": [
+    "hyperarousal",
+    "emotional-flooding",
+    "grounding-skills",
+    "mindfulness",
+    "coping-skills"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-shutdown-response-recovery",
+  "title": "Recovering From Shutdown Responses",
+  "track": "trauma-skills",
+  "topics": [
+    "shutdown-patterns",
+    "emotional-withdrawal",
+    "avoidance-behaviours",
+    "grounding-skills",
+    "emotional-safety"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-emotional-memory-processing",
+  "title": "Processing Emotional Memory",
+  "track": "trauma-skills",
+  "topics": [
+    "trauma-history",
+    "emotional-literacy",
+    "identity-development",
+    "emotional-regulation",
+    "mindfulness"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-trauma-cycles-awareness",
+  "title": "Understanding Trauma Cycles",
+  "track": "trauma-skills",
+  "topics": [
+    "trauma-triggers",
+    "fear-patterns",
+    "relationship-patterns",
+    "emotional-flooding",
+    "repair-conversations"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-self-regulation-under-stress",
+  "title": "Self‑Regulation Under Trauma Stress",
+  "track": "trauma-skills",
+  "topics": [
+    "emotional-regulation",
+    "stress-management",
+    "grounding-skills",
+    "coping-skills",
+    "triggers-and-warning-signs"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-hyperarousal-management",
+  "title": "Managing Hyperarousal Responses",
+  "track": "trauma-skills",
+  "topics": [
+    "hyperarousal",
+    "trauma-triggers",
+    "grounding-skills",
+    "emotional-regulation",
+    "coping-skills"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-shutdown-recovery",
+  "title": "Recovering From Shutdown Responses",
+  "track": "trauma-skills",
+  "topics": [
+    "shutdown-patterns",
+    "emotional-withdrawal",
+    "avoidance-behaviours",
+    "grounding-skills",
+    "emotional-safety"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-emotional-memory-processing",
+  "title": "Understanding Emotional Memory Processing",
+  "track": "trauma-skills",
+  "topics": [
+    "trauma-history",
+    "emotional-flooding",
+    "identity-development",
+    "mindfulness",
+    "emotional-literacy"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-trauma-cycles",
+  "title": "Recognising Trauma Cycles",
+  "track": "trauma-skills",
+  "topics": [
+    "trauma-triggers",
+    "fear-patterns",
+    "relationship-patterns",
+    "self-sabotage",
+    "repair-conversations"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-emotional-stabilisation",
+  "title": "Emotional Stabilisation Skills",
+  "track": "trauma-skills",
+  "topics": [
+    "emotional-regulation",
+    "grounding-skills",
+    "stress-management",
+    "coping-skills",
+    "emotional-safety"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-attachment-wounds",
+  "title": "Understanding Attachment Wounds",
+  "track": "trauma-skills",
+  "topics": [
+    "attachment",
+    "identity-development",
+    "fear-patterns",
+    "emotional-avoidance",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-trauma-informed-communication",
+  "title": "Trauma‑Informed Communication Skills",
+  "track": "trauma-skills",
+  "topics": [
+    "communication-roadblocks",
+    "active-listening",
+    "i-messages",
+    "repair-conversations",
+    "empathy"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-relational-trauma-patterns",
+  "title": "Relational Trauma Patterns",
+  "track": "trauma-skills",
+  "topics": [
+    "relationship-patterns",
+    "trauma-triggers",
+    "self-sabotage",
+    "emotional-flooding",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-conflict-trauma-responses",
+  "title": "Trauma Responses During Conflict",
+  "track": "trauma-skills",
+  "topics": [
+    "emotional-flooding",
+    "shutdown-patterns",
+    "hyperarousal",
+    "conflict-de-escalation",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-repair-after-trauma-ruptures",
+  "title": "Repair After Trauma Ruptures",
+  "track": "trauma-skills",
+  "topics": [
+    "repair-conversations",
+    "accountability",
+    "emotional-literacy",
+    "emotional-safety",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-identity-rebuilding",
+  "title": "Identity Rebuilding After Trauma",
+  "track": "trauma-skills",
+  "topics": [
+    "identity-development",
+    "self-concept",
+    "self-worth",
+    "emotional-literacy",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-trauma-linked-behaviour-patterns",
+  "title": "Trauma‑Linked Behaviour Patterns",
+  "track": "trauma-skills",
+  "topics": [
+    "trauma-triggers",
+    "fear-patterns",
+    "self-sabotage",
+    "emotional-regulation",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-long-term-stabilisation",
+  "title": "Long‑Term Trauma Stabilisation",
+  "track": "trauma-skills",
+  "topics": [
+    "stress-management",
+    "routines-and-structure",
+    "relapse-prevention",
+    "coping-skills",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-skills-trauma-integration",
+  "title": "Integrating Trauma Healing Into Daily Life",
+  "track": "trauma-skills",
+  "topics": [
+    "emotional-regulation",
+    "mindfulness",
+    "identity-development",
+    "grounding-skills",
+    "behaviour-guidance"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-insight-foundations",
+  "title": "Foundations of Accountability & Insight",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "accountability",
+    "self-reflection",
+    "identity-development",
+    "emotional-literacy",
+    "behaviour-as-communication"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "understanding-impact-of-actions",
+  "title": "Understanding the Impact of Your Actions",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "accountability",
+    "empathy",
+    "relationship-patterns",
+    "communication-roadblocks",
+    "emotional-safety"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "recognising-patterns",
+  "title": "Recognising Behaviour Patterns",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "self-sabotage",
+    "avoidance-behaviours",
+    "fear-patterns",
+    "triggers-and-warning-signs",
+    "problem-solving"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "taking-responsibility",
+  "title": "Taking Responsibility for Choices",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "accountability",
+    "identity-development",
+    "self-worth",
+    "repair-conversations",
+    "support-networks"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "insight-building-basics",
+  "title": "Insight‑Building Basics",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "self-reflection",
+    "emotional-literacy",
+    "mindfulness",
+    "emotional-regulation",
+    "coping-skills"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-emotional-honesty",
+  "title": "Emotional Honesty & Personal Truth",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "emotional-literacy",
+    "self-reflection",
+    "identity-development",
+    "emotional-safety",
+    "accountability"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-defensiveness-awareness",
+  "title": "Understanding Defensiveness & Avoidance",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "avoidance-behaviours",
+    "communication-roadblocks",
+    "fear-patterns",
+    "self-sabotage",
+    "emotional-regulation"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-impact-on-others",
+  "title": "Seeing the Impact on Others",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "empathy",
+    "relationship-patterns",
+    "emotional-safety",
+    "repair-conversations",
+    "accountability"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-values-alignment",
+  "title": "Aligning Behaviour With Personal Values",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "problem-solving",
+    "behaviour-guidance",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-emotional-regulation",
+  "title": "Emotional Regulation for Accountability",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "emotional-regulation",
+    "grounding-skills",
+    "stress-management",
+    "coping-skills",
+    "triggers-and-warning-signs"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-repairing-relationship-harm",
+  "title": "Repairing Relationship Harm",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "repair-conversations",
+    "communication-roadblocks",
+    "emotional-safety",
+    "accountability",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-insight-integration",
+  "title": "Integrating Accountability & Insight Into Daily Life",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "accountability",
+    "self-reflection",
+    "identity-development",
+    "emotional-literacy",
+    "behaviour-as-communication"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-overcoming-defensiveness",
+  "title": "Overcoming Defensiveness & Avoidance",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "avoidance-behaviours",
+    "communication-roadblocks",
+    "fear-patterns",
+    "self-sabotage",
+    "emotional-regulation"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-root-cause-analysis",
+  "title": "Root Cause Analysis of Behaviour",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "self-sabotage",
+    "fear-patterns",
+    "identity-development",
+    "problem-solving",
+    "behaviour-as-communication"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-trauma-links",
+  "title": "Trauma Links to Accountability",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "trauma-triggers",
+    "hyperarousal",
+    "shutdown-patterns",
+    "emotional-flooding",
+    "grounding-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-conflict-insight",
+  "title": "Insight During Conflict",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "conflict-de-escalation",
+    "communication-roadblocks",
+    "repair-conversations",
+    "emotional-regulation",
+    "empathy"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-pattern-interruption",
+  "title": "Interrupting Harmful Behaviour Patterns",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "avoidance-behaviours",
+    "self-sabotage",
+    "habit-loops",
+    "problem-solving",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-integrity-practice",
+  "title": "Practicing Integrity in Daily Life",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "accountability",
+    "identity-development",
+    "self-worth",
+    "emotional-safety",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-long-term-change",
+  "title": "Long‑Term Behaviour Change Through Insight",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "relapse-prevention",
+    "routines-and-structure",
+    "identity-development",
+    "problem-solving",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-repair-skills",
+  "title": "Repair Skills for Accountability",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "repair-conversations",
+    "empathy",
+    "emotional-literacy",
+    "communication-roadblocks",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-integrated-insight",
+  "title": "Integrating Insight Into Daily Behaviour",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "self-reflection",
+    "identity-development",
+    "emotional-regulation",
+    "habit-loops",
+    "coping-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-relational-impact",
+  "title": "Understanding Your Relational Impact",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "relationship-patterns",
+    "empathy",
+    "emotional-safety",
+    "communication-roadblocks",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "accountability-sustained-insight",
+  "title": "Sustaining Insight Over Time",
+  "track": "accountability-insight-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "relapse-prevention",
+    "stress-management",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-foundations",
+  "title": "Foundations of Reunification",
+  "track": "reunification-skills",
+  "topics": [
+    "emotional-safety",
+    "relationship-patterns",
+    "identity-development",
+    "communication-roadblocks",
+    "support-networks"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-understanding-harm",
+  "title": "Understanding Harm & Its Impact",
+  "track": "reunification-skills",
+  "topics": [
+    "accountability",
+    "empathy",
+    "emotional-literacy",
+    "relationship-patterns",
+    "repair-conversations"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-emotional-preparedness",
+  "title": "Emotional Preparedness for Reunification",
+  "track": "reunification-skills",
+  "topics": [
+    "emotional-regulation",
+    "grounding-skills",
+    "stress-management",
+    "coping-skills",
+    "triggers-and-warning-signs"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-safe-contact-basics",
+  "title": "Safe Contact Basics",
+  "track": "reunification-skills",
+  "topics": [
+    "emotional-safety",
+    "communication-roadblocks",
+    "i-messages",
+    "active-listening",
+    "boundaries"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-child-centred-approach",
+  "title": "Child‑Centred Reunification Approaches",
+  "track": "reunification-skills",
+  "topics": [
+    "child-development",
+    "emotional-literacy",
+    "empathy",
+    "behaviour-as-communication",
+    "support-networks"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-emotional-safety-planning",
+  "title": "Emotional Safety Planning for Reunification",
+  "track": "reunification-skills",
+  "topics": [
+    "emotional-safety",
+    "triggers-and-warning-signs",
+    "stress-management",
+    "grounding-skills",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-repair-conversations",
+  "title": "Repair Conversations in Reunification",
+  "track": "reunification-skills",
+  "topics": [
+    "repair-conversations",
+    "empathy",
+    "i-messages",
+    "active-listening",
+    "communication-roadblocks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-understanding-child-fear",
+  "title": "Understanding Child Fear Responses",
+  "track": "reunification-skills",
+  "topics": [
+    "child-development",
+    "fear-patterns",
+    "emotional-literacy",
+    "behaviour-as-communication",
+    "emotional-safety"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-safe-boundaries",
+  "title": "Building Safe Boundaries During Reunification",
+  "track": "reunification-skills",
+  "topics": [
+    "boundaries",
+    "identity-development",
+    "communication-roadblocks",
+    "support-networks",
+    "emotional-safety"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-preparing-for-contact",
+  "title": "Preparing for Supervised or Supported Contact",
+  "track": "reunification-skills",
+  "topics": [
+    "emotional-regulation",
+    "stress-management",
+    "child-development",
+    "support-networks",
+    "behaviour-guidance"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-trauma-informed-contact",
+  "title": "Trauma‑Informed Contact Sessions",
+  "track": "reunification-skills",
+  "topics": [
+    "trauma-triggers",
+    "emotional-flooding",
+    "grounding-skills",
+    "child-development",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-rebuilding-trust",
+  "title": "Rebuilding Trust With Children",
+  "track": "reunification-skills",
+  "topics": [
+    "empathy",
+    "relationship-patterns",
+    "identity-development",
+    "repair-conversations",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-managing-setbacks",
+  "title": "Managing Setbacks in Reunification",
+  "track": "reunification-skills",
+  "topics": [
+    "relapse-prevention",
+    "stress-management",
+    "problem-solving",
+    "avoidance-behaviours",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-child-led-engagement",
+  "title": "Child‑Led Engagement Strategies",
+  "track": "reunification-skills",
+  "topics": [
+    "child-development",
+    "emotional-literacy",
+    "behaviour-as-communication",
+    "empathy",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-conflict-de-escalation",
+  "title": "Conflict De‑Escalation During Reunification",
+  "track": "reunification-skills",
+  "topics": [
+    "conflict-de-escalation",
+    "communication-roadblocks",
+    "emotional-regulation",
+    "grounding-skills",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-long-term-stability",
+  "title": "Long‑Term Stability After Reunification",
+  "track": "reunification-skills",
+  "topics": [
+    "routines-and-structure",
+    "relapse-prevention",
+    "identity-development",
+    "support-networks",
+    "stress-management"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-integrating-new-relationships",
+  "title": "Integrating New Family Relationships",
+  "track": "reunification-skills",
+  "topics": [
+    "relationship-patterns",
+    "emotional-literacy",
+    "boundaries",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-co-parenting-alignment",
+  "title": "Co‑Parenting Alignment in Reunification",
+  "track": "reunification-skills",
+  "topics": [
+    "co-parenting",
+    "communication-roadblocks",
+    "i-messages",
+    "repair-conversations",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-child-voice-empowerment",
+  "title": "Empowering the Child’s Voice",
+  "track": "reunification-skills",
+  "topics": [
+    "child-development",
+    "emotional-literacy",
+    "empathy",
+    "behaviour-as-communication",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "reunification-sustaining-healthy-relationships",
+  "title": "Sustaining Healthy Relationships After Reunification",
+  "track": "reunification-skills",
+  "topics": [
+    "relationship-patterns",
+    "emotional-safety",
+    "communication-roadblocks",
+    "repair-conversations",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-skills-foundations",
+  "title": "Foundations of Effective Parenting",
+  "track": "parenting-skills",
+  "topics": [
+    "child-development",
+    "emotional-literacy",
+    "behaviour-as-communication",
+    "routines-and-structure",
+    "emotional-safety"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-understanding-child-needs",
+  "title": "Understanding Your Child’s Needs",
+  "track": "parenting-skills",
+  "topics": [
+    "child-development",
+    "empathy",
+    "emotional-literacy",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-positive-communication",
+  "title": "Positive Communication With Children",
+  "track": "parenting-skills",
+  "topics": [
+    "active-listening",
+    "i-messages",
+    "communication-roadblocks",
+    "emotional-safety",
+    "behaviour-guidance"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-emotional-coaching",
+  "title": "Emotional Coaching for Children",
+  "track": "parenting-skills",
+  "topics": [
+    "emotional-literacy",
+    "emotional-regulation",
+    "mindfulness",
+    "empathy",
+    "behaviour-as-communication"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-safe-boundaries",
+  "title": "Creating Safe & Healthy Boundaries",
+  "track": "parenting-skills",
+  "topics": [
+    "boundaries",
+    "routines-and-structure",
+    "behaviour-guidance",
+    "emotional-safety",
+    "identity-development"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-emotionally-safe-parenting",
+  "title": "Emotionally Safe Parenting",
+  "track": "parenting-skills",
+  "topics": [
+    "emotional-safety",
+    "emotional-literacy",
+    "empathy",
+    "child-development",
+    "behaviour-as-communication"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-guidance-vs-punishment",
+  "title": "Guidance vs Punishment",
+  "track": "parenting-skills",
+  "topics": [
+    "behaviour-guidance",
+    "communication-roadblocks",
+    "routines-and-structure",
+    "emotional-regulation",
+    "identity-development"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-managing-big-feelings",
+  "title": "Helping Children Manage Big Feelings",
+  "track": "parenting-skills",
+  "topics": [
+    "emotional-regulation",
+    "mindfulness",
+    "emotional-literacy",
+    "grounding-skills",
+    "child-development"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-strengthening-connection",
+  "title": "Strengthening Parent‑Child Connection",
+  "track": "parenting-skills",
+  "topics": [
+    "relationship-patterns",
+    "empathy",
+    "active-listening",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-healthy-routines",
+  "title": "Building Healthy Routines & Structure",
+  "track": "parenting-skills",
+  "topics": [
+    "routines-and-structure",
+    "behaviour-guidance",
+    "stress-management",
+    "child-development",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-conflict-de-escalation",
+  "title": "De‑Escalating Conflict With Children",
+  "track": "parenting-skills",
+  "topics": [
+    "conflict-de-escalation",
+    "emotional-regulation",
+    "communication-roadblocks",
+    "grounding-skills",
+    "behaviour-as-communication"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-understanding-behaviour-patterns",
+  "title": "Understanding Behaviour Patterns in Children",
+  "track": "parenting-skills",
+  "topics": [
+    "behaviour-as-communication",
+    "fear-patterns",
+    "avoidance-behaviours",
+    "child-development",
+    "problem-solving"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-raising-resilient-children",
+  "title": "Raising Resilient Children",
+  "track": "parenting-skills",
+  "topics": [
+    "coping-skills",
+    "stress-management",
+    "identity-development",
+    "emotional-literacy",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-guiding-through-transitions",
+  "title": "Guiding Children Through Transitions",
+  "track": "parenting-skills",
+  "topics": [
+    "child-development",
+    "emotional-safety",
+    "routines-and-structure",
+    "empathy",
+    "behaviour-guidance"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-strengthening-identity",
+  "title": "Strengthening Your Child’s Identity",
+  "track": "parenting-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "emotional-literacy",
+    "empathy",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-long-term-stability",
+  "title": "Long‑Term Parenting Stability",
+  "track": "parenting-skills",
+  "topics": [
+    "routines-and-structure",
+    "relapse-prevention",
+    "stress-management",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-healthy-discipline",
+  "title": "Healthy Discipline & Consistency",
+  "track": "parenting-skills",
+  "topics": [
+    "behaviour-guidance",
+    "communication-roadblocks",
+    "routines-and-structure",
+    "emotional-safety",
+    "problem-solving"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-empowering-child-voice",
+  "title": "Empowering Your Child’s Voice",
+  "track": "parenting-skills",
+  "topics": [
+    "emotional-literacy",
+    "empathy",
+    "identity-development",
+    "behaviour-as-communication",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-coaching-independence",
+  "title": "Coaching Independence & Responsibility",
+  "track": "parenting-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "routines-and-structure",
+    "problem-solving",
+    "coping-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "parenting-sustaining-connection",
+  "title": "Sustaining Connection as Children Grow",
+  "track": "parenting-skills",
+  "topics": [
+    "relationship-patterns",
+    "empathy",
+    "active-listening",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-identity-foundations",
+  "title": "Foundations of Fatherhood Identity",
+  "track": "fatherhood-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "emotional-literacy",
+    "relationship-patterns",
+    "support-networks"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-understanding-your-role",
+  "title": "Understanding Your Role as a Father",
+  "track": "fatherhood-skills",
+  "topics": [
+    "child-development",
+    "empathy",
+    "behaviour-as-communication",
+    "identity-development",
+    "routines-and-structure"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-emotional-connection",
+  "title": "Building Emotional Connection With Your Child",
+  "track": "fatherhood-skills",
+  "topics": [
+    "emotional-literacy",
+    "active-listening",
+    "empathy",
+    "relationship-patterns",
+    "emotional-safety"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-positive-presence",
+  "title": "Becoming a Positive & Consistent Presence",
+  "track": "fatherhood-skills",
+  "topics": [
+    "routines-and-structure",
+    "identity-development",
+    "behaviour-guidance",
+    "stress-management",
+    "support-networks"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-communication-basics",
+  "title": "Father‑Child Communication Basics",
+  "track": "fatherhood-skills",
+  "topics": [
+    "active-listening",
+    "i-messages",
+    "communication-roadblocks",
+    "emotional-safety",
+    "behaviour-as-communication"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-emotional-regulation",
+  "title": "Emotional Regulation for Fathers",
+  "track": "fatherhood-skills",
+  "topics": [
+    "emotional-regulation",
+    "grounding-skills",
+    "stress-management",
+    "identity-development",
+    "coping-skills"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-understanding-child-behaviour",
+  "title": "Understanding Child Behaviour Through a Fatherhood Lens",
+  "track": "fatherhood-skills",
+  "topics": [
+    "behaviour-as-communication",
+    "child-development",
+    "fear-patterns",
+    "problem-solving",
+    "empathy"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-positive-discipline",
+  "title": "Positive Discipline for Fathers",
+  "track": "fatherhood-skills",
+  "topics": [
+    "behaviour-guidance",
+    "routines-and-structure",
+    "communication-roadblocks",
+    "emotional-safety",
+    "identity-development"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-strengthening-bonds",
+  "title": "Strengthening Father‑Child Bonds",
+  "track": "fatherhood-skills",
+  "topics": [
+    "relationship-patterns",
+    "active-listening",
+    "empathy",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-consistency-and-presence",
+  "title": "Consistency & Presence in Fatherhood",
+  "track": "fatherhood-skills",
+  "topics": [
+    "routines-and-structure",
+    "self-worth",
+    "identity-development",
+    "stress-management",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-conflict-de-escalation",
+  "title": "Conflict De‑Escalation for Fathers",
+  "track": "fatherhood-skills",
+  "topics": [
+    "conflict-de-escalation",
+    "emotional-regulation",
+    "communication-roadblocks",
+    "grounding-skills",
+    "behaviour-as-communication"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-supporting-child-emotional-growth",
+  "title": "Supporting Your Child’s Emotional Growth",
+  "track": "fatherhood-skills",
+  "topics": [
+    "emotional-literacy",
+    "empathy",
+    "child-development",
+    "behaviour-as-communication",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-conflict-de-escalation",
+  "title": "De‑Escalating Conflict as a Father",
+  "track": "fatherhood-skills",
+  "topics": [
+    "conflict-de-escalation",
+    "communication-roadblocks",
+    "emotional-regulation",
+    "grounding-skills",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-healing-patterns",
+  "title": "Healing Intergenerational Fatherhood Patterns",
+  "track": "fatherhood-skills",
+  "topics": [
+    "identity-development",
+    "self-sabotage",
+    "fear-patterns",
+    "relationship-patterns",
+    "emotional-literacy"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-raising-resilient-kids",
+  "title": "Raising Resilient Children as a Father",
+  "track": "fatherhood-skills",
+  "topics": [
+    "coping-skills",
+    "stress-management",
+    "child-development",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-guiding-through-challenges",
+  "title": "Guiding Children Through Challenges",
+  "track": "fatherhood-skills",
+  "topics": [
+    "behaviour-guidance",
+    "emotional-safety",
+    "problem-solving",
+    "child-development",
+    "empathy"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-strengthening-identity",
+  "title": "Strengthening Your Identity as a Father",
+  "track": "fatherhood-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "emotional-literacy",
+    "relationship-patterns",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-long-term-stability",
+  "title": "Long‑Term Stability in Fatherhood",
+  "track": "fatherhood-skills",
+  "topics": [
+    "routines-and-structure",
+    "relapse-prevention",
+    "identity-development",
+    "stress-management",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-healthy-boundaries",
+  "title": "Healthy Boundaries in Fatherhood",
+  "track": "fatherhood-skills",
+  "topics": [
+    "boundaries",
+    "communication-roadblocks",
+    "identity-development",
+    "emotional-safety",
+    "relationship-patterns"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-empowering-child-voice",
+  "title": "Empowering Your Child’s Voice as a Father",
+  "track": "fatherhood-skills",
+  "topics": [
+    "emotional-literacy",
+    "empathy",
+    "identity-development",
+    "behaviour-as-communication",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-coaching-independence",
+  "title": "Coaching Independence & Responsibility",
+  "track": "fatherhood-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "routines-and-structure",
+    "problem-solving",
+    "coping-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "fatherhood-sustaining-connection",
+  "title": "Sustaining Father‑Child Connection Over Time",
+  "track": "fatherhood-skills",
+  "topics": [
+    "relationship-patterns",
+    "empathy",
+    "active-listening",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-emotional-safety-planning",
+  "title": "Emotional Safety Planning in Co‑Parenting",
+  "track": "co-parenting-skills",
+  "topics": [
+    "emotional-safety",
+    "stress-management",
+    "grounding-skills",
+    "communication-roadblocks",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-repair-conversations",
+  "title": "Repair Conversations Between Co‑Parents",
+  "track": "co-parenting-skills",
+  "topics": [
+    "repair-conversations",
+    "active-listening",
+    "i-messages",
+    "empathy",
+    "communication-roadblocks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-child-emotional-needs",
+  "title": "Understanding Your Child’s Emotional Needs",
+  "track": "co-parenting-skills",
+  "topics": [
+    "child-development",
+    "emotional-literacy",
+    "behaviour-as-communication",
+    "empathy",
+    "identity-development"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-boundaries-in-practice",
+  "title": "Putting Co‑Parenting Boundaries Into Practice",
+  "track": "co-parenting-skills",
+  "topics": [
+    "boundaries",
+    "identity-development",
+    "relationship-patterns",
+    "routines-and-structure",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-reducing-child-exposure",
+  "title": "Reducing Children’s Exposure to Conflict",
+  "track": "co-parenting-skills",
+  "topics": [
+    "emotional-safety",
+    "conflict-de-escalation",
+    "communication-roadblocks",
+    "stress-management",
+    "behaviour-as-communication"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-conflict-de-escalation",
+  "title": "De‑Escalating Co‑Parenting Conflict",
+  "track": "co-parenting-skills",
+  "topics": [
+    "conflict-de-escalation",
+    "emotional-regulation",
+    "grounding-skills",
+    "repair-conversations",
+    "communication-roadblocks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-child-led-communication",
+  "title": "Child‑Led Communication Approaches",
+  "track": "co-parenting-skills",
+  "topics": [
+    "child-development",
+    "emotional-literacy",
+    "behaviour-as-communication",
+    "empathy",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-managing-setbacks",
+  "title": "Managing Setbacks in Co‑Parenting",
+  "track": "co-parenting-skills",
+  "topics": [
+    "relapse-prevention",
+    "stress-management",
+    "problem-solving",
+    "avoidance-behaviours",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-aligning-parenting-styles",
+  "title": "Aligning Parenting Styles Across Households",
+  "track": "co-parenting-skills",
+  "topics": [
+    "routines-and-structure",
+    "behaviour-guidance",
+    "communication-roadblocks",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-empathy-in-action",
+  "title": "Practicing Empathy in Co‑Parenting",
+  "track": "co-parenting-skills",
+  "topics": [
+    "empathy",
+    "emotional-literacy",
+    "relationship-patterns",
+    "active-listening",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-trauma-informed-approach",
+  "title": "Trauma‑Informed Co‑Parenting",
+  "track": "co-parenting-skills",
+  "topics": [
+    "trauma-triggers",
+    "emotional-flooding",
+    "grounding-skills",
+    "child-development",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-rebuilding-trust",
+  "title": "Rebuilding Trust Between Co‑Parents",
+  "track": "co-parenting-skills",
+  "topics": [
+    "relationship-patterns",
+    "repair-conversations",
+    "empathy",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-integrating-new-partners",
+  "title": "Integrating New Partners Into Co‑Parenting",
+  "track": "co-parenting-skills",
+  "topics": [
+    "boundaries",
+    "identity-development",
+    "relationship-patterns",
+    "emotional-safety",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-child-voice-empowerment",
+  "title": "Empowering the Child’s Voice in Co‑Parenting",
+  "track": "co-parenting-skills",
+  "topics": [
+    "child-development",
+    "emotional-literacy",
+    "empathy",
+    "behaviour-as-communication",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-long-term-stability",
+  "title": "Long‑Term Co‑Parenting Stability",
+  "track": "co-parenting-skills",
+  "topics": [
+    "routines-and-structure",
+    "relapse-prevention",
+    "identity-development",
+    "stress-management",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-healthy-boundaries",
+  "title": "Maintaining Healthy Boundaries Over Time",
+  "track": "co-parenting-skills",
+  "topics": [
+    "boundaries",
+    "communication-roadblocks",
+    "identity-development",
+    "emotional-safety",
+    "relationship-patterns"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-shared-decision-making",
+  "title": "Shared Decision‑Making in Co‑Parenting",
+  "track": "co-parenting-skills",
+  "topics": [
+    "problem-solving",
+    "active-listening",
+    "i-messages",
+    "routines-and-structure",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-coaching-independence",
+  "title": "Co‑Parenting Through Independence & Growth",
+  "track": "co-parenting-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "child-development",
+    "routines-and-structure",
+    "coping-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-sustaining-connection",
+  "title": "Sustaining Connection Across Two Homes",
+  "track": "co-parenting-skills",
+  "topics": [
+    "relationship-patterns",
+    "empathy",
+    "active-listening",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "coparenting-integrated-family-systems",
+  "title": "Integrated Family Systems in Co‑Parenting",
+  "track": "co-parenting-skills",
+  "topics": [
+    "relationship-patterns",
+    "identity-development",
+    "emotional-safety",
+    "support-networks",
+    "routines-and-structure"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-emotional-safety-planning",
+  "title": "Emotional Safety Planning",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "emotional-safety",
+    "stress-management",
+    "grounding-skills",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-recognising-emotions",
+  "title": "Recognising Emotions in Real Time",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "emotional-literacy",
+    "mindfulness",
+    "self-reflection",
+    "emotional-regulation",
+    "behaviour-as-communication"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-understanding-triggers",
+  "title": "Understanding Emotional Triggers",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "triggers-and-warning-signs",
+    "emotional-flooding",
+    "grounding-skills",
+    "self-reflection",
+    "identity-development"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-empathy-building",
+  "title": "Building Empathy",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "empathy",
+    "active-listening",
+    "emotional-literacy",
+    "relationship-patterns",
+    "emotional-safety"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-healthy-expression",
+  "title": "Healthy Emotional Expression in Relationships",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "i-messages",
+    "communication-roadblocks",
+    "identity-development",
+    "emotional-regulation",
+    "repair-conversations"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-conflict-awareness",
+  "title": "Emotional Awareness During Conflict",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "conflict-de-escalation",
+    "emotional-flooding",
+    "grounding-skills",
+    "communication-roadblocks",
+    "empathy"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-pattern-recognition",
+  "title": "Recognising Emotional Patterns",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "self-sabotage",
+    "fear-patterns",
+    "identity-development",
+    "self-reflection",
+    "problem-solving"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-regulation-skills",
+  "title": "Advanced Emotional Regulation Skills",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "emotional-regulation",
+    "grounding-skills",
+    "stress-management",
+    "coping-skills",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-emotional-boundaries",
+  "title": "Emotional Boundaries & Self‑Protection",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "boundaries",
+    "identity-development",
+    "emotional-safety",
+    "relationship-patterns",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-emotional-communication",
+  "title": "Communicating Emotions Effectively",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "i-messages",
+    "active-listening",
+    "communication-roadblocks",
+    "emotional-literacy",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-trauma-links",
+  "title": "Trauma & Emotional Literacy",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "trauma-triggers",
+    "emotional-flooding",
+    "grounding-skills",
+    "identity-development",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-repair-skills",
+  "title": "Repair Skills Through Emotional Insight",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "repair-conversations",
+    "empathy",
+    "emotional-literacy",
+    "communication-roadblocks",
+    "relationship-patterns"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-integrating-emotions",
+  "title": "Integrating Emotions Into Daily Life",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "self-reflection",
+    "identity-development",
+    "emotional-regulation",
+    "habit-loops",
+    "coping-skills"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-relational-impact",
+  "title": "Understanding Your Emotional Impact on Others",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "relationship-patterns",
+    "empathy",
+    "emotional-safety",
+    "communication-roadblocks",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-long-term-growth",
+  "title": "Long‑Term Emotional Growth",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "relapse-prevention",
+    "stress-management",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-emotional-resilience",
+  "title": "Building Emotional Resilience",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "coping-skills",
+    "stress-management",
+    "identity-development",
+    "emotional-literacy",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-emotional-leadership",
+  "title": "Emotional Leadership in Family Life",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "identity-development",
+    "relationship-patterns",
+    "empathy",
+    "emotional-safety",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-emotional-identity",
+  "title": "Strengthening Emotional Identity",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "emotional-literacy",
+    "self-reflection",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-emotional-connection",
+  "title": "Deepening Emotional Connection With Others",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "relationship-patterns",
+    "empathy",
+    "active-listening",
+    "identity-development",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "emotional-literacy-sustaining-emotional-health",
+  "title": "Sustaining Emotional Health Over Time",
+  "track": "emotional-literacy-skills",
+  "topics": [
+    "relapse-prevention",
+    "stress-management",
+    "identity-development",
+    "coping-skills",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-foundations",
+  "title": "Foundations of Healthy Communication",
+  "track": "communication-skills",
+  "topics": [
+    "active-listening",
+    "i-messages",
+    "communication-roadblocks",
+    "emotional-safety",
+    "relationship-patterns"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-understanding-miscommunication",
+  "title": "Understanding Miscommunication",
+  "track": "communication-skills",
+  "topics": [
+    "communication-roadblocks",
+    "emotional-literacy",
+    "identity-development",
+    "empathy",
+    "problem-solving"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-nonverbal-skills",
+  "title": "Non‑Verbal Communication Skills",
+  "track": "communication-skills",
+  "topics": [
+    "relationship-patterns",
+    "emotional-literacy",
+    "behaviour-as-communication",
+    "empathy",
+    "identity-development"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-emotional-safety",
+  "title": "Creating Emotional Safety in Conversations",
+  "track": "communication-skills",
+  "topics": [
+    "emotional-safety",
+    "stress-management",
+    "grounding-skills",
+    "active-listening",
+    "support-networks"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-basic-boundaries",
+  "title": "Basic Communication Boundaries",
+  "track": "communication-skills",
+  "topics": [
+    "boundaries",
+    "identity-development",
+    "communication-roadblocks",
+    "emotional-safety",
+    "relationship-patterns"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-assertive-communication",
+  "title": "Assertive Communication Skills",
+  "track": "communication-skills",
+  "topics": [
+    "i-messages",
+    "self-worth",
+    "identity-development",
+    "active-listening",
+    "boundaries"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-empathy-in-action",
+  "title": "Empathy in Communication",
+  "track": "communication-skills",
+  "topics": [
+    "empathy",
+    "emotional-literacy",
+    "relationship-patterns",
+    "active-listening",
+    "emotional-safety"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-managing-defensiveness",
+  "title": "Managing Defensiveness in Conversations",
+  "track": "communication-skills",
+  "topics": [
+    "avoidance-behaviours",
+    "fear-patterns",
+    "communication-roadblocks",
+    "emotional-regulation",
+    "grounding-skills"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-repair-basics",
+  "title": "Repairing Communication Breakdowns",
+  "track": "communication-skills",
+  "topics": [
+    "repair-conversations",
+    "emotional-literacy",
+    "active-listening",
+    "i-messages",
+    "relationship-patterns"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-child-led-communication",
+  "title": "Communicating Effectively With Children",
+  "track": "communication-skills",
+  "topics": [
+    "child-development",
+    "behaviour-as-communication",
+    "emotional-literacy",
+    "empathy",
+    "identity-development"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-conflict-de-escalation",
+  "title": "Communication During Conflict",
+  "track": "communication-skills",
+  "topics": [
+    "conflict-de-escalation",
+    "emotional-flooding",
+    "grounding-skills",
+    "repair-conversations",
+    "communication-roadblocks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-high-stress-conversations",
+  "title": "Managing High‑Stress Conversations",
+  "track": "communication-skills",
+  "topics": [
+    "stress-management",
+    "emotional-regulation",
+    "grounding-skills",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-pattern-recognition",
+  "title": "Recognising Communication Patterns",
+  "track": "communication-skills",
+  "topics": [
+    "relationship-patterns",
+    "self-sabotage",
+    "fear-patterns",
+    "identity-development",
+    "problem-solving"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-advanced-boundaries",
+  "title": "Advanced Boundary Setting",
+  "track": "communication-skills",
+  "topics": [
+    "boundaries",
+    "identity-development",
+    "emotional-safety",
+    "communication-roadblocks",
+    "relationship-patterns"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-trauma-informed",
+  "title": "Trauma‑Informed Communication",
+  "track": "communication-skills",
+  "topics": [
+    "trauma-triggers",
+    "emotional-flooding",
+    "grounding-skills",
+    "empathy",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-repair-masterclass",
+  "title": "Mastering Repair Conversations",
+  "track": "communication-skills",
+  "topics": [
+    "repair-conversations",
+    "active-listening",
+    "i-messages",
+    "relationship-patterns",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-integrated-skills",
+  "title": "Integrating Communication Skills Into Daily Life",
+  "track": "communication-skills",
+  "topics": [
+    "habit-loops",
+    "identity-development",
+    "self-reflection",
+    "emotional-regulation",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-relational-impact",
+  "title": "Understanding Your Relational Communication Impact",
+  "track": "communication-skills",
+  "topics": [
+    "relationship-patterns",
+    "empathy",
+    "communication-roadblocks",
+    "identity-development",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-long-term-growth",
+  "title": "Long‑Term Communication Growth",
+  "track": "communication-skills",
+  "topics": [
+    "relapse-prevention",
+    "stress-management",
+    "identity-development",
+    "self-worth",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "communication-sustaining-healthy-communication",
+  "title": "Sustaining Healthy Communication Over Time",
+  "track": "communication-skills",
+  "topics": [
+    "relationship-patterns",
+    "active-listening",
+    "emotional-safety",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-foundations",
+  "title": "Foundations of DFV Recovery",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "emotional-safety",
+    "identity-development",
+    "trauma-triggers",
+    "support-networks",
+    "self-reflection"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-understanding-harm",
+  "title": "Understanding Harm & Its Impact",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "accountability",
+    "empathy",
+    "relationship-patterns",
+    "emotional-literacy",
+    "repair-conversations"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-emotional-regulation-basics",
+  "title": "Emotional Regulation Basics for Recovery",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "emotional-regulation",
+    "grounding-skills",
+    "stress-management",
+    "coping-skills",
+    "triggers-and-warning-signs"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-safe-relationship-principles",
+  "title": "Principles of Safe Relationships",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "emotional-safety",
+    "boundaries",
+    "identity-development",
+    "relationship-patterns",
+    "support-networks"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-trauma-awareness",
+  "title": "Trauma Awareness & Emotional Responses",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "trauma-triggers",
+    "emotional-flooding",
+    "shutdown-patterns",
+    "grounding-skills",
+    "self-reflection"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-empathy-building",
+  "title": "Building Empathy in Recovery",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "empathy",
+    "emotional-literacy",
+    "active-listening",
+    "relationship-patterns",
+    "identity-development"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-pattern-recognition",
+  "title": "Recognising Harmful Behaviour Patterns",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "self-sabotage",
+    "fear-patterns",
+    "avoidance-behaviours",
+    "identity-development",
+    "problem-solving"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-safe-boundaries",
+  "title": "Building Safe Boundaries in Recovery",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "boundaries",
+    "identity-development",
+    "emotional-safety",
+    "relationship-patterns",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-repair-skills",
+  "title": "Repair Skills for DFV Recovery",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "repair-conversations",
+    "i-messages",
+    "active-listening",
+    "communication-roadblocks",
+    "emotional-literacy"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-emotional-safety-planning",
+  "title": "Emotional Safety Planning in Recovery",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "emotional-safety",
+    "stress-management",
+    "grounding-skills",
+    "support-networks",
+    "triggers-and-warning-signs"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-trauma-informed-skills",
+  "title": "Trauma‑Informed Recovery Skills",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "trauma-triggers",
+    "emotional-flooding",
+    "grounding-skills",
+    "identity-development",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-conflict-de-escalation",
+  "title": "Conflict De‑Escalation in Recovery",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "conflict-de-escalation",
+    "communication-roadblocks",
+    "emotional-regulation",
+    "grounding-skills",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-integrating-insight",
+  "title": "Integrating Insight Into Behaviour Change",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "self-reflection",
+    "identity-development",
+    "habit-loops",
+    "problem-solving",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-relational-impact",
+  "title": "Understanding Your Relational Impact",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "relationship-patterns",
+    "empathy",
+    "emotional-safety",
+    "communication-roadblocks",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-long-term-stability",
+  "title": "Long‑Term Stability in DFV Recovery",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "relapse-prevention",
+    "stress-management",
+    "identity-development",
+    "routines-and-structure",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-emotional-resilience",
+  "title": "Building Emotional Resilience in Recovery",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "coping-skills",
+    "stress-management",
+    "identity-development",
+    "emotional-literacy",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-healthy-relationships",
+  "title": "Building Healthy Post‑DFV Relationships",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "relationship-patterns",
+    "boundaries",
+    "emotional-safety",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-rebuilding-identity",
+  "title": "Rebuilding Identity After Harm",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "self-reflection",
+    "emotional-literacy",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-integrated-family-healing",
+  "title": "Integrated Family Healing Approaches",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "relationship-patterns",
+    "child-development",
+    "emotional-safety",
+    "support-networks",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "dfv-recovery-sustaining-change",
+  "title": "Sustaining Change After DFV Recovery",
+  "track": "dfv-recovery-skills",
+  "topics": [
+    "relapse-prevention",
+    "habit-loops",
+    "identity-development",
+    "stress-management",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-foundations",
+  "title": "Foundations of Mental Health",
+  "track": "mental-health-skills",
+  "topics": [
+    "emotional-literacy",
+    "identity-development",
+    "stress-management",
+    "self-reflection",
+    "support-networks"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-understanding-symptoms",
+  "title": "Understanding Mental Health Symptoms",
+  "track": "mental-health-skills",
+  "topics": [
+    "emotional-regulation",
+    "triggers-and-warning-signs",
+    "behaviour-as-communication",
+    "identity-development",
+    "grounding-skills"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-stress-basics",
+  "title": "Stress & Overwhelm Basics",
+  "track": "mental-health-skills",
+  "topics": [
+    "stress-management",
+    "coping-skills",
+    "grounding-skills",
+    "emotional-literacy",
+    "self-reflection"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-anxiety-basics",
+  "title": "Understanding Anxiety Responses",
+  "track": "mental-health-skills",
+  "topics": [
+    "fear-patterns",
+    "emotional-flooding",
+    "grounding-skills",
+    "identity-development",
+    "coping-skills"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-depression-basics",
+  "title": "Understanding Low Mood & Depression",
+  "track": "mental-health-skills",
+  "topics": [
+    "shutdown-patterns",
+    "avoidance-behaviours",
+    "self-worth",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-emotional-regulation",
+  "title": "Emotional Regulation Skills",
+  "track": "mental-health-skills",
+  "topics": [
+    "emotional-regulation",
+    "grounding-skills",
+    "stress-management",
+    "coping-skills",
+    "identity-development"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-pattern-recognition",
+  "title": "Recognising Mental Health Patterns",
+  "track": "mental-health-skills",
+  "topics": [
+    "self-sabotage",
+    "fear-patterns",
+    "avoidance-behaviours",
+    "identity-development",
+    "problem-solving"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-boundaries",
+  "title": "Boundaries for Mental Health",
+  "track": "mental-health-skills",
+  "topics": [
+    "boundaries",
+    "identity-development",
+    "emotional-safety",
+    "relationship-patterns",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-self-care",
+  "title": "Self‑Care That Actually Works",
+  "track": "mental-health-skills",
+  "topics": [
+    "stress-management",
+    "coping-skills",
+    "identity-development",
+    "self-worth",
+    "routines-and-structure"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-emotional-safety-planning",
+  "title": "Emotional Safety Planning",
+  "track": "mental-health-skills",
+  "topics": [
+    "emotional-safety",
+    "triggers-and-warning-signs",
+    "grounding-skills",
+    "stress-management",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-trauma-links",
+  "title": "Trauma & Mental Health",
+  "track": "mental-health-skills",
+  "topics": [
+    "trauma-triggers",
+    "emotional-flooding",
+    "shutdown-patterns",
+    "grounding-skills",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-conflict-impact",
+  "title": "How Conflict Impacts Mental Health",
+  "track": "mental-health-skills",
+  "topics": [
+    "conflict-de-escalation",
+    "communication-roadblocks",
+    "emotional-regulation",
+    "stress-management",
+    "relationship-patterns"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-integrating-insight",
+  "title": "Integrating Insight Into Daily Life",
+  "track": "mental-health-skills",
+  "topics": [
+    "self-reflection",
+    "identity-development",
+    "habit-loops",
+    "problem-solving",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-relational-impact",
+  "title": "Understanding Your Mental Health Impact on Others",
+  "track": "mental-health-skills",
+  "topics": [
+    "relationship-patterns",
+    "empathy",
+    "communication-roadblocks",
+    "identity-development",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-long-term-stability",
+  "title": "Long‑Term Mental Health Stability",
+  "track": "mental-health-skills",
+  "topics": [
+    "relapse-prevention",
+    "stress-management",
+    "identity-development",
+    "routines-and-structure",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-resilience",
+  "title": "Building Mental Health Resilience",
+  "track": "mental-health-skills",
+  "topics": [
+    "coping-skills",
+    "stress-management",
+    "identity-development",
+    "self-worth",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-healthy-relationships",
+  "title": "Healthy Relationships & Mental Health",
+  "track": "mental-health-skills",
+  "topics": [
+    "relationship-patterns",
+    "boundaries",
+    "emotional-safety",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-rebuilding-identity",
+  "title": "Rebuilding Identity Through Mental Health Recovery",
+  "track": "mental-health-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "self-reflection",
+    "emotional-literacy",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-integrated-family-health",
+  "title": "Integrated Family Mental Health",
+  "track": "mental-health-skills",
+  "topics": [
+    "relationship-patterns",
+    "child-development",
+    "emotional-safety",
+    "support-networks",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "mh-sustaining-change",
+  "title": "Sustaining Mental Health Change",
+  "track": "mental-health-skills",
+  "topics": [
+    "relapse-prevention",
+    "habit-loops",
+    "identity-development",
+    "stress-management",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-foundations",
+  "title": "Foundations of Alcohol & Other Drugs",
+  "track": "aod-skills",
+  "topics": [
+    "behaviour-as-communication",
+    "identity-development",
+    "stress-management",
+    "self-reflection",
+    "support-networks"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-understanding-dependence",
+  "title": "Understanding Dependence & Cravings",
+  "track": "aod-skills",
+  "topics": [
+    "triggers-and-warning-signs",
+    "habit-loops",
+    "emotional-regulation",
+    "coping-skills",
+    "identity-development"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-impact-on-relationships",
+  "title": "AOD Impact on Relationships",
+  "track": "aod-skills",
+  "topics": [
+    "relationship-patterns",
+    "emotional-safety",
+    "communication-roadblocks",
+    "empathy",
+    "support-networks"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-emotional-regulation-basics",
+  "title": "Emotional Regulation in AOD Recovery",
+  "track": "aod-skills",
+  "topics": [
+    "emotional-regulation",
+    "grounding-skills",
+    "stress-management",
+    "coping-skills",
+    "identity-development"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-understanding-triggers",
+  "title": "Understanding AOD Triggers",
+  "track": "aod-skills",
+  "topics": [
+    "triggers-and-warning-signs",
+    "fear-patterns",
+    "avoidance-behaviours",
+    "habit-loops",
+    "self-reflection"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-pattern-recognition",
+  "title": "Recognising AOD Behaviour Patterns",
+  "track": "aod-skills",
+  "topics": [
+    "self-sabotage",
+    "fear-patterns",
+    "avoidance-behaviours",
+    "identity-development",
+    "problem-solving"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-harm-minimisation",
+  "title": "Harm Minimisation Strategies",
+  "track": "aod-skills",
+  "topics": [
+    "emotional-safety",
+    "stress-management",
+    "support-networks",
+    "routines-and-structure",
+    "identity-development"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-repair-skills",
+  "title": "Repairing Relationships After AOD Harm",
+  "track": "aod-skills",
+  "topics": [
+    "repair-conversations",
+    "active-listening",
+    "i-messages",
+    "empathy",
+    "relationship-patterns"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-boundaries",
+  "title": "Boundaries in AOD Recovery",
+  "track": "aod-skills",
+  "topics": [
+    "boundaries",
+    "identity-development",
+    "emotional-safety",
+    "relationship-patterns",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-emotional-safety-planning",
+  "title": "Emotional Safety Planning for AOD Recovery",
+  "track": "aod-skills",
+  "topics": [
+    "emotional-safety",
+    "grounding-skills",
+    "stress-management",
+    "support-networks",
+    "triggers-and-warning-signs"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-trauma-links",
+  "title": "Trauma Links to AOD Use",
+  "track": "aod-skills",
+  "topics": [
+    "trauma-triggers",
+    "emotional-flooding",
+    "shutdown-patterns",
+    "grounding-skills",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-conflict-de-escalation",
+  "title": "Conflict De‑Escalation in AOD Recovery",
+  "track": "aod-skills",
+  "topics": [
+    "conflict-de-escalation",
+    "communication-roadblocks",
+    "emotional-regulation",
+    "grounding-skills",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-integrating-insight",
+  "title": "Integrating Insight Into AOD Behaviour Change",
+  "track": "aod-skills",
+  "topics": [
+    "self-reflection",
+    "identity-development",
+    "habit-loops",
+    "problem-solving",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-relational-impact",
+  "title": "Understanding Your AOD Impact on Others",
+  "track": "aod-skills",
+  "topics": [
+    "relationship-patterns",
+    "empathy",
+    "communication-roadblocks",
+    "identity-development",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-long-term-stability",
+  "title": "Long‑Term AOD Stability",
+  "track": "aod-skills",
+  "topics": [
+    "relapse-prevention",
+    "stress-management",
+    "identity-development",
+    "routines-and-structure",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-resilience",
+  "title": "Building Resilience in AOD Recovery",
+  "track": "aod-skills",
+  "topics": [
+    "coping-skills",
+    "stress-management",
+    "identity-development",
+    "self-worth",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-healthy-relationships",
+  "title": "Healthy Relationships in AOD Recovery",
+  "track": "aod-skills",
+  "topics": [
+    "relationship-patterns",
+    "boundaries",
+    "emotional-safety",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-rebuilding-identity",
+  "title": "Rebuilding Identity After AOD Harm",
+  "track": "aod-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "self-reflection",
+    "emotional-literacy",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-integrated-family-healing",
+  "title": "Integrated Family Healing in AOD Recovery",
+  "track": "aod-skills",
+  "topics": [
+    "relationship-patterns",
+    "child-development",
+    "emotional-safety",
+    "support-networks",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "aod-sustaining-change",
+  "title": "Sustaining AOD Recovery Over Time",
+  "track": "aod-skills",
+  "topics": [
+    "relapse-prevention",
+    "habit-loops",
+    "identity-development",
+    "stress-management",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-foundations",
+  "title": "Foundations of Trauma Understanding",
+  "track": "trauma-skills",
+  "topics": [
+    "trauma-triggers",
+    "emotional-flooding",
+    "shutdown-patterns",
+    "identity-development",
+    "emotional-safety"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-nervous-system-basics",
+  "title": "Nervous System Basics in Trauma",
+  "track": "trauma-skills",
+  "topics": [
+    "hyperarousal",
+    "shutdown-patterns",
+    "grounding-skills",
+    "stress-management",
+    "self-reflection"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-emotional-awareness",
+  "title": "Emotional Awareness in Trauma Recovery",
+  "track": "trauma-skills",
+  "topics": [
+    "emotional-literacy",
+    "emotional-regulation",
+    "grounding-skills",
+    "identity-development",
+    "behaviour-as-communication"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-safety-basics",
+  "title": "Emotional & Physical Safety Basics",
+  "track": "trauma-skills",
+  "topics": [
+    "emotional-safety",
+    "stress-management",
+    "support-networks",
+    "boundaries",
+    "identity-development"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-understanding-triggers",
+  "title": "Understanding Trauma Triggers",
+  "track": "trauma-skills",
+  "topics": [
+    "triggers-and-warning-signs",
+    "emotional-flooding",
+    "grounding-skills",
+    "fear-patterns",
+    "self-reflection"
+  ],
+  "difficulty": "beginner",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-pattern-recognition",
+  "title": "Recognising Trauma Patterns",
+  "track": "trauma-skills",
+  "topics": [
+    "self-sabotage",
+    "fear-patterns",
+    "avoidance-behaviours",
+    "identity-development",
+    "problem-solving"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-emotional-regulation",
+  "title": "Emotional Regulation for Trauma Recovery",
+  "track": "trauma-skills",
+  "topics": [
+    "emotional-regulation",
+    "grounding-skills",
+    "stress-management",
+    "coping-skills",
+    "identity-development"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-repair-skills",
+  "title": "Repair Skills in Trauma Recovery",
+  "track": "trauma-skills",
+  "topics": [
+    "repair-conversations",
+    "active-listening",
+    "i-messages",
+    "empathy",
+    "relationship-patterns"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-boundaries",
+  "title": "Building Trauma‑Safe Boundaries",
+  "track": "trauma-skills",
+  "topics": [
+    "boundaries",
+    "identity-development",
+    "emotional-safety",
+    "relationship-patterns",
+    "support-networks"
+  ],
+  "difficulty": "intermediate",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-trauma-informed-living",
+  "title": "Trauma‑Informed Living",
+  "track": "trauma-skills",
+  "topics": [
+    "trauma-triggers",
+    "emotional-flooding",
+    "grounding-skills",
+    "identity-development",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-conflict-de-escalation",
+  "title": "Conflict De‑Escalation for Trauma Survivors",
+  "track": "trauma-skills",
+  "topics": [
+    "conflict-de-escalation",
+    "communication-roadblocks",
+    "emotional-regulation",
+    "grounding-skills",
+    "repair-conversations"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-integrating-insight",
+  "title": "Integrating Insight Into Trauma Recovery",
+  "track": "trauma-skills",
+  "topics": [
+    "self-reflection",
+    "identity-development",
+    "habit-loops",
+    "problem-solving",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-relational-impact",
+  "title": "Understanding Your Trauma Impact on Others",
+  "track": "trauma-skills",
+  "topics": [
+    "relationship-patterns",
+    "empathy",
+    "communication-roadblocks",
+    "identity-development",
+    "emotional-safety"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-long-term-stability",
+  "title": "Long‑Term Trauma Stability",
+  "track": "trauma-skills",
+  "topics": [
+    "relapse-prevention",
+    "stress-management",
+    "identity-development",
+    "routines-and-structure",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-resilience",
+  "title": "Building Trauma Resilience",
+  "track": "trauma-skills",
+  "topics": [
+    "coping-skills",
+    "stress-management",
+    "identity-development",
+    "self-worth",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-healthy-relationships",
+  "title": "Healthy Relationships After Trauma",
+  "track": "trauma-skills",
+  "topics": [
+    "relationship-patterns",
+    "boundaries",
+    "emotional-safety",
+    "identity-development",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-rebuilding-identity",
+  "title": "Rebuilding Identity After Trauma",
+  "track": "trauma-skills",
+  "topics": [
+    "identity-development",
+    "self-worth",
+    "self-reflection",
+    "emotional-literacy",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-integrated-family-healing",
+  "title": "Integrated Family Trauma Healing",
+  "track": "trauma-skills",
+  "topics": [
+    "relationship-patterns",
+    "child-development",
+    "emotional-safety",
+    "support-networks",
+    "identity-development"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+},
+{
+  "courseId": "trauma-sustaining-change",
+  "title": "Sustaining Trauma Recovery Over Time",
+  "track": "trauma-skills",
+  "topics": [
+    "relapse-prevention",
+    "habit-loops",
+    "identity-development",
+    "stress-management",
+    "support-networks"
+  ],
+  "difficulty": "advanced",
+  "duration": "4-6 hours"
+}
+
+]
+
+

@@ -1,0 +1,25 @@
+{
+  "title": "Behaviour Change",
+  "description": "Explores how behaviour change works, what supports it, and how to build sustainable new habits.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand the stages of behaviour change.",
+    "Recognise barriers to change.",
+    "Apply strategies to build new habits."
+  ],
+  "modules": [
+    "Understanding Change",
+    "Building New Behaviour"
+  ],
+  "metadata": {
+    "stream": "dfv-pwuv",
+    "category": "Behaviour Change",
+    "tags": [
+      "change",
+      "habits",
+      "growth"
+    ]
+  },
+  "caseworkerSummary": "Supports participants to understand the process of change and build new, safer behaviours."
+}

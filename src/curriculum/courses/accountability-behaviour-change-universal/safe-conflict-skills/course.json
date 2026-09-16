@@ -1,0 +1,25 @@
+{
+  "id": "safe-conflict-skills",
+  "title": "Safe Conflict Skills",
+  "description": "This course teaches participants how to manage conflict safely, respectfully, and without escalation.",
+  "learningOutcomes": [
+    "Understand the difference between safe and unsafe conflict.",
+    "Recognise escalation patterns during conflict.",
+    "Learn skills for calm, respectful disagreement.",
+    "Develop long-term conflict safety habits."
+  ],
+  "modules": [
+    {
+      "title": "Understanding Conflict",
+      "content": "Explores healthy vs harmful conflict."
+    },
+    {
+      "title": "Escalation Awareness",
+      "content": "Identifies patterns that increase risk."
+    },
+    {
+      "title": "Safe Conflict Tools",
+      "content": "Provides strategies for calm, respectful communication."
+    }
+  ]
+}

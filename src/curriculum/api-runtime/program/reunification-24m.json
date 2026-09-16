@@ -1,0 +1,641 @@
+{
+  "id": "reunification-24m",
+  "stages": [
+    {
+      "id": "stage-01",
+      "weeks": [
+        {
+          "id": "week-01",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-02",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-03",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-04",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-05",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-06",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-07",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-08",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        }
+      ]
+    },
+    {
+      "id": "stage-02",
+      "weeks": [
+        {
+          "id": "week-01",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-02",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-03",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-04",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-05",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-06",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-07",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-08",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        }
+      ]
+    },
+    {
+      "id": "stage-03",
+      "weeks": [
+        {
+          "id": "week-01",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-02",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-03",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-04",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-05",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-06",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-07",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-08",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        }
+      ]
+    },
+    {
+      "id": "stage-04",
+      "weeks": [
+        {
+          "id": "week-01",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-02",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-03",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-04",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-05",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-06",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-07",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-08",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        }
+      ]
+    },
+    {
+      "id": "stage-05",
+      "weeks": [
+        {
+          "id": "week-01",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-02",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-03",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-04",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-05",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-06",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-07",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-08",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        }
+      ]
+    },
+    {
+      "id": "stage-06",
+      "weeks": [
+        {
+          "id": "week-01",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-02",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-03",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-04",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-05",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-06",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-07",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-08",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        }
+      ]
+    },
+    {
+      "id": "stage-07",
+      "weeks": [
+        {
+          "id": "week-01",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-02",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-03",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-04",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-05",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-06",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-07",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-08",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        }
+      ]
+    },
+    {
+      "id": "stage-08",
+      "weeks": [
+        {
+          "id": "week-01",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-02",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-03",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-04",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-05",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-06",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-07",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-08",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        }
+      ]
+    },
+    {
+      "id": "stage-09",
+      "weeks": [
+        {
+          "id": "week-01",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-02",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-03",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-04",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-05",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-06",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-07",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-08",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        }
+      ]
+    },
+    {
+      "id": "stage-10",
+      "weeks": [
+        {
+          "id": "week-01",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-02",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-03",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-04",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-05",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-06",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-07",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-08",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        }
+      ]
+    },
+    {
+      "id": "stage-11",
+      "weeks": [
+        {
+          "id": "week-01",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-02",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-03",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-04",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-05",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-06",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-07",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-08",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        }
+      ]
+    },
+    {
+      "id": "stage-12",
+      "weeks": [
+        {
+          "id": "week-01",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-02",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-03",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-04",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-05",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-06",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-07",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        },
+        {
+          "id": "week-08",
+          "lessons": [],
+          "sectionLessons": [],
+          "courseLessons": []
+        }
+      ]
+    }
+  ]
+}

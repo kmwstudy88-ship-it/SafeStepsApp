@@ -1,0 +1,25 @@
+{
+  "title": "Longâ€‘Term Change",
+  "description": "Explores how to sustain behaviour change, prevent relapse, and build a longâ€‘term commitment to nonâ€‘violence.",
+  "estimatedTimeMinutes": 45,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Understand what supports longâ€‘term change.",
+    "Recognise risks for relapse.",
+    "Apply strategies to maintain change over time."
+  ],
+  "modules": [
+    "Sustaining Change",
+    "Preventing Relapse"
+  ],
+  "metadata": {
+    "stream": "dfv-pwuv",
+    "category": "Behaviour Change",
+    "tags": [
+      "change",
+      "relapse prevention",
+      "growth"
+    ]
+  },
+  "caseworkerSummary": "Supports participants to maintain longâ€‘term behaviour change and avoid relapse."
+}

@@ -1,0 +1,26 @@
+{
+  "id": "module-parenting-after-separation",
+  "title": "Parenting After Separation",
+  "moduleId": "parenting-after-separation",
+  "durationMinutes": 60,
+  "learningGoal": "Support parents to navigate separation while protecting children’s emotional wellbeing.",
+  "microLesson": "Separation is a major transition. Children cope best when parents avoid conflict, maintain routines, and provide reassurance. Keeping communication child-focused reduces stress and supports healing.",
+  "activity": "Write a reflection on one way you can reduce stress for your child during transitions between homes.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "separation",
+    "emotional-support"
+  ],
+  "resources": [
+    {
+      "title": "Post-Separation Parenting Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

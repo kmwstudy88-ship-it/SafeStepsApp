@@ -1,0 +1,26 @@
+{
+  "id": "module-bullying-and-peer-pressure",
+  "title": "Bullying and Peer Pressure",
+  "moduleId": "bullying-and-peer-pressure",
+  "durationMinutes": 60,
+  "learningGoal": "Support parents to recognise signs of bullying, understand peer pressure, and help children build confidence and safety strategies.",
+  "microLesson": "Bullying can be physical, verbal, social, or online. Children may hide bullying due to fear, shame, or not wanting to worry their parents. Warning signs include withdrawal, anxiety, school refusal, changes in sleep, or sudden behaviour shifts. Peer pressure can influence children to take risks, hide mistakes, or act against their values. Parents can help by listening without judgment, validating feelings, and teaching assertive communication. Strong parent–child connection is the best protection against bullying and negative peer influence.",
+  "activity": "Talk with your child about a time they felt pressured or uncomfortable with peers. Write a reflection on what they shared and how you supported them.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "school-safety",
+    "emotional-development"
+  ],
+  "resources": [
+    {
+      "title": "Bullying Prevention Toolkit",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

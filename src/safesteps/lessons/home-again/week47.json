@@ -1,0 +1,29 @@
+{
+  "week": 47,
+  "lessons": [
+    {
+      "id": "home-again-w47-l1",
+      "title": "Lesson 1",
+      "week": 47,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "home-again-w47-l2",
+      "title": "Lesson 2",
+      "week": 47,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "home-again-w47-l3",
+      "title": "Lesson 3",
+      "week": 47,
+      "content": "Lesson content goes here."
+    },
+    {
+      "id": "home-again-w47-l4",
+      "title": "Lesson 4",
+      "week": 47,
+      "content": "Lesson content goes here."
+    }
+  ]
+}

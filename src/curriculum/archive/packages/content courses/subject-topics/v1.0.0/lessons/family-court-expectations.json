@@ -1,0 +1,25 @@
+{
+  "id": "module-family-court-expectations",
+  "title": "Family Court Expectations",
+  "moduleId": "family-court-expectations",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand what the court expects regarding safety, communication, and child wellbeing.",
+  "microLesson": "Family courts prioritise the child’s best interests. This includes safety, stability, cooperation, and child‑focused communication. Parents who demonstrate insight, consistency, and emotional regulation show capacity for safe parenting.",
+  "activity": "Write a reflection on one court expectation you can meet more consistently.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "legal-awareness"
+  ],
+  "resources": [
+    {
+      "title": "Family Court Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

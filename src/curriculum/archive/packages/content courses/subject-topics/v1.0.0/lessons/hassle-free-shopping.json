@@ -1,0 +1,27 @@
+{
+  "id": "module-hassle-free-shopping",
+  "title": "Hassle-Free Shopping",
+  "moduleId": "hassle-free-shopping",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how to prevent and manage challenging behaviour during shopping trips.",
+  "microLesson": "Shopping can be overwhelming for children due to noise, waiting, and overstimulation. Behaviour issues often arise when children are bored, tired, or unsure of expectations. Preparing ahead—such as setting clear rules, offering small responsibilities, or bringing a quiet activity—can prevent problems. During the trip, praise positive behaviour and stay calm if challenges arise. Afterward, reflect on what worked well to build confidence for next time.",
+  "activity": "Before your next shopping trip, create a simple plan: one rule, one responsibility for your child, and one reward for positive behaviour. After the trip, write a short reflection on what worked.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "public-behaviour",
+    "behaviour-guidance"
+  ],
+  "resources": [
+    {
+      "title": "Shopping Behaviour Checklist",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

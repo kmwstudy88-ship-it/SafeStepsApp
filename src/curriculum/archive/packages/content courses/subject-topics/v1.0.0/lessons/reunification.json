@@ -1,0 +1,29 @@
+{
+  "id": "module-reunification",
+  "title": "Reunification",
+  "moduleId": "reunification",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents understand the reunification process and how to rebuild trust, safety, and connection with their child after separation or limited contact.",
+  "microLesson": "Reunification is a gradual process focused on rebuilding safety, trust, and emotional connection. Children may feel unsure, overwhelmed, or cautious when reconnecting after separation, even when they want the relationship to improve. Progress depends on the parent’s ability to stay calm, predictable, and child‑focused. Reunification requires patience, empathy, and consistency—children need to see that the parent can regulate emotions, respect boundaries, and follow through on commitments. Small moments of safety and connection build the foundation for long‑term healing.",
+  "activity": "Write a reflection describing one way you can support your child’s sense of safety during reunification (e.g., predictable routines, calm communication, following contact agreements, validating feelings).",
+  "evidenceTypes": [
+    "reflection",
+    "photo",
+    "document"
+  ],
+  "caseworkerFlags": [
+    "reunification",
+    "relationship-repair",
+    "child-safety"
+  ],
+  "resources": [
+    {
+      "title": "Reunification and Relationship Repair Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

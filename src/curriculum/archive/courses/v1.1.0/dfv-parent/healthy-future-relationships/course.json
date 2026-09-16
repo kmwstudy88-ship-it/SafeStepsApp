@@ -1,0 +1,25 @@
+{
+  "title": "Healthy Future Relationships",
+  "description": "Explores what healthy relationships look like and how parents can build safe, respectful connections in the future.",
+  "estimatedTimeMinutes": 40,
+  "difficultyLevel": "intermediate",
+  "learningOutcomes": [
+    "Recognise the qualities of healthy relationships.",
+    "Identify red flags and green flags.",
+    "Build confidence in future relationship choices."
+  ],
+  "modules": [
+    "Understanding Healthy Relationships",
+    "Building Safe Connections"
+  ],
+  "metadata": {
+    "stream": "dfv-parent",
+    "category": "Relationships",
+    "tags": [
+      "relationships",
+      "healing",
+      "future"
+    ]
+  },
+  "caseworkerSummary": "Helps parents understand healthy relationships and rebuild trust in future connections."
+}

@@ -1,0 +1,58 @@
+{
+  "id": "course_module_working_with_older_people",
+  "title": "Working with Older People",
+  "description": "Auto-generated course for module module_working_with_older_people",
+  "lessons": [
+    {
+      "id": "lesson_understanding_elder_abuse",
+      "title": "Understanding Elder Abuse",
+      "sections": [
+        {
+          "id": "section_lesson_understanding_elder_abuse_01"
+        },
+        {
+          "id": "section_lesson_understanding_elder_abuse_02"
+        },
+        {
+          "id": "section_lesson_understanding_elder_abuse_03"
+        },
+        {
+          "id": "section_lesson_understanding_elder_abuse_04"
+        },
+        {
+          "id": "section_lesson_understanding_elder_abuse_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_age_related_risks",
+      "title": "Age-Related Risks",
+      "sections": [
+        {
+          "id": "section_lesson_age_related_risks_01"
+        },
+        {
+          "id": "section_lesson_age_related_risks_02"
+        },
+        {
+          "id": "section_lesson_age_related_risks_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_supporting_older_people",
+      "title": "Supporting Older People",
+      "sections": [
+        {
+          "id": "section_lesson_supporting_older_people_01"
+        },
+        {
+          "id": "section_lesson_supporting_older_people_02"
+        },
+        {
+          "id": "section_lesson_supporting_older_people_03"
+        }
+      ]
+    }
+  ]
+}

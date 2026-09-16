@@ -1,0 +1,834 @@
+=== Check-CurriculumIntegrity.ps1 ===
+Scanning topics, modules, lessons, sections...
+Topics:   291
+Modules:  82
+Lessons:  293
+Sections: 0
+
+=== TOPIC CHECK ===
+[33;1mWARNING: [TOPIC] accountability-and-responsibility.json (accountability-and-responsibility) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] active-listening.json (active-listening) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] adolescent-behaviour-management.json (adolescent-behaviour-management) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] age-appropriate-behaviour.json (age-appropriate-behaviour) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] aggression-and-hitting.json (aggression-and-hitting) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] anger-in-children.json (anger-in-children) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] anxiety-in-children.json (anxiety-in-children) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] assertive-discipline.json (assertive-discipline) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] avoiding-communication-blocks.json (avoiding-communication-blocks) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] avoiding-frightening-behaviours.json (avoiding-frightening-behaviours) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] avoiding-loyalty-conflicts.json (avoiding-loyalty-conflicts) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] avoiding-shame-based-discipline.json (avoiding-shame-based-discipline) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] bedtime-routines.json (bedtime-routines) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] behaviour-as-communication.json (behaviour-as-communication) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] behaviour-description.json (behaviour-description) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] behaviour-guidance.json (behaviour-guidance) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] behaviour-management.json (behaviour-management) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] behaviour-reward-systems.json (behaviour-reward-systems) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] being-with-your-child.json (being-with-your-child) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] body-image-and-self-esteem.json (body-image-and-self-esteem) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] body-image-and-social-media.json (body-image-and-social-media) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] brain-development-and-nutrition.json (brain-development-and-nutrition) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] brain-development.json (brain-development) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] breaking-generational-cycles.json (breaking-generational-cycles) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] breastfeeding-basics.json (breastfeeding-basics) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] bullying-and-social-health.json (bullying-and-social-health) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] calm-follow-through.json (calm-follow-through) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] calming-the-nervous-system.json (calming-the-nervous-system) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] child-development-basics.json (child-development-basics) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] child-development-foundations.json (child-development-foundations) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] child-development-stages.json (child-development-stages) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] child-directed-play.json (child-directed-play) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] child-focused-communication.json (child-focused-communication) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] child-parent-negotiation.json (child-parent-negotiation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] child-protection-responsibilities.json (child-protection-responsibilities) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] childrenâs-experience-of-separation.json (childrenâs-experience-of-separation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] choices-and-control.json (choices-and-control) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] circle-of-security.json (circle-of-security) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] co-parenting-effectively.json (co-parenting-effectively) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] co-parenting.json (co-parenting) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] co-regulation-and-physical-health.json (co-regulation-and-physical-health) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] co-regulation-basics.json (co-regulation-basics) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] coercive-control-awareness.json (coercive-control-awareness) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] cognitive-development.json (cognitive-development) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] communicating-with-families.json (communicating-with-families) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] communication-boundaries.json (communication-boundaries) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] communication-roadblocks.json (communication-roadblocks) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] communication-without-conflict.json (communication-without-conflict) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] complex-trauma.json (complex-trauma) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] conflict-resolution.json (conflict-resolution) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] consistency-in-parenting.json (consistency-in-parenting) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] consistency-without-harshness.json (consistency-without-harshness) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] consistent-consequences.json (consistent-consequences) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] cooking-with-children.json (cooking-with-children) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] cooperative-co-parenting.json (cooperative-co-parenting) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] creating-calming-spaces.json (creating-calming-spaces) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] creating-emotional-safety.json (creating-emotional-safety) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] creating-physical-safety.json (creating-physical-safety) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] creating-safe-emotional-expression.json (creating-safe-emotional-expression) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] creating-sustainable-healthy-habits.json (creating-sustainable-healthy-habits) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] critical-periods.json (critical-periods) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] cultural-sensitivity.json (cultural-sensitivity) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] decision-making.json (decision-making) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] defiance-and-non-compliance.json (defiance-and-non-compliance) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] delayed-consequences.json (delayed-consequences) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] descriptive-commenting.json (descriptive-commenting) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] descriptive-praise.json (descriptive-praise) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] developing-good-routines.json (developing-good-routines) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] developmental-delays.json (developmental-delays) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] developmental-domains.json (developmental-domains) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] developmental-milestones.json (developmental-milestones) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] developmental-trauma.json (developmental-trauma) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] differentiating-healthy-vs-toxic-stress.json (differentiating-healthy-vs-toxic-stress) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] digital-safety.json (digital-safety) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] discipline-foundations.json (discipline-foundations) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] dissociation-in-children.json (dissociation-in-children) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] domestic-violence-exposure.json (domestic-violence-exposure) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] effective-commands.json (effective-commands) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] effective-discipline.json (effective-discipline) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] effective-limit-setting.json (effective-limit-setting) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] effective-parenting-under-pressure.json (effective-parenting-under-pressure) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] emotional-abuse-and-children.json (emotional-abuse-and-children) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] emotional-availability.json (emotional-availability) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] emotional-coaching.json (emotional-coaching) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] emotional-development.json (emotional-development) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] emotional-intelligence.json (emotional-intelligence) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] emotional-literacy.json (emotional-literacy) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] emotional-regulation.json (emotional-regulation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] emotional-safety-and-wellbeing.json (emotional-safety-and-wellbeing) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] emotional-security.json (emotional-security) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] emotional-validation.json (emotional-validation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] empathy-and-validation.json (empathy-and-validation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] empathy.json (empathy) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] energy-drinks-vaping-and-substance-risks.json (energy-drinks-vaping-and-substance-risks) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] enjoyment-skills.json (enjoyment-skills) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] esponsive-interactions.json (esponsive-interactions) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] ethics-and-social-justice.json (ethics-and-social-justice) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] family-centred-practice.json (family-centred-practice) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] family-meal-routines.json (family-meal-routines) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] family-meetings.json (family-meetings) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] family-stress.json (family-stress) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] family-violence-impacts.json (family-violence-impacts) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] feeding-challenges.json (feeding-challenges) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] felt-sense-of-safety.json (felt-sense-of-safety) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] firm-but-kind-parenting.json (firm-but-kind-parenting) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] following-the-childâs-lead.json (following-the-childâs-lead) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] food-allergies-and-intolerances.json (food-allergies-and-intolerances) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] food-insecurity-and-family-stress.json (food-insecurity-and-family-stress) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] food-sleep-and-regulation.json (food-sleep-and-regulation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] formula-feeding-safety.json (formula-feeding-safety) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] foster-and-kinship-care.json (foster-and-kinship-care) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] foster-holistic-learning.json (foster-holistic-learning) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] foster-positive-interactions.json (foster-positive-interactions) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] foster-respectful-behaviour.json (foster-respectful-behaviour) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] fussy-eating.json (fussy-eating) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] giving-effective-instructions.json (giving-effective-instructions) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] grocery-shopping-skills.json (grocery-shopping-skills) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] growth-milestones.json (growth-milestones) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] handling-tantrums-safely.json (handling-tantrums-safely) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] hassle-free-shopping.json (hassle-free-shopping) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] healing-through-connection.json (healing-through-connection) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] healthy-eating-on-a-budget.json (healthy-eating-on-a-budget) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] healthy-family-routines.json (healthy-family-routines) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] healthy-feeding-relationships.json (healthy-feeding-relationships) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] healthy-growth.json (healthy-growth) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] healthy-home-environments.json (healthy-home-environments) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] healthy-routines.json (healthy-routines) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] helping-children-adjust-to-family-change.json (helping-children-adjust-to-family-change) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] high-conflict-parenting-dynamics.json (high-conflict-parenting-dynamics) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] home-safety-basics.json (home-safety-basics) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] homework-routines.json (homework-routines) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] i-messages.json (i-messages) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] ignoring-minor-misbehaviour.json (ignoring-minor-misbehaviour) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] imitation.json (imitation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] impact-of-chronic-stress.json (impact-of-chronic-stress) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] impact-of-family-violence-on-children.json (impact-of-family-violence-on-children) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] infant-care.json (infant-care) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] infant-health.json (infant-health) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] infant-nutrition.json (infant-nutrition) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] intergenerational-patterns.json (intergenerational-patterns) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] intergenerational-trauma.json (intergenerational-trauma) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] introducing-solid-foods.json (introducing-solid-foods) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] joy-and-connection.json (joy-and-connection) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] learning-through-play.json (learning-through-play) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] life-skills-development.json (life-skills-development) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] logical-consequences.json (logical-consequences) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] lying-and-stealing.json (lying-and-stealing) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] managing-aggression.json (managing-aggression) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] managing-anger-as-a-parent.json (managing-anger-as-a-parent) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] managing-big-feelings.json (managing-big-feelings) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] managing-challenging-behaviour.json (managing-challenging-behaviour) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] managing-conflict-between-parents.json (managing-conflict-between-parents) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] managing-difficult-conversations.json (managing-difficult-conversations) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] managing-disobedience.json (managing-disobedience) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] managing-fighting-and-aggression.json (managing-fighting-and-aggression) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] managing-parenting-stress.json (managing-parenting-stress) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] managing-screen-time.json (managing-screen-time) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] managing-stress-and-burnout.json (managing-stress-and-burnout) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] managing-transitions.json (managing-transitions) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] meal-planning-for-busy-families.json (meal-planning-for-busy-families) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] mealtime-behaviour.json (mealtime-behaviour) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] meeting-emotional-needs.json (meeting-emotional-needs) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] milestones-birth-to-five.json (milestones-birth-to-five) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] morning-routines.json (morning-routines) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] motivation-and-behaviour.json (motivation-and-behaviour) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] natural-consequences.json (natural-consequences) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] negotiation-skills.json (negotiation-skills) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] neurodiversity-and-trauma.json (neurodiversity-and-trauma) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] neutral-parenting-tone.json (neutral-parenting-tone) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] nurturance-during-distress.json (nurturance-during-distress) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] nurture-babies-and-toddlers.json (nurture-babies-and-toddlers) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] online-safety.json (online-safety) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] outdoor-play-and-development.json (outdoor-play-and-development) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parent-child-negotiation.json (parent-child-negotiation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parent-directed-interaction.json (parent-directed-interaction) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parent-mental-health.json (parent-mental-health) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parent-partnerships.json (parent-partnerships) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parent-self-regulation.json (parent-self-regulation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parenting-after-separation.json (parenting-after-separation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parenting-children-with-adhd.json (parenting-children-with-adhd) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parenting-children-with-autism.json (parenting-children-with-autism) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parenting-children-with-complex-trauma.json (parenting-children-with-complex-trauma) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parenting-multiple-children.json (parenting-multiple-children) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parenting-plans-vs-court-orders.json (parenting-plans-vs-court-orders) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parenting-styles-explained.json (parenting-styles-explained) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parenting-triggers.json (parenting-triggers) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] parenting-under-stress.json (parenting-under-stress) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] peer-pressure.json (peer-pressure) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] peer-relationships.json (peer-relationships) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] persistence-and-self-regulation.json (persistence-and-self-regulation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] physical-activity-for-families.json (physical-activity-for-families) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] physical-development-milestones.json (physical-development-milestones) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] play-based-learning.json (play-based-learning) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] positive-behaviour-guidance.json (positive-behaviour-guidance) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] positive-communication.json (positive-communication) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] positive-family-communication.json (positive-family-communication) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] positive-parenting-strategies.json (positive-parenting-strategies) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] positive-reinforcement.json (positive-reinforcement) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] preparing-for-adolescence.json (preparing-for-adolescence) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] preparing-for-adulthood-transition.json (preparing-for-adulthood-transition) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] preparing-for-school.json (preparing-for-school) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] preventing-re-traumatization.json (preventing-re-traumatization) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] problem-solving-skills.json (problem-solving-skills) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] problem-solving.json (problem-solving) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] promoting-a-positive-learning-environment.json (promoting-a-positive-learning-environment) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] protecting-children-from-adult-conflict.json (protecting-children-from-adult-conflict) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] public-behaviour-management.json (public-behaviour-management) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] punishment-based-health-approaches.json (punishment-based-health-approaches) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] raising-confident-children.json (raising-confident-children) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] rebuilding-trust-with-children.json (rebuilding-trust-with-children) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] rebuilding-trust.json (rebuilding-trust) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] recognising-dysregulation.json (recognising-dysregulation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] recognising-health-concerns-early.json (recognising-health-concerns-early) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] recognising-triggers.json (recognising-triggers) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] reducing-challenging-behaviour.json (reducing-challenging-behaviour) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] reducing-chaos-in-the-home.json (reducing-chaos-in-the-home) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] reducing-power-struggles.json (reducing-power-struggles) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] reducing-sedentary-behaviour.json (reducing-sedentary-behaviour) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] reflective-parenting.json (reflective-parenting) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] reinforcement-theory.json (reinforcement-theory) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] reinforcement.json (reinforcement) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] repair-after-mistakes.json (repair-after-mistakes) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] repairing-parent-child-relationships.json (repairing-parent-child-relationships) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] repairing-ruptures.json (repairing-ruptures) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] repetition-and-consistency.json (repetition-and-consistency) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] respectful-communication.json (respectful-communication) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] respectful-interactions.json (respectful-interactions) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] responding-to-distress.json (responding-to-distress) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] responsibility-training.json (responsibility-training) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] responsive-caregiving.json (responsive-caregiving) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] responsive-feeding.json (responsive-feeding) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] risk-behaviour-management.json (risk-behaviour-management) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] risk-taking-behaviour.json (risk-taking-behaviour) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] routine-management.json (routine-management) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] school-and-homework-support.json (school-and-homework-support) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] school-refusal.json (school-refusal) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] screen-time-and-health.json (screen-time-and-health) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] secure-attachment.json (secure-attachment) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] self-awareness.json (self-awareness) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] self-care-for-parents.json (self-care-for-parents) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] self-compassion-in-parenting.json (self-compassion-in-parenting) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] self-esteem-and-body-image.json (self-esteem-and-body-image) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] self-regulation-skills.json (self-regulation-skills) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] separation-conflict.json (separation-conflict) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] sharing-and-turn-taking.json (sharing-and-turn-taking) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] sibling-rivalry.json (sibling-rivalry) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] sleep-and-brain-function.json (sleep-and-brain-function) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] sleep-and-child-development.json (sleep-and-child-development) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] sleep-deprivation-and-teens.json (sleep-deprivation-and-teens) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] sleep-training-approaches.json (sleep-training-approaches) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] social-development-through-healthy-activities.json (social-development-through-healthy-activities) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] social-development.json (social-development) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] social-skills.json (social-skills) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] special-time.json (special-time) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] stability-and-routine.json (stability-and-routine) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] stress-and-anxiety-in-children.json (stress-and-anxiety-in-children) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] stress-and-the-developing-brain.json (stress-and-the-developing-brain) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] structured-discipline.json (structured-discipline) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] substance-awareness-for-teens.json (substance-awareness-for-teens) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] sun-safety.json (sun-safety) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] supervised-contact-preparation.json (supervised-contact-preparation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] supporting-children-through-change.json (supporting-children-through-change) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] supporting-emotional-wellbeing.json (supporting-emotional-wellbeing) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] supporting-social-development.json (supporting-social-development) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] supporting-vulnerable-families.json (supporting-vulnerable-families) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] survival-behaviours.json (survival-behaviours) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] tantrums-and-meltdowns.json (tantrums-and-meltdowns) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] teaching-instead-of-punishing.json (teaching-instead-of-punishing) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] teaching-responsibility.json (teaching-responsibility) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] teaching-self-regulation.json (teaching-self-regulation) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] teaching-social-skills.json (teaching-social-skills) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] teen-communication.json (teen-communication) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] teen-responsibility.json (teen-responsibility) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] temperament-and-personality.json (temperament-and-personality) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] time-out-strategies.json (time-out-strategies) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] toilet-training.json (toilet-training) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] trauma-and-adverse-childhood-experiences.json (trauma-and-adverse-childhood-experiences) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] trauma-and-behaviour.json (trauma-and-behaviour) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] trauma-effects.json (trauma-effects) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] trauma-informed-parenting.json (trauma-informed-parenting) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] triggers-vs-misbehaviour.json (triggers-vs-misbehaviour) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] understanding-attachment-styles.json (understanding-attachment-styles) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] understanding-behaviour-as-communication.json (understanding-behaviour-as-communication) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] understanding-childrenâs-emotions.json (understanding-childrenâs-emotions) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] understanding-emotions.json (understanding-emotions) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] understanding-parenting-orders.json (understanding-parenting-orders) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] understanding-separation-conflict.json (understanding-separation-conflict) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] using-assertive-discipline.json (using-assertive-discipline) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] using-child-focused-language.json (using-child-focused-language) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] values-based-parenting.json (values-based-parenting) has no 'modules' array[0m
+[33;1mWARNING: [TOPIC] working-with-families.json (working-with-families) has no 'modules' array[0m
+
+=== MODULE CHECK ===
+[33;1mWARNING: [MODULE] module_accountability_foundations.json (module_accountability_foundations) has no 'lessons' array[0m
+[OK] Module module_advanced_dfv_practice_and_leadership  lesson lesson_complex_case_practice
+[OK] Module module_advanced_dfv_practice_and_leadership  lesson lesson_supervision_and_practice_leadership
+[OK] Module module_advanced_dfv_practice_and_leadership  lesson lesson_leading_system_improvement
+[OK] Module module_advanced_risk_management  lesson lesson_lethality_assessment
+[OK] Module module_advanced_risk_management  lesson lesson_multiagency_risk_panels
+[OK] Module module_advanced_risk_management  lesson lesson_monitoring_dynamic_risk
+[OK] Module module_assessment_and_response  lesson lesson_initial_assessment
+[OK] Module module_assessment_and_response  lesson lesson_risk_identification
+[OK] Module module_assessment_and_response  lesson lesson_safety_planning
+[OK] Module module_boundaries_and_safety  lesson lesson_maintaining_boundaries
+[OK] Module module_boundaries_and_safety  lesson lesson_self_care_for_peers
+[OK] Module module_boundaries_and_safety  lesson lesson_supervision_and_support
+[OK] Module module_building_respectful_communities  lesson lesson_positive_social_norms
+[OK] Module module_building_respectful_communities  lesson lesson_community_leadership_for_respect
+[OK] Module module_building_respectful_communities  lesson lesson_everyday_prevention_actions
+[OK] Module module_bystander_action_and_community_safety  lesson lesson_recognising_warning_signs
+[OK] Module module_bystander_action_and_community_safety  lesson lesson_safe_bystander_actions
+[OK] Module module_bystander_action_and_community_safety  lesson lesson_building_safe_communities
+[OK] Module module_case_review_and_reflective_practice  lesson lesson_structured_case_review
+[OK] Module module_case_review_and_reflective_practice  lesson lesson_reflective_practice_frameworks
+[OK] Module module_case_review_and_reflective_practice  lesson lesson_continuous_improvement
+[OK] Module module_challenging_gender_inequality_and_harmful_norms  lesson lesson_understanding_gender_inequality
+[OK] Module module_challenging_gender_inequality_and_harmful_norms  lesson lesson_harmful_norms_and_stereotypes
+[OK] Module module_challenging_gender_inequality_and_harmful_norms  lesson lesson_shifting_attitudes_and_beliefs
+[OK] Module module_child_centred_and_family_focused_practice  lesson lesson_child_centred_principles
+[OK] Module module_child_centred_and_family_focused_practice  lesson lesson_working_with_family_systems
+[OK] Module module_child_centred_and_family_focused_practice  lesson lesson_supporting_relational_healing
+[OK] Module module_child_healing  lesson lesson_understanding_child_trauma
+[OK] Module module_child_healing  lesson lesson_age_appropriate_support
+[OK] Module module_child_healing  lesson lesson_building_resilience_in_children
+[OK] Module module_client_engagement  lesson lesson_trauma_informed_engagement
+[OK] Module module_client_engagement  lesson lesson_working_with_resistance
+[OK] Module module_client_engagement  lesson lesson_strengths_based_practice
+[OK] Module module_collaboration_and_referral  lesson lesson_multiagency_work
+[OK] Module module_collaboration_and_referral  lesson lesson_referral_pathways
+[OK] Module module_collaboration_and_referral  lesson lesson_documentation_and_case_notes
+[OK] Module module_community_accountability_and_collective_action  lesson lesson_shared_accountability
+[OK] Module module_community_accountability_and_collective_action  lesson lesson_shifting_community_norms
+[OK] Module module_community_accountability_and_collective_action  lesson lesson_coordinated_collective_action
+[OK] Module module_community_advocacy_and_awareness  lesson lesson_community_campaigns
+[OK] Module module_community_advocacy_and_awareness  lesson lesson_local_partnerships
+[OK] Module module_community_advocacy_and_awareness  lesson lesson_ethical_storytelling
+[OK] Module module_community_crisis_response_and_safety_planning  lesson lesson_recognising_crisis_situations
+[OK] Module module_community_crisis_response_and_safety_planning  lesson lesson_supporting_safety_planning
+[OK] Module module_community_crisis_response_and_safety_planning  lesson lesson_escalation_and_emergency_response
+[OK] Module module_community_education_and_prevention_campaigns  lesson lesson_designing_prevention_campaigns
+[OK] Module module_community_education_and_prevention_campaigns  lesson lesson_safe_and_ethical_messaging
+[OK] Module module_community_education_and_prevention_campaigns  lesson lesson_engaging_community_groups
+[OK] Module module_community_healing_and_collective_recovery  lesson lesson_understanding_collective_trauma
+[OK] Module module_community_healing_and_collective_recovery  lesson lesson_trauma_aware_community_practices
+[OK] Module module_community_healing_and_collective_recovery  lesson lesson_building_resilient_communities
+[OK] Module module_community_leadership_for_change  lesson lesson_leadership_for_prevention
+[OK] Module module_community_leadership_for_change  lesson lesson_mobilising_communities
+[OK] Module module_community_leadership_for_change  lesson lesson_sustaining_change
+[OK] Module module_community_led_prevention_strategies  lesson lesson_community_strengths_and_assets
+[OK] Module module_community_led_prevention_strategies  lesson lesson_designing_local_prevention_strategies
+[OK] Module module_community_led_prevention_strategies  lesson lesson_implementing_and_evaluating_strategies
+[OK] Module module_community_partnerships_and_local_action  lesson lesson_building_local_partnerships
+[OK] Module module_community_partnerships_and_local_action  lesson lesson_coordinating_local_initiatives
+[OK] Module module_community_partnerships_and_local_action  lesson lesson_strengthening_community_capacity
+[OK] Module module_complex_casework  lesson lesson_working_with_high_risk_cases
+[OK] Module module_complex_casework  lesson lesson_multi_layered_trauma
+[OK] Module module_complex_casework  lesson lesson_complex_family_dynamics
+[OK] Module module_court_support_and_legal_processes  lesson lesson_understanding_legal_options
+[OK] Module module_court_support_and_legal_processes  lesson lesson_preparing_clients_for_court
+[OK] Module module_court_support_and_legal_processes  lesson lesson_working_with_legal_services
+[OK] Module module_cultural_safety_in_community_responses  lesson lesson_understanding_cultural_contexts
+[OK] Module module_cultural_safety_in_community_responses  lesson lesson_avoiding_assumptions
+[OK] Module module_cultural_safety_in_community_responses  lesson lesson_building_trust_with_communities
+[OK] Module module_designing_and_evaluating_prevention_initiatives  lesson lesson_designing_prevention_programs
+[OK] Module module_designing_and_evaluating_prevention_initiatives  lesson lesson_monitoring_and_evaluation
+[OK] Module module_designing_and_evaluating_prevention_initiatives  lesson lesson_continuous_improvement
+[OK] Module module_dfv_and_health_impacts  lesson lesson_physical_health_impacts
+[OK] Module module_dfv_and_health_impacts  lesson lesson_psychological_and_emotional_impacts
+[OK] Module module_dfv_and_health_impacts  lesson lesson_long_term_health_consequences
+[OK] Module module_dfv_housing_instability_and_homelessness  lesson lesson_dfv_and_housing_risks
+[OK] Module module_dfv_housing_instability_and_homelessness  lesson lesson_barriers_to_safe_housing
+[OK] Module module_dfv_housing_instability_and_homelessness  lesson lesson_pathways_to_stability
+[OK] Module module_dfv_in_health_settings  lesson lesson_recognising_indicators
+[OK] Module module_dfv_in_health_settings  lesson lesson_safe_clinical_responses
+[OK] Module module_dfv_in_health_settings  lesson lesson_documentation_and_referral
+[OK] Module module_digital_safety_and_online_communities  lesson lesson_recognising_digital_red_flags
+[OK] Module module_digital_safety_and_online_communities  lesson lesson_safer_online_practices
+[OK] Module module_digital_safety_and_online_communities  lesson lesson_responding_to_tech_facilitated_abuse
+[OK] Module module_economic_abuse_and_financial_security  lesson lesson_understanding_economic_abuse
+[OK] Module module_economic_abuse_and_financial_security  lesson lesson_supporting_financial_safety
+[OK] Module module_economic_abuse_and_financial_security  lesson lesson_pathways_to_financial_independence
+[33;1mWARNING: [MODULE] module_emotional_regulation.json (module_emotional_regulation) has no 'lessons' array[0m
+[OK] Module module_engaging_young_people_in_prevention  lesson lesson_youth_engagement_strategies
+[OK] Module module_engaging_young_people_in_prevention  lesson lesson_challenging_harmful_norms
+[OK] Module module_engaging_young_people_in_prevention  lesson lesson_youth_led_initiatives
+[OK] Module module_faith_communities_and_dfv_prevention  lesson lesson_dfv_in_faith_contexts
+[OK] Module module_faith_communities_and_dfv_prevention  lesson lesson_safe_and_ethical_responses
+[OK] Module module_faith_communities_and_dfv_prevention  lesson lesson_building_safe_faith_environments
+[OK] Module module_foundations_of_dfv_capability  lesson lesson_core_capabilities
+[OK] Module module_foundations_of_dfv_capability  lesson lesson_values_and_principles
+[OK] Module module_foundations_of_dfv_capability  lesson lesson_workforce_roles_and_skills
+[OK] Module module_health_led_prevention_and_early_intervention  lesson lesson_universal_education
+[OK] Module module_health_led_prevention_and_early_intervention  lesson lesson_early_identification
+[OK] Module module_health_led_prevention_and_early_intervention  lesson lesson_health_led_strategies
+[OK] Module module_leading_safe_practice  lesson lesson_leadership_responsibilities
+[OK] Module module_leading_safe_practice  lesson lesson_modelling_safe_practice
+[OK] Module module_leading_safe_practice  lesson lesson_building_safe_cultures
+[OK] Module module_legal_advocacy_and_supporting_clients  lesson lesson_advocacy_principles
+[OK] Module module_legal_advocacy_and_supporting_clients  lesson lesson_supporting_informed_decision_making
+[OK] Module module_legal_advocacy_and_supporting_clients  lesson lesson_trauma_informed_legal_support
+[OK] Module module_legal_systems_and_dfv  lesson lesson_legal_responses_to_dfv
+[OK] Module module_legal_systems_and_dfv  lesson lesson_protection_orders_and_courts
+[OK] Module module_legal_systems_and_dfv  lesson lesson_justice_system_intersections
+[OK] Module module_long_term_recovery_stability_and_economic_empowerment  lesson lesson_long_term_housing_stability
+[OK] Module module_long_term_recovery_stability_and_economic_empowerment  lesson lesson_economic_empowerment_strategies
+[OK] Module module_long_term_recovery_stability_and_economic_empowerment  lesson lesson_sustainable_recovery
+[OK] Module module_managing_complex_teams  lesson lesson_leading_multidisciplinary_teams
+[OK] Module module_managing_complex_teams  lesson lesson_psychological_safety
+[OK] Module module_managing_complex_teams  lesson lesson_managing_conflict_and_complexity
+[OK] Module module_mental_health_trauma_and_recovery  lesson lesson_understanding_trauma_responses
+[OK] Module module_mental_health_trauma_and_recovery  lesson lesson_mental_health_impacts
+[OK] Module module_mental_health_trauma_and_recovery  lesson lesson_supporting_recovery
+[OK] Module module_multi_agency_collaboration_and_information_sharing  lesson lesson_collaboration_principles
+[OK] Module module_multi_agency_collaboration_and_information_sharing  lesson lesson_safe_information_sharing
+[OK] Module module_multi_agency_collaboration_and_information_sharing  lesson lesson_coordinated_responses
+[OK] Module module_organisational_change_and_improvement  lesson lesson_change_leadership
+[OK] Module module_organisational_change_and_improvement  lesson lesson_embedding_trauma_informed_practice
+[OK] Module module_organisational_change_and_improvement  lesson lesson_quality_and_improvement_systems
+[OK] Module module_parent_safety  lesson lesson_recognising_risk_as_a_parent
+[OK] Module module_parent_safety  lesson lesson_safety_planning_with_children
+[OK] Module module_parent_safety  lesson lesson_building_safe_routines
+[OK] Module module_parenting_under_stress  lesson lesson_managing_parental_stress
+[OK] Module module_parenting_under_stress  lesson lesson_supporting_children_emotionally
+[OK] Module module_parenting_under_stress  lesson lesson_maintaining_parent_child_connection
+[OK] Module module_peer_role_foundations  lesson lesson_what_is_peer_support
+[OK] Module module_peer_role_foundations  lesson lesson_using_lived_experience_safely
+[OK] Module module_peer_role_foundations  lesson lesson_scope_and_limitations
+[OK] Module module_practitioner_foundations  lesson lesson_dfv_frameworks
+[OK] Module module_practitioner_foundations  lesson lesson_ethical_practice
+[OK] Module module_practitioner_foundations  lesson lesson_professional_responsibilities
+[OK] Module module_prevention_in_schools_workplaces_and_community_settings  lesson lesson_prevention_in_schools
+[OK] Module module_prevention_in_schools_workplaces_and_community_settings  lesson lesson_prevention_in_workplaces
+[OK] Module module_prevention_in_schools_workplaces_and_community_settings  lesson lesson_prevention_in_community_settings
+[OK] Module module_professional_boundaries_ethics_and_self_care  lesson lesson_ethical_and_safe_boundaries
+[OK] Module module_professional_boundaries_ethics_and_self_care  lesson lesson_vicarious_trauma_and_burnout
+[OK] Module module_professional_boundaries_ethics_and_self_care  lesson lesson_reflective_practice_and_self_care
+[OK] Module module_protection_orders_and_court_processes  lesson lesson_understanding_protection_orders
+[OK] Module module_protection_orders_and_court_processes  lesson lesson_court_processes_and_procedures
+[OK] Module module_protection_orders_and_court_processes  lesson lesson_safety_in_legal_contexts
+[OK] Module module_rebuilding_family_life  lesson lesson_restoring_routines
+[OK] Module module_rebuilding_family_life  lesson lesson_strengthening_family_bonds
+[OK] Module module_rebuilding_family_life  lesson lesson_long_term_recovery_planning
+[33;1mWARNING: [MODULE] module_relationship_skills.json (module_relationship_skills) has no 'lessons' array[0m
+[OK] Module module_safe_conversations  lesson lesson_active_listening
+[OK] Module module_safe_conversations  lesson lesson_holding_space
+[OK] Module module_safe_conversations  lesson lesson_avoiding_retraumatisation
+[OK] Module module_safe_housing_responses_and_crisis_accommodation  lesson lesson_crisis_accommodation_models
+[OK] Module module_safe_housing_responses_and_crisis_accommodation  lesson lesson_trauma_informed_housing_support
+[OK] Module module_safe_housing_responses_and_crisis_accommodation  lesson lesson_coordinated_housing_responses
+[OK] Module module_specialist_interventions  lesson lesson_specialist_therapeutic_support
+[OK] Module module_specialist_interventions  lesson lesson_cultural_complexity
+[OK] Module module_specialist_interventions  lesson lesson_intersectional_practice
+[OK] Module module_strategic_partnerships_and_sector_leadership  lesson lesson_building_strategic_partnerships
+[OK] Module module_strategic_partnerships_and_sector_leadership  lesson lesson_sector_leadership
+[OK] Module module_strategic_partnerships_and_sector_leadership  lesson lesson_policy_and_system_influence
+[OK] Module module_supporting_childrens_safety_and_wellbeing  lesson lesson_child_friendly_safety_planning
+[OK] Module module_supporting_childrens_safety_and_wellbeing  lesson lesson_supportive_communication
+[OK] Module module_supporting_childrens_safety_and_wellbeing  lesson lesson_strengthening_protective_relationships
+[OK] Module module_supporting_community_members_experiencing_dfv  lesson lesson_safe_supportive_responses
+[OK] Module module_supporting_community_members_experiencing_dfv  lesson lesson_trauma_informed_communication
+[OK] Module module_supporting_community_members_experiencing_dfv  lesson lesson_connecting_to_services
+[OK] Module module_supporting_health_professionals_responding_to_dfv  lesson lesson_professional_boundaries
+[OK] Module module_supporting_health_professionals_responding_to_dfv  lesson lesson_vicarious_trauma_and_burnout
+[OK] Module module_supporting_health_professionals_responding_to_dfv  lesson lesson_reflective_practice
+[OK] Module module_supporting_survivors  lesson lesson_strengths_based_support
+[OK] Module module_supporting_survivors  lesson lesson_navigating_services
+[OK] Module module_supporting_survivors  lesson lesson_encouraging_help_seeking
+[33;1mWARNING: [MODULE] module_sustainable_change.json (module_sustainable_change) has no 'lessons' array[0m
+[OK] Module module_system_navigation_and_advocacy  lesson lesson_navigating_systems
+[OK] Module module_system_navigation_and_advocacy  lesson lesson_advocacy_skills
+[OK] Module module_system_navigation_and_advocacy  lesson lesson_coordinated_case_responses
+[33;1mWARNING: [MODULE] module_system_navigation.json (module_system_navigation) has no 'lessons' array[0m
+[OK] Module module_system_reform_and_continuous_improvement  lesson lesson_understanding_system_reform
+[OK] Module module_system_reform_and_continuous_improvement  lesson lesson_evidence_and_evaluation
+[OK] Module module_system_reform_and_continuous_improvement  lesson lesson_contributing_to_system_improvement
+[OK] Module module_trauma_attachment_and_child_development  lesson lesson_trauma_and_brain_development
+[OK] Module module_trauma_attachment_and_child_development  lesson lesson_attachment_and_relationships
+[OK] Module module_trauma_attachment_and_child_development  lesson lesson_promoting_healing_and_stability
+[OK] Module module_trauma_informed_and_culturally_safe_practice  lesson lesson_trauma_informed_principles
+[OK] Module module_trauma_informed_and_culturally_safe_practice  lesson lesson_cultural_safety_and_respect
+[OK] Module module_trauma_informed_and_culturally_safe_practice  lesson lesson_empowerment_and_choice
+[OK] Module module_understanding_dfv_impacts_on_children  lesson lesson_developmental_impacts
+[OK] Module module_understanding_dfv_impacts_on_children  lesson lesson_behavioural_and_emotional_signs
+[OK] Module module_understanding_dfv_impacts_on_children  lesson lesson_protective_factors
+[OK] Module module_understanding_dfv_in_the_community  lesson lesson_dfv_patterns_and_drivers
+[OK] Module module_understanding_dfv_in_the_community  lesson lesson_myths_and_misconceptions
+[OK] Module module_understanding_dfv_in_the_community  lesson lesson_community_roles_in_prevention
+[OK] Module module_understanding_dfv_legal_responses  lesson lesson_legal_definitions_and_frameworks
+[OK] Module module_understanding_dfv_legal_responses  lesson lesson_civil_and_criminal_pathways
+[OK] Module module_understanding_dfv_legal_responses  lesson lesson_role_of_justice_agencies
+[OK] Module module_understanding_dfv_systems_and_pathways  lesson lesson_dfv_system_overview
+[OK] Module module_understanding_dfv_systems_and_pathways  lesson lesson_service_pathways
+[OK] Module module_understanding_dfv_systems_and_pathways  lesson lesson_coordination_and_system_interaction
+[OK] Module module_understanding_primary_prevention  lesson lesson_what_is_primary_prevention
+[OK] Module module_understanding_primary_prevention  lesson lesson_drivers_of_violence
+[OK] Module module_understanding_primary_prevention  lesson lesson_prevention_strategies
+[OK] Module module_working_with_adolescents_experiencing_or_using_violence  lesson lesson_adolescent_dfv_dynamics
+[OK] Module module_working_with_adolescents_experiencing_or_using_violence  lesson lesson_safe_engagement_with_young_people
+[OK] Module module_working_with_adolescents_experiencing_or_using_violence  lesson lesson_supporting_behaviour_change
+[OK] Module module_working_with_cald_communities  lesson lesson_cultural_contexts_and_migration
+[OK] Module module_working_with_cald_communities  lesson lesson_barriers_and_risks
+[OK] Module module_working_with_cald_communities  lesson lesson_culturally_safe_practice
+[OK] Module module_working_with_first_nations_peoples  lesson lesson_historical_and_cultural_contexts
+[OK] Module module_working_with_first_nations_peoples  lesson lesson_community_led_responses
+[OK] Module module_working_with_first_nations_peoples  lesson lesson_strengths_based_practice
+[OK] Module module_working_with_lgbtqia_communities  lesson lesson_identity_and_safety
+[OK] Module module_working_with_lgbtqia_communities  lesson lesson_inclusive_practice
+[OK] Module module_working_with_lgbtqia_communities  lesson lesson_responding_to_lgbtqia_dfv
+[OK] Module module_working_with_older_people  lesson lesson_understanding_elder_abuse
+[OK] Module module_working_with_older_people  lesson lesson_age_related_risks
+[OK] Module module_working_with_older_people  lesson lesson_supporting_older_people
+[OK] Module module_working_with_people_using_violence_diverse_backgrounds  lesson lesson_cultural_contexts_of_violence
+[OK] Module module_working_with_people_using_violence_diverse_backgrounds  lesson lesson_safe_engagement
+[OK] Module module_working_with_people_using_violence_diverse_backgrounds  lesson lesson_culturally_informed_accountability
+[OK] Module module_working_with_people_with_disability  lesson lesson_disability_specific_risks
+[OK] Module module_working_with_people_with_disability  lesson lesson_accessible_practice
+[OK] Module module_working_with_people_with_disability  lesson lesson_supporting_autonomy_and_safety
+[OK] Module module_working_with_perpetrators  lesson lesson_safe_engagement
+[OK] Module module_working_with_perpetrators  lesson lesson_accountability_frameworks
+[OK] Module module_working_with_perpetrators  lesson lesson_behaviour_change_principles
+[OK] Module module_working_with_police_and_justice_agencies  lesson lesson_police_roles_and_responses
+[OK] Module module_working_with_police_and_justice_agencies  lesson lesson_working_with_justice_partners
+[OK] Module module_working_with_police_and_justice_agencies  lesson lesson_evidence_and_risk_processes
+[OK] Module module_workplace_and_community_organisation_responses  lesson lesson_recognising_dfv_in_organisations
+[OK] Module module_workplace_and_community_organisation_responses  lesson lesson_safe_responses_in_organisations
+[OK] Module module_workplace_and_community_organisation_responses  lesson lesson_building_safe_organisational_cultures
+[OK] Module module_youth_leadership_and_dfv_prevention  lesson lesson_youth_as_change_makers
+[OK] Module module_youth_leadership_and_dfv_prevention  lesson lesson_promoting_respectful_relationships
+[OK] Module module_youth_leadership_and_dfv_prevention  lesson lesson_peer_led_prevention_initiatives
+
+=== LESSON CHECK ===
+[33;1mWARNING: [LESSON] active_listening.json (active_listening) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] advocacy_skills.json (advocacy_skills) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] age_appropriate_support.json (age_appropriate_support) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] avoiding_retraumatisation.json (avoiding_retraumatisation) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] building_empathy.json (building_empathy) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] building_new_patterns.json (building_new_patterns) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] building_resilience_in_children.json (building_resilience_in_children) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] building_safe_routines.json (building_safe_routines) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] building-safe-routines.json missing 'id'[0m
+[33;1mWARNING: [LESSON] challenging_minimisation.json (challenging_minimisation) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] co-regulation-basics.json missing 'id'[0m
+[33;1mWARNING: [LESSON] communication_skills.json (communication_skills) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] complex_family_dynamics.json (complex_family_dynamics) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] conflict_management.json (conflict_management) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] cultural_complexity.json (cultural_complexity) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] dfv_frameworks.json (dfv_frameworks) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] documentation_and_case_notes.json (documentation_and_case_notes) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] encouraging_help_seeking.json (encouraging_help_seeking) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] ethical_practice.json (ethical_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] holding_space.json (holding_space) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] initial_assessment.json (initial_assessment) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] interrupting_violent_patterns.json (interrupting_violent_patterns) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] intersectional_practice.json (intersectional_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_accessible_practice.json (lesson_accessible_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_accountability_frameworks.json (lesson_accountability_frameworks) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_active_listening.json (lesson_active_listening) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_adolescent_dfv_dynamics.json (lesson_adolescent_dfv_dynamics) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_advocacy_principles.json (lesson_advocacy_principles) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_advocacy_skills.json (lesson_advocacy_skills) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_age_appropriate_support.json (lesson_age_appropriate_support) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_age_related_risks.json (lesson_age_related_risks) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_attachment_and_relationships.json (lesson_attachment_and_relationships) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_avoiding_assumptions.json (lesson_avoiding_assumptions) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_avoiding_retraumatisation.json (lesson_avoiding_retraumatisation) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_barriers_and_risks.json (lesson_barriers_and_risks) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_barriers_to_safe_housing.json (lesson_barriers_to_safe_housing) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_behaviour_change_principles.json (lesson_behaviour_change_principles) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_behavioural_and_emotional_signs.json (lesson_behavioural_and_emotional_signs) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_building_local_partnerships.json (lesson_building_local_partnerships) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_building_resilience_in_children.json (lesson_building_resilience_in_children) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_building_resilient_communities.json (lesson_building_resilient_communities) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_building_safe_communities.json (lesson_building_safe_communities) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_building_safe_cultures.json (lesson_building_safe_cultures) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_building_safe_faith_environments.json (lesson_building_safe_faith_environments) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_building_safe_organisational_cultures.json (lesson_building_safe_organisational_cultures) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_building_safe_routines.json (lesson_building_safe_routines) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_building_strategic_partnerships.json (lesson_building_strategic_partnerships) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_building_trust_with_communities.json (lesson_building_trust_with_communities) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_challenging_harmful_norms.json (lesson_challenging_harmful_norms) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_change_leadership.json (lesson_change_leadership) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_child_centred_principles.json (lesson_child_centred_principles) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_child_friendly_safety_planning.json (lesson_child_friendly_safety_planning) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_civil_and_criminal_pathways.json (lesson_civil_and_criminal_pathways) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_collaboration_principles.json (lesson_collaboration_principles) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_community_campaigns.json (lesson_community_campaigns) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_community_leadership_for_respect.json (lesson_community_leadership_for_respect) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_community_led_responses.json (lesson_community_led_responses) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_community_roles_in_prevention.json (lesson_community_roles_in_prevention) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_community_strengths_and_assets.json (lesson_community_strengths_and_assets) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_complex_case_practice.json (lesson_complex_case_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_complex_family_dynamics.json (lesson_complex_family_dynamics) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_connecting_to_services.json (lesson_connecting_to_services) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_continuous_improvement.json (lesson_continuous_improvement) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_contributing_to_system_improvement.json (lesson_contributing_to_system_improvement) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_coordinated_case_responses.json (lesson_coordinated_case_responses) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_coordinated_collective_action.json (lesson_coordinated_collective_action) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_coordinated_housing_responses.json (lesson_coordinated_housing_responses) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_coordinated_responses.json (lesson_coordinated_responses) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_coordinating_local_initiatives.json (lesson_coordinating_local_initiatives) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_coordination_and_system_interaction.json (lesson_coordination_and_system_interaction) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_core_capabilities.json (lesson_core_capabilities) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_court_processes_and_procedures.json (lesson_court_processes_and_procedures) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_crisis_accommodation_models.json (lesson_crisis_accommodation_models) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_cultural_complexity.json (lesson_cultural_complexity) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_cultural_contexts_and_migration.json (lesson_cultural_contexts_and_migration) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_cultural_contexts_of_violence.json (lesson_cultural_contexts_of_violence) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_cultural_safety_and_respect.json (lesson_cultural_safety_and_respect) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_culturally_informed_accountability.json (lesson_culturally_informed_accountability) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_culturally_safe_practice.json (lesson_culturally_safe_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_designing_local_prevention_strategies.json (lesson_designing_local_prevention_strategies) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_designing_prevention_campaigns.json (lesson_designing_prevention_campaigns) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_designing_prevention_programs.json (lesson_designing_prevention_programs) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_developmental_impacts.json (lesson_developmental_impacts) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_dfv_and_housing_risks.json (lesson_dfv_and_housing_risks) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_dfv_frameworks.json (lesson_dfv_frameworks) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_dfv_in_faith_contexts.json (lesson_dfv_in_faith_contexts) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_dfv_patterns_and_drivers.json (lesson_dfv_patterns_and_drivers) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_dfv_system_overview.json (lesson_dfv_system_overview) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_disability_specific_risks.json (lesson_disability_specific_risks) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_documentation_and_case_notes.json (lesson_documentation_and_case_notes) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_documentation_and_referral.json (lesson_documentation_and_referral) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_drivers_of_violence.json (lesson_drivers_of_violence) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_early_identification.json (lesson_early_identification) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_economic_empowerment_strategies.json (lesson_economic_empowerment_strategies) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_embedding_trauma_informed_practice.json (lesson_embedding_trauma_informed_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_empowerment_and_choice.json (lesson_empowerment_and_choice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_encouraging_help_seeking.json (lesson_encouraging_help_seeking) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_engaging_community_groups.json (lesson_engaging_community_groups) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_escalation_and_emergency_response.json (lesson_escalation_and_emergency_response) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_ethical_and_safe_boundaries.json (lesson_ethical_and_safe_boundaries) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_ethical_practice.json (lesson_ethical_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_ethical_storytelling.json (lesson_ethical_storytelling) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_everyday_prevention_actions.json (lesson_everyday_prevention_actions) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_evidence_and_evaluation.json (lesson_evidence_and_evaluation) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_evidence_and_risk_processes.json (lesson_evidence_and_risk_processes) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_harmful_norms_and_stereotypes.json (lesson_harmful_norms_and_stereotypes) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_health_led_strategies.json (lesson_health_led_strategies) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_historical_and_cultural_contexts.json (lesson_historical_and_cultural_contexts) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_holding_space.json (lesson_holding_space) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_identity_and_safety.json (lesson_identity_and_safety) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_implementing_and_evaluating_strategies.json (lesson_implementing_and_evaluating_strategies) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_inclusive_practice.json (lesson_inclusive_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_initial_assessment.json (lesson_initial_assessment) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_intersectional_practice.json (lesson_intersectional_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_justice_system_intersections.json (lesson_justice_system_intersections) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_leadership_for_prevention.json (lesson_leadership_for_prevention) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_leadership_responsibilities.json (lesson_leadership_responsibilities) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_leading_multidisciplinary_teams.json (lesson_leading_multidisciplinary_teams) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_leading_system_improvement.json (lesson_leading_system_improvement) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_legal_definitions_and_frameworks.json (lesson_legal_definitions_and_frameworks) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_legal_responses_to_dfv.json (lesson_legal_responses_to_dfv) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_lethality_assessment.json (lesson_lethality_assessment) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_local_partnerships.json (lesson_local_partnerships) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_long_term_health_consequences.json (lesson_long_term_health_consequences) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_long_term_housing_stability.json (lesson_long_term_housing_stability) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_long_term_recovery_planning.json (lesson_long_term_recovery_planning) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_maintaining_boundaries.json (lesson_maintaining_boundaries) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_maintaining_parent_child_connection.json (lesson_maintaining_parent_child_connection) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_managing_conflict_and_complexity.json (lesson_managing_conflict_and_complexity) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_managing_parental_stress.json (lesson_managing_parental_stress) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_mental_health_impacts.json (lesson_mental_health_impacts) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_mobilising_communities.json (lesson_mobilising_communities) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_modelling_safe_practice.json (lesson_modelling_safe_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_monitoring_and_evaluation.json (lesson_monitoring_and_evaluation) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_monitoring_dynamic_risk.json (lesson_monitoring_dynamic_risk) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_multi_layered_trauma.json (lesson_multi_layered_trauma) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_multiagency_risk_panels.json (lesson_multiagency_risk_panels) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_multiagency_work.json (lesson_multiagency_work) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_myths_and_misconceptions.json (lesson_myths_and_misconceptions) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_navigating_services.json (lesson_navigating_services) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_navigating_systems.json (lesson_navigating_systems) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_pathways_to_financial_independence.json (lesson_pathways_to_financial_independence) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_pathways_to_stability.json (lesson_pathways_to_stability) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_peer_led_prevention_initiatives.json (lesson_peer_led_prevention_initiatives) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_physical_health_impacts.json (lesson_physical_health_impacts) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_police_roles_and_responses.json (lesson_police_roles_and_responses) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_policy_and_system_influence.json (lesson_policy_and_system_influence) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_positive_social_norms.json (lesson_positive_social_norms) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_preparing_clients_for_court.json (lesson_preparing_clients_for_court) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_prevention_in_community_settings.json (lesson_prevention_in_community_settings) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_prevention_in_schools.json (lesson_prevention_in_schools) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_prevention_in_workplaces.json (lesson_prevention_in_workplaces) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_prevention_strategies.json (lesson_prevention_strategies) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_professional_boundaries.json (lesson_professional_boundaries) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_professional_responsibilities.json (lesson_professional_responsibilities) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_promoting_healing_and_stability.json (lesson_promoting_healing_and_stability) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_promoting_respectful_relationships.json (lesson_promoting_respectful_relationships) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_protection_orders_and_courts.json (lesson_protection_orders_and_courts) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_protective_factors.json (lesson_protective_factors) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_psychological_and_emotional_impacts.json (lesson_psychological_and_emotional_impacts) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_psychological_safety.json (lesson_psychological_safety) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_quality_and_improvement_systems.json (lesson_quality_and_improvement_systems) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_recognising_crisis_situations.json (lesson_recognising_crisis_situations) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_recognising_dfv_in_organisations.json (lesson_recognising_dfv_in_organisations) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_recognising_digital_red_flags.json (lesson_recognising_digital_red_flags) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_recognising_indicators.json (lesson_recognising_indicators) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_recognising_risk_as_a_parent.json (lesson_recognising_risk_as_a_parent) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_recognising_warning_signs.json (lesson_recognising_warning_signs) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_referral_pathways.json (lesson_referral_pathways) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_reflective_practice_and_self_care.json (lesson_reflective_practice_and_self_care) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_reflective_practice_frameworks.json (lesson_reflective_practice_frameworks) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_reflective_practice.json (lesson_reflective_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_responding_to_lgbtqia_dfv.json (lesson_responding_to_lgbtqia_dfv) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_responding_to_tech_facilitated_abuse.json (lesson_responding_to_tech_facilitated_abuse) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_restoring_routines.json (lesson_restoring_routines) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_risk_identification.json (lesson_risk_identification) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_role_of_justice_agencies.json (lesson_role_of_justice_agencies) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safe_and_ethical_messaging.json (lesson_safe_and_ethical_messaging) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safe_and_ethical_responses.json (lesson_safe_and_ethical_responses) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safe_bystander_actions.json (lesson_safe_bystander_actions) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safe_clinical_responses.json (lesson_safe_clinical_responses) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safe_engagement_with_young_people.json (lesson_safe_engagement_with_young_people) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safe_engagement.json (lesson_safe_engagement) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safe_information_sharing.json (lesson_safe_information_sharing) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safe_responses_in_organisations.json (lesson_safe_responses_in_organisations) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safe_supportive_responses.json (lesson_safe_supportive_responses) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safer_online_practices.json (lesson_safer_online_practices) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safety_in_legal_contexts.json (lesson_safety_in_legal_contexts) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safety_planning_with_children.json (lesson_safety_planning_with_children) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_safety_planning.json (lesson_safety_planning) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_scope_and_limitations.json (lesson_scope_and_limitations) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_sector_leadership.json (lesson_sector_leadership) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_self_care_for_peers.json (lesson_self_care_for_peers) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_service_pathways.json (lesson_service_pathways) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_shared_accountability.json (lesson_shared_accountability) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_shifting_attitudes_and_beliefs.json (lesson_shifting_attitudes_and_beliefs) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_shifting_community_norms.json (lesson_shifting_community_norms) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_specialist_therapeutic_support.json (lesson_specialist_therapeutic_support) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_strengthening_community_capacity.json (lesson_strengthening_community_capacity) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_strengthening_family_bonds.json (lesson_strengthening_family_bonds) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_strengthening_protective_relationships.json (lesson_strengthening_protective_relationships) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_strengths_based_practice.json (lesson_strengths_based_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_strengths_based_support.json (lesson_strengths_based_support) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_structured_case_review.json (lesson_structured_case_review) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_supervision_and_practice_leadership.json (lesson_supervision_and_practice_leadership) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_supervision_and_support.json (lesson_supervision_and_support) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_supporting_autonomy_and_safety.json (lesson_supporting_autonomy_and_safety) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_supporting_behaviour_change.json (lesson_supporting_behaviour_change) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_supporting_children_emotionally.json (lesson_supporting_children_emotionally) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_supporting_financial_safety.json (lesson_supporting_financial_safety) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_supporting_informed_decision_making.json (lesson_supporting_informed_decision_making) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_supporting_older_people.json (lesson_supporting_older_people) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_supporting_recovery.json (lesson_supporting_recovery) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_supporting_relational_healing.json (lesson_supporting_relational_healing) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_supporting_safety_planning.json (lesson_supporting_safety_planning) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_supportive_communication.json (lesson_supportive_communication) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_sustainable_recovery.json (lesson_sustainable_recovery) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_sustaining_change.json (lesson_sustaining_change) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_trauma_and_brain_development.json (lesson_trauma_and_brain_development) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_trauma_aware_community_practices.json (lesson_trauma_aware_community_practices) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_trauma_informed_communication.json (lesson_trauma_informed_communication) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_trauma_informed_engagement.json (lesson_trauma_informed_engagement) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_trauma_informed_housing_support.json (lesson_trauma_informed_housing_support) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_trauma_informed_legal_support.json (lesson_trauma_informed_legal_support) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_trauma_informed_principles.json (lesson_trauma_informed_principles) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_understanding_child_trauma.json (lesson_understanding_child_trauma) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_understanding_collective_trauma.json (lesson_understanding_collective_trauma) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_understanding_cultural_contexts.json (lesson_understanding_cultural_contexts) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_understanding_economic_abuse.json (lesson_understanding_economic_abuse) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_understanding_elder_abuse.json (lesson_understanding_elder_abuse) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_understanding_gender_inequality.json (lesson_understanding_gender_inequality) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_understanding_legal_options.json (lesson_understanding_legal_options) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_understanding_protection_orders.json (lesson_understanding_protection_orders) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_understanding_system_reform.json (lesson_understanding_system_reform) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_understanding_trauma_responses.json (lesson_understanding_trauma_responses) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_universal_education.json (lesson_universal_education) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_using_lived_experience_safely.json (lesson_using_lived_experience_safely) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_values_and_principles.json (lesson_values_and_principles) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_vicarious_trauma_and_burnout.json (lesson_vicarious_trauma_and_burnout) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_what_is_peer_support.json (lesson_what_is_peer_support) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_what_is_primary_prevention.json (lesson_what_is_primary_prevention) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_workforce_roles_and_skills.json (lesson_workforce_roles_and_skills) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_working_with_family_systems.json (lesson_working_with_family_systems) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_working_with_high_risk_cases.json (lesson_working_with_high_risk_cases) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_working_with_justice_partners.json (lesson_working_with_justice_partners) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_working_with_legal_services.json (lesson_working_with_legal_services) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_working_with_resistance.json (lesson_working_with_resistance) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_youth_as_change_makers.json (lesson_youth_as_change_makers) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_youth_engagement_strategies.json (lesson_youth_engagement_strategies) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lesson_youth_led_initiatives.json (lesson_youth_led_initiatives) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] lethality_assessment.json (lethality_assessment) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] long_term_accountability.json (long_term_accountability) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] long_term_recovery_planning.json (long_term_recovery_planning) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] maintaining_boundaries.json (maintaining_boundaries) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] maintaining_parent_child_connection.json (maintaining_parent_child_connection) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] managing_parental_stress.json (managing_parental_stress) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] managing-transitions.json missing 'id'[0m
+[33;1mWARNING: [LESSON] monitoring_dynamic_risk.json (monitoring_dynamic_risk) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] multi_layered_trauma.json (multi_layered_trauma) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] multiagency_risk_panels.json (multiagency_risk_panels) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] multiagency_work.json (multiagency_work) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] navigating_complex_systems.json (navigating_complex_systems) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] navigating_services.json (navigating_services) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] new_lesson_name.json missing 'id'[0m
+[33;1mWARNING: [LESSON] positive-behaviour-foundations.json missing 'id'[0m
+[33;1mWARNING: [LESSON] professional_responsibilities.json (professional_responsibilities) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] recognising_risk_as_a_parent.json (recognising_risk_as_a_parent) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] recognising_triggers.json (recognising_triggers) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] referral_pathways.json (referral_pathways) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] regulation_strategies.json (regulation_strategies) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] relapse_prevention.json (relapse_prevention) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] restoring_routines.json (restoring_routines) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] risk_identification.json (risk_identification) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] safety_planning_with_children.json (safety_planning_with_children) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] safety_planning.json (safety_planning) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] scope_and_limitations.json (scope_and_limitations) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] self_care_for_peers.json (self_care_for_peers) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] specialist_therapeutic_support.json (specialist_therapeutic_support) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] strengthening_family_bonds.json (strengthening_family_bonds) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] strengths_based_practice.json (strengths_based_practice) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] strengths_based_support.json (strengths_based_support) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] supervision_and_support.json (supervision_and_support) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] supporting_children_emotionally.json (supporting_children_emotionally) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] supporting_clients_through_system_barriers.json (supporting_clients_through_system_barriers) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] taking_responsibility.json (taking_responsibility) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] trauma_informed_engagement.json (trauma_informed_engagement) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] understanding_child_trauma.json (understanding_child_trauma) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] understanding_harm.json (understanding_harm) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] understanding-child-cues.json missing 'id'[0m
+[33;1mWARNING: [LESSON] using_lived_experience_safely.json (using_lived_experience_safely) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] what_is_peer_support.json (what_is_peer_support) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] working_with_high_risk_cases.json (working_with_high_risk_cases) has no 'sections' array[0m
+[33;1mWARNING: [LESSON] working_with_resistance.json (working_with_resistance) has no 'sections' array[0m
+
+Curriculum integrity check complete.

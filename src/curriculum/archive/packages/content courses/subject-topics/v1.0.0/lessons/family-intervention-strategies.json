@@ -1,0 +1,25 @@
+{
+  "id": "module-family-intervention-strategies",
+  "title": "Family Intervention Strategies",
+  "moduleId": "family-intervention-strategies",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents how structured interventions support behaviour, routines, and emotional development.",
+  "microLesson": "Family interventions use predictable routines, positive reinforcement, and emotional coaching to improve behaviour. Small, consistent changes create long‑term improvements. Parents who use structured strategies help children feel secure and supported.",
+  "activity": "Choose one intervention strategy (routine, praise, visual chart). Use it for two days and reflect on the outcome.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "behaviour-guidance"
+  ],
+  "resources": [
+    {
+      "title": "Family Intervention Toolkit",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

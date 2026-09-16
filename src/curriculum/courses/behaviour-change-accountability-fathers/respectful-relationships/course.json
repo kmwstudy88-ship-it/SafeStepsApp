@@ -1,0 +1,25 @@
+{
+  "id": "respectful-relationships",
+  "title": "Respectful Relationships (Father-Focused)",
+  "description": "This course supports fathers to build respectful, safe, and stable relationships with partners and children, reducing fear and increasing emotional security.",
+  "learningOutcomes": [
+    "Understand respectful behaviour in the context of fatherhood.",
+    "Recognise how disrespect affects children’s emotional wellbeing.",
+    "Learn how to build trust and safety in the family.",
+    "Develop long-term respectful relationship habits."
+  ],
+  "modules": [
+    {
+      "title": "Respect in Fathering",
+      "content": "Explores how respect shapes children’s emotional development."
+    },
+    {
+      "title": "Behaviours That Harm or Support Respect",
+      "content": "Identifies patterns that create fear or stability."
+    },
+    {
+      "title": "Building Safe Family Relationships",
+      "content": "Provides tools for consistent, respectful behaviour."
+    }
+  ]
+}

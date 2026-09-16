@@ -1,0 +1,10 @@
+{
+    "topic":  "reflective-practice",
+    "version":  "1.1.0",
+    "stream":  "dfv-peer-mentor",
+    "content":  "Lesson content for reflective-practice.",
+    "type":  "lesson",
+    "id":  "Lesson -  $args[0].Value.ToUpper() eflective  $args[0].Value.ToUpper() ractice",
+    "name":  "Lesson -  $args[0].Value.ToUpper() eflective  $args[0].Value.ToUpper() ractice",
+    "title":  "Lesson -  $args[0].Value.ToUpper() eflective  $args[0].Value.ToUpper() ractice"
+}

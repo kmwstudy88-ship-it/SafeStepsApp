@@ -1,0 +1,25 @@
+{
+  "id": "power-and-control-awareness",
+  "title": "Power and Control Awareness",
+  "description": "This course helps participants understand how power, control, and dominance can appear in relationships and how these behaviours create harm.",
+  "learningOutcomes": [
+    "Identify behaviours rooted in power and control.",
+    "Understand how control affects partners, family members, and children.",
+    "Recognise subtle and overt forms of dominance.",
+    "Develop strategies for equitable, respectful interactions."
+  ],
+  "modules": [
+    {
+      "title": "Understanding Power Dynamics",
+      "content": "Explores how power operates in relationships."
+    },
+    {
+      "title": "Forms of Control",
+      "content": "Identifies emotional, financial, social, and physical control."
+    },
+    {
+      "title": "Building Respectful Equality",
+      "content": "Provides tools for shared decision-making and fairness."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "module-trauma-informed-parenting-strategies",
+  "title": "Trauma-Informed Parenting Strategies",
+  "moduleId": "trauma-informed-parenting-strategies",
+  "durationMinutes": 60,
+  "learningGoal": "Teach parents practical trauma‑informed strategies to support healing and emotional safety.",
+  "microLesson": "Trauma‑informed parenting focuses on safety, predictability, and connection. Strategies include co‑regulation, calm tone, clear routines, and avoiding power struggles. These approaches help children feel safe enough to learn new behaviours.",
+  "activity": "Choose one trauma‑informed strategy to use today. Reflect on how it changed your child's behaviour or emotions.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "trauma-awareness",
+    "emotional-safety"
+  ],
+  "resources": [
+    {
+      "title": "Trauma-Informed Parenting Toolkit",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

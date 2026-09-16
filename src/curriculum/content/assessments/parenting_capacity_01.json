@@ -1,0 +1,43 @@
+{
+  "created_at": "2026-06-07T12:23:42.5338262+10:00",
+  "completed_at": null,
+  "recommendations": [],
+  "assessor": "Caseworker",
+  "updated_at": "2026-06-07T12:23:42.5338262+10:00",
+  "type": "parenting_capacity",
+  "overall_risk": null,
+  "id": "parenting_capacity_01",
+  "overall_strength": null,
+  "domains": [
+    {
+      "label": "Understanding child needs",
+      "notes": null,
+      "id": "understanding_needs",
+      "score": null
+    },
+    {
+      "label": "Consistency and routines",
+      "notes": null,
+      "id": "consistency",
+      "score": null
+    },
+    {
+      "label": "Boundaries and supervision",
+      "notes": null,
+      "id": "boundaries",
+      "score": null
+    },
+    {
+      "label": "Emotional availability",
+      "notes": null,
+      "id": "emotional_availability",
+      "score": null
+    },
+    {
+      "label": "Insight into harm",
+      "notes": null,
+      "id": "insight_into_harm",
+      "score": null
+    }
+  ]
+}

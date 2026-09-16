@@ -1,0 +1,27 @@
+{
+  "id": "module-building-trust-and-safety",
+  "title": "Building Trust and Safety",
+  "moduleId": "building-trust-and-safety",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents build emotional and physical safety so children feel secure, connected, and able to thrive.",
+  "microLesson": "Trust and safety are the foundation of every healthy parent–child relationship. Children feel safe when parents are predictable, emotionally available, and responsive to their needs. Safety is not only physical—emotional safety matters just as much. When children know they will be listened to, comforted, and treated with respect, their behaviour improves and their confidence grows. Trust is built through small, consistent moments: keeping promises, staying calm during conflict, repairing mistakes, and showing genuine interest in the child’s world. When safety is strong, children are more willing to explore, learn, and form healthy relationships.",
+  "activity": "Spend 10 minutes doing a child-led activity where your child chooses what to do. Focus on being present, warm, and predictable. Write a reflection on how your child responded to your attention and presence.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "attachment",
+    "emotional-safety",
+    "relationship-building"
+  ],
+  "resources": [
+    {
+      "title": "Building Safe and Trusting Relationships",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

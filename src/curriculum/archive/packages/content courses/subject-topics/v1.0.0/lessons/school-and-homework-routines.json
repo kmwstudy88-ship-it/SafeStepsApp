@@ -1,0 +1,28 @@
+{
+  "id": "module-school-and-homework-routines",
+  "title": "School and Homework Routines",
+  "moduleId": "school-and-homework-routines",
+  "durationMinutes": 60,
+  "learningGoal": "Help parents create predictable school and homework routines that support learning, reduce stress, and build responsibility.",
+  "microLesson": "Children learn best when their days feel predictable and calm. School and homework routines help children stay organised, reduce anxiety, and build confidence. A consistent routine includes preparing school items the night before, having a set time and place for homework, and breaking tasks into manageable steps. Parents support success by offering encouragement, staying calm during challenges, and helping children develop problem‑solving skills rather than doing the work for them. When routines are clear and consistent, children feel more capable and independent.",
+  "activity": "Choose one part of your school or homework routine to improve (e.g., morning preparation, after‑school transition, homework setup). Implement one small change and write a reflection on how it affected your child’s focus or stress level.",
+  "evidenceTypes": [
+    "reflection",
+    "photo"
+  ],
+  "caseworkerFlags": [
+    "routines",
+    "school-support",
+    "responsibility-building"
+  ],
+  "resources": [
+    {
+      "title": "School and Homework Routine Guide",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

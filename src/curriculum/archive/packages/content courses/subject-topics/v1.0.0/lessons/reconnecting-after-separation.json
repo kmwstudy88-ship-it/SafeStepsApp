@@ -1,0 +1,26 @@
+{
+  "id": "module-reconnecting-after-separation",
+  "title": "Reconnecting After Separation",
+  "moduleId": "reconnecting-after-separation",
+  "durationMinutes": 60,
+  "learningGoal": "Support parents to rebuild connection with children after time apart or disrupted contact.",
+  "microLesson": "Children may feel unsure, shy, or overwhelmed when reconnecting after separation. Parents can support reconnection by going slowly, following the child’s cues, and focusing on warmth and predictability. Avoiding pressure helps the child feel safe.",
+  "activity": "Plan a gentle reconnection activity (reading, play, walk). Reflect on how your child responded.",
+  "evidenceTypes": [
+    "reflection"
+  ],
+  "caseworkerFlags": [
+    "separation",
+    "attachment"
+  ],
+  "resources": [
+    {
+      "title": "Reconnection Strategies",
+      "url": ""
+    }
+  ],
+  "metadata": {
+    "type": "subject-lesson",
+    "version": "1.0.0"
+  }
+}

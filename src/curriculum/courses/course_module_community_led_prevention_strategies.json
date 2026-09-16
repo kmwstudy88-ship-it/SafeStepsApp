@@ -1,0 +1,61 @@
+{
+  "id": "course_module_community_led_prevention_strategies",
+  "title": "Community-Led Prevention Strategies",
+  "description": "Auto-generated course for module module_community_led_prevention_strategies",
+  "lessons": [
+    {
+      "id": "lesson_community_strengths_and_assets",
+      "title": "Community Strengths and Assets",
+      "sections": [
+        {
+          "id": "section_lesson_community_strengths_and_assets_01"
+        },
+        {
+          "id": "section_lesson_community_strengths_and_assets_02"
+        },
+        {
+          "id": "section_lesson_community_strengths_and_assets_03"
+        },
+        {
+          "id": "section_lesson_community_strengths_and_assets_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_designing_local_prevention_strategies",
+      "title": "Designing Local Prevention Strategies",
+      "sections": [
+        {
+          "id": "section_lesson_designing_local_prevention_strategies_01"
+        },
+        {
+          "id": "section_lesson_designing_local_prevention_strategies_02"
+        },
+        {
+          "id": "section_lesson_designing_local_prevention_strategies_03"
+        },
+        {
+          "id": "section_lesson_designing_local_prevention_strategies_04"
+        },
+        {
+          "id": "section_lesson_designing_local_prevention_strategies_05"
+        }
+      ]
+    },
+    {
+      "id": "lesson_implementing_and_evaluating_strategies",
+      "title": "Implementing and Evaluating Strategies",
+      "sections": [
+        {
+          "id": "section_lesson_implementing_and_evaluating_strategies_01"
+        },
+        {
+          "id": "section_lesson_implementing_and_evaluating_strategies_02"
+        },
+        {
+          "id": "section_lesson_implementing_and_evaluating_strategies_03"
+        }
+      ]
+    }
+  ]
+}

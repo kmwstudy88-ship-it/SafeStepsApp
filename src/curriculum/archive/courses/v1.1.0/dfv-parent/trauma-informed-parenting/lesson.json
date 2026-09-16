@@ -1,0 +1,24 @@
+{
+    "sections":  [
+                     {
+                         "title":  "Welcome",
+                         "content":  "Trauma affects how parents and children think, feel, and behave. This lesson builds understanding and compassion."
+                     },
+                     {
+                         "title":  "Core Concepts",
+                         "content":  "Trauma responses include fight, flight, freeze, and fawn. These are survival instincts, not choices."
+                     },
+                     {
+                         "title":  "Practical Skills",
+                         "content":  "Parents learn grounding, predictable routines, and coâ€‘regulation strategies."
+                     },
+                     {
+                         "title":  "Activity",
+                         "content":  "Identify a moment when you or your child felt overwhelmed. What helped?"
+                     },
+                     {
+                         "title":  "Reflection",
+                         "content":  "Traumaâ€‘informed parenting strengthens safety and connection."
+                     }
+                 ]
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "parent-001",
+    "title": "Understanding Domestic and Family Violence",
+    "description": "An introduction to DFV, its forms, and its impact on families.",
+    "keywords": ["dfv", "intro", "safety"],
+    "difficulty": "intro",
+    "order": 1
+  },
+  {
+    "id": "parent-002",
+    "title": "Recognising Early Warning Signs",
+    "description": "How to identify early indicators of controlling or harmful behaviour.",
+    "keywords": ["warning signs", "risk", "awareness"],
+    "difficulty": "intro",
+    "order": 2
+  },
+  {
+    "id": "parent-003",
+    "title": "Cycle of Violence",
+    "description": "Understanding the tension-building, incident, and reconciliation phases.",
+    "keywords": ["cycle", "patterns", "behaviour"],
+    "difficulty": "core",
+    "order": 3
+  },
+  {
+    "id": "parent-004",
+    "title": "Impact on Children",
+    "description": "How DFV affects children’s emotional, physical, and developmental wellbeing.",
+    "keywords": ["children", "impact", "development"],
+    "difficulty": "core",
+    "order": 4
+  },
+  {
+    "id": "parent-005",
+    "title": "Understanding Coercive Control",
+    "description": "Exploring non-physical forms of abuse and their long-term effects.",
+    "keywords": ["coercive control", "psychological abuse"],
+    "difficulty": "core",
+    "order": 5
+  },
+  {
+    "id": "parent-006",
+    "title": "Healthy Parenting Foundations",
+    "description": "Core principles of safe, nurturing, and consistent parenting.",
+    "keywords": ["parenting", "foundations", "safety"],
+    "difficulty": "intro",
+    "order": 6
+  },
+  {
+    "id": "parent-007",
+    "title": "Emotional Regulation for Parents",
+    "description": "Skills for managing stress, overwhelm, and emotional triggers.",
+    "keywords": ["regulation", "stress", "coping"],
+    "difficulty": "core",
+    "order": 7
+  },
+  {
+    "id": "parent-008",
+    "title": "Building Secure Attachment",
+    "description": "How to strengthen trust and emotional connection with children.",
+    "keywords": ["attachment", "bonding", "trust"],
+    "difficulty": "core",
+    "order": 8
+  },
+  {
+    "id": "parent-009",
+    "title": "Safe Communication Skills",
+    "description": "Techniques for calm, respectful, and effective communication.",
+    "keywords": ["communication", "skills", "respect"],
+    "difficulty": "intro",
+    "order": 9
+  },
+  {
+    "id": "parent-010",
+    "title": "Boundaries and Safety Planning",
+    "description": "How to set boundaries and create a practical safety plan.",
+    "keywords": ["boundaries", "safety plan"],
+    "difficulty": "core",
+    "order": 10
+  },
+  {
+    "id": "parent-011",
+    "title": "Understanding Trauma Responses",
+    "description": "Fight, flight, freeze, and fawn responses in adults and children.",
+    "keywords": ["trauma", "responses"],
+    "difficulty": "advanced",
+    "order": 11
+  },
+  {
+    "id": "parent-012",
+    "title": "Supporting Children Through Trauma",
+    "description": "How to respond to trauma symptoms in children.",
+    "keywords": ["children", "trauma"],
+    "difficulty": "advanced",
+    "order": 12
+  },
+  {
+    "id": "parent-013",
+    "title": "Rebuilding Trust After Harm",
+    "description": "Steps for repairing relationships and restoring safety.",
+    "keywords": ["trust", "repair"],
+    "difficulty": "advanced",
+    "order": 13
+  },
+  {
+    "id": "parent-014",
+    "title": "Managing Conflict Safely",
+    "description": "How to de-escalate conflict and prevent harm.",
+    "keywords": ["conflict", "de-escalation"],
+    "difficulty": "core",
+    "order": 14
+  },
+  {
+    "id": "parent-015",
+    "title": "Understanding Child Development",
+    "description": "Developmental stages and how DFV disrupts them.",
+    "keywords": ["development", "children"],
+    "difficulty": "intro",
+    "order": 15
+  },
+  {
+    "id": "parent-016",
+    "title": "Positive Behaviour Guidance",
+    "description": "Non-punitive strategies for guiding children’s behaviour.",
+    "keywords": ["behaviour", "guidance"],
+    "difficulty": "core",
+    "order": 16
+  },
+  {
+    "id": "parent-017",
+    "title": "Self-Care for Parents",
+    "description": "How to maintain wellbeing while supporting children.",
+    "keywords": ["self-care", "wellbeing"],
+    "difficulty": "intro",
+    "order": 17
+  },
+  {
+    "id": "parent-018",
+    "title": "Understanding Power and Control",
+    "description": "How power dynamics shape relationships and safety.",
+    "keywords": ["power", "control"],
+    "difficulty": "core",
+    "order": 18
+  },
+  {
+    "id": "parent-019",
+    "title": "Financial Abuse Awareness",
+    "description": "Recognising and responding to financial control.",
+    "keywords": ["financial abuse", "control"],
+    "difficulty": "core",
+    "order": 19
+  },
+  {
+    "id": "parent-020",
+    "title": "Digital Safety for Families",
+    "description": "Protecting children and parents from digital harm.",
+    "keywords": ["digital safety", "technology"],
+    "difficulty": "intro",
+    "order": 20
+  },
+  {
+    "id": "parent-021",
+    "title": "Cultural Safety in Parenting",
+    "description": "Supporting diverse families with respect and understanding.",
+    "keywords": ["culture", "safety"],
+    "difficulty": "core",
+    "order": 21
+  },
+  {
+    "id": "parent-022",
+    "title": "Responding to Disclosures",
+    "description": "How to respond safely when a child or adult discloses harm.",
+    "keywords": ["disclosure", "response"],
+    "difficulty": "advanced",
+    "order": 22
+  },
+  {
+    "id": "parent-023",
+    "title": "Supporting Teenagers Through DFV",
+    "description": "Understanding adolescent needs and risks.",
+    "keywords": ["teenagers", "support"],
+    "difficulty": "core",
+    "order": 23
+  },
+  {
+    "id": "parent-024",
+    "title": "Parenting After Separation",
+    "description": "Navigating co-parenting and safety after leaving harm.",
+    "keywords": ["separation", "co-parenting"],
+    "difficulty": "advanced",
+    "order": 24
+  },
+  {
+    "id": "parent-025",
+    "title": "Understanding Legal Protections",
+    "description": "Overview of protection orders and child safety processes.",
+    "keywords": ["legal", "protection"],
+    "difficulty": "intro",
+    "order": 25
+  },
+  {
+    "id": "parent-026",
+    "title": "Rebuilding Family Routines",
+    "description": "Creating stability and predictability after DFV.",
+    "keywords": ["routines", "stability"],
+    "difficulty": "intro",
+    "order": 26
+  },
+  {
+    "id": "parent-027",
+    "title": "Supporting Children’s Emotional Literacy",
+    "description": "Helping children name, understand, and manage emotions.",
+    "keywords": ["emotions", "children"],
+    "difficulty": "core",
+    "order": 27
+  },
+  {
+    "id": "parent-028",
+    "title": "Healthy Relationship Modelling",
+    "description": "Demonstrating respect, empathy, and boundaries.",
+    "keywords": ["relationships", "modelling"],
+    "difficulty": "core",
+    "order": 28
+  },
+  {
+    "id": "parent-029",
+    "title": "Understanding Parental Triggers",
+    "description": "Identifying and managing personal triggers safely.",
+    "keywords": ["triggers", "self-awareness"],
+    "difficulty": "advanced",
+    "order": 29
+  },
+  {
+    "id": "parent-030",
+    "title": "Long-Term Healing for Families",
+    "description": "Sustaining safety, connection, and recovery over time.",
+    "keywords": ["healing", "long-term"],
+    "difficulty": "advanced",
+    "order": 30
+  }
+]

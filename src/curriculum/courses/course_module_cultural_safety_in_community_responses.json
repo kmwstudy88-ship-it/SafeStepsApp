@@ -1,0 +1,61 @@
+{
+  "id": "course_module_cultural_safety_in_community_responses",
+  "title": "Cultural Safety in Community Responses",
+  "description": "Auto-generated course for module module_cultural_safety_in_community_responses",
+  "lessons": [
+    {
+      "id": "lesson_understanding_cultural_contexts",
+      "title": "Understanding Cultural Contexts",
+      "sections": [
+        {
+          "id": "section_lesson_understanding_cultural_contexts_01"
+        },
+        {
+          "id": "section_lesson_understanding_cultural_contexts_02"
+        },
+        {
+          "id": "section_lesson_understanding_cultural_contexts_03"
+        }
+      ]
+    },
+    {
+      "id": "lesson_avoiding_assumptions",
+      "title": "Avoiding Assumptions",
+      "sections": [
+        {
+          "id": "section_lesson_avoiding_assumptions_01"
+        },
+        {
+          "id": "section_lesson_avoiding_assumptions_02"
+        },
+        {
+          "id": "section_lesson_avoiding_assumptions_03"
+        },
+        {
+          "id": "section_lesson_avoiding_assumptions_04"
+        }
+      ]
+    },
+    {
+      "id": "lesson_building_trust_with_communities",
+      "title": "Building Trust with Communities",
+      "sections": [
+        {
+          "id": "section_lesson_building_trust_with_communities_01"
+        },
+        {
+          "id": "section_lesson_building_trust_with_communities_02"
+        },
+        {
+          "id": "section_lesson_building_trust_with_communities_03"
+        },
+        {
+          "id": "section_lesson_building_trust_with_communities_04"
+        },
+        {
+          "id": "section_lesson_building_trust_with_communities_05"
+        }
+      ]
+    }
+  ]
+}
