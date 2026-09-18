@@ -10,6 +10,7 @@ const requiredFiles = [
   'backend/document-intelligence/supabase.js',
   'lib/documentIntelligenceApi.ts',
   'lib/fairness/DocumentFairnessViewerScreen.tsx',
+  'shared/documentIntelligenceAnalysisSkills.js',
   'shared/documentIntelligenceMediaSignals.js',
   'supabase/migrations/20260911173000_document_intelligence_pipeline.sql',
 ];
@@ -59,7 +60,7 @@ if (!server.includes('SUPABASE_SERVICE_ROLE_KEY')) fail('Readiness checks do not
 if (!server.includes('OPENAI_API_KEY') || !server.includes('ANTHROPIC_API_KEY')) fail('Readiness checks do not cover AI provider credentials.');
 
 const ai = read('backend/document-intelligence/ai.js');
-for (const skill of ['"evidence"', '"contradictions"', '"timeline"', '"risk"', '"bias"', '"fairness"', '"media_assessment"']) {
+for (const skill of ['"evidence"', '"contradictions"', '"timeline"', '"risk"', '"bias"', '"fairness"', '"media_assessment"', '"analysis_skills"']) {
   if (!ai.includes(skill)) fail(`AI schema missing analysis skill ${skill}.`);
 }
 if (!ai.includes('api.openai.com/v1/responses')) fail('OpenAI Responses API integration missing.');
@@ -68,6 +69,39 @@ if (!ai.includes('Do not make automated child-protection decisions')) fail('Huma
 const sharedMediaSignals = read('shared/documentIntelligenceMediaSignals.js');
 if (!sharedMediaSignals.includes('Environmental Safety') || !sharedMediaSignals.includes('Digital Integrity & Authenticity')) {
   fail('Upgraded media signal domains are missing from shared schema definitions.');
+}
+const sharedAnalysisSkills = read('shared/documentIntelligenceAnalysisSkills.js');
+for (const skill of [
+  'fairness_detection',
+  'bias_and_discrimination_detection',
+  'coercion_and_framing_detection',
+  'contradiction_detection',
+  'evidence_extraction',
+  'requirement_and_obligation_extraction',
+  'timeline_extraction',
+  'risk_signal_extraction',
+  'concern_classification',
+  'unrealistic_expectation_detection',
+  'developmental_appropriateness_checks',
+  'cultural_safety_checks',
+  'child_safe_language_checks',
+  'disclosure_sensitive_handling',
+  'privacy_and_boundary_checks',
+]) {
+  if (!sharedAnalysisSkills.includes(`skill_id: '${skill}'`)) fail(`Missing required analysis skill definition: ${skill}.`);
+}
+for (const requiredField of [
+  'input_format',
+  'output_schema',
+  'confidence_score',
+  'evidence_citation_or_source_location',
+  'limitations',
+  'human_review_requirement',
+  'failure_behavior',
+  'test_cases',
+  'unsafe_output_rules',
+]) {
+  if (!sharedAnalysisSkills.includes(requiredField)) fail(`Analysis skill contract field missing: ${requiredField}.`);
 }
 
 const pipeline = read('backend/document-intelligence/pipeline.js');

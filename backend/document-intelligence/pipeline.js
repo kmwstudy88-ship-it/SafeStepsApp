@@ -9,6 +9,7 @@ const {
   analyzeDocument,
   compareDocuments,
   createEmptyMediaAssessment,
+  normalizeAnalysisSkills,
 } = require('./ai');
 
 const WORKER_ID = process.env.DOCUMENT_AI_WORKER_ID || `node-${process.pid}-${crypto.randomUUID().slice(0, 8)}`;
@@ -146,12 +147,13 @@ async function processAnalysisJob(job) {
   const ai = await analyzeDocument(document, fileBuffer);
   const result = ai.result || {};
   const mediaAssessment = result.media_assessment || result.risk?.media_assessment || createEmptyMediaAssessment();
+  const analysisSkills = normalizeAnalysisSkills(result.analysis_skills || result.analysisSkills);
   const risk = result.risk && typeof result.risk === 'object' ? result.risk : {};
   const completedAt = new Date().toISOString();
   await expectNoError(admin.from('document_analyses').update({
     provider: ai.provider, model: ai.model, status: 'completed', summary: result.summary || {}, evidence: result.evidence || [],
     contradictions: result.contradictions || [], timeline: result.timeline || [], risk: { ...risk, media_assessment: mediaAssessment }, bias: result.bias || {},
-    fairness: result.fairness || {}, limitations: result.limitations || [], raw_output: result, usage: ai.usage || {}, completed_at: completedAt,
+    fairness: result.fairness || {}, limitations: result.limitations || [], raw_output: { ...result, analysis_skills: analysisSkills }, usage: ai.usage || {}, completed_at: completedAt,
   }).eq('id', analysisId));
   await expectNoError(admin.from('documents').update({ processing_status: 'completed', updated_at: completedAt }).eq('id', document.id));
 }
@@ -165,6 +167,12 @@ function normalizeAnalysisRecord(analysis) {
       || analysis.raw_output?.media_assessment
       || analysis.raw_output?.risk?.media_assessment
       || createEmptyMediaAssessment(),
+    analysis_skills: normalizeAnalysisSkills(
+      analysis.raw_output?.analysis_skills
+      || analysis.raw_output?.analysisSkills
+      || analysis.analysis_skills
+      || analysis.analysisSkills,
+    ),
   };
 }
 

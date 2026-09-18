@@ -33,6 +33,17 @@ export type DocumentAnalysis = {
   timeline?: unknown[];
   risk?: Record<string, unknown> & { media_assessment?: MediaAssessmentResult };
   media_assessment?: MediaAssessmentResult;
+  analysis_skills?: Array<{
+    skill_id?: string;
+    status?: 'complete' | 'insufficient_evidence' | 'failed';
+    findings?: Array<Record<string, unknown>>;
+    confidence?: number;
+    evidence_citations?: string[];
+    limitations?: string[];
+    human_review_required?: boolean;
+    failure_behavior?: string;
+    unsafe_output_flags?: string[];
+  }>;
   raw_output?: Record<string, unknown>;
   limitations?: string[];
   error_message?: string | null;

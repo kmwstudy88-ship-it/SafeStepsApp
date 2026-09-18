@@ -1,10 +1,18 @@
 'use strict';
 
 const { mediaSignalDomains, createEmptyMediaAssessment } = require('../../shared/documentIntelligenceMediaSignals');
+const {
+  ANALYSIS_SKILL_RESULT_SCHEMA,
+  analysisSkillCatalog,
+  createEmptyAnalysisSkills,
+  normalizeAnalysisSkills,
+} = require('../../shared/documentIntelligenceAnalysisSkills');
 
-const ANALYSIS_SCHEMA_VERSION = 'document-intelligence-v2';
+const ANALYSIS_SCHEMA_VERSION = 'document-intelligence-v3';
 const COMPARISON_SCHEMA_VERSION = 'document-comparison-v1';
 const MEDIA_SIGNAL_GUIDANCE = JSON.stringify(mediaSignalDomains, null, 2);
+const ANALYSIS_SKILLS_GUIDANCE = JSON.stringify(analysisSkillCatalog, null, 2);
+const ANALYSIS_SKILL_RESULT_SCHEMA_GUIDANCE = JSON.stringify(ANALYSIS_SKILL_RESULT_SCHEMA, null, 2);
 
 const ANALYSIS_INSTRUCTIONS = `You are SafeSteps Document Intelligence. Analyze child/family casework records as decision-support only.
 Return valid JSON only. Never infer a fact, diagnosis, motive, risk, or credibility finding that is not supported by the supplied material. Distinguish allegation, observation, opinion, and verified evidence. Preserve uncertainty. Do not make automated child-protection decisions.
@@ -18,9 +26,14 @@ Required JSON shape:
   "bias": {"score":100, "signals":[{"category":"", "language":"", "explanation":"", "severity":"low|medium|high"}]},
   "fairness": {"score":100, "framing_concerns":[], "coercion_flags":[], "discrimination_risks":[], "unrealistic_expectations":[], "remediation_recommendations":[{"concern":"", "reframe":""}]},
   "media_assessment": {"domains":[{"domain_id":"", "domain_name":"", "signals_observed":[], "risk_flags":[], "protective_flags":[], "notes":"", "confidence":0}]},
+  "analysis_skills": [{"skill_id":"", "status":"complete|insufficient_evidence|failed", "findings":[], "confidence":0, "evidence_citations":[], "limitations":[], "human_review_required":true, "failure_behavior":"", "unsafe_output_flags":[]}],
   "limitations": []
 }
 Scores are 0-100. Risk score is a document-content signal, not a case decision. Fairness/bias scores are higher when language is more objective and evidence-linked.
+For each required skill below, return exactly one entry in analysis_skills using this schema:
+${ANALYSIS_SKILL_RESULT_SCHEMA_GUIDANCE}
+Required skill catalog:
+${ANALYSIS_SKILLS_GUIDANCE}
 When the supplied material includes video, photos, transcripts of observed interaction, visit notes, or metadata, assess only the following upgraded media-signal domains and leave unsupported domains empty:
 ${MEDIA_SIGNAL_GUIDANCE}
 Violence & Coercive Control Indicators is risk-only, so protective_flags must stay empty for that domain.
@@ -138,7 +151,10 @@ module.exports = {
   ANALYSIS_SCHEMA_VERSION,
   COMPARISON_SCHEMA_VERSION,
   mediaSignalDomains,
+  analysisSkillCatalog,
   createEmptyMediaAssessment,
+  createEmptyAnalysisSkills,
+  normalizeAnalysisSkills,
   providerName,
   analyzeDocument,
   compareDocuments,
