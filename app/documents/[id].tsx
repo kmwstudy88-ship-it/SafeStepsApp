@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
+import * as FileSystem from 'expo-file-system';
 import { useLocalSearchParams } from 'expo-router';
 
-import { supabase } from '../../lib/supabaseClient';
-
-const { uploadDocument, processDocument, getAnalysis } = require('../../shared/apiClient');
+import { queueDocumentUpload, waitForDocumentAnalysis, type DocumentAnalysis } from '../../lib/documentIntelligenceApi';
 
 export default function DocumentViewerScreen() {
   const { id: caseId } = useLocalSearchParams<{ id: string }>();
@@ -14,7 +13,7 @@ export default function DocumentViewerScreen() {
   const [notesText, setNotesText] = useState('');
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
-  const [analysis, setAnalysis] = useState<any>(null);
+  const [analysis, setAnalysis] = useState<DocumentAnalysis | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   async function pickDocument() {
@@ -45,41 +44,25 @@ export default function DocumentViewerScreen() {
     setStatus('Uploading document...');
 
     try {
-      const { data: session } = await supabase.auth.getSession();
-      const authUserId = session?.session?.user?.id ?? null;
-
-      let appUserId: string | null = null;
-      if (authUserId) {
-        const { data: userRow } = await supabase
-          .from('users')
-          .select('id')
-          .eq('auth_user_id', authUserId)
-          .maybeSingle();
-        appUserId = userRow?.id ?? null;
+      if (typeof selectedDocument.size === 'number' && selectedDocument.size > 25 * 1024 * 1024) {
+        throw new Error('Document exceeds the 25 MB upload limit.');
       }
-
-      const uploadResponse = await uploadDocument({
+      const contentBase64 = await FileSystem.readAsStringAsync(selectedDocument.uri, {
+        encoding: FileSystem.EncodingType.Base64,
+      });
+      const uploadResponse = await queueDocumentUpload({
         caseId,
-        uploadedBy: appUserId,
         fileName: selectedDocument.name,
         mimeType: selectedDocument.mimeType || 'application/octet-stream',
-        storagePath: selectedDocument.uri,
-        text:
-          notesText.trim() ||
-          `Document upload: ${selectedDocument.name}. Add extracted text for deeper section matching when available.`,
+        contentBase64,
+        extractedText: notesText.trim() || null,
       });
 
-      setStatus('Running full analysis pipeline...');
-      const processed = await processDocument({
-        caseId,
-        documentId: uploadResponse.documentId,
-        requestedBy: appUserId,
-      });
-
-      setStatus(processed.escalationTriggered ? 'High risk detected. Escalation event logged.' : 'Analysis complete.');
-
-      const stored = await getAnalysis(processed.analysisId);
-      setAnalysis(stored);
+      setStatus('Queued for analysis. Waiting for results...');
+      const result = await waitForDocumentAnalysis(uploadResponse.document_id);
+      if (result.analysis?.status === 'failed') throw new Error(result.analysis.error_message || 'Document analysis failed.');
+      setStatus('Analysis complete. Human review is required before any case action.');
+      setAnalysis(result.analysis);
     } catch (uploadError: any) {
       setError(uploadError?.message || 'Document processing failed');
       setStatus(null);
@@ -132,8 +115,8 @@ export default function DocumentViewerScreen() {
             <Text style={styles.meta}>Analysis ID: {analysis.id}</Text>
             <Text style={styles.meta}>Provider: {analysis.provider || 'heuristic'}</Text>
             <Text style={styles.meta}>Model: {analysis.model || 'n/a'}</Text>
-            <Text style={styles.meta}>Risk: {analysis.risk?.risk_level || analysis.risk_result?.risk_level || 'n/a'}</Text>
-            <Text style={styles.summary}>{analysis.summary}</Text>
+            <Text style={styles.meta}>Risk: {String(analysis.risk?.level || 'n/a')}</Text>
+            <Text style={styles.summary}>{String(analysis.raw_output?.summary?.overview || 'No summary available.')}</Text>
           </View>
         ) : null}
       </ScrollView>

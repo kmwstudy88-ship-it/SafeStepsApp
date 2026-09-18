@@ -434,3 +434,65 @@ test('getDocumentForUser falls back to nested raw_output risk media assessment',
     assert.equal(result.analysis.media_assessment.domains[0].risk_flags[0], 'Biased recording intent');
   });
 });
+
+test('queueDocumentAnalysis creates a queued analysis job for an existing owned document', async () => {
+  const { admin, calls } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', user_id: 'user-1' }, error: null };
+    }
+    if (query.table === 'document_analyses' && query.op === 'insert') {
+      return { data: { id: 'analysis-2', ...query.payload }, error: null };
+    }
+    if (query.table === 'document_analysis_jobs' && query.op === 'insert') {
+      return { data: { id: 'job-2', ...query.payload }, error: null };
+    }
+    if (query.table === 'documents' && query.op === 'update') {
+      return { data: null, error: null };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ queueDocumentAnalysis }) => {
+    const result = await queueDocumentAnalysis({ userId: 'user-1', documentId: 'doc-1' });
+    assert.equal(result.analysis.id, 'analysis-2');
+    assert.equal(result.job.id, 'job-2');
+  });
+
+  const documentUpdate = calls.queries.find((query) => query.table === 'documents' && query.op === 'update');
+  assert.equal(documentUpdate.payload.processing_status, 'queued');
+});
+
+test('getAnalysisForUser returns normalized media assessment domains', async () => {
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'document_analyses' && query.op === 'select') {
+      return {
+        data: {
+          id: 'analysis-1',
+          status: 'completed',
+          risk: {},
+          raw_output: {
+            media_assessment: {
+              domains: [{
+                domain_id: 'digital_integrity_and_authenticity',
+                domain_name: 'Digital Integrity & Authenticity',
+                signals_observed: ['Metadata validation'],
+                risk_flags: ['Potential tampering'],
+                protective_flags: [],
+                notes: 'Metadata checks were incomplete.',
+                confidence: 0.4,
+              }],
+            },
+          },
+        },
+        error: null,
+      };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ getAnalysisForUser }) => {
+    const result = await getAnalysisForUser('analysis-1', 'user-1');
+    assert.equal(result.media_assessment.domains[0].domain_id, 'digital_integrity_and_authenticity');
+    assert.equal(result.media_assessment.domains[0].risk_flags[0], 'Potential tampering');
+  });
+});

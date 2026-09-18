@@ -88,6 +88,45 @@ async function createComparison({ userId, caseId = null, documentIds }) {
   return { comparison, job };
 }
 
+async function queueDocumentAnalysis({ userId, documentId }) {
+  if (!documentId) throw new Error('documentId is required');
+  const { data: document, error: documentError } = await admin
+    .from('documents')
+    .select('*')
+    .eq('id', documentId)
+    .eq('user_id', userId)
+    .maybeSingle();
+  if (documentError) throw documentError;
+  if (!document) {
+    const error = new Error('Document not found.');
+    error.statusCode = 404;
+    throw error;
+  }
+
+  const now = new Date().toISOString();
+  const { data: analysis, error: analysisError } = await admin.from('document_analyses').insert({
+    document_id: document.id,
+    user_id: userId,
+    provider: providerName(),
+    model: DEFAULT_MODEL(),
+    schema_version: ANALYSIS_SCHEMA_VERSION,
+    status: 'queued',
+  }).select('*').single();
+  if (analysisError) throw analysisError;
+
+  const { data: job, error: jobError } = await admin.from('document_analysis_jobs').insert({
+    job_type: 'document_analysis',
+    document_id: document.id,
+    user_id: userId,
+    payload: { analysis_id: analysis.id },
+  }).select('*').single();
+  if (jobError) throw jobError;
+
+  const { error: updateError } = await admin.from('documents').update({ processing_status: 'queued', updated_at: now }).eq('id', document.id);
+  if (updateError) throw updateError;
+  return { document, analysis, job };
+}
+
 async function loadBinary(document) {
   if (!document.storage_path) return null;
   const { data, error } = await admin.storage.from('document-intelligence').download(document.storage_path);
@@ -200,4 +239,24 @@ async function getComparisonForUser(id, userId) {
   return data;
 }
 
-module.exports = { createTextDocument, createUploadDocument, createComparison, processNextJobs, getDocumentForUser, getComparisonForUser };
+async function getAnalysisForUser(id, userId) {
+  const { data, error } = await admin
+    .from('document_analyses')
+    .select('*')
+    .eq('id', id)
+    .eq('user_id', userId)
+    .maybeSingle();
+  if (error) throw error;
+  return normalizeAnalysisRecord(data);
+}
+
+module.exports = {
+  createTextDocument,
+  createUploadDocument,
+  createComparison,
+  queueDocumentAnalysis,
+  processNextJobs,
+  getDocumentForUser,
+  getComparisonForUser,
+  getAnalysisForUser,
+};
