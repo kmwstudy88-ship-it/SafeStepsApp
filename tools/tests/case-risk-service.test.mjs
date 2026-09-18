@@ -81,6 +81,25 @@ test('buildEscalationAlerts respects configurable delta escalation thresholds', 
   assert.equal(atCustomThreshold.some((item) => item.trigger_type === 'risk_score_delta'), true);
 });
 
+test('buildEscalationAlerts falls back to the safe default when delta threshold is invalid', () => {
+  const alerts = buildEscalationAlerts({
+    snapshot: {
+      score: 70,
+      tier: 'high',
+      model_version: 'risk-rules-v1',
+      hard_escalation: { triggered: false, triggers: [] },
+    },
+    previousSnapshot: { score: 50 },
+    routedTo: { case_worker_ids: [], supervisor_ids: [] },
+    rules: {
+      thresholds: { highAlertScore: 60, criticalAlertScore: 75 },
+      deltaEscalationThreshold: 'abc',
+    },
+  });
+
+  assert.equal(alerts.some((item) => item.trigger_type === 'risk_score_delta'), true);
+});
+
 test('buildFollowUpTasks upgrades follow-up SLA and marks reprioritization after risk increases', () => {
   const tasks = buildFollowUpTasks({
     caseId: 'case-1',

@@ -2,6 +2,7 @@ import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.57.4";
 
 const jsonHeaders = { "Content-Type": "application/json", "Cache-Control": "no-store" };
+const allowedRiskLevels = new Set(["low", "moderate", "high", "critical"]);
 
 function cors(req: Request) {
   const origin = req.headers.get("origin") ?? "*";
@@ -35,7 +36,16 @@ Deno.serve(async (req: Request) => {
       throw new Error("caseId, riskScore, and riskLevel are required");
     }
 
-    const escalationRequired = ["high", "critical"].includes(String(body.riskLevel).toLowerCase()) || Number(body.riskScore) >= 65;
+    const riskScore = Number(body.riskScore);
+    const riskLevel = String(body.riskLevel).toLowerCase();
+    if (!Number.isFinite(riskScore)) {
+      throw new Error("riskScore must be a finite number");
+    }
+    if (!allowedRiskLevels.has(riskLevel)) {
+      throw new Error("riskLevel must be one of: low, moderate, high, critical");
+    }
+
+    const escalationRequired = ["high", "critical"].includes(riskLevel) || riskScore >= 65;
     if (!escalationRequired) {
       return new Response(JSON.stringify({ ok: true, escalated: false, reason: "Risk score below escalation threshold" }), { headers: { ...headers, ...jsonHeaders } });
     }
@@ -55,8 +65,8 @@ Deno.serve(async (req: Request) => {
         doc_signals: Array.isArray(body.docSignals) ? body.docSignals : [],
         payload: {
           external_risk_signal: {
-            risk_score: Number(body.riskScore),
-            risk_level: body.riskLevel,
+            risk_score: riskScore,
+            risk_level: riskLevel,
             analysis_id: body.analysisId ?? null,
             triggered_at: new Date().toISOString(),
             actor_auth_user_id: authData.user.id,
@@ -66,12 +76,15 @@ Deno.serve(async (req: Request) => {
     });
     const riskBody = await riskResponse.json().catch(() => null);
     if (!riskResponse.ok) throw new Error(riskBody?.error?.message ?? `Risk escalation request failed (${riskResponse.status})`);
+    const alerts = Array.isArray(riskBody?.alerts) ? riskBody.alerts : [];
+    const snapshotTier = String(riskBody?.snapshot?.tier ?? "").toLowerCase();
+    const escalated = alerts.length > 0 || ["high", "critical"].includes(snapshotTier);
 
     return new Response(JSON.stringify({
       ok: true,
-      escalated: true,
+      escalated,
       snapshot: riskBody?.snapshot ?? null,
-      alerts: riskBody?.alerts ?? [],
+      alerts,
       tasks: riskBody?.tasks ?? [],
       human_review_required: true,
     }), { headers: { ...headers, ...jsonHeaders } });

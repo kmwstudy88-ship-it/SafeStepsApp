@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import * as DocumentPicker from 'expo-document-picker';
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system/legacy';
 import { useLocalSearchParams } from 'expo-router';
 
 import { queueDocumentUpload, waitForDocumentAnalysis, type DocumentAnalysis } from '../../lib/documentIntelligenceApi';
@@ -15,6 +15,9 @@ export default function DocumentViewerScreen() {
   const [status, setStatus] = useState<string | null>(null);
   const [analysis, setAnalysis] = useState<DocumentAnalysis | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const summaryOverview = typeof analysis?.summary?.overview === 'string'
+    ? analysis.summary.overview
+    : 'No summary available.';
 
   async function pickDocument() {
     const result = await DocumentPicker.getDocumentAsync({
@@ -116,7 +119,7 @@ export default function DocumentViewerScreen() {
             <Text style={styles.meta}>Provider: {analysis.provider || 'heuristic'}</Text>
             <Text style={styles.meta}>Model: {analysis.model || 'n/a'}</Text>
             <Text style={styles.meta}>Risk: {String(analysis.risk?.level || 'n/a')}</Text>
-            <Text style={styles.summary}>{String(analysis.raw_output?.summary?.overview || 'No summary available.')}</Text>
+            <Text style={styles.summary}>{summaryOverview}</Text>
           </View>
         ) : null}
       </ScrollView>
