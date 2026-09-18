@@ -76,6 +76,9 @@ Compatibility and generated areas live here:
 - `GET /analyses/:id` *(compatibility read path)*
 - `POST /analyses/compare` *(compatibility alias of `/documents/compare`)*
 - `POST /risk-assessment/compute` *(compatibility alias that returns latest recomputed Track C snapshot)*
+- `GET /documents/:id`
+- `POST /documents/compare`
+- `GET /documents/comparisons/:id`
 - `POST /cases/:id/events`
 - `POST /cases/:id/recompute-risk`
 - `GET /cases/:id/risk-history`

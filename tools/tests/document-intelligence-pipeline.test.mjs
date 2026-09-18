@@ -100,6 +100,10 @@ function makeAdmin(resolveQuery, storage = {}) {
           state.payload = payload;
           return builder;
         },
+        delete() {
+          state.op = 'delete';
+          return builder;
+        },
         select(columns) {
           state.columns = columns;
           return builder;
@@ -163,6 +167,37 @@ async function withoutConsoleError(run) {
   }
 }
 
+test('createUploadDocument rolls back stored artifacts when job creation fails', async () => {
+  const failure = new Error('queue unavailable');
+  const { admin, calls } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'insert') return { data: { ...query.payload }, error: null };
+    if (query.table === 'document_analyses' && query.op === 'insert') return { data: { id: 'analysis-1', ...query.payload }, error: null };
+    if (query.table === 'document_analysis_jobs' && query.op === 'insert') return { data: null, error: failure };
+    if (query.table === 'documents' && query.op === 'delete') return { data: null, error: null };
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ createUploadDocument }) => {
+    await assert.rejects(
+      createUploadDocument({
+        userId: 'user-1',
+        caseId: 'case-1',
+        fileName: 'Unsafe name (draft).txt',
+        mimeType: 'text/plain',
+        contentBase64: Buffer.from('hello world', 'utf8').toString('base64'),
+      }),
+      { message: 'queue unavailable' },
+    );
+  });
+
+  const documentDelete = calls.queries.find((query) => query.table === 'documents' && query.op === 'delete');
+  assert.equal(Boolean(documentDelete?.filters.find((filter) => filter.type === 'eq')?.value), true);
+  assert.deepEqual(calls.removals[0], {
+    bucket: 'document-intelligence',
+    paths: [calls.uploads[0].path],
+  });
+});
+
 test('createUploadDocument stores inline text uploads with a sanitized storage path', async () => {
   const { admin, calls } = makeAdmin((query) => {
     if (query.table === 'documents' && query.op === 'insert') return { data: { ...query.payload }, error: null };
@@ -219,6 +254,62 @@ test('createComparison enqueues only unique owned document IDs', async () => {
     assert.deepEqual(comparisonInsert.payload.document_ids, ['doc-a', 'doc-b']);
     assert.equal(result.comparison.id, 'comparison-1');
   });
+});
+
+test('processNextJobs preserves requested comparison order when building comparison input', async () => {
+  let comparedItems = [];
+  const { admin, calls } = makeAdmin((query) => {
+    if (query.table === '__rpc__' && query.op === 'claim_document_analysis_jobs') {
+      return {
+        data: [{
+          id: 'job-1',
+          job_type: 'document_comparison',
+          comparison_id: 'comparison-1',
+          user_id: 'user-1',
+          payload: {},
+          attempts: 0,
+          max_attempts: 2,
+          available_at: '2026-09-11T00:00:00.000Z',
+        }],
+        error: null,
+      };
+    }
+    if (query.table === 'document_comparisons' && query.op === 'select') {
+      return {
+        data: { id: 'comparison-1', user_id: 'user-1', document_ids: ['doc-a', 'doc-b'] },
+        error: null,
+      };
+    }
+    if (query.table === 'document_analysis_jobs' && query.op === 'update') return { data: null, error: null };
+    if (query.table === 'document_comparisons' && query.op === 'update') return { data: null, error: null };
+    if (query.table === 'documents' && query.op === 'select') {
+      return {
+        data: [
+          { id: 'doc-b', file_name: 'b.txt', extracted_text: 'Document B' },
+          { id: 'doc-a', file_name: 'a.txt', extracted_text: 'Document A' },
+        ],
+        error: null,
+      };
+    }
+    if (query.table === 'document_analyses' && query.op === 'select') return { data: null, error: null };
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({
+    admin,
+    ai: {
+      compareDocuments: async (items) => {
+        comparedItems = items;
+        return { provider: 'openai', model: 'unit-model', result: { overview: 'ok' }, usage: {} };
+      },
+    },
+  }, async ({ processNextJobs }) => {
+    assert.equal(await processNextJobs(1), 1);
+  });
+
+  assert.deepEqual(comparedItems.map((item) => item.document.id), ['doc-a', 'doc-b']);
+  const completionUpdate = calls.queries.filter((query) => query.table === 'document_analysis_jobs' && query.op === 'update').at(-1);
+  assert.equal(completionUpdate.payload.status, 'completed');
 });
 
 test('processNextJobs requeues failed analysis jobs before the final attempt', async () => {
