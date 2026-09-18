@@ -124,6 +124,27 @@ Track C adds a deterministic safety-support workflow for case events, risk snaps
 - If a worker or supervisor overrides an automated recommendation, record a follow-up case event/note with the justification so the audit trail stays complete
 - Resolve or dismiss escalation alerts only after a human review documents the outcome in case notes or a linked case event
 
+### Risk-model versioning process
+
+- Treat `backend/case-risk/rules.js` `version` as the contract identifier for risk scoring behavior.
+- For any rule/weight/threshold change, bump the `version` value in the same pull request as the rule edits and tests.
+- Add or update tests in `tools/tests/case-risk-engine.test.mjs`, `tools/tests/case-risk-service.test.mjs`, and `tools/tests/case-risk-migration.test.mjs` to cover the changed behavior.
+- Keep previous `risk_snapshots.model_version` values immutable so historical decisions remain reproducible.
+- Require supervisor sign-off in code review for any risk-model version bump before release.
+
+### Supervisor score interpretation
+
+- `0-24` (`low`): maintain routine check-ins and monitor for new signals.
+- `25-49` (`moderate`): increase follow-up cadence and confirm protective-factor stability.
+- `50-74` (`high`): perform expedited supervisor review and verify safety-plan execution.
+- `75-100` (`critical`) or any hard flag: immediate supervisor attention, urgent safety review, and documented human decision.
+- Rising-risk deltas (`+15` or more) indicate acceleration risk and should be reviewed even when the tier does not change.
+
+### Automation boundaries
+
+- Automated workflow outputs must never directly change placement, contact arrangements, legal status, or custody outcomes.
+- Any such change requires explicit human review and documented rationale in case notes/events.
+
 ## Readiness notes
 
 - The root Expo manifest and lockfile are now restored so the mobile app can be installed and validated consistently.
