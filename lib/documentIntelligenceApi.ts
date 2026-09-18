@@ -26,6 +26,9 @@ export type FairnessResult = {
 export type DocumentAnalysis = {
   id: string;
   status: 'queued' | 'processing' | 'completed' | 'failed';
+  provider?: string;
+  model?: string;
+  summary?: Record<string, unknown>;
   fairness?: FairnessResult;
   bias?: { score?: number; signals?: Array<{ category?: string; language?: string; explanation?: string; severity?: string }> };
   evidence?: unknown[];
@@ -41,6 +44,15 @@ export type DocumentAnalysis = {
 export type DocumentPollResult = {
   document: { id: string; processing_status: string; file_name?: string };
   analysis: DocumentAnalysis | null;
+};
+
+export type DocumentQueueResult = {
+  document_id: string;
+  analysis_id: string;
+  job_id?: string;
+  status: 'queued' | 'processing' | 'completed' | 'failed';
+  poll_url?: string;
+  human_review_required?: boolean;
 };
 
 const baseUrl = String(
@@ -67,8 +79,27 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export async function queueFairnessAnalysis(text: string) {
-  return request<{ document_id: string; analysis_id: string; status: string }>('/documents/analyze/fairness', {
+  return request<DocumentQueueResult>('/documents/analyze/fairness', {
     method: 'POST', body: JSON.stringify({ text }),
+  });
+}
+
+export async function queueDocumentUpload(params: {
+  caseId?: string | null;
+  fileName: string;
+  mimeType: string;
+  contentBase64: string;
+  extractedText?: string | null;
+}) {
+  return request<DocumentQueueResult>('/documents/upload', {
+    method: 'POST',
+    body: JSON.stringify({
+      caseId: params.caseId ?? null,
+      fileName: params.fileName,
+      mimeType: params.mimeType,
+      contentBase64: params.contentBase64,
+      extractedText: params.extractedText ?? null,
+    }),
   });
 }
 
