@@ -201,12 +201,13 @@ async function processComparisonJob(job) {
 
 async function failJob(job, error) {
   const message = String(error?.message || error).slice(0, 4000);
-  const claimedAttempts = Math.max(0, Number(job.attempts || 0));
+  const attemptsAfterClaim = Math.max(0, Number(job.attempts || 0));
   const maxAttempts = Math.max(1, Number(job.max_attempts || 1));
-  const retry = claimedAttempts < maxAttempts;
+  // claim_document_analysis_jobs returns attempts after the current claim increment.
+  const retry = attemptsAfterClaim < maxAttempts;
   await expectNoError(admin.from('document_analysis_jobs').update({
     status: retry ? 'queued' : 'failed',
-    available_at: retry ? new Date(Date.now() + Math.min(60000, 2000 * (2 ** claimedAttempts))).toISOString() : job.available_at,
+    available_at: retry ? new Date(Date.now() + Math.min(60000, 2000 * (2 ** attemptsAfterClaim))).toISOString() : job.available_at,
     completed_at: retry ? null : new Date().toISOString(), last_error: message,
   }).eq('id', job.id));
   if (!retry && job.job_type === 'document_analysis') {
