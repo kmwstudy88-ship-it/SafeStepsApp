@@ -12,6 +12,7 @@ const {
   processNextJobs,
   getDocumentForUser,
   getComparisonForUser,
+  deleteDocumentForUser,
 } = require('./document-intelligence/pipeline');
 const { authenticateBearer } = require('./document-intelligence/supabase');
 const { createCaseRiskService } = require('./case-risk/service');
@@ -135,7 +136,7 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'POST' && (url.pathname === '/documents/text' || url.pathname === '/documents/analyze' || url.pathname === '/documents/analyze/fairness')) {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
-      const created = await createTextDocument({ userId: user.id, caseId: body.caseId || null, text: body.text, fileName: body.fileName || 'fairness-analysis.txt' });
+      const created = await createTextDocument({ authUserId: user.id, caseId: body.caseId || null, text: body.text, fileName: body.fileName || 'fairness-analysis.txt' });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
       return sendJson(res, 202, {
         document_id: created.document.id,
@@ -143,7 +144,11 @@ const server = http.createServer(async (req, res) => {
         job_id: created.job.id,
         status: 'queued',
         poll_url: `/documents/${created.document.id}`,
+        duplicate_document: Boolean(created.duplicate),
+        decision_support_only: true,
+        unverified: true,
         human_review_required: true,
+        human_review_status: 'pending_analysis',
       });
     }
 
@@ -151,11 +156,22 @@ const server = http.createServer(async (req, res) => {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
       const created = await createUploadDocument({
-        userId: user.id, caseId: body.caseId || null, fileName: body.fileName, mimeType: body.mimeType,
+        authUserId: user.id, caseId: body.caseId || null, fileName: body.fileName, mimeType: body.mimeType,
         contentBase64: body.contentBase64, extractedText: body.extractedText || null,
       });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
-      return sendJson(res, 202, { document_id: created.document.id, analysis_id: created.analysis.id, job_id: created.job.id, status: 'queued', poll_url: `/documents/${created.document.id}` });
+      return sendJson(res, 202, {
+        document_id: created.document.id,
+        analysis_id: created.analysis.id,
+        job_id: created.job.id,
+        status: 'queued',
+        poll_url: `/documents/${created.document.id}`,
+        duplicate_document: Boolean(created.duplicate),
+        decision_support_only: true,
+        unverified: true,
+        human_review_required: true,
+        human_review_status: 'pending_analysis',
+      });
     }
 
     const documentId = routeId(url.pathname, '/documents/');
@@ -165,13 +181,28 @@ const server = http.createServer(async (req, res) => {
       if (!record) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Document not found.' } });
       return sendJson(res, 200, record);
     }
+    if (req.method === 'DELETE' && documentId) {
+      const user = await requireUser(req, res); if (!user) return;
+      const deleted = await deleteDocumentForUser(documentId, user.id, 'user_request');
+      if (!deleted) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Document not found.' } });
+      return sendJson(res, 200, deleted);
+    }
 
     if (req.method === 'POST' && url.pathname === '/documents/compare') {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
-      const created = await createComparison({ userId: user.id, caseId: body.caseId || null, documentIds: body.documentIds });
+      const created = await createComparison({ authUserId: user.id, caseId: body.caseId || null, documentIds: body.documentIds });
       processNextJobs(1).catch(err => console.error('[document-intelligence] comparison worker error', err));
-      return sendJson(res, 202, { comparison_id: created.comparison.id, job_id: created.job.id, status: 'queued', poll_url: `/documents/comparisons/${created.comparison.id}` });
+      return sendJson(res, 202, {
+        comparison_id: created.comparison.id,
+        job_id: created.job.id,
+        status: 'queued',
+        poll_url: `/documents/comparisons/${created.comparison.id}`,
+        decision_support_only: true,
+        unverified: true,
+        human_review_required: true,
+        human_review_status: 'pending_analysis',
+      });
     }
 
     const comparisonId = routeId(url.pathname, '/documents/comparisons/');
@@ -221,7 +252,14 @@ const server = http.createServer(async (req, res) => {
     return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Route not found.' } });
   } catch (error) {
     console.error('[backend]', error);
-    return sendJson(res, error.statusCode || 500, { error: { code: error.statusCode === 400 ? 'BAD_REQUEST' : 'INTERNAL_ERROR', message: error.message || 'Unexpected server error' } });
+    const statusCode = error.statusCode || 500;
+    const code =
+      statusCode === 400 ? 'BAD_REQUEST'
+        : statusCode === 401 ? 'UNAUTHENTICATED'
+          : statusCode === 403 ? 'FORBIDDEN'
+            : statusCode === 404 ? 'NOT_FOUND'
+              : 'INTERNAL_ERROR';
+    return sendJson(res, statusCode, { error: { code, message: error.message || 'Unexpected server error' } });
   }
 });
 

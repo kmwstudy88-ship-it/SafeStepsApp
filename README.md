@@ -12,6 +12,8 @@ SafeSteps is a mixed repository with three active concerns:
 - `npm run start`
 - `npm run backend`
 - `npm run smoke:documents`
+- `npm run test:documents`
+- `npm run smoke:documents:live` *(requires staging backend URL + access token env vars)*
 - `npm run validate`
 - `npm run content:index`
 - `npm run readiness` *(requires staging evidence environment variables)*
@@ -70,6 +72,7 @@ Compatibility and generated areas live here:
 - `POST /documents/analyze/fairness`
 - `POST /documents/upload`
 - `GET /documents/:id`
+- `DELETE /documents/:id`
 - `POST /documents/compare`
 - `GET /documents/comparisons/:id`
 - `POST /cases/:id/events`

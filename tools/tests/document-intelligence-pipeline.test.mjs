@@ -147,6 +147,10 @@ function makeAdmin(resolveQuery, storage = {}) {
           mode,
         };
         calls.queries.push(snapshot);
+        if (snapshot.table === 'users' && snapshot.op === 'select') return { data: null, error: null };
+        if (snapshot.table === 'roles' && snapshot.op === 'select') return { data: null, error: null };
+        if (snapshot.table === 'team_memberships' && snapshot.op === 'select') return { data: [], error: null };
+        if (snapshot.table === 'case_assignments' && snapshot.op === 'select') return { data: null, error: null };
         return resolveQuery(snapshot, calls);
       }
 
@@ -170,6 +174,7 @@ async function withoutConsoleError(run) {
 test('createUploadDocument rolls back stored artifacts when job creation fails', async () => {
   const failure = new Error('queue unavailable');
   const { admin, calls } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') return { data: [], error: null };
     if (query.table === 'documents' && query.op === 'insert') return { data: { ...query.payload }, error: null };
     if (query.table === 'document_analyses' && query.op === 'insert') return { data: { id: 'analysis-1', ...query.payload }, error: null };
     if (query.table === 'document_analysis_jobs' && query.op === 'insert') return { data: null, error: failure };
@@ -180,8 +185,8 @@ test('createUploadDocument rolls back stored artifacts when job creation fails',
   await withLoadedPipeline({ admin }, async ({ createUploadDocument }) => {
     await assert.rejects(
       createUploadDocument({
-        userId: 'user-1',
-        caseId: 'case-1',
+        authUserId: 'user-1',
+        caseId: null,
         fileName: 'Unsafe name (draft).txt',
         mimeType: 'text/plain',
         contentBase64: Buffer.from('hello world', 'utf8').toString('base64'),
@@ -200,6 +205,7 @@ test('createUploadDocument rolls back stored artifacts when job creation fails',
 
 test('createUploadDocument stores inline text uploads with a sanitized storage path', async () => {
   const { admin, calls } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') return { data: [], error: null };
     if (query.table === 'documents' && query.op === 'insert') return { data: { ...query.payload }, error: null };
     if (query.table === 'document_analyses' && query.op === 'insert') return { data: { id: 'analysis-1', ...query.payload }, error: null };
     if (query.table === 'document_analysis_jobs' && query.op === 'insert') return { data: { id: 'job-1', ...query.payload }, error: null };
@@ -208,8 +214,8 @@ test('createUploadDocument stores inline text uploads with a sanitized storage p
 
   await withLoadedPipeline({ admin }, async ({ createUploadDocument }) => {
     const result = await createUploadDocument({
-      userId: 'user-1',
-      caseId: 'case-1',
+      authUserId: 'user-1',
+      caseId: null,
       fileName: 'Unsafe name (draft).txt',
       mimeType: 'text/plain',
       contentBase64: Buffer.from('hello world', 'utf8').toString('base64'),
@@ -223,6 +229,60 @@ test('createUploadDocument stores inline text uploads with a sanitized storage p
   });
 });
 
+test('createUploadDocument rejects unsupported file types without extracted text', async () => {
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') return { data: [], error: null };
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ createUploadDocument }) => {
+    await assert.rejects(
+      createUploadDocument({
+        authUserId: 'user-1',
+        caseId: null,
+        fileName: 'malware.exe',
+        mimeType: 'application/x-msdownload',
+        contentBase64: Buffer.from('not allowed', 'utf8').toString('base64'),
+      }),
+      { message: 'Unsupported file type. Provide extractedText or upload a supported document format.' },
+    );
+  });
+});
+
+test('createUploadDocument reuses existing document on duplicate sha256 and enqueues fresh analysis', async () => {
+  const { admin, calls } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      if (query.filters.find((filter) => filter.key === 'sha256')) {
+        return {
+          data: [{ id: 'doc-existing', user_id: 'user-1', case_id: null, sha256: 'same' }],
+          error: null,
+        };
+      }
+      throw new Error(`Unexpected document select without sha256 filter: ${JSON.stringify(query)}`);
+    }
+    if (query.table === 'document_analyses' && query.op === 'insert') return { data: { id: 'analysis-1', ...query.payload }, error: null };
+    if (query.table === 'document_analysis_jobs' && query.op === 'insert') return { data: { id: 'job-1', ...query.payload }, error: null };
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ createUploadDocument }) => {
+    const result = await createUploadDocument({
+      authUserId: 'user-1',
+      caseId: null,
+      fileName: 'same.txt',
+      mimeType: 'text/plain',
+      contentBase64: Buffer.from('same body', 'utf8').toString('base64'),
+    });
+
+    assert.equal(result.document.id, 'doc-existing');
+    assert.equal(result.duplicate, true);
+    assert.equal(result.analysis.id, 'analysis-1');
+  });
+
+  const uploadCalls = calls.uploads.length;
+  assert.equal(uploadCalls, 0);
+});
+
 test('createComparison rejects requests that collapse to fewer than two unique document IDs', async () => {
   const { admin } = makeAdmin(() => {
     throw new Error('Database should not be queried for invalid comparisons');
@@ -230,7 +290,7 @@ test('createComparison rejects requests that collapse to fewer than two unique d
 
   await withLoadedPipeline({ admin }, async ({ createComparison }) => {
     await assert.rejects(
-      createComparison({ userId: 'user-1', documentIds: ['doc-a', 'doc-a'] }),
+      createComparison({ authUserId: 'user-1', documentIds: ['doc-a', 'doc-a'] }),
       { message: 'Comparison requires 2 to 10 unique document IDs' },
     );
   });
@@ -245,12 +305,16 @@ test('createComparison enqueues only unique owned document IDs', async () => {
   });
 
   await withLoadedPipeline({ admin }, async ({ createComparison }) => {
-    const result = await createComparison({ userId: 'user-1', caseId: 'case-1', documentIds: ['doc-a', 'doc-a', 'doc-b'] });
+    const result = await createComparison({ authUserId: 'user-1', caseId: null, documentIds: ['doc-a', 'doc-a', 'doc-b'] });
 
-    const ownershipQuery = calls.queries.find((query) => query.table === 'documents' && query.op === 'select');
+    const ownershipQuery = calls.queries.find((query) =>
+      query.table === 'documents'
+      && query.op === 'select'
+      && query.filters.some((filter) => filter.type === 'in' && filter.key === 'id'),
+    );
     const comparisonInsert = calls.queries.find((query) => query.table === 'document_comparisons' && query.op === 'insert');
 
-    assert.deepEqual(ownershipQuery.filters.find((filter) => filter.type === 'in')?.values, ['doc-a', 'doc-b']);
+    assert.deepEqual(ownershipQuery.filters.find((filter) => filter.type === 'in' && filter.key === 'id')?.values, ['doc-a', 'doc-b']);
     assert.deepEqual(comparisonInsert.payload.document_ids, ['doc-a', 'doc-b']);
     assert.equal(result.comparison.id, 'comparison-1');
   });
@@ -523,5 +587,34 @@ test('getDocumentForUser falls back to nested raw_output risk media assessment',
     const result = await getDocumentForUser('doc-1', 'user-1');
     assert.equal(result.analysis.media_assessment.domains[0].domain_id, 'contextual_reliability');
     assert.equal(result.analysis.media_assessment.domains[0].risk_flags[0], 'Biased recording intent');
+  });
+});
+
+test('deleteDocumentForUser removes storage object and document row for the owner', async () => {
+  const { admin, calls } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return {
+        data: {
+          id: 'doc-1',
+          user_id: 'user-1',
+          case_id: null,
+          storage_path: 'user-1/doc-1/file.txt',
+        },
+        error: null,
+      };
+    }
+    if (query.table === 'documents' && query.op === 'delete') return { data: null, error: null };
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ deleteDocumentForUser }) => {
+    const result = await deleteDocumentForUser('doc-1', 'user-1', 'user_request');
+    assert.equal(result.deleted, true);
+    assert.equal(result.id, 'doc-1');
+  });
+
+  assert.deepEqual(calls.removals[0], {
+    bucket: 'document-intelligence',
+    paths: ['user-1/doc-1/file.txt'],
   });
 });

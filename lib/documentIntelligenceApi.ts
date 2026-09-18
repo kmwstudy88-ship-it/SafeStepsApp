@@ -35,11 +35,25 @@ export type DocumentAnalysis = {
   media_assessment?: MediaAssessmentResult;
   raw_output?: Record<string, unknown>;
   limitations?: string[];
+  confidence_overview?: { sample_count: number; average: number | null; min: number | null; max: number | null };
+  decision_support_only?: boolean;
+  unverified?: boolean;
+  human_review_required?: boolean;
+  human_review_status?: string;
   error_message?: string | null;
 };
 
 export type DocumentPollResult = {
-  document: { id: string; processing_status: string; file_name?: string };
+  document: {
+    id: string;
+    processing_status: string;
+    file_name?: string;
+    decision_support_only?: boolean;
+    unverified?: boolean;
+    human_review_required?: boolean;
+    human_review_status?: string;
+    metadata?: Record<string, unknown>;
+  };
   analysis: DocumentAnalysis | null;
 };
 
