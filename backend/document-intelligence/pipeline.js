@@ -23,8 +23,17 @@ async function expectNoError(request) {
 }
 
 async function cleanupCreatedDocument(document) {
+  const analysisId = document?.analysis_id;
   const storagePath = document?.storage_path;
   const documentId = document?.id;
+
+  if (analysisId) {
+    try {
+      await expectNoError(admin.from('document_analyses').delete().eq('id', analysisId));
+    } catch (error) {
+      console.error('[document-intelligence] failed to roll back analysis row', analysisId, error);
+    }
+  }
 
   if (documentId) {
     try {
@@ -100,7 +109,7 @@ async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer
     }).select('*').single());
     return { document, analysis, job };
   } catch (error) {
-    await cleanupCreatedDocument(document);
+    await cleanupCreatedDocument({ ...document, analysis_id: analysis.id });
     throw error;
   }
 }

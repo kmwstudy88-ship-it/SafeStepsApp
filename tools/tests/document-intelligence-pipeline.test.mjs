@@ -172,6 +172,7 @@ test('createUploadDocument rolls back stored artifacts when job creation fails',
   const { admin, calls } = makeAdmin((query) => {
     if (query.table === 'documents' && query.op === 'insert') return { data: { ...query.payload }, error: null };
     if (query.table === 'document_analyses' && query.op === 'insert') return { data: { id: 'analysis-1', ...query.payload }, error: null };
+    if (query.table === 'document_analyses' && query.op === 'delete') return { data: null, error: null };
     if (query.table === 'document_analysis_jobs' && query.op === 'insert') return { data: null, error: failure };
     if (query.table === 'documents' && query.op === 'delete') return { data: null, error: null };
     throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
@@ -190,7 +191,9 @@ test('createUploadDocument rolls back stored artifacts when job creation fails',
     );
   });
 
+  const analysisDelete = calls.queries.find((query) => query.table === 'document_analyses' && query.op === 'delete');
   const documentDelete = calls.queries.find((query) => query.table === 'documents' && query.op === 'delete');
+  assert.equal(analysisDelete?.filters.find((filter) => filter.type === 'eq')?.value, 'analysis-1');
   assert.equal(Boolean(documentDelete?.filters.find((filter) => filter.type === 'eq')?.value), true);
   assert.deepEqual(calls.removals[0], {
     bucket: 'document-intelligence',
