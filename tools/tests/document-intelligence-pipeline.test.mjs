@@ -315,7 +315,7 @@ test('processNextJobs preserves requested comparison order when building compari
   assert.equal(completionUpdate.payload.status, 'completed');
 });
 
-test('processNextJobs requeues failed analysis jobs before the final attempt', async () => {
+test('processNextJobs requeues failed analysis jobs while claimed attempts remain below max_attempts', async () => {
   const failure = new Error('provider unavailable');
   const startedAt = Date.now();
   const { admin, calls } = makeAdmin((query) => {
@@ -327,7 +327,7 @@ test('processNextJobs requeues failed analysis jobs before the final attempt', a
           document_id: 'doc-1',
           user_id: 'user-1',
           payload: { analysis_id: 'analysis-1' },
-          attempts: 0,
+          attempts: 1,
           max_attempts: 2,
           available_at: '2026-09-11T00:00:00.000Z',
         }],
