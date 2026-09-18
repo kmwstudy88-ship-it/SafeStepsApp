@@ -16,6 +16,34 @@ const DEFAULT_MODEL = () => providerName() === 'anthropic'
   ? (process.env.ANTHROPIC_DOCUMENT_MODEL || 'claude-sonnet-4-5')
   : (process.env.OPENAI_DOCUMENT_MODEL || 'gpt-5.6-terra');
 
+async function expectNoError(request) {
+  const result = await request;
+  if (result?.error) throw result.error;
+  return result?.data ?? null;
+}
+
+async function cleanupCreatedDocument(document) {
+  const storagePath = document?.storage_path;
+  const documentId = document?.id;
+
+  if (documentId) {
+    try {
+      await expectNoError(admin.from('documents').delete().eq('id', documentId));
+    } catch (error) {
+      console.error('[document-intelligence] failed to roll back document row', documentId, error);
+    }
+  }
+
+  if (storagePath) {
+    try {
+      const { error } = await admin.storage.from('document-intelligence').remove([storagePath]);
+      if (error) throw error;
+    } catch (storageError) {
+      console.error('[document-intelligence] failed to remove rolled-back storage object', storagePath, storageError);
+    }
+  }
+}
+
 function textFromBuffer(buffer, mimeType) {
   const type = String(mimeType || '').toLowerCase();
   return type.startsWith('text/') || type.includes('json') || type.includes('xml') || type.includes('csv')
@@ -45,28 +73,36 @@ async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer
   const { error: storageError } = await admin.storage.from('document-intelligence').upload(storagePath, buffer, { contentType: mimeType, upsert: false });
   if (storageError) throw storageError;
 
-  const { data: document, error } = await admin.from('documents').insert({
+  const document = await expectNoError(admin.from('documents').insert({
     id: documentId, user_id: userId, case_id: caseId, file_name: fileName, mime_type: mimeType,
     storage_path: storagePath, byte_size: buffer.length, sha256, source_type: sourceType,
     processing_status: 'queued', extracted_text: extractedText,
     metadata: { extraction: extractedText ? 'inline' : 'provider_file_input' },
-  }).select('*').single();
-  if (error) {
-    await admin.storage.from('document-intelligence').remove([storagePath]);
+  }).select('*').single()).catch(async (error) => {
+    await cleanupCreatedDocument({ id: documentId, storage_path: storagePath });
+    throw error;
+  });
+
+  let analysis;
+  try {
+    analysis = await expectNoError(admin.from('document_analyses').insert({
+      document_id: document.id, user_id: userId, provider: providerName(), model: DEFAULT_MODEL(),
+      schema_version: ANALYSIS_SCHEMA_VERSION, status: 'queued',
+    }).select('*').single());
+  } catch (error) {
+    await cleanupCreatedDocument(document);
     throw error;
   }
 
-  const { data: analysis, error: analysisError } = await admin.from('document_analyses').insert({
-    document_id: document.id, user_id: userId, provider: providerName(), model: DEFAULT_MODEL(),
-    schema_version: ANALYSIS_SCHEMA_VERSION, status: 'queued',
-  }).select('*').single();
-  if (analysisError) throw analysisError;
-
-  const { data: job, error: jobError } = await admin.from('document_analysis_jobs').insert({
-    job_type: 'document_analysis', document_id: document.id, user_id: userId, payload: { analysis_id: analysis.id },
-  }).select('*').single();
-  if (jobError) throw jobError;
-  return { document, analysis, job };
+  try {
+    const job = await expectNoError(admin.from('document_analysis_jobs').insert({
+      job_type: 'document_analysis', document_id: document.id, user_id: userId, payload: { analysis_id: analysis.id },
+    }).select('*').single());
+    return { document, analysis, job };
+  } catch (error) {
+    await cleanupCreatedDocument(document);
+    throw error;
+  }
 }
 
 async function createComparison({ userId, caseId = null, documentIds }) {
@@ -98,14 +134,13 @@ async function loadBinary(document) {
 async function processAnalysisJob(job) {
   const analysisId = job.payload?.analysis_id;
   if (!analysisId) throw new Error('Analysis job has no analysis_id');
-  const { data: document, error: documentError } = await admin.from('documents').select('*').eq('id', job.document_id).single();
-  if (documentError) throw documentError;
+  const document = await expectNoError(admin.from('documents').select('*').eq('id', job.document_id).single());
 
   const now = new Date().toISOString();
   await Promise.all([
     admin.from('documents').update({ processing_status: 'processing', updated_at: now }).eq('id', document.id),
     admin.from('document_analyses').update({ status: 'processing', started_at: now }).eq('id', analysisId),
-  ]);
+  ].map(expectNoError));
 
   const fileBuffer = document.extracted_text ? null : await loadBinary(document);
   const ai = await analyzeDocument(document, fileBuffer);
@@ -113,13 +148,12 @@ async function processAnalysisJob(job) {
   const mediaAssessment = result.media_assessment || result.risk?.media_assessment || createEmptyMediaAssessment();
   const risk = result.risk && typeof result.risk === 'object' ? result.risk : {};
   const completedAt = new Date().toISOString();
-  const { error } = await admin.from('document_analyses').update({
+  await expectNoError(admin.from('document_analyses').update({
     provider: ai.provider, model: ai.model, status: 'completed', summary: result.summary || {}, evidence: result.evidence || [],
     contradictions: result.contradictions || [], timeline: result.timeline || [], risk: { ...risk, media_assessment: mediaAssessment }, bias: result.bias || {},
     fairness: result.fairness || {}, limitations: result.limitations || [], raw_output: result, usage: ai.usage || {}, completed_at: completedAt,
-  }).eq('id', analysisId);
-  if (error) throw error;
-  await admin.from('documents').update({ processing_status: 'completed', updated_at: completedAt }).eq('id', document.id);
+  }).eq('id', analysisId));
+  await expectNoError(admin.from('documents').update({ processing_status: 'completed', updated_at: completedAt }).eq('id', document.id));
 }
 
 function normalizeAnalysisRecord(analysis) {
@@ -135,39 +169,47 @@ function normalizeAnalysisRecord(analysis) {
 }
 
 async function processComparisonJob(job) {
-  const { data: comparison, error } = await admin.from('document_comparisons').select('*').eq('id', job.comparison_id).single();
-  if (error) throw error;
-  await admin.from('document_comparisons').update({ status: 'processing', started_at: new Date().toISOString() }).eq('id', comparison.id);
-  const { data: documents, error: docError } = await admin.from('documents').select('*').eq('user_id', comparison.user_id).in('id', comparison.document_ids);
-  if (docError) throw docError;
+  const comparison = await expectNoError(admin.from('document_comparisons').select('*').eq('id', job.comparison_id).single());
+  await expectNoError(admin.from('document_comparisons').update({ status: 'processing', started_at: new Date().toISOString() }).eq('id', comparison.id));
+  const documents = await expectNoError(admin.from('documents').select('*').eq('user_id', comparison.user_id).in('id', comparison.document_ids));
 
+  const documentsById = new Map((documents || []).map((document) => [document.id, document]));
   const items = [];
-  for (const document of documents || []) {
-    const { data: analysis } = await admin.from('document_analyses').select('*').eq('document_id', document.id).eq('status', 'completed').order('created_at', { ascending: false }).limit(1).maybeSingle();
+  for (const documentId of comparison.document_ids || []) {
+    const document = documentsById.get(documentId);
+    if (!document) continue;
+    const analysis = await expectNoError(
+      admin.from('document_analyses').select('*').eq('document_id', document.id).eq('status', 'completed').order('created_at', { ascending: false }).limit(1).maybeSingle(),
+    );
     items.push({ document, analysis });
   }
   if (items.length !== comparison.document_ids.length) throw new Error('Not all comparison documents are available');
   const ai = await compareDocuments(items);
-  const { error: updateError } = await admin.from('document_comparisons').update({
+  await expectNoError(admin.from('document_comparisons').update({
     provider: ai.provider, model: ai.model, status: 'completed', result: ai.result, usage: ai.usage || {}, completed_at: new Date().toISOString(),
-  }).eq('id', comparison.id);
-  if (updateError) throw updateError;
+  }).eq('id', comparison.id));
 }
 
 async function failJob(job, error) {
   const message = String(error?.message || error).slice(0, 4000);
   const retry = job.attempts < job.max_attempts;
-  await admin.from('document_analysis_jobs').update({
+  await expectNoError(admin.from('document_analysis_jobs').update({
     status: retry ? 'queued' : 'failed',
     available_at: retry ? new Date(Date.now() + Math.min(60000, 2000 * (2 ** job.attempts))).toISOString() : job.available_at,
     completed_at: retry ? null : new Date().toISOString(), last_error: message,
-  }).eq('id', job.id);
+  }).eq('id', job.id));
   if (!retry && job.job_type === 'document_analysis') {
-    await admin.from('documents').update({ processing_status: 'failed', updated_at: new Date().toISOString() }).eq('id', job.document_id);
-    if (job.payload?.analysis_id) await admin.from('document_analyses').update({ status: 'failed', error_code: 'ANALYSIS_FAILED', error_message: message, completed_at: new Date().toISOString() }).eq('id', job.payload.analysis_id);
+    await expectNoError(admin.from('documents').update({ processing_status: 'failed', updated_at: new Date().toISOString() }).eq('id', job.document_id));
+    if (job.payload?.analysis_id) {
+      await expectNoError(admin.from('document_analyses').update({
+        status: 'failed', error_code: 'ANALYSIS_FAILED', error_message: message, completed_at: new Date().toISOString(),
+      }).eq('id', job.payload.analysis_id));
+    }
   }
   if (!retry && job.job_type === 'document_comparison') {
-    await admin.from('document_comparisons').update({ status: 'failed', error_code: 'COMPARISON_FAILED', error_message: message, completed_at: new Date().toISOString() }).eq('id', job.comparison_id);
+    await expectNoError(admin.from('document_comparisons').update({
+      status: 'failed', error_code: 'COMPARISON_FAILED', error_message: message, completed_at: new Date().toISOString(),
+    }).eq('id', job.comparison_id));
   }
 }
 
@@ -177,7 +219,7 @@ async function processNextJobs(limit = 2) {
   for (const job of jobs || []) {
     try {
       if (job.job_type === 'document_analysis') await processAnalysisJob(job); else await processComparisonJob(job);
-      await admin.from('document_analysis_jobs').update({ status: 'completed', completed_at: new Date().toISOString(), last_error: null }).eq('id', job.id);
+      await expectNoError(admin.from('document_analysis_jobs').update({ status: 'completed', completed_at: new Date().toISOString(), last_error: null }).eq('id', job.id));
     } catch (err) {
       console.error('[document-intelligence] job failed', job.id, err);
       await failJob(job, err);

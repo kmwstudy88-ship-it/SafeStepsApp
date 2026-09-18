@@ -63,14 +63,19 @@ Compatibility and generated areas live here:
 `backend/server.js` owns the lightweight local document endpoints:
 
 - `GET /health`
+- `GET /ready`
 - `GET /documents/intelligence/schema`
+- `POST /documents/text`
 - `POST /documents/analyze`
 - `POST /documents/analyze/fairness`
 - `POST /documents/upload`
-- `POST /documents/process`
-- `GET /analyses/:id`
-- `POST /analyses/compare`
-- `POST /risk-assessment/compute`
+- `GET /documents/:id`
+- `POST /documents/compare`
+- `GET /documents/comparisons/:id`
+- `POST /cases/:id/events`
+- `POST /cases/:id/recompute-risk`
+- `GET /cases/:id/risk-history`
+- `GET /dashboard/supervisor`
 
 Use this backend for local smoke testing and heuristic document-analysis development.
 
