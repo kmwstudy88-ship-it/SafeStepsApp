@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, TextInput } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { ActivityIndicator, View, Text, StyleSheet, SafeAreaView, TouchableOpacity, TextInput } from 'react-native';
 
-const DEFAULT_PIN = '7233';
-const RECOVERY_PHRASE = 'BLUEBIRD';
+import { getDiscreetPin, getRecoveryCode, getRecoveryPhrase } from './discreetModeCredentials';
 
 export function DiscreetModeScreen({
   onUnlock,
@@ -15,13 +14,32 @@ export function DiscreetModeScreen({
   const [recoveryPhrase, setRecoveryPhrase] = useState('');
   const [trustedContactCode, setTrustedContactCode] = useState('');
   const [recoveryMessage, setRecoveryMessage] = useState<string | null>(null);
+  const [storedPin, setStoredPin] = useState<string | null>(null);
+  const [storedRecoveryPhrase, setStoredRecoveryPhrase] = useState<string | null>(null);
+  const [storedRecoveryCode, setStoredRecoveryCode] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadCredentials() {
+      try {
+        const [pin, phrase, code] = await Promise.all([getDiscreetPin(), getRecoveryPhrase(), getRecoveryCode()]);
+        setStoredPin(pin);
+        setStoredRecoveryPhrase(phrase);
+        setStoredRecoveryCode(code);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadCredentials();
+  }, []);
 
   const handleDigit = (digit: string) => {
     setCalcDisplay((prev) => (prev === '0' ? digit : prev + digit));
     const nextPin = pinEntry + digit;
     setPinEntry(nextPin);
 
-    if (nextPin.endsWith(DEFAULT_PIN)) {
+    if (storedPin && nextPin.endsWith(storedPin)) {
       onUnlock?.();
     }
   };
@@ -32,13 +50,17 @@ export function DiscreetModeScreen({
   };
 
   const handleRecovery = () => {
+    if (!storedRecoveryPhrase || !storedRecoveryCode) {
+      setRecoveryMessage('No recovery path is configured yet. Use Settings & Trusted Contacts from a safe session to add one.');
+      return;
+    }
+
     const normalizedPhrase = recoveryPhrase.trim().toUpperCase();
     const normalizedCode = trustedContactCode.trim().toUpperCase();
 
-    if (normalizedPhrase === RECOVERY_PHRASE && normalizedCode === 'SJ-24') {
-      setRecoveryMessage('Recovery confirmed. Your disguise PIN resets to 7233 until you change it in Settings & Trusted Contacts.');
-      setPinEntry('');
-      setCalcDisplay('0');
+    if (normalizedPhrase === storedRecoveryPhrase && normalizedCode === storedRecoveryCode) {
+      setRecoveryMessage('Recovery confirmed. You can return to SafeSteps now and update your disguise PIN in Settings when it is safe.');
+      onUnlock?.();
       return;
     }
 
@@ -61,6 +83,7 @@ export function DiscreetModeScreen({
                   if (btn === 'C') handleClear();
                   else handleDigit(btn);
                 }}
+                disabled={loading}
               >
                 <Text style={styles.btnText}>{btn}</Text>
               </TouchableOpacity>
@@ -69,6 +92,8 @@ export function DiscreetModeScreen({
         ))}
       </View>
 
+      {loading ? <ActivityIndicator color="#FFFFFF" style={styles.loader} /> : null}
+
       <TouchableOpacity style={styles.helpToggle} onPress={() => setShowRecovery((prev) => !prev)}>
         <Text style={styles.helpToggleText}>{showRecovery ? 'Hide PIN help' : 'Need PIN help?'}</Text>
       </TouchableOpacity>
@@ -76,7 +101,7 @@ export function DiscreetModeScreen({
       {showRecovery ? (
         <View style={styles.recoveryCard}>
           <Text style={styles.recoveryTitle}>Discreet recovery path</Text>
-          <Text style={styles.recoveryText}>If you cannot remember the PIN, use your stored recovery phrase and trusted-contact code to reset temporary access without exposing the main app.</Text>
+          <Text style={styles.recoveryText}>Use your saved recovery phrase and trusted-contact code to return to the main app without displaying sensitive details on screen.</Text>
           <TextInput
             style={styles.input}
             placeholder="Recovery phrase"
@@ -94,10 +119,11 @@ export function DiscreetModeScreen({
             autoCapitalize="characters"
           />
           <TouchableOpacity style={styles.recoveryButton} onPress={handleRecovery}>
-            <Text style={styles.recoveryButtonText}>Reset disguise PIN</Text>
+            <Text style={styles.recoveryButtonText}>Use recovery details</Text>
           </TouchableOpacity>
-          <Text style={styles.supportHint}>Demo recovery values: phrase BLUEBIRD, contact code SJ-24.</Text>
+          <Text style={styles.supportHint}>If you still cannot get in, contact your worker or trusted support person for a manual reset.</Text>
           {recoveryMessage ? <Text style={styles.recoveryMessage}>{recoveryMessage}</Text> : null}
+          {!storedPin ? <Text style={styles.recoveryMessage}>No disguise PIN is configured on this device yet.</Text> : null}
         </View>
       ) : null}
     </SafeAreaView>
@@ -115,6 +141,7 @@ const styles = StyleSheet.create({
   clearBtn: { backgroundColor: '#A5A5A5' },
   opBtn: { backgroundColor: '#FF9F0A' },
   btnText: { color: '#FFFFFF', fontSize: 30, fontWeight: '400' },
+  loader: { marginTop: 18 },
   helpToggle: { alignItems: 'center', marginTop: 18 },
   helpToggleText: { color: '#9CA3AF', fontSize: 13, fontWeight: '600' },
   recoveryCard: { backgroundColor: '#111827', marginHorizontal: 16, marginTop: 14, borderRadius: 14, borderWidth: 1, borderColor: '#374151', padding: 16, gap: 10 },

@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Alert, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+
+import { getDiscreetPin, getRecoveryCode, getRecoveryPhrase, saveDiscreetPin, saveRecoveryCode, saveRecoveryPhrase } from '../privacy/discreetModeCredentials';
 
 type TrustedContact = {
   id: string;
@@ -11,7 +13,6 @@ type TrustedContact = {
 export function SettingsAccountScreen() {
   const [name, setName] = useState('Sarah Jenkins');
   const [pronouns, setPronouns] = useState('she/her');
-  const [recoveryPhrase, setRecoveryPhrase] = useState('BLUEBIRD');
   const [contacts, setContacts] = useState<TrustedContact[]>([
     { id: 'tc-1', name: 'Joanne Foster', role: 'Trusted friend', phone: '0400 222 111' },
     { id: 'tc-2', name: 'Priya Nair', role: 'Caseworker', phone: '0400 555 222' },
@@ -19,6 +20,22 @@ export function SettingsAccountScreen() {
   const [newContactName, setNewContactName] = useState('');
   const [newContactRole, setNewContactRole] = useState('');
   const [newContactPhone, setNewContactPhone] = useState('');
+  const [newPin, setNewPin] = useState('');
+  const [confirmPin, setConfirmPin] = useState('');
+  const [recoveryPhraseInput, setRecoveryPhraseInput] = useState('');
+  const [recoveryCodeInput, setRecoveryCodeInput] = useState('');
+  const [pinConfigured, setPinConfigured] = useState(false);
+  const [recoveryConfigured, setRecoveryConfigured] = useState(false);
+
+  useEffect(() => {
+    async function loadSecurityStatus() {
+      const [pin, phrase, code] = await Promise.all([getDiscreetPin(), getRecoveryPhrase(), getRecoveryCode()]);
+      setPinConfigured(Boolean(pin));
+      setRecoveryConfigured(Boolean(phrase && code));
+    }
+
+    loadSecurityStatus();
+  }, []);
 
   const handleAddContact = () => {
     if (!newContactName.trim() || !newContactPhone.trim()) {
@@ -40,6 +57,37 @@ export function SettingsAccountScreen() {
     setNewContactPhone('');
   };
 
+  const handleSaveDiscreetSettings = async () => {
+    if (newPin.length !== 4 || !/^\d{4}$/.test(newPin)) {
+      Alert.alert('PIN required', 'Enter a 4-digit disguise PIN.');
+      return;
+    }
+
+    if (newPin !== confirmPin) {
+      Alert.alert('PIN mismatch', 'The disguise PIN and confirmation must match.');
+      return;
+    }
+
+    if (!recoveryPhraseInput.trim() || !recoveryCodeInput.trim()) {
+      Alert.alert('Recovery details required', 'Add both a recovery phrase and a trusted-contact code.');
+      return;
+    }
+
+    await Promise.all([
+      saveDiscreetPin(newPin),
+      saveRecoveryPhrase(recoveryPhraseInput),
+      saveRecoveryCode(recoveryCodeInput),
+    ]);
+
+    setPinConfigured(true);
+    setRecoveryConfigured(true);
+    setNewPin('');
+    setConfirmPin('');
+    setRecoveryPhraseInput('');
+    setRecoveryCodeInput('');
+    Alert.alert('Discreet settings saved', 'Your disguise PIN and recovery path were updated in secure device storage.');
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scroll}>
@@ -57,9 +105,16 @@ export function SettingsAccountScreen() {
 
         <View style={styles.card}>
           <Text style={styles.cardTitle}>Discreet recovery</Text>
-          <Text style={styles.helperText}>Use this phrase in Discreet Privacy Mode if you ever need to recover access during a crisis.</Text>
-          <TextInput style={styles.input} value={recoveryPhrase} onChangeText={setRecoveryPhrase} placeholder="Recovery phrase" placeholderTextColor="#A0AEC0" autoCapitalize="characters" />
-          <Text style={styles.helperText}>Current temporary reset PIN: 7233</Text>
+          <Text style={styles.helperText}>Your disguise PIN and recovery details stay in secure device storage and are never shown back in plain text on this screen.</Text>
+          <Text style={styles.helperText}>PIN configured: {pinConfigured ? 'Yes' : 'No'}</Text>
+          <Text style={styles.helperText}>Recovery path configured: {recoveryConfigured ? 'Yes' : 'No'}</Text>
+          <TextInput style={styles.input} value={newPin} onChangeText={setNewPin} placeholder="New 4-digit disguise PIN" placeholderTextColor="#A0AEC0" keyboardType="number-pad" secureTextEntry />
+          <TextInput style={styles.input} value={confirmPin} onChangeText={setConfirmPin} placeholder="Confirm disguise PIN" placeholderTextColor="#A0AEC0" keyboardType="number-pad" secureTextEntry />
+          <TextInput style={styles.input} value={recoveryPhraseInput} onChangeText={setRecoveryPhraseInput} placeholder="Recovery phrase" placeholderTextColor="#A0AEC0" autoCapitalize="characters" secureTextEntry />
+          <TextInput style={styles.input} value={recoveryCodeInput} onChangeText={setRecoveryCodeInput} placeholder="Trusted contact code" placeholderTextColor="#A0AEC0" autoCapitalize="characters" secureTextEntry />
+          <TouchableOpacity style={styles.button} onPress={handleSaveDiscreetSettings}>
+            <Text style={styles.buttonText}>Save Discreet Settings</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.card}>
