@@ -22,6 +22,16 @@ const { createCaseRiskService } = require('./case-risk/service');
 const PORT = Number(process.env.PORT || 3000);
 const MAX_BODY_BYTES = 35 * 1024 * 1024;
 const WORKER_INTERVAL_MS = Math.max(1000, Number(process.env.DOCUMENT_AI_WORKER_INTERVAL_MS || 2500));
+const RATE_LIMIT_WINDOW_MS = Math.max(1000, Number(process.env.BACKEND_RATE_LIMIT_WINDOW_MS || 60000));
+const RATE_LIMIT_MAX_REQUESTS = Math.max(1, Number(process.env.BACKEND_RATE_LIMIT_MAX_REQUESTS || 120));
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+const DEV_DEFAULT_ALLOWED_ORIGINS = [
+  'http://localhost:8099',
+  'http://127.0.0.1:8099',
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+];
+const rateLimitBuckets = new Map();
 
 const DOCUMENT_SECTIONS = [
   'Case Identification & Reference', 'Family Composition & Demographics', 'Child Safety History & Intakes',
@@ -45,19 +55,62 @@ const DOCUMENT_SECTIONS = [
 const caseRiskService = createCaseRiskService();
 
 function setCors(req, res) {
-  const allowed = (process.env.BACKEND_ALLOWED_ORIGINS || '*').split(',').map(x => x.trim());
   const origin = req.headers.origin;
-  const selected = allowed.includes('*') ? '*' : (origin && allowed.includes(origin) ? origin : allowed[0]);
-  res.setHeader('Access-Control-Allow-Origin', selected || 'null');
+  const configuredOrigins = (process.env.BACKEND_ALLOWED_ORIGINS || '')
+    .split(',')
+    .map(x => x.trim())
+    .filter(Boolean);
+  const allowedOrigins = configuredOrigins.length ? configuredOrigins : (IS_PRODUCTION ? [] : DEV_DEFAULT_ALLOWED_ORIGINS);
+  const allowsWildcard = allowedOrigins.includes('*') && !IS_PRODUCTION;
+  const allowsOrigin = Boolean(origin) && (allowsWildcard || allowedOrigins.includes(origin));
+  res.setHeader('Access-Control-Allow-Origin', allowsOrigin ? (allowsWildcard ? '*' : origin) : 'null');
   res.setHeader('Access-Control-Allow-Headers', 'Authorization, Content-Type');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Vary', 'Origin');
+}
+
+function setSecurityHeaders(res) {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Referrer-Policy', 'no-referrer');
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
 }
 
 function sendJson(res, statusCode, data) {
   const json = JSON.stringify(data);
   res.writeHead(statusCode, { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(json) });
   res.end(json);
+}
+
+function clientIp(req) {
+  const forwarded = req.headers['x-forwarded-for'];
+  if (typeof forwarded === 'string' && forwarded.trim()) {
+    return forwarded.split(',')[0].trim();
+  }
+  return req.socket?.remoteAddress || 'unknown';
+}
+
+function rateLimited(req, pathname) {
+  if (!['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method || '')) return null;
+  const now = Date.now();
+  const key = `${clientIp(req)}:${req.method}:${pathname}`;
+  const windowStartedAt = now - RATE_LIMIT_WINDOW_MS;
+  const current = rateLimitBuckets.get(key);
+  const windowRecord = current && current.windowStartedAt >= windowStartedAt
+    ? current
+    : { windowStartedAt: now, count: 0 };
+  windowRecord.count += 1;
+  rateLimitBuckets.set(key, windowRecord);
+
+  for (const [bucketKey, bucketValue] of rateLimitBuckets) {
+    if (bucketValue.windowStartedAt < windowStartedAt) {
+      rateLimitBuckets.delete(bucketKey);
+    }
+  }
+
+  if (windowRecord.count <= RATE_LIMIT_MAX_REQUESTS) return null;
+  const retryAfterSeconds = Math.max(1, Math.ceil((windowRecord.windowStartedAt + RATE_LIMIT_WINDOW_MS - now) / 1000));
+  return retryAfterSeconds;
 }
 
 function parseBody(req) {
@@ -110,9 +163,20 @@ function readiness() {
 }
 
 const server = http.createServer(async (req, res) => {
-  setCors(req, res);
-  if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
   const url = new URL(req.url, `http://localhost:${PORT}`);
+  setCors(req, res);
+  setSecurityHeaders(res);
+  const retryAfterSeconds = rateLimited(req, url.pathname);
+  if (retryAfterSeconds) {
+    res.setHeader('Retry-After', String(retryAfterSeconds));
+    return sendJson(res, 429, {
+      error: {
+        code: 'RATE_LIMITED',
+        message: `Too many requests. Retry in ${retryAfterSeconds} seconds.`,
+      },
+    });
+  }
+  if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
 
   try {
     if (req.method === 'GET' && url.pathname === '/health') {
