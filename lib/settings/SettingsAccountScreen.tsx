@@ -26,12 +26,17 @@ export function SettingsAccountScreen() {
   const [recoveryCodeInput, setRecoveryCodeInput] = useState('');
   const [pinConfigured, setPinConfigured] = useState(false);
   const [recoveryConfigured, setRecoveryConfigured] = useState(false);
+  const [securityStatusLoaded, setSecurityStatusLoaded] = useState(false);
 
   useEffect(() => {
     async function loadSecurityStatus() {
-      const [pin, phrase, code] = await Promise.all([getDiscreetPin(), getRecoveryPhrase(), getRecoveryCode()]);
-      setPinConfigured(Boolean(pin));
-      setRecoveryConfigured(Boolean(phrase && code));
+      try {
+        const [pin, phrase, code] = await Promise.all([getDiscreetPin(), getRecoveryPhrase(), getRecoveryCode()]);
+        setPinConfigured(Boolean(pin));
+        setRecoveryConfigured(Boolean(phrase && code));
+      } finally {
+        setSecurityStatusLoaded(true);
+      }
     }
 
     loadSecurityStatus();
@@ -106,8 +111,12 @@ export function SettingsAccountScreen() {
         <View style={styles.card}>
           <Text style={styles.cardTitle}>Discreet recovery</Text>
           <Text style={styles.helperText}>Your disguise PIN and recovery details stay in secure device storage and are never shown back in plain text on this screen.</Text>
-          <Text style={styles.helperText}>PIN configured: {pinConfigured ? 'Yes' : 'No'}</Text>
-          <Text style={styles.helperText}>Recovery path configured: {recoveryConfigured ? 'Yes' : 'No'}</Text>
+          <Text style={styles.helperText}>
+            PIN configured: {securityStatusLoaded ? (pinConfigured ? 'Yes' : 'No') : 'Checking secure storage...'}
+          </Text>
+          <Text style={styles.helperText}>
+            Recovery path configured: {securityStatusLoaded ? (recoveryConfigured ? 'Yes' : 'No') : 'Checking secure storage...'}
+          </Text>
           <TextInput style={styles.input} value={newPin} onChangeText={setNewPin} placeholder="New 4-digit disguise PIN" placeholderTextColor="#A0AEC0" keyboardType="number-pad" secureTextEntry />
           <TextInput style={styles.input} value={confirmPin} onChangeText={setConfirmPin} placeholder="Confirm disguise PIN" placeholderTextColor="#A0AEC0" keyboardType="number-pad" secureTextEntry />
           <TextInput style={styles.input} value={recoveryPhraseInput} onChangeText={setRecoveryPhraseInput} placeholder="Recovery phrase" placeholderTextColor="#A0AEC0" autoCapitalize="characters" secureTextEntry />

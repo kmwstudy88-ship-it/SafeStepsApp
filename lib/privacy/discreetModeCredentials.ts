@@ -12,6 +12,10 @@ export async function saveDiscreetPin(pin: string) {
   await SecureStore.setItemAsync(PIN_KEY, pin);
 }
 
+export async function clearDiscreetPin() {
+  await SecureStore.deleteItemAsync(PIN_KEY);
+}
+
 export async function getRecoveryPhrase() {
   return SecureStore.getItemAsync(RECOVERY_PHRASE_KEY);
 }

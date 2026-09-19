@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, View, Text, StyleSheet, SafeAreaView, TouchableOpacity, TextInput } from 'react-native';
 
-import { getDiscreetPin, getRecoveryCode, getRecoveryPhrase } from './discreetModeCredentials';
+import { clearDiscreetPin, getDiscreetPin, getRecoveryCode, getRecoveryPhrase } from './discreetModeCredentials';
 
 export function DiscreetModeScreen({
   onUnlock,
@@ -49,7 +49,7 @@ export function DiscreetModeScreen({
     setPinEntry('');
   };
 
-  const handleRecovery = () => {
+  const handleRecovery = async () => {
     if (!storedRecoveryPhrase || !storedRecoveryCode) {
       setRecoveryMessage('No recovery path is configured yet. Use Settings & Trusted Contacts from a safe session to add one.');
       return;
@@ -59,6 +59,8 @@ export function DiscreetModeScreen({
     const normalizedCode = trustedContactCode.trim().toUpperCase();
 
     if (normalizedPhrase === storedRecoveryPhrase && normalizedCode === storedRecoveryCode) {
+      await clearDiscreetPin();
+      setStoredPin(null);
       setRecoveryMessage('Recovery confirmed. You can return to SafeSteps now and update your disguise PIN in Settings when it is safe.');
       onUnlock?.();
       return;
@@ -69,6 +71,16 @@ export function DiscreetModeScreen({
 
   return (
     <SafeAreaView style={styles.container}>
+      {!loading && !storedPin ? (
+        <View style={styles.setupCard}>
+          <Text style={styles.setupTitle}>Discreet mode needs setup first</Text>
+          <Text style={styles.setupText}>Set a disguise PIN in Settings & Trusted Contacts before using this screen so you do not get stuck in a crisis.</Text>
+          <TouchableOpacity style={styles.recoveryButton} onPress={() => onUnlock?.()}>
+            <Text style={styles.recoveryButtonText}>Return to SafeSteps</Text>
+          </TouchableOpacity>
+        </View>
+      ) : null}
+
       <View style={styles.displayArea}>
         <Text style={styles.displayText}>{calcDisplay}</Text>
       </View>
@@ -83,7 +95,7 @@ export function DiscreetModeScreen({
                   if (btn === 'C') handleClear();
                   else handleDigit(btn);
                 }}
-                disabled={loading}
+                disabled={loading || !storedPin}
               >
                 <Text style={styles.btnText}>{btn}</Text>
               </TouchableOpacity>
@@ -123,7 +135,7 @@ export function DiscreetModeScreen({
           </TouchableOpacity>
           <Text style={styles.supportHint}>If you still cannot get in, contact your worker or trusted support person for a manual reset.</Text>
           {recoveryMessage ? <Text style={styles.recoveryMessage}>{recoveryMessage}</Text> : null}
-          {!storedPin ? <Text style={styles.recoveryMessage}>No disguise PIN is configured on this device yet.</Text> : null}
+          {!storedPin ? <Text style={styles.recoveryMessage}>After recovery, create a fresh disguise PIN in Settings before using this mode again.</Text> : null}
         </View>
       ) : null}
     </SafeAreaView>
@@ -141,6 +153,9 @@ const styles = StyleSheet.create({
   clearBtn: { backgroundColor: '#A5A5A5' },
   opBtn: { backgroundColor: '#FF9F0A' },
   btnText: { color: '#FFFFFF', fontSize: 30, fontWeight: '400' },
+  setupCard: { backgroundColor: '#111827', marginHorizontal: 16, marginBottom: 12, borderRadius: 14, borderWidth: 1, borderColor: '#374151', padding: 16, gap: 10 },
+  setupTitle: { color: '#FFFFFF', fontSize: 16, fontWeight: '700' },
+  setupText: { color: '#D1D5DB', fontSize: 13, lineHeight: 20 },
   loader: { marginTop: 18 },
   helpToggle: { alignItems: 'center', marginTop: 18 },
   helpToggleText: { color: '#9CA3AF', fontSize: 13, fontWeight: '600' },
