@@ -54,11 +54,25 @@ function openAIOutputText(payload) {
   return (payload.output || []).flatMap(item => item.content || []).filter(x => x.type === 'output_text').map(x => x.text).join('\n');
 }
 
+async function fetchWithTimeout(url, init) {
+  const timeoutMs = Math.max(1000, Number(process.env.DOCUMENT_AI_TIMEOUT_MS || 60000));
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...init, signal: controller.signal });
+  } catch (error) {
+    if (error?.name === 'AbortError') throw new Error(`AI provider request timed out after ${timeoutMs}ms`);
+    throw error;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function openAIJson(instructions, input) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) throw new Error('OPENAI_API_KEY is not configured');
   const model = process.env.OPENAI_DOCUMENT_MODEL || 'gpt-5.6-terra';
-  const response = await fetch('https://api.openai.com/v1/responses', {
+  const response = await fetchWithTimeout('https://api.openai.com/v1/responses', {
     method: 'POST',
     headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -78,7 +92,7 @@ async function anthropicJson(instructions, input) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error('ANTHROPIC_API_KEY is not configured');
   const model = process.env.ANTHROPIC_DOCUMENT_MODEL || 'claude-sonnet-4-5';
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
+  const response = await fetchWithTimeout('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: { 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
     body: JSON.stringify({ model, max_tokens: 12000, system: instructions, messages: [{ role: 'user', content: input }] }),

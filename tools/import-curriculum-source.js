@@ -3,13 +3,37 @@ const path = require("path");
 const crypto = require("crypto");
 
 const repoRoot = path.resolve(__dirname, "..");
-const importRoot = path.join(repoRoot, "src", "safesteps", "imports");
+const importRoot = path.join(repoRoot, "src", "safesteps", "imports", "curriculum-seeds");
 const validKinds = new Set(["program", "course", "module"]);
+const forbiddenLearnerDataKeys = new Set([
+  "learnerid",
+  "learner_id",
+  "userid",
+  "user_id",
+  "caseid",
+  "case_id",
+  "authuserid",
+  "auth_user_id",
+  "email",
+  "phone",
+  "mobile",
+  "address",
+  "firstname",
+  "first_name",
+  "lastname",
+  "last_name",
+  "fullname",
+  "full_name",
+  "dateofbirth",
+  "date_of_birth",
+  "dob",
+]);
 
 function parseArgs(argv) {
   const args = {
     kind: null,
     source: null,
+    version: null,
     dryRun: false,
   };
 
@@ -17,13 +41,17 @@ function parseArgs(argv) {
     const arg = argv[index];
     if (arg === "--kind") args.kind = argv[++index];
     else if (arg === "--source") args.source = argv[++index];
+    else if (arg === "--version") args.version = argv[++index];
     else if (arg === "--dry-run") args.dryRun = true;
     else if (!args.kind && validKinds.has(String(arg).toLowerCase())) args.kind = arg;
     else if (!args.source) args.source = arg;
+    else if (!args.version) args.version = arg;
   }
 
   if (!args.source) {
-    throw new Error("Usage: node SafeStepsTools/import-curriculum-source.js course ./path/to/source.json");
+    throw new Error(
+      "Usage: node tools/import-curriculum-source.js --kind <program|course|module> --source ./path/to/source.json --version <source version>",
+    );
   }
 
   if (!args.kind) {
@@ -65,6 +93,12 @@ function slugify(value, fallback) {
 
 function hashRecord(record) {
   return crypto.createHash("sha256").update(JSON.stringify(record)).digest("hex").slice(0, 12);
+}
+
+function normalizeVersion(sourceVersion) {
+  const value = String(sourceVersion ?? "").trim();
+  if (!value) return null;
+  return value;
 }
 
 function stableLessonId(lesson, sourceSlug, index) {
@@ -122,6 +156,31 @@ function collectLessons(value, trail = [], lessons = []) {
   return lessons;
 }
 
+function findForbiddenLearnerDataFields(value, trail = [], findings = []) {
+  if (Array.isArray(value)) {
+    value.forEach((child, index) => findForbiddenLearnerDataFields(child, [...trail, index], findings));
+    return findings;
+  }
+
+  if (!value || typeof value !== "object") return findings;
+
+  for (const [key, child] of Object.entries(value)) {
+    const normalizedKey = key.replace(/[^a-z0-9]/gi, "").toLowerCase();
+    if (forbiddenLearnerDataKeys.has(normalizedKey)) {
+      if (typeof child === "string" ? child.trim().length > 0 : child !== null && child !== undefined) {
+        findings.push({
+          key,
+          path: [...trail, key],
+        });
+      }
+    }
+
+    findForbiddenLearnerDataFields(child, [...trail, key], findings);
+  }
+
+  return findings;
+}
+
 function normalizeLesson(lesson, context) {
   const lessonId = stableLessonId(lesson, context.sourceSlug, context.index);
   return {
@@ -129,10 +188,11 @@ function normalizeLesson(lesson, context) {
     id: lesson.id || lesson.lessonId || lesson.lesson_id || lessonId,
     slug: lesson.slug || lessonId,
     curriculumSource: {
-      importedAt: context.importedAt,
       sourceKind: context.kind,
       sourceId: context.sourceId,
       sourceTitle: context.sourceTitle,
+      sourceVersion: context.sourceVersion,
+      sourceDigest: context.sourceDigest,
       sourceFile: context.sourceFile,
       sourcePath: context.sourcePath,
       contentHash: hashRecord(lesson),
@@ -160,12 +220,31 @@ function main() {
   const sourceTitle = source.title || source.name || path.basename(sourcePath, path.extname(sourcePath));
   const sourceId = slugify(source.id || source.slug || sourceTitle, path.basename(sourcePath, path.extname(sourcePath)));
   const sourceSlug = slugify(source.slug || sourceId, sourceId);
-  const sourceHash = hashRecord(source);
-  const importedAt = new Date().toISOString();
+  const sourceDigest = hashRecord(source);
+  const sourceVersion = normalizeVersion(args.version || source.version || source.metadata?.version);
+  if (!sourceVersion) {
+    throw new Error("Missing source version. Provide --version or include a non-empty `version` value in the source JSON.");
+  }
+
+  const forbiddenFields = findForbiddenLearnerDataFields(source);
+  if (forbiddenFields.length > 0) {
+    const samples = forbiddenFields
+      .slice(0, 10)
+      .map((item) => `${item.path.join(".")} (key: ${item.key})`)
+      .join(", ");
+    throw new Error(
+      `Source contains learner-data fields that are not allowed in curriculum seeds (${forbiddenFields.length} found): ${samples}`,
+    );
+  }
+
+  const sourceVersionSlug = slugify(sourceVersion, "unversioned");
   const bucketName = `${args.kind}s`;
-  const sourceBucket = path.join(importRoot, bucketName);
-  const copiedSourcePath = path.join(sourceBucket, `${sourceSlug}--${sourceHash}.json`);
-  const lessonBucket = path.join(importRoot, "lessons", "extracted", sourceSlug);
+  const sourceBucket = path.join(importRoot, "sources", bucketName);
+  const copiedSourcePath = path.join(
+    sourceBucket,
+    `${sourceSlug}--v-${sourceVersionSlug}--${sourceDigest}.json`,
+  );
+  const lessonBucket = path.join(importRoot, "lessons", "extracted", sourceSlug, `v-${sourceVersionSlug}`);
   const manifestPath = path.join(lessonBucket, "manifest.json");
   const collectedLessons = collectLessons(source);
 
@@ -174,10 +253,11 @@ function main() {
       kind: args.kind,
       sourceId,
       sourceTitle,
+      sourceVersion,
       sourceSlug,
+      sourceDigest,
       sourceFile: path.relative(repoRoot, copiedSourcePath).replace(/\\/g, "/"),
       sourcePath: lessonSourcePath,
-      importedAt,
       index,
     });
     const lessonHash = normalized.curriculumSource.contentHash.slice(0, 8);
@@ -187,25 +267,42 @@ function main() {
     };
   });
 
-  const duplicateFileNames = plannedLessons.reduce((duplicates, planned, index) => {
-    const previousIndex = plannedLessons.findIndex((entry) => entry.fileName === planned.fileName);
-    if (previousIndex !== -1 && previousIndex !== index && !duplicates.includes(planned.fileName)) {
-      duplicates.push(planned.fileName);
-    }
-    return duplicates;
-  }, []);
+  const fileNameCounts = new Map();
+  const lessonIdToHashes = new Map();
+  for (const planned of plannedLessons) {
+    fileNameCounts.set(planned.fileName, (fileNameCounts.get(planned.fileName) ?? 0) + 1);
+    const lessonId = planned.lesson.id;
+    const hashes = lessonIdToHashes.get(lessonId) ?? new Set();
+    hashes.add(planned.lesson.curriculumSource.contentHash);
+    lessonIdToHashes.set(lessonId, hashes);
+  }
+  const duplicateFileNames = [...fileNameCounts.entries()]
+    .filter(([, count]) => count > 1)
+    .map(([name]) => name);
+  const conflictingLessonVersions = [...lessonIdToHashes.entries()]
+    .filter(([, hashes]) => hashes.size > 1)
+    .map(([id]) => id);
 
   if (duplicateFileNames.length > 0) {
     throw new Error(`Import generated duplicate lesson file names: ${duplicateFileNames.join(", ")}`);
+  }
+  if (conflictingLessonVersions.length > 0) {
+    throw new Error(
+      `Import generated conflicting lesson versions for the same lesson id: ${conflictingLessonVersions.join(", ")}`,
+    );
   }
 
   if (args.dryRun) {
     console.log(JSON.stringify({
       source: path.relative(repoRoot, sourcePath),
       kind: args.kind,
+      sourceVersion,
+      sourceDigest,
       destination: path.relative(repoRoot, copiedSourcePath),
       extractedLessonCount: plannedLessons.length,
-      lessonFiles: plannedLessons.map((item) => path.posix.join("src/safesteps/imports/lessons/extracted", sourceSlug, item.fileName)),
+      lessonFiles: plannedLessons.map((item) =>
+        path.posix.join("src/safesteps/imports/curriculum-seeds/lessons/extracted", sourceSlug, `v-${sourceVersionSlug}`, item.fileName),
+      ),
     }, null, 2));
     return;
   }
@@ -224,10 +321,11 @@ function main() {
   }
 
   writeJson(manifestPath, {
-    importedAt,
     sourceKind: args.kind,
     sourceId,
     sourceTitle,
+    sourceVersion,
+    sourceDigest,
     copiedSourceFile: path.relative(repoRoot, copiedSourcePath).replace(/\\/g, "/"),
     extractedLessonCount: plannedLessons.length,
     lessonFiles: plannedLessons.map((item) =>
