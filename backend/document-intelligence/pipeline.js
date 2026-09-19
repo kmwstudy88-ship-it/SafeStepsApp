@@ -74,6 +74,15 @@ async function cleanupCreatedDocument(document) {
   }
 }
 
+async function cleanupCreatedAnalysis(analysisId) {
+  if (!analysisId) return;
+  try {
+    await expectNoError(admin.from('document_analyses').delete().eq('id', analysisId));
+  } catch (error) {
+    console.error('[document-intelligence] failed to roll back analysis row', analysisId, error);
+  }
+}
+
 function textFromBuffer(buffer, mimeType) {
   const type = String(mimeType || '').toLowerCase();
   return type.startsWith('text/') || type.includes('json') || type.includes('xml') || type.includes('csv')
@@ -418,6 +427,82 @@ async function createComparison({ authUserId, caseId = null, documentIds }) {
   return { comparison, job };
 }
 
+async function queueDocumentAnalysis({ authUserId, actorUserId = null, documentId }) {
+  if (!documentId) throw createHttpError(400, 'documentId is required');
+  const actor = await loadActorContext(authUserId);
+  const { data: document, error: documentError } = await admin
+    .from('documents')
+    .select('*')
+    .eq('id', documentId)
+    .in('user_id', actor.ownerUserIds)
+    .maybeSingle();
+  if (documentError) throw documentError;
+  if (!document) {
+    throw createHttpError(404, 'Document not found.');
+  }
+  await assertCaseAccess(actor, document.case_id);
+
+  const now = new Date().toISOString();
+  const previousStatus = document.processing_status || null;
+  const previousUpdatedAt = document.updated_at || null;
+  const ownerUserId = document.user_id || actor.appUserId || actor.authUserId;
+  const { data: analysis, error: analysisError } = await admin.from('document_analyses').insert({
+    document_id: document.id,
+    user_id: ownerUserId,
+    provider: providerName(),
+    model: DEFAULT_MODEL(),
+    schema_version: ANALYSIS_SCHEMA_VERSION,
+    status: 'queued',
+  }).select('*').single();
+  if (analysisError) throw analysisError;
+
+  const { data: job, error: jobError } = await admin.from('document_analysis_jobs').insert({
+    job_type: 'document_analysis',
+    document_id: document.id,
+    user_id: ownerUserId,
+    payload: { analysis_id: analysis.id },
+  }).select('*').single();
+  if (jobError) {
+    await cleanupCreatedAnalysis(analysis.id);
+    throw jobError;
+  }
+
+  const { error: updateError } = await admin.from('documents').update({ processing_status: 'queued', updated_at: now }).eq('id', document.id);
+  if (updateError) throw updateError;
+
+  const auditActorUserId = actorUserId || actor.appUserId || null;
+  if (auditActorUserId) {
+    const { error: auditError } = await admin.from('audit_logs').insert({
+      case_id: document.case_id || null,
+      actor_user_id: auditActorUserId,
+      action: 'document_processing_requested',
+      resource_type: 'document',
+      resource_id: document.id,
+      details: {
+        analysis_id: analysis.id,
+        job_id: job.id,
+        human_review_required: true,
+      },
+    });
+    if (auditError) {
+      await Promise.all([
+        expectNoError(admin.from('document_analysis_jobs').delete().eq('id', job.id)).catch((error) => {
+          console.error('[document-intelligence] failed to roll back queued job', job.id, error);
+        }),
+        cleanupCreatedAnalysis(analysis.id),
+        expectNoError(admin.from('documents').update({
+          processing_status: previousStatus || 'completed',
+          updated_at: previousUpdatedAt || document.updated_at || now,
+        }).eq('id', document.id)).catch((error) => {
+          console.error('[document-intelligence] failed to restore document status after audit failure', document.id, error);
+        }),
+      ]);
+      throw auditError;
+    }
+  }
+  return { document, analysis, job };
+}
+
 async function loadBinary(document) {
   if (!document.storage_path) return null;
   const { data, error } = await admin.storage.from('document-intelligence').download(document.storage_path);
@@ -649,12 +734,40 @@ async function deleteDocumentForUser(id, authUserId, reason = 'user_request') {
   };
 }
 
+async function getAnalysisForUser(id, authUserId) {
+  const actor = await loadActorContext(authUserId);
+  const { data, error } = await admin
+    .from('document_analyses')
+    .select('*')
+    .eq('id', id)
+    .in('user_id', actor.ownerUserIds)
+    .maybeSingle();
+  if (error) throw error;
+  if (!data) return null;
+
+  if (data.document_id) {
+    const { data: document, error: documentError } = await admin
+      .from('documents')
+      .select('id,case_id,user_id')
+      .eq('id', data.document_id)
+      .in('user_id', actor.ownerUserIds)
+      .maybeSingle();
+    if (documentError) throw documentError;
+    if (!document) return null;
+    await assertCaseAccess(actor, document.case_id);
+  }
+
+  return normalizeAnalysisRecord(data);
+}
+
 module.exports = {
   createTextDocument,
   createUploadDocument,
   createComparison,
+  queueDocumentAnalysis,
   processNextJobs,
   getDocumentForUser,
   getComparisonForUser,
   deleteDocumentForUser,
+  getAnalysisForUser,
 };

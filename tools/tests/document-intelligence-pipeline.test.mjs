@@ -618,3 +618,131 @@ test('deleteDocumentForUser removes storage object and document row for the owne
     paths: ['user-1/doc-1/file.txt'],
   });
 });
+
+test('queueDocumentAnalysis creates a queued analysis job for an existing owned document', async () => {
+  const { admin, calls } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', user_id: 'user-1' }, error: null };
+    }
+    if (query.table === 'document_analyses' && query.op === 'insert') {
+      return { data: { id: 'analysis-2', ...query.payload }, error: null };
+    }
+    if (query.table === 'document_analysis_jobs' && query.op === 'insert') {
+      return { data: { id: 'job-2', ...query.payload }, error: null };
+    }
+    if (query.table === 'documents' && query.op === 'update') {
+      return { data: null, error: null };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ queueDocumentAnalysis }) => {
+    const result = await queueDocumentAnalysis({ authUserId: 'user-1', documentId: 'doc-1' });
+    assert.equal(result.analysis.id, 'analysis-2');
+    assert.equal(result.job.id, 'job-2');
+  });
+
+  const documentUpdate = calls.queries.find((query) => query.table === 'documents' && query.op === 'update');
+  assert.equal(documentUpdate.payload.processing_status, 'queued');
+});
+
+test('queueDocumentAnalysis rolls back the analysis when job creation fails', async () => {
+  const failure = new Error('queue unavailable');
+  const { admin, calls } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', user_id: 'user-1', processing_status: 'completed', updated_at: '2026-09-18T00:00:00.000Z' }, error: null };
+    }
+    if (query.table === 'document_analyses' && query.op === 'insert') {
+      return { data: { id: 'analysis-2', ...query.payload }, error: null };
+    }
+    if (query.table === 'document_analysis_jobs' && query.op === 'insert') {
+      return { data: null, error: failure };
+    }
+    if (query.table === 'document_analyses' && query.op === 'delete') {
+      return { data: null, error: null };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ queueDocumentAnalysis }) => {
+    await assert.rejects(
+      queueDocumentAnalysis({ authUserId: 'user-1', documentId: 'doc-1' }),
+      { message: 'queue unavailable' },
+    );
+  });
+
+  const analysisDelete = calls.queries.find((query) => query.table === 'document_analyses' && query.op === 'delete');
+  assert.equal(Boolean(analysisDelete?.filters.find((filter) => filter.type === 'eq' && filter.key === 'id' && filter.value === 'analysis-2')), true);
+});
+
+test('queueDocumentAnalysis records an audit log when an actor is provided', async () => {
+  const { admin, calls } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', case_id: 'case-1', user_id: 'user-1', processing_status: 'completed', updated_at: '2026-09-18T00:00:00.000Z' }, error: null };
+    }
+    if (query.table === 'cases' && query.op === 'select') {
+      return { data: { id: 'case-1', parent_user_id: 'user-1' }, error: null };
+    }
+    if (query.table === 'document_analyses' && query.op === 'insert') {
+      return { data: { id: 'analysis-2', ...query.payload }, error: null };
+    }
+    if (query.table === 'document_analysis_jobs' && query.op === 'insert') {
+      return { data: { id: 'job-2', ...query.payload }, error: null };
+    }
+    if (query.table === 'documents' && query.op === 'update') {
+      return { data: null, error: null };
+    }
+    if (query.table === 'audit_logs' && query.op === 'insert') {
+      return { data: null, error: null };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ queueDocumentAnalysis }) => {
+    await queueDocumentAnalysis({ authUserId: 'user-1', actorUserId: 'app-user-1', documentId: 'doc-1' });
+  });
+
+  const auditInsert = calls.queries.find((query) => query.table === 'audit_logs' && query.op === 'insert');
+  assert.equal(auditInsert.payload.actor_user_id, 'app-user-1');
+  assert.equal(auditInsert.payload.case_id, 'case-1');
+  assert.equal(auditInsert.payload.action, 'document_processing_requested');
+});
+
+test('getAnalysisForUser returns normalized media assessment domains', async () => {
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'document_analyses' && query.op === 'select') {
+      return {
+        data: {
+          id: 'analysis-1',
+          document_id: 'doc-1',
+          status: 'completed',
+          risk: {},
+          raw_output: {
+            media_assessment: {
+              domains: [{
+                domain_id: 'digital_integrity_and_authenticity',
+                domain_name: 'Digital Integrity & Authenticity',
+                signals_observed: ['Metadata validation'],
+                risk_flags: ['Potential tampering'],
+                protective_flags: [],
+                notes: 'Metadata checks were incomplete.',
+                confidence: 0.4,
+              }],
+            },
+          },
+        },
+        error: null,
+      };
+    }
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', case_id: null, user_id: 'user-1' }, error: null };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ getAnalysisForUser }) => {
+    const result = await getAnalysisForUser('analysis-1', 'user-1');
+    assert.equal(result.media_assessment.domains[0].domain_id, 'digital_integrity_and_authenticity');
+    assert.equal(result.media_assessment.domains[0].risk_flags[0], 'Potential tampering');
+  });
+});

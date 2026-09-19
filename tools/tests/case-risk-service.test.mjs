@@ -47,6 +47,59 @@ test('buildEscalationAlerts produces stable dedupe keys for duplicate triggering
   assert.equal(first[0].detail.rationale, 'Primary risk drivers: weapon_access.');
 });
 
+test('buildEscalationAlerts respects configurable delta escalation thresholds', () => {
+  const belowCustomThreshold = buildEscalationAlerts({
+    snapshot: {
+      score: 64,
+      tier: 'high',
+      model_version: 'risk-rules-v1',
+      hard_escalation: { triggered: false, triggers: [] },
+    },
+    previousSnapshot: { score: 54 },
+    routedTo: { case_worker_ids: [], supervisor_ids: [] },
+    rules: {
+      thresholds: { highAlertScore: 60, criticalAlertScore: 75 },
+      deltaEscalationThreshold: 12,
+    },
+  });
+  assert.equal(belowCustomThreshold.some((item) => item.trigger_type === 'risk_score_delta'), false);
+
+  const atCustomThreshold = buildEscalationAlerts({
+    snapshot: {
+      score: 66,
+      tier: 'high',
+      model_version: 'risk-rules-v1',
+      hard_escalation: { triggered: false, triggers: [] },
+    },
+    previousSnapshot: { score: 54 },
+    routedTo: { case_worker_ids: [], supervisor_ids: [] },
+    rules: {
+      thresholds: { highAlertScore: 60, criticalAlertScore: 75 },
+      deltaEscalationThreshold: 12,
+    },
+  });
+  assert.equal(atCustomThreshold.some((item) => item.trigger_type === 'risk_score_delta'), true);
+});
+
+test('buildEscalationAlerts falls back to the safe default when delta threshold is invalid', () => {
+  const alerts = buildEscalationAlerts({
+    snapshot: {
+      score: 70,
+      tier: 'high',
+      model_version: 'risk-rules-v1',
+      hard_escalation: { triggered: false, triggers: [] },
+    },
+    previousSnapshot: { score: 50 },
+    routedTo: { case_worker_ids: [], supervisor_ids: [] },
+    rules: {
+      thresholds: { highAlertScore: 60, criticalAlertScore: 75 },
+      deltaEscalationThreshold: 'abc',
+    },
+  });
+
+  assert.equal(alerts.some((item) => item.trigger_type === 'risk_score_delta'), true);
+});
+
 test('buildFollowUpTasks upgrades follow-up SLA and marks reprioritization after risk increases', () => {
   const tasks = buildFollowUpTasks({
     caseId: 'case-1',

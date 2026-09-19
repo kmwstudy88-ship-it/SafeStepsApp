@@ -1,0 +1,108 @@
+{
+  "generatedAt": "2026-09-18T09:46:01.878Z",
+  "status": "incomplete",
+  "summary": {
+    "blockingIssueCount": 3,
+    "blockingIssues": [
+      "module-required-fields-incomplete",
+      "topics-missing-module-links",
+      "external-source-files-unavailable"
+    ],
+    "counts": {
+      "lessons": 199,
+      "modules": 83,
+      "topics": 291
+    }
+  },
+  "validations": {
+    "ids": {
+      "duplicateLessonIds": [],
+      "duplicateModuleIds": [],
+      "duplicateTopicIds": [],
+      "lessonIdFileNameMismatches": []
+    },
+    "duplicateLessons": {
+      "duplicateHashes": [],
+      "duplicateHashSample": []
+    },
+    "lessonOrdering": {
+      "modulesWithOutOfOrderLessonNumbers": [],
+      "modulesWithNoLessonLinks": 82
+    },
+    "requiredTextFields": {
+      "lessonsMissingRequiredFields": [],
+      "modulesMissingRequiredFields": [
+        "modules/module_accountability_foundations.json",
+        "modules/module_emotional_regulation.json",
+        "modules/module_relationship_skills.json",
+        "modules/module_sustainable_change.json",
+        "modules/module_system_navigation.json"
+      ],
+      "topicsMissingRequiredFields": []
+    },
+    "topicModuleLinks": {
+      "unresolvedTopicModules": [],
+      "topicsWithEmptyModules": 291
+    },
+    "moduleLessonLinks": {
+      "unresolvedModuleLessons": []
+    },
+    "assets": {
+      "foundCount": 0,
+      "missingCount": 0,
+      "missing": []
+    },
+    "masterIndex": {
+      "path": "src/safesteps/lessons/master-index.json",
+      "issues": []
+    },
+    "schema": {
+      "path": "schema/curriculum-schema.json",
+      "issues": []
+    },
+    "secureAttachment": {
+      "path": "topics/secure_attachment.json",
+      "moduleCount": 0,
+      "modules": []
+    },
+    "sharedFiles": {
+      "apiClientBytes": 2101,
+      "modelsBytes": 2492
+    },
+    "externalSources": {
+      "availableCount": 0,
+      "totalCount": 4,
+      "sources": [
+        {
+          "label": "Lessons 1 to 47",
+          "path": "/home/runner/Downloads/NEW READY TO UPLOAD Courses &  Content/LESSONS/safesteps_lessons_1_to_47.json",
+          "available": false,
+          "error": "missing"
+        },
+        {
+          "label": "Lessons 252 to 466",
+          "path": "/home/runner/Downloads/NEW READY TO UPLOAD Courses &  Content/LESSONS/safesteps_lessons_30_to_40_min_batch_252_to_466.json",
+          "available": false,
+          "error": "missing"
+        },
+        {
+          "label": "Lessons 468 to 780",
+          "path": "/home/runner/Downloads/NEW READY TO UPLOAD Courses &  Content/LESSONS/safesteps_lessons_30_to_40_min_batch_468_to_780.json",
+          "available": false,
+          "error": "missing"
+        },
+        {
+          "label": "Parent challenges",
+          "path": "/home/runner/Downloads/NEW READY TO UPLOAD Courses &  Content/safesteps_parent_challenges_pack/safesteps_parent_challenges.json",
+          "available": false,
+          "error": "missing"
+        }
+      ]
+    },
+    "importVersions": {
+      "hasImports": false,
+      "manifests": [],
+      "conflictingVersionSets": []
+    }
+  }
+}

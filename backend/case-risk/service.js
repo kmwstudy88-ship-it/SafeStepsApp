@@ -225,7 +225,11 @@ function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdem
 
   const previousScore = Number(previousSnapshot?.score ?? previousSnapshot?.risk_score ?? 0);
   const delta = snapshot.score - previousScore;
-  if (previousSnapshot && delta >= 15) {
+  const configuredDeltaThreshold = Number(rules.deltaEscalationThreshold);
+  const deltaThreshold = Number.isFinite(configuredDeltaThreshold) && configuredDeltaThreshold >= 0
+    ? configuredDeltaThreshold
+    : 15;
+  if (previousSnapshot && delta >= deltaThreshold) {
     alerts.push({
       dedupe_key: eventIdempotencyKey ? `delta:${eventIdempotencyKey}` : `delta:${previousScore}->${snapshot.score}`,
       trigger_type: 'risk_score_delta',
@@ -604,8 +608,10 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
 }
 
 module.exports = {
+  assertCaseAccess,
   buildDashboardPayload,
   buildEscalationAlerts,
   buildFollowUpTasks,
   createCaseRiskService,
+  loadActorContext,
 };
