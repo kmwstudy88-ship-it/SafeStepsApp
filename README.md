@@ -14,6 +14,7 @@ SafeSteps is a mixed repository with three active concerns:
 - `npm run smoke:documents`
 - `npm run validate`
 - `npm run content:index`
+- `npm run content:readiness`
 - `npm run readiness` *(requires staging evidence environment variables)*
 
 ## Repository contract
@@ -69,6 +70,13 @@ Compatibility and generated areas live here:
 - `POST /documents/analyze`
 - `POST /documents/analyze/fairness`
 - `POST /documents/upload`
+- `POST /documents/process` *(queues analysis for an existing uploaded document)*
+- `GET /documents/:id`
+- `POST /documents/compare`
+- `GET /documents/comparisons/:id`
+- `GET /analyses/:id` *(compatibility read path)*
+- `POST /analyses/compare` *(compatibility alias of `/documents/compare`)*
+- `POST /risk-assessment/compute` *(compatibility alias that returns latest recomputed Track C snapshot)*
 - `GET /documents/:id`
 - `POST /documents/compare`
 - `GET /documents/comparisons/:id`
@@ -76,6 +84,8 @@ Compatibility and generated areas live here:
 - `POST /cases/:id/recompute-risk`
 - `GET /cases/:id/risk-history`
 - `GET /dashboard/supervisor`
+
+Except for `/health` and `/ready`, backend routes require a valid Supabase bearer token and return decision-support outputs that require human review.
 
 Use this backend for local smoke testing and heuristic document-analysis development.
 

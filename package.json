@@ -17,6 +17,7 @@
     "smoke:backend": "node tools/verify-document-intelligence.mjs",
     "validate": "npx expo-doctor",
     "content:index": "node tools/build-content-index.mjs",
+    "content:readiness": "node tools/validate-curriculum-readiness.mjs",
     "readiness": "node tools/production-readiness-gate.mjs"
   },
   "dependencies": {

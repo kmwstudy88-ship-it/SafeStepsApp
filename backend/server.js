@@ -9,12 +9,14 @@ const {
   createTextDocument,
   createUploadDocument,
   createComparison,
+  queueDocumentAnalysis,
   processNextJobs,
   getDocumentForUser,
   getComparisonForUser,
+  getAnalysisForUser,
 } = require('./document-intelligence/pipeline');
-const { authenticateBearer } = require('./document-intelligence/supabase');
-const { createCaseRiskService } = require('./case-risk/service');
+const { admin, authenticateBearer } = require('./document-intelligence/supabase');
+const { assertCaseAccess, createCaseRiskService, loadActorContext } = require('./case-risk/service');
 
 const PORT = Number(process.env.PORT || 3000);
 const MAX_BODY_BYTES = 35 * 1024 * 1024;
@@ -84,6 +86,20 @@ async function requireUser(req, res) {
   return user;
 }
 
+async function requireDocumentActor(req, res) {
+  const user = await requireUser(req, res);
+  if (!user) return null;
+  const actor = await loadActorContext(admin, user.id);
+  return { appUserId: actor.appUserId, actor };
+}
+
+async function requireReadableCaseAccess(actor, caseId) {
+  const normalizedCaseId = caseId ? String(caseId).trim() : '';
+  if (!normalizedCaseId) return null;
+  await assertCaseAccess(admin, actor, normalizedCaseId, 'read');
+  return normalizedCaseId;
+}
+
 function routeId(pathname, prefix) {
   if (!pathname.startsWith(prefix)) return null;
   const value = pathname.slice(prefix.length);
@@ -133,9 +149,10 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (req.method === 'POST' && (url.pathname === '/documents/text' || url.pathname === '/documents/analyze' || url.pathname === '/documents/analyze/fairness')) {
-      const user = await requireUser(req, res); if (!user) return;
+      const context = await requireDocumentActor(req, res); if (!context) return;
       const body = await parseBody(req);
-      const created = await createTextDocument({ userId: user.id, caseId: body.caseId || null, text: body.text, fileName: body.fileName || 'fairness-analysis.txt' });
+      const caseId = await requireReadableCaseAccess(context.actor, body.caseId || null);
+      const created = await createTextDocument({ userId: context.appUserId, caseId, text: body.text, fileName: body.fileName || 'fairness-analysis.txt' });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
       return sendJson(res, 202, {
         document_id: created.document.id,
@@ -148,38 +165,103 @@ const server = http.createServer(async (req, res) => {
     }
 
     if (req.method === 'POST' && url.pathname === '/documents/upload') {
-      const user = await requireUser(req, res); if (!user) return;
+      const context = await requireDocumentActor(req, res); if (!context) return;
       const body = await parseBody(req);
-      const created = await createUploadDocument({
-        userId: user.id, caseId: body.caseId || null, fileName: body.fileName, mimeType: body.mimeType,
-        contentBase64: body.contentBase64, extractedText: body.extractedText || null,
-      });
+      if (!body.contentBase64 && !String(body.text || '').trim()) {
+        throw Object.assign(new Error('Either contentBase64 or text is required for document upload.'), { statusCode: 400 });
+      }
+      const caseId = await requireReadableCaseAccess(context.actor, body.caseId || null);
+      const created = body.contentBase64
+        ? await createUploadDocument({
+          userId: context.appUserId,
+          caseId,
+          fileName: body.fileName,
+          mimeType: body.mimeType,
+          contentBase64: body.contentBase64,
+          extractedText: body.extractedText || null,
+        })
+        : await createTextDocument({
+          userId: context.appUserId,
+          caseId,
+          text: body.text,
+          fileName: body.fileName || 'uploaded-note.txt',
+        });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
-      return sendJson(res, 202, { document_id: created.document.id, analysis_id: created.analysis.id, job_id: created.job.id, status: 'queued', poll_url: `/documents/${created.document.id}` });
+      return sendJson(res, 202, {
+        document_id: created.document.id,
+        analysis_id: created.analysis.id,
+        job_id: created.job.id,
+        status: 'queued',
+        poll_url: `/documents/${created.document.id}`,
+        human_review_required: true,
+      });
+    }
+
+    if (req.method === 'POST' && url.pathname === '/documents/process') {
+      const context = await requireDocumentActor(req, res); if (!context) return;
+      const body = await parseBody(req);
+      const documentId = String(body.documentId || body.document_id || '').trim();
+      if (!documentId) throw Object.assign(new Error('documentId is required'), { statusCode: 400 });
+      const created = await queueDocumentAnalysis({ userId: context.appUserId, actorUserId: context.appUserId, documentId });
+      processNextJobs(1).catch(err => console.error('[document-intelligence] process worker error', err));
+      return sendJson(res, 202, {
+        document_id: created.document.id,
+        analysis_id: created.analysis.id,
+        job_id: created.job.id,
+        status: 'queued',
+        poll_url: `/documents/${created.document.id}`,
+        human_review_required: true,
+      });
     }
 
     const documentId = routeId(url.pathname, '/documents/');
     if (req.method === 'GET' && documentId) {
-      const user = await requireUser(req, res); if (!user) return;
-      const record = await getDocumentForUser(documentId, user.id);
+      const context = await requireDocumentActor(req, res); if (!context) return;
+      const record = await getDocumentForUser(documentId, context.appUserId);
       if (!record) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Document not found.' } });
       return sendJson(res, 200, record);
     }
 
     if (req.method === 'POST' && url.pathname === '/documents/compare') {
-      const user = await requireUser(req, res); if (!user) return;
+      const context = await requireDocumentActor(req, res); if (!context) return;
       const body = await parseBody(req);
-      const created = await createComparison({ userId: user.id, caseId: body.caseId || null, documentIds: body.documentIds });
+      const caseId = await requireReadableCaseAccess(context.actor, body.caseId || null);
+      const created = await createComparison({ userId: context.appUserId, caseId, documentIds: body.documentIds });
       processNextJobs(1).catch(err => console.error('[document-intelligence] comparison worker error', err));
       return sendJson(res, 202, { comparison_id: created.comparison.id, job_id: created.job.id, status: 'queued', poll_url: `/documents/comparisons/${created.comparison.id}` });
     }
 
     const comparisonId = routeId(url.pathname, '/documents/comparisons/');
     if (req.method === 'GET' && comparisonId) {
-      const user = await requireUser(req, res); if (!user) return;
-      const comparison = await getComparisonForUser(comparisonId, user.id);
+      const context = await requireDocumentActor(req, res); if (!context) return;
+      const comparison = await getComparisonForUser(comparisonId, context.appUserId);
       if (!comparison) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Comparison not found.' } });
       return sendJson(res, 200, { comparison });
+    }
+
+    if (req.method === 'POST' && url.pathname === '/analyses/compare') {
+      const context = await requireDocumentActor(req, res); if (!context) return;
+      const body = await parseBody(req);
+      const caseId = await requireReadableCaseAccess(context.actor, body.caseId || null);
+      let documentIds = body.documentIds;
+      if (!Array.isArray(documentIds) && Array.isArray(body.analysisIds)) {
+        const analyses = await Promise.all(body.analysisIds.map((id) => getAnalysisForUser(id, context.appUserId)));
+        if (analyses.some((analysis) => !analysis?.document_id)) {
+          throw Object.assign(new Error('One or more documents are unavailable'), { statusCode: 404 });
+        }
+        documentIds = analyses.map((analysis) => analysis.document_id);
+      }
+      const created = await createComparison({ userId: context.appUserId, caseId, documentIds });
+      processNextJobs(1).catch(err => console.error('[document-intelligence] compatibility comparison worker error', err));
+      return sendJson(res, 202, { comparison_id: created.comparison.id, job_id: created.job.id, status: 'queued', poll_url: `/documents/comparisons/${created.comparison.id}` });
+    }
+
+    const analysisId = routeId(url.pathname, '/analyses/');
+    if (req.method === 'GET' && analysisId) {
+      const context = await requireDocumentActor(req, res); if (!context) return;
+      const analysis = await getAnalysisForUser(analysisId, context.appUserId);
+      if (!analysis) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Analysis not found.' } });
+      return sendJson(res, 200, analysis);
     }
 
     const caseRoute = routeCaseSubpath(url.pathname);
@@ -218,10 +300,33 @@ const server = http.createServer(async (req, res) => {
       return sendJson(res, 200, dashboard);
     }
 
+    if (req.method === 'POST' && url.pathname === '/risk-assessment/compute') {
+      const user = await requireUser(req, res); if (!user) return;
+      const body = await parseBody(req);
+      const caseId = String(body.caseId || body.case_id || '').trim();
+      if (!caseId) throw Object.assign(new Error('caseId is required'), { statusCode: 400 });
+      const result = await caseRiskService.recomputeRisk({ authUserId: user.id, caseId });
+      return sendJson(res, 200, {
+        riskScore: result.snapshot.score,
+        riskLevel: result.snapshot.tier,
+        confidence: result.snapshot.confidence,
+        snapshot: result.snapshot,
+        human_review_required: true,
+      });
+    }
+
     return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Route not found.' } });
   } catch (error) {
     console.error('[backend]', error);
-    return sendJson(res, error.statusCode || 500, { error: { code: error.statusCode === 400 ? 'BAD_REQUEST' : 'INTERNAL_ERROR', message: error.message || 'Unexpected server error' } });
+    const statusCode = error.statusCode || 500;
+    const codeMap = {
+      400: 'BAD_REQUEST',
+      401: 'UNAUTHENTICATED',
+      403: 'FORBIDDEN',
+      404: 'NOT_FOUND',
+      413: 'PAYLOAD_TOO_LARGE',
+    };
+    return sendJson(res, statusCode, { error: { code: codeMap[statusCode] || 'INTERNAL_ERROR', message: error.message || 'Unexpected server error' } });
   }
 });
 
