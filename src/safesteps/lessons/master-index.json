@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2026-09-09",
-  "generatedAt": "2026-09-13T15:46:06.944Z",
+  "generatedAt": "2026-09-19T16:12:34.232Z",
   "repositoryPurpose": "SafeSteps is both a runnable Expo prototype and a curriculum/content repository with backend and Supabase support tooling.",
   "sourceOfTruth": {
     "lessons": "lessons/",
@@ -11,9 +11,9 @@
     "generatedImports": "src/safesteps/imports/"
   },
   "counts": {
-    "lessons": 199,
-    "modules": 83,
-    "topics": 291,
+    "lessons": 206,
+    "modules": 84,
+    "topics": 292,
     "storybookAssets": 1
   },
   "lessons": [
@@ -204,6 +204,12 @@
       "sourcePath": "lessons/lesson_attachment_and_relationships.json"
     },
     {
+      "id": "lesson_audit_trail_generator",
+      "title": "Audit-Trail Generator",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_audit_trail_generator.json"
+    },
+    {
       "id": "lesson_avoiding_assumptions",
       "title": "Avoiding Assumptions",
       "sectionCount": 0,
@@ -304,6 +310,36 @@
       "title": "Building Trust with Communities",
       "sectionCount": 0,
       "sourcePath": "lessons/lesson_building_trust_with_communities.json"
+    },
+    {
+      "id": "lesson_case_decision_justification_builder",
+      "title": "Case Decision Justification Builder",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_case_decision_justification_builder.json"
+    },
+    {
+      "id": "lesson_case_discrepancy_explainer",
+      "title": "Case Discrepancy Explainer",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_case_discrepancy_explainer.json"
+    },
+    {
+      "id": "lesson_case_risk_level_updater",
+      "title": "Case Risk-Level Updater",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_case_risk_level_updater.json"
+    },
+    {
+      "id": "lesson_case_summary_generator",
+      "title": "Case Summary Generator",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_case_summary_generator.json"
+    },
+    {
+      "id": "lesson_case_triage_routing",
+      "title": "Case Triage Routing",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_case_triage_routing.json"
     },
     {
       "id": "lesson_challenging_harmful_norms",
@@ -808,6 +844,12 @@
       "title": "Managing Parental Stress",
       "sectionCount": 0,
       "sourcePath": "lessons/lesson_managing_parental_stress.json"
+    },
+    {
+      "id": "lesson_mandatory_reporting_trigger",
+      "title": "Mandatory-Reporting Trigger",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_mandatory_reporting_trigger.json"
     },
     {
       "id": "lesson_mental_health_impacts",
@@ -1716,6 +1758,13 @@
       "lessonRefCount": 0,
       "contentBlockCount": 0,
       "sourcePath": "modules/module_understanding_primary_prevention.json"
+    },
+    {
+      "id": "module_workflow_action_skills",
+      "title": "Workflow / Action Skills",
+      "lessonRefCount": 7,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_workflow_action_skills.json"
     },
     {
       "id": "module_working_with_adolescents_experiencing_or_using_violence",
@@ -3535,6 +3584,12 @@
       "topicName": "values based parenting",
       "moduleCount": 0,
       "sourcePath": "topics/values_based_parenting.json"
+    },
+    {
+      "id": "workflow_action_skills",
+      "topicName": "workflow action skills",
+      "moduleCount": 1,
+      "sourcePath": "topics/workflow_action_skills.json"
     },
     {
       "id": "working_with_families",
