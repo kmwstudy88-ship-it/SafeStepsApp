@@ -32,10 +32,18 @@ Deno.serve(async (req: Request) => {
 
     const { data: authData, error: authError } = await userClient.auth.getUser(token);
     if (authError || !authData.user) throw new Error("Authentication failed");
+    const { data: actorRow, error: actorError } = await admin
+      .from("users")
+      .select("id,is_active")
+      .eq("auth_user_id", authData.user.id)
+      .maybeSingle();
+    if (actorError) throw actorError;
+    if (!actorRow || !actorRow.is_active) throw new Error("No active case-management identity is mapped to this login");
+    const actorUserId = actorRow.id;
 
     const body = await req.json();
-    if (!body.caseId || !body.actorUserId || body.riskScore == null || !body.riskLevel) {
-      throw new Error("caseId, actorUserId, riskScore, and riskLevel are required");
+    if (!body.caseId || body.riskScore == null || !body.riskLevel) {
+      throw new Error("caseId, riskScore, and riskLevel are required");
     }
 
     const escalationRequired = ["high", "critical"].includes(String(body.riskLevel).toLowerCase()) || Number(body.riskScore) >= 65;
@@ -56,7 +64,7 @@ Deno.serve(async (req: Request) => {
       .insert({
         case_id: body.caseId,
         analysis_id: body.analysisId ?? null,
-        actor_user_id: body.actorUserId,
+        actor_user_id: actorUserId,
         event_type: "risk_escalation_triggered",
         event_payload: payload,
       })
@@ -67,7 +75,7 @@ Deno.serve(async (req: Request) => {
 
     const { error: auditError } = await admin.from("audit_logs").insert({
       case_id: body.caseId,
-      actor_user_id: body.actorUserId,
+      actor_user_id: actorUserId,
       action: "risk_escalation_triggered",
       resource_type: "risk_assessment",
       resource_id: body.analysisId ?? null,

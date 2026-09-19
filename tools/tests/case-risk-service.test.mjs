@@ -7,6 +7,7 @@ const {
   buildEscalationAlerts,
   buildFollowUpTasks,
   buildDashboardPayload,
+  selectScoringEvents,
 } = require('../../backend/case-risk/service.js');
 
 test('buildEscalationAlerts produces stable dedupe keys for duplicate triggering events', () => {
@@ -40,6 +41,60 @@ test('buildEscalationAlerts produces stable dedupe keys for duplicate triggering
   assert.deepEqual(first.map((item) => item.dedupe_key), second.map((item) => item.dedupe_key));
   assert.deepEqual(first.map((item) => item.trigger_type), ['weapon_access', 'risk_threshold_critical', 'risk_score_delta']);
   assert.equal(first.at(-1)?.dedupe_key, 'delta:evt-123');
+});
+
+test('buildEscalationAlerts honors configured delta escalation threshold', () => {
+  const snapshot = {
+    score: 56,
+    tier: 'high',
+    model_version: 'risk-rules-v1',
+    hard_escalation: { triggered: false, triggers: [] },
+  };
+
+  const alerts = buildEscalationAlerts({
+    snapshot,
+    previousSnapshot: { score: 40 },
+    routedTo: { case_worker_ids: ['worker-1'], supervisor_ids: ['sup-1'] },
+    eventIdempotencyKey: 'evt-456',
+    eventType: 'field_note',
+    rules: {
+      thresholds: { highAlertScore: 999, criticalAlertScore: 999 },
+      deltaEscalationThreshold: 20,
+      hardEscalationSignals: {},
+    },
+  });
+
+  assert.equal(alerts.some((item) => item.trigger_type === 'risk_score_delta'), false);
+});
+
+test('selectScoringEvents avoids duplicate synthetic event scoring during idempotent retries', () => {
+  const now = new Date().toISOString();
+  const existingEvents = [{
+    created_at: now,
+    event_type: 'field_note',
+    idempotency_key: 'evt-123',
+    payload: { behavioral_cues: ['missed_contact'] },
+  }];
+  const pendingEvent = {
+    created_at: now,
+    event_type: 'field_note',
+    idempotency_key: 'evt-123',
+    payload: { behavioral_cues: ['missed_contact'] },
+  };
+
+  const onRetry = selectScoringEvents({
+    existingEvents,
+    pendingEvent,
+    hasPersistedIdempotentEvent: true,
+  });
+  const onFirstAttempt = selectScoringEvents({
+    existingEvents,
+    pendingEvent,
+    hasPersistedIdempotentEvent: false,
+  });
+
+  assert.equal(onRetry.length, 1);
+  assert.equal(onFirstAttempt.length, 2);
 });
 
 test('buildFollowUpTasks upgrades follow-up SLA and marks reprioritization after risk increases', () => {
