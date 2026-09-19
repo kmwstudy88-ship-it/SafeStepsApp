@@ -24,10 +24,18 @@ export async function saveRecoveryPhrase(phrase: string) {
   await SecureStore.setItemAsync(RECOVERY_PHRASE_KEY, phrase.trim().toUpperCase());
 }
 
+export async function clearRecoveryPhrase() {
+  await SecureStore.deleteItemAsync(RECOVERY_PHRASE_KEY);
+}
+
 export async function getRecoveryCode() {
   return SecureStore.getItemAsync(RECOVERY_CODE_KEY);
 }
 
 export async function saveRecoveryCode(code: string) {
   await SecureStore.setItemAsync(RECOVERY_CODE_KEY, code.trim().toUpperCase());
+}
+
+export async function clearRecoveryCode() {
+  await SecureStore.deleteItemAsync(RECOVERY_CODE_KEY);
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, View, Text, StyleSheet, SafeAreaView, TouchableOpacity, TextInput } from 'react-native';
 
-import { clearDiscreetPin, getDiscreetPin, getRecoveryCode, getRecoveryPhrase } from './discreetModeCredentials';
+import { clearDiscreetPin, clearRecoveryCode, clearRecoveryPhrase, getDiscreetPin, getRecoveryCode, getRecoveryPhrase } from './discreetModeCredentials';
 
 export function DiscreetModeScreen({
   onUnlock,
@@ -59,8 +59,10 @@ export function DiscreetModeScreen({
     const normalizedCode = trustedContactCode.trim().toUpperCase();
 
     if (normalizedPhrase === storedRecoveryPhrase && normalizedCode === storedRecoveryCode) {
-      await clearDiscreetPin();
+      await Promise.all([clearDiscreetPin(), clearRecoveryPhrase(), clearRecoveryCode()]);
       setStoredPin(null);
+      setStoredRecoveryPhrase(null);
+      setStoredRecoveryCode(null);
       setRecoveryMessage('Recovery confirmed. You can return to SafeSteps now and update your disguise PIN in Settings when it is safe.');
       onUnlock?.();
       return;
@@ -69,9 +71,9 @@ export function DiscreetModeScreen({
     setRecoveryMessage('Recovery details did not match. Move to a safer place and contact your trusted support person or worker for a manual reset.');
   };
 
-  return (
-    <SafeAreaView style={styles.container}>
-      {!loading && !storedPin ? (
+  if (!loading && !storedPin) {
+    return (
+      <SafeAreaView style={styles.container}>
         <View style={styles.setupCard}>
           <Text style={styles.setupTitle}>Discreet mode needs setup first</Text>
           <Text style={styles.setupText}>Set a disguise PIN in Settings & Trusted Contacts before using this screen so you do not get stuck in a crisis.</Text>
@@ -79,8 +81,12 @@ export function DiscreetModeScreen({
             <Text style={styles.recoveryButtonText}>Return to SafeSteps</Text>
           </TouchableOpacity>
         </View>
-      ) : null}
+      </SafeAreaView>
+    );
+  }
 
+  return (
+    <SafeAreaView style={styles.container}>
       <View style={styles.displayArea}>
         <Text style={styles.displayText}>{calcDisplay}</Text>
       </View>
@@ -135,7 +141,6 @@ export function DiscreetModeScreen({
           </TouchableOpacity>
           <Text style={styles.supportHint}>If you still cannot get in, contact your worker or trusted support person for a manual reset.</Text>
           {recoveryMessage ? <Text style={styles.recoveryMessage}>{recoveryMessage}</Text> : null}
-          {!storedPin ? <Text style={styles.recoveryMessage}>After recovery, create a fresh disguise PIN in Settings before using this mode again.</Text> : null}
         </View>
       ) : null}
     </SafeAreaView>

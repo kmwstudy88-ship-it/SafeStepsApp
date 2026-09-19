@@ -78,19 +78,23 @@ export function SettingsAccountScreen() {
       return;
     }
 
-    await Promise.all([
-      saveDiscreetPin(newPin),
-      saveRecoveryPhrase(recoveryPhraseInput),
-      saveRecoveryCode(recoveryCodeInput),
-    ]);
+    try {
+      await Promise.all([
+        saveDiscreetPin(newPin),
+        saveRecoveryPhrase(recoveryPhraseInput),
+        saveRecoveryCode(recoveryCodeInput),
+      ]);
 
-    setPinConfigured(true);
-    setRecoveryConfigured(true);
-    setNewPin('');
-    setConfirmPin('');
-    setRecoveryPhraseInput('');
-    setRecoveryCodeInput('');
-    Alert.alert('Discreet settings saved', 'Your disguise PIN and recovery path were updated in secure device storage.');
+      setPinConfigured(true);
+      setRecoveryConfigured(true);
+      setNewPin('');
+      setConfirmPin('');
+      setRecoveryPhraseInput('');
+      setRecoveryCodeInput('');
+      Alert.alert('Discreet settings saved', 'Your disguise PIN and recovery path were updated in secure device storage.');
+    } catch {
+      Alert.alert('Unable to save discreet settings', 'Your disguise PIN or recovery details could not be stored securely. Please try again.');
+    }
   };
 
   return (
