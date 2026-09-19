@@ -178,10 +178,22 @@ test('createUploadDocument stores inline text uploads with a sanitized storage p
       fileName: 'Unsafe name (draft).txt',
       mimeType: 'text/plain',
       contentBase64: Buffer.from('hello world', 'utf8').toString('base64'),
+      metadata: {
+        document_type: 'case_note',
+        author_role: 'caseworker',
+        creation_date: '2026-09-19T00:00:00.000Z',
+        source_system: 'unit-test',
+        version_number: 'v2',
+      },
     });
 
     assert.equal(result.document.extracted_text, 'hello world');
     assert.equal(result.document.metadata.extraction, 'inline');
+    assert.equal(result.document.metadata.document_type, 'case_note');
+    assert.equal(result.document.metadata.author_role, 'caseworker');
+    assert.equal(result.document.metadata.creation_date, '2026-09-19T00:00:00.000Z');
+    assert.equal(result.document.metadata.source_system, 'unit-test');
+    assert.equal(result.document.metadata.version_number, 'v2');
     assert.match(result.document.storage_path, /^user-1\/[0-9a-f-]{36}\/Unsafe_name_draft_.txt$/i);
     assert.equal(calls.uploads[0].bucket, 'document-intelligence');
     assert.equal(calls.uploads[0].options.contentType, 'text/plain');

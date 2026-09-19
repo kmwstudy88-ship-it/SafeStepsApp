@@ -15,22 +15,49 @@ function textFromBuffer(buffer, mimeType) {
     ? buffer.toString('utf8') : null;
 }
 
-async function createTextDocument({ userId, caseId = null, text, fileName = 'pasted-text.txt' }) {
-  if (!text || !String(text).trim()) throw new Error('Document text is required');
-  const buffer = Buffer.from(String(text), 'utf8');
-  return createDocumentRecord({ userId, caseId, fileName, mimeType: 'text/plain', buffer, extractedText: String(text), sourceType: 'text' });
+function normalizeInputMetadata(metadata, extractedText) {
+  const input = metadata && typeof metadata === 'object' && !Array.isArray(metadata) ? metadata : {};
+  const output = { extraction: extractedText ? 'inline' : 'provider_file_input' };
+  for (const key of ['document_type', 'author_role', 'creation_date', 'source_system', 'version_number']) {
+    if (typeof input[key] === 'string' && input[key].trim()) output[key] = input[key].trim();
+  }
+  return output;
 }
 
-async function createUploadDocument({ userId, caseId = null, fileName, mimeType, contentBase64, extractedText = null }) {
+async function createTextDocument({ userId, caseId = null, text, fileName = 'pasted-text.txt', metadata = {} }) {
+  if (!text || !String(text).trim()) throw new Error('Document text is required');
+  const buffer = Buffer.from(String(text), 'utf8');
+  return createDocumentRecord({
+    userId,
+    caseId,
+    fileName,
+    mimeType: 'text/plain',
+    buffer,
+    extractedText: String(text),
+    sourceType: 'text',
+    metadata,
+  });
+}
+
+async function createUploadDocument({ userId, caseId = null, fileName, mimeType, contentBase64, extractedText = null, metadata = {} }) {
   if (!fileName || !contentBase64) throw new Error('fileName and contentBase64 are required');
   const buffer = Buffer.from(contentBase64, 'base64');
   if (!buffer.length) throw new Error('Uploaded document is empty');
   if (buffer.length > 25 * 1024 * 1024) throw new Error('Document exceeds the 25 MB upload limit');
   const text = extractedText || textFromBuffer(buffer, mimeType);
-  return createDocumentRecord({ userId, caseId, fileName, mimeType: mimeType || 'application/octet-stream', buffer, extractedText: text, sourceType: 'upload' });
+  return createDocumentRecord({
+    userId,
+    caseId,
+    fileName,
+    mimeType: mimeType || 'application/octet-stream',
+    buffer,
+    extractedText: text,
+    sourceType: 'upload',
+    metadata,
+  });
 }
 
-async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer, extractedText, sourceType }) {
+async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer, extractedText, sourceType, metadata = {} }) {
   const sha256 = crypto.createHash('sha256').update(buffer).digest('hex');
   const documentId = crypto.randomUUID();
   const safeName = String(fileName).replace(/[^a-zA-Z0-9._-]+/g, '_').slice(-180) || 'document';
@@ -42,7 +69,7 @@ async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer
     id: documentId, user_id: userId, case_id: caseId, file_name: fileName, mime_type: mimeType,
     storage_path: storagePath, byte_size: buffer.length, sha256, source_type: sourceType,
     processing_status: 'queued', extracted_text: extractedText,
-    metadata: { extraction: extractedText ? 'inline' : 'provider_file_input' },
+    metadata: normalizeInputMetadata(metadata, extractedText),
   }).select('*').single();
   if (error) {
     await admin.storage.from('document-intelligence').remove([storagePath]);

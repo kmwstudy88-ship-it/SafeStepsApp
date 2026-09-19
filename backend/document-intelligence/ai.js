@@ -7,6 +7,8 @@ const ANALYSIS_INSTRUCTIONS = `You are SafeSteps Document Intelligence. Analyze 
 Return valid JSON only. Never infer a fact, diagnosis, motive, risk, or credibility finding that is not supported by the supplied material. Distinguish allegation, observation, opinion, and verified evidence. Preserve uncertainty. Do not make automated child-protection decisions.
 Required JSON shape:
 {
+  "metadata": {"document_type":"", "author_role":"", "created_at":"", "source_system":"", "version_number":""},
+  "entities": {"people":[], "dates":[], "locations":[], "events":[]},
   "summary": {"overview":"", "document_type":"", "key_points":[]},
   "evidence": [{"claim":"", "evidence":"", "evidence_type":"observation|allegation|record|opinion|unknown", "confidence":0, "source_locator":""}],
   "contradictions": [{"statement_a":"", "statement_b":"", "explanation":"", "severity":"low|medium|high", "confidence":0}],
@@ -14,6 +16,9 @@ Required JSON shape:
   "risk": {"score":0, "level":"low|moderate|high|critical|insufficient_evidence", "factors":[], "protective_factors":[], "uncertainties":[]},
   "bias": {"score":100, "signals":[{"category":"", "language":"", "explanation":"", "severity":"low|medium|high"}]},
   "fairness": {"score":100, "framing_concerns":[], "coercion_flags":[], "discrimination_risks":[], "unrealistic_expectations":[], "remediation_recommendations":[{"concern":"", "reframe":""}]},
+  "scores": {"risk_score":0, "protective_score":0, "bias_score":0, "document_quality_score":0, "case_complexity_score":0},
+  "summaries": {"child_centred":"", "parent_summary":"", "legal_summary":"", "strengths_summary":"", "action_plan":""},
+  "audit": {"evidence_trace":[], "source_verification":[], "explainability":[]},
   "limitations": []
 }
 Scores are 0-100. Risk score is a document-content signal, not a case decision. Fairness/bias scores are higher when language is more objective and evidence-linked.`;

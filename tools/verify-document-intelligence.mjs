@@ -8,6 +8,7 @@ const requiredFiles = [
   'backend/document-intelligence/ai.js',
   'backend/document-intelligence/pipeline.js',
   'backend/document-intelligence/supabase.js',
+  'backend/document-intelligence/v1.js',
   'lib/documentIntelligenceApi.ts',
   'lib/fairness/DocumentFairnessViewerScreen.tsx',
   'supabase/migrations/20260911173000_document_intelligence_pipeline.sql',
@@ -36,6 +37,7 @@ for (const rel of [
   'backend/document-intelligence/ai.js',
   'backend/document-intelligence/pipeline.js',
   'backend/document-intelligence/supabase.js',
+  'backend/document-intelligence/v1.js',
 ]) {
   const result = spawnSync(process.execPath, ['--check', rel], { cwd: root, encoding: 'utf8' });
   if (result.status !== 0) fail(`${rel} failed node --check: ${result.stderr || result.stdout}`);
@@ -44,6 +46,7 @@ for (const rel of [
 const server = read('backend/server.js');
 for (const route of [
   '/ready',
+  '/v1/document/analyse',
   '/documents/text',
   '/documents/upload',
   '/documents/analyze/fairness',
@@ -56,9 +59,10 @@ if (!server.includes('authenticateBearer')) fail('Backend does not require authe
 if (!server.includes('processNextJobs')) fail('Backend worker loop is not wired.');
 if (!server.includes('SUPABASE_SERVICE_ROLE_KEY')) fail('Readiness checks do not cover the Supabase service-role credential.');
 if (!server.includes('OPENAI_API_KEY') || !server.includes('ANTHROPIC_API_KEY')) fail('Readiness checks do not cover AI provider credentials.');
+if (!server.includes('sendDocumentV1Response')) fail('Document intelligence v1 response wiring is missing.');
 
 const ai = read('backend/document-intelligence/ai.js');
-for (const skill of ['"evidence"', '"contradictions"', '"timeline"', '"risk"', '"bias"', '"fairness"']) {
+for (const skill of ['"metadata"', '"entities"', '"evidence"', '"contradictions"', '"timeline"', '"risk"', '"bias"', '"fairness"', '"scores"', '"summaries"', '"audit"']) {
   if (!ai.includes(skill)) fail(`AI schema missing analysis skill ${skill}.`);
 }
 if (!ai.includes('api.openai.com/v1/responses')) fail('OpenAI Responses API integration missing.');
@@ -89,6 +93,9 @@ const client = read('lib/documentIntelligenceApi.ts');
 if (!client.includes('Authorization: `Bearer ${token}`')) fail('Client does not send Supabase access token to backend.');
 if (!client.includes('/documents/analyze/fairness')) fail('Fairness client route missing.');
 if (!client.includes('/documents/compare')) fail('Comparison client route missing.');
+if (!client.includes('/v1/document/analyse')) fail('Document intelligence v1 analyze client route missing.');
+if (!client.includes('/v1/document/${documentId}/summary')) fail('Document intelligence summary client route missing.');
+if (!client.includes('/v1/document/${documentId}/scores')) fail('Document intelligence scores client route missing.');
 
 const screen = read('lib/fairness/DocumentFairnessViewerScreen.tsx');
 if (!screen.includes('queueFairnessAnalysis')) fail('Fairness screen is not wired to backend analysis queue.');
