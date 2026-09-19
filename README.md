@@ -14,6 +14,7 @@ SafeSteps is a mixed repository with three active concerns:
 - `npm run smoke:documents`
 - `npm run validate`
 - `npm run content:index`
+- `npm run content:readiness`
 - `npm run readiness` *(requires staging evidence environment variables)*
 
 ## Repository contract

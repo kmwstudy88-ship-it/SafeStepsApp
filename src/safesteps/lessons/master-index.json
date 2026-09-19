@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2026-09-09",
-  "generatedAt": "2026-09-13T15:46:06.944Z",
+  "generatedAt": "2026-09-18T09:46:01.666Z",
   "repositoryPurpose": "SafeSteps is both a runnable Expo prototype and a curriculum/content repository with backend and Supabase support tooling.",
   "sourceOfTruth": {
     "lessons": "lessons/",
