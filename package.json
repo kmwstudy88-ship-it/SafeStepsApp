@@ -12,11 +12,13 @@
     "web": "expo start --web",
     "backend": "node backend/server.js",
     "verify:documents": "node tools/verify-document-intelligence.mjs",
+    "test:documents": "node --test tools/tests/document-intelligence-ai.test.mjs tools/tests/document-intelligence-pipeline.test.mjs tools/tests/document-intelligence-storage-unification.test.mjs",
     "smoke:documents": "node tools/verify-document-intelligence.mjs",
     "smoke:documents:live": "node tools/smoke-document-intelligence-live.mjs",
     "smoke:backend": "node tools/verify-document-intelligence.mjs",
     "validate": "npx expo-doctor",
     "content:index": "node tools/build-content-index.mjs",
+    "content:readiness": "node tools/validate-curriculum-readiness.mjs",
     "readiness": "node tools/production-readiness-gate.mjs"
   },
   "dependencies": {
@@ -29,6 +31,7 @@
     "expo-linking": "~57.0.9",
     "expo-print": "^57.0.1",
     "expo-router": "^57.0.20",
+    "expo-secure-store": "~57.0.3",
     "expo-sharing": "^57.0.18",
     "expo-status-bar": "^57.0.1",
     "react": "19.2.3",
