@@ -16,6 +16,11 @@ const {
   deleteDocumentForUser,
   getAnalysisForUser,
 } = require('./document-intelligence/pipeline');
+const {
+  formatDocumentIntelligenceResult,
+  summarizeDocumentIntelligenceResult,
+  scoreDocumentIntelligenceResult,
+} = require('./document-intelligence/v1');
 const { authenticateBearer } = require('./document-intelligence/supabase');
 const { createCaseRiskService } = require('./case-risk/service');
 
@@ -152,6 +157,57 @@ function routeCaseSubpath(pathname) {
   return { caseId: match[1], action: match[2] };
 }
 
+function routeDocumentV1(pathname) {
+  const match = pathname.match(/^\/v1\/document\/([0-9a-f-]{36})(?:\/(summary|scores))?$/i);
+  if (!match) return null;
+  return { documentId: match[1], section: match[2] || 'full' };
+}
+
+function coerceMetadata(value) {
+  return value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+}
+
+function normalizeV1FileBody(body) {
+  const file = body?.file && typeof body.file === 'object' && !Array.isArray(body.file) ? body.file : null;
+  if (typeof body?.text === 'string' && body.text.trim()) {
+    return { kind: 'text', text: body.text, fileName: body.fileName || file?.name || 'document.txt' };
+  }
+  const contentBase64 = file?.contentBase64 || body?.contentBase64;
+  if (typeof contentBase64 === 'string' && contentBase64.trim()) {
+    return {
+      kind: 'upload',
+      fileName: file?.name || body?.fileName,
+      mimeType: file?.mimeType || body?.mimeType,
+      contentBase64,
+      extractedText: file?.extractedText || body?.extractedText || null,
+    };
+  }
+  throw Object.assign(new Error('Provide document text or a base64-encoded file payload.'), { statusCode: 400 });
+}
+
+function sendDocumentV1Response(res, record, section = 'full') {
+  if (!record) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Document not found.' } });
+  if (record.analysis?.status === 'failed') {
+    return sendJson(res, 422, {
+      document_id: record.document.id,
+      status: 'failed',
+      error_message: record.analysis.error_message || 'Document analysis failed.',
+    });
+  }
+  if (record.analysis?.status !== 'completed') {
+    return sendJson(res, 202, {
+      document_id: record.document.id,
+      status: record.analysis?.status || record.document.processing_status || 'queued',
+      poll_url: `/v1/document/${record.document.id}`,
+      summary_url: `/v1/document/${record.document.id}/summary`,
+      scores_url: `/v1/document/${record.document.id}/scores`,
+    });
+  }
+  if (section === 'summary') return sendJson(res, 200, summarizeDocumentIntelligenceResult(record.document, record.analysis));
+  if (section === 'scores') return sendJson(res, 200, scoreDocumentIntelligenceResult(record.document, record.analysis));
+  return sendJson(res, 200, formatDocumentIntelligenceResult(record.document, record.analysis));
+}
+
 function readiness() {
   const provider = String(process.env.DOCUMENT_AI_PROVIDER || 'openai').toLowerCase() === 'anthropic' ? 'anthropic' : 'openai';
   const checks = {
@@ -199,9 +255,36 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
+    if (req.method === 'POST' && (url.pathname === '/v1/document/analyse' || url.pathname === '/v1/document/analyze')) {
+      const user = await requireUser(req, res); if (!user) return;
+      const body = await parseBody(req);
+      const metadata = coerceMetadata(body.metadata);
+      const input = normalizeV1FileBody(body);
+      const created = input.kind === 'text'
+        ? await createTextDocument({ userId: user.id, caseId: body.caseId || null, text: input.text, fileName: input.fileName, metadata })
+        : await createUploadDocument({
+          userId: user.id,
+          caseId: body.caseId || null,
+          fileName: input.fileName,
+          mimeType: input.mimeType,
+          contentBase64: input.contentBase64,
+          extractedText: input.extractedText,
+          metadata,
+        });
+      await processNextJobs(1).catch(err => console.error('[document-intelligence] immediate v1 worker error', err));
+      return sendDocumentV1Response(res, await getDocumentForUser(created.document.id, user.id), 'full');
+    }
+
     if (req.method === 'POST' && (url.pathname === '/documents/text' || url.pathname === '/documents/analyze' || url.pathname === '/documents/analyze/fairness')) {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
+      const created = await createTextDocument({
+        userId: user.id,
+        caseId: body.caseId || null,
+        text: body.text,
+        fileName: body.fileName || 'fairness-analysis.txt',
+        metadata: coerceMetadata(body.metadata),
+      });
       const created = await createTextDocument({ authUserId: user.id, caseId: body.caseId || null, text: body.text, fileName: body.fileName || 'fairness-analysis.txt' });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
       return sendJson(res, 202, {
@@ -221,6 +304,10 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'POST' && url.pathname === '/documents/upload') {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
+      const created = await createUploadDocument({
+        userId: user.id, caseId: body.caseId || null, fileName: body.fileName, mimeType: body.mimeType,
+        contentBase64: body.contentBase64, extractedText: body.extractedText || null, metadata: coerceMetadata(body.metadata),
+      });
       if (!body.contentBase64 && !String(body.text || '').trim()) {
         throw Object.assign(new Error('Either contentBase64 or text is required for document upload.'), { statusCode: 400 });
       }
@@ -272,6 +359,12 @@ const server = http.createServer(async (req, res) => {
         human_review_required: true,
         human_review_status: 'pending_analysis',
       });
+    }
+
+    const documentV1 = routeDocumentV1(url.pathname);
+    if (req.method === 'GET' && documentV1) {
+      const user = await requireUser(req, res); if (!user) return;
+      return sendDocumentV1Response(res, await getDocumentForUser(documentV1.documentId, user.id), documentV1.section);
     }
 
     const documentId = routeId(url.pathname, '/documents/');

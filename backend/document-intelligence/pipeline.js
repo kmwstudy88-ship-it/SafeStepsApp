@@ -89,251 +89,49 @@ function textFromBuffer(buffer, mimeType) {
     ? buffer.toString('utf8') : null;
 }
 
-function uniqueIds(values) {
-  return [...new Set((values || []).filter(Boolean))];
-}
-
-async function loadActorContext(authUserId) {
-  const { data: userRow, error: userError } = await admin
-    .from('users')
-    .select('id,role_id,is_active')
-    .eq('auth_user_id', authUserId)
-    .maybeSingle();
-  if (userError) throw userError;
-
-  if (!userRow || !userRow.is_active) {
-    return {
-      authUserId,
-      appUserId: null,
-      roleKey: null,
-      ownerUserIds: uniqueIds([authUserId]),
-    };
+function normalizeInputMetadata(metadata, extractedText) {
+  const input = metadata && typeof metadata === 'object' && !Array.isArray(metadata) ? metadata : {};
+  const output = { extraction: extractedText ? 'inline' : 'provider_file_input' };
+  for (const key of ['document_type', 'author_role', 'creation_date', 'source_system', 'version_number']) {
+    if (typeof input[key] === 'string' && input[key].trim()) output[key] = input[key].trim();
   }
-
-  const { data: roleRow, error: roleError } = await admin
-    .from('roles')
-    .select('role_key')
-    .eq('id', userRow.role_id)
-    .maybeSingle();
-  if (roleError) throw roleError;
-
-  return {
-    authUserId,
-    appUserId: userRow.id,
-    roleKey: roleRow?.role_key || null,
-    ownerUserIds: uniqueIds([authUserId, userRow.id]),
-  };
+  return output;
 }
 
-async function isSupervisorForCase(actor, caseId) {
-  if (!actor.appUserId) return false;
-
-  const { data: memberships, error: membershipError } = await admin
-    .from('team_memberships')
-    .select('team_id')
-    .eq('user_id', actor.appUserId)
-    .eq('membership_role', 'supervisor')
-    .eq('is_active', true);
-  if (membershipError) throw membershipError;
-
-  const teamIds = uniqueIds((memberships || []).map((row) => row.team_id));
-  if (!teamIds.length) return false;
-
-  const { data: workerMemberships, error: workerError } = await admin
-    .from('team_memberships')
-    .select('user_id')
-    .in('team_id', teamIds)
-    .eq('membership_role', 'worker')
-    .eq('is_active', true);
-  if (workerError) throw workerError;
-
-  const workerIds = uniqueIds((workerMemberships || []).map((row) => row.user_id));
-  if (!workerIds.length) return false;
-
-  const { data: assignment, error: assignmentError } = await admin
-    .from('case_assignments')
-    .select('id')
-    .eq('case_id', caseId)
-    .in('user_id', workerIds)
-    .eq('assignment_role', 'case_worker')
-    .eq('is_active', true)
-    .limit(1)
-    .maybeSingle();
-  if (assignmentError) throw assignmentError;
-
-  return Boolean(assignment);
-}
-
-async function assertCaseAccess(actor, caseId) {
-  if (!caseId) return null;
-
-  const { data: caseRow, error: caseError } = await admin
-    .from('cases')
-    .select('id,parent_user_id')
-    .eq('id', caseId)
-    .maybeSingle();
-  if (caseError) throw caseError;
-  if (!caseRow) {
-    throw createHttpError(404, 'Case not found.');
-  }
-
-  if (actor.roleKey === 'admin') return caseRow;
-
-  const { data: directAssignment, error: directError } = await admin
-    .from('case_assignments')
-    .select('id')
-    .eq('case_id', caseId)
-    .in('user_id', actor.ownerUserIds)
-    .eq('is_active', true)
-    .limit(1)
-    .maybeSingle();
-  if (directError) throw directError;
-
-  const isParentOnCase = actor.ownerUserIds.includes(caseRow.parent_user_id);
-  const supervisorAccess = actor.roleKey === 'supervisor' && await isSupervisorForCase(actor, caseId);
-  if (!directAssignment && !isParentOnCase && !supervisorAccess) {
-    throw createHttpError(403, 'You are not permitted to access this case.');
-  }
-
-  return caseRow;
-}
-
-function normalizeLimitations(limitations = []) {
-  const values = Array.isArray(limitations) ? limitations.filter((item) => typeof item === 'string' && item.trim()) : [];
-  if (!values.find((value) => value.toLowerCase().includes('decision-support') || value.toLowerCase().includes('human review'))) {
-    values.push(DEFAULT_LIMITATION);
-  }
-  return values;
-}
-
-function collectConfidenceValues(analysis) {
-  const values = [];
-  const pull = (items) => {
-    for (const item of items || []) {
-      if (typeof item?.confidence === 'number' && Number.isFinite(item.confidence)) {
-        values.push(Math.max(0, Math.min(100, item.confidence <= 1 ? item.confidence * 100 : item.confidence)));
-      }
-    }
-  };
-
-  pull(analysis?.evidence);
-  pull(analysis?.timeline);
-  pull(analysis?.contradictions);
-
-  return values;
-}
-
-function confidenceOverview(analysis) {
-  const values = collectConfidenceValues(analysis);
-  if (!values.length) return { sample_count: 0, average: null, min: null, max: null };
-  const sum = values.reduce((acc, value) => acc + value, 0);
-  return {
-    sample_count: values.length,
-    average: Number((sum / values.length).toFixed(1)),
-    min: Number(Math.min(...values).toFixed(1)),
-    max: Number(Math.max(...values).toFixed(1)),
-  };
-}
-
-function annotateWorkflow(record) {
-  if (!record) return null;
-  const status = record.status || record.processing_status || 'unknown';
-  let humanReviewStatus = 'pending_analysis';
-  if (status === 'completed') humanReviewStatus = 'pending_review';
-  else if (status === 'failed') humanReviewStatus = 'analysis_failed';
-  else if (status === 'reviewed') humanReviewStatus = 'reviewed';
-
-  return {
-    ...record,
-    decision_support_only: true,
-    unverified: true,
-    human_review_required: true,
-    human_review_status: humanReviewStatus,
-  };
-}
-
-async function createTextDocument({ authUserId, caseId = null, text, fileName = 'pasted-text.txt' }) {
-  if (!text || !String(text).trim()) throw createHttpError(400, 'Document text is required');
-  const actor = await loadActorContext(authUserId);
-  await assertCaseAccess(actor, caseId);
-
+async function createTextDocument({ userId, caseId = null, text, fileName = 'pasted-text.txt', metadata = {} }) {
+  if (!text || !String(text).trim()) throw new Error('Document text is required');
   const buffer = Buffer.from(String(text), 'utf8');
   return createDocumentRecord({
-    actor,
+    userId,
     caseId,
     fileName,
     mimeType: 'text/plain',
     buffer,
     extractedText: String(text),
     sourceType: 'text',
+    metadata,
   });
 }
 
-async function createUploadDocument({ authUserId, caseId = null, fileName, mimeType, contentBase64, extractedText = null }) {
-  if (!fileName || !contentBase64) throw createHttpError(400, 'fileName and contentBase64 are required');
-  const actor = await loadActorContext(authUserId);
-  await assertCaseAccess(actor, caseId);
-
+async function createUploadDocument({ userId, caseId = null, fileName, mimeType, contentBase64, extractedText = null, metadata = {} }) {
+  if (!fileName || !contentBase64) throw new Error('fileName and contentBase64 are required');
   const buffer = Buffer.from(contentBase64, 'base64');
-  if (!buffer.length) throw createHttpError(400, 'Uploaded document is empty');
-  if (buffer.length > 25 * 1024 * 1024) throw createHttpError(400, 'Document exceeds the 25 MB upload limit');
-
-  const normalizedMimeType = String(mimeType || 'application/octet-stream').toLowerCase();
-  if (!isSupportedMimeType(normalizedMimeType) && !String(extractedText || '').trim()) {
-    throw createHttpError(400, 'Unsupported file type. Provide extractedText or upload a supported document format.');
-  }
-
-  const text = extractedText || textFromBuffer(buffer, normalizedMimeType);
+  if (!buffer.length) throw new Error('Uploaded document is empty');
+  if (buffer.length > 25 * 1024 * 1024) throw new Error('Document exceeds the 25 MB upload limit');
+  const text = extractedText || textFromBuffer(buffer, mimeType);
   return createDocumentRecord({
-    actor,
+    userId,
     caseId,
     fileName,
-    mimeType: normalizedMimeType,
+    mimeType: mimeType || 'application/octet-stream',
     buffer,
     extractedText: text,
     sourceType: 'upload',
+    metadata,
   });
 }
 
-async function createAnalysisAndJob({ documentId, ownerUserId }) {
-  const analysis = await expectNoError(admin.from('document_analyses').insert({
-    document_id: documentId,
-    user_id: ownerUserId,
-    provider: providerName(),
-    model: DEFAULT_MODEL(),
-    schema_version: ANALYSIS_SCHEMA_VERSION,
-    status: 'queued',
-  }).select('*').single());
-
-  const job = await expectNoError(admin.from('document_analysis_jobs').insert({
-    job_type: 'document_analysis',
-    document_id: documentId,
-    user_id: ownerUserId,
-    payload: { analysis_id: analysis.id },
-  }).select('*').single());
-
-  return { analysis, job };
-}
-
-function caseIdsMatch(left, right) {
-  return (left || null) === (right || null);
-}
-
-async function findDuplicateDocument({ ownerUserIds, caseId, sha256 }) {
-  if (!sha256) return null;
-  const { data: matches, error } = await admin
-    .from('documents')
-    .select('*')
-    .in('user_id', ownerUserIds)
-    .eq('sha256', sha256)
-    .order('created_at', { ascending: false })
-    .limit(20);
-  if (error) throw error;
-
-  return (matches || []).find((item) => caseIdsMatch(item.case_id, caseId)) || null;
-}
-
-async function createDocumentRecord({ actor, caseId, fileName, mimeType, buffer, extractedText, sourceType }) {
+async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer, extractedText, sourceType, metadata = {} }) {
   const sha256 = crypto.createHash('sha256').update(buffer).digest('hex');
   const duplicate = await findDuplicateDocument({ ownerUserIds: actor.ownerUserIds, caseId, sha256 });
   if (duplicate) {
@@ -349,15 +147,16 @@ async function createDocumentRecord({ actor, caseId, fileName, mimeType, buffer,
   const { error: storageError } = await admin.storage.from('document-intelligence').upload(storagePath, buffer, { contentType: mimeType, upsert: false });
   if (storageError) throw storageError;
 
-  const documentMetadata = {
-    extraction: extractedText ? 'inline' : 'provider_file_input',
-    decision_support_only: true,
-    unverified: true,
-    human_review_required: true,
-    human_review_status: 'pending_analysis',
-    retention_days: DOCUMENT_RETENTION_DAYS,
-    retention_expires_at: retentionExpiresAt(),
-  };
+  const { data: document, error } = await admin.from('documents').insert({
+    id: documentId, user_id: userId, case_id: caseId, file_name: fileName, mime_type: mimeType,
+    storage_path: storagePath, byte_size: buffer.length, sha256, source_type: sourceType,
+    processing_status: 'queued', extracted_text: extractedText,
+    metadata: normalizeInputMetadata(metadata, extractedText),
+  }).select('*').single();
+  if (error) {
+    await admin.storage.from('document-intelligence').remove([storagePath]);
+    throw error;
+  }
 
   const document = await expectNoError(admin.from('documents').insert({
     id: documentId,

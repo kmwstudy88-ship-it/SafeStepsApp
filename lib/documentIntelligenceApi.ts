@@ -60,6 +60,54 @@ export type DocumentPollResult = {
   analysis: DocumentAnalysis | null;
 };
 
+export type DocumentIntelligenceScores = {
+  risk_score: number;
+  protective_score: number;
+  bias_score: number;
+  document_quality_score: number;
+  case_complexity_score: number;
+};
+
+export type DocumentIntelligenceSummaries = {
+  child_centred: string;
+  parent_summary: string;
+  legal_summary: string;
+  strengths_summary: string;
+  action_plan: string;
+};
+
+export type DocumentIntelligenceV1Result = {
+  document_id: string;
+  metadata: {
+    document_type: string;
+    author_role: string;
+    created_at: string;
+    source_system: string;
+  };
+  entities: { people: unknown[]; dates: unknown[]; locations: unknown[]; events: unknown[] };
+  timeline: { events: unknown[]; gaps: unknown[]; contradictions: unknown[] };
+  analysis: {
+    risks: unknown[];
+    protective_factors: unknown[];
+    contradictions: unknown[];
+    bias_indicators: unknown[];
+    professional_concerns: unknown[];
+    missing_evidence: unknown[];
+    severity_scale: Record<string, unknown>;
+    contextual_modifiers: Record<string, unknown>;
+  };
+  scores: DocumentIntelligenceScores;
+  summaries: DocumentIntelligenceSummaries;
+  ml_features: { tokens: unknown[]; embeddings: unknown[]; feature_vector: unknown[] };
+  audit: { evidence_trace: unknown[]; source_verification: unknown[]; explainability: unknown[] };
+};
+
+export type DocumentIntelligenceQueuedResult = {
+  document_id: string;
+  status: string;
+  poll_url: string;
+  summary_url: string;
+  scores_url: string;
 export type DocumentQueueResult = {
   document_id: string;
   analysis_id: string;
@@ -135,4 +183,24 @@ export async function compareDocuments(documentIds: string[]) {
   return request<{ comparison_id: string; status: string }>('/documents/compare', {
     method: 'POST', body: JSON.stringify({ documentIds }),
   });
+}
+
+export async function analyzeDocumentV1(payload: {
+  text?: string;
+  file?: { name: string; mimeType?: string; contentBase64: string; extractedText?: string | null };
+  metadata?: Record<string, unknown>;
+  caseId?: string | null;
+}) {
+  return request<DocumentIntelligenceV1Result | DocumentIntelligenceQueuedResult>('/v1/document/analyse', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  });
+}
+
+export async function getDocumentIntelligenceSummary(documentId: string) {
+  return request<DocumentIntelligenceSummaries>(`/v1/document/${documentId}/summary`);
+}
+
+export async function getDocumentIntelligenceScores(documentId: string) {
+  return request<DocumentIntelligenceScores>(`/v1/document/${documentId}/scores`);
 }
