@@ -32,6 +32,7 @@ export function DocumentFairnessViewerScreen() {
 
   const fairnessScore = Math.round(analysis?.fairness?.score ?? analysis?.bias?.score ?? 0);
   const recommendations = analysis?.fairness?.remediation_recommendations || [];
+  const confidenceAverage = analysis?.confidence_overview?.average;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -78,6 +79,12 @@ export function DocumentFairnessViewerScreen() {
                 <Text style={styles.scoreSub}>Framing / Bias Signals</Text>
               </View>
             </View>
+            <Text style={styles.metaLine}>
+              Human review status: {analysis?.human_review_status || 'pending_review'} | Confidence summary: {confidenceAverage === null || confidenceAverage === undefined ? 'n/a' : `${confidenceAverage}%`}
+            </Text>
+            <Text style={styles.metaLine}>
+              Unverified decision-support output. Do not use as an automated case decision.
+            </Text>
 
             {flags.length === 0 && (
               <View style={styles.neutralItem}>
@@ -146,4 +153,5 @@ const styles = StyleSheet.create({
   limitations: { backgroundColor: '#FFFAF0', padding: 12, borderRadius: 8, gap: 3 },
   limitationsTitle: { fontWeight: '700', color: '#744210', fontSize: 13 },
   limitationsText: { color: '#744210', fontSize: 12, lineHeight: 17 },
+  metaLine: { fontSize: 12, color: '#4A5568' },
 });
