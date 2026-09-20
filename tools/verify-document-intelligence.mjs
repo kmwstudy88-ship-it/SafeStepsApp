@@ -11,6 +11,7 @@ const requiredFiles = [
   'backend/document-intelligence/v1.js',
   'lib/documentIntelligenceApi.ts',
   'lib/fairness/DocumentFairnessViewerScreen.tsx',
+  'shared/documentIntelligenceMediaSignals.js',
   'supabase/migrations/20260911173000_document_intelligence_pipeline.sql',
 ];
 
@@ -50,11 +51,13 @@ for (const route of [
   '/documents/text',
   '/documents/upload',
   '/documents/analyze/fairness',
+  '/documents/',
   '/documents/compare',
   '/documents/comparisons/',
 ]) {
   if (!server.includes(route)) fail(`Backend route missing: ${route}`);
 }
+if (!server.includes("req.method === 'DELETE' && documentId")) fail('Document deletion route is missing.');
 if (!server.includes('authenticateBearer')) fail('Backend does not require authenticated bearer identity.');
 if (!server.includes('processNextJobs')) fail('Backend worker loop is not wired.');
 if (!server.includes('SUPABASE_SERVICE_ROLE_KEY')) fail('Readiness checks do not cover the Supabase service-role credential.');
@@ -63,11 +66,16 @@ if (!server.includes('sendDocumentV1Response')) fail('Document intelligence v1 r
 
 const ai = read('backend/document-intelligence/ai.js');
 for (const skill of ['"metadata"', '"entities"', '"evidence"', '"contradictions"', '"timeline"', '"risk"', '"bias"', '"fairness"', '"scores"', '"summaries"', '"audit"']) {
+for (const skill of ['"evidence"', '"contradictions"', '"timeline"', '"risk"', '"bias"', '"fairness"', '"media_assessment"']) {
   if (!ai.includes(skill)) fail(`AI schema missing analysis skill ${skill}.`);
 }
 if (!ai.includes('api.openai.com/v1/responses')) fail('OpenAI Responses API integration missing.');
 if (!ai.includes('api.anthropic.com/v1/messages')) fail('Anthropic Messages API integration missing.');
 if (!ai.includes('Do not make automated child-protection decisions')) fail('Human-decision safety instruction missing.');
+const sharedMediaSignals = read('shared/documentIntelligenceMediaSignals.js');
+if (!sharedMediaSignals.includes('Environmental Safety') || !sharedMediaSignals.includes('Digital Integrity & Authenticity')) {
+  fail('Upgraded media signal domains are missing from shared schema definitions.');
+}
 
 const pipeline = read('backend/document-intelligence/pipeline.js');
 for (const table of ['documents', 'document_analyses', 'document_comparisons', 'document_analysis_jobs']) {
@@ -76,6 +84,9 @@ for (const table of ['documents', 'document_analyses', 'document_comparisons', '
 if (!pipeline.includes("rpc('claim_document_analysis_jobs'")) fail('Atomic queue claim RPC is not used by the worker.');
 if (!pipeline.includes('2 to 10 unique document IDs')) fail('Multi-document comparison bounds are missing.');
 if (!pipeline.includes("createHash('sha256')")) fail('Document integrity SHA-256 fingerprinting is missing.');
+if (!pipeline.includes('Unsupported file type. Provide extractedText or upload a supported document format.')) fail('Unsupported file-type validation is missing.');
+if (!pipeline.includes('retention_expires_at')) fail('Retention metadata wiring is missing for uploaded documents.');
+if (!pipeline.includes('human_review_status')) fail('Human review status metadata is missing in document workflow responses.');
 
 const migration = read('supabase/migrations/20260911173000_document_intelligence_pipeline.sql');
 for (const token of [

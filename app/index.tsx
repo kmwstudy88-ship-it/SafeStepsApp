@@ -17,8 +17,9 @@ export default function SafeStepsHub() {
       pillar: 'Pillar 2: Proof of Change & Documentation',
       items: [
         { title: 'Case Management Console', subtitle: 'Authenticated case assignments & realtime status', route: '/cases', icon: '🗂️', badge: 'Supabase' },
+        { title: 'Family Dashboard', subtitle: 'Track multiple children, cases, and next actions together', route: '/family', icon: '👨‍👩‍👧‍👦', badge: 'Multi-child' },
         { title: 'Supervisor Risk Dashboard', subtitle: 'Highest-risk cases, rising risk, escalations, and follow-ups', route: '/dashboard/supervisor', icon: '🚦', badge: 'Safety' },
-        { title: 'Clinical Assessments (CAPES / KEPS / PAFAS / FPS)', subtitle: 'Standardized progress & efficacy scoring', route: '/assessments', icon: '📊', badge: '4 Scales' },
+        { title: 'Assessments & Results', subtitle: 'Parent self-check-ins with plain-language feedback and next steps', route: '/assessments', icon: '📊', badge: 'Self-check-in' },
         { title: 'Secure Evidence Vault', subtitle: 'Photo proof & routine milestone locker', route: '/evidence', icon: '🔐', badge: 'Vault' },
         { title: 'Court-Ready Progress Reports', subtitle: 'Cryptographically sealed PDF summaries', route: '/reports', icon: '⚖️', badge: 'PDF Export' },
       ],
@@ -34,8 +35,16 @@ export default function SafeStepsHub() {
     {
       pillar: 'Pillar 4: Safety, Privacy & Contact Visits',
       items: [
-        { title: 'Supervised Contact Visit Companion', subtitle: '4-phase visit flow & bonding play ideas', route: '/contact-visit', icon: '🤝', badge: 'Visits' },
-        { title: 'Discreet Privacy Mode', subtitle: 'Functional disguise screen with PIN unlock', route: '/discreet', icon: '🔒', badge: 'Disguise' },
+        { title: 'Safety Plan Builder', subtitle: 'Editable safety steps, escape contacts, and go-bag checklist', route: '/safety-plan', icon: '🛡️', badge: 'Plan' },
+        { title: 'Supervised Contact Visit Companion', subtitle: 'Visit flow, bonding ideas, and post-visit reflections for reports', route: '/contact-visit', icon: '🤝', badge: 'Visits' },
+        { title: 'Discreet Privacy Mode', subtitle: 'Functional disguise screen with PIN unlock and recovery support', route: '/discreet', icon: '🔒', badge: 'Disguise' },
+      ],
+    },
+    {
+      pillar: 'Pillar 5: Access, Language & Account',
+      items: [
+        { title: 'Accessibility & Language', subtitle: 'Plain-language mode, text-to-speech, and preferred language tools', route: '/accessibility', icon: '🗣️', badge: 'Inclusive' },
+        { title: 'Settings & Trusted Contacts', subtitle: 'Profile, trusted-contact SOS list, and account preferences', route: '/settings', icon: '⚙️', badge: 'Account' },
       ],
     },
   ];
@@ -98,7 +107,7 @@ const styles = StyleSheet.create({
   cardIcon: { fontSize: 28 },
   cardText: { flex: 1, gap: 3 },
   titleRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  cardTitle: { fontSize: 15, fontWeight: '700', color: '#1A202C' },
+  cardTitle: { fontSize: 15, fontWeight: '700', color: '#1A202C', flex: 1 },
   cardBadge: { fontSize: 11, fontWeight: '700', backgroundColor: '#EDF2F7', color: '#4A5568', paddingHorizontal: 6, paddingVertical: 2, borderRadius: 6 },
   cardSubtitle: { fontSize: 13, color: '#718096' },
   arrow: { fontSize: 24, color: '#CBD5E0', paddingLeft: 8 },

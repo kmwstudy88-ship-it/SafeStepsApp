@@ -1,6 +1,6 @@
 begin;
 
-select plan(28);
+select plan(30);
 
 select has_table('public', 'evidence_records', 'evidence_records exists');
 select has_table('public', 'evidence_files', 'evidence_files exists');
@@ -29,16 +29,24 @@ select ok(
   'anon cannot execute grant_parent_video_report_consent'
 );
 select ok(
-  coalesce(has_function_privilege('authenticated', to_regprocedure('public.grant_parent_video_report_consent(uuid, text, text, timestamp with time zone)'), 'EXECUTE'), false),
-  'authenticated can execute grant_parent_video_report_consent'
+  coalesce(not has_function_privilege('authenticated', to_regprocedure('public.grant_parent_video_report_consent(uuid, text, text, timestamp with time zone)'), 'EXECUTE'), false),
+  'authenticated cannot execute grant_parent_video_report_consent'
 );
 select ok(
   coalesce(not has_function_privilege('anon', to_regprocedure('public.withdraw_parent_video_report_consent(uuid, text)'), 'EXECUTE'), false),
   'anon cannot execute withdraw_parent_video_report_consent'
 );
 select ok(
-  coalesce(has_function_privilege('authenticated', to_regprocedure('public.withdraw_parent_video_report_consent(uuid, text)'), 'EXECUTE'), false),
-  'authenticated can execute withdraw_parent_video_report_consent'
+  coalesce(not has_function_privilege('authenticated', to_regprocedure('public.withdraw_parent_video_report_consent(uuid, text)'), 'EXECUTE'), false),
+  'authenticated cannot execute withdraw_parent_video_report_consent'
+);
+select ok(
+  coalesce(has_function_privilege('service_role', to_regprocedure('public.grant_parent_video_report_consent(uuid, text, text, timestamp with time zone)'), 'EXECUTE'), false),
+  'service_role can execute grant_parent_video_report_consent'
+);
+select ok(
+  coalesce(has_function_privilege('service_role', to_regprocedure('public.withdraw_parent_video_report_consent(uuid, text)'), 'EXECUTE'), false),
+  'service_role can execute withdraw_parent_video_report_consent'
 );
 select ok(
   not exists (

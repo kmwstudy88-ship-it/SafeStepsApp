@@ -2,6 +2,18 @@ import Constants from 'expo-constants';
 import { supabase } from './supabaseClient';
 
 export type FairnessRecommendation = { concern: string; reframe: string };
+export type MediaAssessmentDomainResult = {
+  domain_id?: string;
+  domain_name?: string;
+  signals_observed?: string[];
+  risk_flags?: string[];
+  protective_flags?: string[];
+  notes?: string;
+  confidence?: number;
+};
+export type MediaAssessmentResult = {
+  domains?: MediaAssessmentDomainResult[];
+};
 export type FairnessResult = {
   score?: number;
   framing_concerns?: Array<{ category?: string; language?: string; explanation?: string; severity?: string }>;
@@ -14,18 +26,37 @@ export type FairnessResult = {
 export type DocumentAnalysis = {
   id: string;
   status: 'queued' | 'processing' | 'completed' | 'failed';
+  provider?: string;
+  model?: string;
+  summary?: Record<string, unknown>;
   fairness?: FairnessResult;
   bias?: { score?: number; signals?: Array<{ category?: string; language?: string; explanation?: string; severity?: string }> };
   evidence?: unknown[];
   contradictions?: unknown[];
   timeline?: unknown[];
-  risk?: Record<string, unknown>;
+  risk?: Record<string, unknown> & { media_assessment?: MediaAssessmentResult };
+  media_assessment?: MediaAssessmentResult;
+  raw_output?: Record<string, unknown>;
   limitations?: string[];
+  confidence_overview?: { sample_count: number; average: number | null; min: number | null; max: number | null };
+  decision_support_only?: boolean;
+  unverified?: boolean;
+  human_review_required?: boolean;
+  human_review_status?: string;
   error_message?: string | null;
 };
 
 export type DocumentPollResult = {
-  document: { id: string; processing_status: string; file_name?: string };
+  document: {
+    id: string;
+    processing_status: string;
+    file_name?: string;
+    decision_support_only?: boolean;
+    unverified?: boolean;
+    human_review_required?: boolean;
+    human_review_status?: string;
+    metadata?: Record<string, unknown>;
+  };
   analysis: DocumentAnalysis | null;
 };
 
@@ -77,6 +108,13 @@ export type DocumentIntelligenceQueuedResult = {
   poll_url: string;
   summary_url: string;
   scores_url: string;
+export type DocumentQueueResult = {
+  document_id: string;
+  analysis_id: string;
+  job_id?: string;
+  status: 'queued' | 'processing' | 'completed' | 'failed';
+  poll_url?: string;
+  human_review_required?: boolean;
 };
 
 const baseUrl = String(
@@ -103,8 +141,27 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export async function queueFairnessAnalysis(text: string) {
-  return request<{ document_id: string; analysis_id: string; status: string }>('/documents/analyze/fairness', {
+  return request<DocumentQueueResult>('/documents/analyze/fairness', {
     method: 'POST', body: JSON.stringify({ text }),
+  });
+}
+
+export async function queueDocumentUpload(params: {
+  caseId?: string | null;
+  fileName: string;
+  mimeType: string;
+  contentBase64: string;
+  extractedText?: string | null;
+}) {
+  return request<DocumentQueueResult>('/documents/upload', {
+    method: 'POST',
+    body: JSON.stringify({
+      caseId: params.caseId ?? null,
+      fileName: params.fileName,
+      mimeType: params.mimeType,
+      contentBase64: params.contentBase64,
+      extractedText: params.extractedText ?? null,
+    }),
   });
 }
 
