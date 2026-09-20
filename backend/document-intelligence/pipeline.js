@@ -160,6 +160,7 @@ async function createAnalysisAndJob({ documentId, ownerUserId }) {
 async function createTextDocument({ authUserId, userId, caseId = null, text, fileName = 'pasted-text.txt', metadata = {} }) {
   const ownerUserId = userId || authUserId;
   if (!ownerUserId) throw createHttpError(401, 'Authentication required');
+  await assertCaseAccess({ authUserId: authUserId || ownerUserId, appUserId: null, ownerUserIds: [ownerUserId] }, caseId);
   if (!text || !String(text).trim()) throw new Error('Document text is required');
   const buffer = Buffer.from(String(text), 'utf8');
   return createDocumentRecord({
@@ -177,6 +178,7 @@ async function createTextDocument({ authUserId, userId, caseId = null, text, fil
 async function createUploadDocument({ authUserId, userId, caseId = null, fileName, mimeType, contentBase64, extractedText = null, metadata = {} }) {
   const ownerUserId = userId || authUserId;
   if (!ownerUserId) throw createHttpError(401, 'Authentication required');
+  await assertCaseAccess({ authUserId: authUserId || ownerUserId, appUserId: null, ownerUserIds: [ownerUserId] }, caseId);
   if (!fileName || !contentBase64) throw new Error('fileName and contentBase64 are required');
   if (!isSupportedMimeType(mimeType) && !String(extractedText || '').trim()) {
     throw createHttpError(400, 'Unsupported file type. Provide extractedText or upload a supported document format.');
