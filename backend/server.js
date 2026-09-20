@@ -239,7 +239,7 @@ function createApp({
     if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
 
     try {
-      if (req.method === 'GET' && url.pathname === '/health') {
+      if (req.method === 'GET' && (url.pathname === '/health' || url.pathname === '/ready')) {
         return sendJson(res, 200, { status: 'ok', documentIntelligence: true, timestamp: new Date().toISOString() });
       }
 
@@ -312,18 +312,20 @@ function createApp({
       }
       const created = body.contentBase64
         ? await createUploadDocument({
-          authUserId: user.id,
+          userId: user.id,
           caseId: body.caseId || null,
           fileName: body.fileName,
           mimeType: body.mimeType,
           contentBase64: body.contentBase64,
           extractedText: body.extractedText || null,
+          metadata: coerceMetadata(body.metadata),
         })
         : await createTextDocument({
-          authUserId: user.id,
+          userId: user.id,
           caseId: body.caseId || null,
           text: body.text,
           fileName: body.fileName || 'uploaded-note.txt',
+          metadata: coerceMetadata(body.metadata),
         });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
       return sendJson(res, 202, {
@@ -404,7 +406,6 @@ function createApp({
       if (!comparison) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Comparison not found.' } });
       return sendJson(res, 200, { comparison });
     }
-
     if (req.method === 'POST' && url.pathname === '/analyses/compare') {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
@@ -517,6 +518,17 @@ function createApp({
   function shutdown() {
     clearInterval(workerTimer);
     server.close();
+  }
+  });
+
+  const workerTimer = setInterval(() => {
+    processNextJobs(2).catch((error) => console.error('[document-intelligence] worker loop error', error));
+  }, workerIntervalMs);
+  if (typeof workerTimer.unref === 'function') workerTimer.unref();
+
+  function shutdown() {
+    clearInterval(workerTimer);
+    server.close(() => {});
   }
 
   return { server, shutdown };

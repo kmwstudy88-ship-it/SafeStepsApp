@@ -115,6 +115,9 @@ async function createTextDocument({ userId, caseId = null, text, fileName = 'pas
 
 async function createUploadDocument({ userId, caseId = null, fileName, mimeType, contentBase64, extractedText = null, metadata = {} }) {
   if (!fileName || !contentBase64) throw new Error('fileName and contentBase64 are required');
+  if (!isSupportedMimeType(mimeType)) {
+    throw new Error('Unsupported file type. Provide extractedText or upload a supported document format.');
+  }
   const buffer = Buffer.from(contentBase64, 'base64');
   if (!buffer.length) throw new Error('Uploaded document is empty');
   if (buffer.length > 25 * 1024 * 1024) throw new Error('Document exceeds the 25 MB upload limit');
@@ -133,14 +136,21 @@ async function createUploadDocument({ userId, caseId = null, fileName, mimeType,
 
 async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer, extractedText, sourceType, metadata = {} }) {
   const sha256 = crypto.createHash('sha256').update(buffer).digest('hex');
-  const duplicate = await findDuplicateDocument({ ownerUserIds: actor.ownerUserIds, caseId, sha256 });
+  let duplicateQuery = admin
+    .from('documents')
+    .select('*')
+    .eq('sha256', sha256)
+    .in('user_id', [userId])
+    .limit(1);
+  duplicateQuery = caseId == null ? duplicateQuery.is('case_id', null) : duplicateQuery.eq('case_id', caseId);
+  const duplicate = await expectNoError(duplicateQuery.maybeSingle());
   if (duplicate) {
-    const ownerUserId = duplicate.user_id || actor.appUserId || actor.authUserId;
+    const ownerUserId = duplicate.user_id || userId;
     const { analysis, job } = await createAnalysisAndJob({ documentId: duplicate.id, ownerUserId });
     return { document: duplicate, analysis, job, duplicate: true };
   }
 
-  const ownerUserId = actor.appUserId || actor.authUserId;
+  const ownerUserId = userId;
   const documentId = crypto.randomUUID();
   const safeName = String(fileName).replace(/[^a-zA-Z0-9._-]+/g, '_').slice(-180) || 'document';
   const storagePath = `${ownerUserId}/${documentId}/${safeName}`;
@@ -151,30 +161,13 @@ async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer
     id: documentId, user_id: userId, case_id: caseId, file_name: fileName, mime_type: mimeType,
     storage_path: storagePath, byte_size: buffer.length, sha256, source_type: sourceType,
     processing_status: 'queued', extracted_text: extractedText,
+    retention_expires_at: retentionExpiresAt(),
     metadata: normalizeInputMetadata(metadata, extractedText),
   }).select('*').single();
   if (error) {
     await admin.storage.from('document-intelligence').remove([storagePath]);
     throw error;
   }
-
-  const document = await expectNoError(admin.from('documents').insert({
-    id: documentId,
-    user_id: ownerUserId,
-    case_id: caseId,
-    file_name: fileName,
-    mime_type: mimeType,
-    storage_path: storagePath,
-    byte_size: buffer.length,
-    sha256,
-    source_type: sourceType,
-    processing_status: 'queued',
-    extracted_text: extractedText,
-    metadata: documentMetadata,
-  }).select('*').single()).catch(async (error) => {
-    await cleanupCreatedDocument({ id: documentId, storage_path: storagePath });
-    throw error;
-  });
 
   try {
     const { analysis, job } = await createAnalysisAndJob({ documentId: document.id, ownerUserId });
@@ -281,6 +274,7 @@ async function queueDocumentAnalysis({ authUserId, actorUserId = null, documentI
         analysis_id: analysis.id,
         job_id: job.id,
         human_review_required: true,
+        human_review_status: 'pending_analysis',
       },
     });
     if (auditError) {
