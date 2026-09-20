@@ -81,3 +81,128 @@ test('summary and score helpers return the corresponding v1 blocks', () => {
     case_complexity_score: 40,
   });
 });
+
+test('formatDocumentIntelligenceResult prefers explicit master-schema slices over derived fallbacks', () => {
+  const result = formatDocumentIntelligenceResult(
+    {
+      id: 'doc-3',
+      created_at: '2026-09-20T08:00:00.000Z',
+      metadata: {},
+    },
+    {
+      summary: { overview: 'Fallback overview', document_type: 'incident_report' },
+      evidence: [{ claim: 'fallback claim', evidence: 'fallback evidence', source_locator: 'page 1', confidence: 55 }],
+      contradictions: [{ statement_a: 'a', statement_b: 'b' }],
+      timeline: [{ event: 'fallback event', source_locator: 'page 1' }],
+      risk: { score: 99, level: 'critical', protective_factors: ['fallback factor'], uncertainties: ['fallback gap'] },
+      bias: { score: 5, signals: [{ category: 'fallback bias' }] },
+      fairness: { framing_concerns: [{ language: 'fallback fairness' }] },
+      limitations: ['fallback limitation'],
+      raw_output: {
+        analysis: {
+          risks: [{ engine: 'ReviewedEngine', risk_score: 45, severity_level: 'moderate' }],
+          protective_factors: [{ strength: 'Stable kinship placement' }],
+          bias_indicators: [{ category: 'framing', language: 'always', explanation: 'absolute language', severity: 'high' }],
+          professional_concerns: ['Escalating incidents'],
+          missing_evidence: ['School attendance records'],
+          severity_scale: { risk_level: 'moderate', explanation: 'verified by reviewer' },
+          contextual_modifiers: { interpreter_required: true },
+        },
+        scores: {
+          risk_score: '120',
+          protective_score: '-5',
+          bias_score: '70',
+          document_quality_score: 88,
+          case_complexity_score: '101',
+        },
+        summaries: {
+          child_centred: 'Explicit child-centred summary',
+          action_plan: 'Schedule supervised contact review',
+        },
+        audit: {
+          evidence_trace: [{ claim: 'explicit claim', evidence: 'explicit evidence', source_locator: 'appendix a' }],
+          source_verification: [{ source_locator: 'appendix a', confidence: 90, evidence_type: 'record' }],
+          explainability: [{ limitation: 'Model confidence reduced by missing annexure' }],
+        },
+      },
+    },
+  );
+
+  assert.deepEqual(result.analysis.risks, [{ engine: 'ReviewedEngine', risk_score: 45, severity_level: 'moderate' }]);
+  assert.deepEqual(result.analysis.protective_factors, [{ strength: 'Stable kinship placement' }]);
+  assert.deepEqual(result.analysis.bias_indicators, [{
+    category: 'framing',
+    language: 'always',
+    explanation: 'absolute language',
+    severity: 'high',
+  }]);
+  assert.deepEqual(result.analysis.professional_concerns, ['Escalating incidents']);
+  assert.deepEqual(result.analysis.missing_evidence, ['School attendance records']);
+  assert.deepEqual(result.analysis.severity_scale, { risk_level: 'moderate', explanation: 'verified by reviewer' });
+  assert.deepEqual(result.analysis.contextual_modifiers, { interpreter_required: true });
+  assert.deepEqual(result.audit.evidence_trace, [{ claim: 'explicit claim', evidence: 'explicit evidence', source_locator: 'appendix a' }]);
+  assert.deepEqual(result.audit.source_verification, [{ source_locator: 'appendix a', confidence: 90, evidence_type: 'record' }]);
+  assert.deepEqual(result.audit.explainability, [{ limitation: 'Model confidence reduced by missing annexure' }]);
+  assert.equal(result.summaries.child_centred, 'Explicit child-centred summary');
+  assert.equal(result.summaries.action_plan, 'Schedule supervised contact review');
+  assert.deepEqual(result.scores, {
+    risk_score: 100,
+    protective_score: 0,
+    bias_score: 70,
+    document_quality_score: 88,
+    case_complexity_score: 100,
+  });
+});
+
+test('formatDocumentIntelligenceResult falls back safely when metadata and analysis shapes are incomplete', () => {
+  const result = formatDocumentIntelligenceResult(
+    {
+      id: 'doc-4',
+      created_at: '2026-09-20T10:15:00.000Z',
+      metadata: 'invalid',
+    },
+    {
+      summary: { overview: 'Short overview', document_type: 'case_note' },
+      evidence: [{ claim: 'Supported claim', evidence: 'Case note', confidence: '92', source_locator: 44 }],
+      risk: { score: 'not-a-number', level: 'low', protective_factors: [{ strength: 'Housing secured' }], uncertainties: 'missing attachment' },
+      raw_output: {
+        entities: { people: 'invalid', dates: ['2026-09-20'] },
+        ml_features: { tokens: ['family', 'safety'], embeddings: 'invalid', feature_vector: [0.2, 0.4] },
+      },
+      limitations: ['Awaiting collateral records'],
+    },
+  );
+
+  assert.equal(result.metadata.document_type, 'case_note');
+  assert.equal(result.metadata.created_at, '2026-09-20T10:15:00.000Z');
+  assert.deepEqual(result.entities.people, []);
+  assert.deepEqual(result.entities.dates, ['2026-09-20']);
+  assert.deepEqual(result.analysis.risks, [{
+    engine: 'DocumentRiskEngine',
+    risk_score: 0,
+    severity_level: 'low',
+    evidence_sources: [{
+      claim: 'Supported claim',
+      evidence: 'Case note',
+      evidence_type: 'unknown',
+      confidence: 92,
+      source_locator: '',
+    }],
+    contradictions: [],
+    missing_evidence: [],
+    timeline_links: [],
+  }]);
+  assert.deepEqual(result.analysis.protective_factors, [{ strength: 'Housing secured' }]);
+  assert.deepEqual(result.analysis.missing_evidence, []);
+  assert.deepEqual(result.ml_features, {
+    tokens: ['family', 'safety'],
+    embeddings: [],
+    feature_vector: [0.2, 0.4],
+  });
+  assert.deepEqual(result.audit.source_verification, [{
+    source_locator: '',
+    confidence: 92,
+    evidence_type: 'unknown',
+  }]);
+  assert.deepEqual(result.audit.explainability, [{ limitation: 'Awaiting collateral records' }]);
+});
