@@ -30,6 +30,14 @@ Deno.serve(async (req: Request) => {
 
     const { data: authData, error: authError } = await userClient.auth.getUser(token);
     if (authError || !authData.user) throw new Error("Authentication failed");
+    const { data: actorRow, error: actorError } = await admin
+      .from("users")
+      .select("id,is_active")
+      .eq("auth_user_id", authData.user.id)
+      .maybeSingle();
+    if (actorError) throw actorError;
+    if (!actorRow || !actorRow.is_active) throw new Error("No active case-management identity is mapped to this login");
+    const actorUserId = actorRow.id;
 
     const body = await req.json();
     if (!body.caseId || body.riskScore == null || !body.riskLevel) {
