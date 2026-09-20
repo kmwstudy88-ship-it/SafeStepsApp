@@ -9,9 +9,12 @@ const {
   createTextDocument,
   createUploadDocument,
   createComparison,
+  queueDocumentAnalysis,
   processNextJobs,
   getDocumentForUser,
   getComparisonForUser,
+  deleteDocumentForUser,
+  getAnalysisForUser,
 } = require('./document-intelligence/pipeline');
 const { authenticateBearer } = require('./document-intelligence/supabase');
 const { createCaseRiskService } = require('./case-risk/service');
@@ -19,6 +22,16 @@ const { createCaseRiskService } = require('./case-risk/service');
 const PORT = Number(process.env.PORT || 3000);
 const MAX_BODY_BYTES = 35 * 1024 * 1024;
 const WORKER_INTERVAL_MS = Math.max(1000, Number(process.env.DOCUMENT_AI_WORKER_INTERVAL_MS || 2500));
+const RATE_LIMIT_WINDOW_MS = Math.max(1000, Number(process.env.BACKEND_RATE_LIMIT_WINDOW_MS || 60000));
+const RATE_LIMIT_MAX_REQUESTS = Math.max(1, Number(process.env.BACKEND_RATE_LIMIT_MAX_REQUESTS || 120));
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+const DEV_DEFAULT_ALLOWED_ORIGINS = [
+  'http://localhost:8099',
+  'http://127.0.0.1:8099',
+  'http://localhost:3000',
+  'http://127.0.0.1:3000',
+];
+const rateLimitBuckets = new Map();
 
 const DOCUMENT_SECTIONS = [
   'Case Identification & Reference', 'Family Composition & Demographics', 'Child Safety History & Intakes',
@@ -42,19 +55,62 @@ const DOCUMENT_SECTIONS = [
 const caseRiskService = createCaseRiskService();
 
 function setCors(req, res) {
-  const allowed = (process.env.BACKEND_ALLOWED_ORIGINS || '*').split(',').map(x => x.trim());
   const origin = req.headers.origin;
-  const selected = allowed.includes('*') ? '*' : (origin && allowed.includes(origin) ? origin : allowed[0]);
-  res.setHeader('Access-Control-Allow-Origin', selected || 'null');
+  const configuredOrigins = (process.env.BACKEND_ALLOWED_ORIGINS || '')
+    .split(',')
+    .map(x => x.trim())
+    .filter(Boolean);
+  const allowedOrigins = configuredOrigins.length ? configuredOrigins : (IS_PRODUCTION ? [] : DEV_DEFAULT_ALLOWED_ORIGINS);
+  const allowsWildcard = allowedOrigins.includes('*') && !IS_PRODUCTION;
+  const allowsOrigin = Boolean(origin) && (allowsWildcard || allowedOrigins.includes(origin));
+  res.setHeader('Access-Control-Allow-Origin', allowsOrigin ? (allowsWildcard ? '*' : origin) : 'null');
   res.setHeader('Access-Control-Allow-Headers', 'Authorization, Content-Type');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Vary', 'Origin');
+}
+
+function setSecurityHeaders(res) {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Referrer-Policy', 'no-referrer');
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
 }
 
 function sendJson(res, statusCode, data) {
   const json = JSON.stringify(data);
   res.writeHead(statusCode, { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(json) });
   res.end(json);
+}
+
+function clientIp(req) {
+  const forwarded = req.headers['x-forwarded-for'];
+  if (typeof forwarded === 'string' && forwarded.trim()) {
+    return forwarded.split(',')[0].trim();
+  }
+  return req.socket?.remoteAddress || 'unknown';
+}
+
+function rateLimited(req, pathname) {
+  if (!['POST', 'PUT', 'PATCH', 'DELETE'].includes(req.method || '')) return null;
+  const now = Date.now();
+  const key = `${clientIp(req)}:${req.method}:${pathname}`;
+  const windowStartedAt = now - RATE_LIMIT_WINDOW_MS;
+  const current = rateLimitBuckets.get(key);
+  const windowRecord = current && current.windowStartedAt >= windowStartedAt
+    ? current
+    : { windowStartedAt: now, count: 0 };
+  windowRecord.count += 1;
+  rateLimitBuckets.set(key, windowRecord);
+
+  for (const [bucketKey, bucketValue] of rateLimitBuckets) {
+    if (bucketValue.windowStartedAt < windowStartedAt) {
+      rateLimitBuckets.delete(bucketKey);
+    }
+  }
+
+  if (windowRecord.count <= RATE_LIMIT_MAX_REQUESTS) return null;
+  const retryAfterSeconds = Math.max(1, Math.ceil((windowRecord.windowStartedAt + RATE_LIMIT_WINDOW_MS - now) / 1000));
+  return retryAfterSeconds;
 }
 
 function parseBody(req) {
@@ -107,9 +163,20 @@ function readiness() {
 }
 
 const server = http.createServer(async (req, res) => {
-  setCors(req, res);
-  if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
   const url = new URL(req.url, `http://localhost:${PORT}`);
+  setCors(req, res);
+  setSecurityHeaders(res);
+  const retryAfterSeconds = rateLimited(req, url.pathname);
+  if (retryAfterSeconds) {
+    res.setHeader('Retry-After', String(retryAfterSeconds));
+    return sendJson(res, 429, {
+      error: {
+        code: 'RATE_LIMITED',
+        message: `Too many requests. Retry in ${retryAfterSeconds} seconds.`,
+      },
+    });
+  }
+  if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
 
   try {
     if (req.method === 'GET' && url.pathname === '/health') {
@@ -135,7 +202,7 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'POST' && (url.pathname === '/documents/text' || url.pathname === '/documents/analyze' || url.pathname === '/documents/analyze/fairness')) {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
-      const created = await createTextDocument({ userId: user.id, caseId: body.caseId || null, text: body.text, fileName: body.fileName || 'fairness-analysis.txt' });
+      const created = await createTextDocument({ authUserId: user.id, caseId: body.caseId || null, text: body.text, fileName: body.fileName || 'fairness-analysis.txt' });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
       return sendJson(res, 202, {
         document_id: created.document.id,
@@ -143,19 +210,68 @@ const server = http.createServer(async (req, res) => {
         job_id: created.job.id,
         status: 'queued',
         poll_url: `/documents/${created.document.id}`,
+        duplicate_document: Boolean(created.duplicate),
+        decision_support_only: true,
+        unverified: true,
         human_review_required: true,
+        human_review_status: 'pending_analysis',
       });
     }
 
     if (req.method === 'POST' && url.pathname === '/documents/upload') {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
-      const created = await createUploadDocument({
-        userId: user.id, caseId: body.caseId || null, fileName: body.fileName, mimeType: body.mimeType,
-        contentBase64: body.contentBase64, extractedText: body.extractedText || null,
-      });
+      if (!body.contentBase64 && !String(body.text || '').trim()) {
+        throw Object.assign(new Error('Either contentBase64 or text is required for document upload.'), { statusCode: 400 });
+      }
+      const created = body.contentBase64
+        ? await createUploadDocument({
+          authUserId: user.id,
+          caseId: body.caseId || null,
+          fileName: body.fileName,
+          mimeType: body.mimeType,
+          contentBase64: body.contentBase64,
+          extractedText: body.extractedText || null,
+        })
+        : await createTextDocument({
+          authUserId: user.id,
+          caseId: body.caseId || null,
+          text: body.text,
+          fileName: body.fileName || 'uploaded-note.txt',
+        });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
-      return sendJson(res, 202, { document_id: created.document.id, analysis_id: created.analysis.id, job_id: created.job.id, status: 'queued', poll_url: `/documents/${created.document.id}` });
+      return sendJson(res, 202, {
+        document_id: created.document.id,
+        analysis_id: created.analysis.id,
+        job_id: created.job.id,
+        status: 'queued',
+        poll_url: `/documents/${created.document.id}`,
+        duplicate_document: Boolean(created.duplicate),
+        decision_support_only: true,
+        unverified: true,
+        human_review_required: true,
+        human_review_status: 'pending_analysis',
+      });
+    }
+
+    if (req.method === 'POST' && url.pathname === '/documents/process') {
+      const user = await requireUser(req, res); if (!user) return;
+      const body = await parseBody(req);
+      const documentId = String(body.documentId || body.document_id || '').trim();
+      if (!documentId) throw Object.assign(new Error('documentId is required'), { statusCode: 400 });
+      const created = await queueDocumentAnalysis({ authUserId: user.id, documentId });
+      processNextJobs(1).catch(err => console.error('[document-intelligence] process worker error', err));
+      return sendJson(res, 202, {
+        document_id: created.document.id,
+        analysis_id: created.analysis.id,
+        job_id: created.job.id,
+        status: 'queued',
+        poll_url: `/documents/${created.document.id}`,
+        decision_support_only: true,
+        unverified: true,
+        human_review_required: true,
+        human_review_status: 'pending_analysis',
+      });
     }
 
     const documentId = routeId(url.pathname, '/documents/');
@@ -165,13 +281,28 @@ const server = http.createServer(async (req, res) => {
       if (!record) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Document not found.' } });
       return sendJson(res, 200, record);
     }
+    if (req.method === 'DELETE' && documentId) {
+      const user = await requireUser(req, res); if (!user) return;
+      const deleted = await deleteDocumentForUser(documentId, user.id, 'user_request');
+      if (!deleted) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Document not found.' } });
+      return sendJson(res, 200, deleted);
+    }
 
     if (req.method === 'POST' && url.pathname === '/documents/compare') {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
-      const created = await createComparison({ userId: user.id, caseId: body.caseId || null, documentIds: body.documentIds });
+      const created = await createComparison({ authUserId: user.id, caseId: body.caseId || null, documentIds: body.documentIds });
       processNextJobs(1).catch(err => console.error('[document-intelligence] comparison worker error', err));
-      return sendJson(res, 202, { comparison_id: created.comparison.id, job_id: created.job.id, status: 'queued', poll_url: `/documents/comparisons/${created.comparison.id}` });
+      return sendJson(res, 202, {
+        comparison_id: created.comparison.id,
+        job_id: created.job.id,
+        status: 'queued',
+        poll_url: `/documents/comparisons/${created.comparison.id}`,
+        decision_support_only: true,
+        unverified: true,
+        human_review_required: true,
+        human_review_status: 'pending_analysis',
+      });
     }
 
     const comparisonId = routeId(url.pathname, '/documents/comparisons/');
@@ -180,6 +311,39 @@ const server = http.createServer(async (req, res) => {
       const comparison = await getComparisonForUser(comparisonId, user.id);
       if (!comparison) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Comparison not found.' } });
       return sendJson(res, 200, { comparison });
+    }
+
+    if (req.method === 'POST' && url.pathname === '/analyses/compare') {
+      const user = await requireUser(req, res); if (!user) return;
+      const body = await parseBody(req);
+      let documentIds = body.documentIds;
+      if (!Array.isArray(documentIds) && Array.isArray(body.analysisIds)) {
+        const analyses = await Promise.all(body.analysisIds.map((id) => getAnalysisForUser(id, user.id)));
+        if (analyses.some((analysis) => !analysis?.document_id)) {
+          throw Object.assign(new Error('One or more documents are unavailable'), { statusCode: 404 });
+        }
+        documentIds = analyses.map((analysis) => analysis.document_id);
+      }
+      const created = await createComparison({ authUserId: user.id, caseId: body.caseId || null, documentIds });
+      processNextJobs(1).catch(err => console.error('[document-intelligence] compatibility comparison worker error', err));
+      return sendJson(res, 202, {
+        comparison_id: created.comparison.id,
+        job_id: created.job.id,
+        status: 'queued',
+        poll_url: `/documents/comparisons/${created.comparison.id}`,
+        decision_support_only: true,
+        unverified: true,
+        human_review_required: true,
+        human_review_status: 'pending_analysis',
+      });
+    }
+
+    const analysisId = routeId(url.pathname, '/analyses/');
+    if (req.method === 'GET' && analysisId) {
+      const user = await requireUser(req, res); if (!user) return;
+      const analysis = await getAnalysisForUser(analysisId, user.id);
+      if (!analysis) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Analysis not found.' } });
+      return sendJson(res, 200, analysis);
     }
 
     const caseRoute = routeCaseSubpath(url.pathname);
@@ -218,10 +382,33 @@ const server = http.createServer(async (req, res) => {
       return sendJson(res, 200, dashboard);
     }
 
+    if (req.method === 'POST' && url.pathname === '/risk-assessment/compute') {
+      const user = await requireUser(req, res); if (!user) return;
+      const body = await parseBody(req);
+      const caseId = String(body.caseId || body.case_id || '').trim();
+      if (!caseId) throw Object.assign(new Error('caseId is required'), { statusCode: 400 });
+      const result = await caseRiskService.recomputeRisk({ authUserId: user.id, caseId });
+      return sendJson(res, 200, {
+        riskScore: result.snapshot.score,
+        riskLevel: result.snapshot.tier,
+        confidence: result.snapshot.confidence,
+        snapshot: result.snapshot,
+        human_review_required: true,
+      });
+    }
+
     return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Route not found.' } });
   } catch (error) {
     console.error('[backend]', error);
-    return sendJson(res, error.statusCode || 500, { error: { code: error.statusCode === 400 ? 'BAD_REQUEST' : 'INTERNAL_ERROR', message: error.message || 'Unexpected server error' } });
+    const statusCode = error.statusCode || 500;
+    const codeMap = {
+      400: 'BAD_REQUEST',
+      401: 'UNAUTHENTICATED',
+      403: 'FORBIDDEN',
+      404: 'NOT_FOUND',
+      413: 'PAYLOAD_TOO_LARGE',
+    };
+    return sendJson(res, statusCode, { error: { code: codeMap[statusCode] || 'INTERNAL_ERROR', message: error.message || 'Unexpected server error' } });
   }
 });
 
