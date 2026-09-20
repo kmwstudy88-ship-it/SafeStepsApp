@@ -2,6 +2,18 @@ import Constants from 'expo-constants';
 import { supabase } from './supabaseClient';
 
 export type FairnessRecommendation = { concern: string; reframe: string };
+export type MediaAssessmentDomainResult = {
+  domain_id?: string;
+  domain_name?: string;
+  signals_observed?: string[];
+  risk_flags?: string[];
+  protective_flags?: string[];
+  notes?: string;
+  confidence?: number;
+};
+export type MediaAssessmentResult = {
+  domains?: MediaAssessmentDomainResult[];
+};
 export type FairnessResult = {
   score?: number;
   framing_concerns?: Array<{ category?: string; language?: string; explanation?: string; severity?: string }>;
@@ -14,19 +26,95 @@ export type FairnessResult = {
 export type DocumentAnalysis = {
   id: string;
   status: 'queued' | 'processing' | 'completed' | 'failed';
+  provider?: string;
+  model?: string;
+  summary?: Record<string, unknown>;
   fairness?: FairnessResult;
   bias?: { score?: number; signals?: Array<{ category?: string; language?: string; explanation?: string; severity?: string }> };
   evidence?: unknown[];
   contradictions?: unknown[];
   timeline?: unknown[];
-  risk?: Record<string, unknown>;
+  risk?: Record<string, unknown> & { media_assessment?: MediaAssessmentResult };
+  media_assessment?: MediaAssessmentResult;
+  raw_output?: Record<string, unknown>;
   limitations?: string[];
+  confidence_overview?: { sample_count: number; average: number | null; min: number | null; max: number | null };
+  decision_support_only?: boolean;
+  unverified?: boolean;
+  human_review_required?: boolean;
+  human_review_status?: string;
   error_message?: string | null;
 };
 
 export type DocumentPollResult = {
-  document: { id: string; processing_status: string; file_name?: string };
+  document: {
+    id: string;
+    processing_status: string;
+    file_name?: string;
+    decision_support_only?: boolean;
+    unverified?: boolean;
+    human_review_required?: boolean;
+    human_review_status?: string;
+    metadata?: Record<string, unknown>;
+  };
   analysis: DocumentAnalysis | null;
+};
+
+export type DocumentIntelligenceScores = {
+  risk_score: number;
+  protective_score: number;
+  bias_score: number;
+  document_quality_score: number;
+  case_complexity_score: number;
+};
+
+export type DocumentIntelligenceSummaries = {
+  child_centred: string;
+  parent_summary: string;
+  legal_summary: string;
+  strengths_summary: string;
+  action_plan: string;
+};
+
+export type DocumentIntelligenceV1Result = {
+  document_id: string;
+  metadata: {
+    document_type: string;
+    author_role: string;
+    created_at: string;
+    source_system: string;
+  };
+  entities: { people: unknown[]; dates: unknown[]; locations: unknown[]; events: unknown[] };
+  timeline: { events: unknown[]; gaps: unknown[]; contradictions: unknown[] };
+  analysis: {
+    risks: unknown[];
+    protective_factors: unknown[];
+    contradictions: unknown[];
+    bias_indicators: unknown[];
+    professional_concerns: unknown[];
+    missing_evidence: unknown[];
+    severity_scale: Record<string, unknown>;
+    contextual_modifiers: Record<string, unknown>;
+  };
+  scores: DocumentIntelligenceScores;
+  summaries: DocumentIntelligenceSummaries;
+  ml_features: { tokens: unknown[]; embeddings: unknown[]; feature_vector: unknown[] };
+  audit: { evidence_trace: unknown[]; source_verification: unknown[]; explainability: unknown[] };
+};
+
+export type DocumentIntelligenceQueuedResult = {
+  document_id: string;
+  status: string;
+  poll_url: string;
+  summary_url: string;
+  scores_url: string;
+export type DocumentQueueResult = {
+  document_id: string;
+  analysis_id: string;
+  job_id?: string;
+  status: 'queued' | 'processing' | 'completed' | 'failed';
+  poll_url?: string;
+  human_review_required?: boolean;
 };
 
 const baseUrl = String(
@@ -53,8 +141,27 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
 }
 
 export async function queueFairnessAnalysis(text: string) {
-  return request<{ document_id: string; analysis_id: string; status: string }>('/documents/analyze/fairness', {
+  return request<DocumentQueueResult>('/documents/analyze/fairness', {
     method: 'POST', body: JSON.stringify({ text }),
+  });
+}
+
+export async function queueDocumentUpload(params: {
+  caseId?: string | null;
+  fileName: string;
+  mimeType: string;
+  contentBase64: string;
+  extractedText?: string | null;
+}) {
+  return request<DocumentQueueResult>('/documents/upload', {
+    method: 'POST',
+    body: JSON.stringify({
+      caseId: params.caseId ?? null,
+      fileName: params.fileName,
+      mimeType: params.mimeType,
+      contentBase64: params.contentBase64,
+      extractedText: params.extractedText ?? null,
+    }),
   });
 }
 
@@ -76,4 +183,24 @@ export async function compareDocuments(documentIds: string[]) {
   return request<{ comparison_id: string; status: string }>('/documents/compare', {
     method: 'POST', body: JSON.stringify({ documentIds }),
   });
+}
+
+export async function analyzeDocumentV1(payload: {
+  text?: string;
+  file?: { name: string; mimeType?: string; contentBase64: string; extractedText?: string | null };
+  metadata?: Record<string, unknown>;
+  caseId?: string | null;
+}) {
+  return request<DocumentIntelligenceV1Result | DocumentIntelligenceQueuedResult>('/v1/document/analyse', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  });
+}
+
+export async function getDocumentIntelligenceSummary(documentId: string) {
+  return request<DocumentIntelligenceSummaries>(`/v1/document/${documentId}/summary`);
+}
+
+export async function getDocumentIntelligenceScores(documentId: string) {
+  return request<DocumentIntelligenceScores>(`/v1/document/${documentId}/scores`);
 }

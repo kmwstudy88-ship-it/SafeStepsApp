@@ -76,6 +76,9 @@ test('openai analysis sends base64 file input and parses JSON from output conten
       assert.equal(result.result.summary.overview, 'ok');
       assert.equal(requestBody.input[0].content[1].type, 'input_file');
       assert.equal(requestBody.input[0].content[1].file_data, Buffer.from('pdf-bytes').toString('base64'));
+      assert.match(requestBody.instructions, /"media_assessment"/);
+      assert.match(requestBody.instructions, /Environmental Safety/);
+      assert.match(requestBody.instructions, /Digital Integrity & Authenticity/);
     } finally {
       restoreFetch();
     }
@@ -112,6 +115,43 @@ test('comparison parser accepts fenced JSON and uses analysis fallback when text
       assert.match(requestBody.input, /DOCUMENT 1: doc-a/);
       assert.match(requestBody.input, /fallback analysis/);
       assert.match(requestBody.input, /direct body text/);
+    } finally {
+      restoreFetch();
+    }
+  });
+});
+
+test('analysis fails closed when provider returns malformed JSON output', async () => {
+  await withEnv({ DOCUMENT_AI_PROVIDER: 'openai', OPENAI_API_KEY: 'test-key' }, async () => {
+    const restoreFetch = mockFetch(async () => ({
+      ok: true,
+      json: async () => ({ output_text: 'not valid json' }),
+    }));
+
+    try {
+      await assert.rejects(
+        analyzeDocument({ id: 'doc-malformed', file_name: 'note.txt', mime_type: 'text/plain', extracted_text: 'example text' }),
+        { message: 'AI provider returned non-JSON output' },
+      );
+    } finally {
+      restoreFetch();
+    }
+  });
+});
+
+test('analysis surfaces provider timeout failures clearly', async () => {
+  await withEnv({ DOCUMENT_AI_PROVIDER: 'openai', OPENAI_API_KEY: 'test-key', DOCUMENT_AI_TIMEOUT_MS: '1234' }, async () => {
+    const restoreFetch = mockFetch(async () => {
+      const error = new Error('aborted');
+      error.name = 'AbortError';
+      throw error;
+    });
+
+    try {
+      await assert.rejects(
+        analyzeDocument({ id: 'doc-timeout', file_name: 'note.txt', mime_type: 'text/plain', extracted_text: 'example text' }),
+        { message: 'AI provider request timed out after 1234ms' },
+      );
     } finally {
       restoreFetch();
     }

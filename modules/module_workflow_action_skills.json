@@ -1,0 +1,29 @@
+{
+  "id": "module_workflow_action_skills",
+  "title": "Workflow / Action Skills",
+  "description": "This module defines the first operational SafeSteps capability set for case workflow orchestration. It focuses on generating reviewable summaries and explanations, updating and routing risk responses, and preserving defensible reporting and audit records with human review checkpoints for high-impact actions.",
+  "type": "module",
+  "level": "advanced",
+  "tags": [
+    "workflow orchestration",
+    "case management",
+    "risk response",
+    "auditability",
+    "human review"
+  ],
+  "outcomes": [
+    "Generate case workflow outputs that stay anchored to case, document, assessment, and audit records",
+    "Route risk and reporting actions through clear review checkpoints rather than autonomous decision-making",
+    "Produce defensible summaries, discrepancy explanations, and justification records that support accountable practice"
+  ],
+  "lessons": [
+    "lesson_case_summary_generator",
+    "lesson_case_discrepancy_explainer",
+    "lesson_case_risk_level_updater",
+    "lesson_case_triage_routing",
+    "lesson_mandatory_reporting_trigger",
+    "lesson_audit_trail_generator",
+    "lesson_case_decision_justification_builder"
+  ],
+  "content": []
+}

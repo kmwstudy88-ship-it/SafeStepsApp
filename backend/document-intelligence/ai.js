@@ -1,12 +1,17 @@
 'use strict';
 
-const ANALYSIS_SCHEMA_VERSION = 'document-intelligence-v1';
+const { mediaSignalDomains, createEmptyMediaAssessment } = require('../../shared/documentIntelligenceMediaSignals');
+
+const ANALYSIS_SCHEMA_VERSION = 'document-intelligence-v2';
 const COMPARISON_SCHEMA_VERSION = 'document-comparison-v1';
+const MEDIA_SIGNAL_GUIDANCE = JSON.stringify(mediaSignalDomains, null, 2);
 
 const ANALYSIS_INSTRUCTIONS = `You are SafeSteps Document Intelligence. Analyze child/family casework records as decision-support only.
 Return valid JSON only. Never infer a fact, diagnosis, motive, risk, or credibility finding that is not supported by the supplied material. Distinguish allegation, observation, opinion, and verified evidence. Preserve uncertainty. Do not make automated child-protection decisions.
 Required JSON shape:
 {
+  "metadata": {"document_type":"", "author_role":"", "created_at":"", "source_system":"", "version_number":""},
+  "entities": {"people":[], "dates":[], "locations":[], "events":[]},
   "summary": {"overview":"", "document_type":"", "key_points":[]},
   "evidence": [{"claim":"", "evidence":"", "evidence_type":"observation|allegation|record|opinion|unknown", "confidence":0, "source_locator":""}],
   "contradictions": [{"statement_a":"", "statement_b":"", "explanation":"", "severity":"low|medium|high", "confidence":0}],
@@ -14,9 +19,17 @@ Required JSON shape:
   "risk": {"score":0, "level":"low|moderate|high|critical|insufficient_evidence", "factors":[], "protective_factors":[], "uncertainties":[]},
   "bias": {"score":100, "signals":[{"category":"", "language":"", "explanation":"", "severity":"low|medium|high"}]},
   "fairness": {"score":100, "framing_concerns":[], "coercion_flags":[], "discrimination_risks":[], "unrealistic_expectations":[], "remediation_recommendations":[{"concern":"", "reframe":""}]},
+  "scores": {"risk_score":0, "protective_score":0, "bias_score":0, "document_quality_score":0, "case_complexity_score":0},
+  "summaries": {"child_centred":"", "parent_summary":"", "legal_summary":"", "strengths_summary":"", "action_plan":""},
+  "audit": {"evidence_trace":[], "source_verification":[], "explainability":[]},
+  "media_assessment": {"domains":[{"domain_id":"", "domain_name":"", "signals_observed":[], "risk_flags":[], "protective_flags":[], "notes":"", "confidence":0}]},
   "limitations": []
 }
-Scores are 0-100. Risk score is a document-content signal, not a case decision. Fairness/bias scores are higher when language is more objective and evidence-linked.`;
+Scores are 0-100. Risk score is a document-content signal, not a case decision. Fairness/bias scores are higher when language is more objective and evidence-linked.
+When the supplied material includes video, photos, transcripts of observed interaction, visit notes, or metadata, assess only the following upgraded media-signal domains and leave unsupported domains empty:
+${MEDIA_SIGNAL_GUIDANCE}
+Violence & Coercive Control Indicators is risk-only, so protective_flags must stay empty for that domain.
+If the supplied material does not support a domain, return that domain with empty arrays, blank notes, and confidence 0 rather than inventing content.`;
 
 const COMPARISON_INSTRUCTIONS = `You are SafeSteps multi-document comparison. Compare only the supplied documents/analyses. Return valid JSON only. Do not resolve disputed facts merely because one source repeats them more often.
 Required JSON shape:
@@ -46,11 +59,25 @@ function openAIOutputText(payload) {
   return (payload.output || []).flatMap(item => item.content || []).filter(x => x.type === 'output_text').map(x => x.text).join('\n');
 }
 
+async function fetchWithTimeout(url, init) {
+  const timeoutMs = Math.max(1000, Number(process.env.DOCUMENT_AI_TIMEOUT_MS || 60000));
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...init, signal: controller.signal });
+  } catch (error) {
+    if (error?.name === 'AbortError') throw new Error(`AI provider request timed out after ${timeoutMs}ms`);
+    throw error;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 async function openAIJson(instructions, input) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) throw new Error('OPENAI_API_KEY is not configured');
   const model = process.env.OPENAI_DOCUMENT_MODEL || 'gpt-5.6-terra';
-  const response = await fetch('https://api.openai.com/v1/responses', {
+  const response = await fetchWithTimeout('https://api.openai.com/v1/responses', {
     method: 'POST',
     headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -70,7 +97,7 @@ async function anthropicJson(instructions, input) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error('ANTHROPIC_API_KEY is not configured');
   const model = process.env.ANTHROPIC_DOCUMENT_MODEL || 'claude-sonnet-4-5';
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
+  const response = await fetchWithTimeout('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: { 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
     body: JSON.stringify({ model, max_tokens: 12000, system: instructions, messages: [{ role: 'user', content: input }] }),
@@ -126,4 +153,12 @@ async function compareDocuments(items) {
   return runJson(COMPARISON_INSTRUCTIONS, body);
 }
 
-module.exports = { ANALYSIS_SCHEMA_VERSION, COMPARISON_SCHEMA_VERSION, providerName, analyzeDocument, compareDocuments };
+module.exports = {
+  ANALYSIS_SCHEMA_VERSION,
+  COMPARISON_SCHEMA_VERSION,
+  mediaSignalDomains,
+  createEmptyMediaAssessment,
+  providerName,
+  analyzeDocument,
+  compareDocuments,
+};

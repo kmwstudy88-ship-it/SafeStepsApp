@@ -1,0 +1,9 @@
+{
+  "topicId": "workflow-action-skills",
+  "topicName": "workflow action skills",
+  "caseworkerSummary": "This topic defines the first operational SafeSteps workflow capability set for case summary generation, discrepancy explanation, risk updates, triage routing, mandatory-reporting review, audit trails, and decision justification. It is designed for practitioner and supervisor use where outputs must stay anchored to canonical case, document, assessment, and audit records and pass through human review before high-impact action.",
+  "modules": [
+    "module_workflow_action_skills"
+  ],
+  "id": "workflow_action_skills"
+}
