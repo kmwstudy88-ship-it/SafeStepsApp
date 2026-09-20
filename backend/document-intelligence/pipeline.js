@@ -115,7 +115,7 @@ async function createTextDocument({ userId, caseId = null, text, fileName = 'pas
 
 async function createUploadDocument({ userId, caseId = null, fileName, mimeType, contentBase64, extractedText = null, metadata = {} }) {
   if (!fileName || !contentBase64) throw new Error('fileName and contentBase64 are required');
-  if (!isSupportedMimeType(mimeType)) {
+  if (!isSupportedMimeType(mimeType) && !String(extractedText || '').trim()) {
     throw new Error('Unsupported file type. Provide extractedText or upload a supported document format.');
   }
   const buffer = Buffer.from(contentBase64, 'base64');

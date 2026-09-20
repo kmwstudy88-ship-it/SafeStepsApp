@@ -239,7 +239,7 @@ function createApp({
     if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
 
     try {
-      if (req.method === 'GET' && (url.pathname === '/health' || url.pathname === '/ready')) {
+      if (req.method === 'GET' && url.pathname === '/health') {
         return sendJson(res, 200, { status: 'ok', documentIntelligence: true, timestamp: new Date().toISOString() });
       }
 
