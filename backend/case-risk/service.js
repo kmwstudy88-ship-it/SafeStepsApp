@@ -173,6 +173,12 @@ function normalizeIncomingEventPayload(body = {}) {
   };
 }
 
+function selectScoringEvents({ existingEvents, pendingEvent, hasPersistedIdempotentEvent }) {
+  const historicalEvents = sortByCreatedDesc(existingEvents || []);
+  if (!pendingEvent || hasPersistedIdempotentEvent) return historicalEvents;
+  return sortByCreatedDesc([pendingEvent, ...historicalEvents]);
+}
+
 function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdempotencyKey, eventType, rules = rulesFromEnv() }) {
   const alerts = [];
   if (snapshot.hard_escalation?.triggered) {
@@ -404,6 +410,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
       const eventType = String(body.eventType || body.event_type || '').trim();
       if (!eventType) throw createHttpError(400, 'eventType is required.');
       const eventPayload = normalizeIncomingEventPayload(body);
+      const eventIdempotencyKey = body.idempotencyKey || body.idempotency_key || null;
 
       const existingEvents = await loadRecentCaseEvents(adminClient, caseId, 50);
       const previousSnapshot = await loadLatestSnapshot(adminClient, caseId);
@@ -411,9 +418,16 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
       const newEvent = {
         created_at: new Date().toISOString(),
         event_type: eventType,
+        idempotency_key: eventIdempotencyKey,
         payload: eventPayload,
       };
-      const allEvents = sortByCreatedDesc([newEvent, ...existingEvents]);
+      const hasPersistedIdempotentEvent = Boolean(eventIdempotencyKey)
+        && existingEvents.some((event) => event.idempotency_key === eventIdempotencyKey);
+      const allEvents = selectScoringEvents({
+        existingEvents,
+        pendingEvent: newEvent,
+        hasPersistedIdempotentEvent,
+      });
       const factors = aggregateFactorsFromEvents(allEvents);
       const snapshot = scoreCaseRisk({
         behavioralCues: factors.behavioral,
@@ -431,7 +445,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         snapshot,
         previousSnapshot,
         routedTo,
-        eventIdempotencyKey: body.idempotencyKey || body.idempotency_key || null,
+        eventIdempotencyKey,
         eventType,
         rules,
       });
@@ -444,7 +458,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         p_event_source: body.eventSource || body.event_source || 'manual_note',
         p_event_note: body.note || null,
         p_event_payload: eventPayload,
-        p_event_idempotency_key: body.idempotencyKey || body.idempotency_key || null,
+        p_event_idempotency_key: eventIdempotencyKey,
         p_snapshot: snapshot,
         p_alerts: alerts,
         p_tasks: tasks,
@@ -593,4 +607,5 @@ module.exports = {
   buildEscalationAlerts,
   buildFollowUpTasks,
   createCaseRiskService,
+  selectScoringEvents,
 };
