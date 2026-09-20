@@ -519,17 +519,6 @@ function createApp({
     clearInterval(workerTimer);
     server.close();
   }
-  });
-
-  const workerTimer = setInterval(() => {
-    processNextJobs(2).catch((error) => console.error('[document-intelligence] worker loop error', error));
-  }, workerIntervalMs);
-  if (typeof workerTimer.unref === 'function') workerTimer.unref();
-
-  function shutdown() {
-    clearInterval(workerTimer);
-    server.close(() => {});
-  }
 
   return { server, shutdown };
 }
