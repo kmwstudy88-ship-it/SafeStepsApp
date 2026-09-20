@@ -139,6 +139,12 @@ function parseBody(req) {
   });
 }
 
+async function requireUser(req, res) {
+  const user = await authenticateBearer(req.headers.authorization);
+  if (!user) sendJson(res, 401, { error: { code: 'UNAUTHENTICATED', message: 'A valid Supabase access token is required.' } });
+  return user;
+}
+
 function routeId(pathname, prefix) {
   if (!pathname.startsWith(prefix)) return null;
   const value = pathname.slice(prefix.length);
@@ -215,47 +221,31 @@ function readiness() {
 function createApp({
   port = PORT,
   workerIntervalMs = WORKER_INTERVAL_MS,
-  documentPipeline = pipeline,
-  authenticate = authenticateBearer,
 } = {}) {
-  const {
-    createTextDocument,
-    createUploadDocument,
-    createComparison,
-    processNextJobs,
-    getDocumentForUser,
-    getComparisonForUser,
-  } = documentPipeline;
-
-  async function requireAuthenticatedUser(req, res) {
-    const user = await authenticate(req.headers.authorization);
-    if (!user) sendJson(res, 401, { error: { code: 'UNAUTHENTICATED', message: 'A valid Supabase access token is required.' } });
-    return user;
-  }
-const server = http.createServer(async (req, res) => {
-  const url = new URL(req.url, `http://localhost:${PORT}`);
-  setCors(req, res);
-  setSecurityHeaders(res);
-  const retryAfterSeconds = rateLimited(req, url.pathname);
-  if (retryAfterSeconds) {
-    res.setHeader('Retry-After', String(retryAfterSeconds));
-    return sendJson(res, 429, {
-      error: {
-        code: 'RATE_LIMITED',
-        message: `Too many requests. Retry in ${retryAfterSeconds} seconds.`,
-      },
-    });
-  }
-  if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
-
   const server = http.createServer(async (req, res) => {
-    setCors(req, res);
-    if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
     const url = new URL(req.url, `http://localhost:${port}`);
+    setCors(req, res);
+    setSecurityHeaders(res);
+    const retryAfterSeconds = rateLimited(req, url.pathname);
+    if (retryAfterSeconds) {
+      res.setHeader('Retry-After', String(retryAfterSeconds));
+      return sendJson(res, 429, {
+        error: {
+          code: 'RATE_LIMITED',
+          message: `Too many requests. Retry in ${retryAfterSeconds} seconds.`,
+        },
+      });
+    }
+    if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
 
     try {
       if (req.method === 'GET' && url.pathname === '/health') {
         return sendJson(res, 200, { status: 'ok', documentIntelligence: true, timestamp: new Date().toISOString() });
+      }
+
+      if (req.method === 'GET' && url.pathname === '/ready') {
+        const state = readiness();
+        return sendJson(res, state.ready ? 200 : 503, { ...state, documentIntelligence: true, timestamp: new Date().toISOString() });
       }
 
     if (req.method === 'GET' && url.pathname === '/documents/intelligence/schema') {
@@ -299,7 +289,6 @@ const server = http.createServer(async (req, res) => {
         fileName: body.fileName || 'fairness-analysis.txt',
         metadata: coerceMetadata(body.metadata),
       });
-      const created = await createTextDocument({ authUserId: user.id, caseId: body.caseId || null, text: body.text, fileName: body.fileName || 'fairness-analysis.txt' });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
       return sendJson(res, 202, {
         document_id: created.document.id,
@@ -318,10 +307,6 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'POST' && url.pathname === '/documents/upload') {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
-      const created = await createUploadDocument({
-        userId: user.id, caseId: body.caseId || null, fileName: body.fileName, mimeType: body.mimeType,
-        contentBase64: body.contentBase64, extractedText: body.extractedText || null, metadata: coerceMetadata(body.metadata),
-      });
       if (!body.contentBase64 && !String(body.text || '').trim()) {
         throw Object.assign(new Error('Either contentBase64 or text is required for document upload.'), { statusCode: 400 });
       }
@@ -412,12 +397,13 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
-      return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Route not found.' } });
-    } catch (error) {
-      console.error('[backend]', error);
-      return sendJson(res, error.statusCode || 500, { error: { code: error.statusCode === 400 ? 'BAD_REQUEST' : 'INTERNAL_ERROR', message: error.message || 'Unexpected server error' } });
+    const comparisonId = routeId(url.pathname, '/documents/comparisons/');
+    if (req.method === 'GET' && comparisonId) {
+      const user = await requireUser(req, res); if (!user) return;
+      const comparison = await getComparisonForUser(comparisonId, user.id);
+      if (!comparison) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Comparison not found.' } });
+      return sendJson(res, 200, { comparison });
     }
-  });
 
     if (req.method === 'POST' && url.pathname === '/analyses/compare') {
       const user = await requireUser(req, res); if (!user) return;
@@ -503,18 +489,34 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
-    return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Route not found.' } });
-  } catch (error) {
-    console.error('[backend]', error);
-    const statusCode = error.statusCode || 500;
-    const codeMap = {
-      400: 'BAD_REQUEST',
-      401: 'UNAUTHENTICATED',
-      403: 'FORBIDDEN',
-      404: 'NOT_FOUND',
-      413: 'PAYLOAD_TOO_LARGE',
-    };
-    return sendJson(res, statusCode, { error: { code: codeMap[statusCode] || 'INTERNAL_ERROR', message: error.message || 'Unexpected server error' } });
+      return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Route not found.' } });
+    } catch (error) {
+      console.error('[backend]', error);
+      const statusCode = error.statusCode || 500;
+      const codeMap = {
+        400: 'BAD_REQUEST',
+        401: 'UNAUTHENTICATED',
+        403: 'FORBIDDEN',
+        404: 'NOT_FOUND',
+        413: 'PAYLOAD_TOO_LARGE',
+      };
+      return sendJson(res, statusCode, { error: { code: codeMap[statusCode] || 'INTERNAL_ERROR', message: error.message || 'Unexpected server error' } });
+    }
+  });
+
+  let workerBusy = false;
+  const workerTimer = setInterval(async () => {
+    if (workerBusy) return;
+    workerBusy = true;
+    try { await processNextJobs(2); }
+    catch (error) { console.error('[document-intelligence] worker poll failed', error); }
+    finally { workerBusy = false; }
+  }, workerIntervalMs);
+  workerTimer.unref?.();
+
+  function shutdown() {
+    clearInterval(workerTimer);
+    server.close();
   }
 
   return { server, shutdown };

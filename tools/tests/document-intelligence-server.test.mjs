@@ -132,58 +132,58 @@ test('GET /ready returns 503 when anthropic is selected without its provider key
           providerKey: false,
         });
       });
+    });
+  });
+});
 
-      test('GET /ready fails closed when Supabase URL is missing from both server and Expo env vars', async () => {
-        await withEnv({
-          DOCUMENT_AI_PROVIDER: undefined,
-          SUPABASE_URL: undefined,
-          EXPO_PUBLIC_SUPABASE_URL: undefined,
-          SUPABASE_SERVICE_ROLE_KEY: 'service-role',
-          OPENAI_API_KEY: 'openai-key',
-          ANTHROPIC_API_KEY: undefined,
-        }, async () => {
-          await withLoadedServer(async ({ createApp }) => {
-            await withRunningServer(createApp, async (port) => {
-              const response = await fetch(`http://127.0.0.1:${port}/ready`);
-              const body = await response.json();
+test('GET /ready fails closed when Supabase URL is missing from both server and Expo env vars', async () => {
+  await withEnv({
+    DOCUMENT_AI_PROVIDER: undefined,
+    SUPABASE_URL: undefined,
+    EXPO_PUBLIC_SUPABASE_URL: undefined,
+    SUPABASE_SERVICE_ROLE_KEY: 'service-role',
+    OPENAI_API_KEY: 'openai-key',
+    ANTHROPIC_API_KEY: undefined,
+  }, async () => {
+    await withLoadedServer(async ({ createApp }) => {
+      await withRunningServer(createApp, async (port) => {
+        const response = await fetch(`http://127.0.0.1:${port}/ready`);
+        const body = await response.json();
 
-              assert.equal(response.status, 503);
-              assert.equal(body.ready, false);
-              assert.equal(body.provider, 'openai');
-              assert.deepEqual(body.checks, {
-                supabaseUrl: false,
-                supabaseServiceRole: true,
-                providerKey: true,
-              });
-            });
-          });
+        assert.equal(response.status, 503);
+        assert.equal(body.ready, false);
+        assert.equal(body.provider, 'openai');
+        assert.deepEqual(body.checks, {
+          supabaseUrl: false,
+          supabaseServiceRole: true,
+          providerKey: true,
         });
       });
+    });
+  });
+});
 
-      test('GET /ready defaults unknown provider values to openai credential checks', async () => {
-        await withEnv({
-          DOCUMENT_AI_PROVIDER: 'azure-openai',
-          SUPABASE_URL: 'https://project.supabase.co',
-          EXPO_PUBLIC_SUPABASE_URL: undefined,
-          SUPABASE_SERVICE_ROLE_KEY: 'service-role',
-          OPENAI_API_KEY: undefined,
-          ANTHROPIC_API_KEY: 'anthropic-key',
-        }, async () => {
-          await withLoadedServer(async ({ createApp }) => {
-            await withRunningServer(createApp, async (port) => {
-              const response = await fetch(`http://127.0.0.1:${port}/ready`);
-              const body = await response.json();
+test('GET /ready defaults unknown provider values to openai credential checks', async () => {
+  await withEnv({
+    DOCUMENT_AI_PROVIDER: 'azure-openai',
+    SUPABASE_URL: 'https://project.supabase.co',
+    EXPO_PUBLIC_SUPABASE_URL: undefined,
+    SUPABASE_SERVICE_ROLE_KEY: 'service-role',
+    OPENAI_API_KEY: undefined,
+    ANTHROPIC_API_KEY: 'anthropic-key',
+  }, async () => {
+    await withLoadedServer(async ({ createApp }) => {
+      await withRunningServer(createApp, async (port) => {
+        const response = await fetch(`http://127.0.0.1:${port}/ready`);
+        const body = await response.json();
 
-              assert.equal(response.status, 503);
-              assert.equal(body.ready, false);
-              assert.equal(body.provider, 'openai');
-              assert.deepEqual(body.checks, {
-                supabaseUrl: true,
-                supabaseServiceRole: true,
-                providerKey: false,
-              });
-            });
-          });
+        assert.equal(response.status, 503);
+        assert.equal(body.ready, false);
+        assert.equal(body.provider, 'openai');
+        assert.deepEqual(body.checks, {
+          supabaseUrl: true,
+          supabaseServiceRole: true,
+          providerKey: false,
         });
       });
     });
