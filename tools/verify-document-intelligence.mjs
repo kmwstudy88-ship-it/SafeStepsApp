@@ -65,7 +65,6 @@ if (!server.includes('OPENAI_API_KEY') || !server.includes('ANTHROPIC_API_KEY'))
 if (!server.includes('sendDocumentV1Response')) fail('Document intelligence v1 response wiring is missing.');
 
 const ai = read('backend/document-intelligence/ai.js');
-for (const skill of ['"metadata"', '"entities"', '"evidence"', '"contradictions"', '"timeline"', '"risk"', '"bias"', '"fairness"', '"scores"', '"summaries"', '"audit"']) {
 for (const skill of ['"evidence"', '"contradictions"', '"timeline"', '"risk"', '"bias"', '"fairness"', '"media_assessment"']) {
   if (!ai.includes(skill)) fail(`AI schema missing analysis skill ${skill}.`);
 }

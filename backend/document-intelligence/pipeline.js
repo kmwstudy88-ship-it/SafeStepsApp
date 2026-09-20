@@ -98,11 +98,72 @@ function normalizeInputMetadata(metadata, extractedText) {
   return output;
 }
 
-async function createTextDocument({ userId, caseId = null, text, fileName = 'pasted-text.txt', metadata = {} }) {
+function caseIdsMatch(left, right) {
+  return (left || null) === (right || null);
+}
+
+async function loadActorContext(authUserId) {
+  if (!authUserId) throw createHttpError(401, 'Authentication required');
+  return {
+    authUserId,
+    appUserId: null,
+    ownerUserIds: [authUserId],
+  };
+}
+
+async function assertCaseAccess(actor, caseId) {
+  if (!caseId) return;
+  const { data: caseRecord, error } = await admin.from('cases').select('id,parent_user_id').eq('id', caseId).maybeSingle();
+  if (error) throw error;
+  if (!caseRecord) throw createHttpError(404, 'Case not found');
+  if (caseRecord.parent_user_id && !actor.ownerUserIds.includes(caseRecord.parent_user_id)) {
+    throw createHttpError(403, 'Case access denied');
+  }
+}
+
+async function findDuplicateDocument({ ownerUserIds, caseId, sha256 }) {
+  const { data, error } = await admin
+    .from('documents')
+    .select('*')
+    .in('user_id', ownerUserIds)
+    .eq('sha256', sha256);
+  if (error) throw error;
+
+  const matches = Array.isArray(data) ? data : (data ? [data] : []);
+  return matches.find((document) => caseIdsMatch(document.case_id, caseId)) || null;
+}
+
+async function createAnalysisAndJob({ documentId, ownerUserId }) {
+  const analysis = await expectNoError(admin.from('document_analyses').insert({
+    document_id: documentId,
+    user_id: ownerUserId,
+    provider: providerName(),
+    model: DEFAULT_MODEL(),
+    schema_version: ANALYSIS_SCHEMA_VERSION,
+    status: 'queued',
+  }).select('*').single());
+
+  try {
+    const job = await expectNoError(admin.from('document_analysis_jobs').insert({
+      job_type: 'document_analysis',
+      document_id: documentId,
+      user_id: ownerUserId,
+      payload: { analysis_id: analysis.id },
+    }).select('*').single());
+    return { analysis, job };
+  } catch (error) {
+    await cleanupCreatedAnalysis(analysis.id);
+    throw error;
+  }
+}
+
+async function createTextDocument({ authUserId, userId, caseId = null, text, fileName = 'pasted-text.txt', metadata = {} }) {
+  const ownerUserId = userId || authUserId;
+  if (!ownerUserId) throw createHttpError(401, 'Authentication required');
   if (!text || !String(text).trim()) throw new Error('Document text is required');
   const buffer = Buffer.from(String(text), 'utf8');
   return createDocumentRecord({
-    userId,
+    userId: ownerUserId,
     caseId,
     fileName,
     mimeType: 'text/plain',
@@ -113,14 +174,19 @@ async function createTextDocument({ userId, caseId = null, text, fileName = 'pas
   });
 }
 
-async function createUploadDocument({ userId, caseId = null, fileName, mimeType, contentBase64, extractedText = null, metadata = {} }) {
+async function createUploadDocument({ authUserId, userId, caseId = null, fileName, mimeType, contentBase64, extractedText = null, metadata = {} }) {
+  const ownerUserId = userId || authUserId;
+  if (!ownerUserId) throw createHttpError(401, 'Authentication required');
   if (!fileName || !contentBase64) throw new Error('fileName and contentBase64 are required');
+  if (!isSupportedMimeType(mimeType) && !String(extractedText || '').trim()) {
+    throw createHttpError(400, 'Unsupported file type. Provide extractedText or upload a supported document format.');
+  }
   const buffer = Buffer.from(contentBase64, 'base64');
   if (!buffer.length) throw new Error('Uploaded document is empty');
   if (buffer.length > 25 * 1024 * 1024) throw new Error('Document exceeds the 25 MB upload limit');
   const text = extractedText || textFromBuffer(buffer, mimeType);
   return createDocumentRecord({
-    userId,
+    userId: ownerUserId,
     caseId,
     fileName,
     mimeType: mimeType || 'application/octet-stream',
@@ -133,31 +199,25 @@ async function createUploadDocument({ userId, caseId = null, fileName, mimeType,
 
 async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer, extractedText, sourceType, metadata = {} }) {
   const sha256 = crypto.createHash('sha256').update(buffer).digest('hex');
-  const duplicate = await findDuplicateDocument({ ownerUserIds: actor.ownerUserIds, caseId, sha256 });
+  const duplicate = await findDuplicateDocument({ ownerUserIds: [userId], caseId, sha256 });
   if (duplicate) {
-    const ownerUserId = duplicate.user_id || actor.appUserId || actor.authUserId;
+    const ownerUserId = duplicate.user_id || userId;
     const { analysis, job } = await createAnalysisAndJob({ documentId: duplicate.id, ownerUserId });
     return { document: duplicate, analysis, job, duplicate: true };
   }
 
-  const ownerUserId = actor.appUserId || actor.authUserId;
+  const ownerUserId = userId;
   const documentId = crypto.randomUUID();
   const safeName = String(fileName).replace(/[^a-zA-Z0-9._-]+/g, '_').slice(-180) || 'document';
   const storagePath = `${ownerUserId}/${documentId}/${safeName}`;
   const { error: storageError } = await admin.storage.from('document-intelligence').upload(storagePath, buffer, { contentType: mimeType, upsert: false });
   if (storageError) throw storageError;
 
-  const { data: document, error } = await admin.from('documents').insert({
-    id: documentId, user_id: userId, case_id: caseId, file_name: fileName, mime_type: mimeType,
-    storage_path: storagePath, byte_size: buffer.length, sha256, source_type: sourceType,
-    processing_status: 'queued', extracted_text: extractedText,
-    metadata: normalizeInputMetadata(metadata, extractedText),
-  }).select('*').single();
-  if (error) {
-    await admin.storage.from('document-intelligence').remove([storagePath]);
-    throw error;
-  }
-
+  const documentMetadata = {
+    ...normalizeInputMetadata(metadata, extractedText),
+    retention_expires_at: retentionExpiresAt(),
+    human_review_status: 'pending_analysis',
+  };
   const document = await expectNoError(admin.from('documents').insert({
     id: documentId,
     user_id: ownerUserId,
@@ -307,6 +367,36 @@ async function loadBinary(document) {
   const { data, error } = await admin.storage.from('document-intelligence').download(document.storage_path);
   if (error) throw error;
   return Buffer.from(await data.arrayBuffer());
+}
+
+function normalizeLimitations(limitations) {
+  const values = Array.isArray(limitations) ? limitations.filter((item) => typeof item === 'string' && item.trim()) : [];
+  const merged = [...new Set([DEFAULT_LIMITATION, ...values.map((item) => item.trim())])];
+  return merged;
+}
+
+function confidenceOverview(analysis) {
+  const score = analysis?.risk?.confidence ?? analysis?.raw_output?.risk?.confidence ?? null;
+  if (typeof score !== 'number') return null;
+  return {
+    score,
+    band: score >= 0.75 ? 'high' : score >= 0.45 ? 'medium' : 'low',
+  };
+}
+
+function annotateWorkflow(record) {
+  if (!record || typeof record !== 'object') return record;
+  const metadata = record.metadata && typeof record.metadata === 'object' ? record.metadata : {};
+  return {
+    ...record,
+    metadata: {
+      ...metadata,
+      human_review_status: metadata.human_review_status || 'pending_analysis',
+    },
+    decision_support_only: true,
+    unverified: true,
+    human_review_required: true,
+  };
 }
 
 async function processAnalysisJob(job) {

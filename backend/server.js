@@ -285,7 +285,6 @@ const server = http.createServer(async (req, res) => {
         fileName: body.fileName || 'fairness-analysis.txt',
         metadata: coerceMetadata(body.metadata),
       });
-      const created = await createTextDocument({ authUserId: user.id, caseId: body.caseId || null, text: body.text, fileName: body.fileName || 'fairness-analysis.txt' });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
       return sendJson(res, 202, {
         document_id: created.document.id,
@@ -304,27 +303,25 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'POST' && url.pathname === '/documents/upload') {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
-      const created = await createUploadDocument({
-        userId: user.id, caseId: body.caseId || null, fileName: body.fileName, mimeType: body.mimeType,
-        contentBase64: body.contentBase64, extractedText: body.extractedText || null, metadata: coerceMetadata(body.metadata),
-      });
       if (!body.contentBase64 && !String(body.text || '').trim()) {
         throw Object.assign(new Error('Either contentBase64 or text is required for document upload.'), { statusCode: 400 });
       }
       const created = body.contentBase64
         ? await createUploadDocument({
-          authUserId: user.id,
+          userId: user.id,
           caseId: body.caseId || null,
           fileName: body.fileName,
           mimeType: body.mimeType,
           contentBase64: body.contentBase64,
           extractedText: body.extractedText || null,
+          metadata: coerceMetadata(body.metadata),
         })
         : await createTextDocument({
-          authUserId: user.id,
+          userId: user.id,
           caseId: body.caseId || null,
           text: body.text,
           fileName: body.fileName || 'uploaded-note.txt',
+          metadata: coerceMetadata(body.metadata),
         });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
       return sendJson(res, 202, {
