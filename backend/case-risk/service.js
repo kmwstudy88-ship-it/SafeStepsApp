@@ -191,6 +191,18 @@ function normalizeIncomingEventPayload(body = {}) {
   };
 }
 
+function decisionSupportDetail(snapshot, detail = {}) {
+  return {
+    ...detail,
+    score: detail.score ?? snapshot.score,
+    tier: detail.tier ?? snapshot.tier,
+    model_version: snapshot.model_version,
+    rationale: snapshot.rationale,
+    human_review_required: true,
+    decision_support_only: true,
+  };
+}
+
 function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdempotencyKey, eventType, rules = rulesFromEnv() }) {
   const alerts = [];
   if (snapshot.hard_escalation?.triggered) {
@@ -201,11 +213,10 @@ function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdem
         severity: 'critical',
         status: 'open',
         routed_to: routedTo,
-        detail: {
+        detail: decisionSupportDetail(snapshot, {
           reason: trigger.reason,
           source: eventType || 'risk_recompute',
-          model_version: snapshot.model_version,
-        },
+        }),
       });
     }
   }
@@ -217,7 +228,7 @@ function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdem
       severity: 'critical',
       status: 'open',
       routed_to: routedTo,
-      detail: { score: snapshot.score, tier: snapshot.tier },
+      detail: decisionSupportDetail(snapshot),
     });
   } else if (snapshot.score >= rules.thresholds.highAlertScore) {
     alerts.push({
@@ -226,21 +237,24 @@ function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdem
       severity: 'high',
       status: 'open',
       routed_to: routedTo,
-      detail: { score: snapshot.score, tier: snapshot.tier },
+      detail: decisionSupportDetail(snapshot),
     });
   }
 
   const previousScore = Number(previousSnapshot?.score ?? previousSnapshot?.risk_score ?? 0);
   const delta = snapshot.score - previousScore;
-  const deltaEscalationThreshold = Number(rules.deltaEscalationThreshold ?? 15);
-  if (previousSnapshot && delta >= deltaEscalationThreshold) {
+  const configuredDeltaThreshold = Number(rules.deltaEscalationThreshold);
+  const deltaThreshold = Number.isFinite(configuredDeltaThreshold) && configuredDeltaThreshold >= 0
+    ? configuredDeltaThreshold
+    : 15;
+  if (previousSnapshot && delta >= deltaThreshold) {
     alerts.push({
       dedupe_key: eventIdempotencyKey ? `delta:${eventIdempotencyKey}` : `delta:${previousScore}->${snapshot.score}`,
       trigger_type: 'risk_score_delta',
       severity: snapshot.score >= 75 ? 'critical' : 'high',
       status: 'open',
       routed_to: routedTo,
-      detail: { previous_score: previousScore, current_score: snapshot.score, delta },
+      detail: decisionSupportDetail(snapshot, { previous_score: previousScore, current_score: snapshot.score, delta }),
     });
   }
   return alerts;
@@ -271,12 +285,12 @@ function buildFollowUpTasks({ caseId, snapshot, previousSnapshot, assignments, r
     status: 'pending',
     source: template.source,
     allow_duplicates: false,
-    detail: {
+    detail: decisionSupportDetail(snapshot, {
       generated_by: snapshot.model_version,
       target_tier: snapshot.tier,
       risk_score: snapshot.score,
       reprioritized: Boolean(previousSnapshot) && riskIncreased,
-    },
+    }),
   }));
 }
 
@@ -357,6 +371,8 @@ function buildDashboardPayload({ cases, snapshots, alerts, tasks, timelineByCase
 
   return {
     generated_at: new Date().toISOString(),
+    human_review_required: true,
+    decision_support_only: true,
     highest_risk_open_cases: highestRiskCases,
     rising_risk_cases: risingRiskCases,
     open_escalations: sortByCreatedDesc(openEscalations).slice(0, 20),
@@ -494,6 +510,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         alerts,
         tasks,
         human_review_required: true,
+        decision_support_only: true,
       };
     },
 
@@ -542,7 +559,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         }],
       });
       if (error) throw error;
-      return { workflow: data, snapshot, alerts, tasks, human_review_required: true };
+      return { workflow: data, snapshot, alerts, tasks, human_review_required: true, decision_support_only: true };
     },
 
     async getCaseRiskHistory({ authUserId, caseId }) {
@@ -566,6 +583,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         open_escalations: alertsResult.data || [],
         follow_up_tasks: tasksResult.data || [],
         human_review_required: true,
+        decision_support_only: true,
       };
     },
 
@@ -617,9 +635,10 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
 }
 
 module.exports = {
+  assertCaseAccess,
   buildDashboardPayload,
   buildEscalationAlerts,
   buildFollowUpTasks,
   createCaseRiskService,
-  selectScoringEvents,
+  loadActorContext,
 };

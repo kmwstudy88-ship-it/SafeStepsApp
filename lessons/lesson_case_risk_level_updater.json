@@ -1,0 +1,39 @@
+{
+  "id": "lesson_case_risk_level_updater",
+  "title": "Case Risk-Level Updater",
+  "sections": [],
+  "content": {
+    "overview": "This lesson equips practitioners to update case risk levels using current events, document signals, protective factors, and explicit escalation rules. It focuses on transparent inputs, preserved rationale, and review controls that stop automated scoring from becoming a final safety finding.",
+    "learning_outcomes": [
+      "Identify the event, document, and assessment inputs that should contribute to a risk-level update",
+      "Explain how thresholds, deltas, hard flags, and protective factors affect a proposed change",
+      "Record rationale and change history in a way that supports audit and supervisory review",
+      "Apply review safeguards so automated updates inform but do not replace accountable human decisions"
+    ],
+    "key_concepts": [
+      "Risk updates should preserve both the current score and the reasons the score changed",
+      "Hard escalation signals require immediate visibility even when other factors point downward",
+      "Protective factors matter, but they must not erase serious unresolved safety concerns",
+      "A proposed risk level is decision-support only until the required human review is complete"
+    ],
+    "practice_activities": [
+      "Map a new case event to behavioural, contextual, protective, and hard-flag inputs",
+      "Review two snapshots and explain the main drivers of score or tier movement",
+      "Draft a short rationale showing why a risk level should stay the same, rise, or be urgently reviewed",
+      "Identify which risk changes require supervisor confirmation or immediate escalation"
+    ],
+    "facilitator_notes": [
+      "Keep the distinction clear between scoring logic and final professional judgement",
+      "Use scenarios that show both escalation pressure and the need to document restraint",
+      "Highlight the value of immutable snapshot history for later review",
+      "Emphasise that missing data should reduce certainty, not produce false confidence"
+    ],
+    "reflection_prompts": [
+      "What types of information most often shift my risk judgement?",
+      "How do I respond when automated scoring conflicts with my initial impression?",
+      "Where could protective factors be overstated in a risky case?",
+      "What rationale details would help a supervisor understand my decision?"
+    ],
+    "printable_summary": "Case Risk-Level Updater — Key Takeaways:\r\n- Use current events, signals, and protective factors transparently.\r\n- Preserve the rationale behind every risk change.\r\n- Keep hard escalation triggers highly visible.\r\n- Require human review before treating a proposed risk level as final."
+  }
+}
