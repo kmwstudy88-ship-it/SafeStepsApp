@@ -199,7 +199,14 @@ async function createUploadDocument({ authUserId, userId, caseId = null, fileNam
 
 async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer, extractedText, sourceType, metadata = {} }) {
   const sha256 = crypto.createHash('sha256').update(buffer).digest('hex');
-  const duplicate = await findDuplicateDocument({ ownerUserIds: [userId], caseId, sha256 });
+  let duplicateQuery = admin
+    .from('documents')
+    .select('*')
+    .eq('sha256', sha256)
+    .in('user_id', [userId])
+    .limit(1);
+  duplicateQuery = caseId == null ? duplicateQuery.is('case_id', null) : duplicateQuery.eq('case_id', caseId);
+  const duplicate = await expectNoError(duplicateQuery.maybeSingle());
   if (duplicate) {
     const ownerUserId = duplicate.user_id || userId;
     const { analysis, job } = await createAnalysisAndJob({ documentId: duplicate.id, ownerUserId });
@@ -235,6 +242,17 @@ async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer
     await cleanupCreatedDocument({ id: documentId, storage_path: storagePath });
     throw error;
   });
+  const { data: document, error } = await admin.from('documents').insert({
+    id: documentId, user_id: userId, case_id: caseId, file_name: fileName, mime_type: mimeType,
+    storage_path: storagePath, byte_size: buffer.length, sha256, source_type: sourceType,
+    processing_status: 'queued', extracted_text: extractedText,
+    retention_expires_at: retentionExpiresAt(),
+    metadata: normalizeInputMetadata(metadata, extractedText),
+  }).select('*').single();
+  if (error) {
+    await admin.storage.from('document-intelligence').remove([storagePath]);
+    throw error;
+  }
 
   try {
     const { analysis, job } = await createAnalysisAndJob({ documentId: document.id, ownerUserId });
@@ -341,6 +359,7 @@ async function queueDocumentAnalysis({ authUserId, actorUserId = null, documentI
         analysis_id: analysis.id,
         job_id: job.id,
         human_review_required: true,
+        human_review_status: 'pending_analysis',
       },
     });
     if (auditError) {
