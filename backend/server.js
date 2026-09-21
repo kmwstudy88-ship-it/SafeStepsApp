@@ -218,31 +218,35 @@ function readiness() {
   return { ready: Object.values(checks).every(Boolean), provider, checks };
 }
 
-const server = http.createServer(async (req, res) => {
-  const url = new URL(req.url, `http://localhost:${PORT}`);
-  setCors(req, res);
-  setSecurityHeaders(res);
-  const retryAfterSeconds = rateLimited(req, url.pathname);
-  if (retryAfterSeconds) {
-    res.setHeader('Retry-After', String(retryAfterSeconds));
-    return sendJson(res, 429, {
-      error: {
-        code: 'RATE_LIMITED',
-        message: `Too many requests. Retry in ${retryAfterSeconds} seconds.`,
-      },
-    });
-  }
-  if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
-
-  try {
-    if (req.method === 'GET' && url.pathname === '/health') {
-      return sendJson(res, 200, { status: 'ok', documentIntelligence: true, timestamp: new Date().toISOString() });
+function createApp({
+  port = PORT,
+  workerIntervalMs = WORKER_INTERVAL_MS,
+} = {}) {
+  const server = http.createServer(async (req, res) => {
+    const url = new URL(req.url, `http://localhost:${port}`);
+    setCors(req, res);
+    setSecurityHeaders(res);
+    const retryAfterSeconds = rateLimited(req, url.pathname);
+    if (retryAfterSeconds) {
+      res.setHeader('Retry-After', String(retryAfterSeconds));
+      return sendJson(res, 429, {
+        error: {
+          code: 'RATE_LIMITED',
+          message: `Too many requests. Retry in ${retryAfterSeconds} seconds.`,
+        },
+      });
     }
+    if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
 
-    if (req.method === 'GET' && url.pathname === '/ready') {
-      const state = readiness();
-      return sendJson(res, state.ready ? 200 : 503, { ...state, documentIntelligence: true, timestamp: new Date().toISOString() });
-    }
+    try {
+      if (req.method === 'GET' && url.pathname === '/health') {
+        return sendJson(res, 200, { status: 'ok', documentIntelligence: true, timestamp: new Date().toISOString() });
+      }
+
+      if (req.method === 'GET' && url.pathname === '/ready') {
+        const state = readiness();
+        return sendJson(res, state.ready ? 200 : 503, { ...state, documentIntelligence: true, timestamp: new Date().toISOString() });
+      }
 
     if (req.method === 'GET' && url.pathname === '/documents/intelligence/schema') {
       return sendJson(res, 200, {
@@ -285,7 +289,6 @@ const server = http.createServer(async (req, res) => {
         fileName: body.fileName || 'fairness-analysis.txt',
         metadata: coerceMetadata(body.metadata),
       });
-      const created = await createTextDocument({ authUserId: user.id, caseId: body.caseId || null, text: body.text, fileName: body.fileName || 'fairness-analysis.txt' });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
       return sendJson(res, 202, {
         document_id: created.document.id,
@@ -304,27 +307,25 @@ const server = http.createServer(async (req, res) => {
     if (req.method === 'POST' && url.pathname === '/documents/upload') {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
-      const created = await createUploadDocument({
-        userId: user.id, caseId: body.caseId || null, fileName: body.fileName, mimeType: body.mimeType,
-        contentBase64: body.contentBase64, extractedText: body.extractedText || null, metadata: coerceMetadata(body.metadata),
-      });
       if (!body.contentBase64 && !String(body.text || '').trim()) {
         throw Object.assign(new Error('Either contentBase64 or text is required for document upload.'), { statusCode: 400 });
       }
       const created = body.contentBase64
         ? await createUploadDocument({
-          authUserId: user.id,
+          userId: user.id,
           caseId: body.caseId || null,
           fileName: body.fileName,
           mimeType: body.mimeType,
           contentBase64: body.contentBase64,
           extractedText: body.extractedText || null,
+          metadata: coerceMetadata(body.metadata),
         })
         : await createTextDocument({
-          authUserId: user.id,
+          userId: user.id,
           caseId: body.caseId || null,
           text: body.text,
           fileName: body.fileName || 'uploaded-note.txt',
+          metadata: coerceMetadata(body.metadata),
         });
       processNextJobs(1).catch(err => console.error('[document-intelligence] immediate worker error', err));
       return sendJson(res, 202, {
@@ -405,7 +406,6 @@ const server = http.createServer(async (req, res) => {
       if (!comparison) return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Comparison not found.' } });
       return sendJson(res, 200, { comparison });
     }
-
     if (req.method === 'POST' && url.pathname === '/analyses/compare') {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
@@ -490,36 +490,44 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
-    return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Route not found.' } });
-  } catch (error) {
-    console.error('[backend]', error);
-    const statusCode = error.statusCode || 500;
-    const codeMap = {
-      400: 'BAD_REQUEST',
-      401: 'UNAUTHENTICATED',
-      403: 'FORBIDDEN',
-      404: 'NOT_FOUND',
-      413: 'PAYLOAD_TOO_LARGE',
-    };
-    return sendJson(res, statusCode, { error: { code: codeMap[statusCode] || 'INTERNAL_ERROR', message: error.message || 'Unexpected server error' } });
+      return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Route not found.' } });
+    } catch (error) {
+      console.error('[backend]', error);
+      const statusCode = error.statusCode || 500;
+      const codeMap = {
+        400: 'BAD_REQUEST',
+        401: 'UNAUTHENTICATED',
+        403: 'FORBIDDEN',
+        404: 'NOT_FOUND',
+        413: 'PAYLOAD_TOO_LARGE',
+      };
+      return sendJson(res, statusCode, { error: { code: codeMap[statusCode] || 'INTERNAL_ERROR', message: error.message || 'Unexpected server error' } });
+    }
+  });
+
+  let workerBusy = false;
+  const workerTimer = setInterval(async () => {
+    if (workerBusy) return;
+    workerBusy = true;
+    try { await processNextJobs(2); }
+    catch (error) { console.error('[document-intelligence] worker poll failed', error); }
+    finally { workerBusy = false; }
+  }, workerIntervalMs);
+  workerTimer.unref?.();
+
+  function shutdown() {
+    clearInterval(workerTimer);
+    server.close();
   }
-});
 
-let workerBusy = false;
-const workerTimer = setInterval(async () => {
-  if (workerBusy) return;
-  workerBusy = true;
-  try { await processNextJobs(2); }
-  catch (error) { console.error('[document-intelligence] worker poll failed', error); }
-  finally { workerBusy = false; }
-}, WORKER_INTERVAL_MS);
-workerTimer.unref?.();
-
-server.listen(PORT, () => console.log(`SafeSteps backend listening on port ${PORT}`));
-
-function shutdown() {
-  clearInterval(workerTimer);
-  server.close();
+  return { server, shutdown };
 }
-process.on('SIGTERM', shutdown);
-process.on('SIGINT', shutdown);
+
+if (require.main === module) {
+  const { server, shutdown } = createApp();
+  server.listen(PORT, () => console.log(`SafeSteps backend listening on port ${PORT}`));
+  process.on('SIGTERM', shutdown);
+  process.on('SIGINT', shutdown);
+}
+
+module.exports = { createApp, readiness };
