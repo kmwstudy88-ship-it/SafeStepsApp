@@ -271,6 +271,29 @@ test('createUploadDocument rejects unsupported file types without extracted text
   });
 });
 
+test('createUploadDocument accepts legacy userId callers when authUserId is unavailable', async () => {
+  const { admin, calls } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') return { data: null, error: null };
+    if (query.table === 'documents' && query.op === 'insert') return { data: { ...query.payload }, error: null };
+    if (query.table === 'document_analyses' && query.op === 'insert') return { data: { id: 'analysis-1', ...query.payload }, error: null };
+    if (query.table === 'document_analysis_jobs' && query.op === 'insert') return { data: { id: 'job-1', ...query.payload }, error: null };
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ createUploadDocument }) => {
+    const result = await createUploadDocument({
+      userId: 'legacy-user-1',
+      caseId: null,
+      fileName: 'legacy.txt',
+      mimeType: 'text/plain',
+      contentBase64: Buffer.from('legacy flow', 'utf8').toString('base64'),
+    });
+    assert.equal(result.document.user_id, 'legacy-user-1');
+  });
+
+  assert.match(calls.uploads[0].path, /^legacy-user-1\//);
+});
+
 test('createUploadDocument reuses existing document on duplicate sha256 and enqueues fresh analysis', async () => {
   const { admin, calls } = makeAdmin((query) => {
     if (query.table === 'documents' && query.op === 'select') {
@@ -303,6 +326,38 @@ test('createUploadDocument reuses existing document on duplicate sha256 and enqu
 
   const uploadCalls = calls.uploads.length;
   assert.equal(uploadCalls, 0);
+});
+
+test('getDocumentForUser denies access when the case is owned by a different user', async () => {
+  const { admin, calls } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return {
+        data: { id: 'doc-1', user_id: 'user-1', case_id: 'case-1', metadata: {} },
+        error: null,
+      };
+    }
+    if (query.table === 'cases' && query.op === 'select') {
+      return {
+        data: { id: 'case-1', parent_user_id: 'user-2' },
+        error: null,
+      };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ getDocumentForUser }) => {
+    await assert.rejects(
+      getDocumentForUser('doc-1', 'user-1'),
+      (error) => {
+        assert.equal(error.message, 'Case access denied');
+        assert.equal(error.statusCode, 403);
+        return true;
+      },
+    );
+  });
+
+  const analysisQuery = calls.queries.find((query) => query.table === 'document_analyses' && query.op === 'select');
+  assert.equal(analysisQuery, undefined);
 });
 
 test('createComparison rejects requests that collapse to fewer than two unique document IDs', async () => {
