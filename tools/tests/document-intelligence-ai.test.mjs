@@ -159,3 +159,40 @@ test('comparison parser accepts fenced JSON and uses analysis fallback when text
     }
   });
 });
+
+test('analysis fails closed when provider returns malformed JSON output', async () => {
+  await withEnv({ DOCUMENT_AI_PROVIDER: 'openai', OPENAI_API_KEY: 'test-key' }, async () => {
+    const restoreFetch = mockFetch(async () => ({
+      ok: true,
+      json: async () => ({ output_text: 'not valid json' }),
+    }));
+
+    try {
+      await assert.rejects(
+        analyzeDocument({ id: 'doc-malformed', file_name: 'note.txt', mime_type: 'text/plain', extracted_text: 'example text' }),
+        { message: 'AI provider returned non-JSON output' },
+      );
+    } finally {
+      restoreFetch();
+    }
+  });
+});
+
+test('analysis surfaces provider timeout failures clearly', async () => {
+  await withEnv({ DOCUMENT_AI_PROVIDER: 'openai', OPENAI_API_KEY: 'test-key', DOCUMENT_AI_TIMEOUT_MS: '1234' }, async () => {
+    const restoreFetch = mockFetch(async () => {
+      const error = new Error('aborted');
+      error.name = 'AbortError';
+      throw error;
+    });
+
+    try {
+      await assert.rejects(
+        analyzeDocument({ id: 'doc-timeout', file_name: 'note.txt', mime_type: 'text/plain', extracted_text: 'example text' }),
+        { message: 'AI provider request timed out after 1234ms' },
+      );
+    } finally {
+      restoreFetch();
+    }
+  });
+});

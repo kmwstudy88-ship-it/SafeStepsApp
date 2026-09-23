@@ -1,0 +1,39 @@
+{
+  "id": "lesson_mandatory_reporting_trigger",
+  "title": "Mandatory-Reporting Trigger",
+  "sections": [],
+  "content": {
+    "overview": "This lesson supports practitioners to identify when available information may meet a mandatory-reporting threshold and to route that concern into the correct human-led reporting workflow. It focuses on threshold awareness, time sensitivity, and documentation that shows why review or reporting was triggered.",
+    "learning_outcomes": [
+      "Recognise the indicators that may trigger mandatory-reporting review in child-safety contexts",
+      "Distinguish threshold detection from the act of filing or approving a report",
+      "Document the concern, evidence basis, and urgency in a way that supports lawful escalation",
+      "Use role authority and human approval checkpoints before any external report is sent"
+    ],
+    "key_concepts": [
+      "A trigger identifies that reporting review may be required; it does not replace authorised human action",
+      "Thresholds depend on jurisdiction, role, policy, and the facts currently available",
+      "Incomplete information should not block urgent review when immediate safety concerns are present",
+      "The audit trail must show what concern was detected, who reviewed it, and what action followed"
+    ],
+    "practice_activities": [
+      "Review a scenario and identify the information that may meet a reporting threshold",
+      "Draft a concise escalation note that records concern, source, urgency, and next reviewer",
+      "Map the internal approval steps that must occur before any external notification is made",
+      "Identify what additional facts would strengthen the record without delaying necessary review"
+    ],
+    "facilitator_notes": [
+      "Be explicit that no automated workflow should contact an external agency on its own",
+      "Encourage participants to separate policy thresholds from personal comfort levels",
+      "Use examples that show why timely escalation matters even when information is still developing",
+      "Reinforce the need for jurisdiction-specific supervision and legal/policy guidance"
+    ],
+    "reflection_prompts": [
+      "What signs make me most uncertain about a reporting threshold?",
+      "How do I avoid both delay and overreach when concerns are serious?",
+      "What internal pathway should be fastest and clearest in my workplace?",
+      "How would I show that I acted responsibly if my decision were later reviewed?"
+    ],
+    "printable_summary": "Mandatory-Reporting Trigger — Key Takeaways:\r\n- Detect potential reporting thresholds early.\r\n- Treat the trigger as a review signal, not an automated report.\r\n- Document concern, source, urgency, and reviewer path.\r\n- Keep authorised humans responsible for external action."
+  }
+}

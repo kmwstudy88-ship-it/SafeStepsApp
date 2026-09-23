@@ -26,3 +26,5 @@ jobs:
           node-version: '22'
       - name: Verify document intelligence pipeline
         run: node tools/verify-document-intelligence.mjs
+      - name: Run document intelligence unit tests
+        run: npm run test:documents
