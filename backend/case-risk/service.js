@@ -641,4 +641,5 @@ module.exports = {
   buildFollowUpTasks,
   createCaseRiskService,
   loadActorContext,
+  selectScoringEvents,
 };
