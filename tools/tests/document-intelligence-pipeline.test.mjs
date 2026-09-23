@@ -33,6 +33,7 @@ async function withLoadedPipeline({ admin, ai }, run) {
       providerName: () => 'openai',
       analyzeDocument: async () => ({ provider: 'openai', model: 'unit-model', result: {}, usage: {} }),
       compareDocuments: async () => ({ provider: 'openai', model: 'unit-model', result: {}, usage: {} }),
+      createEmptyMediaAssessment: () => ({ domains: [] }),
       ...(ai || {}),
     },
   };
@@ -112,6 +113,10 @@ function makeAdmin(resolveQuery, storage = {}) {
           state.filters.push({ type: 'eq', key, value });
           return builder;
         },
+        is(key, value) {
+          state.filters.push({ type: 'is', key, value });
+          return builder;
+        },
         in(key, values) {
           state.filters.push({ type: 'in', key, values });
           return builder;
@@ -174,9 +179,10 @@ async function withoutConsoleError(run) {
 test('createUploadDocument rolls back stored artifacts when job creation fails', async () => {
   const failure = new Error('queue unavailable');
   const { admin, calls } = makeAdmin((query) => {
-    if (query.table === 'documents' && query.op === 'select') return { data: [], error: null };
+    if (query.table === 'documents' && query.op === 'select') return { data: null, error: null };
     if (query.table === 'documents' && query.op === 'insert') return { data: { ...query.payload }, error: null };
     if (query.table === 'document_analyses' && query.op === 'insert') return { data: { id: 'analysis-1', ...query.payload }, error: null };
+    if (query.table === 'document_analyses' && query.op === 'delete') return { data: null, error: null };
     if (query.table === 'document_analysis_jobs' && query.op === 'insert') return { data: null, error: failure };
     if (query.table === 'documents' && query.op === 'delete') return { data: null, error: null };
     throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
@@ -205,7 +211,7 @@ test('createUploadDocument rolls back stored artifacts when job creation fails',
 
 test('createUploadDocument stores inline text uploads with a sanitized storage path', async () => {
   const { admin, calls } = makeAdmin((query) => {
-    if (query.table === 'documents' && query.op === 'select') return { data: [], error: null };
+    if (query.table === 'documents' && query.op === 'select') return { data: null, error: null };
     if (query.table === 'documents' && query.op === 'insert') return { data: { ...query.payload }, error: null };
     if (query.table === 'document_analyses' && query.op === 'insert') return { data: { id: 'analysis-1', ...query.payload }, error: null };
     if (query.table === 'document_analysis_jobs' && query.op === 'insert') return { data: { id: 'job-1', ...query.payload }, error: null };
@@ -243,7 +249,7 @@ test('createUploadDocument stores inline text uploads with a sanitized storage p
 
 test('createUploadDocument rejects unsupported file types without extracted text', async () => {
   const { admin } = makeAdmin((query) => {
-    if (query.table === 'documents' && query.op === 'select') return { data: [], error: null };
+    if (query.table === 'documents' && query.op === 'select') return { data: null, error: null };
     throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
   });
 
@@ -256,7 +262,11 @@ test('createUploadDocument rejects unsupported file types without extracted text
         mimeType: 'application/x-msdownload',
         contentBase64: Buffer.from('not allowed', 'utf8').toString('base64'),
       }),
-      { message: 'Unsupported file type. Provide extractedText or upload a supported document format.' },
+      (error) => {
+        assert.equal(error.message, 'Unsupported file type. Provide extractedText or upload a supported document format.');
+        assert.equal(error.statusCode, 400);
+        return true;
+      },
     );
   });
 });
@@ -266,7 +276,7 @@ test('createUploadDocument reuses existing document on duplicate sha256 and enqu
     if (query.table === 'documents' && query.op === 'select') {
       if (query.filters.find((filter) => filter.key === 'sha256')) {
         return {
-          data: [{ id: 'doc-existing', user_id: 'user-1', case_id: null, sha256: 'same' }],
+          data: { id: 'doc-existing', user_id: 'user-1', case_id: null, sha256: 'same' },
           error: null,
         };
       }
@@ -756,5 +766,72 @@ test('getAnalysisForUser returns normalized media assessment domains', async () 
     const result = await getAnalysisForUser('analysis-1', 'user-1');
     assert.equal(result.media_assessment.domains[0].domain_id, 'digital_integrity_and_authenticity');
     assert.equal(result.media_assessment.domains[0].risk_flags[0], 'Potential tampering');
+  });
+});
+
+test('getDocumentForUser adds workflow annotations and confidence/limitation normalization', async () => {
+  const defaultLimitation = 'AI output is unverified decision-support material and requires documented human review before case action.';
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return {
+        data: {
+          id: 'doc-1',
+          user_id: 'user-1',
+          case_id: null,
+          metadata: {},
+        },
+        error: null,
+      };
+    }
+    if (query.table === 'document_analyses' && query.op === 'select') {
+      return {
+        data: {
+          id: 'analysis-1',
+          document_id: 'doc-1',
+          user_id: 'user-1',
+          risk: { confidence: 0.81 },
+          limitations: ['Missing collateral records', 'Missing collateral records'],
+        },
+        error: null,
+      };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ getDocumentForUser }) => {
+    const result = await getDocumentForUser('doc-1', 'user-1');
+    assert.equal(result.document.human_review_required, true);
+    assert.equal(result.document.metadata.human_review_status, 'pending_analysis');
+    assert.equal(result.analysis.decision_support_only, true);
+    assert.deepEqual(result.analysis.confidence_overview, { score: 0.81, band: 'high' });
+    assert.deepEqual(result.analysis.limitations, [defaultLimitation, 'Missing collateral records']);
+  });
+});
+
+test('getComparisonForUser normalizes limitations and preserves explicit human review status', async () => {
+  const defaultLimitation = 'AI output is unverified decision-support material and requires documented human review before case action.';
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'document_comparisons' && query.op === 'select') {
+      return {
+        data: {
+          id: 'comparison-1',
+          user_id: 'user-1',
+          case_id: null,
+          metadata: { human_review_status: 'reviewed' },
+          result: {
+            limitations: ['Conflicting chronology between statements'],
+          },
+        },
+        error: null,
+      };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ getComparisonForUser }) => {
+    const result = await getComparisonForUser('comparison-1', 'user-1');
+    assert.equal(result.human_review_required, true);
+    assert.equal(result.metadata.human_review_status, 'reviewed');
+    assert.deepEqual(result.result.limitations, [defaultLimitation, 'Conflicting chronology between statements']);
   });
 });

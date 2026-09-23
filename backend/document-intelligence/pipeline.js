@@ -242,18 +242,6 @@ async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer
     await cleanupCreatedDocument({ id: documentId, storage_path: storagePath });
     throw error;
   });
-  const { data: document, error } = await admin.from('documents').insert({
-    id: documentId, user_id: userId, case_id: caseId, file_name: fileName, mime_type: mimeType,
-    storage_path: storagePath, byte_size: buffer.length, sha256, source_type: sourceType,
-    processing_status: 'queued', extracted_text: extractedText,
-    retention_expires_at: retentionExpiresAt(),
-    metadata: normalizeInputMetadata(metadata, extractedText),
-  }).select('*').single();
-  if (error) {
-    await admin.storage.from('document-intelligence').remove([storagePath]);
-    throw error;
-  }
-
   try {
     const { analysis, job } = await createAnalysisAndJob({ documentId: document.id, ownerUserId });
     return { document, analysis, job };
