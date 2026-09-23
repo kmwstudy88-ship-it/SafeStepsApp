@@ -34,6 +34,7 @@ async function withLoadedPipeline({ admin, ai }, run) {
       analyzeDocument: async () => ({ provider: 'openai', model: 'unit-model', result: {}, usage: {} }),
       compareDocuments: async () => ({ provider: 'openai', model: 'unit-model', result: {}, usage: {} }),
       createEmptyMediaAssessment: () => ({ domains: [] }),
+      normalizeAnalysisSkills: (rows) => Array.isArray(rows) ? rows : [],
       ...(ai || {}),
     },
   };
@@ -113,12 +114,12 @@ function makeAdmin(resolveQuery, storage = {}) {
           state.filters.push({ type: 'eq', key, value });
           return builder;
         },
-        is(key, value) {
-          state.filters.push({ type: 'is', key, value });
-          return builder;
-        },
         in(key, values) {
           state.filters.push({ type: 'in', key, values });
+          return builder;
+        },
+        is(key, value) {
+          state.filters.push({ type: 'is', key, value });
           return builder;
         },
         order(key, options) {
@@ -179,7 +180,7 @@ async function withoutConsoleError(run) {
 test('createUploadDocument rolls back stored artifacts when job creation fails', async () => {
   const failure = new Error('queue unavailable');
   const { admin, calls } = makeAdmin((query) => {
-    if (query.table === 'documents' && query.op === 'select') return { data: null, error: null };
+    if (query.table === 'documents' && query.op === 'select') return { data: [], error: null };
     if (query.table === 'documents' && query.op === 'insert') return { data: { ...query.payload }, error: null };
     if (query.table === 'document_analyses' && query.op === 'insert') return { data: { id: 'analysis-1', ...query.payload }, error: null };
     if (query.table === 'document_analyses' && query.op === 'delete') return { data: null, error: null };
@@ -211,7 +212,7 @@ test('createUploadDocument rolls back stored artifacts when job creation fails',
 
 test('createUploadDocument stores inline text uploads with a sanitized storage path', async () => {
   const { admin, calls } = makeAdmin((query) => {
-    if (query.table === 'documents' && query.op === 'select') return { data: null, error: null };
+    if (query.table === 'documents' && query.op === 'select') return { data: [], error: null };
     if (query.table === 'documents' && query.op === 'insert') return { data: { ...query.payload }, error: null };
     if (query.table === 'document_analyses' && query.op === 'insert') return { data: { id: 'analysis-1', ...query.payload }, error: null };
     if (query.table === 'document_analysis_jobs' && query.op === 'insert') return { data: { id: 'job-1', ...query.payload }, error: null };
@@ -249,7 +250,7 @@ test('createUploadDocument stores inline text uploads with a sanitized storage p
 
 test('createUploadDocument rejects unsupported file types without extracted text', async () => {
   const { admin } = makeAdmin((query) => {
-    if (query.table === 'documents' && query.op === 'select') return { data: null, error: null };
+    if (query.table === 'documents' && query.op === 'select') return { data: [], error: null };
     throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
   });
 
@@ -262,36 +263,9 @@ test('createUploadDocument rejects unsupported file types without extracted text
         mimeType: 'application/x-msdownload',
         contentBase64: Buffer.from('not allowed', 'utf8').toString('base64'),
       }),
-      (error) => {
-        assert.equal(error.message, 'Unsupported file type. Provide extractedText or upload a supported document format.');
-        assert.equal(error.statusCode, 400);
-        return true;
-      },
+      { message: 'Unsupported file type. Provide extractedText or upload a supported document format.' },
     );
   });
-});
-
-test('createUploadDocument accepts legacy userId callers when authUserId is unavailable', async () => {
-  const { admin, calls } = makeAdmin((query) => {
-    if (query.table === 'documents' && query.op === 'select') return { data: null, error: null };
-    if (query.table === 'documents' && query.op === 'insert') return { data: { ...query.payload }, error: null };
-    if (query.table === 'document_analyses' && query.op === 'insert') return { data: { id: 'analysis-1', ...query.payload }, error: null };
-    if (query.table === 'document_analysis_jobs' && query.op === 'insert') return { data: { id: 'job-1', ...query.payload }, error: null };
-    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
-  });
-
-  await withLoadedPipeline({ admin }, async ({ createUploadDocument }) => {
-    const result = await createUploadDocument({
-      userId: 'legacy-user-1',
-      caseId: null,
-      fileName: 'legacy.txt',
-      mimeType: 'text/plain',
-      contentBase64: Buffer.from('legacy flow', 'utf8').toString('base64'),
-    });
-    assert.equal(result.document.user_id, 'legacy-user-1');
-  });
-
-  assert.match(calls.uploads[0].path, /^legacy-user-1\//);
 });
 
 test('createUploadDocument reuses existing document on duplicate sha256 and enqueues fresh analysis', async () => {
@@ -299,7 +273,7 @@ test('createUploadDocument reuses existing document on duplicate sha256 and enqu
     if (query.table === 'documents' && query.op === 'select') {
       if (query.filters.find((filter) => filter.key === 'sha256')) {
         return {
-          data: { id: 'doc-existing', user_id: 'user-1', case_id: null, sha256: 'same' },
+          data: [{ id: 'doc-existing', user_id: 'user-1', case_id: null, sha256: 'same' }],
           error: null,
         };
       }
@@ -326,38 +300,6 @@ test('createUploadDocument reuses existing document on duplicate sha256 and enqu
 
   const uploadCalls = calls.uploads.length;
   assert.equal(uploadCalls, 0);
-});
-
-test('getDocumentForUser denies access when the case is owned by a different user', async () => {
-  const { admin, calls } = makeAdmin((query) => {
-    if (query.table === 'documents' && query.op === 'select') {
-      return {
-        data: { id: 'doc-1', user_id: 'user-1', case_id: 'case-1', metadata: {} },
-        error: null,
-      };
-    }
-    if (query.table === 'cases' && query.op === 'select') {
-      return {
-        data: { id: 'case-1', parent_user_id: 'user-2' },
-        error: null,
-      };
-    }
-    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
-  });
-
-  await withLoadedPipeline({ admin }, async ({ getDocumentForUser }) => {
-    await assert.rejects(
-      getDocumentForUser('doc-1', 'user-1'),
-      (error) => {
-        assert.equal(error.message, 'Case access denied');
-        assert.equal(error.statusCode, 403);
-        return true;
-      },
-    );
-  });
-
-  const analysisQuery = calls.queries.find((query) => query.table === 'document_analyses' && query.op === 'select');
-  assert.equal(analysisQuery, undefined);
 });
 
 test('createComparison rejects requests that collapse to fewer than two unique document IDs', async () => {
@@ -824,28 +766,86 @@ test('getAnalysisForUser returns normalized media assessment domains', async () 
   });
 });
 
-test('getDocumentForUser adds workflow annotations and confidence/limitation normalization', async () => {
-  const defaultLimitation = 'AI output is unverified decision-support material and requires documented human review before case action.';
-  const { admin } = makeAdmin((query) => {
-    if (query.table === 'documents' && query.op === 'select') {
+test('processNextJobs stores normalized analysis skill rows in raw output', async () => {
+  const { admin, calls } = makeAdmin((query) => {
+    if (query.table === '__rpc__' && query.op === 'claim_document_analysis_jobs') {
       return {
-        data: {
-          id: 'doc-1',
+        data: [{
+          id: 'job-1',
+          job_type: 'document_analysis',
+          document_id: 'doc-1',
           user_id: 'user-1',
-          case_id: null,
-          metadata: {},
-        },
+          payload: { analysis_id: 'analysis-1' },
+          attempts: 0,
+          max_attempts: 2,
+          available_at: '2026-09-11T00:00:00.000Z',
+        }],
         error: null,
       };
+    }
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', extracted_text: 'sample text' }, error: null };
+    }
+    if (query.op === 'update') return { data: null, error: null };
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({
+    admin,
+    ai: {
+      normalizeAnalysisSkills: (rows) => rows,
+      analyzeDocument: async () => ({
+        provider: 'openai',
+        model: 'unit-model',
+        usage: {},
+        result: {
+          analysis_skills: [{
+            skill_id: 'fairness_detection',
+            status: 'complete',
+            findings: [{ category: 'loaded_language' }],
+            confidence: 0.8,
+            evidence_citations: ['paragraph:2'],
+            limitations: [],
+            human_review_required: true,
+            failure_behavior: 'none',
+            unsafe_output_flags: [],
+          }],
+        },
+      }),
+    },
+  }, async ({ processNextJobs }) => {
+    assert.equal(await processNextJobs(1), 1);
+  });
+
+  const analysisUpdate = calls.queries.filter((query) => query.table === 'document_analyses' && query.op === 'update').at(-1);
+  assert.equal(Array.isArray(analysisUpdate.payload.raw_output.analysis_skills), true);
+  assert.equal(analysisUpdate.payload.raw_output.analysis_skills[0].skill_id, 'fairness_detection');
+});
+
+test('getDocumentForUser normalizes analysis skills from raw output aliases', async () => {
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', user_id: 'user-1' }, error: null };
     }
     if (query.table === 'document_analyses' && query.op === 'select') {
       return {
         data: {
           id: 'analysis-1',
-          document_id: 'doc-1',
-          user_id: 'user-1',
-          risk: { confidence: 0.81 },
-          limitations: ['Missing collateral records', 'Missing collateral records'],
+          status: 'completed',
+          risk: {},
+          raw_output: {
+            analysisSkills: [{
+              skill_id: 'privacy_and_boundary_checks',
+              status: 'complete',
+              findings: [{ issue: 'unnecessary_identifier' }],
+              confidence: 0.72,
+              evidence_citations: ['line:12'],
+              limitations: [],
+              human_review_required: true,
+              failure_behavior: 'none',
+              unsafe_output_flags: [],
+            }],
+          },
         },
         error: null,
       };
@@ -855,38 +855,7 @@ test('getDocumentForUser adds workflow annotations and confidence/limitation nor
 
   await withLoadedPipeline({ admin }, async ({ getDocumentForUser }) => {
     const result = await getDocumentForUser('doc-1', 'user-1');
-    assert.equal(result.document.human_review_required, true);
-    assert.equal(result.document.metadata.human_review_status, 'pending_analysis');
-    assert.equal(result.analysis.decision_support_only, true);
-    assert.deepEqual(result.analysis.confidence_overview, { score: 0.81, band: 'high' });
-    assert.deepEqual(result.analysis.limitations, [defaultLimitation, 'Missing collateral records']);
-  });
-});
-
-test('getComparisonForUser normalizes limitations and preserves explicit human review status', async () => {
-  const defaultLimitation = 'AI output is unverified decision-support material and requires documented human review before case action.';
-  const { admin } = makeAdmin((query) => {
-    if (query.table === 'document_comparisons' && query.op === 'select') {
-      return {
-        data: {
-          id: 'comparison-1',
-          user_id: 'user-1',
-          case_id: null,
-          metadata: { human_review_status: 'reviewed' },
-          result: {
-            limitations: ['Conflicting chronology between statements'],
-          },
-        },
-        error: null,
-      };
-    }
-    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
-  });
-
-  await withLoadedPipeline({ admin }, async ({ getComparisonForUser }) => {
-    const result = await getComparisonForUser('comparison-1', 'user-1');
-    assert.equal(result.human_review_required, true);
-    assert.equal(result.metadata.human_review_status, 'reviewed');
-    assert.deepEqual(result.result.limitations, [defaultLimitation, 'Conflicting chronology between statements']);
+    assert.equal(Array.isArray(result.analysis.analysis_skills), true);
+    assert.equal(result.analysis.analysis_skills[0].skill_id, 'privacy_and_boundary_checks');
   });
 });

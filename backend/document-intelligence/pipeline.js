@@ -9,6 +9,7 @@ const {
   analyzeDocument,
   compareDocuments,
   createEmptyMediaAssessment,
+  normalizeAnalysisSkills,
 } = require('./ai');
 
 const WORKER_ID = process.env.DOCUMENT_AI_WORKER_ID || `node-${process.pid}-${crypto.randomUUID().slice(0, 8)}`;
@@ -98,72 +99,123 @@ function normalizeInputMetadata(metadata, extractedText) {
   return output;
 }
 
+function normalizeUserId(userId, authUserId) {
+  return userId || authUserId || null;
+}
+
 function caseIdsMatch(left, right) {
   return (left || null) === (right || null);
 }
 
-async function loadActorContext(authUserId) {
-  if (!authUserId) throw createHttpError(401, 'Authentication required');
+function normalizeLimitations(limitations) {
+  const values = (Array.isArray(limitations) ? limitations : [])
+    .map((value) => String(value || '').trim())
+    .filter(Boolean);
+  return values.length ? [...new Set(values)] : [DEFAULT_LIMITATION];
+}
+
+function humanReviewStatus(status) {
+  if (status === 'completed') return 'pending_human_review';
+  if (status === 'failed') return 'analysis_failed';
+  return 'pending_analysis';
+}
+
+function annotateWorkflow(record) {
+  if (!record || typeof record !== 'object') return record;
   return {
-    authUserId,
-    appUserId: null,
-    ownerUserIds: [authUserId],
+    ...record,
+    human_review_required: true,
+    decision_support_only: true,
+    human_review_status: humanReviewStatus(record.status),
   };
+}
+
+function confidenceOverview(analysis) {
+  const candidates = [];
+  for (const value of [
+    analysis?.risk?.confidence,
+    ...(Array.isArray(analysis?.evidence) ? analysis.evidence.map((item) => item?.confidence) : []),
+    ...(Array.isArray(analysis?.timeline) ? analysis.timeline.map((item) => item?.confidence) : []),
+    ...(Array.isArray(analysis?.contradictions) ? analysis.contradictions.map((item) => item?.confidence) : []),
+    ...(Array.isArray(analysis?.analysis_skills) ? analysis.analysis_skills.map((item) => item?.confidence) : []),
+  ]) {
+    if (Number.isFinite(value)) candidates.push(Number(value));
+  }
+  if (!candidates.length) return { overall_confidence: 0, inputs_considered: 0 };
+  const average = candidates.reduce((sum, value) => sum + value, 0) / candidates.length;
+  return {
+    overall_confidence: Number(average.toFixed(3)),
+    inputs_considered: candidates.length,
+  };
+}
+
+async function loadActorContext(authUserId) {
+  if (!authUserId) throw createHttpError(401, 'authUserId is required');
+  const { data, error } = await admin
+    .from('users')
+    .select('id,auth_user_id')
+    .eq('auth_user_id', authUserId)
+    .maybeSingle();
+  if (error) throw error;
+
+  const appUserId = data?.id || null;
+  const ownerUserIds = [...new Set([authUserId, appUserId].filter(Boolean))];
+  return { authUserId, appUserId, ownerUserIds };
 }
 
 async function assertCaseAccess(actor, caseId) {
   if (!caseId) return;
-  const { data: caseRecord, error } = await admin.from('cases').select('id,parent_user_id').eq('id', caseId).maybeSingle();
+  const { data: caseRecord, error } = await admin
+    .from('cases')
+    .select('id,parent_user_id')
+    .eq('id', caseId)
+    .maybeSingle();
   if (error) throw error;
-  if (!caseRecord) throw createHttpError(404, 'Case not found');
-  if (caseRecord.parent_user_id && !actor.ownerUserIds.includes(caseRecord.parent_user_id)) {
-    throw createHttpError(403, 'Case access denied');
-  }
-}
+  if (!caseRecord) throw createHttpError(404, 'Case not found.');
+  if (actor.ownerUserIds.includes(caseRecord.parent_user_id)) return;
 
-async function findDuplicateDocument({ ownerUserIds, caseId, sha256 }) {
-  const { data, error } = await admin
-    .from('documents')
-    .select('*')
-    .in('user_id', ownerUserIds)
-    .eq('sha256', sha256);
-  if (error) throw error;
-
-  const matches = Array.isArray(data) ? data : (data ? [data] : []);
-  return matches.find((document) => caseIdsMatch(document.case_id, caseId)) || null;
+  const { data: assignment, error: assignmentError } = await admin
+    .from('case_assignments')
+    .select('id,user_id')
+    .eq('case_id', caseId)
+    .in('user_id', actor.ownerUserIds)
+    .maybeSingle();
+  if (assignmentError) throw assignmentError;
+  if (!assignment) throw createHttpError(403, 'Case access denied.');
 }
 
 async function createAnalysisAndJob({ documentId, ownerUserId }) {
-  const analysis = await expectNoError(admin.from('document_analyses').insert({
+  const { data: analysis, error: analysisError } = await admin.from('document_analyses').insert({
     document_id: documentId,
     user_id: ownerUserId,
     provider: providerName(),
     model: DEFAULT_MODEL(),
     schema_version: ANALYSIS_SCHEMA_VERSION,
     status: 'queued',
-  }).select('*').single());
+  }).select('*').single();
+  if (analysisError) throw analysisError;
 
-  try {
-    const job = await expectNoError(admin.from('document_analysis_jobs').insert({
-      job_type: 'document_analysis',
-      document_id: documentId,
-      user_id: ownerUserId,
-      payload: { analysis_id: analysis.id },
-    }).select('*').single());
-    return { analysis, job };
-  } catch (error) {
+  const { data: job, error: jobError } = await admin.from('document_analysis_jobs').insert({
+    job_type: 'document_analysis',
+    document_id: documentId,
+    user_id: ownerUserId,
+    payload: { analysis_id: analysis.id },
+  }).select('*').single();
+  if (jobError) {
     await cleanupCreatedAnalysis(analysis.id);
-    throw error;
+    throw jobError;
   }
+
+  return { analysis, job };
 }
 
-async function createTextDocument({ authUserId, userId, caseId = null, text, fileName = 'pasted-text.txt', metadata = {} }) {
-  const ownerUserId = userId || authUserId;
-  if (!ownerUserId) throw createHttpError(401, 'Authentication required');
+async function createTextDocument({ userId, authUserId, caseId = null, text, fileName = 'pasted-text.txt', metadata = {} }) {
+  const normalizedUserId = normalizeUserId(userId, authUserId);
+  if (!normalizedUserId) throw new Error('userId is required');
   if (!text || !String(text).trim()) throw new Error('Document text is required');
   const buffer = Buffer.from(String(text), 'utf8');
   return createDocumentRecord({
-    userId: ownerUserId,
+    userId: normalizedUserId,
     caseId,
     fileName,
     mimeType: 'text/plain',
@@ -174,19 +226,19 @@ async function createTextDocument({ authUserId, userId, caseId = null, text, fil
   });
 }
 
-async function createUploadDocument({ authUserId, userId, caseId = null, fileName, mimeType, contentBase64, extractedText = null, metadata = {} }) {
-  const ownerUserId = userId || authUserId;
-  if (!ownerUserId) throw createHttpError(401, 'Authentication required');
+async function createUploadDocument({ userId, authUserId, caseId = null, fileName, mimeType, contentBase64, extractedText = null, metadata = {} }) {
+  const normalizedUserId = normalizeUserId(userId, authUserId);
+  if (!normalizedUserId) throw new Error('userId is required');
   if (!fileName || !contentBase64) throw new Error('fileName and contentBase64 are required');
   if (!isSupportedMimeType(mimeType) && !String(extractedText || '').trim()) {
-    throw createHttpError(400, 'Unsupported file type. Provide extractedText or upload a supported document format.');
+    throw new Error('Unsupported file type. Provide extractedText or upload a supported document format.');
   }
   const buffer = Buffer.from(contentBase64, 'base64');
   if (!buffer.length) throw new Error('Uploaded document is empty');
   if (buffer.length > 25 * 1024 * 1024) throw new Error('Document exceeds the 25 MB upload limit');
   const text = extractedText || textFromBuffer(buffer, mimeType);
   return createDocumentRecord({
-    userId: ownerUserId,
+    userId: normalizedUserId,
     caseId,
     fileName,
     mimeType: mimeType || 'application/octet-stream',
@@ -206,7 +258,8 @@ async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer
     .in('user_id', [userId])
     .limit(1);
   duplicateQuery = caseId == null ? duplicateQuery.is('case_id', null) : duplicateQuery.eq('case_id', caseId);
-  const duplicate = await expectNoError(duplicateQuery.maybeSingle());
+  const duplicateResult = await expectNoError(duplicateQuery.maybeSingle());
+  const duplicate = Array.isArray(duplicateResult) ? duplicateResult[0] || null : duplicateResult;
   if (duplicate) {
     const ownerUserId = duplicate.user_id || userId;
     const { analysis, job } = await createAnalysisAndJob({ documentId: duplicate.id, ownerUserId });
@@ -220,28 +273,18 @@ async function createDocumentRecord({ userId, caseId, fileName, mimeType, buffer
   const { error: storageError } = await admin.storage.from('document-intelligence').upload(storagePath, buffer, { contentType: mimeType, upsert: false });
   if (storageError) throw storageError;
 
-  const documentMetadata = {
-    ...normalizeInputMetadata(metadata, extractedText),
+  const { data: document, error } = await admin.from('documents').insert({
+    id: documentId, user_id: userId, case_id: caseId, file_name: fileName, mime_type: mimeType,
+    storage_path: storagePath, byte_size: buffer.length, sha256, source_type: sourceType,
+    processing_status: 'queued', extracted_text: extractedText,
     retention_expires_at: retentionExpiresAt(),
-    human_review_status: 'pending_analysis',
-  };
-  const document = await expectNoError(admin.from('documents').insert({
-    id: documentId,
-    user_id: ownerUserId,
-    case_id: caseId,
-    file_name: fileName,
-    mime_type: mimeType,
-    storage_path: storagePath,
-    byte_size: buffer.length,
-    sha256,
-    source_type: sourceType,
-    processing_status: 'queued',
-    extracted_text: extractedText,
-    metadata: documentMetadata,
-  }).select('*').single()).catch(async (error) => {
-    await cleanupCreatedDocument({ id: documentId, storage_path: storagePath });
+    metadata: normalizeInputMetadata(metadata, extractedText),
+  }).select('*').single();
+  if (error) {
+    await admin.storage.from('document-intelligence').remove([storagePath]);
     throw error;
-  });
+  }
+
   try {
     const { analysis, job } = await createAnalysisAndJob({ documentId: document.id, ownerUserId });
     return { document, analysis, job };
@@ -376,36 +419,6 @@ async function loadBinary(document) {
   return Buffer.from(await data.arrayBuffer());
 }
 
-function normalizeLimitations(limitations) {
-  const values = Array.isArray(limitations) ? limitations.filter((item) => typeof item === 'string' && item.trim()) : [];
-  const merged = [...new Set([DEFAULT_LIMITATION, ...values.map((item) => item.trim())])];
-  return merged;
-}
-
-function confidenceOverview(analysis) {
-  const score = analysis?.risk?.confidence ?? analysis?.raw_output?.risk?.confidence ?? null;
-  if (typeof score !== 'number') return null;
-  return {
-    score,
-    band: score >= 0.75 ? 'high' : score >= 0.45 ? 'medium' : 'low',
-  };
-}
-
-function annotateWorkflow(record) {
-  if (!record || typeof record !== 'object') return record;
-  const metadata = record.metadata && typeof record.metadata === 'object' ? record.metadata : {};
-  return {
-    ...record,
-    metadata: {
-      ...metadata,
-      human_review_status: metadata.human_review_status || 'pending_analysis',
-    },
-    decision_support_only: true,
-    unverified: true,
-    human_review_required: true,
-  };
-}
-
 async function processAnalysisJob(job) {
   const analysisId = job.payload?.analysis_id;
   if (!analysisId) throw new Error('Analysis job has no analysis_id');
@@ -421,7 +434,9 @@ async function processAnalysisJob(job) {
   const ai = await analyzeDocument(document, fileBuffer);
   const result = ai.result || {};
   const mediaAssessment = result.media_assessment || result.risk?.media_assessment || createEmptyMediaAssessment();
+  const analysisSkills = normalizeAnalysisSkills(result.analysis_skills || result.analysisSkills);
   const risk = result.risk && typeof result.risk === 'object' ? result.risk : {};
+  const limitations = normalizeLimitations(result.limitations || []);
   const completedAt = new Date().toISOString();
   await expectNoError(admin.from('document_analyses').update({
     provider: ai.provider,
@@ -434,8 +449,8 @@ async function processAnalysisJob(job) {
     risk: { ...risk, media_assessment: mediaAssessment },
     bias: result.bias || {},
     fairness: result.fairness || {},
-    limitations: normalizeLimitations(result.limitations || []),
-    raw_output: result,
+    limitations,
+    raw_output: { ...result, analysis_skills: analysisSkills, limitations },
     usage: ai.usage || {},
     completed_at: completedAt,
   }).eq('id', analysisId));
@@ -451,6 +466,12 @@ function normalizeAnalysisRecord(analysis) {
       || analysis.raw_output?.media_assessment
       || analysis.raw_output?.risk?.media_assessment
       || createEmptyMediaAssessment(),
+    analysis_skills: normalizeAnalysisSkills(
+      analysis.raw_output?.analysis_skills
+      || analysis.raw_output?.analysisSkills
+      || analysis.analysis_skills
+      || analysis.analysisSkills,
+    ),
     limitations: normalizeLimitations(analysis.limitations || []),
   };
   normalized.confidence_overview = confidenceOverview(normalized);

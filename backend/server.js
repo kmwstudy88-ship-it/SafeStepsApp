@@ -4,6 +4,7 @@ const http = require('node:http');
 const {
   ANALYSIS_SCHEMA_VERSION,
   mediaSignalDomains,
+  analysisSkillCatalog,
 } = require('./document-intelligence/ai');
 const {
   createTextDocument,
@@ -255,6 +256,8 @@ function createApp({
         totalSections: DOCUMENT_SECTIONS.length,
         mediaSignalDomains,
         totalMediaSignalDomains: mediaSignalDomains.length,
+        analysisSkills: analysisSkillCatalog,
+        totalAnalysisSkills: analysisSkillCatalog.length,
         timestamp: new Date().toISOString(),
       });
     }
