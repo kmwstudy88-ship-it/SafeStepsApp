@@ -6,7 +6,6 @@ const require = createRequire(import.meta.url);
 const serverPath = require.resolve('../../backend/server.js');
 const pipelinePath = require.resolve('../../backend/document-intelligence/pipeline.js');
 const supabasePath = require.resolve('../../backend/document-intelligence/supabase.js');
-const caseRiskPath = require.resolve('../../backend/case-risk/service.js');
 
 function cloneCacheEntry(entry) {
   return entry ? { ...entry } : undefined;
@@ -31,7 +30,6 @@ async function withLoadedServer(run, { pipeline, authenticateBearer } = {}) {
   const previousServer = cloneCacheEntry(require.cache[serverPath]);
   const previousPipeline = cloneCacheEntry(require.cache[pipelinePath]);
   const previousSupabase = cloneCacheEntry(require.cache[supabasePath]);
-  const previousCaseRisk = cloneCacheEntry(require.cache[caseRiskPath]);
 
   delete require.cache[serverPath];
   require.cache[pipelinePath] = {
@@ -54,21 +52,6 @@ async function withLoadedServer(run, { pipeline, authenticateBearer } = {}) {
     loaded: true,
     exports: { authenticateBearer: authenticateBearer || (async () => null) },
   };
-  require.cache[caseRiskPath] = {
-    id: caseRiskPath,
-    filename: caseRiskPath,
-    loaded: true,
-    exports: {
-      createCaseRiskService: () => ({
-        getDashboard: async () => ({ cases: [] }),
-        listCases: async () => [],
-        getTimeline: async () => [],
-        ingestCaseEvent: async () => ({ event_id: 'event-1' }),
-        acknowledgeAlert: async () => ({ ok: true }),
-        completeTask: async () => ({ ok: true }),
-      }),
-    },
-  };
 
   try {
     return await run(require(serverPath));
@@ -82,9 +65,6 @@ async function withLoadedServer(run, { pipeline, authenticateBearer } = {}) {
 
     if (previousSupabase) require.cache[supabasePath] = previousSupabase;
     else delete require.cache[supabasePath];
-
-    if (previousCaseRisk) require.cache[caseRiskPath] = previousCaseRisk;
-    else delete require.cache[caseRiskPath];
   }
 }
 

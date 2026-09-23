@@ -444,7 +444,6 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
       const existingEvents = await loadRecentCaseEvents(adminClient, caseId, 50);
       const previousSnapshot = await loadLatestSnapshot(adminClient, caseId);
       const rules = rulesFromEnv();
-      const eventIdempotencyKey = body.idempotencyKey || body.idempotency_key || null;
       const persistedIdempotentEvent = eventIdempotencyKey
         ? await loadCaseEventByIdempotencyKey(adminClient, caseId, eventIdempotencyKey)
         : null;
@@ -453,7 +452,6 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         event_type: eventType,
         idempotency_key: eventIdempotencyKey,
         payload: eventPayload,
-        idempotency_key: eventIdempotencyKey,
       };
       const allEvents = selectScoringEvents({
         existingEvents,
@@ -643,4 +641,5 @@ module.exports = {
   buildFollowUpTasks,
   createCaseRiskService,
   loadActorContext,
+  selectScoringEvents,
 };
