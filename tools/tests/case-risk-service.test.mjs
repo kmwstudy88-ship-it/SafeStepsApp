@@ -48,6 +48,53 @@ test('buildEscalationAlerts produces stable dedupe keys for duplicate triggering
   assert.equal(first[0].detail.rationale, 'Primary risk drivers: weapon_access.');
 });
 
+test('buildEscalationAlerts handles hard flags as critical workflow output even below threshold score', () => {
+  const alerts = buildEscalationAlerts({
+    snapshot: {
+      score: 45,
+      tier: 'critical',
+      rationale: 'Hard escalation triggered by child_immediate_danger.',
+      model_version: 'risk-rules-v1',
+      hard_escalation: {
+        triggered: true,
+        triggers: [{ key: 'child_immediate_danger', reason: 'Immediate child safety danger disclosed' }],
+      },
+    },
+    previousSnapshot: { score: 43 },
+    routedTo: { case_worker_ids: ['worker-1'], supervisor_ids: ['sup-1'] },
+    eventIdempotencyKey: 'evt-hard-1',
+    eventType: 'field_note',
+  });
+
+  assert.equal(alerts.length, 1);
+  assert.equal(alerts[0].severity, 'critical');
+  assert.equal(alerts[0].trigger_type, 'child_immediate_danger');
+  assert.equal(alerts[0].detail.human_review_required, true);
+  assert.equal(alerts[0].detail.decision_support_only, true);
+});
+
+test('buildEscalationAlerts applies threshold and delta boundaries', () => {
+  const build = (score, previousScore) => buildEscalationAlerts({
+    snapshot: {
+      score,
+      tier: score >= 75 ? 'critical' : score >= 50 ? 'high' : 'moderate',
+      rationale: 'Boundary test',
+      model_version: 'risk-rules-v1',
+      hard_escalation: { triggered: false, triggers: [] },
+    },
+    previousSnapshot: previousScore == null ? null : { score: previousScore },
+    routedTo: { case_worker_ids: ['worker-1'], supervisor_ids: ['sup-1'] },
+    eventIdempotencyKey: `evt-${score}-${previousScore ?? 'none'}`,
+    eventType: 'field_note',
+  });
+
+  assert.equal(build(59, 40).some((item) => item.trigger_type.startsWith('risk_threshold')), false);
+  assert.deepEqual(build(60, 40).map((item) => item.trigger_type), ['risk_threshold_high', 'risk_score_delta']);
+  assert.equal(build(74, 60).map((item) => item.trigger_type).includes('risk_threshold_high'), true);
+  assert.equal(build(75, 60).map((item) => item.trigger_type).includes('risk_threshold_critical'), true);
+
+  assert.equal(build(70, 56).some((item) => item.trigger_type === 'risk_score_delta'), false);
+  assert.equal(build(70, 55).some((item) => item.trigger_type === 'risk_score_delta'), true);
 test('buildEscalationAlerts respects configurable delta escalation thresholds', () => {
   const belowCustomThreshold = buildEscalationAlerts({
     snapshot: {
@@ -173,6 +220,55 @@ test('buildFollowUpTasks upgrades follow-up SLA and marks reprioritization after
   assert.equal(tasks.every((item) => item.detail.model_version === 'risk-rules-v1'), true);
   assert.equal(tasks.every((item) => item.detail.rationale === 'Recent pattern pressure.'), true);
   assert.equal(tasks.every((item) => item.detail.decision_support_only === true), true);
+});
+
+test('buildFollowUpTasks routes tasks to worker and supervisor assignments correctly', () => {
+  const tasks = buildFollowUpTasks({
+    caseId: 'case-1',
+    snapshot: { score: 78, tier: 'critical', rationale: 'Recent pattern pressure.', model_version: 'risk-rules-v1' },
+    previousSnapshot: { score: 60, tier: 'high' },
+    assignments: [
+      { assignment_role: 'case_worker', user_id: 'worker-1' },
+      { assignment_role: 'supervisor', user_id: 'sup-1' },
+    ],
+  });
+  assert.equal(tasks.find((item) => item.task_type === 'immediate_supervisor_review')?.assignee, 'sup-1');
+  assert.equal(tasks.find((item) => item.task_type === 'safety_plan_review')?.assignee, 'worker-1');
+  assert.equal(tasks.find((item) => item.task_type === 'risk_reassessment')?.assignee, 'worker-1');
+});
+
+test('buildFollowUpTasks handles cases without assigned worker by routing to supervisor', () => {
+  const tasks = buildFollowUpTasks({
+    caseId: 'case-2',
+    snapshot: { score: 52, tier: 'high', rationale: 'High risk', model_version: 'risk-rules-v1' },
+    previousSnapshot: { score: 40, tier: 'moderate' },
+    assignments: [{ assignment_role: 'supervisor', user_id: 'sup-2' }],
+  });
+
+  assert.equal(tasks.every((item) => item.assignee === 'sup-2'), true);
+});
+
+test('buildFollowUpTasks handles cases without supervisor by routing supervisor tasks to worker', () => {
+  const tasks = buildFollowUpTasks({
+    caseId: 'case-3',
+    snapshot: { score: 79, tier: 'critical', rationale: 'Critical risk', model_version: 'risk-rules-v1' },
+    previousSnapshot: { score: 62, tier: 'high' },
+    assignments: [{ assignment_role: 'case_worker', user_id: 'worker-3' }],
+  });
+
+  assert.equal(tasks.every((item) => item.assignee === 'worker-3'), true);
+});
+
+test('buildFollowUpTasks allows unassigned tasks when no worker or supervisor exists', () => {
+  const tasks = buildFollowUpTasks({
+    caseId: 'case-4',
+    snapshot: { score: 28, tier: 'moderate', rationale: 'Moderate risk', model_version: 'risk-rules-v1' },
+    previousSnapshot: { score: 20, tier: 'low' },
+    assignments: [],
+  });
+
+  assert.equal(tasks.length, 2);
+  assert.equal(tasks.every((item) => item.assignee === null), true);
 });
 
 test('buildDashboardPayload returns highest-risk, rising-risk, open escalation, and overdue follow-up queues', () => {
