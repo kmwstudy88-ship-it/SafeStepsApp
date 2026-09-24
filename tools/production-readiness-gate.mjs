@@ -151,6 +151,8 @@ for (const name of [
   "SAFESTEPS_STAGING_JOURNEY_VERIFIED_AT",
   "SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT",
   "SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT",
+  "SAFESTEPS_CHILD_SAFE_POLICY_REVIEWED_AT",
+  "SAFESTEPS_CHILD_SAFE_HUMAN_REVIEW_SIGNOFF_AT",
   "SAFESTEPS_CONTENT_READINESS_REVIEWED_AT",
 ]) {
   if (process.env[name] && !hasIsoDate(process.env[name])) {
@@ -178,6 +180,7 @@ if (process.exitCode) {
   process.exit(process.exitCode);
 }
 
+console.log("Production readiness gate passed required staging, advisor, child-safe review, dependency, credential-rotation, and Firebase-removal checks.");
 console.log(
   "Production readiness gate passed required staging, advisor, content-readiness, dependency, credential-rotation, and Firebase-removal checks.",
 );
