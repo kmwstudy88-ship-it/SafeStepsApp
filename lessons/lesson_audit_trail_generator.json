@@ -1,0 +1,39 @@
+{
+  "id": "lesson_audit_trail_generator",
+  "title": "Audit-Trail Generator",
+  "sections": [],
+  "content": {
+    "overview": "This lesson builds practitioner understanding of how operational workflow outputs should produce a defensible audit trail. It focuses on recording who acted, what changed, what evidence was relied on, and where review or override decisions occurred.",
+    "learning_outcomes": [
+      "Identify the minimum audit elements needed for workflow transparency and accountability",
+      "Link actions back to source records, timestamps, actors, and rationale",
+      "Recognise when an override, dismissal, or exception needs stronger justification",
+      "Use audit design to support court defensibility, supervision, and post-incident review"
+    ],
+    "key_concepts": [
+      "An audit trail should explain workflow behaviour, not just prove that a button was clicked",
+      "Good audit records connect inputs, outputs, review steps, and final human actions",
+      "Overrides and manual corrections are especially important to preserve accurately",
+      "Auditability protects children, families, and workers by making high-impact reasoning reviewable"
+    ],
+    "practice_activities": [
+      "Review a workflow action and list the actor, source records, timestamp, rationale, and outcome that should be captured",
+      "Compare a weak audit note with a strong one and identify missing defensibility elements",
+      "Draft an audit entry for a supervisor override of a proposed workflow action",
+      "Trace a case action backwards to the evidence and review step that authorised it"
+    ],
+    "facilitator_notes": [
+      "Keep participants focused on operational usefulness, not just compliance burden",
+      "Highlight that audit records should remain understandable to reviewers outside the immediate team",
+      "Use examples where missing audit detail creates safety, legal, or quality risks",
+      "Reinforce that auditability is part of safe workflow design from the start"
+    ],
+    "reflection_prompts": [
+      "Which actions in my work would be hardest to explain later if poorly documented?",
+      "How often do I capture why a decision changed, not just that it changed?",
+      "What makes an override note feel trustworthy and complete?",
+      "How could better audit design reduce repeat confusion in my team?"
+    ],
+    "printable_summary": "Audit-Trail Generator — Key Takeaways:\r\n- Record who acted, what changed, why, and from which sources.\r\n- Preserve review steps, overrides, and final human actions.\r\n- Make records understandable to later reviewers.\r\n- Treat auditability as a safety and defensibility requirement."
+  }
+}

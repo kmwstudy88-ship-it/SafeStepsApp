@@ -7,7 +7,7 @@ module.exports = ({ config }) => ({
   orientation: "portrait",
   userInterfaceStyle: "light",
   assetBundlePatterns: ["**/*"],
-  plugins: ["expo-router"],
+  plugins: ["expo-router", "expo-secure-store"],
   experiments: {
     typedRoutes: false,
   },

@@ -4,6 +4,9 @@ import path from "node:path";
 const LIVE_REF = "yzxotxbwgxnxemkzigse";
 const REPO_ROOT = process.env.SAFESTEPS_REPO_ROOT ?? process.cwd();
 const FIREBASE_DEPENDENCY_PREFIX = "@firebase/";
+const CONTENT_READINESS_EVIDENCE_PATH =
+  process.env.SAFESTEPS_CONTENT_READINESS_EVIDENCE_PATH ??
+  "docs/content-readiness/evidence.json";
 const FIREBASE_IMPORT_PATTERN =
   /\bfrom\s+["'](?:firebase(?:\/[^"']*)?|@firebase\/[^"']+)["']|\brequire\(\s*["'](?:firebase(?:\/[^"']*)?|@firebase\/[^"']+)["']\s*\)/;
 
@@ -17,8 +20,7 @@ const required = [
   "SAFESTEPS_STAGING_JOURNEY_VERIFIED_AT",
   "SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT",
   "SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT",
-  "SAFESTEPS_CHILD_SAFE_POLICY_REVIEWED_AT",
-  "SAFESTEPS_CHILD_SAFE_HUMAN_REVIEW_SIGNOFF_AT",
+  "SAFESTEPS_CONTENT_READINESS_REVIEWED_AT",
 ];
 
 function fail(message) {
@@ -101,6 +103,35 @@ function validateNoFirebaseRuntimeImports() {
   }
 }
 
+function validateContentReadinessEvidence() {
+  const absolutePath = resolveRepoPath(CONTENT_READINESS_EVIDENCE_PATH);
+  if (!exists(absolutePath)) {
+    fail(`Content readiness evidence is missing: ${absolutePath}. Run node tools/validate-curriculum-readiness.mjs first.`);
+    return;
+  }
+
+  let evidence;
+  try {
+    evidence = JSON.parse(fs.readFileSync(absolutePath, "utf8"));
+  } catch (error) {
+    fail(`Content readiness evidence could not be parsed: ${error.message}`);
+    return;
+  }
+
+  if (evidence?.status !== "ready") {
+    fail(`Content readiness evidence is not ready (status=${String(evidence?.status ?? "unknown")}).`);
+  }
+
+  if (!hasIsoDate(evidence?.generatedAt)) {
+    fail("Content readiness evidence must include generatedAt in ISO date format.");
+  }
+
+  const blockingIssueCount = Number(evidence?.summary?.blockingIssueCount ?? NaN);
+  if (!Number.isFinite(blockingIssueCount) || blockingIssueCount > 0) {
+    fail(`Content readiness evidence reports blocking issues (${String(evidence?.summary?.blockingIssueCount ?? "unknown")}).`);
+  }
+}
+
 for (const name of required) {
   if (!process.env[name]) fail(`Missing release gate evidence: ${name}.`);
 }
@@ -122,6 +153,7 @@ for (const name of [
   "SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT",
   "SAFESTEPS_CHILD_SAFE_POLICY_REVIEWED_AT",
   "SAFESTEPS_CHILD_SAFE_HUMAN_REVIEW_SIGNOFF_AT",
+  "SAFESTEPS_CONTENT_READINESS_REVIEWED_AT",
 ]) {
   if (process.env[name] && !hasIsoDate(process.env[name])) {
     fail(`${name} must be an ISO-style date/time after the evidence has been reviewed.`);
@@ -141,6 +173,7 @@ try {
 
 validateNoFirebaseDependencies();
 validateNoFirebaseRuntimeImports();
+validateContentReadinessEvidence();
 
 if (process.exitCode) {
   console.error("Production readiness gate failed closed.");
@@ -148,3 +181,6 @@ if (process.exitCode) {
 }
 
 console.log("Production readiness gate passed required staging, advisor, child-safe review, dependency, credential-rotation, and Firebase-removal checks.");
+console.log(
+  "Production readiness gate passed required staging, advisor, content-readiness, dependency, credential-rotation, and Firebase-removal checks.",
+);

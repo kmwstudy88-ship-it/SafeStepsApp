@@ -1,0 +1,26 @@
+{
+  "id": "module_compliance_and_safeguarding_skills",
+  "title": "Compliance and Safeguarding Skills",
+  "description": "This module supports practitioners to interpret safeguarding requirements, identify bias and discrimination risks, and respond in culturally safe ways. It focuses on child safe standards, practical policy use, and reflective decision-making that protects children and families.",
+  "type": "module",
+  "level": "workforce_capability",
+  "tags": [
+    "safeguarding",
+    "child safe standards",
+    "bias awareness",
+    "cultural safety",
+    "policy interpretation"
+  ],
+  "outcomes": [
+    "Apply child safe standards to everyday service delivery and decision-making",
+    "Recognise bias and discrimination risks that can affect assessments, documentation, and referrals",
+    "Use policies and procedures in culturally safe ways that strengthen child wellbeing and accountability"
+  ],
+  "lessons": [
+    "lesson_child_safe_standards_compliance",
+    "lesson_bias_and_discrimination_detection",
+    "lesson_cultural_safety_support",
+    "lesson_policy_interpretation"
+  ],
+  "content": []
+}

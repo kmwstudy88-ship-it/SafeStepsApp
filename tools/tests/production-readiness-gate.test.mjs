@@ -20,10 +20,19 @@ const validCredentials = {
   unrelated: { email: 'unrelated@example.com', password: 'pw' },
 };
 
-function createFixture({ packageJson = { name: 'fixture', version: '1.0.0' }, appSource = 'export {};' } = {}) {
+function createFixture({
+  packageJson = { name: 'fixture', version: '1.0.0' },
+  appSource = 'export {};',
+  readinessEvidence = { generatedAt: '2026-09-01T00:00:00Z', status: 'ready', summary: { blockingIssueCount: 0 } },
+} = {}) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'safesteps-gate-'));
   fs.mkdirSync(path.join(root, 'app'), { recursive: true });
+  fs.mkdirSync(path.join(root, 'docs', 'content-readiness'), { recursive: true });
   fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify(packageJson, null, 2));
+  fs.writeFileSync(
+    path.join(root, 'docs', 'content-readiness', 'evidence.json'),
+    JSON.stringify(readinessEvidence, null, 2),
+  );
   if (appSource !== null) {
     fs.writeFileSync(path.join(root, 'app', 'index.ts'), appSource);
   }
@@ -43,6 +52,7 @@ function baseEnv() {
     SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT: '2026-09-01T00:00:00Z',
     SAFESTEPS_CHILD_SAFE_POLICY_REVIEWED_AT: '2026-09-01T00:00:00Z',
     SAFESTEPS_CHILD_SAFE_HUMAN_REVIEW_SIGNOFF_AT: '2026-09-01T00:00:00Z',
+    SAFESTEPS_CONTENT_READINESS_REVIEWED_AT: '2026-09-01T00:00:00Z',
   };
 }
 
@@ -138,6 +148,18 @@ test('readiness gate fails closed when child-safe human review evidence is missi
     });
     assert.equal(result.status, 1);
     assert.match(result.stderr, /Missing release gate evidence: SAFESTEPS_CHILD_SAFE_HUMAN_REVIEW_SIGNOFF_AT/);
+test('readiness gate fails closed when content readiness evidence is incomplete', () => {
+  const root = createFixture({
+    readinessEvidence: {
+      generatedAt: '2026-09-01T00:00:00Z',
+      status: 'incomplete',
+      summary: { blockingIssueCount: 2 },
+    },
+  });
+  try {
+    const result = runGate(root);
+    assert.equal(result.status, 1);
+    assert.match(result.stderr, /Content readiness evidence is not ready/);
   } finally {
     fs.rmSync(root, { recursive: true, force: true });
   }

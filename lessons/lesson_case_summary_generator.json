@@ -1,0 +1,39 @@
+{
+  "id": "lesson_case_summary_generator",
+  "title": "Case Summary Generator",
+  "sections": [],
+  "content": {
+    "overview": "This lesson prepares practitioners to generate structured case summaries that bring together current case status, recent events, document findings, and outstanding actions without replacing human judgement. It focuses on concise synthesis, source traceability, and clearly separating verified information from uncertainty.",
+    "learning_outcomes": [
+      "Explain the purpose of a decision-support case summary in a high-accountability environment",
+      "Identify which case, document, assessment, and task records should feed a current summary",
+      "Differentiate verified facts, reported concerns, unresolved contradictions, and missing information",
+      "Use human review to confirm that a summary is safe, current, and contextually accurate before reliance"
+    ],
+    "key_concepts": [
+      "Case summaries should synthesise evidence, not invent conclusions or close decision pathways",
+      "Every high-impact statement should be traceable to a current record or clearly marked as unresolved",
+      "Summaries need recency signals so stale information does not drive present action",
+      "Human review is required before a summary is used for court-facing, statutory, or safety-critical decisions"
+    ],
+    "practice_activities": [
+      "Review a case file and sort inputs into verified facts, allegations, observations, and open questions",
+      "Draft a short summary that includes risk status, recent changes, and next review actions",
+      "Mark each summary section with the source record type that supports it",
+      "Identify when a summary should be withheld because records are incomplete, outdated, or contradictory"
+    ],
+    "facilitator_notes": [
+      "Reinforce that summaries are navigation tools for practitioners, not final findings",
+      "Encourage participants to notice gaps, not just produce polished narrative text",
+      "Keep focus on traceability, freshness, and neutral language",
+      "Return often to the need for supervisor or authorised human review in high-stakes contexts"
+    ],
+    "reflection_prompts": [
+      "What information do I most need at a glance when taking over a complex case?",
+      "Where am I most at risk of overstating certainty when summarising?",
+      "How do I show uncertainty without making the summary unusable?",
+      "What review checkpoint should always happen before a summary informs action?"
+    ],
+    "printable_summary": "Case Summary Generator — Key Takeaways:\r\n- Synthesize current records without inventing findings.\r\n- Keep facts, concerns, contradictions, and gaps distinct.\r\n- Trace important statements back to source records.\r\n- Require human review before high-impact use."
+  }
+}

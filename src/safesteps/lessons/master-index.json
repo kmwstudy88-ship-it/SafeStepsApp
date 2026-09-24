@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2026-09-09",
-  "generatedAt": "2026-09-09T04:35:23.508Z",
+  "generatedAt": "2026-09-18T09:46:01.666Z",
   "repositoryPurpose": "SafeSteps is both a runnable Expo prototype and a curriculum/content repository with backend and Supabase support tooling.",
   "sourceOfTruth": {
     "lessons": "lessons/",
@@ -11,9 +11,9 @@
     "generatedImports": "src/safesteps/imports/"
   },
   "counts": {
-    "lessons": 195,
-    "modules": 82,
-    "topics": 291,
+    "lessons": 206,
+    "modules": 84,
+    "topics": 292,
     "storybookAssets": 1
   },
   "lessons": [
@@ -204,6 +204,12 @@
       "sourcePath": "lessons/lesson_attachment_and_relationships.json"
     },
     {
+      "id": "lesson_audit_trail_generator",
+      "title": "Audit-Trail Generator",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_audit_trail_generator.json"
+    },
+    {
       "id": "lesson_avoiding_assumptions",
       "title": "Avoiding Assumptions",
       "sectionCount": 0,
@@ -238,6 +244,12 @@
       "title": "Behavioural and Emotional Signs",
       "sectionCount": 0,
       "sourcePath": "lessons/lesson_behavioural_and_emotional_signs.json"
+    },
+    {
+      "id": "lesson_bias_and_discrimination_detection",
+      "title": "Bias and Discrimination Detection",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_bias_and_discrimination_detection.json"
     },
     {
       "id": "lesson_building_local_partnerships",
@@ -300,6 +312,36 @@
       "sourcePath": "lessons/lesson_building_trust_with_communities.json"
     },
     {
+      "id": "lesson_case_decision_justification_builder",
+      "title": "Case Decision Justification Builder",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_case_decision_justification_builder.json"
+    },
+    {
+      "id": "lesson_case_discrepancy_explainer",
+      "title": "Case Discrepancy Explainer",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_case_discrepancy_explainer.json"
+    },
+    {
+      "id": "lesson_case_risk_level_updater",
+      "title": "Case Risk-Level Updater",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_case_risk_level_updater.json"
+    },
+    {
+      "id": "lesson_case_summary_generator",
+      "title": "Case Summary Generator",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_case_summary_generator.json"
+    },
+    {
+      "id": "lesson_case_triage_routing",
+      "title": "Case Triage Routing",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_case_triage_routing.json"
+    },
+    {
       "id": "lesson_challenging_harmful_norms",
       "title": "Challenging Harmful Norms",
       "sectionCount": 0,
@@ -322,6 +364,12 @@
       "title": "Child-Friendly Safety Planning",
       "sectionCount": 0,
       "sourcePath": "lessons/lesson_child_friendly_safety_planning.json"
+    },
+    {
+      "id": "lesson_child_safe_standards_compliance",
+      "title": "Child Safe Standards Compliance",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_child_safe_standards_compliance.json"
     },
     {
       "id": "lesson_civil_and_criminal_pathways",
@@ -472,6 +520,12 @@
       "title": "Cultural Safety and Respect",
       "sectionCount": 0,
       "sourcePath": "lessons/lesson_cultural_safety_and_respect.json"
+    },
+    {
+      "id": "lesson_cultural_safety_support",
+      "title": "Cultural Safety Support",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_cultural_safety_support.json"
     },
     {
       "id": "lesson_culturally_informed_accountability",
@@ -792,6 +846,12 @@
       "sourcePath": "lessons/lesson_managing_parental_stress.json"
     },
     {
+      "id": "lesson_mandatory_reporting_trigger",
+      "title": "Mandatory-Reporting Trigger",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_mandatory_reporting_trigger.json"
+    },
+    {
       "id": "lesson_mental_health_impacts",
       "title": "Mental Health Impacts",
       "sectionCount": 0,
@@ -892,6 +952,12 @@
       "title": "Policy and System Influence",
       "sectionCount": 0,
       "sourcePath": "lessons/lesson_policy_and_system_influence.json"
+    },
+    {
+      "id": "lesson_policy_interpretation",
+      "title": "Policy Interpretation",
+      "sectionCount": 0,
+      "sourcePath": "lessons/lesson_policy_interpretation.json"
     },
     {
       "id": "lesson_positive_social_norms",
@@ -1344,6 +1410,13 @@
       "sourcePath": "modules/module_complex_casework.json"
     },
     {
+      "id": "module_compliance_and_safeguarding_skills",
+      "title": "Compliance and Safeguarding Skills",
+      "lessonRefCount": 4,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_compliance_and_safeguarding_skills.json"
+    },
+    {
       "id": "module_court_support_and_legal_processes",
       "title": "Court Support and Legal Processes",
       "lessonRefCount": 0,
@@ -1685,6 +1758,13 @@
       "lessonRefCount": 0,
       "contentBlockCount": 0,
       "sourcePath": "modules/module_understanding_primary_prevention.json"
+    },
+    {
+      "id": "module_workflow_action_skills",
+      "title": "Workflow / Action Skills",
+      "lessonRefCount": 7,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_workflow_action_skills.json"
     },
     {
       "id": "module_working_with_adolescents_experiencing_or_using_violence",
@@ -3504,6 +3584,12 @@
       "topicName": "values based parenting",
       "moduleCount": 0,
       "sourcePath": "topics/values_based_parenting.json"
+    },
+    {
+      "id": "workflow_action_skills",
+      "topicName": "workflow action skills",
+      "moduleCount": 1,
+      "sourcePath": "topics/workflow_action_skills.json"
     },
     {
       "id": "working_with_families",

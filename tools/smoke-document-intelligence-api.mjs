@@ -1,6 +1,7 @@
 import { spawn } from 'node:child_process';
 
 const baseUrl = process.env.EXPO_PUBLIC_SAFESTEPS_API_URL ?? 'http://localhost:3000';
+const accessToken = process.env.SAFESTEPS_ACCESS_TOKEN ?? null;
 const server = spawn(process.execPath, ['backend/server.js'], {
   cwd: process.cwd(),
   env: {
@@ -28,11 +29,16 @@ try {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
     },
     body: JSON.stringify({ text: 'Parent attended a review session and brought a service letter.' }),
   });
 
-  if (process.env.OPENAI_KEY || process.env.OPENAI_API_KEY) {
+  if (!accessToken) {
+    if (response.status !== 401) {
+      throw new Error(`Expected unauthenticated document analysis request to return 401, received ${response.status}: ${await response.text()}`);
+    }
+  } else if (process.env.OPENAI_KEY || process.env.OPENAI_API_KEY) {
     if (!response.ok) {
       throw new Error(`Expected document analysis to run, received ${response.status}: ${await response.text()}`);
     }
