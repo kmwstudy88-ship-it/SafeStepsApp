@@ -145,6 +145,24 @@ async function loadRecentCaseEvents(adminClient, caseId, limit = 50) {
   return sortByCreatedDesc(data || []);
 }
 
+async function loadCaseEventByIdempotencyKey(adminClient, caseId, idempotencyKey) {
+  if (!idempotencyKey) return null;
+  const { data, error } = await adminClient
+    .from('case_events')
+    .select('id')
+    .eq('case_id', caseId)
+    .eq('idempotency_key', idempotencyKey)
+    .limit(1)
+    .maybeSingle();
+  if (error) throw error;
+  return data || null;
+}
+
+function selectScoringEvents({ existingEvents, pendingEvent, hasPersistedIdempotentEvent }) {
+  if (hasPersistedIdempotentEvent) return sortByCreatedDesc(existingEvents || []);
+  return sortByCreatedDesc([pendingEvent, ...(existingEvents || [])]);
+}
+
 function aggregateFactorsFromEvents(events) {
   const behavioral = [];
   const contextual = [];
@@ -225,7 +243,11 @@ function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdem
 
   const previousScore = Number(previousSnapshot?.score ?? previousSnapshot?.risk_score ?? 0);
   const delta = snapshot.score - previousScore;
-  if (previousSnapshot && delta >= 15) {
+  const configuredDeltaThreshold = Number(rules.deltaEscalationThreshold);
+  const deltaThreshold = Number.isFinite(configuredDeltaThreshold) && configuredDeltaThreshold >= 0
+    ? configuredDeltaThreshold
+    : 15;
+  if (previousSnapshot && delta >= deltaThreshold) {
     alerts.push({
       dedupe_key: eventIdempotencyKey ? `delta:${eventIdempotencyKey}` : `delta:${previousScore}->${snapshot.score}`,
       trigger_type: 'risk_score_delta',
@@ -417,16 +439,25 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
       const eventType = String(body.eventType || body.event_type || '').trim();
       if (!eventType) throw createHttpError(400, 'eventType is required.');
       const eventPayload = normalizeIncomingEventPayload(body);
+      const eventIdempotencyKey = body.idempotencyKey || body.idempotency_key || null;
 
       const existingEvents = await loadRecentCaseEvents(adminClient, caseId, 50);
       const previousSnapshot = await loadLatestSnapshot(adminClient, caseId);
       const rules = rulesFromEnv();
+      const persistedIdempotentEvent = eventIdempotencyKey
+        ? await loadCaseEventByIdempotencyKey(adminClient, caseId, eventIdempotencyKey)
+        : null;
       const newEvent = {
         created_at: new Date().toISOString(),
         event_type: eventType,
+        idempotency_key: eventIdempotencyKey,
         payload: eventPayload,
       };
-      const allEvents = sortByCreatedDesc([newEvent, ...existingEvents]);
+      const allEvents = selectScoringEvents({
+        existingEvents,
+        pendingEvent: newEvent,
+        hasPersistedIdempotentEvent: Boolean(persistedIdempotentEvent),
+      });
       const factors = aggregateFactorsFromEvents(allEvents);
       const snapshot = scoreCaseRisk({
         behavioralCues: factors.behavioral,
@@ -444,7 +475,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         snapshot,
         previousSnapshot,
         routedTo,
-        eventIdempotencyKey: body.idempotencyKey || body.idempotency_key || null,
+        eventIdempotencyKey,
         eventType,
         rules,
       });
@@ -457,7 +488,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         p_event_source: body.eventSource || body.event_source || 'manual_note',
         p_event_note: body.note || null,
         p_event_payload: eventPayload,
-        p_event_idempotency_key: body.idempotencyKey || body.idempotency_key || null,
+        p_event_idempotency_key: eventIdempotencyKey,
         p_snapshot: snapshot,
         p_alerts: alerts,
         p_tasks: tasks,
@@ -604,8 +635,11 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
 }
 
 module.exports = {
+  assertCaseAccess,
   buildDashboardPayload,
   buildEscalationAlerts,
   buildFollowUpTasks,
   createCaseRiskService,
+  loadActorContext,
+  selectScoringEvents,
 };
