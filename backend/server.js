@@ -268,9 +268,9 @@ function createApp({
       const metadata = coerceMetadata(body.metadata);
       const input = normalizeV1FileBody(body);
       const created = input.kind === 'text'
-        ? await createTextDocument({ userId: user.id, caseId: body.caseId || null, text: input.text, fileName: input.fileName, metadata })
+        ? await createTextDocument({ authUserId: user.id, caseId: body.caseId || null, text: input.text, fileName: input.fileName, metadata })
         : await createUploadDocument({
-          userId: user.id,
+          authUserId: user.id,
           caseId: body.caseId || null,
           fileName: input.fileName,
           mimeType: input.mimeType,
@@ -286,7 +286,7 @@ function createApp({
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
       const created = await createTextDocument({
-        userId: user.id,
+        authUserId: user.id,
         caseId: body.caseId || null,
         text: body.text,
         fileName: body.fileName || 'fairness-analysis.txt',
