@@ -21,6 +21,10 @@ function validateFamilyConflictProgramConfig(program) {
   if (!Array.isArray(program.levels) || program.levels.length !== PROGRAM_LEVELS.length) {
     errors.push('program.levels must include Basic, Developing, Mastery');
   } else {
+    const uniqueLevels = new Set(program.levels);
+    if (uniqueLevels.size !== PROGRAM_LEVELS.length) {
+      errors.push('program.levels must not contain duplicates');
+    }
     for (const level of PROGRAM_LEVELS) {
       if (!program.levels.includes(level)) errors.push(`program.levels missing ${level}`);
     }
@@ -34,6 +38,7 @@ function validateFamilyConflictProgramConfig(program) {
     const seenIds = new Set();
     for (const lesson of program.lessons) {
       if (!Number.isInteger(lesson?.id)) errors.push('each lesson.id must be an integer');
+      if (seenIds.has(lesson?.id)) errors.push(`duplicate lesson id ${lesson.id}`);
       if (!hasNonEmptyString(lesson?.title)) errors.push(`lesson ${lesson?.id || 'unknown'} title is required`);
       if (!hasNonEmptyString(lesson?.learning_goal)) errors.push(`lesson ${lesson?.id || 'unknown'} learning_goal is required`);
       seenIds.add(lesson?.id);
@@ -62,7 +67,17 @@ function validateFamilyConflictProgramConfig(program) {
   }
 
   for (const level of PROGRAM_LEVELS) {
-    if (!program?.completion_guidance?.[level]) errors.push(`completion_guidance missing ${level}`);
+    const guidance = program?.completion_guidance?.[level];
+    if (!guidance || typeof guidance !== 'object') {
+      errors.push(`completion_guidance missing ${level}`);
+      continue;
+    }
+    if (!hasNonEmptyString(guidance.description)) {
+      errors.push(`completion_guidance.${level}.description is required`);
+    }
+    if (!Array.isArray(guidance.evidence) || guidance.evidence.length < 1) {
+      errors.push(`completion_guidance.${level}.evidence must be non-empty`);
+    }
   }
   if (!hasNonEmptyString(program?.completion_guidance?.progression)) {
     errors.push('completion_guidance.progression is required');
@@ -76,7 +91,13 @@ function validateFamilyConflictProgramConfig(program) {
   if (!rubric || typeof rubric !== 'object') {
     errors.push('reusable_assessments.role_play_rubric is required');
   } else {
-    if (!rubric.scoring || typeof rubric.scoring !== 'object') errors.push('role_play_rubric.scoring is required');
+    if (!rubric.scoring || typeof rubric.scoring !== 'object') {
+      errors.push('role_play_rubric.scoring is required');
+    } else {
+      for (const key of ['0', '1', '2']) {
+        if (!hasNonEmptyString(rubric.scoring[key])) errors.push(`role_play_rubric.scoring.${key} is required`);
+      }
+    }
     if (!Array.isArray(rubric.criteria) || rubric.criteria.length < 5) errors.push('role_play_rubric.criteria must include core criteria');
   }
 

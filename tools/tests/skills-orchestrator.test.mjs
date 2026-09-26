@@ -26,6 +26,8 @@ test('orchestrator returns typed decision-support envelope for known skill', asy
   assert.equal(result.policy.decisionSupportOnly, true);
   assert.equal(result.automation.irreversibleActionsAllowed, false);
   assert.equal(result.integration.trackC, true);
+  assert.deepEqual(result.inputSummary.fields, ['caseId']);
+  assert.equal('input' in result, false);
   assert.deepEqual(result.output.packet_sections, ['summary', 'evidence']);
 });
 
@@ -50,4 +52,26 @@ test('orchestrator returns structured error for unknown skills', async () => {
   const result = await orchestrator.runSkill({ skillId: 'not_real', input: {} });
   assert.equal(result.status, 'failed');
   assert.equal(result.error.code, 'SKILL_NOT_FOUND');
+});
+
+test('orchestrator returns structured error when a known skill has no handler', async () => {
+  const orchestrator = createSkillsOrchestrator();
+  const result = await orchestrator.runSkill({ skillId: 'case_update', input: {} });
+  assert.equal(result.status, 'failed');
+  assert.equal(result.error.code, 'SKILL_HANDLER_NOT_FOUND');
+  assert.equal(result.skill.id, 'case_update');
+});
+
+test('orchestrator returns structured error when a handler throws', async () => {
+  const orchestrator = createSkillsOrchestrator({
+    handlers: {
+      case_update: async () => {
+        throw new Error('handler exploded');
+      },
+    },
+  });
+  const result = await orchestrator.runSkill({ skillId: 'case_update', input: {} });
+  assert.equal(result.status, 'failed');
+  assert.equal(result.error.code, 'SKILL_HANDLER_FAILED');
+  assert.match(result.error.message, /handler exploded/);
 });
