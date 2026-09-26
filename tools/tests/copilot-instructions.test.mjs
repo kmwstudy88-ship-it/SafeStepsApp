@@ -11,11 +11,16 @@ const instructionsPath = path.join(repoRoot, '.github', 'copilot-instructions.md
 
 test('copilot instructions avoid explicit model identifiers while preserving auto fallback guidance', () => {
   const instructions = fs.readFileSync(instructionsPath, 'utf8');
+  const resumedSessionLine = instructions
+    .split('\n')
+    .find((line) => line.includes('If a resumed session'));
 
-  assert.doesNotMatch(
-    instructions,
-    /`(?!auto`)[a-z0-9]+(?:-[a-z0-9.]+){1,}`/i,
-    'Copilot repository instructions should not embed explicit model identifiers that can poison resumed sessions',
+  assert.ok(resumedSessionLine, 'Expected resumed-session guidance in Copilot instructions');
+  assert.doesNotMatch(instructions, /claude-sonnet-4\.6/i);
+  assert.deepEqual(
+    [...resumedSessionLine.matchAll(/`([^`]+)`/g)].map(([, value]) => value),
+    ['auto'],
+    'The resumed-session guidance should only preserve the generic auto fallback, not explicit model identifiers',
   );
   assert.match(instructions, /default `auto` choice/i);
   assert.match(instructions, /currently supported runtime model/i);
