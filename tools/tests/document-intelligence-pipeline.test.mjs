@@ -609,6 +609,95 @@ test('getDocumentForUser normalizes media assessment from persisted analysis pay
   });
 });
 
+test('getDocumentForUser prefers top-level requirements and concern classification over raw output fallbacks', async () => {
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', user_id: 'user-1' }, error: null };
+    }
+    if (query.table === 'document_analyses' && query.op === 'select') {
+      return {
+        data: {
+          id: 'analysis-1',
+          status: 'completed',
+          risk: {},
+          requirements: [{
+            requirement: 'Complete parenting program certificate',
+            category: 'service',
+            priority: 'high',
+            status: 'met',
+            source_locator: 'service-note:7',
+            confidence: 0.93,
+          }],
+          concern_classification: {
+            concerns: [{
+              concern: 'Transportation barrier resolved',
+              category: 'resource',
+              severity: 'low',
+              rationale: 'Family now has weekly bus vouchers.',
+              source_locator: 'case-note:11',
+              confidence: 0.82,
+            }],
+          },
+          raw_output: {
+            requirements: [{
+              requirement: 'Outdated fallback requirement',
+              category: 'other',
+              priority: 'low',
+              status: 'unknown',
+              source_locator: 'old-note:1',
+              confidence: 0.11,
+            }],
+            concern_classification: {
+              concerns: [{
+                concern: 'Outdated fallback concern',
+                category: 'other',
+                severity: 'high',
+                rationale: 'Stale fallback payload.',
+                source_locator: 'old-note:2',
+                confidence: 0.12,
+              }],
+            },
+          },
+        },
+        error: null,
+      };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ getDocumentForUser }) => {
+    const result = await getDocumentForUser('doc-1', 'user-1');
+    assert.equal(result.analysis.requirements[0].requirement, 'Complete parenting program certificate');
+    assert.equal(result.analysis.concern_classification.concerns[0].concern, 'Transportation barrier resolved');
+  });
+});
+
+test('getDocumentForUser supplies empty requirement and concern collections when persisted fields are absent', async () => {
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', user_id: 'user-1' }, error: null };
+    }
+    if (query.table === 'document_analyses' && query.op === 'select') {
+      return {
+        data: {
+          id: 'analysis-1',
+          status: 'completed',
+          risk: {},
+          raw_output: {},
+        },
+        error: null,
+      };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ getDocumentForUser }) => {
+    const result = await getDocumentForUser('doc-1', 'user-1');
+    assert.deepEqual(result.analysis.requirements, []);
+    assert.deepEqual(result.analysis.concern_classification, { concerns: [] });
+  });
+});
+
 test('getDocumentForUser falls back to nested raw_output risk media assessment', async () => {
   const { admin } = makeAdmin((query) => {
     if (query.table === 'documents' && query.op === 'select') {
