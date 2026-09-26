@@ -14,9 +14,15 @@ test('copilot instructions avoid explicit model identifiers while preserving aut
   const resumedSessionLine = instructions
     .split('\n')
     .find((line) => line.includes('If a resumed session'));
+  const explicitModelIdentifierPattern =
+    /\b(?:claude|gpt|gemini|grok|kimi|mai-code)-[a-z0-9][a-z0-9.-]*\b/i;
 
   assert.ok(resumedSessionLine, 'Expected resumed-session guidance in Copilot instructions');
-  assert.doesNotMatch(instructions, /claude-sonnet-4\.6/i);
+  assert.doesNotMatch(
+    instructions,
+    explicitModelIdentifierPattern,
+    'Copilot instructions should not hard-code explicit model identifiers',
+  );
   assert.deepEqual(
     [...resumedSessionLine.matchAll(/`([^`]+)`/g)].map(([, value]) => value),
     ['auto'],
@@ -27,7 +33,8 @@ test('copilot instructions avoid explicit model identifiers while preserving aut
   assert.match(resumedSessionLine, /carried-forward agent\/task model parameter/i);
   assert.match(resumedSessionLine, /discard that explicit override before any new turn or tool call/i);
   assert.match(resumedSessionLine, /continue with `auto`/i);
-  assert.match(resumedSessionLine, /if an explicit model is still necessary afterward/i);
+  assert.match(resumedSessionLine, /never reuse an inherited explicit model name/i);
+  assert.match(resumedSessionLine, /models currently exposed by the active runtime/i);
   assert.match(instructions, /default `auto` choice/i);
-  assert.match(instructions, /currently supported runtime model/i);
+  assert.match(instructions, /currently supported model/i);
 });
