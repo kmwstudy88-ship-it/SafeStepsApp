@@ -175,6 +175,41 @@ Track C adds a deterministic safety-support workflow for case events, risk snaps
 - Automated workflow outputs must never directly change placement, contact arrangements, legal status, or custody outcomes.
 - Any such change requires explicit human review and documented rationale in case notes/events.
 
+## Skills foundation (family conflict + orchestration)
+
+This repository now includes a first SafeSteps skills foundation that stays aligned to the existing document-analysis and Track C case-risk architecture.
+
+### Canonical curriculum/program content
+
+- `lessons/family_conflict_psychoeducation_program.json` — canonical Family Conflict Psychoeducation program configuration, including all 20 lessons, Basic/Developing/Mastery progression, safeguards, completion guidance, reusable assessments, and rubric details.
+- `modules/module_family_conflict_psychoeducation_program.json` — canonical module wrapper for the program.
+- `topics/family_conflict_psychoeducation_program.json` — canonical topic mapping to the module.
+- `schema/family-conflict-psychoeducation-program-schema.json` — validation schema for the program structure.
+
+### Backend skills registry and orchestration
+
+- `backend/skills/registry.js` — grouped skill metadata for:
+  - document intelligence
+  - workflow/action
+  - communication/de-escalation
+  - child-safe interaction
+  - compliance/safeguarding
+- `backend/skills/safety-gates.js` — shared gating policy enforcing:
+  - decision-support only outputs
+  - no diagnosis/legal advice automation
+  - privacy/boundary protections
+  - no child messenger/side-taking patterns
+  - participant pass/take-a-break support
+  - escalation flags for possible immediate safety concerns
+- `backend/skills/orchestrator.js` — typed orchestration envelope for structured skill inputs/outputs, policy evaluation, and integration hints to existing document and Track C workflows.
+- `backend/skills/program-config.js` — canonical program loader + validator for the family conflict configuration.
+
+### Explicit automation boundaries
+
+- Skills outputs are advisory and require human review checkpoints.
+- No automatic irreversible placement, custody, contact, or legal decisions are allowed.
+- Escalation flags route to human review within existing case event/risk workflows.
+
 ## Readiness notes
 
 - The root Expo manifest and lockfile are now restored so the mobile app can be installed and validated consistently.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2026-09-09",
-  "generatedAt": "2026-09-18T09:46:01.666Z",
+  "generatedAt": "2026-09-26T23:43:27.875Z",
   "repositoryPurpose": "SafeSteps is both a runnable Expo prototype and a curriculum/content repository with backend and Supabase support tooling.",
   "sourceOfTruth": {
     "lessons": "lessons/",
@@ -11,9 +11,9 @@
     "generatedImports": "src/safesteps/imports/"
   },
   "counts": {
-    "lessons": 206,
-    "modules": 84,
-    "topics": 292,
+    "lessons": 207,
+    "modules": 85,
+    "topics": 293,
     "storybookAssets": 1
   },
   "lessons": [
@@ -124,6 +124,12 @@
       "title": "ethical_practice",
       "sectionCount": 10,
       "sourcePath": "lessons/ethical_practice.json"
+    },
+    {
+      "id": "family_conflict_psychoeducation_program",
+      "title": "Family Conflict Psychoeducation: Three-Level Learning Pathway",
+      "sectionCount": 0,
+      "sourcePath": "lessons/family_conflict_psychoeducation_program.json"
     },
     {
       "id": "holding_space",
@@ -1494,6 +1500,13 @@
       "sourcePath": "modules/module_faith_communities_and_dfv_prevention.json"
     },
     {
+      "id": "module_family_conflict_psychoeducation_program",
+      "title": "Family Conflict Psychoeducation Program",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_family_conflict_psychoeducation_program.json"
+    },
+    {
       "id": "module_foundations_of_dfv_capability",
       "title": "Foundations of DFV Capability",
       "lessonRefCount": 0,
@@ -2432,6 +2445,12 @@
       "topicName": "family centred practice",
       "moduleCount": 0,
       "sourcePath": "topics/family_centred_practice.json"
+    },
+    {
+      "id": "family_conflict_psychoeducation_program",
+      "topicName": "family conflict psychoeducation program",
+      "moduleCount": 1,
+      "sourcePath": "topics/family_conflict_psychoeducation_program.json"
     },
     {
       "id": "family_meal_routines",
