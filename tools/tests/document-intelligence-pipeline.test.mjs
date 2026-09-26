@@ -507,6 +507,24 @@ test('processNextJobs preserves upgraded media assessment domains in risk output
         model: 'unit-model',
         usage: {},
         result: {
+          requirements: [{
+            requirement: 'Attend weekly supervised visits',
+            category: 'case_plan',
+            priority: 'high',
+            status: 'partially_met',
+            source_locator: 'case-plan:12',
+            confidence: 0.81,
+          }],
+          concern_classification: {
+            concerns: [{
+              concern: 'Missed visit attendance',
+              category: 'engagement',
+              severity: 'medium',
+              rationale: 'Two missed visits in prior month.',
+              source_locator: 'visit-log:4',
+              confidence: 0.74,
+            }],
+          },
           risk: { score: 12, level: 'low' },
           media_assessment: {
             domains: [{
@@ -527,6 +545,8 @@ test('processNextJobs preserves upgraded media assessment domains in risk output
   });
 
   const analysisUpdate = calls.queries.filter((query) => query.table === 'document_analyses' && query.op === 'update').at(-1);
+  assert.equal(analysisUpdate.payload.raw_output.requirements[0].category, 'case_plan');
+  assert.equal(analysisUpdate.payload.raw_output.concern_classification.concerns[0].category, 'engagement');
   assert.equal(analysisUpdate.payload.risk.media_assessment.domains[0].domain_id, 'environmental_safety');
   assert.equal(analysisUpdate.payload.risk.media_assessment.domains[0].risk_flags[0], 'Unsafe sleeping setups');
 });
@@ -543,6 +563,24 @@ test('getDocumentForUser normalizes media assessment from persisted analysis pay
           status: 'completed',
           risk: {},
           raw_output: {
+            requirements: [{
+              requirement: 'Provide school attendance update',
+              category: 'documentation',
+              priority: 'high',
+              status: 'unmet',
+              source_locator: 'school-note:2',
+              confidence: 0.67,
+            }],
+            concern_classification: {
+              concerns: [{
+                concern: 'Attendance verification missing',
+                category: 'compliance',
+                severity: 'medium',
+                rationale: 'No attendance proof attached.',
+                source_locator: 'school-note:2',
+                confidence: 0.65,
+              }],
+            },
             media_assessment: {
               domains: [{
                 domain_id: 'digital_integrity_and_authenticity',
@@ -564,8 +602,99 @@ test('getDocumentForUser normalizes media assessment from persisted analysis pay
 
   await withLoadedPipeline({ admin }, async ({ getDocumentForUser }) => {
     const result = await getDocumentForUser('doc-1', 'user-1');
+    assert.equal(result.analysis.requirements[0].priority, 'high');
+    assert.equal(result.analysis.concern_classification.concerns[0].severity, 'medium');
     assert.equal(result.analysis.media_assessment.domains[0].domain_id, 'digital_integrity_and_authenticity');
     assert.equal(result.analysis.media_assessment.domains[0].signals_observed[0], 'Metadata validation');
+  });
+});
+
+test('getDocumentForUser prefers top-level requirements and concern classification over raw output fallbacks', async () => {
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', user_id: 'user-1' }, error: null };
+    }
+    if (query.table === 'document_analyses' && query.op === 'select') {
+      return {
+        data: {
+          id: 'analysis-1',
+          status: 'completed',
+          risk: {},
+          requirements: [{
+            requirement: 'Complete parenting program certificate',
+            category: 'service',
+            priority: 'high',
+            status: 'met',
+            source_locator: 'service-note:7',
+            confidence: 0.93,
+          }],
+          concern_classification: {
+            concerns: [{
+              concern: 'Transportation barrier resolved',
+              category: 'resource',
+              severity: 'low',
+              rationale: 'Family now has weekly bus vouchers.',
+              source_locator: 'case-note:11',
+              confidence: 0.82,
+            }],
+          },
+          raw_output: {
+            requirements: [{
+              requirement: 'Outdated fallback requirement',
+              category: 'other',
+              priority: 'low',
+              status: 'unknown',
+              source_locator: 'old-note:1',
+              confidence: 0.11,
+            }],
+            concern_classification: {
+              concerns: [{
+                concern: 'Outdated fallback concern',
+                category: 'other',
+                severity: 'high',
+                rationale: 'Stale fallback payload.',
+                source_locator: 'old-note:2',
+                confidence: 0.12,
+              }],
+            },
+          },
+        },
+        error: null,
+      };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ getDocumentForUser }) => {
+    const result = await getDocumentForUser('doc-1', 'user-1');
+    assert.equal(result.analysis.requirements[0].requirement, 'Complete parenting program certificate');
+    assert.equal(result.analysis.concern_classification.concerns[0].concern, 'Transportation barrier resolved');
+  });
+});
+
+test('getDocumentForUser supplies empty requirement and concern collections when persisted fields are absent', async () => {
+  const { admin } = makeAdmin((query) => {
+    if (query.table === 'documents' && query.op === 'select') {
+      return { data: { id: 'doc-1', user_id: 'user-1' }, error: null };
+    }
+    if (query.table === 'document_analyses' && query.op === 'select') {
+      return {
+        data: {
+          id: 'analysis-1',
+          status: 'completed',
+          risk: {},
+          raw_output: {},
+        },
+        error: null,
+      };
+    }
+    throw new Error(`Unhandled query ${query.table}:${query.op}:${query.mode}`);
+  });
+
+  await withLoadedPipeline({ admin }, async ({ getDocumentForUser }) => {
+    const result = await getDocumentForUser('doc-1', 'user-1');
+    assert.deepEqual(result.analysis.requirements, []);
+    assert.deepEqual(result.analysis.concern_classification, { concerns: [] });
   });
 });
 

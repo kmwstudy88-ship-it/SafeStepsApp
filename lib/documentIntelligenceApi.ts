@@ -22,6 +22,22 @@ export type FairnessResult = {
   unrealistic_expectations?: unknown[];
   remediation_recommendations?: FairnessRecommendation[];
 };
+export type RequirementExtractionResult = {
+  requirement?: string;
+  category?: string;
+  priority?: string;
+  status?: string;
+  source_locator?: string;
+  confidence?: number;
+};
+export type ConcernClassificationResult = {
+  concern?: string;
+  category?: string;
+  severity?: string;
+  rationale?: string;
+  source_locator?: string;
+  confidence?: number;
+};
 
 export type DocumentAnalysis = {
   id: string;
@@ -34,6 +50,8 @@ export type DocumentAnalysis = {
   evidence?: unknown[];
   contradictions?: unknown[];
   timeline?: unknown[];
+  requirements?: RequirementExtractionResult[];
+  concern_classification?: { concerns?: ConcernClassificationResult[] };
   risk?: Record<string, unknown> & { media_assessment?: MediaAssessmentResult };
   media_assessment?: MediaAssessmentResult;
   analysis_skills?: Array<{
