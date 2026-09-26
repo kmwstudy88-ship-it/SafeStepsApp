@@ -467,7 +467,6 @@ function normalizeAnalysisRecord(analysis) {
     analysis.concern_classification
     || analysis.raw_output?.concern_classification
     || { concerns: [] };
-  return {
   const normalized = {
     ...analysis,
     requirements,
