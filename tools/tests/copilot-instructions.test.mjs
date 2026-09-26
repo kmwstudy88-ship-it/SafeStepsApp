@@ -14,7 +14,7 @@ test('copilot instructions avoid explicit model identifiers while preserving aut
 
   assert.doesNotMatch(
     instructions,
-    /`(?:claude|gpt|gemini|grok|kimi|mai)-[^`]+`/i,
+    /`(?!auto`)[a-z0-9]+(?:-[a-z0-9.]+){1,}`/i,
     'Copilot repository instructions should not embed explicit model identifiers that can poison resumed sessions',
   );
   assert.match(instructions, /default `auto` choice/i);
