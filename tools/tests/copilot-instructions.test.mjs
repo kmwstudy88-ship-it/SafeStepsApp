@@ -11,9 +11,18 @@ const instructionsPath = path.join(repoRoot, '.github', 'copilot-instructions.md
 
 test('copilot instructions avoid explicit model identifiers while preserving auto fallback guidance', () => {
   const instructions = fs.readFileSync(instructionsPath, 'utf8');
-  const resumedSessionLine = instructions
-    .split('\n')
-    .find((line) => line.includes('If a resumed session'));
+  const lines = instructions.split('\n');
+  const resumedSessionLine = lines.find((line) => line.includes('If a resumed session'));
+  const historicalOverrideLines = lines.filter((line) =>
+    line.includes('Never carry forward historical model overrides into new runs'),
+  );
+  const expandedOverrideLines = lines.filter(
+    (line) =>
+      line.includes('If a resumed session') &&
+      line.includes('saved plan') &&
+      line.includes('prior instruction') &&
+      line.includes('carried-forward agent/task model parameter'),
+  );
   const explicitModelIdentifierPattern =
     /\b(?:claude|gpt|gemini|grok|kimi|mai-code)-[a-z0-9][a-z0-9.-]*\b/i;
 
@@ -35,6 +44,16 @@ test('copilot instructions avoid explicit model identifiers while preserving aut
   assert.match(resumedSessionLine, /continue with `auto`/i);
   assert.match(resumedSessionLine, /never reuse an inherited explicit model name/i);
   assert.match(resumedSessionLine, /models currently exposed by the active runtime/i);
+  assert.equal(
+    historicalOverrideLines.length,
+    1,
+    'Historical model override guidance should be stated once to avoid drift between duplicate bullets',
+  );
+  assert.equal(
+    expandedOverrideLines.length,
+    1,
+    'Resumed-session override guidance should be consolidated into a single comprehensive bullet',
+  );
   assert.match(instructions, /default `auto` choice/i);
   assert.match(instructions, /currently supported model/i);
 });
