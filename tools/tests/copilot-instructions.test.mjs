@@ -25,6 +25,9 @@ test('copilot instructions avoid explicit model identifiers while preserving aut
   assert.match(resumedSessionLine, /saved plan/i);
   assert.match(resumedSessionLine, /prior instruction/i);
   assert.match(resumedSessionLine, /carried-forward agent\/task model parameter/i);
+  assert.match(resumedSessionLine, /discard that explicit override before any new turn or tool call/i);
+  assert.match(resumedSessionLine, /continue with `auto`/i);
+  assert.match(resumedSessionLine, /if an explicit model is still necessary afterward/i);
   assert.match(instructions, /default `auto` choice/i);
   assert.match(instructions, /currently supported runtime model/i);
 });
