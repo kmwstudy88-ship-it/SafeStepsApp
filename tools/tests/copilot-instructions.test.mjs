@@ -24,7 +24,7 @@ test('copilot instructions avoid explicit model identifiers while preserving aut
   );
   assert.match(resumedSessionLine, /saved plan/i);
   assert.match(resumedSessionLine, /prior instruction/i);
-  assert.match(resumedSessionLine, /agent\/task model parameter/i);
+  assert.match(resumedSessionLine, /carried-forward agent\/task model parameter/i);
   assert.match(instructions, /default `auto` choice/i);
   assert.match(instructions, /currently supported runtime model/i);
 });
