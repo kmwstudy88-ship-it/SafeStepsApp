@@ -459,8 +459,18 @@ async function processAnalysisJob(job) {
 
 function normalizeAnalysisRecord(analysis) {
   if (!analysis) return null;
+  const requirements =
+    analysis.requirements
+    || analysis.raw_output?.requirements
+    || [];
+  const concernClassification =
+    analysis.concern_classification
+    || analysis.raw_output?.concern_classification
+    || { concerns: [] };
   const normalized = {
     ...analysis,
+    requirements,
+    concern_classification: concernClassification,
     media_assessment:
       analysis.risk?.media_assessment
       || analysis.raw_output?.media_assessment
