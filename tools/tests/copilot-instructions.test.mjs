@@ -33,6 +33,7 @@ test('copilot instructions avoid explicit model identifiers while preserving aut
   assert.match(resumedSessionLine, /carried-forward agent\/task model parameter/i);
   assert.match(resumedSessionLine, /discard that explicit override before any new turn or tool call/i);
   assert.match(resumedSessionLine, /clear any inherited model argument fields/i);
+  assert.match(resumedSessionLine, /including child agent\/task launches/i);
   assert.match(resumedSessionLine, /continue with `auto`/i);
   assert.match(resumedSessionLine, /never reuse an inherited explicit model name/i);
   assert.match(resumedSessionLine, /models currently exposed by the active runtime/i);
