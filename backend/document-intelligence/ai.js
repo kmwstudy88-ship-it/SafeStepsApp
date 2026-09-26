@@ -1,10 +1,18 @@
 'use strict';
 
 const { mediaSignalDomains, createEmptyMediaAssessment } = require('../../shared/documentIntelligenceMediaSignals');
+const {
+  ANALYSIS_SKILL_RESULT_SCHEMA,
+  analysisSkillCatalog,
+  createEmptyAnalysisSkills,
+  normalizeAnalysisSkills,
+} = require('../../shared/documentIntelligenceAnalysisSkills');
 
-const ANALYSIS_SCHEMA_VERSION = 'document-intelligence-v2';
+const ANALYSIS_SCHEMA_VERSION = 'document-intelligence-v3';
 const COMPARISON_SCHEMA_VERSION = 'document-comparison-v1';
 const MEDIA_SIGNAL_GUIDANCE = JSON.stringify(mediaSignalDomains, null, 2);
+const ANALYSIS_SKILLS_GUIDANCE = JSON.stringify(analysisSkillCatalog, null, 2);
+const ANALYSIS_SKILL_RESULT_SCHEMA_GUIDANCE = JSON.stringify(ANALYSIS_SKILL_RESULT_SCHEMA, null, 2);
 
 const ANALYSIS_INSTRUCTIONS = `You are SafeSteps Document Intelligence. Analyze child/family casework records as decision-support only.
 Return valid JSON only. Never infer a fact, diagnosis, motive, risk, or credibility finding that is not supported by the supplied material. Distinguish allegation, observation, opinion, and verified evidence. Preserve uncertainty. Do not make automated child-protection decisions.
@@ -15,7 +23,9 @@ Required JSON shape:
   "summary": {"overview":"", "document_type":"", "key_points":[]},
   "evidence": [{"claim":"", "evidence":"", "evidence_type":"observation|allegation|record|opinion|unknown", "confidence":0, "source_locator":""}],
   "contradictions": [{"statement_a":"", "statement_b":"", "explanation":"", "severity":"low|medium|high", "confidence":0}],
+  "requirements": [{"requirement":"", "category":"safety|legal|service|case_plan|documentation|other", "priority":"low|medium|high", "status":"met|partially_met|unmet|unknown", "source_locator":"", "confidence":0}],
   "timeline": [{"date":"", "date_precision":"exact|approximate|unknown", "event":"", "actors":[], "source_locator":"", "confidence":0}],
+  "concern_classification": {"concerns":[{"concern":"", "category":"safety|compliance|credibility|engagement|resource|other", "severity":"low|medium|high", "rationale":"", "source_locator":"", "confidence":0}]},
   "risk": {"score":0, "level":"low|moderate|high|critical|insufficient_evidence", "factors":[], "protective_factors":[], "uncertainties":[]},
   "bias": {"score":100, "signals":[{"category":"", "language":"", "explanation":"", "severity":"low|medium|high"}]},
   "fairness": {"score":100, "framing_concerns":[], "coercion_flags":[], "discrimination_risks":[], "unrealistic_expectations":[], "remediation_recommendations":[{"concern":"", "reframe":""}]},
@@ -23,9 +33,14 @@ Required JSON shape:
   "summaries": {"child_centred":"", "parent_summary":"", "legal_summary":"", "strengths_summary":"", "action_plan":""},
   "audit": {"evidence_trace":[], "source_verification":[], "explainability":[]},
   "media_assessment": {"domains":[{"domain_id":"", "domain_name":"", "signals_observed":[], "risk_flags":[], "protective_flags":[], "notes":"", "confidence":0}]},
+  "analysis_skills": [{"skill_id":"", "status":"complete|insufficient_evidence|failed", "findings":[], "confidence":0, "evidence_citations":[], "limitations":[], "human_review_required":true, "failure_behavior":"", "unsafe_output_flags":[]}],
   "limitations": []
 }
 Scores are 0-100. Risk score is a document-content signal, not a case decision. Fairness/bias scores are higher when language is more objective and evidence-linked.
+For each required skill below, return exactly one entry in analysis_skills using this schema:
+${ANALYSIS_SKILL_RESULT_SCHEMA_GUIDANCE}
+Required skill catalog:
+${ANALYSIS_SKILLS_GUIDANCE}
 When the supplied material includes video, photos, transcripts of observed interaction, visit notes, or metadata, assess only the following upgraded media-signal domains and leave unsupported domains empty:
 ${MEDIA_SIGNAL_GUIDANCE}
 Violence & Coercive Control Indicators is risk-only, so protective_flags must stay empty for that domain.
@@ -157,7 +172,10 @@ module.exports = {
   ANALYSIS_SCHEMA_VERSION,
   COMPARISON_SCHEMA_VERSION,
   mediaSignalDomains,
+  analysisSkillCatalog,
   createEmptyMediaAssessment,
+  createEmptyAnalysisSkills,
+  normalizeAnalysisSkills,
   providerName,
   analyzeDocument,
   compareDocuments,

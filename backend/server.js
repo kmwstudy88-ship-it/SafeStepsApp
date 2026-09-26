@@ -4,6 +4,7 @@ const http = require('node:http');
 const {
   ANALYSIS_SCHEMA_VERSION,
   mediaSignalDomains,
+  analysisSkillCatalog,
 } = require('./document-intelligence/ai');
 const {
   createTextDocument,
@@ -255,6 +256,8 @@ function createApp({
         totalSections: DOCUMENT_SECTIONS.length,
         mediaSignalDomains,
         totalMediaSignalDomains: mediaSignalDomains.length,
+        analysisSkills: analysisSkillCatalog,
+        totalAnalysisSkills: analysisSkillCatalog.length,
         timestamp: new Date().toISOString(),
       });
     }
@@ -265,9 +268,9 @@ function createApp({
       const metadata = coerceMetadata(body.metadata);
       const input = normalizeV1FileBody(body);
       const created = input.kind === 'text'
-        ? await createTextDocument({ userId: user.id, caseId: body.caseId || null, text: input.text, fileName: input.fileName, metadata })
+        ? await createTextDocument({ authUserId: user.id, caseId: body.caseId || null, text: input.text, fileName: input.fileName, metadata })
         : await createUploadDocument({
-          userId: user.id,
+          authUserId: user.id,
           caseId: body.caseId || null,
           fileName: input.fileName,
           mimeType: input.mimeType,
@@ -283,7 +286,7 @@ function createApp({
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
       const created = await createTextDocument({
-        userId: user.id,
+        authUserId: user.id,
         caseId: body.caseId || null,
         text: body.text,
         fileName: body.fileName || 'fairness-analysis.txt',

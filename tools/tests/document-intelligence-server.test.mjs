@@ -26,7 +26,7 @@ async function withEnv(overrides, run) {
   }
 }
 
-async function withLoadedServer(run) {
+async function withLoadedServer(run, { pipeline, authenticateBearer } = {}) {
   const previousServer = cloneCacheEntry(require.cache[serverPath]);
   const previousPipeline = cloneCacheEntry(require.cache[pipelinePath]);
   const previousSupabase = cloneCacheEntry(require.cache[supabasePath]);
@@ -43,13 +43,14 @@ async function withLoadedServer(run) {
       processNextJobs: async () => 0,
       getDocumentForUser: async () => null,
       getComparisonForUser: async () => null,
+      ...(pipeline || {}),
     },
   };
   require.cache[supabasePath] = {
     id: supabasePath,
     filename: supabasePath,
     loaded: true,
-    exports: { authenticateBearer: async () => null },
+    exports: { authenticateBearer: authenticateBearer || (async () => null) },
   };
 
   try {
@@ -185,6 +186,85 @@ test('GET /ready defaults unknown provider values to openai credential checks', 
           supabaseServiceRole: true,
           providerKey: false,
         });
+      });
+
+      test('POST /v1/document/analyse passes authenticated identity through authUserId', async () => {
+        let createTextPayload = null;
+        const users = [];
+        await withLoadedServer(async ({ createApp }) => {
+          await withRunningServer(createApp, async (port) => {
+            const response = await fetch(`http://127.0.0.1:${port}/v1/document/analyse`, {
+              method: 'POST',
+              headers: {
+                authorization: '******',
+                'content-type': 'application/json',
+              },
+              body: JSON.stringify({ text: 'child safety note', fileName: 'note.txt' }),
+            });
+            const body = await response.json();
+
+            assert.equal(response.status, 202);
+            assert.equal(body.document_id, 'doc-1');
+          });
+        }, {
+          authenticateBearer: async () => ({ id: 'auth-user-1' }),
+          pipeline: {
+            createTextDocument: async (payload) => {
+              createTextPayload = payload;
+              return {
+                document: { id: 'doc-1' },
+                analysis: { id: 'analysis-1' },
+                job: { id: 'job-1' },
+              };
+            },
+            getDocumentForUser: async (documentId, userId) => {
+              users.push({ documentId, userId });
+              return {
+                document: { id: documentId, processing_status: 'queued' },
+                analysis: { status: 'queued' },
+              };
+            },
+          },
+        });
+
+        assert.equal(createTextPayload.authUserId, 'auth-user-1');
+        assert.equal('userId' in createTextPayload, false);
+        assert.deepEqual(users, [{ documentId: 'doc-1', userId: 'auth-user-1' }]);
+      });
+
+      test('POST /documents/text passes authenticated identity through authUserId', async () => {
+        let createTextPayload = null;
+        await withLoadedServer(async ({ createApp }) => {
+          await withRunningServer(createApp, async (port) => {
+            const response = await fetch(`http://127.0.0.1:${port}/documents/text`, {
+              method: 'POST',
+              headers: {
+                authorization: '******',
+                'content-type': 'application/json',
+              },
+              body: JSON.stringify({ text: 'fairness analysis' }),
+            });
+            const body = await response.json();
+
+            assert.equal(response.status, 202);
+            assert.equal(body.document_id, 'doc-2');
+          });
+        }, {
+          authenticateBearer: async () => ({ id: 'auth-user-2' }),
+          pipeline: {
+            createTextDocument: async (payload) => {
+              createTextPayload = payload;
+              return {
+                document: { id: 'doc-2' },
+                analysis: { id: 'analysis-2' },
+                job: { id: 'job-2' },
+              };
+            },
+          },
+        });
+
+        assert.equal(createTextPayload.authUserId, 'auth-user-2');
+        assert.equal('userId' in createTextPayload, false);
       });
     });
   });

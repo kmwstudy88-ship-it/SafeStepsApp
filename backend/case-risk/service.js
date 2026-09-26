@@ -439,19 +439,19 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
       const eventType = String(body.eventType || body.event_type || '').trim();
       if (!eventType) throw createHttpError(400, 'eventType is required.');
       const eventPayload = normalizeIncomingEventPayload(body);
+      const eventIdempotencyKey = body.idempotencyKey || body.idempotency_key || null;
 
       const existingEvents = await loadRecentCaseEvents(adminClient, caseId, 50);
       const previousSnapshot = await loadLatestSnapshot(adminClient, caseId);
       const rules = rulesFromEnv();
-      const eventIdempotencyKey = body.idempotencyKey || body.idempotency_key || null;
       const persistedIdempotentEvent = eventIdempotencyKey
         ? await loadCaseEventByIdempotencyKey(adminClient, caseId, eventIdempotencyKey)
         : null;
       const newEvent = {
         created_at: new Date().toISOString(),
         event_type: eventType,
-        payload: eventPayload,
         idempotency_key: eventIdempotencyKey,
+        payload: eventPayload,
       };
       const allEvents = selectScoringEvents({
         existingEvents,
@@ -475,7 +475,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         snapshot,
         previousSnapshot,
         routedTo,
-        eventIdempotencyKey: body.idempotencyKey || body.idempotency_key || null,
+        eventIdempotencyKey,
         eventType,
         rules,
       });
@@ -488,7 +488,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         p_event_source: body.eventSource || body.event_source || 'manual_note',
         p_event_note: body.note || null,
         p_event_payload: eventPayload,
-        p_event_idempotency_key: body.idempotencyKey || body.idempotency_key || null,
+        p_event_idempotency_key: eventIdempotencyKey,
         p_snapshot: snapshot,
         p_alerts: alerts,
         p_tasks: tasks,
@@ -641,4 +641,5 @@ module.exports = {
   buildFollowUpTasks,
   createCaseRiskService,
   loadActorContext,
+  selectScoringEvents,
 };
