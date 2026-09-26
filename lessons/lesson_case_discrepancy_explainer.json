@@ -1,0 +1,39 @@
+{
+  "id": "lesson_case_discrepancy_explainer",
+  "title": "Case Discrepancy Explainer",
+  "sections": [],
+  "content": {
+    "overview": "This lesson supports practitioners to identify and explain meaningful discrepancies across case notes, documents, assessments, and timeline events. It focuses on making inconsistencies visible without prematurely resolving them, so teams can investigate safely and fairly.",
+    "learning_outcomes": [
+      "Recognise the difference between a discrepancy, an uncertainty, and a confirmed contradiction",
+      "Compare statements across records without defaulting to blame or credibility assumptions",
+      "Describe why a discrepancy matters for safety, planning, or evidence quality",
+      "Escalate significant conflicts for human review rather than silently smoothing them into a single narrative"
+    ],
+    "key_concepts": [
+      "Discrepancy explanation is about surfacing conflicts, not deciding who is right",
+      "Contradictions may arise from trauma, timing differences, reporting context, error, or missing records",
+      "High-value explanations show the source locations, affected decisions, and unanswered questions",
+      "Human review is essential when discrepancies affect risk, reporting thresholds, or court-facing records"
+    ],
+    "practice_activities": [
+      "Compare two records and list any inconsistent dates, actors, observations, or actions",
+      "Write a discrepancy explanation that stays neutral and evidence-linked",
+      "Classify each discrepancy as low, moderate, or high consequence for decision-making",
+      "Identify what additional record, conversation, or supervisor review is needed before action"
+    ],
+    "facilitator_notes": [
+      "Discourage language that frames discrepancy review as a credibility verdict",
+      "Help participants connect discrepancies to operational consequences such as safety review or reporting delay",
+      "Use examples where the safest response is to pause and verify rather than decide quickly",
+      "Reinforce that transparent uncertainty is stronger than false consistency"
+    ],
+    "reflection_prompts": [
+      "When do I feel pressure to explain away conflicting information too quickly?",
+      "How do I describe contradictions without escalating stigma or blame?",
+      "Which discrepancies should trigger immediate review in my setting?",
+      "What would make discrepancy logging more useful for my team?"
+    ],
+    "printable_summary": "Case Discrepancy Explainer — Key Takeaways:\r\n- Surface meaningful inconsistencies without forcing a verdict.\r\n- Link each discrepancy to the records and decisions it affects.\r\n- Keep neutral language and preserve uncertainty.\r\n- Escalate significant contradictions for human review."
+  }
+}

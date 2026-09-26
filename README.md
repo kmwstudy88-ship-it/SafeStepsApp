@@ -12,8 +12,11 @@ SafeSteps is a mixed repository with three active concerns:
 - `npm run start`
 - `npm run backend`
 - `npm run smoke:documents`
+- `npm run test:documents`
+- `npm run smoke:documents:live` *(requires staging backend URL + access token env vars)*
 - `npm run validate`
 - `npm run content:index`
+- `npm run content:readiness`
 - `npm run readiness` *(requires staging evidence environment variables)*
 
 ## Repository contract
@@ -56,6 +59,26 @@ Compatibility and generated areas live here:
 | `/contact-visit` | `lib/contactVisit/ContactVisitCompanionScreen.tsx` | static guidance UI | none |
 | `/discreet` | `lib/privacy/DiscreetModeScreen.tsx` | device-local disguise prototype | none |
 
+## Parent/caregiver feature inventory
+
+The current parent/caregiver surface is narrower than the backend/domain footprint. The list below distinguishes what is already surfaced in the app from capabilities that only have partial foundations today.
+
+| Capability | Current route/surface | Current state | Existing backend/domain basis |
+| --- | --- | --- | --- |
+| AI companion / counsellor access | planned `/companion`-style route | missing parent route and chat UI | personal AI consent, conversation, safety-event, handoff, referral, and audit tables in Supabase |
+| Case plan visibility | `/cases/[id]` | partial: current case detail does not show tasks, milestones, requirements checklist, or percent-complete progress | case tasks, milestones, quest progress, and reunification data structures |
+| Direct messaging with caseworker | none | missing parent inbox/chat experience | consolidated `messages` view and `parent_child_messages` model |
+| Scheduling & calendar | none | missing unified parent calendar for visits, hearings, assessments, and appointments | case appointments plus consolidated visit records |
+| Notifications | none | missing parent-facing alerts center and delivery flows in app | notification preferences and notification-related backend infrastructure |
+| Court & legal literacy | none | missing plain-language guidance for hearings, rights, and document prep | no dedicated app surface yet |
+| Financial / housing evidence upload | `/evidence`, `/documents/[id]` | partial: generic evidence and document upload only | evidence categories include housing and document/evidence pipelines exist |
+| Substance-use self-tracking | none | missing parent log for sobriety, UA, recovery, and appointment tracking | assessment/evidence foundations only |
+| Peer / community support | none | missing parent peer-support, mentor, or forum surface | community/referral foundations exist outside the parent app surface |
+| Onboarding & consent | `/cases` sign-in only | partial: sign-in exists, but no dedicated onboarding, identity-verification, consent, or terms flow | onboarding consent events and parent intake save/resume RPCs |
+| Dispute / grievance path | none | missing contestability and supervisor-review request flow | governance and decision-review structures exist, but no parent UI |
+| Emergency / crisis escalation | `/sos` only | partial: calming scripts exist, but no distinct crisis-routing or hotline flow | personal AI safety/referral structures exist without a dedicated route |
+| Data rights | none | missing parent export/download and access-audit views | export and audit structures exist in backend domains, but not in the app surface |
+
 ## Backend boundary
 
 ### Node backend
@@ -63,14 +86,26 @@ Compatibility and generated areas live here:
 `backend/server.js` owns the lightweight local document endpoints:
 
 - `GET /health`
+- `GET /ready`
 - `GET /documents/intelligence/schema`
+- `POST /documents/text`
 - `POST /documents/analyze`
 - `POST /documents/analyze/fairness`
 - `POST /documents/upload`
-- `POST /documents/process`
-- `GET /analyses/:id`
-- `POST /analyses/compare`
-- `POST /risk-assessment/compute`
+- `POST /documents/process` *(queues analysis for an existing uploaded document)*
+- `GET /documents/:id`
+- `DELETE /documents/:id`
+- `POST /documents/compare`
+- `GET /documents/comparisons/:id`
+- `GET /analyses/:id` *(compatibility read path)*
+- `POST /analyses/compare` *(compatibility alias of `/documents/compare`)*
+- `POST /risk-assessment/compute` *(compatibility alias that returns latest recomputed Track C snapshot)*
+- `POST /cases/:id/events`
+- `POST /cases/:id/recompute-risk`
+- `GET /cases/:id/risk-history`
+- `GET /dashboard/supervisor`
+
+Except for `/health` and `/ready`, backend routes require a valid Supabase bearer token and return decision-support outputs that require human review.
 
 Use this backend for local smoke testing and heuristic document-analysis development.
 
@@ -118,6 +153,27 @@ Track C adds a deterministic safety-support workflow for case events, risk snaps
 - Review the latest `risk_snapshots.rationale`, `escalation_alerts.detail`, and case timeline before changing placement, contact, or legal status
 - If a worker or supervisor overrides an automated recommendation, record a follow-up case event/note with the justification so the audit trail stays complete
 - Resolve or dismiss escalation alerts only after a human review documents the outcome in case notes or a linked case event
+
+### Risk-model versioning process
+
+- Treat `backend/case-risk/rules.js` `version` as the contract identifier for risk scoring behavior.
+- For any rule/weight/threshold change, bump the `version` value in the same pull request as the rule edits and tests.
+- Add or update tests in `tools/tests/case-risk-engine.test.mjs`, `tools/tests/case-risk-service.test.mjs`, and `tools/tests/case-risk-migration.test.mjs` to cover the changed behavior.
+- Keep previous `risk_snapshots.model_version` values immutable so historical decisions remain reproducible.
+- Require supervisor sign-off in code review for any risk-model version bump before release.
+
+### Supervisor score interpretation
+
+- `0-24` (`low`): maintain routine check-ins and monitor for new signals.
+- `25-49` (`moderate`): increase follow-up cadence and confirm protective-factor stability.
+- `50-74` (`high`): perform expedited supervisor review and verify safety-plan execution.
+- `75-100` (`critical`) or any hard flag: immediate supervisor attention, urgent safety review, and documented human decision.
+- Rising-risk deltas (`+15` or more) indicate acceleration risk and should be reviewed even when the tier does not change.
+
+### Automation boundaries
+
+- Automated workflow outputs must never directly change placement, contact arrangements, legal status, or custody outcomes.
+- Any such change requires explicit human review and documented rationale in case notes/events.
 
 ## Readiness notes
 

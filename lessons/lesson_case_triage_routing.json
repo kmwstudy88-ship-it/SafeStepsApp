@@ -1,0 +1,39 @@
+{
+  "id": "lesson_case_triage_routing",
+  "title": "Case Triage Routing",
+  "sections": [],
+  "content": {
+    "overview": "This lesson helps practitioners route cases into the right response pathway based on current risk, urgency, complexity, and review requirements. It focuses on consistent triage logic, transparent thresholds, and making sure the safest response is visible to the right people at the right time.",
+    "learning_outcomes": [
+      "Differentiate low, moderate, high, and critical routing pathways using explicit criteria",
+      "Match triage outputs to the right tasks, alerts, owners, and response timeframes",
+      "Recognise when a case needs escalation because of change velocity, not just absolute severity",
+      "Use human checkpoints to confirm that routing is appropriate before sensitive action proceeds"
+    ],
+    "key_concepts": [
+      "Triage routing determines workflow attention, not the final outcome of a case",
+      "Routing should account for urgency, uncertainty, and coordination needs as well as score bands",
+      "Visible ownership and timeframes reduce response drift in complex cases",
+      "High-risk routing must notify accountable humans rather than automate adverse action"
+    ],
+    "practice_activities": [
+      "Sort sample cases into routing tiers and explain the threshold used",
+      "Map each tier to follow-up tasks, reviewer roles, and expected timeframes",
+      "Identify a case where rising risk should change routing even if the absolute score is moderate",
+      "Review a misrouted case and describe the operational consequences"
+    ],
+    "facilitator_notes": [
+      "Frame triage as a prioritisation tool that supports safer coordination",
+      "Use examples that show both over-escalation and under-escalation risks",
+      "Discuss workload pressure openly so participants can see where triage drift happens",
+      "Keep emphasis on notification, review, and response discipline"
+    ],
+    "reflection_prompts": [
+      "What signals tell me a case may need a faster or more senior response?",
+      "How do I balance urgency with uncertainty?",
+      "Where are routing expectations least clear in my service?",
+      "What review step most improves confidence in triage decisions?"
+    ],
+    "printable_summary": "Case Triage Routing — Key Takeaways:\r\n- Route for urgency, complexity, and change, not score alone.\r\n- Tie each tier to owners, tasks, and timeframes.\r\n- Use routing to improve visibility and coordination.\r\n- Confirm sensitive escalations through human checkpoints."
+  }
+}

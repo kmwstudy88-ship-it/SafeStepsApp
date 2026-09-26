@@ -145,6 +145,24 @@ async function loadRecentCaseEvents(adminClient, caseId, limit = 50) {
   return sortByCreatedDesc(data || []);
 }
 
+async function loadCaseEventByIdempotencyKey(adminClient, caseId, idempotencyKey) {
+  if (!idempotencyKey) return null;
+  const { data, error } = await adminClient
+    .from('case_events')
+    .select('id')
+    .eq('case_id', caseId)
+    .eq('idempotency_key', idempotencyKey)
+    .limit(1)
+    .maybeSingle();
+  if (error) throw error;
+  return data || null;
+}
+
+function selectScoringEvents({ existingEvents, pendingEvent, hasPersistedIdempotentEvent }) {
+  if (hasPersistedIdempotentEvent) return sortByCreatedDesc(existingEvents || []);
+  return sortByCreatedDesc([pendingEvent, ...(existingEvents || [])]);
+}
+
 function aggregateFactorsFromEvents(events) {
   const behavioral = [];
   const contextual = [];
@@ -173,6 +191,18 @@ function normalizeIncomingEventPayload(body = {}) {
   };
 }
 
+function decisionSupportDetail(snapshot, detail = {}) {
+  return {
+    ...detail,
+    score: detail.score ?? snapshot.score,
+    tier: detail.tier ?? snapshot.tier,
+    model_version: snapshot.model_version,
+    rationale: snapshot.rationale,
+    human_review_required: true,
+    decision_support_only: true,
+  };
+}
+
 function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdempotencyKey, eventType, rules = rulesFromEnv() }) {
   const alerts = [];
   if (snapshot.hard_escalation?.triggered) {
@@ -183,11 +213,10 @@ function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdem
         severity: 'critical',
         status: 'open',
         routed_to: routedTo,
-        detail: {
+        detail: decisionSupportDetail(snapshot, {
           reason: trigger.reason,
           source: eventType || 'risk_recompute',
-          model_version: snapshot.model_version,
-        },
+        }),
       });
     }
   }
@@ -199,7 +228,7 @@ function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdem
       severity: 'critical',
       status: 'open',
       routed_to: routedTo,
-      detail: { score: snapshot.score, tier: snapshot.tier },
+      detail: decisionSupportDetail(snapshot),
     });
   } else if (snapshot.score >= rules.thresholds.highAlertScore) {
     alerts.push({
@@ -208,20 +237,24 @@ function buildEscalationAlerts({ snapshot, previousSnapshot, routedTo, eventIdem
       severity: 'high',
       status: 'open',
       routed_to: routedTo,
-      detail: { score: snapshot.score, tier: snapshot.tier },
+      detail: decisionSupportDetail(snapshot),
     });
   }
 
   const previousScore = Number(previousSnapshot?.score ?? previousSnapshot?.risk_score ?? 0);
   const delta = snapshot.score - previousScore;
-  if (previousSnapshot && delta >= 15) {
+  const configuredDeltaThreshold = Number(rules.deltaEscalationThreshold);
+  const deltaThreshold = Number.isFinite(configuredDeltaThreshold) && configuredDeltaThreshold >= 0
+    ? configuredDeltaThreshold
+    : 15;
+  if (previousSnapshot && delta >= deltaThreshold) {
     alerts.push({
       dedupe_key: eventIdempotencyKey ? `delta:${eventIdempotencyKey}` : `delta:${previousScore}->${snapshot.score}`,
       trigger_type: 'risk_score_delta',
       severity: snapshot.score >= 75 ? 'critical' : 'high',
       status: 'open',
       routed_to: routedTo,
-      detail: { previous_score: previousScore, current_score: snapshot.score, delta },
+      detail: decisionSupportDetail(snapshot, { previous_score: previousScore, current_score: snapshot.score, delta }),
     });
   }
   return alerts;
@@ -252,12 +285,12 @@ function buildFollowUpTasks({ caseId, snapshot, previousSnapshot, assignments, r
     status: 'pending',
     source: template.source,
     allow_duplicates: false,
-    detail: {
+    detail: decisionSupportDetail(snapshot, {
       generated_by: snapshot.model_version,
       target_tier: snapshot.tier,
       risk_score: snapshot.score,
       reprioritized: Boolean(previousSnapshot) && riskIncreased,
-    },
+    }),
   }));
 }
 
@@ -338,6 +371,8 @@ function buildDashboardPayload({ cases, snapshots, alerts, tasks, timelineByCase
 
   return {
     generated_at: new Date().toISOString(),
+    human_review_required: true,
+    decision_support_only: true,
     highest_risk_open_cases: highestRiskCases,
     rising_risk_cases: risingRiskCases,
     open_escalations: sortByCreatedDesc(openEscalations).slice(0, 20),
@@ -404,16 +439,25 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
       const eventType = String(body.eventType || body.event_type || '').trim();
       if (!eventType) throw createHttpError(400, 'eventType is required.');
       const eventPayload = normalizeIncomingEventPayload(body);
+      const eventIdempotencyKey = body.idempotencyKey || body.idempotency_key || null;
 
       const existingEvents = await loadRecentCaseEvents(adminClient, caseId, 50);
       const previousSnapshot = await loadLatestSnapshot(adminClient, caseId);
       const rules = rulesFromEnv();
+      const persistedIdempotentEvent = eventIdempotencyKey
+        ? await loadCaseEventByIdempotencyKey(adminClient, caseId, eventIdempotencyKey)
+        : null;
       const newEvent = {
         created_at: new Date().toISOString(),
         event_type: eventType,
+        idempotency_key: eventIdempotencyKey,
         payload: eventPayload,
       };
-      const allEvents = sortByCreatedDesc([newEvent, ...existingEvents]);
+      const allEvents = selectScoringEvents({
+        existingEvents,
+        pendingEvent: newEvent,
+        hasPersistedIdempotentEvent: Boolean(persistedIdempotentEvent),
+      });
       const factors = aggregateFactorsFromEvents(allEvents);
       const snapshot = scoreCaseRisk({
         behavioralCues: factors.behavioral,
@@ -431,7 +475,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         snapshot,
         previousSnapshot,
         routedTo,
-        eventIdempotencyKey: body.idempotencyKey || body.idempotency_key || null,
+        eventIdempotencyKey,
         eventType,
         rules,
       });
@@ -444,7 +488,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         p_event_source: body.eventSource || body.event_source || 'manual_note',
         p_event_note: body.note || null,
         p_event_payload: eventPayload,
-        p_event_idempotency_key: body.idempotencyKey || body.idempotency_key || null,
+        p_event_idempotency_key: eventIdempotencyKey,
         p_snapshot: snapshot,
         p_alerts: alerts,
         p_tasks: tasks,
@@ -466,6 +510,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         alerts,
         tasks,
         human_review_required: true,
+        decision_support_only: true,
       };
     },
 
@@ -514,7 +559,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         }],
       });
       if (error) throw error;
-      return { workflow: data, snapshot, alerts, tasks, human_review_required: true };
+      return { workflow: data, snapshot, alerts, tasks, human_review_required: true, decision_support_only: true };
     },
 
     async getCaseRiskHistory({ authUserId, caseId }) {
@@ -538,6 +583,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
         open_escalations: alertsResult.data || [],
         follow_up_tasks: tasksResult.data || [],
         human_review_required: true,
+        decision_support_only: true,
       };
     },
 
@@ -589,8 +635,11 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
 }
 
 module.exports = {
+  assertCaseAccess,
   buildDashboardPayload,
   buildEscalationAlerts,
   buildFollowUpTasks,
   createCaseRiskService,
+  loadActorContext,
+  selectScoringEvents,
 };
