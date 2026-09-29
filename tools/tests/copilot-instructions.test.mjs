@@ -50,8 +50,8 @@ test('copilot instructions avoid unrelated-history task branches', () => {
   const instructions = fs.readFileSync(instructionsPath, 'utf8');
 
   assert.match(instructions, /start new Copilot tasks on a fresh branch from the current default branch/i);
-  assert.match(instructions, /check that it shares a merge base with the default branch before comparing them/i);
-  assert.match(instructions, /stop and request a fresh task branch instead of diffing unrelated histories/i);
+  assert.match(instructions, /fetch the default branch and enough history to check that it shares a merge base before comparing them/i);
+  assert.match(instructions, /if the histories are truly unrelated, stop and request a fresh task branch instead of diffing unrelated histories/i);
   assert.match(instructions, /do not reset or rebase the existing branch automatically/i);
 });
 
