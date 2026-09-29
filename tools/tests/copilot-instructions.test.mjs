@@ -46,6 +46,15 @@ test('copilot instructions avoid explicit model identifiers while preserving aut
   assert.match(instructions, /currently supported model/i);
 });
 
+test('copilot instructions avoid unrelated-history task branches', () => {
+  const instructions = fs.readFileSync(instructionsPath, 'utf8');
+
+  assert.match(instructions, /start new Copilot tasks on a fresh branch from the current default branch/i);
+  assert.match(instructions, /fetch the default branch and enough history to check that it shares a merge base before comparing them/i);
+  assert.match(instructions, /if the histories are truly unrelated, stop and request a fresh task branch instead of diffing unrelated histories/i);
+  assert.match(instructions, /do not reset or rebase the existing branch automatically/i);
+});
+
 test('copilot instructions verify workflow runs the guard when its inputs change', () => {
   const workflow = fs.readFileSync(workflowPath, 'utf8');
 
