@@ -9,19 +9,11 @@ import {
   sequencePracticeDomainContent,
   sequencePracticeLimitations,
 } from '../data/safeStepsSequencePracticeContent';
-
-function getShuffledSteps(item: SafeStepsSequenceAssessmentItem): string[] {
-  const steps = [...item.correctSequence];
-  let seed = [...item.id].reduce((value, character) => (value * 31 + character.charCodeAt(0)) >>> 0, 7);
-
-  for (let index = steps.length - 1; index > 0; index -= 1) {
-    seed = (seed * 1664525 + 1013904223) >>> 0;
-    const swapIndex = seed % (index + 1);
-    [steps[index], steps[swapIndex]] = [steps[swapIndex], steps[index]];
-  }
-
-  return steps;
-}
+import {
+  getShuffledSequenceSteps,
+  isSequenceComplete,
+  moveSelectedSequenceStep,
+} from './sequencePracticeState';
 
 export function SequencePracticeScreen() {
   const [domainId, setDomainId] = useState<string | null>(null);
@@ -34,7 +26,7 @@ export function SequencePracticeScreen() {
     [domainId]
   );
   const item = domainItems[itemIndex];
-  const shuffledSteps = useMemo(() => item ? getShuffledSteps(item) : [], [item?.id]);
+  const shuffledSteps = useMemo(() => item ? getShuffledSequenceSteps(item) : [], [item?.id]);
   const domain = safeStepsSequenceAssessmentDomains.find((candidate) => candidate.id === domainId);
 
   function beginTopic(selectedDomainId: string) {
@@ -51,13 +43,7 @@ export function SequencePracticeScreen() {
   }
 
   function moveStep(index: number, direction: -1 | 1) {
-    setSelectedSteps((current) => {
-      const nextIndex = index + direction;
-      if (nextIndex < 0 || nextIndex >= current.length) return current;
-      const updated = [...current];
-      [updated[index], updated[nextIndex]] = [updated[nextIndex], updated[index]];
-      return updated;
-    });
+    setSelectedSteps((current) => moveSelectedSequenceStep(current, index, direction));
   }
 
   function changeItem(direction: -1 | 1) {
@@ -115,7 +101,7 @@ export function SequencePracticeScreen() {
 
   if (!item || !domain) return null;
 
-  const allStepsSelected = selectedSteps.length === item.correctSequence.length;
+  const allStepsSelected = isSequenceComplete(selectedSteps, item.correctSequence);
   const guidance = sequencePracticeDomainContent[domainId];
 
   return (
