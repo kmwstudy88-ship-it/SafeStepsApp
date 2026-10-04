@@ -137,3 +137,51 @@ test('Personal AI HTTP handlers receive only the authenticated actor identity', 
     }],
   ]);
 });
+
+test('Personal AI HTTP routes preserve consent errors and hide unexpected server details', async () => {
+  const handlers = {
+    async getFlows() {
+      return { version: '1.0', product: 'SafeSteps Personal AI Support', flows: [] };
+    },
+    async classify() {
+      throw Object.assign(new Error('Current consent is required.'), {
+        code: 'CONSENT_REQUIRED',
+        statusCode: 403,
+      });
+    },
+    async chat() {
+      throw new Error('sensitive database details');
+    },
+  };
+
+  const originalConsoleError = console.error;
+  console.error = () => {};
+  try {
+    await withLoadedServer(async ({ createApp }) => {
+      await withServer(createApp, async port => {
+        const headers = { authorization: '******', 'content-type': 'application/json' };
+        const classify = await fetch(`http://127.0.0.1:${port}/personal-ai/classify`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ message: 'Can you help?' }),
+        });
+        assert.equal(classify.status, 403);
+        assert.deepEqual(await classify.json(), {
+          error: { code: 'CONSENT_REQUIRED', message: 'Current consent is required.' },
+        });
+
+        const chat = await fetch(`http://127.0.0.1:${port}/personal-ai/chat`, {
+          method: 'POST',
+          headers,
+          body: JSON.stringify({ message: 'Can you help?', consentToAiSupport: true }),
+        });
+        assert.equal(chat.status, 500);
+        assert.deepEqual(await chat.json(), {
+          error: { code: 'INTERNAL_ERROR', message: 'Unexpected server error' },
+        });
+      }, { personalAiHandlers: handlers });
+    }, async header => header === '******' ? { id: 'authenticated-user' } : null);
+  } finally {
+    console.error = originalConsoleError;
+  }
+});
