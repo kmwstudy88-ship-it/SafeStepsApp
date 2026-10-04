@@ -128,7 +128,7 @@ export default function CaseDetailScreen() {
           {riskSummary.latest ? (
             <View style={styles.item}>
               <Text style={styles.itemTitle}>{riskSummary.latest.title}</Text>
-              <Text style={styles.meta}>{riskSummary.latest.confidenceText}</Text>
+              <Text style={styles.meta}>{riskSummary.latest.cautionText}</Text>
               <Text style={styles.meta}>{riskSummary.latest.rationaleText}</Text>
               <Text style={styles.meta}>{riskSummary.latest.rulesText}</Text>
             </View>

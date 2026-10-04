@@ -223,6 +223,7 @@ function createApp({
   port = PORT,
   workerIntervalMs = WORKER_INTERVAL_MS,
   personalAiHandlers = null,
+  riskService = caseRiskService,
 } = {}) {
   const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, `http://localhost:${port}`);
@@ -472,7 +473,7 @@ function createApp({
     if (caseRoute?.action === 'events' && req.method === 'POST') {
       const user = await requireUser(req, res); if (!user) return;
       const body = await parseBody(req);
-      const result = await caseRiskService.createCaseEventAndRecompute({
+      const result = await riskService.createCaseEventAndRecompute({
         authUserId: user.id,
         caseId: caseRoute.caseId,
         body,
@@ -482,7 +483,7 @@ function createApp({
 
     if (caseRoute?.action === 'recompute-risk' && req.method === 'POST') {
       const user = await requireUser(req, res); if (!user) return;
-      const result = await caseRiskService.recomputeRisk({
+      const result = await riskService.recomputeRisk({
         authUserId: user.id,
         caseId: caseRoute.caseId,
       });
@@ -491,7 +492,7 @@ function createApp({
 
     if (caseRoute?.action === 'risk-history' && req.method === 'GET') {
       const user = await requireUser(req, res); if (!user) return;
-      const result = await caseRiskService.getCaseRiskHistory({
+      const result = await riskService.getCaseRiskHistory({
         authUserId: user.id,
         caseId: caseRoute.caseId,
       });
@@ -500,7 +501,7 @@ function createApp({
 
     if (req.method === 'GET' && url.pathname === '/dashboard/supervisor') {
       const user = await requireUser(req, res); if (!user) return;
-      const dashboard = await caseRiskService.getSupervisorDashboard({ authUserId: user.id });
+      const dashboard = await riskService.getSupervisorDashboard({ authUserId: user.id });
       return sendJson(res, 200, dashboard);
     }
 
@@ -509,13 +510,14 @@ function createApp({
       const body = await parseBody(req);
       const caseId = String(body.caseId || body.case_id || '').trim();
       if (!caseId) throw Object.assign(new Error('caseId is required'), { statusCode: 400 });
-      const result = await caseRiskService.recomputeRisk({ authUserId: user.id, caseId });
+      const result = await riskService.recomputeRisk({ authUserId: user.id, caseId });
       return sendJson(res, 200, {
         riskScore: result.snapshot.score,
         riskLevel: result.snapshot.tier,
         confidence: result.snapshot.confidence,
         snapshot: result.snapshot,
         human_review_required: true,
+        decision_support_only: true,
       });
     }
 

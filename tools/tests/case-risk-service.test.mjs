@@ -95,6 +95,8 @@ test('buildEscalationAlerts applies threshold and delta boundaries', () => {
 
   assert.equal(build(70, 56).some((item) => item.trigger_type === 'risk_score_delta'), false);
   assert.equal(build(70, 55).some((item) => item.trigger_type === 'risk_score_delta'), true);
+});
+
 test('buildEscalationAlerts respects configurable delta escalation thresholds', () => {
   const belowCustomThreshold = buildEscalationAlerts({
     snapshot: {
@@ -327,4 +329,18 @@ test('buildDashboardPayload returns highest-risk, rising-risk, open escalation, 
   assert.equal(dashboard.rising_risk_cases[1].case_id, 'case-b');
   assert.equal(dashboard.human_review_required, true);
   assert.equal(dashboard.decision_support_only, true);
+});
+
+test('buildDashboardPayload keeps decision-support disclosures when there are no cases', () => {
+  const dashboard = buildDashboardPayload({
+    cases: [],
+    snapshots: [],
+    alerts: [],
+    tasks: [],
+    timelineByCase: new Map(),
+  });
+
+  assert.equal(dashboard.human_review_required, true);
+  assert.equal(dashboard.decision_support_only, true);
+  assert.deepEqual(dashboard.case_summaries, []);
 });

@@ -593,14 +593,13 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
 
       const caseIds = await listSupervisorCaseIds(adminClient, actor);
       if (!caseIds.length) {
-        return {
-          generated_at: new Date().toISOString(),
-          highest_risk_open_cases: [],
-          rising_risk_cases: [],
-          open_escalations: [],
-          overdue_follow_ups: [],
-          case_summaries: [],
-        };
+        return buildDashboardPayload({
+          cases: [],
+          snapshots: [],
+          alerts: [],
+          tasks: [],
+          timelineByCase: new Map(),
+        });
       }
 
       const [casesResult, snapshotsResult, alertsResult, tasksResult, eventsResult] = await Promise.all([

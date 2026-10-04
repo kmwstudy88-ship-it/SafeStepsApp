@@ -24,7 +24,7 @@ export type CaseRiskSummary =
       errorText: null;
       latest: {
         title: string;
-        confidenceText: string;
+        cautionText: string;
         rationaleText: string;
         rulesText: string;
       };

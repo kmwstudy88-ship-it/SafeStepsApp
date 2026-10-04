@@ -18,7 +18,8 @@ test('buildCaseRiskSummary formats the latest snapshot for case detail display',
 
   assert.equal(summary.hasError, false);
   assert.equal(summary.latest.title, 'CRITICAL · Score 82');
-  assert.equal(summary.latest.confidenceText, 'Confidence: 83%');
+  assert.equal(summary.latest.cautionText, 'Rule-based decision support only; not a validated prediction or a substitute for human review.');
+  assert.equal('confidenceText' in summary.latest, false);
   assert.equal(summary.latest.rulesText, 'Rules: risk-rules-v1');
 });
 
