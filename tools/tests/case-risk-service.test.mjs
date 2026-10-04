@@ -8,7 +8,43 @@ const {
   buildFollowUpTasks,
   buildDashboardPayload,
   selectScoringEvents,
+  createCaseRiskService,
 } = require('../../backend/case-risk/service.js');
+
+test('getSupervisorDashboard preserves review disclosures when the supervisor has no cases', async () => {
+  const rows = {
+    users: { id: 'app-user-1', role_id: 'role-1', is_active: true },
+    roles: { role_key: 'supervisor', role_name: 'Supervisor' },
+    case_assignments: [],
+    team_memberships: [],
+  };
+  const adminClient = {
+    from(table) {
+      const result = { data: rows[table], error: null };
+      const query = {
+        select() { return this; },
+        eq() { return this; },
+        in() { return this; },
+        order() { return this; },
+        limit() { return this; },
+        maybeSingle() { return Promise.resolve(result); },
+        then(resolve, reject) { return Promise.resolve(result).then(resolve, reject); },
+      };
+      return query;
+    },
+  };
+
+  const dashboard = await createCaseRiskService(adminClient)
+    .getSupervisorDashboard({ authUserId: 'auth-user-1' });
+
+  assert.deepEqual(dashboard.highest_risk_open_cases, []);
+  assert.deepEqual(dashboard.rising_risk_cases, []);
+  assert.deepEqual(dashboard.open_escalations, []);
+  assert.deepEqual(dashboard.overdue_follow_ups, []);
+  assert.deepEqual(dashboard.case_summaries, []);
+  assert.equal(dashboard.human_review_required, true);
+  assert.equal(dashboard.decision_support_only, true);
+});
 
 test('buildEscalationAlerts produces stable dedupe keys for duplicate triggering events', () => {
   const snapshot = {
