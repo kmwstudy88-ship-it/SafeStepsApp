@@ -6,36 +6,15 @@ type ParentFeedback = {
   heading: string;
   explanation: string;
   nextStep: string;
-  workerShareNote: string;
 };
 
-function getParentFeedback(result: AssessmentResult): ParentFeedback {
-  if (result.clinicalBand === 'Elevated Concern') {
-    return {
-      heading: 'Extra support is recommended right now.',
-      explanation:
-        'Your answers suggest a higher level of stress or parenting difficulty in this check-in. This does not label you as a bad parent — it highlights where more support could make day-to-day family life feel safer and steadier.',
-      nextStep: 'Bring this result to your worker, choose one small goal for this week, and pair it with a support action such as respite, coaching, or a safety-plan check-in.',
-      workerShareNote: 'Shared in progress records so your worker can compare changes over time and respond to urgent patterns quickly.',
-    };
-  }
-
-  if (result.clinicalBand === 'Moderate / Support Indicated') {
-    return {
-      heading: 'Some areas may need extra support.',
-      explanation:
-        'Your answers show a mix of strengths and pressure points. This usually means routines or emotions are manageable some days, but extra coaching, reflection, or practical support could help make things more consistent.',
-      nextStep: 'Review the questions that felt hardest, pick one routine to strengthen this week, and add a follow-up note after your next worker or visit session.',
-      workerShareNote: 'Stored as part of your progress story so you can show improvements, not just problems, over time.',
-    };
-  }
-
+function getParentFeedback(): ParentFeedback {
   return {
-    heading: 'This check-in shows solid protective strengths today.',
+    heading: 'Use your answers as a starting point.',
     explanation:
-      'Your answers suggest lower current concern or stronger confidence in this area. Keep using the strategies that are already helping, because stable patterns over time matter more than one good day.',
-    nextStep: 'Save the result, note what is working well, and repeat the check-in after the next milestone or contact visit to keep tracking progress.',
-    workerShareNote: 'Logged alongside future check-ins so strengths stay visible in reports as well as concerns.',
+      'This is an informal self-check-in using adapted questions. It is not a validated clinical assessment, and its responses do not determine safety, parenting capacity, or reunification readiness.',
+    nextStep:
+      'Choose one answer you would like help with, then discuss a practical next step with someone you trust or a qualified support person.',
   };
 }
 
@@ -82,30 +61,18 @@ export function AssessmentRunnerScreen({
   };
 
   if (result) {
-    const feedback = getParentFeedback(result);
+    const feedback = getParentFeedback();
 
     return (
       <SafeAreaView style={styles.container}>
         <ScrollView contentContainerStyle={styles.scroll}>
           <View style={styles.resultCard}>
-            <Text style={styles.resultBadge}>ASSESSMENT COMPLETE</Text>
+            <Text style={styles.resultBadge}>CHECK-IN COMPLETE</Text>
             <Text style={styles.title}>{assessment.fullTitle}</Text>
-            <Text style={styles.bandLabel}>{result.clinicalBand}</Text>
             <Text style={styles.feedbackHeading}>{feedback.heading}</Text>
 
-            <View style={styles.statRow}>
-              <View style={styles.statBox}>
-                <Text style={styles.statValue}>{result.totalScore} / {result.maxPossibleScore}</Text>
-                <Text style={styles.statSub}>Total Score</Text>
-              </View>
-              <View style={styles.statBox}>
-                <Text style={styles.statValue}>{result.percentage}%</Text>
-                <Text style={styles.statSub}>Index</Text>
-              </View>
-            </View>
-
             <View style={styles.calloutBox}>
-              <Text style={styles.calloutTitle}>What this means</Text>
+              <Text style={styles.calloutTitle}>About this check-in</Text>
               <Text style={styles.summaryText}>{feedback.explanation}</Text>
             </View>
             <View style={styles.calloutBox}>
@@ -113,8 +80,10 @@ export function AssessmentRunnerScreen({
               <Text style={styles.summaryText}>{feedback.nextStep}</Text>
             </View>
             <View style={styles.calloutBox}>
-              <Text style={styles.calloutTitle}>What gets shared</Text>
-              <Text style={styles.summaryText}>{feedback.workerShareNote}</Text>
+              <Text style={styles.calloutTitle}>Privacy</Text>
+              <Text style={styles.summaryText}>
+                Your answers and this summary are held in this screen's memory only. They are not saved or shared; leaving or resetting this screen clears them.
+              </Text>
             </View>
           </View>
         </ScrollView>
@@ -130,8 +99,10 @@ export function AssessmentRunnerScreen({
           <Text style={styles.title}>{assessment.fullTitle}</Text>
           <Text style={styles.description}>{assessment.description}</Text>
           <View style={styles.intakeCard}>
-            <Text style={styles.intakeTitle}>Parent self-check-in</Text>
-            <Text style={styles.intakeText}>Use this intake to show how things are going from your point of view. When you finish, you will get plain-language feedback, next-step guidance, and a timestamped result for your progress record.</Text>
+            <Text style={styles.intakeTitle}>Informal parent self-check-in</Text>
+            <Text style={styles.intakeText}>
+              These adapted questions are for personal reflection and are not a validated administration of a clinical measure. Your answers stay in this screen's memory only and are not saved or shared. This check-in cannot determine safety or reunification readiness.
+            </Text>
           </View>
           <View style={styles.progressBarBg}>
             <View style={[styles.progressBarFill, { width: `${progressPercent}%` }]} />
@@ -169,7 +140,7 @@ export function AssessmentRunnerScreen({
           onPress={handleSubmit}
           disabled={answeredCount < assessment.items.length}
         >
-          <Text style={styles.submitButtonText}>Submit & Record Assessment</Text>
+          <Text style={styles.submitButtonText}>Review check-in</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
@@ -203,12 +174,7 @@ const styles = StyleSheet.create({
   submitButtonText: { color: '#FFFFFF', fontSize: 16, fontWeight: 'bold' },
   resultCard: { backgroundColor: '#FFFFFF', padding: 22, borderRadius: 16, borderWidth: 1, borderColor: '#E2E8F0', gap: 14 },
   resultBadge: { alignSelf: 'flex-start', backgroundColor: '#C6F6D5', color: '#22543D', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 10, fontSize: 12, fontWeight: '800' },
-  bandLabel: { fontSize: 18, fontWeight: '700', color: '#2B6CB0' },
   feedbackHeading: { fontSize: 16, fontWeight: '700', color: '#1A202C' },
-  statRow: { flexDirection: 'row', gap: 12, marginVertical: 8 },
-  statBox: { flex: 1, backgroundColor: '#F8FCFC', padding: 14, borderRadius: 12, alignItems: 'center' },
-  statValue: { fontSize: 22, fontWeight: 'bold', color: '#42A99D' },
-  statSub: { fontSize: 12, color: '#718096', marginTop: 4 },
   calloutBox: { backgroundColor: '#F8FCFC', borderRadius: 12, padding: 14, gap: 6 },
   calloutTitle: { fontSize: 13, fontWeight: '700', color: '#2D3748', textTransform: 'uppercase' },
   summaryText: { fontSize: 14, color: '#4A5568', lineHeight: 22 },

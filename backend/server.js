@@ -222,6 +222,7 @@ function readiness() {
 function createApp({
   port = PORT,
   workerIntervalMs = WORKER_INTERVAL_MS,
+  personalAiHandlers = null,
 } = {}) {
   const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, `http://localhost:${port}`);
@@ -247,6 +248,31 @@ function createApp({
       if (req.method === 'GET' && url.pathname === '/ready') {
         const state = readiness();
         return sendJson(res, state.ready ? 200 : 503, { ...state, documentIntelligence: true, timestamp: new Date().toISOString() });
+      }
+
+      if (url.pathname.startsWith('/personal-ai/')) {
+        const user = await requireUser(req, res); if (!user) return;
+        if (!personalAiHandlers) {
+          return sendJson(res, 503, {
+            error: {
+              code: 'SERVICE_UNAVAILABLE',
+              message: 'Personal AI support is not configured for use.',
+            },
+          });
+        }
+
+        if (req.method === 'GET' && url.pathname === '/personal-ai/flows') {
+          return sendJson(res, 200, await personalAiHandlers.getFlows({ userId: user.id }));
+        }
+        if (req.method === 'POST' && url.pathname === '/personal-ai/classify') {
+          const body = await parseBody(req);
+          return sendJson(res, 200, await personalAiHandlers.classify({ userId: user.id, body }));
+        }
+        if (req.method === 'POST' && url.pathname === '/personal-ai/chat') {
+          const body = await parseBody(req);
+          return sendJson(res, 200, await personalAiHandlers.chat({ userId: user.id, body }));
+        }
+        return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Route not found.' } });
       }
 
     if (req.method === 'GET' && url.pathname === '/documents/intelligence/schema') {
@@ -504,7 +530,25 @@ function createApp({
         404: 'NOT_FOUND',
         413: 'PAYLOAD_TOO_LARGE',
       };
-      return sendJson(res, statusCode, { error: { code: codeMap[statusCode] || 'INTERNAL_ERROR', message: error.message || 'Unexpected server error' } });
+      const personalAiCode = [
+        'VALIDATION_ERROR',
+        'UNAUTHORIZED',
+        'FORBIDDEN',
+        'NOT_FOUND',
+        'CONSENT_REQUIRED',
+        'SERVICE_UNAVAILABLE',
+        'STATE_CONFLICT',
+      ].includes(error.code) ? error.code : null;
+      return sendJson(res, statusCode, {
+        error: {
+          code: personalAiCode || codeMap[statusCode] || 'INTERNAL_ERROR',
+          message: personalAiCode
+            ? error.message
+            : (url.pathname.startsWith('/personal-ai/') && statusCode >= 500
+              ? 'Unexpected server error'
+              : error.message || 'Unexpected server error'),
+        },
+      });
     }
   });
 

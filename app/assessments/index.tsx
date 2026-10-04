@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { AssessmentRunnerScreen } from '../../lib/assessments/AssessmentRunnerScreen';
 import { ForensicCriteriaAssessmentScreen } from '../../lib/assessments/ForensicCriteriaAssessmentScreen';
+import { ProtectiveCapacityReflectionScreen } from '../../lib/assessments/ProtectiveCapacityReflectionScreen';
 import { ALL_ASSESSMENTS, StandardAssessment } from '../../lib/assessments/assessmentDefinitions';
 
 const FORENSIC_TAB = {
@@ -10,13 +11,22 @@ const FORENSIC_TAB = {
   kind: 'forensic',
 } as const;
 
+const PROTECTIVE_CAPACITY_TAB = {
+  id: 'PROTECTIVE_CAPACITY',
+  name: 'Protective Capacity',
+  kind: 'protective-capacity',
+} as const;
+
 const ASSESSMENT_TABS = [
   ...ALL_ASSESSMENTS.map((assessment) => ({ ...assessment, kind: 'standard' as const })),
   FORENSIC_TAB,
+  PROTECTIVE_CAPACITY_TAB,
 ];
 
 export default function AssessmentsRoute() {
-  const [selectedAssessment, setSelectedAssessment] = useState<(StandardAssessment & { kind: 'standard' }) | typeof FORENSIC_TAB>(
+  const [selectedAssessment, setSelectedAssessment] = useState<
+    (StandardAssessment & { kind: 'standard' }) | typeof FORENSIC_TAB | typeof PROTECTIVE_CAPACITY_TAB
+  >(
     ASSESSMENT_TABS[0]
   );
 
@@ -38,6 +48,8 @@ export default function AssessmentsRoute() {
       <View style={{ flex: 1 }}>
         {selectedAssessment.kind === 'forensic' ? (
           <ForensicCriteriaAssessmentScreen />
+        ) : selectedAssessment.kind === 'protective-capacity' ? (
+          <ProtectiveCapacityReflectionScreen />
         ) : (
           <AssessmentRunnerScreen key={selectedAssessment.id} assessment={selectedAssessment} />
         )}
