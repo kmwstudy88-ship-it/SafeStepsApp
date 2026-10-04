@@ -19,7 +19,7 @@ export default function SafeStepsHub() {
         { title: 'Case Management Console', subtitle: 'Authenticated case assignments & realtime status', route: '/cases', icon: '🗂️', badge: 'Supabase' },
         { title: 'Family Dashboard', subtitle: 'Track multiple children, cases, and next actions together', route: '/family', icon: '👨‍👩‍👧‍👦', badge: 'Multi-child' },
         { title: 'Supervisor Risk Dashboard', subtitle: 'Highest-risk cases, rising risk, escalations, and follow-ups', route: '/dashboard/supervisor', icon: '🚦', badge: 'Safety' },
-        { title: 'Assessments & Results', subtitle: 'Parent self-check-ins with plain-language feedback and next steps', route: '/assessments', icon: '📊', badge: 'Self-check-in' },
+        { title: 'Assessments & Practice', subtitle: 'Private reflection and step-by-step learning practice', route: '/assessments', icon: '📊', badge: 'Local' },
         { title: 'Secure Evidence Vault', subtitle: 'Photo proof & routine milestone locker', route: '/evidence', icon: '🔐', badge: 'Vault' },
         { title: 'Court-Ready Progress Reports', subtitle: 'Cryptographically sealed PDF summaries', route: '/reports', icon: '⚖️', badge: 'PDF Export' },
       ],

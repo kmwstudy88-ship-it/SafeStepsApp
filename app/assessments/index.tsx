@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-na
 import { AssessmentRunnerScreen } from '../../lib/assessments/AssessmentRunnerScreen';
 import { ForensicCriteriaAssessmentScreen } from '../../lib/assessments/ForensicCriteriaAssessmentScreen';
 import { ProtectiveCapacityReflectionScreen } from '../../lib/assessments/ProtectiveCapacityReflectionScreen';
+import { SequencePracticeScreen } from '../../lib/assessments/SequencePracticeScreen';
 import { ALL_ASSESSMENTS, StandardAssessment } from '../../lib/assessments/assessmentDefinitions';
 
 const FORENSIC_TAB = {
@@ -17,15 +18,25 @@ const PROTECTIVE_CAPACITY_TAB = {
   kind: 'protective-capacity',
 } as const;
 
+const SEQUENCE_PRACTICE_TAB = {
+  id: 'SEQUENCE_PRACTICE',
+  name: 'Sequence Practice',
+  kind: 'sequence-practice',
+} as const;
+
 const ASSESSMENT_TABS = [
   ...ALL_ASSESSMENTS.map((assessment) => ({ ...assessment, kind: 'standard' as const })),
   FORENSIC_TAB,
   PROTECTIVE_CAPACITY_TAB,
+  SEQUENCE_PRACTICE_TAB,
 ];
 
 export default function AssessmentsRoute() {
   const [selectedAssessment, setSelectedAssessment] = useState<
-    (StandardAssessment & { kind: 'standard' }) | typeof FORENSIC_TAB | typeof PROTECTIVE_CAPACITY_TAB
+    (StandardAssessment & { kind: 'standard' })
+    | typeof FORENSIC_TAB
+    | typeof PROTECTIVE_CAPACITY_TAB
+    | typeof SEQUENCE_PRACTICE_TAB
   >(
     ASSESSMENT_TABS[0]
   );
@@ -50,6 +61,8 @@ export default function AssessmentsRoute() {
           <ForensicCriteriaAssessmentScreen />
         ) : selectedAssessment.kind === 'protective-capacity' ? (
           <ProtectiveCapacityReflectionScreen />
+        ) : selectedAssessment.kind === 'sequence-practice' ? (
+          <SequencePracticeScreen />
         ) : (
           <AssessmentRunnerScreen key={selectedAssessment.id} assessment={selectedAssessment} />
         )}

@@ -47,7 +47,7 @@ Compatibility and generated areas live here:
 | `/` | `app/index.tsx` | navigation hub | none |
 | `/scenarios` | `lib/scenarios/ScenarioSimulatorScreen.tsx` | local scenario prototype | none |
 | `/storybooks` | `lib/storybooks/StorybookReaderScreen.tsx` | sample storybook content | none |
-| `/assessments` | `lib/assessments/AssessmentRunnerScreen.tsx`, `ProtectiveCapacityReflectionScreen.tsx`, and `ForensicCriteriaAssessmentScreen.tsx` | local self-reflection/check-ins; no assessment persistence | none |
+| `/assessments` | `lib/assessments/AssessmentRunnerScreen.tsx`, `ProtectiveCapacityReflectionScreen.tsx`, `SequencePracticeScreen.tsx`, and `ForensicCriteriaAssessmentScreen.tsx` | local self-reflection and unscored practice; no assessment persistence | none |
 | `/evidence` | `lib/evidence/EvidenceVaultScreen.tsx` | device-local evidence prototype | none |
 | `/reports` | `lib/reports/ReportGeneratorScreen.tsx` | local PDF generation | none |
 | `/voice-coach` | `lib/voice/VoiceCalmingCoach.tsx` | device-local breathing tool | none |
