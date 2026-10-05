@@ -134,7 +134,7 @@ test('self-harm disclosures require human review without overstating immediate d
   const result = await handlers.chat({
     userId: 'authenticated-user',
     body: {
-      message: 'I have thought about hurting myself before.',
+      message: 'I have thought about self-harm before.',
       consentToAiSupport: true,
     },
   });
