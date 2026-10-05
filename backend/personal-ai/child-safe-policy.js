@@ -1,11 +1,17 @@
 'use strict';
 
 const PRIVACY_REQUEST_PATTERN = /\b(full\s*name|surname|last\s*name|first\s*name|address|street|suburb|postcode|school|phone|email|social\s*media|photo|picture|where\s+you\s+live|who\s+you\s+live\s+with)\b/ig;
-const IMMEDIATE_DANGER_PATTERN = /\b(now|right now|tonight|today|immediately|urgent|emergency|can't breathe|bleeding|hurt me|hurting me|kill me|suicide|self[-\s]?harm|unsafe at home)\b/i;
+const IMMEDIATE_DANGER_PATTERNS = [
+  /\b(?:right now|this moment|currently|immediately|tonight)\b.{0,80}\b(?:hurt|hurting|harm|kill|attack|unsafe|in danger|bleeding|can't breathe|choking|trapped)\b/i,
+  /\b(?:hurt|hurting|harm|kill|attack|unsafe|in danger|bleeding|can't breathe|choking|trapped)\b.{0,80}\b(?:right now|this moment|currently|immediately|tonight)\b/i,
+  /\b(?:can't breathe|cannot breathe|choking|bleeding heavily|being attacked|being hurt right now|unsafe at home right now)\b/i,
+  /\b(?:going to|about to|plan to)\s+(?:kill myself|hurt myself|self[-\s]?harm)\b/i,
+];
+const NEGATED_DANGER_PATTERN = /\b(?:no one|nobody|none|not|never|don't|do not|doesn't|does not|isn't|is not|aren't|are not|wasn't|was not|weren't|were not)\b.{0,40}\b(?:unsafe|in danger|hurt|hurting|harm|kill|attack|bleeding|choking|trapped)\b/i;
 const UNSAFE_TONE_PATTERN = /\b(your fault|you should have|prove it|why didn't you|details please|tell me exactly what happened|give me their name)\b/ig;
 
 const DISCLOSURE_SIGNALS = {
-  abuse: /\b(hit|hurt|abuse|abused|molest|touch me|violent|violence|threaten|threatened|yell at me|scream at me)\b/i,
+  abuse: /\b(hit|hurt|hurting|abuse|abused|molest|touch me|violent|violence|threaten|threatened|yell at me|scream at me)\b/i,
   self_harm: /\b(self[-\s]?harm|suicide|kill myself|want to die|hurt myself|cut myself)\b/i,
   coercion: /\b(force|forced|made me|won't let me|control me|locked|trapped|blackmail|threatened to)\b/i,
   fear: /\b(scared|afraid|terrified|frightened|panic|unsafe)\b/i,
@@ -45,7 +51,9 @@ function detectDisclosureSignals(message = '') {
 }
 
 function hasImmediateDanger(message = '') {
-  return IMMEDIATE_DANGER_PATTERN.test(String(message || ''));
+  const sentences = String(message || '').split(/(?<=[.!?;])\s+|\n+/);
+  return sentences.some(sentence => !NEGATED_DANGER_PATTERN.test(sentence)
+    && IMMEDIATE_DANGER_PATTERNS.some(pattern => pattern.test(sentence)));
 }
 
 function privacyBoundaryNotice(ageBand) {
@@ -57,7 +65,7 @@ function privacyBoundaryNotice(ageBand) {
 
 function confidentialityLine(immediateDanger) {
   if (immediateDanger) {
-    return 'You can share only what you want. I cannot keep secrets when someone is in immediate danger, so contact emergency services or a trusted safe adult now.';
+    return 'You can share only what you want. I cannot keep secrets when someone is in immediate danger, so contact local emergency services or a trusted safe adult now.';
   }
   return 'You can share only what you want. I will focus on safety and encourage trusted adult support if risk increases.';
 }
@@ -72,12 +80,12 @@ function safetyPlanLines({ immediateDanger, ageBand }) {
     return ageBand === 'early_child'
       ? [
         'If you can, go to a safe grown-up right now.',
-        'If there is danger now, call emergency services now.',
+        'If there is danger now, contact local emergency services.',
         'Take slow breaths with me: in for 4, out for 4.',
       ]
       : [
         'Move to the safest nearby place you can get to now.',
-        'Contact a trusted adult, local crisis line, or emergency services right now.',
+        'Contact a trusted adult or local emergency services right now.',
         'Use a grounding step: name 5 things you can see, then take 3 slow breaths.',
       ];
   }
@@ -157,4 +165,6 @@ module.exports = {
   detectDisclosureSignals,
   deriveAgeBand,
   hasImmediateDanger,
+  privacyBoundaryNotice,
+  removeUnsafePrompts,
 };

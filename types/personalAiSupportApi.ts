@@ -1,23 +1,23 @@
 import type {
   PersonalAiCompletionState,
+  PersonalAiConfidenceBasis,
   PersonalAiEscalationType,
   PersonalAiFlowState,
   PersonalAiRiskLevel,
-  PersonalAiSafetyCheck,
 } from "../lib/engines/personalAiSupportTypes";
 
 export interface PersonalAiRequestContext {
-  conversationId?: string;
   flowId?: string;
-  state?: PersonalAiFlowState;
-  locale?: string;
-  timezone?: string;
+  ageBand?: "early_child" | "middle_child" | "adolescent";
+  developmentBand?: "early_child" | "middle_child" | "adolescent";
+  ageYears?: number;
 }
 
 export type PersonalAiApiErrorCode =
   | "VALIDATION_ERROR" | "UNAUTHORIZED" | "FORBIDDEN" | "NOT_FOUND"
   | "RATE_LIMITED" | "CLASSIFICATION_FAILED" | "MODEL_FAILED"
-  | "SAFETY_OVERRIDE" | "STATE_CONFLICT" | "INTERNAL_ERROR";
+  | "SAFETY_OVERRIDE" | "STATE_CONFLICT" | "CONSENT_REQUIRED"
+  | "SERVICE_UNAVAILABLE" | "INTERNAL_ERROR";
 
 export interface PersonalAiApiError {
   code: PersonalAiApiErrorCode;
@@ -35,6 +35,7 @@ export interface ClassifyResponse {
   intent: string;
   riskLevel: PersonalAiRiskLevel;
   confidence: number;
+  confidenceBasis: PersonalAiConfidenceBasis;
   escalationType: PersonalAiEscalationType;
   flowId: string;
   additionalFlowIds: string[];
@@ -44,20 +45,17 @@ export interface ClassifyResponse {
   clarificationQuestion?: string;
   matchedSignalIds: string[];
   reasons: string[];
+  decisionSupportOnly: true;
 }
 
 export interface ChatRequest {
-  conversationId?: string;
   message: string;
   flowId?: string;
-  state?: PersonalAiFlowState;
   context?: PersonalAiRequestContext;
-  safetyCheck?: PersonalAiSafetyCheck;
   consentToAiSupport: boolean;
 }
 
 export interface ChatResponse {
-  conversationId?: string;
   flowId: string;
   state: PersonalAiFlowState;
   assistantMessage: string;
@@ -66,10 +64,15 @@ export interface ChatResponse {
   requiresHumanHandoff: boolean;
   shouldDocument: boolean;
   completionState: PersonalAiCompletionState;
+  handoffStatus: "not_offered" | "offered";
   metadata: {
     intent: string;
     confidence: number;
+    confidenceBasis: PersonalAiConfidenceBasis;
     matchedSignalIds: string[];
+    processingMode: "deterministic_scripted";
+    decisionSupportOnly: true;
+    humanReviewRequired: true;
   };
 }
 
@@ -117,5 +120,11 @@ export interface GetFlowsResponse {
   flows: PersonalAiFlowSummary[];
 }
 
+export interface PersonalAiSupportHandlers {
+  getFlows(input: { userId: string }): Promise<GetFlowsResponse>;
+  classify(input: { userId: string; body: ClassifyRequest }): Promise<ClassifyResponse>;
+  chat(input: { userId: string; body: ChatRequest }): Promise<ChatResponse>;
+}
+
 export const SAFE_PERSONAL_AI_FALLBACK =
-  "I’m glad you told me. Right now, let’s focus on safety. If anyone is in immediate danger, call Triple Zero or involve a trusted safe adult now.";
+  "I’m glad you told me. Right now, let’s focus on safety. If anyone is in immediate danger, contact local emergency services or a trusted safe adult now.";

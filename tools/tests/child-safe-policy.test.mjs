@@ -24,6 +24,9 @@ test('derives developmental band from age and explicit band', () => {
 
 test('flags immediate danger wording', () => {
   assert.equal(hasImmediateDanger('I feel unsafe at home right now'), true);
+  assert.equal(hasImmediateDanger('Someone is hurting me right now.'), true);
+  assert.equal(hasImmediateDanger("I don't feel unsafe at home right now. I'm safe."), false);
+  assert.equal(hasImmediateDanger('I feel worried today, but I am safe.'), false);
   assert.equal(hasImmediateDanger('I was upset yesterday but I am feeling calmer'), false);
 });
 

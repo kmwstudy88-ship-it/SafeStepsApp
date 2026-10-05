@@ -18,10 +18,10 @@ export type StandardAssessment = {
 
 export const CAPES_ASSESSMENT: StandardAssessment = {
   id: "CAPES",
-  name: "CAPES",
-  fullTitle: "Child Adjustment and Parent Efficacy Scale",
-  description: "Standardized measure of emotional/behavioral child problems and parental self-efficacy.",
-  clinicalPurpose: "Evaluates child behavioral intensity and parental confidence in managing difficulties.",
+  name: "Child & Parent Check-in",
+  fullTitle: "Child adjustment and parent confidence reflection",
+  description: "Informal adapted prompts for reflecting on child behavior and parenting confidence; not the standardized CAPES measure.",
+  clinicalPurpose: "Personal reflection only; not a clinical screen or an official CAPES administration.",
   scaleType: "likert_0_3",
   subscales: ["Behavior Problems", "Emotional Problems", "Parenting Confidence"],
   items: [
@@ -40,10 +40,10 @@ export const CAPES_ASSESSMENT: StandardAssessment = {
 
 export const KEPS_ASSESSMENT: StandardAssessment = {
   id: "KEPS",
-  name: "KEPS",
-  fullTitle: "Kessler Psychological Distress & Efficacy Scale",
-  description: "10-item screen measuring non-specific psychological distress and parenting strain.",
-  clinicalPurpose: "Monitors parental emotional distress and identifies support needs during reunification.",
+  name: "Parent Stress Check-in",
+  fullTitle: "Parent stress and coping reflection",
+  description: "Informal adapted prompts about stress and coping; not a validated clinical screen or an official Kessler measure.",
+  clinicalPurpose: "Personal reflection only; it does not screen for or diagnose psychological distress.",
   scaleType: "likert_0_3",
   subscales: ["Fatigue / Depressed Mood", "Nervousness / Anxiety"],
   items: [
@@ -62,10 +62,10 @@ export const KEPS_ASSESSMENT: StandardAssessment = {
 
 export const PAFAS_ASSESSMENT: StandardAssessment = {
   id: "PAFAS",
-  name: "PAFAS",
-  fullTitle: "Parenting and Family Adjustment Scales",
-  description: "Validated measure of parenting practices, emotional adjustment, and family relationships.",
-  clinicalPurpose: "Measures consistency, positive encouragement, parent-child relationship, and family discord.",
+  name: "Family Routines Check-in",
+  fullTitle: "Parenting and family adjustment reflection",
+  description: "Informal adapted prompts about parenting and family routines; not a validated PAFAS administration.",
+  clinicalPurpose: "Personal reflection only; scores are not clinical or family-functioning measures.",
   scaleType: "likert_0_3",
   subscales: ["Parenting Practices", "Family Discord", "Parental Emotional Adjustment", "Partner Teamwork"],
   items: [
@@ -89,10 +89,10 @@ export const PAFAS_ASSESSMENT: StandardAssessment = {
 
 export const FPS_ASSESSMENT: StandardAssessment = {
   id: "FPS",
-  name: "FPS",
-  fullTitle: "Facilitative Parenting Scale",
-  description: "Validated scale evaluating parenting behaviors supporting child autonomy, friendships, and boundaries.",
-  clinicalPurpose: "Identifies facilitative warmth versus over-protective or overly directive parenting patterns.",
+  name: "Parent-Child Connection",
+  fullTitle: "Facilitative parenting reflection",
+  description: "Informal adapted prompts about connection, autonomy, and boundaries; not a validated FPS administration.",
+  clinicalPurpose: "Personal reflection only; it does not identify or classify parenting patterns.",
   scaleType: "likert_1_5",
   subscales: ["Warmth", "Friendship Support", "Non-Over-Protective", "Non-Conflicting", "Enables Independence"],
   items: [

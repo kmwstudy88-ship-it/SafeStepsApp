@@ -47,7 +47,7 @@ Compatibility and generated areas live here:
 | `/` | `app/index.tsx` | navigation hub | none |
 | `/scenarios` | `lib/scenarios/ScenarioSimulatorScreen.tsx` | local scenario prototype | none |
 | `/storybooks` | `lib/storybooks/StorybookReaderScreen.tsx` | sample storybook content | none |
-| `/assessments` | `lib/assessments/AssessmentRunnerScreen.tsx` | local scoring flow | none |
+| `/assessments` | `lib/assessments/AssessmentRunnerScreen.tsx`, `ProtectiveCapacityReflectionScreen.tsx`, `SequencePracticeScreen.tsx`, and `ForensicCriteriaAssessmentScreen.tsx` | local self-reflection and unscored practice; no assessment persistence | none |
 | `/evidence` | `lib/evidence/EvidenceVaultScreen.tsx` | device-local evidence prototype | none |
 | `/reports` | `lib/reports/ReportGeneratorScreen.tsx` | local PDF generation | none |
 | `/voice-coach` | `lib/voice/VoiceCalmingCoach.tsx` | device-local breathing tool | none |
@@ -65,7 +65,7 @@ The current parent/caregiver surface is narrower than the backend/domain footpri
 
 | Capability | Current route/surface | Current state | Existing backend/domain basis |
 | --- | --- | --- | --- |
-| AI companion / counsellor access | planned `/companion`-style route | missing parent route and chat UI | personal AI consent, conversation, safety-event, handoff, referral, and audit tables in Supabase |
+| AI companion / counsellor access | planned `/companion`-style route | missing parent route and chat UI; deterministic backend handlers are gated and disabled until trusted consent/catalog adapters and launch approvals are available | repository migrations define Personal AI persistence/governance tables, but they are absent from the verified deployment snapshot |
 | Case plan visibility | `/cases/[id]` | partial: current case detail does not show tasks, milestones, requirements checklist, or percent-complete progress | case tasks, milestones, quest progress, and reunification data structures |
 | Direct messaging with caseworker | none | missing parent inbox/chat experience | consolidated `messages` view and `parent_child_messages` model |
 | Scheduling & calendar | none | missing unified parent calendar for visits, hearings, assessments, and appointments | case appointments plus consolidated visit records |
@@ -76,7 +76,7 @@ The current parent/caregiver surface is narrower than the backend/domain footpri
 | Peer / community support | none | missing parent peer-support, mentor, or forum surface | community/referral foundations exist outside the parent app surface |
 | Onboarding & consent | `/cases` sign-in only | partial: sign-in exists, but no dedicated onboarding, identity-verification, consent, or terms flow | onboarding consent events and parent intake save/resume RPCs |
 | Dispute / grievance path | none | missing contestability and supervisor-review request flow | governance and decision-review structures exist, but no parent UI |
-| Emergency / crisis escalation | `/sos` only | partial: calming scripts exist, but no distinct crisis-routing or hotline flow | personal AI safety/referral structures exist without a dedicated route |
+| Emergency / crisis escalation | `/sos` only | partial: calming scripts exist, but no distinct crisis-routing or hotline flow; Personal AI can only offer generic local-emergency guidance and does not dispatch or queue help | repository migrations define Personal AI safety/referral structures, but they are absent from the verified deployment snapshot |
 | Data rights | none | missing parent export/download and access-audit views | export and audit structures exist in backend domains, but not in the app surface |
 
 ## Backend boundary

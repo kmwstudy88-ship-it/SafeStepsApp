@@ -24,11 +24,11 @@ export const safeStepsProtectiveCapacityDomains: AssessmentDomain[] = [
 ];
 
 const scaleOptions = (itemId: string) => [
-  { id: `${itemId}-0`, itemId, label: "0 - Immediate concern", value: "0", score: 0 },
-  { id: `${itemId}-1`, itemId, label: "1 - Major concern", value: "1", score: 1 },
-  { id: `${itemId}-2`, itemId, label: "2 - Emerging progress", value: "2", score: 2 },
-  { id: `${itemId}-3`, itemId, label: "3 - Mostly consistent", value: "3", score: 3 },
-  { id: `${itemId}-4`, itemId, label: "4 - Sustained safe practice", value: "4", score: 4 },
+  { id: `${itemId}-0`, itemId, label: "Not in place yet", value: "0", score: 0 },
+  { id: `${itemId}-1`, itemId, label: "Rarely or only with substantial support", value: "1", score: 1 },
+  { id: `${itemId}-2`, itemId, label: "Sometimes; still developing", value: "2", score: 2 },
+  { id: `${itemId}-3`, itemId, label: "Often; usually manageable", value: "3", score: 3 },
+  { id: `${itemId}-4`, itemId, label: "Consistently across recent situations", value: "4", score: 4 },
 ];
 
 export const safeStepsProtectiveCapacityItems: AssessmentItem[] = [
@@ -38,9 +38,9 @@ export const safeStepsProtectiveCapacityItems: AssessmentItem[] = [
     itemType: "multiple_choice",
     weight: 1.4,
     options: [
-      { id: "active-safety-concern-no", itemId: "active-safety-concern", label: "No active unmanaged safety concern", value: "no", score: 4 },
-      { id: "active-safety-concern-managed", itemId: "active-safety-concern", label: "Concern present but safety plan is active", value: "managed", score: 2 },
-      { id: "active-safety-concern-yes", itemId: "active-safety-concern", label: "Active unmanaged safety concern", value: "yes", score: 0 },
+      { id: "active-safety-concern-no", itemId: "active-safety-concern", label: "No current unmanaged concern known", value: "no", score: 4 },
+      { id: "active-safety-concern-managed", itemId: "active-safety-concern", label: "A concern is present and a safety plan is in place", value: "managed", score: 2 },
+      { id: "active-safety-concern-yes", itemId: "active-safety-concern", label: "A current concern does not yet have a workable safety response", value: "yes", score: 0 },
     ],
   },
   {
@@ -210,9 +210,9 @@ export const safeStepsProtectiveCapacityItems: AssessmentItem[] = [
     itemType: "multiple_choice",
     weight: 1,
     options: [
-      { id: "drug-test-clear", itemId: "drug-test-critical", label: "No relevant concern or stable evidence", value: "clear", score: 4 },
-      { id: "drug-test-missed", itemId: "drug-test-critical", label: "Missed or incomplete evidence", value: "missed", score: 1 },
-      { id: "drug-test-positive-unmanaged", itemId: "drug-test-critical", label: "Positive or unmanaged concern", value: "positive_unmanaged", score: 0 },
+      { id: "drug-test-clear", itemId: "drug-test-critical", label: "No current concern known, or testing is not part of my plan", value: "clear", score: 4 },
+      { id: "drug-test-missed", itemId: "drug-test-critical", label: "Testing information is incomplete or I need clarification", value: "missed", score: 1 },
+      { id: "drug-test-positive-unmanaged", itemId: "drug-test-critical", label: "A concern has been identified and I have not yet discussed a response", value: "positive_unmanaged", score: 0 },
     ],
   },
   {
