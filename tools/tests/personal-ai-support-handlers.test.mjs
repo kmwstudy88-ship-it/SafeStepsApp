@@ -111,6 +111,42 @@ test('classification is deterministic and prioritizes urgent danger over a reque
   assert.deepEqual(result.matchedSignalIds, ['abuse']);
 });
 
+test('immediate danger uses the built-in safety response when no approved critical flow exists', async () => {
+  const handlers = createHandlers();
+  const result = await handlers.chat({
+    userId: 'authenticated-user',
+    body: {
+      message: 'Someone will hurt me right now.',
+      consentToAiSupport: true,
+    },
+  });
+
+  assert.equal(result.flowId, FALLBACK_FLOW_ID);
+  assert.equal(result.state, 'safety_check');
+  assert.equal(result.riskLevel, 'critical');
+  assert.equal(result.escalationType, 'urgent_support');
+  assert.equal(result.requiresHumanHandoff, true);
+  assert.match(result.assistantMessage, /local emergency services/i);
+});
+
+test('self-harm disclosures require human review without overstating immediate danger', async () => {
+  const handlers = createHandlers();
+  const result = await handlers.chat({
+    userId: 'authenticated-user',
+    body: {
+      message: 'I have thought about hurting myself before.',
+      consentToAiSupport: true,
+    },
+  });
+
+  assert.equal(result.riskLevel, 'high');
+  assert.equal(result.escalationType, 'human_review');
+  assert.equal(result.requiresHumanHandoff, true);
+  assert.equal(result.handoffStatus, 'offered');
+  assert.equal(result.metadata.matchedSignalIds.includes('self_harm'), true);
+  assert.match(result.assistantMessage, /trusted adult|trusted person/i);
+});
+
 test('chat returns a scripted, privacy-bounded response without claiming a handoff was queued', async () => {
   const handlers = createHandlers();
   const result = await handlers.chat({
@@ -194,6 +230,27 @@ test('fails closed when consent or flow dependencies are unavailable', async () 
     }),
     error => error.code === 'SERVICE_UNAVAILABLE' && error.statusCode === 503,
   );
+});
+
+test('flow listing fails closed when the approved catalog is unavailable or invalid', async () => {
+  const unavailableCatalog = createPersonalAiSupportHandlers({
+    catalog: {
+      async listApprovedActiveFlows() {
+        throw new Error('catalog unavailable');
+      },
+    },
+    consentVerifier: { async hasActiveConsent() { return true; } },
+  });
+  const invalidCatalog = createHandlers({
+    flows: [{ ...safeFlow, riskLevel: 'unrecognized' }],
+  });
+
+  for (const handlers of [unavailableCatalog, invalidCatalog]) {
+    await assert.rejects(
+      handlers.getFlows({ userId: 'authenticated-user' }),
+      error => error.code === 'SERVICE_UNAVAILABLE' && error.statusCode === 503,
+    );
+  }
 });
 
 test('rejects missing and oversized messages', async () => {
