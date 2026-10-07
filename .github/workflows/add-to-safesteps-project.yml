@@ -13,7 +13,19 @@ jobs:
   add-to-project:
     runs-on: ubuntu-latest
     steps:
+      - name: Check project token availability
+        id: project-token
+        env:
+          ADD_TO_PROJECT_PAT: ${{ secrets.ADD_TO_PROJECT_PAT }}
+        run: |
+          if [[ -z "$ADD_TO_PROJECT_PAT" ]]; then
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::ADD_TO_PROJECT_PAT is not configured; skipping project assignment."
+          else
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Add issue or pull request to SafeSteps Build
+        if: steps.project-token.outputs.available == 'true'
         uses: actions/add-to-project@5afcf98fcd03f1c2f92c3c83f58ae24323cc57fd # v2.0.0
         with:
           project-url: https://github.com/users/kmwstudy88-ship-it/projects/2
