@@ -11,8 +11,7 @@ import {
   safeStepsProtectiveCapacityItems,
   safeStepsScoringBands,
 } from '../data/safeStepsAssessmentInstrument';
-import type { AssessmentResponse } from '../data/safeStepsAssessmentInstrument';
-import { scoreAssessment } from '../engines/assessmentScoringEngine';
+import { scoreAssessment, type AssessmentResponse } from '../engines/assessmentScoringEngine';
 
 const domainDisplayNames: Record<string, string> = {
   "anti-gaming": "Communication and change over time",
