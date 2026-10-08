@@ -6,12 +6,16 @@ on:
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/dependency-audit.yml'
+      - 'tools/check-npm-audit.mjs'
+      - 'tools/tests/dependency-audit.test.mjs'
   push:
     branches: [main]
     paths:
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/dependency-audit.yml'
+      - 'tools/check-npm-audit.mjs'
+      - 'tools/tests/dependency-audit.test.mjs'
   schedule:
     - cron: '0 6 * * 1'
 
@@ -28,40 +32,8 @@ jobs:
         with:
           node-version: '22'
       - run: npm ci --ignore-scripts
+      - run: node --test tools/tests/dependency-audit.test.mjs
       - name: Fail on high/critical vulnerabilities with compatible fixes
         run: |
           npm audit --omit=dev --json > "$RUNNER_TEMP/npm-audit.json" || true
-          node - "$RUNNER_TEMP/npm-audit.json" <<'NODE'
-          const fs = require('node:fs');
-          const report = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
-
-          if (!report.auditReportVersion || report.error) {
-            throw new Error(`npm audit did not return a valid report: ${JSON.stringify(report.error ?? report)}`);
-          }
-
-          const vulnerabilities = Object.entries(report.vulnerabilities ?? {});
-          const blocking = vulnerabilities.filter(([, vulnerability]) => {
-            if (vulnerability.severity === 'critical') return true;
-            if (vulnerability.severity !== 'high') return false;
-
-            const hasCompatibleFix = vulnerability.fixAvailable === true
-              || (typeof vulnerability.fixAvailable === 'object'
-                && vulnerability.fixAvailable !== null
-                && vulnerability.fixAvailable.isSemVerMajor === false);
-
-            return hasCompatibleFix
-              && vulnerability.via.some((advisory) => typeof advisory === 'object');
-          });
-          const unfixableHigh = vulnerabilities
-            .filter(([, vulnerability]) => vulnerability.severity === 'high')
-            .filter(([name]) => !blocking.some(([blockingName]) => blockingName === name))
-            .map(([name]) => name);
-
-          if (unfixableHigh.length) {
-            console.warn(`High-severity production findings without a compatible fix: ${unfixableHigh.join(', ')}`);
-          }
-          if (blocking.length) {
-            console.error(`Production vulnerabilities with compatible fixes: ${blocking.map(([name]) => name).join(', ')}`);
-            process.exitCode = 1;
-          }
-          NODE
+          node tools/check-npm-audit.mjs "$RUNNER_TEMP/npm-audit.json"
