@@ -19,6 +19,7 @@
     "validate": "npx expo-doctor",
     "content:index": "node tools/build-content-index.mjs",
     "content:readiness": "node tools/validate-curriculum-readiness.mjs",
+    "test:resilience-schema": "node --test tools/tests/resilience-learning-observations-schema.test.mjs",
     "readiness": "node tools/production-readiness-gate.mjs"
   },
   "dependencies": {
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "@types/react": "^19.2.18",
+    "ajv": "^8.17.1",
     "typescript": "^7.0.2"
   }
 }

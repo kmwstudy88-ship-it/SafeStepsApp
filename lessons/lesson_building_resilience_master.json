@@ -1,0 +1,290 @@
+{
+  "id": "lesson_building_resilience_master",
+  "title": "Building Resilience: Advanced Master Course",
+  "description": "An advanced, practical course for parents and caregivers on supporting children through setbacks, stress, and recovery. It combines emotional coaching, optional pattern tracking, collaborative problem-solving, and relationship repair.",
+  "duration_minutes": 90,
+  "audience": [
+    "Parents and caregivers",
+    "Family support practitioners"
+  ],
+  "prerequisites": [],
+  "content_warning": "This lesson discusses stress, distress, and family conflict. Pause or skip activities that do not feel right for you. The exercises are educational and are not a substitute for individualized clinical care or safety planning.",
+  "learning_outcomes": [
+    "Describe resilience as a set of skills and supports that can develop over time, rather than a fixed trait or a requirement to endure harm.",
+    "Recognize that stress can make flexible thinking and problem-solving harder without treating a simplified brain-region metaphor as a diagnosis.",
+    "Use a brief emotional coaching sequence to listen, validate, support regulation, and invite problem-solving when the child is ready.",
+    "Notice patterns in context and recovery using optional, privacy-conscious tracking.",
+    "Use an age-appropriate repair conversation after a difficult interaction while maintaining clear safety boundaries."
+  ],
+  "sections": [
+    {
+      "id": "section_resilience_foundations",
+      "title": "1. Grounding and the foundations of resilience (30 minutes)",
+      "duration_minutes": 30,
+      "content": {
+        "title": "Resilience grows through support and practice",
+        "overview": "Resilience is not simply coping alone, staying cheerful, or recovering quickly. It describes a changing process shaped by a child's skills, relationships, environment, culture, and access to support. Adults can help by making distress safer to express, offering predictable care, and helping children take manageable next steps.",
+        "psychoeducation": "When people feel overwhelmed, attention and flexible problem-solving can become more difficult. A child may need time, a quieter space, connection, or practical help before they can reflect on what happened. The phrase “survival brain” can be a teaching shorthand, but the brain does not literally switch between two separate modes, and visible signs such as silence, movement, or a tense body do not tell us exactly what a child is feeling. Ask, observe, and stay curious rather than diagnosing from behavior.",
+        "learning_goals": [
+          "Distinguish resilience from compliance, toughness, or never needing help.",
+          "Identify supports that make coping and recovery more possible.",
+          "Notice how adult expectations, accessibility, culture, and current stress affect what support is useful."
+        ],
+        "step_by_step": [
+          "Start with safety: check whether anyone is at immediate risk and address that before coaching.",
+          "Slow the interaction: lower the pace, reduce extra demands, and use a calm, respectful tone where possible.",
+          "Offer connection without pressure: ask whether the child wants company, space, a practical aid, or another trusted adult.",
+          "Wait for signs of readiness before asking for explanations or solutions.",
+          "Return to the problem in small steps, with the child's age, communication style, disability, and preferences in mind."
+        ],
+        "parent_scripts": [
+          "You do not have to solve this right now. I can stay nearby, or give you some space.",
+          "This feels hard. Would listening, a break, or help with one small step be useful?",
+          "You are allowed to feel disappointed. We can think about what comes next when you are ready."
+        ],
+        "practical_examples": [
+          "After a child is not selected for a team, an adult acknowledges the disappointment before discussing practice or another opportunity.",
+          "When a child becomes quiet after a school transition, the caregiver offers low-pressure connection and asks what, if anything, would make the next school day easier.",
+          "If noise, language, sensory demands, or an inaccessible task is contributing to distress, the adult changes the environment instead of treating the child's response as a lack of resilience."
+        ],
+        "reflection_questions": [
+          "What messages did I learn about showing distress or asking for help?",
+          "What might make this situation harder for this child than it appears to me?",
+          "How can I communicate that support is available without demanding disclosure?"
+        ],
+        "practice_ideas": [
+          "Write down two ways you can offer connection and two ways you can offer space.",
+          "Choose one phrase that conveys support without promising that everything will be fine."
+        ],
+        "closing_message": "Resilience does not mean a child should have to manage unsafe or unfair circumstances alone. Support, protection, and practical changes are part of helping a child recover and grow."
+      }
+    },
+    {
+      "id": "section_emotional_coaching_tracking",
+      "title": "2. Emotional coaching and optional pattern tracking (25 minutes)",
+      "duration_minutes": 25,
+      "content": {
+        "title": "Notice, connect, support, and reflect",
+        "overview": "This course uses Emotional Coaching & Tracking (E.C.T.) as a practical learning sequence: notice what may be happening, connect without judgment, support regulation and safety, and reflect later on what helped. E.C.T. here is a teaching framework, not a validated clinical protocol, diagnostic tool, or replacement for professional advice.",
+        "psychoeducation": "A child's behavior can have many possible causes, including stress, tiredness, communication barriers, sensory overload, illness, or a need for safety. A single observation cannot establish a cause. Tracking is useful only when it helps the caregiver respond more thoughtfully; it should not be used to monitor, label, punish, or pressure a child.",
+        "learning_goals": [
+          "Separate what was observed from assumptions about why it happened.",
+          "Use validation without agreeing with every interpretation or removing reasonable boundaries.",
+          "Decide whether a short, private log is useful and safe for the family."
+        ],
+        "step_by_step": [
+          "Notice: describe only what you observed and the context, using neutral words.",
+          "Connect: acknowledge the child's experience and ask what support they want, if they can answer.",
+          "Support: prioritize safety and offer one or two realistic choices; do not require the child to calm down on demand.",
+          "Wait: postpone teaching, consequences, or detailed questions until the child can take part safely.",
+          "Reflect later: consider what changed, what support helped, and whether an environmental adjustment is needed."
+        ],
+        "parent_scripts": [
+          "I noticed this got harder when the room became noisy. Is that part of it, or is something else going on?",
+          "I hear that you are frustrated. I will listen, and I will also keep everyone safe.",
+          "Would you like me to stay, give you space, or help with the next step?"
+        ],
+        "practical_examples": [
+          "Instead of writing “attention-seeking,” note “asked to leave the room twice during the group activity; returned after a quiet break.”",
+          "If a child cannot or does not want to talk, offer another communication method or a later check-in rather than insisting on an explanation.",
+          "If the same difficult transition appears repeatedly, consider changing the warning, timing, sensory environment, or amount of adult help."
+        ],
+        "reflection_questions": [
+          "What did I actually observe, and what am I guessing?",
+          "Could the pattern reflect an unmet need or a barrier in the environment?",
+          "Would writing this down protect the child's privacy and improve support, or could it create risk or pressure?"
+        ],
+        "practice_ideas": [
+          "If appropriate and safe, keep a private, brief 14-day reflection log with only these prompts: situation or context, observable signs, support offered, and what seemed helpful.",
+          "Do not include identifying details in a worksheet shared outside the family, and do not upload a child's private log as course evidence.",
+          "Stop tracking if it increases conflict, surveillance, shame, or risk; seek guidance from an appropriate professional when needed."
+        ],
+        "closing_message": "A log can help you notice patterns, but it cannot explain a child by itself. Use curiosity, protect privacy, and let the child's needs—not the record—guide your next step."
+      }
+    },
+    {
+      "id": "section_practice_and_repair",
+      "title": "3. Practice, problem-solving, and relationship repair (20 minutes)",
+      "duration_minutes": 20,
+      "content": {
+        "title": "Build skills together, then reconnect after strain",
+        "overview": "Once immediate safety and regulation needs are addressed, children can be invited into manageable problem-solving. A repair conversation is not a demand that a child forgive, reassure the adult, or disclose more. It is an opportunity for the adult to take responsibility for their own behavior, listen to impact, and make a realistic plan.",
+        "psychoeducation": "Repeated experiences of being heard, helped, and treated respectfully can support trust and coping. Repair does not erase harm or guarantee that a relationship is safe. If conflict includes intimidation, violence, coercion, or a credible threat, prioritize safety and specialist support rather than a family repair exercise.",
+        "learning_goals": [
+          "Offer a problem-solving role that fits the child's age and readiness.",
+          "Make a repair statement that is specific, accountable, and free of blame.",
+          "Know when a guided repair activity is inappropriate or needs professional support."
+        ],
+        "step_by_step": [
+          "Ask permission to revisit the event and accept “not now” where safe to do so.",
+          "Name your own action specifically, without adding an excuse or blaming the child.",
+          "Acknowledge the possible impact and invite the child's perspective without requiring it.",
+          "State the change you will make and follow through consistently.",
+          "If the child is ready, agree on one small next step they can influence; keep adult responsibilities with the adult."
+        ],
+        "parent_scripts": [
+          "I raised my voice earlier. That was my choice, and it may have felt frightening. I am sorry. I will step away and get support before I speak that way again.",
+          "You do not need to make me feel better or answer now. I am here if you want to talk later.",
+          "Would it help to plan one small step together, or would you rather leave this for today?"
+        ],
+        "practical_examples": [
+          "After a parent reacts sharply to a homework struggle, the parent apologizes for the sharp tone, asks what part felt difficult, and later adjusts the task into smaller steps.",
+          "A caregiver does not ask a child to mediate an adult disagreement; the adults take responsibility for resolving it and protecting the child from conflict.",
+          "If the event involved fear or harm, the adult checks immediate safety and consults appropriate specialist services instead of asking the child to participate in a reconciliation ritual."
+        ],
+        "reflection_questions": [
+          "What part of the repair is my responsibility, regardless of the child's response?",
+          "Am I inviting the child's perspective, or asking them to comfort me?",
+          "Is a family conversation safe and appropriate here, or is outside support needed?"
+        ],
+        "practice_ideas": [
+          "Rehearse a brief apology that names one adult action, its impact, and one concrete change.",
+          "Choose one setback scenario and write a child-led next step that is small, safe, and optional."
+        ],
+        "closing_message": "Trust is built through safe, repeated actions over time. A sincere repair is a beginning; the adult's consistent follow-through matters more than a perfect script."
+      }
+    },
+    {
+      "id": "section_reflection_and_assessment",
+      "title": "4. Reflection, assessment, and next steps (15 minutes)",
+      "duration_minutes": 15,
+      "content": {
+        "title": "Choose one safe next step",
+        "overview": "Use the final part of the course to check understanding, identify what feels realistic, and decide whether additional support is needed. A score is a learning prompt, not a measure of parenting worth or a clinical assessment.",
+        "learning_goals": [
+          "Recall the main safety, coaching, tracking, and repair principles.",
+          "Choose a small action that fits the family's current needs and resources.",
+          "Identify when to pause self-guided practice and seek specialist help."
+        ],
+        "step_by_step": [
+          "Complete the knowledge questions at your own pace; skip any prompt that feels unsafe.",
+          "Review any incorrect answer as a chance to revisit the lesson rather than a judgment.",
+          "Choose one small supportive action to try, or decide that seeking help is the next step.",
+          "Keep any family notes private and share them only when safe and appropriate."
+        ],
+        "reflection_questions": [
+          "Which response from this course feels most realistic for me to use?",
+          "What support would make it easier to follow through?",
+          "Is there any safety, health, or family concern that needs help beyond this course?"
+        ],
+        "practice_ideas": [
+          "Write one sentence describing the support you plan to offer, not a result you expect the child to achieve.",
+          "Identify one trusted person or local service you could contact if the situation becomes harder."
+        ],
+        "closing_message": "You can return to these ideas in small steps. Getting support, changing the environment, and protecting safety are all meaningful ways to help a child."
+      }
+    }
+  ],
+  "activities": [
+    {
+      "id": "activity_stress_window_mapping",
+      "title": "Context and support map",
+      "type": "private_reflection",
+      "duration_minutes": 15,
+      "instructions": [
+        "Choose a low-risk, recent setback; do not use an event involving immediate danger or unresolved abuse for this exercise.",
+        "Write only what you observed, the context, and what support was offered.",
+        "List one possible environmental or practical barrier without assuming you know the child's internal experience.",
+        "Identify one safe adjustment or supportive question to try next time.",
+        "Keep the notes private, omit identifying details from shared materials, and stop if the exercise feels unsafe or intrusive."
+      ],
+      "completion": "Optional reflection; no child data or worksheet upload is required."
+    },
+    {
+      "id": "activity_repair_rehearsal",
+      "title": "Accountable repair rehearsal",
+      "type": "role_play_or_private_practice",
+      "duration_minutes": 10,
+      "instructions": [
+        "Use a mild everyday interaction, not a disclosure of abuse, violence, or immediate safety risk.",
+        "Practice naming the adult's action, acknowledging possible impact, and stating a specific change.",
+        "Remove “but you made me” and any request that the child forgive or reassure the adult.",
+        "Plan how you will respect the child's choice not to talk."
+      ],
+      "completion": "Practice can be completed privately; sharing is optional."
+    }
+  ],
+  "self_reflection": {
+    "prompt": "When a child is distressed, what happens in my body and what do I feel pulled to do? What safe pause or support could help me respond with care without making the child responsible for my emotions?"
+  },
+  "assessment": {
+    "title": "Applied resilience and repair check",
+    "pass_mark_percent": 80,
+    "questions": [
+      {
+        "id": "resilience_q1",
+        "type": "multiple_choice",
+        "question": "What is the most useful first response when a child is distressed after a setback?",
+        "options": [
+          "Demand an explanation so the cause can be fixed immediately.",
+          "Check safety, acknowledge the difficulty, and offer a manageable form of support.",
+          "Tell the child that resilient people do not give up.",
+          "Promise that the outcome will definitely improve."
+        ],
+        "correct_answer": "Check safety, acknowledge the difficulty, and offer a manageable form of support.",
+        "rationale": "Safety and connection come before detailed reflection or problem-solving. Avoid promising outcomes that cannot be guaranteed."
+      },
+      {
+        "id": "resilience_q2",
+        "type": "true_false",
+        "question": "A brief behavior log can establish the cause of a child's distress.",
+        "correct_answer": false,
+        "rationale": "A log can help notice context and response patterns, but observations do not establish cause or diagnosis."
+      },
+      {
+        "id": "resilience_q3",
+        "type": "short_answer",
+        "scenario": "An 8-year-old is upset after not making a sports team and says, “I'm bad at everything.”",
+        "task": "Write a short response that acknowledges the disappointment, avoids agreeing with the global self-judgment, and asks whether the child wants listening, space, or help thinking about a next step.",
+        "rubric": [
+          "Names or validates the disappointment without minimizing it.",
+          "Separates one outcome from the child's worth or identity.",
+          "Offers choice and does not rush the child into problem-solving."
+        ]
+      },
+      {
+        "id": "resilience_q4",
+        "type": "case_analysis",
+        "scenario": "A teenager has become quieter since changing schools. They say they are tired and do not want to discuss it.",
+        "task": "Describe three supportive steps that respect the teenager's choice, check for safety without interrogation, and explore practical support when they are ready.",
+        "rubric": [
+          "Offers a low-pressure connection and respects the teenager's communication choice.",
+          "Checks immediate safety proportionately and identifies when professional help may be needed.",
+          "Offers practical choices, such as a trusted adult or school support, without taking over."
+        ]
+      }
+    ]
+  },
+  "safety_guidance": {
+    "red_flags": [
+      "The child says they are unsafe, threatened, or being harmed.",
+      "There is immediate risk of violence, self-harm, serious injury, or inability to provide safe supervision.",
+      "Tracking or family conversations are being used to control, intimidate, punish, or pressure the child.",
+      "Distress is persistent, worsening, significantly disrupting daily life, or beyond the caregiver's capacity to support."
+    ],
+    "when_to_escalate": [
+      "For immediate danger, follow local emergency procedures and contact emergency services.",
+      "For suspected abuse, neglect, or violence, follow local safeguarding and mandatory-reporting requirements and consult the relevant specialist service.",
+      "Seek advice from a qualified health or mental-health professional when distress is persistent, severe, or interfering with daily functioning.",
+      "Do not use the repair activity where coercion, intimidation, or ongoing violence makes a joint conversation unsafe."
+    ]
+  },
+  "resources": [
+    {
+      "title": "Local child and family health or mental-health service",
+      "url": "",
+      "note": "Add a locally reviewed service directory before publishing this lesson in a specific region."
+    },
+    {
+      "title": "Local child protection and family-violence support services",
+      "url": "",
+      "note": "Use region-specific, reviewed contacts; this course does not provide emergency or case-specific safety advice."
+    }
+  ],
+  "editorial_notes": {
+    "observation_definitions": "schema/resilience-learning-observations-schema.json",
+    "observation_definitions_scope": "Draft definitions for optional private coaching observations and descriptive caregiver practice counts only. These are not wired to storage, reporting, scoring, or the application. They do not authorize uploading a child's log or establish proof of change.",
+    "source_review": "The supplied source contained placeholder citations and no usable resource URLs. Neuroscience claims were softened, and no sources are represented as verified. Add reviewed citations and region-specific resources before production publication.",
+    "content_status": "Draft for subject-matter and safeguarding review."
+  }
+}

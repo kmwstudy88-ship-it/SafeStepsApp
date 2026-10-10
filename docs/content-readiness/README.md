@@ -52,6 +52,20 @@ Validated counts:
 - Run production readiness gate with real evidence: implemented and enforced; production pass remains blocked until evidence status is `ready`.
 
 ## Validation and limits
+### Resilience observation definition checks
+
+Run `npm run test:resilience-schema` to validate the draft schema in
+`schema/resilience-learning-observations-schema.json` using Ajv's Draft 2020-12
+validator. Tests cover published examples, required fields, inclusive day and
+text-length boundaries, unknown versus zero counts, supported metrics, rejected
+identifiers, and the resilience lesson's schema reference. Validation does not
+verify that free text is non-identifying or establish clinical validity. These
+definitions are not connected to database storage or runtime tracking.
+The `Resilience Schema Verify` GitHub Actions workflow runs these checks on
+relevant pull requests and pushes to `main`, and can also be started manually.
+It uses the lockfile to install dependencies, including the development-only
+validator, without running dependency lifecycle scripts.
+
 What was executed in this audit update:
 - `node tools/build-content-index.mjs`
 - `node tools/validate-curriculum-readiness.mjs`
