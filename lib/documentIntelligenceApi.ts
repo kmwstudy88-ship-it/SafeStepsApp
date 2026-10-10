@@ -137,6 +137,8 @@ export type DocumentIntelligenceQueuedResult = {
   poll_url: string;
   summary_url: string;
   scores_url: string;
+};
+
 export type DocumentQueueResult = {
   document_id: string;
   analysis_id: string;
