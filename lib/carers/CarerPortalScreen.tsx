@@ -13,19 +13,9 @@ import {
   View,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import { createJournalEntry, type EntryKind, type JournalEntry } from './carerPortalState';
 
 type Tab = 'Home' | 'Journal' | 'Messages' | 'Settings';
-type EntryKind = 'Daily update' | 'Achievement' | 'Worry or concern';
-
-type JournalEntry = {
-  id: string;
-  kind: EntryKind;
-  title: string;
-  detail: string;
-  time: string;
-  shared: boolean;
-  imageUri?: string;
-};
 
 const tabs: Array<{ label: Tab; icon: string }> = [
   { label: 'Home', icon: '⌂' },
@@ -75,24 +65,13 @@ export function CarerPortalScreen() {
   }
 
   function saveEntry() {
-    const detail = entryText.trim();
-    if (!detail) {
+    const entry = createJournalEntry(entryKind, entryText, attachment);
+    if (!entry) {
       Alert.alert('Add a few details', 'Describe what happened before saving this update.');
       return;
     }
 
-    setEntries((current) => [
-      {
-        id: String(Date.now()),
-        kind: entryKind,
-        title: entryKind === 'Achievement' ? 'A new achievement' : entryKind === 'Worry or concern' ? 'New concern recorded' : 'Daily care update',
-        detail,
-        time: 'Just now',
-        shared: false,
-        imageUri: attachment,
-      },
-      ...current,
-    ]);
+    setEntries((current) => [entry, ...current]);
     setEntryText('');
     setAttachment(undefined);
     setComposerOpen(false);
