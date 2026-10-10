@@ -55,6 +55,7 @@ Compatibility and generated areas live here:
 | `/fairness` | `lib/fairness/DocumentFairnessViewerScreen.tsx` | live fairness analyzer UI | Node API fairness endpoint |
 | `/cases` | `app/cases/index.tsx` | authenticated case list | Supabase auth, case assignments, realtime |
 | `/cases/[id]` | `app/cases/[id].tsx` | case detail + analysis status | Supabase cases/documents/analyses |
+| `/carers` | `lib/carers/CarerPortalScreen.tsx` | interactive carer dashboard, journal, media picker, sharing states, and monitored-message controls | device-local prototype; case integration pending |
 | `/documents/[id]` | `app/documents/[id].tsx` | document upload + processing | `expo-document-picker` + Node analysis API |
 | `/contact-visit` | `lib/contactVisit/ContactVisitCompanionScreen.tsx` | static guidance UI | none |
 | `/discreet` | `lib/privacy/DiscreetModeScreen.tsx` | device-local disguise prototype | none |
