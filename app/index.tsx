@@ -16,6 +16,7 @@ export default function SafeStepsHub() {
     {
       pillar: 'Pillar 2: Proof of Change & Documentation',
       items: [
+        { title: 'Carer Portal', subtitle: 'Share child-centred updates, milestones, media, and monitored messages', route: '/carers', icon: '🌿', badge: 'New' },
         { title: 'Case Management Console', subtitle: 'Authenticated case assignments & realtime status', route: '/cases', icon: '🗂️', badge: 'Supabase' },
         { title: 'Family Dashboard', subtitle: 'Track multiple children, cases, and next actions together', route: '/family', icon: '👨‍👩‍👧‍👦', badge: 'Multi-child' },
         { title: 'Supervisor Risk Dashboard', subtitle: 'Highest-risk cases, rising risk, escalations, and follow-ups', route: '/dashboard/supervisor', icon: '🚦', badge: 'Safety' },
