@@ -5,6 +5,8 @@ on:
     paths:
       - 'schema/resilience-learning-observations-schema.json'
       - 'lessons/lesson_building_resilience_master.json'
+      - 'modules/module_building_resilience_master.json'
+      - 'src/safesteps/lessons/master-index.json'
       - 'tools/tests/resilience-learning-observations-schema.test.mjs'
       - 'package.json'
       - 'package-lock.json'
@@ -14,6 +16,8 @@ on:
     paths:
       - 'schema/resilience-learning-observations-schema.json'
       - 'lessons/lesson_building_resilience_master.json'
+      - 'modules/module_building_resilience_master.json'
+      - 'src/safesteps/lessons/master-index.json'
       - 'tools/tests/resilience-learning-observations-schema.test.mjs'
       - 'package.json'
       - 'package-lock.json'

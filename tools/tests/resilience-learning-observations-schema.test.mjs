@@ -136,3 +136,18 @@ test('the resilience lesson references this definitions-only schema', () => {
   assert.equal(lesson.editorial_notes.observation_definitions, schemaPath);
   assert.ok(fs.existsSync(fileURLToPath(new URL(lesson.editorial_notes.observation_definitions, repoRoot))));
 });
+
+test('the resilience lesson, module, and generated index stay linked', () => {
+  const lessonPath = 'lessons/lesson_building_resilience_master.json';
+  const modulePath = 'modules/module_building_resilience_master.json';
+  const lesson = JSON.parse(fs.readFileSync(new URL(lessonPath, repoRoot), 'utf8'));
+  const module = JSON.parse(fs.readFileSync(new URL(modulePath, repoRoot), 'utf8'));
+  const index = JSON.parse(fs.readFileSync(new URL('src/safesteps/lessons/master-index.json', repoRoot), 'utf8'));
+  const moduleContent = module.content.find((item) => item.lesson_id === lesson.id);
+
+  assert.ok(module.lessons.includes(lesson.id));
+  assert.ok(moduleContent);
+  assert.deepEqual(moduleContent.sections, lesson.sections.map((section) => section.id));
+  assert.ok(index.lessons.some((item) => item.id === lesson.id && item.sourcePath === lessonPath));
+  assert.ok(index.modules.some((item) => item.id === module.id && item.sourcePath === modulePath));
+});
