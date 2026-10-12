@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     environment: production-readiness
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout
