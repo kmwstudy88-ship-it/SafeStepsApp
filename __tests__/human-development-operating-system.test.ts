@@ -151,10 +151,11 @@ describe("humanDevelopmentOperatingSystem", () => {
   });
 
   it("runs universal quality checks before conclusions are relied on", () => {
+    const recentDate = new Date().toISOString().slice(0, 10);
     const flags = runQualityChecks({
       evidence: [
-        evidence({ id: "one", status: "accepted", independentSourceKey: "parent", context: "home" }),
-        evidence({ id: "two", status: "contradictory", independentSourceKey: "parent", context: "home" }),
+        evidence({ id: "one", date: recentDate, status: "accepted", independentSourceKey: "parent", context: "home" }),
+        evidence({ id: "two", date: recentDate, status: "contradictory", independentSourceKey: "parent", context: "home" }),
       ],
       thresholds: {
         minimumEvidenceItems: 3,
