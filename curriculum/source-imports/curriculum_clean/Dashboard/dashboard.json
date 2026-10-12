@@ -1,0 +1,67 @@
+﻿{
+    "sectionId":  "H",
+    "description":  "Displays the parent’s strengths, wellbeing, stability, protective factors, and growth opportunities.",
+    "name":  "Parenting Capacity Dashboard",
+    "scores":  [
+                   {
+                       "label":  "Parenting Strength Score",
+                       "range":  "0-100",
+                       "description":  "Measures emotional care, basic needs, supervision, and relationship quality.",
+                       "id":  "parenting_strength"
+                   },
+                   {
+                       "label":  "Child Wellbeing Score",
+                       "range":  "0-100",
+                       "description":  "Measures development, emotional safety, school engagement, and stability.",
+                       "id":  "child_wellbeing"
+                   },
+                   {
+                       "label":  "Family Stability Score",
+                       "range":  "0-100",
+                       "description":  "Measures home environment, routines, predictability, and housing stability.",
+                       "id":  "family_stability"
+                   },
+                   {
+                       "label":  "Protective Factors Score",
+                       "range":  "0-100",
+                       "description":  "Measures support systems, community engagement, school involvement, and access to services.",
+                       "id":  "protective_factors"
+                   },
+                   {
+                       "label":  "Growth Opportunities Score",
+                       "range":  "0-100",
+                       "description":  "Highlights areas where support, learning, or change may be beneficial.",
+                       "id":  "growth_opportunities"
+                   }
+               ],
+    "widgets":  [
+                    {
+                        "label":  "Key Strengths",
+                        "source":  "auto_generated",
+                        "description":  "Shows the parent’s strongest areas based on assessment results.",
+                        "id":  "W_Strengths",
+                        "type":  "list"
+                    },
+                    {
+                        "label":  "Recommended Focus Areas",
+                        "source":  "auto_generated",
+                        "description":  "Shows suggested areas for improvement.",
+                        "id":  "W_FocusAreas",
+                        "type":  "list"
+                    },
+                    {
+                        "label":  "Suggested SafeSteps Programs",
+                        "source":  "program_engine",
+                        "description":  "Automatically matched programs based on assessment results.",
+                        "id":  "W_Programs",
+                        "type":  "program_recommendations"
+                    },
+                    {
+                        "label":  "Progress Roadmap",
+                        "source":  "auto_generated",
+                        "description":  "Shows 30-day, 60-day, 90-day, and 12-month goals.",
+                        "id":  "W_ProgressRoadmap",
+                        "type":  "timeline"
+                    }
+                ]
+}

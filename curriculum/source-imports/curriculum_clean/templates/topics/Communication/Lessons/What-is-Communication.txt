@@ -1,0 +1,23 @@
+TOPIC: Communication
+
+LESSON-001
+Title: What is Communication?
+Level: Foundation
+Duration: 2-4 Hours
+Category: Communication
+Learning Outcomes:
+- Define communication
+- Identify verbal and non-verbal communication
+- Understand communication barriers
+Core Concepts:
+- Sender and receiver
+- Communication channels
+- Verbal communication
+- Non-verbal communication
+- Feedback loops
+Activities:
+- Self-reflection exercise
+- Communication style assessment
+Evidence:
+- Completed reflection worksheet
+- Communication action plan

@@ -1,0 +1,218 @@
+const fs = require("fs");
+const path = require("path");
+const crypto = require("crypto");
+
+const repoRoot = path.resolve(__dirname, "..");
+const curriculumRoot = path.join(repoRoot, "curriculum");
+const validKinds = new Set(["program", "course", "module"]);
+
+function parseArgs(argv) {
+  const args = {
+    kind: null,
+    source: null,
+    dryRun: false,
+  };
+
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
+    if (arg === "--kind") args.kind = argv[++index];
+    else if (arg === "--source") args.source = argv[++index];
+    else if (arg === "--dry-run") args.dryRun = true;
+    else if (!args.kind && validKinds.has(String(arg).toLowerCase())) args.kind = arg;
+    else if (!args.source) args.source = arg;
+  }
+
+  if (!args.source) {
+    throw new Error("Usage: node SafeStepsTools/import-curriculum-source.js course ./path/to/source.json");
+  }
+
+  if (!args.kind) {
+    args.kind = inferKindFromPath(args.source);
+  }
+
+  args.kind = String(args.kind).toLowerCase();
+  if (!validKinds.has(args.kind)) {
+    throw new Error(`Invalid --kind "${args.kind}". Use program, course, or module.`);
+  }
+
+  return args;
+}
+
+function inferKindFromPath(sourcePath) {
+  const lowerPath = sourcePath.toLowerCase();
+  if (lowerPath.includes("program")) return "program";
+  if (lowerPath.includes("module")) return "module";
+  return "course";
+}
+
+function readJson(filePath) {
+  const text = fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, "");
+  return JSON.parse(text);
+}
+
+function ensureDir(dirPath) {
+  fs.mkdirSync(dirPath, { recursive: true });
+}
+
+function slugify(value, fallback) {
+  const slug = String(value || fallback || "curriculum-source")
+    .toLowerCase()
+    .replace(/['"]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return slug || fallback || "curriculum-source";
+}
+
+function hashRecord(record) {
+  return crypto.createHash("sha256").update(JSON.stringify(record)).digest("hex").slice(0, 12);
+}
+
+function stableLessonId(lesson, sourceSlug, index) {
+  return slugify(
+    lesson.id || lesson.lessonId || lesson.slug || lesson.title,
+    `${sourceSlug}-lesson-${String(index + 1).padStart(3, "0")}`,
+  );
+}
+
+function isLessonLike(value) {
+  return (
+    value &&
+    typeof value === "object" &&
+    !Array.isArray(value) &&
+    typeof value.title === "string" &&
+    (
+      value.lessonNumber !== undefined ||
+      value.lesson_id !== undefined ||
+      value.lessonId !== undefined ||
+      value.quiz !== undefined ||
+      value.learningOutcomes !== undefined ||
+      value.content !== undefined ||
+      value.transcript !== undefined ||
+      value.teachingTranscript !== undefined ||
+      value.evidenceTask !== undefined
+    )
+  );
+}
+
+function collectLessons(value, trail = [], lessons = []) {
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => collectLessons(item, [...trail, index], lessons));
+    return lessons;
+  }
+
+  if (!value || typeof value !== "object") return lessons;
+
+  if (isLessonLike(value)) {
+    lessons.push({ lesson: value, sourcePath: trail });
+    return lessons;
+  }
+
+  for (const [key, child] of Object.entries(value)) {
+    if (key === "lessons" && Array.isArray(child)) {
+      child.forEach((lesson, index) => {
+        if (lesson && typeof lesson === "object") {
+          lessons.push({ lesson, sourcePath: [...trail, key, index] });
+        }
+      });
+      continue;
+    }
+    collectLessons(child, [...trail, key], lessons);
+  }
+
+  return lessons;
+}
+
+function normalizeLesson(lesson, context) {
+  const lessonId = stableLessonId(lesson, context.sourceSlug, context.index);
+  return {
+    ...lesson,
+    id: lesson.id || lesson.lessonId || lesson.lesson_id || lessonId,
+    slug: lesson.slug || lessonId,
+    curriculumSource: {
+      importedAt: context.importedAt,
+      sourceKind: context.kind,
+      sourceId: context.sourceId,
+      sourceTitle: context.sourceTitle,
+      sourceFile: context.sourceFile,
+      sourcePath: context.sourcePath,
+      contentHash: hashRecord(lesson),
+    },
+  };
+}
+
+function writeJson(filePath, data) {
+  fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, "utf8");
+}
+
+function main() {
+  const args = parseArgs(process.argv.slice(2));
+  const sourcePath = path.resolve(process.cwd(), args.source);
+  if (!fs.existsSync(sourcePath)) {
+    throw new Error(`Missing source file: ${sourcePath}`);
+  }
+
+  const source = readJson(sourcePath);
+  const sourceTitle = source.title || source.name || path.basename(sourcePath, path.extname(sourcePath));
+  const sourceId = slugify(source.id || source.slug || sourceTitle, path.basename(sourcePath, path.extname(sourcePath)));
+  const sourceSlug = slugify(source.slug || sourceId, sourceId);
+  const importedAt = new Date().toISOString();
+  const bucketName = `${args.kind}s`;
+  const sourceBucket = path.join(curriculumRoot, bucketName);
+  const copiedSourcePath = path.join(sourceBucket, `${sourceSlug}.json`);
+  const lessonBucket = path.join(curriculumRoot, "lessons", "extracted", sourceSlug);
+  const manifestPath = path.join(lessonBucket, "manifest.json");
+  const collectedLessons = collectLessons(source);
+
+  const plannedLessons = collectedLessons.map(({ lesson, sourcePath: lessonSourcePath }, index) => {
+    const normalized = normalizeLesson(lesson, {
+      kind: args.kind,
+      sourceId,
+      sourceTitle,
+      sourceSlug,
+      sourceFile: path.relative(repoRoot, copiedSourcePath).replace(/\\/g, "/"),
+      sourcePath: lessonSourcePath,
+      importedAt,
+      index,
+    });
+    return {
+      fileName: `${stableLessonId(normalized, sourceSlug, index)}.json`,
+      lesson: normalized,
+    };
+  });
+
+  if (args.dryRun) {
+    console.log(JSON.stringify({
+      source: path.relative(repoRoot, sourcePath),
+      kind: args.kind,
+      destination: path.relative(repoRoot, copiedSourcePath),
+      extractedLessonCount: plannedLessons.length,
+      lessonFiles: plannedLessons.map((item) => path.posix.join("curriculum/lessons/extracted", sourceSlug, item.fileName)),
+    }, null, 2));
+    return;
+  }
+
+  ensureDir(sourceBucket);
+  ensureDir(lessonBucket);
+  writeJson(copiedSourcePath, source);
+
+  for (const planned of plannedLessons) {
+    writeJson(path.join(lessonBucket, planned.fileName), planned.lesson);
+  }
+
+  writeJson(manifestPath, {
+    importedAt,
+    sourceKind: args.kind,
+    sourceId,
+    sourceTitle,
+    copiedSourceFile: path.relative(repoRoot, copiedSourcePath).replace(/\\/g, "/"),
+    extractedLessonCount: plannedLessons.length,
+    lessonFiles: plannedLessons.map((item) =>
+      path.relative(repoRoot, path.join(lessonBucket, item.fileName)).replace(/\\/g, "/"),
+    ),
+  });
+
+  console.log(`Stored ${args.kind} source at ${path.relative(repoRoot, copiedSourcePath)}`);
+  console.log(`Extracted ${plannedLessons.length} lessons into ${path.relative(repoRoot, lessonBucket)}`);
+}
+
+main();

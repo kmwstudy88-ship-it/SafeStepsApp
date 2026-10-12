@@ -1,0 +1,12 @@
+{
+    "path":  "courses/working_with_families/modules/module_positive_parent_child_relationships.json",
+    "data":  {
+                 "title":  "Building Positive Parent-Child Relationships",
+                 "lessons":  [
+                                 "lesson_emotional_connection",
+                                 "lesson_trust_and_safety",
+                                 "lesson_repairing_ruptures"
+                             ],
+                 "id":  "module_positive_parent_child_relationships"
+             }
+}

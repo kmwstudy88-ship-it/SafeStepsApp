@@ -1,0 +1,285 @@
+# SafeSteps Shared Taxonomy
+# Version: 1.0.0
+# This file is the single source of truth for all canonical enums used across
+# SafeSteps skills, schemas, and policies. All skills must reference this file
+# rather than defining their own label sets.
+
+taxonomy_version: "1.0.0"
+last_updated: "2026-08-28"
+jurisdiction_default: "Australia"
+
+# ─────────────────────────────────────────────
+# Concern Categories
+# Used by: Concern Classification, Risk Assessment, Policy Interpretation
+# ─────────────────────────────────────────────
+concern_categories:
+  - id: safety
+    label: "Safety"
+    description: "Imminent or ongoing physical safety risk to a child or family member."
+    severity_weight: 1.0
+  - id: wellbeing
+    label: "Wellbeing"
+    description: "Emotional, developmental, or social wellbeing concern for a child."
+    severity_weight: 0.8
+  - id: parenting_capacity
+    label: "Parenting Capacity"
+    description: "Concerns about a parent's ability to meet a child's physical, emotional, and developmental needs."
+    severity_weight: 0.75
+  - id: violence_indicator
+    label: "Violence Indicator"
+    description: "Evidence of family or domestic violence impacting the child or household."
+    severity_weight: 1.0
+  - id: neglect
+    label: "Neglect"
+    description: "Failure to provide adequate basic needs: nutrition, supervision, medical care, shelter."
+    severity_weight: 0.95
+  - id: substance_use
+    label: "Substance Use"
+    description: "Substance use by a caregiver that impairs parenting capacity or creates safety risks."
+    severity_weight: 0.85
+  - id: mental_health
+    label: "Mental Health"
+    description: "Mental health concerns of a caregiver or child that affect functioning and safety."
+    severity_weight: 0.7
+  - id: compliance
+    label: "Compliance"
+    description: "Non-compliance with court orders, safety plans, or statutory requirements."
+    severity_weight: 0.8
+  - id: housing
+    label: "Housing"
+    description: "Housing instability or homelessness affecting child welfare."
+    severity_weight: 0.6
+  - id: education
+    label: "Education"
+    description: "Educational access, chronic absence, or engagement concerns."
+    severity_weight: 0.5
+
+# ─────────────────────────────────────────────
+# Risk Levels
+# Used by: Risk Assessment, Escalation, Case Packet Builder
+# ─────────────────────────────────────────────
+risk_levels:
+  - id: low
+    label: "Low"
+    description: "Risk signals present but manageable with current supports. No immediate intervention required."
+    score_range: [0.0, 0.29]
+    escalation_required: false
+    review_interval_days: 90
+  - id: moderate
+    label: "Moderate"
+    description: "Multiple risk signals present. Enhanced monitoring and proactive support required."
+    score_range: [0.30, 0.59]
+    escalation_required: false
+    review_interval_days: 30
+  - id: high
+    label: "High"
+    description: "Significant risk indicators. Immediate professional review and intervention planning required."
+    score_range: [0.60, 0.79]
+    escalation_required: true
+    review_interval_days: 7
+  - id: critical
+    label: "Critical"
+    description: "Imminent risk to child safety. Immediate escalation and statutory notification may be required."
+    score_range: [0.80, 1.00]
+    escalation_required: true
+    review_interval_days: 1
+
+# ─────────────────────────────────────────────
+# Evidence Quality
+# Used by: Evidence Extraction, Multi-Document Comparison, Case Packet Builder
+# ─────────────────────────────────────────────
+evidence_quality:
+  - id: direct
+    label: "Direct"
+    description: "First-hand, explicit statement from a primary source (e.g. sworn affidavit, professional observation)."
+    weight: 1.0
+  - id: indirect
+    label: "Indirect"
+    description: "Inferred or reported by a secondary source."
+    weight: 0.7
+  - id: hearsay
+    label: "Hearsay"
+    description: "Reported statement — person reporting did not directly observe the event."
+    weight: 0.4
+  - id: uncorroborated
+    label: "Uncorroborated"
+    description: "Single-source claim with no independent confirmation."
+    weight: 0.3
+  - id: corroborated
+    label: "Corroborated"
+    description: "Claim confirmed by two or more independent sources."
+    weight: 1.0
+  - id: documentary
+    label: "Documentary"
+    description: "Evidence from official document (court record, medical record, school report)."
+    weight: 0.9
+
+# ─────────────────────────────────────────────
+# Contradiction Types
+# Used by: Contradiction Detection
+# ─────────────────────────────────────────────
+contradiction_types:
+  - id: temporal
+    label: "Temporal"
+    description: "Different accounts give conflicting dates or sequences for the same event."
+  - id: factual
+    label: "Factual"
+    description: "Different accounts describe the same event in incompatible ways."
+  - id: source_conflict
+    label: "Source Conflict"
+    description: "Two named parties give mutually exclusive accounts of the same event."
+  - id: omission
+    label: "Omission"
+    description: "A fact present in one document is absent from another where it would be expected."
+  - id: quantitative
+    label: "Quantitative"
+    description: "Numeric values (dates, counts, amounts) are inconsistent across documents."
+
+# ─────────────────────────────────────────────
+# Escalation Tiers
+# Used by: Escalation, Follow-Up Scheduling, Disclosure Sensitive
+# ─────────────────────────────────────────────
+escalation_tiers:
+  - id: tier_1_immediate
+    label: "Tier 1 — Immediate"
+    description: "Imminent risk to life or safety. Notify responsible practitioner within 15 minutes. May require statutory notification or emergency services."
+    response_sla_minutes: 15
+    notification_roles: ["case_manager", "team_leader", "child_protection_authority"]
+  - id: tier_2_urgent
+    label: "Tier 2 — Urgent"
+    description: "Significant risk requiring same-day professional response and action planning."
+    response_sla_minutes: 240
+    notification_roles: ["case_manager", "team_leader"]
+  - id: tier_3_standard
+    label: "Tier 3 — Standard"
+    description: "Elevated risk or compliance concern requiring response within agreed case review timeline."
+    response_sla_minutes: 1440
+    notification_roles: ["case_manager"]
+
+# ─────────────────────────────────────────────
+# Confidence Bands
+# Used by: all skills
+# ─────────────────────────────────────────────
+confidence_bands:
+  - id: high
+    label: "High"
+    description: "Strong evidential basis. Direct, explicit source material."
+    range: [0.80, 1.00]
+    disclosure_required: false
+  - id: medium
+    label: "Medium"
+    description: "Moderate evidential basis. Inference or partially explicit source."
+    range: [0.50, 0.79]
+    disclosure_required: false
+  - id: low
+    label: "Low"
+    description: "Weak evidential basis. Significant inference or ambiguous source."
+    range: [0.20, 0.49]
+    disclosure_required: true
+  - id: uncertain
+    label: "Uncertain"
+    description: "Insufficient basis for reliable assessment. Requires human review."
+    range: [0.00, 0.19]
+    disclosure_required: true
+
+# ─────────────────────────────────────────────
+# Audience Types
+# Used by: Case Packet Builder, Guided Discovery, Child-Safe Conversation
+# ─────────────────────────────────────────────
+audience_types:
+  - id: lawyer
+    label: "Lawyer"
+    description: "Legal practitioner requiring full source attribution, legal citations, and compliance status."
+    pii_permitted: true
+    risk_score_permitted: true
+    allegation_detail_permitted: true
+  - id: social_worker
+    label: "Social Worker / Child Protection Professional"
+    description: "Child protection or family support professional requiring risk signals, protective factors, and action items."
+    pii_permitted: true
+    risk_score_permitted: true
+    allegation_detail_permitted: true
+  - id: parent
+    label: "Parent / Carer"
+    description: "Non-professional party requiring plain language, no raw risk scores, and no allegation details without professional review."
+    pii_permitted: false
+    risk_score_permitted: false
+    allegation_detail_permitted: false
+  - id: judicial_officer
+    label: "Judicial Officer / Registrar"
+    description: "Court officer requiring executive summary with source spans and evidence quality flags."
+    pii_permitted: true
+    risk_score_permitted: true
+    allegation_detail_permitted: true
+  - id: child
+    label: "Child"
+    description: "Age-appropriate, trauma-safe communication. Requires developmental appropriateness check."
+    pii_permitted: false
+    risk_score_permitted: false
+    allegation_detail_permitted: false
+
+# ─────────────────────────────────────────────
+# Developmental Stages
+# Used by: Developmental Appropriateness, Child-Safe Conversation, Guided Discovery
+# ─────────────────────────────────────────────
+developmental_stages:
+  - id: infant
+    label: "Infant"
+    age_range_years: [0, 1]
+    notes: "Pre-verbal. Communication through caregiver proxy only."
+  - id: toddler
+    label: "Toddler"
+    age_range_years: [1, 3]
+    notes: "Emerging language. Short sentences, concrete concepts only."
+  - id: early_childhood
+    label: "Early Childhood"
+    age_range_years: [3, 6]
+    notes: "Symbolic play, simple narratives, limited temporal understanding."
+  - id: middle_childhood
+    label: "Middle Childhood"
+    age_range_years: [6, 12]
+    notes: "Logical reasoning developing, peer relationships important, can understand rules."
+  - id: adolescent
+    label: "Adolescent"
+    age_range_years: [12, 18]
+    notes: "Abstract reasoning, identity development, requires autonomy respect."
+
+# ─────────────────────────────────────────────
+# Fairness Issue Categories
+# Used by: Fairness Detection
+# ─────────────────────────────────────────────
+fairness_issue_categories:
+  - id: procedural
+    label: "Procedural"
+    description: "Failure to follow required procedural steps (e.g. missed notices, hearings conducted without a party)."
+  - id: informational
+    label: "Informational"
+    description: "Asymmetric access to information — one party received documents another did not."
+  - id: representational
+    label: "Representational"
+    description: "A party lacked adequate representation or opportunity to present their position."
+  - id: institutional
+    label: "Institutional"
+    description: "Systemic or institutional patterns suggesting bias against a party or group."
+
+# ─────────────────────────────────────────────
+# Disclosure Types
+# Used by: Disclosure Sensitive
+# ─────────────────────────────────────────────
+disclosure_types:
+  - id: direct_disclosure
+    label: "Direct Disclosure"
+    description: "Explicit statement of harm by a child or adult survivor."
+    mandatory_report_threshold: 0.65
+  - id: partial_disclosure
+    label: "Partial Disclosure"
+    description: "Incomplete or hedged disclosure indicating possible harm."
+    mandatory_report_threshold: 0.65
+  - id: behavioural_indicator
+    label: "Behavioural Indicator"
+    description: "Behaviour suggesting possible undisclosed harm."
+    mandatory_report_threshold: 0.75
+  - id: third_party_report
+    label: "Third Party Report"
+    description: "Disclosure reported by a third party (teacher, relative, friend)."
+    mandatory_report_threshold: 0.60

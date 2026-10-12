@@ -1,0 +1,195 @@
+{
+  "module_id": "parent_identity_background",
+  "version": "1.0.0",
+  "title": "Parent Identity & Background",
+  "description": "Foundational identity, history, and contextual background for the parent.",
+  "branching": {
+    "path": "parent_type",
+    "options": ["mother", "father"],
+    "conditional_rules": [
+      {
+        "if": "parent_type == 'mother'",
+        "load": ["mother_specific_items"]
+      },
+      {
+        "if": "parent_type == 'father'",
+        "load": ["father_specific_items"]
+      }
+    ]
+  },
+  "sections": [
+    {
+      "section_id": "identity_core",
+      "title": "Core Identity",
+      "items": [
+        {
+          "id": "id_full_name",
+          "type": "text",
+          "label": "Full legal name",
+          "required": true
+        },
+        {
+          "id": "id_preferred_name",
+          "type": "text",
+          "label": "Preferred name",
+          "required": false
+        },
+        {
+          "id": "id_parent_type",
+          "type": "single_select",
+          "label": "Parent type",
+          "options": ["Mother", "Father"],
+          "required": true
+        },
+        {
+          "id": "id_date_of_birth",
+          "type": "date",
+          "label": "Date of birth",
+          "required": true
+        },
+        {
+          "id": "id_primary_language",
+          "type": "single_select",
+          "label": "Primary language",
+          "options": ["English", "Other"],
+          "required": true
+        },
+        {
+          "id": "id_cultural_identity",
+          "type": "text",
+          "label": "Cultural identity / background",
+          "required": false
+        }
+      ]
+    },
+    {
+      "section_id": "background_history",
+      "title": "Background & History",
+      "items": [
+        {
+          "id": "bg_childhood_environment",
+          "type": "multi_select",
+          "label": "Childhood environment",
+          "options": [
+            "Stable and supportive",
+            "Unstable or inconsistent",
+            "Exposure to violence",
+            "Exposure to substance misuse",
+            "Frequent moves",
+            "Other"
+          ]
+        },
+        {
+          "id": "bg_education_level",
+          "type": "single_select",
+          "label": "Highest education level",
+          "options": [
+            "No formal schooling",
+            "Primary",
+            "Secondary",
+            "Vocational",
+            "University"
+          ]
+        },
+        {
+          "id": "bg_employment_status",
+          "type": "single_select",
+          "label": "Current employment status",
+          "options": [
+            "Full-time",
+            "Part-time",
+            "Casual",
+            "Unemployed",
+            "Student",
+            "Carer"
+          ]
+        },
+        {
+          "id": "bg_criminal_history",
+          "type": "single_select",
+          "label": "Criminal history",
+          "options": ["None", "Minor", "Significant"],
+          "risk_flag": true
+        }
+      ]
+    },
+    {
+      "section_id": "cultural_context",
+      "title": "Cultural & Community Context",
+      "items": [
+        {
+          "id": "cc_community_connection",
+          "type": "single_select",
+          "label": "Connection to community",
+          "options": ["Strong", "Moderate", "Weak", "None"]
+        },
+        {
+          "id": "cc_cultural_practices",
+          "type": "text",
+          "label": "Cultural practices important to parenting"
+        }
+      ]
+    },
+    {
+      "section_id": "personal_challenges",
+      "title": "Personal Challenges & Life Stressors",
+      "items": [
+        {
+          "id": "pc_current_stressors",
+          "type": "multi_select",
+          "label": "Current stressors",
+          "options": [
+            "Financial pressure",
+            "Housing instability",
+            "Relationship conflict",
+            "Mental health challenges",
+            "Substance use",
+            "Legal issues",
+            "Health issues"
+          ],
+          "risk_flag": true
+        },
+        {
+          "id": "pc_mental_health_history",
+          "type": "single_select",
+          "label": "Mental health history",
+          "options": ["None", "Mild", "Moderate", "Severe"],
+          "risk_flag": true
+        }
+      ]
+    },
+    {
+      "section_id": "support_network",
+      "title": "Support Network",
+      "items": [
+        {
+          "id": "sn_support_strength",
+          "type": "single_select",
+          "label": "Strength of support network",
+          "options": ["Strong", "Moderate", "Weak", "None"]
+        },
+        {
+          "id": "sn_primary_support_person",
+          "type": "text",
+          "label": "Primary support person"
+        }
+      ]
+    }
+  ],
+  "scoring": {
+    "dimensions": [
+      "identity_stability",
+      "life_stressors",
+      "support_strength",
+      "cultural_alignment",
+      "risk_flags"
+    ],
+    "rules": []
+  },
+  "curriculum_mapping": {
+    "routes": []
+  },
+  "ingestion_schema": {
+    "fields": []
+  }
+}

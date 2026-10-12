@@ -1,0 +1,21 @@
+{
+    "id":  "connection-based-support",
+    "title":  "Connection-Based Behaviour Support",
+    "keyMessage":  "Connection creates cooperation.",
+    "summary":  "Children listen better when they feel connected. Connection reduces fear, increases trust, and supports long-term behaviour change.",
+    "cards":  [
+                  "Connection before correction.",
+                  "Children cooperate when they feel safe.",
+                  "Warm communication builds trust."
+              ],
+    "actions":  [
+                    "Kneel to your child\u0027s level.",
+                    "Use warm tone and gentle touch.",
+                    "Offer connection before giving instructions."
+                ],
+    "reflection":  [
+                       "What increases connection with my child?",
+                       "What decreases it?"
+                   ],
+    "path":  "C:\\Users\\SAFES\\SafeStepsProject\\safesteps-curriculum\\lessons\\BehaviourSupport\\ConnectionBasedSupport\\ConnectionBasedSupport.json"
+}

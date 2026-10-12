@@ -1,0 +1,7 @@
+/modules/media
+  media.service.ts
+  media.repository.ts
+  media.controller.ts
+  media.validators.ts
+  media.types.ts
+  media.storage.ts

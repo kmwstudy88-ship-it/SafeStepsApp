@@ -1,0 +1,36 @@
+{
+  "id": "phase-3-stage-2",
+  "title": "Demonstration — Stage 2",
+  "objectives": [
+    "Demonstrate insight into past harm",
+    "Show accountability",
+    "Reduce minimisation and denial"
+  ],
+  "required_lessons": [
+    "DFV-CC-002_cycle",
+    "DFV-CC-004_gaslighting",
+    "DFV-CC-005_financial_control"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "Accountability reflection",
+    "Caseworker observation"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_contact_logs",
+      "weekly_routine_log"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "fridge_pantry_photo",
+      "medication_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

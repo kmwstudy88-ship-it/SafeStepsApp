@@ -1,0 +1,29 @@
+{
+  "id": "phase-4-stage-1",
+  "title": "Transition — Stage 1",
+  "objectives": [
+    "Maintain routines during contact",
+    "Demonstrate safe supervision"
+  ],
+  "required_lessons": [
+    "PAR-ROU-001_morning_routines",
+    "PAR-COM-001_positive_language"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "Contact session reports",
+    "Routine consistency logs"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo"
+    ],
+    "level": "A"
+  }
+}

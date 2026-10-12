@@ -1,0 +1,9 @@
+﻿{
+  "id": "game_101",
+  "title": "SafeSteps Game 101",
+  "category": "quick_fun",
+  "minPlayers": 2,
+  "maxPlayers": 8,
+  "recommendedModes": ["live_family", "remote_connection"],
+  "duration": "quick_play"
+}

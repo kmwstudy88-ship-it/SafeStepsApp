@@ -1,0 +1,18 @@
+{
+  "id": "week-1",
+  "title": "DFV Recovery — Week 1",
+  "objectives": [
+    "Understand coercive control",
+    "Identify DFV patterns"
+  ],
+  "required_lessons": [
+    "DFV-CC-001_patterns"
+  ],
+  "recommended_lessons": [
+    "DFV-CC-004_gaslighting"
+  ],
+  "evidence": [
+    "Coercive control worksheet"
+  ],
+  "compliance": {}
+}

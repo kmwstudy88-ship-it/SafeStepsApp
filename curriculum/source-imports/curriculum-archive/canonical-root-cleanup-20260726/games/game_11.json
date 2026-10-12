@@ -1,0 +1,39 @@
+{
+  "id": "game_11",
+  "title": "Routine Builder",
+  "libraryType": "parent_child_interaction_assessment",
+  "curriculum": false,
+  "category": "routines",
+  "minPlayers": 2,
+  "maxPlayers": 6,
+  "recommendedModes": [
+    "live_family",
+    "contact_visit",
+    "worker_supported"
+  ],
+  "duration": "quick_play",
+  "objective": "Arrange picture cards into a realistic routine and negotiate choices together.",
+  "observationDimensions": [
+    "communication",
+    "boundaries"
+  ],
+  "childSafeguards": {
+    "voluntaryParticipation": true,
+    "mayPass": true,
+    "mayStop": true,
+    "noForcedDisclosure": true,
+    "childChoicesRespected": true,
+    "privateReflectionDefault": true
+  },
+  "facilitatorPrompts": [
+    "What did each person do that helped the activity feel connected or safe?",
+    "How were choices, boundaries and changes communicated?",
+    "Was there a moment of repair, support or shared enjoyment?"
+  ],
+  "completion": {
+    "winnerRequired": false,
+    "performanceRanked": false,
+    "professionalInterpretationRequired": true,
+    "snapshotCannotDetermineParentingCapacity": true
+  }
+}

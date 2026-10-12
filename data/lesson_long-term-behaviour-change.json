@@ -1,0 +1,21 @@
+{
+    "id":  "long-term-behaviour-change",
+    "title":  "Long-Term Behaviour Change",
+    "keyMessage":  "Behaviour change takes time.",
+    "summary":  "Small steps, repeated often, create long-term change. Consistency, connection, and regulation build new patterns.",
+    "cards":  [
+                  "Small steps matter.",
+                  "Consistency builds change.",
+                  "Children grow slowly over time."
+              ],
+    "actions":  [
+                    "Celebrate small wins.",
+                    "Keep routines steady.",
+                    "Practice skills daily."
+                ],
+    "reflection":  [
+                       "What progress have I seen?",
+                       "What is one next step?"
+                   ],
+    "path":  "C:\\Users\\SAFES\\SafeStepsProject\\safesteps-curriculum\\lessons\\BehaviourSupport\\LongTermBehaviourChange\\LongTermBehaviourChange.json"
+}

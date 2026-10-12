@@ -1,0 +1,29 @@
+{
+  "id": "week-7",
+  "title": "AOD Recovery — Week 7",
+  "objectives": [
+    "Strengthen support networks"
+  ],
+  "required_lessons": [
+    "SAF-SP-003_safe_people"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "Support network map"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_aod_evidence"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "medication_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

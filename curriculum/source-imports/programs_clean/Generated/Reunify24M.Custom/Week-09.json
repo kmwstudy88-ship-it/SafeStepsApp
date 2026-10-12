@@ -1,0 +1,85 @@
+﻿{
+    "programId":  "REUNIFY-24M-CUSTOM",
+    "week":  9,
+    "stageId":  "STAGE-02",
+    "stageName":  "Custom Stage 2",
+    "modules":  [
+                    {
+                        "id":  "PP-ENGAGE-02",
+                        "name":  "STOP-THINK-ACT Model",
+                        "goal":  "Improve decision-making under stress.",
+                        "tasks":  [
+                                      "Pause before reacting to conflict",
+                                      "Identify possible risks before responding",
+                                      "Choose the safest possible action",
+                                      "Review what worked and what didnâ€™t"
+                                  ],
+                        "evidence":  [
+                                         "Reduced incidents",
+                                         "Support person feedback"
+                                     ],
+                        "category":  "emotional-regulation",
+                        "tags":  [
+
+                                 ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "Pause before reacting to conflict"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "Identify possible risks before responding"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "Choose the safest possible action"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "Review what worked and what didnâ€™t"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+                                    "Reduced incidents"
+                                ],
+                     "insight":  [
+                                     "Support person feedback"
+                                 ],
+                     "behaviour":  [
+
+                                   ]
+                 }
+}

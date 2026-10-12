@@ -1,0 +1,60 @@
+{
+      "module_id": "behaviour_change_habit_replacement_v1",
+      "module_title": "Replacing Harmful Habits",
+      "learning_outcomes": [
+        "Identify harmful automatic habits.",
+        "Understand habit loops (trigger → behaviour → reward).",
+        "Replace harmful habits with safe alternatives.",
+        "Build sustainable new patterns."
+      ],
+      "lesson_content": {
+        "definition": "Habit replacement involves identifying automatic reactions and substituting safer, intentional behaviours.",
+        "habit_loop": {
+          "trigger": "Stress",
+          "behaviour": "Yelling",
+          "reward": "Temporary release"
+        },
+        "replacement_examples": [
+          { "old": "Criticism", "new": "Curiosity" },
+          { "old": "Withdrawal", "new": "Repair" }
+        ]
+      },
+      "activities": [
+        {
+          "activity_id": "habit_loop_mapping",
+          "type": "visual_mapping"
+        }
+      ],
+      "fill_in_the_blank": [
+        { "question": "Habits follow a ________ → behaviour → reward pattern.", "answer": "trigger" }
+      ],
+      "quiz": {
+        "multiple_choice": [
+          {
+            "question": "Which is a replacement habit?",
+            "options": ["Criticism", "Curiosity", "Shaming", "Ignoring"],
+            "answer": "Curiosity"
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "assessment_id": "habit_replacement_plan",
+          "type": "scenario_analysis",
+          "criteria": [
+            { "criterion_id": "habit_identification", "weight": 0.40 },
+            { "criterion_id": "replacement_accuracy", "weight": 0.35 },
+            { "criterion_id": "sustainability_planning", "weight": 0.25 }
+          ]
+        }
+      ],
+      "competency_check": [
+        "Identify habit loops",
+        "Replace harmful habits",
+        "Plan sustainable change"
+      ],
+      "extensions": [
+        "Habit Change Under Stress",
+        "Habit Change for Co-Parents"
+      ]
+    }

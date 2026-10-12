@@ -1,0 +1,85 @@
+﻿{
+    "programId":  "REUNIFY-24M-CUSTOM",
+    "week":  28,
+    "stageId":  "STAGE-04",
+    "stageName":  "Custom Stage 4",
+    "modules":  [
+                    {
+                        "id":  "PP-REUNIFY-01",
+                        "name":  "Understanding the Reunification Pathway",
+                        "goal":  "Know exactly what reunification requires.",
+                        "tasks":  [
+                                      "List what child protection is worried about",
+                                      "List what you are already doing well",
+                                      "List what you need to strengthen for reunification"
+                                  ],
+                        "evidence":  [
+                                         "Reflections",
+                                         "Caseworker acknowledgement"
+                                     ],
+                        "category":  "emotional-regulation",
+                        "tags":  [
+
+                                 ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "List what child protection is worried about"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "List what you are already doing well"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "List what you need to strengthen for reunification"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+
+                                ],
+                     "insight":  [
+                                     "Reflections",
+                                     "Caseworker acknowledgement"
+                                 ],
+                     "behaviour":  [
+
+                                   ]
+                 }
+}

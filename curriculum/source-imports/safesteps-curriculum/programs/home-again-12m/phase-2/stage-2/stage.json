@@ -1,0 +1,27 @@
+{
+  "id": "phase-2-stage-2",
+  "title": "Strengthening — Stage 2",
+  "objectives": [
+    "Maintain routines independently",
+    "Demonstrate consistent parenting"
+  ],
+  "required_lessons": [
+    "PAR-ROU-002_bedtime_routines"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "Routine consistency logs"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo"
+    ],
+    "level": "A"
+  }
+}

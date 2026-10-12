@@ -1,0 +1,1351 @@
+[
+  {
+    "week": 39,
+    "track": "J",
+    "title": "LGBTQ+ Parents and Their Children",
+    "summary": "Understanding the experiences of LGBTQ+ parents and their children, the evidence on outcomes, and how professionals can provide affirming support.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Summarise what research says about outcomes for children raised by LGBTQ+ parents.",
+      "Understand the unique stressors LGBTQ+ parents and their children may face.",
+      "Apply affirming, non-stigmatising practice principles when working with LGBTQ+ families.",
+      "Recognise how children in LGBTQ+ families develop identity and navigate questions from peers and communities."
+    ],
+    "content_sections": [
+      {
+        "heading": "What Research Says About Outcomes",
+        "body": "Decades of research across numerous countries consistently find that children raised by same-sex or LGBTQ+ parents fare as well on measures of social development, psychological wellbeing, academic achievement, and quality of parent-child relationships as children raised by different-sex parents. The American Psychological Association, American Academy of Pediatrics, and major professional bodies in many countries have issued statements to this effect. What does predict outcomes -- as with all families -- is the quality of the parenting relationship, family stability, and access to resources, not parental sexual orientation or gender identity."
+      },
+      {
+        "heading": "Unique Stressors Facing LGBTQ+ Families",
+        "body": "While outcomes are broadly positive, LGBTQ+ parents and their children navigate stressors that other families typically do not. These include minority stress (the chronic, low-level stress of navigating a world that is not fully affirming), stigma and discrimination (which varies significantly by geography, culture, and community), children encountering questions or comments about their family structure from peers, teachers, or community members, and in some contexts legal uncertainties around parental recognition. These stressors are external, not inherent to LGBTQ+ parenting itself, and are reduced in more affirming environments -- which is both an argument for social inclusion and a reminder that environmental context matters."
+      },
+      {
+        "heading": "Affirming Professional Practice",
+        "body": "Affirming practice with LGBTQ+ families begins with self-examination of assumptions (including about what a 'normal' family looks like), using inclusive language and intake forms (avoiding default assumptions of two-parent, different-sex families), being familiar with legal frameworks around parental rights and recognition in one's jurisdiction, and treating LGBTQ+ identity as a normal dimension of human diversity rather than a problem requiring special handling. Professionals should be prepared for LGBTQ+ families to have encountered previous non-affirming professional responses and may need to actively build trust. Proactively displaying inclusive materials and language signals a welcoming environment before the first question is asked."
+      },
+      {
+        "heading": "Children's Identity Development in LGBTQ+ Families",
+        "body": "Children raised in LGBTQ+ families develop healthy gender and sexual identities at the same rates as other children. They may, however, develop early familiarity with concepts of diversity and difference, and often show higher levels of tolerance and comfort with diversity as a result. As they grow, children in LGBTQ+ families may need support navigating peer questions ('why do you have two mums?'), developing age-appropriate language to explain their family, and processing any experiences of stigma. Parents can support this through open family communication, books and media that reflect diverse families, and connecting children with others from similar family structures where possible."
+      }
+    ],
+    "key_takeaways": [
+      "Research consistently shows children raised by LGBTQ+ parents have equivalent outcomes to those raised by different-sex parents.",
+      "Unique stressors for LGBTQ+ families are external (stigma, minority stress), not inherent to LGBTQ+ parenting.",
+      "Affirming practice requires self-examination, inclusive systems, and proactive signals of welcome.",
+      "Children in LGBTQ+ families develop healthy identities and often develop early fluency with diversity."
+    ],
+    "activity": {
+      "title": "Inclusive Practice Audit",
+      "instructions": "Audit your current professional practice (or, if a parent, your child's school or care setting) for LGBTQ+ inclusion. Check: intake forms (do they assume two-sex parents?), waiting room materials (do they depict diverse families?), language used in sessions ('your child's mother' vs 'your child's other parent'), and knowledge of relevant legal rights in your jurisdiction. Identify two specific changes you could make this week to make your practice more affirming.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What does decades of research consistently find about children raised by LGBTQ+ parents?",
+        "options": [
+          "They have significantly worse outcomes than children raised by different-sex parents",
+          "They fare as well on development, wellbeing, and academic outcomes, with parenting quality being the key predictor",
+          "They always have better outcomes due to more intentional parenting",
+          "Research has not studied this question"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Consistent research across countries finds children of LGBTQ+ parents fare as well as others, with parenting quality -- not parental identity -- being the key predictor."
+      },
+      {
+        "question": "What is 'minority stress' in the context of LGBTQ+ families?",
+        "options": [
+          "Stress caused by having a smaller family",
+          "The chronic, low-level stress of navigating a world not fully affirming of one's identity",
+          "A clinical diagnosis specific to LGBTQ+ people",
+          "Stress that only affects children, not parents"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Minority stress refers to the additional chronic stress burden carried by people whose identity is stigmatised or not fully affirmed in their broader environment."
+      }
+    ],
+    "resources": [
+      {
+        "title": "American Psychological Association - LGBT Resources",
+        "type": "external_org",
+        "note": "Research summaries and practice guidelines for LGBTQ+ affirmative care."
+      },
+      {
+        "title": "GLSEN (Gay, Lesbian and Straight Education Network)",
+        "type": "external_org",
+        "note": "Resources for creating affirming school environments for children of all families."
+      }
+    ]
+  },
+  {
+    "week": 40,
+    "track": "J",
+    "title": "Single Parenting: Strengths, Stressors, and Support",
+    "summary": "The realities of single parenting across different circumstances, the strengths single-parent families show, and how to support single parents effectively.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand the diversity of single-parent family structures and circumstances.",
+      "Describe the stressors unique to single parenting and their impact on parental and child wellbeing.",
+      "Identify the strengths and resources that single-parent families commonly demonstrate.",
+      "Apply practical strategies for supporting single parents in professional and community contexts."
+    ],
+    "content_sections": [
+      {
+        "heading": "The Diversity of Single-Parent Families",
+        "body": "Single-parent families are not a monolithic group. They include parents who have separated or divorced, parents who were never in a partnership, parents who have been widowed, parents who are single due to a partner's incarceration or deployment, and parents who have chosen single parenthood deliberately (including through donor conception or adoption). Circumstances, resources, and support networks differ enormously across these groups. A widowed parent with strong extended family support and financial stability faces a very different set of challenges than a parent who has left a violent relationship with no support network and limited income -- yet both may be counted in the same statistical category."
+      },
+      {
+        "heading": "Stressors Unique to Single Parenting",
+        "body": "Single parenting typically involves carrying the full weight of parenting decisions, tasks, and emotional labour without a co-parent to share them. This role overload is a significant and underappreciated stressor: there is no one to tag out when patience runs out, no one to share the mental load of school schedules and medical appointments, and often no backup when illness or emergency disrupts routines. Financial strain is common, particularly for single mothers, who on average earn less than partnered parents and carry disproportionate childcare costs. Social isolation is also common, as social structures are often designed for coupled adults and families. These structural stressors, not single parenting itself, account for most of the outcome differences observed between single and partnered families in research."
+      },
+      {
+        "heading": "Strengths Single-Parent Families Demonstrate",
+        "body": "Single-parent families often develop distinctive strengths: children frequently develop greater autonomy and responsibility earlier, strong one-on-one parent-child relationships often develop without a co-parent relationship competing for attention, and families often develop creative problem-solving and resourcefulness. Single parents who have left difficult relationships may also be modelling for children that personal safety and dignity matter, and that positive change is possible. These strengths are genuine and worth naming explicitly, both for the benefit of single parents who may primarily hear about the challenges, and for professionals who may approach single-parent families through a deficits lens."
+      },
+      {
+        "heading": "Supporting Single Parents Effectively",
+        "body": "Effective support for single parents addresses both practical and emotional dimensions. Practically: connecting to financial assistance, affordable childcare, flexible service scheduling (evening or weekend appointments), and peer support from other single parents. Emotionally: validating the genuine difficulty of the role without patronising, avoiding assumptions about the absent parent, and recognising the parent's expertise about their own family. For professionals: scheduling appointments that don't require the parent to arrange additional childcare to attend, providing information in forms they can process alone (written summaries), and connecting them with peer support groups where their specific circumstances are understood."
+      }
+    ],
+    "key_takeaways": [
+      "Single-parent families are highly diverse; circumstance, resources, and support differ enormously within this category.",
+      "Structural stressors -- financial strain, role overload, isolation -- rather than single parenting itself drive most outcome differences.",
+      "Single-parent families demonstrate genuine strengths including child autonomy, strong parent-child bonds, and resilience.",
+      "Effective professional support addresses both practical barriers and emotional dimensions, and avoids assumptions about absent parents."
+    ],
+    "activity": {
+      "title": "Resource Mapping for a Single Parent",
+      "instructions": "Identify a single parent (yourself, a client, or a hypothetical scenario) and map the practical and emotional resources currently available to them. Identify 3 gaps in their current support. For each gap, identify one realistic, accessible step toward addressing it -- this might be a referral, a program, or a community connection.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What does research suggest is the primary driver of outcome differences between single- and two-parent families?",
+        "options": [
+          "Single parenting is inherently harmful to children",
+          "Structural stressors (financial strain, role overload, isolation) rather than single parenting itself account for most observed outcome differences",
+          "Children never do well in single-parent families",
+          "Two-parent families always have better relationships"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Research points to structural stressors (poverty, isolation, role overload) rather than the single-parent structure itself as the primary drivers of any observed outcome differences."
+      },
+      {
+        "question": "Which of the following is a strength commonly found in single-parent families?",
+        "options": [
+          "Lower financial stress than partnered families",
+          "Greater child autonomy and responsibility, strong one-on-one parent-child relationships",
+          "Single parents never experience isolation",
+          "Children in single-parent families always have two active co-parents"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Children in single-parent families often develop greater autonomy and strong individual relationships with their parent -- genuine strengths alongside the real challenges."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Single parent support groups (local)",
+        "type": "community_resource",
+        "note": "Many communities have peer support groups for single parents; searchable via local family services."
+      },
+      {
+        "title": "Financial assistance programs (jurisdiction-specific)",
+        "type": "community_resource",
+        "note": "Single parents may be eligible for childcare subsidies, tax credits, housing assistance, and other targeted programs."
+      }
+    ]
+  },
+  {
+    "week": 41,
+    "track": "J",
+    "title": "Foster Care, Kinship Care, and Children with Care Experience",
+    "summary": "Understanding the experiences of children in foster and kinship care, the impact of placement on development, and trauma-informed practice with care-experienced children.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Describe the developmental and emotional needs of children with care experience.",
+      "Understand the differences between foster care and kinship care and the strengths and challenges of each.",
+      "Apply trauma-informed approaches to supporting care-experienced children.",
+      "Recognise the role of stability, belonging, and identity in positive outcomes for children in care."
+    ],
+    "content_sections": [
+      {
+        "heading": "Understanding Children With Care Experience",
+        "body": "Children enter foster or kinship care because their safety or wellbeing could not be ensured in their family of origin -- due to abuse, neglect, parental incapacity, or family crisis. By the time of placement, most children have experienced significant adversity, often including multiple ACEs, disrupted attachments, and trauma. They bring these experiences with them into care. Understanding this background is essential for carers and professionals: behaviours that can appear challenging (hypervigilance, controlling behaviours, difficulty trusting adults, intense fear of abandonment) are typically adaptive responses to prior experience, not character flaws or signs of unmanageability."
+      },
+      {
+        "heading": "Foster Care vs Kinship Care",
+        "body": "Foster care places children with trained, approved carers who are not family members. Kinship care places children with relatives or close family connections. Both serve important functions, but each has distinct characteristics. Kinship care preserves existing family relationships and cultural connections, and research generally shows lower placement breakdown rates than non-kin foster care. However, kinship carers are often older, may have fewer financial resources, and may receive less formal support than non-kin foster carers. Non-kin foster care provides more structured support and oversight but requires the child to form new relationships with strangers, which can be a significant additional attachment challenge."
+      },
+      {
+        "heading": "Trauma-Informed Practice With Care-Experienced Children",
+        "body": "Trauma-informed practice with care-experienced children applies the foundational principles covered in Track A (Week 5) in a high-intensity context. Key elements include: prioritising felt safety and predictability, understanding that behaviour is communication, using co-regulation before expecting self-regulation, avoiding consequences that replicate the dynamics of the original trauma (such as isolation), maintaining connection during difficult behaviour rather than withdrawing it, and being explicit with children about the permanence and unconditional nature of the caring relationship -- particularly important for children who have learned that relationships are conditional and temporary."
+      },
+      {
+        "heading": "Stability, Belonging, and Identity",
+        "body": "Research on outcomes for children in care identifies three factors as particularly powerful: placement stability (children who experience multiple placements have significantly worse outcomes), a sense of belonging to their placement and carers, and a coherent identity -- including connection to their cultural, familial, and ethnic background. Life story work (helping children understand and make sense of their own history) is a recognised approach to supporting identity development in care-experienced children. Regardless of the circumstances that led to care, children benefit from carers who speak respectfully about birth families, maintain cultural connections, and help children integrate rather than deny their full history."
+      }
+    ],
+    "key_takeaways": [
+      "Care-experienced children have typically experienced significant adversity before placement; their behaviours are adaptive responses, not character flaws.",
+      "Kinship care preserves family connections; non-kin foster care offers more structured support -- each has distinct strengths and challenges.",
+      "Trauma-informed care prioritises felt safety, co-regulation, connection during difficulty, and unconditional relationships.",
+      "Placement stability, a sense of belonging, and a coherent identity -- including cultural connection -- are the strongest predictors of positive outcomes."
+    ],
+    "activity": {
+      "title": "Behaviour as Communication Exercise",
+      "instructions": "A care-experienced 8-year-old becomes extremely distressed and aggressive when a carer unexpectedly changes plans for the afternoon. Rather than responding to the surface behaviour, write a brief analysis of: (a) what this behaviour might be communicating about the child's history and fears, (b) what the child likely needs in this moment, and (c) what the carer could say or do that is trauma-informed rather than purely disciplinary.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "Why are behaviours like hypervigilance and difficulty trusting adults common in care-experienced children?",
+        "options": [
+          "These children are inherently more difficult than other children",
+          "These are adaptive responses to prior adversity and disrupted attachment, not character flaws",
+          "All foster carers cause these behaviours",
+          "These behaviours indicate the child doesn't want to be in care"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Behaviours like hypervigilance and distrust are adaptive responses to prior adversity -- survival strategies developed in unsafe environments that persist after the child is safer."
+      },
+      {
+        "question": "What does research identify as one of the most important predictors of positive outcomes for children in care?",
+        "options": [
+          "The child having no contact with their birth family",
+          "Placement stability -- fewer placement disruptions are associated with significantly better outcomes",
+          "The child being placed as far as possible from their original community",
+          "The carer having no knowledge of the child's history"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Placement stability is one of the strongest predictors of positive outcomes for care-experienced children; each placement disruption compounds cumulative adversity."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Creating conditions for children in care to thrive -- local child welfare resources",
+        "type": "professional_resource",
+        "note": "Most jurisdictions have training and resources for foster and kinship carers; contact local child welfare authority."
+      },
+      {
+        "title": "Life story work practitioners",
+        "type": "professional_resource",
+        "note": "Specialists in supporting care-experienced children to understand and integrate their history."
+      }
+    ]
+  },
+  {
+    "week": 42,
+    "track": "J",
+    "title": "Culturally Responsive Practice With Diverse Families",
+    "summary": "Developing genuine cultural responsiveness in working with families from diverse cultural backgrounds, avoiding cultural imposition and building authentic partnerships.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Define cultural responsiveness and distinguish it from cultural tokenism.",
+      "Understand how culture shapes help-seeking, family roles, discipline, and child-rearing beliefs.",
+      "Identify common cultural practice traps professionals fall into.",
+      "Apply practical skills for building genuine cross-cultural therapeutic and professional relationships."
+    ],
+    "content_sections": [
+      {
+        "heading": "What Cultural Responsiveness Actually Means",
+        "body": "Cultural responsiveness goes beyond knowing demographic facts about cultural groups. It involves genuine curiosity about how a particular family understands their situation, what their community and cultural frameworks mean to them, and how those frameworks interact with the support being offered. It means recognising that Western psychological and social work frameworks are themselves culturally situated -- not universal -- and that they carry assumptions about individualism, emotional expression, family structure, and help-seeking that may not align with the families being served. Tokenistic approaches (translating a leaflet, adding a multicultural flag to a website) are insufficient substitutes for this deeper engagement."
+      },
+      {
+        "heading": "Culture and Child-Rearing Beliefs",
+        "body": "Culture profoundly shapes beliefs and practices around child-rearing: the degree of independence versus interdependence expected of children, the role of extended family in parenting decisions, approaches to discipline and authority, the meaning and expression of emotional life within the family, and expectations about children's roles and responsibilities at different ages. These differences are not simply matters of surface preference -- they reflect deep values about what it means to be a good parent and raise a good child. Professionals who approach these differences with a single-standard evaluation framework risk pathologising normal cultural variation while missing genuine concerns."
+      },
+      {
+        "heading": "Common Cultural Practice Traps",
+        "body": "Several traps undermine cross-cultural practice: cultural relativism taken too far (using cultural context to avoid addressing genuine harm); cultural essentialism (assuming an individual or family fits a cultural stereotype based on ethnicity or background); assimilation bias (an implicit expectation that families should adapt to dominant-culture norms); and over-reliance on a cultural broker or interpreter in ways that reduce the family's direct voice. The appropriate balance is genuine respect for cultural context combined with clear, consistent positions on practices that harm children, applied universally rather than selectively, alongside humility about the limits of one's own cultural knowledge."
+      },
+      {
+        "heading": "Building Genuine Cross-Cultural Relationships",
+        "body": "Genuine cross-cultural practice is built on specific relational skills: asking rather than assuming ('I'd like to understand how your family approaches this -- can you tell me more?'), acknowledging one's own cultural positioning ('I'm aware I'm coming from a particular cultural framework -- I want to understand yours'), naming power dynamics explicitly where relevant, building in time and relationship before moving to assessment or intervention, working with community and cultural supports rather than replacing them, and where possible, using workers from the family's own community or cultural background. These are skills, not innate abilities -- they require deliberate practice and ongoing learning."
+      }
+    ],
+    "key_takeaways": [
+      "Cultural responsiveness requires recognising that professional frameworks are themselves culturally situated, not universal.",
+      "Culture shapes child-rearing beliefs deeply -- differences in discipline, emotion, family roles, and help-seeking reflect values, not deficits.",
+      "Common traps include cultural relativism, essentialism, assimilation bias, and sidelining the family's direct voice.",
+      "Genuine cross-cultural relationships are built on asking rather than assuming, naming power dynamics, and working with community supports."
+    ],
+    "activity": {
+      "title": "Cultural Positioning Reflection",
+      "instructions": "Reflect on your own cultural background and how it shapes your assumptions about: what a healthy family looks like, how children should be disciplined, what appropriate emotional expression looks like, and what 'getting help' means. Write 200-300 words. This is not about self-criticism but about developing the awareness that your own cultural position is one position among many, not a universal standard.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "What distinguishes genuine cultural responsiveness from tokenism?",
+        "options": [
+          "Tokenism involves more effort than genuine responsiveness",
+          "Genuine responsiveness involves curiosity about a specific family's framework and recognising the cultural situatedness of professional practice itself",
+          "Tokenism and genuine responsiveness are the same",
+          "Genuine responsiveness only applies to families from non-Western cultures"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Genuine cultural responsiveness requires recognising that professional frameworks are themselves culturally situated and engaging with each family's specific cultural context, not just surface-level gestures."
+      },
+      {
+        "question": "What is 'cultural essentialism' in professional practice?",
+        "options": [
+          "Recognising that culture is important",
+          "Assuming an individual or family fits a cultural stereotype based on ethnicity or background",
+          "Using interpreters in cross-cultural practice",
+          "Providing translated materials"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Cultural essentialism is the error of assuming individuals fit cultural stereotypes based on group membership, rather than engaging with the specific person and family."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Cultural competence training (local)",
+        "type": "professional_resource",
+        "note": "Most professional registration bodies and large services offer cultural competence training; seek out programs led by members of the relevant community."
+      },
+      {
+        "title": "Community cultural liaison workers",
+        "type": "professional_resource",
+        "note": "Available in many service systems to support genuine cross-cultural engagement."
+      }
+    ]
+  },
+  {
+    "week": 43,
+    "track": "K",
+    "title": "Screen Time, Technology, and Child Development",
+    "summary": "Evidence-based guidance on screen time across developmental stages, what research actually shows, and how to establish healthy technology habits.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Summarise what research actually shows about screen time and child development across ages.",
+      "Distinguish between different types of screen time and their varying impacts.",
+      "Apply evidence-informed, age-appropriate guidelines to screen use.",
+      "Develop practical approaches to family technology habits without shame or all-or-nothing thinking."
+    ],
+    "content_sections": [
+      {
+        "heading": "What Research Actually Shows",
+        "body": "Public discourse about screen time tends toward extremes -- either screens are destroying children or concerns are entirely overblown. The evidence is more nuanced. For infants and toddlers, research does find that high passive screen exposure (background TV, device use while being held) is associated with reduced caregiver interaction quality and language exposure, which matter for development. For school-age children and adolescents, the type, context, and content of screen use matters significantly more than total time. Social video calling with family members, co-viewing with an engaged caregiver, educational content, and creative digital production have quite different profiles than passive consumption of algorithmically-curated content."
+      },
+      {
+        "heading": "Different Types of Screen Time",
+        "body": "Helpful frameworks distinguish screen time by: passivity versus activity (consuming versus creating), content quality, social context (alone versus with others), and displacement of other activities. A child spending two hours playing a cooperative online game with friends, talking and problem-solving together, is having a different experience than a child spending two hours alone scrolling short-form video. A toddler watching high-quality educational programming with a caregiver who pauses to discuss is having a different experience than one left with a device as a pacifier. These distinctions are more practically useful than hour-counting."
+      },
+      {
+        "heading": "Age-Appropriate Guidance",
+        "body": "Major paediatric organisations (American Academy of Pediatrics, Royal Australian College of Physicians, and others) offer evolving guidance. General principles across guidelines include: for children under 18-24 months, avoid digital media other than video calling; for 2-5 years, limit to around an hour per day of high-quality content, ideally with caregiver co-viewing; for school-age children and adolescents, focus on content quality and ensuring screens don't displace sleep, physical activity, in-person relationships, and homework. These are guidelines, not rigid rules -- context matters -- and they are updated as evidence evolves."
+      },
+      {
+        "heading": "Building Healthy Family Technology Habits",
+        "body": "Rather than focusing on restriction alone, healthy family technology habits involve: shared conversations about what good and poor technology use looks like, family media plans (documenting family agreements about devices, content, times), modelling -- caregivers' own device use in front of children is among the most powerful influences, screen-free times and spaces as a family norm (meals, bedrooms), and remaining curious about what children and adolescents are doing online rather than simply monitoring or restricting. The goal is building internal regulation of technology use, not only external restriction -- since restriction alone does not build the skills young people will need throughout their digitally-saturated lives."
+      }
+    ],
+    "key_takeaways": [
+      "Evidence on screen time is nuanced -- content, context, and displacement of other activities matter more than total hours.",
+      "Different types of screen use (active vs passive, social vs solitary, quality content vs algorithmic scroll) have different developmental profiles.",
+      "Age-appropriate guidelines are evolving; focus on protecting sleep, physical activity, and in-person relationships.",
+      "Building internal regulation through family conversation and modelling is more durable than restriction alone."
+    ],
+    "activity": {
+      "title": "Family Media Plan",
+      "instructions": "Draft a family media plan covering: screen-free times (e.g. meals, an hour before bed), screen-free spaces (e.g. bedrooms), content expectations, device-free social time, and caregiver commitments (modelling). Frame it as a collaborative family agreement rather than a top-down rule list. If working professionally, design a template you could offer to families.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What does research suggest matters most about children's screen use?",
+        "options": [
+          "Total hours of screen time, regardless of content or context",
+          "The type, content, social context, and whether screens displace sleep, activity, and relationships",
+          "Whether the screen is a phone, tablet, or television",
+          "Screen use has no impact on child development"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Research consistently shows that type, content, context, and displacement of other activities matter far more than total screen hours alone."
+      },
+      {
+        "question": "What is the most powerful influence on children's technology use habits?",
+        "options": [
+          "Screen time apps and device restrictions",
+          "School policies",
+          "Caregiver modelling of their own device use",
+          "The specific device a child uses"
+        ],
+        "correct_answer_index": 2,
+        "explanation": "Caregivers' own device use in front of children is among the most powerful influences on children's technology habits -- what adults do matters more than what they say."
+      }
+    ],
+    "resources": [
+      {
+        "title": "American Academy of Pediatrics Family Media Plan tool",
+        "type": "external_tool",
+        "note": "Online tool for creating a personalised family media plan."
+      },
+      {
+        "title": "Common Sense Media",
+        "type": "external_org",
+        "note": "Age-appropriate content reviews and digital wellbeing resources for families."
+      }
+    ]
+  },
+  {
+    "week": 44,
+    "track": "K",
+    "title": "Social Media, Adolescent Mental Health, and Identity",
+    "summary": "Understanding the complex relationship between social media use and adolescent mental health, identity development, and the particular risks for vulnerable young people.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Describe the evidence on the relationship between social media use and adolescent mental health.",
+      "Understand how social media affects identity development, social comparison, and self-esteem.",
+      "Identify which adolescents are most vulnerable to social media-related mental health impacts.",
+      "Apply practical strategies for supporting healthy social media engagement in adolescents."
+    ],
+    "content_sections": [
+      {
+        "heading": "The Evidence on Social Media and Mental Health",
+        "body": "The relationship between social media and adolescent mental health is genuinely complex and the subject of ongoing research and debate. Some studies find associations between heavy social media use and depression, anxiety, and body image concerns -- particularly among girls and young women. Other researchers argue these associations are modest, that causality is unclear (unhappy adolescents may turn to social media more), and that for some young people (particularly those who are isolated or belong to minority groups) social media provides genuine community and belonging that benefits mental health. The honest answer is that social media's impact is heterogeneous: it depends significantly on how it is used, what content is consumed, and who is using it."
+      },
+      {
+        "heading": "Social Comparison, Identity, and Self-Esteem",
+        "body": "Social comparison -- evaluating oneself against others -- is a normal adolescent developmental process. Social media platforms amplify it significantly, presenting curated, often filtered, highlights of peers' lives at unprecedented scale and frequency. Research on upward social comparison (comparing oneself unfavourably to others) consistently links it to reduced self-esteem and increased depression symptoms. This is particularly concerning in the context of appearance-focused content, where image editing tools make comparisons even less grounded in reality. Identity development in adolescence involves experimenting with self-presentation -- social media is a significant arena for this -- with the added complexity that missteps can be permanent and public in ways they weren't for previous generations."
+      },
+      {
+        "heading": "Who Is Most Vulnerable",
+        "body": "Not all adolescents are equally affected by social media. Those already experiencing depression or anxiety, those with low self-esteem or body image concerns, those who are socially marginalised or bullied offline, younger adolescents whose identity is less consolidated, and girls (who on average spend more time on visually-oriented social platforms and are subject to more appearance-based commentary) appear to be at heightened risk. Conversely, adolescents with strong offline social support, those using social media primarily for active social connection rather than passive consumption, and those who have developed critical media literacy skills show more protective profiles."
+      },
+      {
+        "heading": "Supporting Healthy Social Media Engagement",
+        "body": "Practical approaches include: developing critical media literacy (teaching young people to recognise curation, editing, and algorithmic influence), encouraging active rather than passive use (creating, connecting, contributing rather than scrolling), maintaining offline social investments, establishing sleep-protective limits (phones out of bedrooms overnight), having ongoing curious (not interrogative) conversations about online life, monitoring for signs of cyberbullying or online harm, and -- for young people showing significant distress related to social media -- considering collaborative breaks or reduced use alongside professional support. Blanket bans often drive use underground; informed engagement generally produces better outcomes."
+      }
+    ],
+    "key_takeaways": [
+      "Social media's relationship with adolescent mental health is complex and heterogeneous, not uniformly harmful.",
+      "Social comparison processes, amplified by curated and filtered content, are a key mechanism of harm for vulnerable adolescents.",
+      "Vulnerability factors include pre-existing mental health difficulties, passive use, appearance-focused platforms, and younger age.",
+      "Informed, curious engagement -- building critical media literacy and maintaining offline investment -- outperforms blanket restriction."
+    ],
+    "activity": {
+      "title": "Media Literacy Conversation Guide",
+      "instructions": "Design 5 conversation-starter questions a parent or professional could use with an adolescent to explore their social media experience without being interrogative or triggering defensiveness. Each question should invite reflection on how social media makes the young person feel, what they notice about content, and how they navigate comparison. Aim for curious rather than judgmental framing.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What does current research suggest about social media's impact on adolescent mental health?",
+        "options": [
+          "Social media uniformly damages all adolescents equally",
+          "Social media has no impact on mental health",
+          "Impact is heterogeneous, depending on how it is used, what content is consumed, and individual vulnerability factors",
+          "Only social media use by girls causes any harm"
+        ],
+        "correct_answer_index": 2,
+        "explanation": "Research consistently finds heterogeneous effects -- social media's impact varies significantly by use pattern, content, and individual vulnerability, not a uniform harmful effect."
+      },
+      {
+        "question": "Which adolescents appear most vulnerable to social media-related mental health impacts?",
+        "options": [
+          "All adolescents equally",
+          "Only those from lower-income families",
+          "Those with pre-existing anxiety or depression, low self-esteem, younger adolescents, and those using platforms passively and appearance-focused",
+          "Only those who use social media for more than 10 hours per day"
+        ],
+        "correct_answer_index": 2,
+        "explanation": "Vulnerability factors include pre-existing mental health difficulties, low self-esteem, younger age, and passive appearance-focused use rather than active social connection."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Common Sense Media: Social Media and Teen Mental Health",
+        "type": "external_reading",
+        "note": "Evidence-based resources on social media's impact on young people."
+      },
+      {
+        "title": "MediaSmarts (Canada) - Digital Literacy resources",
+        "type": "external_org",
+        "note": "Critical media literacy resources for young people, parents, and educators."
+      }
+    ]
+  },
+  {
+    "week": 45,
+    "track": "K",
+    "title": "Online Safety: Risks, Conversations, and Protective Practices",
+    "summary": "Understanding the range of online risks children face, how to talk about safety without creating fear, and building protective practices across ages.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Identify the range of online risks children and adolescents may encounter.",
+      "Understand how online grooming operates and what makes children vulnerable.",
+      "Apply age-appropriate online safety conversations across developmental stages.",
+      "Build a family approach to online safety that is protective without being fear-based."
+    ],
+    "content_sections": [
+      {
+        "heading": "The Range of Online Risks",
+        "body": "Online risks for children and adolescents span several categories: content risks (exposure to age-inappropriate, violent, or harmful content, including content promoting eating disorders or self-harm), contact risks (unwanted contact from strangers, solicitation, grooming by adults with harmful intent), conduct risks (cyberbullying, harassment, or being drawn into harmful group behaviour), and commercial risks (advertising targeting, in-app purchases, data exploitation). The prominence of each risk shifts across developmental stages -- young children are most vulnerable to content exposure and stranger contact; adolescents face heightened contact, conduct, and commercial risks. No risk category is absent at any age."
+      },
+      {
+        "heading": "How Online Grooming Operates",
+        "body": "Online grooming -- the process by which an adult builds a relationship with a child with the intent to exploit them sexually -- has migrated significantly to online platforms and gaming environments. Grooming typically involves: targeting a child who appears isolated, unhappy, or seeking connection; building trust and emotional intimacy over time; normalising secrecy; and gradually introducing sexual content or requests. Children most vulnerable include those who are lonely, experiencing family difficulties, have low self-esteem, or who are already engaging in risk-seeking behaviour online. Understanding grooming patterns helps adults recognise them and helps young people understand why certain online relationship patterns are concerning."
+      },
+      {
+        "heading": "Age-Appropriate Online Safety Conversations",
+        "body": "For young children (5-8 years): focus on trusted adults, body autonomy, and that some content online is for grown-ups only -- the same principles as offline personal safety, applied to the online context. For middle childhood (8-11 years): introduce concepts of privacy, the permanence of online sharing, and that online 'friends' may not be who they say they are. For adolescents (12+): nuanced conversations about consent in online contexts (image sharing, screenshots), recognising manipulation and grooming patterns, managing online reputation, and knowing where to seek help without fear of punishment. A key principle across all ages: children should feel they can come to a trusted adult without consequences if something online makes them uncomfortable."
+      },
+      {
+        "heading": "A Family Approach to Online Safety",
+        "body": "Effective family online safety practice is characterised by open communication rather than surveillance, clear and consistent expectations, age-appropriate expanding digital autonomy (a 7-year-old and a 15-year-old need very different degrees of oversight), agreed family principles (not rules that change daily), and regular, low-key conversations about online life rather than crisis-driven interventions. Parental monitoring tools (content filters, device management apps) are useful supports but not substitutes for relationship and communication -- children who feel monitored without trusted relationship are more likely to conceal concerning online experiences. The goal, as with road safety, is building children's own capacity to navigate risks, not only building fences."
+      }
+    ],
+    "key_takeaways": [
+      "Online risks span content, contact, conduct, and commercial categories, with different risks prominent at different ages.",
+      "Grooming involves systematic trust-building over time; understanding the pattern helps adults and children recognise it.",
+      "Age-appropriate safety conversations build gradually from personal safety principles for young children to nuanced consent and manipulation recognition for adolescents.",
+      "Open communication and relationship outperform surveillance and restriction as the foundation of effective online safety."
+    ],
+    "activity": {
+      "title": "Online Safety Conversation Starter Cards",
+      "instructions": "Create 8 age-appropriate 'conversation starter' scenarios a parent could use with their child to open discussion about online safety without lecturing. Create 4 for ages 7-10 and 4 for ages 12-16. Each scenario should be realistic (e.g. 'What would you do if someone online asked to meet you in real life?') and designed to invite the child's thinking rather than deliver a ready-made answer.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "What are the four categories of online risk described in this module?",
+        "options": [
+          "Gaming, social media, messaging, browsing",
+          "Content, contact, conduct, and commercial risks",
+          "Educational, recreational, social, and commercial use",
+          "Physical, emotional, social, and financial risks"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Online risks span content (exposure), contact (unwanted contact/grooming), conduct (cyberbullying/harmful behaviour), and commercial (advertising/data exploitation) categories."
+      },
+      {
+        "question": "What is the most important principle for children to understand about coming to a trusted adult with online concerns?",
+        "options": [
+          "They will always be punished for what happened online",
+          "They should handle all online problems independently",
+          "They should feel able to come to a trusted adult without fear of consequences",
+          "Online concerns are never serious enough to involve an adult"
+        ],
+        "correct_answer_index": 2,
+        "explanation": "Children who fear punishment for online incidents are less likely to disclose them -- a 'no blame' approach to disclosure is essential for children to seek help when they need it."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Childnet International",
+        "type": "external_org",
+        "note": "Age-specific online safety resources for children, parents, and educators."
+      },
+      {
+        "title": "NetSafe (NZ) / ThinkUKnow (AU/UK)",
+        "type": "external_org",
+        "note": "Online safety education programs for schools and families."
+      },
+      {
+        "title": "NCMEC CyberTipline (US)",
+        "type": "crisis_resource",
+        "note": "Report online child sexual exploitation: CyberTipline.org or 1-800-843-5678."
+      }
+    ]
+  },
+  {
+    "week": 46,
+    "track": "K",
+    "title": "Gaming, Technology Habits, and When Use Becomes Problematic",
+    "summary": "Understanding gaming and other technology habits across the spectrum from healthy engagement to problematic use, and how to support children and adolescents.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand the appeal and developmental value of gaming for children and adolescents.",
+      "Distinguish between healthy, high engagement and problematic gaming or technology use.",
+      "Recognise the warning signs that technology use may be becoming harmful.",
+      "Apply practical, collaborative approaches to supporting children with excessive technology use."
+    ],
+    "content_sections": [
+      {
+        "heading": "The Appeal and Value of Gaming",
+        "body": "Gaming is often approached primarily through a risk lens, but it has genuine developmental value that is worth recognising. Games provide challenges calibrated to ability (with immediate feedback), opportunities for social connection and teamwork (particularly in multiplayer environments), narrative engagement and perspective-taking, strategic thinking and problem-solving, and -- particularly for adolescents -- a sense of competence and mastery that may be harder to access in other domains. For children who are anxious, socially isolated, or struggling in school, gaming communities can provide genuine belonging. This doesn't mean all gaming is beneficial or that problematic use isn't real -- but starting from genuine understanding rather than default suspicion produces better conversations with young people."
+      },
+      {
+        "heading": "Healthy Engagement vs Problematic Use",
+        "body": "Most children and adolescents who play video games or use technology intensively do not develop problematic use. The WHO's classification of 'Gaming Disorder' (included in ICD-11) requires that gaming cause significant impairment in personal, family, social, educational, or occupational functioning, and persist for at least 12 months. Features associated with problematic use include: loss of control over use despite negative consequences, use continuing or escalating to escape distressing emotions, extreme distress when access is removed, and significant interference with sleep, school, relationships, and physical health. A child who plays four hours on a weekend but maintains all other domains of functioning does not fit this profile."
+      },
+      {
+        "heading": "Warning Signs Worth Paying Attention To",
+        "body": "Signs that technology use may be becoming harmful include: consistent prioritisation of gaming or device use over sleep to the point of significant sleep deprivation, complete withdrawal from offline friendships and activities, severe emotional dysregulation when access is removed (beyond typical frustration), declining school performance specifically tied to technology use patterns, and the child describing gaming or social media as the only thing that makes them feel good -- suggesting it may be serving as an escape from underlying distress (depression, anxiety, social difficulties) rather than simply a preferred activity."
+      },
+      {
+        "heading": "Collaborative Approaches to Excessive Use",
+        "body": "When technology use is becoming problematic, punitive removal tends to escalate conflict and drive use underground rather than building regulation. More effective approaches include: exploring what the technology use is providing (social connection, escape from distress, sense of competence) and finding ways to meet those needs through other means, collaborating with the young person on agreed limits rather than imposing them unilaterally, addressing underlying issues (if gaming is primarily escapism from depression or social anxiety, treating those conditions is more effective than targeting the gaming), and in more significant cases, referring to professional support from a psychologist familiar with technology use and adolescent wellbeing."
+      }
+    ],
+    "key_takeaways": [
+      "Gaming has genuine developmental value including social connection, competence, and problem-solving -- starting from this understanding improves conversations with young people.",
+      "Problematic technology use requires significant impairment across life domains and loss of control, not simply intensive use.",
+      "Warning signs include sleep deprivation, withdrawal from offline life, extreme dysregulation at removal, and use primarily as emotional escape.",
+      "Collaborative approaches addressing underlying needs outperform punitive removal; underlying distress driving use should be treated directly."
+    ],
+    "activity": {
+      "title": "Technology Use Assessment",
+      "instructions": "For a child or adolescent you know (or a hypothetical case), conduct a brief technology use assessment: What types of technology do they use and for how long? What does the technology provide them (social connection, entertainment, competence, escape)? What domains of functioning (sleep, school, friendships, physical activity) are affected, if any? Based on this, would you describe the use as healthy engagement, a pattern worth monitoring, or something warranting intervention? Explain your reasoning.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What distinguishes 'high engagement' gaming from the WHO classification of Gaming Disorder?",
+        "options": [
+          "Total hours played per week",
+          "Gaming Disorder requires significant impairment across life domains, loss of control, and persistence for at least 12 months",
+          "The specific type of game being played",
+          "Whether parents approve of the gaming"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Gaming Disorder requires demonstrated significant impairment across life domains and loss of control persisting for at least 12 months -- not simply playing intensively."
+      },
+      {
+        "question": "When a young person uses gaming primarily as escape from depression or anxiety, what does research suggest is the most effective intervention?",
+        "options": [
+          "Removing all gaming access immediately",
+          "Ignoring the gaming and hoping it resolves",
+          "Addressing the underlying depression or anxiety is more effective than targeting the gaming behaviour itself",
+          "Replacing gaming with a different screen-based activity"
+        ],
+        "correct_answer_index": 2,
+        "explanation": "When gaming functions as escape from underlying distress, treating the underlying condition produces better outcomes than removing the coping mechanism without addressing what drives its use."
+      }
+    ],
+    "resources": [
+      {
+        "title": "WHO: Gaming Disorder classification (ICD-11)",
+        "type": "professional_reference",
+        "note": "Clinical criteria for Gaming Disorder for professional/trainee audiences."
+      },
+      {
+        "title": "Young Minds (UK) / Beyond Blue (AU) digital wellbeing resources",
+        "type": "external_org",
+        "note": "Young person-friendly resources on technology wellbeing."
+      }
+    ]
+  },
+  {
+    "week": 47,
+    "track": "L",
+    "title": "How Poverty and Financial Stress Affect Children's Development",
+    "summary": "Understanding the mechanisms through which poverty and financial stress affect child development, beyond simple resource scarcity.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Describe the multiple pathways through which poverty affects child development.",
+      "Understand the distinction between poverty as a resource deficit and poverty as a chronic stressor.",
+      "Recognise how financial stress affects parenting capacity and parent-child relationships.",
+      "Apply a non-stigmatising, structurally-informed lens to working with families experiencing financial hardship."
+    ],
+    "content_sections": [
+      {
+        "heading": "Poverty as More Than Resource Scarcity",
+        "body": "Poverty's effects on children operate through multiple pathways beyond simple lack of material resources. The Family Stress Model (Conger et al.) identifies financial pressure as triggering economic pressure that leads to parental emotional distress, which in turn affects the quality of parenting and thereby children's development. Separately, scarcity research (Mullainathan & Shafir) demonstrates that poverty imposes a 'cognitive tax' -- the mental bandwidth consumed by managing financial scarcity (juggling bills, making difficult trade-offs, managing uncertainty) reduces the cognitive resources available for other functions, including patient, sensitive parenting. These mechanisms explain why parenting in poverty is harder, without attributing that difficulty to character."
+      },
+      {
+        "heading": "Material Deprivation and Development",
+        "body": "Material deprivation directly affects several domains of child development: food insecurity is associated with cognitive difficulties, reduced school readiness, and behavioural problems; housing instability (frequent moves, overcrowding, homelessness) disrupts educational continuity and social relationships and adds acute stress to family functioning; reduced access to learning materials, enriching activities, and quality childcare creates cumulative disadvantage relative to better-resourced peers. Neighbourhood effects also play a role: concentrated poverty is associated with reduced access to quality schools, green space, and safe play environments, and elevated exposure to community violence."
+      },
+      {
+        "heading": "Financial Stress and Parenting",
+        "body": "Financial stress is one of the most consistent predictors of parenting difficulties. Parents under severe financial pressure tend to show reduced warmth, increased harshness, and reduced consistency -- not because they care less, but because financial stress consumes cognitive resources, increases irritability, and reduces the emotional bandwidth available for patient, sensitive caregiving. Conversely, interventions that directly reduce financial stress (income supplements, food assistance, stable housing) show measurable improvements in parenting quality and child outcomes -- evidence that financial support is also a parenting intervention."
+      },
+      {
+        "heading": "A Structurally-Informed, Non-Stigmatising Lens",
+        "body": "Families experiencing poverty frequently face stigma from service systems that attribute their circumstances to individual failing rather than structural conditions. A structurally-informed lens recognises that poverty is overwhelmingly the product of structural factors (labour market conditions, housing costs, wage levels, welfare system design) and historical inequities (including racial and geographic disadvantage), not simply individual choices or character. This matters for professional practice: an approach that diagnoses parenting problems without addressing the structural conditions producing them will have limited impact. Advocating for structural supports (income, housing, childcare) alongside parenting support is legitimate and evidenced professional practice."
+      }
+    ],
+    "key_takeaways": [
+      "Poverty affects children through multiple pathways: material deprivation, chronic stress, neighbourhood effects, and a 'cognitive tax' on parental resources.",
+      "Financial stress is one of the most consistent predictors of parenting difficulties -- not due to character, but due to depleted cognitive and emotional bandwidth.",
+      "Income supplements and direct financial support produce measurable improvements in parenting quality -- financial support is itself a parenting intervention.",
+      "A structurally-informed lens attributes poverty primarily to structural conditions, not individual failing, shaping both attitude and practice."
+    ],
+    "activity": {
+      "title": "Family Stress Model Application",
+      "instructions": "Trace the Family Stress Model pathway for a hypothetical family: a single parent working two low-wage jobs with uncertain hours, two children under 10, and regular difficulty making rent. At each step in the pathway (financial pressure → parental distress → parenting quality → child outcomes), identify both the risks AND the potential points of intervention that could break the chain. This exercise builds structural thinking alongside individual support.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What is the 'cognitive tax' of poverty, as described in this module?",
+        "options": [
+          "A government tax on low-income families",
+          "The mental bandwidth consumed by managing financial scarcity, reducing cognitive resources available for other functions including parenting",
+          "A penalty for failing to budget correctly",
+          "A measure of intellectual disability caused by poverty"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Scarcity research shows that managing financial scarcity consumes significant mental bandwidth, reducing cognitive resources available for other functions."
+      },
+      {
+        "question": "What does evidence from income supplement programs suggest about the relationship between financial support and parenting?",
+        "options": [
+          "Financial support has no effect on parenting quality",
+          "Financial support directly reduces parenting stress and is associated with measurable improvements in parenting quality and child outcomes",
+          "Financial support reduces parenting motivation",
+          "Only parenting programs, never financial support, improve parenting quality"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Income supplements and financial supports that reduce poverty have been associated with improved parenting quality and child outcomes, demonstrating that financial support is itself a parenting intervention."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Local financial hardship assistance programs",
+        "type": "community_resource",
+        "note": "Emergency financial assistance, food banks, housing support, and utility relief are often available through local community services."
+      },
+      {
+        "title": "Government income support programs (jurisdiction-specific)",
+        "type": "community_resource",
+        "note": "Ensure families in financial hardship are connected to all entitlements they qualify for."
+      }
+    ]
+  },
+  {
+    "week": 48,
+    "track": "L",
+    "title": "Financial Stress and Parental Mental Health",
+    "summary": "The direct relationship between financial stress and parental mental health conditions, and how to support parents navigating economic hardship.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand the bidirectional relationship between financial stress and parental mental health.",
+      "Recognise how financial shame and stigma affect help-seeking among parents in hardship.",
+      "Identify practical approaches for supporting parents experiencing financial stress-related mental health impacts.",
+      "Apply financial wellbeing tools and conversations in professional practice."
+    ],
+    "content_sections": [
+      {
+        "heading": "Financial Stress and Mental Health: The Evidence",
+        "body": "Financial stress is among the strongest environmental predictors of depression and anxiety in adults. Research consistently finds that debt, housing insecurity, inability to meet basic needs, and unemployment are associated with elevated rates of depression, anxiety, and in the most severe cases, suicidality. The relationship is bidirectional: financial stress causes mental health difficulties, and mental health difficulties (such as depression impairing work functioning, or anxiety making financial decisions harder) often worsen financial situations, creating a reinforcing cycle. This bidirectional dynamic means addressing only one dimension without the other often produces limited gains."
+      },
+      {
+        "heading": "Financial Shame and Help-Seeking",
+        "body": "Financial difficulty carries significant social stigma that shapes help-seeking in important ways. Many parents experiencing financial hardship feel deep shame -- that their difficulties reflect personal failure and are something to hide rather than address. This shame can delay engagement with financial assistance programs, prevent honest disclosure to mental health professionals (whose interventions may target psychological symptoms while missing the structural driver), and reduce engagement with parenting support services that feel like additional evidence of 'failure.' Professionals who routinely and non-judgmentally explore the financial situation of families they work with create more opportunities to connect people with both financial and mental health support simultaneously."
+      },
+      {
+        "heading": "Supporting Parents With Financial Stress-Related Mental Health Impacts",
+        "body": "Effective support addresses both dimensions. On the financial side: connecting families with financial counselling (many services offer this free), welfare rights advice to ensure all entitlements are being accessed, emergency relief for immediate crises, and longer-term financial literacy if appropriate. On the mental health side: validating that financial stress is an objectively difficult situation (not a thinking distortion to be reframed away), offering evidence-based support for depression and anxiety, and recognising that some 'cognitive distortions' (like 'there's no way out') may be rational assessments of genuinely difficult circumstances that require material improvement, not just cognitive reframing."
+      },
+      {
+        "heading": "Integrating Financial Wellbeing Into Professional Practice",
+        "body": "Mental health and social service professionals are rarely financial advisers, but they can play an important bridging role: routinely asking about financial situation as part of holistic assessment (normalising it as relevant, not intrusive), knowing local financial counselling and welfare rights services and referring to them actively, advocating for integrated services that address mental health and financial wellbeing together, and challenging settings where financial wellbeing is treated as outside the professional's remit when it is a primary driver of the presenting issue."
+      }
+    ],
+    "key_takeaways": [
+      "Financial stress is among the strongest environmental predictors of depression and anxiety, with a bidirectional relationship.",
+      "Financial shame significantly inhibits help-seeking; non-judgmental professional inquiry opens pathways to support.",
+      "Effective support addresses both financial and mental health dimensions rather than treating either in isolation.",
+      "Routine financial wellbeing assessment in professional practice is a bridging role that connects families to integrated support."
+    ],
+    "activity": {
+      "title": "Integrated Assessment Practice",
+      "instructions": "Design 4 questions you could incorporate into a routine professional intake assessment to understand a family's financial wellbeing without it feeling intrusive or shaming. For each question, note how you would frame it in a session (tone, words used) to normalise financial discussion as part of whole-family understanding.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "Why is the relationship between financial stress and mental health described as 'bidirectional'?",
+        "options": [
+          "Financial stress causes mental health difficulties, which can worsen financial situations, creating a reinforcing cycle",
+          "Mental health difficulties always precede financial difficulties",
+          "Financial stress only affects mental health in extreme poverty",
+          "The relationship only flows from mental health difficulties to financial stress"
+        ],
+        "correct_answer_index": 0,
+        "explanation": "Financial stress causes mental health difficulties, and mental health difficulties often worsen financial situations -- a cycle that reinforces in both directions."
+      },
+      {
+        "question": "Why might 'cognitive reframing' alone be insufficient for a parent experiencing financial stress-related depression?",
+        "options": [
+          "Cognitive reframing is never an effective approach",
+          "Some 'distorted' thinking about financial situations may be accurate assessments of genuinely difficult circumstances requiring material improvement, not just cognitive change",
+          "Depression prevents all cognitive interventions from working",
+          "Financial stress never causes depression"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "When circumstances are genuinely severe, some apparently distorted thinking may be accurate, and addressing the structural situation alongside psychological symptoms is more effective."
+      }
+    ],
+    "resources": [
+      {
+        "title": "National Foundation for Credit Counseling (US): 1-800-388-2227",
+        "type": "external_org",
+        "note": "Free or low-cost financial counselling referrals."
+      },
+      {
+        "title": "Financial counselling services (jurisdiction-specific)",
+        "type": "community_resource",
+        "note": "Many community legal centres and financial services offer free financial counselling; search local options."
+      }
+    ]
+  },
+  {
+    "week": 49,
+    "track": "L",
+    "title": "Economic Resilience: Building Financial Capacity in Families",
+    "summary": "Practical approaches to supporting families in building financial knowledge, skills, and habits that promote economic resilience.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand what economic resilience means in a family context.",
+      "Identify the core components of financial literacy relevant to families.",
+      "Apply practical strategies for helping families build emergency savings and manage debt.",
+      "Understand how professionals can support financial capability without overstepping professional boundaries."
+    ],
+    "content_sections": [
+      {
+        "heading": "What Economic Resilience Means for Families",
+        "body": "Economic resilience refers to a family's capacity to absorb financial shocks (job loss, unexpected expense, illness) without catastrophic impact on their stability and wellbeing. It is built from several components: having some financial buffer (savings, even small), understanding and managing cash flow, accessing appropriate credit rather than high-cost emergency debt, knowing one's entitlements and benefits, and having relationships with financial and community support systems that can be activated in a crisis. Importantly, economic resilience is not about achieving financial comfort -- many families in genuine poverty cannot build resilience through behavioural change alone -- but about maximising the stability and agency available within structural constraints."
+      },
+      {
+        "heading": "Core Financial Literacy for Families",
+        "body": "Financial literacy relevant to families includes: understanding income and expenses (cash flow awareness), distinguishing needs from wants in a realistic, non-judgmental way, understanding how interest works (particularly on high-cost debt), knowing the welfare and entitlement system and how to access it, understanding basic banking and avoiding fee-laden financial products, and -- where children are involved -- age-appropriate money education that builds financial capability from childhood. Research consistently finds that financial literacy programs are most effective when they address actual financial behaviours and decisions, not just theoretical knowledge."
+      },
+      {
+        "heading": "Emergency Savings and Debt Management",
+        "body": "A small emergency savings buffer -- even the equivalent of one week's income -- has been shown to significantly reduce a household's vulnerability to financial shocks and the associated stress. For families with very limited income, achieving even small savings requires deliberate system design: automatic transfers, keeping savings separate from spending accounts, and having a clear purpose for the fund. On debt: high-cost debt (payday loans, buy-now-pay-later schemes) can rapidly become a significant burden; connecting families to low-cost alternatives, debt counselling, and hardship programs with utilities and creditors can meaningfully reduce financial pressure."
+      },
+      {
+        "heading": "Professional Roles in Financial Capability Support",
+        "body": "Most professionals working with families are not financial advisers and should not act as such. However, there are meaningful roles within professional scope: ensuring families are accessing all welfare entitlements they qualify for (a form of financial advocacy), knowing local financial counselling services and making warm referrals, using basic financial conversation to identify hidden financial stress, and where relevant, integrating age-appropriate financial education for children into family support programs. The Family SafeSteps context particularly benefits from this, as reunification readiness often involves stabilising financial circumstances alongside parenting capacity."
+      }
+    ],
+    "key_takeaways": [
+      "Economic resilience is built from savings buffers, cash flow awareness, entitlement access, and low-cost credit -- within whatever structural constraints exist.",
+      "Financial literacy is most effective when addressing real behaviours and decisions, not just theoretical knowledge.",
+      "Even small emergency savings significantly reduce vulnerability to financial shocks.",
+      "Professional scope includes entitlement advocacy, warm referrals to financial counsellors, and identifying hidden financial stress."
+    ],
+    "activity": {
+      "title": "Financial Resilience Planning",
+      "instructions": "For a family earning low but stable income with three children, design a simple 90-day financial resilience plan covering: one small savings goal, one debt to prioritise, two entitlements to check eligibility for, and one financial conversation to have with the children (age-appropriate). Keep it realistic, specific, and achievable within the family's actual constraints.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "What has even a small emergency savings buffer been shown to do for families?",
+        "options": [
+          "Eliminate all financial stress",
+          "Significantly reduce vulnerability to financial shocks and associated stress",
+          "Replace the need for welfare entitlements",
+          "Have no significant effect on financial wellbeing"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Research shows that even small emergency savings buffers significantly reduce a household's vulnerability to financial shocks and the mental health impacts that follow."
+      },
+      {
+        "question": "What is an appropriate professional role in financial capability support for families?",
+        "options": [
+          "Acting as a full financial adviser and managing the family's accounts",
+          "Ensuring families access entitlements, making warm referrals to financial counsellors, and identifying hidden financial stress",
+          "Avoiding any discussion of financial matters as outside professional scope",
+          "Advising on investment strategies"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Within professional scope, practitioners can ensure entitlement access, make referrals, and identify financial stress without acting as financial advisers."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Benefits calculators (jurisdiction-specific)",
+        "type": "practical_tool",
+        "note": "Online tools to check benefit entitlements; search for your local government benefits calculator."
+      },
+      {
+        "title": "Consumer Financial Protection Bureau (US)",
+        "type": "external_org",
+        "note": "Free financial literacy resources and consumer protection information."
+      }
+    ]
+  },
+  {
+    "week": 50,
+    "track": "L",
+    "title": "Navigating Service Systems: Help-Seeking, Advocacy, and Reducing Barriers",
+    "summary": "Supporting families to navigate complex service systems effectively, reduce barriers to help-seeking, and build their capacity to advocate for their own needs.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand the barriers families in financial hardship face when navigating service systems.",
+      "Describe the role of professionals in service navigation and system advocacy.",
+      "Apply practical skills for supporting families in accessing entitlements and services.",
+      "Understand the concept of 'no wrong door' service delivery and wrap-around support."
+    ],
+    "content_sections": [
+      {
+        "heading": "Why Service Navigation Is Hard",
+        "body": "Service systems designed to help families experiencing hardship are often genuinely difficult to navigate. They are typically fragmented (multiple agencies covering different needs with limited coordination), means-tested and eligibility-complex (requiring significant documentation and often multiple applications), built with significant administrative burden that is harder to manage under the cognitive load of financial stress, and sometimes experienced as humiliating or judgmental by those who need them. Research on 'administrative burden' shows that the effort, psychological cost, and compliance costs of accessing services cause many eligible families to give up before receiving assistance -- not because they don't need or want it, but because the process is simply too costly."
+      },
+      {
+        "heading": "Professionals as Service Navigators and Advocates",
+        "body": "Professionals working with families experiencing hardship can significantly reduce administrative burden through active navigation support: knowing the local service landscape (what is available, how to access it, eligibility criteria), helping families prepare applications and documentation, making warm referrals (accompanying the family or making direct contact rather than handing over a phone number), following up to ensure services were accessed, and advocating with service systems on behalf of families where barriers arise. This is legitimate professional practice, not scope creep -- removing service access barriers is often as important as direct clinical or support work."
+      },
+      {
+        "heading": "'No Wrong Door' and Wrap-Around Service Models",
+        "body": "Effective service delivery for families with complex needs increasingly uses 'no wrong door' principles: regardless of which service a family first accesses, they can be connected to all relevant supports from that entry point. Wrap-around service models coordinate multiple agencies around a single family's needs rather than requiring the family to independently manage relationships with multiple disconnected providers. These models are associated with better outcomes and reduced family burden, and align with the holistic family-systems approach consistent with SafeSteps and similar platforms."
+      },
+      {
+        "heading": "Building Families' Own Navigation Capacity",
+        "body": "Alongside professional navigation support, building families' own capacity to access services is a durable investment. This includes: understanding their rights within service systems, knowing how to escalate when a service is not meeting an obligation, building confidence in advocating for their own needs, and connecting with peer advocates and community support organisations who can offer ongoing informal navigation support. This is particularly important as formal professional involvement reduces over time -- families who have developed their own navigation skills are better positioned to sustain access to support independently."
+      }
+    ],
+    "key_takeaways": [
+      "Service systems are often genuinely difficult to navigate due to fragmentation, complexity, and administrative burden -- eligible families frequently give up before receiving support.",
+      "Professionals can significantly reduce burden through active navigation: knowing local services, making warm referrals, and following up.",
+      "'No wrong door' and wrap-around models coordinate support around the whole family rather than requiring independent management of multiple disconnected services.",
+      "Building families' own navigation capacity alongside professional support creates more durable access to services over time."
+    ],
+    "activity": {
+      "title": "Service Navigation Map",
+      "instructions": "For a family in your local context facing a combination of financial stress, housing insecurity, and parenting support needs: map the relevant services available across these three domains. Identify the entry point (which service would you refer them to first and why?), 2-3 likely barriers to access, and a specific strategy to address each barrier. This exercise builds practical local knowledge alongside systemic thinking.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "What is 'administrative burden' in the context of service access?",
+        "options": [
+          "The cost to government of running service systems",
+          "The effort, psychological cost, and compliance cost imposed on service users that can prevent eligible families from accessing assistance",
+          "A management approach used by government agencies",
+          "The paperwork completed by professionals, not service users"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Administrative burden refers to the costs imposed on service users -- time, effort, humiliation, documentation -- that cause eligible people to give up before receiving assistance."
+      },
+      {
+        "question": "What distinguishes a 'warm referral' from simply providing a phone number?",
+        "options": [
+          "A warm referral involves the professional accompanying the family or making direct contact, rather than leaving the family to navigate independently",
+          "A warm referral is only appropriate for mental health services",
+          "There is no meaningful difference",
+          "A warm referral involves written documentation only"
+        ],
+        "correct_answer_index": 0,
+        "explanation": "A warm referral involves the professional actively facilitating the connection -- direct contact, accompaniment, or follow-up -- rather than leaving the service user to navigate independently."
+      }
+    ],
+    "resources": [
+      {
+        "title": "211 (US) community resource hotline",
+        "type": "community_resource",
+        "note": "Dial 211 for local social service referrals covering housing, food, utilities, healthcare, and more."
+      },
+      {
+        "title": "Local community legal centres / welfare rights services",
+        "type": "community_resource",
+        "note": "Free legal and entitlement advice for people in financial hardship."
+      }
+    ]
+  },
+  {
+    "week": 51,
+    "track": "M",
+    "title": "Emotional Intelligence: What It Is and How It Develops in Children",
+    "summary": "Understanding emotional intelligence as a teachable set of skills, how it develops across childhood, and why it matters for life outcomes.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Define emotional intelligence and its core components.",
+      "Describe how emotional intelligence develops across childhood and what supports its development.",
+      "Understand the relationship between emotional intelligence and long-term outcomes.",
+      "Apply practical strategies for building emotional intelligence in children of different ages."
+    ],
+    "content_sections": [
+      {
+        "heading": "What Is Emotional Intelligence?",
+        "body": "Emotional intelligence (EI), first systematically described by Peter Salovey and John Mayer and popularised by Daniel Goleman, refers to the ability to perceive, understand, manage, and use emotions effectively -- both one's own and others'. Its core components include: emotional awareness (recognising and naming emotions in oneself and others), emotional regulation (managing emotional responses effectively rather than being overwhelmed by or suppressing them), empathy (understanding and responding to others' emotional states), and social skills (using emotional understanding to navigate relationships). EI is not a fixed trait; it is a set of learnable skills that develop across childhood and can be deliberately taught and practised."
+      },
+      {
+        "heading": "How EI Develops Across Childhood",
+        "body": "Emotional intelligence develops in stages closely tied to cognitive and language development. In early childhood, the foundational skills are emotional awareness -- simply learning to name and recognise emotions -- and beginning to tolerate frustration without complete dysregulation. In middle childhood, the capacity for perspective-taking (understanding that others have different emotional experiences) deepens, as does the ability to regulate emotions in social contexts like school. Adolescence brings increased emotional complexity: the intensity of emotions is heightened by neurological changes, while the capacity for nuanced empathy and self-awareness is simultaneously expanding. Adults who consistently name, validate, and model emotional processes are the primary developmental scaffold."
+      },
+      {
+        "heading": "Why EI Matters for Outcomes",
+        "body": "Research links emotional intelligence to a wide range of positive outcomes, including: academic achievement (the ability to manage emotions, persist through frustration, and work cooperatively), peer relationships and social competence, mental health (EI is associated with lower rates of depression and anxiety and better coping with stress), and later life outcomes including occupational success and relationship satisfaction. EI does not replace cognitive ability or create success in its absence, but it substantially moderates how effectively cognitive and other capacities can be deployed in real-world contexts."
+      },
+      {
+        "heading": "Building EI in Children: Practical Approaches",
+        "body": "Emotion coaching, researched extensively by John Gottman, is a well-evidenced approach: noticing and naming children's emotions, validating them as understandable, helping children develop a vocabulary for their emotional experience, and collaboratively problem-solving after the emotion has been acknowledged. Additional strategies include: maintaining a rich emotion vocabulary in everyday family conversation, reading books and discussing characters' emotional experiences, explicitly modelling the emotional regulation process ('I'm feeling frustrated, so I'm going to take a pause before I respond'), and creating a family culture in which emotions are named and discussed rather than suppressed or dismissed."
+      }
+    ],
+    "key_takeaways": [
+      "Emotional intelligence is a set of learnable skills -- emotional awareness, regulation, empathy, and social skills -- not a fixed trait.",
+      "EI develops across childhood through interaction with emotionally responsive adults and deliberate skill-building.",
+      "EI is associated with academic achievement, mental health, social competence, and long-term life outcomes.",
+      "Emotion coaching -- naming, validating, and problem-solving around emotions -- is a well-evidenced approach accessible to parents and professionals alike."
+    ],
+    "activity": {
+      "title": "Emotion Coaching Practice",
+      "instructions": "Write out a sample emotion coaching interaction between a parent and a 7-year-old who has just had a meltdown because they lost a board game. The interaction should: (1) acknowledge and name the feeling, (2) validate it as understandable, (3) set a limit on behaviour if needed, (4) problem-solve together once the child is regulated. Then note: what would a non-emotion-coaching response to the same situation typically look like, and what would be lost?",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What are the four core components of emotional intelligence?",
+        "options": [
+          "Reading, writing, arithmetic, and social skills",
+          "Emotional awareness, emotional regulation, empathy, and social skills",
+          "Intelligence, motivation, memory, and creativity",
+          "Confidence, ambition, resilience, and optimism"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "The core EI components are emotional awareness, emotional regulation, empathy, and social skills -- all teachable and developable."
+      },
+      {
+        "question": "What is 'emotion coaching' and what is it based on?",
+        "options": [
+          "A therapy approach requiring a clinical licence to use",
+          "An approach researched by John Gottman involving naming, validating, and problem-solving around children's emotions",
+          "A technique for eliminating negative emotions in children",
+          "A school-based curriculum available only in private schools"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Emotion coaching, extensively researched by John Gottman, involves noticing, naming, validating emotions and collaborative problem-solving -- accessible to any parent or professional."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Gottman, J. Raising an Emotionally Intelligent Child",
+        "type": "book",
+        "note": "Foundational, accessible guide to emotion coaching."
+      },
+      {
+        "title": "RULER Approach (Yale Center for Emotional Intelligence)",
+        "type": "external_org",
+        "note": "Evidence-based EI curriculum for schools and families."
+      }
+    ]
+  },
+  {
+    "week": 52,
+    "track": "M",
+    "title": "Self-Regulation: Building Children's Capacity to Manage Themselves",
+    "summary": "Understanding self-regulation as a developmental skill, how it builds over time, why it breaks down under stress, and how to support its development.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Define self-regulation and distinguish it from self-control.",
+      "Understand the developmental trajectory of self-regulation and the role of co-regulation.",
+      "Recognise common triggers for dysregulation across age groups.",
+      "Apply practical co-regulation and self-regulation support strategies."
+    ],
+    "content_sections": [
+      {
+        "heading": "Self-Regulation vs Self-Control",
+        "body": "Self-regulation and self-control are related but distinct concepts. Self-control typically refers to the effortful inhibition of impulses -- stopping oneself from doing something. Self-regulation is broader: it refers to the ability to manage one's physiological arousal, emotional states, attention, and behaviour flexibly in response to the demands of the situation. Self-regulation can involve activating as well as inhibiting -- energising oneself when motivation is low as much as calming oneself when activated. Stuart Shanker's self-regulation framework identifies five domains of stressors affecting regulation: biological, emotional, cognitive, social, and prosocial -- recognising that regulation challenges are often multiply-determined."
+      },
+      {
+        "heading": "The Role of Co-Regulation",
+        "body": "Self-regulation develops out of co-regulation -- the external regulation provided by a responsive caregiver who helps a child manage their physiological and emotional state before the child can do so independently. This is visible in infancy: a distressed infant cannot self-soothe until a caregiver's calming presence, tone, and touch bring them back within a manageable range. This co-regulation function doesn't disappear with age; it becomes more subtle. Adolescents still benefit from co-regulating adult presences, though the form shifts from physical comfort to emotional availability, validation, and support. The capacity for self-regulation is built through thousands of co-regulation experiences, not taught in a single lesson."
+      },
+      {
+        "heading": "What Causes Dysregulation",
+        "body": "Dysregulation -- the loss of the ability to manage one's state effectively -- is triggered differently across development and individuals. Common triggers include physical stressors (hunger, tiredness, illness, sensory overload), emotional stressors (shame, fear, frustration, grief), cognitive stressors (demands exceeding capacity, transitions requiring rapid mental shifting), and social stressors (conflict, humiliation, exclusion). Understanding what specifically dysregulates a particular child -- their individual stress profile -- is more useful than general behaviour management strategies, because it allows prevention (reducing stressors where possible) and preparation (supporting regulation before the threshold is reached)."
+      },
+      {
+        "heading": "Practical Co-Regulation and Self-Regulation Support",
+        "body": "Practical strategies span two phases: before and during dysregulation. Before: reducing unnecessary stressors (ensuring basic needs are met, keeping demands within capacity, building in transition warnings), teaching and practising regulation strategies during calm periods (breathing, movement, grounding, naming), and building the child's own stressor-awareness ('I notice I get dysregulated when I'm hungry -- what can I do about that?'). During dysregulation: the adult's primary role is to provide a regulated, calm presence (co-regulation) before any problem-solving or consequence occurs. Attempting discipline, reasoning, or correction during acute dysregulation is ineffective; the brain's capacity for rational processing is compromised during high arousal states."
+      }
+    ],
+    "key_takeaways": [
+      "Self-regulation involves managing arousal, emotion, attention, and behaviour flexibly -- broader than simple impulse control.",
+      "Self-regulation develops out of co-regulation: thousands of experiences of adult-scaffolded state management build eventual self-regulatory capacity.",
+      "Understanding a child's individual stress profile allows prevention and preparation rather than purely reactive responses to dysregulation.",
+      "During acute dysregulation, the adult's role is to co-regulate first -- calm, available presence -- before any problem-solving or consequence."
+    ],
+    "activity": {
+      "title": "Individual Stress Profile",
+      "instructions": "For a child you know (or a hypothetical case), map their individual stress profile across the five domains (biological, emotional, cognitive, social, prosocial): what specific triggers cause dysregulation in each domain? Then identify 2 prevention strategies (reducing stressors before they accumulate) and 2 in-the-moment co-regulation strategies that suit this child's profile.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "What is co-regulation and why is it important for self-regulation development?",
+        "options": [
+          "A school-based peer tutoring program",
+          "The external regulation provided by a responsive caregiver that enables a child to manage their state, building the foundation for eventual self-regulation",
+          "A form of self-regulation that children practice independently",
+          "A strategy used only with infants"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Co-regulation -- external support from a calm, responsive adult -- is the developmental precursor to self-regulation, built through thousands of experiences across childhood."
+      },
+      {
+        "question": "Why is attempting discipline or reasoning during acute dysregulation ineffective?",
+        "options": [
+          "Children always ignore adults when upset",
+          "Discipline should only ever occur before dysregulation",
+          "The brain's capacity for rational processing is compromised during high arousal states, making cognitive interventions ineffective until regulation is restored",
+          "Adults are always wrong during conflict"
+        ],
+        "correct_answer_index": 2,
+        "explanation": "High arousal states compromise the prefrontal capacity needed for reasoning and behaviour change; co-regulation to restore calm must precede any consequencing or problem-solving."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Shanker, S. Self-Reg: How to Help Your Child (and You) Break the Stress Cycle",
+        "type": "book",
+        "note": "Accessible framework for understanding and supporting self-regulation."
+      },
+      {
+        "title": "The Zones of Regulation curriculum",
+        "type": "professional_resource",
+        "note": "School-based self-regulation curriculum for children and adolescents."
+      }
+    ]
+  },
+  {
+    "week": 53,
+    "track": "M",
+    "title": "Positive Parenting and Effective Discipline",
+    "summary": "Evidence-based approaches to positive parenting, effective discipline that teaches rather than punishes, and why harsh discipline is counterproductive.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Define positive parenting and distinguish it from permissive parenting.",
+      "Understand why harsh or punitive discipline is counterproductive and harmful.",
+      "Apply evidence-based discipline approaches that teach and guide behaviour effectively.",
+      "Recognise the role of relationship quality as the foundation of all effective parenting."
+    ],
+    "content_sections": [
+      {
+        "heading": "What Positive Parenting Is (and Isn't)",
+        "body": "Positive parenting is frequently misunderstood as permissive or consequence-free parenting. It is neither. Positive parenting refers to an approach characterised by high warmth and high structure -- the 'authoritative' parenting style identified by Diana Baumrind as producing the best developmental outcomes across multiple cultures and socioeconomic contexts. It involves clear, consistent expectations and limits; warm, responsive emotional engagement; explanations rather than arbitrary commands; and consequences that are logical, proportionate, and predictable. This contrasts with authoritarian parenting (high structure, low warmth), permissive parenting (high warmth, low structure), and neglectful parenting (low on both). Positive parenting is demanding of the parent, not easy -- it requires more than simply punishing misbehaviour."
+      },
+      {
+        "heading": "Why Harsh Discipline Is Counterproductive",
+        "body": "Decades of research across cultures finds that harsh discipline -- including physical punishment (hitting, smacking), verbal aggression (yelling, humiliation), and severe or unpredictable consequences -- is associated with: increased child aggression and externalising behaviour (contrary to the intent), poorer mental health outcomes for children, reduced quality of the parent-child relationship, and reduced effectiveness of discipline over time as children habituate or become fearful and compliant without internalising values. Physical punishment in particular is associated with harm and no benefit compared to other discipline approaches, and has been removed from guidance of major paediatric and psychological professional bodies in many countries."
+      },
+      {
+        "heading": "Evidence-Based Discipline Approaches",
+        "body": "Effective discipline teaches behaviour rather than simply punishing it. Key approaches include: natural and logical consequences (consequences that are related to the behaviour, not arbitrary), connection before correction (ensuring the child feels understood before correction is applied -- discipline is more effective when the relationship is intact), positive reinforcement of desired behaviour (catching children being good is more effective than focusing only on unwanted behaviour), age-appropriate limit-setting with clear and specific expectations, and problem-solving with children (particularly older children) to understand what drove the behaviour and develop alternatives. These approaches require more adult investment than punishment but produce more durable behaviour change."
+      },
+      {
+        "heading": "Relationship as the Foundation of Effective Parenting",
+        "body": "All effective parenting strategies are built on a foundation of a positive parent-child relationship. Research by John Gottman found that families with a strong 'emotional bank account' -- a high ratio of positive interactions to negative ones -- navigate difficult moments, including discipline situations, more effectively. A child who feels fundamentally connected to and respected by a parent is more open to that parent's guidance and more motivated to maintain the relationship through cooperative behaviour. A child who experiences the parent primarily as a source of punishment or unpredictability is less accessible to the parent's influence and more likely to comply only under direct supervision while disconnecting emotionally. Investing in the relationship -- play, connection time, warmth -- is not separate from discipline; it is its precondition."
+      }
+    ],
+    "key_takeaways": [
+      "Positive (authoritative) parenting combines high warmth with high structure -- it is neither permissive nor punitive.",
+      "Harsh and punitive discipline is associated with harm and produces worse outcomes than positive discipline approaches.",
+      "Effective discipline teaches behaviour through logical consequences, connection before correction, and positive reinforcement.",
+      "The parent-child relationship is the foundation of all effective discipline -- investing in relationship is not separate from but prerequisite to effective guidance."
+    ],
+    "activity": {
+      "title": "Discipline Approach Analysis",
+      "instructions": "Describe three common parenting discipline scenarios (e.g., a toddler throwing food, a school-age child refusing to do homework, a teenager breaking curfew). For each, write: (a) a harsh/punitive response, (b) a positive parenting response applying the principles from this module, and (c) what the child is likely to learn from each approach. This comparative analysis builds practical application of the concepts.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "How does positive parenting differ from permissive parenting?",
+        "options": [
+          "Positive parenting has no rules or consequences; permissive parenting does",
+          "Positive parenting combines high warmth AND high structure; permissive parenting is high warmth with low structure",
+          "They are the same approach with different names",
+          "Positive parenting is only appropriate for young children"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Positive (authoritative) parenting combines high warmth with high structure and clear limits -- it is not the absence of structure, which characterises permissive parenting."
+      },
+      {
+        "question": "What does research consistently find about physical punishment as a discipline strategy?",
+        "options": [
+          "Physical punishment is associated with harm and no benefit compared to alternative discipline approaches",
+          "Physical punishment is effective if used sparingly",
+          "Physical punishment is associated with improved child compliance long-term",
+          "Research has not examined physical punishment outcomes"
+        ],
+        "correct_answer_index": 0,
+        "explanation": "Research consistently finds physical punishment is associated with harm (including increased aggression, worse mental health) and no benefit compared to alternative approaches."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Triple P - Positive Parenting Program",
+        "type": "external_org",
+        "note": "One of the most extensively researched positive parenting programs, available in many countries."
+      },
+      {
+        "title": "Circle of Security parenting program",
+        "type": "external_org",
+        "note": "Attachment-based positive parenting intervention with evidence in high-need family contexts."
+      }
+    ]
+  },
+  {
+    "week": 54,
+    "track": "M",
+    "title": "Raising Emotionally Healthy Adolescents",
+    "summary": "The specific emotional and relational challenges of parenting adolescents, maintaining connection through the transition to independence, and supporting adolescent mental health.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand the emotional and relational tasks of adolescence from the adolescent's perspective.",
+      "Describe how the parent-adolescent relationship needs to shift during this developmental period.",
+      "Apply practical strategies for maintaining connection with adolescents while respecting growing autonomy.",
+      "Recognise signs that an adolescent may need professional mental health support."
+    ],
+    "content_sections": [
+      {
+        "heading": "Adolescence From the Inside",
+        "body": "Understanding adolescence from the adolescent's perspective changes the parenting response significantly. Adolescents are navigating several simultaneous developmental tasks: forming a coherent identity (who am I, independent of my family?), establishing peer relationships that feel more central than family relationships (a normal shift, not a rejection), developing the capacity for intimate and romantic relationships, beginning to consider their future role in the adult world, and managing significantly heightened emotional intensity driven by neurological changes in brain development. All of these tasks are real and important, and the apparent drama, risk-taking, and family friction of adolescence often reflect the intensity of this developmental work."
+      },
+      {
+        "heading": "Shifting the Parent-Adolescent Relationship",
+        "body": "Effective parenting of adolescents requires a significant shift from the parenting of younger children. The authority model that works for a 6-year-old is counterproductive with a 16-year-old, who is developmentally driven toward autonomy. Effective parenting of adolescents involves: shifting from directive to collaborative decision-making progressively, providing reasons and inviting dialogue rather than simply issuing instructions, maintaining clear non-negotiables (safety, basic respect) while expanding negotiable space significantly, and prioritising the relationship over any individual conflict outcome -- an adolescent who feels respected and connected to a parent remains open to that parent's influence even while pushing for independence."
+      },
+      {
+        "heading": "Maintaining Connection Through Adolescence",
+        "body": "Parental connection with an adolescent is not maintained the same way it is with a young child. It requires: finding the adolescent's genuine interests and engaging with them rather than expecting adolescents to remain interested in parent-centred activities, staying available without being intrusive (the adolescent who finds a parent predictably available for conversation is more likely to initiate than one who is pursued), repairing after conflict rather than allowing ruptures to accumulate, and using ordinary daily moments (driving, cooking together, side-by-side activity) as low-pressure connection opportunities rather than relying primarily on formal conversation. The parent who maintains warmth and interest through the adolescent years typically finds their adult relationship with their child is stronger for having survived it."
+      },
+      {
+        "heading": "Recognising Adolescent Mental Health Concerns",
+        "body": "Several mental health concerns peak in adolescence: depression, anxiety disorders, eating disorders, and the onset of conditions such as psychosis and bipolar disorder typically first emerge in adolescence or young adulthood. The challenge for parents is distinguishing developmentally typical adolescent emotional intensity (mood shifts, periodic withdrawal, social preoccupation) from patterns warranting professional attention (persistent low mood lasting weeks, significant weight changes, extreme anxiety limiting daily functioning, self-harm, or any psychotic symptoms). Protective factors -- a trusted adult relationship, peer connection, a sense of competence and meaning, physical health -- reduce risk; their absence in combination with mood changes is a significant signal. When in doubt, a conversation with a GP or school counsellor is a low-barrier first step."
+      }
+    ],
+    "key_takeaways": [
+      "Adolescent development involves intense work on identity, autonomy, peer relationships, and future orientation -- the drama reflects the significance of the task.",
+      "Effective parenting of adolescents requires a shift from directive to collaborative, progressively expanding autonomy while maintaining clear non-negotiables.",
+      "Connection with adolescents is maintained through genuine interest, available presence without intrusion, repair after conflict, and low-pressure daily moments.",
+      "Several significant mental health conditions first emerge in adolescence; protective factors and sustained parental connection reduce risk and facilitate early identification."
+    ],
+    "activity": {
+      "title": "Adolescent Connection Inventory",
+      "instructions": "Assess the current state of your relationship with an adolescent in your life (or a hypothetical case). Rate each of the following on a scale of 1-5: quality of recent interactions, frequency of positive connection (not conflict), your knowledge of their genuine interests and current preoccupations, their apparent willingness to come to you with problems, and repair after conflict. Identify the lowest-rated area and design one realistic action to strengthen it this month.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "Why does the authority-based parenting model that works for young children become counterproductive in adolescence?",
+        "options": [
+          "Adolescents no longer need any parenting",
+          "Adolescents are developmentally driven toward autonomy, making directive authority increasingly counterproductive as a primary mode",
+          "Teenagers are always right",
+          "Authority becomes more effective, not less, in adolescence"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Adolescents' developmental drive toward autonomy means directive authority as a primary approach becomes progressively counterproductive; collaborative, respectful engagement is more effective."
+      },
+      {
+        "question": "What is a practical, low-pressure approach to maintaining connection with an adolescent?",
+        "options": [
+          "Requiring regular family meetings with mandatory emotional disclosure",
+          "Using ordinary daily moments (driving, cooking, side-by-side activity) as connection opportunities",
+          "Restricting peer social time to ensure more time with parents",
+          "Monitoring all communications to stay connected"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Low-pressure, side-by-side activities in daily life create connection opportunities without the pressure of formal conversation, which adolescents often resist."
+      }
+    ],
+    "resources": [
+      {
+        "title": "ReachOut (AU/UK/IE)",
+        "type": "external_org",
+        "note": "Online mental health resources for young people and the parents and carers who support them."
+      },
+      {
+        "title": "Teen Line (US)",
+        "type": "crisis_resource",
+        "note": "Peer-staffed helpline for teenagers: 1-800-852-8336 or text TEEN to 839863."
+      }
+    ]
+  }
+]

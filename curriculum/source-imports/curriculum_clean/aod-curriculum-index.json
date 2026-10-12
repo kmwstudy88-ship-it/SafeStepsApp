@@ -1,0 +1,808 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction to Alcohol & Other Drugs",
+    "category": "AOD",
+    "file": "1-Introduction to Alcohol & Other Drugs.ps1"
+  },
+  {
+    "id": 2,
+    "title": "What Are Drugs?",
+    "category": "AOD",
+    "file": "2-What Are Drugs.ps1"
+  },
+  {
+    "id": 3,
+    "title": "How Substances Affect the Brain",
+    "category": "AOD",
+    "file": "3-How Substances Affect the Brain.ps1"
+  },
+  {
+    "id": 4,
+    "title": "Legal vs Illegal Substances",
+    "category": "AOD",
+    "file": "4-Legal vs Illegal Substances.ps1"
+  },
+  {
+    "id": 5,
+    "title": "Alcohol Basics",
+    "category": "AOD",
+    "file": "5-Alcohol Basics.ps1"
+  },
+  {
+    "id": 6,
+    "title": "Cannabis Overview",
+    "category": "AOD",
+    "file": "6-Cannabis Overview.ps1"
+  },
+  {
+    "id": 7,
+    "title": "Tobacco & Nicotine",
+    "category": "AOD",
+    "file": "7-Tobacco & Nicotine.ps1"
+  },
+  {
+    "id": 8,
+    "title": "Prescription Drug Misuse",
+    "category": "AOD",
+    "file": "8-Prescription Drug Misuse.ps1"
+  },
+  {
+    "id": 9,
+    "title": "Illicit Drug Categories",
+    "category": "AOD",
+    "file": "9-Illicit Drug Categories.ps1"
+  },
+  {
+    "id": 10,
+    "title": "Polydrug Use Risks",
+    "category": "AOD",
+    "file": "10-Polydrug Use Risks.ps1"
+  },
+  {
+    "id": 11,
+    "title": "Dependence vs Addiction",
+    "category": "AOD",
+    "file": "11-Dependence vs Addiction.ps1"
+  },
+  {
+    "id": 12,
+    "title": "Tolerance Development",
+    "category": "AOD",
+    "file": "12-Tolerance Development.ps1"
+  },
+  {
+    "id": 13,
+    "title": "Withdrawal Symptoms",
+    "category": "AOD",
+    "file": "13-Withdrawal Symptoms.ps1"
+  },
+  {
+    "id": 14,
+    "title": "Cycle of Addiction",
+    "category": "AOD",
+    "file": "14-Cycle of Addiction.ps1"
+  },
+  {
+    "id": 15,
+    "title": "Risk Factors in Substance Use",
+    "category": "AOD",
+    "file": "15-Risk Factors in Substance Use.ps1"
+  },
+  {
+    "id": 16,
+    "title": "Protective Factors",
+    "category": "AOD",
+    "file": "16-Protective Factors.ps1"
+  },
+  {
+    "id": 17,
+    "title": "Peer Pressure and Influence",
+    "category": "AOD",
+    "file": "17-Peer Pressure and Influence.ps1"
+  },
+  {
+    "id": 18,
+    "title": "Family Impact on Drug Use",
+    "category": "AOD",
+    "file": "18-Family Impact on Drug Use.ps1"
+  },
+  {
+    "id": 19,
+    "title": "Trauma and Substance Use",
+    "category": "AOD",
+    "file": "19-Trauma and Substance Use.ps1"
+  },
+  {
+    "id": 20,
+    "title": "Mental Health and AOD",
+    "category": "AOD",
+    "file": "20-Mental Health and AOD.ps1"
+  },
+  {
+    "id": 21,
+    "title": "Adolescent Drug Use Patterns",
+    "category": "AOD",
+    "file": "21-Adolescent Drug Use Patterns.ps1"
+  },
+  {
+    "id": 22,
+    "title": "Early Warning Signs",
+    "category": "AOD",
+    "file": "22-Early Warning Signs.ps1"
+  },
+  {
+    "id": 23,
+    "title": "Behavioural Indicators",
+    "category": "AOD",
+    "file": "23-Behavioural Indicators.ps1"
+  },
+  {
+    "id": 24,
+    "title": "Physical Indicators",
+    "category": "AOD",
+    "file": "24-Physical Indicators.ps1"
+  },
+  {
+    "id": 25,
+    "title": "Emotional Indicators",
+    "category": "AOD",
+    "file": "25-Emotional Indicators.ps1"
+  },
+  {
+    "id": 26,
+    "title": "School and Work Impact",
+    "category": "AOD",
+    "file": "26-School and Work Impact.ps1"
+  },
+  {
+    "id": 27,
+    "title": "Social Consequences",
+    "category": "AOD",
+    "file": "27-Social Consequences.ps1"
+  },
+  {
+    "id": 28,
+    "title": "Legal Consequences",
+    "category": "AOD",
+    "file": "28-Legal Consequences.ps1"
+  },
+  {
+    "id": 29,
+    "title": "Financial Impact",
+    "category": "AOD",
+    "file": "29-Financial Impact.ps1"
+  },
+  {
+    "id": 30,
+    "title": "Health Effects Overview",
+    "category": "AOD",
+    "file": "30-Health Effects Overview.ps1"
+  },
+  {
+    "id": 31,
+    "title": "Liver Damage & Alcohol",
+    "category": "AOD",
+    "file": "31-Liver Damage & Alcohol.ps1"
+  },
+  {
+    "id": 32,
+    "title": "Brain Damage & Substances",
+    "category": "AOD",
+    "file": "32-Brain Damage & Substances.ps1"
+  },
+  {
+    "id": 33,
+    "title": "Overdose Awareness",
+    "category": "AOD",
+    "file": "33-Overdose Awareness.ps1"
+  },
+  {
+    "id": 34,
+    "title": "Emergency Response Basics",
+    "category": "AOD",
+    "file": "34-Emergency Response Basics.ps1"
+  },
+  {
+    "id": 35,
+    "title": "Harm Reduction Principles",
+    "category": "AOD",
+    "file": "35-Harm Reduction Principles.ps1"
+  },
+  {
+    "id": 36,
+    "title": "Safe Use Education (non-promotional)",
+    "category": "AOD",
+    "file": "36-Safe Use Education (non-promotional).ps1"
+  },
+  {
+    "id": 37,
+    "title": "Stigma and Shame",
+    "category": "AOD",
+    "file": "37-Stigma and Shame.ps1"
+  },
+  {
+    "id": 38,
+    "title": "Barriers to Seeking Help",
+    "category": "AOD",
+    "file": "38-Barriers to Seeking Help.ps1"
+  },
+  {
+    "id": 39,
+    "title": "Motivational Change",
+    "category": "AOD",
+    "file": "39-Motivational Change.ps1"
+  },
+  {
+    "id": 40,
+    "title": "Stages of Change Model",
+    "category": "AOD",
+    "file": "40-Stages of Change Model.ps1"
+  },
+  {
+    "id": 41,
+    "title": "Brief Intervention Strategies",
+    "category": "AOD",
+    "file": "41-Brief Intervention Strategies.ps1"
+  },
+  {
+    "id": 42,
+    "title": "Counselling Introduction",
+    "category": "AOD",
+    "file": "42-Counselling Introduction.ps1"
+  },
+  {
+    "id": 43,
+    "title": "Rehab and Treatment Options",
+    "category": "AOD",
+    "file": "43-Rehab and Treatment Options.ps1"
+  },
+  {
+    "id": 44,
+    "title": "Detox Process",
+    "category": "AOD",
+    "file": "44-Detox Process.ps1"
+  },
+  {
+    "id": 45,
+    "title": "Relapse Prevention",
+    "category": "AOD",
+    "file": "45-Relapse Prevention.ps1"
+  },
+  {
+    "id": 46,
+    "title": "Triggers Identification",
+    "category": "AOD",
+    "file": "46-Triggers Identification.ps1"
+  },
+  {
+    "id": 47,
+    "title": "Coping Strategies",
+    "category": "AOD",
+    "file": "47-Coping Strategies.ps1"
+  },
+  {
+    "id": 48,
+    "title": "Support Networks",
+    "category": "AOD",
+    "file": "48-Support Networks.ps1"
+  },
+  {
+    "id": 49,
+    "title": "Peer Support Groups",
+    "category": "AOD",
+    "file": "49-Peer Support Groups.ps1"
+  },
+  {
+    "id": 50,
+    "title": "Family Recovery Systems",
+    "category": "AOD",
+    "file": "50-Family Recovery Systems.ps1"
+  },
+  {
+    "id": 51,
+    "title": "AOD Advanced Topic Module 51",
+    "category": "AOD",
+    "file": "51-AOD Advanced Topic Module 51.ps1"
+  },
+  {
+    "id": 52,
+    "title": "AOD Advanced Topic Module 52",
+    "category": "AOD",
+    "file": "52-AOD Advanced Topic Module 52.ps1"
+  },
+  {
+    "id": 53,
+    "title": "AOD Advanced Topic Module 53",
+    "category": "AOD",
+    "file": "53-AOD Advanced Topic Module 53.ps1"
+  },
+  {
+    "id": 54,
+    "title": "AOD Advanced Topic Module 54",
+    "category": "AOD",
+    "file": "54-AOD Advanced Topic Module 54.ps1"
+  },
+  {
+    "id": 55,
+    "title": "AOD Advanced Topic Module 55",
+    "category": "AOD",
+    "file": "55-AOD Advanced Topic Module 55.ps1"
+  },
+  {
+    "id": 56,
+    "title": "AOD Advanced Topic Module 56",
+    "category": "AOD",
+    "file": "56-AOD Advanced Topic Module 56.ps1"
+  },
+  {
+    "id": 57,
+    "title": "AOD Advanced Topic Module 57",
+    "category": "AOD",
+    "file": "57-AOD Advanced Topic Module 57.ps1"
+  },
+  {
+    "id": 58,
+    "title": "AOD Advanced Topic Module 58",
+    "category": "AOD",
+    "file": "58-AOD Advanced Topic Module 58.ps1"
+  },
+  {
+    "id": 59,
+    "title": "AOD Advanced Topic Module 59",
+    "category": "AOD",
+    "file": "59-AOD Advanced Topic Module 59.ps1"
+  },
+  {
+    "id": 60,
+    "title": "AOD Advanced Topic Module 60",
+    "category": "AOD",
+    "file": "60-AOD Advanced Topic Module 60.ps1"
+  },
+  {
+    "id": 61,
+    "title": "AOD Advanced Topic Module 61",
+    "category": "AOD",
+    "file": "61-AOD Advanced Topic Module 61.ps1"
+  },
+  {
+    "id": 62,
+    "title": "AOD Advanced Topic Module 62",
+    "category": "AOD",
+    "file": "62-AOD Advanced Topic Module 62.ps1"
+  },
+  {
+    "id": 63,
+    "title": "AOD Advanced Topic Module 63",
+    "category": "AOD",
+    "file": "63-AOD Advanced Topic Module 63.ps1"
+  },
+  {
+    "id": 64,
+    "title": "AOD Advanced Topic Module 64",
+    "category": "AOD",
+    "file": "64-AOD Advanced Topic Module 64.ps1"
+  },
+  {
+    "id": 65,
+    "title": "AOD Advanced Topic Module 65",
+    "category": "AOD",
+    "file": "65-AOD Advanced Topic Module 65.ps1"
+  },
+  {
+    "id": 66,
+    "title": "AOD Advanced Topic Module 66",
+    "category": "AOD",
+    "file": "66-AOD Advanced Topic Module 66.ps1"
+  },
+  {
+    "id": 67,
+    "title": "AOD Advanced Topic Module 67",
+    "category": "AOD",
+    "file": "67-AOD Advanced Topic Module 67.ps1"
+  },
+  {
+    "id": 68,
+    "title": "AOD Advanced Topic Module 68",
+    "category": "AOD",
+    "file": "68-AOD Advanced Topic Module 68.ps1"
+  },
+  {
+    "id": 69,
+    "title": "AOD Advanced Topic Module 69",
+    "category": "AOD",
+    "file": "69-AOD Advanced Topic Module 69.ps1"
+  },
+  {
+    "id": 70,
+    "title": "AOD Advanced Topic Module 70",
+    "category": "AOD",
+    "file": "70-AOD Advanced Topic Module 70.ps1"
+  },
+  {
+    "id": 71,
+    "title": "AOD Advanced Topic Module 71",
+    "category": "AOD",
+    "file": "71-AOD Advanced Topic Module 71.ps1"
+  },
+  {
+    "id": 72,
+    "title": "AOD Advanced Topic Module 72",
+    "category": "AOD",
+    "file": "72-AOD Advanced Topic Module 72.ps1"
+  },
+  {
+    "id": 73,
+    "title": "AOD Advanced Topic Module 73",
+    "category": "AOD",
+    "file": "73-AOD Advanced Topic Module 73.ps1"
+  },
+  {
+    "id": 74,
+    "title": "AOD Advanced Topic Module 74",
+    "category": "AOD",
+    "file": "74-AOD Advanced Topic Module 74.ps1"
+  },
+  {
+    "id": 75,
+    "title": "AOD Advanced Topic Module 75",
+    "category": "AOD",
+    "file": "75-AOD Advanced Topic Module 75.ps1"
+  },
+  {
+    "id": 76,
+    "title": "AOD Advanced Topic Module 76",
+    "category": "AOD",
+    "file": "76-AOD Advanced Topic Module 76.ps1"
+  },
+  {
+    "id": 77,
+    "title": "AOD Advanced Topic Module 77",
+    "category": "AOD",
+    "file": "77-AOD Advanced Topic Module 77.ps1"
+  },
+  {
+    "id": 78,
+    "title": "AOD Advanced Topic Module 78",
+    "category": "AOD",
+    "file": "78-AOD Advanced Topic Module 78.ps1"
+  },
+  {
+    "id": 79,
+    "title": "AOD Advanced Topic Module 79",
+    "category": "AOD",
+    "file": "79-AOD Advanced Topic Module 79.ps1"
+  },
+  {
+    "id": 80,
+    "title": "AOD Advanced Topic Module 80",
+    "category": "AOD",
+    "file": "80-AOD Advanced Topic Module 80.ps1"
+  },
+  {
+    "id": 81,
+    "title": "AOD Advanced Topic Module 81",
+    "category": "AOD",
+    "file": "81-AOD Advanced Topic Module 81.ps1"
+  },
+  {
+    "id": 82,
+    "title": "AOD Advanced Topic Module 82",
+    "category": "AOD",
+    "file": "82-AOD Advanced Topic Module 82.ps1"
+  },
+  {
+    "id": 83,
+    "title": "AOD Advanced Topic Module 83",
+    "category": "AOD",
+    "file": "83-AOD Advanced Topic Module 83.ps1"
+  },
+  {
+    "id": 84,
+    "title": "AOD Advanced Topic Module 84",
+    "category": "AOD",
+    "file": "84-AOD Advanced Topic Module 84.ps1"
+  },
+  {
+    "id": 85,
+    "title": "AOD Advanced Topic Module 85",
+    "category": "AOD",
+    "file": "85-AOD Advanced Topic Module 85.ps1"
+  },
+  {
+    "id": 86,
+    "title": "AOD Advanced Topic Module 86",
+    "category": "AOD",
+    "file": "86-AOD Advanced Topic Module 86.ps1"
+  },
+  {
+    "id": 87,
+    "title": "AOD Advanced Topic Module 87",
+    "category": "AOD",
+    "file": "87-AOD Advanced Topic Module 87.ps1"
+  },
+  {
+    "id": 88,
+    "title": "AOD Advanced Topic Module 88",
+    "category": "AOD",
+    "file": "88-AOD Advanced Topic Module 88.ps1"
+  },
+  {
+    "id": 89,
+    "title": "AOD Advanced Topic Module 89",
+    "category": "AOD",
+    "file": "89-AOD Advanced Topic Module 89.ps1"
+  },
+  {
+    "id": 90,
+    "title": "AOD Advanced Topic Module 90",
+    "category": "AOD",
+    "file": "90-AOD Advanced Topic Module 90.ps1"
+  },
+  {
+    "id": 91,
+    "title": "AOD Advanced Topic Module 91",
+    "category": "AOD",
+    "file": "91-AOD Advanced Topic Module 91.ps1"
+  },
+  {
+    "id": 92,
+    "title": "AOD Advanced Topic Module 92",
+    "category": "AOD",
+    "file": "92-AOD Advanced Topic Module 92.ps1"
+  },
+  {
+    "id": 93,
+    "title": "AOD Advanced Topic Module 93",
+    "category": "AOD",
+    "file": "93-AOD Advanced Topic Module 93.ps1"
+  },
+  {
+    "id": 94,
+    "title": "AOD Advanced Topic Module 94",
+    "category": "AOD",
+    "file": "94-AOD Advanced Topic Module 94.ps1"
+  },
+  {
+    "id": 95,
+    "title": "AOD Advanced Topic Module 95",
+    "category": "AOD",
+    "file": "95-AOD Advanced Topic Module 95.ps1"
+  },
+  {
+    "id": 96,
+    "title": "AOD Advanced Topic Module 96",
+    "category": "AOD",
+    "file": "96-AOD Advanced Topic Module 96.ps1"
+  },
+  {
+    "id": 97,
+    "title": "AOD Advanced Topic Module 97",
+    "category": "AOD",
+    "file": "97-AOD Advanced Topic Module 97.ps1"
+  },
+  {
+    "id": 98,
+    "title": "AOD Advanced Topic Module 98",
+    "category": "AOD",
+    "file": "98-AOD Advanced Topic Module 98.ps1"
+  },
+  {
+    "id": 99,
+    "title": "AOD Advanced Topic Module 99",
+    "category": "AOD",
+    "file": "99-AOD Advanced Topic Module 99.ps1"
+  },
+  {
+    "id": 100,
+    "title": "AOD Advanced Topic Module 100",
+    "category": "AOD",
+    "file": "100-AOD Advanced Topic Module 100.ps1"
+  },
+  {
+    "id": 101,
+    "title": "AOD Advanced Topic Module 101",
+    "category": "AOD",
+    "file": "101-AOD Advanced Topic Module 101.ps1"
+  },
+  {
+    "id": 102,
+    "title": "AOD Advanced Topic Module 102",
+    "category": "AOD",
+    "file": "102-AOD Advanced Topic Module 102.ps1"
+  },
+  {
+    "id": 103,
+    "title": "AOD Advanced Topic Module 103",
+    "category": "AOD",
+    "file": "103-AOD Advanced Topic Module 103.ps1"
+  },
+  {
+    "id": 104,
+    "title": "AOD Advanced Topic Module 104",
+    "category": "AOD",
+    "file": "104-AOD Advanced Topic Module 104.ps1"
+  },
+  {
+    "id": 105,
+    "title": "AOD Advanced Topic Module 105",
+    "category": "AOD",
+    "file": "105-AOD Advanced Topic Module 105.ps1"
+  },
+  {
+    "id": 106,
+    "title": "AOD Advanced Topic Module 106",
+    "category": "AOD",
+    "file": "106-AOD Advanced Topic Module 106.ps1"
+  },
+  {
+    "id": 107,
+    "title": "AOD Advanced Topic Module 107",
+    "category": "AOD",
+    "file": "107-AOD Advanced Topic Module 107.ps1"
+  },
+  {
+    "id": 108,
+    "title": "AOD Advanced Topic Module 108",
+    "category": "AOD",
+    "file": "108-AOD Advanced Topic Module 108.ps1"
+  },
+  {
+    "id": 109,
+    "title": "AOD Advanced Topic Module 109",
+    "category": "AOD",
+    "file": "109-AOD Advanced Topic Module 109.ps1"
+  },
+  {
+    "id": 110,
+    "title": "AOD Advanced Topic Module 110",
+    "category": "AOD",
+    "file": "110-AOD Advanced Topic Module 110.ps1"
+  },
+  {
+    "id": 111,
+    "title": "AOD Advanced Topic Module 111",
+    "category": "AOD",
+    "file": "111-AOD Advanced Topic Module 111.ps1"
+  },
+  {
+    "id": 112,
+    "title": "AOD Advanced Topic Module 112",
+    "category": "AOD",
+    "file": "112-AOD Advanced Topic Module 112.ps1"
+  },
+  {
+    "id": 113,
+    "title": "AOD Advanced Topic Module 113",
+    "category": "AOD",
+    "file": "113-AOD Advanced Topic Module 113.ps1"
+  },
+  {
+    "id": 114,
+    "title": "AOD Advanced Topic Module 114",
+    "category": "AOD",
+    "file": "114-AOD Advanced Topic Module 114.ps1"
+  },
+  {
+    "id": 115,
+    "title": "AOD Advanced Topic Module 115",
+    "category": "AOD",
+    "file": "115-AOD Advanced Topic Module 115.ps1"
+  },
+  {
+    "id": 116,
+    "title": "AOD Advanced Topic Module 116",
+    "category": "AOD",
+    "file": "116-AOD Advanced Topic Module 116.ps1"
+  },
+  {
+    "id": 117,
+    "title": "AOD Advanced Topic Module 117",
+    "category": "AOD",
+    "file": "117-AOD Advanced Topic Module 117.ps1"
+  },
+  {
+    "id": 118,
+    "title": "AOD Advanced Topic Module 118",
+    "category": "AOD",
+    "file": "118-AOD Advanced Topic Module 118.ps1"
+  },
+  {
+    "id": 119,
+    "title": "AOD Advanced Topic Module 119",
+    "category": "AOD",
+    "file": "119-AOD Advanced Topic Module 119.ps1"
+  },
+  {
+    "id": 120,
+    "title": "AOD Advanced Topic Module 120",
+    "category": "AOD",
+    "file": "120-AOD Advanced Topic Module 120.ps1"
+  }
+]
+{
+  "curriculum": "Alcohol and Other Drugs (AOD)",
+  "version": "1.0",
+  "description": "Complete structured curriculum covering addiction science, prevention, harm reduction, intervention, recovery, and social impact.",
+  
+  "modules": [
+    {
+      "module": "Foundations of AOD",
+      "lessons": [
+        "Introduction & Awareness",
+        "Understanding Addiction",
+        "Types of Substances",
+        "Brain & Body Effects",
+        "Addiction Science"
+      ]
+    },
+    {
+      "module": "Substances & Effects",
+      "lessons": [
+        "Alcohol Impacts",
+        "Depressants",
+        "Stimulants (Ice, Speed)",
+        "Cannabis Use",
+        "Prescription Drug Misuse",
+        "Polydrug Use"
+      ]
+    },
+    {
+      "module": "Health & Behaviour",
+      "lessons": [
+        "Physical Signs",
+        "Behavioural Signs",
+        "Emotional Signs",
+        "Mental Health Links",
+        "Health Damage"
+      ]
+    },
+    {
+      "module": "Risk & Protection",
+      "lessons": [
+        "Risk Factors",
+        "Protective Factors",
+        "Triggers",
+        "Peer Pressure",
+        "Child Safety Risks"
+      ]
+    },
+    {
+      "module": "Family & Social Impact",
+      "lessons": [
+        "Family Impact",
+        "Social Consequences",
+        "Trauma & Substance Use",
+        "Support Systems"
+      ]
+    },
+    {
+      "module": "Legal & Crisis",
+      "lessons": [
+        "Legal Consequences",
+        "Overdose & Crisis",
+        "Child Protection Considerations"
+      ]
+    },
+    {
+      "module": "Intervention & Recovery",
+      "lessons": [
+        "Intervention Skills",
+        "Harm Reduction",
+        "Recovery Pathways",
+        "Recovery Planning",
+        "Relapse Prevention",
+        "Long-term Recovery"
+      ]
+    },
+    {
+      "module": "Healthy Recovery",
+      "lessons": [
+        "Healthy Lifestyle",
+        "Emotional Regulation in Recovery",
+        "Support Systems",
+        "Recovery Identity Building"
+      ]
+    }
+  ]
+}

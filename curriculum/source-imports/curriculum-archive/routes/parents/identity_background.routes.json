@@ -1,0 +1,18 @@
+[
+  {
+    "if": "pc_current_stressors includes 'Financial pressure'",
+    "attach": "financial_stability_program"
+  },
+  {
+    "if": "pc_mental_health_history == 'Moderate' or pc_mental_health_history == 'Severe'",
+    "attach": "mental_health_support_program"
+  },
+  {
+    "if": "sn_support_strength == 'None'",
+    "attach": "support_network_builder"
+  },
+  {
+    "if": "bg_criminal_history == 'Significant'",
+    "attach": "risk_management_program"
+  }
+]

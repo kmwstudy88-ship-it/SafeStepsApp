@@ -1,0 +1,35 @@
+{
+  "id": "phase-2-stage-2",
+  "title": "Capacity Building — Stage 2",
+  "objectives": [
+    "Strengthen secure attachment",
+    "Build connection through play"
+  ],
+  "required_lessons": [
+    "PAR-ATT-001_secure_attachment",
+    "PAR-ATT-002_play_connection"
+  ],
+  "recommended_lessons": [
+    "MH-ER-006_name_it_to_tame_it"
+  ],
+  "evidence": [
+    "Video or reflection of connection activity"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_contact_logs",
+      "weekly_routine_log"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "fridge_pantry_photo",
+      "medication_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

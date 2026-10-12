@@ -1,0 +1,6 @@
+SafeSteps API key notes
+
+Do not store API keys, Supabase JWTs, Firebase credentials, or service-role secrets in this repository.
+
+Use local environment files that are ignored by Git, GitHub Actions secrets, or the provider dashboard secret store.
+Rotate any real key that was previously committed before treating a release candidate as clean.

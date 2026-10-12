@@ -1,0 +1,43 @@
+{
+  "id": "phase-1-stage-3",
+  "title": "Stabilisation — Stage 3",
+  "objectives": [
+    "Build emotional regulation capacity",
+    "Learn TIPP skills",
+    "Reduce crisis behaviours"
+  ],
+  "required_lessons": [
+    "MH-ER-010_tipp_skills",
+    "MH-ER-011_opposite_action",
+    "MH-ER-007_emotion_wheel"
+  ],
+  "recommended_lessons": [
+    "MH-ER-008_urge_surfing"
+  ],
+  "evidence": [
+    "Demonstrated 2 regulation strategies",
+    "Weekly emotion tracking"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_contact_logs",
+      "weekly_caseworker_checkin",
+      "weekly_safety_plan_update",
+      "weekly_aod_evidence"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "fridge_pantry_photo",
+      "bedroom_photo",
+      "bathroom_photo",
+      "medication_photo",
+      "daily_reflection",
+      "routine_checklist"
+    ],
+    "level": "C"
+  }
+}

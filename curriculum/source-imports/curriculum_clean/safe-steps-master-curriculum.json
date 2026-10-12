@@ -1,0 +1,134 @@
+{
+  "system": "SafeSteps",
+  "version": "1.0",
+  "description": "Unified Child Development, DFV, and AOD curriculum system",
+  "curricula": [
+    {
+      "id": "child-development",
+      "name": "Child Development",
+      "category": "development",
+      "levels": ["core", "advanced", "master"],
+      "lessons": {
+        "range": "1-200",
+        "structure": {
+          "fields": [
+            "LessonNumber",
+            "Title",
+            "Category",
+            "Level",
+            "Duration",
+            "LearningObjectives",
+            "MainContent",
+            "CaseStudy",
+            "ReflectionQuestions",
+            "AssessmentTask"
+          ]
+        },
+        "topics": [
+          "Infant Development",
+          "Toddler Development",
+          "Early Childhood Development",
+          "Brain Development",
+          "Attachment",
+          "Behavioural Development",
+          "Trauma Impact",
+          "Learning Difficulties",
+          "Emotional Regulation",
+          "Parenting Systems"
+        ]
+      }
+    },
+    {
+      "id": "dfv",
+      "name": "Domestic & Family Violence",
+      "category": "protection",
+      "levels": ["core", "advanced", "master"],
+      "lessons": {
+        "range": "1-200",
+        "structure": {
+          "fields": [
+            "LessonNumber",
+            "Title",
+            "Category",
+            "Level",
+            "Duration",
+            "LearningObjectives",
+            "MainContent",
+            "CaseStudy",
+            "ReflectionQuestions",
+            "AssessmentTask"
+          ]
+        },
+        "topics": [
+          "Coercive Control",
+          "Power & Control",
+          "Child Impact",
+          "Safety Planning",
+          "Legal Protection",
+          "Risk Assessment",
+          "Recovery Systems",
+          "Perpetrator Behaviour",
+          "Trauma Response",
+          "Systemic Intervention"
+        ]
+      }
+    },
+    {
+      "id": "aod",
+      "name": "Alcohol & Other Drugs",
+      "category": "health",
+      "levels": ["core", "advanced", "master"],
+      "lessons": {
+        "range": "1-200",
+        "structure": {
+          "fields": [
+            "LessonNumber",
+            "Title",
+            "Category",
+            "Level",
+            "Duration",
+            "LearningObjectives",
+            "MainContent",
+            "CaseStudy",
+            "ReflectionQuestions",
+            "AssessmentTask"
+          ]
+        },
+        "topics": [
+          "Addiction Science",
+          "Substance Effects",
+          "Withdrawal",
+          "Harm Reduction",
+          "Mental Health Links",
+          "Recovery Pathways",
+          "Relapse Prevention",
+          "Family Impact",
+          "Risk Behaviour",
+          "Intervention Models"
+        ]
+      }
+    }
+  ],
+  "unified_fields": {
+    "standard_lesson_model": {
+      "LessonNumber": "int",
+      "Title": "string",
+      "Category": "string",
+      "Level": "core|advanced|master",
+      "Duration": "string",
+      "LearningObjectives": "array",
+      "Introduction": "string",
+      "MainContent": "string",
+      "CaseStudy": "string",
+      "ReflectionQuestions": "array",
+      "AssessmentTask": "string"
+    }
+  },
+  "system_features": {
+    "cross_curriculum_linking": true,
+    "risk_flagging": true,
+    "child_protection_alignment": true,
+    "caseworker_mode": true,
+    "evidence_tracking_ready": true
+  }
+}

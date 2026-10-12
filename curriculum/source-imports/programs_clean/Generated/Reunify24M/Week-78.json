@@ -1,0 +1,96 @@
+﻿{
+    "programId":  "REUNIFY-24M",
+    "week":  78,
+    "stageId":  "STAGE-10",
+    "stageName":  "Demonstrating Protective Capacity",
+    "modules":  [
+                    {
+                        "id":  "PP-REUNIFY-01",
+                        "name":  "Understanding the Reunification Pathway",
+                        "goal":  "Know exactly what reunification requires.",
+                        "tasks":  [
+                                      "List what child protection is worried about",
+                                      "List what you are already doing well",
+                                      "List what you need to strengthen for reunification"
+                                  ],
+                        "evidence":  [
+                                         "Reflections",
+                                         "Caseworker acknowledgement"
+                                     ]
+                    },
+                    {
+                        "id":  "PP-REUNIFY-03",
+                        "name":  "Safe Contact \u0026 Supervised Visit Behaviour",
+                        "goal":  "Show safe, consistent behaviour during contact.",
+                        "tasks":  [
+                                      "Prepare a contact plan before each visit",
+                                      "Bring age-appropriate activities",
+                                      "Avoid discussing the case with the child"
+                                  ],
+                        "evidence":  [
+                                         "Positive contact reports",
+                                         "Supervisor feedback"
+                                     ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "List what child protection is worried about"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "List what you are already doing well"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "List what you need to strengthen for reunification"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "Prepare a contact plan before each visit"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "Bring age-appropriate activities"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "Avoid discussing the case with the child"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+
+                                ],
+                     "insight":  [
+                                     "Reflections",
+                                     "Caseworker acknowledgement",
+                                     "Supervisor feedback"
+                                 ],
+                     "behaviour":  [
+                                       "Positive contact reports"
+                                   ]
+                 }
+}

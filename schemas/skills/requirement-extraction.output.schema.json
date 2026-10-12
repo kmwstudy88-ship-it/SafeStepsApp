@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safesteps.app/schemas/skills/requirement-extraction.output.schema.json",
+  "title": "Requirement Extraction — Skill Output",
+  "description": "Output schema for the SafeSteps Requirement Extraction skill.",
+  "type": "object",
+  "required": ["case_id", "requirements", "run_meta"],
+  "properties": {
+    "case_id": { "type": "string" },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["requirement_id", "text", "type", "status", "source_doc_id", "source_span", "confidence"],
+        "properties": {
+          "requirement_id": { "type": "string" },
+          "text": { "type": "string", "minLength": 1 },
+          "type": {
+            "type": "string",
+            "enum": ["order_term", "condition", "prohibition", "obligation", "consent_term"]
+          },
+          "responsible_party": { "type": ["string", "null"] },
+          "deadline": { "type": ["string", "null"], "format": "date" },
+          "periodicity": {
+            "type": ["string", "null"],
+            "enum": ["once", "weekly", "fortnightly", "monthly", "ongoing", null]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["active", "expired", "superseded", "unknown"]
+          },
+          "source_doc_id": { "type": "string" },
+          "source_span": {
+            "type": "object",
+            "required": ["start", "end"],
+            "properties": {
+              "start": { "type": "integer", "minimum": 0 },
+              "end": { "type": "integer", "minimum": 0 }
+            },
+            "additionalProperties": false
+          },
+          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "run_meta": {
+      "type": "object",
+      "required": ["skill_version", "model", "timestamp_utc"],
+      "properties": {
+        "skill_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "model": { "type": "string" },
+        "timestamp_utc": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

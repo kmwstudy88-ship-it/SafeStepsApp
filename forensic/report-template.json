@@ -1,0 +1,14 @@
+{
+  "reportTemplate": {
+    "caseId": "",
+    "childId": "",
+    "parentId": "",
+    "flaggedMessages": [],
+    "tier3Events": [],
+    "channelStateHistory": [],
+    "escalationLevel": "",
+    "escalationIndicators": [],
+    "caseworkerActions": [],
+    "summary": ""
+  }
+}

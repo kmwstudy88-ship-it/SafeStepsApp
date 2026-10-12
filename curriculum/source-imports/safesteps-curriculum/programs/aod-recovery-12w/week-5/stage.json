@@ -1,0 +1,29 @@
+{
+  "id": "week-5",
+  "title": "AOD Recovery — Week 5",
+  "objectives": [
+    "Understand withdrawal patterns"
+  ],
+  "required_lessons": [
+    "AOD-RP-004_withdrawal_patterns"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "Withdrawal tracking log"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_aod_evidence"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "medication_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

@@ -1,81 +1,158 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
-import { AssessmentRunnerScreen } from '../../lib/assessments/AssessmentRunnerScreen';
-import { ForensicCriteriaAssessmentScreen } from '../../lib/assessments/ForensicCriteriaAssessmentScreen';
-import { ProtectiveCapacityReflectionScreen } from '../../lib/assessments/ProtectiveCapacityReflectionScreen';
-import { SequencePracticeScreen } from '../../lib/assessments/SequencePracticeScreen';
-import { ALL_ASSESSMENTS, StandardAssessment } from '../../lib/assessments/assessmentDefinitions';
+import React, { useEffect, useMemo, useState } from "react";
+import { ActivityIndicator, ScrollView, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { Redirect, type Href, router } from "expo-router";
 
-const FORENSIC_TAB = {
-  id: 'FORENSIC',
-  name: 'Forensic',
-  kind: 'forensic',
-} as const;
+import { AppBottomNav } from "../../components/AppBottomNav";
+import { useAuth } from "../../lib/auth";
+import { completeMyCaseIntake, getMyIntakeProgress } from "../../lib/engines/programStartGateEngine";
+import { getIntakeAssessment, type AssessmentDefinition } from "../../lib/platformData";
+import { globalStyles } from "../../lib/styles";
 
-const PROTECTIVE_CAPACITY_TAB = {
-  id: 'PROTECTIVE_CAPACITY',
-  name: 'Protective Capacity',
-  kind: 'protective-capacity',
-} as const;
-
-const SEQUENCE_PRACTICE_TAB = {
-  id: 'SEQUENCE_PRACTICE',
-  name: 'Sequence Practice',
-  kind: 'sequence-practice',
-} as const;
-
-const ASSESSMENT_TABS = [
-  ...ALL_ASSESSMENTS.map((assessment) => ({ ...assessment, kind: 'standard' as const })),
-  FORENSIC_TAB,
-  PROTECTIVE_CAPACITY_TAB,
-  SEQUENCE_PRACTICE_TAB,
-];
-
-export default function AssessmentsRoute() {
-  const [selectedAssessment, setSelectedAssessment] = useState<
-    (StandardAssessment & { kind: 'standard' })
-    | typeof FORENSIC_TAB
-    | typeof PROTECTIVE_CAPACITY_TAB
-    | typeof SEQUENCE_PRACTICE_TAB
-  >(
-    ASSESSMENT_TABS[0]
-  );
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.selectorRow}>
-        {ASSESSMENT_TABS.map((a) => (
-          <TouchableOpacity
-            key={a.id}
-            style={[styles.tabBtn, selectedAssessment.id === a.id && styles.tabBtnActive]}
-            onPress={() => setSelectedAssessment(a)}
-          >
-            <Text style={[styles.tabText, selectedAssessment.id === a.id && styles.tabTextActive]}>
-              {a.name}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </View>
-      <View style={{ flex: 1 }}>
-        {selectedAssessment.kind === 'forensic' ? (
-          <ForensicCriteriaAssessmentScreen />
-        ) : selectedAssessment.kind === 'protective-capacity' ? (
-          <ProtectiveCapacityReflectionScreen />
-        ) : selectedAssessment.kind === 'sequence-practice' ? (
-          <SequencePracticeScreen />
-        ) : (
-          <AssessmentRunnerScreen key={selectedAssessment.id} assessment={selectedAssessment} />
-        )}
-      </View>
-    </SafeAreaView>
-  );
+function formatDate(value: string) {
+  return new Intl.DateTimeFormat("en-AU", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(value));
 }
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#F7FAFC' },
-  selectorRow: { flexDirection: 'row', flexWrap: 'wrap', padding: 12, gap: 8, backgroundColor: '#FFFFFF', borderBottomWidth: 1, borderBottomColor: '#E2E8F0' },
-  tabBtn: { minWidth: 88, paddingHorizontal: 12, paddingVertical: 8, borderRadius: 8, backgroundColor: '#EDF2F7', alignItems: 'center' },
-  tabBtnActive: { backgroundColor: '#208AEF' },
-  tabText: { fontSize: 13, fontWeight: '600', color: '#4A5568' },
-  tabTextActive: { color: '#FFFFFF', fontWeight: '700' },
-});
+export default function AssessmentsScreen() {
+  const { initializing, user } = useAuth();
+  const [assessment, setAssessment] = useState<AssessmentDefinition | null>(null);
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [completedAt, setCompletedAt] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    if (!user?.id) return;
+
+    let active = true;
+
+    async function loadIntake() {
+      setLoading(true);
+      setMessage("");
+
+      try {
+        const [nextAssessment, progress] = await Promise.all([
+          getIntakeAssessment(),
+          getMyIntakeProgress(),
+        ]);
+
+        if (!active) return;
+        setAssessment(nextAssessment);
+        setCompletedAt(progress.intakeCompletedAt);
+      } catch (error) {
+        if (active) setMessage(error instanceof Error ? error.message : "Could not load intake.");
+      } finally {
+        if (active) setLoading(false);
+      }
+    }
+
+    loadIntake();
+    return () => {
+      active = false;
+    };
+  }, [user?.id]);
+
+  const answeredCount = useMemo(
+    () => Object.values(answers).filter((answer) => answer.trim().length > 0).length,
+    [answers],
+  );
+  const totalQuestions = assessment?.questions.length ?? 0;
+  const canSubmit = totalQuestions > 0 && answeredCount === totalQuestions;
+
+  if (initializing) return null;
+  if (!user) return <Redirect href="/login" />;
+
+  const handleSubmit = async () => {
+    if (!assessment || saving) return;
+
+    if (!canSubmit) {
+      setMessage("Complete every intake section before saving.");
+      return;
+    }
+
+    setSaving(true);
+    setMessage("");
+
+    try {
+      const result = await completeMyCaseIntake(assessment.id, answers, totalQuestions);
+      setCompletedAt(result.completedAt);
+      setAnswers({});
+      setMessage(`Intake complete. ${result.completedSections} sections saved. Program start requirements will now be checked.`);
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Could not save intake assessment yet.");
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={globalStyles.screen}>
+      <Text style={globalStyles.title}>SafeSteps Intake Assessment</Text>
+      <Text style={globalStyles.subtitle}>
+        Intake, profile, and case setup are required before any program can start. Higher-risk pathways also require worker approval.
+      </Text>
+
+      <View style={globalStyles.card}>
+        <Text style={globalStyles.cardTitle}>Pre-entry baseline</Text>
+        <Text style={globalStyles.cardText}>
+          Complete every section factually. SafeSteps stores the completion time and uses the intake record for pathway review and program-start gating.
+        </Text>
+        {completedAt ? (
+          <Text style={globalStyles.notice}>Completed {formatDate(completedAt)}.</Text>
+        ) : (
+          <Text style={globalStyles.error}>Required before programs unlock.</Text>
+        )}
+      </View>
+
+      {loading ? <ActivityIndicator /> : null}
+
+      {assessment && !completedAt ? (
+        <View style={globalStyles.card}>
+          <Text style={globalStyles.cardTitle}>{assessment.name}</Text>
+          <Text style={globalStyles.cardText}>{assessment.description}</Text>
+          <Text style={globalStyles.cardText}>Progress: {answeredCount} of {totalQuestions} sections completed.</Text>
+
+          {assessment.questions.map((question) => (
+            <View key={question.id} style={globalStyles.questionBlock}>
+              <Text style={globalStyles.cardTitle}>
+                {question.question_number}. {question.question_text}
+              </Text>
+              <TextInput
+                multiline
+                onChangeText={(value) => setAnswers((current) => ({ ...current, [question.id]: value }))}
+                placeholder="Record the intake details for this section."
+                placeholderTextColor="#667085"
+                style={[globalStyles.input, globalStyles.textArea]}
+                value={answers[question.id] ?? ""}
+              />
+            </View>
+          ))}
+
+          {message ? <Text style={message.startsWith("Intake complete") ? globalStyles.notice : globalStyles.error}>{message}</Text> : null}
+
+          <TouchableOpacity
+            disabled={!canSubmit || saving}
+            onPress={handleSubmit}
+            style={[globalStyles.button, (!canSubmit || saving) && globalStyles.buttonDisabled]}
+          >
+            <Text style={globalStyles.buttonText}>{saving ? "Saving intake..." : "Complete intake assessment"}</Text>
+          </TouchableOpacity>
+        </View>
+      ) : null}
+
+      {message && completedAt ? <Text style={globalStyles.notice}>{message}</Text> : null}
+
+      {completedAt ? (
+        <TouchableOpacity onPress={() => router.replace("/intake-progress" as Href)} style={globalStyles.button}>
+          <Text style={globalStyles.buttonText}>View intake and program start progress</Text>
+        </TouchableOpacity>
+      ) : null}
+
+      <AppBottomNav />
+    </ScrollView>
+  );
+}

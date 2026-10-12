@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safesteps.app/schemas/skills/evidence-extraction.output.schema.json",
+  "title": "Evidence Extraction — Skill Output",
+  "description": "Output schema for the SafeSteps Evidence Extraction skill.",
+  "type": "object",
+  "required": ["case_id", "claims", "quality_flags", "run_meta"],
+  "properties": {
+    "case_id": { "type": "string" },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "text", "type", "source_doc_id", "source_span", "confidence"],
+        "properties": {
+          "claim_id": { "type": "string" },
+          "text": { "type": "string", "minLength": 1 },
+          "type": {
+            "type": "string",
+            "enum": ["factual_claim", "allegation", "observation", "order_term", "admission"]
+          },
+          "date": { "type": ["string", "null"], "format": "date" },
+          "date_precision": {
+            "type": ["string", "null"],
+            "enum": ["exact", "approximate", "inferred", null]
+          },
+          "actors": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "source_doc_id": { "type": "string" },
+          "source_span": {
+            "type": "object",
+            "required": ["start", "end"],
+            "properties": {
+              "start": { "type": "integer", "minimum": 0 },
+              "end": { "type": "integer", "minimum": 0 }
+            },
+            "additionalProperties": false
+          },
+          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "quality_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["doc_id", "flag", "severity"],
+        "properties": {
+          "doc_id": { "type": "string" },
+          "flag": {
+            "type": "string",
+            "enum": ["ocr_poor", "incomplete", "redacted", "translated", "handwritten", "low_confidence_extraction"]
+          },
+          "severity": { "type": "string", "enum": ["low", "moderate", "high"] },
+          "description": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "run_meta": {
+      "type": "object",
+      "required": ["skill_version", "model", "timestamp_utc"],
+      "properties": {
+        "skill_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "model": { "type": "string" },
+        "timestamp_utc": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

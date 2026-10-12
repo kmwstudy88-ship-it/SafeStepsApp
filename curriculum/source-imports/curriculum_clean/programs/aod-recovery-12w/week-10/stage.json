@@ -1,0 +1,29 @@
+{
+  "id": "week-10",
+  "title": "AOD Recovery — Week 10",
+  "objectives": [
+    "Strengthen long-term stability"
+  ],
+  "required_lessons": [
+    "AOD-RP-006_long_term_stability"
+  ],
+  "recommended_lessons": [],
+  "evidence": [
+    "Stability review"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_aod_evidence"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "medication_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

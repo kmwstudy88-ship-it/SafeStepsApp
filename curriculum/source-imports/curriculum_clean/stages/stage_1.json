@@ -1,0 +1,11 @@
+﻿{
+    "id":  "stage-1",
+    "name":  "Stage 1",
+    "programId":  "safesteps-program",
+    "weeks":  [
+                  "stage_1_week1",
+                  "stage_1_week2",
+                  "stage_1_week3",
+                  "stage_1_week4"
+              ]
+}

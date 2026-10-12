@@ -1,0 +1,343 @@
+SAFESTEPS
+MASTER FUNCTIONAL SPECIFICATION
+Complete System Requirements — All Modules, All User Types, All Features
+Version 1.0
+CONFIDENTIAL — FOR PROGRAM USE ONLY
+Table of Contents
+1. Authentication & User Management
+2. Parent Portal
+3. Child Portal
+4. Support Worker Hub
+5. Child Protection Portal
+6. Admin Console
+7. Foster/Kinship Carer Portal
+8. Independent Advocate Access
+9. Assessment & Scoring Engine
+10. Program & Phase Engine (Reunification + Home Again)
+11. Visit & Contact Logistics
+12. Legal & Court Timeline Integration
+13. Multi-Agency Information Sharing
+14. Relapse / Crisis Re-Entry Pathway
+15. Evidence Report Generator
+16. Predictive Risk & Trend Analysis
+17. Bias & Equity Auditing
+18. Family Strengths Repository
+19. Notifications & Escalation
+20. Data, Security & Compliance
+21. Non-Functional Requirements
+Appendix A — Role-Based Access Matrix
+Document Purpose
+This document specifies every functional requirement for the SafeSteps platform — a digital reunification and Home Again support system. It is intended to guide development across the mobile app (Expo/React Native), backend (Node.js/Firebase Functions), and database (Firestore). Each module lists required features, the user types who interact with them, and key data/access constraints.
+How to Use This Document
+Each numbered module below is a discrete functional area that can be built, tested and deployed independently.
+Features marked under a module are minimum requirements — not exhaustive UI detail.
+Refer to Appendix A for the full role-based access matrix across all modules.
+1. Authentication & User Management
+Secure, role-based access for five user types with appropriate verification for a vulnerable population.
+Core Requirements
+Multi-role login: Parent, Child, Support Worker, Child Protection, Admin, Carer, Advocate
+Firebase Authentication with email/password; optional SMS verification for parents/carers
+Role-based routing — each role lands on its own dashboard immediately after login
+Account lockout after repeated failed login attempts
+Password reset flow via verified email or SMS
+Session timeout for inactive sessions, configurable per role (shorter for shared devices)
+Versioned, timestamped consent capture at first parent login; re-presented if terms change
+Data & Access Notes
+Firestore collection: users — uid, role, email, displayName, status, createdAt
+All role assignments editable only by Admin
+2. Parent Portal
+The primary interface for parents to submit evidence, complete courses, and track their own progress.
+Daily Check-In
+Camera-only capture — no photo library access permitted
+GPS metadata attached to every submission
+Server-side timestamp (not device clock) on every submission
+Required-area enforcement — submission blocked until all configured areas are captured
+Periodic continuous-video walkthrough requirement (uncut)
+Randomised daily submission window to prevent one-time staging
+Financial Evidence
+Bill photo + payment proof photo upload, categorised by type (rent, power, gas, water, internet)
+Food/shopping receipt upload with itemised view where legible
+Monthly/weekly schedule per evidence type, configurable by Admin
+Assessments & Courses
+In-app delivery of self-report tools (PHQ-9, GAD-7, AUDIT, DAST-10, AAPI-2, etc.)
+Sequential lesson unlocking per course, with progress percentage tracking
+Homework and reflection journal submission per lesson
+Parent-facing simplified progress dashboard (own domain scores over time)
+Support Features
+Secure worker-only messaging (no parent-to-parent contact)
+Always-visible crisis/help button — one tap to worker and emergency resources
+Goal tracking and milestone celebration notifications
+Plain-language consent and data-rights module explaining what is collected and why
+Offline submission queuing — syncs automatically when connection restored
+Data & Access Notes
+Firestore: parents, dailyCheckins, financialEvidence, assessments, courseProgress
+Parent has read-only access to own scored data only — cannot edit submitted assessments
+3. Child Portal
+Age-tiered interface giving children a voice throughout both programs without exposing case-sensitive data.
+Core Features
+Age-gated UI — visual mood scale for younger children, free-text journal for teens
+Weekly check-in: feelings, safety, and contact-visit experience
+Branching logic — concerning responses trigger immediate worker alert
+Direct, monitored messaging with assigned worker
+Separate, simplified crisis button bypassing normal navigation
+Age-appropriate participation tools to contribute to their own case plan goals
+Feedback prompt on whether decisions affecting them are being explained clearly
+Explicit Restrictions
+No visibility of parent scores, contradictions, or case file data
+No access to other children&apos;s data, even siblings, without separate explicit permission per child
+Data & Access Notes
+Firestore: children, childCheckins, childWishes — write access restricted to the child&apos;s own uid and assigned worker
+4. Support Worker Hub
+The operational centre for day-to-day case management, scoring, and evidence review.
+Caseload & Scoring
+Caseload dashboard — all assigned parents/children with status flags at a glance
+Structured domain scoring interface (1–4 rubric) with auto-calculated domain and overall scores
+Inter-rater reliability view — compare own scoring against a second worker on the same session
+Mandatory rationale field when a score deviates significantly from historical pattern
+Evidence Review
+Daily check-in review queue with photo/GPS/timestamp metadata visible
+Financial evidence verification queue
+Session note and transcript upload, playback, and annotation
+Contradiction log — manual entry plus system auto-flagged contradictions
+Collateral contact log (GP, school, other agencies)
+Home visit checklist — scheduled and unannounced variants
+Practice Support
+Supervision and reflective practice log
+Worker wellbeing/burnout self-check-in
+Report generation trigger (full or partial evidence report)
+Data & Access Notes
+Firestore: assessments, observations, contradictions, collaterals, transcripts — full read/write for assigned cases only
+5. Child Protection Portal
+Read-only statutory oversight with automated risk alerting — kept separate from operational worker tools for audit clarity.
+Core Features
+Read-only case oversight dashboard across all active cases
+Automated alert feed: 3+ consecutive missed check-ins, domain score regression, high/critical contradictions, financial evidence gaps, child safety flags
+Court-ready report download (locked-format PDF)
+Case status and phase tracking view
+Data & Access Notes
+No write access to assessment or scoring data — preserves evidentiary integrity and audit trail separation between statutory and support roles
+6. Admin Console
+Full administrative oversight of users, content, and program-level outcomes.
+Core Features
+User and role management — create/suspend/reassign all account types
+Worker performance and inter-rater reliability reporting
+Program-level aggregate outcome reporting (completion %, reunification %, regression %)
+Course/lesson content management — edit and version without app redeployment
+Full audit log viewer — who accessed or changed what, and when
+Caseload rebalancing suggestions based on worker intensity tracking
+De-identified aggregate data export for research, evaluation, and funding reports
+7. Foster/Kinship Carer Portal
+A frequently missing data source — carers hold critical day-to-day observations of the child.
+Core Features
+Daily/weekly structured observations on the child (sleep, mood, behaviour before/after contact)
+Carer-worker secure messaging
+Carer wellbeing/burnout check-in (carer breakdown is a major unplanned disruption risk)
+Carer-side check-in immediately before and after each contact visit
+Data & Access Notes
+Firestore: carers, carerObservations — visible to assigned worker and CP; not visible to parent
+8. Independent Advocate / Support Person Access
+Optional limited access for a parent&apos;s chosen independent advocate, separate from program staff.
+Core Features
+Parent-initiated invitation to grant a named advocate read-only or limited access
+Advocate can view progress summaries and reports shared explicitly by the parent
+No default visibility — every data category requires explicit parent consent toggle
+9. Assessment & Scoring Engine
+The core scoring logic underpinning every domain, course, and longitudinal report.
+Core Features
+Configurable rubric schema (domains, indicators, 1–4 scale) — editable without code changes
+Auto-calculation of domain and overall scores on every assessment write
+Longitudinal score storage across baseline, each phase, exit, and Home Again
+Automated contradiction detection — score regression thresholds, self-report vs collateral mismatches
+Re-administration scheduling — tools due at fixed phase points trigger reminders automatically
+Configurable rubric variants for cultural context (e.g. kinship care models)
+Interpreter-flagged sessions automatically noted against scoring so language barriers are not misread as non-engagement
+10. Program & Phase Engine
+Manages the two linked program tracks sharing one parent profile but distinct phase logic.
+Core Features
+24-month Reunification program with defined phases (Pre-Entry through Exit)
+6–12 month Home Again program, automatically linked on successful Reunification exit
+Phase progression rules — manual worker advance plus automatic eligibility flags
+Regression protocol automation — triggers alert escalation and visit-frequency changes per defined criteria
+Course/lesson sequencing tied to current phase
+11. Visit & Contact Logistics
+Handles the practical scheduling and logging of supervised/unsupervised contact — a commonly missing layer.
+Core Features
+In-app scheduling for contact visits with calendar sync across parent, worker, carer, and child
+Carer-side pre/post-contact check-in on the child&apos;s state
+Automatic handover logs — who dropped off/picked up, timestamped and GPS-tagged
+Incident flag option attached to any logged handover
+12. Legal & Court Timeline Integration
+Embeds statutory deadlines directly into the system rather than tracking them externally.
+Core Features
+Court date tracker with automatic countdown and report-deadline alerts to assigned workers
+Version-locked evidence snapshot generated automatically &apos;as at&apos; each court date — prevents retroactive alteration post-hearing
+Lawyer/legal guardian read-only access tier, scoped to relevant case only
+Data & Access Notes
+Snapshot immutability is critical for legal defensibility — store as a separate locked document, never edit the live record retroactively
+13. Multi-Agency Information Sharing
+Structured, consent-tracked data sharing replacing ad hoc emails and exported PDFs.
+Core Features
+Structured, permissioned export formats for police, health, education, and other linked agencies
+Consent-tracked sharing log — who shared what, with whom, when, and under what authority
+14. Relapse / Crisis Re-Entry Pathway
+Handles the reality that family outcomes are not always linear — preserves history rather than restarting blank.
+Core Features
+Defined &apos;re-entry&apos; workflow for families needing to return to Reunification or Home Again after closure
+Historical case data preserved and linked rather than a fresh case created
+Lighter-touch re-assessment criteria distinct from full initial intake
+15. Evidence Report Generator
+Compiles all data sources into a structured, court-ready output.
+Core Features
+Executive summary, baseline vs current scores, longitudinal score graphs
+Daily check-in compliance analysis, financial evidence summary, transcript theme summary
+Contradiction log, collateral summary, strengths summary, and final recommendation section
+Structured section for the parent&apos;s own reflections in their own words, presented alongside worker scoring
+Locked/exportable PDF format once generated, with full audit trail of who generated it and when
+16. Predictive Risk & Trend Analysis
+Surfaces trajectory, not just point-in-time snapshots — always for human review, never automated decisions.
+Core Features
+Trend-line alerts — e.g. a domain declining across consecutive scoring periods
+Pattern flagging against de-identified historical case patterns associated with past breakdowns
+All predictive flags route to a human reviewer; the system never auto-escalates or auto-decides a case outcome
+Data & Access Notes
+Design constraint: predictive features must be explainable — every flag must show exactly which inputs drove it
+17. Bias & Equity Auditing
+Periodic checks on whether the rubric itself is producing fair outcomes across groups.
+Core Features
+Aggregate, de-identified analysis of whether cultural group, gender, or disability status correlates with systematically lower subjective rubric scores independent of outcomes
+Findings route to Admin/program designers for rubric review — never used to auto-adjust individual scores
+18. Family Strengths Repository
+A standalone record ensuring reports are not purely deficit-based.
+Core Features
+Continuously updated strengths and protective factors record, structurally equal in visibility to the risk/contradiction log
+Included as its own section in every generated evidence report
+19. Notifications & Escalation
+Keeps every role informed at the right urgency level without alert fatigue.
+Core Features
+Push notifications: parent reminders, worker alerts, CP risk alerts, child crisis escalation
+Configurable thresholds per alert type, managed by Admin
+Escalation chains — e.g. an unanswered crisis alert automatically escalates to a supervisor after a defined time window
+20. Data, Security & Compliance
+Foundational protections required given the sensitivity of this data.
+Core Features
+Firestore security rules enforcing strict role-based read/write per collection
+Audit logging on all sensitive data access, viewable in Admin Console
+Defined data retention and deletion policy, implemented in code not just documentation
+Encrypted storage for photos, videos, and transcripts
+Regular automated backups with tested restore procedure
+21. Non-Functional Requirements
+Requirements about how the system performs rather than what it does.
+Core Requirements
+Functions reliably on low-end Android devices and patchy/intermittent connectivity
+Accessibility — large text option and a simplified-language mode
+Check-in submission completes in under 5 seconds on a 3G connection
+Defined uptime target with monitoring and alerting on Firebase Functions failures
+Multi-language support for parent- and child-facing content
+Appendix A — Role-Based Access Matrix
+Summary view of which user types can access which functional areas. Full detail is defined within each module&apos;s Firestore rules.
+Module
+Parent
+Child
+Worker
+CP
+Carer
+Advocate
+Admin
+Daily check-ins
+Submit
+—
+Review
+View
+—
+View (if granted)
+Full
+Financial evidence
+Submit
+—
+Verify
+View
+—
+—
+Full
+Assessments/scoring
+View own
+—
+Create/manage
+View
+—
+—
+Full
+Courses/lessons
+Complete
+—
+Assign/review
+—
+—
+—
+Manage content
+Child check-ins
+—
+Submit
+Review
+View
+View
+—
+Full
+Contact logistics
+View/confirm
+View (age-appr.)
+Schedule/log
+View
+Pre/post check-in
+—
+Full
+Contradiction log
+—
+—
+Create/manage
+View
+—
+—
+Full
+Evidence reports
+View own summary (if shared)
+—
+Generate
+Download
+—
+View (if granted)
+Full
+Court/legal timeline
+—
+—
+View/manage
+View
+—
+View (scoped)
+Full
+Alerts/escalation
+Crisis only
+Crisis (simplified)
+Receive all
+Receive risk alerts
+Receive child-related
+—
+Full
+Strengths repository
+View own
+—
+Create/manage
+View
+Contribute
+View (if granted)
+Full
+Audit logs
+—
+—
+—
+—
+—
+—
+Full
+— END OF FUNCTIONAL SPECIFICATION —
+CONFIDENTIAL — FOR PROGRAM USE ONLY

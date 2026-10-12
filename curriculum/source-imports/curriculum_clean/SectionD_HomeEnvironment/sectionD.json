@@ -1,0 +1,76 @@
+﻿{
+    "sectionId":  "D",
+    "groups":  [
+                   {
+                       "label":  "Stability",
+                       "id":  "D_Stability",
+                       "items":  [
+                                     {
+                                         "id":  "D_ST_Stability",
+                                         "direction":  "higher_score_better",
+                                         "text":  "Our home environment feels stable and predictable.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "stability",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   },
+                   {
+                       "label":  "Safety",
+                       "id":  "D_Safety",
+                       "items":  [
+                                     {
+                                         "id":  "D_SF_Safety",
+                                         "direction":  "higher_score_better",
+                                         "text":  "Our home is physically safe for children.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "safety",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   },
+                   {
+                       "label":  "Cleanliness",
+                       "id":  "D_Cleanliness",
+                       "items":  [
+                                     {
+                                         "id":  "D_CL_Cleanliness",
+                                         "direction":  "higher_score_better",
+                                         "text":  "Our home is kept reasonably clean and hygienic.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "cleanliness",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   },
+                   {
+                       "label":  "Routine",
+                       "id":  "D_Routine",
+                       "items":  [
+                                     {
+                                         "id":  "D_RT_Routine",
+                                         "direction":  "higher_score_better",
+                                         "text":  "Our family has consistent daily routines.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "routine",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   },
+                   {
+                       "label":  "Predictability",
+                       "id":  "D_Predictability",
+                       "items":  [
+                                     {
+                                         "id":  "D_PR_Predictability",
+                                         "direction":  "higher_score_better",
+                                         "text":  "My child knows what to expect day-to-day in our home.",
+                                         "type":  "likert_agreement",
+                                         "domain":  "predictability",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   }
+               ],
+    "name":  "Home Environment"
+}

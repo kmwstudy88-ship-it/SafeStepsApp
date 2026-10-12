@@ -1,0 +1,66 @@
+{
+      "module_id": "behaviour_change_conflict_reduction_v1",
+      "module_title": "Reducing Conflict & Escalation",
+      "learning_outcomes": [
+        "Understand escalation patterns.",
+        "Recognise conflict triggers.",
+        "Apply de-escalation strategies.",
+        "Support children during conflict."
+      ],
+      "lesson_content": {
+        "definition": "Conflict reduction involves interrupting escalation and restoring safety.",
+        "escalation_signs": [
+          "Raised voice",
+          "Fast breathing",
+          "Rigid posture",
+          "Blaming language"
+        ],
+        "deescalation_strategies": [
+          "Pause",
+          "Lower voice",
+          "Step back",
+          "Offer repair"
+        ]
+      },
+      "activities": [
+        {
+          "activity_id": "escalation_identification",
+          "type": "scenario_identification"
+        }
+      ],
+      "fill_in_the_blank": [
+        { "question": "Conflict reduction restores ________.", "answer": "safety" }
+      ],
+      "quiz": {
+        "multiple_choice": [
+          {
+            "question": "Which is a de-escalation strategy?",
+            "options": ["Blaming", "Pausing", "Yelling", "Shaming"],
+            "answer": "Pausing"
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "assessment_id": "conflict_plan",
+          "type": "scenario_analysis",
+          "criteria": [
+            { "criterion_id": "escalation_identification", "weight": 0.40 },
+            { "criterion_id": "strategy_accuracy", "weight": 0.35 },
+            { "criterion_id": "impact_reasoning", "weight": 0.25 }
+          ]
+        }
+      ],
+      "competency_check": [
+        "Identify escalation",
+        "Apply de-escalation",
+        "Support child safety"
+      ],
+      "extensions": [
+        "Conflict Reduction in High-Stress Homes",
+        "Conflict Reduction for Teens"
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,32 @@
+SAFE-STEPS CASEWORKER GUIDELINES
+
+1. Tier 1 Events
+   - Review within 48 hours
+   - No direct intervention required
+   - Document patterns if repeated
+
+2. Tier 2 Events
+   - Review within 24 hours
+   - Consider contacting parent
+   - Monitor escalation indicators
+
+3. Tier 3 Events
+   - Immediate review required
+   - Contact child safety team
+   - Document event in case plan
+   - Consider temporary channel block
+
+4. System-Blocked Channels
+   - Review reason for block
+   - Assess child safety risk
+   - Decide whether to maintain block
+
+5. Child-Paused Channels
+   - Respect child's autonomy
+   - Do not notify parent of pause reason
+   - Review for emotional safety concerns
+
+6. Forensic Reports
+   - Use for court, case plans, supervision
+   - Never alter message content
+   - Ensure escalation indicators are accurate

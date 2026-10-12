@@ -1,0 +1,153 @@
+﻿{
+    "title":  "Neglect Awareness",
+    "category":  "Parent Challenges",
+    "challenge_number":  1,
+    "structure":  {
+                      "weekly_challenge":  "",
+                      "activity_two":  {
+                                           "type":  "",
+                                           "instructions":  ""
+                                       },
+                      "final_reflection":  {
+                                               "questions":  [
+                                                                 "What have you learned?",
+                                                                 "What has changed?",
+                                                                 "What are you most proud of?",
+                                                                 "What will your family continue doing?"
+                                                             ]
+                                           },
+                      "three_month_review":  {
+                                                 "self_assessment":  "",
+                                                 "updated_action_plan":  "",
+                                                 "progress_review":  "",
+                                                 "reflection":  "",
+                                                 "quiz":  ""
+                                             },
+                      "action_plan":  {
+                                          "supports":  [
+
+                                                       ],
+                                          "strategies":  [
+
+                                                         ],
+                                          "review_date":  "",
+                                          "anticipated_barriers":  [
+
+                                                                   ],
+                                          "goals":  [
+
+                                                    ]
+                                      },
+                      "evidence_upload":  {
+                                              "allowed_types":  [
+                                                                    "photo",
+                                                                    "video",
+                                                                    "audio",
+                                                                    "document",
+                                                                    "journal"
+                                                                ]
+                                          },
+                      "professional_feedback":  "",
+                      "activity_one":  {
+                                           "type":  "",
+                                           "instructions":  ""
+                                       },
+                      "introduction":  {
+                                           "what_you_will_learn":  "",
+                                           "skills_developed":  [
+
+                                                                ],
+                                           "why_this_topic_matters":  "",
+                                           "difficulty_level":  "",
+                                           "estimated_time":  "",
+                                           "overview":  ""
+                                       },
+                      "learning_objectives":  [
+                                                  "Explain the topic",
+                                                  "Identify common barriers",
+                                                  "Apply practical strategies",
+                                                  "Reflect on your family experiences",
+                                                  "Create a family action plan"
+                                              ],
+                      "final_assessment":  {
+                                               "knowledge_increase":  "",
+                                               "before_score":  "",
+                                               "behaviour_changes":  "",
+                                               "after_score":  "",
+                                               "confidence_increase":  ""
+                                           },
+                      "scenario_practice":  {
+                                                "feedback":  "",
+                                                "scenarios":  [
+
+                                                              ]
+                                            },
+                      "knowledge_quiz":  {
+                                             "questions":  [
+
+                                                           ],
+                                             "auto_score":  true
+                                         },
+                      "initial_self_assessment":  {
+                                                      "baseline_score":  "",
+                                                      "questions":  [
+                                                                        "How confident are you with this topic? (1–10)",
+                                                                        "How often does this affect your family?",
+                                                                        "How important is this goal for your family?",
+                                                                        "What would success look like for your family?",
+                                                                        "What is your biggest challenge in this area?",
+                                                                        "What strengths does your family already have?"
+                                                                    ]
+                                                  },
+                      "reflection_questions":  [
+                                                   "What stood out today?",
+                                                   "What surprised you?",
+                                                   "How does this relate to your family?",
+                                                   "What would you like to improve?",
+                                                   "What strengths does your family already have?"
+                                               ],
+                      "completion_certificate":  {
+                                                     "hours_completed":  "",
+                                                     "skills_achieved":  "",
+                                                     "cpd_hours":  "",
+                                                     "challenge_name":  "",
+                                                     "quiz_score":  "",
+                                                     "completion_date":  ""
+                                                 },
+                      "educational_content":  {
+                                                  "why_it_matters":  "",
+                                                  "research_findings":  "",
+                                                  "warning_signs":  "",
+                                                  "protective_factors":  "",
+                                                  "common_myths":  "",
+                                                  "understanding_the_topic":  "",
+                                                  "real_life_examples":  "",
+                                                  "practical_strategies":  ""
+                                              },
+                      "child_feedback":  {
+                                             "questions":  [
+                                                               "Did you feel listened to today?",
+                                                               "Did you feel safe?",
+                                                               "What made you happy today?",
+                                                               "What would you change?"
+                                                           ]
+                                         },
+                      "parent_journal":  {
+                                             "daily_prompts":  [
+                                                                   "What went well today?",
+                                                                   "What was difficult?",
+                                                                   "How did you respond?",
+                                                                   "What will you do differently tomorrow?"
+                                                               ]
+                                         },
+                      "progress_tracker":  {
+                                               "evidence_uploaded":  "",
+                                               "quiz_scores":  "",
+                                               "time_spent_learning":  "",
+                                               "completion_percentage":  "",
+                                               "activities_completed":  "",
+                                               "goal_progress":  "",
+                                               "journal_entries":  ""
+                                           }
+                  }
+}

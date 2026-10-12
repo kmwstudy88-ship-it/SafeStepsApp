@@ -1,0 +1,2038 @@
+[
+  {
+    "week": 15,
+    "track": "D",
+    "title": "Attachment Theory: The Foundation of Emotional Development",
+    "summary": "A deep dive into attachment theory, the different attachment styles, and why early bonds shape emotional regulation and relationships across the lifespan.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Explain the core principles of attachment theory and Bowlby's original contribution.",
+      "Describe the four main attachment styles and how each develops.",
+      "Understand how early attachment patterns influence later relationships and mental health.",
+      "Identify practical ways caregivers can support secure attachment at any stage."
+    ],
+    "content_sections": [
+      {
+        "heading": "The Origins of Attachment Theory",
+        "body": "Attachment theory, developed by John Bowlby in the mid-20th century and later expanded by Mary Ainsworth, proposes that humans are biologically predisposed to form close emotional bonds with primary caregivers, and that the nature of those bonds shapes emotional development across the lifespan. Bowlby observed that children who experienced prolonged separation from caregivers showed predictable patterns of distress and, if separation continued, detachment. He proposed that attachment is not simply about feeding or comfort, but about the fundamental need for a felt sense of safety and proximity to a protective caregiver -- what he called the 'secure base.'"
+      },
+      {
+        "heading": "The Four Attachment Styles",
+        "body": "Mary Ainsworth's landmark Strange Situation experiments identified three initial attachment patterns: secure, anxious-ambivalent, and avoidant. A fourth -- disorganized -- was later identified by Mary Main. Securely attached children use their caregiver as a safe base for exploration and are distressed but comforted when reunited after brief separation. Anxious-ambivalent children show heightened distress and difficulty being soothed on reunion, reflecting inconsistent caregiving. Avoidant children show apparent indifference on reunion, having learned to suppress attachment needs in response to consistently unresponsive caregiving. Disorganized attachment -- associated with frightening or abusive caregiving -- lacks a coherent strategy, with children showing confused, contradictory behaviors."
+      },
+      {
+        "heading": "Attachment Across the Lifespan",
+        "body": "Early attachment patterns are not fixed destiny, but they do create internal working models -- mental frameworks about whether the self is worthy of care and whether others can be trusted -- that tend to persist unless disrupted by significant corrective experiences. Research shows that adults with insecure attachment histories can develop 'earned security' through meaningful therapeutic relationships, supportive partnerships, or transformative parenting experiences. This has important implications: a parent's own attachment history influences their caregiving, but understanding and working with that history (often through therapy or parenting programs) can shift patterns within and across generations."
+      },
+      {
+        "heading": "Supporting Secure Attachment in Practice",
+        "body": "Secure attachment is supported by caregiving that is consistently responsive and sensitive -- noticing and responding to a child's cues in a timely, appropriate way. This does not require perfection: research suggests caregivers need to be attuned roughly 30% of the time for secure attachment to develop, provided ruptures (misattunements) are consistently followed by repair. Practical behaviors that support secure attachment include: responding to distress rather than dismissing it, maintaining physical and emotional availability, following the child's lead in play, and naming and validating emotions. For older children, availability for reconnection after conflict is particularly important."
+      }
+    ],
+    "key_takeaways": [
+      "Attachment theory proposes that early caregiver bonds shape emotional development and relationship patterns across the lifespan.",
+      "Four main attachment styles -- secure, anxious-ambivalent, avoidant, disorganized -- each reflect different caregiving patterns.",
+      "Early attachment patterns are not fixed; earned security is possible through corrective relationships.",
+      "Consistent, sensitive responsiveness and repair after misattunement are the foundations of secure attachment."
+    ],
+    "activity": {
+      "title": "Attachment Reflection Exercise",
+      "instructions": "Reflect on your own early relationships with caregivers. What attachment pattern, if any, do you recognize in yourself? How might this show up in your own caregiving or professional relationships with children? Write 200-300 words. This is a reflective, not diagnostic, exercise -- if it raises significant emotional material, consider discussing with a therapist or trusted professional.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What does Bowlby's concept of the 'secure base' refer to?",
+        "options": [
+          "A physical location where children feel safe",
+          "A caregiver who provides a felt sense of safety from which a child can explore the world",
+          "A therapeutic technique used only by professionals",
+          "A rigid caregiving schedule"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "The 'secure base' is Bowlby's term for a caregiver whose consistent availability gives a child the safety to explore, knowing they can return to a protective presence."
+      },
+      {
+        "question": "Which attachment style is associated with frightening or abusive caregiving and lacks a coherent coping strategy?",
+        "options": [
+          "Secure",
+          "Anxious-ambivalent",
+          "Avoidant",
+          "Disorganized"
+        ],
+        "correct_answer_index": 3,
+        "explanation": "Disorganized attachment is associated with caregiving that is frightening or abusive, leaving the child without a coherent attachment strategy."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Circle of Security program",
+        "type": "external_org",
+        "note": "Evidence-based attachment-focused parenting intervention."
+      },
+      {
+        "title": "Bowlby, J. (1988). A Secure Base",
+        "type": "academic_reading",
+        "note": "Accessible summary of Bowlby's attachment theory for general readers."
+      }
+    ]
+  },
+  {
+    "week": 16,
+    "track": "D",
+    "title": "Brain Development: What Every Parent and Professional Should Know",
+    "summary": "How the child's brain develops from birth through adolescence, the role of experience in shaping neural architecture, and what this means for behaviour and learning.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Describe the basic arc of brain development from infancy through adolescence.",
+      "Understand the concept of sensitive periods and their relevance to learning and emotional development.",
+      "Explain how stress and adversity affect brain development, and why early intervention matters.",
+      "Apply brain development knowledge to understanding child behaviour practically."
+    ],
+    "content_sections": [
+      {
+        "heading": "The Developing Brain: An Overview",
+        "body": "The human brain undergoes its most rapid development before birth and in the first years of life, but continues developing well into the mid-20s. At birth, the brain has nearly all the neurons it will ever have, but the connections between them -- synapses -- are formed, pruned, and refined through experience throughout childhood and adolescence. In the early years, synaptic formation happens at an extraordinary rate, creating a period of enormous plasticity and sensitivity to experience. This is not a single process: different brain regions develop on different timescales, with regions governing basic sensory and motor functions developing earliest, and the prefrontal cortex -- responsible for planning, impulse control, and complex decision-making -- not reaching full maturity until approximately the mid-twenties."
+      },
+      {
+        "heading": "Sensitive Periods and Experience-Dependent Development",
+        "body": "Sensitive periods are windows of time during which the brain is particularly responsive to specific types of experience. Language acquisition, for example, is easier in the first few years of life than later; emotional regulation capacity is heavily shaped by early caregiving experiences. Crucially, brain development is experience-dependent: the connections that form are shaped by the inputs the child receives. Warm, responsive caregiving, rich language environments, and opportunities for play and exploration all contribute to healthy neural architecture. Conversely, chronic stress, neglect, or exposure to violence can disrupt normal developmental trajectories -- not because damage is permanent, but because early experience builds the scaffolding on which later development rests."
+      },
+      {
+        "heading": "Stress, Adversity, and the Developing Brain",
+        "body": "The brain's stress response system -- the HPA axis -- is calibrated in part by early experience. Children who experience chronic, unpredictable, or severe stress without adequate caregiver buffering can develop a stress response that is tuned to threat detection in ways that affect emotional regulation, learning, and behaviour. This is sometimes described as a 'toxic stress' response, distinguishing it from normal, manageable stress (which is actually beneficial for building coping capacity) and tolerable stress (significant but buffered by supportive relationships). The presence of a responsive caregiver is itself a biological buffer against toxic stress, which underscores why relationship-based interventions work."
+      },
+      {
+        "heading": "The Adolescent Brain",
+        "body": "Adolescence brings a second major phase of brain reorganization. The brain undergoes extensive synaptic pruning -- a 'use it or lose it' process strengthening frequently used pathways and eliminating others -- alongside heightened activity in the limbic system (emotion and reward) relative to the still-maturing prefrontal cortex. This creates the characteristic adolescent pattern of intensified emotional responses, novelty-seeking, and sensitivity to peer influence alongside still-developing impulse control. Understanding this is not an excuse for dangerous behaviour, but it reframes adolescent risk-taking and emotional intensity as partly neurological rather than purely intentional or characterological."
+      }
+    ],
+    "key_takeaways": [
+      "The brain develops rapidly in early childhood and continues maturing through the mid-twenties.",
+      "Experience shapes neural architecture -- warm caregiving, language, and play build healthy brain development.",
+      "Chronic stress without caregiver buffering can disrupt development; the caregiver relationship is a biological buffer.",
+      "Adolescent emotional intensity and risk-taking partly reflect a neurologically immature prefrontal cortex relative to a highly active limbic system."
+    ],
+    "activity": {
+      "title": "Brain Development Translation Exercise",
+      "instructions": "Choose one behaviour you commonly observe in a child (or a behaviour commonly raised in your professional context) and write a brief explanation of it grounded in what you've learned about brain development. For example: 'A 3-year-old's meltdown when a routine changes' or 'A teenager's apparent inability to think through consequences.' The goal is to build the habit of asking 'what is the brain doing here?' before reacting to behaviour.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "Why is the prefrontal cortex particularly relevant for understanding adolescent behaviour?",
+        "options": [
+          "It controls basic sensory functions and develops at birth",
+          "It governs planning and impulse control and does not fully mature until the mid-twenties",
+          "It is fully developed by age 10",
+          "It plays no role in adolescent decision-making"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "The prefrontal cortex, governing impulse control and planning, doesn't fully mature until the mid-twenties, explaining why adolescents may act impulsively despite knowing better."
+      },
+      {
+        "question": "What distinguishes 'toxic stress' from normal or tolerable stress in the context of brain development?",
+        "options": [
+          "Toxic stress is any form of stress experienced by a child",
+          "Toxic stress involves chronic, severe, or unpredictable stress without adequate caregiver buffering",
+          "Tolerable stress is always more severe than toxic stress",
+          "Toxic stress only occurs in adolescence"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Toxic stress is chronic, severe stress without the buffer of a responsive caregiver -- distinguishing it from manageable or buffered stress, which can build resilience."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Harvard Center on the Developing Child",
+        "type": "external_org",
+        "note": "Excellent accessible resources on brain development, toxic stress, and early intervention."
+      },
+      {
+        "title": "Center on the Developing Child: 'Toxic Stress'",
+        "type": "external_reading",
+        "note": "Plain-language explainer on stress and the developing brain."
+      }
+    ]
+  },
+  {
+    "week": 17,
+    "track": "D",
+    "title": "Developmental Milestones: What to Expect and When to Act",
+    "summary": "A practical guide to emotional, social, cognitive, and physical developmental milestones from infancy through adolescence.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Identify key developmental milestones across emotional, social, cognitive, and physical domains.",
+      "Understand the concept of developmental range versus rigid timelines.",
+      "Recognize red flags that may indicate a developmental delay or concern.",
+      "Know the pathway for developmental evaluation and early intervention."
+    ],
+    "content_sections": [
+      {
+        "heading": "Understanding Milestones as Ranges, Not Deadlines",
+        "body": "Developmental milestones are best understood as ranges rather than fixed deadlines. The age at which a child typically walks, speaks their first words, or begins to manage peer conflict varies considerably across typically developing children. Milestone guidelines (such as those from the CDC or AAP) reflect the point by which most children -- but not all -- have achieved a given skill. Using milestones as conversation starters ('I notice she isn't yet doing X -- what's your sense?') rather than performance standards reduces unnecessary anxiety while ensuring that genuine delays are not missed."
+      },
+      {
+        "heading": "Milestones Across Domains: A Summary",
+        "body": "Social-emotional milestones include: smiling socially by 2 months, stranger anxiety around 6-9 months, parallel play in toddlerhood transitioning to cooperative play by age 4-5, developing empathy and perspective-taking through middle childhood, and navigating complex peer relationships in adolescence. Cognitive milestones include: object permanence developing around 8-12 months, symbolic play in toddlerhood, concrete operational thinking (logic about physical reality) emerging around 6-7 years, and abstract reasoning becoming more robust in adolescence. Language milestones include: babbling by 6 months, first words around 12 months, two-word combinations by 24 months, and increasingly complex sentence structures through preschool years. Physical/motor milestones vary considerably but include: head control by 4 months, independent sitting by 6-9 months, walking by 9-15 months, and refined fine motor skills through early school years."
+      },
+      {
+        "heading": "Developmental Red Flags",
+        "body": "Certain patterns warrant earlier attention and referral: not smiling socially by 3 months, no babbling by 12 months, no single words by 16 months, no two-word phrases by 24 months, loss of previously acquired skills at any age (regression can be situational but warrants evaluation if persistent), significant difficulty with transitions or sensory input, and notably limited eye contact or social reciprocity. Red flags are not diagnoses -- they are signals to investigate further. Early assessment and, where indicated, early intervention programs consistently show better outcomes than watchful waiting, making early referral a practical priority."
+      },
+      {
+        "heading": "Seeking Developmental Evaluation",
+        "body": "Concerns about development are typically first raised with a pediatrician or general practitioner, who may conduct a brief screening or refer to a developmental pediatrician, child psychologist, speech-language pathologist, occupational therapist, or other specialist depending on the area of concern. Early intervention programs (publicly funded in many countries for children under 3, with school-based services extending beyond that) provide assessment and support. For parents who have concerns a professional hasn't shared, advocating for a referral is appropriate -- a parent's sustained, observational knowledge of their child is valuable data."
+      }
+    ],
+    "key_takeaways": [
+      "Developmental milestones are ranges, not fixed deadlines -- variation across typically developing children is normal.",
+      "Milestones span social-emotional, cognitive, language, and physical domains.",
+      "Loss of previously acquired skills at any age is a red flag warranting evaluation.",
+      "Early referral and, where appropriate, early intervention consistently produce better outcomes than watchful waiting."
+    ],
+    "activity": {
+      "title": "Milestone Mapping Exercise",
+      "instructions": "Choose a child aged 0-12 (your own, a client's, or a hypothetical case). Using this module's framework, map where they appear to be developmentally across 3 domains (social-emotional, language, and one other). Identify one area of strength and one area where you'd want to monitor more closely. Note: this is a reflective exercise, not a screening tool. If you have concerns, discuss with the child's pediatrician or a developmental specialist.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "Why are developmental milestones described as 'ranges rather than deadlines'?",
+        "options": [
+          "Because milestones don't actually matter",
+          "Because there is meaningful variation in timing across typically developing children",
+          "Because all children develop at exactly the same pace",
+          "Because only physical milestones are reliable"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Typically developing children vary considerably in when they achieve milestones; ranges reflect this variation rather than imposing a single fixed age."
+      },
+      {
+        "question": "Which of the following is a developmental red flag that warrants evaluation?",
+        "options": [
+          "A 14-month-old who is not yet walking",
+          "A 2-year-old who has lost previously acquired language skills",
+          "A 6-month-old who is beginning to babble",
+          "A 4-year-old who engages in cooperative play"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Loss of previously acquired skills at any age is a red flag warranting professional evaluation -- it is not typical for development to regress without cause."
+      }
+    ],
+    "resources": [
+      {
+        "title": "CDC 'Learn the Signs. Act Early.' milestone resources",
+        "type": "external_org",
+        "note": "Free, illustrated milestone checklists by age."
+      },
+      {
+        "title": "Pediatrician / GP",
+        "type": "professional_resource",
+        "note": "First point of contact for developmental concerns; can initiate referrals for formal evaluation."
+      }
+    ]
+  },
+  {
+    "week": 18,
+    "track": "D",
+    "title": "Executive Functioning: Self-Regulation, Planning, and Emotional Control",
+    "summary": "Understanding executive functioning skills, how they develop, why they matter, and what to do when development in this area is delayed.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Define executive functioning and its core components.",
+      "Understand the developmental trajectory of executive functioning from toddlerhood through young adulthood.",
+      "Identify signs that executive functioning development may be delayed or atypical.",
+      "Apply practical strategies to support executive functioning development in children."
+    ],
+    "content_sections": [
+      {
+        "heading": "What Is Executive Functioning?",
+        "body": "Executive functioning (EF) refers to a set of cognitive skills that allow people to manage themselves and their resources in order to achieve goals. The three core components are working memory (holding and using information in mind), cognitive flexibility (shifting attention and adapting to changing demands), and inhibitory control (resisting impulses and focusing attention despite distractions). EF skills are sometimes described as the 'air traffic control' of the brain -- they coordinate incoming information, ongoing tasks, and responses in real time. They are foundational for academic learning, social relationships, emotional regulation, and daily life management."
+      },
+      {
+        "heading": "How Executive Functioning Develops",
+        "body": "EF skills emerge early and develop slowly across childhood and adolescence. Simple inhibitory control can be observed even in infants, but the capacity to plan, flexibly shift strategies, and manage complex working memory demands continues developing through early adulthood -- again tied to prefrontal cortex maturation. The preschool years see rapid growth in basic EF, which is why 3-5 year olds can begin to follow multi-step instructions and wait their turn, though inconsistently. Middle childhood brings more reliable EF, and adolescence brings improved but still-maturing capacity. Environment matters: children who experience chronic stress or adversity often show delays in EF development, because prefrontal systems are sensitive to the effects of chronic stress."
+      },
+      {
+        "heading": "When EF Development Is Delayed or Atypical",
+        "body": "Significant EF difficulties show up in several contexts. ADHD is fundamentally a disorder of EF -- the inattention, impulsivity, and disorganization characteristic of ADHD reflect impaired inhibitory control and working memory. Autism often involves EF differences, particularly in cognitive flexibility. Children who have experienced early adversity or trauma commonly show EF delays that are not due to a neurodevelopmental condition but to the effects of chronic stress on prefrontal development. Understanding the EF basis of these presentations shifts the response from punitive (the child is choosing to be difficult) to supportive (the child's regulatory system needs scaffolding)."
+      },
+      {
+        "heading": "Practical Strategies to Support EF Development",
+        "body": "EF skills can be supported and built, particularly in childhood when the brain is most plastic. Strategies include: scaffolding complex tasks into smaller steps, externalizing information the child needs to hold in mind (checklists, visual schedules, written reminders), building and maintaining routines that reduce the cognitive demand of transitions, providing advance notice before transitions, practicing 'think aloud' problem-solving together, and play -- particularly games involving turn-taking, rule-following, and strategy -- which builds EF skills in an engaging context. These strategies are useful for all children, and particularly important for children with ADHD, autism, trauma histories, or other EF challenges."
+      }
+    ],
+    "key_takeaways": [
+      "Executive functioning includes working memory, cognitive flexibility, and inhibitory control -- the brain's management system.",
+      "EF develops slowly from infancy through early adulthood, tied closely to prefrontal cortex maturation.",
+      "ADHD, autism, and trauma-related difficulties often involve significant EF challenges.",
+      "EF can be built through scaffolding, routines, externalizing tools, and purposeful play."
+    ],
+    "activity": {
+      "title": "EF Strategy Audit",
+      "instructions": "Identify one child (your own, a client, or a hypothetical case) who shows difficulty in one area of executive functioning (e.g., trouble shifting tasks, forgetting multi-step instructions, acting without thinking). Choose one practical strategy from this module and describe in specific terms how you would implement it for that child this week. Be concrete: what exactly would you do, when, and how?",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What are the three core components of executive functioning?",
+        "options": [
+          "Reading, writing, and arithmetic",
+          "Working memory, cognitive flexibility, and inhibitory control",
+          "Motivation, intelligence, and creativity",
+          "Sleep, nutrition, and exercise"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "The three core EF components are working memory (holding information), cognitive flexibility (shifting strategies), and inhibitory control (resisting impulses)."
+      },
+      {
+        "question": "Why is ADHD described in this module as fundamentally a disorder of executive functioning?",
+        "options": [
+          "Because children with ADHD choose to be inattentive",
+          "Because inattention, impulsivity, and disorganization reflect impaired inhibitory control and working memory",
+          "Because EF has no relation to ADHD",
+          "Because ADHD only affects physical coordination"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "ADHD's core features -- inattention, impulsivity, disorganization -- directly reflect deficits in EF components, particularly inhibitory control and working memory."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Center on the Developing Child: EF Resources",
+        "type": "external_org",
+        "note": "Detailed, accessible resources on executive functioning in children."
+      },
+      {
+        "title": "Understood.org",
+        "type": "external_org",
+        "note": "Practical EF and learning difference resources for parents and educators."
+      }
+    ]
+  },
+  {
+    "week": 19,
+    "track": "E",
+    "title": "Co-Parenting: Collaboration, Conflict, and the Child in the Middle",
+    "summary": "Understanding healthy and high-conflict co-parenting dynamics, and practical approaches for keeping children's needs central.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Define co-parenting and describe its different forms across intact and separated families.",
+      "Understand how co-parenting conflict affects children's emotional wellbeing.",
+      "Identify principles of effective co-parenting communication.",
+      "Recognize when professional support for co-parenting conflict is indicated."
+    ],
+    "content_sections": [
+      {
+        "heading": "What Co-Parenting Is and Why It Matters",
+        "body": "Co-parenting refers to the ways in which two (or more) caregivers coordinate their parenting roles and responsibilities in relation to a shared child. It exists in all family forms -- married couples, separated partners, de facto relationships, blended families, and families with extended co-caregivers. Research consistently shows that the quality of the co-parenting relationship -- how well caregivers support each other in their parenting roles, manage disagreements, and maintain a united front around the child -- is a significant predictor of child emotional wellbeing, often more so than family structure (whether parents are together or separated)."
+      },
+      {
+        "heading": "How Parental Conflict Affects Children",
+        "body": "Children are highly sensitive to interpersonal conflict between caregivers. Exposure to frequent, intense, and unresolved conflict -- particularly conflict in which children are drawn in, used as messengers, or asked to take sides -- is associated with anxiety, depression, behavioural problems, and difficulties in the child's own later relationships. This does not mean parents must be conflict-free; all caregiving relationships involve disagreement. The key distinctions are whether conflict is resolved rather than chronic, whether it occurs away from the child where possible, and whether children are explicitly kept out of adult disputes."
+      },
+      {
+        "heading": "Principles of Effective Co-Parenting Communication",
+        "body": "Effective co-parenting communication tends to share several features: focusing conversations on the child's needs rather than adult grievances; maintaining a businesslike, respectful tone even when the relationship is strained; using structured approaches for handovers and information-sharing (written communication, co-parenting apps) to reduce face-to-face conflict where needed; and maintaining reasonable consistency of routines, expectations, and boundaries across households where possible. Parallel parenting -- in which two caregivers maintain minimal direct contact and manage their households independently while keeping children informed and not triangulated -- is a viable approach in high-conflict situations."
+      },
+      {
+        "heading": "When to Seek Professional Support",
+        "body": "Co-parenting mediation, often available through family courts, community services, or private practice, helps caregivers develop workable arrangements and communication strategies with professional facilitation. Family therapy can address the relational dynamics underpinning conflict. Where one caregiver is experiencing domestic violence, traditional co-parenting support approaches may not be safe or appropriate, and safety planning (covered in Track G) takes priority. For professionals working with families, identifying and naming the impact of co-parenting conflict on the child -- without taking sides between caregivers -- is a valuable clinical and advocacy role."
+      }
+    ],
+    "key_takeaways": [
+      "Co-parenting quality is a key predictor of child wellbeing across all family structures.",
+      "Chronic, unresolved conflict -- especially when children are drawn in -- is associated with significant child mental health impacts.",
+      "Effective co-parenting focuses on the child's needs, uses respectful communication, and insulates children from adult disputes.",
+      "Mediation, family therapy, and parallel parenting models can all support high-conflict situations."
+    ],
+    "activity": {
+      "title": "Co-Parenting Communication Audit",
+      "instructions": "Reflect on your current co-parenting communication (or, if working professionally, that of a family you're supporting). Rate each of the following on a scale of 1-5 (1=poor, 5=strong): focus on child's needs, respectful tone, consistency of information-sharing, child's insulation from adult conflict. Identify one area to strengthen and write a specific commitment to address it.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "Research suggests that children's wellbeing is most strongly predicted by which of the following?",
+        "options": [
+          "Whether parents are married or separated",
+          "The quality of the co-parenting relationship, regardless of family structure",
+          "The number of siblings",
+          "The family's income level alone"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Co-parenting quality -- not family structure per se -- is a strong predictor of child wellbeing."
+      },
+      {
+        "question": "What is 'parallel parenting' and when is it appropriate?",
+        "options": [
+          "When both parents attend the same school events simultaneously",
+          "A model of minimal direct co-parenting contact used to manage high-conflict situations while keeping the child out of disputes",
+          "A parenting technique for twins",
+          "A form of therapy requiring both parents in the same room"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Parallel parenting is a structured approach for high-conflict situations allowing caregivers to parent their households independently with minimal direct contact."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Family mediation services",
+        "type": "professional_resource",
+        "note": "Often available through family courts or community legal services."
+      },
+      {
+        "title": "Co-parenting apps (e.g., OurFamilyWizard, TalkingParents)",
+        "type": "practical_tool",
+        "note": "Structured communication tools designed for separated co-parents."
+      }
+    ]
+  },
+  {
+    "week": 20,
+    "track": "E",
+    "title": "Sibling Relationships: Conflict, Connection, and Lifelong Bonds",
+    "summary": "The psychology of sibling dynamics, how to support healthy sibling relationships, and what to do when sibling conflict becomes concerning.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Describe the developmental importance of sibling relationships.",
+      "Understand the role of birth order, age gaps, and individual differences in sibling dynamics.",
+      "Identify the difference between normal sibling conflict and concerning sibling aggression.",
+      "Apply practical strategies for supporting sibling connection and reducing destructive conflict."
+    ],
+    "content_sections": [
+      {
+        "heading": "Why Sibling Relationships Matter",
+        "body": "Sibling relationships are among the longest-lasting relationships most people will have. They provide a unique developmental context: a relationship with someone similar in age and status (unlike the caregiver relationship), where children navigate rivalry, cooperation, negotiation, and conflict daily. Research shows that positive sibling relationships are associated with social competence, lower loneliness, and a sense of belonging, while persistently hostile or aggressive sibling relationships are associated with increased risk for anxiety, depression, and peer relationship difficulties. The sibling relationship is also a context in which children practice theory of mind (understanding others' perspectives), emotional regulation, and conflict resolution."
+      },
+      {
+        "heading": "Birth Order, Age Gaps, and Individual Differences",
+        "body": "Birth order effects exist but are often overstated. Firstborn children tend to have more solo time with parents before younger siblings arrive and may internalize higher expectations; younger children navigate a world already populated by older siblings. Wide age gaps often mean less direct rivalry but also less companionship; close age gaps bring more opportunity for both conflict and closeness. More influential than birth order per se are individual temperamental differences between siblings -- children who are very different in temperament, sensory sensitivity, or developmental needs may require more active parental scaffolding to find common ground."
+      },
+      {
+        "heading": "Normal Conflict vs. Concerning Sibling Aggression",
+        "body": "Sibling conflict is normal and developmentally expectable -- it is, in some respects, a practice ground for resolving disputes. Ordinary sibling conflict involves bickering, competition, and occasional physical skirmishes that are roughly even in power (both parties give and receive). Concerning sibling aggression -- sometimes described as sibling bullying -- involves a persistent pattern of one sibling targeting another, with an imbalance of power, where the targeted child is unable to defend themselves and suffers distress. This pattern warrants parental intervention and potentially professional support, as it is associated with outcomes similar to peer bullying."
+      },
+      {
+        "heading": "Supporting Sibling Connection and Managing Conflict",
+        "body": "Strategies that support healthy sibling dynamics include: spending individual time with each child (reducing competition for parental attention), creating shared positive experiences between siblings, avoiding repeated comparisons between children, teaching and modelling conflict resolution rather than always arbitrating outcomes, and giving siblings age-appropriate tools to resolve minor disputes themselves (which builds skills more than parental intervention that removes the conflict). For families with a child with a disability or significant special needs, attending to the wellbeing and experiences of neurotypical or higher-functioning siblings -- who can sometimes feel overlooked -- is also important."
+      }
+    ],
+    "key_takeaways": [
+      "Sibling relationships are developmentally important and among the longest-lasting in most people's lives.",
+      "Birth order effects are real but often overstated; temperamental differences between siblings are often more influential.",
+      "Sibling bullying -- persistent, power-imbalanced targeting -- is distinct from ordinary conflict and warrants intervention.",
+      "Individual time with each child, shared positive experiences, and teaching conflict resolution skills all support healthy sibling dynamics."
+    ],
+    "activity": {
+      "title": "Sibling Dynamic Observation",
+      "instructions": "Over the next week, observe (or recall) 3 sibling interactions -- one that shows conflict, one that shows cooperation or warmth, and one that shows a power imbalance (if present). For each, write a brief description and note what, if anything, an adult did or could do to either support the positive dynamic or address the difficult one.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What distinguishes 'sibling bullying' from ordinary sibling conflict?",
+        "options": [
+          "Sibling bullying involves any argument between siblings",
+          "Sibling bullying involves a persistent, power-imbalanced pattern of targeting where the targeted child cannot effectively defend themselves",
+          "Ordinary conflict is always more serious than sibling bullying",
+          "There is no difference; all sibling conflict is the same"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Sibling bullying involves a persistent power imbalance and one-directional targeting, distinguishing it from the roughly even, mutual conflict typical of ordinary sibling disagreement."
+      },
+      {
+        "question": "What is one way parents can reduce sibling rivalry?",
+        "options": [
+          "Always comparing siblings to motivate them",
+          "Spending individual time with each child, reducing competition for parental attention",
+          "Ensuring siblings spend no time together",
+          "Ignoring all sibling conflict"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Individual time with each child reduces competition for parental attention, which is a key driver of sibling rivalry."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Faber, A. & Mazlish, E. Siblings Without Rivalry",
+        "type": "book",
+        "note": "Widely recommended practical guide to supporting sibling relationships."
+      },
+      {
+        "title": "Family therapist",
+        "type": "professional_resource",
+        "note": "Helpful for persistent, distressing sibling dynamics that don't respond to parental strategies alone."
+      }
+    ]
+  },
+  {
+    "week": 21,
+    "track": "E",
+    "title": "Extended Family, Cultural Context, and the Village Around a Child",
+    "summary": "Understanding the role of grandparents, extended family, and cultural community in children's development, and how to navigate different generational expectations.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Describe the developmental benefits of children having strong extended family and community connections.",
+      "Understand how different cultural contexts shape family roles, discipline, and expectations.",
+      "Navigate intergenerational differences in parenting values and practices constructively.",
+      "Recognize the unique challenges faced by isolated families with limited extended support."
+    ],
+    "content_sections": [
+      {
+        "heading": "The Importance of the Extended Network",
+        "body": "Cross-cultural research consistently shows that children benefit from having multiple warm, reliable adult relationships beyond their primary caregivers. Grandparents in particular often provide a distinct quality of relationship -- characterised by fewer daily pressures and a longer time horizon -- that complements parental relationships. Extended family, trusted family friends, community leaders, and mentors can all serve the 'additional trusted adult' function identified as a key resilience factor. From a systems perspective, the family unit is embedded in wider community networks, and those networks meaningfully affect both child and parental wellbeing."
+      },
+      {
+        "heading": "Cultural Context and Family Roles",
+        "body": "Family structure, roles, and expectations vary significantly across cultural contexts. In many cultures, extended family are actively involved co-caregivers rather than peripheral figures; in others, the nuclear family is more central. Cultural norms shape expectations around discipline (collective versus individual responsibility, physical discipline practices), emotional expressiveness, children's autonomy, and the role of children in family decision-making. Professionals working across cultural contexts benefit from approaching these differences with genuine curiosity rather than imposing a single cultural template, while also maintaining clear positions on practices that cause harm regardless of cultural framing."
+      },
+      {
+        "heading": "Navigating Intergenerational Differences",
+        "body": "Parents often navigate real tensions between their own parenting approaches and those of their own parents or in-laws. These tensions can involve discipline (smacking, strictness), feeding, screen time, and a wide range of daily parenting decisions. When extended family are involved in regular caregiving, these tensions can become a source of ongoing stress. Constructive approaches include: identifying which differences are genuinely harmful versus simply different preferences, having direct (rather than avoidant) conversations, agreeing on non-negotiables while allowing flexibility elsewhere, and framing the conversation around what is best for the child rather than whose approach is 'right.'"
+      },
+      {
+        "heading": "Supporting Isolated Families",
+        "body": "Not all families have access to extended networks. Geographic isolation, migration, family estrangement, or relationship breakdown can leave families without the informal support structures that most research assumes. For these families, building alternative community connections -- through playgroups, faith communities, neighborhood groups, or peer support programs -- is both practically helpful and a direct mental health protective factor. Professionals should be proactive about identifying isolated families and connecting them with community resources rather than assuming informal support is present."
+      }
+    ],
+    "key_takeaways": [
+      "Children benefit from multiple warm, reliable adult relationships beyond primary caregivers.",
+      "Cultural context meaningfully shapes family roles, discipline norms, and expectations -- professionals should approach these with curiosity and humility.",
+      "Intergenerational differences are best navigated by distinguishing genuine harm from different preferences, and focusing on the child's needs.",
+      "Isolated families benefit from proactive community connection-building, not just professional service referrals."
+    ],
+    "activity": {
+      "title": "Family Network Mapping",
+      "instructions": "Draw a simple network map placing the child (or family) at the centre and identifying all adults who play a meaningful role -- caregivers, extended family, family friends, community figures, professionals. Note which relationships are strong and which are thin or absent. Identify one way to strengthen a currently thin relationship or build a new connection.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "Why are multiple trusted adult relationships beyond the primary caregiver considered a protective factor for children?",
+        "options": [
+          "They replace the primary caregiver",
+          "They provide additional sources of support, belonging, and safe connection that buffer against adversity",
+          "They are only relevant for teenagers",
+          "They have been shown to have no effect on child outcomes"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Multiple trusted adult relationships provide additional sources of safety and belonging, and are consistently identified in resilience research as a key protective factor."
+      },
+      {
+        "question": "How should professionals approach cultural differences in parenting practices?",
+        "options": [
+          "Impose a single cultural template as the standard",
+          "Accept all cultural practices without question",
+          "Approach differences with genuine curiosity while maintaining clear positions on practices that cause harm",
+          "Avoid discussing cultural context altogether"
+        ],
+        "correct_answer_index": 2,
+        "explanation": "A culturally responsive approach involves genuine curiosity and respect for cultural variation while maintaining clear ethical positions on practices that harm children."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Community playgroups, family centres",
+        "type": "community_resource",
+        "note": "Often free or low-cost, useful for building informal networks for isolated families."
+      },
+      {
+        "title": "Cultural liaison workers / bicultural workers",
+        "type": "professional_resource",
+        "note": "Available in many service systems to support culturally responsive practice."
+      }
+    ]
+  },
+  {
+    "week": 22,
+    "track": "E",
+    "title": "Building a Healthy Family Culture",
+    "summary": "What makes a family culture emotionally healthy, and how to intentionally shape family values, rituals, and communication patterns.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Define 'family culture' and describe its components.",
+      "Understand how family narratives and rituals support children's identity and belonging.",
+      "Identify communication patterns that strengthen or undermine family connection.",
+      "Apply practical tools for intentionally shaping family culture."
+    ],
+    "content_sections": [
+      {
+        "heading": "What Is Family Culture?",
+        "body": "Every family has a culture -- a set of implicit and explicit values, beliefs, rituals, communication norms, and ways of handling difficulty that shape daily life and are transmitted to children. Family culture is not something that happens by accident; it is shaped over time by the choices caregivers make, the stories they tell, the routines they establish, and the ways they respond to difficulty. Naming and becoming intentional about family culture shifts it from something that happens to a family to something a family builds together."
+      },
+      {
+        "heading": "Family Narratives and the 'Do You Know?' Effect",
+        "body": "Research by Marshall Duke and Robyn Fivush found that children who know more about their family history -- stories of how family members overcame difficulty, where the family came from, what the family has been through -- have stronger identity, higher self-esteem, and better mental health outcomes. This 'Do You Know?' effect underscores the importance of deliberately sharing family stories, including difficult ones, in age-appropriate ways. Families that have a coherent, honest narrative -- including hardship alongside strength -- give children a sense of belonging to something larger than themselves."
+      },
+      {
+        "heading": "Rituals and Routines as Anchors",
+        "body": "Family rituals -- recurring shared practices that have meaning beyond their practical function -- serve as anchors for identity and belonging. These might be as simple as a weekly family meal with no screens, a specific bedtime routine, seasonal traditions, or particular ways of marking celebrations and losses. Rituals are distinct from mere habits in that they carry emotional significance and communicate 'this is who we are.' Research links family rituals to lower rates of adolescent risk behaviour, stronger family cohesion, and better outcomes during times of transition or stress."
+      },
+      {
+        "heading": "Communication Patterns That Build or Undermine Connection",
+        "body": "Healthy family communication tends to be characterised by: a culture in which all family members' feelings are treated as valid (even when behaviour is not), a willingness to name and discuss difficult topics rather than maintaining silence around them, repair as a norm after conflict, and genuine curiosity about each family member's inner life. Communication patterns that undermine connection include: consistent minimisation or dismissal of children's feelings, punishing emotional expression, unspoken rules about what cannot be discussed, and sarcasm or contempt as regular relational modes. These patterns are rarely intentional -- they are often inherited from one's family of origin -- but they can be noticed and changed."
+      }
+    ],
+    "key_takeaways": [
+      "Every family has a culture; becoming intentional about it allows caregivers to shape it deliberately.",
+      "Children who know their family's story -- including hardship -- show stronger identity and mental health.",
+      "Family rituals anchor identity and belonging, and are linked to better outcomes through adolescence.",
+      "Healthy family communication validates feelings, names difficult topics, and normalises repair after conflict."
+    ],
+    "activity": {
+      "title": "Family Culture Audit",
+      "instructions": "Answer the following questions honestly: What are the three most important values in our family, explicitly or implicitly? What stories do our children know about our family history? What rituals do we have, and what do they communicate? What topics are off-limits to discuss? What do we want our children to say, in 20 years, about what it was like to grow up in our family? Use these answers to identify one area of family culture to develop more intentionally.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "What did research on the 'Do You Know?' effect find about family narratives?",
+        "options": [
+          "Children who know their family history show stronger identity and better mental health outcomes",
+          "Sharing family history is harmful to children",
+          "Only positive family stories should be shared",
+          "Family narratives have no impact on child wellbeing"
+        ],
+        "correct_answer_index": 0,
+        "explanation": "The 'Do You Know?' research found that children who know more of their family's story -- including hardship -- have stronger identity and better mental health."
+      },
+      {
+        "question": "How do family rituals differ from mere habits?",
+        "options": [
+          "Rituals are longer than habits",
+          "Habits always involve food; rituals do not",
+          "Rituals carry emotional significance and communicate identity and belonging, beyond their practical function",
+          "There is no meaningful difference"
+        ],
+        "correct_answer_index": 2,
+        "explanation": "Rituals are distinguished by their emotional significance and identity-communicating function -- they tell family members 'this is who we are,' beyond any practical purpose."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Fivush, R. & Duke, M. The 'Do You Know?' scale research (Emory University)",
+        "type": "academic_reference",
+        "note": "Background on family narrative research."
+      },
+      {
+        "title": "Family therapist / parenting coach",
+        "type": "professional_resource",
+        "note": "Can help families intentionally examine and reshape their communication patterns and culture."
+      }
+    ]
+  },
+  {
+    "week": 23,
+    "track": "F",
+    "title": "Understanding Substance Use Disorders in a Family Context",
+    "summary": "A non-stigmatising overview of substance use disorders, how they develop, and how they affect the whole family system.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Distinguish substance use, misuse, and substance use disorder using a continuum model.",
+      "Understand the biopsychosocial factors that contribute to substance use disorder development.",
+      "Describe how substance use disorders affect the whole family system.",
+      "Apply non-stigmatising language and framing to substance use."
+    ],
+    "content_sections": [
+      {
+        "heading": "Understanding the Continuum of Substance Use",
+        "body": "Substance use exists on a continuum from experimental or occasional use through regular use, misuse (use that begins to cause harm), and substance use disorder (SUD), in which use becomes compulsive and continues despite significant negative consequences. SUD is now recognised as a chronic, relapsing condition involving changes in brain structure and function, particularly in circuits governing reward, stress, and self-control, rather than a moral failing or character defect. This framing matters because it shapes how we respond: shame-based or punitive responses have poor outcomes, while compassion, treatment, and consistent support produce better ones."
+      },
+      {
+        "heading": "Biopsychosocial Factors",
+        "body": "No single factor determines who develops a substance use disorder. Genetic predisposition (family history of SUD significantly increases risk), early trauma and adversity (including ACEs), untreated mental health conditions, peer and social environment, and the specific substance involved (some are far more rapidly addictive than others) all interact. Critically, early childhood trauma and mental illness are among the strongest risk factors, explaining the frequent co-occurrence of SUD with PTSD, depression, and anxiety -- sometimes described as dual diagnosis or co-occurring disorders. Effective treatment typically needs to address both."
+      },
+      {
+        "heading": "Impact on the Family System",
+        "body": "Substance use disorders affect the whole family, not just the individual using. Caregiving capacity is often compromised during active use: emotional availability, predictability, and physical presence may all be affected. Financial strain, domestic conflict, involvement of child protection services, legal issues, and social isolation frequently accompany significant SUD in a family. Children in these families often experience inconsistent care, heightened anxiety, and take on inappropriate caretaking roles for parents or younger siblings -- a pattern sometimes called 'parentification.' Family members also develop their own adaptive (and sometimes maladaptive) patterns in response to SUD, including enabling, hypervigilance, or emotional shutdown."
+      },
+      {
+        "heading": "Non-Stigmatising Language and Framing",
+        "body": "Language shapes perception and outcomes. Person-first, non-stigmatising language -- 'a person with a substance use disorder' rather than 'an addict' or 'a junkie' -- is associated with less punitive and more treatment-oriented attitudes, including among helping professionals. Research shows that stigmatising language and attitudes are genuine barriers to help-seeking for people with SUD. For professionals, this means examining their own language and implicit attitudes; for families, it can mean reframing a loved one's condition as an illness that needs treatment rather than a choice that warrants punishment -- without removing appropriate accountability."
+      }
+    ],
+    "key_takeaways": [
+      "Substance use exists on a continuum; SUD is a chronic, relapsing brain condition, not a moral failing.",
+      "Genetic predisposition, trauma, and co-occurring mental illness are among the strongest risk factors for SUD.",
+      "SUD affects the whole family system, not just the individual -- parentification and hypervigilance are common child responses.",
+      "Non-stigmatising language is not just respectful -- it is associated with better treatment engagement and outcomes."
+    ],
+    "activity": {
+      "title": "Language Audit Exercise",
+      "instructions": "Write down five words or phrases you have heard (or used yourself) to describe people with substance use disorders. For each, write a non-stigmatising alternative. Reflect: how might the language we use shape the way we and others respond to someone with a SUD? This is not about political correctness -- it is about which language produces better outcomes.",
+      "estimated_time_minutes": 15
+    },
+    "knowledge_check": [
+      {
+        "question": "How is substance use disorder currently understood in evidence-based frameworks?",
+        "options": [
+          "As a moral failing requiring punishment",
+          "As a chronic, relapsing condition involving brain changes, not a character defect",
+          "As a choice that anyone can simply stop making",
+          "As a condition that only affects adults"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "SUD is recognised as a chronic, relapsing condition with neurobiological underpinnings, not a moral failing -- a framing that produces better treatment engagement and outcomes."
+      },
+      {
+        "question": "What is 'parentification' in the context of a family with parental SUD?",
+        "options": [
+          "Teaching children to parent their own future children",
+          "A child taking on inappropriate caretaking responsibilities for a parent or siblings",
+          "A parenting approach used in recovery",
+          "The process of a parent regaining custody"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Parentification refers to children taking on age-inappropriate caretaking roles -- for a parent, siblings, or the household -- in response to a parent's incapacity."
+      }
+    ],
+    "resources": [
+      {
+        "title": "SAMHSA National Helpline (US)",
+        "type": "crisis_resource",
+        "note": "Free, confidential, 24/7 treatment referral and information: 1-800-662-4357."
+      },
+      {
+        "title": "Al-Anon / Alateen",
+        "type": "community_resource",
+        "note": "Support groups for family members and young people affected by a loved one's drinking."
+      }
+    ]
+  },
+  {
+    "week": 24,
+    "track": "F",
+    "title": "How Parental Substance Use Affects Children",
+    "summary": "The specific impacts of parental substance use on children's development, emotional wellbeing, and safety, and what protective factors help.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Describe the specific developmental and emotional risks for children with a parent with SUD.",
+      "Understand the role of prenatal substance exposure in child development.",
+      "Identify protective factors that buffer children from the worst outcomes.",
+      "Recognize the dual obligation to support the parent AND safeguard the child."
+    ],
+    "content_sections": [
+      {
+        "heading": "Developmental and Emotional Risks for Children",
+        "body": "Children of parents with SUD face elevated risks across multiple domains: anxiety and depression, PTSD (particularly where the home environment involves violence or unpredictability), conduct problems, educational difficulties, social isolation, and -- significantly -- a higher risk of developing SUD themselves in adolescence and adulthood (through a combination of genetic and environmental pathways). These risks are real but not inevitable; the presence of protective factors substantially changes outcomes. It is important for professionals to hold both realities -- the elevated risk is significant enough to warrant active support, and the outcomes are not predetermined."
+      },
+      {
+        "heading": "Prenatal Substance Exposure",
+        "body": "Substance use during pregnancy can affect fetal development through several mechanisms depending on the substance, amount, timing, and other factors. Fetal Alcohol Spectrum Disorder (FASD) is the best-documented consequence of prenatal alcohol exposure and encompasses a range of neurodevelopmental effects including cognitive, behavioural, and physical differences. Prenatal exposure to opioids can result in Neonatal Opioid Withdrawal Syndrome (NOWS), requiring specialised medical care after birth. Other substance exposures carry their own risk profiles. Professionals working with pregnant people with SUD should use a trauma-informed, non-punitive approach to engagement, as punitive approaches consistently reduce prenatal care-seeking."
+      },
+      {
+        "heading": "Protective Factors",
+        "body": "Several factors buffer children from the worst outcomes of parental SUD: the affected parent engaging in and maintaining recovery; the presence of another stable, sober caregiver; open, age-appropriate communication with the child about what is happening; access to professional support (including therapy for children); and the child having at least one other trusted adult outside the immediate family. Recovery in a parent is one of the most powerful modifiers of child outcomes, which is itself a powerful argument for prioritising parental treatment as a child welfare intervention."
+      },
+      {
+        "heading": "Supporting the Parent AND Safeguarding the Child",
+        "body": "Professionals working with families affected by SUD navigate a genuine dual obligation: supporting the parent toward recovery while ensuring the child's immediate safety and developmental needs are met. These goals are usually complementary, not competing -- recovery supports parenting; parental competence supports recovery motivation. However, when a child's immediate safety is compromised by active use, prioritising child safety is not a choice between helping the parent or the child; it is a necessary condition for genuine family recovery. Whole-family treatment models that treat the parent's SUD, the child's needs, and the parent-child relationship simultaneously produce the best outcomes."
+      }
+    ],
+    "key_takeaways": [
+      "Children of parents with SUD face elevated but not predetermined risks across development, mental health, and their own later SUD risk.",
+      "Prenatal substance exposure -- including FASD and NOWS -- requires specialist awareness and trauma-informed care.",
+      "Parental recovery, stable secondary caregivers, and professional support are the most powerful protective factors.",
+      "Supporting parental treatment and safeguarding children are complementary, not competing, goals."
+    ],
+    "activity": {
+      "title": "Child Impact Assessment Reflection",
+      "instructions": "For a child you know or a hypothetical case where a parent has SUD: list 3 ways the child's development or emotional wellbeing may be affected. Then list 3 current or potential protective factors in their life. For each protective factor, note what would strengthen or sustain it. This exercise reinforces holding both risk and resilience in view simultaneously.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "Why is parental recovery in SUD described as 'a child welfare intervention'?",
+        "options": [
+          "Because recovery eliminates all risks to the child immediately",
+          "Because parental recovery is one of the most powerful modifiers of child outcomes in SUD-affected families",
+          "Because child welfare workers provide SUD treatment",
+          "Because recovery is only relevant for the parent, not the child"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Parental recovery so strongly improves outcomes for children that supporting it is itself a form of child welfare intervention."
+      },
+      {
+        "question": "What is FASD?",
+        "options": [
+          "A support program for families affected by SUD",
+          "A range of neurodevelopmental effects resulting from prenatal alcohol exposure",
+          "A type of substance use disorder in adolescents",
+          "A crisis intervention approach"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Fetal Alcohol Spectrum Disorder (FASD) encompasses the range of cognitive, behavioural, and physical effects that can result from prenatal alcohol exposure."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Children of Addicts resources",
+        "type": "community_resource",
+        "note": "Various organisations offer support specifically for children with a parent with SUD."
+      },
+      {
+        "title": "FASD specialist services",
+        "type": "professional_resource",
+        "note": "Seek local services for assessment and support of children with prenatal substance exposure."
+      }
+    ]
+  },
+  {
+    "week": 25,
+    "track": "F",
+    "title": "Supporting Recovery as a Parent",
+    "summary": "How parenting and recovery interact, the unique challenges of parenting in recovery, and practical approaches for families navigating this.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand the unique challenges of early and ongoing recovery while parenting.",
+      "Describe how recovery programs can be family-inclusive.",
+      "Recognize the emotional impact on children of a parent's recovery journey.",
+      "Apply practical strategies for maintaining recovery while meeting parenting demands."
+    ],
+    "content_sections": [
+      {
+        "heading": "The Intersection of Recovery and Parenting",
+        "body": "Recovery from SUD and active parenting present simultaneous, sometimes competing demands. Recovery requires attention, support, time in treatment, and often significant lifestyle restructuring at exactly the time parenting demands are constant. Parenting stressors -- sleep deprivation, financial strain, relationship conflict -- can also be relapse triggers, making the intersection particularly challenging. At the same time, children and the desire to parent well are among the most powerful recovery motivators identified by parents in recovery. This dual reality means recovery support services that incorporate parenting support and vice versa produce better outcomes than those addressing only one dimension."
+      },
+      {
+        "heading": "Family-Inclusive Recovery Approaches",
+        "body": "Traditional addiction treatment has often separated the individual with SUD from their family context; increasingly, family-inclusive models are recognised as more effective. These include: residential treatment programmes that allow children to remain with a recovering parent in a safe therapeutic environment, parenting skills programmes integrated within recovery treatment, couple and family therapy addressing the relational impacts of SUD and recovery, and support groups specifically for parents in recovery. For professionals, advocating for and connecting families to these integrated models, where available, is a meaningful practice contribution."
+      },
+      {
+        "heading": "Talking to Children About a Parent's Recovery",
+        "body": "Many of the same principles from Week 12 (communicating with children about a parent's mental health condition) apply here: age-appropriate honesty, addressing self-blame directly, and framing recovery as something the parent is actively working on. Children benefit from knowing that: the substance use was not their fault, the parent is getting help, things may look or feel different during recovery (and that is not necessarily bad), and who else is available to care for them. For older children and adolescents, honest conversations about SUD as a health condition -- including genetic risk factors, without being alarmist -- can be genuinely protective."
+      },
+      {
+        "heading": "Sustaining Recovery Through Parenting Demands",
+        "body": "Practical strategies for sustaining recovery while parenting include: building a recovery-aware support network (people who know about the recovery and can provide relief when triggers arise), identifying high-risk situations in advance (particular times, events, or emotional states that increase risk), maintaining recovery support (meetings, therapy, sponsor contact) as a non-negotiable even when parenting demands are high, and having a plan for childcare during high-risk moments. For professionals, recovery maintenance is best supported by practical problem-solving alongside emotional support, rather than treating relapse with shame -- relapse is a common part of the recovery process, not a sign of failure."
+      }
+    ],
+    "key_takeaways": [
+      "Recovery and active parenting present both competing demands and powerful mutual reinforcement.",
+      "Family-inclusive recovery models produce better outcomes than those addressing only the individual.",
+      "Age-appropriate, honest communication with children about a parent's recovery builds safety and reduces self-blame.",
+      "Recovery maintenance during parenting requires practical planning, not just willpower."
+    ],
+    "activity": {
+      "title": "Recovery and Parenting Integration Plan",
+      "instructions": "Draft a brief plan (half page) for how a parent in recovery might integrate recovery support activities (meetings, therapy, sponsor contact) into a typical week with children. Identify 2-3 likely challenges and a practical strategy for each. This can be a personal plan or a professional template.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "Why are children described as both a challenge and a motivator for parental recovery?",
+        "options": [
+          "Children are always only a challenge for recovery",
+          "Parenting stressors can trigger relapse, while children are among the strongest motivators to maintain recovery",
+          "Recovery is unaffected by having children",
+          "Children always make recovery easier with no added challenge"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Parenting is genuinely challenging during recovery (stressors, triggers) AND one of the most powerful motivators for sustained recovery -- both realities must be held."
+      },
+      {
+        "question": "What does 'family-inclusive recovery' mean?",
+        "options": [
+          "All family members receive SUD treatment",
+          "Recovery treatment that incorporates the family context, including parenting support and family therapy",
+          "Children attending AA meetings",
+          "Recovery that excludes family involvement"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Family-inclusive recovery models integrate parenting support, family therapy, and family context into SUD treatment rather than treating the individual in isolation."
+      }
+    ],
+    "resources": [
+      {
+        "title": "SAMHSA National Helpline (US): 1-800-662-4357",
+        "type": "crisis_resource",
+        "note": "Free, 24/7 treatment referral and information."
+      },
+      {
+        "title": "Narcotics Anonymous / Alcoholics Anonymous",
+        "type": "community_resource",
+        "note": "Peer-based recovery support with wide geographic availability."
+      }
+    ]
+  },
+  {
+    "week": 26,
+    "track": "F",
+    "title": "Family Roles in Substance Use Systems and Breaking the Cycle",
+    "summary": "How families adapt to SUD through predictable roles, patterns of enabling, and intergenerational transmission -- and how to break the cycle.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Identify the classic family roles that emerge in response to a member's SUD.",
+      "Understand the difference between enabling and supporting recovery.",
+      "Describe how SUD can be transmitted across generations through biological and environmental pathways.",
+      "Identify practical steps for interrupting intergenerational cycles."
+    ],
+    "content_sections": [
+      {
+        "heading": "Family Roles in SUD Systems",
+        "body": "In families affected by SUD, family members often unconsciously adopt predictable roles in response to the instability: the Hero (the high-achieving child who tries to make the family look functional), the Scapegoat (who draws attention away from the family's primary problem through their own behaviour), the Lost Child (who quietly withdraws to avoid adding to family stress), and the Mascot (who uses humour to defuse tension). These roles, first described by Sharon Wegscheider-Cruse and expanded in family systems therapy, serve protective functions in the short term but can limit individual development and maintain the family system's dysfunction. Recognising them -- in clients or in oneself -- is a first step toward change."
+      },
+      {
+        "heading": "Enabling vs. Supporting Recovery",
+        "body": "Enabling refers to behaviours by family members that, while well-intentioned, reduce the consequences of SUD in ways that remove motivation for change -- covering up the person's absence, providing money used for substances, minimising the severity of the problem to outsiders. Supporting recovery, by contrast, involves encouraging and facilitating treatment access, maintaining clear and consistent boundaries, and expressing care for the person while not shielding them from the natural consequences of use. This distinction is genuinely difficult to navigate in close relationships -- love and the desire to help can easily slip into enabling -- and is a common focus in family therapy and support groups like Al-Anon."
+      },
+      {
+        "heading": "Intergenerational Transmission of SUD",
+        "body": "SUD runs in families through both genetic (heritability estimates for SUD are significant, ranging roughly 40-60% for some substances) and environmental pathways (exposure to SUD, family conflict, trauma, and normalisation of substance use as coping). This means a child who grows up in a family with parental SUD carries elevated risk -- not certainty, but elevated risk -- particularly in adolescence when social substance use pressures are also highest. Understanding this is an argument for early, proactive, age-appropriate conversation with children about SUD, family risk, and healthy coping -- framed as empowering knowledge, not a prediction of doom."
+      },
+      {
+        "heading": "Breaking the Cycle",
+        "body": "Intergenerational cycles can be interrupted. Key pathways include: the affected parent achieving and maintaining recovery; children receiving therapy or support that processes their experiences (rather than being asked to simply cope or not talk about it); family members engaging in Al-Anon, Alateen, or equivalent peer support; and -- for adult children of parents with SUD -- intentional work (often in therapy) to understand the adaptive patterns adopted in childhood and whether they still serve a useful purpose. Recovery at one generation demonstrably reduces risk at the next, which is perhaps the most compelling long-term argument for investment in parental SUD treatment."
+      }
+    ],
+    "key_takeaways": [
+      "Family members often adopt predictable roles (Hero, Scapegoat, Lost Child, Mascot) in response to SUD that protect in the short term but limit development.",
+      "Enabling reduces motivation for change; supporting recovery maintains care while sustaining clear limits.",
+      "SUD is transmitted intergenerationally through both genetic and environmental pathways -- risk is elevated but not certain.",
+      "Parental recovery, children's therapy, and family peer support are all pathways to interrupting intergenerational cycles."
+    ],
+    "activity": {
+      "title": "Family Role Identification",
+      "instructions": "Reflecting on a family you know (your own or a professional case), identify which of the family roles (Hero, Scapegoat, Lost Child, Mascot) each family member appears to occupy in response to the SUD. Reflect: how is each role serving that person? How might it be limiting them? What might change if the SUD were addressed?",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What is the key distinction between enabling and supporting recovery?",
+        "options": [
+          "Enabling involves providing emotional support; recovery support is purely practical",
+          "Enabling reduces consequences in ways that remove motivation for change; supporting recovery maintains boundaries and facilitates treatment",
+          "They are the same thing",
+          "Supporting recovery always involves financial support"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Enabling reduces the natural consequences of SUD, reducing motivation to seek help. Supporting recovery involves expressing care while maintaining limits and facilitating treatment."
+      },
+      {
+        "question": "How is the intergenerational risk of SUD best framed for children in families with parental SUD?",
+        "options": [
+          "As an inevitable destiny that cannot be changed",
+          "As something to hide from children entirely",
+          "As an elevated but not certain risk, best addressed through age-appropriate, empowering conversation",
+          "As not worth discussing until adulthood"
+        ],
+        "correct_answer_index": 2,
+        "explanation": "Elevated risk is real but not destiny, and early, honest conversation with children about family risk and healthy coping is itself a protective factor."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Al-Anon / Alateen",
+        "type": "community_resource",
+        "note": "Peer support for family members of people with SUD, including young people."
+      },
+      {
+        "title": "Adult Children of Alcoholics (ACoA) program",
+        "type": "community_resource",
+        "note": "Support for adults who grew up in families affected by SUD."
+      }
+    ]
+  },
+  {
+    "week": 27,
+    "track": "G",
+    "title": "Understanding Domestic Violence: Forms, Dynamics, and Common Misconceptions",
+    "summary": "A comprehensive overview of domestic violence including its forms, the dynamics of power and control, and why victims often stay.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Define domestic violence and describe its multiple forms beyond physical violence.",
+      "Understand the dynamics of power and control that characterise domestic violence.",
+      "Recognise common misconceptions about domestic violence and why they are harmful.",
+      "Understand the complex reasons why people remain in abusive relationships."
+    ],
+    "content_sections": [
+      {
+        "heading": "What Is Domestic Violence?",
+        "body": "Domestic violence (also referred to as intimate partner violence, family violence, or domestic abuse) refers to a pattern of behaviour used by one person to establish and maintain power and control over another in an intimate or family relationship. It extends well beyond physical violence to include: emotional and psychological abuse (humiliation, threats, gaslighting, isolation), financial abuse (controlling money and economic resources), sexual coercion, digital and technological abuse (monitoring, harassment online), spiritual abuse, and stalking. The Duluth Power and Control Wheel, developed from survivor testimony, remains a widely used framework for understanding the full range of abusive tactics. Any one of these forms can be as damaging as physical violence, and they frequently co-occur."
+      },
+      {
+        "heading": "Dynamics of Power and Control",
+        "body": "Domestic violence is not about conflict or anger management failure; it is about one person's systematic use of a range of tactics to establish dominance over another. This distinguishes it from relationship conflict, in which both parties have roughly equal power to hurt and be hurt. Coercive control -- a term developed by Evan Stark -- describes the ongoing pattern of domination (isolation, monitoring, micromanagement of daily life, psychological manipulation) that characterises many abusive relationships even when physical violence is intermittent or absent. Recognising coercive control is important because it is often the feature most damaging to victims' sense of identity and autonomy."
+      },
+      {
+        "heading": "Common Misconceptions and Why They Are Harmful",
+        "body": "Several misconceptions about DV are widespread and actively harmful: that victims 'choose to stay' (ignoring the complexity of leaving, which is often the most dangerous time), that DV is primarily a problem of lower income or particular cultural groups (it occurs across all demographics), that physical violence is always present (coercive control without physical violence is common and serious), and that perpetrators are always visibly angry or monstrous (many are charming in public). Each misconception reduces victim help-seeking, increases blame, and impedes professional identification of abuse. Accurate understanding is a prerequisite for effective response."
+      },
+      {
+        "heading": "Why People Stay in Abusive Relationships",
+        "body": "The question 'why don't they just leave?' reflects a profound misunderstanding of abusive relationship dynamics. People remain in abusive relationships for many complex reasons: genuine love for the person (not just the abuse), fear of escalated violence during or after leaving (leaving is statistically the most dangerous time), financial dependence, immigration status tied to the abusive partner, fear of losing children, hope that the person will change (often reinforced by periods of apparent remorse -- the 'honeymoon cycle'), social and family pressure, and lack of access to safe alternatives. A trauma-informed response focuses on safety planning and respecting the victim's timeline, not on judging their choices."
+      }
+    ],
+    "key_takeaways": [
+      "Domestic violence includes emotional, financial, sexual, digital, and spiritual abuse, not only physical violence.",
+      "DV is about power and control, not conflict or anger management failure.",
+      "Common misconceptions (victim choice, cultural limitation, constant physical violence) reduce help-seeking and professional identification.",
+      "Leaving is often the most dangerous time; a trauma-informed approach respects the victim's timeline while supporting safety planning."
+    ],
+    "activity": {
+      "title": "Misconception Challenge",
+      "instructions": "List three common things you have heard people say about domestic violence that reflect misconceptions (e.g., 'she must like it if she stays'). For each, write a factually accurate and compassionate reframe grounded in this module. Consider: how would using the accurate framing change the way you or others respond to a person disclosing abuse?",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What distinguishes domestic violence from ordinary relationship conflict?",
+        "options": [
+          "Domestic violence involves only physical harm",
+          "In domestic violence, one party uses systematic tactics to establish dominance; in conflict, both parties have roughly equal power",
+          "Domestic violence always involves shouting",
+          "Relationship conflict is always more severe than domestic violence"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "DV is characterised by one party's systematic use of power and control, distinguishing it from mutual conflict where both parties have roughly equal power."
+      },
+      {
+        "question": "Which of the following is a key reason why leaving an abusive relationship is not simply a matter of choice?",
+        "options": [
+          "Victims always have access to safe alternatives",
+          "Leaving is statistically one of the most dangerous times, often triggering escalated violence",
+          "Victims never fear their partner",
+          "Financial independence is always available to victims"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Leaving is frequently the most dangerous period in an abusive relationship, as perpetrators may escalate violence in response to a partner leaving -- a fact that makes 'just leave' dangerously oversimplified advice."
+      }
+    ],
+    "resources": [
+      {
+        "title": "National DV Hotline (US): 1-800-799-7233",
+        "type": "crisis_resource",
+        "note": "24/7 support, safety planning, and local resource referrals for people experiencing DV."
+      },
+      {
+        "title": "1800RESPECT (Australia): 1800 737 732",
+        "type": "crisis_resource",
+        "note": "24/7 support line for Australians experiencing family violence."
+      },
+      {
+        "title": "Duluth Power and Control Wheel",
+        "type": "educational_resource",
+        "note": "Widely used framework for understanding the full range of abusive tactics."
+      }
+    ]
+  },
+  {
+    "week": 28,
+    "track": "G",
+    "title": "How Domestic Violence Affects Children",
+    "summary": "The impact of domestic violence on children's development, mental health, and safety, including children as direct and indirect victims.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand how children are affected by domestic violence, both directly and indirectly.",
+      "Describe the developmental impacts of witnessing DV across age groups.",
+      "Recognise children as independent victims of domestic violence in legal and therapeutic frameworks.",
+      "Identify warning signs that a child may be living with domestic violence."
+    ],
+    "content_sections": [
+      {
+        "heading": "Children as Direct and Indirect Victims",
+        "body": "Children in households where domestic violence occurs are affected in multiple ways. Indirectly, they are exposed to the emotional climate of fear, unpredictability, and coercive control that characterises the home. They witness violence -- auditory, visual, or through its aftermath -- and absorb its emotional impact. Directly, children are often themselves victims: physical violence frequently extends to children, and abusive tactics (threats involving the children, using children to monitor or control the other parent) frequently include children as instruments of abuse. In legal and therapeutic frameworks, witnessing domestic violence is itself now widely recognised as a form of child abuse, not simply 'collateral damage.'"
+      },
+      {
+        "heading": "Developmental Impacts Across Age Groups",
+        "body": "Infants and toddlers exposed to DV show elevated stress reactivity, sleep disturbances, and developmental regression. Preschoolers may show nightmares, somatic complaints, regressed behaviour, and difficulties separating from caregivers. School-age children often show academic difficulties, concentration problems, hypervigilance, and withdrawal or aggression. Adolescents may engage in risk-taking behaviour, develop depression or PTSD, and -- particularly concerning -- may begin to regard the violence they have witnessed as normal in intimate relationships, increasing their own risk as both victims and perpetrators of future relationship violence. Early intervention meaningfully changes these trajectories."
+      },
+      {
+        "heading": "Warning Signs in Children",
+        "body": "Professionals should be alert to patterns that may indicate a child is living with domestic violence: persistent anxiety or hypervigilance, regression in previously achieved developmental skills, sleep disturbances, unexplained physical symptoms, extreme watchfulness around adult relationships, reluctance to go home, drawing or play themes involving violence, or specific disclosures. No single sign is diagnostic, but patterns warrant gentle, non-leading exploration and, where indicated, appropriate reporting to child protection services per mandatory reporting requirements."
+      },
+      {
+        "heading": "The Non-Abusing Parent's Protective Role",
+        "body": "Research consistently shows that the quality of the child's relationship with the non-abusing parent is one of the most powerful mediators of the child's outcomes. A non-abusing parent who is emotionally available, believes and validates the child's experiences, and takes protective action significantly buffers the child from the worst outcomes of DV exposure. This is why supporting the non-abusing parent's safety, mental health, and protective capacity is itself a child-focused intervention. Blaming the non-abusing parent for 'allowing' the child to be exposed is counterproductive and fails to centre accountability appropriately on the perpetrator."
+      }
+    ],
+    "key_takeaways": [
+      "Children experience DV both indirectly (emotional climate, witnessing) and directly (as targets themselves and as instruments of control).",
+      "DV exposure affects development across all age groups, with adolescents at particular risk of normalising relationship violence.",
+      "Patterns of hypervigilance, regression, somatic complaints, and disclosures are warning signs warranting exploration.",
+      "Supporting the non-abusing parent's safety and mental health is itself a child-focused intervention."
+    ],
+    "activity": {
+      "title": "Warning Signs Checklist",
+      "instructions": "Using the warning signs described in this module, create a structured observation checklist (8-10 items) that a professional might use when working with a child and concerned about possible DV exposure. For each item, include the observable behaviour and a brief note on what a professional might do if that item is present.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "Why is witnessing domestic violence widely recognised as a form of child abuse in itself?",
+        "options": [
+          "Because children are never physically harmed in DV households",
+          "Because the emotional impact of living with fear, unpredictability, and control constitutes harm to the child regardless of direct physical impact",
+          "Because legal frameworks have always categorised it this way",
+          "Because witnessing violence has no impact on children"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "The emotional, developmental, and psychological harm of living in a DV household constitutes harm to children independent of whether they are directly physically assaulted."
+      },
+      {
+        "question": "What is one of the most powerful factors in moderating child outcomes following DV exposure?",
+        "options": [
+          "Removing all memory of the experience",
+          "The quality of the child's relationship with the non-abusing parent",
+          "Ensuring the child attends a new school",
+          "The child being unaware that the violence occurred"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "A warm, available, believing non-abusing parent is one of the most significant buffers for children exposed to DV."
+      }
+    ],
+    "resources": [
+      {
+        "title": "National DV Hotline (US): 1-800-799-7233",
+        "type": "crisis_resource",
+        "note": "24/7 support and referrals."
+      },
+      {
+        "title": "Refuge (UK): 0808 2000 247",
+        "type": "crisis_resource",
+        "note": "National DV helpline for the UK."
+      },
+      {
+        "title": "Local mandatory reporting guidelines",
+        "type": "professional_resource",
+        "note": "Professionals must be familiar with their jurisdiction's mandatory reporting requirements for child abuse including DV exposure."
+      }
+    ]
+  },
+  {
+    "week": 29,
+    "track": "G",
+    "title": "Safety Planning for Families Affected by Domestic Violence",
+    "summary": "Practical, trauma-informed safety planning approaches for survivors, children, and professionals working with DV-affected families.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand the principles of trauma-informed safety planning.",
+      "Describe the key components of an effective safety plan for a DV survivor with children.",
+      "Understand the role of technology in both DV perpetration and safety planning.",
+      "Know when and how to make appropriate professional referrals and notifications."
+    ],
+    "content_sections": [
+      {
+        "heading": "Principles of Trauma-Informed Safety Planning",
+        "body": "Effective safety planning with DV survivors is collaborative, not prescriptive. A trauma-informed approach starts from respecting the survivor's knowledge of their own situation and risk level, their autonomy in decision-making, and their timeline -- while providing accurate information, options, and support. Telling a survivor what to do (or what not to do) without understanding their specific context frequently backfires. Safety planning is an ongoing process, not a one-time checklist; it should be revisited as circumstances change, including if the survivor leaves or plans to leave, as this is often the period of highest risk."
+      },
+      {
+        "heading": "Key Components of a Safety Plan With Children",
+        "body": "A safety plan for a parent with children typically includes: identifying a safe person and place to go in an emergency (ideally without the need to make decisions under acute stress), packing an emergency bag (important documents, medication, children's essential items, money, phone charger), having a cover story if leaving is not yet safe, establishing a safety word or signal with older children, informing a trusted person who can assist, and knowing local DV service contacts in advance. For children, age-appropriate information about what to do if an emergency occurs (e.g., 'go to neighbour X, call this number') reduces their paralysis in crisis without asking them to be responsible for adult safety."
+      },
+      {
+        "heading": "Technology, Safety, and Digital Abuse",
+        "body": "Technology is increasingly used both as a tool of abuse (tracking via phones or shared apps, monitoring online activity, sharing intimate images without consent) and as a critical safety tool (DV helplines via text, safety apps, documentation of abuse via secure means). Professionals should be aware of the digital safety dimension: a survivor's phone may be monitored, shared accounts may be visible to the perpetrator, and online communications should be treated carefully. Digital Safety resources from DV organisations include guidance on private browsing, removing tracking apps, creating separate accounts, and using safety apps designed for DV situations."
+      },
+      {
+        "heading": "Professional Referrals and Notifications",
+        "body": "Professionals across all disciplines -- healthcare, education, social work, mental health -- play a role in DV identification and response. This includes knowing mandatory reporting requirements in their jurisdiction (which vary by profession and location), making warm referrals to specialist DV services rather than simply providing a phone number, understanding that a survivor may not be ready to take action and that maintaining the relationship while respecting their autonomy is itself protective, and -- critically -- risk assessment, which may identify situations of high lethality risk where more urgent protective action is warranted. Specialist DV services can provide consultation to professionals uncertain about how to respond."
+      }
+    ],
+    "key_takeaways": [
+      "Effective safety planning is collaborative, ongoing, and respects the survivor's knowledge and autonomy.",
+      "Plans with children include age-appropriate information, emergency contacts, prepared bags, and digital safety.",
+      "Technology is both a tool of abuse and a safety resource -- digital safety awareness is essential.",
+      "Professional response includes warm referrals, risk assessment, mandatory reporting awareness, and maintaining relationship even when the survivor is not yet ready to act."
+    ],
+    "activity": {
+      "title": "Safety Plan Template",
+      "instructions": "Using the components described in this module, draft a safety plan template a professional could use collaboratively with a DV survivor who has children. Include sections for: emergency contacts, safe location, document preparation, children's roles (age-appropriate), digital safety, and a review date. Note which elements the professional fills in collaboratively and which are for the survivor to complete.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "Why is collaborative safety planning more effective than prescribing steps to a survivor?",
+        "options": [
+          "Survivors don't care about their own safety",
+          "The survivor has the most accurate knowledge of their specific risk level and context, and respecting their autonomy is essential to an effective and safe plan",
+          "Professionals always know better than survivors",
+          "Prescriptive plans are always more thorough"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "The survivor's knowledge of their specific situation and their autonomous decision-making are the most reliable guides to what is safe in their circumstances."
+      },
+      {
+        "question": "Why should professionals be aware of technology's role in DV situations?",
+        "options": [
+          "Technology plays no role in modern DV situations",
+          "Technology is used for both abuse (tracking, monitoring) and safety (helplines, apps), and a survivor's communications may be monitored by the perpetrator",
+          "Technology safety is only relevant to teenagers",
+          "Professionals should always avoid discussing technology with clients"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Technology is central to both contemporary DV abuse patterns and to safety planning, and professionals should be aware of both dimensions."
+      }
+    ],
+    "resources": [
+      {
+        "title": "National DV Hotline (US): 1-800-799-7233 / text START to 88788",
+        "type": "crisis_resource",
+        "note": "Available by phone, text, and online chat."
+      },
+      {
+        "title": "Safety Net (NNEDV) - Technology safety resources",
+        "type": "educational_resource",
+        "note": "Detailed digital safety guidance for DV situations."
+      },
+      {
+        "title": "Local specialist DV services",
+        "type": "professional_resource",
+        "note": "Specialist services can consult with professionals on complex or high-risk cases."
+      }
+    ]
+  },
+  {
+    "week": 30,
+    "track": "G",
+    "title": "Supporting Survivors and Children After Domestic Violence",
+    "summary": "Trauma-informed approaches to supporting DV survivors and their children during and after leaving, including recovery and rebuilding.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand the ongoing trauma recovery process for DV survivors and their children.",
+      "Describe trauma-informed therapeutic approaches for DV-affected families.",
+      "Recognize the particular challenges of post-separation coercive control.",
+      "Identify key components of rebuilding safety, identity, and connection after DV."
+    ],
+    "content_sections": [
+      {
+        "heading": "Recovery Is a Process, Not an Event",
+        "body": "Leaving a DV relationship is not the end of the experience -- for many survivors and their children, the aftermath involves an extended recovery process. Safety concerns frequently continue after separation (post-separation violence and stalking are common); the psychological impacts of coercive control (eroded identity, hypervigilance, difficulty trusting one's own perceptions after gaslighting) take time and support to address; and the practical challenges of rebuilding housing, finances, and social connections are significant. Understanding recovery as a non-linear process -- with setbacks, including returns to the relationship, being common -- reduces victim-blaming and supports sustained engagement with services."
+      },
+      {
+        "heading": "Trauma-Informed Approaches to Support",
+        "body": "Therapeutic approaches with evidence in DV contexts include: trauma-focused cognitive behavioural therapy (TF-CBT) for both survivors and children, EMDR (Eye Movement Desensitisation and Reprocessing) for processing traumatic memories, Seeking Safety (a model addressing co-occurring PTSD and SUD), and group-based survivor support programs that provide peer connection and reduce isolation. For children specifically, trauma-informed therapy that includes the non-abusing parent (who can be coached to support the child's processing) produces better outcomes than child-only therapy. DV shelter programs increasingly provide on-site therapeutic support for children."
+      },
+      {
+        "heading": "Post-Separation Coercive Control",
+        "body": "For survivors with children, leaving a relationship does not always end the coercive control. Post-separation, perpetrators often weaponise the family law system (using custody proceedings as a continued form of control), use children as conduits for information or messages, and may undermine the survivor's parenting in ways that serve coercive, not child-focused, purposes. Professionals in family law, child welfare, and mental health contexts benefit from understanding post-separation coercive control in order to avoid inadvertently amplifying it -- for example, by requiring face-to-face contact between parties without considering safety implications."
+      },
+      {
+        "heading": "Rebuilding After DV: Identity, Connection, and Safety",
+        "body": "Recovery from DV involves not just safety from violence but rebuilding a sense of self often significantly eroded by coercive control. Therapeutic goals often include: rebuilding trust in one's own perceptions and decision-making, developing a social network beyond the isolation imposed by the abusive relationship, finding connection with peer survivors who normalise the experience, and -- for parents -- rebuilding confidence in their parenting capacity. Recovery is often described by survivors as reclaiming parts of themselves that were systematically suppressed during the relationship, a process that takes time and is supported by consistent, non-judgmental therapeutic and community relationships."
+      }
+    ],
+    "key_takeaways": [
+      "Recovery from DV is a non-linear process extending well beyond leaving, including ongoing safety concerns and psychological rebuilding.",
+      "Trauma-informed therapy (TF-CBT, EMDR, Seeking Safety) has evidence in DV contexts for both survivors and children.",
+      "Post-separation coercive control -- using children and legal systems as instruments -- requires professional awareness to avoid amplifying it.",
+      "Rebuilding identity, self-trust, social connection, and parenting confidence are central to long-term DV recovery."
+    ],
+    "activity": {
+      "title": "Recovery Pathway Mapping",
+      "instructions": "Identify a DV-affected family (real or hypothetical). Map their recovery pathway across three timeframes: immediate (first 0-3 months after leaving, safety and stabilisation), medium term (3-12 months, therapeutic processing and practical rebuilding), and longer term (1+ years, identity, connection, and flourishing). For each timeframe, note 2-3 types of support that would most benefit this family and a realistic barrier to accessing each.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "Why is leaving a DV relationship described as 'not the end of the experience'?",
+        "options": [
+          "Because survivors prefer to return",
+          "Because post-separation violence, ongoing psychological impacts, and practical rebuilding challenges continue after leaving",
+          "Because the legal system always resolves DV situations immediately",
+          "Because leaving has no impact on safety"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Post-separation, survivors often face continued safety risks, the psychological aftereffects of coercive control, and significant practical rebuilding challenges."
+      },
+      {
+        "question": "What is 'post-separation coercive control' and why is it important for professionals to understand?",
+        "options": [
+          "A form of therapy used after DV",
+          "The continuation of control tactics after separation, often using children and legal systems as instruments",
+          "A term for mutual relationship conflict",
+          "A phase all separating couples experience"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Post-separation coercive control involves perpetrators continuing to control and undermine survivors through children, family courts, and other mechanisms after the relationship ends."
+      }
+    ],
+    "resources": [
+      {
+        "title": "National DV Hotline (US): 1-800-799-7233",
+        "type": "crisis_resource",
+        "note": "24/7 support including post-separation safety planning."
+      },
+      {
+        "title": "DV shelter services / transitional housing programs",
+        "type": "community_resource",
+        "note": "Often provide therapeutic support, legal advocacy, and practical rebuilding assistance."
+      }
+    ]
+  },
+  {
+    "week": 31,
+    "track": "H",
+    "title": "Childhood Grief: How Children Understand and Process Loss",
+    "summary": "Understanding grief through a developmental lens, how children's experience of loss differs from adults', and how to support grieving children.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Describe how children's understanding of death and loss changes across developmental stages.",
+      "Identify ways children's grief commonly manifests that may not look like adult grief.",
+      "Apply practical, developmentally appropriate strategies for supporting a grieving child.",
+      "Recognise when a child's grief may require professional support."
+    ],
+    "content_sections": [
+      {
+        "heading": "Children's Understanding of Death Across Development",
+        "body": "Children's understanding of death is shaped by cognitive development and tends to evolve through recognisable stages. Preschoolers (approximately 3-5 years) typically do not yet understand the permanence, universality, or irreversibility of death -- they may ask repeatedly when a deceased person is coming back, or may show apparent unconcern that can puzzle adults. By middle childhood (6-11 years), most children develop a more adult-like concept of death as permanent and universal, and may become intensely curious about the biological aspects of death. Adolescents understand death intellectually as adults do, but may be particularly affected by the existential implications and by the social disruption loss creates."
+      },
+      {
+        "heading": "What Childhood Grief Looks Like",
+        "body": "Children's grief rarely looks like continuous sadness. It is often characterised by 'puddle-jumping' -- intense grief episodes interspersed with periods of apparently normal play and activity, which can be confusing or even offensive to grieving adults who expect more sustained visible sadness. Physical symptoms (stomachaches, headaches, fatigue) are common. Behavioural changes -- regression, clinginess, aggression, withdrawal -- may signal grief even when the child says little. Some children mask grief entirely to protect a surviving parent they sense is already overwhelmed. Understanding these patterns prevents misinterpreting a child's behaviour and allows more effective support."
+      },
+      {
+        "heading": "Supporting a Grieving Child",
+        "body": "Key principles for supporting grieving children include: using honest, clear language about death (avoiding euphemisms like 'passed away,' 'went to sleep,' or 'lost,' which can cause confusion or additional fear in young children), allowing the child to ask questions and answering them honestly at a developmentally appropriate level, maintaining routine and predictability where possible, validating all emotional responses without requiring the child to feel a particular way, giving the child choices about participation in rituals (attending funerals, visiting graves), and keeping memories of the deceased alive through conversation and ritual. One of the most helpful things an adult can do is grieve honestly in front of a child -- not collapsing entirely, but modelling that grief is a natural human response."
+      },
+      {
+        "heading": "When to Seek Professional Support",
+        "body": "Grief can become complicated (sometimes called prolonged grief disorder or complicated grief) when it is significantly impairing and persists beyond typical timeframes. Signs in children that may indicate the need for professional support include: persistent difficulty functioning at school or socially, regression that doesn't gradually resolve, significant weight loss or sleep disturbance over weeks or months, persistent expressions of wanting to die or join the deceased, or a complete absence of any visible grief response over a prolonged period. Grief counsellors, child therapists with bereavement training, and school counsellors are appropriate referral points."
+      }
+    ],
+    "key_takeaways": [
+      "Children's understanding of death develops across stages and is fundamentally different from adults' in early childhood.",
+      "Childhood grief commonly manifests as 'puddle-jumping', physical symptoms, and behavioural changes rather than sustained visible sadness.",
+      "Honest language, routine, validated feelings, and living memories of the deceased are pillars of good grief support.",
+      "Prolonged impairment, regression, or expressions of wanting to die warrant professional grief support referral."
+    ],
+    "activity": {
+      "title": "Developmental Response Builder",
+      "instructions": "A 5-year-old and a 13-year-old have just lost a grandparent. For each child, write 3-4 things an adult might say or do in the first week that reflect the principles of this module -- appropriate to that child's developmental stage. Contrast the two to highlight how approach should vary.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What is 'puddle-jumping' in the context of childhood grief?",
+        "options": [
+          "A therapeutic intervention for grieving children",
+          "The pattern of intense grief episodes interspersed with periods of apparently normal play, typical of how children grieve",
+          "A child's refusal to engage with grief",
+          "A sign of disordered grief requiring immediate intervention"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "'Puddle-jumping' describes the characteristic non-continuous pattern of children's grief -- intense episodes alternating with normal play -- which can puzzle adults expecting sustained visible sadness."
+      },
+      {
+        "question": "Why are euphemisms like 'passed away' or 'went to sleep' not recommended when talking to young children about death?",
+        "options": [
+          "Because they are too emotionally painful for children",
+          "Because young children's literal thinking can make these phrases confusing or frightening",
+          "Because young children already understand death fully",
+          "Because professionals prefer formal medical language"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Young children think concretely and literally, meaning phrases like 'went to sleep' may cause fear around bedtime, and 'passed away' may simply be confusing."
+      }
+    ],
+    "resources": [
+      {
+        "title": "The Dougy Center (US)",
+        "type": "external_org",
+        "note": "Specialises in grief support for children, teens, and families."
+      },
+      {
+        "title": "Winston's Wish (UK)",
+        "type": "external_org",
+        "note": "UK organisation supporting bereaved children."
+      }
+    ]
+  },
+  {
+    "week": 32,
+    "track": "H",
+    "title": "Parental Bereavement: When a Parent Loses a Child, Partner, or Parent",
+    "summary": "Supporting parents through their own bereavement while maintaining their parenting role, and understanding the family-wide impact of parental loss.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand the specific grief experiences associated with loss of a child, partner, or parent.",
+      "Describe how parental bereavement affects parenting capacity.",
+      "Identify how grief can be shared healthily within a family without burdening children with adult emotional labour.",
+      "Recognise when bereaved parents need professional support."
+    ],
+    "content_sections": [
+      {
+        "heading": "Types of Parental Bereavement",
+        "body": "Parents face several distinct bereavement experiences. The loss of a child -- widely described as one of the most devastating losses possible -- carries unique features: the loss of a hoped-for future, often an absence of social ritual matched to the depth of loss (particularly for pregnancy loss or neonatal death), and a grief that may be both shared with and isolated from the surviving co-parent. The loss of a partner disrupts the family system structurally as well as emotionally, often requiring the surviving parent to simultaneously grieve and take on all parenting functions alone. The loss of one's own parent -- even when expected -- removes a primary source of support and identity at the same time many parents are actively parenting themselves."
+      },
+      {
+        "heading": "How Bereavement Affects Parenting",
+        "body": "Grief significantly affects the cognitive and emotional resources available for parenting. Concentration difficulties, emotional unavailability, sleep disruption, and withdrawal are all typical grief responses that can affect a parent's ability to be present, patient, and consistent with their children during bereavement. This can create a painful bind: children need more support at a time when the surviving parent has fewer resources to give. Practical support (from extended family, community, or formal services) to reduce the parent's burden during acute grief is one of the most concrete ways to protect the parenting relationship during bereavement."
+      },
+      {
+        "heading": "Shared Grief in the Family",
+        "body": "When a family member dies, the surviving adults and children often grieve together. This shared grief can be a powerful source of connection -- families who grieve openly together (while maintaining appropriate adult-child distinctions) tend to navigate bereavement more cohesively. The challenge is sharing grief without overwhelming children with adult-level emotional labour. A parent can model grief authentically (crying, naming sadness, talking about the deceased) while also maintaining the parental function (being available, reassuring children their own needs will be met, and not requiring children to comfort the parent as their primary role)."
+      },
+      {
+        "heading": "When Bereaved Parents Need Professional Support",
+        "body": "Bereaved parents often benefit from: peer support from others who have experienced the same type of loss (which normalises experiences that may feel isolating), grief therapy with a bereavement-trained therapist, and, in cases of traumatic loss (sudden death, suicide, homicide), trauma-focused therapy addressing both grief and trauma dimensions simultaneously. Professionals should gently monitor bereaved parents in their care for signs of complicated grief, depression, SUD, or suicidality, which are elevated following significant bereavement and which have implications both for the parent and for the children in their care."
+      }
+    ],
+    "key_takeaways": [
+      "Parental bereavement takes different forms (loss of child, partner, or parent) with distinct grief features for each.",
+      "Grief reduces parenting resources at a time when children need more support -- practical help during this period is crucial.",
+      "Families can grieve together when adults model authentic grief while maintaining their parental function.",
+      "Bereaved parents benefit from peer support, grief therapy, and monitoring for complicated grief or secondary mental health impacts."
+    ],
+    "activity": {
+      "title": "Sharing Grief Without Burdening Children",
+      "instructions": "Write two short dialogues: one showing a bereaved parent sharing their grief with their child in a healthy, age-appropriate way, and one showing a less healthy version where the child is inadvertently placed in a caretaking role. For each, note what specifically makes the approach healthy or problematic.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What is a key challenge when a parent is bereaved and has children who are also grieving?",
+        "options": [
+          "Children never grieve when a parent is bereaved",
+          "The bereaved parent has reduced resources for parenting at the very time children need more support",
+          "Bereaved parents always have increased energy for parenting",
+          "Children should not know about a parent's grief"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Bereavement reduces the cognitive and emotional resources available for parenting precisely when children may need more support."
+      },
+      {
+        "question": "What distinguishes healthy shared grief from unhealthy parentification of a child in bereavement?",
+        "options": [
+          "In healthy shared grief, children never see a parent cry",
+          "In healthy shared grief, the parent models authentic grief while maintaining their parental function; in parentification, the child becomes the parent's primary emotional support",
+          "Children should always be shielded from all family grief",
+          "There is no difference; all grief expression with children is problematic"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Healthy shared grief involves authentic modelling alongside maintained parental function; parentification inappropriately assigns the child as the parent's primary emotional caretaker."
+      }
+    ],
+    "resources": [
+      {
+        "title": "The Compassionate Friends",
+        "type": "external_org",
+        "note": "Support for parents who have lost a child, with chapters in many countries."
+      },
+      {
+        "title": "SANDS (Stillbirth and Neonatal Death Society)",
+        "type": "external_org",
+        "note": "Support for parents who have experienced pregnancy loss or neonatal death."
+      }
+    ]
+  },
+  {
+    "week": 33,
+    "track": "H",
+    "title": "Divorce, Separation, and Children's Adjustment",
+    "summary": "How children experience parental separation, factors that influence adjustment, and how parents can support their children through family restructuring.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand what research tells us about children's adjustment to parental separation.",
+      "Identify the factors that most strongly predict good versus poor adjustment.",
+      "Apply practical strategies for supporting children through separation and family restructuring.",
+      "Understand the relationship between co-parenting quality and children's adjustment post-separation."
+    ],
+    "content_sections": [
+      {
+        "heading": "What Research Says About Children and Divorce",
+        "body": "Research on children's adjustment to parental separation has evolved significantly. Earlier studies emphasised uniformly negative outcomes; more recent, better-controlled research shows that while many children experience a difficult adjustment period, most achieve good long-term outcomes. Crucially, it is not separation per se that determines outcomes, but the conditions that surround it -- particularly the level of ongoing parental conflict, the quality of parenting in each household, the maintenance of positive relationships with both parents, and the stability of the child's broader environment (school, friendships, routines). Children whose parents manage separation while maintaining low conflict and cooperative co-parenting generally do well."
+      },
+      {
+        "heading": "Factors Predicting Children's Adjustment",
+        "body": "Factors associated with better adjustment after parental separation include: low inter-parental conflict, consistent and warm parenting in both households, stable routines and maintained school and social connections, clear, age-appropriate and honest information about what is happening, the child having a meaningful relationship with both parents where safe, and access to social support including peers, extended family, and, where indicated, counselling. Factors associated with poorer adjustment include: high, unresolved inter-parental conflict, particularly when children are caught in the middle; significant lifestyle disruptions (moving house, changing schools, financial hardship); and loss of meaningful contact with one parent."
+      },
+      {
+        "heading": "Talking to Children About Separation",
+        "body": "How separation is disclosed and explained to children significantly affects their adjustment. Best practice includes: telling children together where possible and safe, using age-appropriate language, emphasising that both parents still love the child and that this will not change, clarifying that the separation is not the child's fault, and answering questions honestly without using the conversation to share adult grievances or blame the other parent. The stability of the explanatory framework -- the child knowing 'what happened' in terms they can understand and integrate -- reduces the confusion and self-blame that can complicate adjustment."
+      },
+      {
+        "heading": "Maintaining the Parent-Child Relationship During Restructuring",
+        "body": "The quality of each parent's individual relationship with the child is the most modifiable protective factor during and after separation. Maintaining warm, consistent, child-focused parenting in each household -- including not using children as messengers, not interrogating children about the other parent's life, and actively encouraging the child's positive relationship with the other parent where safe -- directly supports the child's adjustment. Children who feel pulled between parents, who feel they must hide enjoyment of time with one parent from the other, or who are asked to keep secrets experience additional loyalty conflict stress that compounds the adjustment challenge."
+      }
+    ],
+    "key_takeaways": [
+      "Most children adjust well to parental separation when conditions support them -- it is not separation itself but surrounding circumstances that determine outcomes.",
+      "Low conflict, consistent warm parenting, stable routines, and maintained relationships with both parents are key protective factors.",
+      "Age-appropriate, honest, blame-free disclosure significantly supports children's adjustment.",
+      "Avoiding loyalty conflict -- actively supporting children's relationships with both parents -- is one of the most important things a separated parent can do."
+    ],
+    "activity": {
+      "title": "Child-Centred Communication Plan",
+      "instructions": "Draft a brief communication plan for how a separating couple might talk to their 6-year-old and their 13-year-old about the separation. For each child, what would you say? What would you avoid saying? How would you handle questions you don't have answers to yet (e.g., 'where will I live?')?",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What factor most strongly predicts children's adjustment to parental separation?",
+        "options": [
+          "Whether parents remain legally married",
+          "The level of ongoing inter-parental conflict and the quality of parenting in each household",
+          "The child's age at the time of separation",
+          "Whether the family maintains the same house"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Inter-parental conflict and parenting quality in each household are the strongest predictors of children's adjustment, not separation per se."
+      },
+      {
+        "question": "What is 'loyalty conflict' in the context of parental separation?",
+        "options": [
+          "A legal term for custody disputes",
+          "The stress children experience when they feel they cannot enjoy time with one parent without feeling they are betraying the other",
+          "A form of parental alienation only relevant in court",
+          "A conflict between siblings after separation"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Loyalty conflict describes the additional stress children experience when they feel they cannot be genuine in their positive feelings toward one parent without hurting or betraying the other."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Family mediation services",
+        "type": "professional_resource",
+        "note": "Helps separating parents develop workable arrangements with a professional facilitator."
+      },
+      {
+        "title": "Collaborative divorce / family law practitioners",
+        "type": "professional_resource",
+        "note": "Legal approaches that prioritise child-focused, cooperative outcomes over adversarial processes."
+      }
+    ]
+  },
+  {
+    "week": 34,
+    "track": "H",
+    "title": "Family Breakdown, Reunification, and Rebuilding",
+    "summary": "Navigating the complex emotional and practical terrain of family breakdown, including care placements, and the process of family reunification.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Understand the emotional experience of children and parents during family breakdown and care placement.",
+      "Describe the key elements of a trauma-informed approach to family reunification.",
+      "Identify the ongoing support needs of families post-reunification.",
+      "Understand what evidence says about successful reunification and what predicts breakdown."
+    ],
+    "content_sections": [
+      {
+        "heading": "The Experience of Family Breakdown",
+        "body": "When families reach the point of breakdown requiring child placement in out-of-home care (foster care, kinship care, or residential care), both children and parents typically experience this as a significant trauma, regardless of the circumstances that led to it. Children may experience profound loss, confusion, shame, and divided loyalties -- missing family members while also feeling safer away from harm. Parents, even those whose behaviour contributed to the breakdown, typically experience grief, shame, powerlessness, and -- where motivation for reunification is genuine -- intense anxiety about the process. Recognising the trauma dimension of placement for all parties is a prerequisite for trauma-informed practice in reunification work."
+      },
+      {
+        "heading": "Principles of Trauma-Informed Reunification",
+        "body": "Effective reunification practice is built on several principles: assessing and building parental protective capacity (the parent's ability to keep the child safe, not just their intentions), maintaining the child's relationship with their parents throughout placement where it is safe to do so, using structured and evidence-informed assessment processes rather than solely subjective impression, ensuring the child's voice and lived experience is genuinely included in reunification planning, and planning for an adequate transition period (graduated, supported return) rather than abrupt reunification. Reunification is not a single event but a process requiring sustained support before, during, and after return home."
+      },
+      {
+        "heading": "Post-Reunification Support Needs",
+        "body": "Research consistently shows that reunification without sustained follow-up support has higher rates of re-entry to care. The period immediately after reunification is particularly vulnerable: families are adjusting to changed dynamics, children and parents may have developed differently during separation, and the formal supports of placement are removed. Post-reunification support typically needs to address: the parent's ongoing capacity building (parenting programs, mental health and substance use treatment where relevant), the child's therapeutic processing of their care experience, relationship repair between parent and child, and practical support with housing, finances, and community connection. Sustained wrap-around support, not just discharge to 'self-sufficiency,' is associated with more durable reunification."
+      },
+      {
+        "heading": "What Predicts Successful Reunification",
+        "body": "Evidence identifies several predictors of successful reunification: the parent demonstrating changed circumstances relevant to the original concern (not merely the passage of time), the quality of the parent-child relationship and the child's attachment to the parent, the parent's access to and engagement with appropriate support services, the absence of ongoing domestic violence or active substance use, and the child's own wishes (given appropriate weight for their age). Conversely, premature reunification (before genuine protective capacity is demonstrated) is associated with re-entry and further harm. For professionals, this underscores the value of structured, evidence-informed assessment over purely relationship-driven optimism."
+      }
+    ],
+    "key_takeaways": [
+      "Family breakdown and care placement are experienced as trauma by children and parents alike, regardless of the circumstances.",
+      "Trauma-informed reunification is a sustained process, not a single event, built on assessed protective capacity and the child's voice.",
+      "Post-reunification support is essential; removing formal support at the point of return is associated with higher re-entry rates.",
+      "Structured, evidence-informed assessment of protective capacity produces more durable reunification than relationship-driven optimism alone."
+    ],
+    "activity": {
+      "title": "Reunification Support Plan",
+      "instructions": "For a hypothetical family where a child has been in care for 6 months following parental mental health and substance use concerns, and where significant progress has been made, draft a brief outline reunification support plan covering: pre-reunification preparation steps, the transition period, and 6-month post-reunification support needs. Identify which professional roles would be involved at each stage.",
+      "estimated_time_minutes": 30
+    },
+    "knowledge_check": [
+      {
+        "question": "Why is post-reunification support described as particularly important?",
+        "options": [
+          "Because reunification is always immediately successful and needs no follow-up",
+          "Because the immediate post-reunification period is particularly vulnerable, and reunification without sustained support has higher rates of re-entry",
+          "Because children prefer to remain in care",
+          "Because post-reunification support is legally required in all jurisdictions"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "The post-reunification period is particularly high-risk, and research shows sustained support significantly reduces re-entry to care."
+      },
+      {
+        "question": "What is 'parental protective capacity' in reunification assessment?",
+        "options": [
+          "The parent's ability to afford appropriate housing",
+          "The parent's ability and willingness to keep the child safe going forward, not merely their good intentions",
+          "The number of parenting programs completed",
+          "A legal term for custody entitlement"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Protective capacity refers to demonstrated ability to keep a child safe -- informed by evidence of change, not only positive intention or program completion."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Child welfare / child protection agency",
+        "type": "professional_resource",
+        "note": "The primary professional system involved in care placement and reunification processes."
+      },
+      {
+        "title": "Family Functional Therapy / Multisystemic Therapy",
+        "type": "professional_resource",
+        "note": "Evidence-based family therapy models with evidence in reunification and high-needs family contexts."
+      }
+    ]
+  },
+  {
+    "week": 35,
+    "track": "I",
+    "title": "Understanding Neurodiversity: A Strengths-Based Framework",
+    "summary": "Introduction to neurodiversity as a framework, what it means for how we understand and support children who think and learn differently.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Define neurodiversity and distinguish it from a deficit-based approach to neurological difference.",
+      "Identify the key neurodevelopmental conditions included under the neurodiversity umbrella.",
+      "Understand the strengths-based perspective and its implications for education and support.",
+      "Recognize the importance of the double empathy problem in supporting neurodiverse individuals."
+    ],
+    "content_sections": [
+      {
+        "heading": "What Is Neurodiversity?",
+        "body": "The term 'neurodiversity,' coined by sociologist Judy Singer in the late 1990s, reflects the idea that neurological variation -- differences in how brains develop and function -- is a natural form of human diversity, not inherently a deficit. Just as biodiversity refers to natural variation in living organisms, neurodiversity refers to natural variation in human brains and minds. This does not mean that all neurological differences are without challenge -- many neurodivergent individuals face real difficulties that benefit from support -- but it reframes those differences from 'broken' to 'different,' with implications for how support is designed and delivered."
+      },
+      {
+        "heading": "Conditions Under the Neurodiversity Umbrella",
+        "body": "Neurodiversity is an umbrella term that includes ADHD, autism spectrum disorder (ASD), dyslexia, dyspraxia (developmental coordination disorder), dyscalculia, Tourette syndrome, and other conditions characterised by neurological differences rather than acquired injury. These conditions vary greatly in presentation, co-occurrence, and support needs -- and they frequently co-occur with each other, making clean categorical distinctions less useful than an individual profile of strengths and challenges. The field is moving increasingly toward dimensional rather than categorical understanding, recognising that most neurodiverse traits exist on a spectrum that shades into the neurotypical population."
+      },
+      {
+        "heading": "A Strengths-Based Perspective",
+        "body": "A deficit-based approach focuses on what a neurodiverse child cannot do relative to neurotypical peers. A strengths-based approach identifies what the child can do -- often including distinctive capacities (intense focus in areas of interest, pattern recognition, creative thinking, honesty) alongside genuine challenges -- and builds support that leverages strengths rather than only targeting deficits. This is not about pretending challenges don't exist; it is about building a more complete and accurate picture of the child that respects their full humanity and motivates engagement with support rather than shame about difficulties."
+      },
+      {
+        "heading": "The Double Empathy Problem",
+        "body": "The 'double empathy problem,' described by researcher Damian Milton, challenges the assumption that autistic social difficulties are simply deficits in the autistic person. Milton found that empathy and communication difficulties between autistic and non-autistic people are mutual -- both parties find the other's style harder to read and interpret. This reframes the challenge from a one-sided deficit to a two-way mismatch, with important implications: rather than only trying to make autistic children more neurotypical in their communication, effective support also involves neurotypical people developing understanding of autistic communication styles. This principle extends to other neurodiverse profiles."
+      }
+    ],
+    "key_takeaways": [
+      "Neurodiversity frames neurological variation as natural human diversity, not inherently deficit.",
+      "ADHD, autism, dyslexia, dyspraxia, and other conditions sit under the neurodiversity umbrella, frequently co-occurring.",
+      "Strengths-based approaches build on what a child can do alongside addressing genuine challenges.",
+      "The double empathy problem reminds us that communication mismatches are two-directional, with implications for how support is designed."
+    ],
+    "activity": {
+      "title": "Strength Profile Building",
+      "instructions": "Think of a neurodiverse child you know (or a hypothetical profile). List 5 characteristics often described as 'deficits' (e.g., intense focus on specific topics, difficulty with transitions, talking at length about a specific subject). For each, write a strengths-based reframe that identifies the potential positive dimension of that characteristic (e.g., 'intense focus = exceptional depth of expertise in areas of interest'). This practice builds the habit of whole-child thinking.",
+      "estimated_time_minutes": 20
+    },
+    "knowledge_check": [
+      {
+        "question": "What does the neurodiversity framework argue about neurological variation?",
+        "options": [
+          "All neurological variation is purely negative and should be corrected",
+          "Neurological variation is a natural form of human diversity, with real challenges that benefit from support but not inherently a deficit",
+          "There is no such thing as neurological variation",
+          "Only physical disabilities are considered real differences"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Neurodiversity reframes neurological variation as natural human diversity -- real challenges exist and warrant support, but the person is not 'broken.'"
+      },
+      {
+        "question": "What is the 'double empathy problem' in the context of autism?",
+        "options": [
+          "The idea that autistic people have no empathy",
+          "The finding that communication difficulties between autistic and non-autistic people are mutual, not one-sided",
+          "A therapy technique for autistic children",
+          "A legal protection for neurodiverse people"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "The double empathy problem describes mutual communication difficulty between autistic and non-autistic people, challenging the idea that the difficulty lies solely in the autistic person."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Autism Self Advocacy Network (ASAN)",
+        "type": "external_org",
+        "note": "Led by autistic people; strengths-based resources on autism and neurodiversity."
+      },
+      {
+        "title": "Understood.org",
+        "type": "external_org",
+        "note": "Comprehensive resources on neurodiversity, learning differences, and support strategies."
+      }
+    ]
+  },
+  {
+    "week": 36,
+    "track": "I",
+    "title": "ADHD in Depth: Understanding, Supporting, and Advocating",
+    "summary": "A comprehensive module on ADHD -- what it is, how it presents across ages and genders, how to support children with ADHD, and how to advocate for them at school.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Describe ADHD presentations, including gender differences and later-identified individuals.",
+      "Understand evidence-based approaches to ADHD management including behavioural, educational, and pharmacological.",
+      "Apply practical strategies for supporting ADHD at home and school.",
+      "Understand how to advocate for a child with ADHD within educational systems."
+    ],
+    "content_sections": [
+      {
+        "heading": "ADHD: Presentations and Prevalence",
+        "body": "ADHD (Attention-Deficit/Hyperactivity Disorder) is one of the most common neurodevelopmental conditions, affecting a meaningful proportion of school-age children worldwide. It is characterised by persistent inattention, hyperactivity, and/or impulsivity that cause functional impairment across settings. There are three recognised presentations: predominantly inattentive, predominantly hyperactive-impulsive, and combined. Presentation can change across the lifespan -- hyperactivity often becomes less prominent in adolescence while inattention may become more impairing in the context of increased academic demands. ADHD is significantly underidentified in girls and women, who more commonly present with internalising (inattentive, anxious, 'people-pleasing') features that are less likely to trigger concern than the externalising hyperactive-impulsive presentation more common in boys."
+      },
+      {
+        "heading": "Evidence-Based Approaches to ADHD Management",
+        "body": "Guidelines across jurisdictions generally recommend a multimodal approach to ADHD management. Behavioural interventions (including parent training, behaviour management programs, and school-based accommodations) are typically first-line for younger children. Medication -- primarily stimulant medications (methylphenidate and amphetamine-based) and non-stimulants -- is effective for many children and adolescents when prescribed and monitored appropriately, and is often most effective when combined with behavioural and educational support. Psychoeducation -- helping the child and family understand ADHD -- is an undervalued component that meaningfully improves outcomes, including reducing shame and increasing self-advocacy."
+      },
+      {
+        "heading": "Practical Strategies at Home and School",
+        "body": "At home: clear, brief instructions (one at a time), visual schedules and external reminders, structured routines with predictable transitions, chunking tasks into smaller steps, building in movement breaks, and focusing on the relationship alongside the behaviour. At school: seating away from high-distraction areas, extended time on assessments, breaking assignments into smaller steps, checking for understanding rather than assuming attention, flexible assessment formats, and regular brief check-ins with a trusted staff member. Many of these strategies benefit all students -- universal design principles -- not only those with diagnosed ADHD."
+      },
+      {
+        "heading": "Advocating for a Child With ADHD",
+        "body": "Parents often need to advocate actively within educational systems for their child with ADHD. This may include requesting formal assessment, seeking Individual Education Plans (IEPs) or equivalent documented accommodations, communicating regularly with teachers about what is and isn't working, and, where necessary, escalating to school administration or special education coordinators. Understanding one's rights within the local education system -- which typically includes the right to assessment, appropriate support, and non-discrimination -- is empowering for parents who may otherwise accept inadequate responses to their child's needs. For professionals, advocating alongside families within systems is a meaningful component of effective ADHD support."
+      }
+    ],
+    "key_takeaways": [
+      "ADHD presents in three patterns and is significantly underidentified in girls, whose internalising presentation is often missed.",
+      "Evidence-based ADHD management is multimodal: behavioural, educational, and pharmacological components together outperform any single approach.",
+      "Practical home and school strategies focus on structure, chunking, external reminders, movement, and relationship.",
+      "Parental advocacy within educational systems -- including formal assessment and documented accommodations -- is often essential for children with ADHD."
+    ],
+    "activity": {
+      "title": "ADHD Accommodation Plan",
+      "instructions": "Design a brief accommodation plan (6-8 strategies) for a 10-year-old with predominantly inattentive ADHD who is struggling with multi-step tasks and distraction at school. For each accommodation, write what it looks like in practice and which person (teacher, parent, or child) is primarily responsible for implementing it.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "Why is ADHD often underidentified in girls?",
+        "options": [
+          "Girls cannot have ADHD",
+          "Girls more commonly present with internalising, inattentive features that are less likely to trigger concern than the hyperactive-impulsive presentation more common in boys",
+          "Girls are always better at masking all conditions",
+          "ADHD assessors don't work with girls"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Girls with ADHD more commonly present with inattentive, internalising features that are less disruptive and therefore less likely to prompt referral for assessment."
+      },
+      {
+        "question": "What is the general evidence-based approach to ADHD management in children?",
+        "options": [
+          "Medication only",
+          "Behaviour management only, never medication",
+          "A multimodal approach combining behavioural support, educational accommodations, and medication when appropriate",
+          "Waiting until adulthood before any intervention"
+        ],
+        "correct_answer_index": 2,
+        "explanation": "Evidence-based guidelines recommend multimodal treatment -- behavioural, educational, and pharmacological components combined -- as most effective."
+      }
+    ],
+    "resources": [
+      {
+        "title": "CHADD (Children and Adults with ADHD)",
+        "type": "external_org",
+        "note": "Comprehensive resources for parents, educators, and individuals with ADHD."
+      },
+      {
+        "title": "ADDitude Magazine",
+        "type": "external_org",
+        "note": "Practical, accessible ADHD resources for families and professionals."
+      }
+    ]
+  },
+  {
+    "week": 37,
+    "track": "I",
+    "title": "Autism Spectrum Disorder: Understanding, Supporting, and Celebrating",
+    "summary": "A comprehensive, affirming module on autism -- presentation, diagnosis, support, and how to create environments where autistic children thrive.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Describe the range of presentations within autism spectrum disorder.",
+      "Understand the sensory, social, and communication experiences of autistic individuals.",
+      "Identify evidence-informed and autistic-affirming approaches to support.",
+      "Understand the difference between masking and authentic expression, and why it matters."
+    ],
+    "content_sections": [
+      {
+        "heading": "Understanding the Autism Spectrum",
+        "body": "Autism Spectrum Disorder (ASD) is a neurodevelopmental condition characterised by differences in social communication, sensory processing, and patterns of behaviour (often described as repetitive behaviours or restricted interests). The 'spectrum' reflects enormous variation: autism manifests very differently across individuals, ranging from those who are non-speaking and require significant support across all areas of daily living, to those who are highly articulate and largely independent. This variation means no single description fully captures what autism looks like -- understanding the specific individual's profile, sensory needs, communication style, and strengths is more useful than relying on generalised descriptions."
+      },
+      {
+        "heading": "Sensory, Social, and Communication Experiences",
+        "body": "Sensory processing differences are a central and often underappreciated feature of autism. Many autistic individuals experience heightened sensitivity to sensory input (lights, sounds, textures, smells) that can cause significant distress in environments designed for neurotypical sensory systems -- schools, shops, and social gatherings are often particularly challenging. Social communication differences include difficulty reading implicit social cues, preference for explicit and direct communication, and challenges with the unwritten social rules that neurotypical people often navigate intuitively. These are differences in communication style, not absence of desire for connection -- many autistic people have rich social and relational lives while communicating differently."
+      },
+      {
+        "heading": "Autistic-Affirming Approaches to Support",
+        "body": "Support approaches for autistic individuals have evolved significantly. Earlier approaches (including some still in use) focused heavily on eliminating autistic traits and behaviours to maximise neurotypical appearance. Autistic-affirming approaches, increasingly preferred by autistic people and supported by contemporary research, focus instead on: building genuine skills and strategies that help the individual navigate the world, reducing unnecessary barriers in the environment (sensory modifications, communication adaptations), supporting the individual to understand and advocate for their own needs, and preserving authentic autistic expression rather than demanding conformity to neurotypical norms."
+      },
+      {
+        "heading": "Masking and Why It Matters",
+        "body": "Masking (also called camouflaging) refers to the effortful suppression or imitation of neurotypical behaviours by autistic individuals to 'pass' as non-autistic in social settings. Masking is associated with significant mental health costs -- higher rates of anxiety, depression, burnout, and in research, elevated suicidality among autistic people who mask heavily. It is also associated with delayed diagnosis, particularly in girls and women. Understanding masking matters for support: a child who appears to be managing well in the classroom while exhausted and dysregulated at home may be masking, and their needs are real even when not visible. Creating environments where autistic children feel safe to be themselves reduces the demand and cost of masking."
+      }
+    ],
+    "key_takeaways": [
+      "Autism is a spectrum with enormous individual variation; individual profiling is more useful than generalised descriptions.",
+      "Sensory processing differences are central to autism and frequently create significant challenges in neurotypically-designed environments.",
+      "Autistic-affirming approaches build skills and reduce environmental barriers without demanding suppression of autistic identity.",
+      "Masking is associated with serious mental health costs; creating safe spaces for authentic autistic expression is protective."
+    ],
+    "activity": {
+      "title": "Environmental Audit for an Autistic Learner",
+      "instructions": "Imagine you are designing a classroom environment for an autistic student with sensory sensitivities and communication differences. List 8-10 specific modifications you would make to the physical environment, communication expectations, and daily structure. For each, explain the sensory or communication principle it addresses.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "What does 'masking' refer to in the context of autism?",
+        "options": [
+          "A therapeutic technique for helping autistic children learn social rules",
+          "The effortful suppression of autistic traits to appear neurotypical, associated with significant mental health costs",
+          "A legal protection mechanism for autistic individuals",
+          "A form of non-verbal communication unique to autism"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Masking is the effortful suppression of autistic traits to appear neurotypical, associated with high mental health costs and delayed diagnosis."
+      },
+      {
+        "question": "What distinguishes autistic-affirming approaches from older approaches?",
+        "options": [
+          "Autistic-affirming approaches focus on eliminating autistic traits to maximise neurotypical appearance",
+          "Autistic-affirming approaches focus on building genuine skills, reducing environmental barriers, and preserving authentic autistic expression",
+          "Older approaches were always more effective",
+          "There is no meaningful difference"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Autistic-affirming approaches prioritise genuine wellbeing, environmental adaptation, and authentic expression rather than demanding conformity to neurotypical norms."
+      }
+    ],
+    "resources": [
+      {
+        "title": "Autism Self Advocacy Network (ASAN)",
+        "type": "external_org",
+        "note": "Autistic-led organisation with affirming resources and policy positions."
+      },
+      {
+        "title": "Autistic Women & Nonbinary Network",
+        "type": "external_org",
+        "note": "Resources specifically addressing the experience of autistic women, girls, and non-binary individuals."
+      }
+    ]
+  },
+  {
+    "week": 38,
+    "track": "I",
+    "title": "Learning Disabilities and Educational Advocacy",
+    "summary": "Understanding dyslexia, dyscalculia, and other learning disabilities, and how to effectively advocate for children with learning differences in educational settings.",
+    "audience_focus": [
+      "parent",
+      "professional",
+      "trainee",
+      "general"
+    ],
+    "estimated_time_minutes": 120,
+    "learning_objectives": [
+      "Define common learning disabilities including dyslexia and dyscalculia.",
+      "Understand how learning disabilities are identified and assessed in educational settings.",
+      "Apply knowledge of evidence-based interventions for common learning disabilities.",
+      "Develop effective advocacy skills for supporting children with learning disabilities in school."
+    ],
+    "content_sections": [
+      {
+        "heading": "Understanding Common Learning Disabilities",
+        "body": "Learning disabilities (LDs) are neurologically-based processing differences that affect specific academic skills, typically in reading (dyslexia), writing (dysgraphia), mathematics (dyscalculia), or oral/written language more broadly. They are distinct from intellectual disability (which affects general cognitive functioning) and from ADHD (though co-occurrence is common). Dyslexia is the most prevalent LD, affecting a significant proportion of the population, and is characterised by difficulties with accurate and/or fluent word recognition, decoding, and spelling -- not with reading comprehension when text is read aloud. Crucially, LDs are not related to intelligence and are not the result of inadequate teaching, effort, or motivation, though these misconceptions persist."
+      },
+      {
+        "heading": "Identification and Assessment",
+        "body": "Early identification significantly improves outcomes for children with LDs. Warning signs in the early school years include: difficulty with phonological awareness (rhyming, syllable counting), slow word recognition development, letter and number reversals persisting beyond typical developmental stages, and significant discrepancy between verbal ability and reading/writing performance. Formal assessment typically involves a psychoeducational assessment conducted by a psychologist or educational specialist, examining cognitive ability, academic achievement, and processing skills. Many children with LDs go unidentified for years, particularly if they are bright enough to compensate partially for their difficulties -- late identification is associated with accumulated academic failure, low self-esteem, and often misidentified as behavioural or motivational problems."
+      },
+      {
+        "heading": "Evidence-Based Interventions",
+        "body": "For dyslexia, structured literacy approaches -- systematic, explicit instruction in phonology, phonics, and decoding (such as the Orton-Gillingham approach and its derivatives) -- have the strongest evidence base. For dyscalculia, concrete, visual, and multisensory approaches to number and quantity representation support understanding that purely abstract/symbolic instruction does not. Critically, evidence-based LD intervention is characterised by intensity (frequent, regular sessions), explicitness (direct teaching of skills, not discovery learning), and systematicity (building from foundational skills upward). Generic learning support without these features is often insufficient for children with significant LDs."
+      },
+      {
+        "heading": "Educational Advocacy",
+        "body": "Parents of children with learning disabilities often need to be active advocates within educational systems. This may include: requesting formal psychoeducational assessment (which schools may be required to provide), understanding the range of accommodations available (extended time, oral assessment, assistive technology, reader/scribe), participating meaningfully in IEP or equivalent plan development, monitoring plan implementation, and escalating where reasonable adjustments are not being made. Knowledge of relevant disability discrimination legislation (such as the ADA in the US, the Disability Discrimination Act in Australia, or the Equality Act in the UK) is empowering. Parent support groups and disability advocacy organisations can provide practical guidance and emotional support for navigating these processes."
+      }
+    ],
+    "key_takeaways": [
+      "Learning disabilities are neurologically-based, specific processing differences -- not related to intelligence, effort, or teaching quality.",
+      "Early identification significantly improves outcomes; late identification is associated with compounded academic and emotional effects.",
+      "Evidence-based LD interventions are systematic, explicit, and intensive -- generic support without these features is often insufficient.",
+      "Active parental advocacy in educational systems -- including requesting assessment, appropriate accommodations, and documented plans -- is often essential."
+    ],
+    "activity": {
+      "title": "Advocacy Letter Draft",
+      "instructions": "Draft a letter from a parent to a school principal requesting a formal psychoeducational assessment for their 9-year-old who is showing signs consistent with dyslexia (difficulty decoding, slow reading despite good verbal ability, avoidance of reading tasks). The letter should be professional, specific, and reference the child's right to assessment under their educational system. Note: adapt to your local context or write it as a hypothetical.",
+      "estimated_time_minutes": 25
+    },
+    "knowledge_check": [
+      {
+        "question": "What distinguishes a learning disability from an intellectual disability?",
+        "options": [
+          "There is no difference",
+          "Learning disabilities affect specific academic skills (e.g., reading, maths) while general cognitive functioning is in the typical range; intellectual disability affects general cognitive functioning",
+          "Learning disabilities are always more severe",
+          "Intellectual disabilities only occur in adults"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "LDs affect specific processing and academic skills while general intelligence is typical; intellectual disability involves significantly reduced general cognitive functioning."
+      },
+      {
+        "question": "What characterises evidence-based interventions for dyslexia?",
+        "options": [
+          "Unstructured reading time and discovery learning",
+          "Systematic, explicit, intense, phonics-based structured literacy instruction",
+          "Waiting for the child to develop reading naturally",
+          "Removing all reading requirements"
+        ],
+        "correct_answer_index": 1,
+        "explanation": "Structured literacy approaches -- systematic, explicit, intense instruction in phonology and phonics -- have the strongest evidence for dyslexia intervention."
+      }
+    ],
+    "resources": [
+      {
+        "title": "International Dyslexia Association (IDA)",
+        "type": "external_org",
+        "note": "Evidence-based resources on dyslexia identification and intervention."
+      },
+      {
+        "title": "Understood.org - Learning Disabilities",
+        "type": "external_org",
+        "note": "Accessible LD resources for parents and professionals."
+      },
+      {
+        "title": "Local parent advocacy group for special education",
+        "type": "community_resource",
+        "note": "Often provide practical guidance on navigating local educational systems."
+      }
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: safesteps-ingress
+spec:
+  rules:
+    - host: safesteps.local
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: safesteps-backend
+                port:
+                  number: 3000
+          - path: /dashboard
+            pathType: Prefix
+            backend:
+              service:
+                name: safesteps-dashboard
+                port:
+                  number: 3001

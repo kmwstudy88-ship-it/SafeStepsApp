@@ -1,0 +1,58 @@
+ {
+      "module_id": "behaviour_change_repair_skills_v1",
+      "module_title": "Repairing After Mistakes",
+      "learning_outcomes": [
+        "Understand repair as a core behaviour change skill.",
+        "Recognise when repair is needed.",
+        "Apply repair steps with children.",
+        "Build trust through consistent repair."
+      ],
+      "lesson_content": {
+        "definition": "Repair is the process of reconnecting after harm, conflict, or dysregulation.",
+        "repair_steps": [
+          "Pause and regulate",
+          "Acknowledge the impact",
+          "Apologise without excuses",
+          "Offer reconnection",
+          "Return to safety and routine"
+        ]
+      },
+      "activities": [
+        {
+          "activity_id": "repair_sequence",
+          "type": "sequencing"
+        }
+      ],
+      "fill_in_the_blank": [
+        { "question": "Repair begins with ________.", "answer": "regulation" }
+      ],
+      "quiz": {
+        "multiple_choice": [
+          {
+            "question": "Which is part of repair?",
+            "options": ["Blaming", "Avoiding", "Acknowledging impact", "Minimising"],
+            "answer": "Acknowledging impact"
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "assessment_id": "repair_plan",
+          "type": "scenario_analysis",
+          "criteria": [
+            { "criterion_id": "repair_step_accuracy", "weight": 0.40 },
+            { "criterion_id": "impact_reasoning", "weight": 0.35 },
+            { "criterion_id": "connection_planning", "weight": 0.25 }
+          ]
+        }
+      ],
+      "competency_check": [
+        "Identify repair moments",
+        "Apply repair steps",
+        "Restore connection"
+      ],
+      "extensions": [
+        "Repair in High-Conflict Homes",
+        "Repair for Teen Relationships"
+      ]
+    }

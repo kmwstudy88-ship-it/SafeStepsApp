@@ -1,0 +1,31 @@
+{
+  "id": "week-4",
+  "title": "AOD Recovery — Week 4",
+  "objectives": [
+    "Strengthen emotional regulation"
+  ],
+  "required_lessons": [
+    "MH-ER-010_tipp_skills"
+  ],
+  "recommended_lessons": [
+    "MH-ER-007_emotion_wheel"
+  ],
+  "evidence": [
+    "Regulation practice log"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_aod_evidence"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "medication_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

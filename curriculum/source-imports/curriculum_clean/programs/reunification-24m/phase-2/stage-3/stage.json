@@ -1,0 +1,36 @@
+{
+  "id": "phase-2-stage-3",
+  "title": "Capacity Building — Stage 3",
+  "objectives": [
+    "Improve parent-child communication",
+    "Use positive language",
+    "Support child emotional needs"
+  ],
+  "required_lessons": [
+    "PAR-COM-001_positive_language",
+    "MH-ER-007_emotion_wheel"
+  ],
+  "recommended_lessons": [
+    "MH-ER-009_distress_tolerance"
+  ],
+  "evidence": [
+    "Demonstrated co-regulation in session"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_contact_logs",
+      "weekly_routine_log"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "fridge_pantry_photo",
+      "medication_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

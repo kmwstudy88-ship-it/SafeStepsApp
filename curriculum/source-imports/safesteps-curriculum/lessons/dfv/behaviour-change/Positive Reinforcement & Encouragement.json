@@ -1,0 +1,62 @@
+ {
+      "module_id": "behaviour_change_positive_reinforcement_v1",
+      "module_title": "Positive Reinforcement & Encouragement",
+      "learning_outcomes": [
+        "Understand reinforcement as a behaviour change tool.",
+        "Recognise harmful reinforcement patterns.",
+        "Apply positive reinforcement safely.",
+        "Support children through encouragement."
+      ],
+      "lesson_content": {
+        "definition": "Positive reinforcement strengthens desired behaviours through encouragement, connection, and recognition.",
+        "reinforcement_examples": [
+          "Praise effort",
+          "Celebrate small wins",
+          "Acknowledge progress",
+          "Offer connection after success"
+        ],
+        "harmful_patterns": [
+          "Conditional affection",
+          "Over-rewarding",
+          "Shaming mistakes"
+        ]
+      },
+      "activities": [
+        {
+          "activity_id": "reinforcement_sorting",
+          "type": "sorting"
+        }
+      ],
+      "fill_in_the_blank": [
+        { "question": "Positive reinforcement strengthens ________ behaviours.", "answer": "desired" }
+      ],
+      "quiz": {
+        "multiple_choice": [
+          {
+            "question": "Which is positive reinforcement?",
+            "options": ["Criticism", "Praise effort", "Ignoring", "Punishment"],
+            "answer": "Praise effort"
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "assessment_id": "reinforcement_plan",
+          "type": "scenario_analysis",
+          "criteria": [
+            { "criterion_id": "reinforcement_accuracy", "weight": 0.40 },
+            { "criterion_id": "impact_reasoning", "weight": 0.35 },
+            { "criterion_id": "connection_planning", "weight": 0.25 }
+          ]
+        }
+      ],
+      "competency_check": [
+        "Apply reinforcement",
+        "Avoid harmful patterns",
+        "Support child confidence"
+      ],
+      "extensions": [
+        "Reinforcement for Teens",
+        "Reinforcement in High-Stress Homes"
+      ]
+    }

@@ -1,0 +1,7 @@
+/modules/assessments
+  assessment.service.ts
+  assessment.repository.ts
+  assessment.controller.ts
+  assessment.validators.ts
+  assessment.types.ts
+  assessment.scoring.ts

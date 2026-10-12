@@ -1,0 +1,12 @@
+{
+    "path":  "courses/working_with_families/lessons/lesson_repairing_ruptures.json",
+    "data":  {
+                 "title":  "Repairing Relationship Ruptures",
+                 "sections":  [
+                                  "section_repair_01",
+                                  "section_repair_02",
+                                  "section_repair_03"
+                              ],
+                 "id":  "lesson_repairing_ruptures"
+             }
+}

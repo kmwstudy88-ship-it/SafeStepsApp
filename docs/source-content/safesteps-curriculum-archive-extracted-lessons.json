@@ -1,0 +1,1237 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourceFolder": "SafeSteps Curriculum/SafeSteps Curriculum",
+  "extractionPurpose": "Preserve structured lesson records from the ignored Obsidian curriculum archive before deleting the local source folder.",
+  "extractedAt": "2026-07-23T19:35:39.077Z",
+  "totals": {
+    "allFiles": 450,
+    "markdownFiles": 418,
+    "sourceMarkdownFiles": 402,
+    "extractedLessonRecords": 55,
+    "skippedJsonBlocks": 0
+  },
+  "sourceMarkdownByTopLevelFolder": {
+    "1 - Reunification Program (24m)": 126,
+    "2 - Home Again Program (6-12m)": 112,
+    "2026-05-31.md": 1,
+    "2026-06-07.md": 1,
+    "3 - Keep Families Together (12m)": 105,
+    "4 - Back on Track (6m)": 42,
+    "copilot": 13,
+    "Untitled 1.md": 1,
+    "Untitled.md": 1
+  },
+  "lessons": [
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 07 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 08 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 09 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 10 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 11 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 12 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 13 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 14 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 15 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 16 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 17 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 18 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 19 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 20 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 21 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 22 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 23 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "1 - Reunification Program (24m)/Month 24/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 01-/week 01/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 01-/week 02/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 01-/week 03/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 01-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 02-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 03 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 04 -/Month 02-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 04 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 05-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 06-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 07-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 08-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 09-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 10-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 11-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "2 - Home Again Program (6-12m)/Month 12-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 01-/week 01/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 01-/week 02/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 01-/week 03/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 01-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 02-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 03-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 04-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 05-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 06-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 07-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 08-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 09-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 10-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 11-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "3 - Keep Families Together (12m)/Month 12-/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "4 - Back on Track (6m)/Month 01 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "4 - Back on Track (6m)/Month 02 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "4 - Back on Track (6m)/Month 03 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "4 - Back on Track (6m)/Month 04 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "4 - Back on Track (6m)/Month 05 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    },
+    {
+      "sourcePath": "4 - Back on Track (6m)/Month 06 -/week 04/Day 1.md",
+      "id": "M1-W1-D1",
+      "title": "Understanding Safe Enough Parenting",
+      "moduleId": "module-1-safety",
+      "week": 1,
+      "day": 1,
+      "month": 1,
+      "durationMinutes": 10,
+      "learningGoal": "Understand what 'safe enough' means in child protection.",
+      "microLesson": "Safe enough parenting means children are protected from harm, supervised, emotionally supported, and basic needs are consistently met.",
+      "activity": "Write a short reflection: What does 'safe enough' look like in your home?",
+      "evidenceTypes": [
+        "reflection"
+      ],
+      "caseworkerFlags": [
+        "if_parent_reports_inability_to_meet_basic_needs"
+      ],
+      "resources": [],
+      "metadata": {},
+      "version": "1.0.0"
+    }
+  ],
+  "skippedJsonBlocks": []
+}

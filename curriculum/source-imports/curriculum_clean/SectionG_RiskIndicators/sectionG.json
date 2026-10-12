@@ -1,0 +1,96 @@
+﻿{
+    "sectionId":  "G",
+    "groups":  [
+                   {
+                       "label":  "Chronic Family Conflict",
+                       "id":  "G_Conflict",
+                       "items":  [
+                                     {
+                                         "id":  "G_CF_Conflict",
+                                         "direction":  "higher_risk_higher_score",
+                                         "text":  "There is ongoing conflict or tension in our home.",
+                                         "flags":  {
+                                                       "flag":  "conflict_risk",
+                                                       "threshold":  4
+                                                   },
+                                         "type":  "likert_frequency",
+                                         "domain":  "family_conflict",
+                                         "scale":  "1=Never;5=Very often"
+                                     }
+                                 ]
+                   },
+                   {
+                       "label":  "Housing Instability",
+                       "id":  "G_Housing",
+                       "items":  [
+                                     {
+                                         "id":  "G_HI_Housing",
+                                         "direction":  "higher_risk_higher_score",
+                                         "text":  "Our housing situation feels unstable or uncertain.",
+                                         "flags":  {
+                                                       "flag":  "housing_risk",
+                                                       "threshold":  4
+                                                   },
+                                         "type":  "likert_agreement",
+                                         "domain":  "housing_instability",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   },
+                   {
+                       "label":  "Substance Misuse",
+                       "id":  "G_Substance",
+                       "items":  [
+                                     {
+                                         "id":  "G_SM_Substance",
+                                         "direction":  "higher_risk_higher_score",
+                                         "text":  "Substance use (alcohol or drugs) affects our home environment.",
+                                         "flags":  {
+                                                       "flag":  "substance_risk",
+                                                       "threshold":  3
+                                                   },
+                                         "type":  "likert_agreement",
+                                         "domain":  "substance_misuse",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   },
+                   {
+                       "label":  "Domestic Violence Exposure",
+                       "id":  "G_DV",
+                       "items":  [
+                                     {
+                                         "id":  "G_DV_Exposure",
+                                         "direction":  "higher_risk_higher_score",
+                                         "text":  "There has been exposure to domestic or family violence.",
+                                         "flags":  {
+                                                       "flag":  "dv_exposure_risk",
+                                                       "threshold":  2
+                                                   },
+                                         "type":  "likert_agreement",
+                                         "domain":  "domestic_violence",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   },
+                   {
+                       "label":  "Untreated Mental Health Concerns",
+                       "id":  "G_MentalHealth",
+                       "items":  [
+                                     {
+                                         "id":  "G_MH_Untreated",
+                                         "direction":  "higher_risk_higher_score",
+                                         "text":  "Mental health concerns in the home are not being treated or supported.",
+                                         "flags":  {
+                                                       "flag":  "mental_health_risk",
+                                                       "threshold":  3
+                                                   },
+                                         "type":  "likert_agreement",
+                                         "domain":  "untreated_mental_health",
+                                         "scale":  "1=Strongly disagree;5=Strongly agree"
+                                     }
+                                 ]
+                   }
+               ],
+    "name":  "Risk Indicators"
+}

@@ -1,10 +1,8 @@
-export type AssessmentDomain = {
-  id: string;
-  name: string;
-  weight?: number;
-};
+import type { SaferJudgementResult } from "./saferAssessmentEngine";
 
-export type AssessmentOption = {
+export type AssessmentItemType = "likert" | "multiple_choice" | "yes_no" | "numeric" | "narrative";
+
+export type AssessmentResponseOption = {
   id: string;
   itemId: string;
   label: string;
@@ -15,16 +13,23 @@ export type AssessmentOption = {
 export type AssessmentItem = {
   id: string;
   domainId: string;
-  itemType: "likert" | "multiple_choice" | "numeric";
-  weight?: number;
-  options?: AssessmentOption[];
+  itemType: AssessmentItemType;
+  weight: number;
   maxValue?: number;
+  options?: AssessmentResponseOption[];
 };
 
 export type AssessmentResponse = {
   itemId: string;
-  selectedOptionId?: string;
-  numericValue?: number;
+  selectedOptionId?: string | null;
+  numericValue?: number | null;
+  narrativeValue?: string | null;
+};
+
+export type AssessmentDomain = {
+  id: string;
+  name: string;
+  weight: number;
 };
 
 export type AssessmentScoringBand = {
@@ -32,7 +37,7 @@ export type AssessmentScoringBand = {
   label: string;
   minScore: number;
   maxScore: number;
-  recommendation: string;
+  recommendation?: string;
   requiresSupervisorReview?: boolean;
 };
 
@@ -45,272 +50,615 @@ export type AssessmentCriticalOverride = {
   requiresSupervisorReview?: boolean;
 };
 
-export type ServiceReferralProgress = {
-  status: "completed" | "engaged" | "referred" | "not_started";
-  completionWeight: number;
-};
-
-export type VisitationProgress = {
-  visitDate: string;
-  qualityScore: number;
-  incidentCount: number;
-};
-
-export type MilestoneProgress = {
-  status: "completed" | "in_progress" | "not_started";
-  progressScore?: number;
-};
-
-export type AssessmentDomainScore = {
+export type DomainScore = {
   domainId: string;
-  domainName: string;
-  score: number | null;
-  answeredItems: number;
-  totalItems: number;
-  coveragePercent: number;
-};
-
-export type AppliedCriticalOverride = {
-  id: string;
-  reason: string;
-  forcedBandId: string;
+  rawScore: number;
+  maxPossible: number;
+  normalizedScore: number;
 };
 
 export type AssessmentScoreResult = {
-  score: number | null;
+  domainScores: DomainScore[];
+  overallScore: number;
   band: AssessmentScoringBand | null;
-  domainScores: AssessmentDomainScore[];
-  answeredItems: number;
-  totalItems: number;
-  coveragePercent: number;
-  criticalOverridesApplied: AppliedCriticalOverride[];
-  recommendations: string[];
+  overrideTriggered: boolean;
+  override: AssessmentCriticalOverride | null;
   requiresSupervisorReview: boolean;
-  decisionSupportOnly: true;
-  humanReviewRequired: true;
+  recommendation: string;
 };
 
-type ScoreAssessmentInput = {
-  domains: AssessmentDomain[];
-  items: AssessmentItem[];
-  responses: AssessmentResponse[];
-  bands: AssessmentScoringBand[];
-  criticalOverrides?: AssessmentCriticalOverride[];
+export type ScoreTrend = {
+  domainId: string;
+  previousScore: number;
+  currentScore: number;
+  change: number;
+  direction: "improving" | "declining" | "stable";
 };
 
-function assertPositiveWeight(value: number | undefined, label: string): number {
-  const weight = value ?? 1;
-  if (!Number.isFinite(weight) || weight <= 0) {
-    throw new RangeError(`${label} must have a finite weight greater than zero.`);
-  }
-  return weight;
-}
+export type ReadinessSignal = {
+  label: string;
+  score: number | null;
+  weight: number;
+};
 
-function assertUniqueIds<T extends { id: string }>(values: T[], label: string): void {
-  const seen = new Set<string>();
-  for (const value of values) {
-    if (!value.id || seen.has(value.id)) {
-      throw new Error(`${label} must contain non-empty, unique IDs.`);
-    }
-    seen.add(value.id);
-  }
-}
+export type ReadinessIndexResult = {
+  compositeScore: number | null;
+  recommendation: string;
+  flags: string[];
+  signals: ReadinessSignal[];
+  suppressedByOverride: boolean;
+  saferJudgement?: SaferJudgementResult | null;
+};
 
-function validateConfiguration({
-  domains,
-  items,
-  bands,
-  criticalOverrides,
-}: Omit<ScoreAssessmentInput, "responses">): void {
-  assertUniqueIds(domains, "Assessment domains");
-  assertUniqueIds(items, "Assessment items");
-  assertUniqueIds(bands, "Assessment scoring bands");
-  assertUniqueIds(criticalOverrides, "Assessment critical overrides");
+export type CompositeRiskBand = "Critical" | "High" | "Moderate" | "Ready";
 
-  const domainIds = new Set(domains.map((domain) => domain.id));
-  for (const domain of domains) assertPositiveWeight(domain.weight, `Domain "${domain.id}"`);
-  for (const item of items) {
-    if (!domainIds.has(item.domainId)) {
-      throw new Error(`Assessment item "${item.id}" references unknown domain "${item.domainId}".`);
-    }
-    assertPositiveWeight(item.weight, `Item "${item.id}"`);
+export type CompositeReadinessRiskResult = ReadinessIndexResult & {
+  riskBand: CompositeRiskBand;
+  direction: "improving" | "declining" | "stable" | "unknown";
+  workerOnly: true;
+};
 
-    if (item.itemType === "numeric") {
-      const maxValue = item.maxValue ?? 0;
-      if (!Number.isFinite(maxValue) || maxValue <= 0) {
-        throw new RangeError(`Numeric item "${item.id}" must have a finite maxValue greater than zero.`);
-      }
-    } else {
-      if (!item.options?.length) {
-        throw new Error(`Assessment item "${item.id}" must define at least one option.`);
-      }
-      assertUniqueIds(item.options, `Options for item "${item.id}"`);
-      for (const option of item.options) {
-        if (option.itemId !== item.id || !Number.isFinite(option.score) || option.score < 0) {
-          throw new Error(`Assessment option "${option.id}" has invalid ownership or score.`);
-        }
-      }
-      if (Math.max(...item.options.map((option) => option.score)) <= 0) {
-        throw new RangeError(`Assessment item "${item.id}" must have a positive maximum option score.`);
-      }
-    }
-  }
+export type ServiceReferralProgress = {
+  status: "referred" | "engaged" | "completed" | "declined" | "discontinued";
+  completionWeight?: number;
+};
 
-  for (const band of bands) {
-    if (
-      !Number.isFinite(band.minScore)
-      || !Number.isFinite(band.maxScore)
-      || band.minScore < 0
-      || band.maxScore > 100
-      || band.minScore > band.maxScore
-    ) {
-      throw new RangeError(`Assessment scoring band "${band.id}" must be a valid range within 0 to 100.`);
-    }
-  }
+export type VisitationProgress = {
+  visitDate: string | Date;
+  qualityScore: number | null;
+  incidentCount?: number;
+};
 
-  const orderedBands = [...bands].sort((left, right) => left.minScore - right.minScore);
-  for (let index = 1; index < orderedBands.length; index += 1) {
-    if (orderedBands[index].minScore <= orderedBands[index - 1].maxScore) {
-      throw new Error("Assessment scoring bands must not overlap.");
-    }
-  }
+export type MilestoneProgress = {
+  status: "not_started" | "in_progress" | "completed" | "blocked";
+  progressScore?: number | null;
+};
 
-  const itemById = new Map(items.map((item) => [item.id, item]));
-  const bandIds = new Set(bands.map((band) => band.id));
-  const optionIdsByItem = new Map(items.map((item) => [
-    item.id,
-    new Set((item.options || []).map((option) => option.id)),
-  ]));
-  for (const override of criticalOverrides) {
-    if (!itemById.has(override.itemId)) {
-      throw new Error(`Critical override "${override.id}" references unknown item "${override.itemId}".`);
-    }
-    if (!optionIdsByItem.get(override.itemId)?.has(override.triggerOptionId)) {
-      throw new Error(`Critical override "${override.id}" references an unknown trigger option.`);
-    }
-    if (!bandIds.has(override.forcedBandId)) {
-      throw new Error(`Critical override "${override.id}" references unknown band "${override.forcedBandId}".`);
-    }
-  }
-}
-
-function roundedPercent(value: number): number {
+function roundScore(value: number) {
   return Math.round(value * 100) / 100;
 }
 
-export function scoreAssessment(input: ScoreAssessmentInput): AssessmentScoreResult {
-  const criticalOverrides = input.criticalOverrides || [];
-  validateConfiguration({ ...input, criticalOverrides });
+function responseByItem(responses: AssessmentResponse[]) {
+  return new Map(responses.map((response) => [response.itemId, response]));
+}
 
-  const itemById = new Map(input.items.map((item) => [item.id, item]));
-  const responseByItem = new Map<string, AssessmentResponse>();
-  for (const response of input.responses) {
-    if (!itemById.has(response.itemId)) {
-      throw new Error(`Assessment response references unknown item "${response.itemId}".`);
+export function scoreResponse(item: AssessmentItem, response: AssessmentResponse) {
+  if (item.itemType === "narrative") return 0;
+
+  if (item.itemType === "numeric") {
+    if (response.numericValue == null) {
+      throw new Error(`Numeric item ${item.id} has no numericValue.`);
     }
-    if (responseByItem.has(response.itemId)) {
-      throw new Error(`Assessment contains duplicate responses for item "${response.itemId}".`);
-    }
-    responseByItem.set(response.itemId, response);
+    return response.numericValue * item.weight;
   }
 
-  const domainScores = input.domains.map((domain): AssessmentDomainScore => {
-    const domainItems = input.items.filter((item) => item.domainId === domain.id);
-    let weightedScore = 0;
-    let totalWeight = 0;
-    let answeredItems = 0;
+  const selectedOption = item.options?.find((option) => option.id === response.selectedOptionId);
 
-    for (const item of domainItems) {
-      const response = responseByItem.get(item.id);
-      if (!response) continue;
+  if (!selectedOption) {
+    throw new Error(`No selected option recorded for item ${item.id}.`);
+  }
 
-      let rawScore: number;
-      let maximumScore: number;
-      if (item.itemType === "numeric") {
-        const numericValue = response.numericValue ?? Number.NaN;
-        if (!Number.isFinite(numericValue)) {
-          throw new Error(`Numeric item "${item.id}" requires a finite numeric response.`);
-        }
-        rawScore = numericValue;
-        maximumScore = item.maxValue ?? 0;
-        if (rawScore < 0 || rawScore > maximumScore) {
-          throw new RangeError(`Numeric response for item "${item.id}" must be within 0 and ${maximumScore}.`);
-        }
-      } else {
-        if (!response.selectedOptionId) {
-          throw new Error(`Item "${item.id}" requires a selected option.`);
-        }
-        const selectedOption = item.options?.find((option) => option.id === response.selectedOptionId);
-        if (!selectedOption) {
-          throw new Error(`Response for item "${item.id}" selects an unknown option.`);
-        }
-        rawScore = selectedOption.score;
-        maximumScore = Math.max(...(item.options || []).map((option) => option.score));
-      }
+  return selectedOption.score * item.weight;
+}
 
-      const weight = assertPositiveWeight(item.weight, `Item "${item.id}"`);
-      weightedScore += (rawScore / maximumScore) * 100 * weight;
-      totalWeight += weight;
-      answeredItems += 1;
+export function scoreDomain(
+  domain: AssessmentDomain,
+  items: AssessmentItem[],
+  responses: AssessmentResponse[],
+): DomainScore {
+  const domainItems = items.filter((item) => item.domainId === domain.id);
+  const responsesByItem = responseByItem(responses);
+  let rawScore = 0;
+  let maxPossible = 0;
+
+  for (const item of domainItems) {
+    const response = responsesByItem.get(item.id);
+    if (!response) continue;
+
+    rawScore += scoreResponse(item, response);
+
+    if (item.itemType === "numeric") {
+      maxPossible += (item.maxValue ?? response.numericValue ?? 0) * item.weight;
+    } else if (item.itemType !== "narrative") {
+      const maxOptionScore = Math.max(...(item.options ?? []).map((option) => option.score), 0);
+      maxPossible += maxOptionScore * item.weight;
     }
-
-    return {
-      domainId: domain.id,
-      domainName: domain.name,
-      score: totalWeight ? roundedPercent(weightedScore / totalWeight) : null,
-      answeredItems,
-      totalItems: domainItems.length,
-      coveragePercent: domainItems.length ? roundedPercent((answeredItems / domainItems.length) * 100) : 0,
-    };
-  });
-
-  const scoredDomains = domainScores.filter((domain) => domain.score !== null);
-  const totalDomainWeight = scoredDomains.reduce((sum, domainScore) => {
-    const domain = input.domains.find((candidate) => candidate.id === domainScore.domainId)!;
-    return sum + assertPositiveWeight(domain.weight, `Domain "${domain.id}"`);
-  }, 0);
-  const weightedOverall = scoredDomains.reduce((sum, domainScore) => {
-    const domain = input.domains.find((candidate) => candidate.id === domainScore.domainId)!;
-    return sum + (domainScore.score as number) * assertPositiveWeight(domain.weight, `Domain "${domain.id}"`);
-  }, 0);
-  const score = totalDomainWeight ? roundedPercent(weightedOverall / totalDomainWeight) : null;
-
-  const answeredItems = domainScores.reduce((sum, domain) => sum + domain.answeredItems, 0);
-  const totalItems = input.items.length;
-  const coveragePercent = totalItems ? roundedPercent((answeredItems / totalItems) * 100) : 0;
-  const band = score === null
-    ? null
-    : input.bands.find((candidate) => score >= candidate.minScore && score <= candidate.maxScore) || null;
-
-  const appliedOverrides = criticalOverrides.filter((override) => (
-    responseByItem.get(override.itemId)?.selectedOptionId === override.triggerOptionId
-  ));
-  const forcedBand = appliedOverrides
-    .map((override) => input.bands.find((candidate) => candidate.id === override.forcedBandId)!)
-    .sort((left, right) => left.minScore - right.minScore)[0];
-  const finalBand = forcedBand || band;
-  const recommendations = [
-    ...(finalBand?.recommendation ? [finalBand.recommendation] : []),
-    ...appliedOverrides.map((override) => override.reason),
-  ];
+  }
 
   return {
-    score,
-    band: finalBand,
-    domainScores,
-    answeredItems,
-    totalItems,
-    coveragePercent,
-    criticalOverridesApplied: appliedOverrides.map((override) => ({
-      id: override.id,
-      reason: override.reason,
-      forcedBandId: override.forcedBandId,
-    })),
-    recommendations: [...new Set(recommendations)],
-    requiresSupervisorReview: Boolean(
-      finalBand?.requiresSupervisorReview || appliedOverrides.some((override) => override.requiresSupervisorReview),
-    ),
-    decisionSupportOnly: true,
-    humanReviewRequired: true,
+    domainId: domain.id,
+    rawScore: roundScore(rawScore),
+    maxPossible: roundScore(maxPossible),
+    normalizedScore: maxPossible > 0 ? roundScore((rawScore / maxPossible) * 100) : 0,
   };
+}
+
+export function findTriggeredOverride(
+  overrides: AssessmentCriticalOverride[],
+  responses: AssessmentResponse[],
+  bands: AssessmentScoringBand[],
+) {
+  const responsesByItem = responseByItem(responses);
+  const triggered = overrides.filter((override) => {
+    const response = responsesByItem.get(override.itemId);
+    return response?.selectedOptionId === override.triggerOptionId;
+  });
+
+  if (!triggered.length) return null;
+
+  return triggered.sort((left, right) => {
+    const leftBand = bands.find((band) => band.id === left.forcedBandId);
+    const rightBand = bands.find((band) => band.id === right.forcedBandId);
+    return (leftBand?.minScore ?? 0) - (rightBand?.minScore ?? 0);
+  })[0];
+}
+
+export function findScoringBand(score: number, bands: AssessmentScoringBand[]) {
+  return (
+    bands.find((band) => score >= band.minScore && score <= band.maxScore) ??
+    null
+  );
+}
+
+export function scoreAssessment({
+  domains,
+  items,
+  responses,
+  overrides = [],
+  bands = [],
+}: {
+  domains: AssessmentDomain[];
+  items: AssessmentItem[];
+  responses: AssessmentResponse[];
+  overrides?: AssessmentCriticalOverride[];
+  bands?: AssessmentScoringBand[];
+}): AssessmentScoreResult {
+  const domainScores = domains.map((domain) => scoreDomain(domain, items, responses));
+  const totalWeight = domains.reduce((sum, domain) => sum + domain.weight, 0) || 1;
+  const overallScore = roundScore(
+    domainScores.reduce((sum, score) => {
+      const domain = domains.find((candidate) => candidate.id === score.domainId);
+      return sum + score.normalizedScore * (domain?.weight ?? 0);
+    }, 0) / totalWeight,
+  );
+
+  const override = findTriggeredOverride(overrides, responses, bands);
+  const forcedBand = override ? bands.find((band) => band.id === override.forcedBandId) ?? null : null;
+  const computedBand = findScoringBand(overallScore, bands);
+  const band = forcedBand ?? computedBand;
+  const requiresSupervisorReview =
+    Boolean(override?.requiresSupervisorReview) || Boolean(band?.requiresSupervisorReview);
+
+  return {
+    domainScores,
+    overallScore,
+    band,
+    overrideTriggered: Boolean(override),
+    override,
+    requiresSupervisorReview,
+    recommendation: band?.recommendation ?? "Review assessment findings with the case team.",
+  };
+}
+
+export function scoreTrend(previous: DomainScore[], current: DomainScore[]): ScoreTrend[] {
+  return current
+    .map((currentScore) => {
+      const previousScore = previous.find((score) => score.domainId === currentScore.domainId);
+      if (!previousScore) return null;
+
+      const change = roundScore(currentScore.normalizedScore - previousScore.normalizedScore);
+      const direction = change > 2 ? "improving" : change < -2 ? "declining" : "stable";
+
+      return {
+        domainId: currentScore.domainId,
+        previousScore: previousScore.normalizedScore,
+        currentScore: currentScore.normalizedScore,
+        change,
+        direction,
+      };
+    })
+    .filter((trend): trend is ScoreTrend => trend !== null);
+}
+
+export function computeReadinessIndex({
+  assessmentScore,
+  serviceCompletionScore,
+  visitationQualityScore,
+  milestoneProgressScore,
+  activeCriticalOverride,
+  saferJudgement,
+}: {
+  assessmentScore?: number | null;
+  serviceCompletionScore?: number | null;
+  visitationQualityScore?: number | null;
+  milestoneProgressScore?: number | null;
+  activeCriticalOverride?: boolean;
+  saferJudgement?: SaferJudgementResult | null;
+}): ReadinessIndexResult {
+  const signals: ReadinessSignal[] = [
+    { label: "Assessment scores", score: assessmentScore ?? null, weight: 0.4 },
+    { label: "Service completion", score: serviceCompletionScore ?? null, weight: 0.2 },
+    { label: "Visitation quality", score: visitationQualityScore ?? null, weight: 0.25 },
+    { label: "Milestone progress", score: milestoneProgressScore ?? null, weight: 0.15 },
+  ];
+  const availableSignals = signals.filter((signal) => signal.score != null);
+  const flags = signals
+    .filter((signal) => signal.score == null)
+    .map((signal) => `${signal.label} signal is missing.`);
+
+  if (activeCriticalOverride) {
+    return {
+      compositeScore: null,
+      recommendation: "Supervisor review required before any reunification-level change.",
+      flags: ["Active critical override suppresses readiness index.", ...flags],
+      signals,
+      suppressedByOverride: true,
+      saferJudgement: saferJudgement ?? null,
+    };
+  }
+
+  if (saferJudgement?.requiredReview) {
+    return {
+      compositeScore: null,
+      recommendation: "SAFER guided judgement requires practitioner review before readiness can be relied on.",
+      flags: ["SAFER practitioner review required before readiness use.", ...saferJudgement.flags, ...flags],
+      signals,
+      suppressedByOverride: true,
+      saferJudgement,
+    };
+  }
+
+  if (saferJudgement) {
+    flags.push("SAFER guided judgement is shown as review context, not a weighted readiness signal.");
+  }
+
+  if (!availableSignals.length) {
+    return {
+      compositeScore: null,
+      recommendation: "Insufficient evidence to calculate readiness.",
+      flags,
+      signals,
+      suppressedByOverride: false,
+      saferJudgement: saferJudgement ?? null,
+    };
+  }
+
+  const availableWeight = availableSignals.reduce((sum, signal) => sum + signal.weight, 0);
+  const compositeScore = roundScore(
+    availableSignals.reduce((sum, signal) => sum + (signal.score ?? 0) * signal.weight, 0) / availableWeight,
+  );
+  const recommendation =
+    compositeScore >= 80
+      ? "Strong progress shown; review readiness with supervisor and case team."
+      : compositeScore >= 60
+        ? "Emerging progress shown; continue structured monitoring and targeted supports."
+        : "Readiness concerns remain; continue intervention and review active risks.";
+
+  return {
+    compositeScore,
+    recommendation,
+    flags,
+    signals,
+    suppressedByOverride: false,
+    saferJudgement: saferJudgement ?? null,
+  };
+}
+
+export function classifyCompositeRiskBand(input: {
+  compositeScore: number | null;
+  suppressedByOverride?: boolean;
+}): CompositeRiskBand {
+  if (input.suppressedByOverride || input.compositeScore == null) return "Critical";
+  if (input.compositeScore < 40) return "Critical";
+  if (input.compositeScore < 60) return "High";
+  if (input.compositeScore < 80) return "Moderate";
+  return "Ready";
+}
+
+export function calculateReadinessDirection(currentScore: number | null, previousScore?: number | null) {
+  if (currentScore == null || previousScore == null) return "unknown" as const;
+  const change = roundScore(currentScore - previousScore);
+  if (change > 2) return "improving" as const;
+  if (change < -2) return "declining" as const;
+  return "stable" as const;
+}
+
+export function computeCompositeReunificationReadinessRisk({
+  previousCompositeScore,
+  ...input
+}: Parameters<typeof computeReadinessIndex>[0] & {
+  previousCompositeScore?: number | null;
+}): CompositeReadinessRiskResult {
+  const readiness = computeReadinessIndex(input);
+  const riskBand = classifyCompositeRiskBand({
+    compositeScore: readiness.compositeScore,
+    suppressedByOverride: readiness.suppressedByOverride,
+  });
+
+  return {
+    ...readiness,
+    riskBand,
+    direction: calculateReadinessDirection(readiness.compositeScore, previousCompositeScore),
+    workerOnly: true,
+  };
+}
+
+export function calculateServiceCompletionScore(referrals: ServiceReferralProgress[]) {
+  const activeReferrals = referrals.filter((referral) => referral.status !== "declined");
+  if (!activeReferrals.length) return null;
+
+  const totalWeight = activeReferrals.reduce((sum, referral) => sum + (referral.completionWeight ?? 1), 0);
+  if (totalWeight <= 0) return null;
+
+  const completedWeight = activeReferrals.reduce((sum, referral) => {
+    if (referral.status === "completed") return sum + (referral.completionWeight ?? 1);
+    if (referral.status === "engaged") return sum + (referral.completionWeight ?? 1) * 0.5;
+    return sum;
+  }, 0);
+
+  return roundScore((completedWeight / totalWeight) * 100);
+}
+
+export function calculateVisitationQualityTrend(visits: VisitationProgress[]) {
+  const scoredVisits = visits
+    .filter((visit) => visit.qualityScore != null)
+    .sort((left, right) => new Date(left.visitDate).getTime() - new Date(right.visitDate).getTime());
+
+  if (!scoredVisits.length) return null;
+
+  const weighted = scoredVisits.reduce(
+    (acc, visit, index) => {
+      const recencyWeight = index + 1;
+      const incidentPenalty = (visit.incidentCount ?? 0) * 10;
+      const adjustedScore = Math.max(0, Math.min(100, (visit.qualityScore ?? 0) - incidentPenalty));
+
+      return {
+        total: acc.total + adjustedScore * recencyWeight,
+        weight: acc.weight + recencyWeight,
+      };
+    },
+    { total: 0, weight: 0 },
+  );
+
+  return weighted.weight > 0 ? roundScore(weighted.total / weighted.weight) : null;
+}
+
+export function calculateMilestoneProgressScore(milestones: MilestoneProgress[]) {
+  if (!milestones.length) return null;
+
+  const scores = milestones.map((milestone) => {
+    if (milestone.progressScore != null) return milestone.progressScore;
+    if (milestone.status === "completed") return 100;
+    if (milestone.status === "in_progress") return 50;
+    return 0;
+  });
+
+  return roundScore(scores.reduce((sum, score) => sum + score, 0) / scores.length);
+}
+
+export function computeReadinessIndexFromSignals({
+  assessmentScore,
+  serviceReferrals,
+  visitations,
+  milestones,
+  activeCriticalOverride,
+  saferJudgement,
+}: {
+  assessmentScore?: number | null;
+  serviceReferrals: ServiceReferralProgress[];
+  visitations: VisitationProgress[];
+  milestones: MilestoneProgress[];
+  activeCriticalOverride?: boolean;
+  saferJudgement?: SaferJudgementResult | null;
+}) {
+  return computeReadinessIndex({
+    assessmentScore,
+    serviceCompletionScore: calculateServiceCompletionScore(serviceReferrals),
+    visitationQualityScore: calculateVisitationQualityTrend(visitations),
+    milestoneProgressScore: calculateMilestoneProgressScore(milestones),
+    activeCriticalOverride,
+    saferJudgement,
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Score regression detection
+// ---------------------------------------------------------------------------
+
+export type ScoreRegressionFlag = {
+  domainId: string;
+  previousScore: number;
+  currentScore: number;
+  drop: number;
+  severity: "minor" | "significant" | "critical";
+};
+
+/**
+ * Compare a previous set of domain scores against the current scores and
+ * return a list of domains where the score has dropped beyond a configurable
+ * threshold.  Drops are classified:
+ *   - minor:       5–14 points
+ *   - significant: 15–29 points
+ *   - critical:    30+ points
+ */
+export function flagScoreRegression(
+  previousScores: DomainScore[],
+  currentScores: DomainScore[],
+  minorThreshold = 5,
+  significantThreshold = 15,
+  criticalThreshold = 30,
+): ScoreRegressionFlag[] {
+  const prevByDomain = new Map(previousScores.map((d) => [d.domainId, d]));
+
+  const flags: ScoreRegressionFlag[] = [];
+
+  for (const current of currentScores) {
+    const prev = prevByDomain.get(current.domainId);
+    if (!prev) continue;
+
+    const prevNorm = prev.normalizedScore * 100;
+    const currNorm = current.normalizedScore * 100;
+    const drop = roundScore(prevNorm - currNorm);
+
+    if (drop < minorThreshold) continue;
+
+    let severity: ScoreRegressionFlag["severity"];
+    if (drop >= criticalThreshold) {
+      severity = "critical";
+    } else if (drop >= significantThreshold) {
+      severity = "significant";
+    } else {
+      severity = "minor";
+    }
+
+    flags.push({
+      domainId: current.domainId,
+      previousScore: roundScore(prevNorm),
+      currentScore: roundScore(currNorm),
+      drop,
+      severity,
+    });
+  }
+
+  return flags;
+}
+
+// ---------------------------------------------------------------------------
+// Domain trajectory summary
+// ---------------------------------------------------------------------------
+
+export type DomainTrajectoryPoint = {
+  assessmentId: string;
+  assessedAt: string;
+  normalizedScore: number;
+};
+
+export type DomainTrajectorySummary = {
+  domainId: string;
+  points: DomainTrajectoryPoint[];
+  firstScore: number | null;
+  latestScore: number | null;
+  peakScore: number | null;
+  direction: "improving" | "declining" | "stable" | "insufficient_data";
+  regressionFlags: ScoreRegressionFlag[];
+};
+
+export type LongitudinalTrajectorySummary = {
+  domains: DomainTrajectorySummary[];
+  overallDirection: "improving" | "declining" | "stable" | "insufficient_data";
+  assessmentCount: number;
+};
+
+/**
+ * Summarize the score trajectory for each domain across a series of
+ * historical assessment records.
+ *
+ * Each record is an object with `assessmentId`, `assessedAt`, and
+ * `domainScores` (an array of DomainScore).  Records must be provided in
+ * chronological order (oldest first).
+ */
+export function summarizeDomainTrajectory(
+  records: Array<{
+    assessmentId: string;
+    assessedAt: string;
+    domainScores: DomainScore[];
+  }>,
+): LongitudinalTrajectorySummary {
+  if (!records.length) {
+    return { domains: [], overallDirection: "insufficient_data", assessmentCount: 0 };
+  }
+
+  // Collect all domain IDs seen across all records
+  const domainIds = new Set<string>();
+  for (const record of records) {
+    for (const ds of record.domainScores) {
+      domainIds.add(ds.domainId);
+    }
+  }
+
+  const domains: DomainTrajectorySummary[] = [];
+
+  for (const domainId of domainIds) {
+    const points: DomainTrajectoryPoint[] = [];
+
+    for (const record of records) {
+      const ds = record.domainScores.find((d) => d.domainId === domainId);
+      if (!ds) continue;
+      points.push({
+        assessmentId: record.assessmentId,
+        assessedAt: record.assessedAt,
+        normalizedScore: roundScore(ds.normalizedScore * 100),
+      });
+    }
+
+    if (!points.length) {
+      domains.push({
+        domainId,
+        points: [],
+        firstScore: null,
+        latestScore: null,
+        peakScore: null,
+        direction: "insufficient_data",
+        regressionFlags: [],
+      });
+      continue;
+    }
+
+    const firstScore = points[0].normalizedScore;
+    const latestScore = points[points.length - 1].normalizedScore;
+    const peakScore = Math.max(...points.map((p) => p.normalizedScore));
+
+    let direction: DomainTrajectorySummary["direction"];
+    if (points.length < 2) {
+      direction = "insufficient_data";
+    } else {
+      const change = latestScore - firstScore;
+      if (change > 5) direction = "improving";
+      else if (change < -5) direction = "declining";
+      else direction = "stable";
+    }
+
+    // Build regression flags from consecutive pairs
+    const regressionFlags: ScoreRegressionFlag[] = [];
+    for (let i = 1; i < points.length; i++) {
+      const prevDs: DomainScore = {
+        domainId,
+        rawScore: 0,
+        maxPossible: 100,
+        normalizedScore: points[i - 1].normalizedScore / 100,
+      };
+      const currDs: DomainScore = {
+        domainId,
+        rawScore: 0,
+        maxPossible: 100,
+        normalizedScore: points[i].normalizedScore / 100,
+      };
+      const flags = flagScoreRegression([prevDs], [currDs]);
+      regressionFlags.push(...flags);
+    }
+
+    domains.push({ domainId, points, firstScore, latestScore, peakScore, direction, regressionFlags });
+  }
+
+  // Compute overall direction from domain directions
+  const dirCounts = { improving: 0, declining: 0, stable: 0 };
+  for (const d of domains) {
+    if (d.direction === "improving") dirCounts.improving++;
+    else if (d.direction === "declining") dirCounts.declining++;
+    else if (d.direction === "stable") dirCounts.stable++;
+  }
+
+  let overallDirection: LongitudinalTrajectorySummary["overallDirection"];
+  const tracked = domains.filter((d) => d.direction !== "insufficient_data").length;
+  if (!tracked) {
+    overallDirection = "insufficient_data";
+  } else if (dirCounts.improving > dirCounts.declining) {
+    overallDirection = "improving";
+  } else if (dirCounts.declining > dirCounts.improving) {
+    overallDirection = "declining";
+  } else {
+    overallDirection = "stable";
+  }
+
+  return { domains, overallDirection, assessmentCount: records.length };
 }

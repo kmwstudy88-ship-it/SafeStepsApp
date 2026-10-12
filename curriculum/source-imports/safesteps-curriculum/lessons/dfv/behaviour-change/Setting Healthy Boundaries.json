@@ -1,0 +1,62 @@
+{
+      "module_id": "behaviour_change_boundary_setting_v1",
+      "module_title": "Setting Healthy Boundaries",
+      "learning_outcomes": [
+        "Understand boundaries as safety tools.",
+        "Recognise harmful boundary patterns.",
+        "Apply clear, consistent boundaries.",
+        "Support children through predictable limits."
+      ],
+      "lesson_content": {
+        "definition": "Boundaries are clear limits that protect safety, wellbeing, and connection.",
+        "boundary_types": [
+          "Physical boundaries",
+          "Emotional boundaries",
+          "Time boundaries",
+          "Behavioural boundaries"
+        ],
+        "harmful_patterns": [
+          "Rigid boundaries",
+          "Inconsistent boundaries",
+          "Punitive boundaries"
+        ]
+      },
+      "activities": [
+        {
+          "activity_id": "boundary_sorting",
+          "type": "sorting"
+        }
+      ],
+      "fill_in_the_blank": [
+        { "question": "Boundaries protect ________ and wellbeing.", "answer": "safety" }
+      ],
+      "quiz": {
+        "multiple_choice": [
+          {
+            "question": "Which is a healthy boundary?",
+            "options": ["Rigid rules", "Clear expectations", "Punishment", "Shaming"],
+            "answer": "Clear expectations"
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "assessment_id": "boundary_plan",
+          "type": "scenario_analysis",
+          "criteria": [
+            { "criterion_id": "boundary_accuracy", "weight": 0.40 },
+            { "criterion_id": "predictability_planning", "weight": 0.35 },
+            { "criterion_id": "impact_reasoning", "weight": 0.25 }
+          ]
+        }
+      ],
+      "competency_check": [
+        "Set boundaries",
+        "Maintain consistency",
+        "Support child safety"
+      ],
+      "extensions": [
+        "Boundaries for Teens",
+        "Boundaries in Co-Parenting"
+      ]
+    }

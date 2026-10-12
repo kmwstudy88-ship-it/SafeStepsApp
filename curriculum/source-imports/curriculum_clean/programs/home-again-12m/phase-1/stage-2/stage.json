@@ -1,0 +1,33 @@
+{
+  "id": "phase-1-stage-2",
+  "title": "Stability — Stage 2",
+  "objectives": [
+    "Strengthen emotional regulation",
+    "Maintain safety planning"
+  ],
+  "required_lessons": [
+    "MH-ER-010_tipp_skills",
+    "SAF-SP-001_what_is_a_safety_plan"
+  ],
+  "recommended_lessons": [
+    "MH-ER-007_emotion_wheel"
+  ],
+  "evidence": [
+    "Updated safety plan"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_routine_log"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "fridge_pantry_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

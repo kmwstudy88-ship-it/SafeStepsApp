@@ -1,0 +1,22 @@
+﻿{
+    "programs":  [
+                     {
+                         "triggers":  {
+                                          "max_parenting_strength":  70
+                                      },
+                         "name":  "Positive Parenting Foundations",
+                         "id":  "PPF"
+                     },
+                     {
+                         "triggers":  {
+                                          "risk_flags":  [
+                                                             "dv_exposure_risk",
+                                                             "conflict_risk",
+                                                             "mental_health_risk"
+                                                         ]
+                                      },
+                         "name":  "Trauma-Informed Parenting",
+                         "id":  "TIP"
+                     }
+                 ]
+}

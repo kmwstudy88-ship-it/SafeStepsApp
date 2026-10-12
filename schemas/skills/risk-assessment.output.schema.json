@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safesteps.app/schemas/skills/risk-assessment.output.schema.json",
+  "title": "Risk Assessment — Skill Output",
+  "description": "Output schema for the SafeSteps Risk Assessment skill.",
+  "type": "object",
+  "required": ["case_id", "risk_level", "risk_score", "domain_scores", "contributing_factors", "protective_factors", "confidence", "uncertainty_disclosure", "run_meta"],
+  "properties": {
+    "case_id": { "type": "string" },
+    "risk_level": {
+      "type": "string",
+      "enum": ["low", "moderate", "high", "critical"]
+    },
+    "risk_score": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+    "domain_scores": {
+      "type": "object",
+      "required": ["physical_safety", "emotional_wellbeing", "parenting_capacity", "family_violence", "substance_use", "support_network"],
+      "properties": {
+        "physical_safety": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "emotional_wellbeing": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "parenting_capacity": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "family_violence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "substance_use": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+        "support_network": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+      },
+      "additionalProperties": false
+    },
+    "contributing_factors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["factor_id", "description", "domain", "claim_ids", "weight"],
+        "properties": {
+          "factor_id": { "type": "string" },
+          "description": { "type": "string", "minLength": 1 },
+          "domain": {
+            "type": "string",
+            "enum": ["physical_safety", "emotional_wellbeing", "parenting_capacity", "family_violence", "substance_use", "support_network"]
+          },
+          "claim_ids": { "type": "array", "items": { "type": "string" } },
+          "weight": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "protective_factors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["factor_id", "description"],
+        "properties": {
+          "factor_id": { "type": "string" },
+          "description": { "type": "string", "minLength": 1 },
+          "claim_ids": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 },
+    "uncertainty_disclosure": { "type": "boolean" },
+    "disclaimer": { "type": "string" },
+    "run_meta": {
+      "type": "object",
+      "required": ["skill_version", "model", "timestamp_utc"],
+      "properties": {
+        "skill_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "model": { "type": "string" },
+        "timestamp_utc": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

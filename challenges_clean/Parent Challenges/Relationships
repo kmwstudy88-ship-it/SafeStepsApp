@@ -1,0 +1,147 @@
+{
+  "category": "Relationships",
+  "challenges": [
+    {
+      "challenge_number": 1,
+      "title": "Co-Parenting",
+      "structure": {
+        "introduction": {
+          "overview": "",
+          "why_this_topic_matters": "",
+          "what_you_will_learn": "",
+          "estimated_time": "",
+          "difficulty_level": "",
+          "skills_developed": []
+        },
+        "initial_self_assessment": {
+          "questions": [
+            "How confident are you with this topic? (1–10)",
+            "How often does this affect you?",
+            "How important is this goal?",
+            "What would success look like?",
+            "What is your biggest challenge?",
+            "What strengths do you already have?"
+          ],
+          "baseline_score": ""
+        },
+        "learning_objectives": [
+          "Explain the topic",
+          "Identify common barriers",
+          "Apply practical strategies",
+          "Reflect on your own experiences",
+          "Create an action plan"
+        ],
+        "educational_content": {
+          "understanding_the_topic": "",
+          "why_it_matters": "",
+          "research_findings": "",
+          "common_myths": "",
+          "warning_signs": "",
+          "protective_factors": "",
+          "practical_strategies": "",
+          "real_life_examples": ""
+        },
+        "reflection_questions": [
+          "What stood out today?",
+          "What surprised you?",
+          "How does this relate to your family?",
+          "What would you like to improve?",
+          "What strengths do you already have?"
+        ],
+        "activity_one": {
+          "type": "",
+          "instructions": ""
+        },
+        "activity_two": {
+          "type": "",
+          "instructions": ""
+        },
+        "knowledge_quiz": {
+          "questions": [],
+          "auto_score": true
+        },
+        "scenario_practice": {
+          "scenarios": [],
+          "feedback": ""
+        },
+        "weekly_challenge": "",
+        "evidence_upload": {
+          "allowed_types": ["photo", "video", "audio", "document", "journal"]
+        },
+        "parent_journal": {
+          "daily_prompts": [
+            "What went well today?",
+            "What was difficult?",
+            "How did you respond?",
+            "What will you do differently tomorrow?"
+          ]
+        },
+        "child_feedback": {
+          "questions": [
+            "Did you feel listened to today?",
+            "Did you feel safe?",
+            "What made you happy today?",
+            "What would you change?"
+          ]
+        },
+        "professional_feedback": "",
+        "action_plan": {
+          "goals": [],
+          "strategies": [],
+          "supports": [],
+          "anticipated_barriers": [],
+          "review_date": ""
+        },
+        "progress_tracker": {
+          "completion_percentage": "",
+          "quiz_scores": "",
+          "activities_completed": "",
+          "journal_entries": "",
+          "evidence_uploaded": "",
+          "goal_progress": "",
+          "time_spent_learning": ""
+        },
+        "final_reflection": {
+          "questions": [
+            "What have you learned?",
+            "What has changed?",
+            "What are you most proud of?",
+            "What will you continue doing?"
+          ]
+        },
+        "final_assessment": {
+          "before_score": "",
+          "after_score": "",
+          "confidence_increase": "",
+          "knowledge_increase": "",
+          "behaviour_changes": ""
+        },
+        "completion_certificate": {
+          "challenge_name": "",
+          "completion_date": "",
+          "quiz_score": "",
+          "hours_completed": "",
+          "skills_achieved": "",
+          "cpd_hours": ""
+        },
+        "three_month_review": {
+          "self_assessment": "",
+          "quiz": "",
+          "reflection": "",
+          "progress_review": "",
+          "updated_action_plan": ""
+        }
+      }
+    },
+
+    { "challenge_number": 2, "title": "Blended Families", "structure": "same_as_above" },
+    { "challenge_number": 3, "title": "Extended Family Relationships", "structure": "same_as_above" },
+    { "challenge_number": 4, "title": "Building Healthy Friendships", "structure": "same_as_above" },
+    { "challenge_number": 5, "title": "Social Supports", "structure": "same_as_above" },
+    { "challenge_number": 6, "title": "Relationship Boundaries", "structure": "same_as_above" },
+    { "challenge_number": 7, "title": "Trust Building", "structure": "same_as_above" },
+    { "challenge_number": 8, "title": "Separation Recovery", "structure": "same_as_above" },
+    { "challenge_number": 9, "title": "Parenting After Separation", "structure": "same_as_above" },
+    { "challenge_number": 10, "title": "New Relationships", "structure": "same_as_above" }
+  ]
+}

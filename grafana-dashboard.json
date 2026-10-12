@@ -1,0 +1,17 @@
+{
+  \"dashboard\": {
+    \"title\": \"SafeSteps Monitoring\",
+    \"panels\": [
+      {
+        \"type\": \"graph\",
+        \"title\": \"Backend Requests\",
+        \"targets\": [{ \"expr\": \"rate(http_requests_total[1m])\" }]
+      },
+      {
+        \"type\": \"graph\",
+        \"title\": \"Dashboard Requests\",
+        \"targets\": [{ \"expr\": \"rate(http_requests_total[1m])\" }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "type": "ShortCourse",
+  "durationWeeks": 10,
+  "created": "2026-06-09",
+  "metadata": {
+    "generatedBy": "SafeSteps Automation",
+    "category": "ShortCourse"
+  },
+  "topic": "MentalHealth",
+  "compliance": {
+    "weeklyCheckIns": true,
+    "evidenceUploads": true,
+    "attendanceRequired": true
+  },
+  "modules": [],
+  "programName": "MentalHealth Short Course (10 Weeks)"
+}

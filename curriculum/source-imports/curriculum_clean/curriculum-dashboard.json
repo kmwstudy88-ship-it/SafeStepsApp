@@ -1,0 +1,121 @@
+﻿[
+    {
+        "Domain":  "safesteps-curriculum",
+        "TotalLessons":  6,
+        "Completed":  6,
+        "Placeholders":  0,
+        "CompletionRate":  "100%"
+    },
+    {
+        "Domain":  "Alcohol and Other Drugs",
+        "TotalLessons":  100,
+        "Completed":  0,
+        "Placeholders":  100,
+        "CompletionRate":  "0%"
+    },
+    {
+        "Domain":  "AOD",
+        "TotalLessons":  325,
+        "Completed":  320,
+        "Placeholders":  5,
+        "CompletionRate":  "98.46%"
+    },
+    {
+        "Domain":  "Child Development",
+        "TotalLessons":  300,
+        "Completed":  200,
+        "Placeholders":  100,
+        "CompletionRate":  "66.67%"
+    },
+    {
+        "Domain":  "DFV",
+        "TotalLessons":  5,
+        "Completed":  0,
+        "Placeholders":  5,
+        "CompletionRate":  "0%"
+    },
+    {
+        "Domain":  "Domestic and Family Violence",
+        "TotalLessons":  100,
+        "Completed":  100,
+        "Placeholders":  0,
+        "CompletionRate":  "100%"
+    },
+    {
+        "Domain":  "Employment",
+        "TotalLessons":  100,
+        "Completed":  0,
+        "Placeholders":  100,
+        "CompletionRate":  "0%"
+    },
+    {
+        "Domain":  "Family Preservation",
+        "TotalLessons":  100,
+        "Completed":  0,
+        "Placeholders":  100,
+        "CompletionRate":  "0%"
+    },
+    {
+        "Domain":  "Housing",
+        "TotalLessons":  100,
+        "Completed":  0,
+        "Placeholders":  100,
+        "CompletionRate":  "0%"
+    },
+    {
+        "Domain":  "Life Skills",
+        "TotalLessons":  100,
+        "Completed":  0,
+        "Placeholders":  100,
+        "CompletionRate":  "0%"
+    },
+    {
+        "Domain":  "Mental Health",
+        "TotalLessons":  105,
+        "Completed":  0,
+        "Placeholders":  105,
+        "CompletionRate":  "0%"
+    },
+    {
+        "Domain":  "Parenting",
+        "TotalLessons":  115,
+        "Completed":  10,
+        "Placeholders":  105,
+        "CompletionRate":  "8.7%"
+    },
+    {
+        "Domain":  "ParentingCurriculum",
+        "TotalLessons":  89,
+        "Completed":  89,
+        "Placeholders":  0,
+        "CompletionRate":  "100%"
+    },
+    {
+        "Domain":  "ParentingLessons",
+        "TotalLessons":  9,
+        "Completed":  9,
+        "Placeholders":  0,
+        "CompletionRate":  "100%"
+    },
+    {
+        "Domain":  "Reunification",
+        "TotalLessons":  100,
+        "Completed":  0,
+        "Placeholders":  100,
+        "CompletionRate":  "0%"
+    },
+    {
+        "Domain":  "scripts",
+        "TotalLessons":  24,
+        "Completed":  24,
+        "Placeholders":  0,
+        "CompletionRate":  "100%"
+    },
+    {
+        "Domain":  "templates",
+        "TotalLessons":  null,
+        "Completed":  null,
+        "Placeholders":  0,
+        "CompletionRate":  "0%"
+    }
+]

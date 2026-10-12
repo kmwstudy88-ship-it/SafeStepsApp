@@ -1,0 +1,37 @@
+﻿{
+  "programId": "HOMEAGAIN-6-12M",
+  "name": "Home Again Stabilisation Program",
+  "durationMonthsMin": 6,
+  "durationMonthsMax": 12,
+  "phases": [
+    {
+      "phaseId": "PHASE-01",
+      "name": "Stabilisation",
+      "startWeek": 1,
+      "endWeek": 12,
+      "modules": [
+        "PP-REUNIFY-02",
+        "PP-ENGAGE-02"
+      ]
+    },
+    {
+      "phaseId": "PHASE-02",
+      "name": "Strengthening",
+      "startWeek": 13,
+      "endWeek": 24,
+      "modules": [
+        "PP-REUNIFY-01",
+        "PP-ENGAGE-03"
+      ]
+    },
+    {
+      "phaseId": "PHASE-03",
+      "name": "Independence",
+      "startWeek": 25,
+      "endWeek": 48,
+      "modules": [
+        "PP-REUNIFY-03"
+      ]
+    }
+  ]
+}

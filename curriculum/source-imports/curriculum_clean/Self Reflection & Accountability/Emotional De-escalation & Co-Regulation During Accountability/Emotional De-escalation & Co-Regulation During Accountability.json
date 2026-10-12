@@ -1,0 +1,122 @@
+{
+  "program_id": "PARENT-ACC-102",
+  "program_title": "Emotional De-escalation & Co-Regulation During Accountability",
+  "version": "1.0",
+  "metadata": {
+    "target_audience": "Parents of school-aged children and teenagers (Ages 6–17)",
+    "estimated_duration": "90–120 minutes",
+    "delivery_format": "Self-paced or Facilitated Module",
+    "core_objective": "Prevent conflict escalation during boundary enforcement using co-regulation techniques.",
+    "key_deliverable": "Parent Cooldown & De-escalation Plan"
+  },
+  "modules": [
+    {
+      "section_id": 1,
+      "section_title": "Core Learning Content",
+      "topics": [
+        {
+          "topic_id": "2.1",
+          "title": "The Neuroscience of Escalation: Flipping the Lid",
+          "summary": "Understanding nervous system responses during boundary enforcement.",
+          "key_concepts": [
+            {
+              "concept": "Downstairs Brain (Limbic System / Amygdala)",
+              "description": "Controls fight, flight, freeze, or fawn responses. Logic shuts down when triggered."
+            },
+            {
+              "concept": "Upstairs Brain (Prefrontal Cortex)",
+              "description": "Controls reasoning, impulse control, empathy, and problem-solving."
+            },
+            {
+              "concept": "Co-Regulation Principle",
+              "description": "Dysregulated parents cannot regulate a dysregulated child. Children mirror parental nervous systems."
+            }
+          ]
+        },
+        {
+          "topic_id": "2.2",
+          "title": "The 3-Step De-escalation Sequence",
+          "steps": [
+            {
+              "step": 1,
+              "name": "Regulate",
+              "action": "Somatic and physical calm. Lower tone, slow speech, relax posture."
+            },
+            {
+              "step": 2,
+              "name": "Relate",
+              "action": "Emotional connection and validation of feelings before addressing the infraction."
+            },
+            {
+              "step": 3,
+              "name": "Reason",
+              "action": "Logical consequences and problem-solving after nervous system equilibrium is restored."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section_title": "Lesson Activities",
+      "activities": [
+        {
+          "activity_id": "ACT-201",
+          "title": "Identifying Personal Escalation Triggers",
+          "type": "Self-Reflection Worksheet",
+          "instructions": "Map physical warning signs and environmental triggers to construct calming strategies."
+        },
+        {
+          "activity_id": "ACT-202",
+          "title": "Scripting the Regulate-Relate-Reason Response",
+          "type": "Scenario Practice",
+          "instructions": "Apply the 3-step sequence to common high-stress confrontations."
+        }
+      ]
+    },
+    {
+      "section_id": 3,
+      "section_title": "Implementation Tasks",
+      "tasks": [
+        {
+          "task_id": "TSK-201",
+          "title": "Parent Time-Out Protocol",
+          "action": "Establish an explicit phrase to pause conversations during personal emotional escalation."
+        },
+        {
+          "task_id": "TSK-202",
+          "title": "Post-Escalation Repair Routine",
+          "action": "Execute a 3-part repair process (Acknowledge, Take Ownership, Re-anchor Boundary) if emotional composure breaks."
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section_title": "Assessments & Quizzes",
+      "quiz": [
+        {
+          "id": "Q1",
+          "question": "According to neuroscience-informed parenting, what must happen before a child can process a logical consequence?",
+          "options": [
+            "A) They must feel remorse and apologize.",
+            "B) Their nervous system must return to a regulated state.",
+            "C) They must spend time isolated in their bedroom.",
+            "D) The parent must explain the rule at least three times."
+          ],
+          "correct_answer": "B"
+        },
+        {
+          "id": "Q2",
+          "question": "Which order represents the correct sequence for effective de-escalation?",
+          "options": [
+            "A) Reason -> Relate -> Regulate",
+            "B) Relate -> Reason -> Regulate",
+            "C) Regulate -> Relate -> Reason",
+            "D) Regulate -> Reason -> Relate"
+          ],
+          "correct_answer": "C"
+        }
+      ]
+    }
+  ]
+}

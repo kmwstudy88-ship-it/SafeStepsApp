@@ -1,0 +1,44 @@
+# ================================
+# Reunification Program – Stage 1
+# Stabilisation & Safety Foundations (Weeks 1–12)
+# Folder Generator
+# ================================
+
+$base = "C:\Users\SAFES\SafeStepsApp\programs\Reunification\Stage1"
+
+# Create Stage 1 root
+New-Item -ItemType Directory -Path $base -Force
+
+# Week names
+$weeks = @{
+    "Week01" = "Understanding-Your-Case-Plan"
+    "Week02" = "Building-a-Safe-Daily-Routine"
+    "Week03" = "Emotional-Regulation-Basics"
+    "Week04" = "Communication-Skills-for-Caseworkers"
+    "Week05" = "Understanding-Child-Safety-Concerns"
+    "Week06" = "Stress-Management-for-Parents"
+    "Week07" = "Parenting-Under-Pressure"
+    "Week08" = "Safe-Home-Environment"
+    "Week09" = "Healthy-Boundaries"
+    "Week10" = "Understanding-Child-Development"
+    "Week11" = "Trauma-Basics"
+    "Week12" = "Review-and-Evidence-Checkpoint"
+}
+
+# Create folders for each week + lesson subfolders
+foreach ($week in $weeks.Keys) {
+
+    $weekPath = Join-Path $base "$week-$($weeks[$week])"
+    New-Item -ItemType Directory -Path $weekPath -Force
+
+    # Create 7 lessons per week
+    for ($i = 1; $i -le 7; $i++) {
+        $lessonFolder = "Lesson$i"
+        New-Item -ItemType Directory -Path (Join-Path $weekPath $lessonFolder) -Force
+
+        # Create placeholder JSON file for each lesson
+        New-Item -ItemType File -Path (Join-Path $weekPath "$lessonFolder\lesson.json") -Force
+    }
+}
+
+Write-Host "Stage 1 folder structure created successfully."

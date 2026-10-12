@@ -1,0 +1,31 @@
+[
+  {
+    "dimension": "identity_stability",
+    "rules": [
+      { "if": "bg_childhood_environment includes 'Stable and supportive'", "score": 2 },
+      { "if": "bg_childhood_environment includes 'Exposure to violence'", "score": -2 },
+      { "if": "bg_childhood_environment includes 'Exposure to substance misuse'", "score": -2 }
+    ]
+  },
+  {
+    "dimension": "life_stressors",
+    "rules": [
+      { "if": "pc_current_stressors count >= 3", "score": -3 },
+      { "if": "pc_mental_health_history == 'Severe'", "score": -3 }
+    ]
+  },
+  {
+    "dimension": "support_strength",
+    "rules": [
+      { "if": "sn_support_strength == 'Strong'", "score": 3 },
+      { "if": "sn_support_strength == 'None'", "score": -3 }
+    ]
+  },
+  {
+    "dimension": "risk_flags",
+    "rules": [
+      { "if": "bg_criminal_history == 'Significant'", "score": -3 },
+      { "if": "pc_current_stressors includes 'Substance use'", "score": -3 }
+    ]
+  }
+]

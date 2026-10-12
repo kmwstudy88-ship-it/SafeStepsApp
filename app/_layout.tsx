@@ -1,40 +1,134 @@
-import React from 'react';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
+import React from "react";
+import { Stack } from "expo-router";
+
+import { AdvancedAssessmentPreviewBoundary } from "../components/security/AdvancedAssessmentPreviewBoundary";
+import { AuthRouteBoundary } from "../components/security/AuthRouteBoundary";
+import { OnboardingRouteBoundary } from "../components/security/OnboardingRouteBoundary";
+import { ProgramEnrollmentBoundary } from "../components/security/ProgramEnrollmentBoundary";
+import { SensitiveRouteBoundary } from "../components/security/SensitiveRouteBoundary";
+import { AuthProvider } from "../lib/auth";
+import { CaseProvider } from "../lib/contexts/CaseContext";
+import { EvidenceProvider } from "../lib/contexts/EvidenceContext";
+import { FamilyProvider } from "../lib/contexts/FamilyContext";
+import { SafetyProvider } from "../lib/contexts/SafetyContext";
+import { TenantProvider } from "../lib/contexts/TenantContext";
 
 export default function RootLayout() {
   return (
-    <>
-      <StatusBar style="dark" />
-      <Stack
-        screenOptions={{
-          headerStyle: { backgroundColor: '#FFFFFF' },
-          headerTintColor: '#102033',
-          headerTitleStyle: { fontWeight: '700' },
-          contentStyle: { backgroundColor: '#F7FAFC' },
-        }}
-      >
-        <Stack.Screen name="index" options={{ title: 'SafeSteps' }} />
-        <Stack.Screen name="scenarios/index" options={{ title: 'Roleplay Simulation' }} />
-        <Stack.Screen name="storybooks/index" options={{ title: 'Interactive Storybooks' }} />
-        <Stack.Screen name="assessments/index" options={{ title: 'Assessments & Results' }} />
-        <Stack.Screen name="evidence/index" options={{ title: 'Evidence Vault' }} />
-        <Stack.Screen name="reports/index" options={{ title: 'Court Reports' }} />
-        <Stack.Screen name="cases/index" options={{ title: 'Case List' }} />
-        <Stack.Screen name="cases/[id]" options={{ title: 'Case Detail' }} />
-        <Stack.Screen name="family/index" options={{ title: 'Family Dashboard' }} />
-        <Stack.Screen name="carers/index" options={{ title: 'Carer Portal', headerShown: false }} />
-        <Stack.Screen name="dashboard/supervisor" options={{ title: 'Supervisor Dashboard' }} />
-        <Stack.Screen name="documents/[id]" options={{ title: 'Document Viewer' }} />
-        <Stack.Screen name="voice-coach/index" options={{ title: 'Voice & Breathing' }} />
-        <Stack.Screen name="sos/index" options={{ title: 'SOS Calming' }} />
-        <Stack.Screen name="fairness/index" options={{ title: 'Fairness Analyzer' }} />
-        <Stack.Screen name="safety-plan/index" options={{ title: 'Safety Plan Builder' }} />
-        <Stack.Screen name="contact-visit/index" options={{ title: 'Contact Visit Companion' }} />
-        <Stack.Screen name="accessibility/index" options={{ title: 'Accessibility & Language' }} />
-        <Stack.Screen name="settings/index" options={{ title: 'Settings & Trusted Contacts' }} />
-        <Stack.Screen name="discreet/index" options={{ headerShown: false }} />
-      </Stack>
-    </>
+    <AuthProvider>
+      <AuthRouteBoundary>
+        <OnboardingRouteBoundary>
+          <SensitiveRouteBoundary>
+        <ProgramEnrollmentBoundary>
+          <AdvancedAssessmentPreviewBoundary>
+            <TenantProvider>
+              <FamilyProvider>
+                <CaseProvider>
+                  <SafetyProvider>
+                    <EvidenceProvider>
+                      <Stack screenOptions={{ headerShown: false }}>
+                        <Stack.Screen name="index" />
+                        <Stack.Screen name="login/index" />
+                        <Stack.Screen name="register/index" />
+                        <Stack.Screen name="forgot-password/index" />
+                        <Stack.Screen name="reset-password/index" />
+                        <Stack.Screen name="welcome" />
+                        <Stack.Screen name="why-safesteps" />
+                        <Stack.Screen name="onboarding/how-safesteps-works" />
+                        <Stack.Screen name="onboarding/privacy-parent-rights" />
+                        <Stack.Screen name="onboarding/verify-account" />
+                        <Stack.Screen name="onboarding/protect-account" />
+                        <Stack.Screen name="onboarding/consent-information-sharing" />
+                        <Stack.Screen name="onboarding/accessibility-preferences" />
+                        <Stack.Screen name="dashboard/index" />
+                        <Stack.Screen name="programs" />
+                        <Stack.Screen name="program-lessons/[programId]/[weekId]/[dayId]" />
+                        <Stack.Screen name="library/index" />
+                        <Stack.Screen name="challenges/index" />
+                        <Stack.Screen name="challenges/[challengeId]" />
+                        <Stack.Screen name="resources/index" />
+                        <Stack.Screen name="resources/child-wellbeing-check-in" />
+                        <Stack.Screen name="resources/evidence-templates" />
+                        <Stack.Screen name="resources/parenting-tools" />
+                        <Stack.Screen name="resources/program-support" />
+                        <Stack.Screen name="resources/safety-planning" />
+                        <Stack.Screen name="resources/support-service-preparation" />
+                        <Stack.Screen name="lessons/index" />
+                        <Stack.Screen name="tasks/index" />
+                        <Stack.Screen name="sessions/index" />
+                        <Stack.Screen name="documents/index" />
+                        <Stack.Screen name="referrals/index" />
+                        <Stack.Screen name="visits/index" />
+                        <Stack.Screen name="check-in" />
+                        <Stack.Screen name="daily-evidence" />
+                        <Stack.Screen name="evidence/index" />
+                        <Stack.Screen name="bulk-setup/index" />
+                        <Stack.Screen name="timeline/index" />
+                        <Stack.Screen name="family-meeting/index" />
+                        <Stack.Screen name="parent-child" />
+                        <Stack.Screen name="parent/daily-challenges/index" />
+                        <Stack.Screen name="parent/daily-challenges/[id]" />
+                        <Stack.Screen name="parent/daily-challenges/evidence" />
+                        <Stack.Screen name="parent/daily-challenges/complete" />
+                        <Stack.Screen name="parent/daily-challenges/rewards" />
+                        <Stack.Screen name="parent/daily-challenges/streak" />
+                        <Stack.Screen name="parent/daily-challenges/history" />
+                        <Stack.Screen name="parent/daily-challenges/summary" />
+                        <Stack.Screen name="parent/daily-challenges/settings" />
+                        <Stack.Screen name="parent-lessons/strengthening-family-bond" />
+                        <Stack.Screen name="parent-lessons/nervous-system-regulation" />
+                        <Stack.Screen name="facilitator/index" />
+                        <Stack.Screen name="facilitator/contact-session-log" />
+                        <Stack.Screen name="facilitator/evidence-review" />
+                        <Stack.Screen name="facilitator/report-approval" />
+                        <Stack.Screen name="child-protection/index" />
+                        <Stack.Screen name="carer/index" />
+                        <Stack.Screen name="advocate/index" />
+                        <Stack.Screen name="assessments/index" />
+                        <Stack.Screen name="intake-progress" />
+                        <Stack.Screen name="intake-review" />
+                        <Stack.Screen name="assessment-system/index" />
+                        <Stack.Screen name="assessment-system/case-setup" />
+                        <Stack.Screen name="assessment-system/records" />
+                        <Stack.Screen name="assessment-system/parent-profiles" />
+                        <Stack.Screen name="assessment-system/parent-identity" />
+                        <Stack.Screen name="assessment-system/scoring" />
+                        <Stack.Screen name="assessment-system/rubric-scoring" />
+                        <Stack.Screen name="assessment-system/evidence-uploads" />
+                        <Stack.Screen name="assessment-system/program-service-recommendations" />
+                        <Stack.Screen name="assessment-system/document-intelligence" />
+                        <Stack.Screen name="assessment-system/method-encyclopedia" />
+                        <Stack.Screen name="assessment-system/sequence-knowledge" />
+                        <Stack.Screen name="assessment-system/psychometric-engine" />
+                        <Stack.Screen name="assessment-system/measurement-evidence-ontology" />
+                        <Stack.Screen name="assessment-system/human-development-model" />
+                        <Stack.Screen name="assessment-system/human-development-operating-system" />
+                        <Stack.Screen name="assessment-system/platform-domain-architecture" />
+                        <Stack.Screen name="assessment-system/implementation-blueprint" />
+                        <Stack.Screen name="assessment-system/workflow-state-machines" />
+                        <Stack.Screen name="assessment-system/fairness-governance" />
+                        <Stack.Screen name="assessment-system/ai-governance" />
+                        <Stack.Screen name="assessment-system/evidence-integrity" />
+                        <Stack.Screen name="assessment-system/event-orchestration" />
+                        <Stack.Screen name="assessment-system/api-service-contracts" />
+                        <Stack.Screen name="assessment-system/readiness-index" />
+                        <Stack.Screen name="assessment-system/contact-progression-review" />
+                        <Stack.Screen name="assessment-system/home-again-transition-review" />
+                        <Stack.Screen name="assessment-system/report-output" />
+                        <Stack.Screen name="reports/index" />
+                        <Stack.Screen name="my-story" />
+                        <Stack.Screen name="settings" />
+                      </Stack>
+                    </EvidenceProvider>
+                  </SafetyProvider>
+                </CaseProvider>
+              </FamilyProvider>
+            </TenantProvider>
+          </AdvancedAssessmentPreviewBoundary>
+        </ProgramEnrollmentBoundary>
+          </SensitiveRouteBoundary>
+        </OnboardingRouteBoundary>
+      </AuthRouteBoundary>
+    </AuthProvider>
   );
 }

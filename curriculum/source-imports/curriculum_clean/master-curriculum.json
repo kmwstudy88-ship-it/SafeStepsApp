@@ -1,0 +1,99 @@
+{
+  "system": "SAFE STEPS MASTER CURRICULUM",
+  "version": "1.0",
+  "description": "Unified behavioural, parenting, mental health, DFV, AOD and self reflection curriculum system",
+  "modules": [
+    {
+      "module": "Child Development",
+      "categories": [
+        "Infant Development",
+        "Toddler Development",
+        "Early Childhood",
+        "Middle Childhood",
+        "Adolescence",
+        "Attachment",
+        "Brain Development",
+        "Emotional Regulation",
+        "Behaviour Development"
+      ]
+    },
+    {
+      "module": "Alcohol and Other Drugs",
+      "categories": [
+        "Introduction to AOD",
+        "Addiction Science",
+        "Substance Effects",
+        "Behavioural Signs",
+        "Withdrawal & Dependence",
+        "Mental Health Links",
+        "Family Impact",
+        "Risk Factors",
+        "Recovery Pathways",
+        "Relapse Prevention",
+        "Harm Reduction",
+        "Intervention Skills",
+        "Crisis & Overdose Response"
+      ]
+    },
+    {
+      "module": "Domestic and Family Violence",
+      "categories": [
+        "Understanding DFV",
+        "Patterns of Abuse",
+        "Coercive Control",
+        "Child Impact",
+        "Safety Planning",
+        "Legal Systems",
+        "Risk Assessment",
+        "Trauma Responses",
+        "Recovery & Support",
+        "Reunification"
+      ]
+    },
+    {
+      "module": "Mental Health",
+      "categories": [
+        "Anxiety",
+        "Depression",
+        "Trauma",
+        "Emotional Regulation",
+        "Stress Response",
+        "Crisis Management",
+        "Neurodevelopment",
+        "Behavioural Health",
+        "Support Systems",
+        "Recovery Pathways"
+      ]
+    },
+    {
+      "module": "Self Reflection & Accountability",
+      "categories": [
+        "Self Awareness",
+        "Behaviour Patterns",
+        "Accountability Systems",
+        "Emotional Regulation",
+        "Decision Making",
+        "Identity Development",
+        "Habit Change",
+        "Conflict Reflection",
+        "Personal Responsibility",
+        "Behaviour Transformation"
+      ]
+    }
+  ],
+  "lesson_structure": {
+    "format": "standard",
+    "fields": [
+      "LessonNumber",
+      "Title",
+      "Category",
+      "Module",
+      "LearningObjectives",
+      "Introduction",
+      "MainContent",
+      "CaseStudy",
+      "ReflectionQuestions",
+      "AssessmentTask"
+    ]
+  }
+}

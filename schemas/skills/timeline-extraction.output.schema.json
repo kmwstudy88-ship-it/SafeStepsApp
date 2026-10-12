@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safesteps.app/schemas/skills/timeline-extraction.output.schema.json",
+  "title": "Timeline Extraction — Skill Output",
+  "description": "Output schema for the SafeSteps Timeline Extraction skill.",
+  "type": "object",
+  "required": ["case_id", "events", "gaps", "run_meta"],
+  "properties": {
+    "case_id": { "type": "string" },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["event_id", "description", "date", "date_precision", "confidence", "source_spans"],
+        "properties": {
+          "event_id": { "type": "string" },
+          "description": { "type": "string", "minLength": 1 },
+          "date": { "type": "string", "format": "date" },
+          "date_precision": {
+            "type": "string",
+            "enum": ["exact", "approximate", "inferred"]
+          },
+          "actors": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "claim_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "source_spans": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["doc_id", "start", "end"],
+              "properties": {
+                "doc_id": { "type": "string" },
+                "start": { "type": "integer", "minimum": 0 },
+                "end": { "type": "integer", "minimum": 0 }
+              },
+              "additionalProperties": false
+            }
+          },
+          "confidence": { "type": "number", "minimum": 0.0, "maximum": 1.0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "undated_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["event_id", "description"],
+        "properties": {
+          "event_id": { "type": "string" },
+          "description": { "type": "string" },
+          "claim_ids": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "gaps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gap_id", "period_start", "period_end", "significance"],
+        "properties": {
+          "gap_id": { "type": "string" },
+          "period_start": { "type": "string", "format": "date" },
+          "period_end": { "type": "string", "format": "date" },
+          "significance": { "type": "string", "enum": ["low", "moderate", "high"] },
+          "notes": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "run_meta": {
+      "type": "object",
+      "required": ["skill_version", "model", "timestamp_utc"],
+      "properties": {
+        "skill_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "model": { "type": "string" },
+        "timestamp_utc": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

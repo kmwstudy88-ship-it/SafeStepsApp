@@ -1,0 +1,228 @@
+{
+  "module_id": "parenting_coercive_control_v1",
+  "module_title": "Patterns of Coercive Control in Parenting",
+  "series": "SafeSteps Parenting Literacy Series",
+  "level": 3,
+  "version": "1.0.0",
+
+  "learning_outcomes": [
+    "Understand coercive control as a pattern of parenting behaviours.",
+    "Identify early signs of domination, fear-based compliance, and emotional destabilisation.",
+    "Recognise developmental impacts on attachment, self-regulation, and wellbeing.",
+    "Apply safe, supportive, developmentally appropriate alternatives.",
+    "Demonstrate mastery through quizzes, tasks, and scenario-based assessments."
+  ],
+
+  "lesson_content": {
+    "definition": "Coercive control in parenting is a pattern of behaviours that restrict a child’s autonomy, emotional safety, and ability to develop independence.",
+    "patterns": [
+      {
+        "name": "Invasion of Autonomy",
+        "examples": [
+          "Excessive monitoring or surveillance",
+          "Over-controlling routines, choices, friendships",
+          "Interfering with privacy, sleep, or personal space"
+        ]
+      },
+      {
+        "name": "Isolation from Support",
+        "examples": [
+          "Preventing contact with friends or extended family",
+          "Ridiculing outside relationships",
+          "Creating dependency for approval or information"
+        ]
+      },
+      {
+        "name": "Confusion and Destabilisation",
+        "examples": [
+          "Unpredictable rules",
+          "Sudden mood shifts",
+          "Gaslighting or rewriting events"
+        ]
+      },
+      {
+        "name": "Threats and Intimidation",
+        "examples": [
+          "Yelling, looming, slamming doors",
+          "Threatening punishment or abandonment",
+          "Using silence or withdrawal to create fear"
+        ]
+      },
+      {
+        "name": "Humiliation and Degradation",
+        "examples": [
+          "Name-calling",
+          "Mocking emotions",
+          "Public shaming or comparisons"
+        ]
+      },
+      {
+        "name": "Economic and Resource Control",
+        "examples": [
+          "Withholding essentials as punishment",
+          "Restricting access to food, clothing, hygiene items",
+          "Sabotaging school attendance or activities"
+        ]
+      },
+      {
+        "name": "Sexual and Body-Based Control",
+        "examples": [
+          "Shaming normal developmental behaviours",
+          "Ignoring bodily autonomy or consent",
+          "Ridiculing puberty-related changes"
+        ]
+      }
+    ]
+  },
+
+  "video_lesson": {
+    "title": "Coercive Control in Parenting: Understanding Patterns That Harm Children",
+    "length_minutes": 6,
+    "script": [
+      "In parenting, safety and connection form the foundation of healthy development.",
+      "Coercive control is not discipline—it is domination.",
+      "These patterns teach children to comply out of fear rather than trust.",
+      "Understanding these patterns helps parents build safer, healthier relationships."
+    ]
+  },
+
+  "knowledge_sequence": [
+    "Definition",
+    "Parenting Context",
+    "Pattern Recognition",
+    "Developmental Impact",
+    "Scenario Interpretation",
+    "Safe Parenting Alternatives"
+  ],
+
+  "activities": [
+    {
+      "activity_id": "pattern_sorting",
+      "type": "sorting",
+      "description": "Sort behaviours into correct coercive control pattern categories.",
+      "items": [
+        { "behaviour": "Checks child's messages daily", "correct_pattern": "Invasion of Autonomy" },
+        { "behaviour": "Makes child cancel social plans", "correct_pattern": "Isolation from Support" }
+      ]
+    },
+    {
+      "activity_id": "micro_scenarios",
+      "type": "scenario_identification",
+      "description": "Identify pattern, impact, and safer alternative.",
+      "scenarios": [
+        {
+          "scenario_id": "ms1",
+          "text": "Parent alternates between affection and sudden withdrawal.",
+          "correct_pattern": "Confusion and Destabilisation"
+        }
+      ]
+    }
+  ],
+
+  "fill_in_the_blank": [
+    {
+      "question": "Coercive control in parenting is a ________ of behaviours.",
+      "answer": "pattern"
+    },
+    {
+      "question": "Unpredictable rules create ________ and destabilisation.",
+      "answer": "confusion"
+    },
+    {
+      "question": "Withholding food or clothing is a form of ________ control.",
+      "answer": "economic"
+    },
+    {
+      "question": "Mocking a child’s emotions is an example of ________.",
+      "answer": "humiliation"
+    },
+    {
+      "question": "Children learn compliance through ________ when coercive control is present.",
+      "answer": "fear"
+    }
+  ],
+
+  "quiz": {
+    "multiple_choice": [
+      {
+        "question": "Coercive control in parenting is best defined as:",
+        "options": ["Strict discipline", "A pattern of domination", "Normal guidance", "Age-appropriate boundaries"],
+        "answer": "A pattern of domination"
+      },
+      {
+        "question": "Gaslighting a child primarily causes:",
+        "options": ["Confidence", "Confusion", "Independence", "Resilience"],
+        "answer": "Confusion"
+      }
+    ],
+    "true_false": [
+      {
+        "question": "Coercive control can occur without yelling or physical punishment.",
+        "answer": true
+      },
+      {
+        "question": "Isolation can be emotional, not just physical.",
+        "answer": true
+      }
+    ],
+    "short_answer": [
+      {
+        "question": "Name two impacts of humiliation on children.",
+        "expected_keywords": ["low self-esteem", "shame", "withdrawal", "anxiety"]
+      },
+      {
+        "question": "Why is coercive control harmful even if the parent means well?",
+        "expected_keywords": ["fear", "emotional harm", "developmental impact"]
+      }
+    ],
+    "scenario_questions": [
+      {
+        "question": "A parent alternates between affection and sudden withdrawal. Which pattern is present?",
+        "answer": "Confusion and Destabilisation"
+      },
+      {
+        "question": "A parent insists on approving all friendships. Which pattern is present?",
+        "answer": "Isolation from Support"
+      }
+    ]
+  },
+
+  "assessments": [
+    {
+      "assessment_id": "written_analysis",
+      "type": "scenario_analysis",
+      "requirements": [
+        "Identify 3 patterns",
+        "Describe developmental impacts",
+        "Provide safer alternatives"
+      ]
+    },
+    {
+      "assessment_id": "pattern_map",
+      "type": "visual_mapping",
+      "requirements": [
+        "Show escalation over time",
+        "Highlight cumulative harm"
+      ]
+    },
+    {
+      "assessment_id": "mastery_test",
+      "type": "exam",
+      "items": 20
+    }
+  ],
+
+  "competency_check": [
+    "Identify coercive control in parenting",
+    "Explain developmental harm",
+    "Apply safe alternatives",
+    "Recognise early warning signs"
+  ],
+
+  "extensions": [
+    "Coercive Control in Parenting Teens",
+    "Coercive Control in High-Stress Households",
+    "Coercive Control & Neurodivergent Children",
+    "Coercive Control in Post-Separation Parenting"
+  ]
+}

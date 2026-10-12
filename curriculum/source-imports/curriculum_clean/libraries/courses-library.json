@@ -1,0 +1,34 @@
+﻿[
+    {
+        "id":  "f8492f1b-e71d-4351-ab41-aacee5b0d36d",
+        "name":  "24 Month Intensive Program",
+        "type":  "course",
+        "description":  "Course: 24 Month Intensive Program",
+        "stagesCount":  0,
+        "weeksCount":  0
+    },
+    {
+        "id":  "59cbd9b1-7485-4f95-b100-778efc3f8503",
+        "name":  "Automation Test",
+        "type":  "course",
+        "description":  "Course: Automation Test",
+        "stagesCount":  0,
+        "weeksCount":  0
+    },
+    {
+        "id":  "safesteps_core",
+        "name":  "SafeSteps Core",
+        "type":  "course",
+        "description":  "Course: SafeSteps Core",
+        "stagesCount":  1,
+        "weeksCount":  2
+    },
+    {
+        "id":  "safesteps_program",
+        "name":  "SafeSteps Program",
+        "type":  "course",
+        "description":  "Course: SafeSteps Program",
+        "stagesCount":  1,
+        "weeksCount":  4
+    }
+]

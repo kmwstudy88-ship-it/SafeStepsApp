@@ -1,0 +1,255 @@
+{
+  "module_id": "parenting_behaviour_change_lessons_v1",
+  "module_title": "Behaviour Change Lessons",
+  "series": "SafeSteps Parenting Literacy Series",
+  "level": 3,
+  "version": "1.0.0",
+
+  "learning_outcomes": [
+    "Understand behaviour change as a structured, staged process.",
+    "Recognise why harmful patterns persist in parenting and family dynamics.",
+    "Identify readiness, resistance, and ambivalence in behaviour change.",
+    "Apply evidence-based behaviour change strategies safely.",
+    "Support children and caregivers through sustainable, non-coercive change."
+  ],
+
+  "lesson_content": {
+    "definition": "Behaviour change is a gradual, structured process where individuals shift patterns of thinking, reacting, and relating. It requires safety, clarity, consistency, and support—not pressure or coercion.",
+    "behaviour_change_stages": [
+      {
+        "stage": "Awareness",
+        "description": "Recognising that a behaviour is harmful or ineffective.",
+        "examples": [
+          "Noticing yelling escalates conflict",
+          "Realising a child withdraws when shamed"
+        ]
+      },
+      {
+        "stage": "Understanding",
+        "description": "Exploring why the behaviour occurs and what triggers it.",
+        "examples": [
+          "Identifying stress triggers",
+          "Understanding a child's developmental needs"
+        ]
+      },
+      {
+        "stage": "Intention",
+        "description": "Deciding to change and committing to new patterns.",
+        "examples": [
+          "Setting goals for calmer communication",
+          "Planning safer routines"
+        ]
+      },
+      {
+        "stage": "Practice",
+        "description": "Trying new behaviours and adjusting when challenges arise.",
+        "examples": [
+          "Using grounding techniques",
+          "Replacing criticism with curiosity"
+        ]
+      },
+      {
+        "stage": "Maintenance",
+        "description": "Sustaining new behaviours over time.",
+        "examples": [
+          "Consistent routines",
+          "Repairing mistakes without shame"
+        ]
+      }
+    ],
+    "barriers_to_change": [
+      "Stress and emotional overload",
+      "Old habits and automatic reactions",
+      "Fear of losing control",
+      "Lack of support or clarity",
+      "Unresolved trauma"
+    ],
+    "child_specific_impacts": [
+      "Improved emotional regulation",
+      "Greater sense of safety",
+      "Better communication and trust",
+      "Reduced anxiety and confusion",
+      "Stronger attachment relationships"
+    ],
+    "parent_specific_impacts": [
+      "Increased confidence",
+      "Reduced guilt and shame",
+      "Clearer decision-making",
+      "Improved self-regulation",
+      "More stable family dynamics"
+    ]
+  },
+
+  "video_lesson": {
+    "title": "How Behaviour Change Works",
+    "length_minutes": 6,
+    "script": [
+      "Behaviour change is not instant—it is a gradual, structured process.",
+      "Parents often repeat patterns because they are overwhelmed, stressed, or repeating what they learned growing up.",
+      "Real change begins with awareness, followed by understanding, intention, practice, and maintenance.",
+      "Children thrive when parents shift from reactive patterns to calm, connected responses.",
+      "This lesson teaches how to recognise readiness for change and build sustainable new behaviours."
+    ]
+  },
+
+  "knowledge_sequence": [
+    "Definition",
+    "Stages of Change",
+    "Barriers to Change",
+    "Pattern Recognition",
+    "Safe Response Planning"
+  ],
+
+  "activities": [
+    {
+      "activity_id": "stage_sorting",
+      "type": "sorting",
+      "description": "Sort behaviours into correct behaviour change stages.",
+      "items": [
+        { "behaviour": "Noticing yelling escalates conflict", "correct_stage": "Awareness" },
+        { "behaviour": "Planning calmer communication", "correct_stage": "Intention" },
+        { "behaviour": "Trying grounding techniques", "correct_stage": "Practice" }
+      ]
+    },
+    {
+      "activity_id": "micro_scenarios",
+      "type": "scenario_identification",
+      "description": "Identify behaviour change stage and explain likely impacts.",
+      "scenarios": [
+        {
+          "scenario_id": "bc1",
+          "text": "A parent realises their child becomes anxious when they raise their voice.",
+          "correct_stage": "Awareness"
+        },
+        {
+          "scenario_id": "bc2",
+          "text": "A parent practices pausing before responding during conflict.",
+          "correct_stage": "Practice"
+        }
+      ]
+    }
+  ],
+
+  "fill_in_the_blank": [
+    {
+      "question": "Behaviour change is a ________ process, not an instant shift.",
+      "answer": "gradual"
+    },
+    {
+      "question": "The first stage of behaviour change is ________.",
+      "answer": "Awareness"
+    },
+    {
+      "question": "Old habits often persist because they are ________ reactions.",
+      "answer": "automatic"
+    },
+    {
+      "question": "Children thrive when parents shift from reactive patterns to ________ responses.",
+      "answer": "calm"
+    },
+    {
+      "question": "Maintenance involves sustaining new behaviours over ________.",
+      "answer": "time"
+    }
+  ],
+
+  "quiz": {
+    "multiple_choice": [
+      {
+        "question": "Which behaviour belongs to the Awareness stage?",
+        "options": [
+          "Trying new communication strategies",
+          "Recognising a harmful pattern",
+          "Setting goals for change",
+          "Maintaining new routines"
+        ],
+        "answer": "Recognising a harmful pattern"
+      },
+      {
+        "question": "Which behaviour belongs to the Practice stage?",
+        "options": [
+          "Understanding triggers",
+          "Trying grounding techniques",
+          "Deciding to change",
+          "Sustaining new habits"
+        ],
+        "answer": "Trying grounding techniques"
+      }
+    ],
+    "true_false": [
+      {
+        "question": "Behaviour change can happen instantly if someone tries hard enough.",
+        "answer": false
+      },
+      {
+        "question": "Stress can make behaviour change more difficult.",
+        "answer": true
+      }
+    ],
+    "short_answer": [
+      {
+        "question": "Name two barriers to behaviour change.",
+        "expected_keywords": ["stress", "habits", "fear", "trauma"]
+      },
+      {
+        "question": "Why is practice essential for behaviour change?",
+        "expected_keywords": ["learning", "adjustment", "building new patterns"]
+      }
+    ],
+    "scenario_questions": [
+      {
+        "question": "A parent sets a goal to stop yelling. Which stage is this?",
+        "answer": "Intention"
+      },
+      {
+        "question": "A parent consistently uses calm routines for weeks. Which stage is this?",
+        "answer": "Maintenance"
+      }
+    ]
+  },
+
+  "assessments": [
+    {
+      "assessment_id": "behaviour_change_analysis",
+      "type": "scenario_analysis",
+      "max_score": 100,
+      "criteria": [
+        { "criterion_id": "stage_identification", "weight": 0.40 },
+        { "criterion_id": "impact_reasoning", "weight": 0.35 },
+        { "criterion_id": "safe_response_planning", "weight": 0.25 }
+      ]
+    },
+    {
+      "assessment_id": "behaviour_change_map",
+      "type": "visual_mapping",
+      "max_score": 100,
+      "criteria": [
+        { "criterion_id": "stage_accuracy", "weight": 0.45 },
+        { "criterion_id": "pattern_linking", "weight": 0.35 },
+        { "criterion_id": "visual_clarity", "weight": 0.20 }
+      ]
+    },
+    {
+      "assessment_id": "mastery_test",
+      "type": "exam",
+      "max_score": 100,
+      "criteria": [
+        { "criterion_id": "knowledge_accuracy", "weight": 1.0 }
+      ]
+    }
+  ],
+
+  "competency_check": [
+    "Identify behaviour change stages",
+    "Explain emotional and developmental impacts",
+    "Apply safe, supportive behaviour change strategies",
+    "Recognise barriers and readiness for change"
+  ],
+
+  "extensions": [
+    "Advanced Behaviour Change Strategies",
+    "Behaviour Change in High-Stress Parenting",
+    "Supporting Children Through Change",
+    "Behaviour Change in Co-Parenting Systems"
+  ]
+}

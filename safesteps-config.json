@@ -1,0 +1,12 @@
+﻿{
+  "Version": "2.0.0",
+  "CurriculumRoot": ".\\curriculum",
+  "Logging": {
+    "Enabled": true,
+    "Level": "INFO"
+  },
+  "Features": {
+    "AutoGenerate": true,
+    "StrictValidation": true
+  }
+}

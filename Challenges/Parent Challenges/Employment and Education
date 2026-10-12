@@ -1,0 +1,15 @@
+{
+  "category": "Employment & Education",
+  "challenges": [
+    { "challenge_number": 1, "title": "Returning to Work", "structure": "same_as_above" },
+    { "challenge_number": 2, "title": "Job Readiness", "structure": "same_as_above" },
+    { "challenge_number": 3, "title": "Study Skills", "structure": "same_as_above" },
+    { "challenge_number": 4, "title": "Career Planning", "structure": "same_as_above" },
+    { "challenge_number": 5, "title": "Financial Independence", "structure": "same_as_above" },
+    { "challenge_number": 6, "title": "Balancing Work and Parenting", "structure": "same_as_above" },
+    { "challenge_number": 7, "title": "Workplace Communication", "structure": "same_as_above" },
+    { "challenge_number": 8, "title": "Goal Setting", "structure": "same_as_above" },
+    { "challenge_number": 9, "title": "Motivation", "structure": "same_as_above" },
+    { "challenge_number": 10, "title": "Building Confidence", "structure": "same_as_above" }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "game_12",
+  "title": "Family Values Cards",
+  "libraryType": "parent_child_interaction_assessment",
+  "curriculum": false,
+  "category": "family_connection",
+  "minPlayers": 2,
+  "maxPlayers": 6,
+  "recommendedModes": [
+    "live_family",
+    "contact_visit",
+    "worker_supported"
+  ],
+  "duration": "quick_play",
+  "objective": "Choose values cards and discuss what each value looks like at home.",
+  "observationDimensions": [
+    "communication",
+    "child_agency"
+  ],
+  "childSafeguards": {
+    "voluntaryParticipation": true,
+    "mayPass": true,
+    "mayStop": true,
+    "noForcedDisclosure": true,
+    "childChoicesRespected": true,
+    "privateReflectionDefault": true
+  },
+  "facilitatorPrompts": [
+    "What did each person do that helped the activity feel connected or safe?",
+    "How were choices, boundaries and changes communicated?",
+    "Was there a moment of repair, support or shared enjoyment?"
+  ],
+  "completion": {
+    "winnerRequired": false,
+    "performanceRanked": false,
+    "professionalInterpretationRequired": true,
+    "snapshotCannotDetermineParentingCapacity": true
+  }
+}

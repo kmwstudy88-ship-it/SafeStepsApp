@@ -1,0 +1,227 @@
+{
+  "program_id": "PARENT-ACC-101",
+  "program_title": "Building Effective Accountability Systems",
+  "version": "1.0",
+  "metadata": {
+    "target_audience": "Parents of school-aged children and teenagers (Ages 6–17)",
+    "estimated_duration": "90–120 minutes",
+    "delivery_format": "Self-paced or Facilitated Module",
+    "core_objective": "Transition from reactive punishment to proactive accountability.",
+    "key_deliverable": "Customized Family Accountability Pact"
+  },
+  "modules": [
+    {
+      "section_id": 1,
+      "section_title": "Core Learning Content",
+      "topics": [
+        {
+          "topic_id": "1.1",
+          "title": "The Paradigm Shift: Punishment vs. Accountability",
+          "summary": "Differentiating between punitive responses and constructive accountability systems.",
+          "comparisons": [
+            {
+              "concept": "Punishment",
+              "focus": "Past mistake / Suffering",
+              "driver": "Fear and anger",
+              "outcomes": ["Resentment", "Secrecy", "Rebellion"],
+              "example": "Taking a phone away for a month due to lying."
+            },
+            {
+              "concept": "Accountability",
+              "focus": "Future repair / Responsibility",
+              "driver": "Logical consequences and integrity",
+              "outcomes": ["Problem-solving", "Internalized values", "Trust restoration"],
+              "example": "Using allowance or labor to repair/replace a sibling's broken item."
+            }
+          ]
+        },
+        {
+          "topic_id": "1.2",
+          "title": "The Four Pillars of an Accountability System",
+          "pillars": [
+            {
+              "id": 1,
+              "name": "Clear Front-Loaded Expectations",
+              "description": "Rules explicitly communicated prior to situations, rather than during conflict."
+            },
+            {
+              "id": 2,
+              "name": "Logical and Natural Consequences",
+              "description": "Consequences directly tied to the behavior.",
+              "subtypes": {
+                "natural": "Outcomes occurring without parental intervention (e.g., leaving a coat results in feeling cold).",
+                "logical": "Parent-imposed, directly related consequences (e.g., screen misuse results in a temporary screen pause)."
+              }
+            },
+            {
+              "id": 3,
+              "name": "Unwavering Consistency",
+              "description": "Predictable enforcement operating without emotional volatility."
+            },
+            {
+              "id": 4,
+              "name": "Empathy and Connection",
+              "description": "Validating emotional responses while maintaining structural boundaries."
+            }
+          ]
+        },
+        {
+          "topic_id": "1.3",
+          "title": "Age-Appropriate Scaffolding",
+          "developmental_stages": [
+            {
+              "age_range": "6–9 years",
+              "cognitive_stage": "Concrete Thinkers",
+              "strategy": "Immediate, short-term consequences and tangible 'Fix-it' plans."
+            },
+            {
+              "age_range": "10–13 years",
+              "cognitive_stage": "Transitional Thinkers",
+              "strategy": "Cause-and-effect reasoning; involve in co-creating rules; address peer motivators."
+            },
+            {
+              "age_range": "14–17 years",
+              "cognitive_stage": "Abstract Thinkers",
+              "strategy": "Tie privileges directly to responsibilities; child leads trust-repair process."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 2,
+      "section_title": "Lesson Activities",
+      "activities": [
+        {
+          "activity_id": "ACT-01",
+          "title": "The Expectation Audit",
+          "type": "Interactive Worksheet",
+          "instructions": "Select 3 recurring household pain points and audit current responses.",
+          "fields": [
+            "Pain Point / Conflict",
+            "Current Reaction",
+            "Explicit Expectation",
+            "Logical Consequence"
+          ],
+          "sample": {
+            "pain_point": "Morning Routine Delays",
+            "current_reaction": "Yelling, rushing, doing tasks for them",
+            "explicit_expectation": "Bags packed and shoes on by 7:30 AM",
+            "logical_consequence": "Departure without non-essential prep (e.g., going in pajamas or missing lunch money)"
+          }
+        },
+        {
+          "activity_id": "ACT-02",
+          "title": "Scripting the Empathetic Boundary",
+          "type": "Roleplay / Writing Exercise",
+          "instructions": "Reflect and rewrite reactive statements into Empathetic Boundary scripts.",
+          "scenarios": [
+            {
+              "scenario_id": 1,
+              "context": "A 12-year-old leaves chores undone to visit a friend.",
+              "reactive_script": "Are you kidding me? You're not going anywhere until this house is clean! You're so lazy.",
+              "target_script": "I know you really want to see your friends. As soon as the kitchen is clean as we agreed, I'll be happy to drive you."
+            },
+            {
+              "scenario_id": 2,
+              "context": "A 15-year-old lies about their location on Friday night.",
+              "reactive_script": "You're grounded for a month! I can never trust you!",
+              "target_script": "I'm really disappointed because honesty is a big deal in our family. Because trust was broken, you won't be able to go out this coming weekend. Let's talk tomorrow about how you can start rebuilding that trust."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 3,
+      "section_title": "Implementation Tasks",
+      "tasks": [
+        {
+          "task_id": "TSK-01",
+          "title": "The Family Accountability Meeting",
+          "execution_steps": [
+            "Schedule a calm time to meet.",
+            "State the purpose: replace yelling/nagging with clear, mutual agreements.",
+            "Categorize household Rights vs. Privileges.",
+            "Co-create 3–5 core family rules and select corresponding logical consequences."
+          ]
+        },
+        {
+          "task_id": "TSK-02",
+          "title": "The 'Oops to Amends' Framework",
+          "execution_steps": [
+            "Apply after a rule infraction occurs.",
+            "Complete 4 prompt questions (verbally or in writing):"
+          ],
+          "prompts": [
+            "What did I do?",
+            "Who was impacted by my actions?",
+            "What can I do right now to make it right or repair the harm?",
+            "What is my plan to prevent this next time?"
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": 4,
+      "section_title": "Assessments & Quizzes",
+      "assessments": {
+        "multiple_choice_quiz": [
+          {
+            "id": "Q1",
+            "question": "Which of the following best describes the difference between punishment and accountability?",
+            "options": [
+              "A) Punishment is mild; accountability is severe.",
+              "B) Punishment focuses on past mistakes; accountability focuses on future repair and responsibility.",
+              "C) Punishment requires parental calm; accountability requires parental anger.",
+              "D) There is no difference; they are the same concept."
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "id": "Q2",
+            "question": "What is a 'logical consequence' for a teenager who repeatedly returns the family car with an empty gas tank?",
+            "options": [
+              "A) Taking away their cell phone for a week.",
+              "B) Grounding them from seeing their friends.",
+              "C) Loss of driving privileges until they pay to fill the tank, plus a probationary period for using the car.",
+              "D) Yelling at them so they understand the cost of gas."
+            ],
+            "correct_answer": "C"
+          },
+          {
+            "id": "Q3",
+            "question": "Why is 'Consistency' a critical pillar of an accountability system?",
+            "options": [
+              "A) It makes parents look tough.",
+              "B) It prevents children from negotiating and testing boundaries, making the environment predictable.",
+              "C) It ensures the child is always unhappy when they break a rule.",
+              "D) It replaces the need for empathy."
+            ],
+            "correct_answer": "B"
+          },
+          {
+            "id": "Q4",
+            "question": "When is the best time to establish an accountability system and its consequences?",
+            "options": [
+              "A) Right after the child has broken a rule, to ensure it is fresh in their mind.",
+              "B) During a calm family meeting before any rules have been broken (Front-loading).",
+              "C) In front of their peers so they take it seriously.",
+              "D) Through a text message while they are at school."
+            ],
+            "correct_answer": "B"
+          }
+        ],
+        "essay_assessment": {
+          "id": "Q5",
+          "prompt": "Explain why enforcing a boundary with anger or yelling reduces the effectiveness of the lesson. How does offering empathy while holding the boundary change the child's neurological response to the consequence?",
+          "rubric_key_points": [
+            "Parental anger triggers the child's neurological fight-or-flight response.",
+            "Defense responses divert attention to parental behavior rather than self-reflection.",
+            "Combining empathy with boundaries keeps the prefrontal cortex engaged, facilitating internal learning and responsibility."
+          ]
+        }
+      }
+    }
+  ]
+}

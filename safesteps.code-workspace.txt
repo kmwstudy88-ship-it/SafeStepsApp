@@ -1,0 +1,22 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 500,
+        "files.defaultLanguage": "powershell",
+        "terminal.integrated.cwd": "C:\\Users\\SAFES\\SafeStepsApp",
+        "explorer.confirmDelete": false,
+        "explorer.confirmDragAndDrop": false,
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
+        "editor.wordWrap": "on",
+        "editor.minimap.enabled": false,
+        "powershell.integratedConsole.showOnStartup": false,
+        "powershell.powerShellDefaultVersion": "Windows PowerShell"
+    }
+}

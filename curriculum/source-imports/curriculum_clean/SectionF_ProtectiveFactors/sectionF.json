@@ -1,0 +1,76 @@
+{
+  "groups": [
+    {
+      "id": "F_FamilySupport",
+      "label": "Family Support",
+      "items": [
+        {
+          "domain": "family_support",
+          "text": "I have family members who provide emotional or practical support.",
+          "id": "F_FS_FamilySupport",
+          "direction": "higher_score_better",
+          "scale": "1=Strongly disagree;5=Strongly agree",
+          "type": "likert_agreement"
+        }
+      ]
+    },
+    {
+      "id": "F_SchoolInvolvement",
+      "label": "School Involvement",
+      "items": [
+        {
+          "domain": "school_involvement",
+          "text": "I am actively involved in my child's schooling or early learning.",
+          "id": "F_SI_SchoolEngagement",
+          "direction": "higher_score_better",
+          "scale": "1=Strongly disagree;5=Strongly agree",
+          "type": "likert_agreement"
+        }
+      ]
+    },
+    {
+      "id": "F_CommunityEngagement",
+      "label": "Community Engagement",
+      "items": [
+        {
+          "domain": "community_engagement",
+          "text": "I am connected to community groups, activities, or supports.",
+          "id": "F_CE_Community",
+          "direction": "higher_score_better",
+          "scale": "1=Strongly disagree;5=Strongly agree",
+          "type": "likert_agreement"
+        }
+      ]
+    },
+    {
+      "id": "F_PositiveRelationships",
+      "label": "Positive Relationships",
+      "items": [
+        {
+          "domain": "positive_relationships",
+          "text": "My child has positive relationships with peers, family, or trusted adults.",
+          "id": "F_PR_PositiveRelationships",
+          "direction": "higher_score_better",
+          "scale": "1=Strongly disagree;5=Strongly agree",
+          "type": "likert_agreement"
+        }
+      ]
+    },
+    {
+      "id": "F_AccessToServices",
+      "label": "Access to Services",
+      "items": [
+        {
+          "domain": "access_to_services",
+          "text": "I can access services when needed (health, education, community, support).",
+          "id": "F_AS_Access",
+          "direction": "higher_score_better",
+          "scale": "1=Strongly disagree;5=Strongly agree",
+          "type": "likert_agreement"
+        }
+      ]
+    }
+  ],
+  "name": "Protective Factors",
+  "sectionId": "F"
+}

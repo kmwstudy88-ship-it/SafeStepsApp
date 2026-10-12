@@ -1,0 +1,245 @@
+{
+  "module_id": "parenting_red_flags_v1",
+  "module_title": "Recognising Red Flags in Parenting & Family Dynamics",
+  "series": "SafeSteps Parenting Literacy Series",
+  "level": 3,
+  "version": "1.0.0",
+
+  "learning_outcomes": [
+    "Identify early red flags in parent–child interactions.",
+    "Recognise behavioural, emotional, and relational warning signs.",
+    "Understand how red flags signal deeper patterns of harm or instability.",
+    "Interpret red flags in co-parenting, household dynamics, and child behaviour.",
+    "Apply safe, supportive responses when red flags appear."
+  ],
+
+  "lesson_content": {
+    "definition": "Red flags are early indicators of harmful patterns in parenting, family dynamics, or child wellbeing. They are patterns, not isolated moments.",
+    "categories": [
+      {
+        "name": "Parent–Child Interaction Red Flags",
+        "examples": [
+          "Child becomes hyper-vigilant around parent's mood",
+          "Parent uses fear, shame, or humiliation to gain compliance",
+          "Rules change unpredictably",
+          "Child stops expressing emotions to avoid conflict",
+          "Parent dismisses or mocks child's feelings",
+          "Child apologises excessively"
+        ]
+      },
+      {
+        "name": "Co-Parenting Red Flags",
+        "examples": [
+          "One parent undermines the other's decisions",
+          "Communication becomes hostile or manipulative",
+          "Child used as messenger or emotional support",
+          "Isolation from the other parent or extended family",
+          "Child expresses fear about transitions between homes"
+        ]
+      },
+      {
+        "name": "Household Dynamic Red Flags",
+        "examples": [
+          "Frequent yelling or intimidation",
+          "Silent treatment used as punishment",
+          "Family members walk on eggshells",
+          "One person dominates decisions or routines",
+          "Emotional instability in the home"
+        ]
+      },
+      {
+        "name": "Child Behaviour Red Flags",
+        "examples": [
+          "Sudden withdrawal or isolation",
+          "Regression (bedwetting, clinginess)",
+          "Excessive compliance or perfectionism",
+          "Anxiety around mistakes",
+          "Strong reactions to tone or facial expressions",
+          "Sleep difficulties or unexplained physical complaints"
+        ]
+      },
+      {
+        "name": "Parent Internal Experience Red Flags",
+        "examples": [
+          "Feeling constantly tense or drained",
+          "Feeling controlled or undermined",
+          "Fear of another parent's reactions",
+          "Feeling confused about what is real",
+          "Feeling isolated from support"
+        ]
+      }
+    ]
+  },
+
+  "video_lesson": {
+    "title": "Recognising Red Flags Early",
+    "length_minutes": 5,
+    "script": [
+      "Red flags are early signals that something in the family system is creating fear, instability, or emotional harm.",
+      "They often appear subtly, through patterns of behaviour rather than single incidents.",
+      "Recognising red flags early helps parents respond with clarity and protect emotional safety.",
+      "This lesson explores red flags across parent–child interactions, co-parenting, household dynamics, and child behaviour."
+    ]
+  },
+
+  "knowledge_sequence": [
+    "Definition",
+    "Red Flag Categories",
+    "Pattern Recognition",
+    "Impact Interpretation",
+    "Safe Response Planning"
+  ],
+
+  "activities": [
+    {
+      "activity_id": "red_flag_sorting",
+      "type": "sorting",
+      "description": "Sort behaviours into correct red flag categories.",
+      "items": [
+        { "behaviour": "Child apologises excessively", "correct_category": "Parent–Child Interaction Red Flags" },
+        { "behaviour": "One parent undermines the other's decisions", "correct_category": "Co-Parenting Red Flags" },
+        { "behaviour": "Family members walk on eggshells", "correct_category": "Household Dynamic Red Flags" }
+      ]
+    },
+    {
+      "activity_id": "micro_scenarios",
+      "type": "scenario_identification",
+      "description": "Identify red flags and explain likely impacts.",
+      "scenarios": [
+        {
+          "scenario_id": "rf1",
+          "text": "A child becomes extremely anxious when a parent raises their voice.",
+          "correct_category": "Child Behaviour Red Flags"
+        },
+        {
+          "scenario_id": "rf2",
+          "text": "A parent frequently mocks a child's emotions.",
+          "correct_category": "Parent–Child Interaction Red Flags"
+        }
+      ]
+    }
+  ],
+
+  "fill_in_the_blank": [
+    {
+      "question": "Red flags are ________, not isolated incidents.",
+      "answer": "patterns"
+    },
+    {
+      "question": "Children often show red flags through their ________ before they can explain them.",
+      "answer": "behaviour"
+    },
+    {
+      "question": "Walking on eggshells is a sign of unstable ________ dynamics.",
+      "answer": "household"
+    },
+    {
+      "question": "Using a child as a messenger is a ________ red flag.",
+      "answer": "co-parenting"
+    },
+    {
+      "question": "Hyper-vigilance around a parent's mood is a ________ red flag.",
+      "answer": "parent–child interaction"
+    }
+  ],
+
+  "quiz": {
+    "multiple_choice": [
+      {
+        "question": "Which of the following is a red flag in parent–child interactions?",
+        "options": [
+          "Child expresses emotions freely",
+          "Parent mocks child's feelings",
+          "Predictable household routines",
+          "Child confidently makes decisions"
+        ],
+        "answer": "Parent mocks child's feelings"
+      },
+      {
+        "question": "Which behaviour is a co-parenting red flag?",
+        "options": [
+          "Parents communicate respectfully",
+          "One parent undermines the other's decisions",
+          "Child enjoys transitions between homes",
+          "Parents collaborate on routines"
+        ],
+        "answer": "One parent undermines the other's decisions"
+      }
+    ],
+    "true_false": [
+      {
+        "question": "Red flags can appear even when there is no physical violence.",
+        "answer": true
+      },
+      {
+        "question": "Children always verbally express red flags.",
+        "answer": false
+      }
+    ],
+    "short_answer": [
+      {
+        "question": "Name two behavioural red flags in children.",
+        "expected_keywords": ["withdrawal", "regression", "perfectionism", "anxiety"]
+      },
+      {
+        "question": "Why are red flags important to recognise early?",
+        "expected_keywords": ["prevention", "early intervention", "emotional safety"]
+      }
+    ],
+    "scenario_questions": [
+      {
+        "question": "A child becomes fearful when rules change unpredictably. Which category does this belong to?",
+        "answer": "Parent–Child Interaction Red Flags"
+      },
+      {
+        "question": "A parent feels constantly tense and drained. Which category does this belong to?",
+        "answer": "Parent Internal Experience Red Flags"
+      }
+    ]
+  },
+
+  "assessments": [
+    {
+      "assessment_id": "red_flag_analysis",
+      "type": "scenario_analysis",
+      "max_score": 100,
+      "criteria": [
+        { "criterion_id": "red_flag_identification", "weight": 0.40 },
+        { "criterion_id": "impact_reasoning", "weight": 0.35 },
+        { "criterion_id": "safe_response_planning", "weight": 0.25 }
+      ]
+    },
+    {
+      "assessment_id": "red_flag_map",
+      "type": "visual_mapping",
+      "max_score": 100,
+      "criteria": [
+        { "criterion_id": "category_accuracy", "weight": 0.45 },
+        { "criterion_id": "pattern_linking", "weight": 0.35 },
+        { "criterion_id": "visual_clarity", "weight": 0.20 }
+      ]
+    },
+    {
+      "assessment_id": "mastery_test",
+      "type": "exam",
+      "max_score": 100,
+      "criteria": [
+        { "criterion_id": "knowledge_accuracy", "weight": 1.0 }
+      ]
+    }
+  ],
+
+  "competency_check": [
+    "Identify red flags across multiple family contexts",
+    "Explain developmental and emotional impacts",
+    "Apply safe, supportive responses",
+    "Recognise early warning signs before escalation"
+  ],
+
+  "extensions": [
+    "Advanced Red Flag Interpretation",
+    "Red Flags in Teen Behaviour",
+    "Red Flags in Post-Separation Parenting",
+    "Red Flags in Digital & Technology Use"
+  ]
+}

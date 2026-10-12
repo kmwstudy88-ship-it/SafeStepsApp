@@ -1,0 +1,70 @@
+﻿{
+    "id":  "parenting_insights_v1",
+    "name":  "SafeSteps Parenting Insights Assessment",
+    "description":  "Early-intervention parenting, child wellbeing, and family stability assessment.",
+    "scores":  [
+                   {
+                       "label":  "Parenting Strength Score",
+                       "range":  "0-100",
+                       "id":  "parenting_strength"
+                   },
+                   {
+                       "label":  "Child Wellbeing Score",
+                       "range":  "0-100",
+                       "id":  "child_wellbeing"
+                   },
+                   {
+                       "label":  "Family Stability Score",
+                       "range":  "0-100",
+                       "id":  "family_stability"
+                   },
+                   {
+                       "label":  "Protective Factors Score",
+                       "range":  "0-100",
+                       "id":  "protective_factors"
+                   },
+                   {
+                       "label":  "Growth Opportunities Score",
+                       "range":  "0-100",
+                       "id":  "growth_opportunities"
+                   }
+               ],
+    "sections":  [
+                     {
+                         "path":  "SectionA_ParentWellbeing",
+                         "key":  "parent_wellbeing",
+                         "id":  "A"
+                     },
+                     {
+                         "path":  "SectionB_ParentingCapacity",
+                         "key":  "parenting_capacity",
+                         "id":  "B"
+                     },
+                     {
+                         "path":  "SectionC_ParentChildRelationship",
+                         "key":  "parent_child_relationship",
+                         "id":  "C"
+                     },
+                     {
+                         "path":  "SectionD_HomeEnvironment",
+                         "key":  "home_environment",
+                         "id":  "D"
+                     },
+                     {
+                         "path":  "SectionE_ChildDevelopment",
+                         "key":  "child_development",
+                         "id":  "E"
+                     },
+                     {
+                         "path":  "SectionF_ProtectiveFactors",
+                         "key":  "protective_factors",
+                         "id":  "F"
+                     },
+                     {
+                         "path":  "SectionG_RiskIndicators",
+                         "key":  "risk_indicators",
+                         "id":  "G"
+                     }
+                 ],
+    "version":  "1.0.0"
+}

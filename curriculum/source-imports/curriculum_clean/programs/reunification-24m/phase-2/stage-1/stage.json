@@ -1,0 +1,36 @@
+{
+  "id": "phase-2-stage-1",
+  "title": "Capacity Building — Stage 1",
+  "objectives": [
+    "Establish predictable parenting routines",
+    "Build structure for children"
+  ],
+  "required_lessons": [
+    "PAR-ROU-001_morning_routines",
+    "PAR-ROU-002_bedtime_routines"
+  ],
+  "recommended_lessons": [
+    "PAR-COM-001_positive_language"
+  ],
+  "evidence": [
+    "Routine plan submitted",
+    "Demonstrated consistency for 2 weeks"
+  ],
+  "compliance": {
+    "weekly_tasks": [
+      "weekly_bills",
+      "weekly_rent",
+      "weekly_shopping",
+      "weekly_contact_logs",
+      "weekly_routine_log"
+    ],
+    "daily_tasks": [
+      "house_photo",
+      "self_photo",
+      "fridge_pantry_photo",
+      "medication_photo",
+      "daily_reflection"
+    ],
+    "level": "B"
+  }
+}

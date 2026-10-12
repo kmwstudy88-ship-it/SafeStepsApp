@@ -1,0 +1,539 @@
+{
+  "id": "father-identity-accountability",
+  "slug": "father-identity-accountability",
+  "title": "Father Identity and Accountability",
+  "moduleNumber": 2,
+  "description": "Help fathers define who they want to become and take responsibility without shame or blame.",
+  "estimatedHours": 2,
+  "required": true,
+  "lessons": [
+    {
+      "id": "father-identity-accountability-father-i-want-to-become",
+      "slug": "father-i-want-to-become",
+      "title": "The Father I Want To Become",
+      "lessonNumber": 1,
+      "estimatedMinutes": 25,
+      "lessonType": "core",
+      "summary": "Fathers can build a new identity through repeated safe choices, honest reflection, and practical change.",
+      "learningOutcomes": [
+        "Explain why the father i want to become matters for child safety and wellbeing.",
+        "Identify one personal pattern that may affect parenting.",
+        "Create one practical action that can be completed this week."
+      ],
+      "startQuestions": [
+        "What do I already know about this topic?",
+        "How does this affect my child?",
+        "What have I struggled with before?",
+        "What would my child need to see from me?",
+        "What is one change I can practise this week?"
+      ],
+      "content": [
+        {
+          "heading": "The Father I Want To Become",
+          "body": "Fathers can build a new identity through repeated safe choices, honest reflection, and practical change."
+        },
+        {
+          "heading": "Father practice focus",
+          "body": "This lesson asks fathers to move from words into repeated safe action. Children need predictable behaviour, calm responses, and adults who can place the child’s needs ahead of adult conflict, pride, anger, or fear."
+        },
+        {
+          "heading": "What this looks like in real life",
+          "body": "A father can practise this skill by slowing down, listening carefully, following through, keeping adult topics away from children, and recording evidence of safe routines and progress over time."
+        }
+      ],
+      "activities": [
+        {
+          "id": "father-i-want-to-become-activity-1",
+          "title": "My Current Pattern Map",
+          "type": "worksheet",
+          "instructions": [
+            "Write down one situation where this topic shows up in your parenting.",
+            "Describe what usually happens, including thoughts, feelings, words, actions, and the child’s reaction.",
+            "Write one safer response you can practise next time."
+          ],
+          "saveToRecord": true
+        },
+        {
+          "id": "father-i-want-to-become-activity-2",
+          "title": "One Safe Action This Week",
+          "type": "real_world_task",
+          "instructions": [
+            "Choose one small action that supports your child’s safety, routine, connection, or trust.",
+            "Complete the action before the next lesson or check-in.",
+            "Upload evidence or write a short note explaining what you did and what changed."
+          ],
+          "saveToRecord": true
+        }
+      ],
+      "quiz": {
+        "id": "father-i-want-to-become-quiz",
+        "passingScorePercent": 70,
+        "questions": [
+          {
+            "id": "father-i-want-to-become-q1",
+            "question": "Why is the father i want to become important in fathering?",
+            "options": [
+              "Because it helps the father win arguments",
+              "Because it supports the child’s safety, trust and wellbeing",
+              "Because it removes the need for routines",
+              "Because it means the child should ignore their feelings"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Fathering progress is measured by child safety, trust, wellbeing and repeated safe behaviour."
+          },
+          {
+            "id": "father-i-want-to-become-q2",
+            "question": "What is the safest first step when a father feels triggered?",
+            "options": [
+              "Pause and regulate before responding",
+              "Raise his voice so he is heard",
+              "Blame the other parent",
+              "Tell the child to stop feeling upset"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "A pause gives the father time to choose a calm and safer response."
+          },
+          {
+            "id": "father-i-want-to-become-q3",
+            "question": "What best shows real change over time?",
+            "options": [
+              "One promise",
+              "Repeated safe behaviour supported by evidence and reflection",
+              "Avoiding all feedback",
+              "Only saying what professionals want to hear"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Safe change is shown through repeated behaviour, honest reflection, and records over time."
+          }
+        ]
+      },
+      "reflection": {
+        "required": true,
+        "prompts": [
+          "What did this lesson help me understand about my child?",
+          "What is one behaviour I need to keep practising?",
+          "What evidence could show I am making this change?",
+          "What support do I need to stay consistent?"
+        ]
+      },
+      "evidenceUpload": {
+        "required": false,
+        "acceptedTypes": [
+          "photo",
+          "document",
+          "screenshot",
+          "written_reflection",
+          "routine_record"
+        ],
+        "prompts": [
+          "Upload a photo, document, checklist, routine record, or written reflection that shows your safe action this week.",
+          "Do not upload anything that exposes a child’s private information unless it is safe and authorised."
+        ]
+      },
+      "caseNotePrompt": "Record any observed strengths, risk concerns, behaviour change, father engagement, and recommended next steps.",
+      "tags": [
+        "fathers",
+        "father-pathway",
+        "father-identity-accountability",
+        "child-centred",
+        "evidence-based"
+      ]
+    },
+    {
+      "id": "father-identity-accountability-accountability-without-shame",
+      "slug": "accountability-without-shame",
+      "title": "Accountability Without Shame",
+      "lessonNumber": 2,
+      "estimatedMinutes": 25,
+      "lessonType": "core",
+      "summary": "Accountability means owning impact and changing behaviour, not staying stuck in guilt or defensiveness.",
+      "learningOutcomes": [
+        "Explain why accountability without shame matters for child safety and wellbeing.",
+        "Identify one personal pattern that may affect parenting.",
+        "Create one practical action that can be completed this week."
+      ],
+      "startQuestions": [
+        "What do I already know about this topic?",
+        "How does this affect my child?",
+        "What have I struggled with before?",
+        "What would my child need to see from me?",
+        "What is one change I can practise this week?"
+      ],
+      "content": [
+        {
+          "heading": "Accountability Without Shame",
+          "body": "Accountability means owning impact and changing behaviour, not staying stuck in guilt or defensiveness."
+        },
+        {
+          "heading": "Father practice focus",
+          "body": "This lesson asks fathers to move from words into repeated safe action. Children need predictable behaviour, calm responses, and adults who can place the child’s needs ahead of adult conflict, pride, anger, or fear."
+        },
+        {
+          "heading": "What this looks like in real life",
+          "body": "A father can practise this skill by slowing down, listening carefully, following through, keeping adult topics away from children, and recording evidence of safe routines and progress over time."
+        }
+      ],
+      "activities": [
+        {
+          "id": "accountability-without-shame-activity-1",
+          "title": "My Current Pattern Map",
+          "type": "worksheet",
+          "instructions": [
+            "Write down one situation where this topic shows up in your parenting.",
+            "Describe what usually happens, including thoughts, feelings, words, actions, and the child’s reaction.",
+            "Write one safer response you can practise next time."
+          ],
+          "saveToRecord": true
+        },
+        {
+          "id": "accountability-without-shame-activity-2",
+          "title": "One Safe Action This Week",
+          "type": "real_world_task",
+          "instructions": [
+            "Choose one small action that supports your child’s safety, routine, connection, or trust.",
+            "Complete the action before the next lesson or check-in.",
+            "Upload evidence or write a short note explaining what you did and what changed."
+          ],
+          "saveToRecord": true
+        }
+      ],
+      "quiz": {
+        "id": "accountability-without-shame-quiz",
+        "passingScorePercent": 70,
+        "questions": [
+          {
+            "id": "accountability-without-shame-q1",
+            "question": "Why is accountability without shame important in fathering?",
+            "options": [
+              "Because it helps the father win arguments",
+              "Because it supports the child’s safety, trust and wellbeing",
+              "Because it removes the need for routines",
+              "Because it means the child should ignore their feelings"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Fathering progress is measured by child safety, trust, wellbeing and repeated safe behaviour."
+          },
+          {
+            "id": "accountability-without-shame-q2",
+            "question": "What is the safest first step when a father feels triggered?",
+            "options": [
+              "Pause and regulate before responding",
+              "Raise his voice so he is heard",
+              "Blame the other parent",
+              "Tell the child to stop feeling upset"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "A pause gives the father time to choose a calm and safer response."
+          },
+          {
+            "id": "accountability-without-shame-q3",
+            "question": "What best shows real change over time?",
+            "options": [
+              "One promise",
+              "Repeated safe behaviour supported by evidence and reflection",
+              "Avoiding all feedback",
+              "Only saying what professionals want to hear"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Safe change is shown through repeated behaviour, honest reflection, and records over time."
+          }
+        ]
+      },
+      "reflection": {
+        "required": true,
+        "prompts": [
+          "What did this lesson help me understand about my child?",
+          "What is one behaviour I need to keep practising?",
+          "What evidence could show I am making this change?",
+          "What support do I need to stay consistent?"
+        ]
+      },
+      "evidenceUpload": {
+        "required": false,
+        "acceptedTypes": [
+          "photo",
+          "document",
+          "screenshot",
+          "written_reflection",
+          "routine_record"
+        ],
+        "prompts": [
+          "Upload a photo, document, checklist, routine record, or written reflection that shows your safe action this week.",
+          "Do not upload anything that exposes a child’s private information unless it is safe and authorised."
+        ]
+      },
+      "caseNotePrompt": "Record any observed strengths, risk concerns, behaviour change, father engagement, and recommended next steps.",
+      "tags": [
+        "fathers",
+        "father-pathway",
+        "father-identity-accountability",
+        "child-centred",
+        "evidence-based"
+      ]
+    },
+    {
+      "id": "father-identity-accountability-impact-not-intention",
+      "slug": "impact-not-intention",
+      "title": "Understanding Impact, Not Just Intention",
+      "lessonNumber": 3,
+      "estimatedMinutes": 25,
+      "lessonType": "core",
+      "summary": "Children are affected by what they experience, even when the parent did not intend harm.",
+      "learningOutcomes": [
+        "Explain why understanding impact, not just intention matters for child safety and wellbeing.",
+        "Identify one personal pattern that may affect parenting.",
+        "Create one practical action that can be completed this week."
+      ],
+      "startQuestions": [
+        "What do I already know about this topic?",
+        "How does this affect my child?",
+        "What have I struggled with before?",
+        "What would my child need to see from me?",
+        "What is one change I can practise this week?"
+      ],
+      "content": [
+        {
+          "heading": "Understanding Impact, Not Just Intention",
+          "body": "Children are affected by what they experience, even when the parent did not intend harm."
+        },
+        {
+          "heading": "Father practice focus",
+          "body": "This lesson asks fathers to move from words into repeated safe action. Children need predictable behaviour, calm responses, and adults who can place the child’s needs ahead of adult conflict, pride, anger, or fear."
+        },
+        {
+          "heading": "What this looks like in real life",
+          "body": "A father can practise this skill by slowing down, listening carefully, following through, keeping adult topics away from children, and recording evidence of safe routines and progress over time."
+        }
+      ],
+      "activities": [
+        {
+          "id": "impact-not-intention-activity-1",
+          "title": "My Current Pattern Map",
+          "type": "worksheet",
+          "instructions": [
+            "Write down one situation where this topic shows up in your parenting.",
+            "Describe what usually happens, including thoughts, feelings, words, actions, and the child’s reaction.",
+            "Write one safer response you can practise next time."
+          ],
+          "saveToRecord": true
+        },
+        {
+          "id": "impact-not-intention-activity-2",
+          "title": "One Safe Action This Week",
+          "type": "real_world_task",
+          "instructions": [
+            "Choose one small action that supports your child’s safety, routine, connection, or trust.",
+            "Complete the action before the next lesson or check-in.",
+            "Upload evidence or write a short note explaining what you did and what changed."
+          ],
+          "saveToRecord": true
+        }
+      ],
+      "quiz": {
+        "id": "impact-not-intention-quiz",
+        "passingScorePercent": 70,
+        "questions": [
+          {
+            "id": "impact-not-intention-q1",
+            "question": "Why is understanding impact, not just intention important in fathering?",
+            "options": [
+              "Because it helps the father win arguments",
+              "Because it supports the child’s safety, trust and wellbeing",
+              "Because it removes the need for routines",
+              "Because it means the child should ignore their feelings"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Fathering progress is measured by child safety, trust, wellbeing and repeated safe behaviour."
+          },
+          {
+            "id": "impact-not-intention-q2",
+            "question": "What is the safest first step when a father feels triggered?",
+            "options": [
+              "Pause and regulate before responding",
+              "Raise his voice so he is heard",
+              "Blame the other parent",
+              "Tell the child to stop feeling upset"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "A pause gives the father time to choose a calm and safer response."
+          },
+          {
+            "id": "impact-not-intention-q3",
+            "question": "What best shows real change over time?",
+            "options": [
+              "One promise",
+              "Repeated safe behaviour supported by evidence and reflection",
+              "Avoiding all feedback",
+              "Only saying what professionals want to hear"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Safe change is shown through repeated behaviour, honest reflection, and records over time."
+          }
+        ]
+      },
+      "reflection": {
+        "required": true,
+        "prompts": [
+          "What did this lesson help me understand about my child?",
+          "What is one behaviour I need to keep practising?",
+          "What evidence could show I am making this change?",
+          "What support do I need to stay consistent?"
+        ]
+      },
+      "evidenceUpload": {
+        "required": false,
+        "acceptedTypes": [
+          "photo",
+          "document",
+          "screenshot",
+          "written_reflection",
+          "routine_record"
+        ],
+        "prompts": [
+          "Upload a photo, document, checklist, routine record, or written reflection that shows your safe action this week.",
+          "Do not upload anything that exposes a child’s private information unless it is safe and authorised."
+        ]
+      },
+      "caseNotePrompt": "Record any observed strengths, risk concerns, behaviour change, father engagement, and recommended next steps.",
+      "tags": [
+        "fathers",
+        "father-pathway",
+        "father-identity-accountability",
+        "child-centred",
+        "evidence-based"
+      ]
+    },
+    {
+      "id": "father-identity-accountability-repairing-after-mistakes",
+      "slug": "repairing-after-mistakes",
+      "title": "Repairing After Mistakes",
+      "lessonNumber": 4,
+      "estimatedMinutes": 25,
+      "lessonType": "core",
+      "summary": "Repair begins with calm ownership, listening, apology, changed behaviour, and time.",
+      "learningOutcomes": [
+        "Explain why repairing after mistakes matters for child safety and wellbeing.",
+        "Identify one personal pattern that may affect parenting.",
+        "Create one practical action that can be completed this week."
+      ],
+      "startQuestions": [
+        "What do I already know about this topic?",
+        "How does this affect my child?",
+        "What have I struggled with before?",
+        "What would my child need to see from me?",
+        "What is one change I can practise this week?"
+      ],
+      "content": [
+        {
+          "heading": "Repairing After Mistakes",
+          "body": "Repair begins with calm ownership, listening, apology, changed behaviour, and time."
+        },
+        {
+          "heading": "Father practice focus",
+          "body": "This lesson asks fathers to move from words into repeated safe action. Children need predictable behaviour, calm responses, and adults who can place the child’s needs ahead of adult conflict, pride, anger, or fear."
+        },
+        {
+          "heading": "What this looks like in real life",
+          "body": "A father can practise this skill by slowing down, listening carefully, following through, keeping adult topics away from children, and recording evidence of safe routines and progress over time."
+        }
+      ],
+      "activities": [
+        {
+          "id": "repairing-after-mistakes-activity-1",
+          "title": "My Current Pattern Map",
+          "type": "worksheet",
+          "instructions": [
+            "Write down one situation where this topic shows up in your parenting.",
+            "Describe what usually happens, including thoughts, feelings, words, actions, and the child’s reaction.",
+            "Write one safer response you can practise next time."
+          ],
+          "saveToRecord": true
+        },
+        {
+          "id": "repairing-after-mistakes-activity-2",
+          "title": "One Safe Action This Week",
+          "type": "real_world_task",
+          "instructions": [
+            "Choose one small action that supports your child’s safety, routine, connection, or trust.",
+            "Complete the action before the next lesson or check-in.",
+            "Upload evidence or write a short note explaining what you did and what changed."
+          ],
+          "saveToRecord": true
+        }
+      ],
+      "quiz": {
+        "id": "repairing-after-mistakes-quiz",
+        "passingScorePercent": 70,
+        "questions": [
+          {
+            "id": "repairing-after-mistakes-q1",
+            "question": "Why is repairing after mistakes important in fathering?",
+            "options": [
+              "Because it helps the father win arguments",
+              "Because it supports the child’s safety, trust and wellbeing",
+              "Because it removes the need for routines",
+              "Because it means the child should ignore their feelings"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Fathering progress is measured by child safety, trust, wellbeing and repeated safe behaviour."
+          },
+          {
+            "id": "repairing-after-mistakes-q2",
+            "question": "What is the safest first step when a father feels triggered?",
+            "options": [
+              "Pause and regulate before responding",
+              "Raise his voice so he is heard",
+              "Blame the other parent",
+              "Tell the child to stop feeling upset"
+            ],
+            "correctAnswerIndex": 0,
+            "explanation": "A pause gives the father time to choose a calm and safer response."
+          },
+          {
+            "id": "repairing-after-mistakes-q3",
+            "question": "What best shows real change over time?",
+            "options": [
+              "One promise",
+              "Repeated safe behaviour supported by evidence and reflection",
+              "Avoiding all feedback",
+              "Only saying what professionals want to hear"
+            ],
+            "correctAnswerIndex": 1,
+            "explanation": "Safe change is shown through repeated behaviour, honest reflection, and records over time."
+          }
+        ]
+      },
+      "reflection": {
+        "required": true,
+        "prompts": [
+          "What did this lesson help me understand about my child?",
+          "What is one behaviour I need to keep practising?",
+          "What evidence could show I am making this change?",
+          "What support do I need to stay consistent?"
+        ]
+      },
+      "evidenceUpload": {
+        "required": false,
+        "acceptedTypes": [
+          "photo",
+          "document",
+          "screenshot",
+          "written_reflection",
+          "routine_record"
+        ],
+        "prompts": [
+          "Upload a photo, document, checklist, routine record, or written reflection that shows your safe action this week.",
+          "Do not upload anything that exposes a child’s private information unless it is safe and authorised."
+        ]
+      },
+      "caseNotePrompt": "Record any observed strengths, risk concerns, behaviour change, father engagement, and recommended next steps.",
+      "tags": [
+        "fathers",
+        "father-pathway",
+        "father-identity-accountability",
+        "child-centred",
+        "evidence-based"
+      ]
+    }
+  ]
+}

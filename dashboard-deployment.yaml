@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: safesteps-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: safesteps-dashboard
+  template:
+    metadata:
+      labels:
+        app: safesteps-dashboard
+    spec:
+      containers:
+        - name: dashboard
+          image: safesteps-dashboard:latest
+          ports:
+            - containerPort: 3001

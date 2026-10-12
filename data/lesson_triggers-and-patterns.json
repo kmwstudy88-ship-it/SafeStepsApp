@@ -1,0 +1,21 @@
+{
+    "id":  "triggers-and-patterns",
+    "title":  "Triggers and Patterns",
+    "keyMessage":  "Patterns reveal the root cause of behaviour.",
+    "summary":  "Behaviour often follows predictable patterns. Identifying triggers helps parents prevent escalation and support their child proactively.",
+    "cards":  [
+                  "Behaviour follows patterns.",
+                  "Triggers can be predictable.",
+                  "Predictability reduces stress."
+              ],
+    "actions":  [
+                    "Track behaviour patterns for one week.",
+                    "Identify common triggers.",
+                    "Adjust routines to reduce stress."
+                ],
+    "reflection":  [
+                       "What patterns do I notice?",
+                       "What triggers appear most often?"
+                   ],
+    "path":  "C:\\Users\\SAFES\\SafeStepsProject\\safesteps-curriculum\\lessons\\BehaviourSupport\\TriggersAndPatterns\\TriggersAndPatterns.json"
+}

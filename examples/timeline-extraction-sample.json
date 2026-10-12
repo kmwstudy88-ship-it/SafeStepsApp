@@ -1,0 +1,92 @@
+{
+  "case_id": "CASE-2026-00142",
+  "events": [
+    {
+      "event_id": "ev-001",
+      "description": "Parenting order made granting father unsupervised overnight contact on alternate weekends.",
+      "date": "2026-01-22",
+      "date_precision": "exact",
+      "actors": ["father", "child", "judicial_officer"],
+      "claim_ids": ["c-005"],
+      "source_spans": [
+        {
+          "doc_id": "doc-court-order-001",
+          "start": 1102,
+          "end": 1245
+        }
+      ],
+      "confidence": 0.97
+    },
+    {
+      "event_id": "ev-002",
+      "description": "Father states child sustained bruising from a fall at the park.",
+      "date": "2026-03-13",
+      "date_precision": "exact",
+      "actors": ["father", "child"],
+      "claim_ids": ["c-003"],
+      "source_spans": [
+        {
+          "doc_id": "doc-affidavit-father-001",
+          "start": 887,
+          "end": 981
+        }
+      ],
+      "confidence": 0.85
+    },
+    {
+      "event_id": "ev-003",
+      "description": "Mother observed bruising on child's left forearm on school collection.",
+      "date": "2026-03-14",
+      "date_precision": "exact",
+      "actors": ["mother", "child"],
+      "claim_ids": ["c-001"],
+      "source_spans": [
+        {
+          "doc_id": "doc-affidavit-mother-001",
+          "start": 1204,
+          "end": 1321
+        }
+      ],
+      "confidence": 0.91
+    },
+    {
+      "event_id": "ev-004",
+      "description": "School counsellor notes child is withdrawn and reluctant to return home.",
+      "date": "2026-03-15",
+      "date_precision": "exact",
+      "actors": ["school counsellor", "child"],
+      "claim_ids": ["c-002"],
+      "source_spans": [
+        {
+          "doc_id": "doc-school-report-001",
+          "start": 412,
+          "end": 545
+        }
+      ],
+      "confidence": 0.88
+    },
+    {
+      "event_id": "ev-005",
+      "description": "GP report notes bruising inconsistent with a fall on medical examination.",
+      "date": "2026-03-16",
+      "date_precision": "exact",
+      "actors": ["GP", "child"],
+      "claim_ids": ["c-004"],
+      "source_spans": [
+        {
+          "doc_id": "doc-medical-report-001",
+          "start": 234,
+          "end": 356
+        }
+      ],
+      "confidence": 0.94
+    }
+  ],
+  "undated_events": [],
+  "gaps": [],
+  "run_meta": {
+    "skill_version": "1.0.0",
+    "model": "safesteps-extraction-v1",
+    "timestamp_utc": "2026-08-28T10:01:00Z"
+  }
+}

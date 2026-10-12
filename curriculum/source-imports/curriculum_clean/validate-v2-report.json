@@ -1,0 +1,17 @@
+﻿{
+    "invalidJson":  [
+                        "C:\\Users\\SAFES\\SafeStepsApp\\curriculum\\lint-report.json",
+                        "C:\\Users\\SAFES\\SafeStepsApp\\curriculum\\master-index.json",
+                        "C:\\Users\\SAFES\\SafeStepsApp\\curriculum\\integrity\\integrity-report.json",
+                        "C:\\Users\\SAFES\\SafeStepsApp\\curriculum\\summary\\curriculum-summary.json"
+                    ],
+    "missingFields":  [
+
+                      ],
+    "badStructure":  [
+
+                     ],
+    "invalidRefs":  [
+
+                    ]
+}

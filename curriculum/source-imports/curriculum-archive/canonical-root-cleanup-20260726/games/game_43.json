@@ -1,0 +1,9 @@
+﻿{
+  "id": "game_43",
+  "title": "SafeSteps Game 43",
+  "category": "quick_fun",
+  "minPlayers": 2,
+  "maxPlayers": 8,
+  "recommendedModes": ["live_family", "remote_connection"],
+  "duration": "quick_play"
+}
