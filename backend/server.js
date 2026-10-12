@@ -7,6 +7,7 @@ import { errorHandler, notFoundHandler } from "./middleware/errorHandler.js";
 import { requireAuthenticatedUser } from "./middleware/requireAuthenticatedUser.js";
 import { requestContext } from "./middleware/requestContext.js";
 import { universalApiProtection } from "./middleware/universalApiProtection.js";
+import { userApiRateLimit } from "./middleware/userApiRateLimit.js";
 
 const app = express();
 const port = process.env.PORT ?? 3000;
@@ -55,6 +56,8 @@ app.use((req, res, next) => {
 
   next();
 });
+
+app.use("/users", userApiRateLimit);
 
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true, limit: "2mb" }));
