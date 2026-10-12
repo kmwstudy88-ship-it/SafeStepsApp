@@ -1,0 +1,3541 @@
+{
+  "observedDate": "2026-10-13",
+  "repository": "kmwstudy88-ship-it/SafeStepsApp",
+  "baseCommit": "3996aca794921195560d9f6f389d46f97bfebc11",
+  "scope": "metadata-only; not a restorable SQL dump; no application rows",
+  "queries": {
+    "history": "select version,name from supabase_migrations.schema_migrations order by version",
+    "contracts": "select c.relname,c.relkind,c.relrowsecurity,c.reloptions from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relname in ('case_events','risk_snapshots','escalation_alerts','follow_up_tasks','case_assignments','document_analyses','document_comparisons','document_analysis_jobs','safety_risk_calculation_snapshots')",
+    "keys": "select conrelid::regclass::text as source,confrelid::regclass::text as target,convalidated,pg_get_constraintdef(oid) as definition from pg_constraint where contype='f' and connamespace='public'::regnamespace and (conrelid in (select oid from pg_class where relname in ('assessment_records','case_memberships','case_allocations','profiles','documents','risk_snapshots','case_events')) or (conrelid='public.cases'::regclass and confrelid='public.reunification_cases'::regclass) or (conrelid='public.reunification_cases'::regclass and confrelid='public.cases'::regclass)) order by 1,2",
+    "helpers": "select p.proname,pg_get_function_identity_arguments(p.oid) as args,p.prosecdef,p.proconfig,pg_get_functiondef(p.oid) as definition from pg_proc p join pg_namespace n on n.oid=p.pronamespace where n.nspname='public' and p.proname in ('safesteps_auth_role','safesteps_has_case_access','has_case_access','get_my_case_access_grant','current_app_user_id','current_role_key','case_visible_to_current_user','can_access_video_report') order by 1",
+    "grants": "select table_name,grantee,privilege_type from information_schema.role_table_grants where table_schema='public' and grantee in ('anon','authenticated') and table_name in ('profiles','users','assessment_records','case_assignments','case_allocations','case_memberships','user_roles') order by 1,2,3"
+  },
+  "projects": {
+    "yzxotxbwgxnxemkzigse": {
+      "history": [
+        {
+          "version": "20260619124944",
+          "name": "init_schema"
+        },
+        {
+          "version": "20260619125732",
+          "name": "init_schema"
+        },
+        {
+          "version": "20260619125937",
+          "name": "init_schema"
+        },
+        {
+          "version": "20260619130549",
+          "name": "auth_user_trigger"
+        },
+        {
+          "version": "20260619142815",
+          "name": "rls_policies"
+        },
+        {
+          "version": "20260619142937",
+          "name": "rls_policies"
+        },
+        {
+          "version": "20260622181621",
+          "name": "create_intake_forms"
+        },
+        {
+          "version": "20260623160457",
+          "name": "rls_policies"
+        },
+        {
+          "version": "20260627135113",
+          "name": "safesteps_core_platform"
+        },
+        {
+          "version": "20260627140522",
+          "name": "evidence_storage"
+        },
+        {
+          "version": "20260627141307",
+          "name": "assessment_progress_check"
+        },
+        {
+          "version": "20260627142023",
+          "name": "richer_tasks"
+        },
+        {
+          "version": "20260627143629",
+          "name": "profile_story_fields"
+        },
+        {
+          "version": "20260629061241",
+          "name": "program_reflections"
+        },
+        {
+          "version": "20260629195506",
+          "name": "bulk_platform_tables"
+        },
+        {
+          "version": "20260630140347",
+          "name": "child_section_privacy"
+        },
+        {
+          "version": "20260701225859",
+          "name": "assessment_data_model"
+        },
+        {
+          "version": "20260702081721",
+          "name": "assessment_case_setup_fields"
+        },
+        {
+          "version": "20260703055727",
+          "name": "lock_down_remote_drift_security"
+        },
+        {
+          "version": "20260703060240",
+          "name": "add_parent_case_subsections"
+        },
+        {
+          "version": "20260703061540",
+          "name": "add_relationship_assessment_layer"
+        },
+        {
+          "version": "20260705031629",
+          "name": "parent_child_responses"
+        },
+        {
+          "version": "20260706051903",
+          "name": "expand_evidence_upload_types"
+        },
+        {
+          "version": "20260706124802",
+          "name": "parent_child_monitoring_messages"
+        },
+        {
+          "version": "20260707053131",
+          "name": "create_challenges_bucket"
+        },
+        {
+          "version": "20260712143553",
+          "name": "seed_safesteps_protective_capacity_assessment"
+        },
+        {
+          "version": "20260712171004",
+          "name": "forensic_evidence_audit"
+        },
+        {
+          "version": "20260712173337",
+          "name": "safety_alert_notification_rules"
+        },
+        {
+          "version": "20260712174720",
+          "name": "session_management_foundation"
+        },
+        {
+          "version": "20260712175500",
+          "name": "document_management_foundation"
+        },
+        {
+          "version": "20260712180057",
+          "name": "service_referral_tracking"
+        },
+        {
+          "version": "20260713020205",
+          "name": "enforce_assessment_immutability"
+        },
+        {
+          "version": "20260713103000",
+          "name": "seed_required_intake_assessment"
+        },
+        {
+          "version": "20260715085349",
+          "name": "court_report_snapshots"
+        },
+        {
+          "version": "20260715115900",
+          "name": "uuid_min_migration_compat"
+        },
+        {
+          "version": "20260715120000",
+          "name": "sensitive_access_control_and_audit"
+        },
+        {
+          "version": "20260715121500",
+          "name": "sensitive_action_audit_triggers"
+        },
+        {
+          "version": "20260715122000",
+          "name": "remove_uuid_min_migration_compat"
+        },
+        {
+          "version": "20260715122500",
+          "name": "child_permission_boundary_hardening"
+        },
+        {
+          "version": "20260715140000",
+          "name": "intake_program_start_gate"
+        },
+        {
+          "version": "20260716033944",
+          "name": "structured_evidence_workflows"
+        },
+        {
+          "version": "20260716071701",
+          "name": "repair_court_report_snapshots"
+        },
+        {
+          "version": "20260716091243",
+          "name": "add_court_report_supervisor_approvals"
+        },
+        {
+          "version": "20260719091500",
+          "name": "add_representation_preferences"
+        },
+        {
+          "version": "20260721083000",
+          "name": "reunification_stage_quests_achievements"
+        },
+        {
+          "version": "20260721084500",
+          "name": "reunification_role_rls_policies"
+        },
+        {
+          "version": "20260721093000",
+          "name": "seed_safesteps_parenting_multiple_choice_assessment"
+        },
+        {
+          "version": "20260721094000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_021_076"
+        },
+        {
+          "version": "20260721095000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_081_100"
+        },
+        {
+          "version": "20260721101500",
+          "name": "seed_safesteps_parenting_multiple_choice_items_101_115"
+        },
+        {
+          "version": "20260721103000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_121_140"
+        },
+        {
+          "version": "20260721104500",
+          "name": "seed_safesteps_parenting_multiple_choice_items_141_160"
+        },
+        {
+          "version": "20260721110000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_161_163"
+        },
+        {
+          "version": "20260721111500",
+          "name": "seed_safesteps_parenting_fill_blank_quiz"
+        },
+        {
+          "version": "20260721113000",
+          "name": "seed_safesteps_parenting_fill_blank_quiz_items_021_120"
+        },
+        {
+          "version": "20260721114500",
+          "name": "seed_safesteps_parenting_domain_fill_blank_quiz"
+        },
+        {
+          "version": "20260721120000",
+          "name": "seed_safesteps_parenting_domain_fill_blank_items_081_100"
+        },
+        {
+          "version": "20260721121000",
+          "name": "identity_roles_permissions_reporting_foundation"
+        },
+        {
+          "version": "20260721121200",
+          "name": "identity_security_operations_foundation"
+        },
+        {
+          "version": "20260721121300",
+          "name": "ai_governance_foundation"
+        },
+        {
+          "version": "20260721121500",
+          "name": "seed_safesteps_parenting_domain_fill_blank_items_101_141"
+        },
+        {
+          "version": "20260721123000",
+          "name": "seed_safesteps_parenting_domain_fill_blank_items_201_240_401_440"
+        },
+        {
+          "version": "20260721124500",
+          "name": "seed_safesteps_sequence_assessment_items"
+        },
+        {
+          "version": "20260721130000",
+          "name": "seed_safesteps_sequence_assessment_block_1"
+        },
+        {
+          "version": "20260721131500",
+          "name": "seed_safesteps_sequence_assessment_block_2"
+        },
+        {
+          "version": "20260721133000",
+          "name": "seed_safesteps_sequence_assessment_block_3_and_bulk_151_250"
+        },
+        {
+          "version": "20260721133454",
+          "name": "safesteps_assessment_enums"
+        },
+        {
+          "version": "20260721133455",
+          "name": "safesteps_assessment_templates_delivery"
+        },
+        {
+          "version": "20260721133456",
+          "name": "safesteps_competency_framework"
+        },
+        {
+          "version": "20260721133548",
+          "name": "safesteps_assessment_enums"
+        },
+        {
+          "version": "20260721133549",
+          "name": "safesteps_assessment_templates_delivery"
+        },
+        {
+          "version": "20260721133550",
+          "name": "safesteps_competency_framework"
+        },
+        {
+          "version": "20260721133551",
+          "name": "safesteps_scoring_rubrics_reviews_evidence"
+        },
+        {
+          "version": "20260721134500",
+          "name": "seed_safesteps_sequence_assessment_bulk_151_250_drs019_srs013"
+        },
+        {
+          "version": "20260721150213",
+          "name": "ai_model_registry_lifecycle"
+        },
+        {
+          "version": "20260721150617",
+          "name": "ai_prompt_workflow_governance"
+        },
+        {
+          "version": "20260721151044",
+          "name": "ai_governance_remaining_foundations"
+        },
+        {
+          "version": "20260721160745",
+          "name": "ai_model_assurance_volume2_details"
+        },
+        {
+          "version": "20260721161700",
+          "name": "ai_prompt_retrieval_workflow_volume3"
+        },
+        {
+          "version": "20260721162559",
+          "name": "ai_prompt_retrieval_workflow_volume3_completion"
+        },
+        {
+          "version": "20260721164446",
+          "name": "ai_evaluation_validation_release_assurance_volume5"
+        },
+        {
+          "version": "20260721165502",
+          "name": "ai_explainability_transparency_contestability_volume6"
+        },
+        {
+          "version": "20260721170458",
+          "name": "ai_explainability_contestability_volume6_completion"
+        },
+        {
+          "version": "20260721173335",
+          "name": "ai_continuous_learning_change_management_volume10"
+        },
+        {
+          "version": "20260721174116",
+          "name": "ai_continuous_learning_volume10_completion"
+        },
+        {
+          "version": "20260721180934",
+          "name": "ai_operations_centre_reliability_service_management_volume11"
+        },
+        {
+          "version": "20260721184924",
+          "name": "parenting_child_development_learning_engine_volume16"
+        },
+        {
+          "version": "20260721190229",
+          "name": "parenting_child_development_learning_engine_volume16_completion"
+        },
+        {
+          "version": "20260721192516",
+          "name": "assessment_evidence_reunification_framework_volume17"
+        },
+        {
+          "version": "20260721200806",
+          "name": "case_management_platform_volume19"
+        },
+        {
+          "version": "20260721205718",
+          "name": "child_experience_platform_volume20"
+        },
+        {
+          "version": "20260721230904",
+          "name": "community_services_platform_volume21"
+        },
+        {
+          "version": "20260721232009",
+          "name": "white_label_multi_tenant_platform_volume23"
+        },
+        {
+          "version": "202607220001",
+          "name": "extensions"
+        },
+        {
+          "version": "202607220002",
+          "name": "platform_tenants"
+        },
+        {
+          "version": "202607220003",
+          "name": "organisations"
+        },
+        {
+          "version": "202607220004",
+          "name": "profiles"
+        },
+        {
+          "version": "202607220005",
+          "name": "tenant_memberships"
+        },
+        {
+          "version": "202607220006",
+          "name": "permissions"
+        },
+        {
+          "version": "202607220007",
+          "name": "role_assignments"
+        },
+        {
+          "version": "202607220008",
+          "name": "tenant_context"
+        },
+        {
+          "version": "202607220009",
+          "name": "audit_foundation"
+        },
+        {
+          "version": "202607220010",
+          "name": "rls_foundation"
+        },
+        {
+          "version": "202607220011",
+          "name": "foundation_seed"
+        },
+        {
+          "version": "202607220012",
+          "name": "family_foundation_schema"
+        },
+        {
+          "version": "202607220013",
+          "name": "family_foundation_functions"
+        },
+        {
+          "version": "202607220014",
+          "name": "family_foundation_rls_audit_seed"
+        },
+        {
+          "version": "202607220025",
+          "name": "case_definitions"
+        },
+        {
+          "version": "202607220026",
+          "name": "cases"
+        },
+        {
+          "version": "202607220027",
+          "name": "case_participants"
+        },
+        {
+          "version": "202607220028",
+          "name": "worker_teams"
+        },
+        {
+          "version": "202607220029",
+          "name": "case_allocations"
+        },
+        {
+          "version": "202607220030",
+          "name": "case_status_history"
+        },
+        {
+          "version": "202607220031",
+          "name": "case_plans"
+        },
+        {
+          "version": "202607220032",
+          "name": "case_goals_and_actions"
+        },
+        {
+          "version": "202607220033",
+          "name": "case_milestones_barriers_strengths"
+        },
+        {
+          "version": "202607220034",
+          "name": "case_reviews"
+        },
+        {
+          "version": "202607220035",
+          "name": "case_notes"
+        },
+        {
+          "version": "202607220036",
+          "name": "case_legal_references"
+        },
+        {
+          "version": "202607220037",
+          "name": "case_access_functions"
+        },
+        {
+          "version": "202607220038",
+          "name": "case_rls"
+        },
+        {
+          "version": "202607220039",
+          "name": "case_views"
+        },
+        {
+          "version": "202607220040",
+          "name": "case_audit_triggers"
+        },
+        {
+          "version": "202607220041",
+          "name": "case_seed"
+        },
+        {
+          "version": "202607220042",
+          "name": "safety_plans"
+        },
+        {
+          "version": "202607220043",
+          "name": "safety_plan_versions"
+        },
+        {
+          "version": "202607220044",
+          "name": "safety_plan_participants"
+        },
+        {
+          "version": "202607220045",
+          "name": "protective_factors"
+        },
+        {
+          "version": "202607220046",
+          "name": "risk_factors"
+        },
+        {
+          "version": "202607220047",
+          "name": "risk_assessments"
+        },
+        {
+          "version": "202607220048",
+          "name": "risk_indicators"
+        },
+        {
+          "version": "202607220049",
+          "name": "safety_alerts"
+        },
+        {
+          "version": "202607220050",
+          "name": "incidents"
+        },
+        {
+          "version": "202607220051",
+          "name": "crisis_events"
+        },
+        {
+          "version": "202607220052",
+          "name": "weapon_detection"
+        },
+        {
+          "version": "202607220053",
+          "name": "missing_child"
+        },
+        {
+          "version": "202607220054",
+          "name": "emergency_contacts"
+        },
+        {
+          "version": "202607220055",
+          "name": "child_disclosures"
+        },
+        {
+          "version": "202607220056",
+          "name": "escalation_workflows"
+        },
+        {
+          "version": "202607220057",
+          "name": "safety_access"
+        },
+        {
+          "version": "202607220058",
+          "name": "safety_rls"
+        },
+        {
+          "version": "202607220059",
+          "name": "safety_views"
+        },
+        {
+          "version": "202607220060",
+          "name": "safety_seed"
+        },
+        {
+          "version": "202607220061",
+          "name": "evidence_records"
+        },
+        {
+          "version": "202607220062",
+          "name": "evidence_files"
+        },
+        {
+          "version": "202607220063",
+          "name": "evidence_metadata"
+        },
+        {
+          "version": "202607220064",
+          "name": "evidence_categories"
+        },
+        {
+          "version": "202607220065",
+          "name": "evidence_links"
+        },
+        {
+          "version": "202607220066",
+          "name": "evidence_chain_of_custody"
+        },
+        {
+          "version": "202607220067",
+          "name": "evidence_verification"
+        },
+        {
+          "version": "202607220068",
+          "name": "evidence_ai_analysis"
+        },
+        {
+          "version": "202607220069",
+          "name": "evidence_redactions"
+        },
+        {
+          "version": "202607220070",
+          "name": "court_bundles"
+        },
+        {
+          "version": "202607220071",
+          "name": "evidence_retention"
+        },
+        {
+          "version": "202607220072",
+          "name": "evidence_access"
+        },
+        {
+          "version": "202607220073",
+          "name": "evidence_rls"
+        },
+        {
+          "version": "202607220074",
+          "name": "evidence_views"
+        },
+        {
+          "version": "202607220075",
+          "name": "evidence_seed"
+        },
+        {
+          "version": "20260726083830",
+          "name": "revoke_anon_security_definer_execute"
+        },
+        {
+          "version": "20260726091549",
+          "name": "harden_function_search_paths"
+        },
+        {
+          "version": "20260726092438",
+          "name": "revoke_authenticated_internal_trigger_functions"
+        },
+        {
+          "version": "20260726092753",
+          "name": "move_extensions_out_of_public"
+        },
+        {
+          "version": "20260726093937",
+          "name": "revoke_authenticated_standalone_ai_helper_functions"
+        },
+        {
+          "version": "20260727003556",
+          "name": "revoke_authenticated_internal_predicate_helpers"
+        },
+        {
+          "version": "20260727005501",
+          "name": "revoke_authenticated_unused_action_helpers"
+        },
+        {
+          "version": "20260729080221",
+          "name": "parent_onboarding_consent"
+        },
+        {
+          "version": "20260729104323",
+          "name": "parent_intake_save_resume"
+        },
+        {
+          "version": "20260730190000",
+          "name": "final_backend_integration"
+        },
+        {
+          "version": "20260807175333",
+          "name": "parent_program_recommendation"
+        },
+        {
+          "version": "20260807215141",
+          "name": "restrict_assessment_role_helper_execute"
+        },
+        {
+          "version": "20260807220851",
+          "name": "production_lesson_player"
+        },
+        {
+          "version": "20260807220915",
+          "name": "restrict_lesson_responses_authenticated_grants"
+        },
+        {
+          "version": "20260807225535",
+          "name": "contact_progression_case_model"
+        },
+        {
+          "version": "20260808031924",
+          "name": "child_v1_share_context"
+        },
+        {
+          "version": "20260809080900",
+          "name": "evidence_v1_worker_review"
+        },
+        {
+          "version": "20260809112645",
+          "name": "revoke_unpolicied_data_api_grants"
+        },
+        {
+          "version": "20260809113135",
+          "name": "harden_video_function_search_paths"
+        },
+        {
+          "version": "20260809113953",
+          "name": "restrict_video_notification_enqueue_to_service_role"
+        },
+        {
+          "version": "20260809233840",
+          "name": "restrict_video_report_builder_to_trusted_callers"
+        },
+        {
+          "version": "20260810002517",
+          "name": "enforce_video_delivery_acknowledgement_authorization"
+        },
+        {
+          "version": "20260810022348",
+          "name": "report_approval_release_v1"
+        },
+        {
+          "version": "20260810024925",
+          "name": "bind_report_access_helpers_to_session"
+        },
+        {
+          "version": "20260810025857",
+          "name": "bind_video_report_authority_helper_to_session"
+        },
+        {
+          "version": "20260810030254",
+          "name": "bind_case_permission_child_access_helpers_to_session"
+        },
+        {
+          "version": "20260810031203",
+          "name": "bind_organisation_tenant_community_helpers_to_session"
+        },
+        {
+          "version": "20260810031457",
+          "name": "bind_ai_casework_helpers_to_session"
+        },
+        {
+          "version": "20260810031615",
+          "name": "authorize_child_private_lookup_helpers"
+        },
+        {
+          "version": "20260810035900",
+          "name": "report_export_controls_v1"
+        },
+        {
+          "version": "20260810043406",
+          "name": "report_delivery_challenge_v1"
+        },
+        {
+          "version": "20260810043820",
+          "name": "harden_report_delivery_challenge_randomness_and_audit"
+        },
+        {
+          "version": "20260810043929",
+          "name": "qualify_report_delivery_pgcrypto_calls"
+        },
+        {
+          "version": "20260810120637",
+          "name": "restore_ai_child_feedback_foreign_key"
+        },
+        {
+          "version": "20260810132514",
+          "name": "preserve_video_report_consent_withdrawal_reason"
+        },
+        {
+          "version": "20260814144810",
+          "name": "governance_compliance_records"
+        },
+        {
+          "version": "20260814145322",
+          "name": "risk_engine_review_snapshots"
+        },
+        {
+          "version": "20260814155950",
+          "name": "parent_child_game_relationship_records"
+        },
+        {
+          "version": "20260829181644",
+          "name": "harden_parent_video_report_consent_grant"
+        }
+      ],
+      "contracts": [
+        {
+          "relname": "case_assignments",
+          "relkind": "v",
+          "relrowsecurity": false,
+          "reloptions": [
+            "security_invoker=true"
+          ]
+        },
+        {
+          "relname": "safety_risk_calculation_snapshots",
+          "relkind": "r",
+          "relrowsecurity": true,
+          "reloptions": null
+        }
+      ],
+      "keys": [
+        {
+          "source": "assessment_records",
+          "target": "assessment_instruments",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (instrument_id) REFERENCES assessment_instruments(id)"
+        },
+        {
+          "source": "assessment_records",
+          "target": "assessment_records",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (supersedes_assessment_id) REFERENCES assessment_records(id)"
+        },
+        {
+          "source": "assessment_records",
+          "target": "assessment_template_versions",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (template_version_id) REFERENCES assessment_template_versions(id) ON DELETE RESTRICT"
+        },
+        {
+          "source": "assessment_records",
+          "target": "auth.users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (completed_by) REFERENCES auth.users(id) ON DELETE SET NULL"
+        },
+        {
+          "source": "assessment_records",
+          "target": "case_sessions",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (session_id) REFERENCES case_sessions(id) ON DELETE SET NULL"
+        },
+        {
+          "source": "assessment_records",
+          "target": "profiles",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (user_id) REFERENCES profiles(id)"
+        },
+        {
+          "source": "assessment_records",
+          "target": "profiles",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (validated_by) REFERENCES profiles(id)"
+        },
+        {
+          "source": "assessment_records",
+          "target": "reunification_cases",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (case_id) REFERENCES reunification_cases(id) ON DELETE CASCADE"
+        },
+        {
+          "source": "case_allocations",
+          "target": "auth.users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (allocated_user_id) REFERENCES auth.users(id) ON DELETE SET NULL"
+        },
+        {
+          "source": "case_allocations",
+          "target": "auth.users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (allocated_by_user_id) REFERENCES auth.users(id) ON DELETE SET NULL"
+        },
+        {
+          "source": "case_allocations",
+          "target": "cases",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (case_id) REFERENCES cases(id) ON DELETE CASCADE"
+        },
+        {
+          "source": "case_allocations",
+          "target": "platform_tenants",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (tenant_id) REFERENCES platform_tenants(id) ON DELETE RESTRICT"
+        },
+        {
+          "source": "case_allocations",
+          "target": "worker_teams",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (allocated_team_id) REFERENCES worker_teams(id) ON DELETE SET NULL"
+        },
+        {
+          "source": "case_memberships",
+          "target": "auth.users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE"
+        },
+        {
+          "source": "case_memberships",
+          "target": "auth.users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (granted_by) REFERENCES auth.users(id)"
+        },
+        {
+          "source": "case_memberships",
+          "target": "reunification_cases",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (case_id) REFERENCES reunification_cases(id) ON DELETE CASCADE"
+        },
+        {
+          "source": "documents",
+          "target": "families",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (family_id) REFERENCES families(id)"
+        },
+        {
+          "source": "documents",
+          "target": "users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (user_id) REFERENCES users(id)"
+        },
+        {
+          "source": "profiles",
+          "target": "auth.users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE"
+        },
+        {
+          "source": "profiles",
+          "target": "cases",
+          "convalidated": false,
+          "definition": "FOREIGN KEY (case_id) REFERENCES cases(id) NOT VALID"
+        },
+        {
+          "source": "profiles",
+          "target": "platform_tenants",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (default_tenant_id) REFERENCES platform_tenants(id) ON DELETE SET NULL"
+        }
+      ],
+      "helpers": [
+        {
+          "proname": "can_access_video_report",
+          "args": "target_parent_user_id uuid, requested_scope text",
+          "prosecdef": true,
+          "proconfig": [
+            "search_path=public"
+          ],
+          "definition": "CREATE OR REPLACE FUNCTION public.can_access_video_report(target_parent_user_id uuid, requested_scope text DEFAULT 'video_progress'::text)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select (select auth.uid()) = target_parent_user_id\n    or is_video_admin(array['super_admin'])\n    or (\n      exists (\n        select 1 from video_report_access_grants grant_row\n        where grant_row.parent_user_id = target_parent_user_id\n          and grant_row.reviewer_user_id = (select auth.uid())\n          and grant_row.active = true\n          and grant_row.expires_at > now()\n          and (grant_row.access_scope = requested_scope or grant_row.access_scope = 'video_progress_and_evidence')\n      )\n      and has_active_video_report_authority(target_parent_user_id, (select auth.uid()), requested_scope)\n    );\n$function$\n"
+        },
+        {
+          "proname": "get_my_case_access_grant",
+          "args": "target_case_id uuid",
+          "prosecdef": true,
+          "proconfig": [
+            "search_path=public"
+          ],
+          "definition": "CREATE OR REPLACE FUNCTION public.get_my_case_access_grant(target_case_id uuid)\n RETURNS TABLE(membership_role text, case_status text)\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select cm.membership_role, rc.status\n  from public.case_memberships cm\n  join public.reunification_cases rc on rc.id = cm.case_id\n  where cm.case_id = target_case_id\n    and cm.user_id = auth.uid()\n    and cm.status = 'active'\n  order by case cm.membership_role\n    when 'admin' then 1 when 'supervisor' then 2 when 'clinician' then 3\n    when 'caseworker' then 4 when 'facilitator' then 5 when 'court_viewer' then 6\n    when 'advocate' then 7 when 'carer' then 8 when 'case_owner' then 9\n    when 'parent' then 10 else 11 end\n  limit 1;\n$function$\n"
+        },
+        {
+          "proname": "has_case_access",
+          "args": "p_case_id uuid",
+          "prosecdef": true,
+          "proconfig": [
+            "search_path=public"
+          ],
+          "definition": "CREATE OR REPLACE FUNCTION public.has_case_access(p_case_id uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select exists (\n    select 1\n    from public.cases c\n    where c.id = p_case_id\n      and (\n        public.has_permission(c.tenant_id, 'case.view')\n        or public.is_case_worker(c.id)\n        or public.is_case_supervisor(c.id)\n        or public.is_case_team_member(c.id)\n        or public.is_family_member(c.family_id)\n      )\n  );\n$function$\n"
+        },
+        {
+          "proname": "safesteps_auth_role",
+          "args": "",
+          "prosecdef": true,
+          "proconfig": [
+            "search_path=public"
+          ],
+          "definition": "CREATE OR REPLACE FUNCTION public.safesteps_auth_role()\n RETURNS text\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select p.role\n  from public.profiles p\n  where p.auth_user_id = auth.uid() or p.id = auth.uid()\n  limit 1;\n$function$\n"
+        },
+        {
+          "proname": "safesteps_has_case_access",
+          "args": "target_case_id uuid",
+          "prosecdef": true,
+          "proconfig": [
+            "search_path=public"
+          ],
+          "definition": "CREATE OR REPLACE FUNCTION public.safesteps_has_case_access(target_case_id uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  SELECT public.safesteps_auth_role() = 'admin'\n    OR public.safesteps_can_access_case_v19((SELECT auth.uid()), target_case_id);\n$function$\n"
+        }
+      ],
+      "grants": [
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "anon",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "anon",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "anon",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "anon",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "anon",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "anon",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "anon",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "authenticated",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "authenticated",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "authenticated",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "authenticated",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "authenticated",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "authenticated",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "case_assignments",
+          "grantee": "authenticated",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "UPDATE"
+        }
+      ],
+      "policies": [
+        {
+          "tablename": "assessment_records",
+          "policyname": "Assessment records case access",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "((parent_user_id = ( SELECT auth.uid() AS uid)) OR (completed_by = ( SELECT auth.uid() AS uid)) OR current_user_has_role('admin'::text))",
+          "with_check": "((parent_user_id = ( SELECT auth.uid() AS uid)) OR (completed_by = ( SELECT auth.uid() AS uid)) OR current_user_has_role('admin'::text))"
+        },
+        {
+          "tablename": "assessment_records",
+          "policyname": "assessment_records_insert",
+          "roles": "{authenticated}",
+          "cmd": "INSERT",
+          "qual": null,
+          "with_check": "user_has_case_role(case_id, ARRAY['caseworker'::text, 'supervisor'::text, 'clinician'::text, 'admin'::text])"
+        },
+        {
+          "tablename": "assessment_records",
+          "policyname": "assessment_records_select",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "(user_has_active_case_membership(case_id) AND user_has_case_role(case_id, ARRAY['case_owner'::text, 'parent'::text, 'facilitator'::text, 'caseworker'::text, 'supervisor'::text, 'clinician'::text, 'admin'::text]))",
+          "with_check": null
+        },
+        {
+          "tablename": "assessment_records",
+          "policyname": "assessment_records_update",
+          "roles": "{authenticated}",
+          "cmd": "UPDATE",
+          "qual": "user_has_case_role(case_id, ARRAY['caseworker'::text, 'supervisor'::text, 'clinician'::text, 'admin'::text])",
+          "with_check": "user_has_case_role(case_id, ARRAY['caseworker'::text, 'supervisor'::text, 'clinician'::text, 'admin'::text])"
+        },
+        {
+          "tablename": "assessment_records",
+          "policyname": "caseworker_read_case_assessment_records",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "((safesteps_auth_role() = ANY (ARRAY['caseworker'::text, 'admin'::text])) AND safesteps_has_case_access(case_id))",
+          "with_check": null
+        },
+        {
+          "tablename": "assessment_records",
+          "policyname": "facilitator_manage_case_assessment_records",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "((safesteps_auth_role() = ANY (ARRAY['facilitator'::text, 'admin'::text])) AND safesteps_has_case_access(case_id))",
+          "with_check": "((safesteps_auth_role() = ANY (ARRAY['facilitator'::text, 'admin'::text])) AND safesteps_has_case_access(case_id))"
+        },
+        {
+          "tablename": "assessment_records",
+          "policyname": "parent_manage_own_assessment_records",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "(user_id = safesteps_auth_profile_id())",
+          "with_check": "(user_id = safesteps_auth_profile_id())"
+        },
+        {
+          "tablename": "case_allocations",
+          "policyname": "Case allocations manageable",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "has_permission(tenant_id, 'case.allocation.manage'::text)",
+          "with_check": "has_permission(tenant_id, 'case.allocation.manage'::text)"
+        },
+        {
+          "tablename": "case_allocations",
+          "policyname": "Case allocations readable",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "(has_case_access(case_id) OR has_permission(tenant_id, 'case.allocation.view'::text))",
+          "with_check": null
+        },
+        {
+          "tablename": "case_memberships",
+          "policyname": "case_memberships_manage",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "user_has_case_role(case_id, ARRAY['admin'::text, 'supervisor'::text])",
+          "with_check": "user_has_case_role(case_id, ARRAY['admin'::text, 'supervisor'::text])"
+        },
+        {
+          "tablename": "case_memberships",
+          "policyname": "case_memberships_select",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "((user_id = ( SELECT ( SELECT auth.uid() AS uid) AS uid)) OR user_has_case_role(case_id, ARRAY['admin'::text, 'supervisor'::text]))",
+          "with_check": null
+        },
+        {
+          "tablename": "cases",
+          "policyname": "Cases insertable by authorised users",
+          "roles": "{authenticated}",
+          "cmd": "INSERT",
+          "qual": null,
+          "with_check": "has_permission(tenant_id, 'case.create'::text)"
+        },
+        {
+          "tablename": "cases",
+          "policyname": "Cases updateable by authorised users",
+          "roles": "{authenticated}",
+          "cmd": "UPDATE",
+          "qual": "can_manage_case(id)",
+          "with_check": "can_manage_case(id)"
+        },
+        {
+          "tablename": "cases",
+          "policyname": "admin_manage_cases",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "(safesteps_auth_role() = 'admin'::text)",
+          "with_check": "(safesteps_auth_role() = 'admin'::text)"
+        },
+        {
+          "tablename": "cases",
+          "policyname": "cases_select_scoped_access",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "((safesteps_auth_role() = 'admin'::text) OR safesteps_can_access_case_v19(( SELECT auth.uid() AS uid), id))",
+          "with_check": null
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "Profiles are visible to owners",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "(( SELECT ( SELECT auth.uid() AS uid) AS uid) = id)",
+          "with_check": null
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "Profiles can be updated by owners",
+          "roles": "{authenticated}",
+          "cmd": "UPDATE",
+          "qual": "(( SELECT ( SELECT auth.uid() AS uid) AS uid) = id)",
+          "with_check": "(( SELECT ( SELECT auth.uid() AS uid) AS uid) = id)"
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "Users can read own profile",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "(id = ( SELECT ( SELECT auth.uid() AS uid) AS uid))",
+          "with_check": null
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "Users can update own profile",
+          "roles": "{authenticated}",
+          "cmd": "UPDATE",
+          "qual": "(id = ( SELECT ( SELECT auth.uid() AS uid) AS uid))",
+          "with_check": "(id = ( SELECT ( SELECT auth.uid() AS uid) AS uid))"
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "caseworker_update_parent_stage_fields",
+          "roles": "{authenticated}",
+          "cmd": "UPDATE",
+          "qual": "((safesteps_auth_role() = ANY (ARRAY['caseworker'::text, 'admin'::text])) AND ((safesteps_auth_role() = 'admin'::text) OR safesteps_has_case_access(case_id)))",
+          "with_check": "((safesteps_auth_role() = ANY (ARRAY['caseworker'::text, 'admin'::text])) AND ((safesteps_auth_role() = 'admin'::text) OR safesteps_has_case_access(case_id)))"
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "owner_only_profiles",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "(( SELECT ( SELECT auth.uid() AS uid) AS uid) = id)",
+          "with_check": "(( SELECT ( SELECT auth.uid() AS uid) AS uid) = id)"
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "parent_read_own_profile",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "(id = safesteps_auth_profile_id())",
+          "with_check": null
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "staff_read_assigned_profiles",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "((safesteps_auth_role() = ANY (ARRAY['facilitator'::text, 'caseworker'::text, 'admin'::text])) AND ((safesteps_auth_role() = 'admin'::text) OR safesteps_has_case_access(case_id)))",
+          "with_check": null
+        },
+        {
+          "tablename": "safety_risk_assessments",
+          "policyname": "Risk assessments readable",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "has_safety_access(case_id)",
+          "with_check": null
+        },
+        {
+          "tablename": "safety_risk_assessments",
+          "policyname": "Risk reviews manageable",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "(has_permission(tenant_id, 'risk.review'::text) OR can_manage_safety(case_id))",
+          "with_check": "(has_permission(tenant_id, 'risk.review'::text) OR can_manage_safety(case_id))"
+        },
+        {
+          "tablename": "safety_risk_calculation_snapshots",
+          "policyname": "safety_risk_snapshots_insert",
+          "roles": "{authenticated}",
+          "cmd": "INSERT",
+          "qual": null,
+          "with_check": "((created_by_user_id = ( SELECT ( SELECT auth.uid() AS uid) AS uid)) AND (has_permission(tenant_id, 'risk.review'::text) OR can_manage_safety(case_id)))"
+        },
+        {
+          "tablename": "safety_risk_calculation_snapshots",
+          "policyname": "safety_risk_snapshots_select",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "has_safety_access(case_id)",
+          "with_check": null
+        },
+        {
+          "tablename": "safety_risk_indicators",
+          "policyname": "Risk indicators readable",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "has_safety_access(case_id)",
+          "with_check": null
+        }
+      ],
+      "edges": {
+        "functions": [
+          {
+            "id": "1bfe42e8-01dc-4f31-b1e3-436851b012d2",
+            "slug": "summarize-thread",
+            "name": "summarize-thread",
+            "status": "ACTIVE",
+            "version": 14,
+            "created_at": 1783603734759,
+            "updated_at": 1789724366335,
+            "verify_jwt": true,
+            "import_map": false,
+            "entrypoint_path": "file:///tmp/user_fn_yzxotxbwgxnxemkzigse_1bfe42e8-01dc-4f31-b1e3-436851b012d2_1/source/index.ts",
+            "ezbr_sha256": "4a93fa116e64732558612d149c587c8ef32e4ebbdf967ae7186f7eaf59d21bc3"
+          },
+          {
+            "id": "2db9e147-3239-4ff3-b43f-cc1fce260454",
+            "slug": "generate-video-report-export",
+            "name": "generate-video-report-export",
+            "status": "ACTIVE",
+            "version": 14,
+            "created_at": 1785141455804,
+            "updated_at": 1789724366335,
+            "verify_jwt": true,
+            "import_map": false,
+            "entrypoint_path": "file:///tmp/user_fn_yzxotxbwgxnxemkzigse_2db9e147-3239-4ff3-b43f-cc1fce260454_1/source/supabase/functions/generate-video-report-export/index.ts",
+            "ezbr_sha256": "3d5a3407eb24fd62c7a15282c1d8239d7af605486d8ebcfda80d1cab85ffee32"
+          },
+          {
+            "id": "39346feb-9b62-42c0-aa4f-f90dad1c7014",
+            "slug": "verify-video-report",
+            "name": "verify-video-report",
+            "status": "ACTIVE",
+            "version": 14,
+            "created_at": 1785141521909,
+            "updated_at": 1789724366335,
+            "verify_jwt": false,
+            "import_map": false,
+            "entrypoint_path": "file:///tmp/user_fn_yzxotxbwgxnxemkzigse_39346feb-9b62-42c0-aa4f-f90dad1c7014_1/source/supabase/functions/verify-video-report/index.ts",
+            "ezbr_sha256": "7eff5ea5246593efea077895daeb404fbb57cd8844ccfa9a06a6fcd6858caf94"
+          },
+          {
+            "id": "ee93a572-f9f7-4169-96ea-6abccb36539a",
+            "slug": "send-video-notifications",
+            "name": "send-video-notifications",
+            "status": "ACTIVE",
+            "version": 14,
+            "created_at": 1785145657464,
+            "updated_at": 1789724366335,
+            "verify_jwt": false,
+            "import_map": false,
+            "entrypoint_path": "file:///tmp/user_fn_yzxotxbwgxnxemkzigse_ee93a572-f9f7-4169-96ea-6abccb36539a_1/source/supabase/functions/send-video-notifications/index.ts",
+            "ezbr_sha256": "b654c0566500f4e659c89a682a2cf6f4faed33c52706dbe1f215514b5d67d76f"
+          },
+          {
+            "id": "9a332e06-d85b-46a9-8c53-5462cbb2443a",
+            "slug": "send-video-report-delivery",
+            "name": "send-video-report-delivery",
+            "status": "ACTIVE",
+            "version": 14,
+            "created_at": 1785146227468,
+            "updated_at": 1789724366335,
+            "verify_jwt": true,
+            "import_map": false,
+            "entrypoint_path": "file:///tmp/user_fn_yzxotxbwgxnxemkzigse_9a332e06-d85b-46a9-8c53-5462cbb2443a_1/source/supabase/functions/send-video-report-delivery/index.ts",
+            "ezbr_sha256": "ccb9ce4b7bb8d7a00abb7bc0fb66d4878162653d5dfb105d5639e10cbb8b7040"
+          },
+          {
+            "id": "fd2a3e90-cb50-4cb2-950e-05c67769a9e6",
+            "slug": "video-system-healthcheck",
+            "name": "video-system-healthcheck",
+            "status": "ACTIVE",
+            "version": 14,
+            "created_at": 1785146229684,
+            "updated_at": 1789724366335,
+            "verify_jwt": false,
+            "import_map": false,
+            "entrypoint_path": "file:///tmp/user_fn_yzxotxbwgxnxemkzigse_fd2a3e90-cb50-4cb2-950e-05c67769a9e6_1/source/supabase/functions/video-system-healthcheck/index.ts",
+            "ezbr_sha256": "e2aab461c8cec90194e517c506a49954010a71d4fee98f78070dbd40253da924"
+          },
+          {
+            "id": "385c7370-960b-405d-989b-03c9ec826714",
+            "slug": "verify-video-report-delivery",
+            "name": "verify-video-report-delivery",
+            "status": "ACTIVE",
+            "version": 14,
+            "created_at": 1785146238829,
+            "updated_at": 1789724366335,
+            "verify_jwt": false,
+            "import_map": false,
+            "entrypoint_path": "file:///tmp/user_fn_yzxotxbwgxnxemkzigse_385c7370-960b-405d-989b-03c9ec826714_1/source/supabase/functions/verify-video-report-delivery/index.ts",
+            "ezbr_sha256": "fb6ba57c679358aa6db83eb92d82e50bcd839eb8902924a9a11edaa4648f8f86"
+          },
+          {
+            "id": "06c89ed0-3bcb-4081-a4df-7925b4466d83",
+            "slug": "private-report-download",
+            "name": "private-report-download",
+            "status": "ACTIVE",
+            "version": 5,
+            "created_at": 1786336197046,
+            "updated_at": 1789724366335,
+            "verify_jwt": true,
+            "import_map": true,
+            "entrypoint_path": "file:///tmp/user_fn_yzxotxbwgxnxemkzigse_06c89ed0-3bcb-4081-a4df-7925b4466d83_1/source/index.ts",
+            "import_map_path": "file:///tmp/user_fn_yzxotxbwgxnxemkzigse_06c89ed0-3bcb-4081-a4df-7925b4466d83_1/source/deno.json",
+            "ezbr_sha256": "4af274e48cf812f55921eb8d24950828fb86da18ecfba0cc20d523a59c162447"
+          },
+          {
+            "id": "e9badced-2328-407e-bb27-7b193aedafd0",
+            "slug": "report-delivery-challenge",
+            "name": "report-delivery-challenge",
+            "status": "ACTIVE",
+            "version": 5,
+            "created_at": 1786336456497,
+            "updated_at": 1789724366335,
+            "verify_jwt": false,
+            "import_map": true,
+            "entrypoint_path": "file:///tmp/user_fn_yzxotxbwgxnxemkzigse_e9badced-2328-407e-bb27-7b193aedafd0_1/source/index.ts",
+            "import_map_path": "file:///tmp/user_fn_yzxotxbwgxnxemkzigse_e9badced-2328-407e-bb27-7b193aedafd0_1/source/deno.json",
+            "ezbr_sha256": "6ce30014484bddae98d4e0513b73c5cfa8eb4bd21b776b324989c740ce991967"
+          }
+        ]
+      }
+    },
+    "kwhjxggxffphknzxmtrf": {
+      "history": [
+        {
+          "version": "20260619124944",
+          "name": "init_schema"
+        },
+        {
+          "version": "20260619125732",
+          "name": "init_schema"
+        },
+        {
+          "version": "20260619125937",
+          "name": "init_schema"
+        },
+        {
+          "version": "20260619130549",
+          "name": "auth_user_trigger"
+        },
+        {
+          "version": "20260619142815",
+          "name": "remote_reconcile"
+        },
+        {
+          "version": "20260619142937",
+          "name": "rls_policies"
+        },
+        {
+          "version": "20260622181621",
+          "name": "create_intake_forms"
+        },
+        {
+          "version": "20260623160457",
+          "name": "remote_reconcile"
+        },
+        {
+          "version": "20260627135113",
+          "name": "safesteps_core_platform"
+        },
+        {
+          "version": "20260627140522",
+          "name": "evidence_storage"
+        },
+        {
+          "version": "20260627141307",
+          "name": "assessment_progress_check"
+        },
+        {
+          "version": "20260627142023",
+          "name": "richer_tasks"
+        },
+        {
+          "version": "20260627143629",
+          "name": "profile_story_fields"
+        },
+        {
+          "version": "20260629061241",
+          "name": "program_reflections"
+        },
+        {
+          "version": "20260629195506",
+          "name": "bulk_platform_tables"
+        },
+        {
+          "version": "20260630140347",
+          "name": "child_section_privacy"
+        },
+        {
+          "version": "20260701225859",
+          "name": "assessment_data_model"
+        },
+        {
+          "version": "20260702081721",
+          "name": "assessment_case_setup_fields"
+        },
+        {
+          "version": "20260703055727",
+          "name": "lock_down_remote_drift_security"
+        },
+        {
+          "version": "20260703060240",
+          "name": "add_parent_case_subsections"
+        },
+        {
+          "version": "20260703061540",
+          "name": "add_relationship_assessment_layer"
+        },
+        {
+          "version": "20260705031629",
+          "name": "parent_child_responses"
+        },
+        {
+          "version": "20260706051903",
+          "name": "expand_evidence_upload_types"
+        },
+        {
+          "version": "20260706124802",
+          "name": "parent_child_monitoring_messages"
+        },
+        {
+          "version": "20260707053131",
+          "name": "create_challenges_bucket"
+        },
+        {
+          "version": "20260712143553",
+          "name": "seed_safesteps_protective_capacity_assessment"
+        },
+        {
+          "version": "20260712171004",
+          "name": "forensic_evidence_audit"
+        },
+        {
+          "version": "20260712173337",
+          "name": "safety_alert_notification_rules"
+        },
+        {
+          "version": "20260712174720",
+          "name": "session_management_foundation"
+        },
+        {
+          "version": "20260712175500",
+          "name": "document_management_foundation"
+        },
+        {
+          "version": "20260712180057",
+          "name": "service_referral_tracking"
+        },
+        {
+          "version": "20260713020205",
+          "name": "enforce_assessment_immutability"
+        },
+        {
+          "version": "20260713103000",
+          "name": "seed_required_intake_assessment"
+        },
+        {
+          "version": "20260715085349",
+          "name": "court_report_snapshots"
+        },
+        {
+          "version": "20260715115900",
+          "name": "uuid_min_migration_compat"
+        },
+        {
+          "version": "20260715120000",
+          "name": "sensitive_access_control_and_audit"
+        },
+        {
+          "version": "20260715121500",
+          "name": "sensitive_action_audit_triggers"
+        },
+        {
+          "version": "20260715122000",
+          "name": "remove_uuid_min_migration_compat"
+        },
+        {
+          "version": "20260715122500",
+          "name": "child_permission_boundary_hardening"
+        },
+        {
+          "version": "20260715140000",
+          "name": "intake_program_start_gate"
+        },
+        {
+          "version": "20260716033944",
+          "name": "structured_evidence_workflows"
+        },
+        {
+          "version": "20260716071701",
+          "name": "repair_court_report_snapshots"
+        },
+        {
+          "version": "20260716091243",
+          "name": "add_court_report_supervisor_approvals"
+        },
+        {
+          "version": "20260719091500",
+          "name": "add_representation_preferences"
+        },
+        {
+          "version": "20260721083000",
+          "name": "reunification_stage_quests_achievements"
+        },
+        {
+          "version": "20260721084500",
+          "name": "reunification_role_rls_policies"
+        },
+        {
+          "version": "20260721093000",
+          "name": "seed_safesteps_parenting_multiple_choice_assessment"
+        },
+        {
+          "version": "20260721094000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_021_076"
+        },
+        {
+          "version": "20260721095000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_081_100"
+        },
+        {
+          "version": "20260721101500",
+          "name": "seed_safesteps_parenting_multiple_choice_items_101_115"
+        },
+        {
+          "version": "20260721103000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_121_140"
+        },
+        {
+          "version": "20260721104500",
+          "name": "seed_safesteps_parenting_multiple_choice_items_141_160"
+        },
+        {
+          "version": "20260721110000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_161_163"
+        },
+        {
+          "version": "20260721111500",
+          "name": "seed_safesteps_parenting_fill_blank_quiz"
+        },
+        {
+          "version": "20260721113000",
+          "name": "seed_safesteps_parenting_fill_blank_quiz_items_021_120"
+        },
+        {
+          "version": "20260721114500",
+          "name": "seed_safesteps_parenting_domain_fill_blank_quiz"
+        },
+        {
+          "version": "20260721120000",
+          "name": "seed_safesteps_parenting_domain_fill_blank_items_081_100"
+        },
+        {
+          "version": "20260721121000",
+          "name": "identity_roles_permissions_reporting_foundation"
+        },
+        {
+          "version": "20260721121200",
+          "name": "identity_security_operations_foundation"
+        },
+        {
+          "version": "20260721121300",
+          "name": "ai_governance_foundation"
+        },
+        {
+          "version": "20260721121500",
+          "name": "seed_safesteps_parenting_domain_fill_blank_items_101_141"
+        },
+        {
+          "version": "20260721123000",
+          "name": "seed_safesteps_parenting_domain_fill_blank_items_201_240_401_440"
+        },
+        {
+          "version": "20260721124500",
+          "name": "seed_safesteps_sequence_assessment_items"
+        },
+        {
+          "version": "20260721130000",
+          "name": "seed_safesteps_sequence_assessment_block_1"
+        },
+        {
+          "version": "20260721131500",
+          "name": "seed_safesteps_sequence_assessment_block_2"
+        },
+        {
+          "version": "20260721133000",
+          "name": "seed_safesteps_sequence_assessment_block_3_and_bulk_151_250"
+        },
+        {
+          "version": "20260721133454",
+          "name": "safesteps_assessment_enums"
+        },
+        {
+          "version": "20260721133455",
+          "name": "safesteps_assessment_templates_delivery"
+        },
+        {
+          "version": "20260721133456",
+          "name": "safesteps_competency_framework"
+        },
+        {
+          "version": "20260721133548",
+          "name": "safesteps_assessment_enums"
+        },
+        {
+          "version": "20260721133549",
+          "name": "safesteps_assessment_templates_delivery"
+        },
+        {
+          "version": "20260721133550",
+          "name": "safesteps_competency_framework"
+        },
+        {
+          "version": "20260721133551",
+          "name": "safesteps_scoring_rubrics_reviews_evidence"
+        },
+        {
+          "version": "20260721134500",
+          "name": "seed_safesteps_sequence_assessment_bulk_151_250_drs019_srs013"
+        },
+        {
+          "version": "20260721150213",
+          "name": "ai_model_registry_lifecycle"
+        },
+        {
+          "version": "20260721150617",
+          "name": "ai_prompt_workflow_governance"
+        },
+        {
+          "version": "20260721151044",
+          "name": "ai_governance_remaining_foundations"
+        },
+        {
+          "version": "20260721160745",
+          "name": "ai_model_assurance_volume2_details"
+        },
+        {
+          "version": "20260721161700",
+          "name": "ai_prompt_retrieval_workflow_volume3"
+        },
+        {
+          "version": "20260721162559",
+          "name": "ai_prompt_retrieval_workflow_volume3_completion"
+        },
+        {
+          "version": "20260721164446",
+          "name": "ai_evaluation_validation_release_assurance_volume5"
+        },
+        {
+          "version": "20260721165502",
+          "name": "ai_explainability_transparency_contestability_volume6"
+        },
+        {
+          "version": "20260721170458",
+          "name": "ai_explainability_contestability_volume6_completion"
+        },
+        {
+          "version": "20260721173335",
+          "name": "ai_continuous_learning_change_management_volume10"
+        },
+        {
+          "version": "20260721174116",
+          "name": "ai_continuous_learning_volume10_completion"
+        },
+        {
+          "version": "20260721180934",
+          "name": "ai_operations_centre_reliability_service_management_volume11"
+        },
+        {
+          "version": "20260721184924",
+          "name": "parenting_child_development_learning_engine_volume16"
+        },
+        {
+          "version": "20260721190229",
+          "name": "parenting_child_development_learning_engine_volume16_completion"
+        },
+        {
+          "version": "20260721192516",
+          "name": "assessment_evidence_reunification_framework_volume17"
+        },
+        {
+          "version": "20260721200806",
+          "name": "case_management_platform_volume19"
+        },
+        {
+          "version": "20260721205718",
+          "name": "child_experience_platform_volume20"
+        },
+        {
+          "version": "20260721230904",
+          "name": "community_services_platform_volume21"
+        },
+        {
+          "version": "20260721232009",
+          "name": "white_label_multi_tenant_platform_volume23"
+        },
+        {
+          "version": "202607220001",
+          "name": "extensions"
+        },
+        {
+          "version": "202607220002",
+          "name": "platform_tenants"
+        },
+        {
+          "version": "202607220003",
+          "name": "organisations"
+        },
+        {
+          "version": "202607220004",
+          "name": "profiles"
+        },
+        {
+          "version": "202607220005",
+          "name": "tenant_memberships"
+        },
+        {
+          "version": "202607220006",
+          "name": "permissions"
+        },
+        {
+          "version": "202607220007",
+          "name": "role_assignments"
+        },
+        {
+          "version": "202607220008",
+          "name": "tenant_context"
+        },
+        {
+          "version": "202607220009",
+          "name": "audit_foundation"
+        },
+        {
+          "version": "202607220010",
+          "name": "rls_foundation"
+        },
+        {
+          "version": "202607220011",
+          "name": "foundation_seed"
+        },
+        {
+          "version": "202607220012",
+          "name": "family_foundation_schema"
+        },
+        {
+          "version": "202607220013",
+          "name": "family_foundation_functions"
+        },
+        {
+          "version": "202607220014",
+          "name": "family_foundation_rls_audit_seed"
+        },
+        {
+          "version": "202607220025",
+          "name": "case_definitions"
+        },
+        {
+          "version": "202607220026",
+          "name": "cases"
+        },
+        {
+          "version": "202607220027",
+          "name": "case_participants"
+        },
+        {
+          "version": "202607220028",
+          "name": "worker_teams"
+        },
+        {
+          "version": "202607220029",
+          "name": "case_allocations"
+        },
+        {
+          "version": "202607220030",
+          "name": "case_status_history"
+        },
+        {
+          "version": "202607220031",
+          "name": "case_plans"
+        },
+        {
+          "version": "202607220032",
+          "name": "case_goals_and_actions"
+        },
+        {
+          "version": "202607220033",
+          "name": "case_milestones_barriers_strengths"
+        },
+        {
+          "version": "202607220034",
+          "name": "case_reviews"
+        },
+        {
+          "version": "202607220035",
+          "name": "case_notes"
+        },
+        {
+          "version": "202607220036",
+          "name": "case_legal_references"
+        },
+        {
+          "version": "202607220037",
+          "name": "case_access_functions"
+        },
+        {
+          "version": "202607220038",
+          "name": "case_rls"
+        },
+        {
+          "version": "202607220039",
+          "name": "case_views"
+        },
+        {
+          "version": "202607220040",
+          "name": "case_audit_triggers"
+        },
+        {
+          "version": "202607220041",
+          "name": "case_seed"
+        },
+        {
+          "version": "202607220042",
+          "name": "safety_plans"
+        },
+        {
+          "version": "202607220043",
+          "name": "safety_plan_versions"
+        },
+        {
+          "version": "202607220044",
+          "name": "safety_plan_participants"
+        },
+        {
+          "version": "202607220045",
+          "name": "protective_factors"
+        },
+        {
+          "version": "202607220046",
+          "name": "risk_factors"
+        },
+        {
+          "version": "202607220047",
+          "name": "risk_assessments"
+        },
+        {
+          "version": "202607220048",
+          "name": "risk_indicators"
+        },
+        {
+          "version": "202607220049",
+          "name": "safety_alerts"
+        },
+        {
+          "version": "202607220050",
+          "name": "incidents"
+        },
+        {
+          "version": "202607220051",
+          "name": "crisis_events"
+        },
+        {
+          "version": "202607220052",
+          "name": "weapon_detection"
+        },
+        {
+          "version": "202607220053",
+          "name": "missing_child"
+        },
+        {
+          "version": "202607220054",
+          "name": "emergency_contacts"
+        },
+        {
+          "version": "202607220055",
+          "name": "child_disclosures"
+        },
+        {
+          "version": "202607220056",
+          "name": "escalation_workflows"
+        },
+        {
+          "version": "202607220057",
+          "name": "safety_access"
+        },
+        {
+          "version": "202607220058",
+          "name": "safety_rls"
+        },
+        {
+          "version": "202607220059",
+          "name": "safety_views"
+        },
+        {
+          "version": "202607220060",
+          "name": "safety_seed"
+        },
+        {
+          "version": "202607220061",
+          "name": "evidence_records"
+        },
+        {
+          "version": "202607220062",
+          "name": "evidence_files"
+        },
+        {
+          "version": "202607220063",
+          "name": "evidence_metadata"
+        },
+        {
+          "version": "202607220064",
+          "name": "evidence_categories"
+        },
+        {
+          "version": "202607220065",
+          "name": "evidence_links"
+        },
+        {
+          "version": "202607220066",
+          "name": "evidence_chain_of_custody"
+        },
+        {
+          "version": "202607220067",
+          "name": "evidence_verification"
+        },
+        {
+          "version": "202607220068",
+          "name": "evidence_ai_analysis"
+        },
+        {
+          "version": "202607220069",
+          "name": "evidence_redactions"
+        },
+        {
+          "version": "202607220070",
+          "name": "court_bundles"
+        },
+        {
+          "version": "202607220071",
+          "name": "evidence_retention"
+        },
+        {
+          "version": "202607220072",
+          "name": "evidence_access"
+        },
+        {
+          "version": "202607220073",
+          "name": "evidence_rls"
+        },
+        {
+          "version": "202607220074",
+          "name": "evidence_views"
+        },
+        {
+          "version": "202607220075",
+          "name": "evidence_seed"
+        },
+        {
+          "version": "20260726083830",
+          "name": "revoke_anon_security_definer_execute"
+        },
+        {
+          "version": "20260726091549",
+          "name": "harden_function_search_paths"
+        },
+        {
+          "version": "20260726092438",
+          "name": "revoke_authenticated_internal_trigger_functions"
+        },
+        {
+          "version": "20260726092753",
+          "name": "move_extensions_out_of_public"
+        },
+        {
+          "version": "20260726093937",
+          "name": "revoke_authenticated_standalone_ai_helper_functions"
+        },
+        {
+          "version": "20260727003556",
+          "name": "revoke_authenticated_internal_predicate_helpers"
+        },
+        {
+          "version": "20260727005501",
+          "name": "revoke_authenticated_unused_action_helpers"
+        },
+        {
+          "version": "20260729080221",
+          "name": "parent_onboarding_consent"
+        },
+        {
+          "version": "20260729104323",
+          "name": "parent_intake_save_resume"
+        },
+        {
+          "version": "20260730120000",
+          "name": "parent_program_recommendation"
+        },
+        {
+          "version": "20260730190000",
+          "name": "final_backend_integration"
+        },
+        {
+          "version": "20260807175333",
+          "name": "parent_program_recommendation"
+        },
+        {
+          "version": "20260807215141",
+          "name": "restrict_assessment_role_helper_execute"
+        },
+        {
+          "version": "20260807220851",
+          "name": "production_lesson_player"
+        },
+        {
+          "version": "20260807220915",
+          "name": "restrict_lesson_responses_authenticated_grants"
+        },
+        {
+          "version": "20260807225535",
+          "name": "contact_progression_case_model"
+        },
+        {
+          "version": "20260808031500",
+          "name": "child_v1_share_context"
+        },
+        {
+          "version": "20260808031924",
+          "name": "child_v1_share_context"
+        },
+        {
+          "version": "20260808075000",
+          "name": "restrict_assessment_role_helpers"
+        },
+        {
+          "version": "20260808081500",
+          "name": "production_lesson_player"
+        },
+        {
+          "version": "20260808090000",
+          "name": "contact_progression_case_model"
+        },
+        {
+          "version": "20260808093000",
+          "name": "fairness_detection_schema"
+        },
+        {
+          "version": "20260809061159",
+          "name": "evidence_v1_worker_review"
+        },
+        {
+          "version": "20260809080900",
+          "name": "evidence_v1_worker_review"
+        },
+        {
+          "version": "20260809112645",
+          "name": "revoke_unpolicied_data_api_grants"
+        },
+        {
+          "version": "20260809113135",
+          "name": "harden_video_function_search_paths"
+        },
+        {
+          "version": "20260809113953",
+          "name": "restrict_video_notification_enqueue_to_service_role"
+        },
+        {
+          "version": "20260809120000",
+          "name": "video_schema_prerequisites"
+        },
+        {
+          "version": "20260809233840",
+          "name": "restrict_video_report_builder_to_trusted_callers"
+        },
+        {
+          "version": "20260910143352",
+          "name": "restore_delivery_table_prerequisites"
+        },
+        {
+          "version": "20260910143416",
+          "name": "enforce_video_delivery_acknowledgement_authorization"
+        },
+        {
+          "version": "20260910143511",
+          "name": "report_approval_release_v1"
+        },
+        {
+          "version": "20260910143543",
+          "name": "bind_report_access_helpers_to_session"
+        },
+        {
+          "version": "20260910143554",
+          "name": "bind_video_report_authority_helper_to_session"
+        },
+        {
+          "version": "20260910143603",
+          "name": "bind_case_permission_child_access_helpers_to_session"
+        },
+        {
+          "version": "20260910143621",
+          "name": "bind_organisation_tenant_community_helpers_to_session"
+        },
+        {
+          "version": "20260910145531",
+          "name": "bind_ai_casework_helpers_to_session"
+        },
+        {
+          "version": "20260910145540",
+          "name": "authorize_child_private_lookup_helpers"
+        },
+        {
+          "version": "20260910145548",
+          "name": "report_export_controls_v1"
+        },
+        {
+          "version": "20260910145604",
+          "name": "report_delivery_challenge_v1"
+        },
+        {
+          "version": "20260910145612",
+          "name": "harden_report_delivery_challenge_randomness_and_audit"
+        },
+        {
+          "version": "20260910145619",
+          "name": "qualify_report_delivery_pgcrypto_calls"
+        },
+        {
+          "version": "20260910145627",
+          "name": "restore_ai_child_feedback_foreign_key"
+        },
+        {
+          "version": "20260910145648",
+          "name": "baseline_missing_public_tables_schema_only"
+        },
+        {
+          "version": "20260910145656",
+          "name": "baseline_missing_public_table_keys_and_checks"
+        },
+        {
+          "version": "20260910145704",
+          "name": "baseline_missing_public_table_foreign_keys"
+        },
+        {
+          "version": "20260910145713",
+          "name": "baseline_missing_public_table_indexes_and_rls"
+        },
+        {
+          "version": "20260910145725",
+          "name": "baseline_video_report_authority_helpers"
+        },
+        {
+          "version": "20260910145733",
+          "name": "baseline_video_report_authority_helper_grants"
+        },
+        {
+          "version": "20260910145742",
+          "name": "baseline_missing_public_table_policies"
+        },
+        {
+          "version": "20260910145757",
+          "name": "baseline_legacy_compatibility_columns"
+        },
+        {
+          "version": "20260910145804",
+          "name": "baseline_missing_public_table_triggers"
+        },
+        {
+          "version": "20260910145821",
+          "name": "baseline_missing_public_table_data_api_grants"
+        },
+        {
+          "version": "20260910145829",
+          "name": "preserve_video_report_consent_withdrawal_reason"
+        },
+        {
+          "version": "20260910145848",
+          "name": "fix_report_recipient_rls_recursion"
+        },
+        {
+          "version": "20260910145857",
+          "name": "fix_child_private_share_policy_privilege"
+        },
+        {
+          "version": "20260910145909",
+          "name": "personal_ai_support_persistence"
+        },
+        {
+          "version": "20260910145929",
+          "name": "personal_ai_incident_response"
+        },
+        {
+          "version": "20260910145937",
+          "name": "controlled_family_memory"
+        },
+        {
+          "version": "20260910145945",
+          "name": "personal_ai_launch_readiness_gate"
+        },
+        {
+          "version": "20260910145953",
+          "name": "personal_ai_governance_signoff_scope"
+        },
+        {
+          "version": "20260910150007",
+          "name": "personal_ai_atomic_chat_persistence"
+        },
+        {
+          "version": "20260910150046",
+          "name": "harden_report_verification_rpcs_service_role_only"
+        },
+        {
+          "version": "20260910150054",
+          "name": "personal_ai_flow_version_governance"
+        },
+        {
+          "version": "20260910150102",
+          "name": "personal_ai_opt_in_mood_trends"
+        },
+        {
+          "version": "20260910150117",
+          "name": "seed_parenting_stress_capacity_rubric"
+        },
+        {
+          "version": "20260910150126",
+          "name": "seed_cooccurring_aod_mh_dfv_review"
+        },
+        {
+          "version": "20260910150134",
+          "name": "cooccurring_review_result_metadata"
+        },
+        {
+          "version": "20260910150143",
+          "name": "document_analysis_runs"
+        },
+        {
+          "version": "20260910150156",
+          "name": "professional_link_status"
+        },
+        {
+          "version": "20260910150205",
+          "name": "co_occurring_aod_mh_dfv_instrument"
+        },
+        {
+          "version": "20260910150215",
+          "name": "media_evidence_integrity_foundation"
+        },
+        {
+          "version": "20260910150225",
+          "name": "media_evidence_storage_contract"
+        },
+        {
+          "version": "20260911073542",
+          "name": "document_intelligence_pipeline"
+        },
+        {
+          "version": "20260911074051",
+          "name": "document_intelligence_rls_hardening"
+        }
+      ],
+      "contracts": [
+        {
+          "relname": "document_analyses",
+          "relkind": "r",
+          "relrowsecurity": true,
+          "reloptions": null
+        },
+        {
+          "relname": "document_analysis_jobs",
+          "relkind": "r",
+          "relrowsecurity": true,
+          "reloptions": null
+        },
+        {
+          "relname": "document_comparisons",
+          "relkind": "r",
+          "relrowsecurity": true,
+          "reloptions": null
+        }
+      ],
+      "keys": [
+        {
+          "source": "assessment_records",
+          "target": "assessment_instruments",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (instrument_id) REFERENCES assessment_instruments(id)"
+        },
+        {
+          "source": "assessment_records",
+          "target": "assessment_records",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (supersedes_assessment_id) REFERENCES assessment_records(id)"
+        },
+        {
+          "source": "assessment_records",
+          "target": "assessment_template_versions",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (template_version_id) REFERENCES assessment_template_versions(id) ON DELETE RESTRICT"
+        },
+        {
+          "source": "assessment_records",
+          "target": "auth.users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (completed_by) REFERENCES auth.users(id) ON DELETE SET NULL"
+        },
+        {
+          "source": "assessment_records",
+          "target": "case_sessions",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (session_id) REFERENCES case_sessions(id) ON DELETE SET NULL"
+        },
+        {
+          "source": "assessment_records",
+          "target": "profiles",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (user_id) REFERENCES profiles(id)"
+        },
+        {
+          "source": "assessment_records",
+          "target": "profiles",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (validated_by) REFERENCES profiles(id)"
+        },
+        {
+          "source": "assessment_records",
+          "target": "reunification_cases",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (case_id) REFERENCES reunification_cases(id) ON DELETE CASCADE"
+        },
+        {
+          "source": "case_allocations",
+          "target": "auth.users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (allocated_by_user_id) REFERENCES auth.users(id) ON DELETE SET NULL"
+        },
+        {
+          "source": "case_allocations",
+          "target": "auth.users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (allocated_user_id) REFERENCES auth.users(id) ON DELETE SET NULL"
+        },
+        {
+          "source": "case_allocations",
+          "target": "cases",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (case_id) REFERENCES cases(id) ON DELETE CASCADE"
+        },
+        {
+          "source": "case_allocations",
+          "target": "platform_tenants",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (tenant_id) REFERENCES platform_tenants(id) ON DELETE RESTRICT"
+        },
+        {
+          "source": "case_allocations",
+          "target": "worker_teams",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (allocated_team_id) REFERENCES worker_teams(id) ON DELETE SET NULL"
+        },
+        {
+          "source": "case_memberships",
+          "target": "auth.users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (granted_by) REFERENCES auth.users(id)"
+        },
+        {
+          "source": "case_memberships",
+          "target": "auth.users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (user_id) REFERENCES auth.users(id) ON DELETE CASCADE"
+        },
+        {
+          "source": "case_memberships",
+          "target": "reunification_cases",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (case_id) REFERENCES reunification_cases(id) ON DELETE CASCADE"
+        },
+        {
+          "source": "documents",
+          "target": "families",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (family_id) REFERENCES families(id)"
+        },
+        {
+          "source": "documents",
+          "target": "users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (user_id) REFERENCES users(id)"
+        },
+        {
+          "source": "profiles",
+          "target": "auth.users",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (id) REFERENCES auth.users(id) ON DELETE CASCADE"
+        },
+        {
+          "source": "profiles",
+          "target": "cases",
+          "convalidated": false,
+          "definition": "FOREIGN KEY (case_id) REFERENCES cases(id) NOT VALID"
+        },
+        {
+          "source": "profiles",
+          "target": "platform_tenants",
+          "convalidated": true,
+          "definition": "FOREIGN KEY (default_tenant_id) REFERENCES platform_tenants(id) ON DELETE SET NULL"
+        }
+      ],
+      "helpers": [
+        {
+          "proname": "can_access_video_report",
+          "args": "target_parent_user_id uuid, requested_scope text",
+          "prosecdef": true,
+          "proconfig": [
+            "search_path=public"
+          ],
+          "definition": "CREATE OR REPLACE FUNCTION public.can_access_video_report(target_parent_user_id uuid, requested_scope text DEFAULT 'video_progress'::text)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\r\n  select (select auth.uid()) = target_parent_user_id\r\n    or is_video_admin(array['super_admin'])\r\n    or (\r\n      exists (\r\n        select 1 from video_report_access_grants grant_row\r\n        where grant_row.parent_user_id = target_parent_user_id\r\n          and grant_row.reviewer_user_id = (select auth.uid())\r\n          and grant_row.active = true\r\n          and grant_row.expires_at > now()\r\n          and (grant_row.access_scope = requested_scope or grant_row.access_scope = 'video_progress_and_evidence')\r\n      )\r\n      and has_active_video_report_authority(target_parent_user_id, (select auth.uid()), requested_scope)\r\n    );\r\n$function$\n"
+        },
+        {
+          "proname": "get_my_case_access_grant",
+          "args": "target_case_id uuid",
+          "prosecdef": true,
+          "proconfig": [
+            "search_path=public"
+          ],
+          "definition": "CREATE OR REPLACE FUNCTION public.get_my_case_access_grant(target_case_id uuid)\n RETURNS TABLE(membership_role text, case_status text)\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select cm.membership_role, rc.status\n  from public.case_memberships cm\n  join public.reunification_cases rc on rc.id = cm.case_id\n  where cm.case_id = target_case_id\n    and cm.user_id = auth.uid()\n    and cm.status = 'active'\n  order by case cm.membership_role\n    when 'admin' then 1 when 'supervisor' then 2 when 'clinician' then 3\n    when 'caseworker' then 4 when 'facilitator' then 5 when 'court_viewer' then 6\n    when 'advocate' then 7 when 'carer' then 8 when 'case_owner' then 9\n    when 'parent' then 10 else 11 end\n  limit 1;\n$function$\n"
+        },
+        {
+          "proname": "has_case_access",
+          "args": "p_case_id uuid",
+          "prosecdef": true,
+          "proconfig": [
+            "search_path=public"
+          ],
+          "definition": "CREATE OR REPLACE FUNCTION public.has_case_access(p_case_id uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select exists (\n    select 1\n    from public.cases c\n    where c.id = p_case_id\n      and (\n        public.has_permission(c.tenant_id, 'case.view')\n        or public.is_case_worker(c.id)\n        or public.is_case_supervisor(c.id)\n        or public.is_case_team_member(c.id)\n        or public.is_family_member(c.family_id)\n      )\n  );\n$function$\n"
+        },
+        {
+          "proname": "safesteps_auth_role",
+          "args": "",
+          "prosecdef": true,
+          "proconfig": [
+            "search_path=public"
+          ],
+          "definition": "CREATE OR REPLACE FUNCTION public.safesteps_auth_role()\n RETURNS text\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select p.role\n  from public.profiles p\n  where p.auth_user_id = auth.uid() or p.id = auth.uid()\n  limit 1;\n$function$\n"
+        },
+        {
+          "proname": "safesteps_has_case_access",
+          "args": "target_case_id uuid",
+          "prosecdef": true,
+          "proconfig": [
+            "search_path=public"
+          ],
+          "definition": "CREATE OR REPLACE FUNCTION public.safesteps_has_case_access(target_case_id uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select\n    public.safesteps_auth_role() = 'admin'\n    or exists (\n      select 1\n      from public.profiles p\n      where p.id = public.safesteps_auth_profile_id()\n      and p.case_id = target_case_id\n    )\n    or exists (\n      select 1\n      from public.profile_cases pc\n      where pc.profile_id = public.safesteps_auth_profile_id()\n      and pc.case_id = target_case_id\n    );\n$function$\n"
+        }
+      ],
+      "grants": [
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "anon",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "assessment_records",
+          "grantee": "authenticated",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "anon",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "case_allocations",
+          "grantee": "authenticated",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "anon",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "case_memberships",
+          "grantee": "authenticated",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "anon",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "profiles",
+          "grantee": "authenticated",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "anon",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "user_roles",
+          "grantee": "authenticated",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "users",
+          "grantee": "anon",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "users",
+          "grantee": "anon",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "users",
+          "grantee": "anon",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "users",
+          "grantee": "anon",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "users",
+          "grantee": "anon",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "users",
+          "grantee": "anon",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "users",
+          "grantee": "anon",
+          "privilege_type": "UPDATE"
+        },
+        {
+          "table_name": "users",
+          "grantee": "authenticated",
+          "privilege_type": "DELETE"
+        },
+        {
+          "table_name": "users",
+          "grantee": "authenticated",
+          "privilege_type": "INSERT"
+        },
+        {
+          "table_name": "users",
+          "grantee": "authenticated",
+          "privilege_type": "REFERENCES"
+        },
+        {
+          "table_name": "users",
+          "grantee": "authenticated",
+          "privilege_type": "SELECT"
+        },
+        {
+          "table_name": "users",
+          "grantee": "authenticated",
+          "privilege_type": "TRIGGER"
+        },
+        {
+          "table_name": "users",
+          "grantee": "authenticated",
+          "privilege_type": "TRUNCATE"
+        },
+        {
+          "table_name": "users",
+          "grantee": "authenticated",
+          "privilege_type": "UPDATE"
+        }
+      ],
+      "policies": [
+        {
+          "tablename": "assessment_records",
+          "policyname": "Assessment records case access",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "((parent_user_id = auth.uid()) OR (completed_by = auth.uid()) OR current_user_has_role('admin'::text))",
+          "with_check": "((parent_user_id = auth.uid()) OR (completed_by = auth.uid()) OR current_user_has_role('admin'::text))"
+        },
+        {
+          "tablename": "assessment_records",
+          "policyname": "assessment_records_insert",
+          "roles": "{authenticated}",
+          "cmd": "INSERT",
+          "qual": null,
+          "with_check": "user_has_case_role(case_id, ARRAY['caseworker'::text, 'supervisor'::text, 'clinician'::text, 'admin'::text])"
+        },
+        {
+          "tablename": "assessment_records",
+          "policyname": "assessment_records_select",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "(user_has_active_case_membership(case_id) AND user_has_case_role(case_id, ARRAY['case_owner'::text, 'parent'::text, 'facilitator'::text, 'caseworker'::text, 'supervisor'::text, 'clinician'::text, 'admin'::text]))",
+          "with_check": null
+        },
+        {
+          "tablename": "assessment_records",
+          "policyname": "assessment_records_update",
+          "roles": "{authenticated}",
+          "cmd": "UPDATE",
+          "qual": "user_has_case_role(case_id, ARRAY['caseworker'::text, 'supervisor'::text, 'clinician'::text, 'admin'::text])",
+          "with_check": "user_has_case_role(case_id, ARRAY['caseworker'::text, 'supervisor'::text, 'clinician'::text, 'admin'::text])"
+        },
+        {
+          "tablename": "assessment_records",
+          "policyname": "caseworker_read_case_assessment_records",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "((safesteps_auth_role() = ANY (ARRAY['caseworker'::text, 'admin'::text])) AND safesteps_has_case_access(case_id))",
+          "with_check": null
+        },
+        {
+          "tablename": "assessment_records",
+          "policyname": "facilitator_manage_case_assessment_records",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "((safesteps_auth_role() = ANY (ARRAY['facilitator'::text, 'admin'::text])) AND safesteps_has_case_access(case_id))",
+          "with_check": "((safesteps_auth_role() = ANY (ARRAY['facilitator'::text, 'admin'::text])) AND safesteps_has_case_access(case_id))"
+        },
+        {
+          "tablename": "assessment_records",
+          "policyname": "parent_manage_own_assessment_records",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "(user_id = safesteps_auth_profile_id())",
+          "with_check": "(user_id = safesteps_auth_profile_id())"
+        },
+        {
+          "tablename": "case_allocations",
+          "policyname": "Case allocations manageable",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "has_permission(tenant_id, 'case.allocation.manage'::text)",
+          "with_check": "has_permission(tenant_id, 'case.allocation.manage'::text)"
+        },
+        {
+          "tablename": "case_allocations",
+          "policyname": "Case allocations readable",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "(has_case_access(case_id) OR has_permission(tenant_id, 'case.allocation.view'::text))",
+          "with_check": null
+        },
+        {
+          "tablename": "case_memberships",
+          "policyname": "case_memberships_manage",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "user_has_case_role(case_id, ARRAY['admin'::text, 'supervisor'::text])",
+          "with_check": "user_has_case_role(case_id, ARRAY['admin'::text, 'supervisor'::text])"
+        },
+        {
+          "tablename": "case_memberships",
+          "policyname": "case_memberships_select",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "((user_id = ( SELECT auth.uid() AS uid)) OR user_has_case_role(case_id, ARRAY['admin'::text, 'supervisor'::text]))",
+          "with_check": null
+        },
+        {
+          "tablename": "cases",
+          "policyname": "Cases insertable by authorised users",
+          "roles": "{authenticated}",
+          "cmd": "INSERT",
+          "qual": null,
+          "with_check": "has_permission(tenant_id, 'case.create'::text)"
+        },
+        {
+          "tablename": "cases",
+          "policyname": "Cases readable by authorised users",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "has_case_access(id)",
+          "with_check": null
+        },
+        {
+          "tablename": "cases",
+          "policyname": "Cases updateable by authorised users",
+          "roles": "{authenticated}",
+          "cmd": "UPDATE",
+          "qual": "can_manage_case(id)",
+          "with_check": "can_manage_case(id)"
+        },
+        {
+          "tablename": "cases",
+          "policyname": "admin_manage_cases",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "(safesteps_auth_role() = 'admin'::text)",
+          "with_check": "(safesteps_auth_role() = 'admin'::text)"
+        },
+        {
+          "tablename": "cases",
+          "policyname": "assigned_case_read",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "safesteps_has_case_access(id)",
+          "with_check": null
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "Profiles are visible to owners",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "(( SELECT auth.uid() AS uid) = id)",
+          "with_check": null
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "Profiles can be updated by owners",
+          "roles": "{authenticated}",
+          "cmd": "UPDATE",
+          "qual": "(( SELECT auth.uid() AS uid) = id)",
+          "with_check": "(( SELECT auth.uid() AS uid) = id)"
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "Users can read own profile",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "(id = auth.uid())",
+          "with_check": null
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "Users can update own profile",
+          "roles": "{authenticated}",
+          "cmd": "UPDATE",
+          "qual": "(id = auth.uid())",
+          "with_check": "(id = auth.uid())"
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "caseworker_update_parent_stage_fields",
+          "roles": "{authenticated}",
+          "cmd": "UPDATE",
+          "qual": "((safesteps_auth_role() = ANY (ARRAY['caseworker'::text, 'admin'::text])) AND ((safesteps_auth_role() = 'admin'::text) OR safesteps_has_case_access(case_id)))",
+          "with_check": "((safesteps_auth_role() = ANY (ARRAY['caseworker'::text, 'admin'::text])) AND ((safesteps_auth_role() = 'admin'::text) OR safesteps_has_case_access(case_id)))"
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "parent_read_own_profile",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "(id = safesteps_auth_profile_id())",
+          "with_check": null
+        },
+        {
+          "tablename": "profiles",
+          "policyname": "staff_read_assigned_profiles",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "((safesteps_auth_role() = ANY (ARRAY['facilitator'::text, 'caseworker'::text, 'admin'::text])) AND ((safesteps_auth_role() = 'admin'::text) OR safesteps_has_case_access(case_id)))",
+          "with_check": null
+        },
+        {
+          "tablename": "safety_risk_assessments",
+          "policyname": "Risk assessments readable",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "has_safety_access(case_id)",
+          "with_check": null
+        },
+        {
+          "tablename": "safety_risk_assessments",
+          "policyname": "Risk reviews manageable",
+          "roles": "{authenticated}",
+          "cmd": "ALL",
+          "qual": "(has_permission(tenant_id, 'risk.review'::text) OR can_manage_safety(case_id))",
+          "with_check": "(has_permission(tenant_id, 'risk.review'::text) OR can_manage_safety(case_id))"
+        },
+        {
+          "tablename": "safety_risk_indicators",
+          "policyname": "Risk indicators readable",
+          "roles": "{authenticated}",
+          "cmd": "SELECT",
+          "qual": "has_safety_access(case_id)",
+          "with_check": null
+        }
+      ],
+      "edges": {
+        "functions": []
+      }
+    }
+  },
+  "stagingUnknownCaseProbe": [
+    {
+      "canonical_unknown_case_denied": true,
+      "legacy_unknown_case_denied": true
+    }
+  ]
+}
