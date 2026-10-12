@@ -222,11 +222,12 @@ export function buildRestorativeFamilyMeetingPlan(
 ): RestorativeFamilyMeetingResult {
   const preSafety = evaluatePreAndPostSafetyGate(
     input.ruptureRepairDraft,
-    "couples_family_dfv_coach",
+    "couples_dfv_restoration_coach",
   );
 
   const stageAllowed =
     input.couplesDfvStage === "stage_3_conjoint_safety_gated" ||
+    input.couplesDfvStage === "stage_4_whole_family_integration" ||
     input.couplesDfvStage === "stage_4_family_reunification_maintenance";
 
   const feltSafetyCleared = input.survivorFeltSafetyScore0to10 >= 7;

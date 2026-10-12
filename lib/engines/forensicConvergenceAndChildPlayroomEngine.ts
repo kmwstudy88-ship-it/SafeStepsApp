@@ -90,7 +90,7 @@ export function compileCourtSaferAiAnnexure(
   const reliableChangeTrajectorySummary =
     input.evaluation.engine6LongitudinalRci.rciResults.map(
       (r) =>
-        `${r.scaleName}: Baseline ${r.baselineRaw} -> Current ${r.currentRaw} (RCI = ${r.rciValue}, ${r.classification.replace(/_/g, " ")})`,
+        `${r.scaleId}: Baseline ${r.baselineRaw} -> Current ${r.currentRaw} (RCI = ${r.rciValue}, ${r.classification.replace(/_/g, " ")})`,
     );
 
   const nowIso = new Date().toISOString();
@@ -134,15 +134,17 @@ export function compileCourtSaferAiAnnexure(
       ]
     : [];
 
+  const talkVsWalkGap =
+    100 - input.evaluation.engine1AntiGaming.indicators.crossModalBehaviouralAlignment;
   const courtContradictions: CourtReportContradiction[] =
-    input.evaluation.engine1AntiGaming.talkVsWalkGap >= 20
+    talkVsWalkGap >= 20
       ? [
           {
             id: `contra-talk-walk-${annexureHash.slice(0, 8)}`,
-            severity:
-              input.evaluation.engine1AntiGaming.talkVsWalkGap >= 30 ? "high" : "medium",
+            severity: talkVsWalkGap >= 30 ? "high" : "medium",
             summary:
-              input.evaluation.engine1AntiGaming.triangulationFlag ||
+              input.evaluation.engine1AntiGaming.flags[0] ||
+              input.evaluation.engine1AntiGaming.summary ||
               "Divergence between self-report scales and stressed behavioural simulation.",
             sourceA: "Parent Direct Self-Report Scale",
             sourceB: "Stressed Roleplay / SJT Behavioural Simulation",
@@ -502,8 +504,12 @@ export function evaluateChildThreeHousesAndSafetyHand(
     .filter(Boolean);
   const safetyNetworkComplete = trustedAdults.length >= 3;
 
-  let safetyTier = preGate.safetyTier;
-  if (safetyTier === "tier_4_green" && worryLevel >= 8) {
+  let safetyTier: ChildThreeHousesResult["safetyTier"] = "tier_4_green";
+  if (preGate.safetyTier === "tier_1_immediate") {
+    safetyTier = "tier_1_immediate";
+  } else if (preGate.safetyTier === "tier_2_clinical_review") {
+    safetyTier = "tier_2_urgent_2h";
+  } else if (preGate.safetyTier === "tier_3_supportive" || worryLevel >= 8) {
     safetyTier = "tier_3_24h";
   }
 

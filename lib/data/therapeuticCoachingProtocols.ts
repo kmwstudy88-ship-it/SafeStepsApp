@@ -30,6 +30,11 @@ export type CouplesRestorationStageId =
   | "stage_3_conjoint_safety_gated"
   | "stage_4_whole_family_integration";
 
+export type CouplesDfvStageId =
+  | CouplesRestorationStageId
+  | "stage_1_stabilisation"
+  | "stage_4_family_reunification_maintenance";
+
 export type WindowOfToleranceState =
   | "regulated"
   | "hyper_aroused"
