@@ -191,5 +191,32 @@ describe("backend AI Support Coach, Psychologist, Evaluator & Safety Enforcer", 
     expect(threeHouses.crisisHalted).toBe(true);
     expect(threeHouses.safetyTier).toBe("tier_1_immediate");
   });
-});
 
+  test("grants full vault access only for the primary PIN and denies an incorrect PIN", () => {
+    const primaryPinHash = sha256Hex("safesteps-pin-salt-v1:2468");
+    const duressPinHash = sha256Hex("safesteps-pin-salt-v1:9999");
+    const primary = processStealthPinVerification({
+      enteredPin: " 2468 ",
+      primaryPinHash,
+      duressPinHash,
+    });
+
+    expect(primary.authenticated).toBe(true);
+    expect(primary.mode).toBe("normal_full_access");
+    expect(primary.hideDfvCheckInsAndSafetyVault).toBe(false);
+    expect(primary.silentCaseworkerAlertDispatched).toBe(false);
+
+    const invalid = processStealthPinVerification({
+      enteredPin: "1357",
+      primaryPinHash,
+      duressPinHash,
+    });
+
+    expect(invalid.authenticated).toBe(false);
+    expect(invalid.mode).toBe("invalid_pin");
+    expect(invalid.hideDfvCheckInsAndSafetyVault).toBe(true);
+    expect(invalid.silentCaseworkerAlertDispatched).toBe(false);
+    expect(invalid.silentAlertAuditId).toBeNull();
+    expect(invalid.displayViewTitle).toBe("PIN Required");
+  });
+});
