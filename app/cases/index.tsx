@@ -21,7 +21,6 @@ export default function CaseListScreen() {
   const [error, setError] = useState<string | null>(null);
   const [cases, setCases] = useState<CaseRow[]>([]);
   const [authUserId, setAuthUserId] = useState<string | null>(null);
-  const [appUserId, setAppUserId] = useState<string | null>(null);
 
   const isSignedIn = useMemo(() => Boolean(authUserId), [authUserId]);
 
@@ -38,37 +37,14 @@ export default function CaseListScreen() {
 
       if (!userId) {
         setCases([]);
-        setAppUserId(null);
         setLoading(false);
         return;
       }
 
-      const { data: userRow, error: userError } = await supabase
-        .from('users')
-        .select('id')
-        .eq('auth_user_id', userId)
-        .maybeSingle();
-
-      if (userError) throw userError;
-      const mappedUserId = userRow?.id ?? null;
-      setAppUserId(mappedUserId);
-
-      const { data: assignmentRows, error: assignmentError } = await supabase
-        .from('case_assignments')
-        .select('case_id')
-        .eq('user_id', mappedUserId)
-        .eq('is_active', true);
-
-      if (assignmentError) throw assignmentError;
-
-      const assignedCaseIds = (assignmentRows || []).map((row: any) => row.case_id).filter(Boolean);
-
-      let caseQuery = supabase.from('cases').select('id,title,status,updated_at').order('updated_at', { ascending: false });
-      if (assignedCaseIds.length) {
-        caseQuery = caseQuery.in('id', assignedCaseIds);
-      }
-
-      const { data: caseRows, error: caseError } = await caseQuery;
+      const { data: caseRows, error: caseError } = await supabase
+        .from('cases')
+        .select('id,title,status,updated_at')
+        .order('updated_at', { ascending: false });
       if (caseError) throw caseError;
 
       setCases((caseRows || []) as CaseRow[]);
@@ -86,9 +62,8 @@ export default function CaseListScreen() {
   useEffect(() => {
     const channel = supabase
       .channel('case-management-live')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'case_assignments' }, loadCases)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'case_allocations' }, loadCases)
       .on('postgres_changes', { event: '*', schema: 'public', table: 'cases' }, loadCases)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'analyses' }, loadCases)
       .subscribe();
 
     const authSubscription = supabase.auth.onAuthStateChange(() => {
@@ -159,8 +134,6 @@ export default function CaseListScreen() {
         ) : (
           <View style={styles.card}>
             <Text style={styles.cardTitle}>Authenticated session</Text>
-            <Text style={styles.meta}>Auth user: {authUserId}</Text>
-            <Text style={styles.meta}>App user: {appUserId || 'Not mapped in users table'}</Text>
             <TouchableOpacity style={styles.secondaryButton} onPress={signOut}>
               <Text style={styles.secondaryButtonText}>Sign out</Text>
             </TouchableOpacity>
@@ -181,7 +154,7 @@ export default function CaseListScreen() {
           </TouchableOpacity>
         ))}
 
-        {!loading && !cases.length && isSignedIn ? <Text style={styles.meta}>No case assignments available for this user yet.</Text> : null}
+        {!loading && !cases.length && isSignedIn ? <Text style={styles.meta}>No cases are available for this account.</Text> : null}
       </ScrollView>
     </SafeAreaView>
   );
