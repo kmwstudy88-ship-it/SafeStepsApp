@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 
 // Produces SQL only. Never connects to a database or applies a migration.
 const root = new URL("../", import.meta.url);
-const fixture = readFileSync(new URL("supabase/tests/p0_staging_rollback_authorization.sql",root),"utf8");
+const fixture = readFileSync(new URL("SafeStepsTools/sql/p0-staging-rollback-authorization.sql",root),"utf8");
 if (!/^rollback;\s*$/m.test(fixture)) throw new Error("Rollback terminator required.");
 const args = process.argv.slice(2);
 if (args.some(arg => arg !== "--candidate")) throw new Error("Only --candidate is supported.");
