@@ -468,8 +468,7 @@ export function evaluateCouplesDfvSafetyGate(
   input: CouplesDfvSafetyCheckInput,
 ): CouplesDfvSafetyCheckResult {
   const redactedPrivateNotes = redactSensitivePii(input.privateNotes ?? "");
-  const score = Number.isFinite(input.feltSafetyScore) ? input.feltSafetyScore : 0;
-  const clampedScore = Math.max(0, Math.min(10, Math.round(score)));
+  const clampedScore = Math.max(0, Math.min(10, Math.round(input.feltSafetyScore)));
 
   if (input.immediateDanger || input.strangulationOrWeaponHistory) {
     return {

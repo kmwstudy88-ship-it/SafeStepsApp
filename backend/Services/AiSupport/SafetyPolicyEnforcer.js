@@ -174,11 +174,7 @@ export function evaluateServerSafetyGate(rawText, personaMode = "parent_support_
 }
 
 export function evaluateServerCouplesDfvSafetyCheck(body = {}) {
-  const requestedScore =
-    body.feltSafetyScore === undefined ? 8 : Number(body.feltSafetyScore);
-  const feltSafetyScore = Number.isFinite(requestedScore)
-    ? Math.max(0, Math.min(10, requestedScore))
-    : 0;
+  const feltSafetyScore = Math.max(0, Math.min(10, Number(body.feltSafetyScore ?? 8)));
   const fearOfRetaliation = Boolean(body.fearOfRetaliation);
   const coercedToParticipate = Boolean(body.coercedToParticipate);
   const immediateDanger = Boolean(body.immediateDanger);
