@@ -178,6 +178,26 @@ describe("SafeSteps AI Support Coach, 5P Psychologist & 10-Engine Evaluator Suit
     expect(unsafeCheck.partnerFacingNeutralNotice).toMatch(/Parallel Individual Skill-Building Mode/);
   });
 
+  test.each([Number.NaN, Number.POSITIVE_INFINITY])(
+    "blocks conjoint sessions when the felt-safety score is invalid (%s)",
+    (feltSafetyScore) => {
+      const check = evaluateCouplesDfvSafetyGate({
+        sessionId: "sess-dfv-invalid-score",
+        participantUserId: "survivor-1",
+        checkPhase: "pre_session",
+        feltSafetyScore,
+        fearOfRetaliation: false,
+        coercedToParticipate: false,
+        immediateDanger: false,
+      });
+
+      expect(check.silentPivotTriggered).toBe(true);
+      expect(check.recommendedMode).toBe("individual_stabilisation_only");
+      expect(check.permittedStage).toBe("stage_1_containment_individual");
+      expect(check.clinicianAlertRequired).toBe(true);
+    },
+  );
+
   test("rewrites hostile or triangulating partner messages into safe BIFF messages and builds 20-min Time-Out contracts", () => {
     const biff = rewritePartnerMessageToBiff(
       "You always ruin everything and even the kids know it! Where are you right now?!",
@@ -491,4 +511,3 @@ describe("SafeSteps AI Support Coach, 5P Psychologist & 10-Engine Evaluator Suit
     expect(threeHousesCrisis.safetyTier).toBe("tier_1_immediate");
   });
 });
-

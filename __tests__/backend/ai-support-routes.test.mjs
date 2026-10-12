@@ -71,6 +71,22 @@ describe("backend AI Support Coach, Psychologist, Evaluator & Safety Enforcer", 
     expect(check.partnerFacingNeutralNotice).not.toMatch(/fear|5/i);
   });
 
+  test.each([Number.NaN, Number.POSITIVE_INFINITY, "invalid", null])(
+    "blocks conjoint sessions when the server felt-safety score is invalid (%s)",
+    (feltSafetyScore) => {
+      const check = evaluateServerCouplesDfvSafetyCheck({
+        checkPhase: "pre_session",
+        feltSafetyScore,
+      });
+
+      expect(check.feltSafetyScore).toBe(0);
+      expect(check.silentPivotTriggered).toBe(true);
+      expect(check.recommendedMode).toBe("individual_stabilisation_only");
+      expect(check.permittedStage).toBe("stage_1_containment_individual");
+      expect(check.clinicianAlertRequired).toBe(true);
+    },
+  );
+
   test("processes coach turns, scale scoring with RCI, 5P formulations, 10-engine evaluations, and clinician sign-off deterministically", async () => {
     const turn = await processCoachTurn({
       personaMode: "parent_support_coach",
@@ -192,4 +208,3 @@ describe("backend AI Support Coach, Psychologist, Evaluator & Safety Enforcer", 
     expect(threeHouses.safetyTier).toBe("tier_1_immediate");
   });
 });
-
