@@ -65,7 +65,24 @@ function Invoke-SafeStepsVerification {
         "reunification_recommendations",
         "resources",
         "user_achievements",
-        "user_tasks"
+        "user_tasks",
+        "ai_support_sessions",
+        "ai_support_messages",
+        "ai_couples_dfv_safety_checks",
+        "ai_clinical_screenings",
+        "ai_psychological_formulations",
+        "ai_evaluator_assessments",
+        "ai_crisis_escalations",
+        "dfv_living_safety_plans",
+        "contact_visit_coaching_logs",
+        "restorative_family_meetings",
+        "addiction_recovery_shields",
+        "neuro_sleep_household_profiles",
+        "kinship_carer_support_logs",
+        "cultural_sewb_yarning_maps",
+        "multi_informant_360_observations",
+        "adaptive_micro_prescriptions",
+        "child_three_houses_playroom"
     )
 
     $Sql = @"
