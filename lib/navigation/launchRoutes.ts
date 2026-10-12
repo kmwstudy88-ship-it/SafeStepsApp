@@ -24,6 +24,8 @@ export const PUBLIC_LAUNCH_ROUTES = [
 
 export const PARENT_PRIMARY_NAV_ITEMS: readonly LaunchNavItem[] = [
   { label: "Dashboard", href: "/dashboard" },
+  { label: "AI Support Coach", href: "/ai-support-coach" },
+  { label: "Couples & DFV Hub", href: "/ai-support-coach/couples-family-dfv" },
   { label: "Programs", href: "/programs" },
   { label: "Curriculum", href: "/library" },
   { label: "Challenges", href: "/challenges" },
@@ -38,6 +40,7 @@ export const PARENT_PRIMARY_NAV_ITEMS: readonly LaunchNavItem[] = [
 
 export const PARENT_MOBILE_NAV_ITEMS: readonly LaunchNavItem[] = [
   { label: "Home", href: "/dashboard" },
+  { label: "AI Coach", href: "/ai-support-coach" },
   { label: "Programs", href: "/programs" },
   { label: "Tasks", href: "/tasks" },
   { label: "Evidence", href: "/evidence" },
@@ -47,6 +50,11 @@ export const PARENT_MOBILE_NAV_ITEMS: readonly LaunchNavItem[] = [
 ] as const;
 
 export const PARENT_DASHBOARD_QUICK_ACTIONS: readonly LaunchQuickAction[] = [
+  { label: "AI Support Coach", href: "/ai-support-coach", icon: "✦" },
+  { label: "Couples & DFV Hub", href: "/ai-support-coach/couples-family-dfv", icon: "♥" },
+  { label: "Stealth & Safety Vault", href: "/ai-support-coach/safety-plan-vault", icon: "⛨" },
+  { label: "Clinical Toolkits", href: "/ai-support-coach/specialized-toolkits", icon: "✚" },
+  { label: "50+ Check-In Scales", href: "/ai-support-coach/check-in-scales", icon: "⊕" },
   { label: "My Program", href: "/programs/recommendation", icon: "★" },
   { label: "Curriculum", href: "/library", icon: "▤" },
   { label: "Challenges", href: "/challenges", icon: "◎" },

@@ -13,6 +13,12 @@ export type ChildLesson = {
 
 export const childDashboardItems = [
   {
+    title: "SafeSteps Calm Buddy & Worry Thermometer",
+    description: "Your private AI support buddy for big feelings, balloon breathing, body map resets, and safe helpers.",
+    href: "/child/support-coach",
+    badge: "AI Buddy",
+  },
+  {
     title: "Today’s Feelings Check-In",
     description: "Choose how you feel today. You decide if anyone sees it.",
     href: "/child/check-in",

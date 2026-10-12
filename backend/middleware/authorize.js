@@ -10,6 +10,7 @@ export const STAFF_DOCUMENT_ROLES = [
   "super_admin",
 ];
 export const DOCUMENT_ROLES = [...PARENT_DOCUMENT_ROLES, ...STAFF_DOCUMENT_ROLES];
+export const AI_COACH_ROLES = ["child", "carer", ...DOCUMENT_ROLES];
 
 export function hasAnyRole(actualRoles, allowedRoles) {
   return actualRoles.some((role) => allowedRoles.includes(role));

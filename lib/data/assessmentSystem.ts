@@ -1,5 +1,35 @@
 export const assessmentRoutes = [
   {
+    title: "AI Psychologist & 10-Engine Longitudinal Evaluator",
+    href: "/assessment-system/ai-psychologist-evaluator",
+    description:
+      "Generate non-diagnostic 5P clinical formulations, Safe & Together DFV synthesis, Couples DFV Stage Gate, and 10 specialized evaluator reports.",
+  },
+  {
+    title: "50+ Clinical, Parenting, DFV, AOD & Child Scales Hub",
+    href: "/ai-support-coach/check-in-scales",
+    description:
+      "Complete validated screenings across 10 domains with embedded response validity checks, critical safety overrides, and Jacobson & Truax RCI calculation.",
+  },
+  {
+    title: "Personal AI Support Coach (10-Form Multi-Modal Hub)",
+    href: "/ai-support-coach",
+    description:
+      "Engage trauma-informed coaching across Reflective Dialogue, SJT Vignettes, Live Stress Roleplay, Teach-Back Perspective Switch, Somatic Body-Map, and 15s EMA Pulses.",
+  },
+  {
+    title: "Couples & Family DFV 4-Stage Restoration Hub",
+    href: "/ai-support-coach/couples-family-dfv",
+    description:
+      "Private pre/post felt-safety check-in with silent Parallel Safe Mode pivot, AI-Bridged Safe Partner Message Coach (BIFF), and Shared 20-Minute Time-Out Contract.",
+  },
+  {
+    title: "Clinician SPJ Sign-Off & Conjoint Clearance Console",
+    href: "/clinician-review",
+    description:
+      "Review and sign off draft 5P formulations, 10-engine evaluations, Tier 3/4 external psychologist summaries, and Stage 3 Couples DFV clearances.",
+  },
+  {
     title: "Case Setup",
     href: "/assessment-system/case-setup",
     description:

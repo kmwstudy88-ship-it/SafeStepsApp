@@ -15,6 +15,7 @@ const { default: documentRoutes } = await import("./routes/documents/documentRou
 const { default: agentSkillsRoutes } = await import("./routes/agent-skills/agentSkillsRoutes.js");
 const { default: userCurriculumRoutes } = await import("./routes/users/curriculumRoutes.js");
 const { default: worksheetRoutes } = await import("./routes/worksheets/worksheetRoutes.js");
+const { default: aiSupportRoutes } = await import("./routes/ai-support/aiSupportRoutes.js");
 
 const allowedOrigins = (
   process.env.SAFESTEPS_ALLOWED_ORIGINS ??
@@ -69,6 +70,7 @@ app.use("/documents", documentRoutes);
 app.use("/agent-skills", requireAuthenticatedUser, agentSkillsRoutes);
 app.use("/worksheets", requireAuthenticatedUser, worksheetRoutes);
 app.use("/users", requireAuthenticatedUser, userCurriculumRoutes);
+app.use("/ai-support", aiSupportRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

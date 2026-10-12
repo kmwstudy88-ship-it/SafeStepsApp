@@ -3,6 +3,8 @@ const CHILD_SESSION_MAX_AGE_SECONDS = 30 * 60;
 const CHILD_API_ROUTES = Object.freeze([
   { method: "GET", path: "/auth/session", exact: true },
   { method: "POST", path: "/auth/logout", exact: true },
+  { method: "POST", path: "/ai-support/coach/turn", exact: true },
+  { method: "POST", path: "/ai-support/child/three-houses", exact: true },
   { method: "*", path: "/child", exact: false },
 ]);
 

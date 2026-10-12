@@ -82,6 +82,7 @@
     "db:security": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 SecurityAudit",
     "db:new": "pwsh -NoProfile -ExecutionPolicy Bypass -File ./SafeStepsTools/Invoke-SafeStepsDatabase.ps1 NewMigration",
     "smoke:document-intelligence": "node SafeStepsTools/smoke-document-intelligence-api.mjs",
+    "smoke:ai-support": "node SafeStepsTools/smoke-ai-support-and-evaluators.mjs",
     "test:backend": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand --config jest.backend.config.cjs",
     "audit:found-curriculum": "node SafeStepsTools/audit-found-curriculum.js",
     "audit:curriculum-titles": "node SafeStepsTools/audit-curriculum-titles.js",

@@ -13,6 +13,41 @@ const steps: {
   status: string;
 }[] = [
   {
+    title: "AI Psychologist & 10-Engine Longitudinal Evaluator",
+    description:
+      "Non-diagnostic 5P formulation companion, Safe & Together DFV synthesis, and 10 specialized evaluator engines with RCI and 360° convergence.",
+    href: "/assessment-system/ai-psychologist-evaluator" as Href,
+    status: "5P + 10 Engines",
+  },
+  {
+    title: "50+ Clinical, Parenting, DFV, AOD & Child Scales",
+    description:
+      "Interactive screening across 10 clinical domains with embedded impression-management validity checks and Jacobson & Truax RCI.",
+    href: "/ai-support-coach/check-in-scales" as Href,
+    status: "50+ Scales",
+  },
+  {
+    title: "10-Form Personal AI Support Coach Hub",
+    description:
+      "Reflective coaching, disguised SJT vignettes, live stress roleplay, teach-back perspective switch, somatic body-map, and 15s EMA pulses.",
+    href: "/ai-support-coach" as Href,
+    status: "10 Forms",
+  },
+  {
+    title: "Couples & Family DFV 4-Stage Restoration Hub",
+    description:
+      "Private felt-safety check-in with silent Parallel Safe Mode pivot, BIFF partner message bridge, and 20-minute Time-Out Contract builder.",
+    href: "/ai-support-coach/couples-family-dfv" as Href,
+    status: "Safety-Gated",
+  },
+  {
+    title: "Clinician SPJ Sign-Off & Conjoint Clearance",
+    description:
+      "Human-in-the-loop SPJ review, Tier 3/4 external psychologist bridge, and SHA-256 tamper-evident sign-off.",
+    href: "/clinician-review" as Href,
+    status: "SPJ Governance",
+  },
+  {
     title: "Case Setup",
     description: "Create the family case profile, worker details, program stream, and key dates.",
     href: "/assessment-system/case-setup" as Href,

@@ -6,6 +6,16 @@ import { globalStyles } from "../../lib/styles";
 
 const carerItems = [
   {
+    title: "Kinship & Foster Carer AI Support Coach",
+    body: "Trauma-informed co-regulation, contact handover buffering, sensory decompression, and carer respite coaching.",
+    href: "/ai-support-coach",
+  },
+  {
+    title: "Carer Strain & Secondary Trauma Check-In (ProQOL-Carer)",
+    body: "Complete the Kinship/Foster Carer ProQOL, SDQ child summary, and family protective scales.",
+    href: "/ai-support-coach/check-in-scales",
+  },
+  {
     title: "Child wellbeing observations",
     body: "Record sleep, mood, behaviour, routines, and changes before or after family contact.",
     href: "/child/evidence",

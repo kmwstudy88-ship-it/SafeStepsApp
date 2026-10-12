@@ -330,6 +330,27 @@ export default function FacilitatorWorkspaceScreen() {
         ))}
       </View>
 
+      <View style={globalStyles.card}>
+        <Text style={globalStyles.cardTitle}>
+          AI Psychologist 5P Formulation, 10-Engine Evaluator & SPJ Sign-Off
+        </Text>
+        <Text style={globalStyles.cardText}>
+          Review non-diagnostic 5P clinical formulations, Safe & Together DFV patterns, 4-stage
+          Couples DFV safety gates, and 10-engine longitudinal evaluations.
+        </Text>
+        <View style={globalStyles.inlineRow}>
+          <Link href={"/assessment-system/ai-psychologist-evaluator" as never} style={globalStyles.pill}>
+            5P Psychologist & 10 Evaluators
+          </Link>
+          <Link href={"/clinician-review" as never} style={globalStyles.pill}>
+            Clinician SPJ Sign-Off Console
+          </Link>
+          <Link href={"/ai-support-coach/couples-family-dfv" as never} style={globalStyles.pill}>
+            Couples DFV Restoration Gate
+          </Link>
+        </View>
+      </View>
+
       <AppBottomNav />
     </ScrollView>
   );
