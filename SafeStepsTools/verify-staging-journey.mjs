@@ -1,4 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
+import { evaluateBoundaryRead } from "./staging-boundary-result.mjs";
 
 const LIVE_REF="yzxotxbwgxnxemkzigse";
 const url=process.env.SAFESTEPS_STAGING_URL;
@@ -25,16 +26,14 @@ async function runRole(role,checks){
   const filterValue=check.filterValue??check.caseId??caseId;
   const {data,error}=await client.from(check.table).select(check.select??"id").eq(filterColumn,filterValue).limit(1);
   const rowCount=Array.isArray(data)?data.length:0;
-  const passed=check.allow
-   ? !error&&rowCount>0
-   : Boolean(error)||rowCount===0;
+  const passed=evaluateBoundaryRead({data,error},check.allow);
   results.push({
    role,
    check:check.name,
    expected:check.allow?"visible row":"no visible row",
    passed,
    rowCount,
-   error:error?.message??null,
+   errorCode:error?.code??null,
   });
  }
  await client.auth.signOut();
@@ -71,9 +70,9 @@ results.push({
  role:"anonymous",
  check:"report tables",
  expected:"no visible row",
- passed:Boolean(anonError)||anonymousRowCount===0,
+ passed:evaluateBoundaryRead({data:anonReport,error:anonError},false),
  rowCount:anonymousRowCount,
- error:anonError?.message??null,
+ errorCode:anonError?.code??null,
 });
 
 for(const result of results) console.log(JSON.stringify(result));

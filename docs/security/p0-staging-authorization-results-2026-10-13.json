@@ -1,0 +1,144 @@
+{
+  "observedDate": "2026-10-13",
+  "project": "kwhjxggxffphknzxmtrf",
+  "scope": "Rollback-only synthetic database-role tests; not signed Auth/API sessions. No production writes.",
+  "baseline": [
+    {
+      "probe": "allocated_worker_read",
+      "expected": "one fixture",
+      "observed": "1",
+      "passed": true
+    },
+    {
+      "probe": "allocated_worker_update",
+      "expected": "one updated fixture",
+      "observed": "1",
+      "passed": true
+    },
+    {
+      "probe": "escalated_owner_other_case_read",
+      "expected": "zero fixtures",
+      "observed": "1",
+      "passed": false
+    },
+    {
+      "probe": "owner_role_escalation",
+      "expected": "zero updated fixtures",
+      "observed": "1",
+      "passed": false
+    },
+    {
+      "probe": "parent_staff_only_update",
+      "expected": "zero updated fixtures",
+      "observed": "1",
+      "passed": false
+    },
+    {
+      "probe": "unrelated_read",
+      "expected": "zero fixtures",
+      "observed": "0",
+      "passed": true
+    },
+    {
+      "probe": "unrelated_update",
+      "expected": "zero updated fixtures",
+      "observed": "0",
+      "passed": true
+    },
+    {
+      "probe": "worker_other_case_update",
+      "expected": "zero updated fixtures",
+      "observed": "0",
+      "passed": true
+    }
+  ],
+  "proposedMigration": "20261012215912_p0_assessment_and_profile_write_boundaries.sql",
+  "withProposedMigration": [
+    {
+      "probe": "allocated_worker_insert",
+      "expected": "one changed fixture",
+      "observed": "1",
+      "passed": true
+    },
+    {
+      "probe": "allocated_worker_read",
+      "expected": "one fixture",
+      "observed": "1",
+      "passed": true
+    },
+    {
+      "probe": "allocated_worker_update",
+      "expected": "one updated fixture",
+      "observed": "1",
+      "passed": true
+    },
+    {
+      "probe": "escalated_owner_other_case_read",
+      "expected": "zero fixtures",
+      "observed": "0",
+      "passed": true
+    },
+    {
+      "probe": "owner_identity_alias_update",
+      "expected": "denied",
+      "observed": "42501",
+      "passed": true
+    },
+    {
+      "probe": "owner_role_escalation",
+      "expected": "denied",
+      "observed": "42501",
+      "passed": true
+    },
+    {
+      "probe": "owner_safe_profile_update",
+      "expected": "one changed fixture",
+      "observed": "1",
+      "passed": true
+    },
+    {
+      "probe": "parent_staff_only_insert",
+      "expected": "denied",
+      "observed": "42501",
+      "passed": true
+    },
+    {
+      "probe": "parent_staff_only_update",
+      "expected": "zero updated fixtures",
+      "observed": "0",
+      "passed": true
+    },
+    {
+      "probe": "unrelated_read",
+      "expected": "zero fixtures",
+      "observed": "0",
+      "passed": true
+    },
+    {
+      "probe": "unrelated_update",
+      "expected": "zero updated fixtures",
+      "observed": "0",
+      "passed": true
+    },
+    {
+      "probe": "worker_creator_spoof",
+      "expected": "denied",
+      "observed": "42501",
+      "passed": true
+    },
+    {
+      "probe": "worker_other_case_update",
+      "expected": "zero updated fixtures",
+      "observed": "0",
+      "passed": true
+    }
+  ],
+  "rollbackVerification": [
+    {
+      "retained_fixture_users": 0,
+      "retained_fixture_instruments": 0,
+      "retained_proposed_policies": 0,
+      "original_role_grant_restored": true
+    }
+  ]
+}

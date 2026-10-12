@@ -1,0 +1,545 @@
+{
+  "observedDate": "2026-10-13",
+  "baseCommit": "3996aca794921195560d9f6f389d46f97bfebc11",
+  "scope": "Version comparison only; matching versions do not prove SQL or schema parity.",
+  "projects": {
+    "yzxotxbwgxnxemkzigse": {
+      "latestRecordedVersion": "20260829181644",
+      "deployedCount": 197,
+      "repositoryCount": 214,
+      "repositoryOnly": [
+        {
+          "version": "20260730120000",
+          "file": "20260730120000_parent_program_recommendation.sql"
+        },
+        {
+          "version": "20260808031500",
+          "file": "20260808031500_child_v1_share_context.sql"
+        },
+        {
+          "version": "20260808075000",
+          "file": "20260808075000_restrict_assessment_role_helpers.sql"
+        },
+        {
+          "version": "20260808081500",
+          "file": "20260808081500_production_lesson_player.sql"
+        },
+        {
+          "version": "20260808090000",
+          "file": "20260808090000_contact_progression_case_model.sql"
+        },
+        {
+          "version": "20260808093000",
+          "file": "20260808093000_fairness_detection_schema.sql"
+        },
+        {
+          "version": "20260809061159",
+          "file": "20260809061159_evidence_v1_worker_review.sql"
+        },
+        {
+          "version": "20260810021659",
+          "file": "20260810021659_report_approval_release_v1.sql"
+        },
+        {
+          "version": "20260810031816",
+          "file": "20260810031816_bind_ai_casework_helpers_to_session.sql"
+        },
+        {
+          "version": "20260810032248",
+          "file": "20260810032248_authorize_child_private_lookup_helpers.sql"
+        },
+        {
+          "version": "20260810035544",
+          "file": "20260810035544_report_export_controls_v1.sql"
+        },
+        {
+          "version": "20260810043030",
+          "file": "20260810043030_report_delivery_challenge_v1.sql"
+        },
+        {
+          "version": "20260810124320",
+          "file": "20260810124320_baseline_missing_public_tables_schema_only.sql"
+        },
+        {
+          "version": "20260810124400",
+          "file": "20260810124400_baseline_missing_public_table_keys_and_checks.sql"
+        },
+        {
+          "version": "20260810124409",
+          "file": "20260810124409_baseline_missing_public_table_foreign_keys.sql"
+        },
+        {
+          "version": "20260810124446",
+          "file": "20260810124446_baseline_missing_public_table_indexes_and_rls.sql"
+        },
+        {
+          "version": "20260810124612",
+          "file": "20260810124612_baseline_video_report_authority_helpers.sql"
+        },
+        {
+          "version": "20260810124622",
+          "file": "20260810124622_baseline_video_report_authority_helper_grants.sql"
+        },
+        {
+          "version": "20260810124646",
+          "file": "20260810124646_baseline_missing_public_table_policies.sql"
+        },
+        {
+          "version": "20260810124731",
+          "file": "20260810124731_baseline_legacy_compatibility_columns.sql"
+        },
+        {
+          "version": "20260810124805",
+          "file": "20260810124805_baseline_missing_public_table_triggers.sql"
+        },
+        {
+          "version": "20260810124833",
+          "file": "20260810124833_baseline_missing_public_table_data_api_grants.sql"
+        },
+        {
+          "version": "20260811060802",
+          "file": "20260811060802_fix_report_recipient_rls_recursion.sql"
+        },
+        {
+          "version": "20260811060851",
+          "file": "20260811060851_fix_child_private_share_policy_privilege.sql"
+        },
+        {
+          "version": "20260819004000",
+          "file": "20260819004000_query_performance_indexes.sql"
+        },
+        {
+          "version": "20260825185628",
+          "file": "20260825185628_agent_skill_results.sql"
+        },
+        {
+          "version": "20261012150000",
+          "file": "20261012150000_ai_coach_psychologist_evaluator.sql"
+        },
+        {
+          "version": "20261012180000",
+          "file": "20261012180000_ai_next_horizon_12_modules.sql"
+        },
+        {
+          "version": "20261012215912",
+          "file": "20261012215912_p0_assessment_and_profile_write_boundaries.sql"
+        }
+      ],
+      "targetOnly": [
+        {
+          "version": "20260807175333",
+          "name": "parent_program_recommendation"
+        },
+        {
+          "version": "20260807215141",
+          "name": "restrict_assessment_role_helper_execute"
+        },
+        {
+          "version": "20260807220851",
+          "name": "production_lesson_player"
+        },
+        {
+          "version": "20260807220915",
+          "name": "restrict_lesson_responses_authenticated_grants"
+        },
+        {
+          "version": "20260807225535",
+          "name": "contact_progression_case_model"
+        },
+        {
+          "version": "20260808031924",
+          "name": "child_v1_share_context"
+        },
+        {
+          "version": "20260809080900",
+          "name": "evidence_v1_worker_review"
+        },
+        {
+          "version": "20260810022348",
+          "name": "report_approval_release_v1"
+        },
+        {
+          "version": "20260810031457",
+          "name": "bind_ai_casework_helpers_to_session"
+        },
+        {
+          "version": "20260810031615",
+          "name": "authorize_child_private_lookup_helpers"
+        },
+        {
+          "version": "20260810035900",
+          "name": "report_export_controls_v1"
+        },
+        {
+          "version": "20260810043406",
+          "name": "report_delivery_challenge_v1"
+        }
+      ]
+    },
+    "kwhjxggxffphknzxmtrf": {
+      "latestRecordedVersion": "20260911074051",
+      "deployedCount": 233,
+      "repositoryCount": 214,
+      "repositoryOnly": [
+        {
+          "version": "20260810002517",
+          "file": "20260810002517_enforce_video_delivery_acknowledgement_authorization.sql"
+        },
+        {
+          "version": "20260810021659",
+          "file": "20260810021659_report_approval_release_v1.sql"
+        },
+        {
+          "version": "20260810024925",
+          "file": "20260810024925_bind_report_access_helpers_to_session.sql"
+        },
+        {
+          "version": "20260810025857",
+          "file": "20260810025857_bind_video_report_authority_helper_to_session.sql"
+        },
+        {
+          "version": "20260810030254",
+          "file": "20260810030254_bind_case_permission_child_access_helpers_to_session.sql"
+        },
+        {
+          "version": "20260810031203",
+          "file": "20260810031203_bind_organisation_tenant_community_helpers_to_session.sql"
+        },
+        {
+          "version": "20260810031816",
+          "file": "20260810031816_bind_ai_casework_helpers_to_session.sql"
+        },
+        {
+          "version": "20260810032248",
+          "file": "20260810032248_authorize_child_private_lookup_helpers.sql"
+        },
+        {
+          "version": "20260810035544",
+          "file": "20260810035544_report_export_controls_v1.sql"
+        },
+        {
+          "version": "20260810043030",
+          "file": "20260810043030_report_delivery_challenge_v1.sql"
+        },
+        {
+          "version": "20260810043820",
+          "file": "20260810043820_harden_report_delivery_challenge_randomness_and_audit.sql"
+        },
+        {
+          "version": "20260810043929",
+          "file": "20260810043929_qualify_report_delivery_pgcrypto_calls.sql"
+        },
+        {
+          "version": "20260810120637",
+          "file": "20260810120637_restore_ai_child_feedback_foreign_key.sql"
+        },
+        {
+          "version": "20260810124320",
+          "file": "20260810124320_baseline_missing_public_tables_schema_only.sql"
+        },
+        {
+          "version": "20260810124400",
+          "file": "20260810124400_baseline_missing_public_table_keys_and_checks.sql"
+        },
+        {
+          "version": "20260810124409",
+          "file": "20260810124409_baseline_missing_public_table_foreign_keys.sql"
+        },
+        {
+          "version": "20260810124446",
+          "file": "20260810124446_baseline_missing_public_table_indexes_and_rls.sql"
+        },
+        {
+          "version": "20260810124612",
+          "file": "20260810124612_baseline_video_report_authority_helpers.sql"
+        },
+        {
+          "version": "20260810124622",
+          "file": "20260810124622_baseline_video_report_authority_helper_grants.sql"
+        },
+        {
+          "version": "20260810124646",
+          "file": "20260810124646_baseline_missing_public_table_policies.sql"
+        },
+        {
+          "version": "20260810124731",
+          "file": "20260810124731_baseline_legacy_compatibility_columns.sql"
+        },
+        {
+          "version": "20260810124805",
+          "file": "20260810124805_baseline_missing_public_table_triggers.sql"
+        },
+        {
+          "version": "20260810124833",
+          "file": "20260810124833_baseline_missing_public_table_data_api_grants.sql"
+        },
+        {
+          "version": "20260810132514",
+          "file": "20260810132514_preserve_video_report_consent_withdrawal_reason.sql"
+        },
+        {
+          "version": "20260811060802",
+          "file": "20260811060802_fix_report_recipient_rls_recursion.sql"
+        },
+        {
+          "version": "20260811060851",
+          "file": "20260811060851_fix_child_private_share_policy_privilege.sql"
+        },
+        {
+          "version": "20260814144810",
+          "file": "20260814144810_governance_compliance_records.sql"
+        },
+        {
+          "version": "20260814145322",
+          "file": "20260814145322_risk_engine_review_snapshots.sql"
+        },
+        {
+          "version": "20260814155950",
+          "file": "20260814155950_parent_child_game_relationship_records.sql"
+        },
+        {
+          "version": "20260819004000",
+          "file": "20260819004000_query_performance_indexes.sql"
+        },
+        {
+          "version": "20260825185628",
+          "file": "20260825185628_agent_skill_results.sql"
+        },
+        {
+          "version": "20260829181644",
+          "file": "20260829181644_harden_parent_video_report_consent_grant.sql"
+        },
+        {
+          "version": "20261012150000",
+          "file": "20261012150000_ai_coach_psychologist_evaluator.sql"
+        },
+        {
+          "version": "20261012180000",
+          "file": "20261012180000_ai_next_horizon_12_modules.sql"
+        },
+        {
+          "version": "20261012215912",
+          "file": "20261012215912_p0_assessment_and_profile_write_boundaries.sql"
+        }
+      ],
+      "targetOnly": [
+        {
+          "version": "20260807175333",
+          "name": "parent_program_recommendation"
+        },
+        {
+          "version": "20260807215141",
+          "name": "restrict_assessment_role_helper_execute"
+        },
+        {
+          "version": "20260807220851",
+          "name": "production_lesson_player"
+        },
+        {
+          "version": "20260807220915",
+          "name": "restrict_lesson_responses_authenticated_grants"
+        },
+        {
+          "version": "20260807225535",
+          "name": "contact_progression_case_model"
+        },
+        {
+          "version": "20260808031924",
+          "name": "child_v1_share_context"
+        },
+        {
+          "version": "20260809080900",
+          "name": "evidence_v1_worker_review"
+        },
+        {
+          "version": "20260809120000",
+          "name": "video_schema_prerequisites"
+        },
+        {
+          "version": "20260910143352",
+          "name": "restore_delivery_table_prerequisites"
+        },
+        {
+          "version": "20260910143416",
+          "name": "enforce_video_delivery_acknowledgement_authorization"
+        },
+        {
+          "version": "20260910143511",
+          "name": "report_approval_release_v1"
+        },
+        {
+          "version": "20260910143543",
+          "name": "bind_report_access_helpers_to_session"
+        },
+        {
+          "version": "20260910143554",
+          "name": "bind_video_report_authority_helper_to_session"
+        },
+        {
+          "version": "20260910143603",
+          "name": "bind_case_permission_child_access_helpers_to_session"
+        },
+        {
+          "version": "20260910143621",
+          "name": "bind_organisation_tenant_community_helpers_to_session"
+        },
+        {
+          "version": "20260910145531",
+          "name": "bind_ai_casework_helpers_to_session"
+        },
+        {
+          "version": "20260910145540",
+          "name": "authorize_child_private_lookup_helpers"
+        },
+        {
+          "version": "20260910145548",
+          "name": "report_export_controls_v1"
+        },
+        {
+          "version": "20260910145604",
+          "name": "report_delivery_challenge_v1"
+        },
+        {
+          "version": "20260910145612",
+          "name": "harden_report_delivery_challenge_randomness_and_audit"
+        },
+        {
+          "version": "20260910145619",
+          "name": "qualify_report_delivery_pgcrypto_calls"
+        },
+        {
+          "version": "20260910145627",
+          "name": "restore_ai_child_feedback_foreign_key"
+        },
+        {
+          "version": "20260910145648",
+          "name": "baseline_missing_public_tables_schema_only"
+        },
+        {
+          "version": "20260910145656",
+          "name": "baseline_missing_public_table_keys_and_checks"
+        },
+        {
+          "version": "20260910145704",
+          "name": "baseline_missing_public_table_foreign_keys"
+        },
+        {
+          "version": "20260910145713",
+          "name": "baseline_missing_public_table_indexes_and_rls"
+        },
+        {
+          "version": "20260910145725",
+          "name": "baseline_video_report_authority_helpers"
+        },
+        {
+          "version": "20260910145733",
+          "name": "baseline_video_report_authority_helper_grants"
+        },
+        {
+          "version": "20260910145742",
+          "name": "baseline_missing_public_table_policies"
+        },
+        {
+          "version": "20260910145757",
+          "name": "baseline_legacy_compatibility_columns"
+        },
+        {
+          "version": "20260910145804",
+          "name": "baseline_missing_public_table_triggers"
+        },
+        {
+          "version": "20260910145821",
+          "name": "baseline_missing_public_table_data_api_grants"
+        },
+        {
+          "version": "20260910145829",
+          "name": "preserve_video_report_consent_withdrawal_reason"
+        },
+        {
+          "version": "20260910145848",
+          "name": "fix_report_recipient_rls_recursion"
+        },
+        {
+          "version": "20260910145857",
+          "name": "fix_child_private_share_policy_privilege"
+        },
+        {
+          "version": "20260910145909",
+          "name": "personal_ai_support_persistence"
+        },
+        {
+          "version": "20260910145929",
+          "name": "personal_ai_incident_response"
+        },
+        {
+          "version": "20260910145937",
+          "name": "controlled_family_memory"
+        },
+        {
+          "version": "20260910145945",
+          "name": "personal_ai_launch_readiness_gate"
+        },
+        {
+          "version": "20260910145953",
+          "name": "personal_ai_governance_signoff_scope"
+        },
+        {
+          "version": "20260910150007",
+          "name": "personal_ai_atomic_chat_persistence"
+        },
+        {
+          "version": "20260910150046",
+          "name": "harden_report_verification_rpcs_service_role_only"
+        },
+        {
+          "version": "20260910150054",
+          "name": "personal_ai_flow_version_governance"
+        },
+        {
+          "version": "20260910150102",
+          "name": "personal_ai_opt_in_mood_trends"
+        },
+        {
+          "version": "20260910150117",
+          "name": "seed_parenting_stress_capacity_rubric"
+        },
+        {
+          "version": "20260910150126",
+          "name": "seed_cooccurring_aod_mh_dfv_review"
+        },
+        {
+          "version": "20260910150134",
+          "name": "cooccurring_review_result_metadata"
+        },
+        {
+          "version": "20260910150143",
+          "name": "document_analysis_runs"
+        },
+        {
+          "version": "20260910150156",
+          "name": "professional_link_status"
+        },
+        {
+          "version": "20260910150205",
+          "name": "co_occurring_aod_mh_dfv_instrument"
+        },
+        {
+          "version": "20260910150215",
+          "name": "media_evidence_integrity_foundation"
+        },
+        {
+          "version": "20260910150225",
+          "name": "media_evidence_storage_contract"
+        },
+        {
+          "version": "20260911073542",
+          "name": "document_intelligence_pipeline"
+        },
+        {
+          "version": "20260911074051",
+          "name": "document_intelligence_rls_hardening"
+        }
+      ]
+    }
+  }
+}
