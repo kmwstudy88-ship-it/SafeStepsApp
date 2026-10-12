@@ -52,7 +52,6 @@
       "passed": true
     }
   ],
-  "proposedMigration": "20261012215912_p0_assessment_and_profile_write_boundaries.sql",
   "withProposedMigration": [
     {
       "probe": "allocated_worker_insert",
@@ -70,6 +69,12 @@
       "probe": "allocated_worker_update",
       "expected": "one updated fixture",
       "observed": "1",
+      "passed": true
+    },
+    {
+      "probe": "assessment_client_truncate",
+      "expected": "no client TRUNCATE grant",
+      "observed": "false",
       "passed": true
     },
     {
@@ -109,6 +114,12 @@
       "passed": true
     },
     {
+      "probe": "profile_client_truncate",
+      "expected": "no client TRUNCATE grant",
+      "observed": "false",
+      "passed": true
+    },
+    {
       "probe": "unrelated_read",
       "expected": "zero fixtures",
       "observed": "0",
@@ -131,6 +142,12 @@
       "expected": "zero updated fixtures",
       "observed": "0",
       "passed": true
+    },
+    {
+      "probe": "worker_update_creator_spoof",
+      "expected": "denied",
+      "observed": "42501",
+      "passed": true
     }
   ],
   "rollbackVerification": [
@@ -138,7 +155,10 @@
       "retained_fixture_users": 0,
       "retained_fixture_instruments": 0,
       "retained_proposed_policies": 0,
-      "original_role_grant_restored": true
+      "candidate_trigger_function_removed": true,
+      "original_role_grant_restored": true,
+      "original_truncate_grant_restored": true
     }
-  ]
+  ],
+  "proposedCandidate": "SafeStepsTools/sql/candidates/20261012215912_p0_assessment_and_profile_write_boundaries.sql"
 }

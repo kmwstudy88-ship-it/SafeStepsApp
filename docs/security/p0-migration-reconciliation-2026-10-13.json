@@ -6,7 +6,7 @@
     "yzxotxbwgxnxemkzigse": {
       "latestRecordedVersion": "20260829181644",
       "deployedCount": 197,
-      "repositoryCount": 214,
+      "repositoryCount": 213,
       "repositoryOnly": [
         {
           "version": "20260730120000",
@@ -119,10 +119,6 @@
         {
           "version": "20261012180000",
           "file": "20261012180000_ai_next_horizon_12_modules.sql"
-        },
-        {
-          "version": "20261012215912",
-          "file": "20261012215912_p0_assessment_and_profile_write_boundaries.sql"
         }
       ],
       "targetOnly": [
@@ -179,7 +175,7 @@
     "kwhjxggxffphknzxmtrf": {
       "latestRecordedVersion": "20260911074051",
       "deployedCount": 233,
-      "repositoryCount": 214,
+      "repositoryCount": 213,
       "repositoryOnly": [
         {
           "version": "20260810002517",
@@ -316,10 +312,6 @@
         {
           "version": "20261012180000",
           "file": "20261012180000_ai_next_horizon_12_modules.sql"
-        },
-        {
-          "version": "20261012215912",
-          "file": "20261012215912_p0_assessment_and_profile_write_boundaries.sql"
         }
       ],
       "targetOnly": [

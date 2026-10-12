@@ -7,6 +7,6 @@ if (!/^rollback;\s*$/m.test(fixture)) throw new Error("Rollback terminator requi
 const args = process.argv.slice(2);
 if (args.some(arg => arg !== "--candidate")) throw new Error("Only --candidate is supported.");
 const migration = args.includes("--candidate")
-  ? readFileSync(new URL("supabase/migrations/20261012215912_p0_assessment_and_profile_write_boundaries.sql",root),"utf8")
+  ? readFileSync(new URL("SafeStepsTools/sql/candidates/20261012215912_p0_assessment_and_profile_write_boundaries.sql",root),"utf8")
   : "";
 process.stdout.write(fixture.replace("begin;\n", "begin;\n"+migration+"\n"));

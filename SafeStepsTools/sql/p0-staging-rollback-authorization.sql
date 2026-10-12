@@ -26,6 +26,12 @@ select set_config('request.jwt.claim.sub',(select id::text from p0_fixture where
 set local role authenticated;
 insert into p0_results select 'allocated_worker_read','one fixture',count(*)::text,count(*)=1 from public.assessment_records where id=(select id from p0_fixture where name='assessment_a');
 do $probe$ declare n integer; begin
+ update public.assessment_records set created_by=(select id from p0_fixture where name='unrelated') where id=(select id from p0_fixture where name='assessment_a');
+ get diagnostics n=row_count;
+ insert into p0_results values ('worker_update_creator_spoof','denied',n::text,n=0);
+exception when insufficient_privilege then insert into p0_results values ('worker_update_creator_spoof','denied','42501',true);
+when others then insert into p0_results values ('worker_update_creator_spoof','denied',sqlstate,false); end $probe$;
+do $probe$ declare n integer; begin
  insert into public.assessment_records(case_id,parent_user_id,instrument_id,created_by,status) values ((select id from p0_fixture where name='case_a'),(select id from p0_fixture where name='parent'),(select id from p0_fixture where name='instrument'),(select id from p0_fixture where name='worker'),'draft');
  get diagnostics n=row_count;
  insert into p0_results values ('allocated_worker_insert','one changed fixture',n::text,n=1);
@@ -93,5 +99,12 @@ exception when insufficient_privilege then insert into p0_results values ('owner
 when others then insert into p0_results values ('owner_role_escalation','denied',sqlstate,false); end $probe$;
 insert into p0_results select 'escalated_owner_other_case_read','zero fixtures',count(*)::text,count(*)=0 from public.assessment_records where id=(select id from p0_fixture where name='assessment_b');
 reset role;
+-- Check effective destructive privileges without truncating any existing table.
+insert into p0_results
+select 'assessment_client_truncate','no client TRUNCATE grant',bool_or(has_table_privilege(r,'public.assessment_records','TRUNCATE'))::text,not bool_or(has_table_privilege(r,'public.assessment_records','TRUNCATE'))
+from unnest(array['anon','authenticated']::text[]) r;
+insert into p0_results
+select 'profile_client_truncate','no client TRUNCATE grant',bool_or(has_table_privilege(r,'public.profiles','TRUNCATE'))::text,not bool_or(has_table_privilege(r,'public.profiles','TRUNCATE'))
+from unnest(array['anon','authenticated']::text[]) r;
 select probe,expected,observed,passed from p0_results order by probe;
 rollback;

@@ -364,7 +364,7 @@ Primary project evidence:
 - [Document backend identity verification](https://github.com/kmwstudy88-ship-it/SafeStepsApp/blob/1c7b1864d26f4cbfe975ae9f46637742b9b57abb/backend/document-intelligence/supabase.js)
 - [Document backend persistence](https://github.com/kmwstudy88-ship-it/SafeStepsApp/blob/1c7b1864d26f4cbfe975ae9f46637742b9b57abb/backend/document-intelligence/pipeline.js)
 - [Supabase project](https://supabase.com/dashboard/project/yzxotxbwgxnxemkzigse)
-- [Catalog snapshot](./safesteps-schema-snapshot.json): machine-readable metadata for this baseline; this document remains the decision authority.
+- [Historical catalog snapshot](https://github.com/kmwstudy88-ship-it/SafeStepsApp/blob/13258acd2e23fe03abdebafe84b82c3c6a72a6a2/docs/architecture/safesteps-schema-snapshot.json): pinned machine-readable September metadata; this document remains the decision authority. Current bounded P0 evidence is in [the October review](../security/p0-deployment-review-2026-10-13.md).
 
 The Supabase changelog markdown fetch was unavailable during review; no implementation changes were made based on an assumed API version. Current RLS documentation was inspected.
 
@@ -431,7 +431,12 @@ Maintain a change history here rather than creating competing schema masters. Ot
 | 1.0.0 | Defined canonical ownership, deployed baseline, model boundaries, compatibility mappings, deprecations and RLS requirements. |
 | 1.1.0 | Added binding decision IDs, implementation gates, release evidence, operational requirements and cross-repository version control. |
 
-### 15.6 PG-01 implementation progress
+### 15.6 Historical PG-01 implementation progress
+
+The implementation described in this subsection is historical and is absent from
+current main. Inspect the [pinned migration](https://github.com/kmwstudy88-ship-it/SafeStepsApp/blob/13258acd2e23fe03abdebafe84b82c3c6a72a6a2/supabase/migrations/20260912092748_identity_client_write_boundaries.sql)
+and [pinned test suite](https://github.com/kmwstudy88-ship-it/SafeStepsApp/tree/13258acd2e23fe03abdebafe84b82c3c6a72a6a2/tools/identity-security).
+Their presence in that revision does not establish current implementation or deployment.
 
 Repository migration `20260912092748_identity_client_write_boundaries.sql`
 implements the direct-client privilege boundary for `profiles`,

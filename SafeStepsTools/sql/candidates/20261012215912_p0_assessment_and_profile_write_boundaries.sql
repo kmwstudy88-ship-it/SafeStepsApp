@@ -1,5 +1,28 @@
 -- PROPOSED ONLY. Requires reconciled history, caller review and staged API tests.
 -- Does not converge case roots: assessment_records still uses reunification_cases.
+-- Kept outside supabase/migrations until caller replacement and replay are ready.
+revoke truncate on public.profiles, public.assessment_records from public, anon, authenticated;
+
+-- Actor/provenance reassignment must use an independently authorized server path.
+create or replace function public.p0_guard_assessment_provenance()
+returns trigger language plpgsql security invoker set search_path = ''
+as $guard$
+begin
+ if current_user = 'authenticated' and (
+  new.id is distinct from old.id or
+  new.created_by is distinct from old.created_by or
+  new.case_id is distinct from old.case_id or
+  new.instrument_id is distinct from old.instrument_id
+ ) then
+  raise exception using errcode='42501', message='Assessment provenance cannot be reassigned by a client';
+ end if;
+ return new;
+end $guard$;
+revoke all on function public.p0_guard_assessment_provenance() from public, anon, authenticated;
+drop trigger if exists p0_assessment_provenance on public.assessment_records;
+create trigger p0_assessment_provenance before update on public.assessment_records
+for each row execute function public.p0_guard_assessment_provenance();
+
 -- Restrictive write policies AND with all existing permissive policies.
 drop policy if exists p0_assessment_staff_insert on public.assessment_records;
 create policy p0_assessment_staff_insert on public.assessment_records as restrictive
