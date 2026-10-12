@@ -87,6 +87,37 @@ describe("backend AI Support Coach, Psychologist, Evaluator & Safety Enforcer", 
     },
   );
 
+  test.each([
+    [-1, 0, "individual_stabilisation_only", "stage_1_containment_individual"],
+    [4, 4, "individual_stabilisation_only", "stage_1_containment_individual"],
+    [6, 6, "parallel_safe", "stage_2_parallel_synchronised"],
+    [7, 7, "proceed_conjoint", "stage_3_conjoint_safety_gated"],
+    [11, 10, "proceed_conjoint", "stage_3_conjoint_safety_gated"],
+  ])(
+    "clamps score %s and applies the server safety-mode boundaries",
+    (score, expectedScore, expectedMode, expectedStage) => {
+      const check = evaluateServerCouplesDfvSafetyCheck({ feltSafetyScore: score });
+
+      expect(check.feltSafetyScore).toBe(expectedScore);
+      expect(check.recommendedMode).toBe(expectedMode);
+      expect(check.permittedStage).toBe(expectedStage);
+      expect(check.silentPivotTriggered).toBe(expectedMode !== "proceed_conjoint");
+    },
+  );
+
+  test("keeps immediate-danger reports in crisis-halt mode even with a high score", () => {
+    const check = evaluateServerCouplesDfvSafetyCheck({
+      feltSafetyScore: 10,
+      immediateDanger: true,
+    });
+
+    expect(check.recommendedMode).toBe("tier1_crisis_halt");
+    expect(check.permittedStage).toBe("stage_1_containment_individual");
+    expect(check.silentPivotTriggered).toBe(true);
+    expect(check.clinicianAlertRequired).toBe(true);
+    expect(check.partnerFacingNeutralNotice).not.toMatch(/danger|safety|crisis/i);
+  });
+
   test("processes coach turns, scale scoring with RCI, 5P formulations, 10-engine evaluations, and clinician sign-off deterministically", async () => {
     const turn = await processCoachTurn({
       personaMode: "parent_support_coach",
