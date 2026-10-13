@@ -57,7 +57,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/users", userApiRateLimit);
+app.use(userApiRateLimit);
 
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true, limit: "2mb" }));
@@ -68,12 +68,12 @@ app.get("/health", (req, res) => {
   res.json({ ok: true, service: "safesteps-api", requestId: req.id });
 });
 
-app.use("/auth", authRoutes);
-app.use("/documents", documentRoutes);
-app.use("/agent-skills", requireAuthenticatedUser, agentSkillsRoutes);
-app.use("/worksheets", requireAuthenticatedUser, worksheetRoutes);
-app.use("/users", requireAuthenticatedUser, userCurriculumRoutes);
-app.use("/ai-support", aiSupportRoutes);
+app.use("/auth", userApiRateLimit, authRoutes);
+app.use("/documents", userApiRateLimit, documentRoutes);
+app.use("/agent-skills", userApiRateLimit, requireAuthenticatedUser, agentSkillsRoutes);
+app.use("/worksheets", userApiRateLimit, requireAuthenticatedUser, worksheetRoutes);
+app.use("/users", userApiRateLimit, requireAuthenticatedUser, userCurriculumRoutes);
+app.use("/ai-support", userApiRateLimit, aiSupportRoutes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);

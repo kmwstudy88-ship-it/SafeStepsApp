@@ -9,13 +9,16 @@ import {
   requireCaseAccess,
 } from "../../middleware/authorize.js";
 import { requireAuthenticatedUser } from "../../middleware/requireAuthenticatedUser.js";
+import { userApiRateLimit } from "../../middleware/userApiRateLimit.js";
 
 const MAX_TEXT_BYTES = 2 * 1024 * 1024;
 
 const router = express.Router();
+router.use(userApiRateLimit);
 
 router.post(
   "/fairness",
+  userApiRateLimit,
   requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
   requireCaseAccess,
