@@ -21,26 +21,26 @@ import {
 } from "../backend/Services/AiSupport/AiSupportCoachService.js";
 import { sha256Hex } from "../backend/Services/AiSupport/SafetyPolicyEnforcer.js";
 
-const ROUTE_DISPATCH = {
-  "/ai-support/coach/turn": (body) => processCoachTurn(body),
-  "/ai-support/couples-dfv/safety-check": (body) => processCouplesDfvSafetyCheck(body),
-  "/ai-support/scales/score": (body) => processScaleScoring(body),
-  "/ai-support/psychologist/formulate": (body) => processPsychologicalFormulation(body),
-  "/ai-support/evaluator/assess": (body) => processLongitudinalEvaluation(body),
-  "/ai-support/clinician/sign-off": (body) => processClinicianSignOff(body, "smoke-clinician"),
-  "/ai-support/stealth/verify-pin": (body) => processStealthPinVerification(body),
-  "/ai-support/safety-plan/save": (body) => processSafetyPlanVaultSave(body, "smoke-survivor"),
-  "/ai-support/visits/coach": (body) => processContactVisitCoaching(body),
-  "/ai-support/family-meeting/repair-script": (body) => processRestorativeFamilyMeeting(body),
-  "/ai-support/addiction/urge-surf": (body) => processAddictionRecoveryShield(body),
-  "/ai-support/neuro-sleep/profile": (body) => processNeuroSleepProfile(body),
-  "/ai-support/kinship-carer/check-in": (body) => processKinshipCarerSupport(body),
-  "/ai-support/cultural-sewb/yarning-map": (body) => processCulturalSewbYarningMap(body),
-  "/ai-support/court-annexure/compile": (body) => processCourtAnnexureCompilation(body),
-  "/ai-support/informants/submit-360": (body) => processMultiInformant360Portal(body),
-  "/ai-support/prescriptions/generate": (body) => processAdaptiveMicroPrescriptions(body),
-  "/ai-support/child/three-houses": (body) => processChildThreeHousesPlayroom(body),
-};
+const ROUTE_DISPATCH = new Map([
+  ["/ai-support/coach/turn", (body) => processCoachTurn(body)],
+  ["/ai-support/couples-dfv/safety-check", (body) => processCouplesDfvSafetyCheck(body)],
+  ["/ai-support/scales/score", (body) => processScaleScoring(body)],
+  ["/ai-support/psychologist/formulate", (body) => processPsychologicalFormulation(body)],
+  ["/ai-support/evaluator/assess", (body) => processLongitudinalEvaluation(body)],
+  ["/ai-support/clinician/sign-off", (body) => processClinicianSignOff(body, "smoke-clinician")],
+  ["/ai-support/stealth/verify-pin", (body) => processStealthPinVerification(body)],
+  ["/ai-support/safety-plan/save", (body) => processSafetyPlanVaultSave(body, "smoke-survivor")],
+  ["/ai-support/visits/coach", (body) => processContactVisitCoaching(body)],
+  ["/ai-support/family-meeting/repair-script", (body) => processRestorativeFamilyMeeting(body)],
+  ["/ai-support/addiction/urge-surf", (body) => processAddictionRecoveryShield(body)],
+  ["/ai-support/neuro-sleep/profile", (body) => processNeuroSleepProfile(body)],
+  ["/ai-support/kinship-carer/check-in", (body) => processKinshipCarerSupport(body)],
+  ["/ai-support/cultural-sewb/yarning-map", (body) => processCulturalSewbYarningMap(body)],
+  ["/ai-support/court-annexure/compile", (body) => processCourtAnnexureCompilation(body)],
+  ["/ai-support/informants/submit-360", (body) => processMultiInformant360Portal(body)],
+  ["/ai-support/prescriptions/generate", (body) => processAdaptiveMicroPrescriptions(body)],
+  ["/ai-support/child/three-houses", (body) => processChildThreeHousesPlayroom(body)],
+]);
 
 const server = http.createServer(async (req, res) => {
   if (req.method === "GET" && req.url === "/health") {
@@ -49,9 +49,7 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  const handler = Object.prototype.hasOwnProperty.call(ROUTE_DISPATCH, req.url)
-    ? ROUTE_DISPATCH[req.url]
-    : undefined;
+  const handler = ROUTE_DISPATCH.get(req.url);
   if (req.method === "POST" && typeof handler === "function") {
     let raw = "";
     for await (const chunk of req) {
