@@ -15,5 +15,8 @@ spec:
       containers:
         - name: backend
           image: safesteps-backend:latest
+          env:
+            - name: SAFESTEPS_TRUST_PROXY_HOPS
+              value: "1"
           ports:
             - containerPort: 3000
