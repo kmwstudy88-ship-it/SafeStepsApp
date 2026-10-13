@@ -36,6 +36,18 @@ describe("users API rate limit", () => {
     expect(invoke(limiter, firstToken).next.mock.calls[0][0].statusCode).toBe(429);
   });
 
+  test("uses the client IP when the authorization header is not a bearer token", () => {
+    const limiter = createRateLimiter({ maxRequests: 1 });
+
+    expect(invoke(limiter, { ip: "192.0.2.1" }).next).toHaveBeenCalledWith();
+    expect(
+      invoke(limiter, { authorization: "Basic invalid", ip: "192.0.2.1" }).next.mock.calls[0][0],
+    ).toMatchObject({ statusCode: 429 });
+    expect(
+      invoke(limiter, { authorization: "Basic invalid", ip: "192.0.2.2" }).next,
+    ).toHaveBeenCalledWith();
+  });
+
   test("uses the authenticated token across changes in client IP", () => {
     const limiter = createRateLimiter({ maxRequests: 1 });
     const authorization = ["Bearer", "test-client"].join(" ");
@@ -86,5 +98,20 @@ describe("users API rate limit", () => {
     const { res, next } = invoke(limiter, { ip: "192.0.2.2" });
     expect(res.setHeader).toHaveBeenCalledWith("Retry-After", "60");
     expect(next.mock.calls[0][0]).toMatchObject({ statusCode: 429 });
+  });
+
+  test("reclaims expired client slots so new clients can be tracked", () => {
+    let currentTime = 0;
+    const limiter = createRateLimiter({
+      maxClients: 1,
+      windowMs: 1_000,
+      now: () => currentTime,
+    });
+
+    expect(invoke(limiter, { ip: "192.0.2.1" }).next).toHaveBeenCalledWith();
+    expect(invoke(limiter, { ip: "192.0.2.2" }).next.mock.calls[0][0].statusCode).toBe(429);
+
+    currentTime = 1_000;
+    expect(invoke(limiter, { ip: "192.0.2.2" }).next).toHaveBeenCalledWith();
   });
 });
