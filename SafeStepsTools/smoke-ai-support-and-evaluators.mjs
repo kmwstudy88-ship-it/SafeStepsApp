@@ -49,8 +49,10 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  const handler = ROUTE_DISPATCH[req.url];
-  if (req.method === "POST" && handler) {
+  const handler = Object.prototype.hasOwnProperty.call(ROUTE_DISPATCH, req.url)
+    ? ROUTE_DISPATCH[req.url]
+    : undefined;
+  if (req.method === "POST" && typeof handler === "function") {
     let raw = "";
     for await (const chunk of req) {
       raw += chunk;
