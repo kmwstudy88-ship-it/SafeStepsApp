@@ -40,7 +40,10 @@ describe("standard API errors and logging", () => {
 });
 
 describe("authentication and authorization boundaries", () => {
-  test("parses only bearer authorization headers", () => {
+  test("parses bounded bearer authorization headers", () => {
+    expect(bearerToken("  bEaReR\t valid-token  ")).toBe("valid-token");
+    expect(bearerToken("BearerX invalid")).toBeNull();
+    expect(bearerToken("Bearer " + "x".repeat(8192))).toBeNull();
     expect(bearerToken("Bearer valid-token")).toBe("valid-token");
     expect(bearerToken("Basic invalid")).toBeNull();
     expect(bearerToken(undefined)).toBeNull();
