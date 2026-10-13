@@ -3,6 +3,7 @@ import express from "express";
 
 import { analyzeFairnessDocument } from "../../Services/DocumentIntelligence/FairnessEngine.js";
 import { badRequest, serviceUnavailable } from "../../lib/apiError.js";
+import { getSkill, listSkills, SKILL_GROUPS } from "../../skills/registry.js";
 import {
   DOCUMENT_ROLES,
   requireAnyRole,
@@ -108,6 +109,30 @@ function skillHandler(skillName, engineFn) {
 }
 
 // ─── routes ──────────────────────────────────────────────────────────────────
+
+router.get("/catalog", ...auth, (_req, res) => {
+  res.json({
+    catalogVersion: "skills-catalog-v1",
+    decisionSupportOnly: true,
+    humanReviewRequired: true,
+    irreversibleActionsAllowed: false,
+    groups: Object.values(SKILL_GROUPS),
+    skills: listSkills(),
+  });
+});
+
+router.get("/catalog/:skillId", ...auth, (req, res, next) => {
+  const skill = getSkill(req.params.skillId);
+  if (!skill) {
+    return next(badRequest(`Skill ${req.params.skillId} not found.`));
+  }
+  res.json({
+    skill,
+    decisionSupportOnly: true,
+    humanReviewRequired: true,
+    irreversibleActionsAllowed: false,
+  });
+});
 
 router.post("/fairness-detect", ...auth, skillHandler("fairness_detection", (text) => {
   const analysis = analyzeFairnessDocument(text);

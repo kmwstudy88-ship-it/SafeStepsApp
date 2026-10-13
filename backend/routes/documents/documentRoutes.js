@@ -18,6 +18,12 @@ import {
   DOCUMENT_UPLOAD_MIME_TYPES,
   uploadCaseDocument,
 } from "../../Services/Documents/DocumentUploadService.js";
+import {
+  DOCUMENT_INTELLIGENCE_SKILLS,
+  attachSkillsToAnalysisResult,
+  createDocumentSkillsOrchestrator,
+  executeRequestedDocumentSkills,
+} from "../../skills/documentIntelligenceAdapter.js";
 import { badRequest, serviceUnavailable } from "../../lib/apiError.js";
 import {
   DOCUMENT_ROLES,
@@ -47,6 +53,9 @@ router.get("/intelligence/schema", (_req, res) => {
     maxFileBytes: DOCUMENT_UPLOAD_MAX_BYTES,
     supportedFileTypes: DOCUMENT_UPLOAD_MIME_TYPES,
     sections: documentIntelligenceSections(),
+    availableSkills: DOCUMENT_INTELLIGENCE_SKILLS,
+    decisionSupportOnly: true,
+    humanReviewRequired: true,
   });
 });
 
@@ -97,9 +106,25 @@ router.post(
       }
 
       const text = await documentTextFromRequest(req);
+      const requestedSkills = req.body?.skills;
 
       if (req.safeStepsAuth.isLocalBypass) {
-        const result = await analyzeDocument(text);
+        let result = await analyzeDocument(text);
+        if (requestedSkills) {
+          try {
+            const orchestrator = createDocumentSkillsOrchestrator();
+            const skillOutputs = await executeRequestedDocumentSkills({
+              text,
+              documentId: stringField(req.body?.documentId),
+              caseId: req.safeStepsCaseId,
+              skills: requestedSkills,
+              orchestrator,
+            });
+            result = attachSkillsToAnalysisResult(result, skillOutputs);
+          } catch (skillErr) {
+            console.warn("[documents/analyze] skills execution failed safely in bypass mode:", skillErr?.message);
+          }
+        }
         res.json({
           source: sourceEnvelope(req, text),
           result,
@@ -129,6 +154,7 @@ router.post(
         sourceMode: req.file ? "file" : "text",
         sourceMetadata: sourceEnvelope(req, text),
         text,
+        skills: requestedSkills,
       });
 
       res.status(201).json({
