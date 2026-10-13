@@ -4,6 +4,11 @@ import {
   DOCUMENT_INTELLIGENCE_SCHEMA_VERSION,
   analyzeDocument,
 } from "./DocumentService.js";
+import {
+  attachSkillsToAnalysisResult,
+  createDocumentSkillsOrchestrator,
+  executeRequestedDocumentSkills,
+} from "../../skills/documentIntelligenceAdapter.js";
 
 export async function runDocumentIntelligencePipeline(input, options = {}) {
   const analyzer = options.analyzer ?? analyzeDocument;
@@ -34,7 +39,44 @@ export async function runDocumentIntelligencePipeline(input, options = {}) {
   }
 
   try {
-    const result = await analyzer(input.text, options.analyzerOptions);
+    let result = await analyzer(input.text, options.analyzerOptions);
+
+    const requestedSkills = input.skills ?? options.skills;
+    if (requestedSkills) {
+      try {
+        const skillsOrchestrator =
+          options.skillsOrchestrator ??
+          createDocumentSkillsOrchestrator(options.skillHandlers);
+        const skillOutputs = await executeRequestedDocumentSkills({
+          text: input.text,
+          documentId: input.documentId ?? null,
+          caseId: input.caseId ?? null,
+          skills: requestedSkills,
+          orchestrator: skillsOrchestrator,
+          context: { userId: input.userId },
+        });
+        result = attachSkillsToAnalysisResult(result, skillOutputs);
+      } catch (skillError) {
+        console.warn(
+          "[document-pipeline] skills orchestration failed safely:",
+          skillError?.message,
+        );
+        result = {
+          ...result,
+          skills: {
+            status: "failed",
+            error: {
+              code: "SKILLS_ATTACHMENT_FAILED",
+              message: skillError?.message || "Skills orchestration failed.",
+            },
+            decisionSupportOnly: true,
+            humanReviewRequired: true,
+            irreversibleActionsAllowed: false,
+          },
+        };
+      }
+    }
+
     const { data: completed, error: updateError } = await input.client
       .from("document_analysis_runs")
       .update({
