@@ -38,7 +38,7 @@ describe("users API rate limit", () => {
 
   test("uses the authenticated token across changes in client IP", () => {
     const limiter = createRateLimiter({ maxRequests: 1 });
-    const authorization = "******";
+    const authorization = ["Bearer", "test-client"].join(" ");
 
     expect(invoke(limiter, { authorization, ip: "192.0.2.1" }).next).toHaveBeenCalledWith();
 
@@ -48,7 +48,7 @@ describe("users API rate limit", () => {
 
   test("counts a request only once when middleware is mounted more than once", () => {
     const limiter = createRateLimiter({ maxRequests: 1 });
-    const authorization = "******";
+    const authorization = ["Bearer", "test-client"].join(" ");
     const req = { headers: { authorization }, ip: "192.0.2.1" };
     const res = { setHeader: jest.fn() };
     const next = jest.fn();
@@ -59,8 +59,9 @@ describe("users API rate limit", () => {
     expect(next).toHaveBeenCalledTimes(2);
     expect(next).toHaveBeenNthCalledWith(1);
     expect(next).toHaveBeenNthCalledWith(2);
-    expect(invoke(limiter, { authorization, ip: "192.0.2.1" }).next.mock.calls[0][0])
-      .toMatchObject({ statusCode: 429 });
+    expect(
+      invoke(limiter, { authorization, ip: "192.0.2.1" }).next.mock.calls[0][0],
+    ).toMatchObject({ statusCode: 429 });
   });
 
   test("resets the request count after the window expires", () => {
