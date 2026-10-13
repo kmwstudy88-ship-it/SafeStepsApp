@@ -1,0 +1,29 @@
+import { expect, jest, test } from "@jest/globals";
+
+import documentRoutes from "../../backend/routes/documents/documentRoutes.js";
+
+test("rate limits requests to the document analyses listing route", () => {
+  const route = documentRoutes.stack.find(
+    (layer) => layer.route?.path === "/:documentId/analyses",
+  )?.route;
+  expect(route).toBeDefined();
+
+  const limiter = route.stack.find((layer) => layer.handle.name === "rateLimit")?.handle;
+  expect(limiter).toBeDefined();
+
+  const invokeLimiter = () => {
+    const req = { headers: {}, ip: "192.0.2.1" };
+    const res = { setHeader: jest.fn() };
+    const next = jest.fn();
+    limiter(req, res, next);
+    return { res, next };
+  };
+
+  for (let request = 0; request < 120; request += 1) {
+    expect(invokeLimiter().next).toHaveBeenCalledWith();
+  }
+
+  const { res, next } = invokeLimiter();
+  expect(res.setHeader).toHaveBeenCalledWith("Retry-After", "60");
+  expect(next.mock.calls[0][0]).toMatchObject({ statusCode: 429, code: "RATE_LIMITED" });
+});
