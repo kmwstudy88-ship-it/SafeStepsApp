@@ -7,14 +7,12 @@ import {
   resolveAuthorizationContext,
 } from "../../lib/supabase.js";
 import { requireAuthenticatedUser } from "../../middleware/requireAuthenticatedUser.js";
-import { userApiRateLimit } from "../../middleware/userApiRateLimit.js";
 import {
   childSessionExpiresAt,
   evaluateChildLoginEligibility,
 } from "../../security/childAccessPolicy.js";
 
 const router = express.Router();
-router.use(userApiRateLimit);
 
 const AUDIENCE_ROLES = {
   child: ["child"],
@@ -22,18 +20,18 @@ const AUDIENCE_ROLES = {
   caseworker: ["caseworker", "supervisor", "clinician", "admin", "super_admin"],
 };
 
-router.post("/child/login", userApiRateLimit, loginForAudience("child"));
-router.post("/parent/login", userApiRateLimit, loginForAudience("parent"));
-router.post("/caseworker/login", userApiRateLimit, loginForAudience("caseworker"));
+router.post("/child/login", loginForAudience("child"));
+router.post("/parent/login", loginForAudience("parent"));
+router.post("/caseworker/login", loginForAudience("caseworker"));
 
-router.get("/session", userApiRateLimit, requireAuthenticatedUser, async (req, res) => {
+router.get("/session", requireAuthenticatedUser, async (req, res) => {
   res.json({
     data: sessionResponse(req.safeStepsAuth),
     meta: { requestId: req.id },
   });
 });
 
-router.post("/logout", userApiRateLimit, requireAuthenticatedUser, async (req, res, next) => {
+router.post("/logout", requireAuthenticatedUser, async (req, res, next) => {
   try {
     if (!req.safeStepsAuth.isLocalBypass) {
       const { error } = await req.safeStepsAuth.supabase

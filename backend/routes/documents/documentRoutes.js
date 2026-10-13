@@ -25,10 +25,8 @@ import {
   requireCaseAccess,
 } from "../../middleware/authorize.js";
 import { requireAuthenticatedUser } from "../../middleware/requireAuthenticatedUser.js";
-import { userApiRateLimit } from "../../middleware/userApiRateLimit.js";
 
 const router = express.Router();
-router.use(userApiRateLimit);
 const MAX_TEXT_BYTES = 2 * 1024 * 1024;
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -39,7 +37,7 @@ const upload = multer({
   },
 });
 
-router.use("/analyze", userApiRateLimit, fairnessRoutes);
+router.use("/analyze", fairnessRoutes);
 
 router.get("/intelligence/schema", (_req, res) => {
   res.json({
@@ -54,7 +52,6 @@ router.get("/intelligence/schema", (_req, res) => {
 
 router.post(
   "/upload",
-  userApiRateLimit,
   requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
   upload.single("file"),
@@ -89,7 +86,6 @@ router.post(
 
 router.post(
   "/analyze",
-  userApiRateLimit,
   requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
   upload.single("file"),
@@ -152,7 +148,6 @@ router.post(
 
 router.get(
   "/analyses/:analysisId",
-  userApiRateLimit,
   requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
   requireCaseAccess,
@@ -172,7 +167,6 @@ router.get(
 
 router.get(
   "/:documentId/analyses",
-  userApiRateLimit,
   requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
   requireCaseAccess,
