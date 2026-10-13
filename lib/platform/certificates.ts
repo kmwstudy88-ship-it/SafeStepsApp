@@ -40,7 +40,10 @@ async function currentUserId() {
 
 export function makeCertificateNumber(prefix = "SAFE") {
   const stamp = new Date().toISOString().replace(/[-:.TZ]/g, "").slice(0, 14);
-  const random = Math.random().toString(36).slice(2, 7).toUpperCase();
+  const alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const bytes = new Uint8Array(5);
+  globalThis.crypto.getRandomValues(bytes);
+  const random = Array.from(bytes, (byte) => alphabet[byte % alphabet.length]).join("");
   return `${prefix}-${stamp}-${random}`;
 }
 

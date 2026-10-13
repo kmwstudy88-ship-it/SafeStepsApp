@@ -90,7 +90,22 @@ async function postJson(path, payload) {
   return body.data;
 }
 
+async function assertNotFound(path) {
+  const response = await fetch(`${baseUrl}${path}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: "{}",
+  });
+  const body = await response.json();
+  if (response.status !== 404 || body?.ok !== false || body?.error !== "Not found") {
+    throw new Error(`Expected POST ${path} to return 404, received ${response.status}.`);
+  }
+}
+
 try {
+  await assertNotFound("/constructor");
+  await assertNotFound("/toString");
+
   // 1. Coach Turn
   const turn = await postJson("/ai-support/coach/turn", {
     personaMode: "parent_support_coach",

@@ -6,9 +6,19 @@ import {
 } from "../lib/supabase.js";
 
 export function bearerToken(authorizationHeader) {
-  if (typeof authorizationHeader !== "string") return null;
-  const match = authorizationHeader.match(/^Bearer\s+(.+)$/i);
-  return match?.[1]?.trim() || null;
+  if (typeof authorizationHeader !== "string" || authorizationHeader.length > 8192) {
+    return null;
+  }
+  const trimmed = authorizationHeader.trim();
+  if (trimmed.length <= 7 || trimmed.slice(0, 6).toLowerCase() !== "bearer") {
+    return null;
+  }
+  const separator = trimmed[6];
+  if (separator !== " " && separator !== "\t") {
+    return null;
+  }
+  const token = trimmed.slice(7).trim();
+  return token || null;
 }
 
 export async function requireAuthenticatedUser(req, _res, next) {

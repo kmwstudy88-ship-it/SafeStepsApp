@@ -1,4 +1,8 @@
-import { findMatchingCertificate, type CertificateRecord } from "../lib/platform/certificates";
+import {
+  findMatchingCertificate,
+  makeCertificateNumber,
+  type CertificateRecord,
+} from "../lib/platform/certificates";
 
 const certificate: CertificateRecord = {
   id: "certificate-1",
@@ -13,6 +17,10 @@ const certificate: CertificateRecord = {
 };
 
 describe("certificate helpers", () => {
+  test("generates certificate numbers with a five-character uppercase alphanumeric suffix", () => {
+    expect(makeCertificateNumber("TEST")).toMatch(/^TEST-\d{14}-[A-Z0-9]{5}$/);
+  });
+
   test("finds an existing completion certificate without case sensitivity", () => {
     expect(
       findMatchingCertificate(
