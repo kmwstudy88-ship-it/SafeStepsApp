@@ -1,5 +1,7 @@
 import { expect, jest, test } from "@jest/globals";
 
+import { requireCaseAccess } from "../../backend/middleware/authorize.js";
+import { requireAuthenticatedUser } from "../../backend/middleware/requireAuthenticatedUser.js";
 import documentRoutes from "../../backend/routes/documents/documentRoutes.js";
 
 test("rate limits requests to the document analyses listing route", async () => {
@@ -10,6 +12,13 @@ test("rate limits requests to the document analyses listing route", async () => 
 
   const limiter = route.stack.find((layer) => layer.handle.name === "rateLimit")?.handle;
   expect(limiter).toBeDefined();
+
+  expect(route.stack.slice(0, 4).map((layer) => layer.handle)).toEqual([
+    requireAuthenticatedUser,
+    limiter,
+    expect.any(Function),
+    requireCaseAccess,
+  ]);
 
   const invokeLimiter = async () => {
     const req = { headers: {}, ip: "192.0.2.1" };
