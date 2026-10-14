@@ -16,6 +16,8 @@ spec:
         - name: backend
           image: safesteps-backend:latest
           env:
+            - name: SAFESTEPS_TRUST_PROXY_HOPS
+              value: "1"
             - name: REDIS_URL
               value: redis://safesteps-redis:6379
           ports:

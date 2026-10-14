@@ -11,6 +11,10 @@ import { userApiRateLimit } from "./middleware/userApiRateLimit.js";
 
 const app = express();
 const port = process.env.PORT ?? 3000;
+const trustedProxyHops = Number(process.env.SAFESTEPS_TRUST_PROXY_HOPS);
+if (Number.isInteger(trustedProxyHops) && trustedProxyHops >= 0) {
+  app.set("trust proxy", trustedProxyHops);
+}
 const { default: authRoutes } = await import("./routes/auth/authRoutes.js");
 const { default: documentRoutes } = await import("./routes/documents/documentRoutes.js");
 const { default: agentSkillsRoutes } = await import("./routes/agent-skills/agentSkillsRoutes.js");

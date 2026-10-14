@@ -21,3 +21,23 @@ spec:
                 name: safesteps-dashboard
                 port:
                   number: 3001
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: safesteps-users-rate-limit
+  annotations:
+    nginx.ingress.kubernetes.io/limit-rpm: "120"
+    nginx.ingress.kubernetes.io/limit-burst-multiplier: "1"
+spec:
+  rules:
+    - host: safesteps.local
+      http:
+        paths:
+          - path: /api/users
+            pathType: Prefix
+            backend:
+              service:
+                name: safesteps-backend
+                port:
+                  number: 3000

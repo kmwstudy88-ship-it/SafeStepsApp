@@ -40,14 +40,18 @@ describe("users API rate limit", () => {
     });
   });
 
-  test("applies separate limits to authenticated clients", async () => {
+  test("uses the client IP instead of bearer tokens", async () => {
     const limiter = createRateLimiter({ maxRequests: 1 });
     const firstToken = { authorization: ["Bearer", "client-a"].join(" "), ip: "192.0.2.1" };
     const secondToken = { authorization: ["Bearer", "client-b"].join(" "), ip: "192.0.2.1" };
 
     expect((await invoke(limiter, firstToken)).next).toHaveBeenCalledWith();
-    expect((await invoke(limiter, secondToken)).next).toHaveBeenCalledWith();
-    expect((await invoke(limiter, firstToken)).next.mock.calls[0][0].statusCode).toBe(429);
+    expect(
+      (await invoke(limiter, secondToken)).next.mock.calls[0][0],
+    ).toMatchObject({ statusCode: 429 });
+    expect(
+      (await invoke(limiter, { authorization: firstToken.authorization, ip: "192.0.2.2" })).next,
+    ).toHaveBeenCalledWith();
   });
 
   test("uses the client IP when the authorization header is not a bearer token", async () => {
@@ -62,14 +66,13 @@ describe("users API rate limit", () => {
     ).toHaveBeenCalledWith();
   });
 
-  test("uses the authenticated token across changes in client IP", async () => {
+  test("does not share limits across different client IPs even with the same token", async () => {
     const limiter = createRateLimiter({ maxRequests: 1 });
     const authorization = ["Bearer", "test-client"].join(" ");
 
     expect((await invoke(limiter, { authorization, ip: "192.0.2.1" })).next).toHaveBeenCalledWith();
 
-    const { next } = await invoke(limiter, { authorization, ip: "192.0.2.2" });
-    expect(next.mock.calls[0][0]).toMatchObject({ statusCode: 429 });
+    expect((await invoke(limiter, { authorization, ip: "192.0.2.2" })).next).toHaveBeenCalledWith();
   });
 
   test("counts a request only once when middleware is mounted more than once", async () => {

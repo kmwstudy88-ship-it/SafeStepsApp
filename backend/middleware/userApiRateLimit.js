@@ -2,7 +2,6 @@ import { createHash } from "node:crypto";
 import { createClient } from "redis";
 
 import { ApiError } from "../lib/apiError.js";
-import { bearerToken } from "./requireAuthenticatedUser.js";
 
 const WINDOW_MS = 60_000;
 const MAX_REQUESTS_PER_WINDOW = 120;
@@ -98,11 +97,6 @@ function createLocalCounter({ maxClients, windowMs }) {
 }
 
 function clientKey(req) {
-  const token = bearerToken(req.headers?.authorization);
-  if (token) {
-    return `token:${createHash("sha256").update(token).digest("hex")}`;
-  }
-
   return `ip:${req.ip || req.socket?.remoteAddress || "unknown"}`;
 }
 
