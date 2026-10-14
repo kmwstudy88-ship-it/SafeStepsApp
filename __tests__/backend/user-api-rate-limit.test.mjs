@@ -26,6 +26,20 @@ describe("users API rate limit", () => {
     });
   });
 
+  test("fails closed when the request counter store is unavailable", async () => {
+    const limiter = createRateLimiter({
+      increment: async () => {
+        throw new Error("counter store unavailable");
+      },
+    });
+
+    const { next } = await invoke(limiter, { ip: "192.0.2.1" });
+    expect(next.mock.calls[0][0]).toMatchObject({
+      statusCode: 503,
+      code: "RATE_LIMIT_STORE_UNAVAILABLE",
+    });
+  });
+
   test("applies separate limits to authenticated clients", async () => {
     const limiter = createRateLimiter({ maxRequests: 1 });
     const firstToken = { authorization: ["Bearer", "client-a"].join(" "), ip: "192.0.2.1" };
