@@ -12,6 +12,8 @@ jobs:
   validate:
     name: Validate app
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     timeout-minutes: 25
 
     steps:

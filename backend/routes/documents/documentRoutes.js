@@ -31,9 +31,11 @@ import {
   requireCaseAccess,
 } from "../../middleware/authorize.js";
 import { requireAuthenticatedUser } from "../../middleware/requireAuthenticatedUser.js";
+import { createRateLimiter } from "../../middleware/userApiRateLimit.js";
 
 const router = express.Router();
 const MAX_TEXT_BYTES = 2 * 1024 * 1024;
+const listDocumentAnalysesRateLimit = createRateLimiter();
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
@@ -194,6 +196,7 @@ router.get(
 router.get(
   "/:documentId/analyses",
   requireAuthenticatedUser,
+  listDocumentAnalysesRateLimit,
   requireAnyRole(...DOCUMENT_ROLES),
   requireCaseAccess,
   async (req, res, next) => {
