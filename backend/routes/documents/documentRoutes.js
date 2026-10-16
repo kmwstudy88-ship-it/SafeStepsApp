@@ -64,6 +64,7 @@ router.get("/intelligence/schema", (_req, res) => {
 router.post(
   "/upload",
   requireAuthenticatedUser,
+  listDocumentAnalysesRateLimit,
   requireAnyRole(...DOCUMENT_ROLES),
   upload.single("file"),
   requireCaseAccess,
@@ -177,6 +178,7 @@ router.post(
 router.get(
   "/analyses/:analysisId",
   requireAuthenticatedUser,
+  listDocumentAnalysesRateLimit,
   requireAnyRole(...DOCUMENT_ROLES),
   requireCaseAccess,
   async (req, res, next) => {

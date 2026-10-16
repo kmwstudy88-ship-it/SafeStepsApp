@@ -36,3 +36,25 @@ test("rate limits requests to the document analyses listing route", async () => 
   expect(res.setHeader).toHaveBeenCalledWith("Retry-After", "60");
   expect(next.mock.calls[0][0]).toMatchObject({ statusCode: 429, code: "RATE_LIMITED" });
 });
+
+test("applies the shared limiter after authentication to document upload and analysis lookup", () => {
+  const listingRoute = documentRoutes.stack.find(
+    (layer) => layer.route?.path === "/:documentId/analyses",
+  )?.route;
+  const limiter = listingRoute?.stack.find((layer) => layer.handle.name === "rateLimit")?.handle;
+
+  for (const path of ["/upload", "/analyses/:analysisId"]) {
+    const route = documentRoutes.stack.find((layer) => layer.route?.path === path)?.route;
+    expect(route).toBeDefined();
+    expect(route.stack.slice(0, 2).map((layer) => layer.handle)).toEqual([
+      requireAuthenticatedUser,
+      limiter,
+    ]);
+    expect(route.stack.some((layer) => layer.handle === requireCaseAccess)).toBe(true);
+  }
+
+  const uploadRoute = documentRoutes.stack.find((layer) => layer.route?.path === "/upload")?.route;
+  expect(uploadRoute.stack[2].handle).toEqual(expect.any(Function));
+  expect(uploadRoute.stack[3].handle).toEqual(expect.any(Function));
+  expect(uploadRoute.stack.findIndex((layer) => layer.handle === limiter)).toBeLessThan(3);
+});
