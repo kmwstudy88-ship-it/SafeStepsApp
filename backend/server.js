@@ -75,7 +75,7 @@ app.get("/health", (req, res) => {
 app.use("/auth", authRoutes);
 app.use("/documents", documentRoutes);
 app.use("/agent-skills", requireAuthenticatedUser, agentSkillsRoutes);
-app.use("/worksheets", requireAuthenticatedUser, worksheetRoutes);
+app.use("/worksheets", userApiRateLimit, requireAuthenticatedUser, worksheetRoutes);
 app.use("/users", requireAuthenticatedUser, userCurriculumRoutes);
 app.use("/ai-support", aiSupportRoutes);
 
