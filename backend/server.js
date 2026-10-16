@@ -62,6 +62,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/users", userApiRateLimit);
+app.use("/worksheets", userApiRateLimit);
 
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true, limit: "2mb" }));
@@ -75,7 +76,7 @@ app.get("/health", (req, res) => {
 app.use("/auth", authRoutes);
 app.use("/documents", documentRoutes);
 app.use("/agent-skills", requireAuthenticatedUser, agentSkillsRoutes);
-app.use("/worksheets", userApiRateLimit, requireAuthenticatedUser, worksheetRoutes);
+app.use("/worksheets", requireAuthenticatedUser, worksheetRoutes);
 app.use("/users", requireAuthenticatedUser, userCurriculumRoutes);
 app.use("/ai-support", aiSupportRoutes);
 
