@@ -1,10 +1,11 @@
 import React from 'react';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { AuthProvider } from '../lib/auth';
 
 export default function RootLayout() {
   return (
-    <>
+    <AuthProvider>
       <StatusBar style="dark" />
       <Stack
         screenOptions={{
@@ -23,6 +24,7 @@ export default function RootLayout() {
         <Stack.Screen name="cases/index" options={{ title: 'Case List' }} />
         <Stack.Screen name="cases/[id]" options={{ title: 'Case Detail' }} />
         <Stack.Screen name="family/index" options={{ title: 'Family Dashboard' }} />
+        <Stack.Screen name="dashboard/index" options={{ headerShown: false }} />
         <Stack.Screen name="dashboard/supervisor" options={{ title: 'Supervisor Dashboard' }} />
         <Stack.Screen name="documents/[id]" options={{ title: 'Document Viewer' }} />
         <Stack.Screen name="voice-coach/index" options={{ title: 'Voice & Breathing' }} />
@@ -34,6 +36,6 @@ export default function RootLayout() {
         <Stack.Screen name="settings/index" options={{ title: 'Settings & Trusted Contacts' }} />
         <Stack.Screen name="discreet/index" options={{ headerShown: false }} />
       </Stack>
-    </>
+    </AuthProvider>
   );
 }
