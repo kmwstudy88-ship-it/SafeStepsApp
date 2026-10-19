@@ -23,6 +23,7 @@ const {
   scoreDocumentIntelligenceResult,
 } = require('./document-intelligence/v1');
 const { authenticateBearer } = require('./document-intelligence/supabase');
+const { carerServiceForRequest } = require('./carers/client');
 const { createCaseRiskService } = require('./case-risk/service');
 
 const PORT = Number(process.env.PORT || 3000);
@@ -242,6 +243,41 @@ function createApp({
     if (req.method === 'OPTIONS') { res.writeHead(204); return res.end(); }
 
     try {
+      if (url.pathname.startsWith('/carers/')) {
+        res.setHeader('Cache-Control', 'no-store');
+        const user = await requireUser(req, res); if (!user) return;
+        const service = carerServiceForRequest(req, user);
+        if (req.method==='GET' && url.pathname==='/carers/media') return sendJson(res,200,{ media: await service.listMedia() });
+        const mediaReserve=url.pathname.match(/^\/carers\/cases\/([0-9a-f-]{36})\/media$/i);
+        if (mediaReserve && req.method==='POST') return sendJson(res,201,await service.reserveMedia(mediaReserve[1],await parseBody(req)));
+        const media=url.pathname.match(/^\/carers\/media\/([0-9a-f-]{36})\/(complete|view|recipients|review)$/i);
+        if (media) {
+          if (req.method==='GET' && media[2]==='view') return sendJson(res,200,await service.getMediaView(media[1]));
+          if (req.method==='GET' && media[2]==='recipients') return sendJson(res,200,{ recipients: await service.mediaRecipients(media[1]) });
+          if (req.method==='POST' && media[2]==='complete') return sendJson(res,200,await service.completeMedia(media[1],await parseBody(req)));
+          if (req.method==='POST' && media[2]==='review') return sendJson(res,200,await service.reviewMedia(media[1],await parseBody(req)));
+        }
+        if (req.method === 'GET' && url.pathname === '/carers/channels') return sendJson(res, 200, { channels: await service.listChannels() });
+        if (req.method === 'POST' && url.pathname === '/carers/channels') return sendJson(res, 201, await service.createChannel(await parseBody(req)));
+        const channel = url.pathname.match(/^\/carers\/channels\/([0-9a-f-]{36})\/(messages|enabled|review|revoke)$/i);
+        if (channel) {
+          if (req.method === 'GET' && channel[2] === 'messages') return sendJson(res, 200, { messages: await service.getMessages(channel[1]) });
+          if (req.method === 'POST') {
+            const body = await parseBody(req);
+            if (channel[2] === 'messages') return sendJson(res, 201, await service.sendMessage(channel[1], body));
+            if (channel[2] === 'enabled') return sendJson(res, 200, await service.setChannelEnabled(channel[1], body));
+            if (channel[2] === 'review') return sendJson(res, 200, await service.reviewMessage(channel[1], body));
+            if (channel[2] === 'revoke') return sendJson(res, 200, await service.revokeChannel(channel[1], body));
+          }
+        }
+        if (req.method === 'GET' && url.pathname === '/carers/cases') {
+          return sendJson(res, 200, { cases: await service.listCases() });
+        }
+        const journal = url.pathname.match(/^\/carers\/cases\/([0-9a-f-]{36})\/journal$/i);
+        if (journal && req.method === 'GET') return sendJson(res, 200, { entries: await service.listJournal(journal[1]) });
+        if (journal && req.method === 'POST') return sendJson(res, 201, await service.createJournal(journal[1], await parseBody(req)));
+        return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Carer Portal route not found.' } });
+      }
       if (req.method === 'GET' && url.pathname === '/health') {
         return sendJson(res, 200, { status: 'ok', documentIntelligence: true, timestamp: new Date().toISOString() });
       }
@@ -541,12 +577,20 @@ function createApp({
         'SERVICE_UNAVAILABLE',
         'STATE_CONFLICT',
       ].includes(error.code) ? error.code : null;
+      const carerCode = url.pathname.startsWith('/carers/') && [
+        'CARER_NOT_CONFIGURED', 'CARER_PERMISSION_REQUIRED', 'CARER_DATA_UNAVAILABLE',
+        'CARER_CASE_ACCESS_DENIED', 'INVALID_CASE', 'INVALID_JOURNAL_ENTRY',
+        'CASE_NOT_ACTIVE', 'SUBMISSION_ALREADY_EXISTS',
+        'CARER_MIGRATION_REQUIRED',
+        'INVALID_COMMUNICATION_REQUEST',
+        'INVALID_MEDIA_REQUEST',
+      ].includes(error.code) ? error.code : null;
       return sendJson(res, statusCode, {
         error: {
-          code: personalAiCode || codeMap[statusCode] || 'INTERNAL_ERROR',
-          message: personalAiCode
+          code: carerCode || personalAiCode || codeMap[statusCode] || 'INTERNAL_ERROR',
+          message: carerCode || personalAiCode
             ? error.message
-            : (url.pathname.startsWith('/personal-ai/') && statusCode >= 500
+            : ((url.pathname.startsWith('/personal-ai/') || url.pathname.startsWith('/carers/')) && statusCode >= 500
               ? 'Unexpected server error'
               : error.message || 'Unexpected server error'),
         },

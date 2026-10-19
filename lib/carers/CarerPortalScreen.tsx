@@ -24,7 +24,7 @@ type JournalEntry = {
   detail: string;
   time: string;
   shared: boolean;
-  imageUri?: string;
+  media?: { uri: string; type: 'image' | 'video' };
 };
 
 const tabs: Array<{ label: Tab; icon: string }> = [
@@ -59,19 +59,27 @@ export function CarerPortalScreen() {
   const [composerOpen, setComposerOpen] = useState(false);
   const [entryKind, setEntryKind] = useState<EntryKind>('Daily update');
   const [entryText, setEntryText] = useState('');
-  const [attachment, setAttachment] = useState<string | undefined>();
+  const [attachment, setAttachment] = useState<JournalEntry['media']>();
   const [parentCommunication, setParentCommunication] = useState(true);
 
   const sharedCount = useMemo(() => entries.filter((entry) => entry.shared).length, [entries]);
 
   async function chooseMedia() {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ['images', 'videos'],
-      allowsEditing: false,
-      quality: 0.8,
-    });
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ['images', 'videos'],
+        allowsEditing: false,
+        quality: 0.8,
+      });
 
-    if (!result.canceled) setAttachment(result.assets[0]?.uri);
+      const asset = result.canceled ? undefined : result.assets[0];
+      if (asset && (asset.type === 'image' || asset.type === 'video')) {
+        setAttachment({ uri: asset.uri, type: asset.type });
+        setComposerOpen(true);
+      }
+    } catch {
+      Alert.alert('Unable to select media', 'Please try again. Your journal draft is still available.');
+    }
   }
 
   function saveEntry() {
@@ -89,7 +97,7 @@ export function CarerPortalScreen() {
         detail,
         time: 'Just now',
         shared: false,
-        imageUri: attachment,
+        media: attachment,
       },
       ...current,
     ]);
@@ -246,7 +254,7 @@ export function CarerPortalScreen() {
       <View style={styles.composerHeader}><View><Text style={styles.composerEyebrow}>NEW ENTRY</Text><Text style={styles.composerTitle}>{entryKind}</Text></View><TouchableOpacity onPress={() => setComposerOpen(false)}><Text style={styles.close}>×</Text></TouchableOpacity></View>
       <View style={styles.kindRow}>{(['Daily update', 'Achievement', 'Worry or concern'] as EntryKind[]).map((kind) => <TouchableOpacity key={kind} style={[styles.kindChip, entryKind === kind && styles.kindChipActive]} onPress={() => setEntryKind(kind)}><Text style={[styles.kindText, entryKind === kind && styles.kindTextActive]}>{kind}</Text></TouchableOpacity>)}</View>
       <TextInput value={entryText} onChangeText={setEntryText} multiline style={styles.textArea} placeholder="What did you notice? Include the context and how Mia responded." placeholderTextColor="#8A97A5" />
-      {attachment ? <View style={styles.attachmentRow}><Image source={{ uri: attachment }} style={styles.attachmentPreview} /><Text style={styles.attachmentText}>Media ready to attach</Text><TouchableOpacity onPress={() => setAttachment(undefined)}><Text style={styles.removeText}>Remove</Text></TouchableOpacity></View> : <TouchableOpacity style={styles.attachButton} onPress={chooseMedia}><Text style={styles.attachButtonText}>▧  Add photo or video</Text></TouchableOpacity>}
+      {attachment ? <View style={styles.attachmentRow}>{attachment.type === 'image' ? <Image source={{ uri: attachment.uri }} style={styles.attachmentPreview} /> : <Text accessibilityLabel="Selected video">▶</Text>}<Text style={styles.attachmentText}>{attachment.type === 'video' ? 'Video selected (playback unavailable in this prototype)' : 'Photo ready to attach'}</Text><TouchableOpacity onPress={() => setAttachment(undefined)}><Text style={styles.removeText}>Remove</Text></TouchableOpacity></View> : <TouchableOpacity style={styles.attachButton} onPress={chooseMedia}><Text style={styles.attachButtonText}>▧  Add photo or video</Text></TouchableOpacity>}
       <View style={styles.reviewNote}><Text style={styles.reviewNoteText}>🔒 Saved to the care team first. A worker reviews anything shared with parents.</Text></View>
       <TouchableOpacity style={styles.primaryButton} onPress={saveEntry}><Text style={styles.primaryButtonText}>Save to Mia’s journal</Text></TouchableOpacity>
     </View>;
@@ -255,7 +263,7 @@ export function CarerPortalScreen() {
   function renderEntry(entry: JournalEntry) {
     const concern = entry.kind === 'Worry or concern';
     return <View key={entry.id} style={styles.entryCard}>
-      {entry.imageUri ? <Image source={{ uri: entry.imageUri }} style={styles.entryImage} /> : null}
+      {entry.media?.type === 'image' ? <Image source={{ uri: entry.media.uri }} style={styles.entryImage} /> : entry.media?.type === 'video' ? <Text style={styles.attachmentText}>▶ Video attached locally · Playback unavailable in this prototype</Text> : null}
       <View style={styles.entryTop}><View style={[styles.entryKindPill, concern && styles.concernPill]}><Text style={[styles.entryKindText, concern && styles.concernText]}>{entry.kind}</Text></View><Text style={styles.entryTime}>{entry.time}</Text></View>
       <Text style={styles.entryTitle}>{entry.title}</Text><Text style={styles.entryDetail}>{entry.detail}</Text>
       <View style={styles.entryFooter}><Text style={styles.teamVisible}>✓ Care team can view</Text><Text style={entry.shared ? styles.shared : styles.awaiting}>{entry.shared ? '◉ Parent sharing approved' : '○ Care team only'}</Text></View>

@@ -1,3 +1,3 @@
-import { CarerPortalScreen } from '../../lib/carers/CarerPortalScreen';
+import ConnectedCarerPortalScreen from '../../lib/carers/ConnectedCarerPortalScreen';
 
-export default CarerPortalScreen;
+export default ConnectedCarerPortalScreen;

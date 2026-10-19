@@ -182,6 +182,60 @@ Required migration sequence:
 5. Validate row parity, unmatched mappings, tenant consistency and both permitted/denied access paths before switching clients.
 6. Retire the old root only after all dependent contracts are satisfied. This document does not create or populate a mapping table.
 
+### 7.3 Carer Portal extensions (18 October 2026; local review candidates)
+
+The connected portal uses operational cases.id through explicit case_participants.
+It never equates these IDs with reunification_cases.id or infers links from names.
+Case-summary RPCs project only portal fields. Child person references and the
+operational/reunification crosswalk remain explicit integration work.
+
+Current access requires an active platform tenant, timed active tenant membership,
+current active participant statuses and dates, matching tenant/case, and explicit
+participant actions. Active denials override allows. No participants, role grants
+or tenant memberships are automatically provisioned.
+
+Journal observations use canonical case_notes with carer_daily_update,
+carer_achievement and carer_concern types. A narrow source policy permits intake
+without broad case.note.create permission. Source triggers enforce authenticated
+author, private defaults, server timestamps and append-only content; old draft
+UPDATE policies cannot change source sharing fields, type or provenance. Authors
+read only their current assigned source entries; authorized care-team access is
+retained. Parent publication of journal text is not implemented. Existing tagged
+records must be inventoried before adopting this contract.
+
+Monitored conversations store content in canonical messaging_threads and
+messaging_messages. carer_message_channels binds a case, tenant, carer and parent;
+carer_message_reviews controls delivery, and carer_channel_events retains audit.
+Channels start paused. The carer can pause/resume; both directions require review
+before counterpart delivery. Paused channels refuse sends and new approvals.
+Reviewer provisioning requires a label, reason and explicit participant IDs.
+Reviewer permissions require current case-worker/supervisor allocation plus an
+active role assignment scoped to this operational_case or tenant, empty permission
+conditions, and AAL2 when the permission requires it. Legacy ambiguous case scopes
+are not accepted. The fixtures test bypass attempts through existing owner policies.
+
+Private media intake uses carer_media_uploads for reservations, then canonical
+evidence_records/evidence_files for completed originals and evidence_sharing_grants
+for bounded parent access. Upload and vault identities are distinct. The backend
+checks stored size and file signature, computes SHA-256 and invokes a service-only
+finalizer using the verified actor. This is not malware scanning, authenticity
+verification or proof of admissibility; virus scan remains pending. Parent grants
+require a current case-linked family_members identity, a reason, expiry and an
+explicit acknowledgement that the original, including embedded metadata, is being
+disclosed. carer_media_review_events retains decisions and previews. Originals
+remain on withdrawal; legal holds are respected. New previews require current
+access; previously issued private preview URLs can survive up to 60 seconds.
+Already delivered copies cannot be recalled. Automatic redaction is not implemented.
+
+Privileged implementations live in non-exposed carer_journal_private,
+carer_communication_private and carer_media_private schemas with empty search paths.
+Public RPCs are SECURITY INVOKER gateways with explicit execution grants. Clients
+cannot submit their own actor, approval, hash or sharing state. Restrictive policies
+and source guards supplement legacy permissive policies. Review privileged legacy
+readers and the complete migration history before rollout; an isolated fixture is
+not a deployed authorization proof. None of these candidates has been applied to
+staging or production by this change.
+
 ## 8. Document-intelligence model
 
 SafeSteps has two document workflows. Their records have different identities and cannot be merged by renaming a table.
