@@ -1,0 +1,2695 @@
+{
+  "date": "2026-10-13",
+  "project": "kwhjxggxffphknzxmtrf",
+  "type": "security",
+  "status": "Findings collected; remediation and acceptance remain open.",
+  "groups": [
+    {
+      "name": "rls_enabled_no_policy",
+      "level": "INFO",
+      "count": 203,
+      "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy",
+      "findings": [
+        {
+          "detail": "Table \\`public.activities\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "activities",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.adult_participants\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "adult_participants",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_backup_records\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_backup_records",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_backup_restore_tests\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_backup_restore_tests",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_budget_status_snapshots\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_budget_status_snapshots",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_canary_release_stages\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_canary_release_stages",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_canary_releases\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_canary_releases",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_candidate_model_build_reviews\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_candidate_model_build_reviews",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_candidate_model_builds\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_candidate_model_builds",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_capacity_forecasts\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_capacity_forecasts",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_change_approvals\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_change_approvals",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_change_evaluation_plans\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_change_evaluation_plans",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_change_post_release_reviews\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_change_post_release_reviews",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_change_release_decisions\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_change_release_decisions",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_change_rollback_plans\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_change_rollback_plans",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_cost_allocations\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_cost_allocations",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_cost_events\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_cost_events",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_disaster_recovery_exercises\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_disaster_recovery_exercises",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_experiment_assignments\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_experiment_assignments",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_fallback_activations\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_fallback_activations",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_improvement_scorecards\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_improvement_scorecards",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_knowledge_supersession_records\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_knowledge_supersession_records",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_longitudinal_quality_snapshots\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_longitudinal_quality_snapshots",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_machine_unlearning_actions\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_machine_unlearning_actions",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_maintenance_execution_events\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_maintenance_execution_events",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_operational_incident_links\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_operational_incident_links",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_operational_readiness_reviews\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_operational_readiness_reviews",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_operational_regions\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_operational_regions",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_ops_human_review_capacity_plans\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_ops_human_review_capacity_plans",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_ops_human_review_queue_snapshots\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_ops_human_review_queue_snapshots",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_prompt_rollbacks\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_prompt_rollbacks",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_provider_concentration_snapshots\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_provider_concentration_snapshots",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_provider_service_measurements\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_provider_service_measurements",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_provider_sla_assessments\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_provider_sla_assessments",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_runbook_executions\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_runbook_executions",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_service_capacity_profiles\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_service_capacity_profiles",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_service_failover_events\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_service_failover_events",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_service_failover_policies\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_service_failover_policies",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_service_fallback_configurations\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_service_fallback_configurations",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_shadow_comparison_results\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_shadow_comparison_results",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_shadow_deployments\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_shadow_deployments",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_workload_classes\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_workload_classes",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.ai_workload_queue_snapshots\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "ai_workload_queue_snapshots",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.assessment_behaviour_rating_items\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "assessment_behaviour_rating_items",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.assessment_responses_structured\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "assessment_responses_structured",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.assessment_score_overrides\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "assessment_score_overrides",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.care_arrangements\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "care_arrangements",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.case_barriers\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "case_barriers",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.case_legal_references\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "case_legal_references",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.case_note_visibility_grants\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "case_note_visibility_grants",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.case_orders\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "case_orders",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.case_reviews\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "case_reviews",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.case_status_history\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "case_status_history",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.case_strengths\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "case_strengths",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.casefiles\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "casefiles",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_achievement_awards_v20\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_achievement_awards_v20",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_activity_responses\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_activity_responses",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_complaint_responses\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_complaint_responses",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_consent_assent_records\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_consent_assent_records",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_content_safety_reviews\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_content_safety_reviews",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_decision_explanations\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_decision_explanations",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_experience_safety_signal_reviews\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_experience_safety_signal_reviews",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_friendly_safety_plans\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_friendly_safety_plans",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_game_session_participants\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_game_session_participants",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_game_sessions\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_game_sessions",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_goal_progress_records\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_goal_progress_records",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_journal_entries\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_journal_entries",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_learning_enrolments\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_learning_enrolments",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_notifications\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_notifications",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_personal_goals\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_personal_goals",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_platform_sessions\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_platform_sessions",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_privacy_decisions\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_privacy_decisions",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_record_corrections\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_record_corrections",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_record_shares\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_record_shares",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_session_support_events\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_session_support_events",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_storybook_pages\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_storybook_pages",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_strength_records\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_strength_records",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_support_request_responses\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_support_request_responses",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_task_responses\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_task_responses",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.child_visit_preferences\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "child_visit_preferences",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.collateral_report_records\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "collateral_report_records",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.court_bundle_exhibits\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "court_bundle_exhibits",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.court_report_assessment_packages\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "court_report_assessment_packages",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.crisis_audit_events\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "crisis_audit_events",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.curriculum\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "curriculum",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.delegated_authorities\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "delegated_authorities",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.direct_observation_sessions\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "direct_observation_sessions",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.domestic_violence_indicators\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "domestic_violence_indicators",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.dynamic_risk_assessment_items\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "dynamic_risk_assessment_items",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.emergency_access_events\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "emergency_access_events",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence_access_log\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence_access_log",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence_consents\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence_consents",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence_custody_events\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence_custody_events",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence_digital_signatures\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence_digital_signatures",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence_exports\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence_exports",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence_links\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence_links",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence_record_categories\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence_record_categories",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence_retention_events\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence_retention_events",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence_retention_policies\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence_retention_policies",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence_timeline_events\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence_timeline_events",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence_upload_batches\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence_upload_batches",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.evidence_verifications\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "evidence_verifications",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.family_address_links\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "family_address_links",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.family_addresses\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "family_addresses",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.family_contact_points\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "family_contact_points",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.family_relationship_history\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "family_relationship_history",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.forensic_scores\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "forensic_scores",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.guardianship_records\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "guardianship_records",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.home_visit_records\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "home_visit_records",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.household_memberships\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "household_memberships",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_activities\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_activities",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_activity_responses\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_activity_responses",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_assignments\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_assignments",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_badges\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_badges",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_certificate_requirements\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_certificate_requirements",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_certificates\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_certificates",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_challenge_completions\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_challenge_completions",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_challenge_evidence_requirements\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_challenge_evidence_requirements",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_competency_levels\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_competency_levels",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_competency_progress\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_competency_progress",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_completion_events\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_completion_events",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_content_blocks\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_content_blocks",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_content_outcome_links\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_content_outcome_links",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_course_frameworks\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_course_frameworks",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_course_modules\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_course_modules",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_course_progress\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_course_progress",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_cultural_profiles\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_cultural_profiles",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_daily_challenges\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_daily_challenges",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_enrolment_goals\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_enrolment_goals",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_evidence_reviews\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_evidence_reviews",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_evidence_tasks\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_evidence_tasks",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_family_activities\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_family_activities",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_interactive_activities\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_interactive_activities",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_journal_entries\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_journal_entries",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_knowledge_check_items\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_knowledge_check_items",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_knowledge_checks\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_knowledge_checks",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_lesson_activities\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_lesson_activities",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_lesson_competencies\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_lesson_competencies",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_lesson_evidence_tasks\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_lesson_evidence_tasks",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_lesson_quizzes\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_lesson_quizzes",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_lesson_reflections\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_lesson_reflections",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_lesson_scenarios\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_lesson_scenarios",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_lesson_screens\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_lesson_screens",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_lesson_videos\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_lesson_videos",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_module_weeks\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_module_weeks",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_modules\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_modules",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_monthly_programs\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_monthly_programs",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_paths\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_paths",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_pathway_items\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_pathway_items",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_program_courses\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_program_courses",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_program_progress\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_program_progress",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_progression_rules\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_progression_rules",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_quiz_answers\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_quiz_answers",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_quiz_attempts\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_quiz_attempts",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_quiz_questions\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_quiz_questions",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_quizzes\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_quizzes",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_reflection_prompts\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_reflection_prompts",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_reflection_responses\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_reflection_responses",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_scenario_steps\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_scenario_steps",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_scenarios\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_scenarios",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_screen_content_blocks\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_screen_content_blocks",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_screen_progress\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_screen_progress",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_storybooks\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_storybooks",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_video_lessons\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_video_lessons",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_video_segments\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_video_segments",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_videos\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_videos",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_week_lessons\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_week_lessons",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_weekly_missions\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_weekly_missions",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.learning_weeks\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "learning_weeks",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.longitudinal_outcome_snapshots\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "longitudinal_outcome_snapshots",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.mandatory_notifications\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "mandatory_notifications",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.media_analysis_jobs\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "media_analysis_jobs",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.media_authority_revocations\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "media_authority_revocations",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.media_case_scopes\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "media_case_scopes",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.media_evidence\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "media_evidence",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.media_evidence_grants\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "media_evidence_grants",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.media_files\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "media_files",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.media_findings\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "media_findings",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.media_frames\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "media_frames",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.media_hashes\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "media_hashes",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.media_metadata\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "media_metadata",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.media_reviews\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "media_reviews",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.media_transcripts\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "media_transcripts",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.parents\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "parents",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.permission_decision_logs\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "permission_decision_logs",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.progress\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "progress",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.report_jurisdiction_rules\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "report_jurisdiction_rules",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.report_template_sections\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "report_template_sections",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.report_templates\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "report_templates",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.restricted_media_incidents\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "restricted_media_incidents",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.reunification_readiness_assessments_v17\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "reunification_readiness_assessments_v17",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.reunification_readiness_panels\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "reunification_readiness_panels",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.safety_escalations\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "safety_escalations",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.security_permissions\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "security_permissions",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.security_roles\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "security_roles",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.static_risk_assessment_items\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "static_risk_assessment_items",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.temporary_access_grants\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "temporary_access_grants",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.user_role_assignments\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "user_role_assignments",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.user_settings\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "user_settings",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.welfare_checks\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "welfare_checks",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.worker_team_memberships\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "worker_team_memberships",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Table \\`public.worker_teams\\` has RLS enabled, but no policies exist",
+          "metadata": {
+            "name": "worker_teams",
+            "type": "table",
+            "schema": "public"
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        }
+      ]
+    },
+    {
+      "name": "anon_security_definer_function_executable",
+      "level": "WARN",
+      "count": 2,
+      "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0028_anon_security_definer_function_executable",
+      "findings": [
+        {
+          "detail": "Function `public.acknowledge_video_report_delivery(target_delivery_id uuid, acknowledgement_text text)` can be executed by the `anon` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/acknowledge_video_report_delivery`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "acknowledge_video_report_delivery",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_delivery_id uuid, acknowledgement_text text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.withdraw_parent_video_report_consent(target_authority_id uuid, withdrawal_reason text)` can be executed by the `anon` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/withdraw_parent_video_report_consent`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "withdraw_parent_video_report_consent",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_authority_id uuid, withdrawal_reason text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        }
+      ]
+    },
+    {
+      "name": "authenticated_security_definer_function_executable",
+      "level": "WARN",
+      "count": 74,
+      "remediation": "https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable",
+      "findings": [
+        {
+          "detail": "Function `public.acknowledge_video_report_delivery(target_delivery_id uuid, acknowledgement_text text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/acknowledge_video_report_delivery`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "acknowledge_video_report_delivery",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_delivery_id uuid, acknowledgement_text text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.assert_program_start_gate(target_case_id uuid, target_user_id uuid, target_program_id text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/assert_program_start_gate`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "assert_program_start_gate",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_case_id uuid, target_user_id uuid, target_program_id text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_access_video_report(target_parent_user_id uuid, requested_scope text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_access_video_report`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_access_video_report",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_parent_user_id uuid, requested_scope text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_finalise_case_decision_v19(p_decision_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_finalise_case_decision_v19`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_finalise_case_decision_v19",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_decision_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_manage_case(p_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_manage_case`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_manage_case",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_manage_evidence(p_evidence_record_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_manage_evidence`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_manage_evidence",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_evidence_record_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_manage_family(p_tenant_id uuid, p_family_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_manage_family`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_manage_family",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_tenant_id uuid, p_family_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_manage_report_recipients(target_report_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_manage_report_recipients`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_manage_report_recipients",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_report_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_manage_safety(p_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_manage_safety`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_manage_safety",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_read_report(p_report_id uuid, p_user_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_read_report`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_read_report",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_report_id uuid, p_user_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_review_child_disclosure(p_disclosure_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_review_child_disclosure`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_review_child_disclosure",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_disclosure_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_review_weapon_detection(p_detection_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_review_weapon_detection`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_review_weapon_detection",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_detection_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_transfer_case_v19(p_transfer_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_transfer_case_v19`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_transfer_case_v19",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_transfer_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_view_case_note(p_case_note_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_view_case_note`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_view_case_note",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_case_note_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.can_write_report(p_report_id uuid, p_user_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/can_write_report`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "can_write_report",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_report_id uuid, p_user_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.case_has_linked_professional(target_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/case_has_linked_professional`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "case_has_linked_professional",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.child_case_id(target_child_user_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/child_case_id`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "child_case_id",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_child_user_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.community_referral_needs_follow_up(p_referral_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/community_referral_needs_follow_up`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "community_referral_needs_follow_up",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_referral_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.complete_case_intake(target_case_id uuid, target_assessment_id uuid, intake_answers jsonb, completed_section_count integer, total_section_count integer)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/complete_case_intake`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "complete_case_intake",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_case_id uuid, target_assessment_id uuid, intake_answers jsonb, completed_section_count integer, total_section_count integer",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.complete_parent_intake(target_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/complete_parent_intake`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "complete_parent_intake",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.confirm_program_recommendation(target_case_id uuid, target_program_id text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/confirm_program_recommendation`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "confirm_program_recommendation",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_case_id uuid, target_program_id text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.current_user_can_view_program(target_program_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/current_user_can_view_program`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "current_user_can_view_program",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_program_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.current_user_has_role(role_name text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/current_user_has_role`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "current_user_has_role",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "role_name text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.ensure_parent_intake_case()` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/ensure_parent_intake_case`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "ensure_parent_intake_case",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.get_child_case_share_context(target_child_user_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_child_case_share_context`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "get_child_case_share_context",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_child_user_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.get_my_case_access_grant(target_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/get_my_case_access_grant`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "get_my_case_access_grant",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.has_active_video_report_authority(target_parent_user_id uuid, target_user_id uuid, requested_scope text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/has_active_video_report_authority`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "has_active_video_report_authority",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_parent_user_id uuid, target_user_id uuid, requested_scope text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.has_case_access(p_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/has_case_access`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "has_case_access",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.has_case_permission(p_user_id uuid, p_case_id uuid, p_permission_code text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/has_case_permission`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "has_case_permission",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_case_id uuid, p_permission_code text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.has_evidence_access(p_evidence_record_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/has_evidence_access`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "has_evidence_access",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_evidence_record_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.has_permission(p_tenant_id uuid, p_permission_code text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/has_permission`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "has_permission",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_tenant_id uuid, p_permission_code text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.has_resource_permission(p_user_id uuid, p_resource_type text, p_resource_id uuid, p_permission_code text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/has_resource_permission`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "has_resource_permission",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_resource_type text, p_resource_id uuid, p_permission_code text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.has_role(p_tenant_id uuid, p_role_code text, p_scope_type text, p_scope_reference uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/has_role`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "has_role",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_tenant_id uuid, p_role_code text, p_scope_type text, p_scope_reference uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.has_safety_access(p_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/has_safety_access`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "has_safety_access",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.has_tenant_access(p_tenant_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/has_tenant_access`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "has_tenant_access",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_tenant_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.is_active_guardian(p_child_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/is_active_guardian`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "is_active_guardian",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_child_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.is_case_supervisor(p_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/is_case_supervisor`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "is_case_supervisor",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.is_case_team_member(p_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/is_case_team_member`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "is_case_team_member",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.is_case_worker(p_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/is_case_worker`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "is_case_worker",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.is_child_subject(p_child_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/is_child_subject`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "is_child_subject",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_child_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.is_family_member(p_family_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/is_family_member`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "is_family_member",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_family_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.is_video_admin(required_roles text[])` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/is_video_admin`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "is_video_admin",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "required_roles text[]",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.record_sensitive_action(target_case_id uuid, target_action text, target_resource_type text, target_resource_id uuid, target_outcome text, target_metadata jsonb)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/record_sensitive_action`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "record_sensitive_action",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_case_id uuid, target_action text, target_resource_type text, target_resource_id uuid, target_outcome text, target_metadata jsonb",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.review_case_intake(target_case_id uuid, next_reviewer_state text, next_reviewer_notes text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/review_case_intake`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "review_case_intake",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_case_id uuid, next_reviewer_state text, next_reviewer_notes text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_auth_profile_id()` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_auth_profile_id`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_auth_profile_id",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_auth_role()` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_auth_role`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_auth_role",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_access_case_v19(p_user_id uuid, p_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_access_case_v19`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_access_case_v19",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_access_community_referral(p_user_id uuid, p_referral_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_access_community_referral`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_access_community_referral",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_referral_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_access_platform_tenant_config(p_user_id uuid, p_tenant_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_access_platform_tenant_config`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_access_platform_tenant_config",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_tenant_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_admin_organisation(p_user_id uuid, p_organisation_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_admin_organisation`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_admin_organisation",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_organisation_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_manage_ai_evaluation(p_user_id uuid, p_organisation_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_manage_ai_evaluation`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_manage_ai_evaluation",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_organisation_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_manage_ai_explainability(p_user_id uuid, p_organisation_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_manage_ai_explainability`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_manage_ai_explainability",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_organisation_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_manage_ai_governance(p_user_id uuid, p_organisation_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_manage_ai_governance`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_manage_ai_governance",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_organisation_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_manage_ai_learning(p_user_id uuid, p_organisation_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_manage_ai_learning`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_manage_ai_learning",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_organisation_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_manage_ai_model_lifecycle(p_user_id uuid, p_organisation_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_manage_ai_model_lifecycle`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_manage_ai_model_lifecycle",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_organisation_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_manage_ai_operations(p_user_id uuid, p_organisation_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_manage_ai_operations`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_manage_ai_operations",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_organisation_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_manage_ai_prompt_workflow(p_user_id uuid, p_organisation_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_manage_ai_prompt_workflow`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_manage_ai_prompt_workflow",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_organisation_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_manage_casework(p_user_id uuid, p_organisation_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_manage_casework`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_manage_casework",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_organisation_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_manage_community_services(p_user_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_manage_community_services`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_manage_community_services",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_manage_platform_tenant(p_user_id uuid, p_tenant_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_manage_platform_tenant`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_manage_platform_tenant",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_tenant_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_can_worker_access_child_v20(p_user_id uuid, p_child_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_can_worker_access_child_v20`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_can_worker_access_child_v20",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_child_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_has_case_access(target_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_has_case_access`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_has_case_access",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_is_active_member(target_user_id uuid, target_organisation_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_is_active_member`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_is_active_member",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_user_id uuid, target_organisation_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_is_ai_governance_member(p_user_id uuid, p_governance_body_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_is_ai_governance_member`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_is_ai_governance_member",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_governance_body_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.safesteps_is_child_account_user_v20(p_user_id uuid, p_child_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/safesteps_is_child_account_user_v20`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "safesteps_is_child_account_user_v20",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "p_user_id uuid, p_child_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.save_co_occurring_assessment_v1(target_case_id uuid, target_stream text, target_subject_reference text, target_responses jsonb, target_response_notes jsonb, target_metadata jsonb)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/save_co_occurring_assessment_v1`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "save_co_occurring_assessment_v1",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_case_id uuid, target_stream text, target_subject_reference text, target_responses jsonb, target_response_notes jsonb, target_metadata jsonb",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.save_parent_intake_step(target_case_id uuid, section_key text, section_answers jsonb, section_complete boolean, next_section_key text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/save_parent_intake_step`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "save_parent_intake_step",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_case_id uuid, section_key text, section_answers jsonb, section_complete boolean, next_section_key text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.start_program_enrollment(target_case_id uuid, target_program_id text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/start_program_enrollment`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "start_program_enrollment",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_case_id uuid, target_program_id text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.user_can_manage_child_private(target_child_user_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/user_can_manage_child_private`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "user_can_manage_child_private",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_child_user_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.user_can_view_child_private(target_child_user_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/user_can_view_child_private`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "user_can_view_child_private",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_child_user_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.user_has_active_case_membership(target_case_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/user_has_active_case_membership`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "user_has_active_case_membership",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_case_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.user_has_active_child_record_share(target_record_id uuid)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/user_has_active_child_record_share`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "user_has_active_child_record_share",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_record_id uuid",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.user_has_case_role(target_case_id uuid, allowed_roles text[])` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/user_has_case_role`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "user_has_case_role",
+            "schema": "public",
+            "language": "sql",
+            "arguments": "target_case_id uuid, allowed_roles text[]",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        },
+        {
+          "detail": "Function `public.withdraw_parent_video_report_consent(target_authority_id uuid, withdrawal_reason text)` can be executed by the `authenticated` role as a `SECURITY DEFINER` function via `/rest/v1/rpc/withdraw_parent_video_report_consent`. Revoke `EXECUTE` or switch it to `SECURITY INVOKER` if that is not intentional.",
+          "metadata": {
+            "name": "withdraw_parent_video_report_consent",
+            "schema": "public",
+            "language": "plpgsql",
+            "arguments": "target_authority_id uuid, withdrawal_reason text",
+            "security_definer": true
+          },
+          "observed_at": "2026-10-13T10:13:43.622Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3763 @@
+{
+  "observedDate": "2026-10-13",
+  "scope": "Read-only deployed migration-history SQL recovery. Not a schema baseline or authorization/deployment approval.",
+  "projects": {
+    "yzxotxbwgxnxemkzigse": {
+      "history": [
+        {
+          "version": "20260619124944",
+          "name": "init_schema",
+          "statement_count": 4
+        },
+        {
+          "version": "20260619125732",
+          "name": "init_schema",
+          "statement_count": 5
+        },
+        {
+          "version": "20260619125937",
+          "name": "init_schema",
+          "statement_count": null
+        },
+        {
+          "version": "20260619130549",
+          "name": "auth_user_trigger",
+          "statement_count": 2
+        },
+        {
+          "version": "20260619142815",
+          "name": "rls_policies",
+          "statement_count": null
+        },
+        {
+          "version": "20260619142937",
+          "name": "rls_policies",
+          "statement_count": null
+        },
+        {
+          "version": "20260622181621",
+          "name": "create_intake_forms",
+          "statement_count": null
+        },
+        {
+          "version": "20260623160457",
+          "name": "rls_policies",
+          "statement_count": null
+        },
+        {
+          "version": "20260627135113",
+          "name": "safesteps_core_platform",
+          "statement_count": 39
+        },
+        {
+          "version": "20260627140522",
+          "name": "evidence_storage",
+          "statement_count": 9
+        },
+        {
+          "version": "20260627141307",
+          "name": "assessment_progress_check",
+          "statement_count": 16
+        },
+        {
+          "version": "20260627142023",
+          "name": "richer_tasks",
+          "statement_count": 4
+        },
+        {
+          "version": "20260627143629",
+          "name": "profile_story_fields",
+          "statement_count": 3
+        },
+        {
+          "version": "20260629061241",
+          "name": "program_reflections",
+          "statement_count": 10
+        },
+        {
+          "version": "20260629195506",
+          "name": "bulk_platform_tables",
+          "statement_count": 144
+        },
+        {
+          "version": "20260630140347",
+          "name": "child_section_privacy",
+          "statement_count": 105
+        },
+        {
+          "version": "20260701225859",
+          "name": "assessment_data_model",
+          "statement_count": 171
+        },
+        {
+          "version": "20260702081721",
+          "name": "assessment_case_setup_fields",
+          "statement_count": 2
+        },
+        {
+          "version": "20260703055727",
+          "name": "lock_down_remote_drift_security",
+          "statement_count": 3
+        },
+        {
+          "version": "20260703060240",
+          "name": "add_parent_case_subsections",
+          "statement_count": 12
+        },
+        {
+          "version": "20260703061540",
+          "name": "add_relationship_assessment_layer",
+          "statement_count": 22
+        },
+        {
+          "version": "20260705031629",
+          "name": "parent_child_responses",
+          "statement_count": 12
+        },
+        {
+          "version": "20260706051903",
+          "name": "expand_evidence_upload_types",
+          "statement_count": 1
+        },
+        {
+          "version": "20260706124802",
+          "name": "parent_child_monitoring_messages",
+          "statement_count": 15
+        },
+        {
+          "version": "20260707053131",
+          "name": "create_challenges_bucket",
+          "statement_count": 1
+        },
+        {
+          "version": "20260712143553",
+          "name": "seed_safesteps_protective_capacity_assessment",
+          "statement_count": 7
+        },
+        {
+          "version": "20260712171004",
+          "name": "forensic_evidence_audit",
+          "statement_count": 18
+        },
+        {
+          "version": "20260712173337",
+          "name": "safety_alert_notification_rules",
+          "statement_count": 4
+        },
+        {
+          "version": "20260712174720",
+          "name": "session_management_foundation",
+          "statement_count": 12
+        },
+        {
+          "version": "20260712175500",
+          "name": "document_management_foundation",
+          "statement_count": 29
+        },
+        {
+          "version": "20260712180057",
+          "name": "service_referral_tracking",
+          "statement_count": 8
+        },
+        {
+          "version": "20260713020205",
+          "name": "enforce_assessment_immutability",
+          "statement_count": 13
+        },
+        {
+          "version": "20260713103000",
+          "name": "seed_required_intake_assessment",
+          "statement_count": 2
+        },
+        {
+          "version": "20260715085349",
+          "name": "court_report_snapshots",
+          "statement_count": null
+        },
+        {
+          "version": "20260715115900",
+          "name": "uuid_min_migration_compat",
+          "statement_count": 2
+        },
+        {
+          "version": "20260715120000",
+          "name": "sensitive_access_control_and_audit",
+          "statement_count": 88
+        },
+        {
+          "version": "20260715121500",
+          "name": "sensitive_action_audit_triggers",
+          "statement_count": 14
+        },
+        {
+          "version": "20260715122000",
+          "name": "remove_uuid_min_migration_compat",
+          "statement_count": 2
+        },
+        {
+          "version": "20260715122500",
+          "name": "child_permission_boundary_hardening",
+          "statement_count": 54
+        },
+        {
+          "version": "20260715140000",
+          "name": "intake_program_start_gate",
+          "statement_count": 30
+        },
+        {
+          "version": "20260716033944",
+          "name": "structured_evidence_workflows",
+          "statement_count": 4
+        },
+        {
+          "version": "20260716071701",
+          "name": "repair_court_report_snapshots",
+          "statement_count": 15
+        },
+        {
+          "version": "20260716091243",
+          "name": "add_court_report_supervisor_approvals",
+          "statement_count": 14
+        },
+        {
+          "version": "20260719091500",
+          "name": "add_representation_preferences",
+          "statement_count": 1
+        },
+        {
+          "version": "20260721083000",
+          "name": "reunification_stage_quests_achievements",
+          "statement_count": 68
+        },
+        {
+          "version": "20260721084500",
+          "name": "reunification_role_rls_policies",
+          "statement_count": 84
+        },
+        {
+          "version": "20260721093000",
+          "name": "seed_safesteps_parenting_multiple_choice_assessment",
+          "statement_count": 8
+        },
+        {
+          "version": "20260721094000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_021_076",
+          "statement_count": 3
+        },
+        {
+          "version": "20260721095000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_081_100",
+          "statement_count": 2
+        },
+        {
+          "version": "20260721101500",
+          "name": "seed_safesteps_parenting_multiple_choice_items_101_115",
+          "statement_count": 2
+        },
+        {
+          "version": "20260721103000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_121_140",
+          "statement_count": 2
+        },
+        {
+          "version": "20260721104500",
+          "name": "seed_safesteps_parenting_multiple_choice_items_141_160",
+          "statement_count": 2
+        },
+        {
+          "version": "20260721110000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_161_163",
+          "statement_count": 2
+        },
+        {
+          "version": "20260721111500",
+          "name": "seed_safesteps_parenting_fill_blank_quiz",
+          "statement_count": 4
+        },
+        {
+          "version": "20260721113000",
+          "name": "seed_safesteps_parenting_fill_blank_quiz_items_021_120",
+          "statement_count": 3
+        },
+        {
+          "version": "20260721114500",
+          "name": "seed_safesteps_parenting_domain_fill_blank_quiz",
+          "statement_count": 4
+        },
+        {
+          "version": "20260721120000",
+          "name": "seed_safesteps_parenting_domain_fill_blank_items_081_100",
+          "statement_count": 3
+        },
+        {
+          "version": "20260721121000",
+          "name": "identity_roles_permissions_reporting_foundation",
+          "statement_count": 166
+        },
+        {
+          "version": "20260721121200",
+          "name": "identity_security_operations_foundation",
+          "statement_count": 64
+        },
+        {
+          "version": "20260721121300",
+          "name": "ai_governance_foundation",
+          "statement_count": 70
+        },
+        {
+          "version": "20260721121500",
+          "name": "seed_safesteps_parenting_domain_fill_blank_items_101_141",
+          "statement_count": 3
+        },
+        {
+          "version": "20260721123000",
+          "name": "seed_safesteps_parenting_domain_fill_blank_items_201_240_401_440",
+          "statement_count": 3
+        },
+        {
+          "version": "20260721124500",
+          "name": "seed_safesteps_sequence_assessment_items",
+          "statement_count": 10
+        },
+        {
+          "version": "20260721130000",
+          "name": "seed_safesteps_sequence_assessment_block_1",
+          "statement_count": 10
+        },
+        {
+          "version": "20260721131500",
+          "name": "seed_safesteps_sequence_assessment_block_2",
+          "statement_count": 10
+        },
+        {
+          "version": "20260721133000",
+          "name": "seed_safesteps_sequence_assessment_block_3_and_bulk_151_250",
+          "statement_count": 10
+        },
+        {
+          "version": "20260721133454",
+          "name": "safesteps_assessment_enums",
+          "statement_count": null
+        },
+        {
+          "version": "20260721133455",
+          "name": "safesteps_assessment_templates_delivery",
+          "statement_count": null
+        },
+        {
+          "version": "20260721133456",
+          "name": "safesteps_competency_framework",
+          "statement_count": null
+        },
+        {
+          "version": "20260721133548",
+          "name": "safesteps_assessment_enums",
+          "statement_count": null
+        },
+        {
+          "version": "20260721133549",
+          "name": "safesteps_assessment_templates_delivery",
+          "statement_count": null
+        },
+        {
+          "version": "20260721133550",
+          "name": "safesteps_competency_framework",
+          "statement_count": null
+        },
+        {
+          "version": "20260721133551",
+          "name": "safesteps_scoring_rubrics_reviews_evidence",
+          "statement_count": null
+        },
+        {
+          "version": "20260721134500",
+          "name": "seed_safesteps_sequence_assessment_bulk_151_250_drs019_srs013",
+          "statement_count": 10
+        },
+        {
+          "version": "20260721150213",
+          "name": "ai_model_registry_lifecycle",
+          "statement_count": 46
+        },
+        {
+          "version": "20260721150617",
+          "name": "ai_prompt_workflow_governance",
+          "statement_count": 48
+        },
+        {
+          "version": "20260721151044",
+          "name": "ai_governance_remaining_foundations",
+          "statement_count": 83
+        },
+        {
+          "version": "20260721160745",
+          "name": "ai_model_assurance_volume2_details",
+          "statement_count": 30
+        },
+        {
+          "version": "20260721161700",
+          "name": "ai_prompt_retrieval_workflow_volume3",
+          "statement_count": 102
+        },
+        {
+          "version": "20260721162559",
+          "name": "ai_prompt_retrieval_workflow_volume3_completion",
+          "statement_count": 51
+        },
+        {
+          "version": "20260721164446",
+          "name": "ai_evaluation_validation_release_assurance_volume5",
+          "statement_count": 123
+        },
+        {
+          "version": "20260721165502",
+          "name": "ai_explainability_transparency_contestability_volume6",
+          "statement_count": 101
+        },
+        {
+          "version": "20260721170458",
+          "name": "ai_explainability_contestability_volume6_completion",
+          "statement_count": 82
+        },
+        {
+          "version": "20260721173335",
+          "name": "ai_continuous_learning_change_management_volume10",
+          "statement_count": 144
+        },
+        {
+          "version": "20260721174116",
+          "name": "ai_continuous_learning_volume10_completion",
+          "statement_count": 143
+        },
+        {
+          "version": "20260721180934",
+          "name": "ai_operations_centre_reliability_service_management_volume11",
+          "statement_count": 152
+        },
+        {
+          "version": "20260721184924",
+          "name": "parenting_child_development_learning_engine_volume16",
+          "statement_count": 129
+        },
+        {
+          "version": "20260721190229",
+          "name": "parenting_child_development_learning_engine_volume16_completion",
+          "statement_count": 198
+        },
+        {
+          "version": "20260721192516",
+          "name": "assessment_evidence_reunification_framework_volume17",
+          "statement_count": 103
+        },
+        {
+          "version": "20260721200806",
+          "name": "case_management_platform_volume19",
+          "statement_count": 113
+        },
+        {
+          "version": "20260721205718",
+          "name": "child_experience_platform_volume20",
+          "statement_count": 122
+        },
+        {
+          "version": "20260721230904",
+          "name": "community_services_platform_volume21",
+          "statement_count": 91
+        },
+        {
+          "version": "20260721232009",
+          "name": "white_label_multi_tenant_platform_volume23",
+          "statement_count": 145
+        },
+        {
+          "version": "202607220001",
+          "name": "extensions",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220002",
+          "name": "platform_tenants",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220003",
+          "name": "organisations",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220004",
+          "name": "profiles",
+          "statement_count": 7
+        },
+        {
+          "version": "202607220005",
+          "name": "tenant_memberships",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220006",
+          "name": "permissions",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220007",
+          "name": "role_assignments",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220008",
+          "name": "tenant_context",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220009",
+          "name": "audit_foundation",
+          "statement_count": 14
+        },
+        {
+          "version": "202607220010",
+          "name": "rls_foundation",
+          "statement_count": 42
+        },
+        {
+          "version": "202607220011",
+          "name": "foundation_seed",
+          "statement_count": 8
+        },
+        {
+          "version": "202607220012",
+          "name": "family_foundation_schema",
+          "statement_count": 27
+        },
+        {
+          "version": "202607220013",
+          "name": "family_foundation_functions",
+          "statement_count": 29
+        },
+        {
+          "version": "202607220014",
+          "name": "family_foundation_rls_audit_seed",
+          "statement_count": 62
+        },
+        {
+          "version": "202607220025",
+          "name": "case_definitions",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220026",
+          "name": "cases",
+          "statement_count": 17
+        },
+        {
+          "version": "202607220027",
+          "name": "case_participants",
+          "statement_count": 8
+        },
+        {
+          "version": "202607220028",
+          "name": "worker_teams",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220029",
+          "name": "case_allocations",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220030",
+          "name": "case_status_history",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220031",
+          "name": "case_plans",
+          "statement_count": 7
+        },
+        {
+          "version": "202607220032",
+          "name": "case_goals_and_actions",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220033",
+          "name": "case_milestones_barriers_strengths",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220034",
+          "name": "case_reviews",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220035",
+          "name": "case_notes",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220036",
+          "name": "case_legal_references",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220037",
+          "name": "case_access_functions",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220038",
+          "name": "case_rls",
+          "statement_count": 56
+        },
+        {
+          "version": "202607220039",
+          "name": "case_views",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220040",
+          "name": "case_audit_triggers",
+          "statement_count": 24
+        },
+        {
+          "version": "202607220041",
+          "name": "case_seed",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220042",
+          "name": "safety_plans",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220043",
+          "name": "safety_plan_versions",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220044",
+          "name": "safety_plan_participants",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220045",
+          "name": "protective_factors",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220046",
+          "name": "risk_factors",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220047",
+          "name": "risk_assessments",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220048",
+          "name": "risk_indicators",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220049",
+          "name": "safety_alerts",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220050",
+          "name": "incidents",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220051",
+          "name": "crisis_events",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220052",
+          "name": "weapon_detection",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220053",
+          "name": "missing_child",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220054",
+          "name": "emergency_contacts",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220055",
+          "name": "child_disclosures",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220056",
+          "name": "escalation_workflows",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220057",
+          "name": "safety_access",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220058",
+          "name": "safety_rls",
+          "statement_count": 88
+        },
+        {
+          "version": "202607220059",
+          "name": "safety_views",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220060",
+          "name": "safety_seed",
+          "statement_count": 16
+        },
+        {
+          "version": "202607220061",
+          "name": "evidence_records",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220062",
+          "name": "evidence_files",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220063",
+          "name": "evidence_metadata",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220064",
+          "name": "evidence_categories",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220065",
+          "name": "evidence_links",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220066",
+          "name": "evidence_chain_of_custody",
+          "statement_count": 7
+        },
+        {
+          "version": "202607220067",
+          "name": "evidence_verification",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220068",
+          "name": "evidence_ai_analysis",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220069",
+          "name": "evidence_redactions",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220070",
+          "name": "court_bundles",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220071",
+          "name": "evidence_retention",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220072",
+          "name": "evidence_access",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220073",
+          "name": "evidence_rls",
+          "statement_count": 59
+        },
+        {
+          "version": "202607220074",
+          "name": "evidence_views",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220075",
+          "name": "evidence_seed",
+          "statement_count": 11
+        },
+        {
+          "version": "20260726083830",
+          "name": "revoke_anon_security_definer_execute",
+          "statement_count": 4
+        },
+        {
+          "version": "20260726091549",
+          "name": "harden_function_search_paths",
+          "statement_count": 23
+        },
+        {
+          "version": "20260726092438",
+          "name": "revoke_authenticated_internal_trigger_functions",
+          "statement_count": 8
+        },
+        {
+          "version": "20260726092753",
+          "name": "move_extensions_out_of_public",
+          "statement_count": 8
+        },
+        {
+          "version": "20260726093937",
+          "name": "revoke_authenticated_standalone_ai_helper_functions",
+          "statement_count": 9
+        },
+        {
+          "version": "20260727003556",
+          "name": "revoke_authenticated_internal_predicate_helpers",
+          "statement_count": 41
+        },
+        {
+          "version": "20260727005501",
+          "name": "revoke_authenticated_unused_action_helpers",
+          "statement_count": 3
+        },
+        {
+          "version": "20260729080221",
+          "name": "parent_onboarding_consent",
+          "statement_count": 9
+        },
+        {
+          "version": "20260729104323",
+          "name": "parent_intake_save_resume",
+          "statement_count": 11
+        },
+        {
+          "version": "20260730190000",
+          "name": "final_backend_integration",
+          "statement_count": 25
+        },
+        {
+          "version": "20260807175333",
+          "name": "parent_program_recommendation",
+          "statement_count": 1
+        },
+        {
+          "version": "20260807215141",
+          "name": "restrict_assessment_role_helper_execute",
+          "statement_count": 1
+        },
+        {
+          "version": "20260807220851",
+          "name": "production_lesson_player",
+          "statement_count": 1
+        },
+        {
+          "version": "20260807220915",
+          "name": "restrict_lesson_responses_authenticated_grants",
+          "statement_count": 1
+        },
+        {
+          "version": "20260807225535",
+          "name": "contact_progression_case_model",
+          "statement_count": 1
+        },
+        {
+          "version": "20260808031924",
+          "name": "child_v1_share_context",
+          "statement_count": 1
+        },
+        {
+          "version": "20260809080900",
+          "name": "evidence_v1_worker_review",
+          "statement_count": 1
+        },
+        {
+          "version": "20260809112645",
+          "name": "revoke_unpolicied_data_api_grants",
+          "statement_count": 1
+        },
+        {
+          "version": "20260809113135",
+          "name": "harden_video_function_search_paths",
+          "statement_count": 1
+        },
+        {
+          "version": "20260809113953",
+          "name": "restrict_video_notification_enqueue_to_service_role",
+          "statement_count": 1
+        },
+        {
+          "version": "20260809233840",
+          "name": "restrict_video_report_builder_to_trusted_callers",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810002517",
+          "name": "enforce_video_delivery_acknowledgement_authorization",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810022348",
+          "name": "report_approval_release_v1",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810024925",
+          "name": "bind_report_access_helpers_to_session",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810025857",
+          "name": "bind_video_report_authority_helper_to_session",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810030254",
+          "name": "bind_case_permission_child_access_helpers_to_session",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810031203",
+          "name": "bind_organisation_tenant_community_helpers_to_session",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810031457",
+          "name": "bind_ai_casework_helpers_to_session",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810031615",
+          "name": "authorize_child_private_lookup_helpers",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810035900",
+          "name": "report_export_controls_v1",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810043406",
+          "name": "report_delivery_challenge_v1",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810043820",
+          "name": "harden_report_delivery_challenge_randomness_and_audit",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810043929",
+          "name": "qualify_report_delivery_pgcrypto_calls",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810120637",
+          "name": "restore_ai_child_feedback_foreign_key",
+          "statement_count": 1
+        },
+        {
+          "version": "20260810132514",
+          "name": "preserve_video_report_consent_withdrawal_reason",
+          "statement_count": 1
+        },
+        {
+          "version": "20260814144810",
+          "name": "governance_compliance_records",
+          "statement_count": 1
+        },
+        {
+          "version": "20260814145322",
+          "name": "risk_engine_review_snapshots",
+          "statement_count": 1
+        },
+        {
+          "version": "20260814155950",
+          "name": "parent_child_game_relationship_records",
+          "statement_count": 1
+        },
+        {
+          "version": "20260829181644",
+          "name": "harden_parent_video_report_consent_grant",
+          "statement_count": 1
+        }
+      ],
+      "targetOnlyRecovery": [
+        {
+          "version": "20260807175333",
+          "name": "parent_program_recommendation",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "yzxotxbwgxnxemkzigse/20260807175333_parent_program_recommendation.sql",
+          "sha256": "3be2be314ed7879935a311d3c6a3b7775e78844342b3bac32f76aa790ad31321"
+        },
+        {
+          "version": "20260807215141",
+          "name": "restrict_assessment_role_helper_execute",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "yzxotxbwgxnxemkzigse/20260807215141_restrict_assessment_role_helper_execute.sql",
+          "sha256": "eb8610d70cf7304b0c906f515b77e32be5358b0c104af71924a1602ccfa617bd"
+        },
+        {
+          "version": "20260807220851",
+          "name": "production_lesson_player",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "yzxotxbwgxnxemkzigse/20260807220851_production_lesson_player.sql",
+          "sha256": "d6575ef18d848dcaf28b5680fdb4017fb2b27d11d7ea4b905a1326ee2802ada8"
+        },
+        {
+          "version": "20260807220915",
+          "name": "restrict_lesson_responses_authenticated_grants",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "yzxotxbwgxnxemkzigse/20260807220915_restrict_lesson_responses_authenticated_grants.sql",
+          "sha256": "a8dab8f0df7f255cd508fb8f01e259dcf5bf166242386555f1325a6e1291ee54"
+        },
+        {
+          "version": "20260807225535",
+          "name": "contact_progression_case_model",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "yzxotxbwgxnxemkzigse/20260807225535_contact_progression_case_model.sql",
+          "sha256": "bf96a0e2a9736996b6c712dbde4ec2c5b9b32a3636495268e924114e4df512c0"
+        },
+        {
+          "version": "20260808031924",
+          "name": "child_v1_share_context",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "yzxotxbwgxnxemkzigse/20260808031924_child_v1_share_context.sql",
+          "sha256": "b28970b328f7b75f7c7c872e9dc194a89f8247bbe76c92167a588e2fff361ae9"
+        },
+        {
+          "version": "20260809080900",
+          "name": "evidence_v1_worker_review",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "yzxotxbwgxnxemkzigse/20260809080900_evidence_v1_worker_review.sql",
+          "sha256": "6d40ff549bd53ae973863ff5b385f21b467e2bdbc22bcbb1200fbd136078a990"
+        },
+        {
+          "version": "20260810022348",
+          "name": "report_approval_release_v1",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "yzxotxbwgxnxemkzigse/20260810022348_report_approval_release_v1.sql",
+          "sha256": "fbffcbd0fcebb3663d3a61c3ced449f86c9d2050bc9776b1e0e10bb3cd5ac447"
+        },
+        {
+          "version": "20260810031457",
+          "name": "bind_ai_casework_helpers_to_session",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "yzxotxbwgxnxemkzigse/20260810031457_bind_ai_casework_helpers_to_session.sql",
+          "sha256": "b6e0c973e166ba70a61872b60f0a99dc6a51469fe30fa1249db6d3e21ff0680d"
+        },
+        {
+          "version": "20260810031615",
+          "name": "authorize_child_private_lookup_helpers",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "yzxotxbwgxnxemkzigse/20260810031615_authorize_child_private_lookup_helpers.sql",
+          "sha256": "dba851094108d59a758d1ea48f434816c86e1ff633b916bdeda31cd44b187827"
+        },
+        {
+          "version": "20260810035900",
+          "name": "report_export_controls_v1",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "yzxotxbwgxnxemkzigse/20260810035900_report_export_controls_v1.sql",
+          "sha256": "32196e9f363b9c798a7646a1f88930f075eefea66e35a37a913d66bebd6c4237"
+        },
+        {
+          "version": "20260810043406",
+          "name": "report_delivery_challenge_v1",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "yzxotxbwgxnxemkzigse/20260810043406_report_delivery_challenge_v1.sql",
+          "sha256": "d85726611e25bc5d52b21f74d5a276429aa13e4de39a9053bdf0cd57a1f774b8"
+        }
+      ]
+    },
+    "kwhjxggxffphknzxmtrf": {
+      "history": [
+        {
+          "version": "20260619124944",
+          "name": "init_schema",
+          "statement_count": 4
+        },
+        {
+          "version": "20260619125732",
+          "name": "init_schema",
+          "statement_count": 5
+        },
+        {
+          "version": "20260619125937",
+          "name": "init_schema",
+          "statement_count": null
+        },
+        {
+          "version": "20260619130549",
+          "name": "auth_user_trigger",
+          "statement_count": 2
+        },
+        {
+          "version": "20260619142815",
+          "name": "remote_reconcile",
+          "statement_count": 1
+        },
+        {
+          "version": "20260619142937",
+          "name": "rls_policies",
+          "statement_count": null
+        },
+        {
+          "version": "20260622181621",
+          "name": "create_intake_forms",
+          "statement_count": null
+        },
+        {
+          "version": "20260623160457",
+          "name": "remote_reconcile",
+          "statement_count": 1
+        },
+        {
+          "version": "20260627135113",
+          "name": "safesteps_core_platform",
+          "statement_count": 39
+        },
+        {
+          "version": "20260627140522",
+          "name": "evidence_storage",
+          "statement_count": 9
+        },
+        {
+          "version": "20260627141307",
+          "name": "assessment_progress_check",
+          "statement_count": 16
+        },
+        {
+          "version": "20260627142023",
+          "name": "richer_tasks",
+          "statement_count": 4
+        },
+        {
+          "version": "20260627143629",
+          "name": "profile_story_fields",
+          "statement_count": 3
+        },
+        {
+          "version": "20260629061241",
+          "name": "program_reflections",
+          "statement_count": 10
+        },
+        {
+          "version": "20260629195506",
+          "name": "bulk_platform_tables",
+          "statement_count": 144
+        },
+        {
+          "version": "20260630140347",
+          "name": "child_section_privacy",
+          "statement_count": 105
+        },
+        {
+          "version": "20260701225859",
+          "name": "assessment_data_model",
+          "statement_count": 171
+        },
+        {
+          "version": "20260702081721",
+          "name": "assessment_case_setup_fields",
+          "statement_count": 2
+        },
+        {
+          "version": "20260703055727",
+          "name": "lock_down_remote_drift_security",
+          "statement_count": 3
+        },
+        {
+          "version": "20260703060240",
+          "name": "add_parent_case_subsections",
+          "statement_count": 12
+        },
+        {
+          "version": "20260703061540",
+          "name": "add_relationship_assessment_layer",
+          "statement_count": 22
+        },
+        {
+          "version": "20260705031629",
+          "name": "parent_child_responses",
+          "statement_count": 12
+        },
+        {
+          "version": "20260706051903",
+          "name": "expand_evidence_upload_types",
+          "statement_count": 1
+        },
+        {
+          "version": "20260706124802",
+          "name": "parent_child_monitoring_messages",
+          "statement_count": 15
+        },
+        {
+          "version": "20260707053131",
+          "name": "create_challenges_bucket",
+          "statement_count": 1
+        },
+        {
+          "version": "20260712143553",
+          "name": "seed_safesteps_protective_capacity_assessment",
+          "statement_count": 7
+        },
+        {
+          "version": "20260712171004",
+          "name": "forensic_evidence_audit",
+          "statement_count": 18
+        },
+        {
+          "version": "20260712173337",
+          "name": "safety_alert_notification_rules",
+          "statement_count": 4
+        },
+        {
+          "version": "20260712174720",
+          "name": "session_management_foundation",
+          "statement_count": 12
+        },
+        {
+          "version": "20260712175500",
+          "name": "document_management_foundation",
+          "statement_count": 29
+        },
+        {
+          "version": "20260712180057",
+          "name": "service_referral_tracking",
+          "statement_count": 8
+        },
+        {
+          "version": "20260713020205",
+          "name": "enforce_assessment_immutability",
+          "statement_count": 13
+        },
+        {
+          "version": "20260713103000",
+          "name": "seed_required_intake_assessment",
+          "statement_count": 2
+        },
+        {
+          "version": "20260715085349",
+          "name": "court_report_snapshots",
+          "statement_count": 15
+        },
+        {
+          "version": "20260715115900",
+          "name": "uuid_min_migration_compat",
+          "statement_count": 2
+        },
+        {
+          "version": "20260715120000",
+          "name": "sensitive_access_control_and_audit",
+          "statement_count": 88
+        },
+        {
+          "version": "20260715121500",
+          "name": "sensitive_action_audit_triggers",
+          "statement_count": 14
+        },
+        {
+          "version": "20260715122000",
+          "name": "remove_uuid_min_migration_compat",
+          "statement_count": 2
+        },
+        {
+          "version": "20260715122500",
+          "name": "child_permission_boundary_hardening",
+          "statement_count": 54
+        },
+        {
+          "version": "20260715140000",
+          "name": "intake_program_start_gate",
+          "statement_count": 30
+        },
+        {
+          "version": "20260716033944",
+          "name": "structured_evidence_workflows",
+          "statement_count": 4
+        },
+        {
+          "version": "20260716071701",
+          "name": "repair_court_report_snapshots",
+          "statement_count": 15
+        },
+        {
+          "version": "20260716091243",
+          "name": "add_court_report_supervisor_approvals",
+          "statement_count": 14
+        },
+        {
+          "version": "20260719091500",
+          "name": "add_representation_preferences",
+          "statement_count": 1
+        },
+        {
+          "version": "20260721083000",
+          "name": "reunification_stage_quests_achievements",
+          "statement_count": 68
+        },
+        {
+          "version": "20260721084500",
+          "name": "reunification_role_rls_policies",
+          "statement_count": 84
+        },
+        {
+          "version": "20260721093000",
+          "name": "seed_safesteps_parenting_multiple_choice_assessment",
+          "statement_count": 8
+        },
+        {
+          "version": "20260721094000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_021_076",
+          "statement_count": 3
+        },
+        {
+          "version": "20260721095000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_081_100",
+          "statement_count": 2
+        },
+        {
+          "version": "20260721101500",
+          "name": "seed_safesteps_parenting_multiple_choice_items_101_115",
+          "statement_count": 2
+        },
+        {
+          "version": "20260721103000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_121_140",
+          "statement_count": 2
+        },
+        {
+          "version": "20260721104500",
+          "name": "seed_safesteps_parenting_multiple_choice_items_141_160",
+          "statement_count": 2
+        },
+        {
+          "version": "20260721110000",
+          "name": "seed_safesteps_parenting_multiple_choice_items_161_163",
+          "statement_count": 2
+        },
+        {
+          "version": "20260721111500",
+          "name": "seed_safesteps_parenting_fill_blank_quiz",
+          "statement_count": 4
+        },
+        {
+          "version": "20260721113000",
+          "name": "seed_safesteps_parenting_fill_blank_quiz_items_021_120",
+          "statement_count": 3
+        },
+        {
+          "version": "20260721114500",
+          "name": "seed_safesteps_parenting_domain_fill_blank_quiz",
+          "statement_count": 4
+        },
+        {
+          "version": "20260721120000",
+          "name": "seed_safesteps_parenting_domain_fill_blank_items_081_100",
+          "statement_count": 3
+        },
+        {
+          "version": "20260721121000",
+          "name": "identity_roles_permissions_reporting_foundation",
+          "statement_count": 166
+        },
+        {
+          "version": "20260721121200",
+          "name": "identity_security_operations_foundation",
+          "statement_count": 64
+        },
+        {
+          "version": "20260721121300",
+          "name": "ai_governance_foundation",
+          "statement_count": 70
+        },
+        {
+          "version": "20260721121500",
+          "name": "seed_safesteps_parenting_domain_fill_blank_items_101_141",
+          "statement_count": 3
+        },
+        {
+          "version": "20260721123000",
+          "name": "seed_safesteps_parenting_domain_fill_blank_items_201_240_401_440",
+          "statement_count": 3
+        },
+        {
+          "version": "20260721124500",
+          "name": "seed_safesteps_sequence_assessment_items",
+          "statement_count": 10
+        },
+        {
+          "version": "20260721130000",
+          "name": "seed_safesteps_sequence_assessment_block_1",
+          "statement_count": 10
+        },
+        {
+          "version": "20260721131500",
+          "name": "seed_safesteps_sequence_assessment_block_2",
+          "statement_count": 10
+        },
+        {
+          "version": "20260721133000",
+          "name": "seed_safesteps_sequence_assessment_block_3_and_bulk_151_250",
+          "statement_count": 10
+        },
+        {
+          "version": "20260721133454",
+          "name": "safesteps_assessment_enums",
+          "statement_count": 1
+        },
+        {
+          "version": "20260721133455",
+          "name": "safesteps_assessment_templates_delivery",
+          "statement_count": 1
+        },
+        {
+          "version": "20260721133456",
+          "name": "safesteps_competency_framework",
+          "statement_count": 1
+        },
+        {
+          "version": "20260721133548",
+          "name": "safesteps_assessment_enums",
+          "statement_count": 1
+        },
+        {
+          "version": "20260721133549",
+          "name": "safesteps_assessment_templates_delivery",
+          "statement_count": 1
+        },
+        {
+          "version": "20260721133550",
+          "name": "safesteps_competency_framework",
+          "statement_count": 1
+        },
+        {
+          "version": "20260721133551",
+          "name": "safesteps_scoring_rubrics_reviews_evidence",
+          "statement_count": 1
+        },
+        {
+          "version": "20260721134500",
+          "name": "seed_safesteps_sequence_assessment_bulk_151_250_drs019_srs013",
+          "statement_count": 10
+        },
+        {
+          "version": "20260721150213",
+          "name": "ai_model_registry_lifecycle",
+          "statement_count": 46
+        },
+        {
+          "version": "20260721150617",
+          "name": "ai_prompt_workflow_governance",
+          "statement_count": 48
+        },
+        {
+          "version": "20260721151044",
+          "name": "ai_governance_remaining_foundations",
+          "statement_count": 83
+        },
+        {
+          "version": "20260721160745",
+          "name": "ai_model_assurance_volume2_details",
+          "statement_count": 30
+        },
+        {
+          "version": "20260721161700",
+          "name": "ai_prompt_retrieval_workflow_volume3",
+          "statement_count": 102
+        },
+        {
+          "version": "20260721162559",
+          "name": "ai_prompt_retrieval_workflow_volume3_completion",
+          "statement_count": 51
+        },
+        {
+          "version": "20260721164446",
+          "name": "ai_evaluation_validation_release_assurance_volume5",
+          "statement_count": 123
+        },
+        {
+          "version": "20260721165502",
+          "name": "ai_explainability_transparency_contestability_volume6",
+          "statement_count": 101
+        },
+        {
+          "version": "20260721170458",
+          "name": "ai_explainability_contestability_volume6_completion",
+          "statement_count": 82
+        },
+        {
+          "version": "20260721173335",
+          "name": "ai_continuous_learning_change_management_volume10",
+          "statement_count": 144
+        },
+        {
+          "version": "20260721174116",
+          "name": "ai_continuous_learning_volume10_completion",
+          "statement_count": 143
+        },
+        {
+          "version": "20260721180934",
+          "name": "ai_operations_centre_reliability_service_management_volume11",
+          "statement_count": 152
+        },
+        {
+          "version": "20260721184924",
+          "name": "parenting_child_development_learning_engine_volume16",
+          "statement_count": 129
+        },
+        {
+          "version": "20260721190229",
+          "name": "parenting_child_development_learning_engine_volume16_completion",
+          "statement_count": 198
+        },
+        {
+          "version": "20260721192516",
+          "name": "assessment_evidence_reunification_framework_volume17",
+          "statement_count": 103
+        },
+        {
+          "version": "20260721200806",
+          "name": "case_management_platform_volume19",
+          "statement_count": 113
+        },
+        {
+          "version": "20260721205718",
+          "name": "child_experience_platform_volume20",
+          "statement_count": 122
+        },
+        {
+          "version": "20260721230904",
+          "name": "community_services_platform_volume21",
+          "statement_count": 91
+        },
+        {
+          "version": "20260721232009",
+          "name": "white_label_multi_tenant_platform_volume23",
+          "statement_count": 145
+        },
+        {
+          "version": "202607220001",
+          "name": "extensions",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220002",
+          "name": "platform_tenants",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220003",
+          "name": "organisations",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220004",
+          "name": "profiles",
+          "statement_count": 7
+        },
+        {
+          "version": "202607220005",
+          "name": "tenant_memberships",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220006",
+          "name": "permissions",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220007",
+          "name": "role_assignments",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220008",
+          "name": "tenant_context",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220009",
+          "name": "audit_foundation",
+          "statement_count": 14
+        },
+        {
+          "version": "202607220010",
+          "name": "rls_foundation",
+          "statement_count": 42
+        },
+        {
+          "version": "202607220011",
+          "name": "foundation_seed",
+          "statement_count": 8
+        },
+        {
+          "version": "202607220012",
+          "name": "family_foundation_schema",
+          "statement_count": 31
+        },
+        {
+          "version": "202607220013",
+          "name": "family_foundation_functions",
+          "statement_count": 29
+        },
+        {
+          "version": "202607220014",
+          "name": "family_foundation_rls_audit_seed",
+          "statement_count": 62
+        },
+        {
+          "version": "202607220025",
+          "name": "case_definitions",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220026",
+          "name": "cases",
+          "statement_count": 17
+        },
+        {
+          "version": "202607220027",
+          "name": "case_participants",
+          "statement_count": 8
+        },
+        {
+          "version": "202607220028",
+          "name": "worker_teams",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220029",
+          "name": "case_allocations",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220030",
+          "name": "case_status_history",
+          "statement_count": 5
+        },
+        {
+          "version": "202607220031",
+          "name": "case_plans",
+          "statement_count": 7
+        },
+        {
+          "version": "202607220032",
+          "name": "case_goals_and_actions",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220033",
+          "name": "case_milestones_barriers_strengths",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220034",
+          "name": "case_reviews",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220035",
+          "name": "case_notes",
+          "statement_count": 8
+        },
+        {
+          "version": "202607220036",
+          "name": "case_legal_references",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220037",
+          "name": "case_access_functions",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220038",
+          "name": "case_rls",
+          "statement_count": 56
+        },
+        {
+          "version": "202607220039",
+          "name": "case_views",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220040",
+          "name": "case_audit_triggers",
+          "statement_count": 24
+        },
+        {
+          "version": "202607220041",
+          "name": "case_seed",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220042",
+          "name": "safety_plans",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220043",
+          "name": "safety_plan_versions",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220044",
+          "name": "safety_plan_participants",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220045",
+          "name": "protective_factors",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220046",
+          "name": "risk_factors",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220047",
+          "name": "risk_assessments",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220048",
+          "name": "risk_indicators",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220049",
+          "name": "safety_alerts",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220050",
+          "name": "incidents",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220051",
+          "name": "crisis_events",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220052",
+          "name": "weapon_detection",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220053",
+          "name": "missing_child",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220054",
+          "name": "emergency_contacts",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220055",
+          "name": "child_disclosures",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220056",
+          "name": "escalation_workflows",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220057",
+          "name": "safety_access",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220058",
+          "name": "safety_rls",
+          "statement_count": 88
+        },
+        {
+          "version": "202607220059",
+          "name": "safety_views",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220060",
+          "name": "safety_seed",
+          "statement_count": 16
+        },
+        {
+          "version": "202607220061",
+          "name": "evidence_records",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220062",
+          "name": "evidence_files",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220063",
+          "name": "evidence_metadata",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220064",
+          "name": "evidence_categories",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220065",
+          "name": "evidence_links",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220066",
+          "name": "evidence_chain_of_custody",
+          "statement_count": 7
+        },
+        {
+          "version": "202607220067",
+          "name": "evidence_verification",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220068",
+          "name": "evidence_ai_analysis",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220069",
+          "name": "evidence_redactions",
+          "statement_count": 1
+        },
+        {
+          "version": "202607220070",
+          "name": "court_bundles",
+          "statement_count": 2
+        },
+        {
+          "version": "202607220071",
+          "name": "evidence_retention",
+          "statement_count": 6
+        },
+        {
+          "version": "202607220072",
+          "name": "evidence_access",
+          "statement_count": 4
+        },
+        {
+          "version": "202607220073",
+          "name": "evidence_rls",
+          "statement_count": 59
+        },
+        {
+          "version": "202607220074",
+          "name": "evidence_views",
+          "statement_count": 3
+        },
+        {
+          "version": "202607220075",
+          "name": "evidence_seed",
+          "statement_count": 11
+        },
+        {
+          "version": "20260726083830",
+          "name": "revoke_anon_security_definer_execute",
+          "statement_count": 4
+        },
+        {
+          "version": "20260726091549",
+          "name": "harden_function_search_paths",
+          "statement_count": 23
+        },
+        {
+          "version": "20260726092438",
+          "name": "revoke_authenticated_internal_trigger_functions",
+          "statement_count": 8
+        },
+        {
+          "version": "20260726092753",
+          "name": "move_extensions_out_of_public",
+          "statement_count": 8
+        },
+        {
+          "version": "20260726093937",
+          "name": "revoke_authenticated_standalone_ai_helper_functions",
+          "statement_count": 9
+        },
+        {
+          "version": "20260727003556",
+          "name": "revoke_authenticated_internal_predicate_helpers",
+          "statement_count": 41
+        },
+        {
+          "version": "20260727005501",
+          "name": "revoke_authenticated_unused_action_helpers",
+          "statement_count": 3
+        },
+        {
+          "version": "20260729080221",
+          "name": "parent_onboarding_consent",
+          "statement_count": 9
+        },
+        {
+          "version": "20260729104323",
+          "name": "parent_intake_save_resume",
+          "statement_count": 11
+        },
+        {
+          "version": "20260730120000",
+          "name": "parent_program_recommendation",
+          "statement_count": 20
+        },
+        {
+          "version": "20260730190000",
+          "name": "final_backend_integration",
+          "statement_count": 25
+        },
+        {
+          "version": "20260807175333",
+          "name": "parent_program_recommendation",
+          "statement_count": 20
+        },
+        {
+          "version": "20260807215141",
+          "name": "restrict_assessment_role_helper_execute",
+          "statement_count": 4
+        },
+        {
+          "version": "20260807220851",
+          "name": "production_lesson_player",
+          "statement_count": 28
+        },
+        {
+          "version": "20260807220915",
+          "name": "restrict_lesson_responses_authenticated_grants",
+          "statement_count": 2
+        },
+        {
+          "version": "20260807225535",
+          "name": "contact_progression_case_model",
+          "statement_count": 18
+        },
+        {
+          "version": "20260808031500",
+          "name": "child_v1_share_context",
+          "statement_count": 3
+        },
+        {
+          "version": "20260808031924",
+          "name": "child_v1_share_context",
+          "statement_count": 3
+        },
+        {
+          "version": "20260808075000",
+          "name": "restrict_assessment_role_helpers",
+          "statement_count": 4
+        },
+        {
+          "version": "20260808081500",
+          "name": "production_lesson_player",
+          "statement_count": 28
+        },
+        {
+          "version": "20260808090000",
+          "name": "contact_progression_case_model",
+          "statement_count": 18
+        },
+        {
+          "version": "20260808093000",
+          "name": "fairness_detection_schema",
+          "statement_count": 2
+        },
+        {
+          "version": "20260809061159",
+          "name": "evidence_v1_worker_review",
+          "statement_count": 22
+        },
+        {
+          "version": "20260809080900",
+          "name": "evidence_v1_worker_review",
+          "statement_count": 22
+        },
+        {
+          "version": "20260809112645",
+          "name": "revoke_unpolicied_data_api_grants",
+          "statement_count": 1
+        },
+        {
+          "version": "20260809113135",
+          "name": "harden_video_function_search_paths",
+          "statement_count": 4
+        },
+        {
+          "version": "20260809113953",
+          "name": "restrict_video_notification_enqueue_to_service_role",
+          "statement_count": 14
+        },
+        {
+          "version": "20260809120000",
+          "name": "video_schema_prerequisites",
+          "statement_count": 49
+        },
+        {
+          "version": "20260809233840",
+          "name": "restrict_video_report_builder_to_trusted_callers",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910143352",
+          "name": "restore_delivery_table_prerequisites",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910143416",
+          "name": "enforce_video_delivery_acknowledgement_authorization",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910143511",
+          "name": "report_approval_release_v1",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910143543",
+          "name": "bind_report_access_helpers_to_session",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910143554",
+          "name": "bind_video_report_authority_helper_to_session",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910143603",
+          "name": "bind_case_permission_child_access_helpers_to_session",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910143621",
+          "name": "bind_organisation_tenant_community_helpers_to_session",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145531",
+          "name": "bind_ai_casework_helpers_to_session",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145540",
+          "name": "authorize_child_private_lookup_helpers",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145548",
+          "name": "report_export_controls_v1",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145604",
+          "name": "report_delivery_challenge_v1",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145612",
+          "name": "harden_report_delivery_challenge_randomness_and_audit",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145619",
+          "name": "qualify_report_delivery_pgcrypto_calls",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145627",
+          "name": "restore_ai_child_feedback_foreign_key",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145648",
+          "name": "baseline_missing_public_tables_schema_only",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145656",
+          "name": "baseline_missing_public_table_keys_and_checks",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145704",
+          "name": "baseline_missing_public_table_foreign_keys",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145713",
+          "name": "baseline_missing_public_table_indexes_and_rls",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145725",
+          "name": "baseline_video_report_authority_helpers",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145733",
+          "name": "baseline_video_report_authority_helper_grants",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145742",
+          "name": "baseline_missing_public_table_policies",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145757",
+          "name": "baseline_legacy_compatibility_columns",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145804",
+          "name": "baseline_missing_public_table_triggers",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145821",
+          "name": "baseline_missing_public_table_data_api_grants",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145829",
+          "name": "preserve_video_report_consent_withdrawal_reason",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145848",
+          "name": "fix_report_recipient_rls_recursion",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145857",
+          "name": "fix_child_private_share_policy_privilege",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145909",
+          "name": "personal_ai_support_persistence",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145929",
+          "name": "personal_ai_incident_response",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145937",
+          "name": "controlled_family_memory",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145945",
+          "name": "personal_ai_launch_readiness_gate",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910145953",
+          "name": "personal_ai_governance_signoff_scope",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910150007",
+          "name": "personal_ai_atomic_chat_persistence",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910150046",
+          "name": "harden_report_verification_rpcs_service_role_only",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910150054",
+          "name": "personal_ai_flow_version_governance",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910150102",
+          "name": "personal_ai_opt_in_mood_trends",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910150117",
+          "name": "seed_parenting_stress_capacity_rubric",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910150126",
+          "name": "seed_cooccurring_aod_mh_dfv_review",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910150134",
+          "name": "cooccurring_review_result_metadata",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910150143",
+          "name": "document_analysis_runs",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910150156",
+          "name": "professional_link_status",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910150205",
+          "name": "co_occurring_aod_mh_dfv_instrument",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910150215",
+          "name": "media_evidence_integrity_foundation",
+          "statement_count": 1
+        },
+        {
+          "version": "20260910150225",
+          "name": "media_evidence_storage_contract",
+          "statement_count": 1
+        },
+        {
+          "version": "20260911073542",
+          "name": "document_intelligence_pipeline",
+          "statement_count": 1
+        },
+        {
+          "version": "20260911074051",
+          "name": "document_intelligence_rls_hardening",
+          "statement_count": 1
+        }
+      ],
+      "targetOnlyRecovery": [
+        {
+          "version": "20260807175333",
+          "name": "parent_program_recommendation",
+          "statementCount": 20,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260807175333_parent_program_recommendation.sql",
+          "sha256": "dafd39f587b70181733840dbb7d377445c04284a1177892276df10da4adefefc"
+        },
+        {
+          "version": "20260807215141",
+          "name": "restrict_assessment_role_helper_execute",
+          "statementCount": 4,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260807215141_restrict_assessment_role_helper_execute.sql",
+          "sha256": "05b10a1659ee0eeb14505005d4804fbf4475a17e99ef79c484ac47b5869ccd4f"
+        },
+        {
+          "version": "20260807220851",
+          "name": "production_lesson_player",
+          "statementCount": 28,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260807220851_production_lesson_player.sql",
+          "sha256": "e0f82f7e703c96d2fdd75cd08d1a0cbb85c814e9b4b832348db8b534c1bfc6e6"
+        },
+        {
+          "version": "20260807220915",
+          "name": "restrict_lesson_responses_authenticated_grants",
+          "statementCount": 2,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260807220915_restrict_lesson_responses_authenticated_grants.sql",
+          "sha256": "516215a24d70650e945d545c11a7e3c8bc2646aa500b5bc7015211f4cee10233"
+        },
+        {
+          "version": "20260807225535",
+          "name": "contact_progression_case_model",
+          "statementCount": 18,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260807225535_contact_progression_case_model.sql",
+          "sha256": "862e5db54ed7d04f30d47721b0776d339a005a2f0c0c2a7b8cf093c03a067909"
+        },
+        {
+          "version": "20260808031924",
+          "name": "child_v1_share_context",
+          "statementCount": 3,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260808031924_child_v1_share_context.sql",
+          "sha256": "3357183b026ad3cefc8cfb8177f287109bbdfd9d3587e7f09a7244c62cbe4c5a"
+        },
+        {
+          "version": "20260809080900",
+          "name": "evidence_v1_worker_review",
+          "statementCount": 22,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260809080900_evidence_v1_worker_review.sql",
+          "sha256": "35eea1e52c24b1b60225971564aea592479a8c74a3efeed3136844653446acd9"
+        },
+        {
+          "version": "20260809120000",
+          "name": "video_schema_prerequisites",
+          "statementCount": 49,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260809120000_video_schema_prerequisites.sql",
+          "sha256": "fd81bfbd8485d68e19e285b613af5ec330ffc56a91cff518d93fcfbba75772d1"
+        },
+        {
+          "version": "20260910143352",
+          "name": "restore_delivery_table_prerequisites",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910143352_restore_delivery_table_prerequisites.sql",
+          "sha256": "3998605c1e6fe3594ed122ac7373adbae25728dffc51dde74f9632b0b082fc8d"
+        },
+        {
+          "version": "20260910143416",
+          "name": "enforce_video_delivery_acknowledgement_authorization",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910143416_enforce_video_delivery_acknowledgement_authorization.sql",
+          "sha256": "f2e462d3fd890e3899288c1d6a24b7440d66b7774d1fdca7119adc64a1d07cc8"
+        },
+        {
+          "version": "20260910143511",
+          "name": "report_approval_release_v1",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910143511_report_approval_release_v1.sql",
+          "sha256": "27e938e132337ddb6cd5a1bebf72dd8ad7c6941aebd9c8bda62beaf0cc786dbe"
+        },
+        {
+          "version": "20260910143543",
+          "name": "bind_report_access_helpers_to_session",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910143543_bind_report_access_helpers_to_session.sql",
+          "sha256": "1036d5bf8a7be21ffee852bb19369e0f41f09ba5173f3f3e132f65ebc78d9edf"
+        },
+        {
+          "version": "20260910143554",
+          "name": "bind_video_report_authority_helper_to_session",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910143554_bind_video_report_authority_helper_to_session.sql",
+          "sha256": "2e37744fb29632ffe57fc5ca9838c07cf88d5a59b357a03eba378ee716b19dfb"
+        },
+        {
+          "version": "20260910143603",
+          "name": "bind_case_permission_child_access_helpers_to_session",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910143603_bind_case_permission_child_access_helpers_to_session.sql",
+          "sha256": "3f98ab9293e1c8d3bc5670517d6c4ebaf2f862bcb28a81a6a137add74b31c283"
+        },
+        {
+          "version": "20260910143621",
+          "name": "bind_organisation_tenant_community_helpers_to_session",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910143621_bind_organisation_tenant_community_helpers_to_session.sql",
+          "sha256": "64abf21562ef214b5938ccc52bcc6bc00bc1f1560e80ebeaa32fa613270829f1"
+        },
+        {
+          "version": "20260910145531",
+          "name": "bind_ai_casework_helpers_to_session",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145531_bind_ai_casework_helpers_to_session.sql",
+          "sha256": "df6daffbb80db22ff831fe0ddcd2cf95afa0217e642e38fd67ed882fe29e2fe5"
+        },
+        {
+          "version": "20260910145540",
+          "name": "authorize_child_private_lookup_helpers",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145540_authorize_child_private_lookup_helpers.sql",
+          "sha256": "eae8bb4ea10308854a7fc683c825a110a62e351b670fa15902502c7051427829"
+        },
+        {
+          "version": "20260910145548",
+          "name": "report_export_controls_v1",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145548_report_export_controls_v1.sql",
+          "sha256": "39bafb41a9dae55ccdd1bfc19ec36a1f0eee6cf9f287df30f785b8c0f6d6af69"
+        },
+        {
+          "version": "20260910145604",
+          "name": "report_delivery_challenge_v1",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145604_report_delivery_challenge_v1.sql",
+          "sha256": "254d40b8cbcc6838222cf81f0ccbbe0d558fcce96960167c0dcdc79bb1c029b4"
+        },
+        {
+          "version": "20260910145612",
+          "name": "harden_report_delivery_challenge_randomness_and_audit",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145612_harden_report_delivery_challenge_randomness_and_audit.sql",
+          "sha256": "9dda640c6e2d118296871a4267498a583d094dbdcf2dc45c9b8697b404ddabe3"
+        },
+        {
+          "version": "20260910145619",
+          "name": "qualify_report_delivery_pgcrypto_calls",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145619_qualify_report_delivery_pgcrypto_calls.sql",
+          "sha256": "36215076e5063ac4b09ba245c83fe0b733d04b7d1c9e933d3f7499eb7f0991fc"
+        },
+        {
+          "version": "20260910145627",
+          "name": "restore_ai_child_feedback_foreign_key",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145627_restore_ai_child_feedback_foreign_key.sql",
+          "sha256": "21eaaa85d7f7466ad4d08a48b34a965b1812b47c759d3ff42d30ed73f59d0412"
+        },
+        {
+          "version": "20260910145648",
+          "name": "baseline_missing_public_tables_schema_only",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145648_baseline_missing_public_tables_schema_only.sql",
+          "sha256": "3d9278925733db0e0e6171c2a8a1d0a31522c0dcf048aff7b93376d0a20aaee9"
+        },
+        {
+          "version": "20260910145656",
+          "name": "baseline_missing_public_table_keys_and_checks",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145656_baseline_missing_public_table_keys_and_checks.sql",
+          "sha256": "1941d79c062f77ecf1d293bec5298f7e2a6be7e358373edcc348942f3ed11a01"
+        },
+        {
+          "version": "20260910145704",
+          "name": "baseline_missing_public_table_foreign_keys",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145704_baseline_missing_public_table_foreign_keys.sql",
+          "sha256": "a6d76a951221d6b74c848952527abd41534d52c747c71c2841abaf260a97aa1b"
+        },
+        {
+          "version": "20260910145713",
+          "name": "baseline_missing_public_table_indexes_and_rls",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145713_baseline_missing_public_table_indexes_and_rls.sql",
+          "sha256": "aed045ccef328e110cb1ff0bba5cb12f9cd0e6e84ceb8cc7a70b851a464eeba2"
+        },
+        {
+          "version": "20260910145725",
+          "name": "baseline_video_report_authority_helpers",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145725_baseline_video_report_authority_helpers.sql",
+          "sha256": "64927501896a1b6857fd92654e86889ec87230fb5cc9123dfa6b696fb6963caf"
+        },
+        {
+          "version": "20260910145733",
+          "name": "baseline_video_report_authority_helper_grants",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145733_baseline_video_report_authority_helper_grants.sql",
+          "sha256": "e75c60161395bf4e0c3b62b526783669f8d71bad7766fb3ed5d9a32dad7e1d5a"
+        },
+        {
+          "version": "20260910145742",
+          "name": "baseline_missing_public_table_policies",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145742_baseline_missing_public_table_policies.sql",
+          "sha256": "c87d86616557db57835b22aefef24e661c33f726c5c9680a990445dd55a1d416"
+        },
+        {
+          "version": "20260910145757",
+          "name": "baseline_legacy_compatibility_columns",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145757_baseline_legacy_compatibility_columns.sql",
+          "sha256": "03a15d6a5924d270bee45c09e95e4f374267af28c2d07d0a2b1627ebd1656121"
+        },
+        {
+          "version": "20260910145804",
+          "name": "baseline_missing_public_table_triggers",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145804_baseline_missing_public_table_triggers.sql",
+          "sha256": "0472796929f0e53d1364f36dab9477f85a4d72c2f13737fe4fa81e09770d9093"
+        },
+        {
+          "version": "20260910145821",
+          "name": "baseline_missing_public_table_data_api_grants",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145821_baseline_missing_public_table_data_api_grants.sql",
+          "sha256": "ecf14de9312c63299ca4e1139afa90084aa5949fc0195a4e1c298e9989466c92"
+        },
+        {
+          "version": "20260910145829",
+          "name": "preserve_video_report_consent_withdrawal_reason",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145829_preserve_video_report_consent_withdrawal_reason.sql",
+          "sha256": "8a87edbfbfad188f101313df117a0caa7e7baf38c15a6f36b55e62beb3e4ad9a"
+        },
+        {
+          "version": "20260910145848",
+          "name": "fix_report_recipient_rls_recursion",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145848_fix_report_recipient_rls_recursion.sql",
+          "sha256": "12b8abaa4be8813c7d881381702310a7bc5baf357959dff06c7b41d3ef7803c8"
+        },
+        {
+          "version": "20260910145857",
+          "name": "fix_child_private_share_policy_privilege",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145857_fix_child_private_share_policy_privilege.sql",
+          "sha256": "9a7626b727114286e6210b22a65adc7788d5eae58a456d3425951bcde7159f1f"
+        },
+        {
+          "version": "20260910145909",
+          "name": "personal_ai_support_persistence",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145909_personal_ai_support_persistence.sql",
+          "sha256": "4bf6e21acb62a3c8cbcc58c9d5baec3cd3b4df6339614bfcc351a4af73a30ed6"
+        },
+        {
+          "version": "20260910145929",
+          "name": "personal_ai_incident_response",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145929_personal_ai_incident_response.sql",
+          "sha256": "6a0166407459ee4f7f064ef6f352cb3f1583bba642ab950fb4cef1a452467cf2"
+        },
+        {
+          "version": "20260910145937",
+          "name": "controlled_family_memory",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145937_controlled_family_memory.sql",
+          "sha256": "7a1b1b99206d93a73f59d9b3ed2354de6be07cfe296c0fc27ccbfcb88d948c0a"
+        },
+        {
+          "version": "20260910145945",
+          "name": "personal_ai_launch_readiness_gate",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145945_personal_ai_launch_readiness_gate.sql",
+          "sha256": "d8ff88982a54ee1c174a11c7b0e9688b3f8d6288cbe90f659cbf048fd4d3bf1c"
+        },
+        {
+          "version": "20260910145953",
+          "name": "personal_ai_governance_signoff_scope",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910145953_personal_ai_governance_signoff_scope.sql",
+          "sha256": "dd9890ec32972d13178b0cefa2e50344112895fbc530b340be496be50effcfb4"
+        },
+        {
+          "version": "20260910150007",
+          "name": "personal_ai_atomic_chat_persistence",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910150007_personal_ai_atomic_chat_persistence.sql",
+          "sha256": "912987e5cc2847adf42670f9c7790fdce8d45cddd82128b29b13b87ceb938ba9"
+        },
+        {
+          "version": "20260910150046",
+          "name": "harden_report_verification_rpcs_service_role_only",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910150046_harden_report_verification_rpcs_service_role_only.sql",
+          "sha256": "3c4589435375afdff8602f11740bf60fa9ae3e447359c97ee614491cffba4cd5"
+        },
+        {
+          "version": "20260910150054",
+          "name": "personal_ai_flow_version_governance",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910150054_personal_ai_flow_version_governance.sql",
+          "sha256": "5660727e105015a21b36a4644dac125619901486148b343fbe5ce0e373e4eda7"
+        },
+        {
+          "version": "20260910150102",
+          "name": "personal_ai_opt_in_mood_trends",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910150102_personal_ai_opt_in_mood_trends.sql",
+          "sha256": "61f0d8c6a852ac9cf2dd036d23a7b07440a8c4de1c08e4b7bb82dc846c02ccbf"
+        },
+        {
+          "version": "20260910150117",
+          "name": "seed_parenting_stress_capacity_rubric",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910150117_seed_parenting_stress_capacity_rubric.sql",
+          "sha256": "d1f18c718b755d9aad3f8ff845adae50bcae88345cdc0f04e24d039fe76b8e06"
+        },
+        {
+          "version": "20260910150126",
+          "name": "seed_cooccurring_aod_mh_dfv_review",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910150126_seed_cooccurring_aod_mh_dfv_review.sql",
+          "sha256": "b9a9c6a9d9431a31576bfbefb755d10f5a2c82863f8d19a0331026c345952054"
+        },
+        {
+          "version": "20260910150134",
+          "name": "cooccurring_review_result_metadata",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910150134_cooccurring_review_result_metadata.sql",
+          "sha256": "af57bb34bf8e85c44ceb898b05ae3b1338628f989758c495168de8a1dc648c1a"
+        },
+        {
+          "version": "20260910150143",
+          "name": "document_analysis_runs",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910150143_document_analysis_runs.sql",
+          "sha256": "7421af0ad643ee912deb8f491c3c8e5c285fcd21886679fda69116ea7e57218b"
+        },
+        {
+          "version": "20260910150156",
+          "name": "professional_link_status",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910150156_professional_link_status.sql",
+          "sha256": "41f714aed74ec82f3c674afb170aad69e723d47ad012f6376a61b9089589b9ba"
+        },
+        {
+          "version": "20260910150205",
+          "name": "co_occurring_aod_mh_dfv_instrument",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910150205_co_occurring_aod_mh_dfv_instrument.sql",
+          "sha256": "d23c2404d439c6cc5d3641e3b6194cb71b1249eefd1dd3371c4729c17db93cab"
+        },
+        {
+          "version": "20260910150215",
+          "name": "media_evidence_integrity_foundation",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910150215_media_evidence_integrity_foundation.sql",
+          "sha256": "dc250417bd2d7c0a0a480641b2e02861d1fd597e2dd8dadbf5a0a19298b7bcc1"
+        },
+        {
+          "version": "20260910150225",
+          "name": "media_evidence_storage_contract",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260910150225_media_evidence_storage_contract.sql",
+          "sha256": "dc408c186aee46032aef02242499224c49c5bf3d2d3e0f93907886e5d00aa78b"
+        },
+        {
+          "version": "20260911073542",
+          "name": "document_intelligence_pipeline",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260911073542_document_intelligence_pipeline.sql",
+          "sha256": "00d6891afab17aacf9cd40b690c3b19622deef31fe7850a7e7ece3c9692c9708"
+        },
+        {
+          "version": "20260911074051",
+          "name": "document_intelligence_rls_hardening",
+          "statementCount": 1,
+          "status": "recovered",
+          "file": "kwhjxggxffphknzxmtrf/20260911074051_document_intelligence_rls_hardening.sql",
+          "sha256": "74780d7fcbd8d809b604f9e50de6b48115f5e121d3a1c64413f177493d2ed517"
+        }
+      ]
+    }
+  },
+  "repositoryFiles": [
+    {
+      "file": "20260619124944_init_schema.sql",
+      "bytes": 954,
+      "sha256": "9c36baf920bdb6ee4704c45b5359736f4534304fbed69f454d3be6795470d007"
+    },
+    {
+      "file": "20260619125732_init_schema.sql",
+      "bytes": 602,
+      "sha256": "b1c935b430684b67e4ad6899a911df04c5421532c2a3d81a8501c8354554249d"
+    },
+    {
+      "file": "20260619125937_init_schema.sql",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "20260619130549_auth_user_trigger.sql",
+      "bytes": 667,
+      "sha256": "36feb64b2e4235226f002ee818141bfd623d2908b8c7d688ea4a0f8f14d18394"
+    },
+    {
+      "file": "20260619142815_remote_reconcile.sql",
+      "bytes": 206,
+      "sha256": "e239da7ce5d12ee3a8b97fa7786f0743e9a73b288588397c83a073b4f72ecca9"
+    },
+    {
+      "file": "20260619142937_rls_policies.sql",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "20260622181621_create_intake_forms.sql",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "20260623160457_remote_reconcile.sql",
+      "bytes": 206,
+      "sha256": "e239da7ce5d12ee3a8b97fa7786f0743e9a73b288588397c83a073b4f72ecca9"
+    },
+    {
+      "file": "20260627135113_safesteps_core_platform.sql",
+      "bytes": 6127,
+      "sha256": "4c1223ba5d49b236556f7170b0cbdc0d533a7229036f212793fde6443a9b790f"
+    },
+    {
+      "file": "20260627140522_evidence_storage.sql",
+      "bytes": 1555,
+      "sha256": "ae933154a148d674a7ca4dd6b36ea764f55660da9b1d2ae00a32169ddf8940f6"
+    },
+    {
+      "file": "20260627141307_assessment_progress_check.sql",
+      "bytes": 3172,
+      "sha256": "e295bf966bddd86fbae66c88b1526adcf15616624fa40d5bf254d45e43dec8f3"
+    },
+    {
+      "file": "20260627142023_richer_tasks.sql",
+      "bytes": 426,
+      "sha256": "aef7ab370f99b9cc8f0eaa24f801e3e385e73fa61b28bf87981ef56e120be5ae"
+    },
+    {
+      "file": "20260627143629_profile_story_fields.sql",
+      "bytes": 274,
+      "sha256": "6d4405e11efa91c54222338e28477a7d417b43da51e3cfd28e25ceda2d380bba"
+    },
+    {
+      "file": "20260629061241_program_reflections.sql",
+      "bytes": 1949,
+      "sha256": "1eb157da6d56ea221ee7c8fadab72d5eeb71e3755472978f22ab877bfdb9cd77"
+    },
+    {
+      "file": "20260629195506_bulk_platform_tables.sql",
+      "bytes": 23022,
+      "sha256": "30400342ca95b8373c71154057023c2dcd10c0b0fbaaf06c8377d2ec144a1eb0"
+    },
+    {
+      "file": "20260630140347_child_section_privacy.sql",
+      "bytes": 16286,
+      "sha256": "62a9165855cb9ea5be900130cf0e55e5ffef49287e8ae129d58da66fa80d00a2"
+    },
+    {
+      "file": "20260701225859_assessment_data_model.sql",
+      "bytes": 34152,
+      "sha256": "a00d4219587db0f78d13c4b0a51988159215f4e40dc1a75cfb58ec217ccfef3f"
+    },
+    {
+      "file": "20260702081721_assessment_case_setup_fields.sql",
+      "bytes": 899,
+      "sha256": "4df0b58db52247c929d88a1939e959ff7fb1e056c33a9bd08c53af8c9529ff6f"
+    },
+    {
+      "file": "20260703055727_lock_down_remote_drift_security.sql",
+      "bytes": 1682,
+      "sha256": "e22bb95a6159cff19bdbd44e80ca46b1fd9dcdf7a05d01b28386098c2f975682"
+    },
+    {
+      "file": "20260703060240_add_parent_case_subsections.sql",
+      "bytes": 1951,
+      "sha256": "c8712dbb653a4aa992884f192aecef6b4171e6843f3d19acfe28c64d3084152e"
+    },
+    {
+      "file": "20260703061540_add_relationship_assessment_layer.sql",
+      "bytes": 4913,
+      "sha256": "5db5f6e048ef54741e219c9d6367e36dbbad0d2cb636c9af54804d1a22cb8a5b"
+    },
+    {
+      "file": "20260705031629_parent_child_responses.sql",
+      "bytes": 2893,
+      "sha256": "04004701dcfc5fd657228ca6249041ae0d6ef9c7bfbda045b1391845a4b926a4"
+    },
+    {
+      "file": "20260706051903_expand_evidence_upload_types.sql",
+      "bytes": 817,
+      "sha256": "658d2a71a910f437bafdcd2a9968184fac94e962977fbb863603da9389d6f617"
+    },
+    {
+      "file": "20260706124802_parent_child_monitoring_messages.sql",
+      "bytes": 3540,
+      "sha256": "91b21d7eb51b405d0d9d4b3f10146b95933dcbe2c3962f465752b2b47d772b6b"
+    },
+    {
+      "file": "20260707053131_create_challenges_bucket.sql",
+      "bytes": 90,
+      "sha256": "270716900078af99e5a4f25b65963b0f519d8a02a5219b20920c29ee63fa6424"
+    },
+    {
+      "file": "20260712143553_seed_safesteps_protective_capacity_assessment.sql",
+      "bytes": 11054,
+      "sha256": "8fb4688f527ca11d8f0e12db8b26c79a4fa2e7a36cdb2ab63efbb928d4aba213"
+    },
+    {
+      "file": "20260712171004_forensic_evidence_audit.sql",
+      "bytes": 3899,
+      "sha256": "cfc62d523ceb050bb22c523f8ec68c72430ed5891126b4e3b39962449dffa242"
+    },
+    {
+      "file": "20260712173337_safety_alert_notification_rules.sql",
+      "bytes": 1575,
+      "sha256": "9d636fed919056795a2223d8485b30f21f8456fc8d4cc8de9d067bd4076baf01"
+    },
+    {
+      "file": "20260712174720_session_management_foundation.sql",
+      "bytes": 3194,
+      "sha256": "89da0d2c7c0e5ed315f4b9e43a1ab780d2d6a1dc33d9d9991a9d9bca4562e72b"
+    },
+    {
+      "file": "20260712175500_document_management_foundation.sql",
+      "bytes": 7190,
+      "sha256": "7daca3f503353a8305e7efc3e285981bc3c8ba5d82042e4f42f61b16a13c1bf7"
+    },
+    {
+      "file": "20260712180057_service_referral_tracking.sql",
+      "bytes": 2161,
+      "sha256": "2d398f26196e2ac55d47d4622ec4a0fe0d26c788a90d196e7bdcac450d8a9fe9"
+    },
+    {
+      "file": "20260713020205_enforce_assessment_immutability.sql",
+      "bytes": 1994,
+      "sha256": "d879f990e2e53da6e2949a6c5348c391991717942adbaf12908f36ccb77e3ba4"
+    },
+    {
+      "file": "20260713103000_seed_required_intake_assessment.sql",
+      "bytes": 2741,
+      "sha256": "4331936663f5b9064b44de6a0f8d3e38ef36410d9439f687d46593a61ae7776b"
+    },
+    {
+      "file": "20260715085349_court_report_snapshots.sql",
+      "bytes": 3387,
+      "sha256": "caed85d3b8b8f97d4cc34a63a4b45b4ce7f0669fba6e4f46935afb8007aa63d9"
+    },
+    {
+      "file": "20260715115900_uuid_min_migration_compat.sql",
+      "bytes": 914,
+      "sha256": "a65080cf6902ff40ef924f9eba3933d7b9e1ad6799dc51b744ffa949412fee73"
+    },
+    {
+      "file": "20260715120000_sensitive_access_control_and_audit.sql",
+      "bytes": 20101,
+      "sha256": "84cde9677d1c7e7e348249233de7c39af22eec64042b5968e95f69a9004c2b4e"
+    },
+    {
+      "file": "20260715121500_sensitive_action_audit_triggers.sql",
+      "bytes": 3991,
+      "sha256": "c553753ad0a76b091852e79b18ed3b44e23649f481bdbd3c0ad0073d50c8e8f1"
+    },
+    {
+      "file": "20260715122000_remove_uuid_min_migration_compat.sql",
+      "bytes": 198,
+      "sha256": "be63d70c4268abc04e7c92c7792eb4b67d63b1a61e706a07ad3df190c7725ff5"
+    },
+    {
+      "file": "20260715122500_child_permission_boundary_hardening.sql",
+      "bytes": 9356,
+      "sha256": "bae52379bf65e0703660f1b295a5e4d3872b95a96600edbd66c1a1a70e2910bd"
+    },
+    {
+      "file": "20260715140000_intake_program_start_gate.sql",
+      "bytes": 12489,
+      "sha256": "9d1e1d5a532260d71ccde645e2a8f4afb78f032874493782a71fcd7fb0afe8c4"
+    },
+    {
+      "file": "20260716033944_structured_evidence_workflows.sql",
+      "bytes": 2434,
+      "sha256": "073c3ade9937460113bffdd0b45c79e23c464f8f41e3ef2dde53773e65a906a1"
+    },
+    {
+      "file": "20260716071701_repair_court_report_snapshots.sql",
+      "bytes": 3478,
+      "sha256": "4080dffec6179121f927d3f70bca1057f83b29533c04bfaec79faee17411ee10"
+    },
+    {
+      "file": "20260716091243_add_court_report_supervisor_approvals.sql",
+      "bytes": 3097,
+      "sha256": "3d52a986b828087476eb5642d4a22c5789b78d6fe0b15f9b7aaebaee134d8f60"
+    },
+    {
+      "file": "20260719091500_add_representation_preferences.sql",
+      "bytes": 527,
+      "sha256": "3a220254adc18b1e1bd7bd401660b0bfe7a64f30a85ad34fe075df5ad1d412a9"
+    },
+    {
+      "file": "20260721083000_reunification_stage_quests_achievements.sql",
+      "bytes": 13756,
+      "sha256": "96dc35fb099bff0a985081dc011e85f569f682b577b6d46007105640daefb3c5"
+    },
+    {
+      "file": "20260721084500_reunification_role_rls_policies.sql",
+      "bytes": 11976,
+      "sha256": "31d8838fa819a01315eaa65a42b30969b51f59f8289971687ca5eda9a4e61bf4"
+    },
+    {
+      "file": "20260721093000_seed_safesteps_parenting_multiple_choice_assessment.sql",
+      "bytes": 16841,
+      "sha256": "004358471f9e41dd605a3824c51c44233560f0ca81396fb71d36254aa9c6bc00"
+    },
+    {
+      "file": "20260721094000_seed_safesteps_parenting_multiple_choice_items_021_076.sql",
+      "bytes": 29236,
+      "sha256": "bd621f85893cf06691eb1bea3c9074fc63cabe54d5bae891718760b1ca08bdae"
+    },
+    {
+      "file": "20260721095000_seed_safesteps_parenting_multiple_choice_items_081_100.sql",
+      "bytes": 10456,
+      "sha256": "afe1db4d7fcc21177ca5ef83e1ccd89b6533de9eb666861546f5c3bfb44a3fc5"
+    },
+    {
+      "file": "20260721101500_seed_safesteps_parenting_multiple_choice_items_101_115.sql",
+      "bytes": 9382,
+      "sha256": "a80bb0eb7270f4828ebd66bed15bcc560600b165edebf79337d810a2b450abe3"
+    },
+    {
+      "file": "20260721103000_seed_safesteps_parenting_multiple_choice_items_121_140.sql",
+      "bytes": 10970,
+      "sha256": "95d2a6a2a23ccfa1380675a12a2709942b490dd8dede1243af2bca32d8f34243"
+    },
+    {
+      "file": "20260721104500_seed_safesteps_parenting_multiple_choice_items_141_160.sql",
+      "bytes": 10764,
+      "sha256": "9635ff5b0e45ef91d1a65f06f2a5af7f091ae157dde658b6d29acb958399f92f"
+    },
+    {
+      "file": "20260721110000_seed_safesteps_parenting_multiple_choice_items_161_163.sql",
+      "bytes": 3266,
+      "sha256": "cb251b020f97588080146d885b1833c20ad6702490e3210e44bf87c8c87a4c21"
+    },
+    {
+      "file": "20260721111500_seed_safesteps_parenting_fill_blank_quiz.sql",
+      "bytes": 11955,
+      "sha256": "183a6577c64f5b6beb09a6e0fa23a55877ae5feadce8184fa0b22caa24ba1673"
+    },
+    {
+      "file": "20260721113000_seed_safesteps_parenting_fill_blank_quiz_items_021_120.sql",
+      "bytes": 39699,
+      "sha256": "a0b23121e94b36ca8e1f9119a7ed339a822db5281807038a8d80db852528fe3b"
+    },
+    {
+      "file": "20260721114500_seed_safesteps_parenting_domain_fill_blank_quiz.sql",
+      "bytes": 15800,
+      "sha256": "85010d4aa1b12446a00f4834ff1c92a863c9a1793f1d193ede40cfe0e8908b4b"
+    },
+    {
+      "file": "20260721120000_seed_safesteps_parenting_domain_fill_blank_items_081_100.sql",
+      "bytes": 11191,
+      "sha256": "2fd11f55dfce706ef88a18efa2d417733029c83c86fe15f9c529bffba972a084"
+    },
+    {
+      "file": "20260721121000_identity_roles_permissions_reporting_foundation.sql",
+      "bytes": 50898,
+      "sha256": "0408533fe5863ea4f88e7068ea28929f42377189e20ed63e25ec1eaceb9e11aa"
+    },
+    {
+      "file": "20260721121200_identity_security_operations_foundation.sql",
+      "bytes": 18770,
+      "sha256": "31eb66bf1928af8c14231512cfe7e8a7a41e9d8da0caa15ce5ecc483c9a76363"
+    },
+    {
+      "file": "20260721121300_ai_governance_foundation.sql",
+      "bytes": 28218,
+      "sha256": "1af51f04b7d53dbe45453c2281739bdcf55adc81ca19efb47d29403a4145e6c3"
+    },
+    {
+      "file": "20260721121500_seed_safesteps_parenting_domain_fill_blank_items_101_141.sql",
+      "bytes": 20331,
+      "sha256": "207e360e86f99930a23e8c7c9c6eef9dfe3517ebef104211e9bcd0fdc64200c1"
+    },
+    {
+      "file": "20260721123000_seed_safesteps_parenting_domain_fill_blank_items_201_240_401_440.sql",
+      "bytes": 38030,
+      "sha256": "db137415885a21e75d8c85e512adf397ad1d38104f825684a4164b5be1245d9a"
+    },
+    {
+      "file": "20260721124500_seed_safesteps_sequence_assessment_items.sql",
+      "bytes": 7462,
+      "sha256": "8d851ae1763509c06078451af2e7dfe3f86bba296e31f3b8658bc8615077e296"
+    },
+    {
+      "file": "20260721130000_seed_safesteps_sequence_assessment_block_1.sql",
+      "bytes": 12605,
+      "sha256": "f2720b6e0c5b939a44aa2770e2549ba79bf974c2dd43c454a9dd12e6a0ba3db5"
+    },
+    {
+      "file": "20260721131500_seed_safesteps_sequence_assessment_block_2.sql",
+      "bytes": 13252,
+      "sha256": "a218b6de7301b9fb6a0e90bc8b459dec7b618b753198caa84eb4ffd40dbcd835"
+    },
+    {
+      "file": "20260721133000_seed_safesteps_sequence_assessment_block_3_and_bulk_151_250.sql",
+      "bytes": 16584,
+      "sha256": "5d3cf4093d0d6576ee2108523cdacc2b1036a27ba70c0b7465c3eb4a3a1d446e"
+    },
+    {
+      "file": "20260721133454_safesteps_assessment_enums.sql",
+      "bytes": 331,
+      "sha256": "d5cbf81d114b93dd044cc5c6d5c348761baa2ec304e99cd846f1703f479e384c"
+    },
+    {
+      "file": "20260721133455_safesteps_assessment_templates_delivery.sql",
+      "bytes": 331,
+      "sha256": "d5cbf81d114b93dd044cc5c6d5c348761baa2ec304e99cd846f1703f479e384c"
+    },
+    {
+      "file": "20260721133456_safesteps_competency_framework.sql",
+      "bytes": 331,
+      "sha256": "d5cbf81d114b93dd044cc5c6d5c348761baa2ec304e99cd846f1703f479e384c"
+    },
+    {
+      "file": "20260721133548_safesteps_assessment_enums.sql",
+      "bytes": 331,
+      "sha256": "d5cbf81d114b93dd044cc5c6d5c348761baa2ec304e99cd846f1703f479e384c"
+    },
+    {
+      "file": "20260721133549_safesteps_assessment_templates_delivery.sql",
+      "bytes": 331,
+      "sha256": "d5cbf81d114b93dd044cc5c6d5c348761baa2ec304e99cd846f1703f479e384c"
+    },
+    {
+      "file": "20260721133550_safesteps_competency_framework.sql",
+      "bytes": 331,
+      "sha256": "d5cbf81d114b93dd044cc5c6d5c348761baa2ec304e99cd846f1703f479e384c"
+    },
+    {
+      "file": "20260721133551_safesteps_scoring_rubrics_reviews_evidence.sql",
+      "bytes": 331,
+      "sha256": "d5cbf81d114b93dd044cc5c6d5c348761baa2ec304e99cd846f1703f479e384c"
+    },
+    {
+      "file": "20260721134500_seed_safesteps_sequence_assessment_bulk_151_250_drs019_srs013.sql",
+      "bytes": 16848,
+      "sha256": "3e0e07a3ef2741c769236008deb2760d78504103cebc724720be4c26f342c7c0"
+    },
+    {
+      "file": "20260721150213_ai_model_registry_lifecycle.sql",
+      "bytes": 18442,
+      "sha256": "07c89f501964e79e0c8592c94072c90f8e662d1f2f3d0b324a5c16cf868e00da"
+    },
+    {
+      "file": "20260721150617_ai_prompt_workflow_governance.sql",
+      "bytes": 20105,
+      "sha256": "5a4bbc0fdaa119786bab81d348365622fb06cdadbf0fa699d1a7acd5ebffe428"
+    },
+    {
+      "file": "20260721151044_ai_governance_remaining_foundations.sql",
+      "bytes": 30884,
+      "sha256": "48db112b0014e47adaf99c7e27b9bc46ae5f650b9b36f8ddc44f034b6338639e"
+    },
+    {
+      "file": "20260721160745_ai_model_assurance_volume2_details.sql",
+      "bytes": 17283,
+      "sha256": "ee392da27daf6acfcab86ded42fae44094ce84ec72b244c54d142839c02b654e"
+    },
+    {
+      "file": "20260721161700_ai_prompt_retrieval_workflow_volume3.sql",
+      "bytes": 44303,
+      "sha256": "0981b119a6ab44025ead2a4d0b42c44335f17ecb3390251129c273816672ed91"
+    },
+    {
+      "file": "20260721162559_ai_prompt_retrieval_workflow_volume3_completion.sql",
+      "bytes": 25304,
+      "sha256": "17f59d7e5ae1060c6b3218fa6be850404b1d6af9cfa6d0b3de5fff7055b74d5c"
+    },
+    {
+      "file": "20260721164446_ai_evaluation_validation_release_assurance_volume5.sql",
+      "bytes": 53100,
+      "sha256": "1a4b70be462ffedadd2ac52cfed13665c57b25feb4a29831c4adf90a5294d486"
+    },
+    {
+      "file": "20260721165502_ai_explainability_transparency_contestability_volume6.sql",
+      "bytes": 43097,
+      "sha256": "11b3be34bf419b2868bb55e5cc1fc3955b9d3fe44bd422988babf67fe26964ab"
+    },
+    {
+      "file": "20260721170458_ai_explainability_contestability_volume6_completion.sql",
+      "bytes": 34543,
+      "sha256": "d516499f67a4d07fad6d8c6dd46fcac14cd68c62480c0b21b1c1786ea80f7377"
+    },
+    {
+      "file": "20260721173335_ai_continuous_learning_change_management_volume10.sql",
+      "bytes": 53814,
+      "sha256": "9c4a064bda7de503f7c499c2a14fd00f7d02c093a20b049214cc8fc25e97c228"
+    },
+    {
+      "file": "20260721174116_ai_continuous_learning_volume10_completion.sql",
+      "bytes": 57208,
+      "sha256": "5b274ca758b9b307e771b7dc6a7ccbead7c960584d8bd6dedc378995918aad0c"
+    },
+    {
+      "file": "20260721180934_ai_operations_centre_reliability_service_management_volume11.sql",
+      "bytes": 57375,
+      "sha256": "65eaa70ecc3cd21dc77c2e09c0ced90197c0ae4efdcddb4a3724d7f8fcf02ed1"
+    },
+    {
+      "file": "20260721184924_parenting_child_development_learning_engine_volume16.sql",
+      "bytes": 37157,
+      "sha256": "405617962806a47476875e92a1f73f570322d1948015e850eb787b52e0ace3c5"
+    },
+    {
+      "file": "20260721190229_parenting_child_development_learning_engine_volume16_completion.sql",
+      "bytes": 56968,
+      "sha256": "d4d9b882ca71b882fa3afe39feb64ee5d76c1a5da47710171e43c696caddbc4d"
+    },
+    {
+      "file": "20260721192516_assessment_evidence_reunification_framework_volume17.sql",
+      "bytes": 26466,
+      "sha256": "246d447cbdddaf08bcfc91a651aff2931f096d9d4bd0247c6a8cf3abc8f70b2c"
+    },
+    {
+      "file": "20260721200806_case_management_platform_volume19.sql",
+      "bytes": 43066,
+      "sha256": "4d23ed8d627e446034f904a9a131b875944b2d177220125a3c1beac0ab019e66"
+    },
+    {
+      "file": "20260721205718_child_experience_platform_volume20.sql",
+      "bytes": 55827,
+      "sha256": "8bd037e834a17cfbdcf46f8d91025dbd224a0100e1a723445e9e91d4d5ab3943"
+    },
+    {
+      "file": "20260721230904_community_services_platform_volume21.sql",
+      "bytes": 37685,
+      "sha256": "d3b2826d3f077ce47f7e5985d7d89d1c3e1ba2ae0889b03631e85f28c9ff9fe5"
+    },
+    {
+      "file": "20260721232009_white_label_multi_tenant_platform_volume23.sql",
+      "bytes": 59049,
+      "sha256": "091a126cf10f6e033a4467eb256fe4bd3069ccbfaf7be6b6da8b94f0ab16634f"
+    },
+    {
+      "file": "202607220001_extensions.sql",
+      "bytes": 207,
+      "sha256": "974094f20902ede00e5db74a2253eb4990714f4c5a41f63d4bf647ae1b4fcdf8"
+    },
+    {
+      "file": "202607220002_platform_tenants.sql",
+      "bytes": 2307,
+      "sha256": "76856f4e745cb777a39fdaf81c3b3fd1eaa34ddf45414095e17f25729982eac1"
+    },
+    {
+      "file": "202607220003_organisations.sql",
+      "bytes": 1565,
+      "sha256": "45e088d53ded9930c4886fa9370eeaaf221a2e95a8d3176161d20ab6f0c12422"
+    },
+    {
+      "file": "202607220004_profiles.sql",
+      "bytes": 2658,
+      "sha256": "ea41587ac860da8c1498b3ce0c91658bdfd94d70bb7e186e57b077af1cedf6ef"
+    },
+    {
+      "file": "202607220005_tenant_memberships.sql",
+      "bytes": 1573,
+      "sha256": "8d36964745ef50bd4aa8ac4e5daeec88854b60b20e048f98f3814d90eb6c7b41"
+    },
+    {
+      "file": "202607220006_permissions.sql",
+      "bytes": 2440,
+      "sha256": "23918c7e3dfe9de73fea1be45519f4162c7b7de8b5af0759515890a95aef1244"
+    },
+    {
+      "file": "202607220007_role_assignments.sql",
+      "bytes": 1184,
+      "sha256": "ed77e7f312043ed6bfb2fa08f1e0a6634c5912023de414b76cbb364e1fd32d8a"
+    },
+    {
+      "file": "202607220008_tenant_context.sql",
+      "bytes": 2430,
+      "sha256": "697d9cfd00adcbdaa8aa4ad6f1b6354ce2ed81b214b003043566f4e8a68a95b7"
+    },
+    {
+      "file": "202607220009_audit_foundation.sql",
+      "bytes": 4126,
+      "sha256": "fbe65215a0b1ce3f1420565e4e8943cd8de1e942e0c45e9be28be44d80a219a0"
+    },
+    {
+      "file": "202607220010_rls_foundation.sql",
+      "bytes": 5380,
+      "sha256": "7af7fd6f58e65aba31b41825e3bf851ef249c6c1c5a432d13d4427e8a0e5b299"
+    },
+    {
+      "file": "202607220011_foundation_seed.sql",
+      "bytes": 5849,
+      "sha256": "6005e6b453c8ec62b533b54326bd841b55c5767e18a411b19fd96951a2a22acd"
+    },
+    {
+      "file": "202607220012_family_foundation_schema.sql",
+      "bytes": 15086,
+      "sha256": "4c44f2a90ddb3348ef06bf85063d144504c0c29fc4534f74812747577d18fecb"
+    },
+    {
+      "file": "202607220013_family_foundation_functions.sql",
+      "bytes": 11090,
+      "sha256": "e3522f32d044d3b577aa65ae60c442cc8bc128622f9913422628e637679c557f"
+    },
+    {
+      "file": "202607220014_family_foundation_rls_audit_seed.sql",
+      "bytes": 10861,
+      "sha256": "e2959135ee0755b558a6b25e59d1caa0aef2a3d0f7d437aacabc03fa7b45a144"
+    },
+    {
+      "file": "202607220025_case_definitions.sql",
+      "bytes": 1467,
+      "sha256": "715bec1f8344fa56146616fc442dd2abac45155c5df5e1540e24605ec5564679"
+    },
+    {
+      "file": "202607220026_cases.sql",
+      "bytes": 5003,
+      "sha256": "ec2f3654a05bd037caa848772ab69ab4c37990010655157bc65d9fae3bd1f077"
+    },
+    {
+      "file": "202607220027_case_participants.sql",
+      "bytes": 2692,
+      "sha256": "767960d0a1cfc12d6d29364d5fad9c94659ec763ae61f10eee494c05f99ff9d2"
+    },
+    {
+      "file": "202607220028_worker_teams.sql",
+      "bytes": 1405,
+      "sha256": "6897b3329451b66d5d54d2289d53bda34b29418dd41af7f413db78ef128c5263"
+    },
+    {
+      "file": "202607220029_case_allocations.sql",
+      "bytes": 1835,
+      "sha256": "00cb4f9421ebd27d48ed5451d30ea9edace35b6573c2cf137b5d13b4348cf437"
+    },
+    {
+      "file": "202607220030_case_status_history.sql",
+      "bytes": 1505,
+      "sha256": "bd9fa37b84df2489a1d0d92a9a2bc1c31c2822b47148093f669dcc79a92e2b60"
+    },
+    {
+      "file": "202607220031_case_plans.sql",
+      "bytes": 3975,
+      "sha256": "1267726af09a70416083729b09cb07a5c09503849a2e7214903669320b352dc9"
+    },
+    {
+      "file": "202607220032_case_goals_and_actions.sql",
+      "bytes": 5804,
+      "sha256": "7c3275d01af8856ff2a6bf57fd8467936315e25a3b903c2811e57bcd8874c0fa"
+    },
+    {
+      "file": "202607220033_case_milestones_barriers_strengths.sql",
+      "bytes": 1889,
+      "sha256": "b93407ad6d284ae8841030723095f5b4d4afaec9cfb90650ed3b0567922d7e5f"
+    },
+    {
+      "file": "202607220034_case_reviews.sql",
+      "bytes": 736,
+      "sha256": "6ade167588715055fdc00c3ffc6859f058821a35a3589b06c5fdbc9d015f96d2"
+    },
+    {
+      "file": "202607220035_case_notes.sql",
+      "bytes": 5707,
+      "sha256": "c6e67c4de7d4d9f90384bb1b0d675c6ce247ab9b762e9d1b23a5c4ed11620c83"
+    },
+    {
+      "file": "202607220036_case_legal_references.sql",
+      "bytes": 1219,
+      "sha256": "979903dc5981a571fe3c72266a13ef8a3be2ba6d7124639a63b0c7af1465108b"
+    },
+    {
+      "file": "202607220037_case_access_functions.sql",
+      "bytes": 3695,
+      "sha256": "4b64128aa8d4084e4059a2209e9192110855d64ea19659cf4cf9bc4fb3df3a9c"
+    },
+    {
+      "file": "202607220038_case_rls.sql",
+      "bytes": 6465,
+      "sha256": "8e130a7709eddc26807ad9a89448d2958df310110e81c8ee122ba54b7be4fb14"
+    },
+    {
+      "file": "202607220039_case_views.sql",
+      "bytes": 1960,
+      "sha256": "4ca02bbf547ec15a40f7fc9be90fb22c66937a20392d5cf32a210157154a50a2"
+    },
+    {
+      "file": "202607220040_case_audit_triggers.sql",
+      "bytes": 2600,
+      "sha256": "2638b463d9ef5ad5cffdee1b9c2d3739a2fdbc79cf66c767911c9767978abda9"
+    },
+    {
+      "file": "202607220041_case_seed.sql",
+      "bytes": 3794,
+      "sha256": "449a70034b2d3383403cd9729ef666e254fa78f3b276268968863490a70ae53d"
+    },
+    {
+      "file": "202607220042_safety_plans.sql",
+      "bytes": 1531,
+      "sha256": "a3a206f32c26480c48dd66defc2f4460d4c11869c7f55199fa3e9523ad550d4b"
+    },
+    {
+      "file": "202607220043_safety_plan_versions.sql",
+      "bytes": 1290,
+      "sha256": "ce4a4893cbca404881dd2c500fe7e6867cb61e0ee212e3695c1abe2ce0a78b01"
+    },
+    {
+      "file": "202607220044_safety_plan_participants.sql",
+      "bytes": 2778,
+      "sha256": "c96c334c72ab32dacb2b6b746dcd5ede9d6799fd2d2178e2005489486073d659"
+    },
+    {
+      "file": "202607220045_protective_factors.sql",
+      "bytes": 888,
+      "sha256": "9c3afc5c8c570dbcf824140394e2f74f632ae11b7e8ab4b6ac81af6523d6c43d"
+    },
+    {
+      "file": "202607220046_risk_factors.sql",
+      "bytes": 1102,
+      "sha256": "a2e6fc1a71a8ebeb7f94ed9c9d3a774e14b707edbd9c58bb9f2c07bd22afc863"
+    },
+    {
+      "file": "202607220047_risk_assessments.sql",
+      "bytes": 1776,
+      "sha256": "7abb56c2e18ea02e39b8fdf7bde4076c7f633fcfd4b869ee84bfc68d87588912"
+    },
+    {
+      "file": "202607220048_risk_indicators.sql",
+      "bytes": 1716,
+      "sha256": "e09b502e0a30d9d8116d79a44f97cb7b89dcd4df821f86abb3c711eed1baefba"
+    },
+    {
+      "file": "202607220049_safety_alerts.sql",
+      "bytes": 960,
+      "sha256": "5021bbf44ac5d9aef2c4ee0c68698a6d97b4c2e60f9219ebc5f05a510fab3b6c"
+    },
+    {
+      "file": "202607220050_incidents.sql",
+      "bytes": 1581,
+      "sha256": "88d5e9afae7e26229eb2b6823a4508fe9da8c6c414a5388fde31f507b19a3b6d"
+    },
+    {
+      "file": "202607220051_crisis_events.sql",
+      "bytes": 1453,
+      "sha256": "8d7c13dc62e4009ee368f7fed54dd6be3afb0e3ae9656eef52b74f2f8442d8ff"
+    },
+    {
+      "file": "202607220052_weapon_detection.sql",
+      "bytes": 1524,
+      "sha256": "d63a86b542c5c499effc1a5413d92d81175630255e25d39b0996bae29d9943cc"
+    },
+    {
+      "file": "202607220053_missing_child.sql",
+      "bytes": 1601,
+      "sha256": "e68885426c9072781a8a2935e481cbc9fee8e9003338704fc59fa031889c1d01"
+    },
+    {
+      "file": "202607220054_emergency_contacts.sql",
+      "bytes": 844,
+      "sha256": "7c12811a9afc6c9bebaa7da485db160ad45b3ec65a8adf86c6aa7e9f0df5d0ea"
+    },
+    {
+      "file": "202607220055_child_disclosures.sql",
+      "bytes": 1585,
+      "sha256": "787e736c96a924487e4f3974982ff2653e41632e12110349bde17834a884da91"
+    },
+    {
+      "file": "202607220056_escalation_workflows.sql",
+      "bytes": 1217,
+      "sha256": "af923ed45bbac2a07eb4af64d05f66d27147368f31a9303c0f0feab6df7830e4"
+    },
+    {
+      "file": "202607220057_safety_access.sql",
+      "bytes": 1547,
+      "sha256": "fbc3e2edf921fe2633048ba8e51a01355639474413c346442c9e1ba89c28820b"
+    },
+    {
+      "file": "202607220058_safety_rls.sql",
+      "bytes": 11443,
+      "sha256": "5262c19f14a5cd34636b130f6d210a52548d6108d023ca3ad29f7fb20786ad22"
+    },
+    {
+      "file": "202607220059_safety_views.sql",
+      "bytes": 1751,
+      "sha256": "7276387ae32e59465ba0c70ac88c98aad984296264f3dc47399cc7e782fd4b0c"
+    },
+    {
+      "file": "202607220060_safety_seed.sql",
+      "bytes": 4161,
+      "sha256": "192d10dcd74e4309c5d89fe21c2346bffdb6d7a56d8427b5220e0b6350f0034b"
+    },
+    {
+      "file": "202607220061_evidence_records.sql",
+      "bytes": 2408,
+      "sha256": "7b24e957004591461af1fde0b14523fb5a8daddcc03802f92b8925555f84a5ff"
+    },
+    {
+      "file": "202607220062_evidence_files.sql",
+      "bytes": 1783,
+      "sha256": "e28db733da5741cd9b4bf67cfc60ec0eb0f3d166f7fd8270f56217efd42ac639"
+    },
+    {
+      "file": "202607220063_evidence_metadata.sql",
+      "bytes": 595,
+      "sha256": "420251ac6337efff0ed684ebf59402afd7a022efa3c0cce95040dd065116f282"
+    },
+    {
+      "file": "202607220064_evidence_categories.sql",
+      "bytes": 901,
+      "sha256": "ee469e1106848eb66ef7a39eabbce155e762abcfb14b49b64a4ff09c3416de2f"
+    },
+    {
+      "file": "202607220065_evidence_links.sql",
+      "bytes": 3222,
+      "sha256": "486a46a23531ee3fa96b57550cb2335dc7d33d6167c734856124d182beaef67f"
+    },
+    {
+      "file": "202607220066_evidence_chain_of_custody.sql",
+      "bytes": 1555,
+      "sha256": "040da8a79aec07e57870a4032d34b03805e4ed93bf98867c704a18febec4d351"
+    },
+    {
+      "file": "202607220067_evidence_verification.sql",
+      "bytes": 1375,
+      "sha256": "8d7e7b816c1b09b66dd44221ae61977c6d842dd80768903940dc0cb0183b34e3"
+    },
+    {
+      "file": "202607220068_evidence_ai_analysis.sql",
+      "bytes": 1340,
+      "sha256": "0398345737cad85b20b3018c961c066d4bb81debebd760270354dd5d4c07c290"
+    },
+    {
+      "file": "202607220069_evidence_redactions.sql",
+      "bytes": 1023,
+      "sha256": "1c592048a9f10bbd8a2ba1bd4c6dc359017bb0acde6941fd72d31be08b7cf7c3"
+    },
+    {
+      "file": "202607220070_court_bundles.sql",
+      "bytes": 1528,
+      "sha256": "682077288e09ed4cd4ccaa9dca645fe0043bc08b7930bcf7808395b0c68d37b1"
+    },
+    {
+      "file": "202607220071_evidence_retention.sql",
+      "bytes": 2625,
+      "sha256": "54c603e18ad7245ce769f9ae25fc2585fa8fb5e02ac15d835ee1d5521bf05133"
+    },
+    {
+      "file": "202607220072_evidence_access.sql",
+      "bytes": 2652,
+      "sha256": "cc7f7c81b6336cbebacde4d50fca1058a34c0200b1bae5dfbad87b227c7316de"
+    },
+    {
+      "file": "202607220073_evidence_rls.sql",
+      "bytes": 7173,
+      "sha256": "ed98f2cc6674e0378cfa8b15541f0c3ca378839ccc2798cbfc02f5af7c3e9472"
+    },
+    {
+      "file": "202607220074_evidence_views.sql",
+      "bytes": 1907,
+      "sha256": "6bce42896e383e7670cadf78ec48e069cf3581785bb0e6d7195c1eb8210635f8"
+    },
+    {
+      "file": "202607220075_evidence_seed.sql",
+      "bytes": 5425,
+      "sha256": "bccf18318f93007839bd8001b426b5ace7848bf1e20fb3c751c0b530b5a16d9d"
+    },
+    {
+      "file": "20260726083830_revoke_anon_security_definer_execute.sql",
+      "bytes": 980,
+      "sha256": "cdc1dca5a534ccb506d667664d86576f03d8ce690af3536deae3280983245c5c"
+    },
+    {
+      "file": "20260726091549_harden_function_search_paths.sql",
+      "bytes": 1957,
+      "sha256": "0480a41a00938c8f622f45ca6ab3f6762a7d541344b509479dc90db6e7d50247"
+    },
+    {
+      "file": "20260726092438_revoke_authenticated_internal_trigger_functions.sql",
+      "bytes": 680,
+      "sha256": "0f2110b1097a0ea7a3cace255fd5ea2d658da2db27ba6aa59107734f04defd96"
+    },
+    {
+      "file": "20260726092753_move_extensions_out_of_public.sql",
+      "bytes": 374,
+      "sha256": "2e54ccf2743fce4d81fa962acabbabe789ace895782417dc72a2f0dc5c6ebf3b"
+    },
+    {
+      "file": "20260726093937_revoke_authenticated_standalone_ai_helper_functions.sql",
+      "bytes": 853,
+      "sha256": "2ef4285f92bf842cb08f4dcafd82c125f4a4c686a0c3eaf2ab4943b96909b9ff"
+    },
+    {
+      "file": "20260727003556_revoke_authenticated_internal_predicate_helpers.sql",
+      "bytes": 3760,
+      "sha256": "2f614be7606c9426bf802c2999df4dd1bfe2a0010c5d964de96e62e619a5b25f"
+    },
+    {
+      "file": "20260727005501_revoke_authenticated_unused_action_helpers.sql",
+      "bytes": 292,
+      "sha256": "003ab08627ec2a009f17f880f35f02aae4f4256e25752e83c7de890ca01c5610"
+    },
+    {
+      "file": "20260729080221_parent_onboarding_consent.sql",
+      "bytes": 1787,
+      "sha256": "de23e3f057d118d3b9e1b69a9fea999de2a03d0e608a13ede3fca9ae6f574b98"
+    },
+    {
+      "file": "20260729104323_parent_intake_save_resume.sql",
+      "bytes": 10479,
+      "sha256": "6f58016e07a4b34dfecc4a1dbeaa0af8a329b90c9c5f02a31ce297425016a0bc"
+    },
+    {
+      "file": "20260730120000_parent_program_recommendation.sql",
+      "bytes": 10834,
+      "sha256": "fe3da4fb28b48301f875cefca631f5151d40a5bb2ff0fc2eae82b4ee9c1cadae"
+    },
+    {
+      "file": "20260730190000_final_backend_integration.sql",
+      "bytes": 5505,
+      "sha256": "90f5d4c196892d17a488fd78e2ea9fd9f5826158673b788057bd19e2901851ac"
+    },
+    {
+      "file": "20260808031500_child_v1_share_context.sql",
+      "bytes": 946,
+      "sha256": "3b5d1951f56fe08ee601eaaae1cd29d28998019929f18788a73c6272bd0bb033"
+    },
+    {
+      "file": "20260808075000_restrict_assessment_role_helpers.sql",
+      "bytes": 594,
+      "sha256": "b483d45d7225f99b156fd683638f43e648610b068d19e2bff9c37b15677f2ff6"
+    },
+    {
+      "file": "20260808081500_production_lesson_player.sql",
+      "bytes": 5355,
+      "sha256": "10acf429996b4658e48d7cb150f83dd717e38ac5e75ec85e91fc53eeb61d67e0"
+    },
+    {
+      "file": "20260808090000_contact_progression_case_model.sql",
+      "bytes": 4868,
+      "sha256": "629a3c55835b0f3c6f9292d133d93ebb9b173d27fb3dc02a0ae4eab38cc954ce"
+    },
+    {
+      "file": "20260808093000_fairness_detection_schema.sql",
+      "bytes": 866,
+      "sha256": "25c9ebf1b7ed61fab547de899b348f80d8c62432cb3027e4458885344fcb46d8"
+    },
+    {
+      "file": "20260809061159_evidence_v1_worker_review.sql",
+      "bytes": 7221,
+      "sha256": "abe04a02a29d8a4dee20d99ef409c44220321481375b45f17b4853385894b42e"
+    },
+    {
+      "file": "20260809112645_revoke_unpolicied_data_api_grants.sql",
+      "bytes": 955,
+      "sha256": "7822be6a393b07bd69ec5244df6bcaac2a9f91b027cf331a680d9f186782d1da"
+    },
+    {
+      "file": "20260809113135_harden_video_function_search_paths.sql",
+      "bytes": 561,
+      "sha256": "efc4c4700a75a9751ca4028a5755daee56b9022a1d0ff56dba3ec50a115ff967"
+    },
+    {
+      "file": "20260809113953_restrict_video_notification_enqueue_to_service_role.sql",
+      "bytes": 290,
+      "sha256": "3c73be7f5cb99cfda4f4a2ed555bef90a9e51446d5390b022d62f1ac89a52a3b"
+    },
+    {
+      "file": "20260809233840_restrict_video_report_builder_to_trusted_callers.sql",
+      "bytes": 478,
+      "sha256": "68f114efc2d89950ff914bc71703f0fab5af834736002ae9798f718116373823"
+    },
+    {
+      "file": "20260810002517_enforce_video_delivery_acknowledgement_authorization.sql",
+      "bytes": 1488,
+      "sha256": "47c9468c5c52573c3efab21c803db334b134c163a9423dfbc02e03e49dd8cfdb"
+    },
+    {
+      "file": "20260810021659_report_approval_release_v1.sql",
+      "bytes": 12692,
+      "sha256": "33ccbfeed54c32a2a0eea5df2caaf4e2d0416fb920250eebce8c445c613992a1"
+    },
+    {
+      "file": "20260810024925_bind_report_access_helpers_to_session.sql",
+      "bytes": 2231,
+      "sha256": "83f49e84658cf3708eee7d1f43dce1b50cec2b09c57716e2767d3094e2fa99cb"
+    },
+    {
+      "file": "20260810025857_bind_video_report_authority_helper_to_session.sql",
+      "bytes": 1925,
+      "sha256": "27d1c07e57f50375713cfee1070eba58145326503ffeb500c0499652694e761b"
+    },
+    {
+      "file": "20260810030254_bind_case_permission_child_access_helpers_to_session.sql",
+      "bytes": 4234,
+      "sha256": "e56c9bd386e383c0c8470ea71cf3fd417b96506bea89237d91ecfeec855faa72"
+    },
+    {
+      "file": "20260810031203_bind_organisation_tenant_community_helpers_to_session.sql",
+      "bytes": 6321,
+      "sha256": "d9601ee45f0ba2015f2a19219b5eb8718de96fd17fa2cb4868fdd98b124a428b"
+    },
+    {
+      "file": "20260810031816_bind_ai_casework_helpers_to_session.sql",
+      "bytes": 8049,
+      "sha256": "eb3bf335da24f08fc72bbb31e0bb23c18fd80df34ad24c9a1339283dcd3c1508"
+    },
+    {
+      "file": "20260810032248_authorize_child_private_lookup_helpers.sql",
+      "bytes": 2062,
+      "sha256": "d4e17f22f3f90038dde573112cd924752046abbf307aad83ffa5c05714ff8792"
+    },
+    {
+      "file": "20260810035544_report_export_controls_v1.sql",
+      "bytes": 6833,
+      "sha256": "7e97f23457ddbab6772f845a7ce6f9a3b3107c2f169ad1551dd38383ce5c870d"
+    },
+    {
+      "file": "20260810043030_report_delivery_challenge_v1.sql",
+      "bytes": 7323,
+      "sha256": "ec1d7fd5ee41048c3350df37044bf6575fa79e887c8f54a59336b505b032f53d"
+    },
+    {
+      "file": "20260810043820_harden_report_delivery_challenge_randomness_and_audit.sql",
+      "bytes": 5434,
+      "sha256": "6b47261eccbe2e8734632620106337508120eabd1952dcf760be0047da558071"
+    },
+    {
+      "file": "20260810043929_qualify_report_delivery_pgcrypto_calls.sql",
+      "bytes": 4835,
+      "sha256": "2d248c446a8eb9c2904904313ac340075d36816775c562d40300251006a7a12f"
+    },
+    {
+      "file": "20260810120637_restore_ai_child_feedback_foreign_key.sql",
+      "bytes": 564,
+      "sha256": "d3cc00ef14583c6d1d02055e71993ce04a20b28b0ef00436d3f74448af0d9083"
+    },
+    {
+      "file": "20260810124320_baseline_missing_public_tables_schema_only.sql",
+      "bytes": 18837,
+      "sha256": "6d226f38bc4a1f1bfc03bb5b1bd704491df3f2f3f7fbf81f3e572854b47d6928"
+    },
+    {
+      "file": "20260810124400_baseline_missing_public_table_keys_and_checks.sql",
+      "bytes": 13985,
+      "sha256": "8e2961eeba9c6a084f6f7d52672ca3cecbc1f07300eb58ecbbc0e4a9b20477ed"
+    },
+    {
+      "file": "20260810124409_baseline_missing_public_table_foreign_keys.sql",
+      "bytes": 14573,
+      "sha256": "ac05209f308836ab3256cd23ab4c59094e30824b032be4d892cc3a47d9485c64"
+    },
+    {
+      "file": "20260810124446_baseline_missing_public_table_indexes_and_rls.sql",
+      "bytes": 3371,
+      "sha256": "7286bfb1c193567ace01c1e6d3ac60acda648918e032e1e86b8dcf88e60d8621"
+    },
+    {
+      "file": "20260810124612_baseline_video_report_authority_helpers.sql",
+      "bytes": 1702,
+      "sha256": "9528e58f4445a896481e15a125f6c14ee818f6479e51faa29cfd63570b5947da"
+    },
+    {
+      "file": "20260810124622_baseline_video_report_authority_helper_grants.sql",
+      "bytes": 397,
+      "sha256": "6bcb0266cf9210359199c44e3c00ed2509f9a234cfc967a40bc57a6bfd7c612f"
+    },
+    {
+      "file": "20260810124646_baseline_missing_public_table_policies.sql",
+      "bytes": 15357,
+      "sha256": "1d10ad1c393fb6423503dc329ead56b86b476702466d784ae2f78f49949753da"
+    },
+    {
+      "file": "20260810124731_baseline_legacy_compatibility_columns.sql",
+      "bytes": 983,
+      "sha256": "0b3022ce29aacadad08c6e3ce068cd758f31cbdb22074575638af56b27123e15"
+    },
+    {
+      "file": "20260810124805_baseline_missing_public_table_triggers.sql",
+      "bytes": 668,
+      "sha256": "8458bb9a955696b3ff958fbe6c304ecaf353d252f696d9adf2e921db6e80fe0e"
+    },
+    {
+      "file": "20260810124833_baseline_missing_public_table_data_api_grants.sql",
+      "bytes": 20492,
+      "sha256": "cd0556296ba6e49f5a7b897032275bb5cc0925ff1267b65c81320b741c84b143"
+    },
+    {
+      "file": "20260810132514_preserve_video_report_consent_withdrawal_reason.sql",
+      "bytes": 2009,
+      "sha256": "24e88eae8e01210c420fe462f1a36f4c0c0bde8900cd047095a2ee39e70c1578"
+    },
+    {
+      "file": "20260811060802_fix_report_recipient_rls_recursion.sql",
+      "bytes": 965,
+      "sha256": "5bf500936d3cd9f96e3db3d8659a29d8b1cbdc46b6dd4121dd53e53475e65a1d"
+    },
+    {
+      "file": "20260811060851_fix_child_private_share_policy_privilege.sql",
+      "bytes": 986,
+      "sha256": "dfb51b0464d262f42b3801e911c644aa71677a21b91ff5b4dc1cd8345679086e"
+    },
+    {
+      "file": "20260814144810_governance_compliance_records.sql",
+      "bytes": 9665,
+      "sha256": "2679d73c7691b9335b31c96284f087bcaa98b14224b62bd233f02c9c1ba55db5"
+    },
+    {
+      "file": "20260814145322_risk_engine_review_snapshots.sql",
+      "bytes": 6521,
+      "sha256": "89d19d9a80326bc2c4ae91598dcf489a81dcd12ffb4beb6fdbed8b247cb35759"
+    },
+    {
+      "file": "20260814155950_parent_child_game_relationship_records.sql",
+      "bytes": 9073,
+      "sha256": "de05570102a849278b2c32757995a079d377385367cb8fa4b1878e3a99aa2e5f"
+    },
+    {
+      "file": "20260819004000_query_performance_indexes.sql",
+      "bytes": 863,
+      "sha256": "d44a7898022d0fd4a40df188a6624dc7250bd6dd9627bde74a409142bfa9a47d"
+    },
+    {
+      "file": "20260825185628_agent_skill_results.sql",
+      "bytes": 1471,
+      "sha256": "e08da2efc10360cbbfeb2d1277b27d1c42bdc8e7dc8042071367f23275f9a2e1"
+    },
+    {
+      "file": "20260829181644_harden_parent_video_report_consent_grant.sql",
+      "bytes": 2999,
+      "sha256": "99a1ca8dd7f33821d925b7125f804dedb422f688f893a6d9d6388384bd333d76"
+    },
+    {
+      "file": "20261012150000_ai_coach_psychologist_evaluator.sql",
+      "bytes": 13356,
+      "sha256": "74a20412a1524e9af9e20347f461978511253f32579873f83db9aea7de917210"
+    },
+    {
+      "file": "20261012180000_ai_next_horizon_12_modules.sql",
+      "bytes": 12377,
+      "sha256": "ec89ef408ca3a7a169724401d27756c463506b181161608d69d7af893f6b81c4"
+    }
+  ]
+}

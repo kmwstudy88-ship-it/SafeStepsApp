@@ -41,6 +41,15 @@ for delete to authenticated using (false);
 -- Preserve RLS row checks, remove broad table and preexisting column write grants.
 -- Staff stage/role/tenant updates require a separately authorized server workflow.
 revoke insert,update on public.profiles from public,anon,authenticated;
+
+-- A missing auth-trigger profile can be created only for the caller. Both a
+-- permissive policy and an AND restriction are needed across divergent targets.
+drop policy if exists p0_profile_self_insert on public.profiles;
+create policy p0_profile_self_insert on public.profiles for insert to authenticated
+with check (id=(select auth.uid()));
+drop policy if exists p0_profile_insert_identity on public.profiles;
+create policy p0_profile_insert_identity on public.profiles as restrictive
+for insert to authenticated with check (id=(select auth.uid()));
 do $privileges$
 declare col record; safe_columns text;
 begin

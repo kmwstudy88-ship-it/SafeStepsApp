@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-13",
+  "containsApplicationRows": false,
+  "exports": [
+    {
+      "file": "auth-user-trigger.sql",
+      "bytes": 363,
+      "sha256": "7ffa5e731c668be4ed8f1963c81d952c4715153f00e633020b8f8bbe0e681268"
+    },
+    {
+      "file": "kwhjxggxffphknzxmtrf-application.sql",
+      "bytes": 2289818,
+      "sha256": "05aeda622865b91d756b06babe6ed2316f1e757ba74c94fefd9a0ea9f0725663"
+    },
+    {
+      "file": "kwhjxggxffphknzxmtrf-public.sql",
+      "bytes": 2283893,
+      "sha256": "a7496f8fab73a1b4c0fd69de7233dc527a8e9d350b92a2bdfbdec24d91b949ee"
+    },
+    {
+      "file": "yzxotxbwgxnxemkzigse-application.sql",
+      "bytes": 2665837,
+      "sha256": "970d2dd965c9235954ec4274affa9eafb6df24d670a4b4a5a078707fc059015f"
+    },
+    {
+      "file": "yzxotxbwgxnxemkzigse-public.sql",
+      "bytes": 2637325,
+      "sha256": "06f5bd91bf1687e8bfaadca692a14b0a2fd3c8733f8b482d70d9fa1548f2b517"
+    }
+  ]
+}

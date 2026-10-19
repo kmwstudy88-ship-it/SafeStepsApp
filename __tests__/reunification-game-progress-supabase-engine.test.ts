@@ -110,14 +110,8 @@ describe("reunification game progress Supabase engine", () => {
       ],
       { onConflict: "achievement_id,user_id,case_id" },
     );
-    expect(profileQuery.update).toHaveBeenCalledWith({
-      quest_state: expect.objectContaining({
-        completedQuestIds: ["quest-1"],
-      }),
-      achievement_state: expect.objectContaining({
-        unlockedAchievementIds: ["achievement-1"],
-      }),
-    });
+    expect(supabase.from).not.toHaveBeenCalledWith("profiles");
+    expect(profileQuery.update).not.toHaveBeenCalled();
   });
 
   test("does not unlock achievements when evidence is unvalidated", async () => {
@@ -177,13 +171,7 @@ describe("reunification game progress Supabase engine", () => {
     expect(result.completedQuestIds).toEqual([]);
     expect(result.unlockedAchievementIds).toEqual([]);
     expect(supabase.from).not.toHaveBeenCalledWith("user_achievements");
-    expect(profileQuery.update).toHaveBeenCalledWith({
-      quest_state: expect.objectContaining({
-        completedQuestIds: [],
-      }),
-      achievement_state: expect.objectContaining({
-        unlockedAchievementIds: [],
-      }),
-    });
+    expect(supabase.from).not.toHaveBeenCalledWith("profiles");
+    expect(profileQuery.update).not.toHaveBeenCalled();
   });
 });

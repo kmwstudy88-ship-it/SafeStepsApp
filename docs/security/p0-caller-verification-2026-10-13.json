@@ -1,0 +1,180 @@
+{
+  "date": "2026-10-13",
+  "project": "kwhjxggxffphknzxmtrf",
+  "scope": "Synthetic database-role tests with candidate SQL, all rolled back. No signed Auth/API sessions or deployment.",
+  "access": [
+    {
+      "probe": "allocated_worker_insert",
+      "expected": "one changed fixture",
+      "observed": "1",
+      "passed": true
+    },
+    {
+      "probe": "allocated_worker_read",
+      "expected": "one fixture",
+      "observed": "1",
+      "passed": true
+    },
+    {
+      "probe": "allocated_worker_update",
+      "expected": "one updated fixture",
+      "observed": "1",
+      "passed": true
+    },
+    {
+      "probe": "assessment_client_truncate",
+      "expected": "no client TRUNCATE grant",
+      "observed": "false",
+      "passed": true
+    },
+    {
+      "probe": "escalated_owner_other_case_read",
+      "expected": "zero fixtures",
+      "observed": "0",
+      "passed": true
+    },
+    {
+      "probe": "owner_identity_alias_update",
+      "expected": "denied",
+      "observed": "42501",
+      "passed": true
+    },
+    {
+      "probe": "owner_role_escalation",
+      "expected": "denied",
+      "observed": "42501",
+      "passed": true
+    },
+    {
+      "probe": "owner_safe_profile_update",
+      "expected": "one changed fixture",
+      "observed": "1",
+      "passed": true
+    },
+    {
+      "probe": "parent_staff_only_insert",
+      "expected": "denied",
+      "observed": "42501",
+      "passed": true
+    },
+    {
+      "probe": "parent_staff_only_update",
+      "expected": "zero updated fixtures",
+      "observed": "0",
+      "passed": true
+    },
+    {
+      "probe": "profile_client_truncate",
+      "expected": "no client TRUNCATE grant",
+      "observed": "false",
+      "passed": true
+    },
+    {
+      "probe": "unrelated_read",
+      "expected": "zero fixtures",
+      "observed": "0",
+      "passed": true
+    },
+    {
+      "probe": "unrelated_update",
+      "expected": "zero updated fixtures",
+      "observed": "0",
+      "passed": true
+    },
+    {
+      "probe": "worker_creator_spoof",
+      "expected": "denied",
+      "observed": "42501",
+      "passed": true
+    },
+    {
+      "probe": "worker_other_case_update",
+      "expected": "zero updated fixtures",
+      "observed": "0",
+      "passed": true
+    },
+    {
+      "probe": "worker_update_creator_spoof",
+      "expected": "denied",
+      "observed": "42501",
+      "passed": true
+    }
+  ],
+  "onboarding": [
+    {
+      "probe": "anonymous_execute_denied",
+      "passed": true,
+      "observed": "privilege check"
+    },
+    {
+      "probe": "missing_actor_denied",
+      "passed": true,
+      "observed": "42501"
+    },
+    {
+      "probe": "cannot_complete_intake",
+      "passed": true,
+      "observed": "22023"
+    },
+    {
+      "probe": "cannot_skip_protection",
+      "passed": true,
+      "observed": "42501"
+    },
+    {
+      "probe": "account_protection_allowed",
+      "passed": true,
+      "observed": "account_protected"
+    },
+    {
+      "probe": "consent_required",
+      "passed": true,
+      "observed": "42501"
+    },
+    {
+      "probe": "privacy_notice_required",
+      "passed": true,
+      "observed": "42501"
+    },
+    {
+      "probe": "consent_allowed",
+      "passed": true,
+      "observed": "consent_recorded"
+    },
+    {
+      "probe": "accessibility_step_allowed",
+      "passed": true,
+      "observed": "intake_in_progress"
+    },
+    {
+      "probe": "repeat_does_not_regress",
+      "passed": true,
+      "observed": "intake_in_progress"
+    },
+    {
+      "probe": "other_profile_unchanged",
+      "passed": true,
+      "observed": "not_started"
+    },
+    {
+      "probe": "withdrawn_consent_denied",
+      "passed": true,
+      "observed": "42501"
+    },
+    {
+      "probe": "inactive_profile_denied",
+      "passed": true,
+      "observed": "42501"
+    },
+    {
+      "probe": "safe_profile_insert_conflict_update",
+      "passed": true,
+      "observed": "1"
+    },
+    {
+      "probe": "safe_profile_defaults_preserved",
+      "passed": true,
+      "observed": "parent:not_started"
+    }
+  ]
+}

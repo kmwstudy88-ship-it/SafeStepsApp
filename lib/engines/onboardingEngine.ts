@@ -46,14 +46,12 @@ async function readProfileFields(userId: string) {
   // parent profile idempotently so onboarding never dead-ends while waiting for it.
   const { data: authData, error: authError } = await supabase.auth.getUser();
   if (authError) throw new Error(authError.message);
+  if (authData.user?.id !== userId) throw new Error("Sign in again to prepare your profile.");
 
   const { error: profileError } = await supabase.from("profiles").upsert(
     {
       id: userId,
-      email: authData.user?.email ?? null,
       display_name: authData.user?.user_metadata?.display_name ?? authData.user?.email ?? "Parent",
-      role: "parent",
-      onboarding_status: "not_started",
       updated_at: new Date().toISOString(),
     },
     { onConflict: "id", ignoreDuplicates: true },
@@ -66,6 +64,11 @@ async function readProfileFields(userId: string) {
   if (!retry.data) throw new Error("Your SafeSteps parent profile could not be prepared.");
 
   return retry.data;
+}
+
+async function advanceParentOnboarding(step: "account_protected" | "consent_recorded" | "intake_in_progress") {
+  const { error } = await supabase.rpc("advance_parent_onboarding", { requested_step: step });
+  if (error) throw new Error(error.message);
 }
 
 export async function loadParentOnboardingStatus(): Promise<ParentOnboardingStatus> {
@@ -94,7 +97,9 @@ export async function loadParentOnboardingStatus(): Promise<ParentOnboardingStat
     .maybeSingle();
 
   if (error) throw new Error(error.message);
-  return data ? "consent_recorded" : status;
+  if (!data) return status;
+  await advanceParentOnboarding("consent_recorded");
+  return "consent_recorded";
 }
 
 export async function configureParentAccountProtection(input: {
@@ -128,12 +133,12 @@ export async function configureParentAccountProtection(input: {
       .from("profiles")
       .update({
         notification_preferences: notificationPreferences,
-        onboarding_status: "account_protected",
         updated_at: new Date().toISOString(),
       })
       .eq("id", user.id);
 
     if (error) throw new Error(error.message);
+    await advanceParentOnboarding("account_protected");
     return { deviceProtectionPending: true };
   }
 
@@ -170,12 +175,12 @@ export async function configureParentAccountProtection(input: {
     .from("profiles")
     .update({
       notification_preferences: notificationPreferences,
-      onboarding_status: "account_protected",
       updated_at: new Date().toISOString(),
     })
     .eq("id", user.id);
 
   if (error) throw new Error(error.message);
+  await advanceParentOnboarding("account_protected");
   return { deviceProtectionPending: false };
 }
 
@@ -221,15 +226,7 @@ export async function recordParentOnboardingConsent(choices: ParentConsentChoice
 
   if (consentError) throw new Error(consentError.message);
 
-  const { error: profileError } = await supabase
-    .from("profiles")
-    .update({
-      onboarding_status: "consent_recorded",
-      updated_at: recordedAt,
-    })
-    .eq("id", user.id);
-
-  if (profileError) throw new Error(profileError.message);
+  await advanceParentOnboarding("consent_recorded");
 }
 
 export async function loadParentAccessibilityPreferences() {
@@ -246,10 +243,10 @@ export async function saveParentAccessibilityPreferences(
     .from("profiles")
     .update({
       accessibility_preferences: preferences,
-      onboarding_status: "intake_in_progress",
       updated_at: new Date().toISOString(),
     })
     .eq("id", user.id);
 
   if (error) throw new Error(error.message);
+  await advanceParentOnboarding("intake_in_progress");
 }

@@ -25,9 +25,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: |
-          npm install --package-lock-only
-          npm ci
+        run: npm ci
 
       - name: Typecheck
         shell: bash

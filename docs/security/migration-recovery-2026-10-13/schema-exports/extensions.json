@@ -1,0 +1,126 @@
+{
+  "production": [
+    {
+      "extname": "btree_gist",
+      "extversion": "1.7",
+      "schema": "extensions",
+      "extrelocatable": true
+    },
+    {
+      "extname": "citext",
+      "extversion": "1.6",
+      "schema": "extensions",
+      "extrelocatable": true
+    },
+    {
+      "extname": "hypopg",
+      "extversion": "1.4.1",
+      "schema": "extensions",
+      "extrelocatable": true
+    },
+    {
+      "extname": "index_advisor",
+      "extversion": "0.2.0",
+      "schema": "extensions",
+      "extrelocatable": true
+    },
+    {
+      "extname": "pg_cron",
+      "extversion": "1.6.4",
+      "schema": "pg_catalog",
+      "extrelocatable": false
+    },
+    {
+      "extname": "pg_net",
+      "extversion": "0.20.4",
+      "schema": "extensions",
+      "extrelocatable": false
+    },
+    {
+      "extname": "pg_stat_statements",
+      "extversion": "1.11",
+      "schema": "extensions",
+      "extrelocatable": true
+    },
+    {
+      "extname": "pg_trgm",
+      "extversion": "1.6",
+      "schema": "extensions",
+      "extrelocatable": true
+    },
+    {
+      "extname": "pgcrypto",
+      "extversion": "1.3",
+      "schema": "extensions",
+      "extrelocatable": true
+    },
+    {
+      "extname": "plpgsql",
+      "extversion": "1.0",
+      "schema": "pg_catalog",
+      "extrelocatable": false
+    },
+    {
+      "extname": "supabase_vault",
+      "extversion": "0.3.1",
+      "schema": "vault",
+      "extrelocatable": false
+    },
+    {
+      "extname": "uuid-ossp",
+      "extversion": "1.1",
+      "schema": "extensions",
+      "extrelocatable": true
+    }
+  ],
+  "staging": [
+    {
+      "extname": "btree_gist",
+      "extversion": "1.7",
+      "schema": "extensions",
+      "extrelocatable": true
+    },
+    {
+      "extname": "citext",
+      "extversion": "1.6",
+      "schema": "extensions",
+      "extrelocatable": true
+    },
+    {
+      "extname": "pg_stat_statements",
+      "extversion": "1.11",
+      "schema": "extensions",
+      "extrelocatable": true
+    },
+    {
+      "extname": "pg_trgm",
+      "extversion": "1.6",
+      "schema": "extensions",
+      "extrelocatable": true
+    },
+    {
+      "extname": "pgcrypto",
+      "extversion": "1.3",
+      "schema": "extensions",
+      "extrelocatable": true
+    },
+    {
+      "extname": "plpgsql",
+      "extversion": "1.0",
+      "schema": "pg_catalog",
+      "extrelocatable": false
+    },
+    {
+      "extname": "supabase_vault",
+      "extversion": "0.3.1",
+      "schema": "vault",
+      "extrelocatable": false
+    },
+    {
+      "extname": "uuid-ossp",
+      "extversion": "1.1",
+      "schema": "extensions",
+      "extrelocatable": true
+    }
+  ]
+}

@@ -1391,7 +1391,8 @@ export async function getProfile(userId: string, email?: string | null) {
     .eq("id", userId)
     .maybeSingle();
 
-  if (!error && data) {
+  if (error) throw error;
+  if (data) {
     return data as SafeStepsProfile;
   }
 
@@ -1399,8 +1400,7 @@ export async function getProfile(userId: string, email?: string | null) {
     .from("profiles")
     .insert({
       id: userId,
-      email: email ?? null,
-      role: "parent",
+      primary_email: email ?? null,
     })
     .select("id,email,display_name,role,story_goal,strengths,support_notes")
     .single();

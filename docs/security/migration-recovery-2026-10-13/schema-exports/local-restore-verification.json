@@ -1,0 +1,377 @@
+{
+  "date": "2026-10-13",
+  "scope": "Isolated schema-only restores; synthetic database-role tests rolled back; no signed HTTP sessions.",
+  "container": "supabase_db_baseline-verify",
+  "projects": {
+    "yzxotxbwgxnxemkzigse": {
+      "database": "p0_production_replay",
+      "restoredCatalog": {
+        "publicTables": 836,
+        "publicViews": 24,
+        "candidateRolledBack": true,
+        "fixtureUsersRemaining": 0,
+        "profileRows": 0
+      },
+      "access": [
+        {
+          "probe": "allocated_worker_insert",
+          "passed": true,
+          "expected": "one changed fixture",
+          "observed": "1"
+        },
+        {
+          "probe": "allocated_worker_read",
+          "passed": true,
+          "expected": "one fixture",
+          "observed": "1"
+        },
+        {
+          "probe": "allocated_worker_update",
+          "passed": true,
+          "expected": "one updated fixture",
+          "observed": "1"
+        },
+        {
+          "probe": "assessment_client_truncate",
+          "passed": true,
+          "expected": "no client TRUNCATE grant",
+          "observed": "false"
+        },
+        {
+          "probe": "escalated_owner_other_case_read",
+          "passed": true,
+          "expected": "zero fixtures",
+          "observed": "0"
+        },
+        {
+          "probe": "owner_identity_alias_update",
+          "passed": true,
+          "expected": "denied",
+          "observed": "42501"
+        },
+        {
+          "probe": "owner_role_escalation",
+          "passed": true,
+          "expected": "denied",
+          "observed": "42501"
+        },
+        {
+          "probe": "owner_safe_profile_update",
+          "passed": true,
+          "expected": "one changed fixture",
+          "observed": "1"
+        },
+        {
+          "probe": "parent_staff_only_insert",
+          "passed": true,
+          "expected": "denied",
+          "observed": "42501"
+        },
+        {
+          "probe": "parent_staff_only_update",
+          "passed": true,
+          "expected": "zero updated fixtures",
+          "observed": "0"
+        },
+        {
+          "probe": "profile_client_truncate",
+          "passed": true,
+          "expected": "no client TRUNCATE grant",
+          "observed": "false"
+        },
+        {
+          "probe": "unrelated_read",
+          "passed": true,
+          "expected": "zero fixtures",
+          "observed": "0"
+        },
+        {
+          "probe": "unrelated_update",
+          "passed": true,
+          "expected": "zero updated fixtures",
+          "observed": "0"
+        },
+        {
+          "probe": "worker_creator_spoof",
+          "passed": true,
+          "expected": "denied",
+          "observed": "42501"
+        },
+        {
+          "probe": "worker_other_case_update",
+          "passed": true,
+          "expected": "zero updated fixtures",
+          "observed": "0"
+        },
+        {
+          "probe": "worker_update_creator_spoof",
+          "passed": true,
+          "expected": "denied",
+          "observed": "42501"
+        }
+      ],
+      "onboarding": [
+        {
+          "probe": "anonymous_execute_denied",
+          "passed": true,
+          "observed": "privilege check"
+        },
+        {
+          "probe": "missing_actor_denied",
+          "passed": true,
+          "observed": "42501"
+        },
+        {
+          "probe": "cannot_complete_intake",
+          "passed": true,
+          "observed": "22023"
+        },
+        {
+          "probe": "cannot_skip_protection",
+          "passed": true,
+          "observed": "42501"
+        },
+        {
+          "probe": "account_protection_allowed",
+          "passed": true,
+          "observed": "account_protected"
+        },
+        {
+          "probe": "consent_required",
+          "passed": true,
+          "observed": "42501"
+        },
+        {
+          "probe": "privacy_notice_required",
+          "passed": true,
+          "observed": "42501"
+        },
+        {
+          "probe": "consent_allowed",
+          "passed": true,
+          "observed": "consent_recorded"
+        },
+        {
+          "probe": "accessibility_step_allowed",
+          "passed": true,
+          "observed": "intake_in_progress"
+        },
+        {
+          "probe": "repeat_does_not_regress",
+          "passed": true,
+          "observed": "intake_in_progress"
+        },
+        {
+          "probe": "other_profile_unchanged",
+          "passed": true,
+          "observed": "not_started"
+        },
+        {
+          "probe": "withdrawn_consent_denied",
+          "passed": true,
+          "observed": "42501"
+        },
+        {
+          "probe": "inactive_profile_denied",
+          "passed": true,
+          "observed": "42501"
+        },
+        {
+          "probe": "safe_profile_insert_conflict_update",
+          "passed": true,
+          "observed": "1"
+        },
+        {
+          "probe": "safe_profile_defaults_preserved",
+          "passed": true,
+          "observed": "parent:not_started"
+        }
+      ]
+    },
+    "kwhjxggxffphknzxmtrf": {
+      "database": "p0_staging_replay",
+      "restoredCatalog": {
+        "publicTables": 868,
+        "publicViews": 17,
+        "candidateRolledBack": true,
+        "fixtureUsersRemaining": 0,
+        "profileRows": 0
+      },
+      "access": [
+        {
+          "probe": "allocated_worker_insert",
+          "passed": true,
+          "expected": "one changed fixture",
+          "observed": "1"
+        },
+        {
+          "probe": "allocated_worker_read",
+          "passed": true,
+          "expected": "one fixture",
+          "observed": "1"
+        },
+        {
+          "probe": "allocated_worker_update",
+          "passed": true,
+          "expected": "one updated fixture",
+          "observed": "1"
+        },
+        {
+          "probe": "assessment_client_truncate",
+          "passed": true,
+          "expected": "no client TRUNCATE grant",
+          "observed": "false"
+        },
+        {
+          "probe": "escalated_owner_other_case_read",
+          "passed": true,
+          "expected": "zero fixtures",
+          "observed": "0"
+        },
+        {
+          "probe": "owner_identity_alias_update",
+          "passed": true,
+          "expected": "denied",
+          "observed": "42501"
+        },
+        {
+          "probe": "owner_role_escalation",
+          "passed": true,
+          "expected": "denied",
+          "observed": "42501"
+        },
+        {
+          "probe": "owner_safe_profile_update",
+          "passed": true,
+          "expected": "one changed fixture",
+          "observed": "1"
+        },
+        {
+          "probe": "parent_staff_only_insert",
+          "passed": true,
+          "expected": "denied",
+          "observed": "42501"
+        },
+        {
+          "probe": "parent_staff_only_update",
+          "passed": true,
+          "expected": "zero updated fixtures",
+          "observed": "0"
+        },
+        {
+          "probe": "profile_client_truncate",
+          "passed": true,
+          "expected": "no client TRUNCATE grant",
+          "observed": "false"
+        },
+        {
+          "probe": "unrelated_read",
+          "passed": true,
+          "expected": "zero fixtures",
+          "observed": "0"
+        },
+        {
+          "probe": "unrelated_update",
+          "passed": true,
+          "expected": "zero updated fixtures",
+          "observed": "0"
+        },
+        {
+          "probe": "worker_creator_spoof",
+          "passed": true,
+          "expected": "denied",
+          "observed": "42501"
+        },
+        {
+          "probe": "worker_other_case_update",
+          "passed": true,
+          "expected": "zero updated fixtures",
+          "observed": "0"
+        },
+        {
+          "probe": "worker_update_creator_spoof",
+          "passed": true,
+          "expected": "denied",
+          "observed": "42501"
+        }
+      ],
+      "onboarding": [
+        {
+          "probe": "anonymous_execute_denied",
+          "passed": true,
+          "observed": "privilege check"
+        },
+        {
+          "probe": "missing_actor_denied",
+          "passed": true,
+          "observed": "42501"
+        },
+        {
+          "probe": "cannot_complete_intake",
+          "passed": true,
+          "observed": "22023"
+        },
+        {
+          "probe": "cannot_skip_protection",
+          "passed": true,
+          "observed": "42501"
+        },
+        {
+          "probe": "account_protection_allowed",
+          "passed": true,
+          "observed": "account_protected"
+        },
+        {
+          "probe": "consent_required",
+          "passed": true,
+          "observed": "42501"
+        },
+        {
+          "probe": "privacy_notice_required",
+          "passed": true,
+          "observed": "42501"
+        },
+        {
+          "probe": "consent_allowed",
+          "passed": true,
+          "observed": "consent_recorded"
+        },
+        {
+          "probe": "accessibility_step_allowed",
+          "passed": true,
+          "observed": "intake_in_progress"
+        },
+        {
+          "probe": "repeat_does_not_regress",
+          "passed": true,
+          "observed": "intake_in_progress"
+        },
+        {
+          "probe": "other_profile_unchanged",
+          "passed": true,
+          "observed": "not_started"
+        },
+        {
+          "probe": "withdrawn_consent_denied",
+          "passed": true,
+          "observed": "42501"
+        },
+        {
+          "probe": "inactive_profile_denied",
+          "passed": true,
+          "observed": "42501"
+        },
+        {
+          "probe": "safe_profile_insert_conflict_update",
+          "passed": true,
+          "observed": "1"
+        },
+        {
+          "probe": "safe_profile_defaults_preserved",
+          "passed": true,
+          "observed": "parent:not_started"
+        }
+      ]
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { supabase } from "../supabase/client";
+import { saveMyProfile } from "./profileSelfServiceEngine";
 
 export type GrowthProfile = {
   id: string;
@@ -75,23 +76,7 @@ export async function saveGrowthProfile(input: {
 }) {
   const user = await getCurrentUser();
 
-  const { data, error } = await supabase
-    .from("profiles")
-    .upsert({
-      id: user.id,
-      email: user.email ?? null,
-      role: "parent",
-      story_goal: input.story_goal,
-      strengths: input.strengths,
-      support_notes: input.support_notes,
-      updated_at: new Date().toISOString(),
-    })
-    .select()
-    .single();
-
-  if (error) {
-    throw new Error(error.message);
-  }
+  const data = await saveMyProfile(input);
 
   await supabase.from("progress_events").insert({
     owner_id: user.id,

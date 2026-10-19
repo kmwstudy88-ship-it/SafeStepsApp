@@ -1,8 +1,8 @@
 import * as Linking from "expo-linking";
 
 import { supabase } from "../supabase/client";
+import { saveMyProfile } from "./profileSelfServiceEngine";
 import {
-  defaultRepresentationPreferences,
   normaliseRepresentationPreferences,
   type RepresentationPreferences,
 } from "./representationPreferencesEngine";
@@ -105,6 +105,7 @@ export async function registerWithEmail(input: {
     password: input.password,
     options: {
       emailRedirectTo: getAuthRedirectUrl(),
+      data: { display_name: input.displayName.trim() },
     },
   });
 
@@ -115,18 +116,7 @@ export async function registerWithEmail(input: {
   const user = data.user;
 
   if (user && data.session) {
-    const { error: profileError } = await supabase
-      .from("profiles")
-      .update({
-        display_name: input.displayName.trim(),
-        email: user.email ?? input.email.trim(),
-        updated_at: new Date().toISOString(),
-      })
-      .eq("id", user.id);
-
-    if (profileError) {
-      throw new Error(profileError.message);
-    }
+    await saveMyProfile({ display_name: input.displayName.trim() });
   }
 
   return data;
@@ -269,7 +259,7 @@ export async function fetchMyProfile() {
 
   if (!data) {
     return await upsertProfile({
-      display_name: user.email ?? "Parent",
+      display_name: user.user_metadata?.display_name ?? user.email ?? "Parent",
       email: user.email ?? null,
     });
   }
@@ -294,25 +284,14 @@ export async function upsertProfile(input: {
     throw new Error("No logged-in user found.");
   }
 
-  const { data, error } = await supabase
-    .from("profiles")
-    .upsert({
-      id: user.id,
-      email: input.email ?? user.email ?? null,
-      display_name: input.display_name ?? user.email ?? "Parent",
-      role: "parent",
-      story_goal: input.story_goal ?? "",
-      strengths: input.strengths ?? "",
-      support_notes: input.support_notes ?? "",
-      representation_preferences: input.representation_preferences ?? defaultRepresentationPreferences,
-      updated_at: new Date().toISOString(),
-    })
-    .select()
-    .single();
-
-  if (error) {
-    throw new Error(error.message);
-  }
+  const data = await saveMyProfile({
+    display_name: input.display_name,
+    primary_email: input.email,
+    story_goal: input.story_goal,
+    strengths: input.strengths,
+    support_notes: input.support_notes,
+    representation_preferences: input.representation_preferences,
+  });
 
   return data as SafeStepsProfile;
 }

@@ -151,23 +151,8 @@ export async function evaluateAndPersistReunificationGameProgress(input: {
     if (error) throw error;
   }
 
-  const { error: profileError } = await supabase
-    .from("profiles")
-    .update({
-      quest_state: {
-        evaluatedAt: new Date().toISOString(),
-        completedQuestIds,
-        questEvaluations,
-      },
-      achievement_state: {
-        evaluatedAt: new Date().toISOString(),
-        unlockedAchievementIds,
-        achievementUnlocks,
-      },
-    })
-    .eq("id", input.parentProfileId);
-
-  if (profileError) throw profileError;
+  // Dedicated quest_progress and user_achievements records above own progress.
+  // Do not duplicate client-calculated state into protected profile columns.
 
   return {
     questEvaluations,
