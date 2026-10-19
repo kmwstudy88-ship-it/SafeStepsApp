@@ -40,7 +40,8 @@ const RISK_KEYWORDS = [
 export function scanTextForCrisisRisk(text: string): { hasImmediateRisk: boolean; detectedPhrase?: string } {
   const lower = text.toLowerCase();
   for (const phrase of RISK_KEYWORDS) {
-    if (lower.includes(phrase)) {
+    const escapedPhrase = phrase.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (new RegExp(`\\b${escapedPhrase}\\b`).test(lower)) {
       return { hasImmediateRisk: true, detectedPhrase: phrase };
     }
   }

@@ -58,6 +58,8 @@ export async function processSyncQueue(): Promise<{ synced: number; failed: numb
           created_at: item.timestamp,
         });
         if (error) throw error;
+      } else {
+        throw new Error(`Unsupported offline sync item type: ${String(item.type)}`);
       }
       synced++;
     } catch {

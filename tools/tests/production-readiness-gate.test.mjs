@@ -148,6 +148,11 @@ test('readiness gate fails closed when child-safe human review evidence is missi
     });
     assert.equal(result.status, 1);
     assert.match(result.stderr, /Missing release gate evidence: SAFESTEPS_CHILD_SAFE_HUMAN_REVIEW_SIGNOFF_AT/);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
 test('readiness gate fails closed when content readiness evidence is incomplete', () => {
   const root = createFixture({
     readinessEvidence: {
