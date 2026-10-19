@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import * as Linking from 'expo-linking';
 import { useRouter } from 'expo-router';
@@ -22,6 +22,7 @@ export default function CaseListScreen() {
   const [cases, setCases] = useState<CaseRow[]>([]);
   const [authUserId, setAuthUserId] = useState<string | null>(null);
   const [appUserId, setAppUserId] = useState<string | null>(null);
+  const refreshTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const isSignedIn = useMemo(() => Boolean(authUserId), [authUserId]);
 
@@ -52,6 +53,10 @@ export default function CaseListScreen() {
       if (userError) throw userError;
       const mappedUserId = userRow?.id ?? null;
       setAppUserId(mappedUserId);
+      if (!mappedUserId) {
+        setCases([]);
+        return;
+      }
 
       const { data: assignmentRows, error: assignmentError } = await supabase
         .from('case_assignments')
@@ -62,13 +67,16 @@ export default function CaseListScreen() {
       if (assignmentError) throw assignmentError;
 
       const assignedCaseIds = (assignmentRows || []).map((row: any) => row.case_id).filter(Boolean);
-
-      let caseQuery = supabase.from('cases').select('id,title,status,updated_at').order('updated_at', { ascending: false });
-      if (assignedCaseIds.length) {
-        caseQuery = caseQuery.in('id', assignedCaseIds);
+      if (!assignedCaseIds.length) {
+        setCases([]);
+        return;
       }
 
-      const { data: caseRows, error: caseError } = await caseQuery;
+      const { data: caseRows, error: caseError } = await supabase
+        .from('cases')
+        .select('id,title,status,updated_at')
+        .in('id', [...new Set(assignedCaseIds)])
+        .order('updated_at', { ascending: false });
       if (caseError) throw caseError;
 
       setCases((caseRows || []) as CaseRow[]);
@@ -79,6 +87,14 @@ export default function CaseListScreen() {
     }
   }, []);
 
+  const scheduleLoadCases = useCallback(() => {
+    if (refreshTimer.current) clearTimeout(refreshTimer.current);
+    refreshTimer.current = setTimeout(() => {
+      refreshTimer.current = null;
+      void loadCases();
+    }, 250);
+  }, [loadCases]);
+
   useEffect(() => {
     loadCases();
   }, [loadCases]);
@@ -86,20 +102,21 @@ export default function CaseListScreen() {
   useEffect(() => {
     const channel = supabase
       .channel('case-management-live')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'case_assignments' }, loadCases)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'cases' }, loadCases)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'analyses' }, loadCases)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'case_assignments' }, scheduleLoadCases)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'cases' }, scheduleLoadCases)
       .subscribe();
 
-    const authSubscription = supabase.auth.onAuthStateChange(() => {
-      loadCases();
+    const authSubscription = supabase.auth.onAuthStateChange((event) => {
+      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT') scheduleLoadCases();
     });
 
     return () => {
+      if (refreshTimer.current) clearTimeout(refreshTimer.current);
+      refreshTimer.current = null;
       supabase.removeChannel(channel);
       authSubscription.data.subscription.unsubscribe();
     };
-  }, [loadCases]);
+  }, [loadCases, scheduleLoadCases]);
 
   async function signInWithPassword() {
     setAuthenticating(true);
@@ -107,7 +124,7 @@ export default function CaseListScreen() {
     try {
       const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
       if (signInError) throw signInError;
-      await loadCases();
+      scheduleLoadCases();
     } catch (signInError: any) {
       setError(signInError?.message || 'Sign in failed');
     } finally {
@@ -134,6 +151,8 @@ export default function CaseListScreen() {
 
   async function signOut() {
     await supabase.auth.signOut();
+    if (refreshTimer.current) clearTimeout(refreshTimer.current);
+    refreshTimer.current = null;
     await loadCases();
   }
 

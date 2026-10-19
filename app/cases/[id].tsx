@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
@@ -21,6 +21,7 @@ export default function CaseDetailScreen() {
   const [followUpTasks, setFollowUpTasks] = useState<CaseRiskHistoryResponse['follow_up_tasks']>([]);
   const [riskError, setRiskError] = useState<string | null>(null);
   const [recomputingRisk, setRecomputingRisk] = useState(false);
+  const refreshTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const riskSummary = buildCaseRiskSummary({ riskHistory, riskError });
 
   const loadCase = useCallback(async () => {
@@ -30,7 +31,7 @@ export default function CaseDetailScreen() {
 
     try {
       const [{ data: caseData, error: caseError }, { data: documentData, error: documentError }, { data: analysisData, error: analysisError }, riskPayload] = await Promise.all([
-        supabase.from('cases').select('*').eq('id', id).maybeSingle(),
+        supabase.from('cases').select('id,title,status,updated_at').eq('id', id).maybeSingle(),
         supabase.from('documents').select('id,file_name,processing_status,updated_at').eq('case_id', id).order('updated_at', { ascending: false }),
         supabase.from('analyses').select('id,provider,model,summary,created_at,risk_result').eq('case_id', id).order('created_at', { ascending: false }),
         getCaseRiskHistory(id).then((data) => ({ data, error: null })).catch((loadRiskError: any) => ({ data: null, error: loadRiskError })),
@@ -75,18 +76,27 @@ export default function CaseDetailScreen() {
 
   useEffect(() => {
     if (!id) return;
+    const scheduleLoadCase = () => {
+      if (refreshTimer.current) clearTimeout(refreshTimer.current);
+      refreshTimer.current = setTimeout(() => {
+        refreshTimer.current = null;
+        void loadCase();
+      }, 250);
+    };
 
     const channel = supabase
       .channel(`case-${id}-live`)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'documents', filter: `case_id=eq.${id}` }, loadCase)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'analyses', filter: `case_id=eq.${id}` }, loadCase)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'case_events', filter: `case_id=eq.${id}` }, loadCase)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'risk_snapshots', filter: `case_id=eq.${id}` }, loadCase)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'escalation_alerts', filter: `case_id=eq.${id}` }, loadCase)
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'follow_up_tasks', filter: `case_id=eq.${id}` }, loadCase)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'documents', filter: `case_id=eq.${id}` }, scheduleLoadCase)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'analyses', filter: `case_id=eq.${id}` }, scheduleLoadCase)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'case_events', filter: `case_id=eq.${id}` }, scheduleLoadCase)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'risk_snapshots', filter: `case_id=eq.${id}` }, scheduleLoadCase)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'escalation_alerts', filter: `case_id=eq.${id}` }, scheduleLoadCase)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'follow_up_tasks', filter: `case_id=eq.${id}` }, scheduleLoadCase)
       .subscribe();
 
     return () => {
+      if (refreshTimer.current) clearTimeout(refreshTimer.current);
+      refreshTimer.current = null;
       supabase.removeChannel(channel);
     };
   }, [id, loadCase]);

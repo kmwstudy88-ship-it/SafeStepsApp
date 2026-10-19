@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
-import { AssessmentRunnerScreen } from '../../lib/assessments/AssessmentRunnerScreen';
-import { ForensicCriteriaAssessmentScreen } from '../../lib/assessments/ForensicCriteriaAssessmentScreen';
-import { ProtectiveCapacityReflectionScreen } from '../../lib/assessments/ProtectiveCapacityReflectionScreen';
-import { SequencePracticeScreen } from '../../lib/assessments/SequencePracticeScreen';
+import React, { lazy, Suspense, useState } from 'react';
+import { ActivityIndicator, View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { ALL_ASSESSMENTS, StandardAssessment } from '../../lib/assessments/assessmentDefinitions';
+
+const AssessmentRunnerScreen = lazy(() => import('../../lib/assessments/AssessmentRunnerScreen').then((module) => ({ default: module.AssessmentRunnerScreen })));
+const ForensicCriteriaAssessmentScreen = lazy(() => import('../../lib/assessments/ForensicCriteriaAssessmentScreen').then((module) => ({ default: module.ForensicCriteriaAssessmentScreen })));
+const ProtectiveCapacityReflectionScreen = lazy(() => import('../../lib/assessments/ProtectiveCapacityReflectionScreen').then((module) => ({ default: module.ProtectiveCapacityReflectionScreen })));
+const SequencePracticeScreen = lazy(() => import('../../lib/assessments/SequencePracticeScreen').then((module) => ({ default: module.SequencePracticeScreen })));
 
 const FORENSIC_TAB = {
   id: 'FORENSIC',
@@ -57,15 +58,17 @@ export default function AssessmentsRoute() {
         ))}
       </View>
       <View style={{ flex: 1 }}>
-        {selectedAssessment.kind === 'forensic' ? (
-          <ForensicCriteriaAssessmentScreen />
-        ) : selectedAssessment.kind === 'protective-capacity' ? (
-          <ProtectiveCapacityReflectionScreen />
-        ) : selectedAssessment.kind === 'sequence-practice' ? (
-          <SequencePracticeScreen />
-        ) : (
-          <AssessmentRunnerScreen key={selectedAssessment.id} assessment={selectedAssessment} />
-        )}
+        <Suspense fallback={<ActivityIndicator style={styles.loading} size="large" color="#208AEF" />}>
+          {selectedAssessment.kind === 'forensic' ? (
+            <ForensicCriteriaAssessmentScreen />
+          ) : selectedAssessment.kind === 'protective-capacity' ? (
+            <ProtectiveCapacityReflectionScreen />
+          ) : selectedAssessment.kind === 'sequence-practice' ? (
+            <SequencePracticeScreen />
+          ) : (
+            <AssessmentRunnerScreen key={selectedAssessment.id} assessment={selectedAssessment} />
+          )}
+        </Suspense>
       </View>
     </SafeAreaView>
   );
@@ -78,4 +81,5 @@ const styles = StyleSheet.create({
   tabBtnActive: { backgroundColor: '#208AEF' },
   tabText: { fontSize: 13, fontWeight: '600', color: '#4A5568' },
   tabTextActive: { color: '#FFFFFF', fontWeight: '700' },
+  loading: { marginTop: 24 },
 });

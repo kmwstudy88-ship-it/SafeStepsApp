@@ -46,6 +46,48 @@ test('getSupervisorDashboard preserves review disclosures when the supervisor ha
   assert.equal(dashboard.decision_support_only, true);
 });
 
+test('getCaseRiskHistory selects only fields returned to the case detail screen', async () => {
+  const selections = new Map();
+  const rows = {
+    users: { id: 'app-user-1', role_id: 'role-1', is_active: true },
+    roles: { role_key: 'admin', role_name: 'Administrator' },
+    cases: { id: 'case-1', title: 'Case 1', status: 'open' },
+    risk_snapshots: [{ id: 'snapshot-1', score: 32, tier: 'moderate', confidence: 0.7, rationale: 'Review required', model_version: 'v1', created_at: '2026-09-01T00:00:00Z' }],
+    case_events: [{ id: 'event-1', event_type: 'field_note', event_source: 'worker', note: 'Recorded', created_at: '2026-09-01T00:00:00Z' }],
+    escalation_alerts: [],
+    follow_up_tasks: [],
+  };
+  const adminClient = {
+    from(table) {
+      const result = { data: rows[table] ?? [], error: null };
+      const query = {
+        select(columns) {
+          selections.set(table, [...(selections.get(table) || []), columns]);
+          return this;
+        },
+        eq() { return this; },
+        in() { return this; },
+        order() { return this; },
+        limit() { return this; },
+        maybeSingle() { return Promise.resolve(result); },
+        then(resolve, reject) { return Promise.resolve(result).then(resolve, reject); },
+      };
+      return query;
+    },
+  };
+
+  const history = await createCaseRiskService(adminClient)
+    .getCaseRiskHistory({ authUserId: 'auth-user-1', caseId: 'case-1' });
+
+  assert.equal(selections.get('risk_snapshots')?.[0], 'id,score,tier,confidence,rationale,model_version,created_at');
+  assert.equal(selections.get('case_events')?.[0], 'id,event_type,event_source,note,created_at');
+  assert.equal(selections.get('escalation_alerts')?.[0], 'id,trigger_type,severity,status,created_at');
+  assert.equal(selections.get('follow_up_tasks')?.[0], 'id,task_type,title,priority,status,due_at');
+  assert.equal(history.risk_history[0].id, 'snapshot-1');
+  assert.equal(history.recent_events[0].id, 'event-1');
+  assert.equal(history.human_review_required, true);
+});
+
 test('buildEscalationAlerts produces stable dedupe keys for duplicate triggering events', () => {
   const snapshot = {
     score: 92,

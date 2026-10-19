@@ -567,10 +567,10 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
       await assertCaseAccess(adminClient, actor, caseId, 'read');
 
       const [snapshotsResult, eventsResult, alertsResult, tasksResult] = await Promise.all([
-        adminClient.from('risk_snapshots').select('*').eq('case_id', caseId).order('created_at', { ascending: false }).limit(25),
-        adminClient.from('case_events').select('*').eq('case_id', caseId).order('created_at', { ascending: false }).limit(25),
-        adminClient.from('escalation_alerts').select('*').eq('case_id', caseId).in('status', ['open', 'acknowledged']).order('created_at', { ascending: false }).limit(25),
-        adminClient.from('follow_up_tasks').select('*').eq('case_id', caseId).in('status', ['pending', 'in_progress', 'overdue']).order('due_at', { ascending: true }).limit(25),
+        adminClient.from('risk_snapshots').select('id,score,tier,confidence,rationale,model_version,created_at').eq('case_id', caseId).order('created_at', { ascending: false }).limit(25),
+        adminClient.from('case_events').select('id,event_type,event_source,note,created_at').eq('case_id', caseId).order('created_at', { ascending: false }).limit(25),
+        adminClient.from('escalation_alerts').select('id,trigger_type,severity,status,created_at').eq('case_id', caseId).in('status', ['open', 'acknowledged']).order('created_at', { ascending: false }).limit(25),
+        adminClient.from('follow_up_tasks').select('id,task_type,title,priority,status,due_at').eq('case_id', caseId).in('status', ['pending', 'in_progress', 'overdue']).order('due_at', { ascending: true }).limit(25),
       ]);
       if (snapshotsResult.error) throw snapshotsResult.error;
       if (eventsResult.error) throw eventsResult.error;
@@ -604,9 +604,9 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
 
       const [casesResult, snapshotsResult, alertsResult, tasksResult, eventsResult] = await Promise.all([
         adminClient.from('cases').select('id,title,status,updated_at').in('id', caseIds),
-        adminClient.from('risk_snapshots').select('*').in('case_id', caseIds).order('created_at', { ascending: false }),
-        adminClient.from('escalation_alerts').select('*').in('case_id', caseIds).order('created_at', { ascending: false }),
-        adminClient.from('follow_up_tasks').select('*').in('case_id', caseIds).order('due_at', { ascending: true }),
+        adminClient.from('risk_snapshots').select('case_id,score,tier,confidence,rationale,created_at').in('case_id', caseIds).order('created_at', { ascending: false }),
+        adminClient.from('escalation_alerts').select('id,case_id,status,severity,trigger_type,created_at').in('case_id', caseIds).in('status', ['open', 'acknowledged']).order('created_at', { ascending: false }),
+        adminClient.from('follow_up_tasks').select('id,case_id,title,priority,status,due_at').in('case_id', caseIds).in('status', ['pending', 'in_progress', 'overdue']).order('due_at', { ascending: true }),
         adminClient.from('case_events').select('id,case_id,event_type,note,created_at').in('case_id', caseIds).order('created_at', { ascending: false }),
       ]);
       if (casesResult.error) throw casesResult.error;
