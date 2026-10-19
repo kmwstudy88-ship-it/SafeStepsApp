@@ -1,0 +1,49 @@
+{
+  "safesteps_master_scoring_engine": {
+    "knowledge_assessment": {
+      "weight": 25,
+      "max_points": 250
+    },
+    "scenario_engine": {
+      "weight": 40,
+      "max_points": 400
+    },
+    "reflections": {
+      "weight": 15,
+      "max_points": 150
+    },
+    "activities": {
+      "weight": 20,
+      "max_points": 200
+    },
+    "total_points": 1000,
+    "levels": [
+      {
+        "level": "Needs Support",
+        "range": "0-499",
+        "colour": "red"
+      },
+      {
+        "level": "Developing",
+        "range": "500-699",
+        "colour": "orange"
+      },
+      {
+        "level": "Competent",
+        "range": "700-899",
+        "colour": "green"
+      },
+      {
+        "level": "Advanced",
+        "range": "900-1000",
+        "colour": "gold"
+      }
+    ],
+    "ai_actions": {
+      "needs_support": "repeat_lesson",
+      "developing": "assign_coaching",
+      "competent": "unlock_next_lesson",
+      "advanced": "unlock_advanced_pathway"
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "lessonId": "building-secure-attachment-lesson-1",
+  "courseId": "building-secure-attachment",
+  "title": "What Secure Attachment Really Means",
+  "metadata": {
+    "version": "1.0.0",
+    "estimatedDurationMinutes": 30,
+    "targetAudience": "Parents and Caregivers",
+    "prerequisites": []
+  },
+  "aiFacilitatorConfig": {
+    "personaRole": "Warm, empathetic parenting coach grounded in attachment theory and relational frameworks",
+    "pedagogicalFramework": {
+      "theoreticalBasis": "Attachment theory and relational frameworks guiding users from insecure loops to earned security",
+      "scaffoldingStrategy": "Socratic questioning, active listening validation, and scaffolded instruction"
+    },
+    "pacingConfig": {
+      "openingReflectionMinutes": 5,
+      "coreInstructionMinutes": 10,
+      "interactiveAssessmentsMinutes": 5,
+      "guidedActivityMinutes": 7,
+      "closingReflectionMinutes": 3
+    },
+    "interactionRules": [
+      "Validate learner emotions before offering pedagogical guidance",
+      "Ask one follow-up question at a time to prevent cognitive overload",
+      "Provide immediate constructive feedback on assessment responses"
+    ],
+    "systemPrompts": {
+      "openingGreetingPrompt": "Welcome to Lesson 1: What Secure Attachment Really Means. In this 30-minute session, we will explore the foundational elements of emotional safety, consistency, and connection with your child.",
+      "quizFacilitationPrompt": "Let's review key principles of secure attachment and relational trust through these practical scenarios.",
+      "activityGuidancePrompt": "Take a moment to prepare for your undivided attention exercise. Removing distractions helps send a clear message of availability.",
+      "closingReflectionPrompt": "As we conclude today's lesson, reflect on how your own upbringing influences your current dynamic with your child."
+    },
+    "safetyAndIntervention": {
+      "sosToolkitTrigger": "Detect distress signals and activate the SOS toolkit for immediate, in-the-moment support"
+    }
+  },
+  "openingReflection": {
+    "prompt": "What does safety mean to you in relationships, and how did your caregivers respond to your emotions growing up?",
+    "guidance": "Reflect on your personal history of emotional safety to better understand your natural tendencies when responding to your child's needs[cite: 11]."
+  },
+  "content": {
+    "overview": "Secure attachment is the deep sense a child has that their caregiver is emotionally available, responsive, and safe[cite: 11]. It is not about being perfect or constantly cheerful[cite: 11]. It is about being consistent enough that a child trusts you will return, listen, and care[cite: 11]. Children with secure attachment explore more confidently, recover from stress more quickly, and form healthier relationships throughout life[cite: 11].",
+    "coreText": "Many parents worry that they have already damaged attachment, but attachment is flexible and repairable[cite: 11]. Even if a parent has made mistakes, secure attachment can still form through repeated moments of connection, comfort, and responsiveness[cite: 11]. What matters most is the pattern over time, not isolated moments[cite: 11]. This lesson helps parents understand the foundations of secure attachment and why it is one of the strongest predictors of a child’s emotional wellbeing[cite: 11].",
+    "keyConcepts": [
+      {
+        "concept": "Emotional Availability & Consistency",
+        "description": "Providing dependable presence and responsiveness so the child trusts that their caregiver is a safe base[cite: 11]."
+      },
+      {
+        "concept": "Patterns Over Perfection",
+        "description": "Recognizing that secure attachment is built over cumulative daily moments rather than flawless parenting[cite: 11]."
+      },
+      {
+        "concept": "Flexibility & Repairability",
+        "description": "Understanding that attachment bond dynamics can be reshaped and restored through ongoing connection and comfort[cite: 11]."
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "quiz-1",
+      "type": "multiple-choice",
+      "taxonomyLevel": "Knowledge Recall",
+      "question": "What is the core foundation of secure attachment between a parent and child?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "Never making mistakes and maintaining a cheerful mood at all times.",
+          "isCorrect": false,
+          "explanation": "Secure attachment is not about perfection or being constantly cheerful, but about overall consistency and responsiveness[cite: 11]."
+        },
+        {
+          "id": "opt-b",
+          "text": "A deep sense that the caregiver is emotionally available, responsive, and safe[cite: 11].",
+          "isCorrect": true,
+          "explanation": "Correct! Secure attachment comes from a child's trust that their caregiver is dependable and safe[cite: 11]."
+        },
+        {
+          "id": "opt-c",
+          "text": "Ensuring the child never experiences stress or difficult emotions.",
+          "isCorrect": false,
+          "explanation": "Secure attachment helps children recover from stress quickly, rather than shielding them from all stress[cite: 11]."
+        }
+      ]
+    },
+    {
+      "id": "quiz-2",
+      "type": "scenario-analysis",
+      "taxonomyLevel": "Applied Understanding",
+      "question": "A parent feels guilty after losing their patience with their child during a difficult morning. Based on attachment theory, what is the most accurate perspective?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "The attachment bond has been permanently damaged by this mistake.",
+          "isCorrect": false,
+          "explanation": "Attachment is flexible and repairable; isolated mistakes do not destroy a bond[cite: 11]."
+        },
+        {
+          "id": "opt-b",
+          "text": "What matters most is the pattern over time, and secure attachment forms through ongoing connection and responsiveness[cite: 11].",
+          "isCorrect": true,
+          "explanation": "Correct! Cumulative patterns over time are what shape secure attachment, not single moments of imperfection[cite: 11]."
+        },
+        {
+          "id": "opt-c",
+          "text": "The parent should ignore the incident to avoid making the child worry.",
+          "isCorrect": false,
+          "explanation": "Acknowledging moments and reconnecting builds trust and repairs the dynamic[cite: 11]."
+        }
+      ]
+    }
+  ],
+  "guidedActivities": [
+    {
+      "activityId": "act-1",
+      "title": "Undivided Attention Practice",
+      "objective": "Provide uninterrupted presence to signal safety and emotional availability.",
+      "estimatedDurationMinutes": 5,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Set aside five minutes today to give your child your full, undivided attention (put away phones and distractions)[cite: 11]."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Engage in whatever activity your child chooses without redirecting them[cite: 11]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Notice how your child responds to your complete availability[cite: 11]."
+        }
+      ]
+    },
+    {
+      "activityId": "act-2",
+      "title": "Comfort Seeking Reflection",
+      "objective": "Identify and evaluate responses to a child's bid for comfort.",
+      "estimatedDurationMinutes": 3,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Identify one specific moment this week when your child sought comfort or reassurance from you[cite: 11]."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Reflect on your emotional state and verbal/physical response during that interaction[cite: 11]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Consider small adjustments that could enhance emotional safety during future bids for comfort[cite: 11]."
+        }
+      ]
+    }
+  ],
+  "actionableTakeaways": [
+    "Focus on consistency and emotional availability rather than striving for perfection[cite: 11].",
+    "Remember that attachment is built through patterns over time, allowing for growth and repair[cite: 11].",
+    "Dedicated moments of undivided attention strengthen a child's trust and sense of safety[cite: 11]."
+  ],
+  "reflectionQuestions": [
+    {
+      "id": "ref-1",
+      "question": "What does safety mean to you in relationships?[cite: 11]"
+    },
+    {
+      "id": "ref-2",
+      "question": "How did your caregivers respond to your emotions growing up?[cite: 11]"
+    },
+    {
+      "id": "ref-3",
+      "question": "What moments help your child feel most connected to you?[cite: 11]"
+    }
+  ]
+}

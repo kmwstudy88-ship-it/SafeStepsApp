@@ -16,6 +16,11 @@
     "Support safer online practices within communities",
     "Identify and respond to tech-facilitated abuse in safe and appropriate ways"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_recognising_digital_red_flags",
+    "lesson_identity_and_safety",
+    "lesson_barriers_and_risks",
+    "lesson_building_safe_communities"
+  ],
   "content": []
 }

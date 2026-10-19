@@ -16,6 +16,11 @@
     "Choose safe and appropriate bystander actions",
     "Promote community responsibility for preventing DFV"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_recognising_warning_signs",
+    "lesson_everyday_prevention_actions",
+    "lesson_coordinated_collective_action",
+    "lesson_building_safe_communities"
+  ],
   "content": []
 }

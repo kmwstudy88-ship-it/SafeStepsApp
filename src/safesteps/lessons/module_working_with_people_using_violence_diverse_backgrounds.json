@@ -16,6 +16,12 @@
     "Engage safely with people using violence from diverse backgrounds",
     "Promote accountability and behaviour change in culturally informed ways"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_cultural_contexts_of_violence",
+    "lesson_cultural_complexity",
+    "lesson_accountability_frameworks",
+    "working_with_resistance",
+    "working_with_high_risk_cases"
+  ],
   "content": []
 }

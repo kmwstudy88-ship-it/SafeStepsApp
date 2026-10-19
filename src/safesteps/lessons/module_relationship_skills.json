@@ -1,6 +1,22 @@
 {
   "id": "module_relationship_skills",
   "title": "Relationship Skills",
+  "description": "This module strengthens listening, empathy, communication, conflict repair, attachment, and reliable parent-child connection through practical relationship skills.",
+  "type": "module",
   "level": "general",
-  "lessons": []
+  "tags": ["relationships", "attachment", "communication", "empathy", "conflict repair"],
+  "outcomes": [
+    "Use active listening and empathy to understand another person's experience",
+    "Communicate needs and boundaries without intimidation, blame, or escalation",
+    "Apply attachment-informed repair strategies that strengthen parent-child connection"
+  ],
+  "lessons": [
+    "active_listening",
+    "building_empathy",
+    "communication_skills",
+    "conflict_management",
+    "lesson_attachment_and_relationships",
+    "lesson_maintaining_parent_child_connection"
+  ],
+  "content": []
 }

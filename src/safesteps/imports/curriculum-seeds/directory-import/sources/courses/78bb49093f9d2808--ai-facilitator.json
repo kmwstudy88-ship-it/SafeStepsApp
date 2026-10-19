@@ -1,0 +1,46 @@
+{
+  "lessonId": "healthy-boundaries-and-routines-lesson-4",
+  "courseId": "healthy-boundaries-and-routines",
+  "title": "Balancing Flexibility and Structure",
+  "aiFacilitatorAndTeacherScript": {
+    "moduleOverview": "Welcome, AI Facilitator / Teacher. This script provides the complete pedagogical guide for delivering Lesson 4: 'Balancing Flexibility and Structure'. Your goal is to guide participants on how to combine a stable foundation with empathetic responsiveness, avoiding both excessive rigidity and chaotic flexibility[cite: 4].",
+    "timingAndPacing": {
+      "totalDurationMinutes": 30,
+      "breakdown": [
+        {"phase": "Introduction & Hook", "durationMinutes": 5, "description": "Welcome participants, explore the tension between rules and adaptability, and introduce structure with empathy[cite: 4]."},
+        {"phase": "Core Content Delivery", "durationMinutes": 10, "description": "Explain how too much rigidity creates rebellion and too much flexibility creates insecurity, and how to offer choices within boundaries[cite: 4]."},
+        {"phase": "Interactive Reflection & Discussion", "durationMinutes": 8, "description": "Engage participants with reflection questions on their natural tendencies and family balance[cite: 4]."},
+        {"phase": "Actionable Activity Assignment", "durationMinutes": 5, "description": "Guide participants to practice offering choices within routines and reflecting on past rigidity or flexibility[cite: 4]."},
+        {"phase": "Wrap-up & Quiz Prompt", "durationMinutes": 2, "description": "Summarize key course takeaways and direct learners to the final lesson quiz."}
+      ]
+    },
+    "facilitatorDialogueAndPrompts": [
+      {
+        "stage": "Opening",
+        "script": "Welcome everyone to our final lesson: 'Balancing Flexibility and Structure.' Throughout this course, we've talked about boundaries and routines. But what happens when life gets unpredictable? Today we'll explore how healthy parenting requires both a stable foundation and compassionate adaptability[cite: 4]."
+      },
+      {
+        "stage": "Core Concept Explanation",
+        "script": "Too much rigidity can create fear or rebellion, while too much flexibility can create chaos or insecurity[cite: 4]. Children thrive when we provide stability while adapting to their emotions and developmental stage[cite: 4]. Remember, flexibility is not the opposite of structure—it is structure with empathy[cite: 4]. By offering choices within boundaries, we stay connected while enforcing limits[cite: 4]."
+      },
+      {
+        "stage": "Guided Reflection Prompt",
+        "script": "Let's reflect on our parenting style: Do you tend to lean more toward rigidity or flexibility[cite: 4]? How does your child respond when you offer them choices within clear boundaries[cite: 4]? What does a healthy, balanced home look like for your family[cite: 4]?"
+      },
+      {
+        "stage": "Activity Assignment",
+        "script": "For your practice this week, identify one routine where you can offer your child a meaningful choice, such as choosing between two outfits or snack options[cite: 4]. Also, reflect on a recent moment where you were either too rigid or too flexible, and consider how you might approach it differently next time[cite: 4]."
+      }
+    ],
+    "teacherTipsAndTroubleshooting": [
+      {
+        "challenge": "Participant worries that offering choices means giving up control.",
+        "strategy": "Clarify that they are offering *limited* choices (e.g., 'Do you want to wear the blue shirt or the red shirt?'), which empowers the child while keeping the parent firmly in charge of the overarching boundary."
+      },
+      {
+        "challenge": "Participant feels they swing wildly between being too strict and too lenient.",
+        "strategy": "Validate that finding the middle ground is an ongoing practice, not a destination. Encourage self-compassion as they experiment with structure combined with empathy."
+      }
+    ]
+  }
+}

@@ -16,6 +16,10 @@
     "Recognise the underlying drivers of DFV",
     "Identify key prevention strategies that promote long-term cultural change"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_community_roles_in_prevention",
+    "lesson_prevention_strategies",
+    "lesson_designing_prevention_programs"
+  ],
   "content": []
 }

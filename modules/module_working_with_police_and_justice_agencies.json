@@ -16,6 +16,12 @@
     "Collaborate effectively with justice agencies",
     "Support clients through reporting, evidence, and risk processes"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_police_roles_and_responses",
+    "lesson_justice_system_intersections",
+    "lesson_legal_responses_to_dfv",
+    "lesson_coordinated_responses",
+    "lesson_multiagency_work"
+  ],
   "content": []
 }

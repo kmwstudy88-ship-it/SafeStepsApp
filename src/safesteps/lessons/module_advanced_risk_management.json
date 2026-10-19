@@ -17,6 +17,10 @@
     "Participate effectively in multi-agency risk panels and high-risk teams",
     "Monitor and respond to dynamic and rapidly changing DFV risk"
   ],
-  "lessons": [],
+  "lessons": [
+    "risk_identification",
+    "lesson_monitoring_dynamic_risk",
+    "lesson_evidence_and_risk_processes"
+  ],
   "content": []
 }

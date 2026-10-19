@@ -16,6 +16,11 @@
     "Promote economic empowerment and employment pathways",
     "Strengthen long-term recovery and independence"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_long_term_recovery_planning",
+    "lesson_long_term_housing_stability",
+    "lesson_economic_empowerment_strategies",
+    "lesson_pathways_to_financial_independence"
+  ],
   "content": []
 }

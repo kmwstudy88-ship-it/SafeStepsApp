@@ -16,6 +16,10 @@
     "Mobilise community members to participate in safety and prevention initiatives",
     "Sustain long-term community-led change efforts"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_change_leadership",
+    "lesson_leadership_responsibilities",
+    "lesson_community_leadership_for_respect"
+  ],
   "content": []
 }

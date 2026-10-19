@@ -16,6 +16,11 @@
     "Recognise key pathways for victim-survivors, children, and people using violence",
     "Identify how services coordinate and interact to support safety"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_dfv_system_overview",
+    "lesson_referral_pathways",
+    "lesson_civil_and_criminal_pathways",
+    "lesson_navigating_systems"
+  ],
   "content": []
 }

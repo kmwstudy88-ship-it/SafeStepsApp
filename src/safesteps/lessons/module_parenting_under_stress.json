@@ -16,6 +16,11 @@
     "Support children’s emotional needs during instability",
     "Maintain parent–child connection even in high‑stress environments"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_managing_parental_stress",
+    "regulation_strategies",
+    "co_regulation_basics",
+    "building_safe_routines"
+  ],
   "content": []
 }

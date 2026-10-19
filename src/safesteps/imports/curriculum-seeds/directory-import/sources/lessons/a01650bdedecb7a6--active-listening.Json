@@ -1,0 +1,59 @@
+{
+  "id": "lesson_active_listening",
+  "title": "Active Listening",
+  "course_overview": {
+    "overview": "This lesson introduces the core ideas behind active listening and prepares parents to apply the skills in real-life moments. It blends trauma-informed practice, relational safety, and practical strategies that can be used immediately[cite: 2].",
+    "duration": "45–60 Minutes",
+    "prerequisites": "None (Sensitivity/Content Warning Advised)"
+  },
+  "learning_outcomes": [
+    "Understand the purpose and value of active listening[cite: 2].",
+    "Identify common challenges and how to respond calmly[cite: 2].",
+    "Practice simple, repeatable strategies that build confidence[cite: 2].",
+    "Strengthen connection and emotional safety during difficult moments[cite: 2]."
+  ],
+  "ai_teacher_facilitator_profile": {
+    "persona_name": "Aria - Trauma-Informed Parent Support Facilitator",
+    "tone": "Warm, reassuring, non-judgmental, and practical.",
+    "behavioral_guidelines": [
+      "Normalise parenting struggles and eliminate shame around communication challenges[cite: 2].",
+      "Encourage pacing and emotional presence to model co-regulation[cite: 2].",
+      "Pause frequently for personal reflection and emotional processing[cite: 2]."
+    ],
+    "facilitator_dialogue_flow": [
+      {
+        "phase": "Introduction",
+        "script": "Welcome, parents and caregivers. Today we are exploring active listening through a trauma-informed lens. Please remember that learning these skills is a journey, and it is completely normal to experience challenges along the way."
+      },
+      {
+        "phase": "Core Concept Check",
+        "script": "Before we dive into practice, let's remember why active listening matters for child development and how stress impacts behavior. How do predictability and routine act as stabilizing tools in your home?"
+      }
+    ]
+  },
+  "key_concepts": [
+    "Why active listening matters for child development[cite: 2].",
+    "How trauma and stress impact behaviour[cite: 2].",
+    "How parents can model emotional regulation[cite: 2].",
+    "Predictability and routine as stabilising tools[cite: 2]."
+  ],
+  "practice_activities": [
+    "Try a 2-minute grounding exercise before responding to your child[cite: 2].",
+    "Practice naming emotions using simple, non-judgemental language[cite: 2].",
+    "Role-play a challenging moment and rehearse a calm script[cite: 2].",
+    "Identify one routine where active listening can be used daily[cite: 2]."
+  ],
+  "facilitator_notes": [
+    "Normalise struggle — parents often feel shame around these skills[cite: 2].",
+    "Use examples that reflect diverse families and lived experiences[cite: 2].",
+    "Pause often for reflection and emotional processing[cite: 2].",
+    "Model co-regulation through tone, pacing, and presence[cite: 2]."
+  ],
+  "reflection_prompts": [
+    "What part of active listening feels easiest for me?[cite: 2]",
+    "What part feels hardest, and why?[cite: 2]",
+    "How did my own childhood shape my reactions?[cite: 2]",
+    "What is one small change I can try this week?[cite: 2]"
+  ],
+  "printable_summary": "active listening — Key Takeaways:\n- Stay calm and predictable[cite: 2].\n- Use simple language[cite: 2].\n- Focus on connection before correction[cite: 2].\n- Practice small steps consistently[cite: 2]."
+}

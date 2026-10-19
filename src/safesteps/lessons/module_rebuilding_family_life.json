@@ -16,6 +16,12 @@
     "Strengthen family connection and emotional security",
     "Develop a long‑term recovery plan that supports stability and wellbeing"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_complex_family_dynamics",
+    "restoring_routines",
+    "lesson_maintaining_parent_child_connection",
+    "strengthening_family_bonds",
+    "building_new_patterns"
+  ],
   "content": []
 }

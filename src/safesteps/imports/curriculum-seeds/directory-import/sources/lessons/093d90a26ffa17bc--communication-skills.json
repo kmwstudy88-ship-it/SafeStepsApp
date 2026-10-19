@@ -1,0 +1,26 @@
+{
+  "answerKey": {
+    "CS001": {
+      "correctAnswer": "B",
+      "maxScore": 150,
+      "competency": "Active Communication",
+
+      "explanation": "Effective communication requires listening, validating emotions and seeking understanding before responding.",
+
+      "rationale": {
+        "A": {
+          "score": 0,
+          "reason": "Interrupting reduces emotional safety and effective communication."
+        },
+        "B": {
+          "score": 150,
+          "reason": "Correct. Demonstrates active listening, validation and empathy."
+        },
+        "C": {
+          "score": 0,
+          "reason": "Dismisses concerns and damages trust."
+        }
+      }
+    }
+  }
+}

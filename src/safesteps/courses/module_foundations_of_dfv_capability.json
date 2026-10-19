@@ -16,6 +16,12 @@
     "Recognise the values and principles that underpin safe and ethical work",
     "Identify the knowledge and skills needed across different workforce roles"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_dfv_frameworks",
+    "lesson_dfv_patterns_and_drivers",
+    "lesson_myths_and_misconceptions",
+    "lesson_recognising_indicators",
+    "risk_identification"
+  ],
   "content": []
 }

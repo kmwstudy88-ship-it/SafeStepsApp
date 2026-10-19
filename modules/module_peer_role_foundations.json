@@ -16,6 +16,12 @@
     "Use lived experience safely, ethically, and without retraumatisation",
     "Recognise the scope and limitations of peer support in DFV contexts"
   ],
-  "lessons": [],
+  "lessons": [
+    "what_is_peer_support",
+    "holding_space",
+    "strengths_based_support",
+    "lesson_maintaining_boundaries",
+    "self_care_for_peers"
+  ],
   "content": []
 }

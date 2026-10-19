@@ -16,6 +16,12 @@
     "Monitor and evaluate prevention activities",
     "Use data and feedback to improve prevention outcomes"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_designing_prevention_programs",
+    "lesson_designing_prevention_campaigns",
+    "lesson_monitoring_and_evaluation",
+    "lesson_evidence_and_evaluation",
+    "lesson_implementing_and_evaluating_strategies"
+  ],
   "content": []
 }

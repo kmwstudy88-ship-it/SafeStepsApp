@@ -16,6 +16,11 @@
     "Develop personalised safety strategies for the home and daily routines",
     "Increase parental confidence in responding to unsafe situations"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_recognising_risk_as_a_parent",
+    "safety_planning",
+    "lesson_pathways_to_stability",
+    "lesson_protective_factors"
+  ],
   "content": []
 }

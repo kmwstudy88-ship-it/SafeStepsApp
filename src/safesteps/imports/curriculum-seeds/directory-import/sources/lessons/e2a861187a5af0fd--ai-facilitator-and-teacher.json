@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SafeStepsAIFacilitatorTeacherSchema",
+  "type": "object",
+  "description": "Production-ready JSON schema for SafeStepsApp 30+ minute interactive lessons, fully integrating the AI Facilitator / Teacher engine, attachment theory framework, and interactive lesson elements[cite: 1].",
+  "required": [
+    "lessonId",
+    "courseId",
+    "title",
+    "metadata",
+    "aiFacilitatorConfig",
+    "openingReflection",
+    "content",
+    "assessments",
+    "guidedActivities",
+    "actionableTakeaways",
+    "reflectionQuestions"
+  ],
+  "properties": {
+    "lessonId": {
+      "type": "string",
+      "description": "Unique identifier for the lesson (e.g., positive-communication-skills-lesson-1)[cite: 1]"
+    },
+    "courseId": {
+      "type": "string",
+      "description": "Unique identifier for the parent course or tier[cite: 1]"
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the lesson[cite: 1]"
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["version", "estimatedDurationMinutes", "targetAudience"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "example": "1.0.0"
+        },
+        "estimatedDurationMinutes": {
+          "type": "integer",
+          "minimum": 30,
+          "description": "Must be set to 30 minutes or longer to support deep reflection, extended practice, and interactive AI facilitation."
+        },
+        "targetAudience": {
+          "type": "string",
+          "example": "Parents and Caregivers"
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "aiFacilitatorConfig": {
+      "type": "object",
+      "description": "Configuration and runtime instructions for the AI Facilitator / Teacher engine[cite: 1]",
+      "required": [
+        "personaRole",
+        "pedagogicalFramework",
+        "pacingConfig",
+        "interactionRules",
+        "systemPrompts",
+        "safetyAndIntervention"
+      ],
+      "properties": {
+        "personaRole": {
+          "type": "string",
+          "description": "Role specification for the AI guide[cite: 1]",
+          "example": "Warm, empathetic parenting coach grounded in attachment theory and relational frameworks[cite: 1]"
+        },
+        "pedagogicalFramework": {
+          "type": "object",
+          "required": ["theoreticalBasis", "scaffoldingStrategy"],
+          "properties": {
+            "theoreticalBasis": {
+              "type": "string",
+              "example": "Attachment theory and relational frameworks guiding users from insecure loops to earned security[cite: 1]"
+            },
+            "scaffoldingStrategy": {
+              "type": "string",
+              "example": "Socratic questioning, active listening validation, and scaffolded instruction[cite: 1]"
+            }
+          }
+        },
+        "pacingConfig": {
+          "type": "object",
+          "description": "Session orchestration allocations across phases for 30+ minute interactive execution",
+          "required": [
+            "openingReflectionMinutes",
+            "coreInstructionMinutes",
+            "interactiveAssessmentsMinutes",
+            "guidedActivityMinutes",
+            "closingReflectionMinutes"
+          ],
+          "properties": {
+            "openingReflectionMinutes": { "type": "integer", "default": 5 },
+            "coreInstructionMinutes": { "type": "integer", "default": 10 },
+            "interactiveAssessmentsMinutes": { "type": "integer", "default": 5 },
+            "guidedActivityMinutes": { "type": "integer", "default": 7 },
+            "closingReflectionMinutes": { "type": "integer", "default": 3 }
+          }
+        },
+        "interactionRules": {
+          "type": "array",
+          "description": "Rules regulating conversational tone and structure[cite: 1]",
+          "items": { "type": "string" },
+          "example": [
+            "Validate learner emotions before offering pedagogical guidance[cite: 1]",
+            "Ask one follow-up question at a time to prevent cognitive overload[cite: 1]",
+            "Provide immediate constructive feedback on assessment responses[cite: 1]"
+          ]
+        },
+        "systemPrompts": {
+          "type": "object",
+          "description": "Prompt templates for dynamic AI teacher transitions",
+          "required": [
+            "openingGreetingPrompt",
+            "quizFacilitationPrompt",
+            "activityGuidancePrompt",
+            "closingReflectionPrompt"
+          ],
+          "properties": {
+            "openingGreetingPrompt": { "type": "string" },
+            "quizFacilitationPrompt": { "type": "string" },
+            "activityGuidancePrompt": { "type": "string" },
+            "closingReflectionPrompt": { "type": "string" }
+          }
+        },
+        "safetyAndIntervention": {
+          "type": "object",
+          "required": ["sosToolkitTrigger"],
+          "properties": {
+            "sosToolkitTrigger": {
+              "type": "string",
+              "example": "Detect distress signals and activate the SOS toolkit for immediate, in-the-moment support[cite: 1]"
+            }
+          }
+        }
+      }
+    },
+    "openingReflection": {
+      "type": "object",
+      "required": ["prompt", "guidance"],
+      "properties": {
+        "prompt": { "type": "string" },
+        "guidance": { "type": "string" }
+      }
+    },
+    "content": {
+      "type": "object",
+      "required": ["overview", "coreText", "keyConcepts"],
+      "properties": {
+        "overview": { "type": "string" },
+        "coreText": { "type": "string" },
+        "keyConcepts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["concept", "description"],
+            "properties": {
+              "concept": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "assessments": {
+      "type": "array",
+      "description": "Assessments adhering to multi-tier evaluation taxonomy (knowledge recall, applied understanding, scenario analysis)[cite: 1]",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "taxonomyLevel", "question", "options"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["multiple-choice", "open-ended", "scenario-analysis"]
+          },
+          "taxonomyLevel": {
+            "type": "string",
+            "enum": [
+              "Knowledge Recall",
+              "Applied Understanding",
+              "Self-Generated Evidence",
+              "Social Collaboration",
+              "Real-World Behavioral Evidence"
+            ],
+            "description": "Taxonomy tier supporting assessment evaluation[cite: 1]"
+          },
+          "question": { "type": "string" },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "text", "isCorrect", "explanation"],
+              "properties": {
+                "id": { "type": "string" },
+                "text": { "type": "string" },
+                "isCorrect": { "type": "boolean" },
+                "explanation": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "guidedActivities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["activityId", "title", "objective", "estimatedDurationMinutes", "steps"],
+        "properties": {
+          "activityId": { "type": "string" },
+          "title": { "type": "string" },
+          "objective": { "type": "string" },
+          "estimatedDurationMinutes": { "type": "integer" },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["stepNumber", "instruction"],
+              "properties": {
+                "stepNumber": { "type": "integer" },
+                "instruction": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "actionableTakeaways": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "reflectionQuestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "question"],
+        "properties": {
+          "id": { "type": "string" },
+          "question": { "type": "string" }
+        }
+      }
+    }
+  }
+}

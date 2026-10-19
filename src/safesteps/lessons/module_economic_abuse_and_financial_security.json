@@ -16,6 +16,10 @@
     "Support financial safety and independence",
     "Connect clients to financial counselling and economic resources"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_pathways_to_financial_independence",
+    "lesson_economic_empowerment_strategies",
+    "lesson_pathways_to_stability"
+  ],
   "content": []
 }

@@ -1,245 +1,1165 @@
 {
   "id": "understanding_harm",
-  "title": "understanding_harm",
-  "content": [],
-  "description": "",
+  "courseId": "understanding_harm_basic",
+  "title": "Understanding Harm",
+  "version": 1,
+  "level": "Foundation",
+  "durationMinutes": 270,
+  "description": "A six-lesson foundation course that helps parents and caregivers recognise harm, understand a child's experience, take accountability, repair relationships, and practise protective parenting.",
+  "reviewStatus": {
+    "status": "production_draft",
+    "label": "Production draft — not validated or approved",
+    "requiredReviews": [
+      "Safeguarding",
+      "Cultural",
+      "Clinical",
+      "Legal",
+      "Lived experience"
+    ],
+    "learnerNotice": "This educational course is a production draft. It does not replace personalised clinical, cultural, legal, or safeguarding advice."
+  },
+  "audience": {
+    "primary": "Parents and caregivers referred for parenting support",
+    "secondary": "Parents and caregivers choosing to learn voluntarily",
+    "delivery": "Self-paced or supported by a practitioner"
+  },
+  "learningOutcomes": [
+    "Define harm and recognise actions or omissions that can affect a child",
+    "Identify emotional, physical, relational, developmental, and cumulative harm",
+    "Describe possible impacts without diagnosing a child",
+    "Use accountability language without blame, excuses, or asking a child for reassurance",
+    "Choose practical repair steps that centre safety and the child's pace",
+    "Create a realistic protective parenting plan and support pathway"
+  ],
+  "competencies": [
+    {
+      "id": "understanding_harm",
+      "name": "Understanding harm",
+      "requiredScore": 80
+    },
+    {
+      "id": "child_impact_awareness",
+      "name": "Child impact awareness",
+      "requiredScore": 80
+    },
+    {
+      "id": "accountability",
+      "name": "Accountability",
+      "requiredScore": 80
+    },
+    {
+      "id": "protective_parenting",
+      "name": "Protective parenting",
+      "requiredScore": 80
+    }
+  ],
   "sections": [
     {
-      "id": "section_understanding_harm_01",
-      "title": "Section 1 for understanding_harm",
+      "id": "L1",
+      "title": "What is harm?",
+      "durationMinutes": 45,
       "content": {
-        "title": "Deep dive: understanding harm",
-        "overview": "This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
-        "psychoeducation": "Why does understanding harm matter? Children learn through repetition, safety, and\r\nconnection. When adults respond in calm, predictable ways, the child's nervous\r\nsystem gradually learns that the world is safer and more manageable. Over time,\r\nthis builds self-regulation, confidence, and trust. When understanding harm is missing,\r\nchildren may rely more on survival behaviours such as shutting down, exploding,\r\nor clinging because they do not yet have another way to cope.",
+        "title": "Recognising impact, not labelling people",
+        "overview": "Harm is an action, pattern, or omission that negatively affects a child's safety, wellbeing, development, relationships, or emotional health. This lesson focuses on observable behaviour and impact rather than labels.",
+        "psychoeducation": "A parent can love a child and still use a response that causes harm. Learning to notice impact creates room for safer choices. Intent matters for understanding a situation, but it does not erase a child's experience.",
         "learning_goals": [
-          "Understand how understanding harm supports healthy brain and emotional development.",
-          "Identify common triggers and patterns where understanding harm is most needed.",
-          "Practice simple, repeatable responses that feel realistic in daily family life.",
-          "Strengthen the parent-child relationship through calm, consistent interactions."
+          "Explain harm in plain language",
+          "Separate intent from impact",
+          "Recognise when immediate safety takes priority"
         ],
         "step_by_step": [
-          "Pause: Notice your own body first - breathing, tension, tone of voice.",
-          "Name: Briefly name what is happening for the child (for example: 'This is really hard for you right now').",
-          "Connect: Move closer if safe, soften your tone, and show you are staying with them.",
-          "Guide: Offer one simple, doable next step instead of a lecture or long explanation.",
-          "Repeat: Use the same calm script and steps across similar situations to build predictability."
+          "Pause and describe what happened without judgement.",
+          "Ask what the child may have seen, heard, felt, or needed.",
+          "Check emotional and physical safety before correcting behaviour.",
+          "Choose a calm next step and seek support when safety is uncertain."
         ],
         "parent_scripts": [
-          "I can see this feels really big for you. I'm not angry - you're not in trouble. Let's slow down together.",
-          "Your feelings are okay. It's what we do with them that we're practicing.",
-          "I'm going to stay close while you calm down. When you're ready, we'll work it out together.",
-          "We can try that again. Everyone gets another chance to practice."
+          "I can see that felt scary. Your safety matters more than finishing this argument.",
+          "I did not mean to frighten you, and I can see that my shouting did. I am going to lower my voice and give us space.",
+          "You do not have to make me feel better. I am responsible for what I do next."
         ],
         "practical_examples": [
-          "A morning routine where everything is rushed and the child refuses to get dressed. The parent uses understanding harm by slowing their own pace, offering two simple choices, and staying calm when the child protests.",
-          "A homework battle where the child shuts down. Instead of pushing harder, the parent validates the struggle, breaks the task into tiny steps, and celebrates effort rather than perfection.",
-          "A public meltdown in a supermarket. The parent focuses on safety, keeps their voice low, moves to a quieter space if possible, and later reflects on triggers and what might help next time."
+          "A child is mocked whenever they cry. Repeated dismissal may cause emotional and relational harm.",
+          "A caregiver is overwhelmed and misses a child's basic supervision needs. Harm can occur through omission as well as action.",
+          "A parent notices rising anger, moves away safely, and asks another trusted adult for support before continuing."
         ],
         "reflection_questions": [
-          "When my child is struggling, what usually happens inside me first - do I speed up, shut down, or get louder?",
-          "What is one phrase I could practice saying to myself before I respond to my child?",
-          "Where in our daily routine does understanding harm feel hardest to use (mornings, bedtimes, transitions)?",
-          "Who could I talk to or debrief with after a hard parenting moment so I do not carry it alone?"
+          "When I feel challenged, what changes first in my body, voice, or words?",
+          "What helps me pause before I respond?",
+          "Which trusted person or service can I contact if I am worried about safety?"
         ],
         "practice_ideas": [
-          "Choose one daily routine such as bedtime and focus on using the same calm script for one week.",
-          "Write down two or three phrases that help you stay grounded and keep them on your phone or fridge.",
-          "After a tough moment, jot a quick note: what happened, what you tried, and one thing you might do differently next time.",
-          "Share one small win with a trusted friend or worker each week to reinforce progress rather than perfection."
+          "Use the pause, describe, safety-check, and next-step sequence once this week.",
+          "Write one short phrase that helps you slow down and keep it where you can see it."
         ],
-        "closing_message": "You do not have to get understanding harm perfect for it to work. Children benefit from\r\n'good enough' parenting where adults keep coming back, repairing after mistakes,\r\nand trying again. Every time you pause, notice, and respond with a little more\r\ncalm and connection, you are already changing the story for your child."
+        "closing_message": "Recognising impact is a protective skill. It is not a verdict about your worth as a parent."
       },
-      "content_variants": {
-        "toddlers": "For toddlers: Use very simple words, short sentences, and lots of calm, gentle reassurance. This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
-        "school_age": "For school-age children: Explain things clearly, invite questions, and help them name their feelings. This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
-        "teens": "For teens: Respect their growing independence, listen carefully, and involve them in decisions. This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
-        "fatherhood": "For fathers and father-figures: Focus on staying present, accountable, and emotionally available. This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions."
-      },
-      "safety_guidance": {
-        "red_flags": [
-          "The child appears fearful, withdrawn, or hypervigilant during discussions related to understanding harm.",
-          "The parent becomes overwhelmed, dissociative, or unable to remain emotionally regulated.",
-          "There is evidence of escalating conflict, shouting, or intimidation in the home.",
-          "The child reports feeling unsafe, scared, or threatened.",
-          "The parent expresses hopelessness, extreme frustration, or thoughts of harming themselves or others.",
-          "There are signs of substance use impacting safety or supervision.",
-          "The parent or child discloses past or current abuse, neglect, or violence."
+      "facilitator": {
+        "openingScript": "Welcome. We will talk about harm without asking you to disclose personal experiences. You may pass, pause, or use a fictional example at any time.",
+        "teachingPrompts": [
+          "What is observable in this situation?",
+          "What might the child need first?",
+          "How can the adult reduce risk before discussing consequences?"
         ],
-        "when_to_escalate": [
-          "If the parent or child expresses feeling unsafe or at risk.",
-          "If conflict escalates beyond verbal disagreement and becomes threatening.",
-          "If the parent is unable to regulate enough to continue practicing understanding harm safely.",
-          "If the child shows signs of trauma activation that require clinical support.",
-          "If there is any disclosure of abuse, neglect, or violence.",
-          "If the worker feels unsure, overwhelmed, or out of scope.",
-          "If mandatory reporting thresholds are met or suspected."
+        "feedback": {
+          "strong": "You centred the child's immediate safety and described impact without labelling the person.",
+          "developing": "Look again at what the child may experience, even if the adult did not intend harm.",
+          "remediation": "Review the difference between intent and impact, then retry with safety as the first priority."
+        }
+      },
+      "activities": [
+        {
+          "id": "L1_A1",
+          "type": "reflection",
+          "title": "Impact lens",
+          "instructions": "Choose a fictional difficult moment. Describe what happened, what the child might experience, and one safer next step.",
+          "completionPrompt": "Name one action that would increase safety."
+        }
+      ],
+      "scenario": {
+        "id": "L1_S1",
+        "prompt": "A child is highly distressed after an adult has shouted. What should the adult prioritise?",
+        "hint": "Think about what the child needs before correction or explanation.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Immediate punishment",
+            "score": 0,
+            "feedback": "Punishment during high distress can increase fear and reduce the child's ability to listen."
+          },
+          {
+            "id": "B",
+            "text": "Emotional and physical safety",
+            "score": 100,
+            "correct": true,
+            "feedback": "Correct. Safety and regulation come before correction or problem-solving."
+          },
+          {
+            "id": "C",
+            "text": "Winning the argument",
+            "score": 0,
+            "feedback": "Winning an argument does not address the child's safety or distress."
+          },
+          {
+            "id": "D",
+            "text": "Ignoring the behaviour",
+            "score": 25,
+            "feedback": "Space may help when used safely, but ignoring distress without checking safety can leave the child unsupported."
+          }
         ]
       },
-      "trauma_informed": {
-        "clinical": "This clinical trauma-informed overlay explains how understanding harm interacts with the nervous system.\r\nKey concepts include:\r\n- Fight, flight, freeze, and fawn responses\r\n- Window of tolerance\r\n- Co-regulation and self-regulation\r\n- Predictability and routine as stabilisers\r\n- How trauma impacts behaviour, attention, and emotional control\r\n\r\nThis version helps workers and parents understand the biological and neurological foundations behind understanding harm.",
-        "relational": "This relational trauma-informed overlay focuses on attachment, emotional safety, and connection.\r\nKey concepts include:\r\n- Connection before correction\r\n- Repair after rupture\r\n- Shame-free communication\r\n- Emotional attunement\r\n- Building trust through consistent presence\r\n\r\nThis version supports parents to use understanding harm in ways that strengthen the parent-child relationship.",
-        "justice": "This justice-oriented trauma-informed overlay acknowledges systemic, cultural, and intergenerational trauma.\r\nKey concepts include:\r\n- Structural inequality and its impact on families\r\n- Cultural harm and historical trauma\r\n- Power dynamics between services and families\r\n- Community-based healing\r\n- Strength-based, non-deficit approaches\r\n\r\nThis version ensures understanding harm is delivered in a way that respects lived experience and cultural context.",
-        "fatherhood": "This fatherhood-focused trauma-informed overlay recognises how trauma and socialisation shape men's parenting.\r\nKey concepts include:\r\n- Emotional suppression and its impact on fathering\r\n- Intergenerational fatherhood wounds\r\n- Repairing trust through consistency\r\n- Using calm leadership instead of control\r\n- Building connection through shared activity\r\n\r\nThis version helps fathers use understanding harm in ways that feel authentic, strong, and emotionally safe."
-      },
-      "simplified_parent_version": "What this skill means:\r\nunderstanding harm is about helping you and your child stay calm, understand each other, and get through tricky moments together.\r\n\r\nWhy it matters:\r\nWhen you use understanding harm, your child feels safer, more understood, and more connected to you. This makes hard moments easier for both of you.\r\n\r\nHow to use it:\r\n- Keep your voice calm and steady.\r\n- Use short, simple sentences.\r\n- Show your child you are listening.\r\n- Give clear choices when things feel stuck.\r\n- Take a slow breath before responding.\r\n\r\nExample:\r\nIf your child is upset, you might say:\r\n\"I'm here. Let's take a breath. We can figure this out together.\"\r\n\r\nTry this today:\r\nPick one small moment — like getting ready, bedtime, or a small disagreement — and practice using understanding harm in a calm, simple way."
+      "quiz": [
+        {
+          "id": "L1_Q1",
+          "prompt": "Which statement best defines harm?",
+          "hint": "Harm can result from actions and omissions.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Only an action that causes a visible injury",
+              "score": 0
+            },
+            {
+              "id": "B",
+              "text": "An action, pattern, or omission that negatively affects a child",
+              "score": 100,
+              "correct": true
+            },
+            {
+              "id": "C",
+              "text": "Any time a child is unhappy with a limit",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "homePractice": "Notice one difficult moment this week. Record the trigger, your pause strategy, and the safe response you chose.",
+      "safety_guidance": {
+        "red_flags": [
+          "A child or adult says they are in immediate danger",
+          "There is a threat of serious harm, violence, or self-harm",
+          "A child discloses abuse or neglect"
+        ],
+        "when_to_escalate": [
+          "Pause the lesson and use emergency or safeguarding pathways when danger is immediate.",
+          "Contact an appropriate qualified service or practitioner when safety is uncertain.",
+          "Follow applicable mandatory reporting and organisational procedures."
+        ]
+      }
     },
     {
-      "id": "section_understanding_harm_02",
-      "title": "Section 2 for understanding_harm",
+      "id": "L2",
+      "title": "Types and patterns of harm",
+      "durationMinutes": 45,
       "content": {
-        "title": "Deep dive: understanding harm",
-        "overview": "This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
-        "psychoeducation": "Why does understanding harm matter? Children learn through repetition, safety, and\r\nconnection. When adults respond in calm, predictable ways, the child's nervous\r\nsystem gradually learns that the world is safer and more manageable. Over time,\r\nthis builds self-regulation, confidence, and trust. When understanding harm is missing,\r\nchildren may rely more on survival behaviours such as shutting down, exploding,\r\nor clinging because they do not yet have another way to cope.",
+        "title": "Looking beyond a single incident",
+        "overview": "Harm can be emotional, psychological, physical, relational, developmental, or connected to unmet care and supervision needs. Repeated lower-level experiences can also have a cumulative impact.",
+        "psychoeducation": "Categories can help us notice patterns, but real experiences may overlap. The purpose is not to diagnose or investigate. It is to recognise concern, reduce risk, and involve qualified support when needed.",
         "learning_goals": [
-          "Understand how understanding harm supports healthy brain and emotional development.",
-          "Identify common triggers and patterns where understanding harm is most needed.",
-          "Practice simple, repeatable responses that feel realistic in daily family life.",
-          "Strengthen the parent-child relationship through calm, consistent interactions."
+          "Recognise common categories of harm",
+          "Understand cumulative and relational patterns",
+          "Distinguish observation from assumption"
         ],
         "step_by_step": [
-          "Pause: Notice your own body first - breathing, tension, tone of voice.",
-          "Name: Briefly name what is happening for the child (for example: 'This is really hard for you right now').",
-          "Connect: Move closer if safe, soften your tone, and show you are staying with them.",
-          "Guide: Offer one simple, doable next step instead of a lecture or long explanation.",
-          "Repeat: Use the same calm script and steps across similar situations to build predictability."
+          "Record the specific behaviour or omission.",
+          "Notice frequency, intensity, duration, and context.",
+          "Consider possible impact without diagnosing.",
+          "Identify protective factors and the next safe support."
         ],
         "parent_scripts": [
-          "I can see this feels really big for you. I'm not angry - you're not in trouble. Let's slow down together.",
-          "Your feelings are okay. It's what we do with them that we're practicing.",
-          "I'm going to stay close while you calm down. When you're ready, we'll work it out together.",
-          "We can try that again. Everyone gets another chance to practice."
+          "I want to understand the pattern, not make excuses for it.",
+          "I can describe what happened without guessing what my child thinks.",
+          "If I am unsure about safety, I will ask for qualified help."
         ],
         "practical_examples": [
-          "A morning routine where everything is rushed and the child refuses to get dressed. The parent uses understanding harm by slowing their own pace, offering two simple choices, and staying calm when the child protests.",
-          "A homework battle where the child shuts down. Instead of pushing harder, the parent validates the struggle, breaks the task into tiny steps, and celebrates effort rather than perfection.",
-          "A public meltdown in a supermarket. The parent focuses on safety, keeps their voice low, moves to a quieter space if possible, and later reflects on triggers and what might help next time."
+          "Repeatedly humiliating a child can affect self-worth and trust even when there is no physical injury.",
+          "Using a child to carry hostile messages between adults creates loyalty pressure and relational harm.",
+          "Unpredictable supervision may affect both physical safety and a child's sense of security."
         ],
         "reflection_questions": [
-          "When my child is struggling, what usually happens inside me first - do I speed up, shut down, or get louder?",
-          "What is one phrase I could practice saying to myself before I respond to my child?",
-          "Where in our daily routine does understanding harm feel hardest to use (mornings, bedtimes, transitions)?",
-          "Who could I talk to or debrief with after a hard parenting moment so I do not carry it alone?"
+          "Which patterns are easiest for me to notice, and which are easier to minimise?",
+          "How can I record observations without labelling my child or myself?"
         ],
         "practice_ideas": [
-          "Choose one daily routine such as bedtime and focus on using the same calm script for one week.",
-          "Write down two or three phrases that help you stay grounded and keep them on your phone or fridge.",
-          "After a tough moment, jot a quick note: what happened, what you tried, and one thing you might do differently next time.",
-          "Share one small win with a trusted friend or worker each week to reinforce progress rather than perfection."
+          "Use a neutral log: what happened, when, what came before, and what helped.",
+          "Identify one protective person, routine, or place that supports your family."
         ],
-        "closing_message": "You do not have to get understanding harm perfect for it to work. Children benefit from\r\n'good enough' parenting where adults keep coming back, repairing after mistakes,\r\nand trying again. Every time you pause, notice, and respond with a little more\r\ncalm and connection, you are already changing the story for your child."
+        "closing_message": "Patterns become easier to change when they are described clearly and without shame."
       },
-      "content_variants": {
-        "toddlers": "For toddlers: Use very simple words, short sentences, and lots of calm, gentle reassurance. This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
-        "school_age": "For school-age children: Explain things clearly, invite questions, and help them name their feelings. This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
-        "teens": "For teens: Respect their growing independence, listen carefully, and involve them in decisions. This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
-        "fatherhood": "For fathers and father-figures: Focus on staying present, accountable, and emotionally available. This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions."
-      },
-      "safety_guidance": {
-        "red_flags": [
-          "The child appears fearful, withdrawn, or hypervigilant during discussions related to understanding harm.",
-          "The parent becomes overwhelmed, dissociative, or unable to remain emotionally regulated.",
-          "There is evidence of escalating conflict, shouting, or intimidation in the home.",
-          "The child reports feeling unsafe, scared, or threatened.",
-          "The parent expresses hopelessness, extreme frustration, or thoughts of harming themselves or others.",
-          "There are signs of substance use impacting safety or supervision.",
-          "The parent or child discloses past or current abuse, neglect, or violence."
+      "facilitator": {
+        "openingScript": "This lesson uses fictional examples. You control what you share, and identifying a category is not the same as making a diagnosis.",
+        "teachingPrompts": [
+          "What did the observer actually see or hear?",
+          "Is this a one-off event, a pattern, or unknown?",
+          "Which protective factor could reduce risk?"
         ],
-        "when_to_escalate": [
-          "If the parent or child expresses feeling unsafe or at risk.",
-          "If conflict escalates beyond verbal disagreement and becomes threatening.",
-          "If the parent is unable to regulate enough to continue practicing understanding harm safely.",
-          "If the child shows signs of trauma activation that require clinical support.",
-          "If there is any disclosure of abuse, neglect, or violence.",
-          "If the worker feels unsure, overwhelmed, or out of scope.",
-          "If mandatory reporting thresholds are met or suspected."
+        "feedback": {
+          "strong": "You separated observation from assumption and noticed that types of harm can overlap.",
+          "developing": "Try describing the behaviour and pattern before deciding what it means.",
+          "remediation": "Review frequency, intensity, duration, and context, then identify one protective factor."
+        }
+      },
+      "activities": [
+        {
+          "id": "L2_A1",
+          "type": "sorting",
+          "title": "Observe, assume, or protect",
+          "instructions": "Sort fictional statements into observable fact, assumption, or protective response.",
+          "completionPrompt": "Rewrite one assumption as a neutral observation."
+        }
+      ],
+      "scenario": {
+        "id": "L2_S1",
+        "prompt": "A child is repeatedly told that their feelings are silly and should be hidden. What is the best interpretation?",
+        "hint": "Consider the repeated relational and emotional impact.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "It always builds resilience",
+            "score": 0,
+            "feedback": "Repeated dismissal can undermine emotional safety and help-seeking."
+          },
+          {
+            "id": "B",
+            "text": "It may contribute to emotional and relational harm",
+            "score": 100,
+            "correct": true,
+            "feedback": "Correct. The repeated pattern may affect trust, expression, and self-worth."
+          },
+          {
+            "id": "C",
+            "text": "It proves the child has a disorder",
+            "score": 0,
+            "feedback": "The scenario does not support a diagnosis. Focus on observable behaviour and impact."
+          }
         ]
       },
-      "trauma_informed": {
-        "clinical": "This clinical trauma-informed overlay explains how understanding harm interacts with the nervous system.\r\nKey concepts include:\r\n- Fight, flight, freeze, and fawn responses\r\n- Window of tolerance\r\n- Co-regulation and self-regulation\r\n- Predictability and routine as stabilisers\r\n- How trauma impacts behaviour, attention, and emotional control\r\n\r\nThis version helps workers and parents understand the biological and neurological foundations behind understanding harm.",
-        "relational": "This relational trauma-informed overlay focuses on attachment, emotional safety, and connection.\r\nKey concepts include:\r\n- Connection before correction\r\n- Repair after rupture\r\n- Shame-free communication\r\n- Emotional attunement\r\n- Building trust through consistent presence\r\n\r\nThis version supports parents to use understanding harm in ways that strengthen the parent-child relationship.",
-        "justice": "This justice-oriented trauma-informed overlay acknowledges systemic, cultural, and intergenerational trauma.\r\nKey concepts include:\r\n- Structural inequality and its impact on families\r\n- Cultural harm and historical trauma\r\n- Power dynamics between services and families\r\n- Community-based healing\r\n- Strength-based, non-deficit approaches\r\n\r\nThis version ensures understanding harm is delivered in a way that respects lived experience and cultural context.",
-        "fatherhood": "This fatherhood-focused trauma-informed overlay recognises how trauma and socialisation shape men's parenting.\r\nKey concepts include:\r\n- Emotional suppression and its impact on fathering\r\n- Intergenerational fatherhood wounds\r\n- Repairing trust through consistency\r\n- Using calm leadership instead of control\r\n- Building connection through shared activity\r\n\r\nThis version helps fathers use understanding harm in ways that feel authentic, strong, and emotionally safe."
-      },
-      "simplified_parent_version": "What this skill means:\r\nunderstanding harm is about helping you and your child stay calm, understand each other, and get through tricky moments together.\r\n\r\nWhy it matters:\r\nWhen you use understanding harm, your child feels safer, more understood, and more connected to you. This makes hard moments easier for both of you.\r\n\r\nHow to use it:\r\n- Keep your voice calm and steady.\r\n- Use short, simple sentences.\r\n- Show your child you are listening.\r\n- Give clear choices when things feel stuck.\r\n- Take a slow breath before responding.\r\n\r\nExample:\r\nIf your child is upset, you might say:\r\n\"I'm here. Let's take a breath. We can figure this out together.\"\r\n\r\nTry this today:\r\nPick one small moment — like getting ready, bedtime, or a small disagreement — and practice using understanding harm in a calm, simple way."
+      "quiz": [
+        {
+          "id": "L2_Q1",
+          "prompt": "What is cumulative harm?",
+          "hint": "Think about the effect of repeated experiences over time.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "The combined impact of repeated harmful experiences",
+              "score": 100,
+              "correct": true
+            },
+            {
+              "id": "B",
+              "text": "Only one severe physical incident",
+              "score": 0
+            },
+            {
+              "id": "C",
+              "text": "A formal diagnosis made by an app",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "homePractice": "Use neutral language to record one recurring pressure point and one protective factor.",
+      "safety_guidance": {
+        "red_flags": [
+          "Escalating threats, intimidation, or physical aggression",
+          "A child appears fearful of returning to a person or place",
+          "Basic care or supervision needs are not being met"
+        ],
+        "when_to_escalate": [
+          "Do not investigate a disclosure through repeated questioning.",
+          "Record the child's words accurately where required and seek qualified safeguarding guidance.",
+          "Use emergency services when there is immediate danger."
+        ]
+      }
     },
     {
-      "id": "section_understanding_harm_03",
-      "title": "Section 3 for understanding_harm",
+      "id": "L3",
+      "title": "Impact on children",
+      "durationMinutes": 45,
       "content": {
-        "title": "Deep dive: understanding harm",
-        "overview": "This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
-        "psychoeducation": "Why does understanding harm matter? Children learn through repetition, safety, and\r\nconnection. When adults respond in calm, predictable ways, the child's nervous\r\nsystem gradually learns that the world is safer and more manageable. Over time,\r\nthis builds self-regulation, confidence, and trust. When understanding harm is missing,\r\nchildren may rely more on survival behaviours such as shutting down, exploding,\r\nor clinging because they do not yet have another way to cope.",
+        "title": "Seeing the situation from the child's side",
+        "overview": "Children may respond to stress through fight, flight, freeze, fawn, withdrawal, clinginess, aggression, sleep changes, or difficulty concentrating. These are possible signals, not proof of a cause or diagnosis.",
+        "psychoeducation": "A child's behaviour often communicates an unmet need or an overwhelmed nervous system. Developmental stage, disability, culture, temperament, previous experiences, and current supports all shape how stress appears.",
         "learning_goals": [
-          "Understand how understanding harm supports healthy brain and emotional development.",
-          "Identify common triggers and patterns where understanding harm is most needed.",
-          "Practice simple, repeatable responses that feel realistic in daily family life.",
-          "Strengthen the parent-child relationship through calm, consistent interactions."
+          "Describe possible child impacts without diagnosing",
+          "Use developmentally appropriate expectations",
+          "Choose connection and co-regulation before correction"
         ],
         "step_by_step": [
-          "Pause: Notice your own body first - breathing, tension, tone of voice.",
-          "Name: Briefly name what is happening for the child (for example: 'This is really hard for you right now').",
-          "Connect: Move closer if safe, soften your tone, and show you are staying with them.",
-          "Guide: Offer one simple, doable next step instead of a lecture or long explanation.",
-          "Repeat: Use the same calm script and steps across similar situations to build predictability."
+          "Notice the child's cues and your own activation.",
+          "Reduce noise, demands, or proximity when helpful and safe.",
+          "Use few words and a calm tone.",
+          "Reconnect and problem-solve after regulation returns."
         ],
         "parent_scripts": [
-          "I can see this feels really big for you. I'm not angry - you're not in trouble. Let's slow down together.",
-          "Your feelings are okay. It's what we do with them that we're practicing.",
-          "I'm going to stay close while you calm down. When you're ready, we'll work it out together.",
-          "We can try that again. Everyone gets another chance to practice."
+          "Your body looks like it needs a pause. I am here.",
+          "You can tell me, draw it, point, or choose not to talk right now.",
+          "We will solve the problem after we are both calmer."
         ],
         "practical_examples": [
-          "A morning routine where everything is rushed and the child refuses to get dressed. The parent uses understanding harm by slowing their own pace, offering two simple choices, and staying calm when the child protests.",
-          "A homework battle where the child shuts down. Instead of pushing harder, the parent validates the struggle, breaks the task into tiny steps, and celebrates effort rather than perfection.",
-          "A public meltdown in a supermarket. The parent focuses on safety, keeps their voice low, moves to a quieter space if possible, and later reflects on triggers and what might help next time."
+          "A school-age child becomes defiant during transitions. Predictable warnings and two safe choices reduce pressure.",
+          "A teenager withdraws after conflict. The caregiver checks safety, respects space, and offers a specific time to reconnect.",
+          "A young child becomes clingy after a frightening argument. Reassurance and consistent routines help restore predictability."
         ],
         "reflection_questions": [
-          "When my child is struggling, what usually happens inside me first - do I speed up, shut down, or get louder?",
-          "What is one phrase I could practice saying to myself before I respond to my child?",
-          "Where in our daily routine does understanding harm feel hardest to use (mornings, bedtimes, transitions)?",
-          "Who could I talk to or debrief with after a hard parenting moment so I do not carry it alone?"
+          "What behaviours might I misread as deliberate disrespect?",
+          "How could age, disability, culture, or stress change what support is useful?"
         ],
         "practice_ideas": [
-          "Choose one daily routine such as bedtime and focus on using the same calm script for one week.",
-          "Write down two or three phrases that help you stay grounded and keep them on your phone or fridge.",
-          "After a tough moment, jot a quick note: what happened, what you tried, and one thing you might do differently next time.",
-          "Share one small win with a trusted friend or worker each week to reinforce progress rather than perfection."
+          "Try one connection-before-correction phrase.",
+          "Offer two accessible ways for a child to communicate a need."
         ],
-        "closing_message": "You do not have to get understanding harm perfect for it to work. Children benefit from\r\n'good enough' parenting where adults keep coming back, repairing after mistakes,\r\nand trying again. Every time you pause, notice, and respond with a little more\r\ncalm and connection, you are already changing the story for your child."
+        "closing_message": "Curiosity about behaviour helps you respond to need while keeping clear, safe limits."
       },
-      "content_variants": {
-        "toddlers": "For toddlers: Use very simple words, short sentences, and lots of calm, gentle reassurance. This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
-        "school_age": "For school-age children: Explain things clearly, invite questions, and help them name their feelings. This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
-        "teens": "For teens: Respect their growing independence, listen carefully, and involve them in decisions. This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions.",
-        "fatherhood": "For fathers and father-figures: Focus on staying present, accountable, and emotionally available. This section provides a practical, trauma-informed exploration of understanding harm.\r\nIt is designed for parents and caregivers who are juggling real-life pressures,\r\nlimited time, and big emotions - both their own and their children's. The focus\r\nis on simple, repeatable strategies that can be used in everyday moments at home\r\nwithout needing special equipment or perfect conditions."
-      },
-      "safety_guidance": {
-        "red_flags": [
-          "The child appears fearful, withdrawn, or hypervigilant during discussions related to understanding harm.",
-          "The parent becomes overwhelmed, dissociative, or unable to remain emotionally regulated.",
-          "There is evidence of escalating conflict, shouting, or intimidation in the home.",
-          "The child reports feeling unsafe, scared, or threatened.",
-          "The parent expresses hopelessness, extreme frustration, or thoughts of harming themselves or others.",
-          "There are signs of substance use impacting safety or supervision.",
-          "The parent or child discloses past or current abuse, neglect, or violence."
+      "facilitator": {
+        "openingScript": "We will explore possible impacts without diagnosing children or asking you to interpret every behaviour as trauma.",
+        "teachingPrompts": [
+          "What else could this behaviour communicate?",
+          "What expectation fits the child's developmental stage?",
+          "What would connection before correction look like here?"
         ],
-        "when_to_escalate": [
-          "If the parent or child expresses feeling unsafe or at risk.",
-          "If conflict escalates beyond verbal disagreement and becomes threatening.",
-          "If the parent is unable to regulate enough to continue practicing understanding harm safely.",
-          "If the child shows signs of trauma activation that require clinical support.",
-          "If there is any disclosure of abuse, neglect, or violence.",
-          "If the worker feels unsure, overwhelmed, or out of scope.",
-          "If mandatory reporting thresholds are met or suspected."
+        "feedback": {
+          "strong": "You stayed curious, avoided diagnosis, and chose a developmentally appropriate response.",
+          "developing": "Consider what the behaviour may communicate before treating it as deliberate defiance.",
+          "remediation": "Choose one co-regulation step, then one clear limit for after the child is calmer."
+        }
+      },
+      "activities": [
+        {
+          "id": "L3_A1",
+          "type": "case_study",
+          "title": "Child perspective",
+          "instructions": "Read a fictional situation and identify what the child may see, feel, need, and be able to do at their age.",
+          "completionPrompt": "Choose one connection step and one later boundary."
+        }
+      ],
+      "scenario": {
+        "id": "L3_S1",
+        "prompt": "A child cannot answer questions while crying and breathing quickly. What is the most helpful first response?",
+        "hint": "A highly activated child may not be ready for reasoning.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Ask more questions until the child explains",
+            "score": 0,
+            "feedback": "More demands can increase overwhelm."
+          },
+          {
+            "id": "B",
+            "text": "Reduce demands, check safety, and co-regulate",
+            "score": 100,
+            "correct": true,
+            "feedback": "Correct. Help the child return to a safer, calmer state before problem-solving."
+          },
+          {
+            "id": "C",
+            "text": "Tell the child they are overreacting",
+            "score": 0,
+            "feedback": "Dismissal may increase distress and reduce trust."
+          }
         ]
       },
-      "trauma_informed": {
-        "clinical": "This clinical trauma-informed overlay explains how understanding harm interacts with the nervous system.\r\nKey concepts include:\r\n- Fight, flight, freeze, and fawn responses\r\n- Window of tolerance\r\n- Co-regulation and self-regulation\r\n- Predictability and routine as stabilisers\r\n- How trauma impacts behaviour, attention, and emotional control\r\n\r\nThis version helps workers and parents understand the biological and neurological foundations behind understanding harm.",
-        "relational": "This relational trauma-informed overlay focuses on attachment, emotional safety, and connection.\r\nKey concepts include:\r\n- Connection before correction\r\n- Repair after rupture\r\n- Shame-free communication\r\n- Emotional attunement\r\n- Building trust through consistent presence\r\n\r\nThis version supports parents to use understanding harm in ways that strengthen the parent-child relationship.",
-        "justice": "This justice-oriented trauma-informed overlay acknowledges systemic, cultural, and intergenerational trauma.\r\nKey concepts include:\r\n- Structural inequality and its impact on families\r\n- Cultural harm and historical trauma\r\n- Power dynamics between services and families\r\n- Community-based healing\r\n- Strength-based, non-deficit approaches\r\n\r\nThis version ensures understanding harm is delivered in a way that respects lived experience and cultural context.",
-        "fatherhood": "This fatherhood-focused trauma-informed overlay recognises how trauma and socialisation shape men's parenting.\r\nKey concepts include:\r\n- Emotional suppression and its impact on fathering\r\n- Intergenerational fatherhood wounds\r\n- Repairing trust through consistency\r\n- Using calm leadership instead of control\r\n- Building connection through shared activity\r\n\r\nThis version helps fathers use understanding harm in ways that feel authentic, strong, and emotionally safe."
+      "quiz": [
+        {
+          "id": "L3_Q1",
+          "prompt": "Which statement is accurate?",
+          "hint": "Signals should guide support, not automatic conclusions.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "One behaviour proves a specific diagnosis",
+              "score": 0
+            },
+            {
+              "id": "B",
+              "text": "Behaviour may communicate stress, need, or limited regulation skills",
+              "score": 100,
+              "correct": true
+            },
+            {
+              "id": "C",
+              "text": "Children should regulate exactly like adults",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "homePractice": "During one low-risk difficult moment, name the child's cue and try connection before correction.",
+      "safety_guidance": {
+        "red_flags": [
+          "A child cannot be kept physically safe",
+          "A child reports fear, abuse, neglect, or violence",
+          "A caregiver feels unable to control an urge to harm"
+        ],
+        "when_to_escalate": [
+          "Move to immediate safety and contact emergency support when needed.",
+          "Pause educational coaching when clinical or safeguarding support is required.",
+          "Do not rely on the course to assess or manage acute risk."
+        ]
+      }
+    },
+    {
+      "id": "L4",
+      "title": "Accountability and responsibility",
+      "durationMinutes": 45,
+      "content": {
+        "title": "Owning behaviour without collapsing into shame",
+        "overview": "Accountability means naming what you did, recognising impact, accepting responsibility, and following through on change. Shame says a person is beyond repair; accountability focuses on the next safer action.",
+        "psychoeducation": "An accountable response does not include 'but you made me', pressure for forgiveness, or asking the child to comfort the adult. Context can explain a response without excusing it.",
+        "learning_goals": [
+          "Use clear accountability language",
+          "Recognise minimisation, blame, and justification",
+          "Choose a specific behaviour change"
+        ],
+        "step_by_step": [
+          "Name your action plainly.",
+          "Acknowledge the likely impact.",
+          "Take responsibility without a 'but'.",
+          "State the concrete change and support you will use.",
+          "Allow the child time and choice in reconnecting."
+        ],
+        "parent_scripts": [
+          "I shouted. That was frightening and not okay.",
+          "You did not cause my reaction. I am responsible for how I respond.",
+          "Next time I will step away safely and call my support person before I continue."
+        ],
+        "practical_examples": [
+          "Instead of 'I am sorry, but you would not listen,' say 'I shouted. That was not safe. I will use a pause next time.'",
+          "An adult accepts that trust may rebuild slowly and continues consistent safer behaviour.",
+          "A caregiver asks a practitioner for regulation support rather than promising change without a plan."
+        ],
+        "reflection_questions": [
+          "Which accountability step is hardest for me?",
+          "What support makes follow-through more realistic?"
+        ],
+        "practice_ideas": [
+          "Rewrite one excuse as an accountable statement.",
+          "Choose one visible, repeatable behaviour change for the next week."
+        ],
+        "closing_message": "Accountability is demonstrated through consistent action, not a perfect sentence."
       },
-      "simplified_parent_version": "What this skill means:\r\nunderstanding harm is about helping you and your child stay calm, understand each other, and get through tricky moments together.\r\n\r\nWhy it matters:\r\nWhen you use understanding harm, your child feels safer, more understood, and more connected to you. This makes hard moments easier for both of you.\r\n\r\nHow to use it:\r\n- Keep your voice calm and steady.\r\n- Use short, simple sentences.\r\n- Show your child you are listening.\r\n- Give clear choices when things feel stuck.\r\n- Take a slow breath before responding.\r\n\r\nExample:\r\nIf your child is upset, you might say:\r\n\"I'm here. Let's take a breath. We can figure this out together.\"\r\n\r\nTry this today:\r\nPick one small moment — like getting ready, bedtime, or a small disagreement — and practice using understanding harm in a calm, simple way."
+      "facilitator": {
+        "openingScript": "Accountability is not humiliation. We will practise language that owns behaviour and protects the child from carrying the adult's emotions.",
+        "teachingPrompts": [
+          "Where does this statement shift responsibility?",
+          "What specific action would show change?",
+          "How can the child keep choice and space?"
+        ],
+        "feedback": {
+          "strong": "You named the behaviour, owned the impact, and committed to a specific change without demanding forgiveness.",
+          "developing": "Remove the justification and make the next action more specific.",
+          "remediation": "Use the pattern: I did; it affected; I am responsible; next time I will."
+        }
+      },
+      "activities": [
+        {
+          "id": "L4_A1",
+          "type": "rewrite",
+          "title": "From excuse to accountability",
+          "instructions": "Rewrite three fictional statements to remove blame, minimisation, and pressure for forgiveness.",
+          "completionPrompt": "Include one concrete support or behaviour change."
+        }
+      ],
+      "scenario": {
+        "id": "L4_S1",
+        "prompt": "Which apology demonstrates accountability?",
+        "hint": "Look for ownership without blame or pressure.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "I am sorry, but you made me lose my temper",
+            "score": 0,
+            "feedback": "This shifts responsibility to the child."
+          },
+          {
+            "id": "B",
+            "text": "I shouted. That was not safe. You did not cause it. I will pause and get support next time",
+            "score": 100,
+            "correct": true,
+            "feedback": "Correct. This names the action, impact, responsibility, and change."
+          },
+          {
+            "id": "C",
+            "text": "I said sorry, so you need to forgive me now",
+            "score": 0,
+            "feedback": "Forgiveness cannot be demanded, and repair may take time."
+          }
+        ]
+      },
+      "quiz": [
+        {
+          "id": "L4_Q1",
+          "prompt": "What is a key part of accountability?",
+          "hint": "Accountability leads to observable change.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Explaining why the child caused the response",
+              "score": 0
+            },
+            {
+              "id": "B",
+              "text": "Taking responsibility and following through on safer behaviour",
+              "score": 100,
+              "correct": true
+            },
+            {
+              "id": "C",
+              "text": "Obtaining immediate forgiveness",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "homePractice": "Use the four-part accountability pattern for a low-risk repair and note the action you followed through on.",
+      "safety_guidance": {
+        "red_flags": [
+          "An apology is used to regain access, silence concern, or pressure a child",
+          "Violence or coercive behaviour is continuing",
+          "The adult cannot maintain a safe interaction"
+        ],
+        "when_to_escalate": [
+          "Do not use apology or course completion as evidence that risk has ended.",
+          "Seek specialist support for ongoing violence, coercion, or unsafe behaviour.",
+          "Respect safety plans, legal conditions, and professional directions."
+        ]
+      }
+    },
+    {
+      "id": "L5",
+      "title": "Repair and recovery",
+      "durationMinutes": 45,
+      "content": {
+        "title": "Rebuilding trust through safe repetition",
+        "overview": "Repair is the ongoing process of restoring emotional and physical safety after harm. It includes accountability, changed behaviour, respect for boundaries, and patience with the child's response.",
+        "psychoeducation": "A child may not be ready to talk, hug, or forgive. Repair cannot require closeness. Trust is rebuilt through repeated safe experiences and appropriate support, not promises alone.",
+        "learning_goals": [
+          "Identify the parts of a safe repair",
+          "Respect a child's pace and boundaries",
+          "Create a realistic follow-through plan"
+        ],
+        "step_by_step": [
+          "Make sure the harmful behaviour has stopped.",
+          "Acknowledge the impact and take responsibility.",
+          "Ask what would help without making the child responsible for the plan.",
+          "Respect space, boundaries, and existing safety arrangements.",
+          "Repeat the safer behaviour and review support needs."
+        ],
+        "parent_scripts": [
+          "You do not have to talk or hug me. I will respect your space.",
+          "I am working on changing what I do, not asking you to forget what happened.",
+          "I will keep following the safety plan and show change over time."
+        ],
+        "practical_examples": [
+          "A parent keeps their voice steady during repeated stressful routines rather than expecting one apology to restore trust.",
+          "A child declines physical affection, and the caregiver accepts the boundary without sulking or pressure.",
+          "A caregiver reviews setbacks with a practitioner and strengthens the support plan."
+        ],
+        "reflection_questions": [
+          "Have I confused apology with completed repair?",
+          "Which boundary do I need to respect consistently?",
+          "What will help me sustain change when stress returns?"
+        ],
+        "practice_ideas": [
+          "Create a seven-day repair plan with one small repeated action.",
+          "Identify how you will respond safely if the child does not want to reconnect yet."
+        ],
+        "closing_message": "Repair is measured by safety, consistency, and respect over time."
+      },
+      "facilitator": {
+        "openingScript": "Repair does not guarantee reconciliation or access. This lesson focuses on the adult's safe actions and respect for the child's boundaries.",
+        "teachingPrompts": [
+          "Has the harmful behaviour stopped?",
+          "Where does the child retain choice?",
+          "What repeatable action would build predictability?"
+        ],
+        "feedback": {
+          "strong": "You treated repair as consistent safe action and preserved the child's boundaries.",
+          "developing": "Move the focus away from receiving forgiveness and toward sustained behaviour change.",
+          "remediation": "Choose one boundary to respect and one action you can repeat reliably."
+        }
+      },
+      "activities": [
+        {
+          "id": "L5_A1",
+          "type": "action_plan",
+          "title": "Seven-day repair plan",
+          "instructions": "Choose one safe, observable action to repeat, one boundary to respect, and one support to use.",
+          "completionPrompt": "Describe how you will respond if the child wants space."
+        }
+      ],
+      "scenario": {
+        "id": "L5_S1",
+        "prompt": "After an apology, a child does not want a hug. What is the safest response?",
+        "hint": "Repair preserves the child's bodily autonomy.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Insist because the apology should be accepted",
+            "score": 0,
+            "feedback": "This pressures the child and undermines their boundary."
+          },
+          {
+            "id": "B",
+            "text": "Respect the boundary and continue showing safe change",
+            "score": 100,
+            "correct": true,
+            "feedback": "Correct. The child controls physical affection and may need time."
+          },
+          {
+            "id": "C",
+            "text": "Withdraw support until the child forgives",
+            "score": 0,
+            "feedback": "Withholding support adds pressure and does not demonstrate repair."
+          }
+        ]
+      },
+      "quiz": [
+        {
+          "id": "L5_Q1",
+          "prompt": "What best demonstrates repair?",
+          "hint": "Look for sustained action rather than a single promise.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "One emotional apology",
+              "score": 25
+            },
+            {
+              "id": "B",
+              "text": "Repeated safe behaviour, accountability, and respect for boundaries",
+              "score": 100,
+              "correct": true
+            },
+            {
+              "id": "C",
+              "text": "Asking the child to reassure the adult",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "homePractice": "Complete your seven-day repair action and record what helped you follow through.",
+      "safety_guidance": {
+        "red_flags": [
+          "Repair language is used to bypass a safety plan or legal condition",
+          "The child is pressured to forgive, reconnect, or provide affection",
+          "Harmful behaviour continues while apologies repeat"
+        ],
+        "when_to_escalate": [
+          "Keep existing safety arrangements in place.",
+          "Seek practitioner or specialist review when repair attempts are unsafe or coercive.",
+          "Do not interpret course participation as evidence that contact or placement should change."
+        ]
+      }
+    },
+    {
+      "id": "L6",
+      "title": "Protective parenting plan",
+      "durationMinutes": 45,
+      "content": {
+        "title": "Turning learning into a supportable plan",
+        "overview": "Protective parenting combines early warning signs, regulation strategies, child-centred responses, clear boundaries, practical supports, and escalation steps. A useful plan is specific enough to use under stress.",
+        "psychoeducation": "There is no single programme or strategy that fits every family, population, culture, disability, or outcome. Plans should be personalised, reviewed with appropriate support, and changed when they are not improving safety.",
+        "learning_goals": [
+          "Identify personal warning signs and protective factors",
+          "Build a practical pause-and-support sequence",
+          "Know when to seek urgent or specialist help",
+          "Review progress without treating a score as proof of safety"
+        ],
+        "step_by_step": [
+          "Name your early warning signs.",
+          "Choose a safe pause action.",
+          "Identify the child's immediate support needs.",
+          "List trusted people and professional supports.",
+          "Write urgent escalation steps.",
+          "Set a date to review what is and is not working."
+        ],
+        "parent_scripts": [
+          "I am getting too activated to respond safely. I am taking a safe pause now.",
+          "You are not responsible for calming me. I am contacting my support person.",
+          "This plan needs to change because it is not keeping us safe enough."
+        ],
+        "practical_examples": [
+          "A caregiver recognises clenched hands and a raised voice as early warning signs and uses a planned handover.",
+          "A parent adapts verbal instructions for a child who communicates more easily through pictures.",
+          "A family reviews the plan with a culturally appropriate service rather than assuming one strategy fits."
+        ],
+        "reflection_questions": [
+          "What are my earliest reliable warning signs?",
+          "Which support can I realistically contact outside business hours?",
+          "How will I know this plan needs review?"
+        ],
+        "practice_ideas": [
+          "Save your support contacts where they are accessible under stress.",
+          "Rehearse the safe pause sequence during a calm moment.",
+          "Review the plan with a trusted practitioner or support person."
+        ],
+        "closing_message": "A protective plan is a living support tool. Using help early is a strength."
+      },
+      "facilitator": {
+        "openingScript": "The goal is a plan you can use, not a perfect answer. Choose options that fit your family, culture, access needs, and current safety arrangements.",
+        "teachingPrompts": [
+          "Can this step be used under stress?",
+          "Who is responsible for each action?",
+          "What happens if the first support is unavailable?",
+          "What signals mean the plan needs urgent review?"
+        ],
+        "feedback": {
+          "strong": "Your plan identifies early signs, safe actions, support people, and clear escalation steps.",
+          "developing": "Make the plan more specific by naming who, when, and what happens if the first option fails.",
+          "remediation": "Start with one early warning sign, one safe pause, one support contact, and one urgent escalation step."
+        }
+      },
+      "activities": [
+        {
+          "id": "L6_A1",
+          "type": "action_plan",
+          "title": "My protective parenting plan",
+          "instructions": "Create a plan with warning signs, pause actions, child supports, trusted contacts, professional supports, urgent escalation steps, and a review date.",
+          "completionPrompt": "Confirm that the child is not responsible for managing the adult's safety plan."
+        }
+      ],
+      "scenario": {
+        "id": "L6_S1",
+        "prompt": "A parent's usual calming strategy is not working and they fear they may act unsafely. What should they do?",
+        "hint": "A plan needs a next level of support.",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Keep pushing through alone",
+            "score": 0,
+            "feedback": "Continuing without support may increase risk."
+          },
+          {
+            "id": "B",
+            "text": "Use the escalation plan, create distance safely, and contact urgent support",
+            "score": 100,
+            "correct": true,
+            "feedback": "Correct. Escalating support early protects both the child and the adult."
+          },
+          {
+            "id": "C",
+            "text": "Ask the child to calm the parent",
+            "score": 0,
+            "feedback": "Children should not be responsible for regulating or protecting an adult."
+          }
+        ]
+      },
+      "quiz": [
+        {
+          "id": "L6_Q1",
+          "prompt": "Which feature makes a protective plan more usable?",
+          "hint": "A plan should still work when the first option is unavailable.",
+          "choices": [
+            {
+              "id": "A",
+              "text": "Specific steps, named supports, backup options, and review points",
+              "score": 100,
+              "correct": true
+            },
+            {
+              "id": "B",
+              "text": "A promise to never struggle again",
+              "score": 0
+            },
+            {
+              "id": "C",
+              "text": "Making the child responsible for monitoring the adult",
+              "score": 0
+            }
+          ]
+        }
+      ],
+      "homePractice": "Rehearse the safe pause and contact sequence once while calm, then update anything that is unclear.",
+      "safety_guidance": {
+        "red_flags": [
+          "The adult fears they may harm a child, themselves, or another person",
+          "There is immediate danger, violence, weapon access, or a serious threat",
+          "No available adult can maintain the child's immediate safety"
+        ],
+        "when_to_escalate": [
+          "Contact emergency services for immediate danger.",
+          "Use crisis, family violence, child protection, or clinical pathways appropriate to the location and situation.",
+          "Notify the assigned practitioner through approved channels when it is safe and appropriate."
+        ]
+      }
     }
-  ]
+  ],
+  "finalAssessment": {
+    "title": "Understanding Harm foundation assessment",
+    "passMark": 80,
+    "attemptsAllowed": 3,
+    "questions": [
+      {
+        "id": "FA_Q1",
+        "competencyId": "understanding_harm",
+        "prompt": "What should come first when a child is highly distressed?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Safety and regulation",
+            "score": 100,
+            "correct": true
+          },
+          {
+            "id": "B",
+            "text": "A detailed lecture",
+            "score": 0
+          },
+          {
+            "id": "C",
+            "text": "Immediate forgiveness",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "id": "FA_Q2",
+        "competencyId": "understanding_harm",
+        "prompt": "Which statement about intent and impact is most accurate?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Good intent always prevents harm",
+            "score": 0
+          },
+          {
+            "id": "B",
+            "text": "Intent may explain context, but does not erase impact",
+            "score": 100,
+            "correct": true
+          },
+          {
+            "id": "C",
+            "text": "Impact matters only when an adult agrees",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "id": "FA_Q3",
+        "competencyId": "child_impact_awareness",
+        "prompt": "How should a parent interpret a possible stress signal?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "As proof of one diagnosis",
+            "score": 0
+          },
+          {
+            "id": "B",
+            "text": "As information to observe and respond to without diagnosing",
+            "score": 100,
+            "correct": true
+          },
+          {
+            "id": "C",
+            "text": "As deliberate disrespect in every case",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "id": "FA_Q4",
+        "competencyId": "child_impact_awareness",
+        "prompt": "What does connection before correction mean?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Remove all boundaries",
+            "score": 0
+          },
+          {
+            "id": "B",
+            "text": "Support safety and regulation before problem-solving",
+            "score": 100,
+            "correct": true
+          },
+          {
+            "id": "C",
+            "text": "Ignore unsafe behaviour",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "id": "FA_Q5",
+        "competencyId": "accountability",
+        "prompt": "Which phrase demonstrates accountability?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "You made me do it",
+            "score": 0
+          },
+          {
+            "id": "B",
+            "text": "I shouted. That was not safe. I am responsible for changing my response",
+            "score": 100,
+            "correct": true
+          },
+          {
+            "id": "C",
+            "text": "You must forgive me because I apologised",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "id": "FA_Q6",
+        "competencyId": "accountability",
+        "prompt": "What is the strongest evidence of accountability?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "A promise made during conflict",
+            "score": 25
+          },
+          {
+            "id": "B",
+            "text": "Consistent safer behaviour and use of support over time",
+            "score": 100,
+            "correct": true
+          },
+          {
+            "id": "C",
+            "text": "Course completion by itself",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "id": "FA_Q7",
+        "competencyId": "protective_parenting",
+        "prompt": "What should happen when a child declines a hug after an apology?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Respect the boundary",
+            "score": 100,
+            "correct": true
+          },
+          {
+            "id": "B",
+            "text": "Insist on affection",
+            "score": 0
+          },
+          {
+            "id": "C",
+            "text": "Withdraw support",
+            "score": 0
+          }
+        ]
+      },
+      {
+        "id": "FA_Q8",
+        "competencyId": "protective_parenting",
+        "prompt": "What should a parent do if they fear they may act unsafely?",
+        "choices": [
+          {
+            "id": "A",
+            "text": "Use the escalation plan and contact urgent support",
+            "score": 100,
+            "correct": true
+          },
+          {
+            "id": "B",
+            "text": "Ask the child to manage the situation",
+            "score": 0
+          },
+          {
+            "id": "C",
+            "text": "Hide the concern and continue",
+            "score": 0
+          }
+        ]
+      }
+    ]
+  },
+  "markingGuide": {
+    "90-100": {
+      "rating": "Strong foundation",
+      "description": "Demonstrates consistent child-centred understanding and safe application."
+    },
+    "80-89": {
+      "rating": "Foundation achieved",
+      "description": "Meets the course learning threshold with minor areas to strengthen."
+    },
+    "60-79": {
+      "rating": "Developing",
+      "description": "Requires targeted review and another assessment attempt."
+    },
+    "0-59": {
+      "rating": "Not yet demonstrated",
+      "description": "Requires guided review of core safety and accountability concepts."
+    }
+  },
+  "remediation": {
+    "rules": [
+      {
+        "when": "overall_score_below_80",
+        "action": "Review missed questions, revisit linked lessons, and retry when ready."
+      },
+      {
+        "when": "competency_score_below_80",
+        "action": "Provide the linked lesson explanation, one worked example, and one practice question."
+      },
+      {
+        "when": "three_attempts_used",
+        "action": "Pause certification and recommend supported review with a practitioner."
+      }
+    ],
+    "principles": [
+      "Do not shame, threaten, or label the learner.",
+      "Explain why an answer is safer rather than revealing only the correct option.",
+      "Allow a break and preserve completed progress.",
+      "Do not treat assessment results as a risk diagnosis or legal conclusion."
+    ]
+  },
+  "aiFacilitator": {
+    "name": "SafeSteps Learning Coach",
+    "role": "Bounded trauma-informed parenting educator",
+    "openingScript": [
+      "Welcome to Understanding Harm.",
+      "You can pass, pause, or use fictional examples at any time.",
+      "This course provides education, not clinical, legal, or safeguarding advice."
+    ],
+    "interactionRules": [
+      "Use plain, non-shaming language.",
+      "Ask one reflective question at a time.",
+      "Never diagnose a learner or child.",
+      "Never imply that completion proves parenting fitness or safety.",
+      "Do not ask for unnecessary identifying details or compel disclosure.",
+      "Stop teaching and present human support options when a safety trigger is detected."
+    ],
+    "feedbackLibrary": {
+      "strong": [
+        "You centred the child's experience and identified a practical safer response.",
+        "Your answer shows accountability without blame or pressure."
+      ],
+      "developing": [
+        "You have identified part of the concern. Now consider what the child needs first.",
+        "Try making the safer action more specific and realistic."
+      ],
+      "retry": [
+        "This concept is still developing. Review the explanation and try another example.",
+        "A safer answer protects the child, keeps responsibility with the adult, and uses support early."
+      ]
+    }
+  },
+  "safetyControls": {
+    "immediateTriggers": [
+      "Immediate danger",
+      "Threat of serious harm",
+      "Suicidal or homicidal intent",
+      "Weapon access linked to a threat",
+      "Current abuse, neglect, or family violence disclosure",
+      "A caregiver states they cannot keep a child safe"
+    ],
+    "responseSequence": [
+      "Stop the learning interaction.",
+      "Use calm, direct language and advise immediate local emergency help when danger is imminent.",
+      "Offer approved crisis, family violence, child protection, or practitioner contact pathways appropriate to the user's location.",
+      "Do not promise confidentiality or conduct an investigation.",
+      "Record or notify only through approved, consented, and legally required workflows."
+    ],
+    "boundaries": [
+      "Course answers alone do not trigger adverse case action.",
+      "AI output cannot change custody, placement, contact, legal status, or service eligibility.",
+      "A qualified human reviews safety concerns and any intervention recommendation."
+    ]
+  },
+  "accessibility": {
+    "plainLanguage": true,
+    "screenReaderLabelsRequired": true,
+    "scalableTextRequired": true,
+    "reducedMotionSupported": true,
+    "alternativesToWriting": [
+      "Choose from prompts",
+      "Voice note where available",
+      "Private verbal discussion with a practitioner",
+      "Use a fictional example"
+    ],
+    "participationChoices": [
+      "Pass",
+      "Pause",
+      "Take a break",
+      "Return later",
+      "Request practitioner support"
+    ]
+  },
+  "outcomeTracking": {
+    "trackLessonCompletion": true,
+    "trackQuizScores": true,
+    "trackScenarioScores": true,
+    "trackAssessmentAttempts": true,
+    "trackCompetencyScores": true,
+    "trackTimeSpent": true,
+    "shareWithAssignedPractitioner": "explicit_learner_consent_only",
+    "privateByDefault": [
+      "Reflection text",
+      "Personal notes",
+      "Unsubmitted activity drafts"
+    ]
+  },
+  "certificate": {
+    "title": "Understanding Harm Foundation Certificate",
+    "available": true,
+    "criteria": {
+      "allLessonsCompleted": true,
+      "allActivitiesCompleted": true,
+      "finalAssessmentScore": 80,
+      "protectivePlanCompleted": true
+    },
+    "disclaimer": "This certificate records completion of an educational course. It is not evidence of parenting fitness, clinical clearance, legal compliance, or child safety."
+  },
+  "completionRequirements": {
+    "allLessonsCompleted": true,
+    "activitiesCompleted": true,
+    "finalAssessmentPassed": true,
+    "requiredScore": 80,
+    "attemptsAllowed": 3
+  }
 }

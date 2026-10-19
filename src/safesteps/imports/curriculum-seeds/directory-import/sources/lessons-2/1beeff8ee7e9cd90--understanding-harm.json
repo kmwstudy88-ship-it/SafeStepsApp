@@ -1,0 +1,452 @@
+{
+  "lessonId": "understanding_harm",
+  "title": "Understanding Harm",
+  "level": "Foundation",
+  "category": "Protective Parenting",
+  "durationMinutes": 45,
+  "passMark": 80,
+  "cpdPoints": 5,
+
+  "definition": {
+    "title": "What Does Understanding Harm Mean?",
+    "content": "Understanding harm means recognising how behaviours, actions, decisions, communication styles, environmental factors and unmet needs can negatively affect a child's emotional, psychological, physical, social and developmental wellbeing."
+  },
+
+  "learningObjectives": [
+    "Identify different forms of child harm",
+    "Understand emotional and psychological impacts",
+    "Recognise cumulative effects of harmful experiences",
+    "Develop accountability skills",
+    "Build practical repair strategies",
+    "Create emotionally safe environments"
+  ],
+
+  "learningOutcomes": [
+    "Recognise emotional harm indicators",
+    "Describe the impact of harmful experiences",
+    "Demonstrate responsibility taking",
+    "Identify child-centred repair actions",
+    "Create plans for safer parenting practices"
+  ],
+
+  "lessonSections": [
+    {
+      "sectionId": "LS001",
+      "title": "Understanding Harm",
+      "duration": 10,
+      "content": [
+        "Harm is not always intentional.",
+        "Children can be harmed emotionally, psychologically, physically and developmentally.",
+        "Harm may occur through actions or failure to act.",
+        "Children experience situations differently from adults.",
+        "Perception of safety matters as much as actual safety."
+      ]
+    },
+    {
+      "sectionId": "LS002",
+      "title": "Impact on Child Development",
+      "duration": 10,
+      "content": [
+        "Impact on emotional regulation.",
+        "Impact on self-esteem.",
+        "Impact on attachment.",
+        "Impact on behaviour.",
+        "Impact on trust and relationships."
+      ]
+    },
+    {
+      "sectionId": "LS003",
+      "title": "Recognising Signs of Harm",
+      "duration": 10,
+      "content": [
+        "Withdrawal from others.",
+        "Increased anxiety.",
+        "Aggressive behaviours.",
+        "Sleep disturbances.",
+        "Emotional outbursts.",
+        "Developmental regression."
+      ]
+    },
+    {
+      "sectionId": "LS004",
+      "title": "Repair and Accountability",
+      "duration": 15,
+      "content": [
+        "Acknowledging impact.",
+        "Taking responsibility.",
+        "Listening without defensiveness.",
+        "Creating change plans.",
+        "Rebuilding trust through consistency."
+      ]
+    }
+  ],
+
+  "activities": [
+    {
+      "id": "ACT001",
+      "type": "reflection",
+      "title": "Recognising Harm",
+      "instructions": "Identify three situations where a child may feel emotionally unsafe."
+    },
+    {
+      "id": "ACT002",
+      "type": "worksheet",
+      "title": "Impact Mapping",
+      "instructions": "Map short-term and long-term impacts of harmful experiences."
+    },
+    {
+      "id": "ACT003",
+      "type": "action-plan",
+      "title": "Building Safer Responses",
+      "instructions": "Create three changes you can implement immediately."
+    }
+  ],
+
+  "scenarioEngine": [
+    {
+      "id": "UH001",
+      "difficulty": "easy",
+      "points": 100,
+      "situation": "A parent repeatedly dismisses a child's feelings by saying stop crying and toughen up.",
+      "question": "Which response demonstrates understanding of harm?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Continue dismissing feelings",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Acknowledge feelings and create emotional safety",
+          "score": 100
+        },
+        {
+          "id": "C",
+          "text": "Ignore the situation",
+          "score": 20
+        }
+      ]
+    },
+    {
+      "id": "UH002",
+      "difficulty": "medium",
+      "points": 150,
+      "situation": "A child becomes anxious following repeated adult conflict.",
+      "question": "What should happen first?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Focus on restoring emotional safety",
+          "score": 150
+        },
+        {
+          "id": "B",
+          "text": "Tell the child to stop worrying",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Ignore the behaviour",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "id": "UH003",
+      "difficulty": "hard",
+      "points": 200,
+      "situation": "A parent recognises their behaviour negatively affected their child.",
+      "question": "What demonstrates accountability?",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Acknowledge impact, apologise and create a repair plan",
+          "score": 200
+        },
+        {
+          "id": "B",
+          "text": "Blame stress and move on",
+          "score": 20
+        },
+        {
+          "id": "C",
+          "text": "Deny the child's experience",
+          "score": 0
+        }
+      ]
+    }
+  ],
+
+  "quiz": [
+    {
+      "id": "Q1",
+      "question": "What is emotional harm?",
+      "options": [
+        "Supporting a child's emotional needs",
+        "Experiences that negatively affect emotional wellbeing",
+        "Providing emotional safety",
+        "Positive parenting"
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": "Q2",
+      "question": "What should be prioritised when a child feels unsafe?",
+      "options": [
+        "Punishment",
+        "Control",
+        "Emotional safety",
+        "Compliance"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "Q3",
+      "question": "Which behaviour shows accountability?",
+      "options": [
+        "Defensiveness",
+        "Minimisation",
+        "Ignoring impact",
+        "Taking responsibility"
+      ],
+      "correctAnswer": "D"
+    },
+    {
+      "id": "Q4",
+      "question": "Children often respond to harm through:",
+      "options": [
+        "Perfect behaviour",
+        "Increased emotional security",
+        "Emotional and behavioural distress",
+        "None of the above"
+      ],
+      "correctAnswer": "C"
+    },
+    {
+      "id": "Q5",
+      "question": "Repair begins with:",
+      "options": [
+        "Denial",
+        "Accountability",
+        "Blame",
+        "Excuses"
+      ],
+      "correctAnswer": "B"
+    }
+  ],
+
+  "quizAnswerKey": {
+    "Q1": {
+      "correctAnswer": "B",
+      "explanation": "Emotional harm negatively affects emotional wellbeing."
+    },
+    "Q2": {
+      "correctAnswer": "C",
+      "explanation": "Safety must be restored before growth can occur."
+    },
+    "Q3": {
+      "correctAnswer": "D",
+      "explanation": "Accountability demonstrates responsibility."
+    },
+    "Q4": {
+      "correctAnswer": "C",
+      "explanation": "Distress frequently appears through emotional and behavioural indicators."
+    },
+    "Q5": {
+      "correctAnswer": "B",
+      "explanation": "Repair starts with ownership of impact."
+    }
+  },
+
+  "assessment": {
+    "assessmentId": "ASM001",
+    "type": "competency_assessment",
+    "passScore": 80,
+    "attemptsAllowed": 3,
+    "totalQuestions": 10
+  },
+
+  "tasks": [
+    {
+      "id": "TASK001",
+      "title": "Personal Reflection",
+      "description": "Identify a situation where you could respond differently to improve emotional safety."
+    },
+    {
+      "id": "TASK002",
+      "title": "Repair Plan",
+      "description": "Create a practical accountability and repair plan."
+    }
+  ],
+
+  "markingGuide": {
+    "gradingModel": "Competency Based",
+    "bands": [
+      {
+        "range": "90-100",
+        "grade": "Advanced",
+        "description": "Excellent insight and practical application."
+      },
+      {
+        "range": "80-89",
+        "grade": "Competent",
+        "description": "Meets learning outcomes."
+      },
+      {
+        "range": "60-79",
+        "grade": "Developing",
+        "description": "Partial understanding."
+      },
+      {
+        "range": "0-59",
+        "grade": "Not Yet Competent",
+        "description": "Learning outcomes not achieved."
+      }
+    ]
+  },
+
+  "scenarioMarkingRubric": {
+    "excellent": {
+      "score": 100,
+      "criteria": [
+        "Recognises harm",
+        "Acknowledges impact",
+        "Demonstrates empathy",
+        "Prioritises safety",
+        "Provides repair actions"
+      ]
+    },
+    "good": {
+      "score": 75,
+      "criteria": [
+        "Identifies issue",
+        "Shows some understanding",
+        "Attempts solution"
+      ]
+    },
+    "poor": {
+      "score": 25,
+      "criteria": [
+        "Minimises concerns",
+        "Avoids responsibility",
+        "Fails to consider child impact"
+      ]
+    }
+  },
+
+  "reflectionRubric": {
+    "selfAwareness": 25,
+    "empathy": 25,
+    "accountability": 25,
+    "behaviourChange": 25
+  },
+
+  "competencies": [
+    {
+      "name": "Understanding Harm",
+      "requiredScore": 80
+    },
+    {
+      "name": "Child Impact Awareness",
+      "requiredScore": 80
+    },
+    {
+      "name": "Accountability",
+      "requiredScore": 80
+    },
+    {
+      "name": "Protective Capacity",
+      "requiredScore": 80
+    }
+  ],
+
+  "aiFacilitator": {
+    "name": "SafeSteps Learning Coach",
+    "role": "Trauma Informed Parenting Educator",
+
+    "openingScript": [
+      "Welcome to Understanding Harm.",
+      "Today's lesson explores how harm affects children and how positive change can occur.",
+      "Learning requires honesty, reflection and growth."
+    ],
+
+    "teachingPrompts": [
+      "What impact could this behaviour have on a child?",
+      "How might the child feel in this situation?",
+      "What safer alternative could be used?",
+      "How would accountability look here?"
+    ],
+
+    "activityPrompts": [
+      "Reflect on a time emotional safety could have been improved.",
+      "Consider the child's perspective first.",
+      "Identify a practical change you can make this week."
+    ],
+
+    "evaluationRules": {
+      "fullMarks": [
+        "Demonstrates empathy",
+        "Recognises child impact",
+        "Uses lesson concepts",
+        "Suggests safe realistic actions"
+      ],
+      "partialMarks": [
+        "Recognises concerns",
+        "Limited insight",
+        "Requires additional reflection"
+      ],
+      "failIndicators": [
+        "Victim blaming",
+        "Minimisation",
+        "Denial",
+        "Unsafe recommendations"
+      ]
+    },
+
+    "coachingResponses": {
+      "excellent": [
+        "Excellent insight.",
+        "You clearly considered the child's experience.",
+        "Your response demonstrates accountability."
+      ],
+      "developing": [
+        "Good start.",
+        "Explore the child's perspective further.",
+        "Reflect on emotional safety."
+      ],
+      "needsImprovement": [
+        "Review the lesson content again.",
+        "Consider the impact on the child.",
+        "Focus on accountability and repair."
+      ]
+    },
+
+    "completionMessage": [
+      "Congratulations on completing Understanding Harm.",
+      "Small changes create long-term positive outcomes.",
+      "Continue practising accountability and emotional safety."
+    ]
+  },
+
+  "analytics": {
+    "trackLessonTime": true,
+    "trackQuizScores": true,
+    "trackScenarioScores": true,
+    "trackReflectionScores": true,
+    "trackCompetencyProgress": true
+  },
+
+  "completionRequirements": {
+    "minimumTimeMinutes": 30,
+    "minimumQuizScore": 80,
+    "minimumScenarioScore": 80,
+    "activitiesCompleted": true,
+    "assessmentPassed": true
+  },
+
+  "certificateCriteria": {
+    "courseCompleted": true,
+    "competenciesAchieved": true,
+    "assessmentPassed": true
+  }
+}

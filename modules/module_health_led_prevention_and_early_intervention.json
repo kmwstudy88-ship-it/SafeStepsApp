@@ -16,6 +16,11 @@
     "Identify early warning signs and intervene safely",
     "Use health-led strategies to promote safety and wellbeing"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_health_led_strategies",
+    "lesson_early_identification",
+    "lesson_prevention_strategies",
+    "lesson_referral_pathways"
+  ],
   "content": []
 }

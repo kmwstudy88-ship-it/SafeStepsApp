@@ -17,6 +17,11 @@
     "Build psychological safety and support team wellbeing",
     "Manage conflict, communication challenges, and complex team dynamics"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_leading_multidisciplinary_teams",
+    "lesson_managing_conflict_and_complexity",
+    "lesson_psychological_safety",
+    "supervision_and_support"
+  ],
   "content": []
 }

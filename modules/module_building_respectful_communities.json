@@ -16,6 +16,11 @@
     "Identify positive norms that prevent violence",
     "Engage community members in everyday prevention actions"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_community_strengths_and_assets",
+    "lesson_building_trust_with_communities",
+    "lesson_promoting_respectful_relationships",
+    "lesson_building_safe_communities"
+  ],
   "content": []
 }

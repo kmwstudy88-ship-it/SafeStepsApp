@@ -1,0 +1,1414 @@
+{
+  "schemaVersion": 1,
+  "sourceRoots": [
+    "sources",
+    "courses",
+    "safesteps-learning-evidence-system",
+    "lessons",
+    "programs"
+  ],
+  "counts": {
+    "discoveredFiles": 186,
+    "parsedJsonFiles": 169,
+    "uniqueDocuments": 88,
+    "duplicateGroups": 57,
+    "malformedFiles": 0,
+    "repairedFiles": 12,
+    "rejectedFiles": 0,
+    "ignoredFiles": 17
+  },
+  "malformed": [],
+  "repaired": [
+    {
+      "sourcePath": "lessons/Assessments and Marking guide/Assessments and Marking Guide.Json",
+      "repair": "wrapped-top-level-property"
+    },
+    {
+      "sourcePath": "lessons/Lessons/building_new_patterns.json",
+      "repair": "merged-concatenated-objects"
+    },
+    {
+      "sourcePath": "lessons/Lessons/co_regulation_basics.json",
+      "repair": "closed-truncated-co-regulation-structure"
+    },
+    {
+      "sourcePath": "safesteps-learning-evidence-system/Answer and marking package.Json",
+      "repair": "removed-trailing-backticks"
+    },
+    {
+      "sourcePath": "sources/lessons-2/2db15780435e0dc7--co-regulation-basics.json",
+      "repair": "closed-truncated-co-regulation-structure"
+    },
+    {
+      "sourcePath": "sources/lessons-2/8d81f977f122af44--assessments-and-marking-guide.Json",
+      "repair": "wrapped-top-level-property"
+    },
+    {
+      "sourcePath": "sources/lessons-2/952786e73428269a--building-new-patterns.json",
+      "repair": "merged-concatenated-objects"
+    },
+    {
+      "sourcePath": "sources/lessons/2db15780435e0dc7--co-regulation-basics.json",
+      "repair": "closed-truncated-co-regulation-structure"
+    },
+    {
+      "sourcePath": "sources/lessons/8d81f977f122af44--assessments-and-marking-guide.Json",
+      "repair": "wrapped-top-level-property"
+    },
+    {
+      "sourcePath": "sources/lessons/952786e73428269a--building-new-patterns.json",
+      "repair": "merged-concatenated-objects"
+    },
+    {
+      "sourcePath": "sources/safesteps-learning-evidence-system-2/d354b5b2d0878050--answer-and-marking-package.Json",
+      "repair": "removed-trailing-backticks"
+    },
+    {
+      "sourcePath": "sources/safesteps-learning-evidence-system/d354b5b2d0878050--answer-and-marking-package.Json",
+      "repair": "removed-trailing-backticks"
+    }
+  ],
+  "rejected": [],
+  "ignored": [
+    {
+      "sourcePath": "courses/accountability-basics/AI Facilitator.txt",
+      "reason": "Empty file"
+    },
+    {
+      "sourcePath": "courses/desktop.ini",
+      "reason": "Unsupported file type"
+    },
+    {
+      "sourcePath": "lessons/desktop.ini",
+      "reason": "Unsupported file type"
+    },
+    {
+      "sourcePath": "lessons/Engines/desktop.ini",
+      "reason": "Unsupported file type"
+    },
+    {
+      "sourcePath": "lessons/Lesson & AI Facilitator Script/Building Safe Routines.txt",
+      "reason": "Empty file"
+    },
+    {
+      "sourcePath": "lessons/Lesson & AI Facilitator Script/desktop.ini",
+      "reason": "Unsupported file type"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/desktop.ini",
+      "reason": "Unsupported file type"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/Understanding the Cycle of Abuse/LMS Integration & Facilitator Assets.txt",
+      "reason": "Text is not JSON"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/Understanding the Cycle of Abuse/New Text Document.txt",
+      "reason": "Empty file"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/Understanding the Cycle of Abuse/SafeSteps_Phase1Assessment.docx",
+      "reason": "Unsupported file type"
+    },
+    {
+      "sourcePath": "lessons/Lessons/desktop.ini",
+      "reason": "Unsupported file type"
+    },
+    {
+      "sourcePath": "programs/desktop.ini",
+      "reason": "Unsupported file type"
+    },
+    {
+      "sourcePath": "safesteps-learning-evidence-system/Mandatory safeguarding controls.txt",
+      "reason": "Empty file"
+    },
+    {
+      "sourcePath": "sources/courses-2/9d99509559821126--understanding-harmful-vs-healthy.source",
+      "reason": "Unsupported file type"
+    },
+    {
+      "sourcePath": "sources/courses/9d99509559821126--understanding-harmful-vs-healthy.source",
+      "reason": "Unsupported file type"
+    },
+    {
+      "sourcePath": "sources/lessons-2/9d99509559821126--understanding-harmful-vs-healthy.source",
+      "reason": "Unsupported file type"
+    },
+    {
+      "sourcePath": "sources/lessons/9d99509559821126--understanding-harmful-vs-healthy.source",
+      "reason": "Unsupported file type"
+    }
+  ],
+  "sourceSnapshots": [
+    {
+      "sourcePath": "courses/Courses with AI Facilitator/FOUNDATIONS OF SAFE AND EFFECTIVE PARENTING/Understand Harmful vs Healthy Parenting Behaviours/Understanding Harmful vs Healthy Parenting Behaviours",
+      "snapshotFile": "sources/courses/9d99509559821126--understanding-harmful-vs-healthy.source",
+      "rawHash": "9d9950955982112693f6f4b2eeeb79f7279f0779ed66892f959d98a633190c3a"
+    },
+    {
+      "sourcePath": "lessons/Assessments and Marking guide/Assessments and Marking Guide.Json",
+      "snapshotFile": "sources/lessons/8d81f977f122af44--assessments-and-marking-guide.Json",
+      "rawHash": "8d81f977f122af444569a55e81c2a9fe9a86f0ca71dd950f2bb8ca5b35ae4876"
+    },
+    {
+      "sourcePath": "lessons/Lesson & AI Facilitator Script/Understanding the Cycle of Abuse.Json",
+      "snapshotFile": "sources/lessons/dd2667af3afd0617--understanding-the-cycle-of-abuse.Json",
+      "rawHash": "dd2667af3afd06176a151726e70468e8331ca3bec7f09b60fb5b33c224eae7ff"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/accountability_foundations/module_accountability_foundations.json",
+      "snapshotFile": "sources/lessons/6abb1212b933d81f--module-accountability-foundation.json",
+      "rawHash": "6abb1212b933d81fce4e0b24d0ba9a6a8967c31249f7b668cab5e26a34f653f5"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/Active Listening/active_listening.json",
+      "snapshotFile": "sources/lessons/b73b5e642970ef33--active-listening.json",
+      "rawHash": "b73b5e642970ef337dba9be658cbb5f3b2e70b94cb6c780ee6df0d9d053cad09"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/advocacy_skills/advocacy_skills.json",
+      "snapshotFile": "sources/lessons/888886fece114b29--advocacy-skills.json",
+      "rawHash": "888886fece114b29238c82eb106d6b358a46be0f51b4ac6de4eaf28a4a6c9d37"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/Age Appropriate Supports/age_appropriate_support.json",
+      "snapshotFile": "sources/lessons/c76486021e2c66f4--age-appropriate-support.json",
+      "rawHash": "c76486021e2c66f4b00b8965fc0e5c40d26596859f3421fab45b93e677188bb4"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/avoiding_retraumatisation/avoiding_retraumatisation.json",
+      "snapshotFile": "sources/lessons/4d0f529877f6a07d--avoiding-retraumatisation.json",
+      "rawHash": "4d0f529877f6a07d2c814643204fc9ea216bb2c3cf81112500ab64e24e108f58"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/Building Empathy/building_empathy.json",
+      "snapshotFile": "sources/lessons/ba289c8f7d005484--building-empathy.json",
+      "rawHash": "ba289c8f7d005484622c4da7908a72bd9859f3b0fb740c355aab681d6393f927"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/emotional_regulation/module_emotional_regulation.json",
+      "snapshotFile": "sources/lessons/b7f2d6e442824520--module-emotional-regulation.json",
+      "rawHash": "b7f2d6e4428245208bb9a7770e800e7a9f714f818a5d32b7fbdd9708c64a48bd"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/Understand Harmful vs Healthy Parenting Behaviours/Understanding Harmful vs Healthy Parenting Behaviours",
+      "snapshotFile": "sources/lessons/9d99509559821126--understanding-harmful-vs-healthy.source",
+      "rawHash": "9d9950955982112693f6f4b2eeeb79f7279f0779ed66892f959d98a633190c3a"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/Understanding the Cycle of Abuse/Understanding the Cycle of Abuse.json",
+      "snapshotFile": "sources/lessons/1c531cefd47afb9e--understanding-the-cycle-of-abuse.json",
+      "rawHash": "1c531cefd47afb9e32c9ddd647943c89ea962403b4a3a3db4ef1a904c59a6a66"
+    },
+    {
+      "sourcePath": "lessons/Lessons with AI Facilitator/Understanding the Cycle of Abuse/understanding the cycle of abuse.txt",
+      "snapshotFile": "sources/lessons/1c531cefd47afb9e--understanding-the-cycle-of-abuse.txt",
+      "rawHash": "1c531cefd47afb9e32c9ddd647943c89ea962403b4a3a3db4ef1a904c59a6a66"
+    },
+    {
+      "sourcePath": "lessons/Lessons/building_new_patterns.json",
+      "snapshotFile": "sources/lessons/952786e73428269a--building-new-patterns.json",
+      "rawHash": "952786e73428269aae17a2d9aac8d8ffb1d58721bf980f4b777b04dc2849239a"
+    },
+    {
+      "sourcePath": "lessons/Lessons/building_resilience_in_children.json",
+      "snapshotFile": "sources/lessons/4fcdbd577847ed13--building-resilience-in-children.json",
+      "rawHash": "4fcdbd577847ed134e04d11c5dfd14cb932929e2fadde205a175148a3cae986a"
+    },
+    {
+      "sourcePath": "lessons/Lessons/building_safe_routines.json",
+      "snapshotFile": "sources/lessons/3353cf0c59a4d657--building-safe-routines.json",
+      "rawHash": "3353cf0c59a4d657a05ea49db5d596e8f8be242214f77878b94e0058419e5372"
+    },
+    {
+      "sourcePath": "lessons/Lessons/challenging_minimisation.json",
+      "snapshotFile": "sources/lessons/3fd0dfa04717839e--challenging-minimisation.json",
+      "rawHash": "3fd0dfa04717839e08b46607ebdb5a83eae2df9ebe863962656a16497e200e08"
+    },
+    {
+      "sourcePath": "lessons/Lessons/co_regulation_basics.json",
+      "snapshotFile": "sources/lessons/2db15780435e0dc7--co-regulation-basics.json",
+      "rawHash": "2db15780435e0dc7fa9977f065cfdd30ff1e3f8b0857471d5900f1953fd94f85"
+    },
+    {
+      "sourcePath": "lessons/Lessons/communication_skills.json",
+      "snapshotFile": "sources/lessons/093d90a26ffa17bc--communication-skills.json",
+      "rawHash": "093d90a26ffa17bc066f0108bc24f985586428609bfba9ed747a18b9e72cab57"
+    },
+    {
+      "sourcePath": "lessons/Lessons/understanding_harm.json",
+      "snapshotFile": "sources/lessons/1beeff8ee7e9cd90--understanding-harm.json",
+      "rawHash": "1beeff8ee7e9cd9039b828de50e04e77559912a0d8076408f3484eb5b7b79444"
+    },
+    {
+      "sourcePath": "lessons/packages/content-schema/lesson.schema.json",
+      "snapshotFile": "sources/lessons/57e1b24be146002e--lesson-schema.json",
+      "rawHash": "57e1b24be146002e802ab81b6cb55742b482b145a51893f9ed4e849713c26083"
+    },
+    {
+      "sourcePath": "safesteps-learning-evidence-system/Answer and marking package.Json",
+      "snapshotFile": "sources/safesteps-learning-evidence-system/d354b5b2d0878050--answer-and-marking-package.Json",
+      "rawHash": "d354b5b2d0878050a457527a3385742c1f66cd974425981634777c45a318daab"
+    },
+    {
+      "sourcePath": "sources/courses/09a246321d559343--ai-facilitator-and-teacher.json",
+      "snapshotFile": "sources/sources/09a246321d559343--09a246321d559343-ai-facilitator-.json",
+      "rawHash": "09a246321d55934335ab4e16e5dae527f9b5767c5463d20a618b122b4cee9087"
+    },
+    {
+      "sourcePath": "sources/courses/14c6b16803176d60--why-boundaries-create-safety.json",
+      "snapshotFile": "sources/sources/14c6b16803176d60--14c6b16803176d60-why-boundaries-.json",
+      "rawHash": "14c6b16803176d6029134a984fecfa3cbeb42916c272cc83ef2ca6fa29aac1ca"
+    },
+    {
+      "sourcePath": "sources/courses/15c2675ca98ee615--consistency-and-predictability.json",
+      "snapshotFile": "sources/sources/15c2675ca98ee615--15c2675ca98ee615-consistency-and.json",
+      "rawHash": "15c2675ca98ee6157bfd9094b12797a478cbf8a3ee6ca2365110c178fa2a53db"
+    },
+    {
+      "sourcePath": "sources/courses/294b83792d30ad53--ai-facilitator-teacher-structure.json",
+      "snapshotFile": "sources/sources/294b83792d30ad53--294b83792d30ad53-ai-facilitator-.json",
+      "rawHash": "294b83792d30ad534169e11c3b84d2e8a2532c67c9a4b6f21f979606a6ebb955"
+    },
+    {
+      "sourcePath": "sources/courses/320f6590ed848c6b--understanding-harm-mastery.json",
+      "snapshotFile": "sources/sources/320f6590ed848c6b--320f6590ed848c6b-understanding-h.json",
+      "rawHash": "320f6590ed848c6b252236640cbc4f38b4626939a10049c62753f05b571695a3"
+    },
+    {
+      "sourcePath": "sources/courses/41e91687451025da--following-through-with-boundarie.json",
+      "snapshotFile": "sources/sources/41e91687451025da--41e91687451025da-following-throu.json",
+      "rawHash": "41e91687451025da8de62d6b6f093c559d974742a3a00a544562e8780b73bd69"
+    },
+    {
+      "sourcePath": "sources/courses/4577e5cab36cf0f1--ai-facilitator-and-teacher-json.txt",
+      "snapshotFile": "sources/sources/4577e5cab36cf0f1--4577e5cab36cf0f1-ai-facilitator-.txt",
+      "rawHash": "4577e5cab36cf0f1f925a6c6cb53bbcda69dcb6fc8a563f195ea134d0833605b"
+    },
+    {
+      "sourcePath": "sources/courses/459614e605b7fe98--what-accountability-means.json",
+      "snapshotFile": "sources/sources/459614e605b7fe98--459614e605b7fe98-what-accountabi.json",
+      "rawHash": "459614e605b7fe98dc8ea05c196b321f8efbb660db0655dcf78b1fe0a63a9c9c"
+    },
+    {
+      "sourcePath": "sources/courses/45f038672c973661--ai-facilitator-teacher-structure.json",
+      "snapshotFile": "sources/sources/45f038672c973661--45f038672c973661-ai-facilitator-.json",
+      "rawHash": "45f038672c97366121ed3f4778a3bad4228ce59fa5735d63617609c50506a976"
+    },
+    {
+      "sourcePath": "sources/courses/45f038672c973661--repairing-attachment-ruptures.json",
+      "snapshotFile": "sources/sources/45f038672c973661--45f038672c973661-repairing-attac.json",
+      "rawHash": "45f038672c97366121ed3f4778a3bad4228ce59fa5735d63617609c50506a976"
+    },
+    {
+      "sourcePath": "sources/courses/4c2f13fb071893ee--ai-facliltator-and-teacher.json",
+      "snapshotFile": "sources/sources/4c2f13fb071893ee--4c2f13fb071893ee-ai-facliltator-.json",
+      "rawHash": "4c2f13fb071893eeff61d8ba5a91b3dff04d218e625e204fd5fcb7f31ad328ff"
+    },
+    {
+      "sourcePath": "sources/courses/534c9a30da5b84d1--ai-teacher-facilitator.json",
+      "snapshotFile": "sources/sources/534c9a30da5b84d1--534c9a30da5b84d1-ai-teacher-faci.json",
+      "rawHash": "534c9a30da5b84d118133d94b00a9e0db5e419fc7efb1366ceffb11ae4f7d1a3"
+    },
+    {
+      "sourcePath": "sources/courses/68557964b3412faf--identifying-triggers-and-pattern.json",
+      "snapshotFile": "sources/sources/68557964b3412faf--68557964b3412faf-identifying-tri.json",
+      "rawHash": "68557964b3412faf79c2fd748b5849481e89f577764b36379c6576d94defe182"
+    },
+    {
+      "sourcePath": "sources/courses/6a3eba8b54577e5a--speaking-so-children-feel-safe.json",
+      "snapshotFile": "sources/sources/6a3eba8b54577e5a--6a3eba8b54577e5a-speaking-so-chi.json",
+      "rawHash": "6a3eba8b54577e5a783d17ce8d58c0dd3aeb3612bae309c7a48b778de9f88fa3"
+    },
+    {
+      "sourcePath": "sources/courses/6c6c1c08ba724779--practical-regulation-strategies.json",
+      "snapshotFile": "sources/sources/6c6c1c08ba724779--6c6c1c08ba724779-practical-regul.json",
+      "rawHash": "6c6c1c08ba72477922f5aa751b5dfc50fb8df9ecb0999e24ec74db5891926502"
+    },
+    {
+      "sourcePath": "sources/courses/73e9a3c75bdf1a87--ai-facilitator-json.txt",
+      "snapshotFile": "sources/sources/73e9a3c75bdf1a87--73e9a3c75bdf1a87-ai-facilitator-.txt",
+      "rawHash": "73e9a3c75bdf1a872fee2899c7edf1f0caa4a7662c982c7a4fd527433e587e7c"
+    },
+    {
+      "sourcePath": "sources/courses/776f630b649452d9--repairing-after-emotional-mistak.json",
+      "snapshotFile": "sources/sources/776f630b649452d9--776f630b649452d9-repairing-after.json",
+      "rawHash": "776f630b649452d999cca71626d71d23b2939fcbe39cfb31c0646c441b1fa961"
+    },
+    {
+      "sourcePath": "sources/courses/78bb49093f9d2808--ai-facilitator.json",
+      "snapshotFile": "sources/sources/78bb49093f9d2808--78bb49093f9d2808-ai-facilitator.json",
+      "rawHash": "78bb49093f9d2808366834c710c4f046bca1660ee1d2fa2704ceccbc1ba23337"
+    },
+    {
+      "sourcePath": "sources/courses/7f1fbd37275e963c--creating-predictable-routines.json",
+      "snapshotFile": "sources/sources/7f1fbd37275e963c--7f1fbd37275e963c-creating-predic.json",
+      "rawHash": "7f1fbd37275e963cfe2f115cdda78111e5d08be563661674d380d82dc0baff2b"
+    },
+    {
+      "sourcePath": "sources/courses/8b30b5cc82c0e759--reducing-conflict-through-clear-.json",
+      "snapshotFile": "sources/sources/8b30b5cc82c0e759--8b30b5cc82c0e759-reducing-confli.json",
+      "rawHash": "8b30b5cc82c0e759df54a98dcaed6abb3ec096bb7f2c48a7d31b4b496cbdb056"
+    },
+    {
+      "sourcePath": "sources/courses/95d3fd0fbd29a77b--why-emotional-regulation-matters.json",
+      "snapshotFile": "sources/sources/95d3fd0fbd29a77b--95d3fd0fbd29a77b-why-emotional-r.json",
+      "rawHash": "95d3fd0fbd29a77bf067989929ae6919b0ddce2db9c52af43b4fdb7f8ba81ffc"
+    },
+    {
+      "sourcePath": "sources/courses/a74d40431d05a62f--ai-facilitator-json.txt",
+      "snapshotFile": "sources/sources/a74d40431d05a62f--a74d40431d05a62f-ai-facilitator-.txt",
+      "rawHash": "a74d40431d05a62f3698dda9c8c745498b060bd443edaa83507ea06209efb581"
+    },
+    {
+      "sourcePath": "sources/courses/adc0262ce1f08e59--what-secure-attachment-really-me.json",
+      "snapshotFile": "sources/sources/adc0262ce1f08e59--adc0262ce1f08e59-what-secure-att.json",
+      "rawHash": "adc0262ce1f08e5957d883427b7940aecc52b3876b2e05900e8c34c86a5d3fb9"
+    },
+    {
+      "sourcePath": "sources/courses/b31f72d1a82e156e--building-a-safe-parenting-mindse.json",
+      "snapshotFile": "sources/sources/b31f72d1a82e156e--b31f72d1a82e156e-building-a-safe.json",
+      "rawHash": "b31f72d1a82e156e110a87002d2b8446d04414a450bc3c7210eb7bfa5d52f9c9"
+    },
+    {
+      "sourcePath": "sources/courses/b376a94a2f303e0a--ai-facilitator-configuration-sys.json",
+      "snapshotFile": "sources/sources/b376a94a2f303e0a--b376a94a2f303e0a-ai-facilitator-.json",
+      "rawHash": "b376a94a2f303e0a9629b2dc72db8ae9bd72817a6276e4588e066a99b9866369"
+    },
+    {
+      "sourcePath": "sources/courses/b7fe1f76c75ec70b--ai-facilitator-json.txt",
+      "snapshotFile": "sources/sources/b7fe1f76c75ec70b--b7fe1f76c75ec70b-ai-facilitator-.txt",
+      "rawHash": "b7fe1f76c75ec70b58c413f0c92b488efc1f0f2a12d48e5d4c978f5e6241d012"
+    },
+    {
+      "sourcePath": "sources/courses/c10678d2276d3967--ai-facilitator-configuration-sys.json",
+      "snapshotFile": "sources/sources/c10678d2276d3967--c10678d2276d3967-ai-facilitator-.json",
+      "rawHash": "c10678d2276d3967d6add27f43e3b2bc342dc2b605d8a86edcefd326ab61299b"
+    },
+    {
+      "sourcePath": "sources/courses/c21052057ad5d4fa--building-cooperation-through-con.json",
+      "snapshotFile": "sources/sources/c21052057ad5d4fa--c21052057ad5d4fa-building-cooper.json",
+      "rawHash": "c21052057ad5d4fa0b51f112299d1ec2552683f63049c09d3e51fefaaa892ca6"
+    },
+    {
+      "sourcePath": "sources/courses/c4ea3c3c4670a48b--aifacilitatorteacherlessonschema.json",
+      "snapshotFile": "sources/sources/c4ea3c3c4670a48b--c4ea3c3c4670a48b-aifacilitatorte.json",
+      "rawHash": "c4ea3c3c4670a48b566588d73131b9fd99dc4f5af9ad333fb27c88de37990492"
+    },
+    {
+      "sourcePath": "sources/courses/cf2462238b12980b--ai-facilitator-and-teacher.json",
+      "snapshotFile": "sources/sources/cf2462238b12980b--cf2462238b12980b-ai-facilitator-.json",
+      "rawHash": "cf2462238b12980b3f7c48796e69d99306c744453847870b372cbd9aaec1e79e"
+    },
+    {
+      "sourcePath": "sources/courses/d131bfacb06dac83--ai-facilitator-teacher.json",
+      "snapshotFile": "sources/sources/d131bfacb06dac83--d131bfacb06dac83-ai-facilitator-.json",
+      "rawHash": "d131bfacb06dac83deecd1170743c9635c3c26c3ce0535e6bcc155b796381684"
+    },
+    {
+      "sourcePath": "sources/courses/d31c79cd7bd66555--ai-facliltator-and-teacher.json",
+      "snapshotFile": "sources/sources/d31c79cd7bd66555--d31c79cd7bd66555-ai-facliltator-.json",
+      "rawHash": "d31c79cd7bd6655538efdd7ec1e3c11f8b09e4013d70e029f65a4093adc16299"
+    },
+    {
+      "sourcePath": "sources/courses/d8a88bdb41600475--understanding-harm-basic.Json",
+      "snapshotFile": "sources/sources/d8a88bdb41600475--d8a88bdb41600475-understanding-h.Json",
+      "rawHash": "d8a88bdb41600475e801ed3784d7188c68ab6674ac0598517e2936a92d62c9b1"
+    },
+    {
+      "sourcePath": "sources/courses/d8d8d6ab484aa094--the-power-of-attunement.json",
+      "snapshotFile": "sources/sources/d8d8d6ab484aa094--d8d8d6ab484aa094-the-power-of-at.json",
+      "rawHash": "d8d8d6ab484aa094e5399e83b18a0f96be4eed8de0aeb82f158cb24a43c60160"
+    },
+    {
+      "sourcePath": "sources/courses/e2a861187a5af0fd--ai-facilitator-and-teacher.json",
+      "snapshotFile": "sources/sources/e2a861187a5af0fd--e2a861187a5af0fd-ai-facilitator-.json",
+      "rawHash": "e2a861187a5af0fd0f3076fee6b97d7ebba25e7d98e46e22f9b52559f7ff3c77"
+    },
+    {
+      "sourcePath": "sources/courses/e8b7e5b49985ee1a--listening-to-understand-not-to-r.json",
+      "snapshotFile": "sources/sources/e8b7e5b49985ee1a--e8b7e5b49985ee1a-listening-to-un.json",
+      "rawHash": "e8b7e5b49985ee1ae6d5737466d827ec283ad394238c57e1273ec4e43e331c4e"
+    },
+    {
+      "sourcePath": "sources/courses/ea01eb7450278ce1--building-long-term-connection.json",
+      "snapshotFile": "sources/sources/ea01eb7450278ce1--ea01eb7450278ce1-building-long-t.json",
+      "rawHash": "ea01eb7450278ce147f18adff9aff36e8e841553891bb6209ab39ebfc51ede2c"
+    },
+    {
+      "sourcePath": "sources/courses/ea6c42a08038eb81--ai-teacher-facilitator.json",
+      "snapshotFile": "sources/sources/ea6c42a08038eb81--ea6c42a08038eb81-ai-teacher-faci.json",
+      "rawHash": "ea6c42a08038eb81392add6d75d7c036d491e63338af8bfe86d8025bdf13f681"
+    },
+    {
+      "sourcePath": "sources/courses/f21a6b3d71d979cf--what-children-need-to-feel-safe.json",
+      "snapshotFile": "sources/sources/f21a6b3d71d979cf--f21a6b3d71d979cf-what-children-n.json",
+      "rawHash": "f21a6b3d71d979cf2a69b992b0db21eb42d48303608e1d0238d503e1943123f9"
+    },
+    {
+      "sourcePath": "sources/courses/f331c5d3fcc61a22--balancing-flexibility-and-struct.json",
+      "snapshotFile": "sources/sources/f331c5d3fcc61a22--f331c5d3fcc61a22-balancing-flexi.json",
+      "rawHash": "f331c5d3fcc61a227f4be76f0b34a24268024040a5b38120dca6c589afdab02f"
+    },
+    {
+      "sourcePath": "sources/courses/fa8d5d6e7ee72025--ai-facilitator-teacher-structure.json",
+      "snapshotFile": "sources/sources/fa8d5d6e7ee72025--fa8d5d6e7ee72025-ai-facilitator-.json",
+      "rawHash": "fa8d5d6e7ee72025cab298bd85dcaafae349f635a715894e1e7b34b3f49c9754"
+    },
+    {
+      "sourcePath": "sources/learning-evidence-system/5ceadcdb7e8cb1aa--mandatory-safeguarding-controls.Json",
+      "snapshotFile": "sources/sources/5ceadcdb7e8cb1aa--5ceadcdb7e8cb1aa-mandatory-safeg.Json",
+      "rawHash": "5ceadcdb7e8cb1aab7156b5b9e68a905b978e68e6dec38ea005cdd15b4442992"
+    },
+    {
+      "sourcePath": "sources/learning-evidence-system/5cf46a8553034028--evidence-record.Json",
+      "snapshotFile": "sources/sources/5cf46a8553034028--5cf46a8553034028-evidence-record.Json",
+      "rawHash": "5cf46a85530340289466da014150529edf8cf924e763f3f791629324f17085d0"
+    },
+    {
+      "sourcePath": "sources/learning-evidence-system/5fab8a6178f3614a--ai-facilitator-and-assessor.Json",
+      "snapshotFile": "sources/sources/5fab8a6178f3614a--5fab8a6178f3614a-ai-facilitator-.Json",
+      "rawHash": "5fab8a6178f3614a5df5d4223f0d953dc239c24017555d6ae0eabed68ea47ae0"
+    },
+    {
+      "sourcePath": "sources/learning-evidence-system/8d6b749c3530d1eb--evidence-portfolio.json",
+      "snapshotFile": "sources/sources/8d6b749c3530d1eb--8d6b749c3530d1eb-evidence-portfo.json",
+      "rawHash": "8d6b749c3530d1eba0665be6312e05f33ff616c4d7266c95a945904bc4f6a0bb"
+    },
+    {
+      "sourcePath": "sources/learning-evidence-system/c064a34b9acba7bd--complete-assessment-model.Json",
+      "snapshotFile": "sources/sources/c064a34b9acba7bd--c064a34b9acba7bd-complete-assess.Json",
+      "rawHash": "c064a34b9acba7bdcf1ba813636d721cfb2b98b81555064dbcaf7e4bd5b24f20"
+    },
+    {
+      "sourcePath": "sources/learning-evidence-system/c1c7e55610d1759a--strong-evidence-rules.Json",
+      "snapshotFile": "sources/sources/c1c7e55610d1759a--c1c7e55610d1759a-strong-evidence.Json",
+      "rawHash": "c1c7e55610d1759ad4cd9aaed1466ee004e65383a26c8c3ac85eba24d2df04d5"
+    },
+    {
+      "sourcePath": "sources/learning-evidence-system/cb2c9714143ec52e--the-completed-single-json-for-ea.json",
+      "snapshotFile": "sources/sources/cb2c9714143ec52e--cb2c9714143ec52e-the-completed-s.json",
+      "rawHash": "cb2c9714143ec52e194218775103a69ff926f86b654b5e1bdd3f46105326aecf"
+    },
+    {
+      "sourcePath": "sources/learning-evidence-system/f3268d806eb317fa--behaviour-change-evidence.Json",
+      "snapshotFile": "sources/sources/f3268d806eb317fa--f3268d806eb317fa-behaviour-chang.Json",
+      "rawHash": "f3268d806eb317fa3a456c48c6e956152cabc14d71ab705648b1fa6bb664221b"
+    },
+    {
+      "sourcePath": "sources/learning-evidence-system/f5ee10121ff3525f--production-evidence-system.Json",
+      "snapshotFile": "sources/sources/f5ee10121ff3525f--f5ee10121ff3525f-production-evid.Json",
+      "rawHash": "f5ee10121ff3525f1e7fa3cb2e4bde6b0c17853342629d3b9dc7fe2ded5f2e15"
+    },
+    {
+      "sourcePath": "sources/lessons-2/093d90a26ffa17bc--communication-skills.json",
+      "snapshotFile": "sources/sources/093d90a26ffa17bc--093d90a26ffa17bc-communication-s.json",
+      "rawHash": "093d90a26ffa17bc066f0108bc24f985586428609bfba9ed747a18b9e72cab57"
+    },
+    {
+      "sourcePath": "sources/lessons-2/1beeff8ee7e9cd90--understanding-harm.json",
+      "snapshotFile": "sources/sources/1beeff8ee7e9cd90--1beeff8ee7e9cd90-understanding-h.json",
+      "rawHash": "1beeff8ee7e9cd9039b828de50e04e77559912a0d8076408f3484eb5b7b79444"
+    },
+    {
+      "sourcePath": "sources/lessons-2/1c531cefd47afb9e--understanding-the-cycle-of-abuse.json",
+      "snapshotFile": "sources/sources/1c531cefd47afb9e--1c531cefd47afb9e-understanding-t.json",
+      "rawHash": "1c531cefd47afb9e32c9ddd647943c89ea962403b4a3a3db4ef1a904c59a6a66"
+    },
+    {
+      "sourcePath": "sources/lessons-2/1c531cefd47afb9e--understanding-the-cycle-of-abuse.txt",
+      "snapshotFile": "sources/sources/1c531cefd47afb9e--1c531cefd47afb9e-understanding-t.txt",
+      "rawHash": "1c531cefd47afb9e32c9ddd647943c89ea962403b4a3a3db4ef1a904c59a6a66"
+    },
+    {
+      "sourcePath": "sources/lessons-2/2db15780435e0dc7--co-regulation-basics.json",
+      "snapshotFile": "sources/sources/2db15780435e0dc7--2db15780435e0dc7-co-regulation-b.json",
+      "rawHash": "2db15780435e0dc7fa9977f065cfdd30ff1e3f8b0857471d5900f1953fd94f85"
+    },
+    {
+      "sourcePath": "sources/lessons-2/3353cf0c59a4d657--building-safe-routines.json",
+      "snapshotFile": "sources/sources/3353cf0c59a4d657--3353cf0c59a4d657-building-safe-r.json",
+      "rawHash": "3353cf0c59a4d657a05ea49db5d596e8f8be242214f77878b94e0058419e5372"
+    },
+    {
+      "sourcePath": "sources/lessons-2/3fd0dfa04717839e--challenging-minimisation.json",
+      "snapshotFile": "sources/sources/3fd0dfa04717839e--3fd0dfa04717839e-challenging-min.json",
+      "rawHash": "3fd0dfa04717839e08b46607ebdb5a83eae2df9ebe863962656a16497e200e08"
+    },
+    {
+      "sourcePath": "sources/lessons-2/4d0f529877f6a07d--avoiding-retraumatisation.json",
+      "snapshotFile": "sources/sources/4d0f529877f6a07d--4d0f529877f6a07d-avoiding-retrau.json",
+      "rawHash": "4d0f529877f6a07d2c814643204fc9ea216bb2c3cf81112500ab64e24e108f58"
+    },
+    {
+      "sourcePath": "sources/lessons-2/4fcdbd577847ed13--building-resilience-in-children.json",
+      "snapshotFile": "sources/sources/4fcdbd577847ed13--4fcdbd577847ed13-building-resili.json",
+      "rawHash": "4fcdbd577847ed134e04d11c5dfd14cb932929e2fadde205a175148a3cae986a"
+    },
+    {
+      "sourcePath": "sources/lessons-2/57e1b24be146002e--lesson-schema.json",
+      "snapshotFile": "sources/sources/57e1b24be146002e--57e1b24be146002e-lesson-schema.json",
+      "rawHash": "57e1b24be146002e802ab81b6cb55742b482b145a51893f9ed4e849713c26083"
+    },
+    {
+      "sourcePath": "sources/lessons-2/6abb1212b933d81f--module-accountability-foundation.json",
+      "snapshotFile": "sources/sources/6abb1212b933d81f--6abb1212b933d81f-module-accounta.json",
+      "rawHash": "6abb1212b933d81fce4e0b24d0ba9a6a8967c31249f7b668cab5e26a34f653f5"
+    },
+    {
+      "sourcePath": "sources/lessons-2/888886fece114b29--advocacy-skills.json",
+      "snapshotFile": "sources/sources/888886fece114b29--888886fece114b29-advocacy-skills.json",
+      "rawHash": "888886fece114b29238c82eb106d6b358a46be0f51b4ac6de4eaf28a4a6c9d37"
+    },
+    {
+      "sourcePath": "sources/lessons-2/8d81f977f122af44--assessments-and-marking-guide.Json",
+      "snapshotFile": "sources/sources/8d81f977f122af44--8d81f977f122af44-assessments-and.Json",
+      "rawHash": "8d81f977f122af444569a55e81c2a9fe9a86f0ca71dd950f2bb8ca5b35ae4876"
+    },
+    {
+      "sourcePath": "sources/lessons-2/952786e73428269a--building-new-patterns.json",
+      "snapshotFile": "sources/sources/952786e73428269a--952786e73428269a-building-new-pa.json",
+      "rawHash": "952786e73428269aae17a2d9aac8d8ffb1d58721bf980f4b777b04dc2849239a"
+    },
+    {
+      "sourcePath": "sources/lessons-2/b73b5e642970ef33--active-listening.json",
+      "snapshotFile": "sources/sources/b73b5e642970ef33--b73b5e642970ef33-active-listenin.json",
+      "rawHash": "b73b5e642970ef337dba9be658cbb5f3b2e70b94cb6c780ee6df0d9d053cad09"
+    },
+    {
+      "sourcePath": "sources/lessons-2/b7f2d6e442824520--module-emotional-regulation.json",
+      "snapshotFile": "sources/sources/b7f2d6e442824520--b7f2d6e442824520-module-emotiona.json",
+      "rawHash": "b7f2d6e4428245208bb9a7770e800e7a9f714f818a5d32b7fbdd9708c64a48bd"
+    },
+    {
+      "sourcePath": "sources/lessons-2/ba289c8f7d005484--building-empathy.json",
+      "snapshotFile": "sources/sources/ba289c8f7d005484--ba289c8f7d005484-building-empath.json",
+      "rawHash": "ba289c8f7d005484622c4da7908a72bd9859f3b0fb740c355aab681d6393f927"
+    },
+    {
+      "sourcePath": "sources/lessons-2/c76486021e2c66f4--age-appropriate-support.json",
+      "snapshotFile": "sources/sources/c76486021e2c66f4--c76486021e2c66f4-age-appropriate.json",
+      "rawHash": "c76486021e2c66f4b00b8965fc0e5c40d26596859f3421fab45b93e677188bb4"
+    },
+    {
+      "sourcePath": "sources/lessons-2/dd2667af3afd0617--understanding-the-cycle-of-abuse.Json",
+      "snapshotFile": "sources/sources/dd2667af3afd0617--dd2667af3afd0617-understanding-t.Json",
+      "rawHash": "dd2667af3afd06176a151726e70468e8331ca3bec7f09b60fb5b33c224eae7ff"
+    },
+    {
+      "sourcePath": "sources/lessons/093d90a26ffa17bc--communication-skills.json",
+      "snapshotFile": "sources/sources/093d90a26ffa17bc--093d90a26ffa17bc-communication-s.json",
+      "rawHash": "093d90a26ffa17bc066f0108bc24f985586428609bfba9ed747a18b9e72cab57"
+    },
+    {
+      "sourcePath": "sources/lessons/09a246321d559343--ai-facilitator-and-teacher.json",
+      "snapshotFile": "sources/sources/09a246321d559343--09a246321d559343-ai-facilitator-.json",
+      "rawHash": "09a246321d55934335ab4e16e5dae527f9b5767c5463d20a618b122b4cee9087"
+    },
+    {
+      "sourcePath": "sources/lessons/14c6b16803176d60--why-boundaries-create-safety.json",
+      "snapshotFile": "sources/sources/14c6b16803176d60--14c6b16803176d60-why-boundaries-.json",
+      "rawHash": "14c6b16803176d6029134a984fecfa3cbeb42916c272cc83ef2ca6fa29aac1ca"
+    },
+    {
+      "sourcePath": "sources/lessons/15c2675ca98ee615--consistency-and-predictability.json",
+      "snapshotFile": "sources/sources/15c2675ca98ee615--15c2675ca98ee615-consistency-and.json",
+      "rawHash": "15c2675ca98ee6157bfd9094b12797a478cbf8a3ee6ca2365110c178fa2a53db"
+    },
+    {
+      "sourcePath": "sources/lessons/1aef2e7d23e8d6cc--attachment-and-relationships.Json",
+      "snapshotFile": "sources/sources/1aef2e7d23e8d6cc--1aef2e7d23e8d6cc-attachment-and-.Json",
+      "rawHash": "1aef2e7d23e8d6cc22e8728364362db5e313fb0af8e6370cb3881eb0aa52eb24"
+    },
+    {
+      "sourcePath": "sources/lessons/1beeff8ee7e9cd90--understanding-harm.json",
+      "snapshotFile": "sources/sources/1beeff8ee7e9cd90--1beeff8ee7e9cd90-understanding-h.json",
+      "rawHash": "1beeff8ee7e9cd9039b828de50e04e77559912a0d8076408f3484eb5b7b79444"
+    },
+    {
+      "sourcePath": "sources/lessons/1c531cefd47afb9e--understanding-the-cycle-of-abuse.json",
+      "snapshotFile": "sources/sources/1c531cefd47afb9e--1c531cefd47afb9e-understanding-t.json",
+      "rawHash": "1c531cefd47afb9e32c9ddd647943c89ea962403b4a3a3db4ef1a904c59a6a66"
+    },
+    {
+      "sourcePath": "sources/lessons/1c531cefd47afb9e--understanding-the-cycle-of-abuse.txt",
+      "snapshotFile": "sources/sources/1c531cefd47afb9e--1c531cefd47afb9e-understanding-t.txt",
+      "rawHash": "1c531cefd47afb9e32c9ddd647943c89ea962403b4a3a3db4ef1a904c59a6a66"
+    },
+    {
+      "sourcePath": "sources/lessons/1d8e7416045f2e5d--ai-teacher.json",
+      "snapshotFile": "sources/sources/1d8e7416045f2e5d--1d8e7416045f2e5d-ai-teacher.json",
+      "rawHash": "1d8e7416045f2e5d6bda6db940437b0336d8ee2e512ee7a9ef2db92827b584ba"
+    },
+    {
+      "sourcePath": "sources/lessons/294b83792d30ad53--ai-facilitator-teacher-structure.json",
+      "snapshotFile": "sources/sources/294b83792d30ad53--294b83792d30ad53-ai-facilitator-.json",
+      "rawHash": "294b83792d30ad534169e11c3b84d2e8a2532c67c9a4b6f21f979606a6ebb955"
+    },
+    {
+      "sourcePath": "sources/lessons/2db15780435e0dc7--co-regulation-basics.json",
+      "snapshotFile": "sources/sources/2db15780435e0dc7--2db15780435e0dc7-co-regulation-b.json",
+      "rawHash": "2db15780435e0dc7fa9977f065cfdd30ff1e3f8b0857471d5900f1953fd94f85"
+    },
+    {
+      "sourcePath": "sources/lessons/2fc2fbac0df52890--safesteps-master-scoring-engine.json",
+      "snapshotFile": "sources/sources/2fc2fbac0df52890--2fc2fbac0df52890-safesteps-maste.json",
+      "rawHash": "2fc2fbac0df528905e1cf3d5798fece4cf7fe6dcfae781fa191bfc372d55e528"
+    },
+    {
+      "sourcePath": "sources/lessons/3353cf0c59a4d657--building-safe-routines.json",
+      "snapshotFile": "sources/sources/3353cf0c59a4d657--3353cf0c59a4d657-building-safe-r.json",
+      "rawHash": "3353cf0c59a4d657a05ea49db5d596e8f8be242214f77878b94e0058419e5372"
+    },
+    {
+      "sourcePath": "sources/lessons/3fd0dfa04717839e--challenging-minimisation.json",
+      "snapshotFile": "sources/sources/3fd0dfa04717839e--3fd0dfa04717839e-challenging-min.json",
+      "rawHash": "3fd0dfa04717839e08b46607ebdb5a83eae2df9ebe863962656a16497e200e08"
+    },
+    {
+      "sourcePath": "sources/lessons/41e91687451025da--following-through-with-boundarie.json",
+      "snapshotFile": "sources/sources/41e91687451025da--41e91687451025da-following-throu.json",
+      "rawHash": "41e91687451025da8de62d6b6f093c559d974742a3a00a544562e8780b73bd69"
+    },
+    {
+      "sourcePath": "sources/lessons/44145ea0d9f6e3c1--ai-facilitator-script.json",
+      "snapshotFile": "sources/sources/44145ea0d9f6e3c1--44145ea0d9f6e3c1-ai-facilitator-.json",
+      "rawHash": "44145ea0d9f6e3c1d754adad14c3c8888180aa61753069b5bb62a7aedc1fc262"
+    },
+    {
+      "sourcePath": "sources/lessons/4577e5cab36cf0f1--ai-facilitator-and-teacher-json.txt",
+      "snapshotFile": "sources/sources/4577e5cab36cf0f1--4577e5cab36cf0f1-ai-facilitator-.txt",
+      "rawHash": "4577e5cab36cf0f1f925a6c6cb53bbcda69dcb6fc8a563f195ea134d0833605b"
+    },
+    {
+      "sourcePath": "sources/lessons/45f038672c973661--ai-facilitator-teacher-structure.json",
+      "snapshotFile": "sources/sources/45f038672c973661--45f038672c973661-ai-facilitator-.json",
+      "rawHash": "45f038672c97366121ed3f4778a3bad4228ce59fa5735d63617609c50506a976"
+    },
+    {
+      "sourcePath": "sources/lessons/45f038672c973661--repairing-attachment-ruptures.json",
+      "snapshotFile": "sources/sources/45f038672c973661--45f038672c973661-repairing-attac.json",
+      "rawHash": "45f038672c97366121ed3f4778a3bad4228ce59fa5735d63617609c50506a976"
+    },
+    {
+      "sourcePath": "sources/lessons/47bed43a7d30acba--avoiding-retraumatisation-mother.json",
+      "snapshotFile": "sources/sources/47bed43a7d30acba--47bed43a7d30acba-avoiding-retrau.json",
+      "rawHash": "47bed43a7d30acba125d90e4507edeb65d8f7d9e8ccdeb22fe737df80e47fd53"
+    },
+    {
+      "sourcePath": "sources/lessons/49b37d9bbec44454--avoiding-retraumatisation-father.json",
+      "snapshotFile": "sources/sources/49b37d9bbec44454--49b37d9bbec44454-avoiding-retrau.json",
+      "rawHash": "49b37d9bbec44454c4a77764c9e83d926bc302c3853a9e46be6e83b5b836406d"
+    },
+    {
+      "sourcePath": "sources/lessons/49b37d9bbec44454--what-children-need-to-feel-safe.json",
+      "snapshotFile": "sources/sources/49b37d9bbec44454--49b37d9bbec44454-what-children-n.json",
+      "rawHash": "49b37d9bbec44454c4a77764c9e83d926bc302c3853a9e46be6e83b5b836406d"
+    },
+    {
+      "sourcePath": "sources/lessons/4be19b0e1b48be67--adaptive-progression-engine.json",
+      "snapshotFile": "sources/sources/4be19b0e1b48be67--4be19b0e1b48be67-adaptive-progre.json",
+      "rawHash": "4be19b0e1b48be6799ef588bec21baaf23a52aee4fadec9f704c08675b1eebd8"
+    },
+    {
+      "sourcePath": "sources/lessons/4c2f13fb071893ee--ai-facliltator-and-teacher.json",
+      "snapshotFile": "sources/sources/4c2f13fb071893ee--4c2f13fb071893ee-ai-facliltator-.json",
+      "rawHash": "4c2f13fb071893eeff61d8ba5a91b3dff04d218e625e204fd5fcb7f31ad328ff"
+    },
+    {
+      "sourcePath": "sources/lessons/4d0114c98168d792--ai-facilitator-script.json",
+      "snapshotFile": "sources/sources/4d0114c98168d792--4d0114c98168d792-ai-facilitator-.json",
+      "rawHash": "4d0114c98168d79280d4a18fd9206a3457994b79c95248d3f99f84505d2b5f0b"
+    },
+    {
+      "sourcePath": "sources/lessons/4d0f529877f6a07d--avoiding-retraumatisation.json",
+      "snapshotFile": "sources/sources/4d0f529877f6a07d--4d0f529877f6a07d-avoiding-retrau.json",
+      "rawHash": "4d0f529877f6a07d2c814643204fc9ea216bb2c3cf81112500ab64e24e108f58"
+    },
+    {
+      "sourcePath": "sources/lessons/4fcdbd577847ed13--building-resilience-in-children.json",
+      "snapshotFile": "sources/sources/4fcdbd577847ed13--4fcdbd577847ed13-building-resili.json",
+      "rawHash": "4fcdbd577847ed134e04d11c5dfd14cb932929e2fadde205a175148a3cae986a"
+    },
+    {
+      "sourcePath": "sources/lessons/531814989997abfe--building-resilience-in-children.Json",
+      "snapshotFile": "sources/sources/531814989997abfe--531814989997abfe-building-resili.Json",
+      "rawHash": "531814989997abfec7f226c5f83a135c51721e12c17bef1616639fc10e6745a6"
+    },
+    {
+      "sourcePath": "sources/lessons/534c9a30da5b84d1--ai-teacher-facilitator.json",
+      "snapshotFile": "sources/sources/534c9a30da5b84d1--534c9a30da5b84d1-ai-teacher-faci.json",
+      "rawHash": "534c9a30da5b84d118133d94b00a9e0db5e419fc7efb1366ceffb11ae4f7d1a3"
+    },
+    {
+      "sourcePath": "sources/lessons/57e1b24be146002e--lesson-schema.json",
+      "snapshotFile": "sources/sources/57e1b24be146002e--57e1b24be146002e-lesson-schema.json",
+      "rawHash": "57e1b24be146002e802ab81b6cb55742b482b145a51893f9ed4e849713c26083"
+    },
+    {
+      "sourcePath": "sources/lessons/5979470298b96108--behavioural-and-emotional-signs.Json",
+      "snapshotFile": "sources/sources/5979470298b96108--5979470298b96108-behavioural-and.Json",
+      "rawHash": "5979470298b961083c2aec48a0df53332ae5699ea2072b39e8cc8727aecbac02"
+    },
+    {
+      "sourcePath": "sources/lessons/68557964b3412faf--identifying-triggers-and-pattern.json",
+      "snapshotFile": "sources/sources/68557964b3412faf--68557964b3412faf-identifying-tri.json",
+      "rawHash": "68557964b3412faf79c2fd748b5849481e89f577764b36379c6576d94defe182"
+    },
+    {
+      "sourcePath": "sources/lessons/6a3eba8b54577e5a--speaking-so-children-feel-safe.json",
+      "snapshotFile": "sources/sources/6a3eba8b54577e5a--6a3eba8b54577e5a-speaking-so-chi.json",
+      "rawHash": "6a3eba8b54577e5a783d17ce8d58c0dd3aeb3612bae309c7a48b778de9f88fa3"
+    },
+    {
+      "sourcePath": "sources/lessons/6abb1212b933d81f--module-accountability-foundation.json",
+      "snapshotFile": "sources/sources/6abb1212b933d81f--6abb1212b933d81f-module-accounta.json",
+      "rawHash": "6abb1212b933d81fce4e0b24d0ba9a6a8967c31249f7b668cab5e26a34f653f5"
+    },
+    {
+      "sourcePath": "sources/lessons/6c6c1c08ba724779--practical-regulation-strategies.json",
+      "snapshotFile": "sources/sources/6c6c1c08ba724779--6c6c1c08ba724779-practical-regul.json",
+      "rawHash": "6c6c1c08ba72477922f5aa751b5dfc50fb8df9ecb0999e24ec74db5891926502"
+    },
+    {
+      "sourcePath": "sources/lessons/73e9a3c75bdf1a87--ai-facilitator-json.txt",
+      "snapshotFile": "sources/sources/73e9a3c75bdf1a87--73e9a3c75bdf1a87-ai-facilitator-.txt",
+      "rawHash": "73e9a3c75bdf1a872fee2899c7edf1f0caa4a7662c982c7a4fd527433e587e7c"
+    },
+    {
+      "sourcePath": "sources/lessons/776f630b649452d9--repairing-after-emotional-mistak.json",
+      "snapshotFile": "sources/sources/776f630b649452d9--776f630b649452d9-repairing-after.json",
+      "rawHash": "776f630b649452d999cca71626d71d23b2939fcbe39cfb31c0646c441b1fa961"
+    },
+    {
+      "sourcePath": "sources/lessons/777c45c21f1085be--ai-facilitator.json",
+      "snapshotFile": "sources/sources/777c45c21f1085be--777c45c21f1085be-ai-facilitator.json",
+      "rawHash": "777c45c21f1085be0c06467c6ce41634176cec7a604280e7a70f192ee9c57054"
+    },
+    {
+      "sourcePath": "sources/lessons/7890f6162c25e7ef--core-capabilities.Json",
+      "snapshotFile": "sources/sources/7890f6162c25e7ef--7890f6162c25e7ef-core-capabiliti.Json",
+      "rawHash": "7890f6162c25e7ef3921358ef74b75f1953db55eba39e7a4404d94a62b189b96"
+    },
+    {
+      "sourcePath": "sources/lessons/78bb49093f9d2808--ai-facilitator.json",
+      "snapshotFile": "sources/sources/78bb49093f9d2808--78bb49093f9d2808-ai-facilitator.json",
+      "rawHash": "78bb49093f9d2808366834c710c4f046bca1660ee1d2fa2704ceccbc1ba23337"
+    },
+    {
+      "sourcePath": "sources/lessons/7f1fbd37275e963c--creating-predictable-routines.json",
+      "snapshotFile": "sources/sources/7f1fbd37275e963c--7f1fbd37275e963c-creating-predic.json",
+      "rawHash": "7f1fbd37275e963cfe2f115cdda78111e5d08be563661674d380d82dc0baff2b"
+    },
+    {
+      "sourcePath": "sources/lessons/888886fece114b29--advocacy-skills.json",
+      "snapshotFile": "sources/sources/888886fece114b29--888886fece114b29-advocacy-skills.json",
+      "rawHash": "888886fece114b29238c82eb106d6b358a46be0f51b4ac6de4eaf28a4a6c9d37"
+    },
+    {
+      "sourcePath": "sources/lessons/8b30b5cc82c0e759--reducing-conflict-through-clear-.json",
+      "snapshotFile": "sources/sources/8b30b5cc82c0e759--8b30b5cc82c0e759-reducing-confli.json",
+      "rawHash": "8b30b5cc82c0e759df54a98dcaed6abb3ec096bb7f2c48a7d31b4b496cbdb056"
+    },
+    {
+      "sourcePath": "sources/lessons/8d81f977f122af44--assessments-and-marking-guide.Json",
+      "snapshotFile": "sources/sources/8d81f977f122af44--8d81f977f122af44-assessments-and.Json",
+      "rawHash": "8d81f977f122af444569a55e81c2a9fe9a86f0ca71dd950f2bb8ca5b35ae4876"
+    },
+    {
+      "sourcePath": "sources/lessons/8e9ae52d5e4f5ea0--ai-facilitator.json",
+      "snapshotFile": "sources/sources/8e9ae52d5e4f5ea0--8e9ae52d5e4f5ea0-ai-facilitator.json",
+      "rawHash": "8e9ae52d5e4f5ea0e621a32abf250207c869eae07d34dfb529495011d6f07ccb"
+    },
+    {
+      "sourcePath": "sources/lessons/952786e73428269a--building-new-patterns.json",
+      "snapshotFile": "sources/sources/952786e73428269a--952786e73428269a-building-new-pa.json",
+      "rawHash": "952786e73428269aae17a2d9aac8d8ffb1d58721bf980f4b777b04dc2849239a"
+    },
+    {
+      "sourcePath": "sources/lessons/9570b20fe87bd526--building-safe-routines.Json",
+      "snapshotFile": "sources/sources/9570b20fe87bd526--9570b20fe87bd526-building-safe-r.Json",
+      "rawHash": "9570b20fe87bd526e73dd3be1a2c3ae049a972d756ad39aa725ef10c927afe18"
+    },
+    {
+      "sourcePath": "sources/lessons/95d3fd0fbd29a77b--why-emotional-regulation-matters.json",
+      "snapshotFile": "sources/sources/95d3fd0fbd29a77b--95d3fd0fbd29a77b-why-emotional-r.json",
+      "rawHash": "95d3fd0fbd29a77bf067989929ae6919b0ddce2db9c52af43b4fdb7f8ba81ffc"
+    },
+    {
+      "sourcePath": "sources/lessons/9aea6cc836a73600--ai-facilitator.json",
+      "snapshotFile": "sources/sources/9aea6cc836a73600--9aea6cc836a73600-ai-facilitator.json",
+      "rawHash": "9aea6cc836a736003e84831caf42e5708f3c4dfff57901b7504bd6da32125a4d"
+    },
+    {
+      "sourcePath": "sources/lessons/a01650bdedecb7a6--active-listening.Json",
+      "snapshotFile": "sources/sources/a01650bdedecb7a6--a01650bdedecb7a6-active-listenin.Json",
+      "rawHash": "a01650bdedecb7a6e766ddb847175890268791d7ef50e0be850f1f4816b0992c"
+    },
+    {
+      "sourcePath": "sources/lessons/a74d40431d05a62f--ai-facilitator-json.txt",
+      "snapshotFile": "sources/sources/a74d40431d05a62f--a74d40431d05a62f-ai-facilitator-.txt",
+      "rawHash": "a74d40431d05a62f3698dda9c8c745498b060bd443edaa83507ea06209efb581"
+    },
+    {
+      "sourcePath": "sources/lessons/ad28e7e50f4e3f6f--understand-child-development.json",
+      "snapshotFile": "sources/sources/ad28e7e50f4e3f6f--ad28e7e50f4e3f6f-understand-chil.json",
+      "rawHash": "ad28e7e50f4e3f6f7dcdb5a7b4bee3b69ff5bb5e101e8c02b2caea12d1edeec3"
+    },
+    {
+      "sourcePath": "sources/lessons/adc0262ce1f08e59--what-secure-attachment-really-me.json",
+      "snapshotFile": "sources/sources/adc0262ce1f08e59--adc0262ce1f08e59-what-secure-att.json",
+      "rawHash": "adc0262ce1f08e5957d883427b7940aecc52b3876b2e05900e8c34c86a5d3fb9"
+    },
+    {
+      "sourcePath": "sources/lessons/b013f15d6d2d3cfe--ai-facilitator.json",
+      "snapshotFile": "sources/sources/b013f15d6d2d3cfe--b013f15d6d2d3cfe-ai-facilitator.json",
+      "rawHash": "b013f15d6d2d3cfe5df2c32a201d66b73554bc5c50a3211624f93a47988dc723"
+    },
+    {
+      "sourcePath": "sources/lessons/b31f72d1a82e156e--building-a-safe-parenting-mindse.json",
+      "snapshotFile": "sources/sources/b31f72d1a82e156e--b31f72d1a82e156e-building-a-safe.json",
+      "rawHash": "b31f72d1a82e156e110a87002d2b8446d04414a450bc3c7210eb7bfa5d52f9c9"
+    },
+    {
+      "sourcePath": "sources/lessons/b376a94a2f303e0a--ai-facilitator-configuration-sys.json",
+      "snapshotFile": "sources/sources/b376a94a2f303e0a--b376a94a2f303e0a-ai-facilitator-.json",
+      "rawHash": "b376a94a2f303e0a9629b2dc72db8ae9bd72817a6276e4588e066a99b9866369"
+    },
+    {
+      "sourcePath": "sources/lessons/b73b5e642970ef33--active-listening.json",
+      "snapshotFile": "sources/sources/b73b5e642970ef33--b73b5e642970ef33-active-listenin.json",
+      "rawHash": "b73b5e642970ef337dba9be658cbb5f3b2e70b94cb6c780ee6df0d9d053cad09"
+    },
+    {
+      "sourcePath": "sources/lessons/b7f2d6e442824520--module-emotional-regulation.json",
+      "snapshotFile": "sources/sources/b7f2d6e442824520--b7f2d6e442824520-module-emotiona.json",
+      "rawHash": "b7f2d6e4428245208bb9a7770e800e7a9f714f818a5d32b7fbdd9708c64a48bd"
+    },
+    {
+      "sourcePath": "sources/lessons/b7fe1f76c75ec70b--ai-facilitator-json.txt",
+      "snapshotFile": "sources/sources/b7fe1f76c75ec70b--b7fe1f76c75ec70b-ai-facilitator-.txt",
+      "rawHash": "b7fe1f76c75ec70b58c413f0c92b488efc1f0f2a12d48e5d4c978f5e6241d012"
+    },
+    {
+      "sourcePath": "sources/lessons/ba289c8f7d005484--building-empathy.json",
+      "snapshotFile": "sources/sources/ba289c8f7d005484--ba289c8f7d005484-building-empath.json",
+      "rawHash": "ba289c8f7d005484622c4da7908a72bd9859f3b0fb740c355aab681d6393f927"
+    },
+    {
+      "sourcePath": "sources/lessons/bc4c1011bf31b642--ai-facilitator.json",
+      "snapshotFile": "sources/sources/bc4c1011bf31b642--bc4c1011bf31b642-ai-facilitator.json",
+      "rawHash": "bc4c1011bf31b642d1fb2cca2a443f19ddeb89472850571e1f1dc5ec582748fd"
+    },
+    {
+      "sourcePath": "sources/lessons/c10678d2276d3967--ai-facilitator-configuration-sys.json",
+      "snapshotFile": "sources/sources/c10678d2276d3967--c10678d2276d3967-ai-facilitator-.json",
+      "rawHash": "c10678d2276d3967d6add27f43e3b2bc342dc2b605d8a86edcefd326ab61299b"
+    },
+    {
+      "sourcePath": "sources/lessons/c21052057ad5d4fa--building-cooperation-through-con.json",
+      "snapshotFile": "sources/sources/c21052057ad5d4fa--c21052057ad5d4fa-building-cooper.json",
+      "rawHash": "c21052057ad5d4fa0b51f112299d1ec2552683f63049c09d3e51fefaaa892ca6"
+    },
+    {
+      "sourcePath": "sources/lessons/c4ea3c3c4670a48b--aifacilitatorteacherlessonschema.json",
+      "snapshotFile": "sources/sources/c4ea3c3c4670a48b--c4ea3c3c4670a48b-aifacilitatorte.json",
+      "rawHash": "c4ea3c3c4670a48b566588d73131b9fd99dc4f5af9ad333fb27c88de37990492"
+    },
+    {
+      "sourcePath": "sources/lessons/c76486021e2c66f4--age-appropriate-support.json",
+      "snapshotFile": "sources/sources/c76486021e2c66f4--c76486021e2c66f4-age-appropriate.json",
+      "rawHash": "c76486021e2c66f4b00b8965fc0e5c40d26596859f3421fab45b93e677188bb4"
+    },
+    {
+      "sourcePath": "sources/lessons/cf2462238b12980b--ai-facilitator-and-teacher.json",
+      "snapshotFile": "sources/sources/cf2462238b12980b--cf2462238b12980b-ai-facilitator-.json",
+      "rawHash": "cf2462238b12980b3f7c48796e69d99306c744453847870b372cbd9aaec1e79e"
+    },
+    {
+      "sourcePath": "sources/lessons/d131bfacb06dac83--ai-facilitator-teacher.json",
+      "snapshotFile": "sources/sources/d131bfacb06dac83--d131bfacb06dac83-ai-facilitator-.json",
+      "rawHash": "d131bfacb06dac83deecd1170743c9635c3c26c3ce0535e6bcc155b796381684"
+    },
+    {
+      "sourcePath": "sources/lessons/d31c79cd7bd66555--ai-facliltator-and-teacher.json",
+      "snapshotFile": "sources/sources/d31c79cd7bd66555--d31c79cd7bd66555-ai-facliltator-.json",
+      "rawHash": "d31c79cd7bd6655538efdd7ec1e3c11f8b09e4013d70e029f65a4093adc16299"
+    },
+    {
+      "sourcePath": "sources/lessons/d8d8d6ab484aa094--the-power-of-attunement.json",
+      "snapshotFile": "sources/sources/d8d8d6ab484aa094--d8d8d6ab484aa094-the-power-of-at.json",
+      "rawHash": "d8d8d6ab484aa094e5399e83b18a0f96be4eed8de0aeb82f158cb24a43c60160"
+    },
+    {
+      "sourcePath": "sources/lessons/dd2667af3afd0617--understanding-the-cycle-of-abuse.Json",
+      "snapshotFile": "sources/sources/dd2667af3afd0617--dd2667af3afd0617-understanding-t.Json",
+      "rawHash": "dd2667af3afd06176a151726e70468e8331ca3bec7f09b60fb5b33c224eae7ff"
+    },
+    {
+      "sourcePath": "sources/lessons/e2a861187a5af0fd--ai-facilitator-and-teacher.json",
+      "snapshotFile": "sources/sources/e2a861187a5af0fd--e2a861187a5af0fd-ai-facilitator-.json",
+      "rawHash": "e2a861187a5af0fd0f3076fee6b97d7ebba25e7d98e46e22f9b52559f7ff3c77"
+    },
+    {
+      "sourcePath": "sources/lessons/e8b7e5b49985ee1a--listening-to-understand-not-to-r.json",
+      "snapshotFile": "sources/sources/e8b7e5b49985ee1a--e8b7e5b49985ee1a-listening-to-un.json",
+      "rawHash": "e8b7e5b49985ee1ae6d5737466d827ec283ad394238c57e1273ec4e43e331c4e"
+    },
+    {
+      "sourcePath": "sources/lessons/ea01eb7450278ce1--building-long-term-connection.json",
+      "snapshotFile": "sources/sources/ea01eb7450278ce1--ea01eb7450278ce1-building-long-t.json",
+      "rawHash": "ea01eb7450278ce147f18adff9aff36e8e841553891bb6209ab39ebfc51ede2c"
+    },
+    {
+      "sourcePath": "sources/lessons/ea6c42a08038eb81--ai-teacher-facilitator.json",
+      "snapshotFile": "sources/sources/ea6c42a08038eb81--ea6c42a08038eb81-ai-teacher-faci.json",
+      "rawHash": "ea6c42a08038eb81392add6d75d7c036d491e63338af8bfe86d8025bdf13f681"
+    },
+    {
+      "sourcePath": "sources/lessons/f331c5d3fcc61a22--balancing-flexibility-and-struct.json",
+      "snapshotFile": "sources/sources/f331c5d3fcc61a22--f331c5d3fcc61a22-balancing-flexi.json",
+      "rawHash": "f331c5d3fcc61a227f4be76f0b34a24268024040a5b38120dca6c589afdab02f"
+    },
+    {
+      "sourcePath": "sources/lessons/fa8d5d6e7ee72025--ai-facilitator-teacher-structure.json",
+      "snapshotFile": "sources/sources/fa8d5d6e7ee72025--fa8d5d6e7ee72025-ai-facilitator-.json",
+      "rawHash": "fa8d5d6e7ee72025cab298bd85dcaafae349f635a715894e1e7b34b3f49c9754"
+    },
+    {
+      "sourcePath": "sources/safesteps-learning-evidence-system-2/d354b5b2d0878050--answer-and-marking-package.Json",
+      "snapshotFile": "sources/sources/d354b5b2d0878050--d354b5b2d0878050-answer-and-mark.Json",
+      "rawHash": "d354b5b2d0878050a457527a3385742c1f66cd974425981634777c45a318daab"
+    },
+    {
+      "sourcePath": "sources/safesteps-learning-evidence-system/d354b5b2d0878050--answer-and-marking-package.Json",
+      "snapshotFile": "sources/sources/d354b5b2d0878050--d354b5b2d0878050-answer-and-mark.Json",
+      "rawHash": "d354b5b2d0878050a457527a3385742c1f66cd974425981634777c45a318daab"
+    }
+  ],
+  "duplicateGroups": [
+    {
+      "contentHash": "3f76ec8ad30b5964f9820b2e0c27ce6cbf07e7ef0adbba6661e601cb86dbd283",
+      "sourcePaths": [
+        "courses/Courses with AI Facilitator/FOUNDATIONS OF SAFE AND EFFECTIVE PARENTING/Understand Harmful vs Healthy Parenting Behaviours/Understanding Harmful vs Healthy Parenting Behaviours",
+        "lessons/Lessons with AI Facilitator/Understand Harmful vs Healthy Parenting Behaviours/Understanding Harmful vs Healthy Parenting Behaviours"
+      ]
+    },
+    {
+      "contentHash": "c566c3928a363e783acd5c2d23b7a0473a0cd8482e5060ce58dddbed35d74604",
+      "sourcePaths": [
+        "lessons/Assessments and Marking guide/Assessments and Marking Guide.Json",
+        "sources/lessons-2/8d81f977f122af44--assessments-and-marking-guide.Json",
+        "sources/lessons/8d81f977f122af44--assessments-and-marking-guide.Json"
+      ]
+    },
+    {
+      "contentHash": "fa133f25ec01318541113552f8f1a83e252eb554a8eda41920751e444d472514",
+      "sourcePaths": [
+        "lessons/Lesson & AI Facilitator Script/Understanding the Cycle of Abuse.Json",
+        "sources/lessons-2/dd2667af3afd0617--understanding-the-cycle-of-abuse.Json",
+        "sources/lessons/dd2667af3afd0617--understanding-the-cycle-of-abuse.Json"
+      ]
+    },
+    {
+      "contentHash": "b0db4d59e38e6716988b03d34adca93d9e57ead0b04d0c2dbe9f2a962d3dfe5f",
+      "sourcePaths": [
+        "lessons/Lessons with AI Facilitator/accountability_foundations/module_accountability_foundations.json",
+        "sources/lessons-2/6abb1212b933d81f--module-accountability-foundation.json",
+        "sources/lessons/6abb1212b933d81f--module-accountability-foundation.json"
+      ]
+    },
+    {
+      "contentHash": "c55505f6b5b1f1f6d091e04992fee60749a9d539686439b027c576abec7af86a",
+      "sourcePaths": [
+        "lessons/Lessons with AI Facilitator/Active Listening/active_listening.json",
+        "sources/lessons-2/b73b5e642970ef33--active-listening.json",
+        "sources/lessons/b73b5e642970ef33--active-listening.json"
+      ]
+    },
+    {
+      "contentHash": "1040218fea50cb5aa65e91e99a690e4671f7fef9e59e5aa9d534c684ff066079",
+      "sourcePaths": [
+        "lessons/Lessons with AI Facilitator/advocacy_skills/advocacy_skills.json",
+        "sources/lessons-2/888886fece114b29--advocacy-skills.json",
+        "sources/lessons/888886fece114b29--advocacy-skills.json"
+      ]
+    },
+    {
+      "contentHash": "26ea3feba635be6aa21ccba50ca00d1e6a7bdd32d8a2c764037ed35b86c62855",
+      "sourcePaths": [
+        "lessons/Lessons with AI Facilitator/Age Appropriate Supports/age_appropriate_support.json",
+        "sources/lessons-2/c76486021e2c66f4--age-appropriate-support.json",
+        "sources/lessons/c76486021e2c66f4--age-appropriate-support.json"
+      ]
+    },
+    {
+      "contentHash": "5b59f710f42984dd940d8cf887aeb46e7cb835fb8c7ef2bb3656126925dc3a57",
+      "sourcePaths": [
+        "lessons/Lessons with AI Facilitator/avoiding_retraumatisation/avoiding_retraumatisation.json",
+        "sources/lessons-2/4d0f529877f6a07d--avoiding-retraumatisation.json",
+        "sources/lessons/4d0f529877f6a07d--avoiding-retraumatisation.json"
+      ]
+    },
+    {
+      "contentHash": "cac5b7c210de7af5cea729e30198a0ade8676d8c0c166ab8f0f823023db80b0c",
+      "sourcePaths": [
+        "lessons/Lessons with AI Facilitator/Building Empathy/building_empathy.json",
+        "sources/lessons-2/ba289c8f7d005484--building-empathy.json",
+        "sources/lessons/ba289c8f7d005484--building-empathy.json"
+      ]
+    },
+    {
+      "contentHash": "cb1bddf54bfddfc3ccef4e0bc6e6e89cc1242b3acd263687adadd196cc057ce1",
+      "sourcePaths": [
+        "lessons/Lessons with AI Facilitator/emotional_regulation/module_emotional_regulation.json",
+        "sources/lessons-2/b7f2d6e442824520--module-emotional-regulation.json",
+        "sources/lessons/b7f2d6e442824520--module-emotional-regulation.json"
+      ]
+    },
+    {
+      "contentHash": "3126d8443788ed807e24b026ab6dbe21143b576879660d5374fdb4b8b42af18a",
+      "sourcePaths": [
+        "lessons/Lessons with AI Facilitator/Understanding the Cycle of Abuse/Understanding the Cycle of Abuse.json",
+        "lessons/Lessons with AI Facilitator/Understanding the Cycle of Abuse/understanding the cycle of abuse.txt",
+        "sources/lessons-2/1c531cefd47afb9e--understanding-the-cycle-of-abuse.json",
+        "sources/lessons-2/1c531cefd47afb9e--understanding-the-cycle-of-abuse.txt",
+        "sources/lessons/1c531cefd47afb9e--understanding-the-cycle-of-abuse.json",
+        "sources/lessons/1c531cefd47afb9e--understanding-the-cycle-of-abuse.txt"
+      ]
+    },
+    {
+      "contentHash": "05fdd9736b0520bc0801cb272d2678511a393399f2e202ef4bf450c69e4277b1",
+      "sourcePaths": [
+        "lessons/Lessons/building_new_patterns.json",
+        "sources/lessons-2/952786e73428269a--building-new-patterns.json",
+        "sources/lessons/952786e73428269a--building-new-patterns.json"
+      ]
+    },
+    {
+      "contentHash": "8b9a742e2a62c0c23de1f5d36a9465275922d4978b3e135ff5de3956fc4944eb",
+      "sourcePaths": [
+        "lessons/Lessons/building_resilience_in_children.json",
+        "sources/lessons-2/4fcdbd577847ed13--building-resilience-in-children.json",
+        "sources/lessons/4fcdbd577847ed13--building-resilience-in-children.json"
+      ]
+    },
+    {
+      "contentHash": "533ee9f92ba196f217b2915ae63cb80054279488f087af6778482b14284e4bbd",
+      "sourcePaths": [
+        "lessons/Lessons/building_safe_routines.json",
+        "sources/lessons-2/3353cf0c59a4d657--building-safe-routines.json",
+        "sources/lessons/3353cf0c59a4d657--building-safe-routines.json"
+      ]
+    },
+    {
+      "contentHash": "76176c0206fc933b37530dc292cbf017b305df3e747b9dbd7a901577feba26ca",
+      "sourcePaths": [
+        "lessons/Lessons/challenging_minimisation.json",
+        "sources/lessons-2/3fd0dfa04717839e--challenging-minimisation.json",
+        "sources/lessons/3fd0dfa04717839e--challenging-minimisation.json"
+      ]
+    },
+    {
+      "contentHash": "c0974b9074d02cc00f0c0acb544195eae2bfea1e0c25838dbc64a4e9dfaa7aff",
+      "sourcePaths": [
+        "lessons/Lessons/co_regulation_basics.json",
+        "sources/lessons-2/2db15780435e0dc7--co-regulation-basics.json",
+        "sources/lessons/2db15780435e0dc7--co-regulation-basics.json"
+      ]
+    },
+    {
+      "contentHash": "62925c5b9f639e82f9cf41b786dbfa1dc8fdccde5b94339e0b12a92bafda761e",
+      "sourcePaths": [
+        "lessons/Lessons/communication_skills.json",
+        "sources/lessons-2/093d90a26ffa17bc--communication-skills.json",
+        "sources/lessons/093d90a26ffa17bc--communication-skills.json"
+      ]
+    },
+    {
+      "contentHash": "c2feace81c20fc45b9c5b1ddd7d17df99f40a7488a2387d01d586cdabfb8076e",
+      "sourcePaths": [
+        "lessons/Lessons/understanding_harm.json",
+        "sources/lessons-2/1beeff8ee7e9cd90--understanding-harm.json",
+        "sources/lessons/1beeff8ee7e9cd90--understanding-harm.json"
+      ]
+    },
+    {
+      "contentHash": "25ff6fd41e550343f86d03330ad5cb364b4b53484b8f046559e89b11b8b7c110",
+      "sourcePaths": [
+        "lessons/packages/content-schema/lesson.schema.json",
+        "sources/lessons-2/57e1b24be146002e--lesson-schema.json",
+        "sources/lessons/57e1b24be146002e--lesson-schema.json"
+      ]
+    },
+    {
+      "contentHash": "587373b1638fc968af223d81812de9be5b12d41d22c5553e26c080664b595393",
+      "sourcePaths": [
+        "safesteps-learning-evidence-system/Answer and marking package.Json",
+        "sources/safesteps-learning-evidence-system-2/d354b5b2d0878050--answer-and-marking-package.Json",
+        "sources/safesteps-learning-evidence-system/d354b5b2d0878050--answer-and-marking-package.Json"
+      ]
+    },
+    {
+      "contentHash": "40468efac01cec752c45230b7cc923190335e3db5470f375799d1e88ca9072f8",
+      "sourcePaths": [
+        "sources/courses/09a246321d559343--ai-facilitator-and-teacher.json",
+        "sources/lessons/09a246321d559343--ai-facilitator-and-teacher.json"
+      ]
+    },
+    {
+      "contentHash": "7768c6546871911ef26ce6d6a44bcbd219926385aa65410f3b4088d85091f53e",
+      "sourcePaths": [
+        "sources/courses/14c6b16803176d60--why-boundaries-create-safety.json",
+        "sources/lessons/14c6b16803176d60--why-boundaries-create-safety.json"
+      ]
+    },
+    {
+      "contentHash": "bc9302fa4ed5e3b91ccffd8afd3b6147770cae71105be88edd853a9951cb5ae9",
+      "sourcePaths": [
+        "sources/courses/15c2675ca98ee615--consistency-and-predictability.json",
+        "sources/lessons/15c2675ca98ee615--consistency-and-predictability.json"
+      ]
+    },
+    {
+      "contentHash": "c49adda958b87f216396fd7f33d5610060bee4304b518ce2489d67f17d05b346",
+      "sourcePaths": [
+        "sources/courses/294b83792d30ad53--ai-facilitator-teacher-structure.json",
+        "sources/lessons/294b83792d30ad53--ai-facilitator-teacher-structure.json"
+      ]
+    },
+    {
+      "contentHash": "a67c98d6159c5b3a88c45a39a776941ed72c52d55ae38694d2a396d4e38f0efd",
+      "sourcePaths": [
+        "sources/courses/41e91687451025da--following-through-with-boundarie.json",
+        "sources/lessons/41e91687451025da--following-through-with-boundarie.json"
+      ]
+    },
+    {
+      "contentHash": "24d7fb3e309df6f87f83a616335c9172a2c4f7bee866a0246d871c7cff9789fa",
+      "sourcePaths": [
+        "sources/courses/4577e5cab36cf0f1--ai-facilitator-and-teacher-json.txt",
+        "sources/lessons/4577e5cab36cf0f1--ai-facilitator-and-teacher-json.txt"
+      ]
+    },
+    {
+      "contentHash": "52957b37464a6e285465e5225b6c8d0d8ba18e76fb2fc897c287c9c8a2a07d96",
+      "sourcePaths": [
+        "sources/courses/45f038672c973661--ai-facilitator-teacher-structure.json",
+        "sources/courses/45f038672c973661--repairing-attachment-ruptures.json",
+        "sources/lessons/45f038672c973661--ai-facilitator-teacher-structure.json",
+        "sources/lessons/45f038672c973661--repairing-attachment-ruptures.json"
+      ]
+    },
+    {
+      "contentHash": "141826415a71928e4d5b3318738249e11cd357418938f3cb74c4ea0c04ff80d3",
+      "sourcePaths": [
+        "sources/courses/4c2f13fb071893ee--ai-facliltator-and-teacher.json",
+        "sources/lessons/4c2f13fb071893ee--ai-facliltator-and-teacher.json"
+      ]
+    },
+    {
+      "contentHash": "1ef397b19c62e38fe163c027b7018e6226cbc93d37a0fb4b2bb8219922e6ecef",
+      "sourcePaths": [
+        "sources/courses/534c9a30da5b84d1--ai-teacher-facilitator.json",
+        "sources/lessons/534c9a30da5b84d1--ai-teacher-facilitator.json"
+      ]
+    },
+    {
+      "contentHash": "6f7ffc1dccb91b5f773c85f3a04de63990fe4fefd49b97ed44be75817e29d8c2",
+      "sourcePaths": [
+        "sources/courses/68557964b3412faf--identifying-triggers-and-pattern.json",
+        "sources/lessons/68557964b3412faf--identifying-triggers-and-pattern.json"
+      ]
+    },
+    {
+      "contentHash": "ff764f8df15d623aa73fa963a015e1a99cb589d6a56dd0d68874384bcd9784fc",
+      "sourcePaths": [
+        "sources/courses/6a3eba8b54577e5a--speaking-so-children-feel-safe.json",
+        "sources/lessons/6a3eba8b54577e5a--speaking-so-children-feel-safe.json"
+      ]
+    },
+    {
+      "contentHash": "c0c4926990d2fd33a59a3e0f7f712321f66d2bd4e3c8bdf8f9c4e79fbec8f102",
+      "sourcePaths": [
+        "sources/courses/6c6c1c08ba724779--practical-regulation-strategies.json",
+        "sources/lessons/6c6c1c08ba724779--practical-regulation-strategies.json"
+      ]
+    },
+    {
+      "contentHash": "01572823221e00a83bd813b3603d6c02afa9feb2a0358f7f1dc725af8d8e3f32",
+      "sourcePaths": [
+        "sources/courses/73e9a3c75bdf1a87--ai-facilitator-json.txt",
+        "sources/lessons/73e9a3c75bdf1a87--ai-facilitator-json.txt"
+      ]
+    },
+    {
+      "contentHash": "c7c947e43f95a714f70e2e29828234274d4670aaa7049e67c505c6a386a7f63b",
+      "sourcePaths": [
+        "sources/courses/776f630b649452d9--repairing-after-emotional-mistak.json",
+        "sources/lessons/776f630b649452d9--repairing-after-emotional-mistak.json"
+      ]
+    },
+    {
+      "contentHash": "73126fc474a95092f8383e6ec23497567b9cabc5bbf646ce536159e3622e9a81",
+      "sourcePaths": [
+        "sources/courses/78bb49093f9d2808--ai-facilitator.json",
+        "sources/lessons/78bb49093f9d2808--ai-facilitator.json"
+      ]
+    },
+    {
+      "contentHash": "0caa187379c416e351ec7cc6b77e895fe14e56e7e1e2230e2d7e1d174dda54ac",
+      "sourcePaths": [
+        "sources/courses/7f1fbd37275e963c--creating-predictable-routines.json",
+        "sources/lessons/7f1fbd37275e963c--creating-predictable-routines.json"
+      ]
+    },
+    {
+      "contentHash": "1f8268d55d2a2fbefc40607f21b71491bbbbb83dd3e698cc9e2a022af78245ae",
+      "sourcePaths": [
+        "sources/courses/8b30b5cc82c0e759--reducing-conflict-through-clear-.json",
+        "sources/lessons/8b30b5cc82c0e759--reducing-conflict-through-clear-.json"
+      ]
+    },
+    {
+      "contentHash": "6d35db7c240046debe50503fb958459071c4204c420f20aa452f3ce7f6fe0f29",
+      "sourcePaths": [
+        "sources/courses/95d3fd0fbd29a77b--why-emotional-regulation-matters.json",
+        "sources/lessons/95d3fd0fbd29a77b--why-emotional-regulation-matters.json"
+      ]
+    },
+    {
+      "contentHash": "b4f676c7e048fc7e5dadfe5ea1fbad681dbee625cefdf01a027447b40291b69b",
+      "sourcePaths": [
+        "sources/courses/a74d40431d05a62f--ai-facilitator-json.txt",
+        "sources/lessons/a74d40431d05a62f--ai-facilitator-json.txt"
+      ]
+    },
+    {
+      "contentHash": "842645338444442d10ddb1e582cd495a6adcd4977493c84e1558a578c70d8129",
+      "sourcePaths": [
+        "sources/courses/adc0262ce1f08e59--what-secure-attachment-really-me.json",
+        "sources/lessons/adc0262ce1f08e59--what-secure-attachment-really-me.json"
+      ]
+    },
+    {
+      "contentHash": "605d02c07ee7ef9c3fd522c4b4267e7c9d50144ca53a797d9199cfa969895ee4",
+      "sourcePaths": [
+        "sources/courses/b31f72d1a82e156e--building-a-safe-parenting-mindse.json",
+        "sources/lessons/b31f72d1a82e156e--building-a-safe-parenting-mindse.json"
+      ]
+    },
+    {
+      "contentHash": "081faf1f77312f4b9199c2a85cdb701ed3489baacbe361a9299b1f99d4b3a2f7",
+      "sourcePaths": [
+        "sources/courses/b376a94a2f303e0a--ai-facilitator-configuration-sys.json",
+        "sources/lessons/b376a94a2f303e0a--ai-facilitator-configuration-sys.json"
+      ]
+    },
+    {
+      "contentHash": "60e45c9dc1f605be5402a5452c080198c21173578062767570ab53d6dbc6fed0",
+      "sourcePaths": [
+        "sources/courses/b7fe1f76c75ec70b--ai-facilitator-json.txt",
+        "sources/lessons/b7fe1f76c75ec70b--ai-facilitator-json.txt"
+      ]
+    },
+    {
+      "contentHash": "e9e1aaab37ca6534aa994e7a7dabc83ebd8bb0823bd95e7a776d35844e22f038",
+      "sourcePaths": [
+        "sources/courses/c10678d2276d3967--ai-facilitator-configuration-sys.json",
+        "sources/lessons/c10678d2276d3967--ai-facilitator-configuration-sys.json"
+      ]
+    },
+    {
+      "contentHash": "e5ba3ff2e61708d73c4467c75b7d1ca2fab0da144130dba3deaf03e770cecdb2",
+      "sourcePaths": [
+        "sources/courses/c21052057ad5d4fa--building-cooperation-through-con.json",
+        "sources/lessons/c21052057ad5d4fa--building-cooperation-through-con.json"
+      ]
+    },
+    {
+      "contentHash": "a468869fb195b8d522de0a3c8fef6c955b9818ca9cffe516de285c46b1d757f5",
+      "sourcePaths": [
+        "sources/courses/c4ea3c3c4670a48b--aifacilitatorteacherlessonschema.json",
+        "sources/lessons/c4ea3c3c4670a48b--aifacilitatorteacherlessonschema.json"
+      ]
+    },
+    {
+      "contentHash": "e8584ea0b495eb495d0892a266aa546856c5ed2cb7bee4901f522496877837af",
+      "sourcePaths": [
+        "sources/courses/cf2462238b12980b--ai-facilitator-and-teacher.json",
+        "sources/lessons/cf2462238b12980b--ai-facilitator-and-teacher.json"
+      ]
+    },
+    {
+      "contentHash": "7f77e150ecf7e159a7ace7cc7d12aec53aa6d104698f26167c1b73d6ab21d602",
+      "sourcePaths": [
+        "sources/courses/d131bfacb06dac83--ai-facilitator-teacher.json",
+        "sources/lessons/d131bfacb06dac83--ai-facilitator-teacher.json"
+      ]
+    },
+    {
+      "contentHash": "0dd3a35ed245e9cb4f59f6fd82ae0554fd0166a70fd206ae5420c4c739aef7d1",
+      "sourcePaths": [
+        "sources/courses/d31c79cd7bd66555--ai-facliltator-and-teacher.json",
+        "sources/lessons/d31c79cd7bd66555--ai-facliltator-and-teacher.json"
+      ]
+    },
+    {
+      "contentHash": "a63d1c98ed621ac15b319d765fdd3f6fe5af6a2de1f590cb258d7fb0f526187e",
+      "sourcePaths": [
+        "sources/courses/d8d8d6ab484aa094--the-power-of-attunement.json",
+        "sources/lessons/d8d8d6ab484aa094--the-power-of-attunement.json"
+      ]
+    },
+    {
+      "contentHash": "bceb3bb0a289f3a538e28e609739bbfb3682a1a6bf8cb18c8b25ef9be7fbaa6f",
+      "sourcePaths": [
+        "sources/courses/e2a861187a5af0fd--ai-facilitator-and-teacher.json",
+        "sources/lessons/e2a861187a5af0fd--ai-facilitator-and-teacher.json"
+      ]
+    },
+    {
+      "contentHash": "2780d6718e787dc5fb4c0c9824d43280d8e3f589c18b553449606ada17e9fcbb",
+      "sourcePaths": [
+        "sources/courses/e8b7e5b49985ee1a--listening-to-understand-not-to-r.json",
+        "sources/lessons/e8b7e5b49985ee1a--listening-to-understand-not-to-r.json"
+      ]
+    },
+    {
+      "contentHash": "12ed22b9129db4e9f881bfa17b8384ff38112ec400784f1d8e71230d4380373c",
+      "sourcePaths": [
+        "sources/courses/ea01eb7450278ce1--building-long-term-connection.json",
+        "sources/lessons/ea01eb7450278ce1--building-long-term-connection.json"
+      ]
+    },
+    {
+      "contentHash": "3118895b9b6cfb121abe0dd4a830052cb9a1086b77d0485dec7a21f50f1b63d8",
+      "sourcePaths": [
+        "sources/courses/ea6c42a08038eb81--ai-teacher-facilitator.json",
+        "sources/lessons/ea6c42a08038eb81--ai-teacher-facilitator.json"
+      ]
+    },
+    {
+      "contentHash": "c299b0ffec110d409a6dced067c42e10401ba76b0d1ebe36f34d30c79f2055c7",
+      "sourcePaths": [
+        "sources/courses/f331c5d3fcc61a22--balancing-flexibility-and-struct.json",
+        "sources/lessons/f331c5d3fcc61a22--balancing-flexibility-and-struct.json"
+      ]
+    },
+    {
+      "contentHash": "4b31d453ca022bb606e035de34bff292f259a17d1b8c2b4a192bbaa89fe5e370",
+      "sourcePaths": [
+        "sources/courses/fa8d5d6e7ee72025--ai-facilitator-teacher-structure.json",
+        "sources/lessons/fa8d5d6e7ee72025--ai-facilitator-teacher-structure.json"
+      ]
+    },
+    {
+      "contentHash": "1d2c8ef615143680333f0aea7a8b3e6e269531c635e4341eac6df50ef4b60ee2",
+      "sourcePaths": [
+        "sources/lessons/49b37d9bbec44454--avoiding-retraumatisation-father.json",
+        "sources/lessons/49b37d9bbec44454--what-children-need-to-feel-safe.json"
+      ]
+    }
+  ]
+}

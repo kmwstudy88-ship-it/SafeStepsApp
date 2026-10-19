@@ -16,6 +16,10 @@
     "Implement structured prevention programs safely",
     "Align organisational policies with prevention goals"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_prevention_in_schools",
+    "lesson_prevention_in_workplaces",
+    "lesson_prevention_in_community_settings"
+  ],
   "content": []
 }

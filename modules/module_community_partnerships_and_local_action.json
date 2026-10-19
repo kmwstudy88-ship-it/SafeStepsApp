@@ -16,6 +16,10 @@
     "Coordinate local DFV prevention and safety initiatives",
     "Strengthen community capacity to respond collectively to DFV"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_building_local_partnerships",
+    "lesson_local_partnerships",
+    "lesson_coordinating_local_initiatives"
+  ],
   "content": []
 }

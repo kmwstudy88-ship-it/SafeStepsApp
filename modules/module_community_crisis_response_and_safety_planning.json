@@ -16,6 +16,11 @@
     "Support basic safety planning in community contexts",
     "Know when and how to escalate concerns to services or authorities"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_recognising_crisis_situations",
+    "lesson_escalation_and_emergency_response",
+    "safety_planning",
+    "lesson_coordinated_responses"
+  ],
   "content": []
 }

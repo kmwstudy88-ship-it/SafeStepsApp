@@ -16,6 +16,12 @@
     "Engage safely with adolescents using or experiencing violence",
     "Support behaviour change and safety planning"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_adolescent_dfv_dynamics",
+    "lesson_drivers_of_violence",
+    "lesson_cultural_contexts_of_violence",
+    "lesson_age_appropriate_support",
+    "working_with_high_risk_cases"
+  ],
   "content": []
 }

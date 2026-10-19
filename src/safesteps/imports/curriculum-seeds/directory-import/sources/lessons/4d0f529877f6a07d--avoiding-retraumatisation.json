@@ -1,0 +1,53 @@
+{
+  "lesson_id": "avoiding_retraumatisation",
+  "adaptive_scenarios": [
+    {
+      "id": "AR001",
+      "title": "Trauma Trigger",
+      "difficulty": "medium",
+      "points": 150,
+      "situation": "A child becomes distressed during discussion of a past event.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Force the discussion to continue",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Provide safety, pause and regulate emotions",
+          "score": 150
+        },
+        {
+          "id": "C",
+          "text": "Tell them they are overreacting",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "id": "AR002",
+      "title": "Unexpected Reminder",
+      "difficulty": "hard",
+      "points": 200,
+      "situation": "A child reacts strongly to a location associated with previous fear.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Validate, provide control and choices",
+          "score": 200
+        },
+        {
+          "id": "B",
+          "text": "Demand compliance",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Dismiss concerns",
+          "score": 0
+        }
+      ]
+    }
+  ]
+}

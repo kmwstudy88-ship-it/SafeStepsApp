@@ -16,6 +16,12 @@
     "Use trauma-informed communication and validation",
     "Connect people to appropriate services without creating additional risk"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_recognising_indicators",
+    "lesson_encouraging_help_seeking",
+    "lesson_referral_pathways",
+    "strengths_based_support",
+    "lesson_community_led_responses"
+  ],
   "content": []
 }

@@ -16,6 +16,11 @@
     "Identify strengths and resources within local communities",
     "Develop and implement community-driven prevention strategies"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_community_roles_in_prevention",
+    "lesson_prevention_strategies",
+    "lesson_designing_local_prevention_strategies",
+    "lesson_peer_led_prevention_initiatives"
+  ],
   "content": []
 }

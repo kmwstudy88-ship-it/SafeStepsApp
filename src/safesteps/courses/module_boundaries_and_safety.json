@@ -17,6 +17,10 @@
     "Use self-care strategies to manage emotional load and prevent burnout",
     "Engage in supervision and support structures to ensure safe practice"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_ethical_and_safe_boundaries",
+    "lesson_maintaining_boundaries",
+    "safety_planning"
+  ],
   "content": []
 }

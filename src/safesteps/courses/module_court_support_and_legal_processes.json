@@ -17,6 +17,11 @@
     "Prepare clients for court in a trauma-informed and safety-focused way",
     "Work effectively with legal services, police, and court stakeholders"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_court_processes_and_procedures",
+    "lesson_preparing_clients_for_court",
+    "lesson_protection_orders_and_courts",
+    "lesson_advocacy_skills"
+  ],
   "content": []
 }

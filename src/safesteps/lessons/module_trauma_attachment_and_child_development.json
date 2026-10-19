@@ -16,6 +16,12 @@
     "Recognise trauma responses in children",
     "Support healing and secure attachment"
   ],
-  "lessons": [],
+  "lessons": [
+    "understanding_child_trauma",
+    "lesson_attachment_and_relationships",
+    "lesson_developmental_impacts",
+    "understanding_child_cues",
+    "lesson_age_appropriate_support"
+  ],
   "content": []
 }

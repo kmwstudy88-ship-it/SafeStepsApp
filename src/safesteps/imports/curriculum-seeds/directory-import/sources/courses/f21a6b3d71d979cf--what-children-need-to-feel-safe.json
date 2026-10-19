@@ -1,0 +1,90 @@
+{
+  "lessonId": "what-children-need-to-feel-safe-lesson-1",
+  "courseId": "child-safety-and-wellbeing",
+  "title": "What Children Need to Feel Safe",
+  "durationMinutes": 30,
+  "overview": "Explore the foundational emotional and physical requirements children need to feel safe, secure, and ready to learn, grow, and thrive.",
+  "timedBreakdown": [
+    {
+      "part": 1,
+      "title": "Introduction & Core Reading",
+      "durationMinutes": 10,
+      "content": [
+        "Safety is more than just physical protection from harm; it encompasses emotional security, predictability, and unconditional acceptance.",
+        "Children's nervous systems depend heavily on calm, responsive caregivers to regulate stress and process overwhelming feelings.",
+        "Key pillars of safety include consistent routines, clear and gentle boundaries, emotional validation, and knowing they can make mistakes without losing love or approval."
+      ]
+    },
+    {
+      "part": 2,
+      "title": "Interactive Activities & Tasks",
+      "durationMinutes": 10,
+      "tasks": [
+        "Review your daily family routine and identify one area where predictability or transition times could be improved to reduce child anxiety.",
+        "Practice an active listening response: the next time your child expresses an upset feeling, validate their emotion before trying to fix the problem."
+      ]
+    },
+    {
+      "part": 3,
+      "title": "Reflection Exercise",
+      "durationMinutes": 5,
+      "reflectionQuestions": [
+        "How do you signal to your child that they are safe when they are experiencing big emotions?",
+        "What aspects of your home environment or daily schedule provide the strongest sense of predictability for your child?",
+        "In what moments might your child accidentally feel that their safety or your approval is conditional?"
+      ]
+    }
+  ],
+  "assessment": {
+    "quiz": [
+      {
+        "question": "True or False: Children only require physical protection from harm to feel completely safe and secure.",
+        "type": "true_false",
+        "answer": false,
+        "explanation": "Safety encompasses much more than physical protection; it requires emotional security, predictability, and unconditional acceptance."
+      },
+      {
+        "question": "What role do calm, responsive caregivers play in a child's nervous system?",
+        "type": "short_answer",
+        "answer": "They help children regulate stress and process overwhelming feelings."
+      },
+      {
+        "question": "Which of the following are key pillars of a child feeling safe?",
+        "type": "multiple_choice",
+        "answer": "Consistent routines, clear boundaries, and emotional validation."
+      }
+    ]
+  },
+  "facilitatorScript": [
+    {
+      "timestamp": "00:00 - 02:00",
+      "section": "Welcome & Introduction",
+      "speaker": "AI Teacher",
+      "dialogue": "Welcome, parents and caregivers! Today, we are focusing on a vital topic: 'What Children Need to Feel Safe.' True safety goes far beyond physical protection. Today, we'll examine how emotional security, predictability, and unconditional acceptance form the foundation every child needs to thrive."
+    },
+    {
+      "timestamp": "02:00 - 10:00",
+      "section": "Core Lesson Delivery",
+      "speaker": "AI Teacher",
+      "dialogue": "Let's explore the core concepts. Children's developing nervous systems rely heavily on calm, responsive adults to help them regulate stress and process big, overwhelming feelings. When children experience consistent routines, clear yet gentle boundaries, and emotional validation, their brains learn that their environment is secure. They also need to know they can make mistakes safely without losing our love or approval."
+    },
+    {
+      "timestamp": "10:00 - 20:00",
+      "section": "Guided Tasks & Activities",
+      "speaker": "AI Teacher",
+      "dialogue": "Now it's time to put this into action. Task 1: Review your daily family routine and spot one area—like a chaotic transition time—where adding more predictability could reduce anxiety. Task 2: Practice active listening today by validating your child's feelings first before jumping in to fix a problem. Take the next 10 minutes to reflect on these."
+    },
+    {
+      "timestamp": "20:00 - 25:00",
+      "section": "Reflection Exercise",
+      "speaker": "AI Teacher",
+      "dialogue": "Let's take a moment for personal reflection. Ask yourself: How do you signal safety to your child during big meltdowns? What parts of your schedule provide the most predictability? And are there moments where your child might worry your approval is conditional?"
+    },
+    {
+      "timestamp": "25:00 - 30:00",
+      "section": "Assessment Quiz & Wrap-Up",
+      "speaker": "AI Teacher",
+      "dialogue": "Let's finish up with a quick knowledge check. Question 1: True or False—children only need physical protection to feel safe? (Answer: False, emotional security and predictability are essential). Question 2: How do responsive caregivers help a child's nervous system? (Answer: By helping them regulate stress and process feelings). Excellent job today building safer, more connected environments!"
+    }
+  ]
+}

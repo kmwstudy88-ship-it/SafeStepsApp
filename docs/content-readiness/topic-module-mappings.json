@@ -1,0 +1,3467 @@
+{
+  "schemaVersion": 1,
+  "applied": true,
+  "counts": {
+    "mappedTopics": 293,
+    "unmatchedTopics": 0
+  },
+  "mappings": [
+    {
+      "fileName": "accountability_and_responsibility.json",
+      "topicId": "accountability_and_responsibility",
+      "modules": [
+        "module_accountability_foundations",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:accountability"
+      ]
+    },
+    {
+      "fileName": "active_listening.json",
+      "topicId": "active_listening",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "lesson:active_listening",
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "adolescent_behaviour_management.json",
+      "topicId": "adolescent_behaviour_management",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_engaging_young_people_in_prevention",
+        "module_parenting_under_stress",
+        "module_working_with_adolescents_experiencing_or_using_violence"
+      ],
+      "reasons": [
+        "rule:adolescence",
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "age_appropriate_behaviour.json",
+      "topicId": "age_appropriate_behaviour",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "aggression_and_hitting.json",
+      "topicId": "aggression_and_hitting",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "anger_in_children.json",
+      "topicId": "anger_in_children",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "anxiety_in_children.json",
+      "topicId": "anxiety_in_children",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "assertive_discipline.json",
+      "topicId": "assertive_discipline",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "avoiding_communication_blocks.json",
+      "topicId": "avoiding_communication_blocks",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "avoiding_frightening_behaviours.json",
+      "topicId": "avoiding_frightening_behaviours",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_child_healing",
+        "module_parent_safety",
+        "module_parenting_under_stress",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "avoiding_loyalty_conflicts.json",
+      "topicId": "avoiding_loyalty_conflicts",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "avoiding_shame_based_discipline.json",
+      "topicId": "avoiding_shame_based_discipline",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "bedtime_routines.json",
+      "topicId": "bedtime_routines",
+      "modules": [
+        "module_parenting_under_stress",
+        "module_rebuilding_family_life",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:routines-and-stability",
+        "rule:sleep"
+      ]
+    },
+    {
+      "fileName": "behaviour_as_communication.json",
+      "topicId": "behaviour_as_communication",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress",
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "behaviour_description.json",
+      "topicId": "behaviour_description",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "behaviour_guidance.json",
+      "topicId": "behaviour_guidance",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "behaviour_management.json",
+      "topicId": "behaviour_management",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "behaviour_reward_systems.json",
+      "topicId": "behaviour_reward_systems",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "being_with_your_child.json",
+      "topicId": "being_with_your_child",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "body_image_and_self_esteem.json",
+      "topicId": "body_image_and_self_esteem",
+      "modules": [
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:social-development"
+      ]
+    },
+    {
+      "fileName": "body_image_and_social_media.json",
+      "topicId": "body_image_and_social_media",
+      "modules": [
+        "module_digital_safety_and_online_communities",
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:digital-safety",
+        "rule:social-development"
+      ]
+    },
+    {
+      "fileName": "brain_development.json",
+      "topicId": "brain_development",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "brain_development_and_nutrition.json",
+      "topicId": "brain_development_and_nutrition",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development",
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "breaking_generational_cycles.json",
+      "topicId": "breaking_generational_cycles",
+      "modules": [
+        "module_accountability_foundations",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:accountability"
+      ]
+    },
+    {
+      "fileName": "breastfeeding_basics.json",
+      "topicId": "breastfeeding_basics",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "bullying_and_social_health.json",
+      "topicId": "bullying_and_social_health",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress",
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:social-development"
+      ]
+    },
+    {
+      "fileName": "calm_follow_through.json",
+      "topicId": "calm_follow_through",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "calming_the_nervous_system.json",
+      "topicId": "calming_the_nervous_system",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "child_development_basics.json",
+      "topicId": "child_development_basics",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "child_development_foundations.json",
+      "topicId": "child_development_foundations",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "child_development_stages.json",
+      "topicId": "child_development_stages",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "child_directed_play.json",
+      "topicId": "child_directed_play",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development",
+        "rule:positive-parenting"
+      ]
+    },
+    {
+      "fileName": "child_focused_communication.json",
+      "topicId": "child_focused_communication",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication",
+        "rule:general-parenting"
+      ]
+    },
+    {
+      "fileName": "child_parent_negotiation.json",
+      "topicId": "child_parent_negotiation",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication",
+        "rule:general-parenting"
+      ]
+    },
+    {
+      "fileName": "child_protection_responsibilities.json",
+      "topicId": "child_protection_responsibilities",
+      "modules": [
+        "module_accountability_foundations",
+        "module_parent_safety",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:accountability",
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "children_s_experience_of_separation.json",
+      "topicId": "children_s_experience_of_separation",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "choices_and_control.json",
+      "topicId": "choices_and_control",
+      "modules": [
+        "module_relationship_skills",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:problem-solving"
+      ]
+    },
+    {
+      "fileName": "circle_of_security.json",
+      "topicId": "circle_of_security",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "co_parenting.json",
+      "topicId": "co_parenting",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "co_parenting_effectively.json",
+      "topicId": "co_parenting_effectively",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "co_regulation_and_physical_health.json",
+      "topicId": "co_regulation_and_physical_health",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "co_regulation_basics.json",
+      "topicId": "co_regulation_basics",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "lesson:co_regulation_basics",
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "coercive_control_awareness.json",
+      "topicId": "coercive_control_awareness",
+      "modules": [
+        "module_child_healing",
+        "module_parent_safety",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "cognitive_development.json",
+      "topicId": "cognitive_development",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "communicating_with_families.json",
+      "topicId": "communicating_with_families",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "communication_boundaries.json",
+      "topicId": "communication_boundaries",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "communication_roadblocks.json",
+      "topicId": "communication_roadblocks",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "communication_without_conflict.json",
+      "topicId": "communication_without_conflict",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "complex_trauma.json",
+      "topicId": "complex_trauma",
+      "modules": [
+        "module_child_healing",
+        "module_parent_safety",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "conflict_resolution.json",
+      "topicId": "conflict_resolution",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "consistency_in_parenting.json",
+      "topicId": "consistency_in_parenting",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_rebuilding_family_life",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "consistency_without_harshness.json",
+      "topicId": "consistency_without_harshness",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "consistent_consequences.json",
+      "topicId": "consistent_consequences",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress",
+        "module_rebuilding_family_life",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "cooking_with_children.json",
+      "topicId": "cooking_with_children",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "cooperative_co_parenting.json",
+      "topicId": "cooperative_co_parenting",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "creating_calming_spaces.json",
+      "topicId": "creating_calming_spaces",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:emotional-regulation",
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "creating_emotional_safety.json",
+      "topicId": "creating_emotional_safety",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parent_safety",
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:emotional-regulation",
+        "rule:nutrition-and-feeding",
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "creating_physical_safety.json",
+      "topicId": "creating_physical_safety",
+      "modules": [
+        "module_parent_safety",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding",
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "creating_safe_emotional_expression.json",
+      "topicId": "creating_safe_emotional_expression",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parent_safety",
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:emotional-regulation",
+        "rule:nutrition-and-feeding",
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "creating_sustainable_healthy_habits.json",
+      "topicId": "creating_sustainable_healthy_habits",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding",
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "critical_periods.json",
+      "topicId": "critical_periods",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "cultural_sensitivity.json",
+      "topicId": "cultural_sensitivity",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_trauma_informed_and_culturally_safe_practice"
+      ],
+      "reasons": [
+        "rule:culture-and-equity"
+      ]
+    },
+    {
+      "fileName": "decision_making.json",
+      "topicId": "decision_making",
+      "modules": [
+        "module_relationship_skills",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:problem-solving"
+      ]
+    },
+    {
+      "fileName": "defiance_and_non_compliance.json",
+      "topicId": "defiance_and_non_compliance",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "delayed_consequences.json",
+      "topicId": "delayed_consequences",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "descriptive_commenting.json",
+      "topicId": "descriptive_commenting",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "descriptive_praise.json",
+      "topicId": "descriptive_praise",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "developing_good_routines.json",
+      "topicId": "developing_good_routines",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "developmental_delays.json",
+      "topicId": "developmental_delays",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "developmental_domains.json",
+      "topicId": "developmental_domains",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "developmental_milestones.json",
+      "topicId": "developmental_milestones",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "developmental_trauma.json",
+      "topicId": "developmental_trauma",
+      "modules": [
+        "module_child_healing",
+        "module_parent_safety",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:child-development",
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "differentiating_healthy_vs_toxic_stress.json",
+      "topicId": "differentiating_healthy_vs_toxic_stress",
+      "modules": [
+        "module_child_healing",
+        "module_emotional_regulation",
+        "module_parent_safety",
+        "module_parenting_under_stress",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:emotional-regulation",
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "digital_safety.json",
+      "topicId": "digital_safety",
+      "modules": [
+        "module_digital_safety_and_online_communities",
+        "module_parent_safety",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:digital-safety",
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "discipline_foundations.json",
+      "topicId": "discipline_foundations",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "dissociation_in_children.json",
+      "topicId": "dissociation_in_children",
+      "modules": [
+        "module_child_healing",
+        "module_parent_safety",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "domestic_violence_exposure.json",
+      "topicId": "domestic_violence_exposure",
+      "modules": [
+        "module_child_healing",
+        "module_parent_safety",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "effective_commands.json",
+      "topicId": "effective_commands",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "effective_discipline.json",
+      "topicId": "effective_discipline",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "effective_limit_setting.json",
+      "topicId": "effective_limit_setting",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "effective_parenting_under_pressure.json",
+      "topicId": "effective_parenting_under_pressure",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_child_centred_and_family_focused_practice",
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_relationship_skills",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:parent-wellbeing",
+        "rule:positive-parenting"
+      ]
+    },
+    {
+      "fileName": "emotional_abuse_and_children.json",
+      "topicId": "emotional_abuse_and_children",
+      "modules": [
+        "module_child_healing",
+        "module_emotional_regulation",
+        "module_parent_safety",
+        "module_parenting_under_stress",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:emotional-regulation",
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "emotional_availability.json",
+      "topicId": "emotional_availability",
+      "modules": [
+        "module_child_healing",
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection",
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "emotional_coaching.json",
+      "topicId": "emotional_coaching",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "emotional_development.json",
+      "topicId": "emotional_development",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development",
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "emotional_intelligence.json",
+      "topicId": "emotional_intelligence",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "emotional_literacy.json",
+      "topicId": "emotional_literacy",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "emotional_regulation.json",
+      "topicId": "emotional_regulation",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "module:module_emotional_regulation",
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "emotional_safety_and_wellbeing.json",
+      "topicId": "emotional_safety_and_wellbeing",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parent_safety",
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:emotional-regulation",
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "emotional_security.json",
+      "topicId": "emotional_security",
+      "modules": [
+        "module_child_healing",
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection",
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "emotional_validation.json",
+      "topicId": "emotional_validation",
+      "modules": [
+        "module_child_healing",
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection",
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "empathy.json",
+      "topicId": "empathy",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "empathy_and_validation.json",
+      "topicId": "empathy_and_validation",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "energy_drinks_vaping_and_substance_risks.json",
+      "topicId": "energy_drinks_vaping_and_substance_risks",
+      "modules": [
+        "module_engaging_young_people_in_prevention",
+        "module_working_with_adolescents_experiencing_or_using_violence"
+      ],
+      "reasons": [
+        "rule:adolescence"
+      ]
+    },
+    {
+      "fileName": "enjoyment_skills.json",
+      "topicId": "enjoyment_skills",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection",
+        "rule:positive-parenting"
+      ]
+    },
+    {
+      "fileName": "esponsive_interactions.json",
+      "topicId": "esponsive_interactions",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "ethics_and_social_justice.json",
+      "topicId": "ethics_and_social_justice",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_trauma_informed_and_culturally_safe_practice"
+      ],
+      "reasons": [
+        "rule:culture-and-equity"
+      ]
+    },
+    {
+      "fileName": "family_centred_practice.json",
+      "topicId": "family_centred_practice",
+      "modules": [
+        "module_child_centred_and_family_focused_practice"
+      ],
+      "reasons": [
+        "rule:family-support"
+      ]
+    },
+    {
+      "fileName": "family_conflict_psychoeducation_program.json",
+      "topicId": "family_conflict_psychoeducation_program",
+      "modules": [
+        "module_family_conflict_psychoeducation_program"
+      ],
+      "reasons": [
+        "existing"
+      ]
+    },
+    {
+      "fileName": "family_meal_routines.json",
+      "topicId": "family_meal_routines",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding",
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "family_meetings.json",
+      "topicId": "family_meetings",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "family_stress.json",
+      "topicId": "family_stress",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "family_violence_impacts.json",
+      "topicId": "family_violence_impacts",
+      "modules": [
+        "module_child_healing",
+        "module_parent_safety",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "feeding_challenges.json",
+      "topicId": "feeding_challenges",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "felt_sense_of_safety.json",
+      "topicId": "felt_sense_of_safety",
+      "modules": [
+        "module_parent_safety",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "firm_but_kind_parenting.json",
+      "topicId": "firm_but_kind_parenting",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_child_centred_and_family_focused_practice",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:positive-parenting"
+      ]
+    },
+    {
+      "fileName": "following_the_child_s_lead.json",
+      "topicId": "following_the_child_s_lead",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "food_allergies_and_intolerances.json",
+      "topicId": "food_allergies_and_intolerances",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "food_insecurity_and_family_stress.json",
+      "topicId": "food_insecurity_and_family_stress",
+      "modules": [
+        "module_child_healing",
+        "module_economic_abuse_and_financial_security",
+        "module_emotional_regulation",
+        "module_parent_safety",
+        "module_parenting_under_stress",
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection",
+        "rule:economic-stability",
+        "rule:emotional-regulation",
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "food_sleep_and_regulation.json",
+      "topicId": "food_sleep_and_regulation",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:emotional-regulation",
+        "rule:nutrition-and-feeding",
+        "rule:sleep"
+      ]
+    },
+    {
+      "fileName": "formula_feeding_safety.json",
+      "topicId": "formula_feeding_safety",
+      "modules": [
+        "module_parent_safety",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding",
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "foster_and_kinship_care.json",
+      "topicId": "foster_and_kinship_care",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "foster_holistic_learning.json",
+      "topicId": "foster_holistic_learning",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development",
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "foster_positive_interactions.json",
+      "topicId": "foster_positive_interactions",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:positive-parenting",
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "foster_respectful_behaviour.json",
+      "topicId": "foster_respectful_behaviour",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_parenting_under_stress",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "fussy_eating.json",
+      "topicId": "fussy_eating",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "giving_effective_instructions.json",
+      "topicId": "giving_effective_instructions",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "grocery_shopping_skills.json",
+      "topicId": "grocery_shopping_skills",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "growth_milestones.json",
+      "topicId": "growth_milestones",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "handling_tantrums_safely.json",
+      "topicId": "handling_tantrums_safely",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "hassle_free_shopping.json",
+      "topicId": "hassle_free_shopping",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "healing_through_connection.json",
+      "topicId": "healing_through_connection",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "healthy_eating_on_a_budget.json",
+      "topicId": "healthy_eating_on_a_budget",
+      "modules": [
+        "module_economic_abuse_and_financial_security",
+        "module_parent_safety",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:economic-stability",
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "healthy_family_routines.json",
+      "topicId": "healthy_family_routines",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "healthy_feeding_relationships.json",
+      "topicId": "healthy_feeding_relationships",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection",
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "healthy_growth.json",
+      "topicId": "healthy_growth",
+      "modules": [
+        "module_dfv_in_health_settings",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:physical-health"
+      ]
+    },
+    {
+      "fileName": "healthy_home_environments.json",
+      "topicId": "healthy_home_environments",
+      "modules": [
+        "module_parent_safety",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:healthy-home"
+      ]
+    },
+    {
+      "fileName": "healthy_routines.json",
+      "topicId": "healthy_routines",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "helping_children_adjust_to_family_change.json",
+      "topicId": "helping_children_adjust_to_family_change",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "high_conflict_parenting_dynamics.json",
+      "topicId": "high_conflict_parenting_dynamics",
+      "modules": [
+        "module_child_centred_and_family_focused_practice"
+      ],
+      "reasons": [
+        "rule:general-parenting"
+      ]
+    },
+    {
+      "fileName": "home_safety_basics.json",
+      "topicId": "home_safety_basics",
+      "modules": [
+        "module_parent_safety",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "homework_routines.json",
+      "topicId": "homework_routines",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_sustainable_change",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development",
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "i_messages.json",
+      "topicId": "i_messages",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "ignoring_minor_misbehaviour.json",
+      "topicId": "ignoring_minor_misbehaviour",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "imitation.json",
+      "topicId": "imitation",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "impact_of_chronic_stress.json",
+      "topicId": "impact_of_chronic_stress",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "impact_of_family_violence_on_children.json",
+      "topicId": "impact_of_family_violence_on_children",
+      "modules": [
+        "module_child_healing",
+        "module_parent_safety",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "infant_care.json",
+      "topicId": "infant_care",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "infant_health.json",
+      "topicId": "infant_health",
+      "modules": [
+        "module_dfv_in_health_settings",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:physical-health"
+      ]
+    },
+    {
+      "fileName": "infant_nutrition.json",
+      "topicId": "infant_nutrition",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "intergenerational_patterns.json",
+      "topicId": "intergenerational_patterns",
+      "modules": [
+        "module_accountability_foundations",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:accountability"
+      ]
+    },
+    {
+      "fileName": "intergenerational_trauma.json",
+      "topicId": "intergenerational_trauma",
+      "modules": [
+        "module_child_healing",
+        "module_parent_safety",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "introducing_solid_foods.json",
+      "topicId": "introducing_solid_foods",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "joy_and_connection.json",
+      "topicId": "joy_and_connection",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "learning_through_play.json",
+      "topicId": "learning_through_play",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "life_skills_development.json",
+      "topicId": "life_skills_development",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "logical_consequences.json",
+      "topicId": "logical_consequences",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "lying_and_stealing.json",
+      "topicId": "lying_and_stealing",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "managing_aggression.json",
+      "topicId": "managing_aggression",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "managing_anger_as_a_parent.json",
+      "topicId": "managing_anger_as_a_parent",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "managing_big_feelings.json",
+      "topicId": "managing_big_feelings",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "managing_challenging_behaviour.json",
+      "topicId": "managing_challenging_behaviour",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "managing_conflict_between_parents.json",
+      "topicId": "managing_conflict_between_parents",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "managing_difficult_conversations.json",
+      "topicId": "managing_difficult_conversations",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "managing_disobedience.json",
+      "topicId": "managing_disobedience",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "managing_fighting_and_aggression.json",
+      "topicId": "managing_fighting_and_aggression",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "managing_parenting_stress.json",
+      "topicId": "managing_parenting_stress",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation",
+        "rule:general-parenting"
+      ]
+    },
+    {
+      "fileName": "managing_screen_time.json",
+      "topicId": "managing_screen_time",
+      "modules": [
+        "module_digital_safety_and_online_communities"
+      ],
+      "reasons": [
+        "rule:digital-safety"
+      ]
+    },
+    {
+      "fileName": "managing_stress_and_burnout.json",
+      "topicId": "managing_stress_and_burnout",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "managing_transitions.json",
+      "topicId": "managing_transitions",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "meal_planning_for_busy_families.json",
+      "topicId": "meal_planning_for_busy_families",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "mealtime_behaviour.json",
+      "topicId": "mealtime_behaviour",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "meeting_emotional_needs.json",
+      "topicId": "meeting_emotional_needs",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "milestones_birth_to_five.json",
+      "topicId": "milestones_birth_to_five",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "morning_routines.json",
+      "topicId": "morning_routines",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "motivation_and_behaviour.json",
+      "topicId": "motivation_and_behaviour",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress",
+        "module_relationship_skills",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:problem-solving"
+      ]
+    },
+    {
+      "fileName": "natural_consequences.json",
+      "topicId": "natural_consequences",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "negotiation_skills.json",
+      "topicId": "negotiation_skills",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "neurodiversity_and_trauma.json",
+      "topicId": "neurodiversity_and_trauma",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_child_healing",
+        "module_parent_safety",
+        "module_trauma_informed_and_culturally_safe_practice",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:culture-and-equity",
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "neutral_parenting_tone.json",
+      "topicId": "neutral_parenting_tone",
+      "modules": [
+        "module_child_centred_and_family_focused_practice"
+      ],
+      "reasons": [
+        "rule:general-parenting"
+      ]
+    },
+    {
+      "fileName": "nurturance_during_distress.json",
+      "topicId": "nurturance_during_distress",
+      "modules": [
+        "module_child_healing",
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection",
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "nurture_babies_and_toddlers.json",
+      "topicId": "nurture_babies_and_toddlers",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "online_safety.json",
+      "topicId": "online_safety",
+      "modules": [
+        "module_digital_safety_and_online_communities",
+        "module_parent_safety",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:digital-safety",
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "outdoor_play_and_development.json",
+      "topicId": "outdoor_play_and_development",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "parent_child_negotiation.json",
+      "topicId": "parent_child_negotiation",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "parent_directed_interaction.json",
+      "topicId": "parent_directed_interaction",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:positive-parenting"
+      ]
+    },
+    {
+      "fileName": "parent_mental_health.json",
+      "topicId": "parent_mental_health",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:parent-wellbeing"
+      ]
+    },
+    {
+      "fileName": "parent_partnerships.json",
+      "topicId": "parent_partnerships",
+      "modules": [
+        "module_child_centred_and_family_focused_practice"
+      ],
+      "reasons": [
+        "rule:family-support"
+      ]
+    },
+    {
+      "fileName": "parent_self_regulation.json",
+      "topicId": "parent_self_regulation",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:emotional-regulation",
+        "rule:parent-wellbeing"
+      ]
+    },
+    {
+      "fileName": "parenting_after_separation.json",
+      "topicId": "parenting_after_separation",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "parenting_children_with_adhd.json",
+      "topicId": "parenting_children_with_adhd",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_trauma_informed_and_culturally_safe_practice"
+      ],
+      "reasons": [
+        "rule:culture-and-equity",
+        "rule:general-parenting"
+      ]
+    },
+    {
+      "fileName": "parenting_children_with_autism.json",
+      "topicId": "parenting_children_with_autism",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_trauma_informed_and_culturally_safe_practice"
+      ],
+      "reasons": [
+        "rule:culture-and-equity",
+        "rule:general-parenting"
+      ]
+    },
+    {
+      "fileName": "parenting_children_with_complex_trauma.json",
+      "topicId": "parenting_children_with_complex_trauma",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_child_healing",
+        "module_parent_safety",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "parenting_multiple_children.json",
+      "topicId": "parenting_multiple_children",
+      "modules": [
+        "module_child_centred_and_family_focused_practice"
+      ],
+      "reasons": [
+        "rule:family-support",
+        "rule:general-parenting"
+      ]
+    },
+    {
+      "fileName": "parenting_plans_vs_court_orders.json",
+      "topicId": "parenting_plans_vs_court_orders",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "parenting_styles_explained.json",
+      "topicId": "parenting_styles_explained",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:parent-wellbeing"
+      ]
+    },
+    {
+      "fileName": "parenting_triggers.json",
+      "topicId": "parenting_triggers",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:emotional-regulation",
+        "rule:general-parenting",
+        "rule:parent-wellbeing"
+      ]
+    },
+    {
+      "fileName": "parenting_under_stress.json",
+      "topicId": "parenting_under_stress",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "module:module_parenting_under_stress",
+        "rule:emotional-regulation",
+        "rule:general-parenting"
+      ]
+    },
+    {
+      "fileName": "peer_pressure.json",
+      "topicId": "peer_pressure",
+      "modules": [
+        "module_engaging_young_people_in_prevention",
+        "module_working_with_adolescents_experiencing_or_using_violence"
+      ],
+      "reasons": [
+        "rule:adolescence"
+      ]
+    },
+    {
+      "fileName": "peer_relationships.json",
+      "topicId": "peer_relationships",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "persistence_and_self_regulation.json",
+      "topicId": "persistence_and_self_regulation",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "physical_activity_for_families.json",
+      "topicId": "physical_activity_for_families",
+      "modules": [
+        "module_dfv_in_health_settings",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:physical-health"
+      ]
+    },
+    {
+      "fileName": "physical_development_milestones.json",
+      "topicId": "physical_development_milestones",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "play_based_learning.json",
+      "topicId": "play_based_learning",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "positive_behaviour_guidance.json",
+      "topicId": "positive_behaviour_guidance",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "positive_communication.json",
+      "topicId": "positive_communication",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "positive_family_communication.json",
+      "topicId": "positive_family_communication",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "positive_parenting_strategies.json",
+      "topicId": "positive_parenting_strategies",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_child_centred_and_family_focused_practice",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:positive-parenting"
+      ]
+    },
+    {
+      "fileName": "positive_reinforcement.json",
+      "topicId": "positive_reinforcement",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "preparing_for_adolescence.json",
+      "topicId": "preparing_for_adolescence",
+      "modules": [
+        "module_engaging_young_people_in_prevention",
+        "module_working_with_adolescents_experiencing_or_using_violence"
+      ],
+      "reasons": [
+        "rule:adolescence"
+      ]
+    },
+    {
+      "fileName": "preparing_for_adulthood_transition.json",
+      "topicId": "preparing_for_adulthood_transition",
+      "modules": [
+        "module_engaging_young_people_in_prevention",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development",
+        "module_working_with_adolescents_experiencing_or_using_violence"
+      ],
+      "reasons": [
+        "rule:adolescence",
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "preparing_for_school.json",
+      "topicId": "preparing_for_school",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "preventing_re_traumatization.json",
+      "topicId": "preventing_re_traumatization",
+      "modules": [
+        "module_child_healing",
+        "module_parent_safety",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "problem_solving.json",
+      "topicId": "problem_solving",
+      "modules": [
+        "module_relationship_skills",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:problem-solving"
+      ]
+    },
+    {
+      "fileName": "problem_solving_skills.json",
+      "topicId": "problem_solving_skills",
+      "modules": [
+        "module_relationship_skills",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:problem-solving"
+      ]
+    },
+    {
+      "fileName": "promoting_a_positive_learning_environment.json",
+      "topicId": "promoting_a_positive_learning_environment",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "protecting_children_from_adult_conflict.json",
+      "topicId": "protecting_children_from_adult_conflict",
+      "modules": [
+        "module_parent_safety",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "public_behaviour_management.json",
+      "topicId": "public_behaviour_management",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "punishment_based_health_approaches.json",
+      "topicId": "punishment_based_health_approaches",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "raising_confident_children.json",
+      "topicId": "raising_confident_children",
+      "modules": [
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:social-development"
+      ]
+    },
+    {
+      "fileName": "rebuilding_trust.json",
+      "topicId": "rebuilding_trust",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "rebuilding_trust_with_children.json",
+      "topicId": "rebuilding_trust_with_children",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "recognising_dysregulation.json",
+      "topicId": "recognising_dysregulation",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "recognising_health_concerns_early.json",
+      "topicId": "recognising_health_concerns_early",
+      "modules": [
+        "module_dfv_in_health_settings",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:physical-health"
+      ]
+    },
+    {
+      "fileName": "recognising_triggers.json",
+      "topicId": "recognising_triggers",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "reducing_challenging_behaviour.json",
+      "topicId": "reducing_challenging_behaviour",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "reducing_chaos_in_the_home.json",
+      "topicId": "reducing_chaos_in_the_home",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "reducing_power_struggles.json",
+      "topicId": "reducing_power_struggles",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "reducing_sedentary_behaviour.json",
+      "topicId": "reducing_sedentary_behaviour",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_dfv_in_health_settings",
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:physical-health"
+      ]
+    },
+    {
+      "fileName": "reflective_parenting.json",
+      "topicId": "reflective_parenting",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:parent-wellbeing"
+      ]
+    },
+    {
+      "fileName": "reinforcement.json",
+      "topicId": "reinforcement",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "reinforcement_theory.json",
+      "topicId": "reinforcement_theory",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "repair_after_mistakes.json",
+      "topicId": "repair_after_mistakes",
+      "modules": [
+        "module_accountability_foundations",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:accountability"
+      ]
+    },
+    {
+      "fileName": "repairing_parent_child_relationships.json",
+      "topicId": "repairing_parent_child_relationships",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "repairing_ruptures.json",
+      "topicId": "repairing_ruptures",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "repetition_and_consistency.json",
+      "topicId": "repetition_and_consistency",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "respectful_communication.json",
+      "topicId": "respectful_communication",
+      "modules": [
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "respectful_interactions.json",
+      "topicId": "respectful_interactions",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:positive-parenting"
+      ]
+    },
+    {
+      "fileName": "responding_to_distress.json",
+      "topicId": "responding_to_distress",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "responsibility_training.json",
+      "topicId": "responsibility_training",
+      "modules": [
+        "module_accountability_foundations",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:accountability"
+      ]
+    },
+    {
+      "fileName": "responsive_caregiving.json",
+      "topicId": "responsive_caregiving",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection",
+        "rule:general-parenting"
+      ]
+    },
+    {
+      "fileName": "responsive_feeding.json",
+      "topicId": "responsive_feeding",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection",
+        "rule:nutrition-and-feeding"
+      ]
+    },
+    {
+      "fileName": "risk_behaviour_management.json",
+      "topicId": "risk_behaviour_management",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parent_safety",
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "risk_taking_behaviour.json",
+      "topicId": "risk_taking_behaviour",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parent_safety",
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "routine_management.json",
+      "topicId": "routine_management",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "school_and_homework_support.json",
+      "topicId": "school_and_homework_support",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "school_refusal.json",
+      "topicId": "school_refusal",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "screen_time_and_health.json",
+      "topicId": "screen_time_and_health",
+      "modules": [
+        "module_digital_safety_and_online_communities"
+      ],
+      "reasons": [
+        "rule:digital-safety"
+      ]
+    },
+    {
+      "fileName": "secure_attachment.json",
+      "topicId": "secure_attachment",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "self_awareness.json",
+      "topicId": "self_awareness",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "self_care_for_parents.json",
+      "topicId": "self_care_for_parents",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:parent-wellbeing"
+      ]
+    },
+    {
+      "fileName": "self_compassion_in_parenting.json",
+      "topicId": "self_compassion_in_parenting",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:parent-wellbeing"
+      ]
+    },
+    {
+      "fileName": "self_esteem_and_body_image.json",
+      "topicId": "self_esteem_and_body_image",
+      "modules": [
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:social-development"
+      ]
+    },
+    {
+      "fileName": "self_regulation_skills.json",
+      "topicId": "self_regulation_skills",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "separation_conflict.json",
+      "topicId": "separation_conflict",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "sharing_and_turn_taking.json",
+      "topicId": "sharing_and_turn_taking",
+      "modules": [
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:social-development"
+      ]
+    },
+    {
+      "fileName": "sibling_rivalry.json",
+      "topicId": "sibling_rivalry",
+      "modules": [
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:social-development"
+      ]
+    },
+    {
+      "fileName": "sleep_and_brain_function.json",
+      "topicId": "sleep_and_brain_function",
+      "modules": [
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development",
+        "rule:sleep"
+      ]
+    },
+    {
+      "fileName": "sleep_and_child_development.json",
+      "topicId": "sleep_and_child_development",
+      "modules": [
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development",
+        "rule:sleep"
+      ]
+    },
+    {
+      "fileName": "sleep_deprivation_and_teens.json",
+      "topicId": "sleep_deprivation_and_teens",
+      "modules": [
+        "module_engaging_young_people_in_prevention",
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_working_with_adolescents_experiencing_or_using_violence"
+      ],
+      "reasons": [
+        "rule:adolescence",
+        "rule:sleep"
+      ]
+    },
+    {
+      "fileName": "sleep_training_approaches.json",
+      "topicId": "sleep_training_approaches",
+      "modules": [
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:sleep"
+      ]
+    },
+    {
+      "fileName": "social_development.json",
+      "topicId": "social_development",
+      "modules": [
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development",
+        "rule:social-development"
+      ]
+    },
+    {
+      "fileName": "social_development_through_healthy_activities.json",
+      "topicId": "social_development_through_healthy_activities",
+      "modules": [
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development",
+        "rule:social-development"
+      ]
+    },
+    {
+      "fileName": "social_skills.json",
+      "topicId": "social_skills",
+      "modules": [
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:social-development"
+      ]
+    },
+    {
+      "fileName": "special_time.json",
+      "topicId": "special_time",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "stability_and_routine.json",
+      "topicId": "stability_and_routine",
+      "modules": [
+        "module_rebuilding_family_life",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:routines-and-stability"
+      ]
+    },
+    {
+      "fileName": "stress_and_anxiety_in_children.json",
+      "topicId": "stress_and_anxiety_in_children",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "stress_and_the_developing_brain.json",
+      "topicId": "stress_and_the_developing_brain",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development",
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "structured_discipline.json",
+      "topicId": "structured_discipline",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "substance_awareness_for_teens.json",
+      "topicId": "substance_awareness_for_teens",
+      "modules": [
+        "module_engaging_young_people_in_prevention",
+        "module_working_with_adolescents_experiencing_or_using_violence"
+      ],
+      "reasons": [
+        "rule:adolescence"
+      ]
+    },
+    {
+      "fileName": "sun_safety.json",
+      "topicId": "sun_safety",
+      "modules": [
+        "module_dfv_in_health_settings",
+        "module_parent_safety",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:physical-health",
+        "rule:safety-and-risk"
+      ]
+    },
+    {
+      "fileName": "supervised_contact_preparation.json",
+      "topicId": "supervised_contact_preparation",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "supporting_children_through_change.json",
+      "topicId": "supporting_children_through_change",
+      "modules": [
+        "module_child_centred_and_family_focused_practice"
+      ],
+      "reasons": [
+        "rule:family-support"
+      ]
+    },
+    {
+      "fileName": "supporting_emotional_wellbeing.json",
+      "topicId": "supporting_emotional_wellbeing",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "supporting_social_development.json",
+      "topicId": "supporting_social_development",
+      "modules": [
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development",
+        "rule:social-development"
+      ]
+    },
+    {
+      "fileName": "supporting_vulnerable_families.json",
+      "topicId": "supporting_vulnerable_families",
+      "modules": [
+        "module_child_centred_and_family_focused_practice"
+      ],
+      "reasons": [
+        "rule:family-support"
+      ]
+    },
+    {
+      "fileName": "survival_behaviours.json",
+      "topicId": "survival_behaviours",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_child_healing",
+        "module_parent_safety",
+        "module_parenting_under_stress",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "tantrums_and_meltdowns.json",
+      "topicId": "tantrums_and_meltdowns",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "teaching_instead_of_punishing.json",
+      "topicId": "teaching_instead_of_punishing",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:positive-parenting"
+      ]
+    },
+    {
+      "fileName": "teaching_responsibility.json",
+      "topicId": "teaching_responsibility",
+      "modules": [
+        "module_accountability_foundations",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:accountability"
+      ]
+    },
+    {
+      "fileName": "teaching_self_regulation.json",
+      "topicId": "teaching_self_regulation",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "teaching_social_skills.json",
+      "topicId": "teaching_social_skills",
+      "modules": [
+        "module_relationship_skills",
+        "module_supporting_childrens_safety_and_wellbeing"
+      ],
+      "reasons": [
+        "rule:social-development"
+      ]
+    },
+    {
+      "fileName": "teen_communication.json",
+      "topicId": "teen_communication",
+      "modules": [
+        "module_engaging_young_people_in_prevention",
+        "module_relationship_skills",
+        "module_safe_conversations",
+        "module_working_with_adolescents_experiencing_or_using_violence"
+      ],
+      "reasons": [
+        "rule:adolescence",
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "teen_responsibility.json",
+      "topicId": "teen_responsibility",
+      "modules": [
+        "module_accountability_foundations",
+        "module_engaging_young_people_in_prevention",
+        "module_sustainable_change",
+        "module_working_with_adolescents_experiencing_or_using_violence"
+      ],
+      "reasons": [
+        "rule:accountability",
+        "rule:adolescence"
+      ]
+    },
+    {
+      "fileName": "temperament_and_personality.json",
+      "topicId": "temperament_and_personality",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "time_out_strategies.json",
+      "topicId": "time_out_strategies",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "toilet_training.json",
+      "topicId": "toilet_training",
+      "modules": [
+        "module_supporting_childrens_safety_and_wellbeing",
+        "module_trauma_attachment_and_child_development"
+      ],
+      "reasons": [
+        "rule:child-development"
+      ]
+    },
+    {
+      "fileName": "trauma_and_adverse_childhood_experiences.json",
+      "topicId": "trauma_and_adverse_childhood_experiences",
+      "modules": [
+        "module_child_healing",
+        "module_parent_safety",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "trauma_and_behaviour.json",
+      "topicId": "trauma_and_behaviour",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_child_healing",
+        "module_parent_safety",
+        "module_parenting_under_stress",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "trauma_effects.json",
+      "topicId": "trauma_effects",
+      "modules": [
+        "module_child_healing",
+        "module_parent_safety",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "trauma_informed_parenting.json",
+      "topicId": "trauma_informed_parenting",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_child_healing",
+        "module_parent_safety",
+        "module_understanding_dfv_impacts_on_children"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:trauma-and-violence"
+      ]
+    },
+    {
+      "fileName": "triggers_vs_misbehaviour.json",
+      "topicId": "triggers_vs_misbehaviour",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "understanding_attachment_styles.json",
+      "topicId": "understanding_attachment_styles",
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ],
+      "reasons": [
+        "rule:attachment-and-connection"
+      ]
+    },
+    {
+      "fileName": "understanding_behaviour_as_communication.json",
+      "topicId": "understanding_behaviour_as_communication",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress",
+        "module_relationship_skills",
+        "module_safe_conversations"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance",
+        "rule:communication"
+      ]
+    },
+    {
+      "fileName": "understanding_children_s_emotions.json",
+      "topicId": "understanding_children_s_emotions",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "understanding_emotions.json",
+      "topicId": "understanding_emotions",
+      "modules": [
+        "module_emotional_regulation",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:emotional-regulation"
+      ]
+    },
+    {
+      "fileName": "understanding_parenting_orders.json",
+      "topicId": "understanding_parenting_orders",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "understanding_separation_conflict.json",
+      "topicId": "understanding_separation_conflict",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_court_support_and_legal_processes",
+        "module_rebuilding_family_life"
+      ],
+      "reasons": [
+        "rule:separation-and-coparenting"
+      ]
+    },
+    {
+      "fileName": "using_assertive_discipline.json",
+      "topicId": "using_assertive_discipline",
+      "modules": [
+        "module_boundaries_and_safety",
+        "module_parenting_under_stress"
+      ],
+      "reasons": [
+        "rule:behaviour-guidance"
+      ]
+    },
+    {
+      "fileName": "using_child_focused_language.json",
+      "topicId": "using_child_focused_language",
+      "modules": [
+        "module_child_centred_and_family_focused_practice"
+      ],
+      "reasons": [
+        "rule:general-parenting"
+      ]
+    },
+    {
+      "fileName": "values_based_parenting.json",
+      "topicId": "values_based_parenting",
+      "modules": [
+        "module_child_centred_and_family_focused_practice",
+        "module_emotional_regulation",
+        "module_parenting_under_stress",
+        "module_sustainable_change"
+      ],
+      "reasons": [
+        "rule:general-parenting",
+        "rule:parent-wellbeing"
+      ]
+    },
+    {
+      "fileName": "workflow_action_skills.json",
+      "topicId": "workflow_action_skills",
+      "modules": [
+        "module_workflow_action_skills"
+      ],
+      "reasons": [
+        "existing"
+      ]
+    },
+    {
+      "fileName": "working_with_families.json",
+      "topicId": "working_with_families",
+      "modules": [
+        "module_child_centred_and_family_focused_practice"
+      ],
+      "reasons": [
+        "rule:family-support"
+      ]
+    }
+  ],
+  "unmatched": []
+}

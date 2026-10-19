@@ -16,6 +16,11 @@
     "Work with families while maintaining safety and accountability",
     "Support relational healing and stability"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_child_centred_principles",
+    "lesson_age_appropriate_support",
+    "lesson_complex_family_dynamics",
+    "lesson_maintaining_parent_child_connection"
+  ],
   "content": []
 }

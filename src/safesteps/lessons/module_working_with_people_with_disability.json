@@ -16,6 +16,12 @@
     "Apply accessible and rights-based approaches",
     "Support safe communication and autonomy"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_disability_specific_risks",
+    "lesson_accessible_practice",
+    "lesson_barriers_and_risks",
+    "lesson_inclusive_practice",
+    "safety_planning"
+  ],
   "content": []
 }

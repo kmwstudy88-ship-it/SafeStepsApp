@@ -16,6 +16,12 @@
     "Apply culturally safe and community-led approaches",
     "Work respectfully with First Nations families and communities"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_historical_and_cultural_contexts",
+    "lesson_cultural_safety_and_respect",
+    "lesson_community_strengths_and_assets",
+    "lesson_avoiding_assumptions",
+    "strengths_based_practice"
+  ],
   "content": []
 }

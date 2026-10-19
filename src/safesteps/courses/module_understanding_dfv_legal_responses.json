@@ -16,6 +16,10 @@
     "Recognise the difference between civil and criminal pathways",
     "Identify how legal systems promote safety and accountability"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_legal_definitions_and_frameworks",
+    "lesson_legal_responses_to_dfv",
+    "lesson_protection_orders_and_courts"
+  ],
   "content": []
 }

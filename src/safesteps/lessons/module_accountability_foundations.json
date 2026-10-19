@@ -1,6 +1,15 @@
 {
   "id": "module_accountability_foundations",
   "title": "Accountability Foundations",
+  "description": "This module helps parents recognise harm, move beyond minimisation, take responsibility for the impact of their behaviour, and begin repair through honest, child-centred action.",
+  "type": "module",
   "level": "general",
-  "lessons": []
+  "tags": ["accountability", "responsibility", "recognising harm", "minimisation", "repair"],
+  "outcomes": [
+    "Describe the difference between intent, impact, excuses, and responsibility",
+    "Recognise minimising or blame-shifting responses and replace them with accountable language",
+    "Create practical repair actions that centre child and family safety"
+  ],
+  "lessons": ["understanding_harm", "challenging_minimisation", "taking_responsibility"],
+  "content": []
 }

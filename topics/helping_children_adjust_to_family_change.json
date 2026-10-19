@@ -2,6 +2,10 @@
   "topicId": "helping-children-adjust-to-family-change",
   "topicName": "helping children adjust to family change",
   "caseworkerSummary": "This topic helps parents build practical skills related to helping children adjust to family change. It supports safer, more consistent caregiving by improving understanding, strengthening emotional connection, and reducing stress in daily routines. This topic is suitable for parents who need guidance in applying positive parenting strategies and may benefit families working toward stability, reunification, or improved home safety.",
-  "modules": [],
+  "modules": [
+    "module_child_centred_and_family_focused_practice",
+    "module_court_support_and_legal_processes",
+    "module_rebuilding_family_life"
+  ],
   "id": "helping_children_adjust_to_family_change"
 }

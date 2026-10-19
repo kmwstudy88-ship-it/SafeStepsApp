@@ -16,6 +16,10 @@
     "Promote community norms that challenge violence and support safety",
     "Coordinate collective action to strengthen community responses"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_accountability_frameworks",
+    "lesson_culturally_informed_accountability",
+    "lesson_coordinated_collective_action"
+  ],
   "content": []
 }

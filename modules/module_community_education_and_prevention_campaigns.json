@@ -16,6 +16,10 @@
     "Develop safe and ethical prevention messaging",
     "Engage diverse community groups in prevention efforts"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_community_campaigns",
+    "lesson_designing_prevention_campaigns",
+    "lesson_everyday_prevention_actions"
+  ],
   "content": []
 }

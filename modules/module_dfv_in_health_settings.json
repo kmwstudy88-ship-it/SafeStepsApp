@@ -16,6 +16,13 @@
     "Respond safely to disclosures in clinical settings",
     "Use safe documentation and referral pathways"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_health_led_strategies",
+    "lesson_early_identification",
+    "lesson_recognising_indicators",
+    "lesson_referral_pathways",
+    "lesson_physical_health_impacts",
+    "lesson_mental_health_impacts"
+  ],
   "content": []
 }

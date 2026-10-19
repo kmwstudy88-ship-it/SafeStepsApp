@@ -16,6 +16,11 @@
     "Recognise how protection orders and criminal processes operate",
     "Identify intersections between DFV, child protection, and the justice system"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_legal_definitions_and_frameworks",
+    "lesson_legal_responses_to_dfv",
+    "lesson_justice_system_intersections",
+    "lesson_navigating_systems"
+  ],
   "content": []
 }

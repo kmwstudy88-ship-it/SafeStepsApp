@@ -283,6 +283,14 @@ A completed learning activity, automated risk flag or AI result must not become 
 
 `assessment_instances`, `assessment_runs` and `assessment_sessions` are not alternative canonical administration tables. The inventory's missing `assessment_instances` expectation must be reconciled with `assessment_records`, not fulfilled through duplication.
 
+### 11.1 Structured learning progress and consent
+
+The `learning_*` relations remain a retained extension, but new application work must use that structured-learning model rather than the legacy `courses`, `lessons`, `enrolments`, `lesson_progress` and `certificates` lane. Course source content remains canonical in the repository's `lessons/`, `modules/` and `topics/` directories; database course rows provide deployed catalogue and progress identity, not a competing authoring source.
+
+Learners own their course progress. An assigned practitioner may read structured course completion and assessment-result fields only while an explicit, current learner consent record permits it. Assignment alone is not consent. Withdrawing consent must remove the practitioner read path without deleting the learner's record. Client-scored results remain marked `client_reported_unverified` unless a trusted server workflow verifies them. Reflection text, journals, private notes and unsubmitted activity drafts are outside progress-sharing consent and remain private unless a separate, specific sharing decision applies.
+
+`20260930043000_learning_progress_sharing_consent.sql` is the required convergence migration for this boundary. It adds `learning_progress_sharing_consents`, assessment-result fields to `learning_course_progress`, explicit participant policies, and the consent-and-assignment practitioner policy. The new relation and fields are required target behavior and are not part of the 2026-09-15 verified deployment snapshot until the migration is reviewed and deployed.
+
 ## 12. RLS rules
 
 ### 12.1 Required security contract
@@ -1793,5 +1801,3 @@ Keys:
 - `FOREIGN KEY (linked_learning_evidence_submission_id) REFERENCES learning_evidence_submissions(id) ON DELETE SET NULL`
 - `FOREIGN KEY (mapped_by) REFERENCES auth.users(id) ON DELETE SET NULL`
 - `PRIMARY KEY (id)`
-
-

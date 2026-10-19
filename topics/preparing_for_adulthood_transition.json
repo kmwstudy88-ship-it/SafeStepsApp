@@ -2,6 +2,11 @@
   "topicId": "preparing-for-adulthood-transition",
   "topicName": "preparing for adulthood transition",
   "caseworkerSummary": "This topic helps parents build practical skills related to preparing for adulthood transition. It supports safer, more consistent caregiving by improving understanding, strengthening emotional connection, and reducing stress in daily routines. This topic is suitable for parents who need guidance in applying positive parenting strategies and may benefit families working toward stability, reunification, or improved home safety.",
-  "modules": [],
+  "modules": [
+    "module_engaging_young_people_in_prevention",
+    "module_supporting_childrens_safety_and_wellbeing",
+    "module_trauma_attachment_and_child_development",
+    "module_working_with_adolescents_experiencing_or_using_violence"
+  ],
   "id": "preparing_for_adulthood_transition"
 }

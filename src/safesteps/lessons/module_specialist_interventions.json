@@ -16,6 +16,11 @@
     "Work effectively with cultural, linguistic, and contextual complexity in DFV cases",
     "Apply intersectional practice to understand layered barriers and risks"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_initial_assessment",
+    "lesson_referral_pathways",
+    "specialist_therapeutic_support",
+    "lesson_complex_case_practice"
+  ],
   "content": []
 }

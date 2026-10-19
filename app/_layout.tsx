@@ -16,6 +16,9 @@ export default function RootLayout() {
       >
         <Stack.Screen name="index" options={{ title: 'SafeSteps' }} />
         <Stack.Screen name="scenarios/index" options={{ title: 'Roleplay Simulation' }} />
+        <Stack.Screen name="learning/understanding-harm" options={{ title: 'Understanding Harm' }} />
+        <Stack.Screen name="learning/catalog/index" options={{ title: 'Learning Library' }} />
+        <Stack.Screen name="learning/catalog/[courseId]" options={{ title: 'Course' }} />
         <Stack.Screen name="storybooks/index" options={{ title: 'Interactive Storybooks' }} />
         <Stack.Screen name="assessments/index" options={{ title: 'Assessments & Results' }} />
         <Stack.Screen name="evidence/index" options={{ title: 'Evidence Vault' }} />

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "1.0.0",
+  "courseId": "masters_understanding_harm",
+  "title": "Mastery Course: Understanding Harm, Safety and Repair",
+  "sourceLesson": "understanding_harm",
+  "level": "Mastery",
+  "durationMinutes": 180,
+  "deliveryMode": "self_paced_ai_facilitated",
+  "importantNotice": "Educational content only. Follow configured safeguarding and emergency procedures where immediate safety concerns arise.",
+  "learningOutcomes": [
+    "Differentiate intention, behaviour, impact, responsibility and repair",
+    "Analyse harm using child-centred and evidence-aware reasoning",
+    "Prioritise immediate and ongoing safety",
+    "Create measurable accountability, repair and prevention plans",
+    "Apply learning to unfamiliar complex scenarios"
+  ],
+  "competencies": [
+    {"id":"C1","name":"Recognition of Harm","weightPercent":20},
+    {"id":"C2","name":"Child Impact Awareness","weightPercent":20},
+    {"id":"C3","name":"Safety Prioritisation","weightPercent":20},
+    {"id":"C4","name":"Accountability and Repair","weightPercent":20},
+    {"id":"C5","name":"Applied Behaviour Change","weightPercent":20}
+  ],
+  "modules": [
+    {
+      "id":"M1","title":"Advanced Foundations of Harm","durationMinutes":35,
+      "definition":"Harm is an adverse effect on a child's physical, emotional, psychological, relational or developmental wellbeing caused by an action, pattern, omission or unsafe environment.",
+      "content":[
+        {"heading":"Intention, behaviour and impact","teachingText":"Intention describes purpose, behaviour describes what occurred and impact describes what the child experienced. Analysis considers all three while keeping safety central."},
+        {"heading":"Patterns and cumulative impact","teachingText":"Repeated, unpredictable or unrepaired events may create cumulative impact even where individual events appear minor."},
+        {"heading":"Evidence-aware reflection","teachingText":"Use observable behaviour, context, child response, protective action and follow-up. Do not diagnose or guess motives."}
+      ],
+      "activity":{"id":"M1A1","type":"classification","instructions":"Identify observable behaviour, possible impact, missing information and the safest next step."},
+      "aiFacilitator":{"opening":"Separate known facts from inference before evaluating impact.","prompts":["What is observable?","What remains unknown?","What action reduces risk now?"],"markingFocus":["accuracy","evidence awareness","safety"]}
+    },
+    {
+      "id":"M2","title":"Child Impact and Emotional Safety","durationMinutes":40,
+      "content":[
+        {"heading":"Child-centred perspective","teachingText":"Consider developmental needs, dependency, power differences, predictability and access to support."},
+        {"heading":"Supportive response","teachingText":"Reduce stress, use calm language, listen without interrogation and affirm that the child is not responsible for adult behaviour."}
+      ],
+      "activity":{"id":"M2A1","type":"impact_map","instructions":"Map immediate needs, possible effects, protective factors and appropriate supports."},
+      "aiFacilitator":{"opening":"Consider the child's experience without presenting possibilities as confirmed facts.","prompts":["What is needed immediately?","Which claim is evidence?","Which protective factor can be strengthened?"],"markingFocus":["child perspective","neutral language","safety"]}
+    },
+    {
+      "id":"M3","title":"Accountability, Repair and Trust","durationMinutes":40,
+      "content":[
+        {"heading":"Accountability","teachingText":"Name the behaviour, recognise impact, avoid excuses, accept responsibility and follow through."},
+        {"heading":"Repair","teachingText":"Repair combines acknowledgement, changed behaviour, respect for boundaries and consistent safety. It does not demand forgiveness."},
+        {"heading":"Trust","teachingText":"Trust is supported by repeated observable action rather than promises alone."}
+      ],
+      "activity":{"id":"M3A1","type":"repair_script","instructions":"Write a statement containing acknowledgement, impact, responsibility, an immediate safety action and a measurable commitment."},
+      "aiFacilitator":{"opening":"Turn insight into accountable language and measurable action.","prompts":["Is the behaviour named?","Is blame shifting absent?","Is the commitment observable?"],"markingFocus":["accountability","repair","specificity"]}
+    },
+    {
+      "id":"M4","title":"Applied Analysis and Sustained Change","durationMinutes":45,
+      "content":[
+        {"heading":"Triggers and choice points","teachingText":"A trigger may explain a reaction but does not remove responsibility. Strong plans identify warnings, pause strategies, supports and safer alternatives."},
+        {"heading":"Progress measurement","teachingText":"Use behavioural indicators such as reduced escalation, calm responses, completed check-ins and adherence to safety plans."},
+        {"heading":"Setback planning","teachingText":"Anticipate setbacks and identify thresholds for additional professional support."}
+      ],
+      "capstone":{"id":"CAP01","title":"Integrated Safety and Repair Plan","instructions":"Analyse an unfamiliar case and address observable facts, possible impact, immediate safety, accountability, repair, prevention, supports and progress measures.","maxScore":100},
+      "aiFacilitator":{"opening":"Transfer all course concepts to a new complex situation.","prompts":["Which action is urgent?","Which conclusion is unsupported?","How will progress be measured?"],"markingFocus":["integration","safety","measurable change"]}
+    }
+  ],
+  "scenarioAssessment": [
+    {
+      "id":"UH001","maxScore":100,"situation":"A parent repeatedly tells a distressed child to stop crying and toughen up.","question":"Which response best demonstrates understanding and safety?",
+      "choices":[{"id":"A","text":"Continue because emotional toughness builds resilience","score":0},{"id":"B","text":"Acknowledge the feeling, respond calmly and help identify the child's need","score":100},{"id":"C","text":"Ignore the child until the emotion passes","score":20},{"id":"D","text":"Offer a reward for stopping","score":35}],
+      "answerKey":{"correctAnswer":"B","explanation":"It validates emotion and supports regulation.","rationales":{"A":"Reframes dismissal as resilience.","C":"Provides no support.","D":"Targets silence rather than regulation."}}
+    },
+    {
+      "id":"UH002","maxScore":100,"situation":"A child becomes quiet and anxious when adult voices rise after repeated conflict.","question":"What should happen first?",
+      "choices":[{"id":"A","text":"Restore calm, move conflict away and provide a safe check-in","score":100},{"id":"B","text":"Ask the child which adult is right","score":0},{"id":"C","text":"Say there is nothing to worry about","score":15},{"id":"D","text":"Wait for proof of lasting impact","score":5}],
+      "answerKey":{"correctAnswer":"A","explanation":"It reduces exposure and provides support without burdening the child.","rationales":{"B":"Places the child in the dispute.","C":"Dismisses the response.","D":"Delays protection."}}
+    },
+    {
+      "id":"UH003","maxScore":100,"situation":"A parent recognises repeated angry reactions have affected their child and wants to rebuild trust.","question":"Which plan best demonstrates accountability and repair?",
+      "choices":[{"id":"A","text":"Explain stress and ask the child to move on","score":10},{"id":"B","text":"Apologise once and promise it will never happen again","score":45},{"id":"C","text":"Name behaviour and impact, use a de-escalation plan, respect boundaries and review progress","score":100},{"id":"D","text":"Avoid discussing it","score":0}],
+      "answerKey":{"correctAnswer":"C","explanation":"It integrates acknowledgement, safety, boundaries and sustained change.","rationales":{"A":"Reduces responsibility.","B":"Lacks a sustained plan.","D":"Provides no repair."}}
+    }
+  ],
+  "knowledgeQuiz": [
+    {"id":"Q1","question":"What distinguishes impact from intention?","options":["Impact is what was meant","Impact is what the child experienced","They are identical","Only intention matters"],"correctAnswerIndex":1,"explanation":"Impact concerns effect or experience; intention concerns purpose."},
+    {"id":"Q2","question":"Which commitment is measurable?","options":["I will be better","I will try","I will pause, lower my voice and check in after conflict","It will never happen"],"correctAnswerIndex":2,"explanation":"It contains observable actions."},
+    {"id":"Q3","question":"What comes first after immediate distress?","options":["Winning the argument","Restoring safety and calm","Demanding forgiveness","Assigning blame"],"correctAnswerIndex":1,"explanation":"Safety precedes teaching and problem-solving."},
+    {"id":"Q4","question":"Which statement minimises impact?","options":["Your feelings matter","I can see this affected you","It was not a big deal","I need to change"],"correctAnswerIndex":2,"explanation":"It dismisses the child's experience."},
+    {"id":"Q5","question":"What best indicates repair?","options":["Immediate forgiveness","Consistent observable behaviour change","A detailed excuse","Avoidance"],"correctAnswerIndex":1,"explanation":"Repair is shown through sustained safer action."}
+  ],
+  "assessmentAndMarking": {
+    "components":[{"name":"Knowledge Quiz","weightPercent":20,"minimumPercent":80},{"name":"Scenario Assessment","weightPercent":30,"minimumPercent":80},{"name":"Module Activities","weightPercent":20,"minimumPercent":75},{"name":"Capstone","weightPercent":30,"minimumPercent":80}],
+    "overallPassPercent":80,
+    "criticalRequirement":"Safety Prioritisation must be at least 70 percent. Unsafe recommendations cannot be offset by a high overall score.",
+    "gradingBands":[{"minimum":90,"grade":"Mastery with Distinction"},{"minimum":80,"grade":"Mastery Achieved"},{"minimum":65,"grade":"Developing: Remediation Required"},{"minimum":0,"grade":"Not Yet Competent"}],
+    "capstoneRubric":[{"criterion":"Observable facts","points":15},{"criterion":"Child impact without unsupported diagnosis","points":15},{"criterion":"Immediate and ongoing safety","points":20},{"criterion":"Accountability without minimisation","points":15},{"criterion":"Repair and prevention plan","points":20},{"criterion":"Progress measures and support thresholds","points":15}],
+    "reflectionRubric":{"selfAwareness":25,"childPerspective":25,"accountability":25,"specificChangePlan":25},
+    "unsafeResponseFlags":["justifies intimidation","blames child for adult behaviour","recommends retaliation","dismisses safety","pressures forgiveness","states unsupported diagnosis as fact"],
+    "remediationRules":[{"condition":"overallBelow80","action":"Assign targeted review and one reassessment"},{"condition":"safetyBelow70","action":"Lock completion, replay safety content and require a new scenario assessment"},{"condition":"unsafeFlag","action":"Give corrective feedback and require a revised response"}]
+  },
+  "aiTeacher": {
+    "name":"SafeSteps Mastery Facilitator","role":"Trauma-informed educational facilitator and competency assessor",
+    "tone":["calm","respectful","non-shaming","clear","child-centred"],
+    "boundaries":["Do not diagnose","Do not assume missing facts","Do not pressure disclosure","Follow safeguarding procedures for immediate safety concerns"],
+    "lessonFlow":["welcome","baselineCheck","teach","guidedPractice","scenario","feedback","retry","reflection","assessment","completionSummary"],
+    "openingScript":["Welcome to Understanding Harm, Safety and Repair at mastery level.","We will focus on accurate recognition, child-centred safety, accountable repair and measurable change.","You may pause at any time."],
+    "feedbackTemplates":{"mastery":"You identified behaviour, impact, safety and measurable change.","competent":"Your response is safe. Add one observable progress measure.","developing":"Revisit the child's possible experience and state the immediate safety action.","unsafe":"Reframe around adult responsibility, emotional safety and a specific safer action."},
+    "markingAlgorithm":{"method":"rubric_based","partialCredit":true,"requiredEvidence":"Reference the learner's wording for each awarded criterion","humanReviewTriggers":["immediate danger disclosed","ambiguous high-risk response","final result appeal"]}
+  },
+  "completionRequirements":{"allModules":true,"allActivities":true,"overallPercent":80,"safetyMinimumPercent":70,"capstoneMinimumPercent":80,"certificateEligible":true}
+}

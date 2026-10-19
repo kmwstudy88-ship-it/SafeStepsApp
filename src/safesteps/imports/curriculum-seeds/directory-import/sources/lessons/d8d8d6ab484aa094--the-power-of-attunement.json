@@ -1,0 +1,150 @@
+{
+  "lessonId": "building-secure-attachment-lesson-2",
+  "courseId": "building-secure-attachment",
+  "title": "The Power of Attunement",
+  "metadata": {
+    "version": "1.0.0",
+    "estimatedDurationMinutes": 30,
+    "targetAudience": "Parents and Caregivers",
+    "prerequisites": [
+      "building-secure-attachment-lesson-1"
+    ]
+  },
+  "openingReflection": {
+    "prompt": "How easy or difficult is it for you to notice your child’s emotional cues during a busy or stressful day?",
+    "guidance": "Consider what common obstacles—such as stress, multitasking, or past emotional habits—might get in the way of being fully present and attuned[cite: 10]."
+  },
+  "content": {
+    "overview": "Attunement is the ability to notice, understand, and respond to your child’s emotional state[cite: 10]. It is the heart of secure attachment[cite: 10]. When a parent is attuned, the child feels seen and understood[cite: 10]. This does not require mind‑reading; it simply means paying attention to cues such as tone, posture, facial expressions, and behaviour[cite: 10].",
+    "coreText": "Children who experience attunement learn that their feelings matter[cite: 10]. They become better at recognising and expressing emotions[cite: 10]. When attunement is missing, children may feel confused, alone, or overwhelmed[cite: 10]. But attunement can be learned and strengthened at any stage of parenting[cite: 10]. This lesson teaches parents how to slow down, observe, and respond in ways that build emotional connection[cite: 10].",
+    "keyConcepts": [
+      {
+        "concept": "Non-Verbal Cues Reading",
+        "description": "Paying deliberate attention to subtle indicators such as tone, body posture, facial expressions, and sudden behavior shifts[cite: 10]."
+      },
+      {
+        "concept": "Emotional Validation",
+        "description": "Acknowledging a child's internal state with validating language to signal that their feelings are real and safe[cite: 10]."
+      },
+      {
+        "concept": "Learnable Relational Skill",
+        "description": "Recognizing that attunement is not an inherent personality trait, but a practice that can be developed over time[cite: 10]."
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "quiz-1",
+      "type": "multiple-choice",
+      "taxonomyLevel": "Knowledge Recall",
+      "question": "What does emotional attunement require from a parent?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "The ability to read their child's mind accurately in every situation.",
+          "isCorrect": false,
+          "explanation": "Attunement does not require mind-reading; it simply means paying attention to observable emotional cues[cite: 10]."
+        },
+        {
+          "id": "opt-b",
+          "text": "Slowing down and paying attention to cues like tone, posture, facial expressions, and behavior[cite: 10].",
+          "isCorrect": true,
+          "explanation": "Correct! Attunement is about noticing, understanding, and responding to emotional cues[cite: 10]."
+        },
+        {
+          "id": "opt-c",
+          "text": "Immediately fixing every negative emotion the child experiences.",
+          "isCorrect": false,
+          "explanation": "Attunement is about helping the child feel seen and understood, not instantly erasing difficult feelings[cite: 10]."
+        }
+      ]
+    },
+    {
+      "id": "quiz-2",
+      "type": "scenario-analysis",
+      "taxonomyLevel": "Applied Understanding",
+      "question": "A child comes home from school slumped over, quiet, and drops their backpack on the floor. Which response best demonstrates emotional attunement?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "'Pick up your backpack right now and clean up your mess.'",
+          "isCorrect": false,
+          "explanation": "Focusing solely on behavior misses the child's underlying emotional cues and state[cite: 10]."
+        },
+        {
+          "id": "opt-b",
+          "text": "'I see you seem down or exhausted today. I'm here if you want to sit together for a moment.'[cite: 10]",
+          "isCorrect": true,
+          "explanation": "Correct! This validates the child's body posture and energy level, helping them feel seen and understood[cite: 10]."
+        },
+        {
+          "id": "opt-c",
+          "text": "'Cheer up! Tomorrow is going to be a much better day.'",
+          "isCorrect": false,
+          "explanation": "Bypassing or trying to quickly fix the feeling can make the child feel alone or unheard[cite: 10]."
+        }
+      ]
+    }
+  ],
+  "guidedActivities": [
+    {
+      "activityId": "act-1",
+      "title": "Silent Observation Practice",
+      "objective": "Practice observing non-verbal emotional cues without intervening or interrupting.",
+      "estimatedDurationMinutes": 4,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Watch your child for two minutes today without speaking[cite: 10]."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Pay close attention to their mood, energy level, facial expression, and body language[cite: 10]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Mentally note what emotional state their body posture or cues might be communicating[cite: 10]."
+        }
+      ]
+    },
+    {
+      "activityId": "act-2",
+      "title": "Validation Response Practice",
+      "objective": "Deliver a concise, non-judgmental validating phrase in response to an emotional cue.",
+      "estimatedDurationMinutes": 3,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Notice the next emotional cue your child expresses (e.g., frustration, sadness, disappointment)[cite: 10]."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Respond with a simple validating phrase such as 'I see you're upset' or 'That was disappointing.'[cite: 10]"
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Pause and observe your child's reaction when they feel understood[cite: 10]."
+        }
+      ]
+    }
+  ],
+  "actionableTakeaways": [
+    "Attunement starts with slowing down to notice tone, body language, and posture[cite: 10].",
+    "Validating emotional states helps children learn that their feelings matter[cite: 10].",
+    "Attunement is a skill that can be learned and strengthened at any stage of parenting[cite: 10]."
+  ],
+  "reflectionQuestions": [
+    {
+      "id": "ref-1",
+      "question": "How easy or difficult is it for you to notice your child’s emotional cues?[cite: 10]"
+    },
+    {
+      "id": "ref-2",
+      "question": "What gets in the way of attunement for you—stress, distractions, past experiences?[cite: 10]"
+    },
+    {
+      "id": "ref-3",
+      "question": "How does your child react when they feel understood?[cite: 10]"
+    }
+  ]
+}

@@ -16,6 +16,10 @@
     "Recognise and manage vicarious trauma and burnout",
     "Use reflective practice to support wellbeing and sustainability"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_professional_boundaries",
+    "lesson_ethical_and_safe_boundaries",
+    "lesson_reflective_practice_and_self_care"
+  ],
   "content": []
 }

@@ -16,6 +16,10 @@
     "Use clear and accurate documentation to support client safety",
     "Navigate referral pathways to connect clients with appropriate supports"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_collaboration_principles",
+    "lesson_referral_pathways",
+    "lesson_documentation_and_referral"
+  ],
   "content": []
 }

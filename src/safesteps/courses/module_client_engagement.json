@@ -16,6 +16,9 @@
     "Recognise and respond safely to resistance and ambivalence",
     "Use strengths‑based approaches to support client empowerment"
   ],
-  "lessons": [],
+  "lessons": [
+    "trauma_informed_engagement",
+    "lesson_embedding_trauma_informed_practice"
+  ],
   "content": []
 }

@@ -16,6 +16,12 @@
     "Recognise barriers to accessing safe housing",
     "Identify pathways to safety and stability for victim-survivors"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_dfv_and_housing_risks",
+    "lesson_barriers_to_safe_housing",
+    "lesson_crisis_accommodation_models",
+    "lesson_coordinated_housing_responses",
+    "lesson_long_term_housing_stability"
+  ],
   "content": []
 }

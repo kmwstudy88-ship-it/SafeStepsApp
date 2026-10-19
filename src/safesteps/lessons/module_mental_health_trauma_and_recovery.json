@@ -16,6 +16,12 @@
     "Recognise mental health impacts and coping strategies",
     "Support recovery through safe, trauma-informed practice"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_mental_health_impacts",
+    "lesson_multi_layered_trauma",
+    "lesson_embedding_trauma_informed_practice",
+    "lesson_long_term_health_consequences",
+    "lesson_long_term_recovery_planning"
+  ],
   "content": []
 }

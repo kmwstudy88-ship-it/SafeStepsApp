@@ -16,6 +16,12 @@
     "Create safe and inclusive environments for disclosure",
     "Apply affirming, respectful, and identity-safe practice"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_identity_and_safety",
+    "lesson_intersectional_practice",
+    "lesson_inclusive_practice",
+    "lesson_avoiding_assumptions",
+    "lesson_building_trust_with_communities"
+  ],
   "content": []
 }

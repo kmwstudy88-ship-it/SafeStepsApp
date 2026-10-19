@@ -1,0 +1,53 @@
+{
+  "lesson_id": "advocacy_skills",
+  "adaptive_scenarios": [
+    {
+      "id": "AS001",
+      "title": "School Meeting",
+      "difficulty": "easy",
+      "points": 100,
+      "situation": "You believe your child needs additional learning support.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Collaborate with staff and provide evidence",
+          "score": 100
+        },
+        {
+          "id": "B",
+          "text": "Become hostile and accusatory",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Avoid discussing concerns",
+          "score": 10
+        }
+      ]
+    },
+    {
+      "id": "AS002",
+      "title": "Service Referral",
+      "difficulty": "medium",
+      "points": 150,
+      "situation": "Your child requires external support services.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Document concerns and seek referrals",
+          "score": 150
+        },
+        {
+          "id": "B",
+          "text": "Wait indefinitely",
+          "score": 20
+        },
+        {
+          "id": "C",
+          "text": "Stop after one rejection",
+          "score": 0
+        }
+      ]
+    }
+  ]
+}

@@ -16,6 +16,13 @@
     "Help survivors understand and navigate available services",
     "Encourage safe and appropriate help-seeking without giving advice outside the peer role"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_avoiding_retraumatisation",
+    "lesson_empowerment_and_choice",
+    "lesson_holding_space",
+    "strengths_based_support",
+    "lesson_referral_pathways",
+    "lesson_pathways_to_stability"
+  ],
   "content": []
 }

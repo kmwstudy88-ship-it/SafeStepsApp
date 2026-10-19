@@ -16,6 +16,11 @@
     "Identify DFV-related health presentations",
     "Understand long-term health consequences of trauma and violence"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_physical_health_impacts",
+    "lesson_mental_health_impacts",
+    "lesson_psychological_and_emotional_impacts",
+    "lesson_developmental_impacts"
+  ],
   "content": []
 }

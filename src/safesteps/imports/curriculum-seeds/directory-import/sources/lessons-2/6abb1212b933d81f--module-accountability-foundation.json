@@ -1,0 +1,68 @@
+{
+  "scenario_activity": {
+    "id": "accountability_scenario_01",
+    "title": "Taking Ownership After Conflict",
+    "difficulty": "foundational",
+    "max_score": 100,
+    "scenario": {
+      "background": "Jordan had an argument with a family member. Afterwards Jordan stated that the entire situation was the other person's fault and refused to discuss their own behaviour.",
+      "objective": "Identify accountable responses."
+    },
+    "decision_points": [
+      {
+        "question": "What should Jordan do first?",
+        "options": [
+          "Blame the other person",
+          "Reflect on personal behaviour",
+          "Ignore the situation",
+          "Wait for others to apologise"
+        ],
+        "correct_answer": 1,
+        "score": 25,
+        "feedback": {
+          "correct": "Reflection is the first step towards accountability.",
+          "incorrect": "Accountability requires examining your own actions."
+        }
+      },
+      {
+        "question": "What demonstrates ownership?",
+        "options": [
+          "Making excuses",
+          "Avoiding discussion",
+          "Acknowledging impact",
+          "Blaming stress"
+        ],
+        "correct_answer": 2,
+        "score": 25
+      },
+      {
+        "question": "What repair action may help rebuild trust?",
+        "options": [
+          "Ignore the conflict",
+          "Accept responsibility and apologise",
+          "Deny involvement",
+          "Change the subject"
+        ],
+        "correct_answer": 1,
+        "score": 25
+      },
+      {
+        "question": "What supports long-term change?",
+        "options": [
+          "Behaviour change plan",
+          "Avoiding accountability",
+          "Defensiveness",
+          "Minimisation"
+        ],
+        "correct_answer": 0,
+        "score": 25
+      }
+    ],
+    "grading": {
+      "90_100": "Competent - Strong accountability demonstrated",
+      "70_89": "Developing - Good understanding with some gaps",
+      "50_69": "Emerging - Additional learning recommended",
+      "0_49": "Needs Further Support"
+    }
+  }
+}

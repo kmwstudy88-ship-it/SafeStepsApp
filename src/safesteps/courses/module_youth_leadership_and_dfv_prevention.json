@@ -16,6 +16,10 @@
     "Promote respectful relationships and challenge harmful norms",
     "Lead or participate in youth-driven DFV prevention initiatives"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_leadership_for_prevention",
+    "lesson_peer_led_prevention_initiatives",
+    "lesson_promoting_respectful_relationships"
+  ],
   "content": []
 }

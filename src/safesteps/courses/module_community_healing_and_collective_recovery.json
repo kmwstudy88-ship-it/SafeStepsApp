@@ -16,6 +16,11 @@
     "Participate in trauma-aware community healing practices",
     "Support environments that promote long-term recovery, resilience, and reconnection"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_community_strengths_and_assets",
+    "lesson_promoting_healing_and_stability",
+    "lesson_long_term_recovery_planning",
+    "lesson_coordinated_collective_action"
+  ],
   "content": []
 }

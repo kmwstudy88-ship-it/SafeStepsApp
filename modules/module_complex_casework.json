@@ -16,6 +16,9 @@
     "Work effectively with clients experiencing multi‑layered trauma",
     "Navigate complex family dynamics while maintaining safety and clarity"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_complex_case_practice",
+    "lesson_complex_family_dynamics"
+  ],
   "content": []
 }

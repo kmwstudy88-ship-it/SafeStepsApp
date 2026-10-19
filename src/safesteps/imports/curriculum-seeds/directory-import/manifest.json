@@ -1,0 +1,1227 @@
+[
+  {
+    "role": "learning-package",
+    "title": "Assessments And Marking Guide",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "c566c3928a363e783acd5c2d23b7a0473a0cd8482e5060ce58dddbed35d74604",
+    "primarySourcePath": "lessons/Assessments and Marking guide/Assessments and Marking Guide.Json",
+    "sourcePaths": [
+      "lessons/Assessments and Marking guide/Assessments and Marking Guide.Json",
+      "sources/lessons-2/8d81f977f122af44--assessments-and-marking-guide.Json",
+      "sources/lessons/8d81f977f122af44--assessments-and-marking-guide.Json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Module Accountability Foundations",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "b0db4d59e38e6716988b03d34adca93d9e57ead0b04d0c2dbe9f2a962d3dfe5f",
+    "primarySourcePath": "lessons/Lessons with AI Facilitator/accountability_foundations/module_accountability_foundations.json",
+    "sourcePaths": [
+      "lessons/Lessons with AI Facilitator/accountability_foundations/module_accountability_foundations.json",
+      "sources/lessons-2/6abb1212b933d81f--module-accountability-foundation.json",
+      "sources/lessons/6abb1212b933d81f--module-accountability-foundation.json"
+    ]
+  },
+  {
+    "role": "course",
+    "title": "active_listening",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "active-listening",
+    "courseTitle": "active_listening",
+    "contentHash": "c55505f6b5b1f1f6d091e04992fee60749a9d539686439b027c576abec7af86a",
+    "primarySourcePath": "lessons/Lessons with AI Facilitator/Active Listening/active_listening.json",
+    "sourcePaths": [
+      "lessons/Lessons with AI Facilitator/Active Listening/active_listening.json",
+      "sources/lessons-2/b73b5e642970ef33--active-listening.json",
+      "sources/lessons/b73b5e642970ef33--active-listening.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Advocacy Skills",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "1040218fea50cb5aa65e91e99a690e4671f7fef9e59e5aa9d534c684ff066079",
+    "primarySourcePath": "lessons/Lessons with AI Facilitator/advocacy_skills/advocacy_skills.json",
+    "sourcePaths": [
+      "lessons/Lessons with AI Facilitator/advocacy_skills/advocacy_skills.json",
+      "sources/lessons-2/888886fece114b29--advocacy-skills.json",
+      "sources/lessons/888886fece114b29--advocacy-skills.json"
+    ]
+  },
+  {
+    "role": "course",
+    "title": "age_appropriate_support",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "age-appropriate-support",
+    "courseTitle": "age_appropriate_support",
+    "contentHash": "26ea3feba635be6aa21ccba50ca00d1e6a7bdd32d8a2c764037ed35b86c62855",
+    "primarySourcePath": "lessons/Lessons with AI Facilitator/Age Appropriate Supports/age_appropriate_support.json",
+    "sourcePaths": [
+      "lessons/Lessons with AI Facilitator/Age Appropriate Supports/age_appropriate_support.json",
+      "sources/lessons-2/c76486021e2c66f4--age-appropriate-support.json",
+      "sources/lessons/c76486021e2c66f4--age-appropriate-support.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Avoiding Retraumatisation",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "5b59f710f42984dd940d8cf887aeb46e7cb835fb8c7ef2bb3656126925dc3a57",
+    "primarySourcePath": "lessons/Lessons with AI Facilitator/avoiding_retraumatisation/avoiding_retraumatisation.json",
+    "sourcePaths": [
+      "lessons/Lessons with AI Facilitator/avoiding_retraumatisation/avoiding_retraumatisation.json",
+      "sources/lessons-2/4d0f529877f6a07d--avoiding-retraumatisation.json",
+      "sources/lessons/4d0f529877f6a07d--avoiding-retraumatisation.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Building Empathy",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "cac5b7c210de7af5cea729e30198a0ade8676d8c0c166ab8f0f823023db80b0c",
+    "primarySourcePath": "lessons/Lessons with AI Facilitator/Building Empathy/building_empathy.json",
+    "sourcePaths": [
+      "lessons/Lessons with AI Facilitator/Building Empathy/building_empathy.json",
+      "sources/lessons-2/ba289c8f7d005484--building-empathy.json",
+      "sources/lessons/ba289c8f7d005484--building-empathy.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Understanding and Managing Emotions",
+    "summary": "",
+    "durationMinutes": 45,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "cb1bddf54bfddfc3ccef4e0bc6e6e89cc1242b3acd263687adadd196cc057ce1",
+    "primarySourcePath": "lessons/Lessons with AI Facilitator/emotional_regulation/module_emotional_regulation.json",
+    "sourcePaths": [
+      "lessons/Lessons with AI Facilitator/emotional_regulation/module_emotional_regulation.json",
+      "sources/lessons-2/b7f2d6e442824520--module-emotional-regulation.json",
+      "sources/lessons/b7f2d6e442824520--module-emotional-regulation.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Understanding Harmful vs Healthy Parenting Behaviours",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "foundations-of-safe-and-effective-parenting",
+    "courseTitle": null,
+    "contentHash": "3f76ec8ad30b5964f9820b2e0c27ce6cbf07e7ef0adbba6661e601cb86dbd283",
+    "primarySourcePath": "lessons/Lessons with AI Facilitator/Understand Harmful vs Healthy Parenting Behaviours/Understanding Harmful vs Healthy Parenting Behaviours",
+    "sourcePaths": [
+      "courses/Courses with AI Facilitator/FOUNDATIONS OF SAFE AND EFFECTIVE PARENTING/Understand Harmful vs Healthy Parenting Behaviours/Understanding Harmful vs Healthy Parenting Behaviours",
+      "lessons/Lessons with AI Facilitator/Understand Harmful vs Healthy Parenting Behaviours/Understanding Harmful vs Healthy Parenting Behaviours"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Understanding The Cycle Of Abuse",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "3126d8443788ed807e24b026ab6dbe21143b576879660d5374fdb4b8b42af18a",
+    "primarySourcePath": "lessons/Lessons with AI Facilitator/Understanding the Cycle of Abuse/Understanding the Cycle of Abuse.json",
+    "sourcePaths": [
+      "lessons/Lessons with AI Facilitator/Understanding the Cycle of Abuse/Understanding the Cycle of Abuse.json",
+      "lessons/Lessons with AI Facilitator/Understanding the Cycle of Abuse/understanding the cycle of abuse.txt",
+      "sources/lessons-2/1c531cefd47afb9e--understanding-the-cycle-of-abuse.json",
+      "sources/lessons-2/1c531cefd47afb9e--understanding-the-cycle-of-abuse.txt",
+      "sources/lessons/1c531cefd47afb9e--understanding-the-cycle-of-abuse.json",
+      "sources/lessons/1c531cefd47afb9e--understanding-the-cycle-of-abuse.txt"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "building_new_patterns",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "05fdd9736b0520bc0801cb272d2678511a393399f2e202ef4bf450c69e4277b1",
+    "primarySourcePath": "lessons/Lessons/building_new_patterns.json",
+    "sourcePaths": [
+      "lessons/Lessons/building_new_patterns.json",
+      "sources/lessons-2/952786e73428269a--building-new-patterns.json",
+      "sources/lessons/952786e73428269a--building-new-patterns.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Building Resilience In Children",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "8b9a742e2a62c0c23de1f5d36a9465275922d4978b3e135ff5de3956fc4944eb",
+    "primarySourcePath": "lessons/Lessons/building_resilience_in_children.json",
+    "sourcePaths": [
+      "lessons/Lessons/building_resilience_in_children.json",
+      "sources/lessons-2/4fcdbd577847ed13--building-resilience-in-children.json",
+      "sources/lessons/4fcdbd577847ed13--building-resilience-in-children.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Building Safe Routines",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "533ee9f92ba196f217b2915ae63cb80054279488f087af6778482b14284e4bbd",
+    "primarySourcePath": "lessons/Lessons/building_safe_routines.json",
+    "sourcePaths": [
+      "lessons/Lessons/building_safe_routines.json",
+      "sources/lessons-2/3353cf0c59a4d657--building-safe-routines.json",
+      "sources/lessons/3353cf0c59a4d657--building-safe-routines.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Challenging Minimisation",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "76176c0206fc933b37530dc292cbf017b305df3e747b9dbd7a901577feba26ca",
+    "primarySourcePath": "lessons/Lessons/challenging_minimisation.json",
+    "sourcePaths": [
+      "lessons/Lessons/challenging_minimisation.json",
+      "sources/lessons-2/3fd0dfa04717839e--challenging-minimisation.json",
+      "sources/lessons/3fd0dfa04717839e--challenging-minimisation.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Co-Regulation Basics",
+    "summary": "",
+    "durationMinutes": 45,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "c0974b9074d02cc00f0c0acb544195eae2bfea1e0c25838dbc64a4e9dfaa7aff",
+    "primarySourcePath": "lessons/Lessons/co_regulation_basics.json",
+    "sourcePaths": [
+      "lessons/Lessons/co_regulation_basics.json",
+      "sources/lessons-2/2db15780435e0dc7--co-regulation-basics.json",
+      "sources/lessons/2db15780435e0dc7--co-regulation-basics.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "Communication Skills",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "62925c5b9f639e82f9cf41b786dbfa1dc8fdccde5b94339e0b12a92bafda761e",
+    "primarySourcePath": "lessons/Lessons/communication_skills.json",
+    "sourcePaths": [
+      "lessons/Lessons/communication_skills.json",
+      "sources/lessons-2/093d90a26ffa17bc--communication-skills.json",
+      "sources/lessons/093d90a26ffa17bc--communication-skills.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Understanding Harm",
+    "summary": "",
+    "durationMinutes": 45,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "c2feace81c20fc45b9c5b1ddd7d17df99f40a7488a2387d01d586cdabfb8076e",
+    "primarySourcePath": "lessons/Lessons/understanding_harm.json",
+    "sourcePaths": [
+      "lessons/Lessons/understanding_harm.json",
+      "sources/lessons-2/1beeff8ee7e9cd90--understanding-harm.json",
+      "sources/lessons/1beeff8ee7e9cd90--understanding-harm.json"
+    ]
+  },
+  {
+    "role": "schema",
+    "title": "Lesson",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "25ff6fd41e550343f86d03330ad5cb364b4b53484b8f046559e89b11b8b7c110",
+    "primarySourcePath": "lessons/packages/content-schema/lesson.schema.json",
+    "sourcePaths": [
+      "lessons/packages/content-schema/lesson.schema.json",
+      "sources/lessons-2/57e1b24be146002e--lesson-schema.json",
+      "sources/lessons/57e1b24be146002e--lesson-schema.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "Answer And Marking Package",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "587373b1638fc968af223d81812de9be5b12d41d22c5553e26c080664b595393",
+    "primarySourcePath": "safesteps-learning-evidence-system/Answer and marking package.Json",
+    "sourcePaths": [
+      "safesteps-learning-evidence-system/Answer and marking package.Json",
+      "sources/safesteps-learning-evidence-system-2/d354b5b2d0878050--answer-and-marking-package.Json",
+      "sources/safesteps-learning-evidence-system/d354b5b2d0878050--answer-and-marking-package.Json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "Following Through With Boundaries",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "healthy-boundaries-and-routines",
+    "courseTitle": null,
+    "contentHash": "40468efac01cec752c45230b7cc923190335e3db5470f375799d1e88ca9072f8",
+    "primarySourcePath": "sources/courses/09a246321d559343--ai-facilitator-and-teacher.json",
+    "sourcePaths": [
+      "sources/courses/09a246321d559343--ai-facilitator-and-teacher.json",
+      "sources/lessons/09a246321d559343--ai-facilitator-and-teacher.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Why Boundaries Create Safety",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "healthy-boundaries-and-routines",
+    "courseTitle": null,
+    "contentHash": "7768c6546871911ef26ce6d6a44bcbd219926385aa65410f3b4088d85091f53e",
+    "primarySourcePath": "sources/courses/14c6b16803176d60--why-boundaries-create-safety.json",
+    "sourcePaths": [
+      "sources/courses/14c6b16803176d60--why-boundaries-create-safety.json",
+      "sources/lessons/14c6b16803176d60--why-boundaries-create-safety.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "15c2675ca98ee615 Consistency And Predictability",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "bc9302fa4ed5e3b91ccffd8afd3b6147770cae71105be88edd853a9951cb5ae9",
+    "primarySourcePath": "sources/courses/15c2675ca98ee615--consistency-and-predictability.json",
+    "sourcePaths": [
+      "sources/courses/15c2675ca98ee615--consistency-and-predictability.json",
+      "sources/lessons/15c2675ca98ee615--consistency-and-predictability.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "The Power of Attunement",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "building-secure-attachment",
+    "courseTitle": null,
+    "contentHash": "c49adda958b87f216396fd7f33d5610060bee4304b518ce2489d67f17d05b346",
+    "primarySourcePath": "sources/courses/294b83792d30ad53--ai-facilitator-teacher-structure.json",
+    "sourcePaths": [
+      "sources/courses/294b83792d30ad53--ai-facilitator-teacher-structure.json",
+      "sources/lessons/294b83792d30ad53--ai-facilitator-teacher-structure.json"
+    ]
+  },
+  {
+    "role": "course",
+    "title": "Mastery Course: Understanding Harm, Safety and Repair",
+    "summary": "",
+    "durationMinutes": 180,
+    "courseId": "masters-understanding-harm",
+    "courseTitle": "Mastery Course: Understanding Harm, Safety and Repair",
+    "contentHash": "61c3ffb9ed54417e4a14919e73b210a39929567f23ba268221dc18c9ebb5a21d",
+    "primarySourcePath": "sources/courses/320f6590ed848c6b--understanding-harm-mastery.json",
+    "sourcePaths": [
+      "sources/courses/320f6590ed848c6b--understanding-harm-mastery.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Following Through With Boundaries",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "healthy-boundaries-and-routines",
+    "courseTitle": null,
+    "contentHash": "a67c98d6159c5b3a88c45a39a776941ed72c52d55ae38694d2a396d4e38f0efd",
+    "primarySourcePath": "sources/courses/41e91687451025da--following-through-with-boundarie.json",
+    "sourcePaths": [
+      "sources/courses/41e91687451025da--following-through-with-boundarie.json",
+      "sources/lessons/41e91687451025da--following-through-with-boundarie.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "SafeStepsAIFacilitatorLessonSchema",
+    "summary": "Production-ready JSON schema for SafeStepsApp 30+ minute interactive lessons with built-in AI Facilitator and Teacher configurations.",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "24d7fb3e309df6f87f83a616335c9172a2c4f7bee866a0246d871c7cff9789fa",
+    "primarySourcePath": "sources/courses/4577e5cab36cf0f1--ai-facilitator-and-teacher-json.txt",
+    "sourcePaths": [
+      "sources/courses/4577e5cab36cf0f1--ai-facilitator-and-teacher-json.txt",
+      "sources/lessons/4577e5cab36cf0f1--ai-facilitator-and-teacher-json.txt"
+    ]
+  },
+  {
+    "role": "course",
+    "title": "Accountability Foundations",
+    "summary": "This course introduces the core principles of accountability, including ownership of behaviour, honesty, and responsibility for impact.",
+    "durationMinutes": null,
+    "courseId": "accountability-basics",
+    "courseTitle": "Accountability Foundations",
+    "contentHash": "7f958e6c325362fdef5b97916b3294280e84422cc1cd907c4ffaab4aa997a43c",
+    "primarySourcePath": "sources/courses/459614e605b7fe98--what-accountability-means.json",
+    "sourcePaths": [
+      "sources/courses/459614e605b7fe98--what-accountability-means.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Repairing Attachment Ruptures",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "building-secure-attachment",
+    "courseTitle": null,
+    "contentHash": "52957b37464a6e285465e5225b6c8d0d8ba18e76fb2fc897c287c9c8a2a07d96",
+    "primarySourcePath": "sources/courses/45f038672c973661--repairing-attachment-ruptures.json",
+    "sourcePaths": [
+      "sources/courses/45f038672c973661--ai-facilitator-teacher-structure.json",
+      "sources/courses/45f038672c973661--repairing-attachment-ruptures.json",
+      "sources/lessons/45f038672c973661--ai-facilitator-teacher-structure.json",
+      "sources/lessons/45f038672c973661--repairing-attachment-ruptures.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Why Boundaries Create Safety",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "healthy-boundaries-and-routines",
+    "courseTitle": null,
+    "contentHash": "141826415a71928e4d5b3318738249e11cd357418938f3cb74c4ea0c04ff80d3",
+    "primarySourcePath": "sources/courses/4c2f13fb071893ee--ai-facliltator-and-teacher.json",
+    "sourcePaths": [
+      "sources/courses/4c2f13fb071893ee--ai-facliltator-and-teacher.json",
+      "sources/lessons/4c2f13fb071893ee--ai-facliltator-and-teacher.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "534c9a30da5b84d1 Ai Teacher Facilitator",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "1ef397b19c62e38fe163c027b7018e6226cbc93d37a0fb4b2bb8219922e6ecef",
+    "primarySourcePath": "sources/courses/534c9a30da5b84d1--ai-teacher-facilitator.json",
+    "sourcePaths": [
+      "sources/courses/534c9a30da5b84d1--ai-teacher-facilitator.json",
+      "sources/lessons/534c9a30da5b84d1--ai-teacher-facilitator.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Identifying Triggers and Patterns",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "emotional-regulation-for-parents",
+    "courseTitle": null,
+    "contentHash": "6f7ffc1dccb91b5f773c85f3a04de63990fe4fefd49b97ed44be75817e29d8c2",
+    "primarySourcePath": "sources/courses/68557964b3412faf--identifying-triggers-and-pattern.json",
+    "sourcePaths": [
+      "sources/courses/68557964b3412faf--identifying-triggers-and-pattern.json",
+      "sources/lessons/68557964b3412faf--identifying-triggers-and-pattern.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Speaking So Children Feel Safe",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "positive-communication-skills",
+    "courseTitle": null,
+    "contentHash": "ff764f8df15d623aa73fa963a015e1a99cb589d6a56dd0d68874384bcd9784fc",
+    "primarySourcePath": "sources/courses/6a3eba8b54577e5a--speaking-so-children-feel-safe.json",
+    "sourcePaths": [
+      "sources/courses/6a3eba8b54577e5a--speaking-so-children-feel-safe.json",
+      "sources/lessons/6a3eba8b54577e5a--speaking-so-children-feel-safe.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Practical Regulation Strategies",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "emotional-regulation-for-parents",
+    "courseTitle": null,
+    "contentHash": "c0c4926990d2fd33a59a3e0f7f712321f66d2bd4e3c8bdf8f9c4e79fbec8f102",
+    "primarySourcePath": "sources/courses/6c6c1c08ba724779--practical-regulation-strategies.json",
+    "sourcePaths": [
+      "sources/courses/6c6c1c08ba724779--practical-regulation-strategies.json",
+      "sources/lessons/6c6c1c08ba724779--practical-regulation-strategies.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "73e9a3c75bdf1a87 Ai Facilitator Json",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "01572823221e00a83bd813b3603d6c02afa9feb2a0358f7f1dc725af8d8e3f32",
+    "primarySourcePath": "sources/courses/73e9a3c75bdf1a87--ai-facilitator-json.txt",
+    "sourcePaths": [
+      "sources/courses/73e9a3c75bdf1a87--ai-facilitator-json.txt",
+      "sources/lessons/73e9a3c75bdf1a87--ai-facilitator-json.txt"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Repairing After Emotional Mistakes",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "emotional-regulation-for-parents",
+    "courseTitle": null,
+    "contentHash": "c7c947e43f95a714f70e2e29828234274d4670aaa7049e67c505c6a386a7f63b",
+    "primarySourcePath": "sources/courses/776f630b649452d9--repairing-after-emotional-mistak.json",
+    "sourcePaths": [
+      "sources/courses/776f630b649452d9--repairing-after-emotional-mistak.json",
+      "sources/lessons/776f630b649452d9--repairing-after-emotional-mistak.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "Balancing Flexibility and Structure",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "healthy-boundaries-and-routines",
+    "courseTitle": null,
+    "contentHash": "73126fc474a95092f8383e6ec23497567b9cabc5bbf646ce536159e3622e9a81",
+    "primarySourcePath": "sources/courses/78bb49093f9d2808--ai-facilitator.json",
+    "sourcePaths": [
+      "sources/courses/78bb49093f9d2808--ai-facilitator.json",
+      "sources/lessons/78bb49093f9d2808--ai-facilitator.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Creating Predictable Routines",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "healthy-boundaries-and-routines",
+    "courseTitle": null,
+    "contentHash": "0caa187379c416e351ec7cc6b77e895fe14e56e7e1e2230e2d7e1d174dda54ac",
+    "primarySourcePath": "sources/courses/7f1fbd37275e963c--creating-predictable-routines.json",
+    "sourcePaths": [
+      "sources/courses/7f1fbd37275e963c--creating-predictable-routines.json",
+      "sources/lessons/7f1fbd37275e963c--creating-predictable-routines.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Reducing Conflict Through Clear Communication",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "positive-communication-skills",
+    "courseTitle": null,
+    "contentHash": "1f8268d55d2a2fbefc40607f21b71491bbbbb83dd3e698cc9e2a022af78245ae",
+    "primarySourcePath": "sources/courses/8b30b5cc82c0e759--reducing-conflict-through-clear-.json",
+    "sourcePaths": [
+      "sources/courses/8b30b5cc82c0e759--reducing-conflict-through-clear-.json",
+      "sources/lessons/8b30b5cc82c0e759--reducing-conflict-through-clear-.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Why Emotional Regulation Matters",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "emotional-regulation-for-parents",
+    "courseTitle": null,
+    "contentHash": "6d35db7c240046debe50503fb958459071c4204c420f20aa452f3ce7f6fe0f29",
+    "primarySourcePath": "sources/courses/95d3fd0fbd29a77b--why-emotional-regulation-matters.json",
+    "sourcePaths": [
+      "sources/courses/95d3fd0fbd29a77b--why-emotional-regulation-matters.json",
+      "sources/lessons/95d3fd0fbd29a77b--why-emotional-regulation-matters.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "SafeStepsAIFacilitatorSchema",
+    "summary": "Production-ready schema for the AI Facilitator / Teacher engine within SafeStepsApp. Manages dynamic pacing, attachment-based coaching, real-time assessment, and dialogue orchestration for 30+ minute lessons.",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "b4f676c7e048fc7e5dadfe5ea1fbad681dbee625cefdf01a027447b40291b69b",
+    "primarySourcePath": "sources/courses/a74d40431d05a62f--ai-facilitator-json.txt",
+    "sourcePaths": [
+      "sources/courses/a74d40431d05a62f--ai-facilitator-json.txt",
+      "sources/lessons/a74d40431d05a62f--ai-facilitator-json.txt"
+    ]
+  },
+  {
+    "role": "course",
+    "title": "Building Secure Attachment & Relational Resilience",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "building-secure-attachment",
+    "courseTitle": "Building Secure Attachment & Relational Resilience",
+    "contentHash": "842645338444442d10ddb1e582cd495a6adcd4977493c84e1558a578c70d8129",
+    "primarySourcePath": "sources/courses/adc0262ce1f08e59--what-secure-attachment-really-me.json",
+    "sourcePaths": [
+      "sources/courses/adc0262ce1f08e59--what-secure-attachment-really-me.json",
+      "sources/lessons/adc0262ce1f08e59--what-secure-attachment-really-me.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Building a Safe Parenting Mindset",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "foundations-of-safe-and-effective-parenting",
+    "courseTitle": null,
+    "contentHash": "605d02c07ee7ef9c3fd522c4b4267e7c9d50144ca53a797d9199cfa969895ee4",
+    "primarySourcePath": "sources/courses/b31f72d1a82e156e--building-a-safe-parenting-mindse.json",
+    "sourcePaths": [
+      "sources/courses/b31f72d1a82e156e--building-a-safe-parenting-mindse.json",
+      "sources/lessons/b31f72d1a82e156e--building-a-safe-parenting-mindse.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "B376a94a2f303e0a Ai Facilitator Configuration Sys",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "081faf1f77312f4b9199c2a85cdb701ed3489baacbe361a9299b1f99d4b3a2f7",
+    "primarySourcePath": "sources/courses/b376a94a2f303e0a--ai-facilitator-configuration-sys.json",
+    "sourcePaths": [
+      "sources/courses/b376a94a2f303e0a--ai-facilitator-configuration-sys.json",
+      "sources/lessons/b376a94a2f303e0a--ai-facilitator-configuration-sys.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "B7fe1f76c75ec70b Ai Facilitator Json",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "60e45c9dc1f605be5402a5452c080198c21173578062767570ab53d6dbc6fed0",
+    "primarySourcePath": "sources/courses/b7fe1f76c75ec70b--ai-facilitator-json.txt",
+    "sourcePaths": [
+      "sources/courses/b7fe1f76c75ec70b--ai-facilitator-json.txt",
+      "sources/lessons/b7fe1f76c75ec70b--ai-facilitator-json.txt"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "C10678d2276d3967 Ai Facilitator Configuration Sys",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "e9e1aaab37ca6534aa994e7a7dabc83ebd8bb0823bd95e7a776d35844e22f038",
+    "primarySourcePath": "sources/courses/c10678d2276d3967--ai-facilitator-configuration-sys.json",
+    "sourcePaths": [
+      "sources/courses/c10678d2276d3967--ai-facilitator-configuration-sys.json",
+      "sources/lessons/c10678d2276d3967--ai-facilitator-configuration-sys.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Building Cooperation Through Connection",
+    "summary": "",
+    "durationMinutes": 15,
+    "courseId": "positive-communication-skills",
+    "courseTitle": null,
+    "contentHash": "e5ba3ff2e61708d73c4467c75b7d1ca2fab0da144130dba3deaf03e770cecdb2",
+    "primarySourcePath": "sources/courses/c21052057ad5d4fa--building-cooperation-through-con.json",
+    "sourcePaths": [
+      "sources/courses/c21052057ad5d4fa--building-cooperation-through-con.json",
+      "sources/lessons/c21052057ad5d4fa--building-cooperation-through-con.json"
+    ]
+  },
+  {
+    "role": "schema",
+    "title": "AIFacilitatorTeacherLessonSchema",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "a468869fb195b8d522de0a3c8fef6c955b9818ca9cffe516de285c46b1d757f5",
+    "primarySourcePath": "sources/courses/c4ea3c3c4670a48b--aifacilitatorteacherlessonschema.json",
+    "sourcePaths": [
+      "sources/courses/c4ea3c3c4670a48b--aifacilitatorteacherlessonschema.json",
+      "sources/lessons/c4ea3c3c4670a48b--aifacilitatorteacherlessonschema.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "Building Long‑Term Connection",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "building-secure-attachment",
+    "courseTitle": null,
+    "contentHash": "e8584ea0b495eb495d0892a266aa546856c5ed2cb7bee4901f522496877837af",
+    "primarySourcePath": "sources/courses/cf2462238b12980b--ai-facilitator-and-teacher.json",
+    "sourcePaths": [
+      "sources/courses/cf2462238b12980b--ai-facilitator-and-teacher.json",
+      "sources/lessons/cf2462238b12980b--ai-facilitator-and-teacher.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "D131bfacb06dac83 Ai Facilitator Teacher",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "7f77e150ecf7e159a7ace7cc7d12aec53aa6d104698f26167c1b73d6ab21d602",
+    "primarySourcePath": "sources/courses/d131bfacb06dac83--ai-facilitator-teacher.json",
+    "sourcePaths": [
+      "sources/courses/d131bfacb06dac83--ai-facilitator-teacher.json",
+      "sources/lessons/d131bfacb06dac83--ai-facilitator-teacher.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Creating Predictable Routines",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "healthy-boundaries-and-routines",
+    "courseTitle": null,
+    "contentHash": "0dd3a35ed245e9cb4f59f6fd82ae0554fd0166a70fd206ae5420c4c739aef7d1",
+    "primarySourcePath": "sources/courses/d31c79cd7bd66555--ai-facliltator-and-teacher.json",
+    "sourcePaths": [
+      "sources/courses/d31c79cd7bd66555--ai-facliltator-and-teacher.json",
+      "sources/lessons/d31c79cd7bd66555--ai-facliltator-and-teacher.json"
+    ]
+  },
+  {
+    "role": "course",
+    "title": "Understanding Harm",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "understanding-harm-basic-imported",
+    "courseTitle": "Understanding Harm",
+    "contentHash": "db6125aa5a992cc80839e9e28086de30d686673647d2004a049d17e3e1f6392c",
+    "primarySourcePath": "sources/courses/d8a88bdb41600475--understanding-harm-basic.Json",
+    "sourcePaths": [
+      "sources/courses/d8a88bdb41600475--understanding-harm-basic.Json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "The Power of Attunement",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "building-secure-attachment",
+    "courseTitle": null,
+    "contentHash": "a63d1c98ed621ac15b319d765fdd3f6fe5af6a2de1f590cb258d7fb0f526187e",
+    "primarySourcePath": "sources/courses/d8d8d6ab484aa094--the-power-of-attunement.json",
+    "sourcePaths": [
+      "sources/courses/d8d8d6ab484aa094--the-power-of-attunement.json",
+      "sources/lessons/d8d8d6ab484aa094--the-power-of-attunement.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "SafeStepsAIFacilitatorTeacherSchema",
+    "summary": "Production-ready JSON schema for SafeStepsApp 30+ minute interactive lessons, fully integrating the AI Facilitator / Teacher engine, attachment theory framework, and interactive lesson elements[cite: 1].",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "bceb3bb0a289f3a538e28e609739bbfb3682a1a6bf8cb18c8b25ef9be7fbaa6f",
+    "primarySourcePath": "sources/courses/e2a861187a5af0fd--ai-facilitator-and-teacher.json",
+    "sourcePaths": [
+      "sources/courses/e2a861187a5af0fd--ai-facilitator-and-teacher.json",
+      "sources/lessons/e2a861187a5af0fd--ai-facilitator-and-teacher.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "Extended30MinLessonSchema",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "2780d6718e787dc5fb4c0c9824d43280d8e3f589c18b553449606ada17e9fcbb",
+    "primarySourcePath": "sources/courses/e8b7e5b49985ee1a--listening-to-understand-not-to-r.json",
+    "sourcePaths": [
+      "sources/courses/e8b7e5b49985ee1a--listening-to-understand-not-to-r.json",
+      "sources/lessons/e8b7e5b49985ee1a--listening-to-understand-not-to-r.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Building Long‑Term Connection",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "building-secure-attachment",
+    "courseTitle": null,
+    "contentHash": "12ed22b9129db4e9f881bfa17b8384ff38112ec400784f1d8e71230d4380373c",
+    "primarySourcePath": "sources/courses/ea01eb7450278ce1--building-long-term-connection.json",
+    "sourcePaths": [
+      "sources/courses/ea01eb7450278ce1--building-long-term-connection.json",
+      "sources/lessons/ea01eb7450278ce1--building-long-term-connection.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "Ea6c42a08038eb81 Ai Teacher Facilitator",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "3118895b9b6cfb121abe0dd4a830052cb9a1086b77d0485dec7a21f50f1b63d8",
+    "primarySourcePath": "sources/courses/ea6c42a08038eb81--ai-teacher-facilitator.json",
+    "sourcePaths": [
+      "sources/courses/ea6c42a08038eb81--ai-teacher-facilitator.json",
+      "sources/lessons/ea6c42a08038eb81--ai-teacher-facilitator.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "What Children Need to Feel Safe",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "child-safety-and-wellbeing",
+    "courseTitle": null,
+    "contentHash": "9f29fd13dc2e71987c39da259c1d7cccfdb30ce999d90b9370d8891c9fccaa33",
+    "primarySourcePath": "sources/courses/f21a6b3d71d979cf--what-children-need-to-feel-safe.json",
+    "sourcePaths": [
+      "sources/courses/f21a6b3d71d979cf--what-children-need-to-feel-safe.json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Balancing Flexibility and Structure",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "healthy-boundaries-and-routines",
+    "courseTitle": null,
+    "contentHash": "c299b0ffec110d409a6dced067c42e10401ba76b0d1ebe36f34d30c79f2055c7",
+    "primarySourcePath": "sources/courses/f331c5d3fcc61a22--balancing-flexibility-and-struct.json",
+    "sourcePaths": [
+      "sources/courses/f331c5d3fcc61a22--balancing-flexibility-and-struct.json",
+      "sources/lessons/f331c5d3fcc61a22--balancing-flexibility-and-struct.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "What Secure Attachment Really Means",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "building-secure-attachment",
+    "courseTitle": null,
+    "contentHash": "4b31d453ca022bb606e035de34bff292f259a17d1b8c2b4a192bbaa89fe5e370",
+    "primarySourcePath": "sources/courses/fa8d5d6e7ee72025--ai-facilitator-teacher-structure.json",
+    "sourcePaths": [
+      "sources/courses/fa8d5d6e7ee72025--ai-facilitator-teacher-structure.json",
+      "sources/lessons/fa8d5d6e7ee72025--ai-facilitator-teacher-structure.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "5ceadcdb7e8cb1aa Mandatory Safeguarding Controls",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "060b07ddfb127bc5fc1896a4578fd23a923649babc19e3f388001fc289598c43",
+    "primarySourcePath": "sources/learning-evidence-system/5ceadcdb7e8cb1aa--mandatory-safeguarding-controls.Json",
+    "sourcePaths": [
+      "sources/learning-evidence-system/5ceadcdb7e8cb1aa--mandatory-safeguarding-controls.Json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "5cf46a8553034028 Evidence Record",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "5a0b1ee153fee1559e9f831a9ad5e37b39d11a094ba1121635e97eeedbe643d2",
+    "primarySourcePath": "sources/learning-evidence-system/5cf46a8553034028--evidence-record.Json",
+    "sourcePaths": [
+      "sources/learning-evidence-system/5cf46a8553034028--evidence-record.Json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "5fab8a6178f3614a Ai Facilitator And Assessor",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "d24d2c2dd311b0ec2e7d57caa5c8fa96b91640895d99240a2146a0988e7361e9",
+    "primarySourcePath": "sources/learning-evidence-system/5fab8a6178f3614a--ai-facilitator-and-assessor.Json",
+    "sourcePaths": [
+      "sources/learning-evidence-system/5fab8a6178f3614a--ai-facilitator-and-assessor.Json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "8d6b749c3530d1eb Evidence Portfolio",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "f62f2066ba7fcf529733e6ff864930f54ef7bb70fcce253151892f66d022dbf5",
+    "primarySourcePath": "sources/learning-evidence-system/8d6b749c3530d1eb--evidence-portfolio.json",
+    "sourcePaths": [
+      "sources/learning-evidence-system/8d6b749c3530d1eb--evidence-portfolio.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "C064a34b9acba7bd Complete Assessment Model",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "e1bd755a0ad84a971c61e93b46d635aa3d556d20963384cac1ccadb305bfc6c8",
+    "primarySourcePath": "sources/learning-evidence-system/c064a34b9acba7bd--complete-assessment-model.Json",
+    "sourcePaths": [
+      "sources/learning-evidence-system/c064a34b9acba7bd--complete-assessment-model.Json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "C1c7e55610d1759a Strong Evidence Rules",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "7c1222e4cc0a8b5e0631a79d31bbb818e2cad67f512ec80232ac519dcb477322",
+    "primarySourcePath": "sources/learning-evidence-system/c1c7e55610d1759a--strong-evidence-rules.Json",
+    "sourcePaths": [
+      "sources/learning-evidence-system/c1c7e55610d1759a--strong-evidence-rules.Json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "Cb2c9714143ec52e The Completed Single Json For Ea",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "9deb9aafaf36d78af39879c73f9b90affcf0f1d6afcfb79d8019774eabfa9870",
+    "primarySourcePath": "sources/learning-evidence-system/cb2c9714143ec52e--the-completed-single-json-for-ea.json",
+    "sourcePaths": [
+      "sources/learning-evidence-system/cb2c9714143ec52e--the-completed-single-json-for-ea.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "F3268d806eb317fa Behaviour Change Evidence",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "5233b9889111568f13f22c579fa4b318e8fba15d44b9537e37a8218bbc7e0ce9",
+    "primarySourcePath": "sources/learning-evidence-system/f3268d806eb317fa--behaviour-change-evidence.Json",
+    "sourcePaths": [
+      "sources/learning-evidence-system/f3268d806eb317fa--behaviour-change-evidence.Json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "F5ee10121ff3525f Production Evidence System",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "4b36bca2c55642aa22eaefc70e0b0446651adc87bd29e20295a3a6dc28a05ab0",
+    "primarySourcePath": "sources/learning-evidence-system/f5ee10121ff3525f--production-evidence-system.Json",
+    "sourcePaths": [
+      "sources/learning-evidence-system/f5ee10121ff3525f--production-evidence-system.Json"
+    ]
+  },
+  {
+    "role": "course",
+    "title": "Dd2667af3afd0617 Understanding The Cycle Of Abuse",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": "Dd2667af3afd0617 Understanding The Cycle Of Abuse",
+    "contentHash": "fa133f25ec01318541113552f8f1a83e252eb554a8eda41920751e444d472514",
+    "primarySourcePath": "sources/lessons-2/dd2667af3afd0617--understanding-the-cycle-of-abuse.Json",
+    "sourcePaths": [
+      "lessons/Lesson & AI Facilitator Script/Understanding the Cycle of Abuse.Json",
+      "sources/lessons-2/dd2667af3afd0617--understanding-the-cycle-of-abuse.Json",
+      "sources/lessons/dd2667af3afd0617--understanding-the-cycle-of-abuse.Json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "Attachment and Relationships",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "c922d1d4e629542dcafe5f0ed9db196f1ff92bd160f8e31cec4bc53bd8ae5e71",
+    "primarySourcePath": "sources/lessons/1aef2e7d23e8d6cc--attachment-and-relationships.Json",
+    "sourcePaths": [
+      "sources/lessons/1aef2e7d23e8d6cc--attachment-and-relationships.Json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "1d8e7416045f2e5d Ai Teacher",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "aa7ade292d52b8cc4b4ec39734fce4a7ddd2088b1898e2e233c56602a3ac5d77",
+    "primarySourcePath": "sources/lessons/1d8e7416045f2e5d--ai-teacher.json",
+    "sourcePaths": [
+      "sources/lessons/1d8e7416045f2e5d--ai-teacher.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "2fc2fbac0df52890 Safesteps Master Scoring Engine",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "0670d1dd27b9baaebe3a6ffc0ead79f6313c105774af3f53d7fdcf309100323a",
+    "primarySourcePath": "sources/lessons/2fc2fbac0df52890--safesteps-master-scoring-engine.json",
+    "sourcePaths": [
+      "sources/lessons/2fc2fbac0df52890--safesteps-master-scoring-engine.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "44145ea0d9f6e3c1 Ai Facilitator Script",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "944d2258dabbc1d54e41b1b5ec7b9dc1249248e98b253a823fde09df35224fc9",
+    "primarySourcePath": "sources/lessons/44145ea0d9f6e3c1--ai-facilitator-script.json",
+    "sourcePaths": [
+      "sources/lessons/44145ea0d9f6e3c1--ai-facilitator-script.json"
+    ]
+  },
+  {
+    "role": "course",
+    "title": "building_empathy",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "building-empathy",
+    "courseTitle": "building_empathy",
+    "contentHash": "6d8ad2be40b9fa0ad2526b5a6c0ffe9fa7f299d72148601fdc989a818f1f2956",
+    "primarySourcePath": "sources/lessons/47bed43a7d30acba--avoiding-retraumatisation-mother.json",
+    "sourcePaths": [
+      "sources/lessons/47bed43a7d30acba--avoiding-retraumatisation-mother.json"
+    ]
+  },
+  {
+    "role": "course",
+    "title": "lesson_avoiding_retraumatisation",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": "lesson-avoiding-retraumatisation",
+    "courseTitle": "lesson_avoiding_retraumatisation",
+    "contentHash": "1d2c8ef615143680333f0aea7a8b3e6e269531c635e4341eac6df50ef4b60ee2",
+    "primarySourcePath": "sources/lessons/49b37d9bbec44454--avoiding-retraumatisation-father.json",
+    "sourcePaths": [
+      "sources/lessons/49b37d9bbec44454--avoiding-retraumatisation-father.json",
+      "sources/lessons/49b37d9bbec44454--what-children-need-to-feel-safe.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "4be19b0e1b48be67 Adaptive Progression Engine",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "0bc3f9f089dadafd31ebf44b328718ab94528697dcdf0d52d76bfe665e9670c7",
+    "primarySourcePath": "sources/lessons/4be19b0e1b48be67--adaptive-progression-engine.json",
+    "sourcePaths": [
+      "sources/lessons/4be19b0e1b48be67--adaptive-progression-engine.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "4d0114c98168d792 Ai Facilitator Script",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "0b23970b6671c4dcfa7236cbfc70d762f836259a697c752e1257d6a9a3bf02d0",
+    "primarySourcePath": "sources/lessons/4d0114c98168d792--ai-facilitator-script.json",
+    "sourcePaths": [
+      "sources/lessons/4d0114c98168d792--ai-facilitator-script.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "Building Resilience in Children",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "a196024e2c5ea53bd92dba4722c9bca018e0c8f104184f7f6a196c3c5f4d4dd5",
+    "primarySourcePath": "sources/lessons/531814989997abfe--building-resilience-in-children.Json",
+    "sourcePaths": [
+      "sources/lessons/531814989997abfe--building-resilience-in-children.Json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "Behavioural and Emotional Signs",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "c947eb5f4a34631851f87d3426033fbe1e2559b467a9da42917bc90754e43c54",
+    "primarySourcePath": "sources/lessons/5979470298b96108--behavioural-and-emotional-signs.Json",
+    "sourcePaths": [
+      "sources/lessons/5979470298b96108--behavioural-and-emotional-signs.Json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "777c45c21f1085be Ai Facilitator",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "d16a147afd828492e57605a82643f1c7230937182cfa68b7e978e7ce478147a6",
+    "primarySourcePath": "sources/lessons/777c45c21f1085be--ai-facilitator.json",
+    "sourcePaths": [
+      "sources/lessons/777c45c21f1085be--ai-facilitator.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "Core Capabilities",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "ac1da0aa368ed3cb3c214eb7b4de575e77f07927f489d9e202e241ff362e3497",
+    "primarySourcePath": "sources/lessons/7890f6162c25e7ef--core-capabilities.Json",
+    "sourcePaths": [
+      "sources/lessons/7890f6162c25e7ef--core-capabilities.Json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "Understanding Developmental Stages - AI Facilitator Script",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "understanding-child-development",
+    "courseTitle": null,
+    "contentHash": "0c4594f52222a0e534aaebb36aeaec383c89b705b7333a0e21370d70040aaf2e",
+    "primarySourcePath": "sources/lessons/8e9ae52d5e4f5ea0--ai-facilitator.json",
+    "sourcePaths": [
+      "sources/lessons/8e9ae52d5e4f5ea0--ai-facilitator.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "Building Safe Routines",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "6b5c914fc1da8e751fd5046554bc13037323858f0e120c4deaa2b58e7de6915e",
+    "primarySourcePath": "sources/lessons/9570b20fe87bd526--building-safe-routines.Json",
+    "sourcePaths": [
+      "sources/lessons/9570b20fe87bd526--building-safe-routines.Json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "What Children Need to Feel Safe",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "child-safety-and-wellbeing",
+    "courseTitle": null,
+    "contentHash": "30d45bd64cd87fd6df7c916f819a97d69ad82a63b6164c795069b9c5d0da2233",
+    "primarySourcePath": "sources/lessons/9aea6cc836a73600--ai-facilitator.json",
+    "sourcePaths": [
+      "sources/lessons/9aea6cc836a73600--ai-facilitator.json"
+    ]
+  },
+  {
+    "role": "learning-package",
+    "title": "Active Listening",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "0da76269c110880f925289437e3f7575e5b2d812fbd2ae5acca9858a56df780c",
+    "primarySourcePath": "sources/lessons/a01650bdedecb7a6--active-listening.Json",
+    "sourcePaths": [
+      "sources/lessons/a01650bdedecb7a6--active-listening.Json"
+    ]
+  },
+  {
+    "role": "lesson",
+    "title": "Understanding Developmental Stages",
+    "summary": "",
+    "durationMinutes": 30,
+    "courseId": "understanding-child-development",
+    "courseTitle": null,
+    "contentHash": "b81023259e5687b874943fbd487c8c08ef001c9e17aa24034ea0e575d8e270ee",
+    "primarySourcePath": "sources/lessons/ad28e7e50f4e3f6f--understand-child-development.json",
+    "sourcePaths": [
+      "sources/lessons/ad28e7e50f4e3f6f--understand-child-development.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "B013f15d6d2d3cfe Ai Facilitator",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "db37831d7770edaec8816c35201bc93b80696ed13b15d1f15c116bb6bfebad11",
+    "primarySourcePath": "sources/lessons/b013f15d6d2d3cfe--ai-facilitator.json",
+    "sourcePaths": [
+      "sources/lessons/b013f15d6d2d3cfe--ai-facilitator.json"
+    ]
+  },
+  {
+    "role": "facilitator",
+    "title": "Bc4c1011bf31b642 Ai Facilitator",
+    "summary": "",
+    "durationMinutes": null,
+    "courseId": null,
+    "courseTitle": null,
+    "contentHash": "139407a6d37e4ef4731a55462957acaa4a77ac0d8a7a9f26251f77420aef7e9b",
+    "primarySourcePath": "sources/lessons/bc4c1011bf31b642--ai-facilitator.json",
+    "sourcePaths": [
+      "sources/lessons/bc4c1011bf31b642--ai-facilitator.json"
+    ]
+  }
+]

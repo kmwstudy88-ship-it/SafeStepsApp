@@ -16,6 +16,11 @@
     "Hold space in a calm, grounded, and non-judgemental way",
     "Avoid retraumatisation and maintain emotional safety during conversations"
   ],
-  "lessons": [],
+  "lessons": [
+    "active_listening",
+    "communication_skills",
+    "conflict_management",
+    "holding_space"
+  ],
   "content": []
 }

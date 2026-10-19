@@ -16,6 +16,12 @@
     "Apply ethical and professional standards in DFV work",
     "Recognise the responsibilities and boundaries of the practitioner role"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_core_capabilities",
+    "scope_and_limitations",
+    "lesson_ethical_practice",
+    "lesson_professional_responsibilities",
+    "supervision_and_support"
+  ],
   "content": []
 }

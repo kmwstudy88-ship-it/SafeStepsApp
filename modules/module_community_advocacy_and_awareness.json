@@ -16,6 +16,11 @@
     "Build partnerships that strengthen local DFV prevention efforts",
     "Amplify survivor voices safely, ethically, and without harm"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_advocacy_principles",
+    "lesson_advocacy_skills",
+    "lesson_community_campaigns",
+    "lesson_ethical_storytelling"
+  ],
   "content": []
 }

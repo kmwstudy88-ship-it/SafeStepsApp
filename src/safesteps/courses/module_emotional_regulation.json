@@ -1,6 +1,26 @@
 {
   "id": "module_emotional_regulation",
   "title": "Emotional Regulation",
+  "description": "This module builds practical skills for recognising triggers, managing parental stress, regulating strong emotions, and supporting children through calm and predictable co-regulation.",
+  "type": "module",
   "level": "general",
-  "lessons": []
+  "tags": [
+    "emotional regulation",
+    "stress",
+    "triggers",
+    "co-regulation",
+    "coping skills"
+  ],
+  "outcomes": [
+    "Identify personal stress signals and common emotional triggers",
+    "Use safe regulation strategies before responding during conflict or distress",
+    "Support children to name, tolerate, and recover from strong emotions"
+  ],
+  "lessons": [
+    "lesson_managing_parental_stress",
+    "regulation_strategies",
+    "co_regulation_basics",
+    "supporting_children_emotionally"
+  ],
+  "content": []
 }

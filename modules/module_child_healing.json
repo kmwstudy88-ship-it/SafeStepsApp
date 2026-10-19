@@ -16,6 +16,12 @@
     "Provide age‑appropriate emotional support to children recovering from DFV",
     "Strengthen children’s resilience and sense of safety"
   ],
-  "lessons": [],
+  "lessons": [
+    "understanding_child_trauma",
+    "understanding_child_cues",
+    "supporting_children_emotionally",
+    "lesson_building_resilience_in_children",
+    "lesson_promoting_healing_and_stability"
+  ],
   "content": []
 }

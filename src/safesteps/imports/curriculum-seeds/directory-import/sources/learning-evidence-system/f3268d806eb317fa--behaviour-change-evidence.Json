@@ -1,0 +1,32 @@
+{
+  "changeMeasurement": {
+    "baseline": {
+      "knowledgeScore": 0,
+      "confidenceScore": 0,
+      "scenarioScore": 0,
+      "protectiveCapacityScore": 0
+    },
+    "postCourse": {
+      "knowledgeScore": 0,
+      "confidenceScore": 0,
+      "scenarioScore": 0,
+      "protectiveCapacityScore": 0
+    },
+    "followUps": [
+      {
+        "interval": "7_days",
+        "reflectionRequired": true
+      },
+      {
+        "interval": "30_days",
+        "skillReviewRequired": true
+      },
+      {
+        "interval": "90_days",
+        "outcomeReviewRequired": true
+      }
+    ],
+    "changeScoreFormula": "postCourseScore - baselineScore",
+    "outcomeStatus": "not_measured"
+  }
+}

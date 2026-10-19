@@ -1,0 +1,57 @@
+{
+  "id": "emotional_regulation_lesson_01",
+  "module": "emotional_regulation",
+  "title": "Understanding and Managing Emotions",
+  "duration_minutes": 45,
+  "difficulty": "foundational",
+  "completion_score": 80,
+  "learning_outcomes": [
+    "Recognise emotional triggers",
+    "Understand emotional escalation",
+    "Apply self-regulation skills",
+    "Strengthen emotional awareness",
+    "Develop emotional recovery plans"
+  ],
+  "lesson_content": [
+    {
+      "section": "Understanding Emotions",
+      "content": "Emotions communicate information about our experiences and needs."
+    },
+    {
+      "section": "Triggers",
+      "content": "Triggers are situations, memories or experiences that create emotional reactions."
+    },
+    {
+      "section": "Emotional Escalation",
+      "content": "Emotions can move from calm to overwhelmed if not recognised early."
+    },
+    {
+      "section": "Regulation Skills",
+      "content": "Breathing, grounding, reflection, movement and healthy communication improve regulation."
+    }
+  ],
+  "activities": [
+    {
+      "title": "Trigger Journal"
+    },
+    {
+      "title": "Grounding Practice"
+    },
+    {
+      "title": "Emotion Thermometer"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is an emotional trigger?",
+      "answer": "A stimulus that creates a strong emotional response."
+    },
+    {
+      "question": "Why is emotional awareness important?",
+      "answer": "It helps recognise and manage emotions effectively."
+    }
+  ],
+  "assessment": {
+    "title": "7 Day Emotional Regulation Tracker"
+  }
+}

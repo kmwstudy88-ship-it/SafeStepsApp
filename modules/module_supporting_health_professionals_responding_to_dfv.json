@@ -16,6 +16,12 @@
     "Recognise and manage vicarious trauma",
     "Use reflective practice to support safe and sustainable work"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_health_led_strategies",
+    "lesson_early_identification",
+    "lesson_recognising_indicators",
+    "lesson_documentation_and_referral",
+    "lesson_coordinated_responses"
+  ],
   "content": []
 }

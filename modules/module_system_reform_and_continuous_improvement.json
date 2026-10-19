@@ -16,6 +16,10 @@
     "Use evidence and evaluation to inform system improvements",
     "Contribute to system reform through collaboration and feedback"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_continuous_improvement",
+    "lesson_contributing_to_system_improvement",
+    "lesson_leading_system_improvement"
+  ],
   "content": []
 }

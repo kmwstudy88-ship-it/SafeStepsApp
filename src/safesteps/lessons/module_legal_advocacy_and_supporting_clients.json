@@ -16,6 +16,11 @@
     "Support clients to understand their rights and options",
     "Use trauma-informed approaches in legal contexts"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_legal_definitions_and_frameworks",
+    "lesson_advocacy_skills",
+    "lesson_court_processes_and_procedures",
+    "supporting_clients_through_system_barriers"
+  ],
   "content": []
 }

@@ -1,0 +1,34 @@
+{
+  "lesson_id": "building_resilience_in_children",
+  "scenario_engine": [
+    {
+      "id": "BR001",
+      "title": "Learning Through Setbacks",
+      "points": 200,
+      "situation": "A child fails an important school assessment and feels discouraged.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Focus on the failure",
+          "score": 25
+        },
+        {
+          "id": "B",
+          "text": "Recognise effort, encourage learning and support recovery",
+          "score": 200
+        },
+        {
+          "id": "C",
+          "text": "Tell the child to get over it",
+          "score": 0
+        }
+      ]
+    }
+  ],
+  "ai_facilitator": {
+    "opening": [
+      "Resilience is the ability to recover, adapt and continue moving forward.",
+      "Children build resilience when they experience support, connection and opportunity."
+    ]
+  }
+}

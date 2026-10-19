@@ -16,6 +16,12 @@
     "Understand age-related risks and dependency dynamics",
     "Provide safe, respectful, and tailored support"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_age_related_risks",
+    "lesson_age_appropriate_support",
+    "lesson_accessible_practice",
+    "lesson_recognising_indicators",
+    "lesson_barriers_and_risks"
+  ],
   "content": []
 }

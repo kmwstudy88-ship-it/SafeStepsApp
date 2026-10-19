@@ -1,0 +1,135 @@
+{
+  "courseId": "understanding_harm_basic",
+  "courseTitle": "Understanding Harm",
+  "courseLevel": "Basic",
+  "courseDurationMinutes": 240,
+  "courseDescription": "An introductory course helping parents and caregivers understand how harm impacts children and how positive change can support safety and wellbeing.",
+
+  "learningOutcomes": [
+    "Define harm",
+    "Identify different forms of harm",
+    "Recognise impacts on children",
+    "Understand accountability",
+    "Develop repair strategies"
+  ],
+
+  "lessons": [
+    {
+      "lessonNumber": 1,
+      "lessonId": "what_is_harm",
+      "title": "What is Harm?",
+      "durationMinutes": 45,
+      "definition": "Harm is any action, behaviour or omission that negatively affects a child's wellbeing, safety, development or relationships."
+    },
+    {
+      "lessonNumber": 2,
+      "lessonId": "types_of_harm",
+      "title": "Types of Harm",
+      "durationMinutes": 45,
+      "definition": "Children may experience emotional, psychological, physical, developmental and relational harm."
+    },
+    {
+      "lessonNumber": 3,
+      "lessonId": "impact_on_children",
+      "title": "Understanding Child Impact",
+      "durationMinutes": 45,
+      "definition": "Harm affects brain development, trust, emotional regulation and relationships."
+    },
+    {
+      "lessonNumber": 4,
+      "lessonId": "accountability",
+      "title": "Recognising Responsibility",
+      "durationMinutes": 45,
+      "definition": "Accountability means understanding the impact of actions and taking responsibility for change."
+    },
+    {
+      "lessonNumber": 5,
+      "lessonId": "repair_and_recovery",
+      "title": "Repair and Recovery",
+      "durationMinutes": 60,
+      "definition": "Repair focuses on rebuilding safety, trust and healthy relationships."
+    }
+  ],
+
+  "courseAssessment": {
+    "totalQuestions": 25,
+    "passMark": 80,
+    "attempts": 3
+  },
+
+  "courseCompetencies": [
+    {
+      "name": "Understanding Harm",
+      "requiredScore": 80
+    },
+    {
+      "name": "Child Impact Awareness",
+      "requiredScore": 80
+    },
+    {
+      "name": "Accountability",
+      "requiredScore": 80
+    },
+    {
+      "name": "Protective Capacity",
+      "requiredScore": 80
+    }
+  ],
+
+  "gradingBands": [
+    {
+      "score": "90-100",
+      "rating": "Advanced"
+    },
+    {
+      "score": "80-89",
+      "rating": "Competent"
+    },
+    {
+      "score": "60-79",
+      "rating": "Developing"
+    },
+    {
+      "score": "0-59",
+      "rating": "Not Yet Competent"
+    }
+  ],
+
+  "aiFacilitator": {
+    "name": "SafeSteps Learning Coach",
+    "role": "Trauma-Informed Parenting Educator",
+
+    "welcomeMessage": [
+      "Welcome to Understanding Harm.",
+      "This course will help you understand how behaviours affect children and how positive change can improve outcomes.",
+      "Learning is focused on reflection, growth and safer parenting practices."
+    ],
+
+    "teachingStyle": [
+      "Supportive",
+      "Trauma-informed",
+      "Strength-based",
+      "Non-judgemental"
+    ],
+
+    "evaluationFramework": {
+      "understanding": 30,
+      "application": 30,
+      "reflection": 20,
+      "behaviourChange": 20
+    }
+  },
+
+  "completionRequirements": {
+    "allLessonsCompleted": true,
+    "minimumQuizScore": 80,
+    "minimumScenarioScore": 80,
+    "allActivitiesCompleted": true,
+    "finalAssessmentPassed": true
+  },
+
+  "certificate": {
+    "certificateName": "Understanding Harm - Foundation Certificate",
+    "awardedUponCompletion": true
+  }
+}

@@ -16,6 +16,12 @@
     "Recognise common myths and misconceptions about DFV",
     "Identify ways communities can contribute to safety and prevention"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_dfv_frameworks",
+    "lesson_myths_and_misconceptions",
+    "lesson_community_strengths_and_assets",
+    "lesson_recognising_indicators",
+    "lesson_community_roles_in_prevention"
+  ],
   "content": []
 }

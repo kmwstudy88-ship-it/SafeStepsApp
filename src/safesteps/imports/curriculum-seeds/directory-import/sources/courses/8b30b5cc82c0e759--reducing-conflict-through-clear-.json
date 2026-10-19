@@ -1,0 +1,170 @@
+{
+  "lessonId": "positive-communication-skills-lesson-3",
+  "courseId": "positive-communication-skills",
+  "title": "Reducing Conflict Through Clear Communication",
+  "metadata": {
+    "version": "1.0.0",
+    "estimatedDurationMinutes": 30,
+    "targetAudience": "Parents and Caregivers",
+    "prerequisites": [
+      "positive-communication-skills-lesson-2"
+    ]
+  },
+  "aiFacilitatorConfig": {
+    "personaRole": "Warm, empathetic parenting coach and conversational guide",
+    "facilitationStrategy": "Socratic questioning, active listening validation, and scaffolded instruction",
+    "pacingConfig": {
+      "openingReflectionMinutes": 5,
+      "coreInstructionMinutes": 10,
+      "interactiveAssessmentsMinutes": 5,
+      "guidedActivityMinutes": 7,
+      "closingReflectionMinutes": 3
+    },
+    "interactionRules": [
+      "Validate learner emotions before offering pedagogical guidance",
+      "Ask one follow-up question at a time to prevent cognitive overload",
+      "Provide immediate constructive feedback on assessment responses"
+    ],
+    "systemPrompts": {
+      "openingGreetingPrompt": "Welcome to Lesson 3: Reducing Conflict Through Clear Communication. In this 30-minute session, we'll explore how simple, direct instructions reduce miscommunication and power struggles.",
+      "quizFacilitationPrompt": "Let's test your understanding of clear communication versus escalating habits through these practical scenarios.",
+      "activityGuidancePrompt": "Take your time with these communication exercises. Simplifying your directions takes intentional practice, especially during busy parts of the day.",
+      "closingReflectionPrompt": "As we conclude today's session, take a moment to reflect on how clear communication creates a calmer dynamic in your home."
+    }
+  },
+  "openingReflection": {
+    "prompt": "Think about a recent moment when an instruction led to frustration or a power struggle. Was the message long, delivered quickly, or accompanied by heightened emotion?",
+    "guidance": "Consider how your child's developmental capacity and emotional state affect their ability to process complex or fast-paced instructions[cite: 4]."
+  },
+  "content": {
+    "overview": "Many conflicts between parents and children come from unclear expectations or mixed messages[cite: 4]. Children need simple, direct communication that matches their developmental level[cite: 4]. When instructions are too long, too fast, or too emotional, children may become confused or overwhelmed[cite: 4].",
+    "coreText": "This lesson teaches parents how to give clear, age‑appropriate instructions and how to check for understanding[cite: 4]. Parents also learn how to avoid communication habits that escalate conflict, such as sarcasm, threats, or shouting[cite: 4]. Clear communication helps children know what is expected and reduces power struggles while helping parents stay calm and consistent[cite: 4].",
+    "keyConcepts": [
+      {
+        "concept": "Developmentally Aligned Directives",
+        "description": "Keeping instructions concise and tailored to a child's cognitive ability to prevent overwhelm and confusion[cite: 4]."
+      },
+      {
+        "concept": "Verification of Understanding",
+        "description": "Checking for comprehension by asking the child to repeat or rephrase expectations rather than assuming complete understanding[cite: 4]."
+      },
+      {
+        "concept": "Eliminating De-escalation Blockers",
+        "description": "Actively avoiding reactive habits like sarcasm, threats, or shouting that trigger defensiveness and heighten conflict[cite: 4]."
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "quiz-1",
+      "type": "multiple-choice",
+      "question": "Why do lengthy, fast, or emotionally charged instructions often fail with children?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "Children deliberately ignore long instructions to test parental limits.",
+          "isCorrect": false,
+          "explanation": "Resistance is rarely intentional defiance; complex directions frequently overwhelm a child's processing capacity[cite: 4]."
+        },
+        {
+          "id": "opt-b",
+          "text": "They overwhelm the child's processing capacity and cause confusion[cite: 4].",
+          "isCorrect": true,
+          "explanation": "Correct! Simple and direct instructions matched to their developmental level prevent cognitive overload[cite: 4]."
+        },
+        {
+          "id": "opt-c",
+          "text": "Children require sarcasm or firm threats to take instructions seriously.",
+          "isCorrect": false,
+          "explanation": "Sarcasm and threats escalate conflict rather than fostering clear understanding and cooperation[cite: 4]."
+        }
+      ]
+    },
+    {
+      "id": "quiz-2",
+      "type": "multiple-choice",
+      "question": "Which of the following communication strategies helps verify that a child has understood an instruction?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "Asking the child to repeat the instruction back in their own words[cite: 4].",
+          "isCorrect": true,
+          "explanation": "Correct! Asking children to restate the expectation in their own words confirms comprehension[cite: 4]."
+        },
+        {
+          "id": "opt-b",
+          "text": "Repeating the instruction three times at an increased volume.",
+          "isCorrect": false,
+          "explanation": "Increasing volume or repeating multi-step demands increases stress and escalates power struggles[cite: 4]."
+        },
+        {
+          "id": "opt-c",
+          "text": "Asking 'Did you hear me?' and moving on immediately.",
+          "isCorrect": false,
+          "explanation": "A simple 'yes' doesn't guarantee the child truly comprehended what was expected of them."
+        }
+      ]
+    }
+  ],
+  "guidedActivities": [
+    {
+      "activityId": "act-1",
+      "title": "Ten-Word Instruction Challenge",
+      "objective": "Practice delivering concise, direct directions to improve child responsiveness.",
+      "estimatedDurationMinutes": 4,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Identify a directive you need to deliver to your child today."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Distill the request down to ten words or fewer before speaking (e.g., 'Please place your shoes in the basket now')[cite: 4]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Deliver the instruction calmly and observe your child's response[cite: 4]."
+        }
+      ]
+    },
+    {
+      "activityId": "act-2",
+      "title": "Comprehension Reflection Loop",
+      "objective": "Establish a feedback loop to confirm clear expectations without raising tension.",
+      "estimatedDurationMinutes": 3,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Give a simple, age-appropriate instruction calmly[cite: 4]."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Ask your child to repeat it back to you in their own words[cite: 4]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Acknowledge their response or gently clarify any misunderstandings[cite: 4]."
+        }
+      ]
+    }
+  ],
+  "actionableTakeaways": [
+    "Keep instructions simple, direct, and tailored to your child's developmental level[cite: 4].",
+    "Avoid communication triggers like sarcasm, threats, or shouting that escalate conflict[cite: 4].",
+    "Check for understanding by having your child repeat directions in their own words[cite: 4]."
+  ],
+  "reflectionQuestions": [
+    {
+      "id": "ref-1",
+      "question": "What communication habits tend to escalate conflict in your home?[cite: 4]"
+    },
+    {
+      "id": "ref-2",
+      "question": "How does your child respond when instructions are simple and clear?[cite: 4]"
+    },
+    {
+      "id": "ref-3",
+      "question": "What changes can you make to reduce misunderstandings?[cite: 4]"
+    }
+  ]
+}

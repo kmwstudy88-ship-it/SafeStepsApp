@@ -16,6 +16,12 @@
     "Apply culturally safe and trauma-informed approaches",
     "Engage CALD communities respectfully and effectively"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_cultural_contexts_and_migration",
+    "lesson_cultural_complexity",
+    "lesson_intersectional_practice",
+    "lesson_inclusive_practice",
+    "lesson_cultural_safety_and_respect"
+  ],
   "content": []
 }

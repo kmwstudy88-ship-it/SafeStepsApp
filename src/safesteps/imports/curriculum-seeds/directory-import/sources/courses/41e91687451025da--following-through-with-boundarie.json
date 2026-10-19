@@ -1,0 +1,41 @@
+{
+  "lessonId": "healthy-boundaries-and-routines-lesson-3",
+  "courseId": "healthy-boundaries-and-routines",
+  "title": "Following Through With Boundaries",
+  "durationMinutes": 30,
+  "content": "Setting boundaries is only half the work—following through is what makes them effective[cite: 2]. Children test boundaries not because they are defiant, but because testing helps them understand where the limits truly are[cite: 2]. When parents follow through calmly and consistently, children learn that boundaries are real and predictable[cite: 2].\n\nThis lesson helps parents understand why follow‑through is difficult, especially when they feel tired, stressed, or guilty[cite: 2]. Parents learn how to stay steady without becoming harsh, and how to use natural and logical consequences instead of punishment[cite: 2].\n\nConsistency builds trust. When children know what to expect, they feel safer and behave more cooperatively[cite: 2].",
+  "assessmentsAndQuizzes": {
+    "quiz": [
+      {
+        "question": "Why do children typically test boundaries?",
+        "options": [
+          "To make their parents angry",
+          "Because testing helps them understand where the limits truly are",
+          "Because they lack any capacity to learn",
+          "To manipulate household schedules"
+        ],
+        "correctAnswer": "Because testing helps them understand where the limits truly are"
+      },
+      {
+        "question": "What should parents use instead of harsh punishment when following through?",
+        "options": [
+          "Ignorance and isolation",
+          "Natural and logical consequences",
+          "Empty threats",
+          "Complete withdrawal of rules"
+        ],
+        "correctAnswer": "Natural and logical consequences"
+      }
+    ],
+    "activities": [
+      "Choose one boundary and practice following through every time for the next three days[cite: 2].",
+      "Write down a calm, consistent response you will use when your child tests this boundary[cite: 2]."
+    ],
+    "reflectionQuestions": [
+      "What makes follow‑through challenging for you?[cite: 2]",
+      "How does your child react when you stay consistent?[cite: 2]",
+      "What support do you need to maintain boundaries during stressful moments?[cite: 2]"
+    ]
+  },
+  "aiFacilitatorScript": "Welcome to lesson three: 'Following Through With Boundaries.' Acknowledge that follow-through is often the hardest part of parenting due to fatigue, guilt, or stress. Guide participants to recognize that boundary testing is a normal developmental check-in rather than personal defiance. Help them script calm, steady responses and practice utilizing natural consequences rather than reactive punishments."
+}

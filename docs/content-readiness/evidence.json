@@ -1,17 +1,13 @@
 {
-  "generatedAt": "2026-09-18T09:46:01.878Z",
-  "status": "incomplete",
+  "generatedAt": "2026-10-10T10:52:50.104Z",
+  "status": "ready",
   "summary": {
-    "blockingIssueCount": 3,
-    "blockingIssues": [
-      "module-required-fields-incomplete",
-      "topics-missing-module-links",
-      "external-source-files-unavailable"
-    ],
+    "blockingIssueCount": 0,
+    "blockingIssues": [],
     "counts": {
-      "lessons": 199,
-      "modules": 83,
-      "topics": 291
+      "lessons": 207,
+      "modules": 85,
+      "topics": 293
     }
   },
   "validations": {
@@ -27,22 +23,16 @@
     },
     "lessonOrdering": {
       "modulesWithOutOfOrderLessonNumbers": [],
-      "modulesWithNoLessonLinks": 82
+      "modulesWithNoLessonLinks": 0
     },
     "requiredTextFields": {
       "lessonsMissingRequiredFields": [],
-      "modulesMissingRequiredFields": [
-        "modules/module_accountability_foundations.json",
-        "modules/module_emotional_regulation.json",
-        "modules/module_relationship_skills.json",
-        "modules/module_sustainable_change.json",
-        "modules/module_system_navigation.json"
-      ],
+      "modulesMissingRequiredFields": [],
       "topicsMissingRequiredFields": []
     },
     "topicModuleLinks": {
       "unresolvedTopicModules": [],
-      "topicsWithEmptyModules": 291
+      "topicsWithEmptyModules": 0
     },
     "moduleLessonLinks": {
       "unresolvedModuleLessons": []
@@ -62,12 +52,15 @@
     },
     "secureAttachment": {
       "path": "topics/secure_attachment.json",
-      "moduleCount": 0,
-      "modules": []
+      "moduleCount": 2,
+      "modules": [
+        "module_child_healing",
+        "module_relationship_skills"
+      ]
     },
     "sharedFiles": {
-      "apiClientBytes": 2101,
-      "modelsBytes": 2492
+      "apiClientBytes": 2198,
+      "modelsBytes": 5381
     },
     "externalSources": {
       "availableCount": 0,
@@ -75,29 +68,95 @@
       "sources": [
         {
           "label": "Lessons 1 to 47",
-          "path": "/home/runner/Downloads/NEW READY TO UPLOAD Courses &  Content/LESSONS/safesteps_lessons_1_to_47.json",
+          "path": "C:\\Users\\Miss&MrRandomCunts\\Downloads\\NEW READY TO UPLOAD Courses &  Content\\LESSONS\\safesteps_lessons_1_to_47.json",
           "available": false,
           "error": "missing"
         },
         {
           "label": "Lessons 252 to 466",
-          "path": "/home/runner/Downloads/NEW READY TO UPLOAD Courses &  Content/LESSONS/safesteps_lessons_30_to_40_min_batch_252_to_466.json",
+          "path": "C:\\Users\\Miss&MrRandomCunts\\Downloads\\NEW READY TO UPLOAD Courses &  Content\\LESSONS\\safesteps_lessons_30_to_40_min_batch_252_to_466.json",
           "available": false,
           "error": "missing"
         },
         {
           "label": "Lessons 468 to 780",
-          "path": "/home/runner/Downloads/NEW READY TO UPLOAD Courses &  Content/LESSONS/safesteps_lessons_30_to_40_min_batch_468_to_780.json",
+          "path": "C:\\Users\\Miss&MrRandomCunts\\Downloads\\NEW READY TO UPLOAD Courses &  Content\\LESSONS\\safesteps_lessons_30_to_40_min_batch_468_to_780.json",
           "available": false,
           "error": "missing"
         },
         {
           "label": "Parent challenges",
-          "path": "/home/runner/Downloads/NEW READY TO UPLOAD Courses &  Content/safesteps_parent_challenges_pack/safesteps_parent_challenges.json",
+          "path": "C:\\Users\\Miss&MrRandomCunts\\Downloads\\NEW READY TO UPLOAD Courses &  Content\\safesteps_parent_challenges_pack\\safesteps_parent_challenges.json",
           "available": false,
           "error": "missing"
         }
       ]
+    },
+    "directoryImport": {
+      "available": true,
+      "path": "src/safesteps/imports/curriculum-seeds/directory-import/import-report.json",
+      "counts": {
+        "discoveredFiles": 186,
+        "parsedJsonFiles": 169,
+        "uniqueDocuments": 88,
+        "duplicateGroups": 57,
+        "malformedFiles": 0,
+        "repairedFiles": 12,
+        "rejectedFiles": 0,
+        "ignoredFiles": 17
+      },
+      "malformed": [],
+      "repaired": [
+        {
+          "sourcePath": "lessons/Assessments and Marking guide/Assessments and Marking Guide.Json",
+          "repair": "wrapped-top-level-property"
+        },
+        {
+          "sourcePath": "lessons/Lessons/building_new_patterns.json",
+          "repair": "merged-concatenated-objects"
+        },
+        {
+          "sourcePath": "lessons/Lessons/co_regulation_basics.json",
+          "repair": "closed-truncated-co-regulation-structure"
+        },
+        {
+          "sourcePath": "safesteps-learning-evidence-system/Answer and marking package.Json",
+          "repair": "removed-trailing-backticks"
+        },
+        {
+          "sourcePath": "sources/lessons-2/2db15780435e0dc7--co-regulation-basics.json",
+          "repair": "closed-truncated-co-regulation-structure"
+        },
+        {
+          "sourcePath": "sources/lessons-2/8d81f977f122af44--assessments-and-marking-guide.Json",
+          "repair": "wrapped-top-level-property"
+        },
+        {
+          "sourcePath": "sources/lessons-2/952786e73428269a--building-new-patterns.json",
+          "repair": "merged-concatenated-objects"
+        },
+        {
+          "sourcePath": "sources/lessons/2db15780435e0dc7--co-regulation-basics.json",
+          "repair": "closed-truncated-co-regulation-structure"
+        },
+        {
+          "sourcePath": "sources/lessons/8d81f977f122af44--assessments-and-marking-guide.Json",
+          "repair": "wrapped-top-level-property"
+        },
+        {
+          "sourcePath": "sources/lessons/952786e73428269a--building-new-patterns.json",
+          "repair": "merged-concatenated-objects"
+        },
+        {
+          "sourcePath": "sources/safesteps-learning-evidence-system-2/d354b5b2d0878050--answer-and-marking-package.Json",
+          "repair": "removed-trailing-backticks"
+        },
+        {
+          "sourcePath": "sources/safesteps-learning-evidence-system/d354b5b2d0878050--answer-and-marking-package.Json",
+          "repair": "removed-trailing-backticks"
+        }
+      ],
+      "rejected": []
     },
     "importVersions": {
       "hasImports": false,

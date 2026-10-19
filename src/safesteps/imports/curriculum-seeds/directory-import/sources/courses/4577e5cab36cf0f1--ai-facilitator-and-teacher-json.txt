@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SafeStepsAIFacilitatorLessonSchema",
+  "type": "object",
+  "description": "Production-ready JSON schema for SafeStepsApp 30+ minute interactive lessons with built-in AI Facilitator and Teacher configurations.",
+  "required": [
+    "lessonId",
+    "courseId",
+    "title",
+    "metadata",
+    "aiFacilitatorConfig",
+    "openingReflection",
+    "content",
+    "assessments",
+    "guidedActivities",
+    "actionableTakeaways",
+    "reflectionQuestions"
+  ],
+  "properties": {
+    "lessonId": {
+      "type": "string",
+      "description": "Unique identifier for the lesson (e.g., positive-communication-skills-lesson-2)"
+    },
+    "courseId": {
+      "type": "string",
+      "description": "Unique identifier for the course tier/category"
+    },
+    "title": {
+      "type": "string",
+      "description": "The title of the lesson"
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["version", "estimatedDurationMinutes", "targetAudience"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "example": "1.0.0"
+        },
+        "estimatedDurationMinutes": {
+          "type": "integer",
+          "minimum": 30,
+          "description": "Must be set to 30 minutes or longer to support deep reflection, extended practice, and interactive AI facilitation."
+        },
+        "targetAudience": {
+          "type": "string",
+          "example": "Parents and Caregivers"
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "aiFacilitatorConfig": {
+      "type": "object",
+      "description": "Runtime instructions, personality, pacing, and prompt templates for the AI teacher/facilitator",
+      "required": [
+        "personaRole",
+        "facilitationStrategy",
+        "pacingConfig",
+        "interactionRules",
+        "systemPrompts"
+      ],
+      "properties": {
+        "personaRole": {
+          "type": "string",
+          "description": "Role definition for the AI agent (e.g., Warm, empathetic parenting coach grounded in attachment theory)",
+          "example": "Warm, empathetic parenting coach and conversational guide"
+        },
+        "facilitationStrategy": {
+          "type": "string",
+          "description": "Pedagogical methodology utilized by the AI",
+          "example": "Socratic questioning, active listening validation, and scaffolded instruction"
+        },
+        "pacingConfig": {
+          "type": "object",
+          "description": "Time allocations for each phase of the 30+ minute session",
+          "required": [
+            "openingReflectionMinutes",
+            "coreInstructionMinutes",
+            "interactiveAssessmentsMinutes",
+            "guidedActivityMinutes",
+            "closingReflectionMinutes"
+          ],
+          "properties": {
+            "openingReflectionMinutes": { "type": "integer", "default": 5 },
+            "coreInstructionMinutes": { "type": "integer", "default": 10 },
+            "interactiveAssessmentsMinutes": { "type": "integer", "default": 5 },
+            "guidedActivityMinutes": { "type": "integer", "default": 7 },
+            "closingReflectionMinutes": { "type": "integer", "default": 3 }
+          }
+        },
+        "interactionRules": {
+          "type": "array",
+          "description": "Behavioral constraints and rules for AI responses",
+          "items": { "type": "string" },
+          "example": [
+            "Validate learner emotions before offering pedagogical guidance",
+            "Ask one follow-up question at a time to prevent cognitive overload",
+            "Provide immediate constructive feedback on assessment responses"
+          ]
+        },
+        "systemPrompts": {
+          "type": "object",
+          "description": "Dynamic prompt templates injected into the LLM context during session state transitions",
+          "required": [
+            "openingGreetingPrompt",
+            "quizFacilitationPrompt",
+            "activityGuidancePrompt",
+            "closingReflectionPrompt"
+          ],
+          "properties": {
+            "openingGreetingPrompt": { "type": "string" },
+            "quizFacilitationPrompt": { "type": "string" },
+            "activityGuidancePrompt": { "type": "string" },
+            "closingReflectionPrompt": { "type": "string" }
+          }
+        }
+      }
+    },
+    "openingReflection": {
+      "type": "object",
+      "required": ["prompt", "guidance"],
+      "properties": {
+        "prompt": {
+          "type": "string",
+          "description": "Initial priming question for the learner"
+        },
+        "guidance": {
+          "type": "string",
+          "description": "Contextual instructions to guide learner thought"
+        }
+      }
+    },
+    "content": {
+      "type": "object",
+      "required": ["overview", "coreText", "keyConcepts"],
+      "properties": {
+        "overview": { "type": "string" },
+        "coreText": { "type": "string" },
+        "keyConcepts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["concept", "description"],
+            "properties": {
+              "concept": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "assessments": {
+      "type": "array",
+      "description": "Formative knowledge checks and scenario evaluations",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "question", "options"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["multiple-choice", "open-ended", "scenario-analysis"]
+          },
+          "question": { "type": "string" },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "text", "isCorrect", "explanation"],
+              "properties": {
+                "id": { "type": "string" },
+                "text": { "type": "string" },
+                "isCorrect": { "type": "boolean" },
+                "explanation": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "guidedActivities": {
+      "type": "array",
+      "description": "Actionable multi-step exercises designed for real-world application",
+      "items": {
+        "type": "object",
+        "required": ["activityId", "title", "objective", "estimatedDurationMinutes", "steps"],
+        "properties": {
+          "activityId": { "type": "string" },
+          "title": { "type": "string" },
+          "objective": { "type": "string" },
+          "estimatedDurationMinutes": { "type": "integer" },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["stepNumber", "instruction"],
+              "properties": {
+                "stepNumber": { "type": "integer" },
+                "instruction": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "actionableTakeaways": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "reflectionQuestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "question"],
+        "properties": {
+          "id": { "type": "string" },
+          "question": { "type": "string" }
+        }
+      }
+    }
+  }
+}

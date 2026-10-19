@@ -16,6 +16,12 @@
     "Challenge harmful norms and promote equality",
     "Support youth-led initiatives and leadership"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_adolescent_dfv_dynamics",
+    "lesson_age_appropriate_support",
+    "lesson_promoting_respectful_relationships",
+    "lesson_leadership_for_prevention",
+    "lesson_peer_led_prevention_initiatives"
+  ],
   "content": []
 }

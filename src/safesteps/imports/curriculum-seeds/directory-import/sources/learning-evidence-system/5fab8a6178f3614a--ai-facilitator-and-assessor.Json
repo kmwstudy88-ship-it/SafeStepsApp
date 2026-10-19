@@ -1,0 +1,25 @@
+{
+  "aiFacilitator": {
+    "openingScript": [],
+    "sectionTeachingScripts": [],
+    "discussionPrompts": [],
+    "scenarioCoaching": [],
+    "reflectionPrompts": [],
+    "modelAnswers": [],
+    "markingInstructions": [],
+    "feedbackLibrary": {
+      "competent": [],
+      "developing": [],
+      "incorrect": [],
+      "unsafeResponse": [],
+      "remediationRequired": []
+    },
+    "safeguards": {
+      "neverDiagnose": true,
+      "neverDetermineLegalFacts": true,
+      "neverTreatCompletionAsProofOfBehaviourChange": true,
+      "escalateImmediateSafetyConcerns": true,
+      "requireHumanReviewForHighRiskResponses": true
+    }
+  }
+}

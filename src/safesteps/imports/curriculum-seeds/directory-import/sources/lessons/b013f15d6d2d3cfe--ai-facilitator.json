@@ -1,0 +1,21 @@
+{
+  "lesson_id": "avoiding_retraumatisation",
+  "ai_facilitator": {
+    "opening": [
+      "Welcome to Avoiding Retraumatisation.",
+      "This lesson focuses on creating emotional safety.",
+      "Many challenging behaviours are survival responses rather than deliberate defiance."
+    ],
+    "coaching_prompts": [
+      "What might this child be feeling right now?",
+      "What could help them feel safer?",
+      "How can you increase predictability in this situation?",
+      "What choices can you offer?"
+    ],
+    "completion": [
+      "Well done.",
+      "Emotional safety is one of the strongest foundations for healing.",
+      "Continue practising calm, predictable responses."
+    ]
+  }
+}

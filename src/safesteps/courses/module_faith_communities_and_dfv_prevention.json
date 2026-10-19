@@ -16,6 +16,11 @@
     "Respond safely and ethically to disclosures within faith communities",
     "Promote faith environments that support safety, dignity, and equality"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_dfv_in_faith_contexts",
+    "lesson_building_safe_faith_environments",
+    "lesson_cultural_safety_and_respect",
+    "lesson_referral_pathways"
+  ],
   "content": []
 }

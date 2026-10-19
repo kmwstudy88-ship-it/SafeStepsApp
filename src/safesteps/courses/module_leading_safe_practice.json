@@ -16,6 +16,11 @@
     "Model trauma-informed and ethical behaviour across teams",
     "Build organisational cultures that prioritise safety, wellbeing, and accountability"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_leadership_responsibilities",
+    "lesson_modelling_safe_practice",
+    "lesson_building_safe_cultures",
+    "lesson_leading_multidisciplinary_teams"
+  ],
   "content": []
 }

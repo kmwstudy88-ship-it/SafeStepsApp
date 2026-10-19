@@ -1,6 +1,26 @@
 {
   "id": "module_sustainable_change",
   "title": "Sustainable Change",
+  "description": "This module supports lasting behaviour change by helping parents understand change principles, interrupt harmful patterns, practise new responses, and prepare for setbacks without abandoning accountability.",
+  "type": "module",
   "level": "general",
-  "lessons": []
+  "tags": [
+    "behaviour change",
+    "new patterns",
+    "maintenance",
+    "relapse prevention",
+    "reflection"
+  ],
+  "outcomes": [
+    "Explain how repeated practice, feedback, and accountability support behaviour change",
+    "Identify high-risk situations and interrupt familiar harmful patterns",
+    "Create a maintenance and setback plan with observable actions and support"
+  ],
+  "lessons": [
+    "lesson_behaviour_change_principles",
+    "interrupting_violent_patterns",
+    "building_new_patterns",
+    "relapse_prevention"
+  ],
+  "content": []
 }

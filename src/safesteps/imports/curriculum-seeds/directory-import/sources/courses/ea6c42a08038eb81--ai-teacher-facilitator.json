@@ -1,0 +1,168 @@
+{
+  "facilitatorConfig": {
+    "role": "AI Teacher & Facilitator",
+    "persona": "Warm, empathetic, grounded, and encouraging parenting guide",
+    "pedagogicalFramework": {
+      "model": "Scaffolded Social-Emotional Learning (SEL) & Relational Safety",
+      "pacing": {
+        "totalDurationMinutes": 30,
+        "breakdown": {
+          "openingReflectionMinutes": 5,
+          "coreConceptInstructionMinutes": 10,
+          "interactiveAssessmentMinutes": 5,
+          "guidedPracticeActivityMinutes": 7,
+          "closingIntegrationMinutes": 3
+        }
+      },
+      "facilitationRules": [
+        "Validate learner reflections before providing structured insight",
+        "Ask single, focused open-ended questions to avoid cognitive overload",
+        "Offer constructive, non-judgmental feedback on quiz responses",
+        "Emphasize progress, presence, and repair over perfection"
+      ]
+    },
+    "prompts": {
+      "lessonOpening": "Welcome! In this 30-minute session, we will explore core concepts of relational safety, emotional presence, and practical parenting tools.",
+      "assessmentTransition": "Let's review these concepts through a couple of scenario-based questions to deepen your understanding.",
+      "activityTransition": "Now, let's turn theory into practice with a guided exercise you can apply in your daily life.",
+      "closingReflection": "To wrap up today's lesson, take a moment to integrate what you've learned and consider how it applies to your journey."
+    }
+  },
+  "lessonModules": [
+    {
+      "lessonId": "foundations-of-safe-and-effective-parenting-lesson-2",
+      "courseId": "foundations-of-safe-and-effective-parenting",
+      "title": "Understanding Harmful vs Healthy Parenting Behaviours",
+      "estimatedDurationMinutes": 30,
+      "metadata": {
+        "version": "1.0.0",
+        "targetAudience": "Parents and Caregivers",
+        "prerequisites": []
+      },
+      "aiFacilitatorConfig": {
+        "personaRole": "Warm, non-judgmental parenting coach focused on self-awareness, emotional regulation, and stress management",
+        "systemPrompts": {
+          "openingGreetingPrompt": "Welcome to Lesson 2: Understanding Harmful vs Healthy Parenting Behaviours. In this 30-minute session, we will explore parenting patterns without shame or blame, focusing on awareness and small, high-impact shifts.",
+          "quizFacilitationPrompt": "Let's assess key distinctions between healthy and harmful parenting patterns and how stress influences daily responses.",
+          "activityGuidancePrompt": "Take a moment to identify triggers for specific behaviors and practice a brief pause to shift your emotional response.",
+          "closingReflectionPrompt": "As we conclude today's session, reflect on the behaviors you experienced growing up and the positive model you want to bring into your home."
+        },
+        "safetyAndIntervention": {
+          "sosToolkitTrigger": "Detect feelings of guilt, shame, or self-blame regarding past parenting behaviors and provide non-judgmental, grounded reassurance"
+        }
+      },
+      "openingReflection": {
+        "prompt": "What behaviors did you learn growing up that you want to change, and how does stress influence the way you respond to your child?[cite: 9]",
+        "guidance": "Consider how exhaustion, stress, or childhood patterns impact your communication and emotional availability[cite: 9]."
+      },
+      "content": {
+        "overview": "Parenting behaviours fall into patterns that either build safety or undermine it[cite: 9]. Healthy behaviours include calm communication, consistent boundaries, and emotional availability[cite: 9]. Harmful behaviours often come from stress, exhaustion, or repeating what we experienced growing up[cite: 9]. These may include yelling, unpredictable reactions, or withdrawing emotionally[cite: 9].",
+        "coreText": "This lesson helps parents recognise these patterns without shame[cite: 9]. Behaviour change begins with awareness, not blame[cite: 9]. When parents understand the impact of their actions, they can begin replacing harmful habits with healthier ones[cite: 9]. We explore how children interpret parental behaviour and how even small shifts—like pausing before responding—can dramatically change the emotional climate of the home[cite: 9].",
+        "keyConcepts": [
+          {
+            "concept": "Awareness Without Shame",
+            "description": "Recognizing harmful patterns (such as yelling or emotional withdrawal) as reflections of stress or learned habits rather than personal failures, opening the door to growth[cite: 9]."
+          },
+          {
+            "concept": "Healthy vs. Harmful Patterns",
+            "description": "Distinguishing between behaviors that build relational safety (calm communication, emotional availability) and those that undermine safety (unpredictable reactions, emotional withdrawal)[cite: 9]."
+          },
+          {
+            "concept": "The Power of the Pause",
+            "description": "Using small intentional pauses before reacting to alter the emotional climate of the home and break reactive cycles[cite: 9]."
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "id": "quiz-1",
+          "type": "multiple-choice",
+          "taxonomyLevel": "Knowledge Recall",
+          "question": "Where do harmful parenting behaviors—such as yelling or emotional withdrawal—most frequently originate?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "An intentional desire to cause emotional harm to the child.",
+              "isCorrect": false,
+              "explanation": "Harmful behaviors rarely stem from bad intent; they usually originate from stress, fatigue, or unexamined childhood patterns[cite: 9]."
+            },
+            {
+              "id": "opt-b",
+              "text": "Stress, exhaustion, or automatically repeating what was experienced growing up[cite: 9].",
+              "isCorrect": true,
+              "explanation": "Correct! Stress, exhaustion, and learned childhood behaviors are common drivers of harmful parenting patterns[cite: 9]."
+            },
+            {
+              "id": "opt-c",
+              "text": "Inherent character flaws that cannot be changed.",
+              "isCorrect": false,
+              "explanation": "Behavior change begins with awareness, not blame or permanent labels[cite: 9]."
+            }
+          ]
+        },
+        {
+          "id": "quiz-2",
+          "type": "scenario-analysis",
+          "taxonomyLevel": "Applied Understanding",
+          "question": "A parent feels overwhelmed by work and responds sharply to their child's question. What small shift can help change the emotional climate in this moment?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Taking a brief pause before responding to move from stress-reaction to calm communication[cite: 9].",
+              "isCorrect": true,
+              "explanation": "Correct! Pausing before responding interrupts automatic stress reactions and creates a calmer environment[cite: 9]."
+            },
+            {
+              "id": "opt-b",
+              "text": "Withdrawing emotionally for the rest of the day to avoid further conflict.",
+              "isCorrect": false,
+              "explanation": "Emotional withdrawal undermines relational safety rather than restoring healthy communication[cite: 9]."
+            },
+            {
+              "id": "opt-c",
+              "text": "Blaming the child for asking questions during a busy time.",
+              "isCorrect": false,
+              "explanation": "Blame blocks self-awareness and prevents positive behavior shifts[cite: 9]."
+            }
+          ]
+        }
+      ],
+      "guidedActivities": [
+        {
+          "activityId": "act-1",
+          "title": "Behavior & Trigger Identification",
+          "objective": "Pinpoint specific triggers driving reactive behaviors and identify replacement habits.",
+          "estimatedDurationMinutes": 4,
+          "steps": [
+            "Identify one behavior you want to reduce and one healthy behavior you want to increase[cite: 9].",
+            "Write down the specific triggers (e.g., fatigue, mess, feeling rushed) that lead to each behavior[cite: 9].",
+            "Formulate a plan for recognizing these triggers before reacting."
+          ]
+        },
+        {
+          "activityId": "act-2",
+          "title": "10-Second Pause Practice",
+          "objective": "Build emotional self-regulation through intentional breathing and delayed response.",
+          "estimatedDurationMinutes": 3,
+          "steps": [
+            "When feeling stressed or reactive, stop and take a deliberate 10-second pause[cite: 9].",
+            "Take two deep breaths while noticing your physical emotional state.",
+            "Choose a calm, intentional response rather than an automatic reaction[cite: 9]."
+          ]
+        }
+      ],
+      "actionableTakeaways": [
+        "Recognize harmful patterns without blame or self-shame; awareness is the first step to change[cite: 9].",
+        "Replace stress-driven reactions like yelling or emotional withdrawal with calm communication and availability[cite: 9].",
+        "A simple 10-second pause during stressful moments can transform the emotional climate of your home[cite: 9]."
+      ],
+      "closingReflection": {
+        "questions": [
+          "What behaviours did you learn growing up that you want to change?[cite: 9]",
+          "How does stress influence the way you respond to your child?[cite: 9]",
+          "What healthy behaviour do you want to model more consistently?[cite: 9]"
+        ]
+      }
+    }
+  ]
+}

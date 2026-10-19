@@ -1,0 +1,62 @@
+{
+  "lesson_id": "building_empathy",
+  "adaptive_scenarios": [
+    {
+      "id": "BE001",
+      "title": "Morning Refusal",
+      "difficulty": "easy",
+      "points": 100,
+      "situation": "Your child refuses to get dressed for school and starts yelling.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Threaten punishment",
+          "score": 0,
+          "competency": "needs_support"
+        },
+        {
+          "id": "B",
+          "text": "Pause, validate feelings and offer choices",
+          "score": 100,
+          "competency": "advanced"
+        },
+        {
+          "id": "C",
+          "text": "Ignore the child",
+          "score": 25,
+          "competency": "developing"
+        }
+      ]
+    },
+    {
+      "id": "BE002",
+      "title": "Public Meltdown",
+      "difficulty": "medium",
+      "points": 150,
+      "situation": "Your child has a public emotional meltdown in a supermarket.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Stay calm, move to quieter space and co-regulate",
+          "score": 150
+        },
+        {
+          "id": "B",
+          "text": "Argue in front of others",
+          "score": 0
+        },
+        {
+          "id": "C",
+          "text": "Leave child unsupported",
+          "score": 25
+        }
+      ]
+    }
+  ],
+  "reflection_scoring": {
+    "self_awareness": 25,
+    "empathy": 25,
+    "behaviour_change": 25,
+    "application": 25
+  }
+}

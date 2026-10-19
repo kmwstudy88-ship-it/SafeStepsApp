@@ -17,6 +17,11 @@
     "Embed trauma-informed and ethical frameworks across teams and systems",
     "Use quality improvement systems to drive sustainable organisational growth"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_building_safe_organisational_cultures",
+    "lesson_change_leadership",
+    "lesson_continuous_improvement",
+    "lesson_quality_and_improvement_systems"
+  ],
   "content": []
 }

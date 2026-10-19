@@ -1,0 +1,28 @@
+"assessment_and_marking_guide": {
+  "evaluation_approach": "Qualitative and trauma-informed; focused on self-reflection, emotional growth, and practical application rather than rigid grading.",
+  "marking_criteria": [
+    {
+      "criterion": "Comprehension of Core Concepts",
+      "description": "Does the parent correctly identify how stress or trauma impacts behavior?",
+      "scoring_rubric": {
+        "developing": "Views behavior solely as defiance or disobedience.",
+        "proficient": "Recognizes that stress impacts behavior and attempts to look beneath the surface.",
+        "advanced": "Consistently connects stress responses to underlying emotional safety and co-regulation needs."
+      }
+    },
+    {
+      "criterion": "Application of Practice Activities",
+      "description": "Does the parent engage with practical strategies (e.g., grounding, calm scripts)?",
+      "scoring_rubric": {
+        "developing": "Resists or struggles to identify practical routines.",
+        "proficient": "Identifies at least one actionable routine where skills can be applied daily.",
+        "advanced": "Actively role-plays and adapts strategies to fit diverse household scenarios."
+      }
+    }
+  ],
+  "facilitator_marking_tips": [
+    "Validate the parent's emotional honesty during reflection prompts.",
+    "Avoid punitive language; frame 'developing' responses as opportunities for growth.",
+    "Reinforce small wins and consistency over perfection."
+  ]
+}

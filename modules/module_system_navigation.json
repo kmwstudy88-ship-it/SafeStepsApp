@@ -1,6 +1,28 @@
 {
   "id": "module_system_navigation",
   "title": "System Navigation",
+  "description": "This module helps parents understand service and court pathways, prepare clear documentation, seek appropriate support, and advocate safely when systems are complex or difficult to access.",
+  "type": "module",
   "level": "general",
-  "lessons": []
+  "tags": [
+    "system navigation",
+    "services",
+    "advocacy",
+    "documentation",
+    "court processes"
+  ],
+  "outcomes": [
+    "Identify relevant services and choose appropriate referral or support pathways",
+    "Prepare accurate records and questions for casework, service, and court interactions",
+    "Use practical advocacy strategies while maintaining safety and respectful communication"
+  ],
+  "lessons": [
+    "lesson_connecting_to_services",
+    "lesson_navigating_services",
+    "supporting_clients_through_system_barriers",
+    "documentation_and_case_notes",
+    "lesson_court_processes_and_procedures",
+    "advocacy_skills"
+  ],
+  "content": []
 }

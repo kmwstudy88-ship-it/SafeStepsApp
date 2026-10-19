@@ -17,6 +17,12 @@
     "Advocate effectively for clients in complex or unsafe system interactions",
     "Coordinate multi‑service responses to support client safety and wellbeing"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_dfv_system_overview",
+    "lesson_navigating_services",
+    "supporting_clients_through_system_barriers",
+    "lesson_advocacy_skills",
+    "lesson_documentation_and_case_notes"
+  ],
   "content": []
 }

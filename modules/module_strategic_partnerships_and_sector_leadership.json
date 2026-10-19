@@ -17,6 +17,11 @@
     "Provide sector leadership through collaboration, influence, and advocacy",
     "Contribute to policy, system improvement, and cross-sector coordination"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_building_strategic_partnerships",
+    "lesson_local_partnerships",
+    "lesson_collaboration_principles",
+    "lesson_change_leadership"
+  ],
   "content": []
 }

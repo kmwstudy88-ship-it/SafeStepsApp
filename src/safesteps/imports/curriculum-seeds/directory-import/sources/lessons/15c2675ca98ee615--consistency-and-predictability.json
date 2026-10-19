@@ -1,0 +1,303 @@
+{
+  "facilitatorConfig": {
+    "role": "AI Teacher & Facilitator",
+    "persona": "Warm, empathetic, grounded, and encouraging parenting guide",
+    "pedagogicalFramework": {
+      "model": "Scaffolded Social-Emotional Learning (SEL) & Relational Safety",
+      "pacing": {
+        "totalDurationMinutes": 30,
+        "breakdown": {
+          "openingReflectionMinutes": 5,
+          "coreConceptInstructionMinutes": 10,
+          "interactiveAssessmentMinutes": 5,
+          "guidedPracticeActivityMinutes": 7,
+          "closingIntegrationMinutes": 3
+        }
+      },
+      "facilitationRules": [
+        "Validate learner reflections before providing structured insight",
+        "Ask single, focused open-ended questions to avoid cognitive overload",
+        "Offer constructive, non-judgmental feedback on quiz responses",
+        "Emphasize progress, presence, and repair over perfection"
+      ]
+    },
+    "prompts": {
+      "lessonOpening": "Welcome! In this 30-minute session, we will explore core concepts of relational safety, emotional presence, and practical parenting tools.",
+      "assessmentTransition": "Let's review these concepts through a couple of scenario-based questions to deepen your understanding.",
+      "activityTransition": "Now, let's turn theory into practice with a guided exercise you can apply in your daily life.",
+      "closingReflection": "To wrap up today's lesson, take a moment to integrate what you've learned and consider how it applies to your journey."
+    }
+  },
+  "lessonModules": [
+    {
+      "lessonId": "foundations-of-safe-and-effective-parenting-lesson-3",
+      "courseId": "foundations-of-safe-and-effective-parenting",
+      "title": "Consistency and Predictability",
+      "estimatedDurationMinutes": 30,
+      "metadata": {
+        "version": "1.0.0",
+        "targetAudience": "Parents and Caregivers",
+        "prerequisites": []
+      },
+      "aiFacilitatorConfig": {
+        "personaRole": "Warm, empathetic parenting coach grounded in emotional regulation and predictable routine building",
+        "systemPrompts": {
+          "openingGreetingPrompt": "Welcome to Lesson 3: Consistency and Predictability. In this 30-minute session, we will look at how predictable routines reduce anxiety and create emotional safety for your child.",
+          "quizFacilitationPrompt": "Let's test your understanding of consistency and how predictable responses support child emotional regulation.",
+          "activityGuidancePrompt": "Take a moment to plan out a routine or boundary that you can stick to consistently over the coming days.",
+          "closingReflectionPrompt": "As we conclude today's session, reflect on what obstacles make consistency difficult and how predictable environments help your child thrive."
+        },
+        "safetyAndIntervention": {
+          "sosToolkitTrigger": "Detect feelings of overwhelm or guilt around parental fatigue and activate self-compassion tools"
+        }
+      },
+      "openingReflection": {
+        "prompt": "Where in your parenting do you feel most consistent, and what situations make consistency difficult for you?[cite: 9]",
+        "guidance": "Reflect on how stress, fatigue, or emotional overwhelm impacts your ability to respond predictably to your child[cite: 9]."
+      },
+      "content": {
+        "overview": "Children feel safest when they know what to expect[cite: 9]. Predictability reduces anxiety and helps children regulate their emotions[cite: 9]. Consistency does not mean perfection; it means responding in similar ways to similar situations[cite: 9]. When parents are consistent, children learn boundaries, routines, and emotional stability[cite: 9].",
+        "coreText": "This lesson explores how inconsistency—often caused by stress, fatigue, or emotional overwhelm—can confuse children and lead to challenging behaviour[cite: 9]. We also examine how predictable routines support brain development and reduce conflict[cite: 9]. Parents learn practical strategies for becoming more consistent, even during difficult days[cite: 9].",
+        "keyConcepts": [
+          {
+            "concept": "Predictability & Emotional Safety",
+            "description": "Understanding that knowing what to expect lowers anxiety and helps children regulate their emotions[cite: 9]."
+          },
+          {
+            "concept": "Consistency Over Perfection",
+            "description": "Recognizing that consistency means responding in similar ways to similar situations, not flawless parenting[cite: 9]."
+          },
+          {
+            "concept": "Routines & Brain Development",
+            "description": "Seeing how structured daily routines support neurodevelopment, reduce confusion, and minimize household conflict[cite: 9]."
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "id": "quiz-1",
+          "type": "multiple-choice",
+          "taxonomyLevel": "Knowledge Recall",
+          "question": "What is the primary benefit of consistency and predictability for children?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "It guarantees that children will never express anger or sadness.",
+              "isCorrect": false,
+              "explanation": "Consistency helps children manage emotions, but does not stop them from experiencing natural feelings[cite: 9]."
+            },
+            {
+              "id": "opt-b",
+              "text": "It reduces anxiety, supports emotional regulation, and creates a sense of safety[cite: 9].",
+              "isCorrect": true,
+              "explanation": "Correct! Knowing what to expect lowers anxiety and helps children feel emotionally secure[cite: 9]."
+            },
+            {
+              "id": "opt-c",
+              "text": "It requires parents to strictly follow every rule without flexibility.",
+              "isCorrect": false,
+              "explanation": "Consistency is about responding in similar ways to similar situations, not rigid perfection[cite: 9]."
+            }
+          ]
+        },
+        {
+          "id": "quiz-2",
+          "type": "scenario-analysis",
+          "taxonomyLevel": "Applied Understanding",
+          "question": "A tired parent gives in to a child's demands after previously saying 'no' several times. What is the likely impact of this inconsistency?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "It confuses the child and often leads to increased testing of boundaries in the future[cite: 9].",
+              "isCorrect": true,
+              "explanation": "Correct! Inconsistency driven by fatigue confuses children and can escalate challenging behaviors[cite: 9]."
+            },
+            {
+              "id": "opt-b",
+              "text": "It immediately teaches the child to respect all parental boundaries.",
+              "isCorrect": false,
+              "explanation": "Changing boundaries unpredictably undermines boundary recognition rather than building respect."
+            },
+            {
+              "id": "opt-c",
+              "text": "It accelerates healthy brain development and emotional self-regulation.",
+              "isCorrect": false,
+              "explanation": "Predictable routines and clear boundaries support brain development, whereas unpredictability creates anxiety[cite: 9]."
+            }
+          ]
+        }
+      ],
+      "guidedActivities": [
+        {
+          "activityId": "act-1",
+          "title": "Consistent Boundary Selection",
+          "objective": "Identify and commit to one predictable response for a daily boundary.",
+          "estimatedDurationMinutes": 4,
+          "steps": [
+            "Choose one boundary you will keep consistent for the next week[cite: 9].",
+            "Write down how you will respond each time your child tests this boundary[cite: 9].",
+            "Practice delivering this response calmly, even when feeling fatigued[cite: 9]."
+          ]
+        },
+        {
+          "activityId": "act-2",
+          "title": "Routine Building Exercise",
+          "objective": "Establish a predictable morning or bedtime routine to support brain development and reduce friction.",
+          "estimatedDurationMinutes": 3,
+          "steps": [
+            "Create a simple morning or bedtime routine with 3-4 clear, predictable steps[cite: 9].",
+            "Follow this routine consistently for three consecutive days[cite: 9].",
+            "Observe any changes in your child's anxiety or cooperation level[cite: 9]."
+          ]
+        }
+      ],
+      "actionableTakeaways": [
+        "Consistency means responding in similar ways to similar situations, not being perfect[cite: 9].",
+        "Predictable routines lower child anxiety and foster emotional stability[cite: 9].",
+        "Recognize stress and fatigue as triggers for inconsistency and plan responses ahead of time[cite: 9]."
+      ],
+      "closingReflection": {
+        "questions": [
+          "Where in your parenting do you feel most consistent?[cite: 9]",
+          "What situations make consistency difficult for you?[cite: 9]",
+          "How does your child respond when routines are predictable?[cite: 9]"
+        ]
+      }
+    },
+    {
+      "lessonId": "foundations-of-safe-and-effective-parenting-lesson-4",
+      "courseId": "foundations-of-safe-and-effective-parenting",
+      "title": "Building a Safe Parenting Mindset",
+      "estimatedDurationMinutes": 30,
+      "metadata": {
+        "version": "1.0.0",
+        "targetAudience": "Parents and Caregivers",
+        "prerequisites": []
+      },
+      "aiFacilitatorConfig": {
+        "personaRole": "Warm, empathetic parenting coach grounded in relational safety and emotional self-regulation",
+        "systemPrompts": {
+          "openingGreetingPrompt": "Welcome to Lesson 4: Building a Safe Parenting Mindset. In this 30-minute session, we will explore how self-reflection, emotional awareness, and presence create a safe foundation for your child.",
+          "quizFacilitationPrompt": "Let's test your understanding of key mindset shifts, such as moving from reaction to response and control to connection.",
+          "activityGuidancePrompt": "Take a quiet moment to consider the beliefs you hold around parenting and how you can practice repair after moments of tension.",
+          "closingReflectionPrompt": "As we wrap up today's lesson, reflect on the presence and feeling you want to bring into your relationship with your child."
+        },
+        "safetyAndIntervention": {
+          "sosToolkitTrigger": "Detect emotional distress or frustration and activate immediate self-soothing and support tools"
+        }
+      },
+      "openingReflection": {
+        "prompt": "What does 'safe parenting' mean to you personally, and how do you want your child to feel when they are around you?",
+        "guidance": "Consider how your internal state and mindset set the tone for safety and connection in your home."
+      },
+      "content": {
+        "overview": "A safe parenting mindset is built on self‑reflection, emotional awareness, and the willingness to grow. Parenting is not about being perfect; it is about being present, learning from mistakes, and repairing when things go wrong. Children benefit most from parents who can acknowledge their own emotions and take responsibility for their behaviour.",
+        "coreText": "This lesson helps parents understand how mindset influences daily interactions. When parents shift from reacting to responding, they create a calmer environment. When they shift from control to connection, children become more cooperative. We explore how to build a mindset that supports long‑term change, resilience, and emotional safety.",
+        "keyConcepts": [
+          {
+            "concept": "Presence & Repair over Perfection",
+            "description": "Recognizing that safe parenting focuses on being emotionally present and taking responsibility to repair after mistakes, rather than aiming for perfection."
+          },
+          {
+            "concept": "Reacting vs. Responding",
+            "description": "Shifting from automatic, emotional reactions to intentional, calm responses to create a peaceful environment."
+          },
+          {
+            "concept": "Control vs. Connection",
+            "description": "Prioritizing relational connection over strict control, which naturally fosters greater cooperation and resilience in children."
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "id": "quiz-1",
+          "type": "multiple-choice",
+          "taxonomyLevel": "Knowledge Recall",
+          "question": "According to the lesson, what is a primary quality of a safe parenting mindset?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Striving to never make mistakes or experience emotional stress.",
+              "isCorrect": false,
+              "explanation": "Parenting is not about being perfect; it is about being present and learning from mistakes."
+            },
+            {
+              "id": "opt-b",
+              "text": "Self-reflection, emotional awareness, and a willingness to grow and repair.",
+              "isCorrect": true,
+              "explanation": "Correct! Self-reflection, emotional awareness, and taking responsibility for behavior build a safe parenting mindset."
+            },
+            {
+              "id": "opt-c",
+              "text": "Maintaining strict control over all childhood behaviors at all times.",
+              "isCorrect": false,
+              "explanation": "Shifting away from control toward connection is what promotes cooperation and emotional safety."
+            }
+          ]
+        },
+        {
+          "id": "quiz-2",
+          "type": "scenario-analysis",
+          "taxonomyLevel": "Applied Understanding",
+          "question": "A parent notices they automatically yell when their child spills a glass of milk. What mindset shift will best help create a calmer environment?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Shifting from automatic reacting to intentional responding.",
+              "isCorrect": true,
+              "explanation": "Correct! Pausing to move from an emotional reaction to an intentional response creates a calm environment."
+            },
+            {
+              "id": "opt-b",
+              "text": "Increasing strictness and control so the child never makes another spill.",
+              "isCorrect": false,
+              "explanation": "Focusing heavily on control often increases tension rather than building a safe dynamic."
+            },
+            {
+              "id": "opt-c",
+              "text": "Ignoring the situation completely to avoid conflict.",
+              "isCorrect": false,
+              "explanation": "Safe parenting involves staying present and addressing moments constructively through emotional awareness."
+            }
+          ]
+        }
+      ],
+      "guidedActivities": [
+        {
+          "activityId": "act-1",
+          "title": "Parenting Belief Reframing",
+          "objective": "Identify unhelpful parenting assumptions and replace them with empowering beliefs.",
+          "estimatedDurationMinutes": 4,
+          "steps": [
+            "Write down one belief about parenting you want to let go of (e.g., 'I must control every situation').",
+            "Write down one belief you want to strengthen (e.g., 'Connection builds long-term cooperation').",
+            "Keep this new belief somewhere visible as a daily reminder."
+          ]
+        },
+        {
+          "activityId": "act-2",
+          "title": "Repair Conversation Practice",
+          "objective": "Build emotional safety by taking responsibility and reconnecting after stress.",
+          "estimatedDurationMinutes": 4,
+          "steps": [
+            "Identify a recent moment of tension or frustration with your child.",
+            "Practice or carry out a repair conversation with your child, acknowledging your reaction and affirming your love.",
+            "Observe how taking responsibility affects the feeling of connection between you and your child."
+          ]
+        }
+      ],
+      "actionableTakeaways": [
+        "Prioritize presence, learning from mistakes, and repair over trying to be perfect.",
+        "Pause to shift from reacting automatically to responding intentionally.",
+        "Focus on connection rather than strict control to foster natural cooperation and emotional safety."
+      ],
+      "closingReflection": {
+        "questions": [
+          "What mindset do you want to bring into your parenting?",
+          "How do you want your child to feel when they are around you?",
+          "What does ‘safe parenting’ mean to you personally?"
+        ]
+      }
+    }
+  ]
+}

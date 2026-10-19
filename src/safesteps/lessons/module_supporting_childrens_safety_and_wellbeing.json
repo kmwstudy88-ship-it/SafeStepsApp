@@ -16,6 +16,12 @@
     "Use child-friendly communication and engagement strategies",
     "Strengthen protective relationships with safe caregivers"
   ],
-  "lessons": [],
+  "lessons": [
+    "understanding_child_trauma",
+    "understanding_child_cues",
+    "safety_planning_with_children",
+    "supporting_children_emotionally",
+    "building_resilience_in_children"
+  ],
   "content": []
 }

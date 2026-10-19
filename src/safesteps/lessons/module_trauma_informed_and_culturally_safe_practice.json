@@ -16,6 +16,10 @@
     "Work in culturally safe and respectful ways",
     "Promote empowerment, choice, and safety for clients"
   ],
-  "lessons": [],
+  "lessons": [
+    "trauma_informed_engagement",
+    "lesson_embedding_trauma_informed_practice",
+    "lesson_culturally_safe_practice"
+  ],
   "content": []
 }

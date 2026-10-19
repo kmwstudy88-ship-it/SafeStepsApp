@@ -16,6 +16,10 @@
     "Apply safe and lawful information-sharing principles",
     "Participate effectively in coordinated DFV responses"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_collaboration_principles",
+    "lesson_multiagency_work",
+    "lesson_multiagency_risk_panels"
+  ],
   "content": []
 }

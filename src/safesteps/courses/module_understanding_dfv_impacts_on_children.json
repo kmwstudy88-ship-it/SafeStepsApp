@@ -16,6 +16,12 @@
     "Recognise behavioural and emotional indicators of DFV exposure",
     "Identify protective factors that support recovery"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_developmental_impacts",
+    "lesson_behavioural_and_emotional_signs",
+    "lesson_psychological_and_emotional_impacts",
+    "understanding_child_trauma",
+    "supporting_children_emotionally"
+  ],
   "content": []
 }

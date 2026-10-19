@@ -1,0 +1,41 @@
+{
+  "lessonId": "healthy-boundaries-and-routines-lesson-4",
+  "courseId": "healthy-boundaries-and-routines",
+  "title": "Balancing Flexibility and Structure",
+  "durationMinutes": 30,
+  "content": "Healthy parenting requires both structure and flexibility[cite: 4]. Too much rigidity can create fear or rebellion, while too much flexibility can create chaos or insecurity[cite: 4]. Children thrive when parents provide a stable foundation while also adapting to the child’s needs, emotions, and developmental stage[cite: 4].\n\nThis lesson explores how to find the balance between being firm and being responsive[cite: 4]. Parents learn how to adjust routines during stressful times, how to offer choices within boundaries, and how to stay connected even when enforcing limits[cite: 4].\n\nFlexibility is not the opposite of structure—it is structure with empathy[cite: 4]. When parents balance both, children feel supported and understood[cite: 4].",
+  "assessmentsAndQuizzes": {
+    "quiz": [
+      {
+        "question": "What can happen if a household has too much rigidity?",
+        "options": [
+          "It can create fear or rebellion",
+          "It can create complete security and freedom",
+          "It eliminates all developmental milestones",
+          "It guarantees perfect behavior"
+        ],
+        "correctAnswer": "It can create fear or rebellion"
+      },
+      {
+        "question": "How is flexibility defined in the context of this course?",
+        "options": [
+          "Having no rules at all",
+          "Giving in to whatever the child wants",
+          "Structure with empathy",
+          "Constantly changing expectations"
+        ],
+        "correctAnswer": "Structure with empathy"
+      }
+    ],
+    "activities": [
+      "Identify one routine where you can offer your child a choice (e.g., choosing between two outfits or two snack options)[cite: 4].",
+      "Reflect on a recent moment when you were either too rigid or too flexible. Consider how you might balance it differently next time[cite: 4]."
+    ],
+    "reflectionQuestions": [
+      "Do you tend to lean more toward rigidity or flexibility?[cite: 4]",
+      "How does your child respond when you offer choices within boundaries?[cite: 4]",
+      "What does a healthy balance look like for your family?[cite: 4]"
+    ]
+  },
+  "aiFacilitatorScript": "Welcome to lesson four: 'Balancing Flexibility and Structure.' In this final facilitator script, guide participants to see that structure and flexibility are complementary rather than opposing forces. Help them explore the concept of offering 'choices within boundaries' to foster autonomy while maintaining safety. Lead a reflective exercise on self-awareness regarding whether they naturally lean toward rigidity or chaos, and how to anchor themselves in empathetic structure."
+}

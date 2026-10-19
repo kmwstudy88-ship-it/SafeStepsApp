@@ -1,0 +1,45 @@
+{
+  "adaptive_progression_engine": {
+    "unlock_requirements": {
+      "minimum_lesson_score": 70,
+      "minimum_scenario_score": 60,
+      "reflection_completed": true
+    },
+    "badges": [
+      {
+        "id": "empathy_builder",
+        "score_required": 80
+      },
+      {
+        "id": "safe_parenting",
+        "score_required": 85
+      },
+      {
+        "id": "family_healing",
+        "score_required": 90
+      },
+      {
+        "id": "advanced_growth",
+        "score_required": 95
+      }
+    ],
+    "certificate_levels": [
+      {
+        "name": "Bronze",
+        "range": "70-79"
+      },
+      {
+        "name": "Silver",
+        "range": "80-89"
+      },
+      {
+        "name": "Gold",
+        "range": "90-94"
+      },
+      {
+        "name": "Platinum",
+        "range": "95-100"
+      }
+    ]
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "facilitatorConfig": {
+    "role": "AI Teacher & Facilitator",
+    "persona": "Warm, empathetic, grounded, and encouraging parenting guide",
+    "pedagogicalFramework": {
+      "model": "Scaffolded Social-Emotional Learning (SEL) & Relational Safety",
+      "pacing": {
+        "totalDurationMinutes": 30,
+        "breakdown": {
+          "openingReflectionMinutes": 5,
+          "coreConceptInstructionMinutes": 10,
+          "interactiveAssessmentMinutes": 5,
+          "guidedPracticeActivityMinutes": 7,
+          "closingIntegrationMinutes": 3
+        }
+      },
+      "facilitationRules": [
+        "Validate learner reflections before providing structured insight",
+        "Ask single, focused open-ended questions to avoid cognitive overload",
+        "Offer constructive, non-judgmental feedback on quiz responses",
+        "Emphasize progress, presence, and repair over perfection"
+      ]
+    },
+    "prompts": {
+      "lessonOpening": "Welcome! In this 30-minute session, we will explore core concepts of relational safety, emotional presence, and practical parenting tools.",
+      "assessmentTransition": "Let's review these concepts through a couple of scenario-based questions to deepen your understanding.",
+      "activityTransition": "Now, let's turn theory into practice with a guided exercise you can apply in your daily life.",
+      "closingReflection": "To wrap up today's lesson, take a moment to integrate what you've learned and consider how it applies to your journey."
+    }
+  },
+  "lessonModules": [
+    {
+      "lessonId": "building-secure-attachment-lesson-1",
+      "courseId": "building-secure-attachment",
+      "title": "What Secure Attachment Really Means",
+      "estimatedDurationMinutes": 30,
+      "openingReflection": {
+        "prompt": "What does safety mean to you in relationships, and how did your caregivers respond to your emotions growing up?",
+        "guidance": "Reflect on your personal history of emotional safety to better understand your natural tendencies when responding to your child's needs."
+      },
+      "content": {
+        "overview": "Secure attachment is the deep sense a child has that their caregiver is emotionally available, responsive, and safe. It is not about being perfect or constantly cheerful. It is about being consistent enough that a child trusts you will return, listen, and care. Children with secure attachment explore more confidently, recover from stress more quickly, and form healthier relationships throughout life.",
+        "coreText": "Many parents worry that they have already damaged attachment, but attachment is flexible and repairable. Even if a parent has made mistakes, secure attachment can still form through repeated moments of connection, comfort, and responsiveness. What matters most is the pattern over time, not isolated moments. This lesson helps parents understand the foundations of secure attachment and why it is one of the strongest predictors of a child’s emotional wellbeing.",
+        "keyConcepts": [
+          {
+            "concept": "Emotional Availability & Consistency",
+            "description": "Providing dependable presence and responsiveness so the child trusts that their caregiver is a safe base."
+          },
+          {
+            "concept": "Patterns Over Perfection",
+            "description": "Recognizing that secure attachment is built over cumulative daily moments rather than flawless parenting."
+          },
+          {
+            "concept": "Flexibility & Repairability",
+            "description": "Understanding that attachment bond dynamics can be reshaped and restored through ongoing connection and comfort."
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "id": "quiz-1",
+          "type": "multiple-choice",
+          "question": "What is the core foundation of secure attachment between a parent and child?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Never making mistakes and maintaining a cheerful mood at all times.",
+              "isCorrect": false,
+              "explanation": "Secure attachment is not about perfection or being constantly cheerful, but about overall consistency and responsiveness."
+            },
+            {
+              "id": "opt-b",
+              "text": "A deep sense that the caregiver is emotionally available, responsive, and safe.",
+              "isCorrect": true,
+              "explanation": "Correct! Secure attachment comes from a child's trust that their caregiver is dependable and safe."
+            },
+            {
+              "id": "opt-c",
+              "text": "Ensuring the child never experiences stress or difficult emotions.",
+              "isCorrect": false,
+              "explanation": "Secure attachment helps children recover from stress quickly, rather than shielding them from all stress."
+            }
+          ]
+        },
+        {
+          "id": "quiz-2",
+          "type": "scenario-analysis",
+          "question": "A parent feels guilty after losing their patience with their child during a difficult morning. Based on attachment theory, what is the most accurate perspective?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "The attachment bond has been permanently damaged by this mistake.",
+              "isCorrect": false,
+              "explanation": "Attachment is flexible and repairable; isolated mistakes do not destroy a bond."
+            },
+            {
+              "id": "opt-b",
+              "text": "What matters most is the pattern over time, and secure attachment forms through ongoing connection and responsiveness.",
+              "isCorrect": true,
+              "explanation": "Correct! Cumulative patterns over time are what shape secure attachment, not single moments of imperfection."
+            },
+            {
+              "id": "opt-c",
+              "text": "The parent should ignore the incident to avoid making the child worry.",
+              "isCorrect": false,
+              "explanation": "Acknowledging moments and reconnecting builds trust and repairs the dynamic."
+            }
+          ]
+        }
+      ],
+      "guidedActivities": [
+        {
+          "activityId": "act-1",
+          "title": "Undivided Attention Practice",
+          "objective": "Provide uninterrupted presence to signal safety and emotional availability.",
+          "estimatedDurationMinutes": 5,
+          "steps": [
+            "Spend five minutes today giving your child your full attention—no phone, no distractions.",
+            "Engage in whatever activity your child chooses without redirecting them.",
+            "Notice how they respond to your complete presence."
+          ]
+        },
+        {
+          "activityId": "act-2",
+          "title": "Comfort Seeking Reflection",
+          "objective": "Identify and evaluate responses to a child's bid for comfort.",
+          "estimatedDurationMinutes": 3,
+          "steps": [
+            "Identify one moment this week when your child sought comfort from you.",
+            "Reflect on how you responded to their request for comfort.",
+            "Consider small adjustments that could enhance emotional safety during future bids for comfort."
+          ]
+        }
+      ],
+      "closingReflection": {
+        "questions": [
+          "What does safety mean to you in relationships?",
+          "How did your caregivers respond to your emotions growing up?",
+          "What moments help your child feel most connected to you?"
+        ]
+      }
+    },
+    {
+      "lessonId": "foundations-of-safe-and-effective-parenting-lesson-4",
+      "courseId": "foundations-of-safe-and-effective-parenting",
+      "title": "Building a Safe Parenting Mindset",
+      "estimatedDurationMinutes": 30,
+      "openingReflection": {
+        "prompt": "What does 'safe parenting' mean to you personally, and how do you want your child to feel when they are around you?",
+        "guidance": "Consider how your internal state and mindset set the tone for safety and connection in your home."
+      },
+      "content": {
+        "overview": "A safe parenting mindset is built on self‑reflection, emotional awareness, and the willingness to grow. Parenting is not about being perfect; it is about being present, learning from mistakes, and repairing when things go wrong. Children benefit most from parents who can acknowledge their own emotions and take responsibility for their behaviour.",
+        "coreText": "This lesson helps parents understand how mindset influences daily interactions. When parents shift from reacting to responding, they create a calmer environment. When they shift from control to connection, children become more cooperative. We explore how to build a mindset that supports long‑term change, resilience, and emotional safety.",
+        "keyConcepts": [
+          {
+            "concept": "Presence & Repair over Perfection",
+            "description": "Recognizing that safe parenting focuses on being emotionally present and taking responsibility to repair after mistakes, rather than aiming for perfection."
+          },
+          {
+            "concept": "Reacting vs. Responding",
+            "description": "Shifting from automatic, emotional reactions to intentional, calm responses to create a peaceful environment."
+          },
+          {
+            "concept": "Control vs. Connection",
+            "description": "Prioritizing relational connection over strict control, which naturally fosters greater cooperation and resilience in children."
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "id": "quiz-1",
+          "type": "multiple-choice",
+          "question": "According to the lesson, what is a primary quality of a safe parenting mindset?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Striving to never make mistakes or experience emotional stress.",
+              "isCorrect": false,
+              "explanation": "Parenting is not about being perfect; it is about being present and learning from mistakes."
+            },
+            {
+              "id": "opt-b",
+              "text": "Self-reflection, emotional awareness, and a willingness to grow and repair.",
+              "isCorrect": true,
+              "explanation": "Correct! Self-reflection, emotional awareness, and taking responsibility for behavior build a safe parenting mindset."
+            },
+            {
+              "id": "opt-c",
+              "text": "Maintaining strict control over all childhood behaviors at all times.",
+              "isCorrect": false,
+              "explanation": "Shifting away from control toward connection is what promotes cooperation and emotional safety."
+            }
+          ]
+        },
+        {
+          "id": "quiz-2",
+          "type": "scenario-analysis",
+          "question": "A parent notices they automatically yell when their child spills a glass of milk. What mindset shift will best help create a calmer environment?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Shifting from automatic reacting to intentional responding.",
+              "isCorrect": true,
+              "explanation": "Correct! Pausing to move from an emotional reaction to an intentional response creates a calm environment."
+            },
+            {
+              "id": "opt-b",
+              "text": "Increasing strictness and control so the child never makes another spill.",
+              "isCorrect": false,
+              "explanation": "Focusing heavily on control often increases tension rather than building a safe dynamic."
+            },
+            {
+              "id": "opt-c",
+              "text": "Ignoring the situation completely to avoid conflict.",
+              "isCorrect": false,
+              "explanation": "Safe parenting involves staying present and addressing moments constructively through emotional awareness."
+            }
+          ]
+        }
+      ],
+      "guidedActivities": [
+        {
+          "activityId": "act-1",
+          "title": "Parenting Belief Reframing",
+          "objective": "Identify unhelpful parenting assumptions and replace them with empowering beliefs.",
+          "estimatedDurationMinutes": 4,
+          "steps": [
+            "Write down one belief about parenting you want to let go of (e.g., 'I must control every situation').",
+            "Write down one belief you want to strengthen (e.g., 'Connection builds long-term cooperation').",
+            "Keep this new belief somewhere visible as a daily reminder."
+          ]
+        },
+        {
+          "activityId": "act-2",
+          "title": "Repair Conversation Practice",
+          "objective": "Build emotional safety by taking responsibility and reconnecting after stress.",
+          "estimatedDurationMinutes": 4,
+          "steps": [
+            "Identify a recent moment of tension or frustration with your child.",
+            "Practice or carry out a repair conversation with your child, acknowledging your reaction and affirming your love.",
+            "Observe how taking responsibility affects the feeling of connection between you and your child."
+          ]
+        }
+      ],
+      "closingReflection": {
+        "questions": [
+          "What mindset do you want to bring into your parenting?",
+          "How do you want your child to feel when they are around you?",
+          "What does ‘safe parenting’ mean to you personally?"
+        ]
+      }
+    }
+  ]
+}

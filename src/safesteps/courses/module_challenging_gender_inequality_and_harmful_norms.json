@@ -16,6 +16,10 @@
     "Recognise harmful norms and stereotypes",
     "Apply strategies to challenge and shift harmful norms"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_harmful_norms_and_stereotypes",
+    "lesson_challenging_harmful_norms",
+    "lesson_positive_social_norms"
+  ],
   "content": []
 }

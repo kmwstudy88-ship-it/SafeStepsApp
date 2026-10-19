@@ -16,6 +16,10 @@
     "Identify key DFV risk indicators and patterns",
     "Develop collaborative and practical safety plans with clients"
   ],
-  "lessons": [],
+  "lessons": [
+    "initial_assessment",
+    "lesson_lethality_assessment",
+    "lesson_escalation_and_emergency_response"
+  ],
   "content": []
 }

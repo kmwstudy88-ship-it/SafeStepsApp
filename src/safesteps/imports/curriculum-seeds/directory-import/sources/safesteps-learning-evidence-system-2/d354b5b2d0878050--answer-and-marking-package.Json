@@ -1,0 +1,16 @@
+{
+  "markingPackage": {
+    "answerKey": [],
+    "choiceRationales": [],
+    "scenarioRubrics": [],
+    "reflectionRubric": {},
+    "taskRubric": {},
+    "competencyMapping": [],
+    "acceptableAnswerExamples": [],
+    "partialCreditRules": [],
+    "unsafeResponseIndicators": [],
+    "manualReviewTriggers": [],
+    "moderationInstructions": []
+  }
+}
+`

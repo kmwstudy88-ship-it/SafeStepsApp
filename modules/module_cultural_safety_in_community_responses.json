@@ -16,6 +16,11 @@
     "Recognise how cultural context shapes experiences of DFV and help-seeking",
     "Engage respectfully and safely with diverse communities"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_cultural_complexity",
+    "lesson_cultural_contexts_and_migration",
+    "lesson_cultural_safety_and_respect",
+    "lesson_community_led_responses"
+  ],
   "content": []
 }

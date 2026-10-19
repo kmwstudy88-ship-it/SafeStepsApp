@@ -16,6 +16,11 @@
     "Apply reflective practice frameworks to strengthen professional judgement",
     "Identify learning themes and integrate them into ongoing practice improvement"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_documentation_and_case_notes",
+    "lesson_case_summary_generator",
+    "lesson_reflective_practice",
+    "lesson_audit_trail_generator"
+  ],
   "content": []
 }

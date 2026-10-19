@@ -10,6 +10,15 @@ const masterIndexPath = path.join(repoRoot, "src", "safesteps", "lessons", "mast
 const schemaPath = path.join(repoRoot, "schema", "curriculum-schema.json");
 const sharedApiClientPath = path.join(repoRoot, "shared", "apiClient.js");
 const sharedModelsPath = path.join(repoRoot, "shared", "models.js");
+const directoryImportReportPath = path.join(
+  repoRoot,
+  "src",
+  "safesteps",
+  "imports",
+  "curriculum-seeds",
+  "directory-import",
+  "import-report.json",
+);
 
 const externalRoot = path.join(os.homedir(), "Downloads", "NEW READY TO UPLOAD Courses &  Content");
 const externalSources = [
@@ -264,6 +273,28 @@ function validateImportVersions() {
   };
 }
 
+function validateDirectoryImport() {
+  if (!fs.existsSync(directoryImportReportPath)) {
+    return {
+      available: false,
+      path: path.relative(repoRoot, directoryImportReportPath).replace(/\\/g, "/"),
+      counts: null,
+      malformed: [],
+      rejected: [],
+    };
+  }
+
+  const report = readJson(directoryImportReportPath);
+  return {
+    available: true,
+    path: path.relative(repoRoot, directoryImportReportPath).replace(/\\/g, "/"),
+    counts: report.counts ?? null,
+    malformed: Array.isArray(report.malformed) ? report.malformed : [],
+    repaired: Array.isArray(report.repaired) ? report.repaired : [],
+    rejected: Array.isArray(report.rejected) ? report.rejected : [],
+  };
+}
+
 function main() {
   const lessons = listJsonRecords("lessons");
   const modules = listJsonRecords("modules");
@@ -430,6 +461,7 @@ function main() {
   };
 
   const importVersions = validateImportVersions();
+  const directoryImport = validateDirectoryImport();
   const external = validateExternalSources(lessonIdSet);
 
   const blockingIssues = [];
@@ -447,7 +479,11 @@ function main() {
   if (masterIndexIssues.length > 0) blockingIssues.push("master-index-mismatch");
   if (schemaIssues.length > 0) blockingIssues.push("invalid-curriculum-schema");
   if (importVersions.conflictingVersionSets.length > 0) blockingIssues.push("conflicting-import-versions");
-  if (external.availableCount < external.totalCount) blockingIssues.push("external-source-files-unavailable");
+  if (directoryImport.malformed.length > 0) blockingIssues.push("malformed-directory-import-sources");
+  if (directoryImport.rejected.length > 0) blockingIssues.push("rejected-directory-import-sources");
+  if (!directoryImport.available && external.availableCount < external.totalCount) {
+    blockingIssues.push("external-source-files-unavailable");
+  }
 
   const report = {
     generatedAt: new Date().toISOString(),
@@ -508,6 +544,7 @@ function main() {
         : null,
       sharedFiles,
       externalSources: external,
+      directoryImport,
       importVersions,
     },
   };

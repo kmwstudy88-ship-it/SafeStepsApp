@@ -38,6 +38,8 @@ Compatibility and generated areas live here:
 
 - `src/safesteps/` — compatibility exports and machine-readable indices for runtime/tooling use
 - `src/safesteps/imports/` — generated imports produced by `tools/import-curriculum-source.js`
+- `src/safesteps/imports/curriculum-seeds/directory-import/` — deterministic source snapshots, duplicate report, and runtime catalog produced by `tools/import-curriculum-directory.js`
+- `schema/imported-curriculum-catalog.schema.json` — normalized runtime contract for imported courses, lessons, facilitator pairings, packages, and source provenance
 - `snapshots/`, `stage1/`, `proof-of-change/`, `sequence-knowledge/` — supporting or historical material, not the primary edit targets for curriculum changes
 
 ## App route audit
@@ -47,6 +49,8 @@ Compatibility and generated areas live here:
 | `/` | `app/index.tsx` | navigation hub | none |
 | `/scenarios` | `lib/scenarios/ScenarioSimulatorScreen.tsx` | local scenario prototype | none |
 | `/storybooks` | `lib/storybooks/StorybookReaderScreen.tsx` | sample storybook content | none |
+| `/learning/understanding-harm` | `lib/learning/UnderstandingHarmCourseScreen.tsx` | six-lesson production-draft course with offline progress, assessment, remediation, certificate, and consent controls | device-local storage; optional consent-gated Supabase sync |
+| `/learning/catalog` | `lib/learning/ImportedCurriculumCatalogScreen.tsx` | searchable catalog of imported parenting courses and lessons with provenance and draft-status boundaries | generated device-bundled curriculum catalog |
 | `/assessments` | `lib/assessments/AssessmentRunnerScreen.tsx` | local scoring flow | none |
 | `/evidence` | `lib/evidence/EvidenceVaultScreen.tsx` | device-local evidence prototype | none |
 | `/reports` | `lib/reports/ReportGeneratorScreen.tsx` | local PDF generation | none |

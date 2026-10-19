@@ -16,6 +16,10 @@
     "Support clients through DFV-related court processes",
     "Recognise safety considerations in legal proceedings"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_protection_orders_and_courts",
+    "lesson_court_processes_and_procedures",
+    "lesson_preparing_clients_for_court"
+  ],
   "content": []
 }

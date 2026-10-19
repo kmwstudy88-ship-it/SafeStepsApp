@@ -17,6 +17,12 @@
     "Apply accountability‑focused approaches that prioritise survivor safety",
     "Understand behaviour change principles and their limitations in DFV contexts"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_accountability_frameworks",
+    "working_with_resistance",
+    "working_with_high_risk_cases",
+    "lesson_dfv_patterns_and_drivers",
+    "lesson_behaviour_change_principles"
+  ],
   "content": []
 }

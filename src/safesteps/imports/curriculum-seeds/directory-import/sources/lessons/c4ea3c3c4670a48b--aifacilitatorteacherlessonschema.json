@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIFacilitatorTeacherLessonSchema",
+  "type": "object",
+  "required": [
+    "lessonId",
+    "courseId",
+    "title",
+    "aiFacilitatorConfig",
+    "openingReflection",
+    "content",
+    "assessments",
+    "guidedActivities",
+    "actionableTakeaways",
+    "reflectionQuestions"
+  ],
+  "properties": {
+    "lessonId": {
+      "type": "string",
+      "description": "Unique identifier for the lesson"
+    },
+    "courseId": {
+      "type": "string",
+      "description": "Unique identifier for the parent course"
+    },
+    "title": {
+      "type": "string",
+      "description": "Title of the lesson"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string" },
+        "estimatedDurationMinutes": { "type": "integer" },
+        "targetAudience": { "type": "string" },
+        "prerequisites": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "aiFacilitatorConfig": {
+      "type": "object",
+      "description": "System instructions and role specifications for the AI teacher/facilitator executing this lesson",
+      "required": ["personaRole", "facilitationStrategy", "interactionRules", "systemPrompts"],
+      "properties": {
+        "personaRole": {
+          "type": "string",
+          "example": "Warm, empathetic parenting coach and conversational guide"
+        },
+        "facilitationStrategy": {
+          "type": "string",
+          "example": "Socratic questioning, active listening validation, and scaffolded instruction"
+        },
+        "interactionRules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "example": [
+            "Validate learner emotions before offering pedagogical guidance",
+            "Ask one follow-up question at a time to prevent cognitive overload",
+            "Provide immediate constructive feedback on assessment responses"
+          ]
+        },
+        "systemPrompts": {
+          "type": "object",
+          "properties": {
+            "openingGreetingPrompt": { "type": "string" },
+            "quizFacilitationPrompt": { "type": "string" },
+            "activityGuidancePrompt": { "type": "string" },
+            "closingReflectionPrompt": { "type": "string" }
+          }
+        }
+      }
+    },
+    "openingReflection": {
+      "type": "object",
+      "required": ["prompt", "guidance"],
+      "properties": {
+        "prompt": { "type": "string" },
+        "guidance": { "type": "string" }
+      }
+    },
+    "content": {
+      "type": "object",
+      "required": ["overview", "coreText", "keyConcepts"],
+      "properties": {
+        "overview": { "type": "string" },
+        "coreText": { "type": "string" },
+        "keyConcepts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["concept", "description"],
+            "properties": {
+              "concept": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "assessments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "question", "options"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string", "enum": ["multiple-choice", "open-ended"] },
+          "question": { "type": "string" },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "text", "isCorrect", "explanation"],
+              "properties": {
+                "id": { "type": "string" },
+                "text": { "type": "string" },
+                "isCorrect": { "type": "boolean" },
+                "explanation": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "guidedActivities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["activityId", "title", "objective", "steps"],
+        "properties": {
+          "activityId": { "type": "string" },
+          "title": { "type": "string" },
+          "objective": { "type": "string" },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["stepNumber", "instruction"],
+              "properties": {
+                "stepNumber": { "type": "integer" },
+                "instruction": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "actionableTakeaways": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "reflectionQuestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "question"],
+        "properties": {
+          "id": { "type": "string" },
+          "question": { "type": "string" }
+        }
+      }
+    }
+  }
+}

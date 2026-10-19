@@ -16,6 +16,11 @@
     "Support safe and trauma-informed housing responses",
     "Coordinate with housing and DFV services to promote safety"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_barriers_to_safe_housing",
+    "lesson_coordinated_housing_responses",
+    "lesson_crisis_accommodation_models",
+    "lesson_long_term_housing_stability"
+  ],
   "content": []
 }

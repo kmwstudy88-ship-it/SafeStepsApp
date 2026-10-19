@@ -16,6 +16,12 @@
     "Provide effective supervision and practice leadership",
     "Lead system improvements and evidence-informed practice"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_core_capabilities",
+    "lesson_leadership_responsibilities",
+    "lesson_change_leadership",
+    "lesson_leading_multidisciplinary_teams",
+    "lesson_leading_system_improvement"
+  ],
   "content": []
 }

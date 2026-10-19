@@ -1,0 +1,34 @@
+{
+  "lesson_id": "building_safe_routines",
+  "scenario_engine": [
+    {
+      "id": "BSR001",
+      "title": "Creating Predictability",
+      "points": 150,
+      "situation": "A child struggles with inconsistent daily routines.",
+      "choices": [
+        {
+          "id": "A",
+          "text": "Keep changing routines",
+          "score": 0
+        },
+        {
+          "id": "B",
+          "text": "Create consistent schedules and expectations",
+          "score": 150
+        },
+        {
+          "id": "C",
+          "text": "Allow complete unpredictability",
+          "score": 0
+        }
+      ]
+    }
+  ],
+  "ai_facilitator": {
+    "opening": [
+      "Children feel safer when life becomes predictable.",
+      "Healthy routines strengthen emotional security and trust."
+    ]
+  }
+}

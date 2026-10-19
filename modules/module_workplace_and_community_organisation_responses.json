@@ -16,6 +16,12 @@
     "Respond safely and appropriately to disclosures or concerns",
     "Develop policies and practices that promote safety and support"
   ],
-  "lessons": [],
+  "lessons": [
+    "lesson_recognising_dfv_in_organisations",
+    "lesson_prevention_in_workplaces",
+    "lesson_prevention_in_community_settings",
+    "lesson_coordinated_responses",
+    "lesson_building_safe_organisational_cultures"
+  ],
   "content": []
 }

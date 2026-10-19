@@ -1,0 +1,258 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safesteps.example/schemas/imported-curriculum-catalog.schema.json",
+  "title": "SafeSteps imported curriculum catalog",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "title",
+    "reviewStatus",
+    "notice",
+    "counts",
+    "courses",
+    "standaloneLessons",
+    "learningPackages"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewStatus": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notice": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generatedFrom": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "courses",
+        "courseLessons",
+        "standaloneLessons",
+        "learningPackages"
+      ],
+      "properties": {
+        "courses": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "courseLessons": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "standaloneLessons": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "learningPackages": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "courses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/course"
+      }
+    },
+    "standaloneLessons": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/lesson"
+      }
+    },
+    "learningPackages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/package"
+      }
+    }
+  },
+  "$defs": {
+    "sourcePaths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "lesson": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "reviewStatus",
+        "content",
+        "facilitatorProfiles",
+        "sourcePaths",
+        "contentHash"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string"
+        },
+        "durationMinutes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "reviewStatus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content": {
+          "type": "object"
+        },
+        "facilitatorProfiles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "sourcePaths",
+              "content"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sourcePaths": {
+                "$ref": "#/$defs/sourcePaths"
+              },
+              "content": {
+                "type": "object"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "sourcePaths": {
+          "$ref": "#/$defs/sourcePaths"
+        },
+        "contentHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "course": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "level",
+        "reviewStatus",
+        "lessons",
+        "sourcePaths"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "level": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewStatus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "lessons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/lesson"
+          }
+        },
+        "sourcePaths": {
+          "$ref": "#/$defs/sourcePaths"
+        },
+        "sourceDocument": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "package": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "title",
+        "sourcePaths",
+        "contentHash",
+        "content"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "learning-package",
+            "engine",
+            "schema"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourcePaths": {
+          "$ref": "#/$defs/sourcePaths"
+        },
+        "contentHash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "content": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -9,6 +9,8 @@ export default function SafeStepsHub() {
     {
       pillar: 'Pillar 1: Interactive Learning',
       items: [
+        { title: 'Understanding Harm', subtitle: 'Six guided lessons, practice scenarios, and a foundation assessment', route: '/learning/understanding-harm', icon: '🧭', badge: 'Draft' },
+        { title: 'Learning Library', subtitle: 'Browse all imported parenting courses and standalone lessons', route: '/learning/catalog', icon: '📚', badge: '76 lessons' },
         { title: 'Interactive Roleplay Simulator', subtitle: 'Practice de-escalation & caseworker meetings', route: '/scenarios', icon: '🎭', badge: 'Active' },
         { title: 'Interactive Storybooks', subtitle: 'Parent-child co-reading & reflection', route: '/storybooks', icon: '📖', badge: 'Co-reading' },
       ],
