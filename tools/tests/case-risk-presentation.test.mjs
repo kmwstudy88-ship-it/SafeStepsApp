@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
+import fs from 'node:fs';
 
 const require = createRequire(import.meta.url);
 const { buildCaseRiskSummary } = require('../../lib/caseRiskPresentation.js');
@@ -41,3 +42,24 @@ test('buildCaseRiskSummary tolerates partial snapshot payloads', () => {
   assert.equal(summary.latest.rationaleText, 'No rationale available.');
   assert.equal(summary.latest.rulesText, 'Rules: unknown');
 });
+
+test('risk screens do not present empty safety queues when backend data is unavailable', () => {
+    const caseScreen = fs.readFileSync(new URL('../../app/cases/[id].tsx', import.meta.url), 'utf8');
+    const supervisorScreen = fs.readFileSync(new URL('../../app/dashboard/supervisor.tsx', import.meta.url), 'utf8');
+    assert.match(caseScreen, /disabled=\{loading \|\| recomputingRisk \|\| Boolean\(riskError\)\}/);
+    assert.match(caseScreen, /!riskSummary\.hasError && !loading \?/);
+    const caseQueueStart = caseScreen.indexOf('{!riskError && !loading ? <>');
+    const caseQueueEnd = caseScreen.indexOf('</> : null}', caseQueueStart);
+    assert.ok(caseQueueStart >= 0 && caseQueueEnd > caseQueueStart);
+    const caseQueues = caseScreen.slice(caseQueueStart, caseQueueEnd);
+    for (const title of ['Open Escalations', 'Follow-up Tasks', 'Recent Timeline Events']) {
+      assert.ok(caseQueues.includes(title), title);
+    }
+    const supervisorStart = supervisorScreen.indexOf('{!error && !loading && dashboard ? <>');
+    const supervisorEnd = supervisorScreen.indexOf('</> : null}', supervisorStart);
+    assert.ok(supervisorStart >= 0 && supervisorEnd > supervisorStart);
+    const supervisorQueues = supervisorScreen.slice(supervisorStart, supervisorEnd);
+    for (const title of ['Highest-Risk Open Cases', 'Rising-Risk Cases', 'Open Escalations', 'Overdue Follow-Ups']) {
+      assert.ok(supervisorQueues.includes(title), title);
+    }
+  });

@@ -59,6 +59,7 @@ export default function SupervisorDashboardScreen() {
         {loading ? <ActivityIndicator size="large" color="#208AEF" /> : null}
         {error ? <Text style={styles.error}>{error}</Text> : null}
 
+        {!error && !loading && dashboard ? <>
         <DashboardSection
           title="Highest-Risk Open Cases"
           items={highestRiskCases}
@@ -128,6 +129,7 @@ export default function SupervisorDashboardScreen() {
             </View>
           )}
         />
+        </> : null}
       </ScrollView>
     </SafeAreaView>
   );

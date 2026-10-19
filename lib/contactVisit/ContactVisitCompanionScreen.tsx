@@ -18,20 +18,11 @@ export function ContactVisitCompanionScreen({
   onComplete?: () => void;
 }) {
   const [activeTab, setActiveTab] = useState<'timer' | 'activities' | 'reflection'>('timer');
-  const [child, setChild] = useState('Leo');
+  const [child, setChild] = useState('');
   const [wentWell, setWentWell] = useState('');
   const [supportNeed, setSupportNeed] = useState('');
   const [nextStep, setNextStep] = useState('');
-  const [reflections, setReflections] = useState<VisitReflection[]>([
-    {
-      id: 'visit-1',
-      child: 'Maya',
-      wentWell: 'Maya initiated pretend play twice and stayed connected during goodbye.',
-      supportNeed: 'She became unsettled when the room got noisy near the end.',
-      nextStep: 'Pack headphones and ask for a quieter transition space next visit.',
-      loggedAt: '2026-09-10',
-    },
-  ]);
+  const [reflections, setReflections] = useState<VisitReflection[]>([]);
 
   const ACTIVITIES = [
     { title: 'Playdough Emotion Faces', age: 'Ages 3-8', description: 'Roll balls of dough together to make silly, happy, or calm faces.' },
@@ -54,7 +45,7 @@ export function ContactVisitCompanionScreen({
 
     const entry: VisitReflection = {
       id: `visit-${Date.now()}`,
-      child: child.trim() || 'Child',
+      child: child.trim() || 'Unspecified child',
       wentWell: wentWell.trim(),
       supportNeed: supportNeed.trim(),
       nextStep: nextStep.trim(),
@@ -66,18 +57,22 @@ export function ContactVisitCompanionScreen({
     setSupportNeed('');
     setNextStep('');
     onComplete?.();
-    Alert.alert('Reflection saved', 'This visit note is ready to feed into progress reports and worker follow-up.');
+    Alert.alert('Session-only reflection added', 'This note is held in this screen session only. It is not attached to a case, sent to a worker, or included in a report.');
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scroll}>
         <View style={styles.header}>
-          <Text style={styles.badge}>SUPERVISED CONTACT COMPANION</Text>
-          <Text style={styles.title}>Family Visit Companion</Text>
+          <Text style={styles.badge}>VISIT GUIDANCE PREVIEW</Text>
+          <Text style={styles.title}>Family visit guide</Text>
           <Text style={styles.subtitle}>
-            Structured schedule, bonding activities, and post-visit reflections that can feed back into progress documentation.
+            Optional activity ideas and a sample visit structure. Follow the actual visit plan and instructions from your authorized supervisor.
           </Text>
+          <View style={styles.noticeCard}>
+            <Text style={styles.noticeTitle}>Local preview only</Text>
+            <Text style={styles.helperText}>Reflections stay in this screen's memory only and clear when you leave. They are not official visit notes and are not shared or included in reports.</Text>
+          </View>
         </View>
 
         <View style={styles.tabRow}>
@@ -103,7 +98,8 @@ export function ContactVisitCompanionScreen({
 
         {activeTab === 'timer' ? (
           <View style={styles.card}>
-            <Text style={styles.sectionHeading}>4-Stage Visit Timeline ({totalMinutes} min session)</Text>
+            <Text style={styles.sectionHeading}>Example 4-stage structure ({totalMinutes} minutes)</Text>
+            <Text style={styles.helperText}>Timing is illustrative. Confirm the authorized visit duration, rules, and transitions with the supervising worker.</Text>
             {PHASES.map((p, i) => (
               <View key={i} style={styles.phaseRow}>
                 <View style={styles.phaseIndicator}>
@@ -136,12 +132,12 @@ export function ContactVisitCompanionScreen({
           <View style={styles.reflectionColumn}>
             <View style={styles.card}>
               <Text style={styles.sectionHeading}>Post-visit reflection</Text>
-              <Text style={styles.helperText}>Capture this while the visit is still fresh so it can be reused in progress notes and later report writing.</Text>
+              <Text style={styles.helperText}>This optional reflection is for your own session-only planning. It cannot be used as an official progress note.</Text>
               <TextInput
                 style={styles.input}
                 value={child}
                 onChangeText={setChild}
-                placeholder="Child name"
+                placeholder="Child name (optional)"
                 placeholderTextColor="#A0AEC0"
               />
               <TextInput
@@ -169,12 +165,13 @@ export function ContactVisitCompanionScreen({
                 multiline
               />
               <TouchableOpacity style={styles.saveButton} onPress={handleSaveReflection}>
-                <Text style={styles.saveButtonText}>Save to Progress Documentation</Text>
+                <Text style={styles.saveButtonText}>Keep reflection in this session</Text>
               </TouchableOpacity>
             </View>
 
             <View style={styles.card}>
-              <Text style={styles.sectionHeading}>Saved reflections</Text>
+              <Text style={styles.sectionHeading}>Session reflections</Text>
+              {!reflections.length ? <Text style={styles.helperText}>No reflections in this session.</Text> : null}
               {reflections.map((entry) => (
                 <View key={entry.id} style={styles.logCard}>
                   <View style={styles.logHeader}>
@@ -214,6 +211,8 @@ const styles = StyleSheet.create({
   tabBtnText: { fontSize: 14, fontWeight: '600', color: '#4A5568', textAlign: 'center' },
   tabBtnTextActive: { color: '#FFFFFF', fontWeight: '700' },
   card: { backgroundColor: '#FFFFFF', padding: 18, borderRadius: 14, borderWidth: 1, borderColor: '#E2E8F0', gap: 14 },
+  noticeCard: { backgroundColor: '#FFF7ED', padding: 12, borderRadius: 10, borderWidth: 1, borderColor: '#FED7AA', gap: 5 },
+  noticeTitle: { fontSize: 14, color: '#9A5B18', fontWeight: '700' },
   reflectionColumn: { gap: 16 },
   sectionHeading: { fontSize: 16, fontWeight: '700', color: '#1A202C' },
   helperText: { fontSize: 13, color: '#4A5568', lineHeight: 20 },

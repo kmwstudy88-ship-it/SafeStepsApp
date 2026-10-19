@@ -23,7 +23,6 @@ const {
   scoreDocumentIntelligenceResult,
 } = require('./document-intelligence/v1');
 const { authenticateBearer } = require('./document-intelligence/supabase');
-const { createCaseRiskService } = require('./case-risk/service');
 
 const PORT = Number(process.env.PORT || 3000);
 const MAX_BODY_BYTES = 35 * 1024 * 1024;
@@ -57,8 +56,6 @@ const DOCUMENT_SECTIONS = [
   'Interagency Collaboration Notes', 'Parent-Child Attachment Indicators', 'Incident Escalation Trail',
   'Compliance Obligations Tracking', 'Service Referral Timelines', 'Outcome Measurement Benchmarks',
 ];
-
-const caseRiskService = createCaseRiskService();
 
 function setCors(req, res) {
   const origin = req.headers.origin;
@@ -223,7 +220,6 @@ function createApp({
   port = PORT,
   workerIntervalMs = WORKER_INTERVAL_MS,
   personalAiHandlers = null,
-  riskService = caseRiskService,
 } = {}) {
   const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, `http://localhost:${port}`);
@@ -470,52 +466,20 @@ function createApp({
     }
 
     const caseRoute = routeCaseSubpath(url.pathname);
-    if (caseRoute?.action === 'events' && req.method === 'POST') {
+    // Deployment metadata confirms unresolved identity, authorization and persistence contracts.
+    if (
+      (caseRoute?.action === 'events' && req.method === 'POST') ||
+      (caseRoute?.action === 'recompute-risk' && req.method === 'POST') ||
+      (caseRoute?.action === 'risk-history' && req.method === 'GET') ||
+      (url.pathname === '/dashboard/supervisor' && req.method === 'GET') ||
+      (url.pathname === '/risk-assessment/compute' && req.method === 'POST')
+    ) {
       const user = await requireUser(req, res); if (!user) return;
-      const body = await parseBody(req);
-      const result = await riskService.createCaseEventAndRecompute({
-        authUserId: user.id,
-        caseId: caseRoute.caseId,
-        body,
-      });
-      return sendJson(res, 201, result);
-    }
-
-    if (caseRoute?.action === 'recompute-risk' && req.method === 'POST') {
-      const user = await requireUser(req, res); if (!user) return;
-      const result = await riskService.recomputeRisk({
-        authUserId: user.id,
-        caseId: caseRoute.caseId,
-      });
-      return sendJson(res, 200, result);
-    }
-
-    if (caseRoute?.action === 'risk-history' && req.method === 'GET') {
-      const user = await requireUser(req, res); if (!user) return;
-      const result = await riskService.getCaseRiskHistory({
-        authUserId: user.id,
-        caseId: caseRoute.caseId,
-      });
-      return sendJson(res, 200, result);
-    }
-
-    if (req.method === 'GET' && url.pathname === '/dashboard/supervisor') {
-      const user = await requireUser(req, res); if (!user) return;
-      const dashboard = await riskService.getSupervisorDashboard({ authUserId: user.id });
-      return sendJson(res, 200, dashboard);
-    }
-
-    if (req.method === 'POST' && url.pathname === '/risk-assessment/compute') {
-      const user = await requireUser(req, res); if (!user) return;
-      const body = await parseBody(req);
-      const caseId = String(body.caseId || body.case_id || '').trim();
-      if (!caseId) throw Object.assign(new Error('caseId is required'), { statusCode: 400 });
-      const result = await riskService.recomputeRisk({ authUserId: user.id, caseId });
-      return sendJson(res, 200, {
-        riskScore: result.snapshot.score,
-        riskLevel: result.snapshot.tier,
-        confidence: result.snapshot.confidence,
-        snapshot: result.snapshot,
+      return sendJson(res, 503, {
+        error: {
+          code: 'SERVICE_UNAVAILABLE',
+          message: 'Case risk workflows are unavailable until canonical schema and authorization reconciliation is verified.',
+        },
         human_review_required: true,
         decision_support_only: true,
       });

@@ -110,14 +110,21 @@ export default function CaseDetailScreen() {
           <Text style={styles.buttonText}>Open Document Viewer & Upload</Text>
         </TouchableOpacity>
 
+        <View style={styles.card}>
+          <Text style={styles.sectionTitle}>Case plan, milestones & requirements</Text>
+          <Text style={styles.meta}>
+            Case-plan tasks and milestone progress are not available in this view. The case-ID crosswalk, plan-data contract, and parent authorization rules must be verified before showing or calculating case-linked requirements.
+          </Text>
+        </View>
+
         <TouchableOpacity
           style={styles.secondaryButton}
           onPress={handleRecomputeRisk}
-          disabled={recomputingRisk}
+          disabled={loading || recomputingRisk || Boolean(riskError)}
           accessibilityRole="button"
           accessibilityLabel="Recompute case risk snapshot"
           accessibilityHint="Creates a new deterministic risk snapshot from the latest recorded case events."
-          accessibilityState={{ disabled: recomputingRisk, busy: recomputingRisk }}
+          accessibilityState={{ disabled: loading || recomputingRisk || Boolean(riskError), busy: recomputingRisk }}
         >
           <Text style={styles.secondaryButtonText}>{recomputingRisk ? 'Recomputing risk...' : 'Recompute Risk Snapshot'}</Text>
         </TouchableOpacity>
@@ -132,7 +139,7 @@ export default function CaseDetailScreen() {
               <Text style={styles.meta}>{riskSummary.latest.rationaleText}</Text>
               <Text style={styles.meta}>{riskSummary.latest.rulesText}</Text>
             </View>
-          ) : <Text style={styles.meta}>{riskSummary.emptyText || 'No risk history available yet.'}</Text>}
+          ) : !riskSummary.hasError && !loading ? <Text style={styles.meta}>{riskSummary.emptyText || 'No risk history available yet.'}</Text> : null}
         </View>
 
         <View style={styles.card}>
@@ -160,6 +167,7 @@ export default function CaseDetailScreen() {
           {!analyses.length ? <Text style={styles.meta}>No analyses available yet.</Text> : null}
         </View>
 
+        {!riskError && !loading ? <>
         <View style={styles.card}>
           <Text style={styles.sectionTitle}>Open Escalations</Text>
           {openAlerts.map((item) => (
@@ -196,6 +204,7 @@ export default function CaseDetailScreen() {
           ))}
           {!caseEvents.length ? <Text style={styles.meta}>No case events recorded yet.</Text> : null}
         </View>
+        </> : null}
       </ScrollView>
     </SafeAreaView>
   );

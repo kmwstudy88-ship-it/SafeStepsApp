@@ -2,28 +2,16 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity, TextInput, Alert } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
-export type EvidenceItem = {
+type EvidenceDraft = {
   id: string;
   title: string;
-  category: string;
   reflectionText: string;
-  imageUri?: string;
-  status: 'pending_verification' | 'verified_by_worker';
+  hasPhoto: boolean;
   createdAt: string;
 };
 
 export function EvidenceVaultScreen() {
-  const [items, setItems] = useState<EvidenceItem[]>([
-    {
-      id: 'ev_01',
-      title: 'Safe Sleeping Space Setup',
-      category: 'Child Safety & Routines',
-      reflectionText: 'Arranged child bed with safety rail and cleared toys off floor.',
-      status: 'verified_by_worker',
-      createdAt: '2026-08-20',
-    },
-  ]);
-
+  const [items, setItems] = useState<EvidenceDraft[]>([]);
   const [title, setTitle] = useState('');
   const [reflection, setReflection] = useState('');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -31,7 +19,7 @@ export function EvidenceVaultScreen() {
   const handlePickImage = async () => {
     const perm = await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (!perm.granted) {
-      Alert.alert('Permission required', 'Please grant photo permissions to upload proof.');
+      Alert.alert('Permission required', 'Photo library permission is needed to select a photo for this local preview.');
       return;
     }
 
@@ -48,79 +36,97 @@ export function EvidenceVaultScreen() {
 
   const handleAddEvidence = () => {
     if (!title.trim()) {
-      Alert.alert('Title required', 'Please enter what milestone this evidence represents.');
+      Alert.alert('Title required', 'Enter a short label for this local draft.');
       return;
     }
 
-    const newItem: EvidenceItem = {
-      id: `ev_${Date.now()}`,
+    setItems((current) => [{
+      id: `draft_${Date.now()}`,
       title: title.trim(),
-      category: 'Case Plan Goal Demonstration',
       reflectionText: reflection.trim(),
-      imageUri: selectedImage ?? undefined,
-      status: 'pending_verification',
-      createdAt: new Date().toISOString().split('T')[0],
-    };
-
-    setItems([newItem, ...items]);
+      hasPhoto: Boolean(selectedImage),
+      createdAt: new Date().toLocaleDateString(),
+    }, ...current]);
     setTitle('');
     setReflection('');
     setSelectedImage(null);
-    Alert.alert('Evidence Stored', 'Evidence logged and queued for caseworker verification.');
+    Alert.alert('Local draft added', 'This draft exists only in this screen session. It was not uploaded, stored as case evidence, or sent for worker review.');
+  };
+
+  const clearDrafts = () => {
+    setItems([]);
+    setTitle('');
+    setReflection('');
+    setSelectedImage(null);
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scroll}>
         <View style={styles.header}>
-          <Text style={styles.badge}>PROOF OF CHANGE</Text>
-          <Text style={styles.title}>Secure Evidence Vault</Text>
+          <Text style={styles.badge}>LOCAL PREVIEW ONLY</Text>
+          <Text style={styles.title}>Evidence draft workspace</Text>
           <Text style={styles.subtitle}>
-            Attach photos, meal preps, routine charts, or certificates directly to your case plan milestones.
+            Create a temporary note to explore the workflow. Nothing here is attached to a case, verified, uploaded, or retained after leaving this screen.
           </Text>
         </View>
 
+        <View style={styles.warningCard}>
+          <Text style={styles.warningTitle}>Do not add sensitive evidence here</Text>
+          <Text style={styles.warningText}>This prototype is not an evidence vault. Selected photos and text are held temporarily in screen memory, not securely case-stored or reviewed by a worker.</Text>
+        </View>
+
         <View style={styles.formCard}>
-          <Text style={styles.formTitle}>Log New Milestone Evidence</Text>
+          <Text style={styles.formTitle}>Create a local draft</Text>
           <TextInput
             style={styles.input}
-            placeholder="Milestone Title (e.g. Bedtime Routine Chart)"
-            placeholderTextColor="#A0AEC0"
+            placeholder="Draft title"
+            placeholderTextColor="#718096"
             value={title}
             onChangeText={setTitle}
           />
           <TextInput
             style={[styles.input, styles.textArea]}
-            placeholder="Brief reflection on what you did and how it helped your child..."
-            placeholderTextColor="#A0AEC0"
+            placeholder="Optional reflection (avoid sensitive details)"
+            placeholderTextColor="#718096"
             value={reflection}
             onChangeText={setReflection}
             multiline
           />
           <TouchableOpacity style={styles.mediaButton} onPress={handlePickImage}>
-            <Text style={styles.mediaButtonText}>{selectedImage ? '✓ Photo Attached' : '+ Select Photo Evidence'}</Text>
+            <Text style={styles.mediaButtonText}>{selectedImage ? 'Photo selected for this session only' : 'Select a photo (not uploaded)'}</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.submitButton} onPress={handleAddEvidence}>
-            <Text style={styles.submitButtonText}>Deposit to Evidence Vault</Text>
+            <Text style={styles.submitButtonText}>Add session-only draft</Text>
           </TouchableOpacity>
         </View>
 
-        <Text style={styles.sectionHeader}>Vault Entries ({items.length})</Text>
-        <View style={styles.itemsList}>
-          {items.map((item) => (
-            <View key={item.id} style={styles.itemCard}>
-              <View style={styles.itemHeader}>
-                <Text style={styles.itemTitle}>{item.title}</Text>
-                <Text style={[styles.statusBadge, item.status === 'verified_by_worker' ? styles.verifiedBadge : styles.pendingBadge]}>
-                  {item.status === 'verified_by_worker' ? 'Verified by CSO' : 'Pending CSO Review'}
-                </Text>
-              </View>
-              <Text style={styles.categoryLabel}>{item.category} • {item.createdAt}</Text>
-              {item.reflectionText ? <Text style={styles.reflectionBody}>"{item.reflectionText}"</Text> : null}
-            </View>
-          ))}
+        <View style={styles.listHeader}>
+          <Text style={styles.sectionHeader}>Session drafts ({items.length})</Text>
+          {items.length ? (
+            <TouchableOpacity accessibilityRole="button" onPress={clearDrafts}>
+              <Text style={styles.clearText}>Clear</Text>
+            </TouchableOpacity>
+          ) : null}
         </View>
+        {items.length ? (
+          <View style={styles.itemsList}>
+            {items.map((item) => (
+              <View key={item.id} style={styles.itemCard}>
+                <View style={styles.itemHeader}>
+                  <Text style={styles.itemTitle}>{item.title}</Text>
+                  <Text style={styles.statusBadge}>Local draft</Text>
+                </View>
+                <Text style={styles.categoryLabel}>{item.createdAt} · not uploaded or verified</Text>
+                {item.hasPhoto ? <Text style={styles.categoryLabel}>A photo was selected for this session only.</Text> : null}
+                {item.reflectionText ? <Text style={styles.reflectionBody}>{item.reflectionText}</Text> : null}
+              </View>
+            ))}
+          </View>
+        ) : (
+          <Text style={styles.emptyText}>No session drafts. Nothing has been uploaded or submitted.</Text>
+        )}
       </ScrollView>
     </SafeAreaView>
   );
@@ -130,25 +136,29 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F7FAFC' },
   scroll: { padding: 20, gap: 16 },
   header: { gap: 6 },
-  badge: { alignSelf: 'flex-start', backgroundColor: '#E2E8F0', color: '#4A5568', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 10, fontSize: 12, fontWeight: '700' },
+  badge: { alignSelf: 'flex-start', backgroundColor: '#FEF3C7', color: '#92400E', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 10, fontSize: 11, fontWeight: '800' },
   title: { fontSize: 22, fontWeight: 'bold', color: '#102033' },
-  subtitle: { fontSize: 14, color: '#718096', lineHeight: 20 },
+  subtitle: { fontSize: 14, color: '#4A5568', lineHeight: 20 },
+  warningCard: { backgroundColor: '#FFF7ED', padding: 14, borderRadius: 12, borderWidth: 1, borderColor: '#FED7AA', gap: 5 },
+  warningTitle: { fontSize: 14, fontWeight: '700', color: '#9A5B18' },
+  warningText: { fontSize: 12, color: '#7C4A17', lineHeight: 18 },
   formCard: { backgroundColor: '#FFFFFF', padding: 18, borderRadius: 14, borderWidth: 1, borderColor: '#E2E8F0', gap: 12 },
   formTitle: { fontSize: 16, fontWeight: '700', color: '#1A202C' },
-  input: { backgroundColor: '#F8FCFC', borderWidth: 1, borderColor: '#E2E8F0', borderRadius: 8, padding: 12, fontSize: 14, color: '#2D3748' },
+  input: { backgroundColor: '#F8FAFC', borderWidth: 1, borderColor: '#CBD5E0', borderRadius: 8, padding: 12, fontSize: 14, color: '#2D3748' },
   textArea: { height: 80, textAlignVertical: 'top' },
   mediaButton: { backgroundColor: '#EDF2F7', padding: 12, borderRadius: 8, alignItems: 'center' },
-  mediaButtonText: { color: '#2B6CB0', fontSize: 14, fontWeight: '600' },
-  submitButton: { backgroundColor: '#42A99D', padding: 14, borderRadius: 10, alignItems: 'center' },
+  mediaButtonText: { color: '#2B6CB0', fontSize: 14, fontWeight: '600', textAlign: 'center' },
+  submitButton: { backgroundColor: '#2D6CDF', padding: 14, borderRadius: 10, alignItems: 'center' },
   submitButtonText: { color: '#FFFFFF', fontSize: 15, fontWeight: 'bold' },
-  sectionHeader: { fontSize: 16, fontWeight: '700', color: '#1A202C', marginTop: 8 },
+  listHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  sectionHeader: { fontSize: 16, fontWeight: '700', color: '#1A202C' },
+  clearText: { color: '#205AA7', fontSize: 13, fontWeight: '700', padding: 6 },
   itemsList: { gap: 12 },
   itemCard: { backgroundColor: '#FFFFFF', padding: 16, borderRadius: 12, borderWidth: 1, borderColor: '#E2E8F0', gap: 6 },
-  itemHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  itemHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 8 },
   itemTitle: { fontSize: 15, fontWeight: '700', color: '#2D3748', flex: 1 },
-  statusBadge: { fontSize: 11, fontWeight: '700', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 8 },
-  verifiedBadge: { backgroundColor: '#C6F6D5', color: '#22543D' },
-  pendingBadge: { backgroundColor: '#FEEBC8', color: '#C05621' },
-  categoryLabel: { fontSize: 12, color: '#A0AEC0' },
-  reflectionBody: { fontSize: 13, color: '#4A5568', fontStyle: 'italic', marginTop: 4 },
+  statusBadge: { fontSize: 11, fontWeight: '700', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 8, backgroundColor: '#E2E8F0', color: '#4A5568' },
+  categoryLabel: { fontSize: 12, color: '#718096' },
+  reflectionBody: { fontSize: 13, color: '#4A5568', marginTop: 4 },
+  emptyText: { backgroundColor: '#FFFFFF', padding: 14, borderRadius: 10, color: '#4A5568', fontSize: 13 },
 });

@@ -20,6 +20,8 @@ const required = [
   "SAFESTEPS_STAGING_JOURNEY_VERIFIED_AT",
   "SAFESTEPS_DEPENDENCY_AUDIT_REVIEWED_AT",
   "SAFESTEPS_CREDENTIAL_ROTATION_CONFIRMED_AT",
+  "SAFESTEPS_CHILD_SAFE_POLICY_REVIEWED_AT",
+  "SAFESTEPS_CHILD_SAFE_HUMAN_REVIEW_SIGNOFF_AT",
   "SAFESTEPS_CONTENT_READINESS_REVIEWED_AT",
 ];
 
@@ -175,12 +177,16 @@ validateNoFirebaseDependencies();
 validateNoFirebaseRuntimeImports();
 validateContentReadinessEvidence();
 
+// Catalog capture cannot certify a crosswalk, deployed reconciliation or actor tests.
+fail(
+  "Backend contract release blocker: the case-root crosswalk, assessment authorization " +
+  "and Track C canonical identity/allocation reconciliation remain unverified. " +
+  "Follow supabase/README.md#backend-contract-evidence-no-deployment; metadata matches " +
+  "or environment sign-off flags cannot clear this blocker. Reviewed implementation " +
+  "and allowed/denied database actor tests are required before replacing this gate.",
+);
+
 if (process.exitCode) {
   console.error("Production readiness gate failed closed.");
   process.exit(process.exitCode);
 }
-
-console.log("Production readiness gate passed required staging, advisor, child-safe review, dependency, credential-rotation, and Firebase-removal checks.");
-console.log(
-  "Production readiness gate passed required staging, advisor, content-readiness, dependency, credential-rotation, and Firebase-removal checks.",
-);

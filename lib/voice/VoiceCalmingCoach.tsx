@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-na
 export function VoiceCalmingCoach({ onExit }: { onExit?: () => void }) {
   const [phase, setPhase] = useState<'Inhale' | 'Hold' | 'Exhale' | 'Pause'>('Inhale');
   const [secondsRemaining, setSecondsRemaining] = useState(4);
-  const [activeCycle, setActiveCycle] = useState(1);
+  const [activeCycle, setActiveCycle] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
 
   useEffect(() => {
@@ -37,18 +37,19 @@ export function VoiceCalmingCoach({ onExit }: { onExit?: () => void }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.badge}>VOICE & GROUNDING COACH</Text>
-        <Text style={styles.title}>Box Breathing Reset</Text>
+        <Text style={styles.badge}>OPTIONAL BREATHING EXERCISE</Text>
+        <Text style={styles.title}>Box breathing guide</Text>
         <Text style={styles.subtitle}>
-          Regulate your nervous system. Inhale 4s, Hold 4s, Exhale 4s, Pause 4s.
+        If comfortable, breathe in, hold, breathe out, and pause for four seconds each. Keep your breathing natural if counting does not feel right.
         </Text>
+        <Text style={styles.safetyNote}>This is a simple timing guide, not medical care or crisis support. Stop if you feel dizzy, short of breath, or more distressed.</Text>
 
         <View style={[styles.breathRing, phase === 'Inhale' ? styles.ringExpand : phase === 'Exhale' ? styles.ringContract : styles.ringHold]}>
           <Text style={styles.phaseText}>{phase}</Text>
           <Text style={styles.timerNumber}>{secondsRemaining}s</Text>
         </View>
 
-        <Text style={styles.cycleLabel}>Completed Cycles: {activeCycle}</Text>
+        <Text style={styles.cycleLabel}>Completed cycles: {activeCycle}</Text>
 
         <View style={styles.controlsRow}>
           <TouchableOpacity
@@ -74,6 +75,7 @@ const styles = StyleSheet.create({
   badge: { backgroundColor: 'rgba(66, 169, 157, 0.2)', color: '#42A99D', fontSize: 12, fontWeight: '800', paddingHorizontal: 12, paddingVertical: 4, borderRadius: 12 },
   title: { fontSize: 26, fontWeight: 'bold', color: '#FFFFFF', textAlign: 'center' },
   subtitle: { fontSize: 14, color: '#A0AEC0', textAlign: 'center', maxWidth: 300, lineHeight: 20 },
+  safetyNote: { fontSize: 12, color: '#CBD5E0', textAlign: 'center', maxWidth: 320, lineHeight: 18 },
   breathRing: { width: 220, height: 220, borderRadius: 110, borderWidth: 8, borderColor: '#42A99D', alignItems: 'center', justifyContent: 'center', marginVertical: 30 },
   ringExpand: { borderColor: '#42A99D', backgroundColor: 'rgba(66, 169, 157, 0.15)' },
   ringHold: { borderColor: '#ECC94B', backgroundColor: 'rgba(236, 201, 75, 0.15)' },

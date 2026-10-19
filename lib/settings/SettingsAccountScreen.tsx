@@ -11,12 +11,9 @@ type TrustedContact = {
 };
 
 export function SettingsAccountScreen() {
-  const [name, setName] = useState('Sarah Jenkins');
-  const [pronouns, setPronouns] = useState('she/her');
-  const [contacts, setContacts] = useState<TrustedContact[]>([
-    { id: 'tc-1', name: 'Joanne Foster', role: 'Trusted friend', phone: '0400 222 111' },
-    { id: 'tc-2', name: 'Priya Nair', role: 'Caseworker', phone: '0400 555 222' },
-  ]);
+  const [name, setName] = useState('');
+  const [pronouns, setPronouns] = useState('');
+  const [contacts, setContacts] = useState<TrustedContact[]>([]);
   const [newContactName, setNewContactName] = useState('');
   const [newContactRole, setNewContactRole] = useState('');
   const [newContactPhone, setNewContactPhone] = useState('');
@@ -91,7 +88,7 @@ export function SettingsAccountScreen() {
       setConfirmPin('');
       setRecoveryPhraseInput('');
       setRecoveryCodeInput('');
-      Alert.alert('Discreet settings saved', 'Your disguise PIN and recovery path were updated in secure device storage.');
+      Alert.alert('Discreet settings saved', 'The PIN and recovery strings were saved on this device with platform SecureStore.');
     } catch {
       Alert.alert('Unable to save discreet settings', 'Your disguise PIN or recovery details could not be stored securely. Please try again.');
     }
@@ -103,18 +100,20 @@ export function SettingsAccountScreen() {
         <View style={styles.header}>
           <Text style={styles.badge}>ACCOUNT & SOS SETTINGS</Text>
           <Text style={styles.title}>Settings & Trusted Contacts</Text>
-          <Text style={styles.subtitle}>Manage your profile, recovery details, and the people who should appear first when you need help fast.</Text>
+          <Text style={styles.subtitle}>Preview profile fields, local device recovery settings, and trusted-contact details.</Text>
         </View>
 
         <View style={styles.card}>
           <Text style={styles.cardTitle}>Profile</Text>
+          <Text style={styles.helperText}>These fields are held in this screen session only. They are not saved to an account.</Text>
           <TextInput style={styles.input} value={name} onChangeText={setName} placeholder="Display name" placeholderTextColor="#A0AEC0" />
           <TextInput style={styles.input} value={pronouns} onChangeText={setPronouns} placeholder="Pronouns" placeholderTextColor="#A0AEC0" />
         </View>
 
         <View style={styles.card}>
           <Text style={styles.cardTitle}>Discreet recovery</Text>
-          <Text style={styles.helperText}>Your disguise PIN and recovery details stay in secure device storage and are never shown back in plain text on this screen.</Text>
+          <Text style={styles.warningText}>Discreet mode is a calculator-style visual prototype, not a working calculator. It does not guarantee concealment or safety. Someone may still identify the app through the app switcher, notifications, device access, or other traces. Do not rely on it to protect you from monitoring or discovery.</Text>
+          <Text style={styles.helperText}>The PIN and recovery strings are stored on this device using platform SecureStore. This does not verify a trusted contact, unlock the device, or protect other app data.</Text>
           <Text style={styles.helperText}>
             PIN configured: {securityStatusLoaded ? (pinConfigured ? 'Yes' : 'No') : 'Checking secure storage...'}
           </Text>
@@ -132,6 +131,8 @@ export function SettingsAccountScreen() {
 
         <View style={styles.card}>
           <Text style={styles.cardTitle}>Trusted contacts for SOS</Text>
+          <Text style={styles.helperText}>This list is session-only and does not place calls or send alerts. No sample contacts are preloaded.</Text>
+          {!contacts.length ? <Text style={styles.helperText}>No contacts added in this session.</Text> : null}
           {contacts.map((contact) => (
             <View key={contact.id} style={styles.contactRow}>
               <View style={styles.contactText}>
@@ -145,6 +146,7 @@ export function SettingsAccountScreen() {
 
         <View style={styles.card}>
           <Text style={styles.cardTitle}>Add trusted contact</Text>
+          <Text style={styles.helperText}>Contact details are temporary in this prototype and will be cleared when the screen is left.</Text>
           <TextInput style={styles.input} value={newContactName} onChangeText={setNewContactName} placeholder="Name" placeholderTextColor="#A0AEC0" />
           <TextInput style={styles.input} value={newContactRole} onChangeText={setNewContactRole} placeholder="Role" placeholderTextColor="#A0AEC0" />
           <TextInput style={styles.input} value={newContactPhone} onChangeText={setNewContactPhone} placeholder="Phone" placeholderTextColor="#A0AEC0" keyboardType="phone-pad" />
@@ -167,6 +169,7 @@ const styles = StyleSheet.create({
   card: { backgroundColor: '#FFFFFF', borderRadius: 14, borderWidth: 1, borderColor: '#E2E8F0', padding: 16, gap: 10 },
   cardTitle: { fontSize: 15, fontWeight: '700', color: '#1A202C' },
   helperText: { fontSize: 13, color: '#4A5568', lineHeight: 19 },
+  warningText: { fontSize: 13, color: '#7C2D12', lineHeight: 19, backgroundColor: '#FFF7ED', padding: 12, borderRadius: 8, borderWidth: 1, borderColor: '#FED7AA' },
   input: { backgroundColor: '#F8FCFC', borderWidth: 1, borderColor: '#E2E8F0', borderRadius: 8, padding: 12, fontSize: 14, color: '#2D3748' },
   contactRow: { backgroundColor: '#F8FCFC', borderRadius: 10, borderWidth: 1, borderColor: '#E2E8F0', padding: 12, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 10 },
   contactText: { flex: 1 },

@@ -63,7 +63,7 @@ export function DiscreetModeScreen({
       setStoredPin(null);
       setStoredRecoveryPhrase(null);
       setStoredRecoveryCode(null);
-      setRecoveryMessage('Recovery confirmed. You can return to SafeSteps now and update your disguise PIN in Settings when it is safe.');
+      setRecoveryMessage('The saved recovery strings matched on this device. No trusted contact was contacted or verified. You can return to SafeSteps.');
       onUnlock?.();
       return;
     }
@@ -119,7 +119,7 @@ export function DiscreetModeScreen({
       {showRecovery ? (
         <View style={styles.recoveryCard}>
           <Text style={styles.recoveryTitle}>Discreet recovery path</Text>
-          <Text style={styles.recoveryText}>Use your saved recovery phrase and trusted-contact code to return to the main app without displaying sensitive details on screen.</Text>
+          <Text style={styles.recoveryText}>Enter the recovery strings previously saved on this device. This local check does not contact or verify a trusted person.</Text>
           <TextInput
             style={styles.input}
             placeholder="Recovery phrase"

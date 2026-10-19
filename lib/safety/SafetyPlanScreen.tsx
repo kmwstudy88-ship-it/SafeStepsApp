@@ -1,66 +1,43 @@
 import React, { useState } from 'react';
-import { Alert, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export function SafetyPlanScreen() {
-  const [warningSigns, setWarningSigns] = useState('Raised voice in the driveway, repeated texts, child getting clingy before handover.');
-  const [safePlace, setSafePlace] = useState("Neighbour Joanne's unit and the library family room.");
-  const [goBag, setGoBag] = useState('Medication, spare clothes, court paperwork, charger, comfort toy.');
-  const [trustedContacts, setTrustedContacts] = useState('Joanne — 0400 222 111\nCaseworker Priya — 0400 555 222\nDV helpline — 1800 000 000');
-  const [childSteps, setChildSteps] = useState('Use the blue backpack cue, move to the car first, then text the caseworker once safe.');
-  const [lastSaved, setLastSaved] = useState('2026-09-18 18:20');
-
-  const handleSave = () => {
-    setLastSaved(new Date().toISOString().replace('T', ' ').slice(0, 16));
-    Alert.alert('Safety plan updated', 'Your editable safety plan is saved and ready for review with your worker or support person.');
-  };
-
-  const checklist = [
-    'Choose where you and each child can go fast if home no longer feels safe.',
-    'Keep transport, charger, and medicines together in one grab-and-go place.',
-    'Check trusted-contact numbers every week so they stay current.',
-  ];
+  const [warningSigns, setWarningSigns] = useState('');
+  const [safePlace, setSafePlace] = useState('');
+  const [goBag, setGoBag] = useState('');
+  const [trustedContacts, setTrustedContacts] = useState('');
+  const [childSteps, setChildSteps] = useState('');
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scroll}>
         <View style={styles.header}>
-          <Text style={styles.badge}>EDITABLE SAFETY SUPPORT</Text>
-          <Text style={styles.title}>Parent Safety Plan Builder</Text>
-          <Text style={styles.subtitle}>Create and update a practical plan you can rehearse, share with supports, and revisit after incidents or handovers.</Text>
+          <Text style={styles.badge}>TEMPORARY NOTES</Text>
+          <Text style={styles.title}>Safety planning notes</Text>
+          <Text style={styles.subtitle}>Use these blank prompts only if it is safe to enter information on this device.</Text>
         </View>
 
-        <View style={styles.statusCard}>
-          <Text style={styles.statusTitle}>Plan status</Text>
-          <Text style={styles.statusText}>Last updated: {lastSaved}</Text>
-          <Text style={styles.statusText}>Share this with your worker, advocate, or trusted support person after any major change.</Text>
+        <View style={styles.noticeCard}>
+          <Text style={styles.noticeTitle}>This is not a saved or emergency plan</Text>
+          <Text style={styles.statusText}>Notes remain only in this screen's memory and may be lost when you leave or close the app. Nothing is sent to a worker, trusted contact, or emergency service.</Text>
+          <Text style={styles.statusText}>If you are in immediate danger, contact your local emergency service. For planning, consider working with a qualified local safety advocate who understands your situation. Do not rely on this app to protect you or keep information hidden.</Text>
         </View>
 
         <View style={styles.formCard}>
-          <Text style={styles.label}>Warning signs to act on early</Text>
-          <TextInput style={[styles.input, styles.textArea]} multiline value={warningSigns} onChangeText={setWarningSigns} />
+          <Text style={styles.label}>Warning signs you may want to notice</Text>
+          <TextInput accessibilityLabel="Warning signs notes" placeholder="Optional notes" placeholderTextColor="#718096" style={[styles.input, styles.textArea]} multiline value={warningSigns} onChangeText={setWarningSigns} />
 
-          <Text style={styles.label}>Safe places and exit options</Text>
-          <TextInput style={[styles.input, styles.textArea]} multiline value={safePlace} onChangeText={setSafePlace} />
+          <Text style={styles.label}>Places or options you have discussed with an advocate</Text>
+          <TextInput accessibilityLabel="Places and options notes" placeholder="Optional notes" placeholderTextColor="#718096" style={[styles.input, styles.textArea]} multiline value={safePlace} onChangeText={setSafePlace} />
 
-          <Text style={styles.label}>Go-bag essentials</Text>
-          <TextInput style={[styles.input, styles.textArea]} multiline value={goBag} onChangeText={setGoBag} />
+          <Text style={styles.label}>Items you may want to plan for</Text>
+          <TextInput accessibilityLabel="Items to plan for notes" placeholder="Optional notes" placeholderTextColor="#718096" style={[styles.input, styles.textArea]} multiline value={goBag} onChangeText={setGoBag} />
 
-          <Text style={styles.label}>Trusted contacts</Text>
-          <TextInput style={[styles.input, styles.textArea]} multiline value={trustedContacts} onChangeText={setTrustedContacts} />
+          <Text style={styles.label}>People or services you have independently confirmed are safe to contact</Text>
+          <TextInput accessibilityLabel="Confirmed contacts notes" placeholder="Optional notes" placeholderTextColor="#718096" style={[styles.input, styles.textArea]} multiline value={trustedContacts} onChangeText={setTrustedContacts} />
 
-          <Text style={styles.label}>Child-friendly safety steps</Text>
-          <TextInput style={[styles.input, styles.textArea]} multiline value={childSteps} onChangeText={setChildSteps} />
-
-          <TouchableOpacity style={styles.button} onPress={handleSave}>
-            <Text style={styles.buttonText}>Save Safety Plan</Text>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.checklistCard}>
-          <Text style={styles.checklistTitle}>Quick review checklist</Text>
-          {checklist.map((item) => (
-            <Text key={item} style={styles.checkItem}>• {item}</Text>
-          ))}
+          <Text style={styles.label}>Steps discussed with a qualified support person</Text>
+          <TextInput accessibilityLabel="Discussed safety steps notes" placeholder="Optional notes" placeholderTextColor="#718096" style={[styles.input, styles.textArea]} multiline value={childSteps} onChangeText={setChildSteps} />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -71,19 +48,14 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#F7FAFC' },
   scroll: { padding: 20, gap: 16 },
   header: { gap: 6 },
-  badge: { alignSelf: 'flex-start', backgroundColor: '#E6FFFA', color: '#285E61', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 10, fontSize: 12, fontWeight: '700' },
+  badge: { alignSelf: 'flex-start', backgroundColor: '#FFF7ED', color: '#9A3412', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 10, fontSize: 12, fontWeight: '700' },
   title: { fontSize: 22, fontWeight: '700', color: '#102033' },
   subtitle: { fontSize: 14, lineHeight: 20, color: '#4A5568' },
-  statusCard: { backgroundColor: '#FFFFFF', borderRadius: 14, borderWidth: 1, borderColor: '#E2E8F0', padding: 16, gap: 6 },
-  statusTitle: { fontSize: 15, fontWeight: '700', color: '#1A202C' },
+  noticeCard: { backgroundColor: '#FFF7ED', borderRadius: 14, borderWidth: 1, borderColor: '#FED7AA', padding: 16, gap: 8 },
+  noticeTitle: { fontSize: 15, fontWeight: '700', color: '#9A3412' },
   statusText: { fontSize: 13, color: '#4A5568', lineHeight: 19 },
   formCard: { backgroundColor: '#FFFFFF', borderRadius: 14, borderWidth: 1, borderColor: '#E2E8F0', padding: 16, gap: 10 },
   label: { fontSize: 14, fontWeight: '700', color: '#2D3748' },
   input: { backgroundColor: '#F8FCFC', borderWidth: 1, borderColor: '#E2E8F0', borderRadius: 8, padding: 12, fontSize: 14, color: '#2D3748' },
   textArea: { minHeight: 76, textAlignVertical: 'top' },
-  button: { backgroundColor: '#2C7A7B', borderRadius: 10, paddingVertical: 14, alignItems: 'center', marginTop: 4 },
-  buttonText: { color: '#FFFFFF', fontSize: 15, fontWeight: '700' },
-  checklistCard: { backgroundColor: '#FFFFFF', borderRadius: 14, borderWidth: 1, borderColor: '#E2E8F0', padding: 16, gap: 8 },
-  checklistTitle: { fontSize: 15, fontWeight: '700', color: '#1A202C' },
-  checkItem: { fontSize: 13, color: '#4A5568', lineHeight: 19 },
 });

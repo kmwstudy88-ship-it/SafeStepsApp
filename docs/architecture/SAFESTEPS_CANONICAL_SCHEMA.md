@@ -1,7 +1,10 @@
 # SafeSteps Canonical Schema Document
 
-Version: 1.1.0  
+Version: 1.1.1
+
 Defined: 12 September 2026 (Australia/Brisbane)  
+Metadata follow-up: 8 October 2026 (UTC capture times below)
+
 Authority path: `docs/architecture/SAFESTEPS_CANONICAL_SCHEMA.md`  
 Repository: `kmwstudy88-ship-it/SafeStepsApp`  
 Verified database: `yzxotxbwgxnxemkzigse` — Reunification and Parenting Project  
@@ -17,7 +20,7 @@ For runtime implementation, inspect the actual target database and migration his
 
 Scope includes identity, organizations/tenancy, cases, documents and document intelligence, messaging, evidence, assessments and their supporting governance records. Appendix A inventories every public relation observed. Specialized AI, curriculum, child experience, reporting, community service and safety tables remain owned extensions unless explicitly classified otherwise; existence alone does not make them substitutes for a core table.
 
-No application rows, case contents, personal records or secrets were retrieved for this document.
+No application rows, case contents, personal records or secrets were retrieved for this document. The September snapshot and Appendix A remain the historical baseline; the October follow-up below does not redefine ownership or certify deployment convergence.
 
 ### 1.1 Evidence baseline
 
@@ -43,6 +46,29 @@ The latest recorded migration version is `20260829181644`. Catalog objects can e
 6. Do not run new migrations against this project merely because this document names target behavior. Documentation adoption does not itself execute migrations.
 7. Keep schema decisions here. Other repositories, including `parent-app`, should link to a pinned version or release of this document instead of maintaining competing copies.
 8. If a new environment contains an unlisted relation, classify it explicitly before using it. Never infer that an unlisted table is safe to delete.
+
+### 1.3 Read-only deployment follow-up: 8 October 2026
+
+User-approved public-catalog and migration-history captures were executed through the Supabase dashboard, staging first and production second, inside read-only repeatable-read transactions ending in rollback. No application rows, credentials, migrations or permission changes were accessed/performed. These are selected live observations, not an exhaustive SQL/checksum comparison or executed authorization evidence.
+
+| Observation | SafeSteps Staging (`kwhjxggxffphknzxmtrf`) | Production (`yzxotxbwgxnxemkzigse`) |
+|---|---|---|
+| Capture timestamp (UTC) | `2026-10-08T07:59:29.266928+00:00` | `2026-10-08T08:02:36.3012+00:00` |
+| Public base tables / views | 868 / 17 | 836 / 24 |
+| Migration-history entries / latest version | 233 / `20260911074051` | 197 / `20260829181644` |
+| `assessment_records.case_id` FK | `reunification_cases.id`, `ON DELETE CASCADE` | Same |
+| Assessment policies | Seven, all permissive; parent/completer/facilitator/legacy-profile paths remain | Same policy count and paths |
+| Assessment table grants | `anon` and `authenticated` retain broad privileges including `TRUNCATE` | Same |
+| `case_assignments` | Absent from public relation inventory | Canonical `worker_id`, `team_id`, `role`, `status`, `created_at` aliases; `security_invoker=true` |
+| Track C dependencies `roles`, `team_memberships`, `case_events`, `risk_snapshots`, `escalation_alerts` | Absent from public relation inventory | Absent from public relation inventory |
+
+The migration-version sets contain **54 staging-only and 18 production-only entries**. Staging is not production-equivalent; a later maximum version is not proof that it includes production hardening. Production's latest version remains unchanged from September despite its public base-table count increasing by one. This count observation does not classify the additional relation or update the historical registry. All 836 production base tables have RLS enabled and all 24 production views have `security_invoker=true`; neither establishes authorization correctness.
+
+Production `users` has `id`, `auth_user_id`, `role`, `created_at`, not Track C's expected `display_name`, `role_id`, `is_active`. Production `case_allocations.allocated_user_id` references `auth.users.id` and `case_id` references operational `cases.id`. The live compatibility view therefore must not be replaced with the repository's conflicting legacy projection merely to satisfy Track C. The captured assessment trigger list contains the UPDATE audit trigger only; no general finalized-administration immutability trigger was observed.
+
+Both catalogs contain `reports` foreign keys to both case roots. Production explicitly has `reports.case_id -> cases.id` and `reports.reunification_case_id -> reunification_cases.id`. This is a relationship candidate to review, **not an authoritative case-pair crosswalk**: no report rows, pair uniqueness, completeness, tenant agreement or provenance were inspected. Do not infer case equivalence from those foreign keys or use report records as a mapping without a reviewed contract.
+
+The read-only query produced complete metadata JSON in the browser. Complete captures were not persisted to local files, so the offline reconciliation CLI was not run against them; selected observations were retained privately in the session. The historical `safesteps-schema-snapshot.json` is intentionally unchanged. Obtain administrator-reviewed full exports and compare actual migration SQL/checksums before authoring deployment reconciliation. Reviewed crosswalk data, authorization reconciliation and allowed/denied actor tests remain blocking prerequisites. No schema decision, reader/writer, generated type or migration was changed by this follow-up.
 
 ## 2. Canonical tables and ownership
 
@@ -1793,5 +1819,3 @@ Keys:
 - `FOREIGN KEY (linked_learning_evidence_submission_id) REFERENCES learning_evidence_submissions(id) ON DELETE SET NULL`
 - `FOREIGN KEY (mapped_by) REFERENCES auth.users(id) ON DELETE SET NULL`
 - `PRIMARY KEY (id)`
-
-

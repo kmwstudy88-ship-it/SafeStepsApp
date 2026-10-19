@@ -6,7 +6,6 @@ const {
   FORENSIC_CRITERIA_DOMAINS,
   FORENSIC_RELIABILITY_MODIFIERS,
   FORENSIC_SIGNAL_SCALE,
-  scoreForensicCriteriaAssessment,
   totalModifierCount,
   totalSignalCount,
 } = require('../../shared/forensicCriteriaModel');
@@ -15,7 +14,7 @@ type ResponseMap = Record<string, boolean | number | undefined>;
 
 export function ForensicCriteriaAssessmentScreen() {
   const [responses, setResponses] = useState<ResponseMap>({});
-  const [result, setResult] = useState<any | null>(null);
+  const [showSummary, setShowSummary] = useState(false);
 
   const answeredSignals = useMemo(
     () =>
@@ -37,78 +36,31 @@ export function ForensicCriteriaAssessmentScreen() {
   const totalQuestions = totalSignalCount() + totalModifierCount();
   const answeredQuestions = answeredSignals + answeredModifiers;
   const progressPercent = Math.round((answeredQuestions / totalQuestions) * 100);
-  const canScore = answeredSignals > 0;
+  const canReview = answeredSignals > 0;
 
   function setValue(id: string, value: boolean | number) {
     setResponses((prev) => ({ ...prev, [id]: value }));
   }
 
   function handleSubmit() {
-    setResult(scoreForensicCriteriaAssessment(responses));
+    setShowSummary(true);
   }
 
-  if (result) {
+  if (showSummary) {
     return (
       <SafeAreaView style={styles.container}>
         <ScrollView contentContainerStyle={styles.scroll}>
           <View style={styles.resultCard}>
-            <Text style={styles.resultBadge}>FORENSIC CRITERIA SCORED</Text>
-            <Text style={styles.title}>First-Class Forensic Criteria Set</Text>
-            <Text style={styles.subtitle}>
-              Risk-weighted, protective-weighted, contradiction-aware, bias-adjusted, child-centred, and ML-ready.
-            </Text>
-
-            <View style={styles.statRow}>
-              <View style={styles.statBox}>
-                <Text style={styles.statValue}>{result.adjusted_concern_score} / 100</Text>
-                <Text style={styles.statSub}>Adjusted Concern Score</Text>
-              </View>
-              <View style={styles.statBox}>
-                <Text style={styles.statValue}>{Math.round(result.confidence * 100)}%</Text>
-                <Text style={styles.statSub}>Confidence</Text>
-              </View>
-            </View>
-
-            <View style={styles.summaryGrid}>
-              <Text style={styles.summaryLine}>Raw concern score: {result.raw_concern_score} / 100</Text>
-              <Text style={styles.summaryLine}>Risk-weighted score: {result.risk_weighted_score} / 100</Text>
-              <Text style={styles.summaryLine}>Protective-weighted score: {result.protective_weighted_score} / 100</Text>
-              <Text style={styles.summaryLine}>Court defensibility: {result.court_defensibility.status.replace('_', ' ')}</Text>
-            </View>
-
+            <Text style={styles.resultBadge}>REFLECTION ONLY</Text>
+            <Text style={styles.title}>Prompt review complete</Text>
+            <Text style={styles.subtitle}>{answeredQuestions} of {totalQuestions} prompts answered in this screen session.</Text>
             <View style={styles.noticeCard}>
-              <Text style={styles.noticeTitle}>Child-centred priority domains</Text>
-              <Text style={styles.noticeBody}>{result.child_centred_priority_domains.map((domain: any) => domain.title).join(', ')}</Text>
+              <Text style={styles.noticeTitle}>No assessment or decision was made</Text>
+              <Text style={styles.noticeBody}>This prototype does not calculate or show concern, confidence, risk, or court-defensibility scores. Responses are not saved or shared. Discuss concerns with an appropriately qualified professional; do not use this screen to assess safety or make case decisions.</Text>
             </View>
-
-            {result.domains.map((domain: any) => (
-              <View key={domain.id} style={styles.domainResultCard}>
-                <View style={styles.domainResultTop}>
-                  <Text style={styles.domainResultTitle}>{domain.title}</Text>
-                  <Text style={styles.domainResultScore}>{domain.concern_score} / 100</Text>
-                </View>
-                <Text style={styles.domainMeta}>
-                  Risk {domain.risk_weighted_score} · Protective {domain.protective_weighted_score} · Coverage {domain.coverage_score}%
-                </Text>
-                {!!domain.risk_flags_present.length && (
-                  <Text style={styles.flagSummary}>Risk flags: {domain.risk_flags_present.map((flag: any) => flag.label).join(', ')}</Text>
-                )}
-                {!!domain.protective_flags_present.length && (
-                  <Text style={styles.protectiveSummary}>
-                    Protective flags: {domain.protective_flags_present.map((flag: any) => flag.label).join(', ')}
-                  </Text>
-                )}
-              </View>
-            ))}
-
-            <View style={styles.modifierCard}>
-              <Text style={styles.noticeTitle}>Reliability modifiers</Text>
-              <Text style={styles.summaryLine}>Contradictions: {result.contradictions_present.length}</Text>
-              <Text style={styles.summaryLine}>Bias flags: {result.bias_flags_present.length}</Text>
-              {result.court_defensibility.reasons.map((reason: string, index: number) => (
-                <Text key={index} style={styles.limitationsText}>• {reason}</Text>
-              ))}
-            </View>
+            <TouchableOpacity style={styles.submitButton} onPress={() => setShowSummary(false)}>
+              <Text style={styles.submitButtonText}>Return to prompts</Text>
+            </TouchableOpacity>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -120,11 +72,14 @@ export function ForensicCriteriaAssessmentScreen() {
       <ScrollView contentContainerStyle={styles.scroll}>
         <View style={styles.header}>
           <Text style={styles.assessmentTag}>FORENSIC</Text>
-          <Text style={styles.title}>First-Class Forensic Criteria Set</Text>
+          <Text style={styles.title}>Observation reflection prompts</Text>
           <Text style={styles.description}>
-            Structured observation capture for parent-child interaction, safety, regulation, child state, and co-parenting
-            dynamics. Higher scores reflect higher concern after protective offsets and reliability adjustments.
+            Local, unvalidated prompts for personal reflection only. No score, diagnosis, safety decision, or court opinion is produced.
           </Text>
+          <View style={styles.noticeCard}>
+            <Text style={styles.noticeTitle}>Prototype and privacy limits</Text>
+            <Text style={styles.noticeBody}>Responses stay in this screen's memory only and clear when you leave. This is not a professional assessment or an authorized case-record tool. Do not enter identifying or highly sensitive details.</Text>
+          </View>
           <View style={styles.progressBarBg}>
             <View style={[styles.progressBarFill, { width: `${progressPercent}%` }]} />
           </View>
@@ -137,7 +92,6 @@ export function ForensicCriteriaAssessmentScreen() {
           <View key={domain.id} style={styles.domainCard}>
             <View style={styles.domainHeader}>
               <Text style={styles.domainTitle}>{domain.title}</Text>
-              <Text style={styles.domainWeight}>Child weight {domain.childCentredWeight}×</Text>
             </View>
             <Text style={styles.domainDescription}>{domain.summary}</Text>
 
@@ -189,10 +143,9 @@ export function ForensicCriteriaAssessmentScreen() {
         ))}
 
         <View style={styles.domainCard}>
-          <Text style={styles.domainTitle}>Reliability & Fairness Modifiers</Text>
+          <Text style={styles.domainTitle}>Context prompts</Text>
           <Text style={styles.domainDescription}>
-            These modifiers do not create risk by themselves. They temper confidence, flag review requirements, and improve
-            court defensibility.
+            Optional prompts to consider context and uncertainty. They do not validate observations or determine how a court or professional should interpret them.
           </Text>
 
           <View style={styles.flagSection}>
@@ -221,11 +174,11 @@ export function ForensicCriteriaAssessmentScreen() {
         </View>
 
         <TouchableOpacity
-          style={[styles.submitButton, !canScore && styles.submitButtonDisabled]}
+          style={[styles.submitButton, !canReview && styles.submitButtonDisabled]}
           onPress={handleSubmit}
-          disabled={!canScore}
+          disabled={!canReview}
         >
-          <Text style={styles.submitButtonText}>Score Forensic Criteria</Text>
+          <Text style={styles.submitButtonText}>Review reflection only</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>

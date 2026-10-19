@@ -6,19 +6,14 @@ const require = createRequire(import.meta.url);
 const serverPath = require.resolve('../../backend/server.js');
 const pipelinePath = require.resolve('../../backend/document-intelligence/pipeline.js');
 const supabasePath = require.resolve('../../backend/document-intelligence/supabase.js');
+const riskPath = require.resolve('../../backend/case-risk/service.js');
 
-async function withLoadedServer(run, authenticateBearer) {
-  const prior = {
-    server: require.cache[serverPath],
-    pipeline: require.cache[pipelinePath],
-    supabase: require.cache[supabasePath],
-  };
-
+async function withLoadedServer(run) {
+  const paths = [serverPath, pipelinePath, supabasePath, riskPath];
+  const prior = new Map(paths.map(path => [path, require.cache[path]]));
   delete require.cache[serverPath];
   require.cache[pipelinePath] = {
-    id: pipelinePath,
-    filename: pipelinePath,
-    loaded: true,
+    id: pipelinePath, filename: pipelinePath, loaded: true,
     exports: {
       createTextDocument: async () => { throw new Error('not used'); },
       createUploadDocument: async () => { throw new Error('not used'); },
@@ -31,125 +26,92 @@ async function withLoadedServer(run, authenticateBearer) {
     },
   };
   require.cache[supabasePath] = {
-    id: supabasePath,
-    filename: supabasePath,
-    loaded: true,
-    exports: { authenticateBearer },
+    id: supabasePath, filename: supabasePath, loaded: true,
+    exports: {
+      authenticateBearer: async token => token === 'valid-token' ? { id: 'authenticated-user' } : null,
+    },
   };
-
+  require.cache[riskPath] = {
+    id: riskPath, filename: riskPath, loaded: true,
+    exports: {
+      createCaseRiskService() { throw new Error('Unreconciled risk service must not be initialized'); },
+    },
+  };
   try {
     await run(require(serverPath));
   } finally {
-    delete require.cache[serverPath];
-    for (const [key, path] of Object.entries({
-      server: serverPath,
-      pipeline: pipelinePath,
-      supabase: supabasePath,
-    })) {
-      if (prior[key]) require.cache[path] = prior[key];
+    for (const path of paths) {
+      if (prior.get(path)) require.cache[path] = prior.get(path);
       else delete require.cache[path];
     }
   }
 }
 
-test('legacy risk compute response remains explicitly decision support only', async () => {
-  const seen = [];
-  const riskService = {
-    async recomputeRisk(input) {
-      seen.push(input);
-      return { snapshot: { score: 82, tier: 'critical', confidence: 0.83 } };
-    },
-  };
+const caseId = '123e4567-e89b-12d3-a456-426614174000';
+const endpoints = [
+  ['POST', `/cases/${caseId}/events`],
+  ['POST', `/cases/${caseId}/recompute-risk`],
+  ['GET', `/cases/${caseId}/risk-history`],
+  ['GET', '/dashboard/supervisor'],
+  ['POST', '/risk-assessment/compute'],
+];
+const unavailable = {
+  error: {
+    code: 'SERVICE_UNAVAILABLE',
+    message: 'Case risk workflows are unavailable until canonical schema and authorization reconciliation is verified.',
+  },
+  human_review_required: true,
+  decision_support_only: true,
+};
 
+test('all unreconciled Track C routes fail closed before parsing bodies or invoking legacy services', async () => {
   await withLoadedServer(async ({ createApp }) => {
-    const app = createApp({ port: 0, workerIntervalMs: 60000, riskService });
-    await new Promise(resolve => app.server.listen(0, resolve));
-    try {
-      const response = await fetch(`http://127.0.0.1:${app.server.address().port}/risk-assessment/compute`, {
-        method: 'POST',
-        headers: { authorization: 'valid-token', 'content-type': 'application/json' },
-        body: JSON.stringify({ caseId: 'case-123' }),
-      });
-
-      assert.equal(response.status, 200);
-      assert.deepEqual(await response.json(), {
-        riskScore: 82,
-        riskLevel: 'critical',
-        confidence: 0.83,
-        snapshot: { score: 82, tier: 'critical', confidence: 0.83 },
-        human_review_required: true,
-        decision_support_only: true,
-      });
-    } finally {
-      await new Promise(resolve => {
-        app.server.once('close', resolve);
-        app.shutdown();
-      });
-    }
-  }, async token => token === 'valid-token' ? { id: 'authenticated-user' } : null);
-
-  assert.deepEqual(seen, [{ authUserId: 'authenticated-user', caseId: 'case-123' }]);
-});
-
-test('case-risk endpoints dispatch through the injected service after authentication', async () => {
-  const seen = [];
-  const riskService = {
-    async createCaseEventAndRecompute(input) {
-      seen.push(['event', input]);
-      return { endpoint: 'event' };
-    },
-    async recomputeRisk(input) {
-      seen.push(['recompute', input]);
-      return { endpoint: 'recompute' };
-    },
-    async getCaseRiskHistory(input) {
-      seen.push(['history', input]);
-      return { endpoint: 'history' };
-    },
-    async getSupervisorDashboard(input) {
-      seen.push(['dashboard', input]);
-      return { endpoint: 'dashboard' };
-    },
-  };
-  const caseId = '123e4567-e89b-12d3-a456-426614174000';
-
-  await withLoadedServer(async ({ createApp }) => {
-    const app = createApp({ port: 0, workerIntervalMs: 60000, riskService });
-    await new Promise(resolve => app.server.listen(0, resolve));
+    const app = createApp({
+      port: 0, workerIntervalMs: 60000,
+      riskService: new Proxy({}, {
+        get() { throw new Error('Injected services cannot bypass the runtime blocker'); },
+      }),
+    });
+    await new Promise(resolve => app.server.listen(0, '127.0.0.1', resolve));
     const baseUrl = `http://127.0.0.1:${app.server.address().port}`;
-    const headers = { authorization: 'valid-token', 'content-type': 'application/json' };
     try {
-      const requests = [
-        ['POST', `/cases/${caseId}/events`, JSON.stringify({ eventType: 'field_note' }), 201, 'event'],
-        ['POST', `/cases/${caseId}/recompute-risk`, undefined, 200, 'recompute'],
-        ['GET', `/cases/${caseId}/risk-history`, undefined, 200, 'history'],
-        ['GET', '/dashboard/supervisor', undefined, 200, 'dashboard'],
-      ];
-
-      for (const [method, path, body, status, endpoint] of requests) {
-        const response = await fetch(`${baseUrl}${path}`, { method, headers, body });
-        assert.equal(response.status, status);
-        assert.deepEqual(await response.json(), { endpoint });
+      for (const [method, path] of endpoints) {
+        const response = await fetch(`${baseUrl}${path}`, {
+          method,
+          headers: { authorization: 'valid-token', 'content-type': 'application/json' },
+          ...(method === 'POST' ? { body: '{invalid JSON' } : {}),
+        });
+        assert.equal(response.status, 503, path);
+        assert.deepEqual(await response.json(), unavailable, path);
       }
-
-      const unauthenticated = await fetch(`${baseUrl}/dashboard/supervisor`);
-      assert.equal(unauthenticated.status, 401);
+      for (const [method, path] of endpoints) {
+        for (const authorization of [undefined, 'invalid-token']) {
+          const response = await fetch(`${baseUrl}${path}`, {
+            method, headers: authorization ? { authorization } : {},
+          });
+          assert.equal(response.status, 401, path);
+          assert.equal((await response.json()).error.code, 'UNAUTHENTICATED');
+        }
+      }
+      const health = await fetch(`${baseUrl}/health`);
+      assert.equal(health.status, 200);
+      assert.equal((await health.json()).documentIntelligence, true);
+      const missingDocument = await fetch(`${baseUrl}/documents/${caseId}`, {
+        headers: { authorization: 'valid-token' },
+      });
+      assert.equal(missingDocument.status, 404);
+      assert.equal((await missingDocument.json()).error.code, 'NOT_FOUND');
+      const unknown = await fetch(`${baseUrl}/cases/${caseId}/unknown`, {
+        headers: { authorization: 'valid-token' },
+      });
+      assert.equal(unknown.status, 404);
+      const preflight = await fetch(`${baseUrl}/cases/${caseId}/events`, { method: 'OPTIONS' });
+      assert.equal(preflight.status, 204);
     } finally {
       await new Promise(resolve => {
         app.server.once('close', resolve);
         app.shutdown();
       });
     }
-  }, async token => token === 'valid-token' ? { id: 'authenticated-user' } : null);
-
-  assert.deepEqual(seen, [
-    ['event', {
-      authUserId: 'authenticated-user',
-      caseId,
-      body: { eventType: 'field_note' },
-    }],
-    ['recompute', { authUserId: 'authenticated-user', caseId }],
-    ['history', { authUserId: 'authenticated-user', caseId }],
-    ['dashboard', { authUserId: 'authenticated-user' }],
-  ]);
+  });
 });

@@ -68,12 +68,15 @@ function runGate(root, envOverrides = {}) {
   });
 }
 
-test('readiness gate passes with valid evidence, credentials, and no firebase usage', () => {
+test('readiness gate blocks unresolved backend contracts even when existing prerequisites pass', () => {
   const root = createFixture();
   try {
     const result = runGate(root);
-    assert.equal(result.status, 0);
-    assert.match(result.stdout, /child-safe review/);
+    assert.equal(result.status, 1);
+    assert.match(result.stderr, /Backend contract release blocker/);
+    assert.match(result.stderr, /Production readiness gate failed closed/);
+    assert.doesNotMatch(result.stderr, /Missing release gate evidence|Content readiness evidence is not ready|Firebase/);
+    assert.equal(result.stdout, '');
   } finally {
     fs.rmSync(root, { recursive: true, force: true });
   }
@@ -148,6 +151,11 @@ test('readiness gate fails closed when child-safe human review evidence is missi
     });
     assert.equal(result.status, 1);
     assert.match(result.stderr, /Missing release gate evidence: SAFESTEPS_CHILD_SAFE_HUMAN_REVIEW_SIGNOFF_AT/);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
 test('readiness gate fails closed when content readiness evidence is incomplete', () => {
   const root = createFixture({
     readinessEvidence: {
@@ -156,10 +164,27 @@ test('readiness gate fails closed when content readiness evidence is incomplete'
       summary: { blockingIssueCount: 2 },
     },
   });
+
   try {
     const result = runGate(root);
     assert.equal(result.status, 1);
     assert.match(result.stderr, /Content readiness evidence is not ready/);
+  } finally {
+    fs.rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('environment assertions cannot bypass backend contract reconciliation', () => {
+  const root = createFixture();
+  try {
+    const result = runGate(root, {
+      SAFESTEPS_BACKEND_CONTRACTS_READY: 'true',
+      SAFESTEPS_BACKEND_CONTRACTS_REVIEWED_AT: '2026-09-01T00:00:00Z',
+      SAFESTEPS_SKIP_BACKEND_CONTRACT_GATE: 'true',
+    });
+    assert.equal(result.status, 1);
+    assert.match(result.stderr, /Backend contract release blocker/);
+    assert.equal(result.stdout, '');
   } finally {
     fs.rmSync(root, { recursive: true, force: true });
   }

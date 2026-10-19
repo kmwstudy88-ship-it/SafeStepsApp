@@ -17,34 +17,36 @@ export default function SafeStepsHub() {
       pillar: 'Pillar 2: Proof of Change & Documentation',
       items: [
         { title: 'Case Management Console', subtitle: 'Authenticated case assignments & realtime status', route: '/cases', icon: '🗂️', badge: 'Supabase' },
-        { title: 'Family Dashboard', subtitle: 'Track multiple children, cases, and next actions together', route: '/family', icon: '👨‍👩‍👧‍👦', badge: 'Multi-child' },
-        { title: 'Supervisor Risk Dashboard', subtitle: 'Highest-risk cases, rising risk, escalations, and follow-ups', route: '/dashboard/supervisor', icon: '🚦', badge: 'Safety' },
-        { title: 'Assessments & Practice', subtitle: 'Private reflection and step-by-step learning practice', route: '/assessments', icon: '📊', badge: 'Local' },
-        { title: 'Secure Evidence Vault', subtitle: 'Photo proof & routine milestone locker', route: '/evidence', icon: '🔐', badge: 'Vault' },
-        { title: 'Court-Ready Progress Reports', subtitle: 'Cryptographically sealed PDF summaries', route: '/reports', icon: '⚖️', badge: 'PDF Export' },
+    { title: 'Parent Caregiver Portal', subtitle: 'Local workflow previews with production service gates', route: '/parent', icon: '👨‍👩‍👧‍👦', badge: 'Parent Hub' },
+    { title: 'Family Dashboard', subtitle: 'Family case data unavailable until parent access is verified', route: '/family', icon: '👨‍👩‍👧‍👦', badge: 'Unavailable' },
+    { title: 'Supervisor Risk Dashboard', subtitle: 'Unavailable pending verified schema and actor authorization', route: '/dashboard/supervisor', icon: '🚦', badge: 'Blocked' },
+    { title: 'Assessments & Practice', subtitle: 'Private reflection and step-by-step learning practice', route: '/assessments', icon: '📊', badge: 'Local' },
+    { title: 'Evidence Drafts', subtitle: 'Temporary local preview; not uploaded or worker-verified', route: '/evidence', icon: '🗂️', badge: 'Local only' },
+    { title: 'Progress Report Preview', subtitle: 'Export disabled until verified case data and review are connected', route: '/reports', icon: '⚖️', badge: 'Unavailable' },
       ],
     },
     {
       pillar: 'Pillar 3: AI & Voice Coaching',
       items: [
-        { title: 'Voice Calming Coach', subtitle: 'Box breathing (4-4-4-4) & grounding reset', route: '/voice-coach', icon: '🌬️', badge: 'Audio Reset' },
-        { title: '24/7 Parenting SOS Reliever', subtitle: 'Zero-judgment emergency de-escalation scripts', route: '/sos', icon: '🚨', badge: 'SOS' },
-        { title: 'Document Fairness & Bias Analyzer', subtitle: 'Objective framing & constructive reframing', route: '/fairness', icon: '📝', badge: 'AI Explainer' },
+    { title: 'AI Companion', subtitle: 'Unavailable until trusted consent and launch approval are verified', route: '/companion', icon: '🤖', badge: 'Not enabled' },
+    { title: 'Breathing Guide', subtitle: 'Optional four-count breathing timer; stop if uncomfortable', route: '/voice-coach', icon: '🌬️', badge: 'Local tool' },
+    { title: 'Calm Support Scripts', subtitle: 'Non-emergency suggestions; app cannot dispatch help', route: '/sos', icon: '🚨', badge: 'Guidance' },
+    { title: 'Document Fairness & Bias Analyzer', subtitle: 'Objective framing & constructive reframing', route: '/fairness', icon: '📝', badge: 'AI Explainer' },
       ],
     },
     {
       pillar: 'Pillar 4: Safety, Privacy & Contact Visits',
       items: [
-        { title: 'Safety Plan Builder', subtitle: 'Editable safety steps, escape contacts, and go-bag checklist', route: '/safety-plan', icon: '🛡️', badge: 'Plan' },
-        { title: 'Supervised Contact Visit Companion', subtitle: 'Visit flow, bonding ideas, and post-visit reflections for reports', route: '/contact-visit', icon: '🤝', badge: 'Visits' },
-        { title: 'Discreet Privacy Mode', subtitle: 'Functional disguise screen with PIN unlock and recovery support', route: '/discreet', icon: '🔒', badge: 'Disguise' },
+        { title: 'Safety Planning Notes', subtitle: 'Temporary on-screen prompts; not saved or an emergency plan', route: '/safety-plan', icon: '🛡️', badge: 'Local draft' },
+        { title: 'Family Visit Guide', subtitle: 'Example visit structure and session-only reflection', route: '/contact-visit', icon: '🤝', badge: 'Preview' },
+        { title: 'Calculator-Style Screen', subtitle: 'Prototype only; does not guarantee concealment or safety', route: '/discreet', icon: '🔒', badge: 'Prototype' },
       ],
     },
     {
       pillar: 'Pillar 5: Access, Language & Account',
       items: [
         { title: 'Accessibility & Language', subtitle: 'Plain-language mode, text-to-speech, and preferred language tools', route: '/accessibility', icon: '🗣️', badge: 'Inclusive' },
-        { title: 'Settings & Trusted Contacts', subtitle: 'Profile, trusted-contact SOS list, and account preferences', route: '/settings', icon: '⚙️', badge: 'Account' },
+        { title: 'Settings & Trusted Contacts', subtitle: 'Profile and contacts are previews; contacts are not saved or alerted', route: '/settings', icon: '⚙️', badge: 'Prototype' },
       ],
     },
   ];
@@ -56,7 +58,7 @@ export default function SafeStepsHub() {
           <Text style={styles.platformBadge}>CHILD SAFETY & REUNIFICATION PLATFORM</Text>
           <Text style={styles.title}>SafeSteps Hub</Text>
           <Text style={styles.subtitle}>
-            Comprehensive evidence-based tools for parents, caseworkers, and family safety.
+            Learning and planning prototypes with clear limits on storage, verification, and emergency support.
           </Text>
         </View>
 

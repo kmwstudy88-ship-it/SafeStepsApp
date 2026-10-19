@@ -11,7 +11,7 @@ import {
   safeStepsProtectiveCapacityItems,
   safeStepsScoringBands,
 } from '../data/safeStepsAssessmentInstrument';
-import type { AssessmentResponse } from '../data/safeStepsAssessmentInstrument';
+import type { AssessmentResponse } from '../engines/assessmentScoringEngine';
 import { scoreAssessment } from '../engines/assessmentScoringEngine';
 
 const domainDisplayNames: Record<string, string> = {
