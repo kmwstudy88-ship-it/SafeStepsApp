@@ -55,6 +55,7 @@ Compatibility and generated areas live here:
 | `/fairness` | `lib/fairness/DocumentFairnessViewerScreen.tsx` | live fairness analyzer UI | Node API fairness endpoint |
 | `/cases` | `app/cases/index.tsx` | authenticated case list | Supabase auth, case assignments, realtime |
 | `/cases/[id]` | `app/cases/[id].tsx` | case detail + analysis status | Supabase cases/documents/analyses |
+| `/parent` | `app/parent/index.tsx` | parent welcome + existing-account sign-in foundation; consent and parent case-plan access are not connected yet | Supabase auth only |
 | `/documents/[id]` | `app/documents/[id].tsx` | document upload + processing | `expo-document-picker` + Node analysis API |
 | `/contact-visit` | `lib/contactVisit/ContactVisitCompanionScreen.tsx` | static guidance UI | none |
 | `/discreet` | `lib/privacy/DiscreetModeScreen.tsx` | device-local disguise prototype | none |
@@ -74,7 +75,7 @@ The current parent/caregiver surface is narrower than the backend/domain footpri
 | Financial / housing evidence upload | `/evidence`, `/documents/[id]` | partial: generic evidence and document upload only | evidence categories include housing and document/evidence pipelines exist |
 | Substance-use self-tracking | none | missing parent log for sobriety, UA, recovery, and appointment tracking | assessment/evidence foundations only |
 | Peer / community support | none | missing parent peer-support, mentor, or forum surface | community/referral foundations exist outside the parent app surface |
-| Onboarding & consent | `/cases` sign-in only | partial: sign-in exists, but no dedicated onboarding, identity-verification, consent, or terms flow | onboarding consent events and parent intake save/resume RPCs |
+| Onboarding & consent | `/parent` | partial: welcome and existing-account sign-in are available; consent capture, identity verification, and parent case-plan access are not connected | parent onboarding consent events and parent intake save/resume RPCs; approved policy copy/version and case-root mapping are still required |
 | Dispute / grievance path | none | missing contestability and supervisor-review request flow | governance and decision-review structures exist, but no parent UI |
 | Emergency / crisis escalation | `/sos` only | partial: calming scripts exist, but no distinct crisis-routing or hotline flow | personal AI safety/referral structures exist without a dedicated route |
 | Data rights | none | missing parent export/download and access-audit views | export and audit structures exist in backend domains, but not in the app surface |

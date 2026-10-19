@@ -22,6 +22,7 @@ export default function RootLayout() {
         <Stack.Screen name="reports/index" options={{ title: 'Court Reports' }} />
         <Stack.Screen name="cases/index" options={{ title: 'Case List' }} />
         <Stack.Screen name="cases/[id]" options={{ title: 'Case Detail' }} />
+        <Stack.Screen name="parent/index" options={{ title: 'Parent & Guardian Space' }} />
         <Stack.Screen name="family/index" options={{ title: 'Family Dashboard' }} />
         <Stack.Screen name="dashboard/supervisor" options={{ title: 'Supervisor Dashboard' }} />
         <Stack.Screen name="documents/[id]" options={{ title: 'Document Viewer' }} />
