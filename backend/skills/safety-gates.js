@@ -41,13 +41,16 @@ export function evaluateSafetyPolicy({ skill, input, output }) {
   if (immediateDanger) {
     safetyConcerns.push('possible_immediate_safety_concern');
   }
+  if (disclosureSignals.length > 0) {
+    safetyConcerns.push('sensitive_disclosure_requires_human_review');
+  }
 
   return {
     policyVersion: POLICY_VERSION,
     skillId: skill?.id || null,
     decisionSupportOnly: true,
     humanReviewRequired: true,
-    requiresEscalationReview: immediateDanger,
+    requiresEscalationReview: immediateDanger || disclosureSignals.length > 0,
     disclosureSignals,
     safetyConcerns,
     automationBlockedReasons,

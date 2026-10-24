@@ -11,7 +11,7 @@ export const SKILLS = Object.freeze([
     id: 'fairness_detection',
     group: SKILL_GROUPS.document_intelligence,
     description: 'Flags fairness framing concerns and evidence-linked reframe opportunities.',
-    input: { type: 'document_text', required: ['documentId', 'text'] },
+    input: { type: 'document_text', required: ['text'] },
     output: { type: 'decision_support_findings', fields: ['concerns', 'objective_reframes'] },
     integrations: { primary: 'document-intelligence/analyze', trackC: false },
   },
@@ -19,7 +19,7 @@ export const SKILLS = Object.freeze([
     id: 'contradiction_detection',
     group: SKILL_GROUPS.document_intelligence,
     description: 'Identifies materially inconsistent statements without adjudicating truth.',
-    input: { type: 'document_text', required: ['documentId', 'text'] },
+    input: { type: 'document_text', required: ['text'] },
     output: { type: 'decision_support_findings', fields: ['contradictions', 'unresolved_questions'] },
     integrations: { primary: 'document-intelligence/analyze', trackC: false },
   },
@@ -27,7 +27,7 @@ export const SKILLS = Object.freeze([
     id: 'evidence_extraction',
     group: SKILL_GROUPS.document_intelligence,
     description: 'Extracts evidence-linked findings and evidence gaps from supplied records.',
-    input: { type: 'document_text', required: ['documentId', 'text'] },
+    input: { type: 'document_text', required: ['text'] },
     output: { type: 'decision_support_findings', fields: ['evidence_items', 'evidence_gaps'] },
     integrations: { primary: 'document-intelligence/analyze', trackC: true },
   },
@@ -35,7 +35,7 @@ export const SKILLS = Object.freeze([
     id: 'requirement_extraction',
     group: SKILL_GROUPS.document_intelligence,
     description: 'Extracts obligations/requirements from plans, orders, and commitments.',
-    input: { type: 'document_text', required: ['documentId', 'text'] },
+    input: { type: 'document_text', required: ['text'] },
     output: { type: 'decision_support_findings', fields: ['obligations', 'ambiguous_requirements'] },
     integrations: { primary: 'document-intelligence/analyze', trackC: true },
   },
@@ -43,7 +43,7 @@ export const SKILLS = Object.freeze([
     id: 'timeline_extraction',
     group: SKILL_GROUPS.document_intelligence,
     description: 'Builds chronology signals from dated references and event narratives.',
-    input: { type: 'document_text', required: ['documentId', 'text'] },
+    input: { type: 'document_text', required: ['text'] },
     output: { type: 'decision_support_findings', fields: ['timeline_events', 'chronology_gaps'] },
     integrations: { primary: 'document-intelligence/analyze', trackC: true },
   },
@@ -59,7 +59,7 @@ export const SKILLS = Object.freeze([
     id: 'concern_classification',
     group: SKILL_GROUPS.document_intelligence,
     description: 'Classifies concern categories and triage hints for human review.',
-    input: { type: 'document_text', required: ['documentId', 'text'] },
+    input: { type: 'document_text', required: ['text'] },
     output: { type: 'decision_support_findings', fields: ['concerns', 'triage_hints'] },
     integrations: { primary: 'document-intelligence/analyze', trackC: true },
   },
@@ -67,7 +67,7 @@ export const SKILLS = Object.freeze([
     id: 'unrealistic_expectation_detection',
     group: SKILL_GROUPS.document_intelligence,
     description: 'Flags unrealistic demands and provides child-safe, practical reframes.',
-    input: { type: 'document_text', required: ['documentId', 'text'] },
+    input: { type: 'document_text', required: ['text'] },
     output: { type: 'decision_support_findings', fields: ['unrealistic_expectations', 'suggested_reframes'] },
     integrations: { primary: 'document-intelligence/analyze', trackC: false },
   },
@@ -83,7 +83,7 @@ export const SKILLS = Object.freeze([
     id: 'multi_document_comparison',
     group: SKILL_GROUPS.workflow_action,
     description: 'Compares multiple records while preserving uncertainty and evidence traceability.',
-    input: { type: 'document_set', required: ['documentIds'] },
+    input: { type: 'document_set', required: ['documents'] },
     output: { type: 'comparison_summary', fields: ['agreements', 'contradictions', 'evidence_gaps'] },
     integrations: { primary: 'documents/compare', trackC: false },
   },
@@ -107,7 +107,7 @@ export const SKILLS = Object.freeze([
     id: 'follow_up_scheduling',
     group: SKILL_GROUPS.workflow_action,
     description: 'Creates follow-up scheduling recommendations aligned to Track C tiers/SLAs.',
-    input: { type: 'follow_up_input', required: ['caseId', 'tier'] },
+    input: { type: 'follow_up_input', required: ['caseId'] },
     output: { type: 'follow_up_output', fields: ['tasks', 'due_windows'] },
     integrations: { primary: 'case_follow_up_tasks', trackC: true },
   },
@@ -136,7 +136,7 @@ export const SKILLS = Object.freeze([
     integrations: { primary: 'assistant guidance only', trackC: false },
   },
   {
-    id: 'behavior_message_interpretation',
+    id: 'behaviour_message_interpretation',
     group: SKILL_GROUPS.communication_deescalation,
     description: 'Interprets behavior-related messaging without diagnosis or legal conclusions.',
     input: { type: 'communication_prompt', required: ['message'] },
@@ -160,7 +160,7 @@ export const SKILLS = Object.freeze([
     integrations: { primary: 'personal-ai child-safe policy', trackC: false },
   },
   {
-    id: 'disclosure_sensitive_handling',
+    id: 'disclosure_sensitive',
     group: SKILL_GROUPS.child_safe_interaction,
     description: 'Handles sensitive disclosures with safety planning and human-review routing.',
     input: { type: 'child_context_input', required: ['message'] },
@@ -226,6 +226,10 @@ export const SKILLS = Object.freeze([
 ]);
 
 const SKILLS_BY_ID = new Map(SKILLS.map((skill) => [skill.id, skill]));
+const SKILL_ID_ALIASES = Object.freeze({
+  behavior_message_interpretation: 'behaviour_message_interpretation',
+  disclosure_sensitive_handling: 'disclosure_sensitive',
+});
 
 export function listSkills() {
   return [...SKILLS];
@@ -236,7 +240,8 @@ export function listSkillsByGroup(group) {
 }
 
 export function getSkill(skillId) {
-  return SKILLS_BY_ID.get(String(skillId || '').trim()) || null;
+  const id = String(skillId || '').trim();
+  return SKILLS_BY_ID.get(SKILL_ID_ALIASES[id] || id) || null;
 }
 
 export default {

@@ -2,10 +2,15 @@ import { createHash, randomUUID } from "node:crypto";
 import express from "express";
 
 import { analyzeFairnessDocument } from "../../Services/DocumentIntelligence/FairnessEngine.js";
-import { badRequest, serviceUnavailable } from "../../lib/apiError.js";
+import { badRequest, forbidden, serviceUnavailable } from "../../lib/apiError.js";
 import { getSkill, listSkills, SKILL_GROUPS } from "../../skills/registry.js";
+import { createDefaultSkillHandlers } from "../../skills/defaultHandlers.js";
+import { createSkillsOrchestrator } from "../../skills/orchestrator.js";
+import { evaluateSafetyPolicy } from "../../skills/safety-gates.js";
 import {
   DOCUMENT_ROLES,
+  STAFF_DOCUMENT_ROLES,
+  hasAnyRole,
   requireAnyRole,
   requireCaseAccess,
 } from "../../middleware/authorize.js";
@@ -16,6 +21,7 @@ const MAX_TEXT_BYTES = 2 * 1024 * 1024;
 const router = express.Router();
 
 const auth = [requireAuthenticatedUser, requireAnyRole(...DOCUMENT_ROLES), requireCaseAccess];
+const skillsOrchestrator = createSkillsOrchestrator({ handlers: createDefaultSkillHandlers() });
 
 // ─── shared helpers ──────────────────────────────────────────────────────────
 
@@ -31,6 +37,31 @@ export function assertTextSize(text) {
   if (Buffer.byteLength(text, "utf8") > MAX_TEXT_BYTES) {
     throw badRequest("Document text is too large for analysis. Submit an extract under 2 MB.");
   }
+}
+
+export function validateSkillExecutionInput(body = {}) {
+  if (!body || typeof body !== "object" || Array.isArray(body)) body = {};
+  const input = body.input && typeof body.input === "object" && !Array.isArray(body.input)
+    ? { ...body.input }
+    : { ...body };
+  delete input.input;
+  if (body.caseId && !input.caseId) input.caseId = body.caseId;
+  let serialized;
+  try {
+    serialized = JSON.stringify(input);
+  } catch {
+    throw badRequest("Skill input must be valid JSON data.");
+  }
+  assertTextSize(serialized);
+  return input;
+}
+
+export function skillSafetyPreflight(skillName, text) {
+  return evaluateSafetyPolicy({
+    skill: getSkill(skillName),
+    input: { text },
+    output: null,
+  });
 }
 
 export async function persistSkillResult({ client, isLocalBypass, caseId, skillName, inputText, result }) {
@@ -74,6 +105,25 @@ function skillHandler(skillName, engineFn) {
   return async (req, res, next) => {
     try {
       const input = validateSkillInput(req.body, skillName);
+      const policy = skillSafetyPreflight(skillName, input.text);
+      if (policy.requiresEscalationReview) {
+        const result = {
+          status: "blocked",
+          analysis_skipped: true,
+          decisionSupportOnly: true,
+          humanReviewRequired: true,
+          policy,
+        };
+        const resultId = await persistSkillResult({
+          client: req.safeStepsAuth?.supabase,
+          isLocalBypass: req.safeStepsAuth?.isLocalBypass,
+          caseId: req.safeStepsCaseId,
+          skillName,
+          inputText: input.text,
+          result,
+        });
+        return res.status(201).json({ result_id: resultId, skill_name: skillName, result });
+      }
 
       let rawResult;
       try {
@@ -132,6 +182,58 @@ router.get("/catalog/:skillId", ...auth, (req, res, next) => {
     humanReviewRequired: true,
     irreversibleActionsAllowed: false,
   });
+});
+
+router.post("/run/:skillId", (req, _res, next) => {
+  const input = req.body?.input && typeof req.body.input === "object" ? req.body.input : req.body;
+  const caseId = req.body?.caseId ?? req.body?.case_id ?? input?.caseId ?? input?.case_id;
+  if (typeof caseId === "string" && caseId.trim()) req.body.caseId = caseId.trim();
+  next();
+}, ...auth, async (req, res, next) => {
+  try {
+    const skill = getSkill(req.params.skillId);
+    if (!skill) throw badRequest(`Skill ${req.params.skillId} not found.`);
+    if (
+      [SKILL_GROUPS.workflow_action, SKILL_GROUPS.compliance_safeguarding].includes(skill.group) &&
+      !req.safeStepsAuth?.isLocalBypass &&
+      !hasAnyRole(req.safeStepsAuth?.roles ?? [], STAFF_DOCUMENT_ROLES)
+    ) {
+      throw forbidden("ROLE_FORBIDDEN", "This SafeSteps skill is available to authorized staff only.");
+    }
+
+    const input = validateSkillExecutionInput(req.body);
+    const execution = await skillsOrchestrator.runSkill({
+      skillId: skill.id,
+      input,
+      context: { userId: req.safeStepsAuth?.user?.id ?? null },
+    });
+    if (execution.status === "failed") {
+      const status = execution.error?.code === "SKILL_INPUT_INVALID" ? 400 : 503;
+      return res.status(status).json({
+        error: {
+          code: execution.error?.code,
+          message: status === 400 ? execution.error.message : "Skill execution failed. Please try again shortly.",
+        },
+        skillId: skill.id,
+      });
+    }
+
+    const resultId = await persistSkillResult({
+      client: req.safeStepsAuth?.supabase,
+      isLocalBypass: req.safeStepsAuth?.isLocalBypass,
+      caseId: req.safeStepsCaseId,
+      skillName: skill.id,
+      inputText: JSON.stringify(input),
+      result: execution,
+    });
+    return res.status(201).json({
+      result_id: resultId,
+      skill_name: skill.id,
+      ...execution,
+    });
+  } catch (error) {
+    return next(error);
+  }
 });
 
 router.post("/fairness-detect", ...auth, skillHandler("fairness_detection", (text) => {

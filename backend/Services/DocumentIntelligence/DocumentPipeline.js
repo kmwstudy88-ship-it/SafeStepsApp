@@ -3,12 +3,47 @@ import { normalizeApiError } from "../../lib/apiError.js";
 import {
   DOCUMENT_INTELLIGENCE_SCHEMA_VERSION,
   analyzeDocument,
+  documentIntelligenceSections,
 } from "./DocumentService.js";
+import { evaluateSafetyPolicy } from "../../skills/safety-gates.js";
 import {
   attachSkillsToAnalysisResult,
   createDocumentSkillsOrchestrator,
   executeRequestedDocumentSkills,
 } from "../../skills/documentIntelligenceAdapter.js";
+
+function createDisclosureReviewResult(text, safetyPolicy) {
+  const reviewSection = {
+    summary: "Analysis paused pending professional safeguarding review.",
+    signals: [],
+    evidenceRefs: [],
+    gaps: ["Automated analysis was not run because a disclosure or immediate-danger signal requires review."],
+    reviewPrompts: ["Follow local safeguarding and emergency procedures; do not ask the child to repeat details."],
+    confidence: "low",
+  };
+  const sections = Object.fromEntries(
+    documentIntelligenceSections().map(({ key }) => [key, reviewSection]),
+  );
+
+  return {
+    schemaVersion: DOCUMENT_INTELLIGENCE_SCHEMA_VERSION,
+    model: "safety-preflight-gate",
+    generatedAt: new Date().toISOString(),
+    input: {
+      characterCount: typeof text === "string" ? text.length : 0,
+      truncated: false,
+    },
+    overallSummary: "Document analysis was paused pending professional safeguarding review.",
+    priorityReview: ["A disclosure or immediate-danger signal requires prompt human review."],
+    safetyFlags: safetyPolicy.safetyConcerns,
+    evidenceGaps: ["Automated evidence analysis was not performed."],
+    workerReviewActions: ["Follow local safeguarding and emergency procedures."],
+    sections,
+    disclaimer: "Decision support only. This output is not a finding, diagnosis, or legal advice.",
+    analysisSkipped: true,
+    safetyPolicy,
+  };
+}
 
 export async function runDocumentIntelligencePipeline(input, options = {}) {
   const analyzer = options.analyzer ?? analyzeDocument;
@@ -39,7 +74,14 @@ export async function runDocumentIntelligencePipeline(input, options = {}) {
   }
 
   try {
-    let result = await analyzer(input.text, options.analyzerOptions);
+    const preflightPolicy = evaluateSafetyPolicy({
+      skill: { id: "document_intelligence" },
+      input: { text: input.text },
+      output: null,
+    });
+    let result = preflightPolicy.requiresEscalationReview
+      ? createDisclosureReviewResult(input.text, preflightPolicy)
+      : await analyzer(input.text, options.analyzerOptions);
 
     const requestedSkills = input.skills ?? options.skills;
     if (requestedSkills) {

@@ -20,12 +20,66 @@ describe('skills orchestrator', () => {
     const orchestrator = createSkillsOrchestrator({ handlers: {} });
     const result = await orchestrator.runSkill({
       skillId: 'fairness_detection',
-      input: { text: 'Some text' },
+      input: { documentId: 'doc-1', text: 'Some text' },
     });
 
     expect(result.status).toBe('failed');
     expect(result.error.code).toBe('SKILL_HANDLER_NOT_FOUND');
     expect(result.skill.id).toBe('fairness_detection');
+  });
+
+  test('rejects missing required input fields before calling a handler', async () => {
+    const orchestrator = createSkillsOrchestrator({
+      handlers: { fairness_detection: async () => ({ concerns: [] }) },
+    });
+    const result = await orchestrator.runSkill({
+      skillId: 'fairness_detection',
+      input: { documentId: 'doc-1' },
+    });
+
+    expect(result.status).toBe('failed');
+    expect(result.error.code).toBe('SKILL_INPUT_INVALID');
+  });
+
+  test('halts a non-disclosure skill in preflight when input contains a disclosure signal', async () => {
+    let handlerCalled = false;
+    const orchestrator = createSkillsOrchestrator({
+      handlers: {
+        fairness_detection: async () => {
+          handlerCalled = true;
+          return { concerns: [] };
+        },
+      },
+    });
+    const result = await orchestrator.runSkill({
+      skillId: 'fairness_detection',
+      input: { documentId: 'doc-1', text: 'I am scared because someone hurt me.' },
+    });
+
+    expect(result.status).toBe('blocked');
+    expect(handlerCalled).toBe(false);
+    expect(result.policy.requiresEscalationReview).toBe(true);
+    expect(result.policy.safetyConcerns).toContain('sensitive_disclosure_requires_human_review');
+  });
+
+  test('halts non-disclosure execution when immediate danger requires escalation review', async () => {
+    let handlerCalled = false;
+    const orchestrator = createSkillsOrchestrator({
+      handlers: {
+        fairness_detection: async () => {
+          handlerCalled = true;
+          return { concerns: [] };
+        },
+      },
+    });
+    const result = await orchestrator.runSkill({
+      skillId: 'fairness_detection',
+      input: { documentId: 'doc-1', text: 'I am under attack right now.' },
+    });
+
+    expect(result.status).toBe('blocked');
+    expect(handlerCalled).toBe(false);
+    expect(result.policy.requiresEscalationReview).toBe(true);
   });
 
   test('safely catches and isolates handler failures', async () => {
@@ -39,7 +93,7 @@ describe('skills orchestrator', () => {
 
     const result = await orchestrator.runSkill({
       skillId: 'fairness_detection',
-      input: { text: 'Sample text' },
+      input: { documentId: 'doc-1', text: 'Sample text' },
     });
 
     expect(result.status).toBe('failed');
@@ -54,6 +108,7 @@ describe('skills orchestrator', () => {
           concerns: [],
           objective_reframes: [],
           summary: `Analyzed text of length ${input.text?.length || 0}`,
+          evidence_items: [{ evidence: 'Parent attended' }],
         }),
       },
     });
@@ -66,6 +121,16 @@ describe('skills orchestrator', () => {
     expect(result.status).toBe('ok');
     expect(result.orchestratorVersion).toBe(ORCHESTRATOR_VERSION);
     expect(result.output.summary).toBe('Analyzed text of length 47');
+    expect(result.output.evidence_items[0].source_span).toEqual({
+      doc_id: 'doc-1',
+      start: 0,
+      end: 'Parent attended'.length,
+    });
+    expect(result.run_meta).toMatchObject({
+      skill_version: '1.0.0',
+      model: 'model-not-reported',
+    });
+    expect(new Date(result.run_meta.timestamp_utc).toISOString()).toBe(result.run_meta.timestamp_utc);
     expect(result.automation.irreversibleActionsAllowed).toBe(false);
     expect(result.automation.humanReviewCheckpointRequired).toBe(true);
     expect(result.policy.decisionSupportOnly).toBe(true);
@@ -84,7 +149,7 @@ describe('skills orchestrator', () => {
 
     const result = await orchestrator.runSkill({
       skillId: 'fairness_detection',
-      input: { text: 'Case note' },
+      input: { documentId: 'doc-1', text: 'Case note' },
     });
 
     expect(result.status).toBe('blocked');

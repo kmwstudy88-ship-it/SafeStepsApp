@@ -35,13 +35,13 @@ Every skill MUST:
 | Risk Assessment | [risk-assessment.md](risk-assessment.md) | Score risk level across child safety and wellbeing domains |
 | Concern Classification | [concern-classification.md](concern-classification.md) | Assign canonical concern categories to case signals |
 | Unrealistic Expectation Detection | [unrealistic-expectation-detection.md](unrealistic-expectation-detection.md) | Flag stated expectations that are clinically or legally implausible |
-| Multi-Document Comparison | [multi-document-comparison.md](multi-document-comparison.md) | Align and diff claims across multiple source documents |
 
 ### Operational Skills
 
 | Skill | File | Purpose |
 |---|---|---|
 | Case Packet Builder | [case-packet-builder.md](case-packet-builder.md) | Assemble audience-specific case summaries |
+| Multi-Document Comparison | [multi-document-comparison.md](multi-document-comparison.md) | Align and diff claims across multiple source documents |
 | Case Update | [case-update.md](case-update.md) | Incrementally update a live case record |
 | Escalation | [escalation.md](escalation.md) | Trigger and route escalation actions |
 | Follow-Up Scheduling | [follow-up-scheduling.md](follow-up-scheduling.md) | Generate follow-up task lists with deadlines |
@@ -76,7 +76,21 @@ Every skill MUST:
 ingest → normalize → [evidence | requirements | timeline] → [contradictions | fairness] → [risk | concerns] → packet builder → [escalation | follow-up] → case update
 ```
 
-All skills are idempotent. Human-review checkpoints are mandatory at `high` and `critical` risk outcomes before downstream actions are taken.
+## Runtime Map and Current Limits
+
+The authenticated, case-scoped `POST /agent-skills/run/:skillId` endpoint accepts `{ "caseId": "...", "input": { ... } }` and executes the catalog handler. Workflow-action and compliance/safeguarding skills are restricted to staff roles. The response includes the skill definition, decision-support output, `run_meta`, policy findings, and a mandatory human-review checkpoint. `GET /agent-skills/catalog` and `GET /agent-skills/catalog/:skillId` expose discovery. The existing document-specific endpoints (`/fairness-detect`, `/contradiction-detect`, `/evidence-extract`, `/requirement-extract`, `/timeline-extract`, `/risk-assess`, `/concern-classify`, and `/expectation-detect`) remain available and skip analysis when the disclosure preflight requires review.
+
+| Skill group | Runtime implementation | Review boundary |
+|---|---|---|
+| Document intelligence (Fairness, Contradiction, Evidence, Requirement, Timeline, Risk, Concern, Unrealistic Expectation) | Eight handlers in `backend/skills/documentIntelligenceAdapter.js`; fairness and risk include deterministic signals, while several extractors use configured model engines. | Disclosure signals stop model analysis in the document pipeline, direct document routes, and non-disclosure orchestrator handlers. Extracted text is source-linked only when an evidence quote exactly matches supplied text. |
+| Workflow actions (Case Packet, Multi-Document Comparison, Case Update, Escalation, Follow-Up Scheduling) | Draft-only handlers in `backend/skills/defaultHandlers.js`; shared endpoint: `/agent-skills/run/:skillId`. | These handlers do not update case records, send notifications, or create calendar tasks. Document comparison needs `input.documents` with text; unmatched statements are not asserted as contradictions. |
+| Communication & de-escalation (Trauma-Informed, Emotion-Labeling, Guided Discovery, Behaviour-Message Interpretation, De-Escalation Strategy) | Rule-based communication and prompt handlers in `backend/skills/defaultHandlers.js`; shared endpoint: `/agent-skills/run/:skillId`. | Language signals do not diagnose or determine intent; generated prompts are optional and must be reviewed. |
+| Child-safe interaction (Child-Safe Conversation, Disclosure-Sensitive, Developmental Appropriateness, Safety Planning, Boundary & Privacy) | `backend/personal-ai/child-safe-policy.js` powers child-safe responses, disclosure triage, developmental adaptation, and safety prompts; shared endpoint: `/agent-skills/run/:skillId`. | Disclosure/immediate-danger findings require human review and block other skill execution; local safeguarding/emergency procedures remain authoritative. |
+| Compliance & safeguarding (Child Safe Standards, Bias & Discrimination, Cultural Safety, Policy Interpretation) | Fairness screening reuses `FairnessEngine`; cultural-safety and policy checks return review prompts; standards compliance reports unassessed dimensions in `backend/skills/defaultHandlers.js`; shared endpoint: `/agent-skills/run/:skillId`. | Text screening is not a legal interpretation, formal standards audit, or substitute for culturally informed review. |
+
+The runtime validates required input fields, emits a versioned `run_meta` block, and adds character spans when an evidence quote can be matched exactly. If a handler does not report its model, `run_meta.model` is `model-not-reported`; upstream model provenance still needs to be wired through those engines. The per-skill output JSON Schemas are not yet enforced against handler results, and evaluation datasets / full CI quality gates described above remain follow-up work. Repeated calls create separate skill-result records; they are not idempotent. Legacy IDs `behavior_message_interpretation` and `disclosure_sensitive_handling` resolve to the canonical `behaviour_message_interpretation` and `disclosure_sensitive` IDs.
+
+High- and critical-risk outcomes require human review before any downstream decision or action.
 
 ## References
 

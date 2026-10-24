@@ -57,6 +57,8 @@ describe('skills registry', () => {
     expect(getSkill('non_existent_skill')).toBeNull();
     expect(getSkill(null)).toBeNull();
     expect(getSkill('')).toBeNull();
+    expect(getSkill('behavior_message_interpretation').id).toBe('behaviour_message_interpretation');
+    expect(getSkill('disclosure_sensitive_handling').id).toBe('disclosure_sensitive');
   });
 
   test('verifies each skill group has registered skills', () => {
