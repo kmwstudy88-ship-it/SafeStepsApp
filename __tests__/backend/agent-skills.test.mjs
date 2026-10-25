@@ -2,7 +2,9 @@ import { expect, jest, test, describe } from "@jest/globals";
 
 import {
   assertTextSize,
+  skillSafetyPreflight,
   validateSkillInput,
+  validateSkillExecutionInput,
   persistSkillResult,
 } from "../../backend/routes/agent-skills/agentSkillsRoutes.js";
 
@@ -28,6 +30,34 @@ describe("validateSkillInput", () => {
   test("returns null documentId when not provided", () => {
     const result = validateSkillInput({ text: "hello" }, "concern_classification");
     expect(result.documentId).toBeNull();
+  });
+});
+
+describe("validateSkillExecutionInput", () => {
+  test("accepts structured input and carries the authorized case id into it", () => {
+    expect(validateSkillExecutionInput({
+      caseId: "case-123",
+      input: { message: "Please help me pause." },
+    })).toEqual({ message: "Please help me pause.", caseId: "case-123" });
+  });
+
+  test("rejects oversized serialized skill input", () => {
+    expect(() => validateSkillExecutionInput({
+      input: { message: "x".repeat(2 * 1024 * 1024) },
+    })).toThrow("under 2 MB");
+  });
+});
+
+describe("skillSafetyPreflight", () => {
+  test("flags sensitive disclosures before direct document analysis handlers run", () => {
+    const result = skillSafetyPreflight("evidence_extraction", "I am scared because someone hurt me.");
+    expect(result.requiresEscalationReview).toBe(true);
+    expect(result.disclosureSignals).toContain("abuse");
+  });
+
+  test("allows routine text to continue to its skill handler", () => {
+    const result = skillSafetyPreflight("evidence_extraction", "The parent attended the scheduled visit.");
+    expect(result.requiresEscalationReview).toBe(false);
   });
 });
 

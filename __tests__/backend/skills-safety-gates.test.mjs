@@ -109,4 +109,16 @@ describe('skills safety gates and policy enforcement', () => {
     expect(policy.requiresEscalationReview).toBe(true);
     expect(policy.safetyConcerns).toContain('possible_immediate_safety_concern');
   });
+
+  test('routes non-immediate disclosure signals to human review', () => {
+    const policy = evaluateSafetyPolicy({
+      skill: dummySkill,
+      input: { message: 'I feel scared when the adults argue.' },
+      output: null,
+    });
+
+    expect(policy.requiresEscalationReview).toBe(true);
+    expect(policy.disclosureSignals).toContain('fear');
+    expect(policy.safetyConcerns).toContain('sensitive_disclosure_requires_human_review');
+  });
 });

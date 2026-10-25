@@ -283,4 +283,47 @@ describe('document intelligence and skills orchestration integration', () => {
     expect(updatedPayload.result.skills.decisionSupportOnly).toBe(true);
     expect(updatedPayload.result.skills.humanReviewRequired).toBe(true);
   });
+
+  test('pauses document analysis before model execution when input contains an immediate disclosure signal', async () => {
+    let updatedPayload = null;
+    const fakeClient = {
+      from: jest.fn(() => ({
+        insert: jest.fn(() => ({
+          select: () => ({
+            single: async () => ({ data: { id: 'run-3' }, error: null }),
+          }),
+        })),
+        update: jest.fn((payload) => {
+          updatedPayload = payload;
+          return {
+            eq: () => ({
+              select: () => ({
+                single: async () => ({ data: { id: 'run-3', ...payload }, error: null }),
+              }),
+            }),
+          };
+        }),
+      })),
+    };
+    const analyzer = jest.fn(async () => ({ overallSummary: 'Should not run.' }));
+
+    const completed = await runDocumentIntelligencePipeline(
+      {
+        client: fakeClient,
+        caseId: 'case-123',
+        userId: 'user-123',
+        sourceMode: 'text',
+        text: 'I am being hurt right now and feel scared.',
+        skills: ['fairness_detection'],
+      },
+      { analyzer },
+    );
+
+    expect(analyzer).not.toHaveBeenCalled();
+    expect(completed.result.analysisSkipped).toBe(true);
+    expect(completed.result.model).toBe('safety-preflight-gate');
+    expect(completed.result.safetyPolicy.requiresEscalationReview).toBe(true);
+    expect(completed.result.skills.blockedCount).toBe(1);
+    expect(updatedPayload.status).toBe('completed');
+  });
 });
