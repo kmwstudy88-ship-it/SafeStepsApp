@@ -1,0 +1,10 @@
+{
+  "welcomeMessages": {},
+  "iceBreakers": {},
+  "lessonIntroductions": {},
+  "conceptExplanations": {},
+  "realWorldExamples": {},
+  "storytellingPrompts": {},
+  "guidedLearning": {},
+  "knowledgeChecks": {}
+}

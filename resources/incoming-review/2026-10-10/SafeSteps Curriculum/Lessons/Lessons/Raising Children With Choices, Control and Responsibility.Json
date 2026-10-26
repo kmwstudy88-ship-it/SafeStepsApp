@@ -1,0 +1,341 @@
+{
+  "course": {
+    "title": "Raising Children With Choices, Control and Responsibility",
+    "audience": "Parents and caregivers",
+    "delivery_format": {
+      "duration_per_module": "2 hours",
+      "format": [
+        "presentation",
+        "discussion",
+        "reflection",
+        "practice activities",
+        "home implementation"
+      ]
+    },
+    "modules": [
+      {
+        "module_id": 1,
+        "title": "Understanding the Power of Choice",
+        "duration": "2 hours",
+        "purpose": "Help parents understand how giving children appropriate choices develops confidence, decision-making ability, responsibility, and resilience.",
+        "learning_outcomes": [
+          "Understand why choice is essential for healthy child development",
+          "Recognise the difference between guidance and control",
+          "Identify age-appropriate decisions children can make",
+          "Develop a plan to increase responsibility at home"
+        ],
+        "materials": [
+          "Whiteboard or flip chart",
+          "Sticky notes",
+          "Family Choice Audit worksheet",
+          "Pens and highlighters"
+        ],
+        "sections": [
+          {
+            "type": "activity",
+            "title": "The Choice Reflection",
+            "duration_minutes": 15,
+            "instructions": [
+              "Write down five decisions you made for your child today",
+              "Write down five decisions your child made independently"
+            ],
+            "discussion_questions": [
+              "What patterns do you notice?",
+              "Are you surprised by the balance?",
+              "Where might your child be ready for more responsibility?"
+            ]
+          },
+          {
+            "type": "teaching",
+            "title": "Why Choice Matters",
+            "duration_minutes": 20,
+            "key_concepts": [
+              "Autonomy",
+              "Competence",
+              "Ownership",
+              "Personal responsibility"
+            ],
+            "facilitator_notes": "Children who never make decisions often become dependent on adults. Appropriate choices help develop judgement and confidence.",
+            "discussion_question": "What happens when a child is never allowed to make mistakes?"
+          },
+          {
+            "type": "teaching",
+            "title": "Choice and Self-Esteem",
+            "duration_minutes": 15,
+            "model": "Choice → Responsibility → Competence → Confidence",
+            "exercise": {
+              "name": "Trusted Decision Reflection",
+              "instruction": "Identify a childhood experience where you were trusted to make an important decision."
+            }
+          },
+          {
+            "type": "case_study",
+            "title": "Jack",
+            "duration_minutes": 20,
+            "scenario": "Eight-year-old Jack refuses to choose clothes, activities or meals because his parents always decide for him.",
+            "questions": [
+              "What skills might Jack be missing?",
+              "What message may Jack have learned about himself?",
+              "How could responsibility be gradually transferred?"
+            ]
+          },
+          {
+            "type": "workshop",
+            "title": "Family Choice Audit",
+            "duration_minutes": 30,
+            "columns": [
+              "My Child Already Chooses",
+              "I Control",
+              "I Could Transfer"
+            ],
+            "examples": [
+              "Clothing",
+              "Homework timing",
+              "Bedroom organisation",
+              "Lunch choices",
+              "Play activities"
+            ]
+          },
+          {
+            "type": "action_plan",
+            "title": "Transfer of Responsibility",
+            "duration_minutes": 10,
+            "tasks": [
+              "One choice to introduce immediately",
+              "One choice to introduce within a month",
+              "One responsibility to gradually transfer"
+            ]
+          }
+        ],
+        "home_assignment": {
+          "task": "Introduce three age-appropriate choices",
+          "record": [
+            "Child response",
+            "Parent response",
+            "Lessons learned"
+          ]
+        },
+        "reflection_questions": [
+          "Where do I over-manage?",
+          "What am I afraid might happen if I let go?",
+          "What would greater independence look like in six months?"
+        ]
+      },
+      {
+        "module_id": 2,
+        "title": "Building Self-Control",
+        "duration": "2 hours",
+        "purpose": "Equip parents with practical strategies to help children regulate emotions, behaviour, and impulses.",
+        "learning_outcomes": [
+          "Understand how self-control develops",
+          "Learn the difference between discipline and emotional coaching",
+          "Practise co-regulation strategies",
+          "Create a family emotional regulation plan"
+        ],
+        "materials": [
+          "Emotion cards",
+          "Feelings thermometer worksheet",
+          "Calm-down plan template",
+          "Pens and markers"
+        ],
+        "sections": [
+          {
+            "type": "activity",
+            "title": "Think of a Time",
+            "duration_minutes": 10,
+            "prompts": [
+              "Child had a meltdown",
+              "Child became angry",
+              "Child refused instructions",
+              "Child lost emotional control"
+            ]
+          },
+          {
+            "type": "teaching",
+            "title": "What Is Self-Control?",
+            "duration_minutes": 20,
+            "key_concepts": [
+              "Pause",
+              "Think",
+              "Choose a response"
+            ],
+            "note": "Self-control is not suppressing emotions."
+          },
+          {
+            "type": "teaching",
+            "title": "The Developing Brain",
+            "duration_minutes": 20,
+            "topics": [
+              "Immature impulse control systems",
+              "Emotional brain versus thinking brain",
+              "Why children struggle to regulate themselves"
+            ]
+          },
+          {
+            "type": "demonstration",
+            "title": "Reactive vs Coaching Response",
+            "duration_minutes": 20,
+            "scenario": "A child throws a book after becoming frustrated.",
+            "reactive_response": [
+              "Yelling",
+              "Threatening punishment",
+              "Escalating emotion"
+            ],
+            "coaching_response": [
+              "Calm presence",
+              "Naming feelings",
+              "Teaching alternatives"
+            ]
+          },
+          {
+            "type": "skills_practice",
+            "title": "Regulation Tools",
+            "duration_minutes": 30,
+            "tools": [
+              "Deep breathing",
+              "Count to ten",
+              "Take a break",
+              "Name the feeling"
+            ],
+            "practice_script": "I can see you're upset. Let's take a moment to calm our bodies before we solve this problem together."
+          },
+          {
+            "type": "planning",
+            "title": "Family Calm-Down Plan",
+            "duration_minutes": 15,
+            "components": [
+              "Safe calm-down space",
+              "Regulation tools",
+              "Encouraging phrases",
+              "Family expectations"
+            ]
+          }
+        ],
+        "home_assignment": {
+          "task": "Use emotional coaching language daily",
+          "record": "Keep notes on one emotional incident"
+        },
+        "reflection_questions": [
+          "Do I react or respond?",
+          "How do I model emotional control?",
+          "What emotional habits am I teaching?"
+        ]
+      },
+      {
+        "module_id": 3,
+        "title": "Consequences That Teach",
+        "duration": "2 hours",
+        "purpose": "Help parents use consequences that build learning, accountability and responsibility.",
+        "learning_outcomes": [
+          "Understand natural and logical consequences",
+          "Reduce reliance on punishment",
+          "Promote ownership and repair",
+          "Develop consistent response strategies"
+        ],
+        "materials": [
+          "Case-study worksheets",
+          "Consequences framework handout",
+          "Reflection journal"
+        ],
+        "sections": [
+          {
+            "type": "activity",
+            "title": "Punishment Inventory",
+            "duration_minutes": 15,
+            "examples": [
+              "Grounding",
+              "Removing screens",
+              "Time-out",
+              "Extra chores"
+            ],
+            "discussion_prompt": "Which consequences teach and which simply create discomfort?"
+          },
+          {
+            "type": "teaching",
+            "title": "Natural Consequences",
+            "duration_minutes": 15,
+            "examples": [
+              "Forgetting lunch may lead to hunger",
+              "Leaving a toy outside may result in damage"
+            ]
+          },
+          {
+            "type": "teaching",
+            "title": "Logical Consequences",
+            "duration_minutes": 20,
+            "examples": [
+              {
+                "behaviour": "Drawing on walls",
+                "consequence": "Helping clean the wall"
+              },
+              {
+                "behaviour": "Misusing a bicycle",
+                "consequence": "Temporary loss of bicycle privileges"
+              }
+            ]
+          },
+          {
+            "type": "teaching",
+            "title": "Repair and Responsibility",
+            "duration_minutes": 15,
+            "repair_process": [
+              "Acknowledge",
+              "Apologise",
+              "Repair",
+              "Learn"
+            ],
+            "message": "The goal is not suffering. The goal is learning."
+          },
+          {
+            "type": "case_study_workshop",
+            "title": "Consequences in Action",
+            "duration_minutes": 30,
+            "scenarios": [
+              "Homework forgotten",
+              "Toy broken due to carelessness",
+              "Sibling hurt through unkind words"
+            ],
+            "analysis": [
+              "Natural consequences",
+              "Logical consequences",
+              "Repair actions"
+            ]
+          },
+          {
+            "type": "exercise",
+            "title": "Reframing Punishment",
+            "duration_minutes": 15,
+            "example": {
+              "punishment": "No screens for a week",
+              "teaching_response": "What needs to happen to rebuild trust and responsibility?"
+            }
+          },
+          {
+            "type": "framework",
+            "title": "Personal Consequence Framework",
+            "duration_minutes": 10,
+            "fields": [
+              "Behaviour",
+              "Consequence",
+              "Repair action",
+              "Learning conversation"
+            ]
+          }
+        ],
+        "home_assignment": {
+          "task": "Implement one logical consequence",
+          "record": [
+            "Child response",
+            "Parent response",
+            "Learning outcome"
+          ]
+        },
+        "reflection_questions": [
+          "Do my consequences teach responsibility?",
+          "Am I focused on control or learning?",
+          "How can I encourage repair after mistakes?"
+        ]
+      }
+    ]
+  }
+}

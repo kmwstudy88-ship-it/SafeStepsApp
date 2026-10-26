@@ -1,0 +1,864 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://safesteps.app/schema/family-conflict-psychoeducation-program-schema.json",
+  "title": "Family Conflict Psychoeducation Program",
+  "type": "object",
+  "required": [
+    "title",
+    "levels",
+    "audience",
+    "lesson_duration_minutes",
+    "safeguards",
+    "lessons",
+    "completion_guidance",
+    "reusable_assessments"
+  ],
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "levels": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "Basic",
+          "Developing",
+          "Mastery"
+        ]
+      }
+    },
+    "audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lesson_duration_minutes": {
+      "type": "object",
+      "required": [
+        "Basic",
+        "Developing",
+        "Mastery"
+      ],
+      "properties": {
+        "Basic": {
+          "type": "string"
+        },
+        "Developing": {
+          "type": "string"
+        },
+        "Mastery": {
+          "type": "string"
+        }
+      }
+    },
+    "safeguards": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "lessons": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20,
+      "allOf": [
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 1
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 2
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 3
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 4
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 5
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 6
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 7
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 8
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 9
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 10
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 11
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 12
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 13
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 14
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 15
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 16
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 17
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 18
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 19
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "const": 20
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        }
+      ],
+      "unevaluatedItems": false,
+      "prefixItems": [
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 1
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 2
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 3
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 4
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 5
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 6
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 7
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 8
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 9
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 10
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 11
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 12
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 13
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 14
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 15
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 16
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 17
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 18
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 19
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "#/$defs/lessonEntry"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "const": 20
+                }
+              },
+              "required": [
+                "id"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "completion_guidance": {
+      "type": "object",
+      "required": [
+        "Basic",
+        "Developing",
+        "Mastery",
+        "progression"
+      ],
+      "properties": {
+        "Basic": {
+          "$ref": "#/$defs/completionDetail"
+        },
+        "Developing": {
+          "$ref": "#/$defs/completionDetail"
+        },
+        "Mastery": {
+          "$ref": "#/$defs/completionDetail"
+        },
+        "progression": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "reusable_assessments": {
+      "type": "object",
+      "required": [
+        "exit_ticket",
+        "role_play_rubric",
+        "learning_journal_prompts"
+      ],
+      "properties": {
+        "exit_ticket": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "string"
+          }
+        },
+        "role_play_rubric": {
+          "type": "object",
+          "required": [
+            "scoring",
+            "criteria"
+          ],
+          "properties": {
+            "scoring": {
+              "type": "object",
+              "required": [
+                "0",
+                "1",
+                "2"
+              ],
+              "properties": {
+                "0": {
+                  "type": "string"
+                },
+                "1": {
+                  "type": "string"
+                },
+                "2": {
+                  "type": "string"
+                }
+              }
+            },
+            "criteria": {
+              "type": "array",
+              "minItems": 5,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "learning_journal_prompts": {
+          "type": "array",
+          "minItems": 5,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "levelDetail": {
+      "type": "object",
+      "required": [
+        "activity",
+        "assessment"
+      ],
+      "properties": {
+        "activity": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assessment": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "completionDetail": {
+      "type": "object",
+      "required": [
+        "description",
+        "evidence"
+      ],
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "lessonEntry": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "learning_goal",
+        "levels"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "learning_goal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "levels": {
+          "type": "object",
+          "required": [
+            "Basic",
+            "Developing",
+            "Mastery"
+          ],
+          "properties": {
+            "Basic": {
+              "$ref": "#/$defs/levelDetail"
+            },
+            "Developing": {
+              "$ref": "#/$defs/levelDetail"
+            },
+            "Mastery": {
+              "$ref": "#/$defs/levelDetail"
+            }
+          }
+        }
+      }
+    }
+  }
+}

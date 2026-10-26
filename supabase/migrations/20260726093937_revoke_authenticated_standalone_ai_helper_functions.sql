@@ -1,0 +1,9 @@
+revoke execute on function public.ai_change_request_open_blocking_gate_count(uuid) from authenticated;
+revoke execute on function public.ai_continuous_evaluation_overdue_count(uuid) from authenticated;
+revoke execute on function public.ai_knowledge_change_requires_revalidation(uuid) from authenticated;
+revoke execute on function public.ai_learning_workflow_ready_for_governance(uuid) from authenticated;
+revoke execute on function public.ai_model_retirement_required(uuid) from authenticated;
+revoke execute on function public.is_ai_cost_centre_within_limit(uuid) from authenticated;
+revoke execute on function public.should_activate_ai_fallback(uuid) from authenticated;
+revoke execute on function public.should_block_ai_experiment(uuid) from authenticated;
+revoke execute on function public.should_pause_ai_output_reliance(uuid) from authenticated;

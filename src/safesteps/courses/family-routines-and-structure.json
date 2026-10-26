@@ -1,0 +1,22 @@
+{
+  "id": "family-routines-and-structure",
+  "title": "Family Routines and Structure",
+  "description": "Core program course on establishing predictable daily rhythms for mornings, mealtimes, homework, and bedtime.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "family-routines-and-structure"
+  ],
+  "outcomes": [
+    "Understand the core principles of family routines and structure",
+    "Apply family routines and structure safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "building_safe_routines",
+    "restoring_routines",
+    "lesson_building_safe_routines"
+  ],
+  "content": []
+}

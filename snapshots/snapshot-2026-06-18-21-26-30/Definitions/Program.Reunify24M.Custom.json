@@ -1,0 +1,116 @@
+﻿{
+    "programId":  "REUNIFY-24M-CUSTOM",
+    "name":  "24-Month Reunification Program (Custom)",
+    "parentId":  null,
+    "caseId":  null,
+    "stages":  [
+                   {
+                       "stageId":  "STAGE-01",
+                       "name":  "Custom Stage 1",
+                       "startWeek":  1,
+                       "endWeek":  8,
+                       "modules":  [
+
+                                   ]
+                   },
+                   {
+                       "stageId":  "STAGE-02",
+                       "name":  "Custom Stage 2",
+                       "startWeek":  9,
+                       "endWeek":  16,
+                       "modules":  [
+
+                                   ]
+                   },
+                   {
+                       "stageId":  "STAGE-03",
+                       "name":  "Custom Stage 3",
+                       "startWeek":  17,
+                       "endWeek":  24,
+                       "modules":  [
+
+                                   ]
+                   },
+                   {
+                       "stageId":  "STAGE-04",
+                       "name":  "Custom Stage 4",
+                       "startWeek":  25,
+                       "endWeek":  32,
+                       "modules":  [
+
+                                   ]
+                   },
+                   {
+                       "stageId":  "STAGE-05",
+                       "name":  "Custom Stage 5",
+                       "startWeek":  33,
+                       "endWeek":  40,
+                       "modules":  [
+
+                                   ]
+                   },
+                   {
+                       "stageId":  "STAGE-06",
+                       "name":  "Custom Stage 6",
+                       "startWeek":  41,
+                       "endWeek":  48,
+                       "modules":  [
+
+                                   ]
+                   },
+                   {
+                       "stageId":  "STAGE-07",
+                       "name":  "Custom Stage 7",
+                       "startWeek":  49,
+                       "endWeek":  56,
+                       "modules":  [
+
+                                   ]
+                   },
+                   {
+                       "stageId":  "STAGE-08",
+                       "name":  "Custom Stage 8",
+                       "startWeek":  57,
+                       "endWeek":  64,
+                       "modules":  [
+
+                                   ]
+                   },
+                   {
+                       "stageId":  "STAGE-09",
+                       "name":  "Custom Stage 9",
+                       "startWeek":  65,
+                       "endWeek":  72,
+                       "modules":  [
+
+                                   ]
+                   },
+                   {
+                       "stageId":  "STAGE-10",
+                       "name":  "Custom Stage 10",
+                       "startWeek":  73,
+                       "endWeek":  80,
+                       "modules":  [
+
+                                   ]
+                   },
+                   {
+                       "stageId":  "STAGE-11",
+                       "name":  "Custom Stage 11",
+                       "startWeek":  81,
+                       "endWeek":  88,
+                       "modules":  [
+
+                                   ]
+                   },
+                   {
+                       "stageId":  "STAGE-12",
+                       "name":  "Custom Stage 12",
+                       "startWeek":  89,
+                       "endWeek":  96,
+                       "modules":  [
+
+                                   ]
+                   }
+               ]
+}

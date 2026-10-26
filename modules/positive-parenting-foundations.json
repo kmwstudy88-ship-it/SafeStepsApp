@@ -1,0 +1,22 @@
+{
+  "id": "positive-parenting-foundations",
+  "title": "Positive Parenting Foundations",
+  "description": "Core program course on strengths-based parenting, warmth, encouragement, and building child resilience.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "positive-parenting-foundations"
+  ],
+  "outcomes": [
+    "Understand the core principles of positive parenting foundations",
+    "Apply positive parenting foundations safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "building_resilience_in_children",
+    "supporting_children_emotionally",
+    "strengths_based_support"
+  ],
+  "content": []
+}

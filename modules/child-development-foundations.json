@@ -1,0 +1,22 @@
+{
+  "id": "child-development-foundations",
+  "title": "Child Development Foundations",
+  "description": "Core program course on age-appropriate expectations, developmental milestones, and trauma impacts across childhood.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "child-development-foundations"
+  ],
+  "outcomes": [
+    "Understand the core principles of child development foundations",
+    "Apply child development foundations safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "age_appropriate_support",
+    "understanding_child_cues",
+    "lesson_developmental_impacts"
+  ],
+  "content": []
+}

@@ -1,0 +1,22 @@
+{
+  "id": "attachment-and-bonding-foundations",
+  "title": "Attachment and Bonding Foundations",
+  "description": "Core program course on responsive caregiving, emotional availability, and repairing parent-child connection.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "attachment-and-bonding-foundations"
+  ],
+  "outcomes": [
+    "Understand the core principles of attachment and bonding foundations",
+    "Apply attachment and bonding foundations safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "strengthening_family_bonds",
+    "lesson_attachment_and_relationships",
+    "lesson_maintaining_parent_child_connection"
+  ],
+  "content": []
+}

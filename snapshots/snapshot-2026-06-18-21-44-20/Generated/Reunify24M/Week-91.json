@@ -1,0 +1,96 @@
+﻿{
+    "programId":  "REUNIFY-24M",
+    "week":  91,
+    "stageId":  "STAGE-12",
+    "stageName":  "Reunification Implementation",
+    "modules":  [
+                    {
+                        "id":  "PP-ENGAGE-01",
+                        "name":  "Understanding Your Current Position",
+                        "goal":  "Clarify where you are without judgment.",
+                        "tasks":  [
+                                      "Write what you believe is happening in your situation",
+                                      "Write what you believe child protection is concerned about",
+                                      "Write what you want for your child long-term"
+                                  ],
+                        "evidence":  [
+                                         "Written reflections",
+                                         "Caseworker acknowledgement"
+                                     ]
+                    },
+                    {
+                        "id":  "PP-REUNIFY-03",
+                        "name":  "Safe Contact \u0026 Supervised Visit Behaviour",
+                        "goal":  "Show safe, consistent behaviour during contact.",
+                        "tasks":  [
+                                      "Prepare a contact plan before each visit",
+                                      "Bring age-appropriate activities",
+                                      "Avoid discussing the case with the child"
+                                  ],
+                        "evidence":  [
+                                         "Positive contact reports",
+                                         "Supervisor feedback"
+                                     ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "Write what you believe is happening in your situation"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "Write what you believe child protection is concerned about"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "Write what you want for your child long-term"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "Prepare a contact plan before each visit"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "Bring age-appropriate activities"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "Avoid discussing the case with the child"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+
+                                ],
+                     "insight":  [
+                                     "Written reflections",
+                                     "Caseworker acknowledgement",
+                                     "Supervisor feedback"
+                                 ],
+                     "behaviour":  [
+                                       "Positive contact reports"
+                                   ]
+                 }
+}

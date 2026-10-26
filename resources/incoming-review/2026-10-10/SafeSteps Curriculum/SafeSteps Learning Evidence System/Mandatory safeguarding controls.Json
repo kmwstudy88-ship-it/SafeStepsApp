@@ -1,0 +1,17 @@
+{
+  "safeguarding": {
+    "informedConsentRequired": true,
+    "collectMinimumNecessaryInformation": true,
+    "doNotRequestChildInterviews": true,
+    "doNotRequestIdentifyingChildDetails": true,
+    "immediateDangerEscalationMessage": true,
+    "disclosureResponseProtocol": true,
+    "mandatoryReportingNotice": true,
+    "humanReviewRequired": true,
+    "roleBasedAccess": true,
+    "encryptionRequired": true,
+    "retentionPolicyRequired": true,
+    "deletionWorkflowRequired": true,
+    "immutableAuditTrail": true
+  }
+}

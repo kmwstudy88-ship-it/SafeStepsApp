@@ -1,0 +1,200 @@
+{
+  "lesson_module": {
+    "title": "Understanding the Cycle of Abuse",
+    "metadata": {
+      "target_audience": [
+        "General Public",
+        "Mental Health Advocates",
+        "Social Work Students",
+        "Counseling Trainees",
+        "Support Group Facilitators"
+      ],
+      "duration": "45-60 Minutes",
+      "prerequisites": "None",
+      "content_warning": "This lesson discusses interpersonal violence, emotional manipulation, and relationship trauma. Please ensure you practice self-care while engaging with this material. If you or someone you know needs immediate assistance, contact the National Domestic Violence Hotline (1-800-799-SAFE or text 'START' to 88788)."
+    },
+    "learning_objectives": [
+      "Identify and explain the 4 core stages of Lenore Walker's Cycle of Abuse framework.",
+      "Differentiate between subtle behavioral tactics (e.g., gaslighting, isolation) and distinct cycle phases.",
+      "Analyze real-world scenarios to trace the progression of abusive dynamics.",
+      "Apply safety-planning and supportive intervention strategies to assist individuals navigating abusive relationships."
+    ],
+    "content_sections": [
+      {
+        "section_id": 1,
+        "title": "Introduction to Lenore Walker's Cycle of Abuse",
+        "summary": "Developed by psychologist Dr. Lenore Walker in 1979, the Cycle of Abuse model illustrates how domestic violence and emotional abuse often follow a repeating, predictable pattern rather than being constant physical or emotional conflict."
+      },
+      {
+        "section_id": 2,
+        "title": "Deep Dive into the 4 Phases",
+        "phases": [
+          {
+            "phase": 1,
+            "name": "Tension Building",
+            "characteristics": [
+              "Microaggressions",
+              "Walking on eggshells",
+              "Unpredictable mood swings",
+              "Passive-aggressive remarks",
+              "Excessive control"
+            ],
+            "victim_experience": [
+              "High anxiety",
+              "Attempts to appease the partner",
+              "Hyper-vigilance",
+              "Feeling that a blowup is inevitable"
+            ]
+          },
+          {
+            "phase": 2,
+            "name": "The Incident / Acute Abuse",
+            "characteristics": [
+              "Outburst of abusive behavior (physical, emotional, sexual, verbal, financial, or digital)",
+              "Excessive monitoring",
+              "Extreme humiliation",
+              "Physical destruction of belongings",
+              "Threats"
+            ],
+            "victim_experience": [
+              "Trauma",
+              "Fear",
+              "Dissociation",
+              "Shock",
+              "Survival mode"
+            ]
+          },
+          {
+            "phase": 3,
+            "name": "Reconciliation / Honeymoon",
+            "characteristics": [
+              "Apologies",
+              "Gift-giving",
+              "Declarations of love",
+              "Promises to change",
+              "Shifting blame to external stress",
+              "Mini-breakthrough claims ('I'm seeking help')"
+            ],
+            "victim_experience": [
+              "Relief",
+              "Hope",
+              "Cognitive dissonance",
+              "Guilt",
+              "Believing the partner's positive traits represent their 'true' self"
+            ]
+          },
+          {
+            "phase": 4,
+            "name": "Calm / Normalcy",
+            "characteristics": [
+              "Relationship appears stable and peaceful",
+              "Abusive partner acts normal",
+              "Abuse is minimized, ignored, or reframed"
+            ],
+            "victim_experience": [
+              "False sense of security",
+              "Dropping boundaries or plans to leave",
+              "Lingering subconscious stress"
+            ]
+          }
+        ],
+        "escalation_factor": "Over time without intervention: 1) Calm/Honeymoon phases shorten or disappear entirely. 2) Intensity of Tension and Incident phases increases."
+      }
+    ],
+    "interactive_activities": [
+      {
+        "activity_id": 1,
+        "type": "Self-Reflection & Knowledge Check",
+        "instructions": "Read each statement and identify which phase of the Cycle of Abuse it represents.",
+        "items": [
+          {
+            "statement": "He brought me flowers, sobbed, and promised he would start therapy if I gave him one last chance.",
+            "answer": "Phase 3: Reconciliation / Honeymoon"
+          },
+          {
+            "statement": "I try not to bring up money or play music too loudly when they come home from work because I don't want to set them off.",
+            "answer": "Phase 1: Tension Building"
+          },
+          {
+            "statement": "Things have been completely fine for two weeks. It feels like the fight last month never even happened.",
+            "answer": "Phase 4: Calm / Normalcy"
+          }
+        ]
+      },
+      {
+        "activity_id": 2,
+        "type": "Real-World Scenario Analysis",
+        "scenario": "Alex and Jordan have been dating for two years. Recently, Jordan started demanding to see Alex's text messages and making sarcastic comments about Alex's family. Alex notices feeling nervous every afternoon before Jordan gets home from work. Last night, after Alex spent 10 minutes talking to a colleague after work, Jordan threw a glass against the wall, shouted insults, and locked Alex out of the bedroom. This morning, Jordan brought Alex breakfast in bed, apologized profusely while crying, said work stress caused the outburst, and bought Alex a new laptop to 'make up for the drama.'",
+        "discussion_questions": [
+          "What specific indicators highlight the Tension Building phase in this scenario?",
+          "What tactic is Jordan using in the morning to keep Alex from re-evaluating the relationship?",
+          "How might a supportive friend intervene effectively without putting Alex in danger?"
+        ]
+      }
+    ],
+    "quiz": [
+      {
+        "id": 1,
+        "question": "What is the primary function of the Reconciliation (Honeymoon) phase for the abusive partner?",
+        "options": {
+          "A": "To permanently end the conflict.",
+          "B": "To regain control and re-establish the victim's hope in the relationship.",
+          "C": "To prove that the victim was responsible for the incident.",
+          "D": "To show genuine long-term psychological change."
+        },
+        "answer": "B",
+        "explanation": "The reconciliation phase builds hope and emotional attachment, making it difficult for the victim to exit the relationship."
+      },
+      {
+        "id": 2,
+        "question": "Which of the following is true about how the Cycle of Abuse evolves over time?",
+        "options": {
+          "A": "The calm phase expands until the cycle disappears on its own.",
+          "B": "The cycle remains completely identical in length and intensity indefinitely.",
+          "C": "The time between incidents often shrinks, and abuse frequently escalates in severity.",
+          "D": "The tension building phase disappears completely after the first incident."
+        },
+        "answer": "C",
+        "explanation": "Without external intervention or accountability, abusive cycles typically shorten in length and increase in severity."
+      },
+      {
+        "id": 3,
+        "question": "What does 'walking on eggshells' refer to during the Tension Building phase?",
+        "options": {
+          "A": "The physical destruction of property in the home.",
+          "B": "The victim constantly modifying their behavior to avoid provoking an abusive outburst.",
+          "C": "A formal therapeutic intervention strategy.",
+          "D": "The cooling-off period following an acute incident."
+        },
+        "answer": "B",
+        "explanation": "'Walking on eggshells' describes the hyper-vigilance and continuous anxiety felt when trying to prevent an outburst."
+      }
+    ],
+    "assessment": {
+      "title": "Case Study Evaluation & Response Plan",
+      "case_study": "Maya has been married to Sam for three years. Sam controls all household finances and requires Maya to send photos showing her location when she isn't home. Last Friday, Sam accused Maya of flirting with a grocery clerk, yelled at her for an hour, and smashed her smartphone. The next day, Sam cleaned the entire house, took Maya out for a fine dinner, and promised to attend anger management classes. Maya confides in you: 'Sam is just really under a lot of pressure at work. When things are good, Sam is the kindest person I know. I think if I just become better at communicating, this won't happen again.'",
+      "deliverables": [
+        "Cycle Mapping: Map at least three specific actions from Maya's story to their corresponding phase in the Cycle of Abuse.",
+        "Cognitive Analysis: Explain why Maya believes 'if I just become better at communicating, this won't happen again' based on the psychological impacts of the cycle.",
+        "Support Response: Write a short script (3-5 sentences) showing how you would respond to Maya with empathy, validating her feelings while avoiding blame or pushing dangerous immediate ultimatums."
+      ]
+    },
+    "resources": [
+      {
+        "name": "National Domestic Violence Hotline",
+        "contact": "1-800-799-SAFE (7233) or text 'START' to 88788",
+        "url": "https://www.thehotline.org/"
+      },
+      {
+        "name": "Love is Respect",
+        "contact": "Text 'LOVEIS' to 22522",
+        "url": "https://www.loveisrespect.org/"
+      },
+      {
+        "name": "The Network/La Red",
+        "contact": "Resource for LGBTQ+ survivors of partner abuse",
+        "url": "https://www.tnlr.org/"
+      }
+    ]
+  }
+}

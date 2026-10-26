@@ -1,0 +1,80 @@
+﻿{
+    "programId":  "REUNIFY-24M",
+    "week":  20,
+    "stageId":  "STAGE-03",
+    "stageName":  "Child-Focused Thinking",
+    "modules":  [
+                    {
+                        "id":  "PP-ENGAGE-03",
+                        "name":  "Child-Focused Thinking",
+                        "goal":  "Shift from self-focus to child experience.",
+                        "tasks":  [
+                                      "After stressful events, answer: How was my child affected?",
+                                      "What did my child need from me?",
+                                      "Did I meet that need?"
+                                  ],
+                        "evidence":  [
+                                         "Contact reports",
+                                         "Therapist notes"
+                                     ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "After stressful events, answer: How was my child affected?"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "What did my child need from me?"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "Did I meet that need?"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+
+                                ],
+                     "insight":  [
+                                     "Therapist notes"
+                                 ],
+                     "behaviour":  [
+                                       "Contact reports"
+                                   ]
+                 }
+}

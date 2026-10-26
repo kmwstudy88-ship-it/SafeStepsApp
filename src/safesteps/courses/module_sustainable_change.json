@@ -1,0 +1,25 @@
+{
+  "id": "module_sustainable_change",
+  "title": "Sustainable Change",
+  "description": "This module focuses on maintaining long-term safe routines, relapse prevention, support networks, and consistent caregiving habits over time.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "sustainable change",
+    "routines",
+    "relapse prevention",
+    "long-term stability"
+  ],
+  "outcomes": [
+    "Build sustainable daily routines that support child stability and wellbeing",
+    "Identify early warning signs of setback and activate support plans early",
+    "Maintain consistent accountability and help-seeking habits over time"
+  ],
+  "lessons": [
+    "building_new_patterns",
+    "building_safe_routines",
+    "lesson_building_safe_routines",
+    "lesson_behaviour_change_principles"
+  ],
+  "content": []
+}

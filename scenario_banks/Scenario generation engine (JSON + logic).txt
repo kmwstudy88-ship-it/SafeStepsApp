@@ -1,0 +1,95 @@
+{
+  "engine_id": "safesteps_scenario_generation_engine_v1",
+  "version": "1.0.0",
+  "inputs": {
+    "module_id": "string",
+    "category": "string",
+    "target_difficulty_level": "L1|L2|L3",
+    "context_flags": [
+      "parent",
+      "child",
+      "co_parenting",
+      "post_separation",
+      "neurodivergent",
+      "high_stress"
+    ]
+  },
+  "templates": {
+    "emotional_regulation": [
+      {
+        "template_id": "ER_TPL_01",
+        "pattern": "A {actor} feels {emotion} when {trigger} and uses {strategy} before responding.",
+        "slots": {
+          "actor": ["parent", "caregiver"],
+          "emotion": ["overwhelmed", "anxious", "angry"],
+          "trigger": ["child crying", "siblings arguing", "noise in the house"],
+          "strategy": ["breathing", "grounding", "stepping away briefly"]
+        },
+        "default_difficulty": "L1"
+      },
+      {
+        "template_id": "ER_TPL_02",
+        "pattern": "A {actor} with {context_flag} experiences {emotion} during {trigger} and attempts {strategy} while staying present.",
+        "slots": {
+          "actor": ["parent", "caregiver"],
+          "context_flag": ["trauma history", "neurodivergence"],
+          "emotion": ["panic", "overwhelm"],
+          "trigger": ["child meltdown", "intense conflict"],
+          "strategy": ["grounding", "self-talk", "co-regulation"]
+        },
+        "default_difficulty": "L3"
+      }
+    ],
+    "gaslighting": [
+      {
+        "template_id": "GL_TPL_01",
+        "pattern": "A {actor} tells a {recipient} they 'imagined' an event that clearly happened.",
+        "slots": {
+          "actor": ["parent", "caregiver"],
+          "recipient": ["child", "co-parent"]
+        },
+        "default_difficulty": "L2"
+      }
+    ]
+  },
+  "logic": {
+    "difficulty_selection": {
+      "L1": {
+        "max_emotional_intensity": 2,
+        "max_relational_layers": 1
+      },
+      "L2": {
+        "max_emotional_intensity": 4,
+        "max_relational_layers": 2
+      },
+      "L3": {
+        "max_emotional_intensity": 6,
+        "max_relational_layers": 3
+      }
+    },
+    "generation_rules": [
+      {
+        "rule_id": "RULE_01",
+        "description": "Match template default_difficulty to target_difficulty_level when possible.",
+        "priority": 1
+      },
+      {
+        "rule_id": "RULE_02",
+        "description": "If context_flag includes 'high_stress', bias towards L2 or L3 templates.",
+        "priority": 2
+      },
+      {
+        "rule_id": "RULE_03",
+        "description": "Ensure generated text remains child-safe and non-graphic.",
+        "priority": 3
+      }
+    ],
+    "output_schema": {
+      "scenario_id": "string",
+      "text": "string",
+      "category": "string",
+      "difficulty_level": "string",
+      "module_suggestions": ["string"]
+    }
+  }
+}

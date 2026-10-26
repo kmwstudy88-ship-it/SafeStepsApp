@@ -1,0 +1,140 @@
+{
+  "permissions": {
+    "telehealth.appointments.read": [
+      "caseworker",
+      "supervisor",
+      "family_support_worker",
+      "clinician",
+      "lawyer",
+      "court_officer",
+      "admin"
+    ],
+    "telehealth.appointments.create": [
+      "caseworker",
+      "supervisor",
+      "family_support_worker",
+      "clinician",
+      "lawyer",
+      "admin"
+    ],
+    "telehealth.appointments.update": [
+      "caseworker",
+      "supervisor",
+      "family_support_worker",
+      "clinician",
+      "lawyer",
+      "admin"
+    ],
+    "telehealth.appointments.cancel": [
+      "caseworker",
+      "supervisor",
+      "family_support_worker",
+      "clinician",
+      "lawyer",
+      "admin"
+    ],
+    "telehealth.sessions.host": [
+      "caseworker",
+      "supervisor",
+      "family_support_worker",
+      "clinician",
+      "lawyer",
+      "admin"
+    ],
+    "telehealth.sessions.join": [
+      "parent",
+      "child",
+      "caseworker",
+      "family_support_worker",
+      "clinician",
+      "lawyer",
+      "court_officer",
+      "interpreter",
+      "support_person",
+      "observer",
+      "external_professional"
+    ],
+    "telehealth.sessions.admit": [
+      "caseworker",
+      "supervisor",
+      "family_support_worker",
+      "clinician",
+      "lawyer",
+      "admin"
+    ],
+    "telehealth.sessions.remove": [
+      "caseworker",
+      "supervisor",
+      "family_support_worker",
+      "clinician",
+      "lawyer",
+      "admin"
+    ],
+    "telehealth.attendance.read": [
+      "caseworker",
+      "supervisor",
+      "family_support_worker",
+      "clinician",
+      "lawyer",
+      "court_officer",
+      "admin"
+    ],
+    "telehealth.consents.manage": [
+      "caseworker",
+      "supervisor",
+      "clinician",
+      "lawyer",
+      "admin"
+    ],
+    "telehealth.notes.create": [
+      "caseworker",
+      "supervisor",
+      "family_support_worker",
+      "clinician",
+      "lawyer",
+      "admin"
+    ],
+    "telehealth.notes.read": [
+      "caseworker",
+      "supervisor",
+      "family_support_worker",
+      "clinician",
+      "lawyer",
+      "court_officer",
+      "admin"
+    ],
+    "telehealth.notes.restricted_read": [
+      "supervisor",
+      "clinician",
+      "lawyer",
+      "admin"
+    ],
+    "telehealth.recordings.start": [
+      "supervisor",
+      "clinician",
+      "admin"
+    ],
+    "telehealth.recordings.read": [
+      "supervisor",
+      "clinician",
+      "lawyer",
+      "admin"
+    ],
+    "telehealth.recordings.delete": [
+      "supervisor",
+      "admin"
+    ],
+    "telehealth.incidents.create": [
+      "caseworker",
+      "supervisor",
+      "family_support_worker",
+      "clinician",
+      "lawyer",
+      "admin"
+    ],
+    "telehealth.incidents.review": [
+      "supervisor",
+      "admin"
+    ]
+  }
+}

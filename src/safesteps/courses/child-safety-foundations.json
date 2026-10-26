@@ -1,0 +1,22 @@
+{
+  "id": "child-safety-foundations",
+  "title": "Child Safety Foundations",
+  "description": "Core program course focused on child-centred safety planning, recognising risk, and protective caregiving.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "child-safety-foundations"
+  ],
+  "outcomes": [
+    "Understand the core principles of child safety foundations",
+    "Apply child safety foundations safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "safety_planning_with_children",
+    "lesson_child_centred_principles",
+    "lesson_recognising_risk_as_a_parent"
+  ],
+  "content": []
+}

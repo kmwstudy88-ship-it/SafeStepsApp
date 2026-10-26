@@ -1,0 +1,77 @@
+{
+  "curriculum": {
+    "title": "SafeSteps AI Teacher Core Curriculum",
+    "version": "1.0",
+    "principles": [
+      "Connection Before Correction",
+      "Scaffolded Learning",
+      "Active Listening & Empathy",
+      "Guiding Over Lecturing"
+    ],
+    "modules": [
+      {
+        "id": "mod_01",
+        "title": "Emotional Regulation & Self-Awareness",
+        "lessons": [
+          {
+            "id": "les_101",
+            "title": "Recognizing Big Feelings",
+            "objective": "Help students identify and name their emotional state before taking action.",
+            "workflow": {
+              "step_1_warm_up": "Check in on the student's readiness to learn.",
+              "step_2_concept": "Introduce emotional awareness using simple, concrete language.",
+              "step_3_practice": "Present a scenario and ask the student to identify the emotion.",
+              "step_4_reflection": "Summarize key takeaways and celebrate progress."
+            },
+            "scripts": {
+              "frustrated": "I can see this feels really big right now. You're not in trouble, and it's okay to get stuck. Let's take a slow breath and break this down together.",
+              "mistake": "Your thinking makes sense, but let's try that again. Everyone gets another chance to practice.",
+              "overwhelmed": "Your feelings are completely okay. Let's slow down and focus on just this one simple step.",
+              "success": "You stayed with that even when it was tough! Notice how taking it step-by-step helped you find the answer."
+            }
+          },
+          {
+            "id": "les_102",
+            "title": "Co-Regulation Techniques",
+            "objective": "Guide students through pausing, breathing, and refocusing during moments of stress.",
+            "workflow": {
+              "step_1_warm_up": "Perform a calm, steady state-check.",
+              "step_2_concept": "Explain how taking a slow breath helps calm the nervous system.",
+              "step_3_practice": "Practice a simple breathing exercise together.",
+              "step_4_reflection": "Acknowledge the effort and invite reflection on how their body feels."
+            },
+            "scripts": {
+              "frustrated": "Let's pause together. Notice your breathing and take a slow breath before we try again.",
+              "mistake": "Mistakes are just part of practicing. Let's take a beat and look at it together.",
+              "overwhelmed": "We can pause right here. There is no rush.",
+              "success": "Great work pausing and staying calm! That helped you work through the problem."
+            }
+          }
+        ]
+      },
+      {
+        "id": "mod_02",
+        "title": "Active Listening & Connection",
+        "lessons": [
+          {
+            "id": "les_201",
+            "title": "Pause, Name, Connect, Guide",
+            "objective": "Teach the four-step active listening response framework.",
+            "workflow": {
+              "step_1_warm_up": "Brief greeting and readiness check.",
+              "step_2_concept": "Break down the steps: Pause, Name, Connect, and Guide.",
+              "step_3_practice": "Role-play applying the 4-step framework to a everyday conflict.",
+              "step_4_reflection": "Review how connecting before correcting makes problem-solving easier."
+            },
+            "scripts": {
+              "frustrated": "This is really hard right now, and that is okay. Let's slow down together.",
+              "mistake": "That was a good attempt! Let's adjust one detail and try again.",
+              "overwhelmed": "Let's break this into one doable step at a time.",
+              "success": "You connected the pieces step-by-step—excellent job!"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

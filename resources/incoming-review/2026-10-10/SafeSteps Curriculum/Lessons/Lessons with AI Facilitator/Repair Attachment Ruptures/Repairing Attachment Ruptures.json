@@ -1,0 +1,178 @@
+{
+  "lessonId": "building-secure-attachment-lesson-3",
+  "courseId": "building-secure-attachment",
+  "title": "Repairing Attachment Ruptures",
+  "metadata": {
+    "version": "1.0.0",
+    "estimatedDurationMinutes": 30,
+    "targetAudience": "Parents and Caregivers",
+    "prerequisites": [
+      "building-secure-attachment-lesson-2"
+    ]
+  },
+  "aiFacilitatorConfig": {
+    "personaRole": "Warm, empathetic parenting coach grounded in attachment theory and relational frameworks",
+    "pedagogicalFramework": {
+      "theoreticalBasis": "Attachment theory and relational frameworks guiding users from insecure loops to earned security",
+      "scaffoldingStrategy": "Socratic questioning, active listening validation, and scaffolded instruction"
+    },
+    "pacingConfig": {
+      "openingReflectionMinutes": 5,
+      "coreInstructionMinutes": 10,
+      "interactiveAssessmentsMinutes": 5,
+      "guidedActivityMinutes": 7,
+      "closingReflectionMinutes": 3
+    },
+    "interactionRules": [
+      "Validate learner emotions before offering pedagogical guidance",
+      "Ask one follow-up question at a time to prevent cognitive overload",
+      "Provide immediate constructive feedback on assessment responses"
+    ],
+    "systemPrompts": {
+      "openingGreetingPrompt": "Welcome to Lesson 3: Repairing Attachment Ruptures. In this 30-minute session, we will explore how moments of disconnection can become powerful opportunities to strengthen your child's emotional security.",
+      "quizFacilitationPrompt": "Let's review key concepts of relational repair and emotional accountability through these practical scenarios.",
+      "activityGuidancePrompt": "Take your time formulating your repair statement. Acknowledging mistakes with genuine warmth models emotional resilience for your child.",
+      "closingReflectionPrompt": "As we conclude today's session, take a moment to reflect on your personal experience with repair and how you wish to handle disconnections moving forward."
+    },
+    "safetyAndIntervention": {
+      "sosToolkitTrigger": "Detect distress signals and activate the SOS toolkit for immediate, in-the-moment support"
+    }
+  },
+  "openingReflection": {
+    "prompt": "How were ruptures and disconnections handled in your childhood when conflict or misunderstandings occurred?",
+    "guidance": "Reflect on how past experiences with rupture or lack of repair might shape how comfortable or uncomfortable you feel apologizing to your child today[cite: 8]."
+  },
+  "content": {
+    "overview": "Attachment ruptures happen in every family[cite: 8]. A rupture is a moment of disconnection—yelling, shutting down, misunderstanding, or emotional withdrawal[cite: 8]. Ruptures are not failures; they are opportunities[cite: 8]. What matters most is repair[cite: 8]. When parents repair after a rupture, children learn that relationships can recover and that emotions are safe[cite: 8].",
+    "coreText": "Repair involves acknowledging what happened, taking responsibility, and offering reassurance[cite: 8]. It teaches children that mistakes do not break love[cite: 8]. Parents who repair consistently raise children who are more resilient, more trusting, and more emotionally secure[cite: 8]. This lesson helps parents understand how to repair in a way that strengthens attachment rather than weakening it[cite: 8].",
+    "keyConcepts": [
+      {
+        "concept": "Rupture as an Opportunity",
+        "description": "Understanding disconnection not as a relational failure, but as a crucial moment to teach children that relationships are resilient[cite: 8]."
+      },
+      {
+        "concept": "Emotional Accountability",
+        "description": "Taking full ownership of parental behavior without placing blame or conditionality on the child[cite: 8]."
+      },
+      {
+        "concept": "Relational Safety & Reassurance",
+        "description": "Re-establishing trust by affirming that conflict and mistakes do not break unconditional care and connection[cite: 8]."
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "quiz-1",
+      "type": "multiple-choice",
+      "taxonomyLevel": "Knowledge Recall",
+      "question": "What is the primary message a child receives when a parent consistently initiates repair after a rupture?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "That adults are unpredictable and rules change often.",
+          "isCorrect": false,
+          "explanation": "Consistent repair creates emotional safety and predictability, not uncertainty[cite: 8]."
+        },
+        {
+          "id": "opt-b",
+          "text": "That mistakes do not break love and relationships can recover[cite: 8].",
+          "isCorrect": true,
+          "explanation": "Correct! Repair teaches children that emotional safety can be restored and relationships are resilient[cite: 8]."
+        },
+        {
+          "id": "opt-c",
+          "text": "That conflict should be completely avoided in healthy relationships.",
+          "isCorrect": false,
+          "explanation": "Ruptures happen in every family; repair shows how to navigate disconnection safely rather than avoiding it[cite: 8]."
+        }
+      ]
+    },
+    {
+      "id": "quiz-2",
+      "type": "scenario-analysis",
+      "taxonomyLevel": "Applied Understanding",
+      "question": "Which of the following best demonstrates an effective, attachment-focused repair statement?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "'I wouldn't have raised my voice if you had listened to me the first time.'",
+          "isCorrect": false,
+          "explanation": "Shifting blame onto the child undermines genuine repair and avoids parental accountability[cite: 8]."
+        },
+        {
+          "id": "opt-b",
+          "text": "'I’m sorry I got frustrated and yelled. I care about you, and I’m working on staying calm.'[cite: 8]",
+          "isCorrect": true,
+          "explanation": "Correct! This statement acknowledges what happened, takes direct responsibility, and offers reassurance[cite: 8]."
+        },
+        {
+          "id": "opt-c",
+          "text": "'Let's just forget about what happened earlier and go get ice cream.'",
+          "isCorrect": false,
+          "explanation": "Distraction or bypassing the issue avoids true acknowledgment and emotional reassurance[cite: 8]."
+        }
+      ]
+    }
+  ],
+  "guidedActivities": [
+    {
+      "activityId": "act-1",
+      "title": "Repair Statement Formulation",
+      "objective": "Practice taking responsibility and formulating a direct repair statement.",
+      "estimatedDurationMinutes": 4,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Think of a recent rupture or tense moment with your child (e.g., yelling, shutting down, misunderstanding)[cite: 8]."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Draft a repair statement acknowledging what happened and offering reassurance (e.g., 'I’m sorry I got frustrated. I care about you and I’m working on staying calm.')[cite: 8]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Deliver the statement to your child with warm, open posture when both of you are calm[cite: 8]."
+        }
+      ]
+    },
+    {
+      "activityId": "act-2",
+      "title": "Repair Timing Observation",
+      "objective": "Evaluate child responsiveness based on the speed and consistency of relational repair.",
+      "estimatedDurationMinutes": 3,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Observe how your child behaves when repair occurs quickly after a minor disconnection[cite: 8]."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Compare this to moments when repair is delayed or omitted[cite: 8]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Note changes in your child's posture, ease of connection, and willingness to cooperate[cite: 8]."
+        }
+      ]
+    }
+  ],
+  "actionableTakeaways": [
+    "View disconnections and ruptures as opportunities to teach relational trust[cite: 8].",
+    "Acknowledge behavior, take direct responsibility, and offer explicit reassurance[cite: 8].",
+    "Initiate repair consistently to build long-term emotional resilience in your child[cite: 8]."
+  ],
+  "reflectionQuestions": [
+    {
+      "id": "ref-1",
+      "question": "How were ruptures handled in your childhood?[cite: 8]"
+    },
+    {
+      "id": "ref-2",
+      "question": "What makes repair difficult for you?[cite: 8]"
+    },
+    {
+      "id": "ref-3",
+      "question": "How does your child behave after a repair conversation?[cite: 8]"
+    }
+  ]
+}

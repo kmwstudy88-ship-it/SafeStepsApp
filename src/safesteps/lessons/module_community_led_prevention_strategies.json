@@ -1,0 +1,21 @@
+{
+  "id": "module_community_led_prevention_strategies",
+  "title": "Community-Led Prevention Strategies",
+  "description": "This module supports communities to design and lead their own DFV prevention strategies. It focuses on grassroots leadership, community strengths, and localised approaches that reflect cultural, social, and environmental contexts.",
+  "type": "module",
+  "level": "community",
+  "tags": [
+    "dfv",
+    "community-led",
+    "prevention",
+    "grassroots leadership",
+    "local action"
+  ],
+  "outcomes": [
+    "Understand the value of community-led DFV prevention",
+    "Identify strengths and resources within local communities",
+    "Develop and implement community-driven prevention strategies"
+  ],
+  "lessons": [],
+  "content": []
+}

@@ -1,0 +1,4202 @@
+{
+  "schemaVersion": "2026-09-09",
+  "generatedAt": "2026-10-19T00:22:36.246Z",
+  "repositoryPurpose": "SafeSteps is both a runnable Expo prototype and a curriculum/content repository with backend and Supabase support tooling.",
+  "sourceOfTruth": {
+    "lessons": "lessons/",
+    "modules": "modules/",
+    "topics": "topics/",
+    "storybooks": "storybooks/",
+    "compatibilityExports": "src/safesteps/",
+    "generatedImports": "src/safesteps/imports/"
+  },
+  "counts": {
+    "lessons": 241,
+    "modules": 108,
+    "topics": 328,
+    "storybookAssets": 1
+  },
+  "lessons": [
+    {
+      "id": "active_listening",
+      "title": "Active Listening",
+      "sectionCount": 3,
+      "sourcePath": "lessons/active_listening.json"
+    },
+    {
+      "id": "adhd_and_executive_function_scaffolding",
+      "title": "ADHD & Executive Function Scaffolding Across Childhood",
+      "sectionCount": 3,
+      "sourcePath": "lessons/adhd_and_executive_function_scaffolding.json"
+    },
+    {
+      "id": "adolescent_coping_with_family_stress",
+      "title": "Coping With Family Change, Stress & Independence",
+      "sectionCount": 3,
+      "sourcePath": "lessons/adolescent_coping_with_family_stress.json"
+    },
+    {
+      "id": "adolescent_digital_boundaries_and_safety",
+      "title": "Digital Boundaries, Sextortion Prevention & Online Respect",
+      "sectionCount": 3,
+      "sourcePath": "lessons/adolescent_digital_boundaries_and_safety.json"
+    },
+    {
+      "id": "adolescent_healthy_dating_and_consent",
+      "title": "Healthy Dating, Respect & Consent for Teens",
+      "sectionCount": 3,
+      "sourcePath": "lessons/adolescent_healthy_dating_and_consent.json"
+    },
+    {
+      "id": "advocacy_skills",
+      "title": "Advocacy Skills",
+      "sectionCount": 3,
+      "sourcePath": "lessons/advocacy_skills.json"
+    },
+    {
+      "id": "age_appropriate_support",
+      "title": "Age Appropriate Support",
+      "sectionCount": 3,
+      "sourcePath": "lessons/age_appropriate_support.json"
+    },
+    {
+      "id": "avoiding_retraumatisation",
+      "title": "Avoiding Retraumatisation",
+      "sectionCount": 3,
+      "sourcePath": "lessons/avoiding_retraumatisation.json"
+    },
+    {
+      "id": "building_empathy",
+      "title": "Building Empathy",
+      "sectionCount": 3,
+      "sourcePath": "lessons/building_empathy.json"
+    },
+    {
+      "id": "building_new_patterns",
+      "title": "Building New Patterns",
+      "sectionCount": 3,
+      "sourcePath": "lessons/building_new_patterns.json"
+    },
+    {
+      "id": "building_resilience_in_children",
+      "title": "Building Resilience in Children",
+      "sectionCount": 3,
+      "sourcePath": "lessons/building_resilience_in_children.json"
+    },
+    {
+      "id": "building_safe_routines",
+      "title": "Building Safe Routines",
+      "sectionCount": 3,
+      "sourcePath": "lessons/building_safe_routines.json"
+    },
+    {
+      "id": "building_your_village_and_support_network",
+      "title": "Building Your Village & Support Network",
+      "sectionCount": 3,
+      "sourcePath": "lessons/building_your_village_and_support_network.json"
+    },
+    {
+      "id": "carer_facilitating_safe_family_contact",
+      "title": "Facilitating Safe Family Contact & Supporting Reunification",
+      "sectionCount": 3,
+      "sourcePath": "lessons/carer_facilitating_safe_family_contact.json"
+    },
+    {
+      "id": "carer_objective_observation_and_child_voice",
+      "title": "Recording Objective Carer Observations & Honouring Child Voice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/carer_objective_observation_and_child_voice.json"
+    },
+    {
+      "id": "carer_supporting_placement_transitions",
+      "title": "Supporting Placement Stability & Trauma-Informed Care",
+      "sectionCount": 3,
+      "sourcePath": "lessons/carer_supporting_placement_transitions.json"
+    },
+    {
+      "id": "challenging_minimisation",
+      "title": "Challenging Minimisation",
+      "sectionCount": 3,
+      "sourcePath": "lessons/challenging_minimisation.json"
+    },
+    {
+      "id": "child_feelings_and_calming_tools",
+      "title": "My Feelings, Body Signals & Calming Tools (Child Track)",
+      "sectionCount": 3,
+      "sourcePath": "lessons/child_feelings_and_calming_tools.json"
+    },
+    {
+      "id": "child_rights_and_body_safety",
+      "title": "My Rights, Body Safety & Safe Secrets (Child Track)",
+      "sectionCount": 3,
+      "sourcePath": "lessons/child_rights_and_body_safety.json"
+    },
+    {
+      "id": "child_safe_adults_and_asking_for_help",
+      "title": "Safe People, Trusted Adults & Asking for Help (Child Track)",
+      "sectionCount": 3,
+      "sourcePath": "lessons/child_safe_adults_and_asking_for_help.json"
+    },
+    {
+      "id": "child_visit_preparation_and_transitions",
+      "title": "Preparing for Family Visits & Big Changes (Child Track)",
+      "sectionCount": 3,
+      "sourcePath": "lessons/child_visit_preparation_and_transitions.json"
+    },
+    {
+      "id": "co_regulation_basics",
+      "title": "Co-Regulation Basics",
+      "sectionCount": 3,
+      "sourcePath": "lessons/co_regulation_basics.json"
+    },
+    {
+      "id": "communication_skills",
+      "title": "Communication Skills",
+      "sectionCount": 3,
+      "sourcePath": "lessons/communication_skills.json"
+    },
+    {
+      "id": "complex_family_dynamics",
+      "title": "Complex Family Dynamics",
+      "sectionCount": 3,
+      "sourcePath": "lessons/complex_family_dynamics.json"
+    },
+    {
+      "id": "conflict_management",
+      "title": "Conflict Management",
+      "sectionCount": 3,
+      "sourcePath": "lessons/conflict_management.json"
+    },
+    {
+      "id": "cultural_complexity",
+      "title": "Cultural Complexity",
+      "sectionCount": 3,
+      "sourcePath": "lessons/cultural_complexity.json"
+    },
+    {
+      "id": "deescalating_dissociation_and_hyperarousal",
+      "title": "De-escalating Trauma-Related Dissociation & Hyperarousal",
+      "sectionCount": 3,
+      "sourcePath": "lessons/deescalating_dissociation_and_hyperarousal.json"
+    },
+    {
+      "id": "demonstrating_sustained_parenting_change",
+      "title": "Demonstrating Sustained Parenting Change",
+      "sectionCount": 3,
+      "sourcePath": "lessons/demonstrating_sustained_parenting_change.json"
+    },
+    {
+      "id": "dfv_frameworks",
+      "title": "DFV Frameworks",
+      "sectionCount": 3,
+      "sourcePath": "lessons/dfv_frameworks.json"
+    },
+    {
+      "id": "documentation_and_case_notes",
+      "title": "Documentation and Case Notes",
+      "sectionCount": 3,
+      "sourcePath": "lessons/documentation_and_case_notes.json"
+    },
+    {
+      "id": "educational_and_ndis_rights_advocacy",
+      "title": "Educational, IEP & NDIS Rights Advocacy for Neurodivergent Children",
+      "sectionCount": 3,
+      "sourcePath": "lessons/educational_and_ndis_rights_advocacy.json"
+    },
+    {
+      "id": "encouraging_help_seeking",
+      "title": "Encouraging Help Seeking",
+      "sectionCount": 3,
+      "sourcePath": "lessons/encouraging_help_seeking.json"
+    },
+    {
+      "id": "ethical_practice",
+      "title": "Ethical Practice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/ethical_practice.json"
+    },
+    {
+      "id": "family_conflict_psychoeducation_program",
+      "title": "Family Conflict Psychoeducation: Three-Level Learning Pathway",
+      "sectionCount": 0,
+      "sourcePath": "lessons/family_conflict_psychoeducation_program.json"
+    },
+    {
+      "id": "fatherhood_and_positive_role_modelling",
+      "title": "Fatherhood, Accountability & Positive Role Modelling",
+      "sectionCount": 3,
+      "sourcePath": "lessons/fatherhood_and_positive_role_modelling.json"
+    },
+    {
+      "id": "holding_space",
+      "title": "Holding Space",
+      "sectionCount": 3,
+      "sourcePath": "lessons/holding_space.json"
+    },
+    {
+      "id": "initial_assessment",
+      "title": "Initial Assessment",
+      "sectionCount": 3,
+      "sourcePath": "lessons/initial_assessment.json"
+    },
+    {
+      "id": "interrupting_violent_patterns",
+      "title": "Interrupting Violent Patterns",
+      "sectionCount": 3,
+      "sourcePath": "lessons/interrupting_violent_patterns.json"
+    },
+    {
+      "id": "intersectional_practice",
+      "title": "Intersectional Practice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/intersectional_practice.json"
+    },
+    {
+      "id": "lapse_relapse_and_recovery_response",
+      "title": "Lapse, Relapse, and Rapid Safety Response",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lapse_relapse_and_recovery_response.json"
+    },
+    {
+      "id": "learning_from_visit_feedback",
+      "title": "Learning from Visit Feedback & Observations",
+      "sectionCount": 3,
+      "sourcePath": "lessons/learning_from_visit_feedback.json"
+    },
+    {
+      "id": "lesson_accessible_practice",
+      "title": "Accessible Practice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_accessible_practice.json"
+    },
+    {
+      "id": "lesson_accountability_frameworks",
+      "title": "Accountability Frameworks",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_accountability_frameworks.json"
+    },
+    {
+      "id": "lesson_active_listening",
+      "title": "Active Listening",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_active_listening.json"
+    },
+    {
+      "id": "lesson_adolescent_dfv_dynamics",
+      "title": "Adolescent DFV Dynamics",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_adolescent_dfv_dynamics.json"
+    },
+    {
+      "id": "lesson_advocacy_principles",
+      "title": "Advocacy Principles",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_advocacy_principles.json"
+    },
+    {
+      "id": "lesson_advocacy_skills",
+      "title": "Advocacy Skills",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_advocacy_skills.json"
+    },
+    {
+      "id": "lesson_age_appropriate_support",
+      "title": "Age‑Appropriate Support",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_age_appropriate_support.json"
+    },
+    {
+      "id": "lesson_age_related_risks",
+      "title": "Age-Related Risks",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_age_related_risks.json"
+    },
+    {
+      "id": "lesson_attachment_and_relationships",
+      "title": "Attachment and Relationships",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_attachment_and_relationships.json"
+    },
+    {
+      "id": "lesson_audit_trail_generator",
+      "title": "Audit-Trail Generator",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_audit_trail_generator.json"
+    },
+    {
+      "id": "lesson_avoiding_assumptions",
+      "title": "Avoiding Assumptions",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_avoiding_assumptions.json"
+    },
+    {
+      "id": "lesson_avoiding_retraumatisation",
+      "title": "Avoiding Retraumatisation",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_avoiding_retraumatisation.json"
+    },
+    {
+      "id": "lesson_barriers_and_risks",
+      "title": "Barriers and Risks",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_barriers_and_risks.json"
+    },
+    {
+      "id": "lesson_barriers_to_safe_housing",
+      "title": "Barriers to Safe Housing",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_barriers_to_safe_housing.json"
+    },
+    {
+      "id": "lesson_behaviour_change_principles",
+      "title": "Behaviour Change Principles",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_behaviour_change_principles.json"
+    },
+    {
+      "id": "lesson_behavioural_and_emotional_signs",
+      "title": "Behavioural and Emotional Signs",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_behavioural_and_emotional_signs.json"
+    },
+    {
+      "id": "lesson_bias_and_discrimination_detection",
+      "title": "Bias and Discrimination Detection",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_bias_and_discrimination_detection.json"
+    },
+    {
+      "id": "lesson_building_local_partnerships",
+      "title": "Building Local Partnerships",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_building_local_partnerships.json"
+    },
+    {
+      "id": "lesson_building_resilience_in_children",
+      "title": "Building Resilience in Children",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_building_resilience_in_children.json"
+    },
+    {
+      "id": "lesson_building_resilient_communities",
+      "title": "Building Resilient Communities",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_building_resilient_communities.json"
+    },
+    {
+      "id": "lesson_building_safe_communities",
+      "title": "Building Safe Communities",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_building_safe_communities.json"
+    },
+    {
+      "id": "lesson_building_safe_cultures",
+      "title": "Building Safe Cultures",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_building_safe_cultures.json"
+    },
+    {
+      "id": "lesson_building_safe_faith_environments",
+      "title": "Building Safe Faith Environments",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_building_safe_faith_environments.json"
+    },
+    {
+      "id": "lesson_building_safe_organisational_cultures",
+      "title": "Building Safe Organisational Cultures",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_building_safe_organisational_cultures.json"
+    },
+    {
+      "id": "lesson_building_safe_routines",
+      "title": "Building Safe Routines",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_building_safe_routines.json"
+    },
+    {
+      "id": "lesson_building_strategic_partnerships",
+      "title": "Building Strategic Partnerships",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_building_strategic_partnerships.json"
+    },
+    {
+      "id": "lesson_building_trust_with_communities",
+      "title": "Building Trust with Communities",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_building_trust_with_communities.json"
+    },
+    {
+      "id": "lesson_case_decision_justification_builder",
+      "title": "Case Decision Justification Builder",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_case_decision_justification_builder.json"
+    },
+    {
+      "id": "lesson_case_discrepancy_explainer",
+      "title": "Case Discrepancy Explainer",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_case_discrepancy_explainer.json"
+    },
+    {
+      "id": "lesson_case_risk_level_updater",
+      "title": "Case Risk-Level Updater",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_case_risk_level_updater.json"
+    },
+    {
+      "id": "lesson_case_summary_generator",
+      "title": "Case Summary Generator",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_case_summary_generator.json"
+    },
+    {
+      "id": "lesson_case_triage_routing",
+      "title": "Case Triage Routing",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_case_triage_routing.json"
+    },
+    {
+      "id": "lesson_challenging_harmful_norms",
+      "title": "Challenging Harmful Norms",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_challenging_harmful_norms.json"
+    },
+    {
+      "id": "lesson_change_leadership",
+      "title": "Change Leadership",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_change_leadership.json"
+    },
+    {
+      "id": "lesson_child_centred_principles",
+      "title": "Child-Centred Principles",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_child_centred_principles.json"
+    },
+    {
+      "id": "lesson_child_friendly_safety_planning",
+      "title": "Child-Friendly Safety Planning",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_child_friendly_safety_planning.json"
+    },
+    {
+      "id": "lesson_child_safe_standards_compliance",
+      "title": "Child Safe Standards Compliance",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_child_safe_standards_compliance.json"
+    },
+    {
+      "id": "lesson_civil_and_criminal_pathways",
+      "title": "Civil and Criminal Pathways",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_civil_and_criminal_pathways.json"
+    },
+    {
+      "id": "lesson_collaboration_principles",
+      "title": "Collaboration Principles",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_collaboration_principles.json"
+    },
+    {
+      "id": "lesson_community_campaigns",
+      "title": "Community Campaigns",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_community_campaigns.json"
+    },
+    {
+      "id": "lesson_community_leadership_for_respect",
+      "title": "Community Leadership for Respect",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_community_leadership_for_respect.json"
+    },
+    {
+      "id": "lesson_community_led_responses",
+      "title": "Community-Led Responses",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_community_led_responses.json"
+    },
+    {
+      "id": "lesson_community_roles_in_prevention",
+      "title": "Community Roles in Prevention",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_community_roles_in_prevention.json"
+    },
+    {
+      "id": "lesson_community_strengths_and_assets",
+      "title": "Community Strengths and Assets",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_community_strengths_and_assets.json"
+    },
+    {
+      "id": "lesson_complex_case_practice",
+      "title": "Complex Case Practice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_complex_case_practice.json"
+    },
+    {
+      "id": "lesson_complex_family_dynamics",
+      "title": "Complex Family Dynamics",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_complex_family_dynamics.json"
+    },
+    {
+      "id": "lesson_connecting_to_services",
+      "title": "Connecting to Services",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_connecting_to_services.json"
+    },
+    {
+      "id": "lesson_continuous_improvement",
+      "title": "Continuous Improvement",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_continuous_improvement.json"
+    },
+    {
+      "id": "lesson_contributing_to_system_improvement",
+      "title": "Contributing to System Improvement",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_contributing_to_system_improvement.json"
+    },
+    {
+      "id": "lesson_coordinated_case_responses",
+      "title": "Coordinated Case Responses",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_coordinated_case_responses.json"
+    },
+    {
+      "id": "lesson_coordinated_collective_action",
+      "title": "Coordinated Collective Action",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_coordinated_collective_action.json"
+    },
+    {
+      "id": "lesson_coordinated_housing_responses",
+      "title": "Coordinated Housing Responses",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_coordinated_housing_responses.json"
+    },
+    {
+      "id": "lesson_coordinated_responses",
+      "title": "Coordinated Responses",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_coordinated_responses.json"
+    },
+    {
+      "id": "lesson_coordinating_local_initiatives",
+      "title": "Coordinating Local Initiatives",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_coordinating_local_initiatives.json"
+    },
+    {
+      "id": "lesson_coordination_and_system_interaction",
+      "title": "Coordination and System Interaction",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_coordination_and_system_interaction.json"
+    },
+    {
+      "id": "lesson_core_capabilities",
+      "title": "Core Capabilities",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_core_capabilities.json"
+    },
+    {
+      "id": "lesson_court_processes_and_procedures",
+      "title": "Court Processes and Procedures",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_court_processes_and_procedures.json"
+    },
+    {
+      "id": "lesson_crisis_accommodation_models",
+      "title": "Crisis Accommodation Models",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_crisis_accommodation_models.json"
+    },
+    {
+      "id": "lesson_cultural_complexity",
+      "title": "Cultural Complexity",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_cultural_complexity.json"
+    },
+    {
+      "id": "lesson_cultural_contexts_and_migration",
+      "title": "Cultural Contexts and Migration",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_cultural_contexts_and_migration.json"
+    },
+    {
+      "id": "lesson_cultural_contexts_of_violence",
+      "title": "Cultural Contexts of Violence",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_cultural_contexts_of_violence.json"
+    },
+    {
+      "id": "lesson_cultural_safety_and_respect",
+      "title": "Cultural Safety and Respect",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_cultural_safety_and_respect.json"
+    },
+    {
+      "id": "lesson_cultural_safety_support",
+      "title": "Cultural Safety Support",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_cultural_safety_support.json"
+    },
+    {
+      "id": "lesson_culturally_informed_accountability",
+      "title": "Culturally Informed Accountability",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_culturally_informed_accountability.json"
+    },
+    {
+      "id": "lesson_culturally_safe_practice",
+      "title": "Culturally Safe Practice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_culturally_safe_practice.json"
+    },
+    {
+      "id": "lesson_designing_local_prevention_strategies",
+      "title": "Designing Local Prevention Strategies",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_designing_local_prevention_strategies.json"
+    },
+    {
+      "id": "lesson_designing_prevention_campaigns",
+      "title": "Designing Prevention Campaigns",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_designing_prevention_campaigns.json"
+    },
+    {
+      "id": "lesson_designing_prevention_programs",
+      "title": "Designing Prevention Programs",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_designing_prevention_programs.json"
+    },
+    {
+      "id": "lesson_developmental_impacts",
+      "title": "Developmental Impacts",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_developmental_impacts.json"
+    },
+    {
+      "id": "lesson_dfv_and_housing_risks",
+      "title": "DFV and Housing Risks",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_dfv_and_housing_risks.json"
+    },
+    {
+      "id": "lesson_dfv_frameworks",
+      "title": "DFV Frameworks",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_dfv_frameworks.json"
+    },
+    {
+      "id": "lesson_dfv_in_faith_contexts",
+      "title": "DFV in Faith Contexts",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_dfv_in_faith_contexts.json"
+    },
+    {
+      "id": "lesson_dfv_patterns_and_drivers",
+      "title": "DFV Patterns and Drivers",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_dfv_patterns_and_drivers.json"
+    },
+    {
+      "id": "lesson_dfv_system_overview",
+      "title": "DFV System Overview",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_dfv_system_overview.json"
+    },
+    {
+      "id": "lesson_disability_specific_risks",
+      "title": "Disability-Specific Risks",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_disability_specific_risks.json"
+    },
+    {
+      "id": "lesson_documentation_and_case_notes",
+      "title": "Documentation and Case Notes",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_documentation_and_case_notes.json"
+    },
+    {
+      "id": "lesson_documentation_and_referral",
+      "title": "Documentation and Referral",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_documentation_and_referral.json"
+    },
+    {
+      "id": "lesson_drivers_of_violence",
+      "title": "Drivers of Violence",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_drivers_of_violence.json"
+    },
+    {
+      "id": "lesson_early_identification",
+      "title": "Early Identification",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_early_identification.json"
+    },
+    {
+      "id": "lesson_economic_empowerment_strategies",
+      "title": "Economic Empowerment Strategies",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_economic_empowerment_strategies.json"
+    },
+    {
+      "id": "lesson_embedding_trauma_informed_practice",
+      "title": "Embedding Trauma-Informed Practice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_embedding_trauma_informed_practice.json"
+    },
+    {
+      "id": "lesson_empowerment_and_choice",
+      "title": "Empowerment and Choice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_empowerment_and_choice.json"
+    },
+    {
+      "id": "lesson_encouraging_help_seeking",
+      "title": "Encouraging Help-Seeking",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_encouraging_help_seeking.json"
+    },
+    {
+      "id": "lesson_engaging_community_groups",
+      "title": "Engaging Community Groups",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_engaging_community_groups.json"
+    },
+    {
+      "id": "lesson_escalation_and_emergency_response",
+      "title": "Escalation and Emergency Response",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_escalation_and_emergency_response.json"
+    },
+    {
+      "id": "lesson_ethical_and_safe_boundaries",
+      "title": "Ethical and Safe Boundaries",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_ethical_and_safe_boundaries.json"
+    },
+    {
+      "id": "lesson_ethical_practice",
+      "title": "Ethical Practice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_ethical_practice.json"
+    },
+    {
+      "id": "lesson_ethical_storytelling",
+      "title": "Ethical Storytelling",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_ethical_storytelling.json"
+    },
+    {
+      "id": "lesson_everyday_prevention_actions",
+      "title": "Everyday Prevention Actions",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_everyday_prevention_actions.json"
+    },
+    {
+      "id": "lesson_evidence_and_evaluation",
+      "title": "Evidence and Evaluation",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_evidence_and_evaluation.json"
+    },
+    {
+      "id": "lesson_evidence_and_risk_processes",
+      "title": "Evidence and Risk Processes",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_evidence_and_risk_processes.json"
+    },
+    {
+      "id": "lesson_harmful_norms_and_stereotypes",
+      "title": "Harmful Norms and Stereotypes",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_harmful_norms_and_stereotypes.json"
+    },
+    {
+      "id": "lesson_health_led_strategies",
+      "title": "Health-Led Strategies",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_health_led_strategies.json"
+    },
+    {
+      "id": "lesson_historical_and_cultural_contexts",
+      "title": "Historical and Cultural Contexts",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_historical_and_cultural_contexts.json"
+    },
+    {
+      "id": "lesson_holding_space",
+      "title": "Holding Space",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_holding_space.json"
+    },
+    {
+      "id": "lesson_identity_and_safety",
+      "title": "Identity and Safety",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_identity_and_safety.json"
+    },
+    {
+      "id": "lesson_implementing_and_evaluating_strategies",
+      "title": "Implementing and Evaluating Strategies",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_implementing_and_evaluating_strategies.json"
+    },
+    {
+      "id": "lesson_inclusive_practice",
+      "title": "Inclusive Practice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_inclusive_practice.json"
+    },
+    {
+      "id": "lesson_initial_assessment",
+      "title": "Initial Assessment",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_initial_assessment.json"
+    },
+    {
+      "id": "lesson_intersectional_practice",
+      "title": "Intersectional Practice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_intersectional_practice.json"
+    },
+    {
+      "id": "lesson_justice_system_intersections",
+      "title": "Justice System Intersections",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_justice_system_intersections.json"
+    },
+    {
+      "id": "lesson_leadership_for_prevention",
+      "title": "Leadership for Prevention",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_leadership_for_prevention.json"
+    },
+    {
+      "id": "lesson_leadership_responsibilities",
+      "title": "Leadership Responsibilities",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_leadership_responsibilities.json"
+    },
+    {
+      "id": "lesson_leading_multidisciplinary_teams",
+      "title": "Leading Multidisciplinary Teams",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_leading_multidisciplinary_teams.json"
+    },
+    {
+      "id": "lesson_leading_system_improvement",
+      "title": "Leading System Improvement",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_leading_system_improvement.json"
+    },
+    {
+      "id": "lesson_legal_definitions_and_frameworks",
+      "title": "Legal Definitions and Frameworks",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_legal_definitions_and_frameworks.json"
+    },
+    {
+      "id": "lesson_legal_responses_to_dfv",
+      "title": "Legal Responses to DFV",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_legal_responses_to_dfv.json"
+    },
+    {
+      "id": "lesson_lethality_assessment",
+      "title": "Lethality Assessment",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_lethality_assessment.json"
+    },
+    {
+      "id": "lesson_local_partnerships",
+      "title": "Local Partnerships",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_local_partnerships.json"
+    },
+    {
+      "id": "lesson_long_term_health_consequences",
+      "title": "Long-Term Health Consequences",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_long_term_health_consequences.json"
+    },
+    {
+      "id": "lesson_long_term_housing_stability",
+      "title": "Long-Term Housing Stability",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_long_term_housing_stability.json"
+    },
+    {
+      "id": "lesson_long_term_recovery_planning",
+      "title": "Long‑Term Recovery Planning",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_long_term_recovery_planning.json"
+    },
+    {
+      "id": "lesson_maintaining_boundaries",
+      "title": "Maintaining Boundaries",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_maintaining_boundaries.json"
+    },
+    {
+      "id": "lesson_maintaining_parent_child_connection",
+      "title": "Maintaining Parent–Child Connection",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_maintaining_parent_child_connection.json"
+    },
+    {
+      "id": "lesson_managing_conflict_and_complexity",
+      "title": "Managing Conflict and Complexity",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_managing_conflict_and_complexity.json"
+    },
+    {
+      "id": "lesson_managing_parental_stress",
+      "title": "Managing Parental Stress",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_managing_parental_stress.json"
+    },
+    {
+      "id": "lesson_mandatory_reporting_trigger",
+      "title": "Mandatory-Reporting Trigger",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_mandatory_reporting_trigger.json"
+    },
+    {
+      "id": "lesson_mental_health_impacts",
+      "title": "Mental Health Impacts",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_mental_health_impacts.json"
+    },
+    {
+      "id": "lesson_mobilising_communities",
+      "title": "Mobilising Communities",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_mobilising_communities.json"
+    },
+    {
+      "id": "lesson_modelling_safe_practice",
+      "title": "Modelling Safe Practice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_modelling_safe_practice.json"
+    },
+    {
+      "id": "lesson_monitoring_and_evaluation",
+      "title": "Monitoring and Evaluation",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_monitoring_and_evaluation.json"
+    },
+    {
+      "id": "lesson_monitoring_dynamic_risk",
+      "title": "Monitoring Dynamic Risk",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_monitoring_dynamic_risk.json"
+    },
+    {
+      "id": "lesson_multi_layered_trauma",
+      "title": "Multi‑Layered Trauma",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_multi_layered_trauma.json"
+    },
+    {
+      "id": "lesson_multiagency_risk_panels",
+      "title": "Multi-Agency Risk Panels",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_multiagency_risk_panels.json"
+    },
+    {
+      "id": "lesson_multiagency_work",
+      "title": "Multi‑Agency Work",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_multiagency_work.json"
+    },
+    {
+      "id": "lesson_myths_and_misconceptions",
+      "title": "Myths and Misconceptions",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_myths_and_misconceptions.json"
+    },
+    {
+      "id": "lesson_navigating_services",
+      "title": "Navigating Services",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_navigating_services.json"
+    },
+    {
+      "id": "lesson_navigating_systems",
+      "title": "Navigating Systems",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_navigating_systems.json"
+    },
+    {
+      "id": "lesson_pathways_to_financial_independence",
+      "title": "Pathways to Financial Independence",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_pathways_to_financial_independence.json"
+    },
+    {
+      "id": "lesson_pathways_to_stability",
+      "title": "Pathways to Stability",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_pathways_to_stability.json"
+    },
+    {
+      "id": "lesson_peer_led_prevention_initiatives",
+      "title": "Peer-Led Prevention Initiatives",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_peer_led_prevention_initiatives.json"
+    },
+    {
+      "id": "lesson_physical_health_impacts",
+      "title": "Physical Health Impacts",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_physical_health_impacts.json"
+    },
+    {
+      "id": "lesson_police_roles_and_responses",
+      "title": "Police Roles and Responses",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_police_roles_and_responses.json"
+    },
+    {
+      "id": "lesson_policy_and_system_influence",
+      "title": "Policy and System Influence",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_policy_and_system_influence.json"
+    },
+    {
+      "id": "lesson_policy_interpretation",
+      "title": "Policy Interpretation",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_policy_interpretation.json"
+    },
+    {
+      "id": "lesson_positive_social_norms",
+      "title": "Positive Social Norms",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_positive_social_norms.json"
+    },
+    {
+      "id": "lesson_preparing_clients_for_court",
+      "title": "Preparing Clients for Court",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_preparing_clients_for_court.json"
+    },
+    {
+      "id": "lesson_prevention_in_community_settings",
+      "title": "Prevention in Community Settings",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_prevention_in_community_settings.json"
+    },
+    {
+      "id": "lesson_prevention_in_schools",
+      "title": "Prevention in Schools",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_prevention_in_schools.json"
+    },
+    {
+      "id": "lesson_prevention_in_workplaces",
+      "title": "Prevention in Workplaces",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_prevention_in_workplaces.json"
+    },
+    {
+      "id": "lesson_prevention_strategies",
+      "title": "Prevention Strategies",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_prevention_strategies.json"
+    },
+    {
+      "id": "lesson_professional_boundaries",
+      "title": "Professional Boundaries",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_professional_boundaries.json"
+    },
+    {
+      "id": "lesson_professional_responsibilities",
+      "title": "Professional Responsibilities",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_professional_responsibilities.json"
+    },
+    {
+      "id": "lesson_promoting_healing_and_stability",
+      "title": "Promoting Healing and Stability",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_promoting_healing_and_stability.json"
+    },
+    {
+      "id": "lesson_promoting_respectful_relationships",
+      "title": "Promoting Respectful Relationships",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_promoting_respectful_relationships.json"
+    },
+    {
+      "id": "lesson_protection_orders_and_courts",
+      "title": "Protection Orders and Courts",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_protection_orders_and_courts.json"
+    },
+    {
+      "id": "lesson_protective_factors",
+      "title": "Protective Factors",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_protective_factors.json"
+    },
+    {
+      "id": "lesson_psychological_and_emotional_impacts",
+      "title": "Psychological and Emotional Impacts",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_psychological_and_emotional_impacts.json"
+    },
+    {
+      "id": "lesson_psychological_safety",
+      "title": "Psychological Safety",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_psychological_safety.json"
+    },
+    {
+      "id": "lesson_quality_and_improvement_systems",
+      "title": "Quality and Improvement Systems",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_quality_and_improvement_systems.json"
+    },
+    {
+      "id": "lesson_recognising_crisis_situations",
+      "title": "Recognising Crisis Situations",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_recognising_crisis_situations.json"
+    },
+    {
+      "id": "lesson_recognising_dfv_in_organisations",
+      "title": "Recognising DFV in Organisations",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_recognising_dfv_in_organisations.json"
+    },
+    {
+      "id": "lesson_recognising_digital_red_flags",
+      "title": "Recognising Digital Red Flags",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_recognising_digital_red_flags.json"
+    },
+    {
+      "id": "lesson_recognising_indicators",
+      "title": "Recognising Indicators",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_recognising_indicators.json"
+    },
+    {
+      "id": "lesson_recognising_risk_as_a_parent",
+      "title": "Recognising Risk as a Parent",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_recognising_risk_as_a_parent.json"
+    },
+    {
+      "id": "lesson_recognising_warning_signs",
+      "title": "Recognising Warning Signs",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_recognising_warning_signs.json"
+    },
+    {
+      "id": "lesson_referral_pathways",
+      "title": "Referral Pathways",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_referral_pathways.json"
+    },
+    {
+      "id": "lesson_reflective_practice",
+      "title": "Reflective Practice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_reflective_practice.json"
+    },
+    {
+      "id": "lesson_reflective_practice_and_self_care",
+      "title": "Reflective Practice and Self-Care",
+      "sectionCount": 3,
+      "sourcePath": "lessons/lesson_reflective_practice_and_self_care.json"
+    },
+    {
+      "id": "mental_health_support_and_crisis_planning",
+      "title": "Mental Health Support & Personal Crisis Planning",
+      "sectionCount": 3,
+      "sourcePath": "lessons/mental_health_support_and_crisis_planning.json"
+    },
+    {
+      "id": "navigating_child_welfare_case_conferences",
+      "title": "Navigating Child Welfare & Multi-Disciplinary Case Conferences",
+      "sectionCount": 3,
+      "sourcePath": "lessons/navigating_child_welfare_case_conferences.json"
+    },
+    {
+      "id": "newborn_care_and_fourth_trimester",
+      "title": "Newborn Care, Safe Sleep & the Fourth Trimester",
+      "sectionCount": 3,
+      "sourcePath": "lessons/newborn_care_and_fourth_trimester.json"
+    },
+    {
+      "id": "parallel_parenting_and_dfv_safety_plans",
+      "title": "Parallel Parenting & Co-Parenting Safety Plans in DFV Recovery",
+      "sectionCount": 3,
+      "sourcePath": "lessons/parallel_parenting_and_dfv_safety_plans.json"
+    },
+    {
+      "id": "parenting_safely_during_recovery",
+      "title": "Parenting Safely During Recovery & Sober Care Plans",
+      "sectionCount": 3,
+      "sourcePath": "lessons/parenting_safely_during_recovery.json"
+    },
+    {
+      "id": "pregnancy_and_perinatal_wellbeing",
+      "title": "Pregnancy, Perinatal Wellbeing & Preparing for Baby",
+      "sectionCount": 3,
+      "sourcePath": "lessons/pregnancy_and_perinatal_wellbeing.json"
+    },
+    {
+      "id": "preparing_for_family_contact_visits",
+      "title": "Preparing for Family Contact Visits",
+      "sectionCount": 3,
+      "sourcePath": "lessons/preparing_for_family_contact_visits.json"
+    },
+    {
+      "id": "recovery_and_treatment_planning",
+      "title": "Recovery and Treatment Planning",
+      "sectionCount": 3,
+      "sourcePath": "lessons/recovery_and_treatment_planning.json"
+    },
+    {
+      "id": "referral_pathways",
+      "title": "Referral Pathways",
+      "sectionCount": 3,
+      "sourcePath": "lessons/referral_pathways.json"
+    },
+    {
+      "id": "regulation_strategies",
+      "title": "Regulation Strategies",
+      "sectionCount": 3,
+      "sourcePath": "lessons/regulation_strategies.json"
+    },
+    {
+      "id": "relapse_prevention",
+      "title": "Relapse Prevention",
+      "sectionCount": 3,
+      "sourcePath": "lessons/relapse_prevention.json"
+    },
+    {
+      "id": "restoring_routines",
+      "title": "Restoring Routines",
+      "sectionCount": 3,
+      "sourcePath": "lessons/restoring_routines.json"
+    },
+    {
+      "id": "reunification_foundations_and_expectations",
+      "title": "Reunification Foundation: Rights, Goals & First Actions",
+      "sectionCount": 3,
+      "sourcePath": "lessons/reunification_foundations_and_expectations.json"
+    },
+    {
+      "id": "reunification_transition_and_home_again",
+      "title": "Reunification Transition & Home Again Maintenance",
+      "sectionCount": 3,
+      "sourcePath": "lessons/reunification_transition_and_home_again.json"
+    },
+    {
+      "id": "risk_identification",
+      "title": "Risk Identification",
+      "sectionCount": 3,
+      "sourcePath": "lessons/risk_identification.json"
+    },
+    {
+      "id": "safe_ai_support_coach_skills",
+      "title": "Using the SafeSteps AI Support Coach Safely",
+      "sectionCount": 3,
+      "sourcePath": "lessons/safe_ai_support_coach_skills.json"
+    },
+    {
+      "id": "safety_planning",
+      "title": "Safety Planning",
+      "sectionCount": 3,
+      "sourcePath": "lessons/safety_planning.json"
+    },
+    {
+      "id": "safety_planning_with_children",
+      "title": "Safety Planning with Children",
+      "sectionCount": 3,
+      "sourcePath": "lessons/safety_planning_with_children.json"
+    },
+    {
+      "id": "scope_and_limitations",
+      "title": "Scope and Limitations",
+      "sectionCount": 3,
+      "sourcePath": "lessons/scope_and_limitations.json"
+    },
+    {
+      "id": "self_care_for_peers",
+      "title": "Self Care for Peers",
+      "sectionCount": 3,
+      "sourcePath": "lessons/self_care_for_peers.json"
+    },
+    {
+      "id": "sensory_processing_and_sleep_architecture",
+      "title": "Sensory Processing, Regulation & Restorative Sleep Architecture",
+      "sectionCount": 3,
+      "sourcePath": "lessons/sensory_processing_and_sleep_architecture.json"
+    },
+    {
+      "id": "specialist_therapeutic_support",
+      "title": "Specialist Therapeutic Support",
+      "sectionCount": 3,
+      "sourcePath": "lessons/specialist_therapeutic_support.json"
+    },
+    {
+      "id": "strengthening_family_bonds",
+      "title": "Strengthening Family Bonds",
+      "sectionCount": 3,
+      "sourcePath": "lessons/strengthening_family_bonds.json"
+    },
+    {
+      "id": "strengths_based_practice",
+      "title": "Strengths Based Practice",
+      "sectionCount": 3,
+      "sourcePath": "lessons/strengths_based_practice.json"
+    },
+    {
+      "id": "strengths_based_support",
+      "title": "Strengths Based Support",
+      "sectionCount": 3,
+      "sourcePath": "lessons/strengths_based_support.json"
+    },
+    {
+      "id": "supervision_and_support",
+      "title": "Supervision and Support",
+      "sectionCount": 3,
+      "sourcePath": "lessons/supervision_and_support.json"
+    },
+    {
+      "id": "supporting_children_emotionally",
+      "title": "Supporting Children Emotionally",
+      "sectionCount": 3,
+      "sourcePath": "lessons/supporting_children_emotionally.json"
+    },
+    {
+      "id": "supporting_clients_through_system_barriers",
+      "title": "Supporting Clients Through System Barriers",
+      "sectionCount": 3,
+      "sourcePath": "lessons/supporting_clients_through_system_barriers.json"
+    },
+    {
+      "id": "sustained_recovery_evidence",
+      "title": "Sustained Recovery & Longitudinal Stability Evidence",
+      "sectionCount": 3,
+      "sourcePath": "lessons/sustained_recovery_evidence.json"
+    },
+    {
+      "id": "taking_responsibility",
+      "title": "Taking Responsibility",
+      "sectionCount": 3,
+      "sourcePath": "lessons/taking_responsibility.json"
+    },
+    {
+      "id": "trauma_informed_engagement",
+      "title": "Trauma Informed Engagement",
+      "sectionCount": 3,
+      "sourcePath": "lessons/trauma_informed_engagement.json"
+    },
+    {
+      "id": "triggers_cravings_and_safer_choices",
+      "title": "Triggers, Cravings, and Safer Choices",
+      "sectionCount": 3,
+      "sourcePath": "lessons/triggers_cravings_and_safer_choices.json"
+    },
+    {
+      "id": "understanding_child_cues",
+      "title": "Understanding Child Cues",
+      "sectionCount": 3,
+      "sourcePath": "lessons/understanding_child_cues.json"
+    },
+    {
+      "id": "understanding_child_experience_of_care",
+      "title": "Understanding the Child's Experience of Removal & Care",
+      "sectionCount": 3,
+      "sourcePath": "lessons/understanding_child_experience_of_care.json"
+    },
+    {
+      "id": "understanding_child_trauma",
+      "title": "Understanding Child Trauma",
+      "sectionCount": 3,
+      "sourcePath": "lessons/understanding_child_trauma.json"
+    },
+    {
+      "id": "understanding_harm",
+      "title": "Understanding Harm",
+      "sectionCount": 3,
+      "sourcePath": "lessons/understanding_harm.json"
+    },
+    {
+      "id": "understanding_substance_use_and_family_impact",
+      "title": "Understanding Substance Use and Family Impact",
+      "sectionCount": 3,
+      "sourcePath": "lessons/understanding_substance_use_and_family_impact.json"
+    },
+    {
+      "id": "using_lived_experience_safely",
+      "title": "Using Lived Experience Safely",
+      "sectionCount": 3,
+      "sourcePath": "lessons/using_lived_experience_safely.json"
+    },
+    {
+      "id": "what_is_peer_support",
+      "title": "What Is Peer Support",
+      "sectionCount": 3,
+      "sourcePath": "lessons/what_is_peer_support.json"
+    },
+    {
+      "id": "working_with_high_risk_cases",
+      "title": "Working with High Risk Cases",
+      "sectionCount": 3,
+      "sourcePath": "lessons/working_with_high_risk_cases.json"
+    },
+    {
+      "id": "working_with_resistance",
+      "title": "Working with Resistance",
+      "sectionCount": 3,
+      "sourcePath": "lessons/working_with_resistance.json"
+    }
+  ],
+  "modules": [
+    {
+      "id": "accountability-and-responsibility",
+      "title": "Accountability and Responsibility",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/accountability-and-responsibility.json"
+    },
+    {
+      "id": "attachment-and-bonding-foundations",
+      "title": "Attachment and Bonding Foundations",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/attachment-and-bonding-foundations.json"
+    },
+    {
+      "id": "behaviour-management-foundations",
+      "title": "Behaviour Management Foundations",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/behaviour-management-foundations.json"
+    },
+    {
+      "id": "building-your-village",
+      "title": "Building Your Village",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/building-your-village.json"
+    },
+    {
+      "id": "child-development-foundations",
+      "title": "Child Development Foundations",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/child-development-foundations.json"
+    },
+    {
+      "id": "child-safety-foundations",
+      "title": "Child Safety Foundations",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/child-safety-foundations.json"
+    },
+    {
+      "id": "co-parenting-after-separation",
+      "title": "Co-Parenting After Separation",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/co-parenting-after-separation.json"
+    },
+    {
+      "id": "communication-skills",
+      "title": "Communication Skills",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/communication-skills.json"
+    },
+    {
+      "id": "demonstrating-change-self-managed-safety",
+      "title": "Demonstrating Change & Self-Managed Safety",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/demonstrating-change-self-managed-safety.json"
+    },
+    {
+      "id": "emotional-regulation-for-parents",
+      "title": "Emotional Regulation for Parents",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/emotional-regulation-for-parents.json"
+    },
+    {
+      "id": "family-routines-and-structure",
+      "title": "Family Routines and Structure",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/family-routines-and-structure.json"
+    },
+    {
+      "id": "module_accountability_foundations",
+      "title": "Accountability Foundations",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_accountability_foundations.json"
+    },
+    {
+      "id": "module_adolescent_safety_and_relationships",
+      "title": "Adolescent Safety, Consent & Healthy Relationships (Youth Track)",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_adolescent_safety_and_relationships.json"
+    },
+    {
+      "id": "module_advanced_dfv_practice_and_leadership",
+      "title": "Advanced DFV Practice and Leadership",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_advanced_dfv_practice_and_leadership.json"
+    },
+    {
+      "id": "module_advanced_risk_management",
+      "title": "Advanced Risk Management",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_advanced_risk_management.json"
+    },
+    {
+      "id": "module_assessment_and_response",
+      "title": "Assessment and Response",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_assessment_and_response.json"
+    },
+    {
+      "id": "module_boundaries_and_safety",
+      "title": "Boundaries and Safety",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_boundaries_and_safety.json"
+    },
+    {
+      "id": "module_building_respectful_communities",
+      "title": "Building Respectful Communities",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_building_respectful_communities.json"
+    },
+    {
+      "id": "module_bystander_action_and_community_safety",
+      "title": "Bystander Action and Community Safety",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_bystander_action_and_community_safety.json"
+    },
+    {
+      "id": "module_case_review_and_reflective_practice",
+      "title": "Case Review and Reflective Practice",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_case_review_and_reflective_practice.json"
+    },
+    {
+      "id": "module_challenging_gender_inequality_and_harmful_norms",
+      "title": "Challenging Gender Inequality and Harmful Norms",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_challenging_gender_inequality_and_harmful_norms.json"
+    },
+    {
+      "id": "module_child_centred_and_family_focused_practice",
+      "title": "Child-Centred and Family-Focused Practice",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_child_centred_and_family_focused_practice.json"
+    },
+    {
+      "id": "module_child_healing",
+      "title": "Supporting Child Healing",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_child_healing.json"
+    },
+    {
+      "id": "module_child_rights_feelings_and_safety",
+      "title": "Child Rights, Feelings & Personal Safety Learning (Child Track)",
+      "lessonRefCount": 4,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_child_rights_feelings_and_safety.json"
+    },
+    {
+      "id": "module_client_engagement",
+      "title": "Trauma‑Informed Client Engagement",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_client_engagement.json"
+    },
+    {
+      "id": "module_collaboration_and_referral",
+      "title": "Collaboration and Referral Pathways",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_collaboration_and_referral.json"
+    },
+    {
+      "id": "module_community_accountability_and_collective_action",
+      "title": "Community Accountability and Collective Action",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_community_accountability_and_collective_action.json"
+    },
+    {
+      "id": "module_community_advocacy_and_awareness",
+      "title": "Community Advocacy and Awareness",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_community_advocacy_and_awareness.json"
+    },
+    {
+      "id": "module_community_crisis_response_and_safety_planning",
+      "title": "Community Crisis Response and Safety Planning",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_community_crisis_response_and_safety_planning.json"
+    },
+    {
+      "id": "module_community_education_and_prevention_campaigns",
+      "title": "Community Education and Prevention Campaigns",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_community_education_and_prevention_campaigns.json"
+    },
+    {
+      "id": "module_community_healing_and_collective_recovery",
+      "title": "Community Healing and Collective Recovery",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_community_healing_and_collective_recovery.json"
+    },
+    {
+      "id": "module_community_leadership_for_change",
+      "title": "Community Leadership for Change",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_community_leadership_for_change.json"
+    },
+    {
+      "id": "module_community_led_prevention_strategies",
+      "title": "Community-Led Prevention Strategies",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_community_led_prevention_strategies.json"
+    },
+    {
+      "id": "module_community_partnerships_and_local_action",
+      "title": "Community Partnerships and Local Action",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_community_partnerships_and_local_action.json"
+    },
+    {
+      "id": "module_complex_casework",
+      "title": "Complex Casework",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_complex_casework.json"
+    },
+    {
+      "id": "module_compliance_and_safeguarding_skills",
+      "title": "Compliance and Safeguarding Skills",
+      "lessonRefCount": 4,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_compliance_and_safeguarding_skills.json"
+    },
+    {
+      "id": "module_court_support_and_legal_processes",
+      "title": "Court Support and Legal Processes",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_court_support_and_legal_processes.json"
+    },
+    {
+      "id": "module_cultural_safety_in_community_responses",
+      "title": "Cultural Safety in Community Responses",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_cultural_safety_in_community_responses.json"
+    },
+    {
+      "id": "module_designing_and_evaluating_prevention_initiatives",
+      "title": "Designing and Evaluating Prevention Initiatives",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_designing_and_evaluating_prevention_initiatives.json"
+    },
+    {
+      "id": "module_dfv_and_health_impacts",
+      "title": "DFV and Health Impacts",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_dfv_and_health_impacts.json"
+    },
+    {
+      "id": "module_dfv_housing_instability_and_homelessness",
+      "title": "DFV, Housing Instability, and Homelessness",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_dfv_housing_instability_and_homelessness.json"
+    },
+    {
+      "id": "module_dfv_in_health_settings",
+      "title": "DFV in Health Settings",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_dfv_in_health_settings.json"
+    },
+    {
+      "id": "module_digital_safety_and_online_communities",
+      "title": "Digital Safety and Online Communities",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_digital_safety_and_online_communities.json"
+    },
+    {
+      "id": "module_economic_abuse_and_financial_security",
+      "title": "Economic Abuse and Financial Security",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_economic_abuse_and_financial_security.json"
+    },
+    {
+      "id": "module_emotional_regulation",
+      "title": "Emotional Regulation",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_emotional_regulation.json"
+    },
+    {
+      "id": "module_engaging_young_people_in_prevention",
+      "title": "Engaging Young People in Prevention and Respectful Relationships",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_engaging_young_people_in_prevention.json"
+    },
+    {
+      "id": "module_faith_communities_and_dfv_prevention",
+      "title": "Faith Communities and DFV Prevention",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_faith_communities_and_dfv_prevention.json"
+    },
+    {
+      "id": "module_family_conflict_psychoeducation_program",
+      "title": "Family Conflict Psychoeducation Program",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_family_conflict_psychoeducation_program.json"
+    },
+    {
+      "id": "module_fatherhood_perinatal_and_support_networks",
+      "title": "Fatherhood, Perinatal Care, Support Networks & Mental Health Planning",
+      "lessonRefCount": 6,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_fatherhood_perinatal_and_support_networks.json"
+    },
+    {
+      "id": "module_foster_and_kinship_carer_support",
+      "title": "Foster & Kinship Carer Trauma-Informed Support (Carer Track)",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_foster_and_kinship_carer_support.json"
+    },
+    {
+      "id": "module_foundations_of_dfv_capability",
+      "title": "Foundations of DFV Capability",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_foundations_of_dfv_capability.json"
+    },
+    {
+      "id": "module_health_led_prevention_and_early_intervention",
+      "title": "Health-Led Prevention and Early Intervention",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_health_led_prevention_and_early_intervention.json"
+    },
+    {
+      "id": "module_leading_safe_practice",
+      "title": "Leading Safe Practice",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_leading_safe_practice.json"
+    },
+    {
+      "id": "module_legal_advocacy_and_supporting_clients",
+      "title": "Legal Advocacy and Supporting Clients Through the System",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_legal_advocacy_and_supporting_clients.json"
+    },
+    {
+      "id": "module_legal_systems_and_dfv",
+      "title": "Legal Systems and DFV",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_legal_systems_and_dfv.json"
+    },
+    {
+      "id": "module_long_term_recovery_stability_and_economic_empowerment",
+      "title": "Long-Term Recovery, Stability, and Economic Empowerment",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_long_term_recovery_stability_and_economic_empowerment.json"
+    },
+    {
+      "id": "module_managing_complex_teams",
+      "title": "Managing Complex Teams",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_managing_complex_teams.json"
+    },
+    {
+      "id": "module_mental_health_trauma_and_recovery",
+      "title": "Mental Health, Trauma, and Recovery",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_mental_health_trauma_and_recovery.json"
+    },
+    {
+      "id": "module_multi_agency_collaboration_and_information_sharing",
+      "title": "Multi-Agency Collaboration and Information Sharing",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_multi_agency_collaboration_and_information_sharing.json"
+    },
+    {
+      "id": "module_neurodiversity_and_systemic_advocacy",
+      "title": "Neurodiversity-Affirming Care, Sensory Support & Systemic Advocacy",
+      "lessonRefCount": 6,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_neurodiversity_and_systemic_advocacy.json"
+    },
+    {
+      "id": "module_organisational_change_and_improvement",
+      "title": "Organisational Change and Improvement",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_organisational_change_and_improvement.json"
+    },
+    {
+      "id": "module_parent_safety",
+      "title": "Parent Safety and Stability",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_parent_safety.json"
+    },
+    {
+      "id": "module_parenting_under_stress",
+      "title": "Parenting Under DFV Stress",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_parenting_under_stress.json"
+    },
+    {
+      "id": "module_peer_role_foundations",
+      "title": "Peer Mentor Role Foundations",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_peer_role_foundations.json"
+    },
+    {
+      "id": "module_practitioner_foundations",
+      "title": "Practitioner Foundations",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_practitioner_foundations.json"
+    },
+    {
+      "id": "module_prevention_in_schools_workplaces_and_community_settings",
+      "title": "Prevention in Schools, Workplaces, and Community Settings",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_prevention_in_schools_workplaces_and_community_settings.json"
+    },
+    {
+      "id": "module_professional_boundaries_ethics_and_self_care",
+      "title": "Professional Boundaries, Ethics, and Self-Care",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_professional_boundaries_ethics_and_self_care.json"
+    },
+    {
+      "id": "module_protection_orders_and_court_processes",
+      "title": "Protection Orders and Court Processes",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_protection_orders_and_court_processes.json"
+    },
+    {
+      "id": "module_rebuilding_family_life",
+      "title": "Rebuilding Family Life After DFV",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_rebuilding_family_life.json"
+    },
+    {
+      "id": "module_relationship_skills",
+      "title": "Relationship Skills",
+      "lessonRefCount": 5,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_relationship_skills.json"
+    },
+    {
+      "id": "module_reunification_and_contact_readiness",
+      "title": "Reunification Pathways, Contact Readiness & Return Home",
+      "lessonRefCount": 6,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_reunification_and_contact_readiness.json"
+    },
+    {
+      "id": "module_safe_conversations",
+      "title": "Safe Conversations",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_safe_conversations.json"
+    },
+    {
+      "id": "module_safe_housing_responses_and_crisis_accommodation",
+      "title": "Safe Housing Responses and Crisis Accommodation",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_safe_housing_responses_and_crisis_accommodation.json"
+    },
+    {
+      "id": "module_specialist_interventions",
+      "title": "Specialist Interventions",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_specialist_interventions.json"
+    },
+    {
+      "id": "module_strategic_partnerships_and_sector_leadership",
+      "title": "Strategic Partnerships and Sector Leadership",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_strategic_partnerships_and_sector_leadership.json"
+    },
+    {
+      "id": "module_substance_use_and_parenting_stability",
+      "title": "Alcohol and Other Drug Recovery & Safe Parenting",
+      "lessonRefCount": 6,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_substance_use_and_parenting_stability.json"
+    },
+    {
+      "id": "module_supporting_childrens_safety_and_wellbeing",
+      "title": "Supporting Children’s Safety and Wellbeing",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_supporting_childrens_safety_and_wellbeing.json"
+    },
+    {
+      "id": "module_supporting_community_members_experiencing_dfv",
+      "title": "Supporting Community Members Experiencing DFV",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_supporting_community_members_experiencing_dfv.json"
+    },
+    {
+      "id": "module_supporting_health_professionals_responding_to_dfv",
+      "title": "Supporting Health Professionals Responding to DFV",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_supporting_health_professionals_responding_to_dfv.json"
+    },
+    {
+      "id": "module_supporting_survivors",
+      "title": "Supporting Survivors",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_supporting_survivors.json"
+    },
+    {
+      "id": "module_sustainable_change",
+      "title": "Sustainable Change",
+      "lessonRefCount": 4,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_sustainable_change.json"
+    },
+    {
+      "id": "module_system_navigation",
+      "title": "System Navigation",
+      "lessonRefCount": 4,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_system_navigation.json"
+    },
+    {
+      "id": "module_system_navigation_and_advocacy",
+      "title": "System Navigation and Advocacy",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_system_navigation_and_advocacy.json"
+    },
+    {
+      "id": "module_system_reform_and_continuous_improvement",
+      "title": "System Reform and Continuous Improvement",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_system_reform_and_continuous_improvement.json"
+    },
+    {
+      "id": "module_trauma_attachment_and_child_development",
+      "title": "Trauma, Attachment, and Child Development",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_trauma_attachment_and_child_development.json"
+    },
+    {
+      "id": "module_trauma_informed_and_culturally_safe_practice",
+      "title": "Trauma-Informed and Culturally Safe Practice",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_trauma_informed_and_culturally_safe_practice.json"
+    },
+    {
+      "id": "module_understanding_dfv_impacts_on_children",
+      "title": "Understanding DFV Impacts on Children",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_understanding_dfv_impacts_on_children.json"
+    },
+    {
+      "id": "module_understanding_dfv_in_the_community",
+      "title": "Understanding DFV in the Community",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_understanding_dfv_in_the_community.json"
+    },
+    {
+      "id": "module_understanding_dfv_legal_responses",
+      "title": "Understanding DFV Legal Responses",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_understanding_dfv_legal_responses.json"
+    },
+    {
+      "id": "module_understanding_dfv_systems_and_pathways",
+      "title": "Understanding DFV Systems and Pathways",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_understanding_dfv_systems_and_pathways.json"
+    },
+    {
+      "id": "module_understanding_primary_prevention",
+      "title": "Understanding Primary Prevention",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_understanding_primary_prevention.json"
+    },
+    {
+      "id": "module_workflow_action_skills",
+      "title": "Workflow / Action Skills",
+      "lessonRefCount": 7,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_workflow_action_skills.json"
+    },
+    {
+      "id": "module_working_with_adolescents_experiencing_or_using_violence",
+      "title": "Working with Adolescents Experiencing or Using Violence",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_working_with_adolescents_experiencing_or_using_violence.json"
+    },
+    {
+      "id": "module_working_with_cald_communities",
+      "title": "Working with Culturally and Linguistically Diverse Communities",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_working_with_cald_communities.json"
+    },
+    {
+      "id": "module_working_with_first_nations_peoples",
+      "title": "Working with First Nations Peoples",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_working_with_first_nations_peoples.json"
+    },
+    {
+      "id": "module_working_with_lgbtqia_communities",
+      "title": "Working with LGBTQIA+ Communities",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_working_with_lgbtqia_communities.json"
+    },
+    {
+      "id": "module_working_with_older_people",
+      "title": "Working with Older People",
+      "lessonRefCount": 1,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_working_with_older_people.json"
+    },
+    {
+      "id": "module_working_with_people_using_violence_diverse_backgrounds",
+      "title": "Working with People Using Violence from Diverse Backgrounds",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_working_with_people_using_violence_diverse_backgrounds.json"
+    },
+    {
+      "id": "module_working_with_people_with_disability",
+      "title": "Working with People with Disability",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_working_with_people_with_disability.json"
+    },
+    {
+      "id": "module_working_with_perpetrators",
+      "title": "Working With Perpetrators",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_working_with_perpetrators.json"
+    },
+    {
+      "id": "module_working_with_police_and_justice_agencies",
+      "title": "Working with Police and Justice Agencies",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_working_with_police_and_justice_agencies.json"
+    },
+    {
+      "id": "module_workplace_and_community_organisation_responses",
+      "title": "Workplace and Community Organisation Responses",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_workplace_and_community_organisation_responses.json"
+    },
+    {
+      "id": "module_youth_leadership_and_dfv_prevention",
+      "title": "Youth Leadership and DFV Prevention",
+      "lessonRefCount": 2,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/module_youth_leadership_and_dfv_prevention.json"
+    },
+    {
+      "id": "parent-safety-and-stability",
+      "title": "Parent Safety and Stability",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/parent-safety-and-stability.json"
+    },
+    {
+      "id": "positive-parenting-foundations",
+      "title": "Positive Parenting Foundations",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/positive-parenting-foundations.json"
+    },
+    {
+      "id": "protective-parenting-foundations",
+      "title": "Protective Parenting Foundations",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/protective-parenting-foundations.json"
+    },
+    {
+      "id": "safe-conversations",
+      "title": "Safe Conversations",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/safe-conversations.json"
+    },
+    {
+      "id": "substance-use-and-parenting-stability",
+      "title": "Substance Use and Parenting Stability",
+      "lessonRefCount": 3,
+      "contentBlockCount": 0,
+      "sourcePath": "modules/substance-use-and-parenting-stability.json"
+    }
+  ],
+  "topics": [
+    {
+      "id": "accountability_and_responsibility",
+      "topicName": "accountability and responsibility",
+      "moduleCount": 3,
+      "sourcePath": "topics/accountability_and_responsibility.json"
+    },
+    {
+      "id": "active_listening",
+      "topicName": "active listening",
+      "moduleCount": 2,
+      "sourcePath": "topics/active_listening.json"
+    },
+    {
+      "id": "adhd_and_executive_function_scaffolding",
+      "topicName": "adhd & executive function scaffolding across childhood",
+      "moduleCount": 1,
+      "sourcePath": "topics/adhd_and_executive_function_scaffolding.json"
+    },
+    {
+      "id": "adolescent_behaviour_management",
+      "topicName": "adolescent behaviour management",
+      "moduleCount": 3,
+      "sourcePath": "topics/adolescent_behaviour_management.json"
+    },
+    {
+      "id": "adolescent_coping_with_family_stress",
+      "topicName": "coping with family change, stress & independence",
+      "moduleCount": 1,
+      "sourcePath": "topics/adolescent_coping_with_family_stress.json"
+    },
+    {
+      "id": "adolescent_digital_boundaries_and_safety",
+      "topicName": "digital boundaries, sextortion prevention & online respect",
+      "moduleCount": 1,
+      "sourcePath": "topics/adolescent_digital_boundaries_and_safety.json"
+    },
+    {
+      "id": "adolescent_healthy_dating_and_consent",
+      "topicName": "healthy dating, respect & consent for teens",
+      "moduleCount": 1,
+      "sourcePath": "topics/adolescent_healthy_dating_and_consent.json"
+    },
+    {
+      "id": "age_appropriate_behaviour",
+      "topicName": "age appropriate behaviour",
+      "moduleCount": 2,
+      "sourcePath": "topics/age_appropriate_behaviour.json"
+    },
+    {
+      "id": "aggression_and_hitting",
+      "topicName": "aggression and hitting",
+      "moduleCount": 2,
+      "sourcePath": "topics/aggression_and_hitting.json"
+    },
+    {
+      "id": "anger_in_children",
+      "topicName": "anger in children",
+      "moduleCount": 2,
+      "sourcePath": "topics/anger_in_children.json"
+    },
+    {
+      "id": "anxiety_in_children",
+      "topicName": "anxiety in children",
+      "moduleCount": 2,
+      "sourcePath": "topics/anxiety_in_children.json"
+    },
+    {
+      "id": "assertive_discipline",
+      "topicName": "assertive discipline",
+      "moduleCount": 3,
+      "sourcePath": "topics/assertive_discipline.json"
+    },
+    {
+      "id": "avoiding_communication_blocks",
+      "topicName": "avoiding communication blocks",
+      "moduleCount": 3,
+      "sourcePath": "topics/avoiding_communication_blocks.json"
+    },
+    {
+      "id": "avoiding_frightening_behaviours",
+      "topicName": "avoiding frightening behaviours",
+      "moduleCount": 2,
+      "sourcePath": "topics/avoiding_frightening_behaviours.json"
+    },
+    {
+      "id": "avoiding_loyalty_conflicts",
+      "topicName": "avoiding loyalty conflicts",
+      "moduleCount": 3,
+      "sourcePath": "topics/avoiding_loyalty_conflicts.json"
+    },
+    {
+      "id": "avoiding_shame_based_discipline",
+      "topicName": "avoiding shame based discipline",
+      "moduleCount": 3,
+      "sourcePath": "topics/avoiding_shame_based_discipline.json"
+    },
+    {
+      "id": "bedtime_routines",
+      "topicName": "bedtime routines",
+      "moduleCount": 3,
+      "sourcePath": "topics/bedtime_routines.json"
+    },
+    {
+      "id": "behaviour_as_communication",
+      "topicName": "behaviour as communication",
+      "moduleCount": 3,
+      "sourcePath": "topics/behaviour_as_communication.json"
+    },
+    {
+      "id": "behaviour_description",
+      "topicName": "behaviour description",
+      "moduleCount": 2,
+      "sourcePath": "topics/behaviour_description.json"
+    },
+    {
+      "id": "behaviour_guidance",
+      "topicName": "behaviour guidance",
+      "moduleCount": 2,
+      "sourcePath": "topics/behaviour_guidance.json"
+    },
+    {
+      "id": "behaviour_management",
+      "topicName": "behaviour management",
+      "moduleCount": 2,
+      "sourcePath": "topics/behaviour_management.json"
+    },
+    {
+      "id": "behaviour_reward_systems",
+      "topicName": "behaviour reward systems",
+      "moduleCount": 3,
+      "sourcePath": "topics/behaviour_reward_systems.json"
+    },
+    {
+      "id": "being_with_your_child",
+      "topicName": "being with your child",
+      "moduleCount": 2,
+      "sourcePath": "topics/being_with_your_child.json"
+    },
+    {
+      "id": "body_image_and_self_esteem",
+      "topicName": "body image and self esteem",
+      "moduleCount": 3,
+      "sourcePath": "topics/body_image_and_self_esteem.json"
+    },
+    {
+      "id": "body_image_and_social_media",
+      "topicName": "body image and social media",
+      "moduleCount": 3,
+      "sourcePath": "topics/body_image_and_social_media.json"
+    },
+    {
+      "id": "brain_development",
+      "topicName": "brain development",
+      "moduleCount": 3,
+      "sourcePath": "topics/brain_development.json"
+    },
+    {
+      "id": "brain_development_and_nutrition",
+      "topicName": "brain development and nutrition",
+      "moduleCount": 3,
+      "sourcePath": "topics/brain_development_and_nutrition.json"
+    },
+    {
+      "id": "breaking_generational_cycles",
+      "topicName": "breaking generational cycles",
+      "moduleCount": 2,
+      "sourcePath": "topics/breaking_generational_cycles.json"
+    },
+    {
+      "id": "breastfeeding_basics",
+      "topicName": "breastfeeding basics",
+      "moduleCount": 2,
+      "sourcePath": "topics/breastfeeding_basics.json"
+    },
+    {
+      "id": "building_your_village_and_support_network",
+      "topicName": "building your village & support network",
+      "moduleCount": 1,
+      "sourcePath": "topics/building_your_village_and_support_network.json"
+    },
+    {
+      "id": "bullying_and_social_health",
+      "topicName": "bullying and social health",
+      "moduleCount": 3,
+      "sourcePath": "topics/bullying_and_social_health.json"
+    },
+    {
+      "id": "calm_follow_through",
+      "topicName": "calm follow through",
+      "moduleCount": 3,
+      "sourcePath": "topics/calm_follow_through.json"
+    },
+    {
+      "id": "calming_the_nervous_system",
+      "topicName": "calming the nervous system",
+      "moduleCount": 3,
+      "sourcePath": "topics/calming_the_nervous_system.json"
+    },
+    {
+      "id": "carer_facilitating_safe_family_contact",
+      "topicName": "facilitating safe family contact & supporting reunification",
+      "moduleCount": 1,
+      "sourcePath": "topics/carer_facilitating_safe_family_contact.json"
+    },
+    {
+      "id": "carer_objective_observation_and_child_voice",
+      "topicName": "recording objective carer observations & honouring child voice",
+      "moduleCount": 1,
+      "sourcePath": "topics/carer_objective_observation_and_child_voice.json"
+    },
+    {
+      "id": "carer_supporting_placement_transitions",
+      "topicName": "supporting placement stability & trauma-informed care",
+      "moduleCount": 1,
+      "sourcePath": "topics/carer_supporting_placement_transitions.json"
+    },
+    {
+      "id": "child_development_basics",
+      "topicName": "child development basics",
+      "moduleCount": 3,
+      "sourcePath": "topics/child_development_basics.json"
+    },
+    {
+      "id": "child_development_foundations",
+      "topicName": "child development foundations",
+      "moduleCount": 3,
+      "sourcePath": "topics/child_development_foundations.json"
+    },
+    {
+      "id": "child_development_stages",
+      "topicName": "child development stages",
+      "moduleCount": 3,
+      "sourcePath": "topics/child_development_stages.json"
+    },
+    {
+      "id": "child_directed_play",
+      "topicName": "child directed play",
+      "moduleCount": 3,
+      "sourcePath": "topics/child_directed_play.json"
+    },
+    {
+      "id": "child_feelings_and_calming_tools",
+      "topicName": "my feelings, body signals & calming tools (child track)",
+      "moduleCount": 1,
+      "sourcePath": "topics/child_feelings_and_calming_tools.json"
+    },
+    {
+      "id": "child_focused_communication",
+      "topicName": "child focused communication",
+      "moduleCount": 3,
+      "sourcePath": "topics/child_focused_communication.json"
+    },
+    {
+      "id": "child_parent_negotiation",
+      "topicName": "child parent negotiation",
+      "moduleCount": 3,
+      "sourcePath": "topics/child_parent_negotiation.json"
+    },
+    {
+      "id": "child_protection_responsibilities",
+      "topicName": "child protection responsibilities",
+      "moduleCount": 3,
+      "sourcePath": "topics/child_protection_responsibilities.json"
+    },
+    {
+      "id": "child_rights_and_body_safety",
+      "topicName": "my rights, body safety & safe secrets (child track)",
+      "moduleCount": 1,
+      "sourcePath": "topics/child_rights_and_body_safety.json"
+    },
+    {
+      "id": "child_safe_adults_and_asking_for_help",
+      "topicName": "safe people, trusted adults & asking for help (child track)",
+      "moduleCount": 1,
+      "sourcePath": "topics/child_safe_adults_and_asking_for_help.json"
+    },
+    {
+      "id": "child_visit_preparation_and_transitions",
+      "topicName": "preparing for family visits & big changes (child track)",
+      "moduleCount": 1,
+      "sourcePath": "topics/child_visit_preparation_and_transitions.json"
+    },
+    {
+      "id": "children_s_experience_of_separation",
+      "topicName": "children's experience of separation",
+      "moduleCount": 3,
+      "sourcePath": "topics/children_s_experience_of_separation.json"
+    },
+    {
+      "id": "choices_and_control",
+      "topicName": "choices and control",
+      "moduleCount": 1,
+      "sourcePath": "topics/choices_and_control.json"
+    },
+    {
+      "id": "circle_of_security",
+      "topicName": "circle of security",
+      "moduleCount": 1,
+      "sourcePath": "topics/circle_of_security.json"
+    },
+    {
+      "id": "co_parenting",
+      "topicName": "co parenting",
+      "moduleCount": 2,
+      "sourcePath": "topics/co_parenting.json"
+    },
+    {
+      "id": "co_parenting_effectively",
+      "topicName": "co parenting effectively",
+      "moduleCount": 2,
+      "sourcePath": "topics/co_parenting_effectively.json"
+    },
+    {
+      "id": "co_regulation_and_physical_health",
+      "topicName": "co regulation and physical health",
+      "moduleCount": 3,
+      "sourcePath": "topics/co_regulation_and_physical_health.json"
+    },
+    {
+      "id": "co_regulation_basics",
+      "topicName": "co regulation basics",
+      "moduleCount": 2,
+      "sourcePath": "topics/co_regulation_basics.json"
+    },
+    {
+      "id": "coercive_control_awareness",
+      "topicName": "coercive control awareness",
+      "moduleCount": 2,
+      "sourcePath": "topics/coercive_control_awareness.json"
+    },
+    {
+      "id": "cognitive_development",
+      "topicName": "cognitive development",
+      "moduleCount": 3,
+      "sourcePath": "topics/cognitive_development.json"
+    },
+    {
+      "id": "communicating_with_families",
+      "topicName": "communicating with families",
+      "moduleCount": 2,
+      "sourcePath": "topics/communicating_with_families.json"
+    },
+    {
+      "id": "communication_boundaries",
+      "topicName": "communication boundaries",
+      "moduleCount": 3,
+      "sourcePath": "topics/communication_boundaries.json"
+    },
+    {
+      "id": "communication_roadblocks",
+      "topicName": "communication roadblocks",
+      "moduleCount": 3,
+      "sourcePath": "topics/communication_roadblocks.json"
+    },
+    {
+      "id": "communication_without_conflict",
+      "topicName": "communication without conflict",
+      "moduleCount": 3,
+      "sourcePath": "topics/communication_without_conflict.json"
+    },
+    {
+      "id": "complex_trauma",
+      "topicName": "complex trauma",
+      "moduleCount": 3,
+      "sourcePath": "topics/complex_trauma.json"
+    },
+    {
+      "id": "conflict_resolution",
+      "topicName": "conflict resolution",
+      "moduleCount": 3,
+      "sourcePath": "topics/conflict_resolution.json"
+    },
+    {
+      "id": "consistency_in_parenting",
+      "topicName": "consistency in parenting",
+      "moduleCount": 2,
+      "sourcePath": "topics/consistency_in_parenting.json"
+    },
+    {
+      "id": "consistency_without_harshness",
+      "topicName": "consistency without harshness",
+      "moduleCount": 2,
+      "sourcePath": "topics/consistency_without_harshness.json"
+    },
+    {
+      "id": "consistent_consequences",
+      "topicName": "consistent consequences",
+      "moduleCount": 2,
+      "sourcePath": "topics/consistent_consequences.json"
+    },
+    {
+      "id": "cooking_with_children",
+      "topicName": "cooking with children",
+      "moduleCount": 2,
+      "sourcePath": "topics/cooking_with_children.json"
+    },
+    {
+      "id": "cooperative_co_parenting",
+      "topicName": "cooperative co parenting",
+      "moduleCount": 2,
+      "sourcePath": "topics/cooperative_co_parenting.json"
+    },
+    {
+      "id": "creating_calming_spaces",
+      "topicName": "creating calming spaces",
+      "moduleCount": 3,
+      "sourcePath": "topics/creating_calming_spaces.json"
+    },
+    {
+      "id": "creating_emotional_safety",
+      "topicName": "creating emotional safety",
+      "moduleCount": 3,
+      "sourcePath": "topics/creating_emotional_safety.json"
+    },
+    {
+      "id": "creating_physical_safety",
+      "topicName": "creating physical safety",
+      "moduleCount": 3,
+      "sourcePath": "topics/creating_physical_safety.json"
+    },
+    {
+      "id": "creating_safe_emotional_expression",
+      "topicName": "creating safe emotional expression",
+      "moduleCount": 3,
+      "sourcePath": "topics/creating_safe_emotional_expression.json"
+    },
+    {
+      "id": "creating_sustainable_healthy_habits",
+      "topicName": "creating sustainable healthy habits",
+      "moduleCount": 3,
+      "sourcePath": "topics/creating_sustainable_healthy_habits.json"
+    },
+    {
+      "id": "critical_periods",
+      "topicName": "critical periods",
+      "moduleCount": 2,
+      "sourcePath": "topics/critical_periods.json"
+    },
+    {
+      "id": "cultural_sensitivity",
+      "topicName": "cultural sensitivity",
+      "moduleCount": 3,
+      "sourcePath": "topics/cultural_sensitivity.json"
+    },
+    {
+      "id": "decision_making",
+      "topicName": "decision making",
+      "moduleCount": 3,
+      "sourcePath": "topics/decision_making.json"
+    },
+    {
+      "id": "deescalating_dissociation_and_hyperarousal",
+      "topicName": "de-escalating trauma-related dissociation & hyperarousal",
+      "moduleCount": 1,
+      "sourcePath": "topics/deescalating_dissociation_and_hyperarousal.json"
+    },
+    {
+      "id": "defiance_and_non_compliance",
+      "topicName": "defiance and non compliance",
+      "moduleCount": 2,
+      "sourcePath": "topics/defiance_and_non_compliance.json"
+    },
+    {
+      "id": "delayed_consequences",
+      "topicName": "delayed consequences",
+      "moduleCount": 2,
+      "sourcePath": "topics/delayed_consequences.json"
+    },
+    {
+      "id": "demonstrating_sustained_parenting_change",
+      "topicName": "demonstrating sustained parenting change",
+      "moduleCount": 1,
+      "sourcePath": "topics/demonstrating_sustained_parenting_change.json"
+    },
+    {
+      "id": "descriptive_commenting",
+      "topicName": "descriptive commenting",
+      "moduleCount": 2,
+      "sourcePath": "topics/descriptive_commenting.json"
+    },
+    {
+      "id": "descriptive_praise",
+      "topicName": "descriptive praise",
+      "moduleCount": 2,
+      "sourcePath": "topics/descriptive_praise.json"
+    },
+    {
+      "id": "developing_good_routines",
+      "topicName": "developing good routines",
+      "moduleCount": 3,
+      "sourcePath": "topics/developing_good_routines.json"
+    },
+    {
+      "id": "developmental_delays",
+      "topicName": "developmental delays",
+      "moduleCount": 3,
+      "sourcePath": "topics/developmental_delays.json"
+    },
+    {
+      "id": "developmental_domains",
+      "topicName": "developmental domains",
+      "moduleCount": 3,
+      "sourcePath": "topics/developmental_domains.json"
+    },
+    {
+      "id": "developmental_milestones",
+      "topicName": "developmental milestones",
+      "moduleCount": 3,
+      "sourcePath": "topics/developmental_milestones.json"
+    },
+    {
+      "id": "developmental_trauma",
+      "topicName": "developmental trauma",
+      "moduleCount": 3,
+      "sourcePath": "topics/developmental_trauma.json"
+    },
+    {
+      "id": "differentiating_healthy_vs_toxic_stress",
+      "topicName": "differentiating healthy vs toxic stress",
+      "moduleCount": 3,
+      "sourcePath": "topics/differentiating_healthy_vs_toxic_stress.json"
+    },
+    {
+      "id": "digital_safety",
+      "topicName": "digital safety",
+      "moduleCount": 3,
+      "sourcePath": "topics/digital_safety.json"
+    },
+    {
+      "id": "discipline_foundations",
+      "topicName": "discipline foundations",
+      "moduleCount": 3,
+      "sourcePath": "topics/discipline_foundations.json"
+    },
+    {
+      "id": "dissociation_in_children",
+      "topicName": "dissociation in children",
+      "moduleCount": 2,
+      "sourcePath": "topics/dissociation_in_children.json"
+    },
+    {
+      "id": "domestic_violence_exposure",
+      "topicName": "domestic violence exposure",
+      "moduleCount": 3,
+      "sourcePath": "topics/domestic_violence_exposure.json"
+    },
+    {
+      "id": "educational_and_ndis_rights_advocacy",
+      "topicName": "educational, iep & ndis rights advocacy for neurodivergent children",
+      "moduleCount": 1,
+      "sourcePath": "topics/educational_and_ndis_rights_advocacy.json"
+    },
+    {
+      "id": "effective_commands",
+      "topicName": "effective commands",
+      "moduleCount": 2,
+      "sourcePath": "topics/effective_commands.json"
+    },
+    {
+      "id": "effective_discipline",
+      "topicName": "effective discipline",
+      "moduleCount": 3,
+      "sourcePath": "topics/effective_discipline.json"
+    },
+    {
+      "id": "effective_limit_setting",
+      "topicName": "effective limit setting",
+      "moduleCount": 3,
+      "sourcePath": "topics/effective_limit_setting.json"
+    },
+    {
+      "id": "effective_parenting_under_pressure",
+      "topicName": "effective parenting under pressure",
+      "moduleCount": 2,
+      "sourcePath": "topics/effective_parenting_under_pressure.json"
+    },
+    {
+      "id": "emotional_abuse_and_children",
+      "topicName": "emotional abuse and children",
+      "moduleCount": 3,
+      "sourcePath": "topics/emotional_abuse_and_children.json"
+    },
+    {
+      "id": "emotional_availability",
+      "topicName": "emotional availability",
+      "moduleCount": 2,
+      "sourcePath": "topics/emotional_availability.json"
+    },
+    {
+      "id": "emotional_coaching",
+      "topicName": "emotional coaching",
+      "moduleCount": 2,
+      "sourcePath": "topics/emotional_coaching.json"
+    },
+    {
+      "id": "emotional_development",
+      "topicName": "emotional development",
+      "moduleCount": 3,
+      "sourcePath": "topics/emotional_development.json"
+    },
+    {
+      "id": "emotional_intelligence",
+      "topicName": "emotional intelligence",
+      "moduleCount": 2,
+      "sourcePath": "topics/emotional_intelligence.json"
+    },
+    {
+      "id": "emotional_literacy",
+      "topicName": "emotional literacy",
+      "moduleCount": 2,
+      "sourcePath": "topics/emotional_literacy.json"
+    },
+    {
+      "id": "emotional_regulation",
+      "topicName": "emotional regulation",
+      "moduleCount": 2,
+      "sourcePath": "topics/emotional_regulation.json"
+    },
+    {
+      "id": "emotional_safety_and_wellbeing",
+      "topicName": "emotional safety and wellbeing",
+      "moduleCount": 3,
+      "sourcePath": "topics/emotional_safety_and_wellbeing.json"
+    },
+    {
+      "id": "emotional_security",
+      "topicName": "emotional security",
+      "moduleCount": 3,
+      "sourcePath": "topics/emotional_security.json"
+    },
+    {
+      "id": "emotional_validation",
+      "topicName": "emotional validation",
+      "moduleCount": 2,
+      "sourcePath": "topics/emotional_validation.json"
+    },
+    {
+      "id": "empathy",
+      "topicName": "empathy",
+      "moduleCount": 2,
+      "sourcePath": "topics/empathy.json"
+    },
+    {
+      "id": "empathy_and_validation",
+      "topicName": "empathy and validation",
+      "moduleCount": 2,
+      "sourcePath": "topics/empathy_and_validation.json"
+    },
+    {
+      "id": "energy_drinks_vaping_and_substance_risks",
+      "topicName": "energy drinks vaping and substance risks",
+      "moduleCount": 3,
+      "sourcePath": "topics/energy_drinks_vaping_and_substance_risks.json"
+    },
+    {
+      "id": "enjoyment_skills",
+      "topicName": "enjoyment skills",
+      "moduleCount": 2,
+      "sourcePath": "topics/enjoyment_skills.json"
+    },
+    {
+      "id": "esponsive_interactions",
+      "topicName": "responsive interactions",
+      "moduleCount": 2,
+      "sourcePath": "topics/esponsive_interactions.json"
+    },
+    {
+      "id": "ethics_and_social_justice",
+      "topicName": "ethics and social justice",
+      "moduleCount": 2,
+      "sourcePath": "topics/ethics_and_social_justice.json"
+    },
+    {
+      "id": "family_centred_practice",
+      "topicName": "family centred practice",
+      "moduleCount": 2,
+      "sourcePath": "topics/family_centred_practice.json"
+    },
+    {
+      "id": "family_conflict_psychoeducation_program",
+      "topicName": "family conflict psychoeducation program",
+      "moduleCount": 1,
+      "sourcePath": "topics/family_conflict_psychoeducation_program.json"
+    },
+    {
+      "id": "family_meal_routines",
+      "topicName": "family meal routines",
+      "moduleCount": 3,
+      "sourcePath": "topics/family_meal_routines.json"
+    },
+    {
+      "id": "family_meetings",
+      "topicName": "family meetings",
+      "moduleCount": 2,
+      "sourcePath": "topics/family_meetings.json"
+    },
+    {
+      "id": "family_stress",
+      "topicName": "family stress",
+      "moduleCount": 2,
+      "sourcePath": "topics/family_stress.json"
+    },
+    {
+      "id": "family_violence_impacts",
+      "topicName": "family violence impacts",
+      "moduleCount": 3,
+      "sourcePath": "topics/family_violence_impacts.json"
+    },
+    {
+      "id": "fatherhood_and_positive_role_modelling",
+      "topicName": "fatherhood, accountability & positive role modelling",
+      "moduleCount": 1,
+      "sourcePath": "topics/fatherhood_and_positive_role_modelling.json"
+    },
+    {
+      "id": "feeding_challenges",
+      "topicName": "feeding challenges",
+      "moduleCount": 3,
+      "sourcePath": "topics/feeding_challenges.json"
+    },
+    {
+      "id": "felt_sense_of_safety",
+      "topicName": "felt sense of safety",
+      "moduleCount": 3,
+      "sourcePath": "topics/felt_sense_of_safety.json"
+    },
+    {
+      "id": "firm_but_kind_parenting",
+      "topicName": "firm but kind parenting",
+      "moduleCount": 2,
+      "sourcePath": "topics/firm_but_kind_parenting.json"
+    },
+    {
+      "id": "following_the_child_s_lead",
+      "topicName": "following the child's lead",
+      "moduleCount": 2,
+      "sourcePath": "topics/following_the_child_s_lead.json"
+    },
+    {
+      "id": "food_allergies_and_intolerances",
+      "topicName": "food allergies and intolerances",
+      "moduleCount": 2,
+      "sourcePath": "topics/food_allergies_and_intolerances.json"
+    },
+    {
+      "id": "food_insecurity_and_family_stress",
+      "topicName": "food insecurity and family stress",
+      "moduleCount": 3,
+      "sourcePath": "topics/food_insecurity_and_family_stress.json"
+    },
+    {
+      "id": "food_sleep_and_regulation",
+      "topicName": "food sleep and regulation",
+      "moduleCount": 3,
+      "sourcePath": "topics/food_sleep_and_regulation.json"
+    },
+    {
+      "id": "formula_feeding_safety",
+      "topicName": "formula feeding safety",
+      "moduleCount": 3,
+      "sourcePath": "topics/formula_feeding_safety.json"
+    },
+    {
+      "id": "foster_and_kinship_care",
+      "topicName": "foster and kinship care",
+      "moduleCount": 2,
+      "sourcePath": "topics/foster_and_kinship_care.json"
+    },
+    {
+      "id": "foster_holistic_learning",
+      "topicName": "foster holistic learning",
+      "moduleCount": 2,
+      "sourcePath": "topics/foster_holistic_learning.json"
+    },
+    {
+      "id": "foster_positive_interactions",
+      "topicName": "foster positive interactions",
+      "moduleCount": 2,
+      "sourcePath": "topics/foster_positive_interactions.json"
+    },
+    {
+      "id": "foster_respectful_behaviour",
+      "topicName": "foster respectful behaviour",
+      "moduleCount": 3,
+      "sourcePath": "topics/foster_respectful_behaviour.json"
+    },
+    {
+      "id": "fussy_eating",
+      "topicName": "fussy eating",
+      "moduleCount": 2,
+      "sourcePath": "topics/fussy_eating.json"
+    },
+    {
+      "id": "giving_effective_instructions",
+      "topicName": "giving effective instructions",
+      "moduleCount": 2,
+      "sourcePath": "topics/giving_effective_instructions.json"
+    },
+    {
+      "id": "grocery_shopping_skills",
+      "topicName": "grocery shopping skills",
+      "moduleCount": 2,
+      "sourcePath": "topics/grocery_shopping_skills.json"
+    },
+    {
+      "id": "growth_milestones",
+      "topicName": "growth milestones",
+      "moduleCount": 2,
+      "sourcePath": "topics/growth_milestones.json"
+    },
+    {
+      "id": "handling_tantrums_safely",
+      "topicName": "handling tantrums safely",
+      "moduleCount": 3,
+      "sourcePath": "topics/handling_tantrums_safely.json"
+    },
+    {
+      "id": "hassle_free_shopping",
+      "topicName": "hassle free shopping",
+      "moduleCount": 2,
+      "sourcePath": "topics/hassle_free_shopping.json"
+    },
+    {
+      "id": "healing_through_connection",
+      "topicName": "healing through connection",
+      "moduleCount": 3,
+      "sourcePath": "topics/healing_through_connection.json"
+    },
+    {
+      "id": "healthy_eating_on_a_budget",
+      "topicName": "healthy eating on a budget",
+      "moduleCount": 3,
+      "sourcePath": "topics/healthy_eating_on_a_budget.json"
+    },
+    {
+      "id": "healthy_family_routines",
+      "topicName": "healthy family routines",
+      "moduleCount": 3,
+      "sourcePath": "topics/healthy_family_routines.json"
+    },
+    {
+      "id": "healthy_feeding_relationships",
+      "topicName": "healthy feeding relationships",
+      "moduleCount": 3,
+      "sourcePath": "topics/healthy_feeding_relationships.json"
+    },
+    {
+      "id": "healthy_growth",
+      "topicName": "healthy growth",
+      "moduleCount": 2,
+      "sourcePath": "topics/healthy_growth.json"
+    },
+    {
+      "id": "healthy_home_environments",
+      "topicName": "healthy home environments",
+      "moduleCount": 3,
+      "sourcePath": "topics/healthy_home_environments.json"
+    },
+    {
+      "id": "healthy_routines",
+      "topicName": "healthy routines",
+      "moduleCount": 3,
+      "sourcePath": "topics/healthy_routines.json"
+    },
+    {
+      "id": "helping_children_adjust_to_family_change",
+      "topicName": "helping children adjust to family change",
+      "moduleCount": 3,
+      "sourcePath": "topics/helping_children_adjust_to_family_change.json"
+    },
+    {
+      "id": "high_conflict_parenting_dynamics",
+      "topicName": "high conflict parenting dynamics",
+      "moduleCount": 3,
+      "sourcePath": "topics/high_conflict_parenting_dynamics.json"
+    },
+    {
+      "id": "home_safety_basics",
+      "topicName": "home safety basics",
+      "moduleCount": 3,
+      "sourcePath": "topics/home_safety_basics.json"
+    },
+    {
+      "id": "homework_routines",
+      "topicName": "homework routines",
+      "moduleCount": 3,
+      "sourcePath": "topics/homework_routines.json"
+    },
+    {
+      "id": "i_messages",
+      "topicName": "i messages",
+      "moduleCount": 2,
+      "sourcePath": "topics/i_messages.json"
+    },
+    {
+      "id": "ignoring_minor_misbehaviour",
+      "topicName": "ignoring minor misbehaviour",
+      "moduleCount": 2,
+      "sourcePath": "topics/ignoring_minor_misbehaviour.json"
+    },
+    {
+      "id": "imitation",
+      "topicName": "imitation",
+      "moduleCount": 2,
+      "sourcePath": "topics/imitation.json"
+    },
+    {
+      "id": "impact_of_chronic_stress",
+      "topicName": "impact of chronic stress",
+      "moduleCount": 3,
+      "sourcePath": "topics/impact_of_chronic_stress.json"
+    },
+    {
+      "id": "impact_of_family_violence_on_children",
+      "topicName": "impact of family violence on children",
+      "moduleCount": 3,
+      "sourcePath": "topics/impact_of_family_violence_on_children.json"
+    },
+    {
+      "id": "infant_care",
+      "topicName": "infant care",
+      "moduleCount": 3,
+      "sourcePath": "topics/infant_care.json"
+    },
+    {
+      "id": "infant_health",
+      "topicName": "infant health",
+      "moduleCount": 3,
+      "sourcePath": "topics/infant_health.json"
+    },
+    {
+      "id": "infant_nutrition",
+      "topicName": "infant nutrition",
+      "moduleCount": 3,
+      "sourcePath": "topics/infant_nutrition.json"
+    },
+    {
+      "id": "intergenerational_patterns",
+      "topicName": "intergenerational patterns",
+      "moduleCount": 3,
+      "sourcePath": "topics/intergenerational_patterns.json"
+    },
+    {
+      "id": "intergenerational_trauma",
+      "topicName": "intergenerational trauma",
+      "moduleCount": 3,
+      "sourcePath": "topics/intergenerational_trauma.json"
+    },
+    {
+      "id": "introducing_solid_foods",
+      "topicName": "introducing solid foods",
+      "moduleCount": 2,
+      "sourcePath": "topics/introducing_solid_foods.json"
+    },
+    {
+      "id": "joy_and_connection",
+      "topicName": "joy and connection",
+      "moduleCount": 3,
+      "sourcePath": "topics/joy_and_connection.json"
+    },
+    {
+      "id": "lapse_relapse_and_recovery_response",
+      "topicName": "lapse, relapse, and rapid safety response",
+      "moduleCount": 1,
+      "sourcePath": "topics/lapse_relapse_and_recovery_response.json"
+    },
+    {
+      "id": "learning_from_visit_feedback",
+      "topicName": "learning from visit feedback & observations",
+      "moduleCount": 1,
+      "sourcePath": "topics/learning_from_visit_feedback.json"
+    },
+    {
+      "id": "learning_through_play",
+      "topicName": "learning through play",
+      "moduleCount": 3,
+      "sourcePath": "topics/learning_through_play.json"
+    },
+    {
+      "id": "life_skills_development",
+      "topicName": "life skills development",
+      "moduleCount": 3,
+      "sourcePath": "topics/life_skills_development.json"
+    },
+    {
+      "id": "logical_consequences",
+      "topicName": "logical consequences",
+      "moduleCount": 2,
+      "sourcePath": "topics/logical_consequences.json"
+    },
+    {
+      "id": "lying_and_stealing",
+      "topicName": "lying and stealing",
+      "moduleCount": 2,
+      "sourcePath": "topics/lying_and_stealing.json"
+    },
+    {
+      "id": "managing_aggression",
+      "topicName": "managing aggression",
+      "moduleCount": 3,
+      "sourcePath": "topics/managing_aggression.json"
+    },
+    {
+      "id": "managing_anger_as_a_parent",
+      "topicName": "managing anger as a parent",
+      "moduleCount": 3,
+      "sourcePath": "topics/managing_anger_as_a_parent.json"
+    },
+    {
+      "id": "managing_big_feelings",
+      "topicName": "managing big feelings",
+      "moduleCount": 3,
+      "sourcePath": "topics/managing_big_feelings.json"
+    },
+    {
+      "id": "managing_challenging_behaviour",
+      "topicName": "managing challenging behaviour",
+      "moduleCount": 3,
+      "sourcePath": "topics/managing_challenging_behaviour.json"
+    },
+    {
+      "id": "managing_conflict_between_parents",
+      "topicName": "managing conflict between parents",
+      "moduleCount": 3,
+      "sourcePath": "topics/managing_conflict_between_parents.json"
+    },
+    {
+      "id": "managing_difficult_conversations",
+      "topicName": "managing difficult conversations",
+      "moduleCount": 3,
+      "sourcePath": "topics/managing_difficult_conversations.json"
+    },
+    {
+      "id": "managing_disobedience",
+      "topicName": "managing disobedience",
+      "moduleCount": 3,
+      "sourcePath": "topics/managing_disobedience.json"
+    },
+    {
+      "id": "managing_fighting_and_aggression",
+      "topicName": "managing fighting and aggression",
+      "moduleCount": 3,
+      "sourcePath": "topics/managing_fighting_and_aggression.json"
+    },
+    {
+      "id": "managing_parenting_stress",
+      "topicName": "managing parenting stress",
+      "moduleCount": 2,
+      "sourcePath": "topics/managing_parenting_stress.json"
+    },
+    {
+      "id": "managing_screen_time",
+      "topicName": "managing screen time",
+      "moduleCount": 3,
+      "sourcePath": "topics/managing_screen_time.json"
+    },
+    {
+      "id": "managing_stress_and_burnout",
+      "topicName": "managing stress and burnout",
+      "moduleCount": 3,
+      "sourcePath": "topics/managing_stress_and_burnout.json"
+    },
+    {
+      "id": "managing_transitions",
+      "topicName": "managing transitions",
+      "moduleCount": 3,
+      "sourcePath": "topics/managing_transitions.json"
+    },
+    {
+      "id": "meal_planning_for_busy_families",
+      "topicName": "meal planning for busy families",
+      "moduleCount": 3,
+      "sourcePath": "topics/meal_planning_for_busy_families.json"
+    },
+    {
+      "id": "mealtime_behaviour",
+      "topicName": "mealtime behaviour",
+      "moduleCount": 3,
+      "sourcePath": "topics/mealtime_behaviour.json"
+    },
+    {
+      "id": "meeting_emotional_needs",
+      "topicName": "meeting emotional needs",
+      "moduleCount": 2,
+      "sourcePath": "topics/meeting_emotional_needs.json"
+    },
+    {
+      "id": "mental_health_support_and_crisis_planning",
+      "topicName": "mental health support & personal crisis planning",
+      "moduleCount": 1,
+      "sourcePath": "topics/mental_health_support_and_crisis_planning.json"
+    },
+    {
+      "id": "milestones_birth_to_five",
+      "topicName": "milestones birth to five",
+      "moduleCount": 2,
+      "sourcePath": "topics/milestones_birth_to_five.json"
+    },
+    {
+      "id": "morning_routines",
+      "topicName": "morning routines",
+      "moduleCount": 3,
+      "sourcePath": "topics/morning_routines.json"
+    },
+    {
+      "id": "motivation_and_behaviour",
+      "topicName": "motivation and behaviour",
+      "moduleCount": 3,
+      "sourcePath": "topics/motivation_and_behaviour.json"
+    },
+    {
+      "id": "natural_consequences",
+      "topicName": "natural consequences",
+      "moduleCount": 2,
+      "sourcePath": "topics/natural_consequences.json"
+    },
+    {
+      "id": "navigating_child_welfare_case_conferences",
+      "topicName": "navigating child welfare & multi-disciplinary case conferences",
+      "moduleCount": 1,
+      "sourcePath": "topics/navigating_child_welfare_case_conferences.json"
+    },
+    {
+      "id": "negotiation_skills",
+      "topicName": "negotiation skills",
+      "moduleCount": 2,
+      "sourcePath": "topics/negotiation_skills.json"
+    },
+    {
+      "id": "neurodiversity_and_trauma",
+      "topicName": "neurodiversity and trauma",
+      "moduleCount": 3,
+      "sourcePath": "topics/neurodiversity_and_trauma.json"
+    },
+    {
+      "id": "neutral_parenting_tone",
+      "topicName": "neutral parenting tone",
+      "moduleCount": 2,
+      "sourcePath": "topics/neutral_parenting_tone.json"
+    },
+    {
+      "id": "newborn_care_and_fourth_trimester",
+      "topicName": "newborn care, safe sleep & the fourth trimester",
+      "moduleCount": 1,
+      "sourcePath": "topics/newborn_care_and_fourth_trimester.json"
+    },
+    {
+      "id": "nurturance_during_distress",
+      "topicName": "nurturance during distress",
+      "moduleCount": 3,
+      "sourcePath": "topics/nurturance_during_distress.json"
+    },
+    {
+      "id": "nurture_babies_and_toddlers",
+      "topicName": "nurture babies and toddlers",
+      "moduleCount": 3,
+      "sourcePath": "topics/nurture_babies_and_toddlers.json"
+    },
+    {
+      "id": "online_safety",
+      "topicName": "online safety",
+      "moduleCount": 3,
+      "sourcePath": "topics/online_safety.json"
+    },
+    {
+      "id": "outdoor_play_and_development",
+      "topicName": "outdoor play and development",
+      "moduleCount": 3,
+      "sourcePath": "topics/outdoor_play_and_development.json"
+    },
+    {
+      "id": "parallel_parenting_and_dfv_safety_plans",
+      "topicName": "parallel parenting & co-parenting safety plans in dfv recovery",
+      "moduleCount": 1,
+      "sourcePath": "topics/parallel_parenting_and_dfv_safety_plans.json"
+    },
+    {
+      "id": "parent_child_negotiation",
+      "topicName": "parent child negotiation",
+      "moduleCount": 3,
+      "sourcePath": "topics/parent_child_negotiation.json"
+    },
+    {
+      "id": "parent_directed_interaction",
+      "topicName": "parent directed interaction",
+      "moduleCount": 1,
+      "sourcePath": "topics/parent_directed_interaction.json"
+    },
+    {
+      "id": "parent_mental_health",
+      "topicName": "parent mental health",
+      "moduleCount": 3,
+      "sourcePath": "topics/parent_mental_health.json"
+    },
+    {
+      "id": "parent_partnerships",
+      "topicName": "parent partnerships",
+      "moduleCount": 3,
+      "sourcePath": "topics/parent_partnerships.json"
+    },
+    {
+      "id": "parent_self_regulation",
+      "topicName": "parent self regulation",
+      "moduleCount": 3,
+      "sourcePath": "topics/parent_self_regulation.json"
+    },
+    {
+      "id": "parenting_after_separation",
+      "topicName": "parenting after separation",
+      "moduleCount": 3,
+      "sourcePath": "topics/parenting_after_separation.json"
+    },
+    {
+      "id": "parenting_children_with_adhd",
+      "topicName": "parenting children with adhd",
+      "moduleCount": 2,
+      "sourcePath": "topics/parenting_children_with_adhd.json"
+    },
+    {
+      "id": "parenting_children_with_autism",
+      "topicName": "parenting children with autism",
+      "moduleCount": 2,
+      "sourcePath": "topics/parenting_children_with_autism.json"
+    },
+    {
+      "id": "parenting_children_with_complex_trauma",
+      "topicName": "parenting children with complex trauma",
+      "moduleCount": 3,
+      "sourcePath": "topics/parenting_children_with_complex_trauma.json"
+    },
+    {
+      "id": "parenting_multiple_children",
+      "topicName": "parenting multiple children",
+      "moduleCount": 2,
+      "sourcePath": "topics/parenting_multiple_children.json"
+    },
+    {
+      "id": "parenting_plans_vs_court_orders",
+      "topicName": "parenting plans vs court orders",
+      "moduleCount": 3,
+      "sourcePath": "topics/parenting_plans_vs_court_orders.json"
+    },
+    {
+      "id": "parenting_safely_during_recovery",
+      "topicName": "parenting safely during recovery & sober care plans",
+      "moduleCount": 1,
+      "sourcePath": "topics/parenting_safely_during_recovery.json"
+    },
+    {
+      "id": "parenting_styles_explained",
+      "topicName": "parenting styles explained",
+      "moduleCount": 2,
+      "sourcePath": "topics/parenting_styles_explained.json"
+    },
+    {
+      "id": "parenting_triggers",
+      "topicName": "parenting triggers",
+      "moduleCount": 2,
+      "sourcePath": "topics/parenting_triggers.json"
+    },
+    {
+      "id": "parenting_under_stress",
+      "topicName": "parenting under stress",
+      "moduleCount": 2,
+      "sourcePath": "topics/parenting_under_stress.json"
+    },
+    {
+      "id": "peer_pressure",
+      "topicName": "peer pressure",
+      "moduleCount": 3,
+      "sourcePath": "topics/peer_pressure.json"
+    },
+    {
+      "id": "peer_relationships",
+      "topicName": "peer relationships",
+      "moduleCount": 3,
+      "sourcePath": "topics/peer_relationships.json"
+    },
+    {
+      "id": "persistence_and_self_regulation",
+      "topicName": "persistence and self regulation",
+      "moduleCount": 3,
+      "sourcePath": "topics/persistence_and_self_regulation.json"
+    },
+    {
+      "id": "physical_activity_for_families",
+      "topicName": "physical activity for families",
+      "moduleCount": 3,
+      "sourcePath": "topics/physical_activity_for_families.json"
+    },
+    {
+      "id": "physical_development_milestones",
+      "topicName": "physical development milestones",
+      "moduleCount": 3,
+      "sourcePath": "topics/physical_development_milestones.json"
+    },
+    {
+      "id": "play_based_learning",
+      "topicName": "play based learning",
+      "moduleCount": 3,
+      "sourcePath": "topics/play_based_learning.json"
+    },
+    {
+      "id": "positive_behaviour_guidance",
+      "topicName": "positive behaviour guidance",
+      "moduleCount": 2,
+      "sourcePath": "topics/positive_behaviour_guidance.json"
+    },
+    {
+      "id": "positive_communication",
+      "topicName": "positive communication",
+      "moduleCount": 3,
+      "sourcePath": "topics/positive_communication.json"
+    },
+    {
+      "id": "positive_family_communication",
+      "topicName": "positive family communication",
+      "moduleCount": 3,
+      "sourcePath": "topics/positive_family_communication.json"
+    },
+    {
+      "id": "positive_parenting_strategies",
+      "topicName": "positive parenting strategies",
+      "moduleCount": 2,
+      "sourcePath": "topics/positive_parenting_strategies.json"
+    },
+    {
+      "id": "positive_reinforcement",
+      "topicName": "positive reinforcement",
+      "moduleCount": 3,
+      "sourcePath": "topics/positive_reinforcement.json"
+    },
+    {
+      "id": "pregnancy_and_perinatal_wellbeing",
+      "topicName": "pregnancy, perinatal wellbeing & preparing for baby",
+      "moduleCount": 1,
+      "sourcePath": "topics/pregnancy_and_perinatal_wellbeing.json"
+    },
+    {
+      "id": "preparing_for_adolescence",
+      "topicName": "preparing for adolescence",
+      "moduleCount": 3,
+      "sourcePath": "topics/preparing_for_adolescence.json"
+    },
+    {
+      "id": "preparing_for_adulthood_transition",
+      "topicName": "preparing for adulthood transition",
+      "moduleCount": 3,
+      "sourcePath": "topics/preparing_for_adulthood_transition.json"
+    },
+    {
+      "id": "preparing_for_family_contact_visits",
+      "topicName": "preparing for family contact visits",
+      "moduleCount": 1,
+      "sourcePath": "topics/preparing_for_family_contact_visits.json"
+    },
+    {
+      "id": "preparing_for_school",
+      "topicName": "preparing for school",
+      "moduleCount": 3,
+      "sourcePath": "topics/preparing_for_school.json"
+    },
+    {
+      "id": "preventing_re_traumatization",
+      "topicName": "preventing re traumatization",
+      "moduleCount": 3,
+      "sourcePath": "topics/preventing_re_traumatization.json"
+    },
+    {
+      "id": "problem_solving",
+      "topicName": "problem solving",
+      "moduleCount": 2,
+      "sourcePath": "topics/problem_solving.json"
+    },
+    {
+      "id": "problem_solving_skills",
+      "topicName": "problem solving skills",
+      "moduleCount": 2,
+      "sourcePath": "topics/problem_solving_skills.json"
+    },
+    {
+      "id": "promoting_a_positive_learning_environment",
+      "topicName": "promoting a positive learning environment",
+      "moduleCount": 2,
+      "sourcePath": "topics/promoting_a_positive_learning_environment.json"
+    },
+    {
+      "id": "protecting_children_from_adult_conflict",
+      "topicName": "protecting children from adult conflict",
+      "moduleCount": 3,
+      "sourcePath": "topics/protecting_children_from_adult_conflict.json"
+    },
+    {
+      "id": "public_behaviour_management",
+      "topicName": "public behaviour management",
+      "moduleCount": 2,
+      "sourcePath": "topics/public_behaviour_management.json"
+    },
+    {
+      "id": "punishment_based_health_approaches",
+      "topicName": "punishment based health approaches",
+      "moduleCount": 3,
+      "sourcePath": "topics/punishment_based_health_approaches.json"
+    },
+    {
+      "id": "raising_confident_children",
+      "topicName": "raising confident children",
+      "moduleCount": 2,
+      "sourcePath": "topics/raising_confident_children.json"
+    },
+    {
+      "id": "rebuilding_trust",
+      "topicName": "rebuilding trust",
+      "moduleCount": 3,
+      "sourcePath": "topics/rebuilding_trust.json"
+    },
+    {
+      "id": "rebuilding_trust_with_children",
+      "topicName": "rebuilding trust with children",
+      "moduleCount": 3,
+      "sourcePath": "topics/rebuilding_trust_with_children.json"
+    },
+    {
+      "id": "recognising_dysregulation",
+      "topicName": "recognising dysregulation",
+      "moduleCount": 3,
+      "sourcePath": "topics/recognising_dysregulation.json"
+    },
+    {
+      "id": "recognising_health_concerns_early",
+      "topicName": "recognising health concerns early",
+      "moduleCount": 3,
+      "sourcePath": "topics/recognising_health_concerns_early.json"
+    },
+    {
+      "id": "recognising_triggers",
+      "topicName": "recognising triggers",
+      "moduleCount": 3,
+      "sourcePath": "topics/recognising_triggers.json"
+    },
+    {
+      "id": "recovery_and_treatment_planning",
+      "topicName": "recovery and treatment planning",
+      "moduleCount": 1,
+      "sourcePath": "topics/recovery_and_treatment_planning.json"
+    },
+    {
+      "id": "reducing_challenging_behaviour",
+      "topicName": "reducing challenging behaviour",
+      "moduleCount": 3,
+      "sourcePath": "topics/reducing_challenging_behaviour.json"
+    },
+    {
+      "id": "reducing_chaos_in_the_home",
+      "topicName": "reducing chaos in the home",
+      "moduleCount": 1,
+      "sourcePath": "topics/reducing_chaos_in_the_home.json"
+    },
+    {
+      "id": "reducing_power_struggles",
+      "topicName": "reducing power struggles",
+      "moduleCount": 2,
+      "sourcePath": "topics/reducing_power_struggles.json"
+    },
+    {
+      "id": "reducing_sedentary_behaviour",
+      "topicName": "reducing sedentary behaviour",
+      "moduleCount": 3,
+      "sourcePath": "topics/reducing_sedentary_behaviour.json"
+    },
+    {
+      "id": "reflective_parenting",
+      "topicName": "reflective parenting",
+      "moduleCount": 3,
+      "sourcePath": "topics/reflective_parenting.json"
+    },
+    {
+      "id": "reinforcement",
+      "topicName": "reinforcement",
+      "moduleCount": 2,
+      "sourcePath": "topics/reinforcement.json"
+    },
+    {
+      "id": "reinforcement_theory",
+      "topicName": "reinforcement theory",
+      "moduleCount": 2,
+      "sourcePath": "topics/reinforcement_theory.json"
+    },
+    {
+      "id": "repair_after_mistakes",
+      "topicName": "repair after mistakes",
+      "moduleCount": 3,
+      "sourcePath": "topics/repair_after_mistakes.json"
+    },
+    {
+      "id": "repairing_parent_child_relationships",
+      "topicName": "repairing parent child relationships",
+      "moduleCount": 3,
+      "sourcePath": "topics/repairing_parent_child_relationships.json"
+    },
+    {
+      "id": "repairing_ruptures",
+      "topicName": "repairing ruptures",
+      "moduleCount": 2,
+      "sourcePath": "topics/repairing_ruptures.json"
+    },
+    {
+      "id": "repetition_and_consistency",
+      "topicName": "repetition and consistency",
+      "moduleCount": 2,
+      "sourcePath": "topics/repetition_and_consistency.json"
+    },
+    {
+      "id": "respectful_communication",
+      "topicName": "respectful communication",
+      "moduleCount": 3,
+      "sourcePath": "topics/respectful_communication.json"
+    },
+    {
+      "id": "respectful_interactions",
+      "topicName": "respectful interactions",
+      "moduleCount": 3,
+      "sourcePath": "topics/respectful_interactions.json"
+    },
+    {
+      "id": "responding_to_distress",
+      "topicName": "responding to distress",
+      "moduleCount": 3,
+      "sourcePath": "topics/responding_to_distress.json"
+    },
+    {
+      "id": "responsibility_training",
+      "topicName": "responsibility training",
+      "moduleCount": 3,
+      "sourcePath": "topics/responsibility_training.json"
+    },
+    {
+      "id": "responsive_caregiving",
+      "topicName": "responsive caregiving",
+      "moduleCount": 3,
+      "sourcePath": "topics/responsive_caregiving.json"
+    },
+    {
+      "id": "responsive_feeding",
+      "topicName": "responsive feeding",
+      "moduleCount": 3,
+      "sourcePath": "topics/responsive_feeding.json"
+    },
+    {
+      "id": "responsive_interactions",
+      "topicName": "responsive interactions",
+      "moduleCount": 2,
+      "sourcePath": "topics/responsive_interactions.json"
+    },
+    {
+      "id": "reunification_foundations_and_expectations",
+      "topicName": "reunification foundation: rights, goals & first actions",
+      "moduleCount": 1,
+      "sourcePath": "topics/reunification_foundations_and_expectations.json"
+    },
+    {
+      "id": "reunification_transition_and_home_again",
+      "topicName": "reunification transition & home again maintenance",
+      "moduleCount": 1,
+      "sourcePath": "topics/reunification_transition_and_home_again.json"
+    },
+    {
+      "id": "risk_behaviour_management",
+      "topicName": "risk behaviour management",
+      "moduleCount": 2,
+      "sourcePath": "topics/risk_behaviour_management.json"
+    },
+    {
+      "id": "risk_taking_behaviour",
+      "topicName": "risk taking behaviour",
+      "moduleCount": 3,
+      "sourcePath": "topics/risk_taking_behaviour.json"
+    },
+    {
+      "id": "routine_management",
+      "topicName": "routine management",
+      "moduleCount": 3,
+      "sourcePath": "topics/routine_management.json"
+    },
+    {
+      "id": "safe_ai_support_coach_skills",
+      "topicName": "using the safesteps ai support coach safely",
+      "moduleCount": 1,
+      "sourcePath": "topics/safe_ai_support_coach_skills.json"
+    },
+    {
+      "id": "school_and_homework_support",
+      "topicName": "school and homework support",
+      "moduleCount": 2,
+      "sourcePath": "topics/school_and_homework_support.json"
+    },
+    {
+      "id": "school_refusal",
+      "topicName": "school refusal",
+      "moduleCount": 2,
+      "sourcePath": "topics/school_refusal.json"
+    },
+    {
+      "id": "screen_time_and_health",
+      "topicName": "screen time and health",
+      "moduleCount": 3,
+      "sourcePath": "topics/screen_time_and_health.json"
+    },
+    {
+      "id": "secure_attachment",
+      "topicName": "secure attachment",
+      "moduleCount": 2,
+      "sourcePath": "topics/secure_attachment.json"
+    },
+    {
+      "id": "self_awareness",
+      "topicName": "self awareness",
+      "moduleCount": 2,
+      "sourcePath": "topics/self_awareness.json"
+    },
+    {
+      "id": "self_care_for_parents",
+      "topicName": "self care for parents",
+      "moduleCount": 3,
+      "sourcePath": "topics/self_care_for_parents.json"
+    },
+    {
+      "id": "self_compassion_in_parenting",
+      "topicName": "self compassion in parenting",
+      "moduleCount": 3,
+      "sourcePath": "topics/self_compassion_in_parenting.json"
+    },
+    {
+      "id": "self_esteem_and_body_image",
+      "topicName": "self esteem and body image",
+      "moduleCount": 3,
+      "sourcePath": "topics/self_esteem_and_body_image.json"
+    },
+    {
+      "id": "self_regulation_skills",
+      "topicName": "self regulation skills",
+      "moduleCount": 3,
+      "sourcePath": "topics/self_regulation_skills.json"
+    },
+    {
+      "id": "sensory_processing_and_sleep_architecture",
+      "topicName": "sensory processing, regulation & restorative sleep architecture",
+      "moduleCount": 1,
+      "sourcePath": "topics/sensory_processing_and_sleep_architecture.json"
+    },
+    {
+      "id": "separation_conflict",
+      "topicName": "separation conflict",
+      "moduleCount": 3,
+      "sourcePath": "topics/separation_conflict.json"
+    },
+    {
+      "id": "sharing_and_turn_taking",
+      "topicName": "sharing and turn taking",
+      "moduleCount": 3,
+      "sourcePath": "topics/sharing_and_turn_taking.json"
+    },
+    {
+      "id": "sibling_rivalry",
+      "topicName": "sibling rivalry",
+      "moduleCount": 2,
+      "sourcePath": "topics/sibling_rivalry.json"
+    },
+    {
+      "id": "sleep_and_brain_function",
+      "topicName": "sleep and brain function",
+      "moduleCount": 3,
+      "sourcePath": "topics/sleep_and_brain_function.json"
+    },
+    {
+      "id": "sleep_and_child_development",
+      "topicName": "sleep and child development",
+      "moduleCount": 3,
+      "sourcePath": "topics/sleep_and_child_development.json"
+    },
+    {
+      "id": "sleep_deprivation_and_teens",
+      "topicName": "sleep deprivation and teens",
+      "moduleCount": 3,
+      "sourcePath": "topics/sleep_deprivation_and_teens.json"
+    },
+    {
+      "id": "sleep_training_approaches",
+      "topicName": "sleep training approaches",
+      "moduleCount": 3,
+      "sourcePath": "topics/sleep_training_approaches.json"
+    },
+    {
+      "id": "social_development",
+      "topicName": "social development",
+      "moduleCount": 3,
+      "sourcePath": "topics/social_development.json"
+    },
+    {
+      "id": "social_development_through_healthy_activities",
+      "topicName": "social development through healthy activities",
+      "moduleCount": 3,
+      "sourcePath": "topics/social_development_through_healthy_activities.json"
+    },
+    {
+      "id": "social_skills",
+      "topicName": "social skills",
+      "moduleCount": 2,
+      "sourcePath": "topics/social_skills.json"
+    },
+    {
+      "id": "special_time",
+      "topicName": "special time",
+      "moduleCount": 3,
+      "sourcePath": "topics/special_time.json"
+    },
+    {
+      "id": "stability_and_routine",
+      "topicName": "stability and routine",
+      "moduleCount": 3,
+      "sourcePath": "topics/stability_and_routine.json"
+    },
+    {
+      "id": "stress_and_anxiety_in_children",
+      "topicName": "stress and anxiety in children",
+      "moduleCount": 2,
+      "sourcePath": "topics/stress_and_anxiety_in_children.json"
+    },
+    {
+      "id": "stress_and_the_developing_brain",
+      "topicName": "stress and the developing brain",
+      "moduleCount": 3,
+      "sourcePath": "topics/stress_and_the_developing_brain.json"
+    },
+    {
+      "id": "structured_discipline",
+      "topicName": "structured discipline",
+      "moduleCount": 3,
+      "sourcePath": "topics/structured_discipline.json"
+    },
+    {
+      "id": "substance_awareness_for_teens",
+      "topicName": "substance awareness for teens",
+      "moduleCount": 3,
+      "sourcePath": "topics/substance_awareness_for_teens.json"
+    },
+    {
+      "id": "sun_safety",
+      "topicName": "sun safety",
+      "moduleCount": 3,
+      "sourcePath": "topics/sun_safety.json"
+    },
+    {
+      "id": "supervised_contact_preparation",
+      "topicName": "supervised contact preparation",
+      "moduleCount": 3,
+      "sourcePath": "topics/supervised_contact_preparation.json"
+    },
+    {
+      "id": "supporting_children_through_change",
+      "topicName": "supporting children through change",
+      "moduleCount": 3,
+      "sourcePath": "topics/supporting_children_through_change.json"
+    },
+    {
+      "id": "supporting_emotional_wellbeing",
+      "topicName": "supporting emotional wellbeing",
+      "moduleCount": 3,
+      "sourcePath": "topics/supporting_emotional_wellbeing.json"
+    },
+    {
+      "id": "supporting_social_development",
+      "topicName": "supporting social development",
+      "moduleCount": 3,
+      "sourcePath": "topics/supporting_social_development.json"
+    },
+    {
+      "id": "supporting_vulnerable_families",
+      "topicName": "supporting vulnerable families",
+      "moduleCount": 2,
+      "sourcePath": "topics/supporting_vulnerable_families.json"
+    },
+    {
+      "id": "survival_behaviours",
+      "topicName": "survival behaviours",
+      "moduleCount": 2,
+      "sourcePath": "topics/survival_behaviours.json"
+    },
+    {
+      "id": "sustained_recovery_evidence",
+      "topicName": "sustained recovery & longitudinal stability evidence",
+      "moduleCount": 1,
+      "sourcePath": "topics/sustained_recovery_evidence.json"
+    },
+    {
+      "id": "tantrums_and_meltdowns",
+      "topicName": "tantrums and meltdowns",
+      "moduleCount": 2,
+      "sourcePath": "topics/tantrums_and_meltdowns.json"
+    },
+    {
+      "id": "teaching_instead_of_punishing",
+      "topicName": "teaching instead of punishing",
+      "moduleCount": 2,
+      "sourcePath": "topics/teaching_instead_of_punishing.json"
+    },
+    {
+      "id": "teaching_responsibility",
+      "topicName": "teaching responsibility",
+      "moduleCount": 3,
+      "sourcePath": "topics/teaching_responsibility.json"
+    },
+    {
+      "id": "teaching_self_regulation",
+      "topicName": "teaching self regulation",
+      "moduleCount": 3,
+      "sourcePath": "topics/teaching_self_regulation.json"
+    },
+    {
+      "id": "teaching_social_skills",
+      "topicName": "teaching social skills",
+      "moduleCount": 2,
+      "sourcePath": "topics/teaching_social_skills.json"
+    },
+    {
+      "id": "teen_communication",
+      "topicName": "teen communication",
+      "moduleCount": 3,
+      "sourcePath": "topics/teen_communication.json"
+    },
+    {
+      "id": "teen_responsibility",
+      "topicName": "teen responsibility",
+      "moduleCount": 3,
+      "sourcePath": "topics/teen_responsibility.json"
+    },
+    {
+      "id": "temperament_and_personality",
+      "topicName": "temperament and personality",
+      "moduleCount": 2,
+      "sourcePath": "topics/temperament_and_personality.json"
+    },
+    {
+      "id": "time_out_strategies",
+      "topicName": "time out strategies",
+      "moduleCount": 3,
+      "sourcePath": "topics/time_out_strategies.json"
+    },
+    {
+      "id": "toilet_training",
+      "topicName": "toilet training",
+      "moduleCount": 3,
+      "sourcePath": "topics/toilet_training.json"
+    },
+    {
+      "id": "trauma_and_adverse_childhood_experiences",
+      "topicName": "trauma and adverse childhood experiences",
+      "moduleCount": 3,
+      "sourcePath": "topics/trauma_and_adverse_childhood_experiences.json"
+    },
+    {
+      "id": "trauma_and_behaviour",
+      "topicName": "trauma and behaviour",
+      "moduleCount": 3,
+      "sourcePath": "topics/trauma_and_behaviour.json"
+    },
+    {
+      "id": "trauma_effects",
+      "topicName": "trauma effects",
+      "moduleCount": 3,
+      "sourcePath": "topics/trauma_effects.json"
+    },
+    {
+      "id": "trauma_informed_parenting",
+      "topicName": "trauma informed parenting",
+      "moduleCount": 3,
+      "sourcePath": "topics/trauma_informed_parenting.json"
+    },
+    {
+      "id": "triggers_cravings_and_safer_choices",
+      "topicName": "triggers, cravings, and safer choices",
+      "moduleCount": 1,
+      "sourcePath": "topics/triggers_cravings_and_safer_choices.json"
+    },
+    {
+      "id": "triggers_vs_misbehaviour",
+      "topicName": "triggers vs misbehaviour",
+      "moduleCount": 3,
+      "sourcePath": "topics/triggers_vs_misbehaviour.json"
+    },
+    {
+      "id": "understanding_attachment_styles",
+      "topicName": "understanding attachment styles",
+      "moduleCount": 3,
+      "sourcePath": "topics/understanding_attachment_styles.json"
+    },
+    {
+      "id": "understanding_behaviour_as_communication",
+      "topicName": "understanding behaviour as communication",
+      "moduleCount": 3,
+      "sourcePath": "topics/understanding_behaviour_as_communication.json"
+    },
+    {
+      "id": "understanding_child_experience_of_care",
+      "topicName": "understanding the child's experience of removal & care",
+      "moduleCount": 1,
+      "sourcePath": "topics/understanding_child_experience_of_care.json"
+    },
+    {
+      "id": "understanding_children_s_emotions",
+      "topicName": "understanding children's emotions",
+      "moduleCount": 3,
+      "sourcePath": "topics/understanding_children_s_emotions.json"
+    },
+    {
+      "id": "understanding_emotions",
+      "topicName": "understanding emotions",
+      "moduleCount": 3,
+      "sourcePath": "topics/understanding_emotions.json"
+    },
+    {
+      "id": "understanding_parenting_orders",
+      "topicName": "understanding parenting orders",
+      "moduleCount": 3,
+      "sourcePath": "topics/understanding_parenting_orders.json"
+    },
+    {
+      "id": "understanding_separation_conflict",
+      "topicName": "understanding separation conflict",
+      "moduleCount": 3,
+      "sourcePath": "topics/understanding_separation_conflict.json"
+    },
+    {
+      "id": "understanding_substance_use_and_family_impact",
+      "topicName": "understanding substance use and family impact",
+      "moduleCount": 1,
+      "sourcePath": "topics/understanding_substance_use_and_family_impact.json"
+    },
+    {
+      "id": "using_assertive_discipline",
+      "topicName": "using assertive discipline",
+      "moduleCount": 3,
+      "sourcePath": "topics/using_assertive_discipline.json"
+    },
+    {
+      "id": "using_child_focused_language",
+      "topicName": "using child focused language",
+      "moduleCount": 2,
+      "sourcePath": "topics/using_child_focused_language.json"
+    },
+    {
+      "id": "values_based_parenting",
+      "topicName": "values based parenting",
+      "moduleCount": 3,
+      "sourcePath": "topics/values_based_parenting.json"
+    },
+    {
+      "id": "workflow_action_skills",
+      "topicName": "workflow action skills",
+      "moduleCount": 1,
+      "sourcePath": "topics/workflow_action_skills.json"
+    },
+    {
+      "id": "working_with_families",
+      "topicName": "working with families",
+      "moduleCount": 2,
+      "sourcePath": "topics/working_with_families.json"
+    }
+  ],
+  "storybooks": [
+    {
+      "id": "React Native screen templates & engine ingestion JSON for storybooks.txt",
+      "sourcePath": "storybooks/React Native screen templates & engine ingestion JSON for storybooks.txt",
+      "fileType": "txt"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "module_mental_health_trauma_and_recovery",
+  "title": "Mental Health, Trauma, and Recovery",
+  "description": "This module explores the mental health impacts of DFV, including trauma responses, coping strategies, and pathways to recovery. It supports practitioners to respond safely and promote healing.",
+  "type": "module",
+  "level": "health_wellbeing",
+  "tags": [
+    "dfv",
+    "mental health",
+    "trauma",
+    "recovery",
+    "healing"
+  ],
+  "outcomes": [
+    "Understand trauma responses related to DFV",
+    "Recognise mental health impacts and coping strategies",
+    "Support recovery through safe, trauma-informed practice"
+  ],
+  "lessons": [],
+  "content": []
+}

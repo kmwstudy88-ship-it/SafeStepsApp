@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "name": "curriculum_master_framework.md",
+    "sha256": "a06311e0fb9dedb1934d4a907d9bfe2bb1302dac24257a4c3e2b0c3c67b26bc6",
+    "reviewDate": "2026-10-11"
+  },
+  "publicationStatus": "draft-review-required",
+  "tracks": [
+    {
+      "id": "parenting-track-1",
+      "title": "Early Infancy, Neurodevelopment & Daily Rhythms",
+      "facilitator": {
+        "name": "Nora",
+        "role": "AI learning coach",
+        "limits": [
+          "No diagnosis or clinical authority",
+          "No autonomous agency notification",
+          "No automated case-plan compliance determination"
+        ],
+        "checkpoints": [
+          "optional check-in",
+          "guided understanding",
+          "optional practice commitment"
+        ]
+      },
+      "basic": {
+        "status": "draft",
+        "lessons": [
+          {
+            "number": "1.1",
+            "title": "Breastfeeding Basics & Attuned Infant Nourishment",
+            "sourceModuleId": "module-breastfeeding-basics",
+            "status": "draft",
+            "sourceText": "- **Module ID:** `module-breastfeeding-basics`"
+          },
+          {
+            "number": "1.2",
+            "title": "Brain Development & Critical Periods",
+            "sourceModuleId": "module-brain-development-and-critical-periods",
+            "status": "draft",
+            "sourceText": "- **Module ID:** `module-brain-development-and-critical-periods`"
+          },
+          {
+            "number": "1.3",
+            "title": "Bedtime Routines & Restorative Sleep Rhythms",
+            "sourceModuleId": "module-bedtime-routines",
+            "status": "draft",
+            "sourceText": "- **Module ID:** `module-bedtime-routines`"
+          }
+        ]
+      },
+      "master": {
+        "status": "outline-only",
+        "sourceOutline": "(Tier 2): Advanced Pediatric Neurodevelopment & Circadian Architecture\n- **Target Audience:** Parents navigating chronic sleep distress, neurodevelopmental delays, sensory processing disorders, or children recovering from early environmental deprivation.\n- **Pedagogical Structure:** 3 In-Depth Master Modules (90 minutes each).\n- **Core Curricular Competencies:**\n  1. *Pediatric Stress Physiology:* Cortisol-melatonin dysregulation, night terrors vs. PTSD nightmares, and somatic soothing for hyper-aroused nervous systems.\n  2. *Sensory-Integrated Sleep Architecture:* Designing sensory bedrooms (weighted blankets, white/pink noise frequencies, proprioceptive input prior to sleep).\n  3. *Longitudinal Circadian Entrainment:* Structuring daytime light exposure, dietary timing, and relational co-regulation for children with neurodevelopmental vulnerabilities.\n\n---"
+      }
+    },
+    {
+      "id": "parenting-track-2",
+      "title": "Relational Safety, Attachment & Resilience",
+      "facilitator": {
+        "name": "Elijah",
+        "role": "AI learning coach",
+        "limits": [
+          "No diagnosis or clinical authority",
+          "No autonomous agency notification",
+          "No automated case-plan compliance determination"
+        ],
+        "checkpoints": [
+          "optional check-in",
+          "guided understanding",
+          "optional practice commitment"
+        ]
+      },
+      "basic": {
+        "status": "draft",
+        "lessons": [
+          {
+            "number": "2.1",
+            "title": "Attachment Theory in Daily Parenting",
+            "sourceModuleId": "module-attachment-theory",
+            "status": "draft",
+            "sourceText": "- **Module ID:** `module-attachment-theory`"
+          },
+          {
+            "number": "2.2",
+            "title": "Building Trust and Relational Safety",
+            "sourceModuleId": "module-building-trust-and-safety",
+            "status": "draft",
+            "sourceText": "- **Module ID:** `module-building-trust-and-safety`"
+          },
+          {
+            "number": "2.3",
+            "title": "Building Resilience & Distress Tolerance",
+            "sourceModuleId": "module-building-resilience",
+            "status": "draft",
+            "sourceText": "- **Module ID:** `module-building-resilience`"
+          }
+        ]
+      },
+      "master": {
+        "status": "outline-only",
+        "sourceOutline": "(Tier 2): Advanced Attachment Repair & Generational Resilience\n- **Target Audience:** Caregivers navigating post-separation trauma, family court transitions, foster-care reunification, or historical family ruptures.\n- **Structure:** 3 Intensive Master Modules (90 minutes each).\n- **Core Curricular Competencies:**\n  1. *Intergenerational Trauma Deconstruction:* Mapping parental adverse attachment scripts, ghost in the nursery phenomena, and conscious cycle-breaking.\n  2. *Reunification Transition Protocols:* Managing contact visits, transition anxiety, behavioral regression post-visit, and rebuilding the attachment hierarchy.\n  3. *Systemic Relational Anchoring:* Creating multi-layered safety circles involving caseworkers, therapists, and extended kinship networks.\n\n---"
+      }
+    },
+    {
+      "id": "parenting-track-3",
+      "title": "Trauma Recovery, Child Protection & Community Safety",
+      "facilitator": {
+        "name": "Maya",
+        "role": "AI learning coach",
+        "limits": [
+          "No diagnosis or clinical authority",
+          "No autonomous agency notification",
+          "No automated case-plan compliance determination"
+        ],
+        "checkpoints": [
+          "optional check-in",
+          "guided understanding",
+          "optional practice commitment"
+        ]
+      },
+      "basic": {
+        "status": "draft",
+        "lessons": [
+          {
+            "number": "3.1",
+            "title": "Adverse Childhood Experiences (ACEs) & Healing Environments",
+            "sourceModuleId": "module-adverse-childhood-experiences",
+            "status": "draft",
+            "sourceText": "- **Module ID:** `module-adverse-childhood-experiences`"
+          },
+          {
+            "number": "3.2",
+            "title": "Abuse Awareness & Child Protection Foundations",
+            "sourceModuleId": "module-abuse-awareness",
+            "status": "draft",
+            "sourceText": "- **Module ID:** `module-abuse-awareness` *(Full authentic replacement for previous duplicate)*"
+          },
+          {
+            "number": "3.3",
+            "title": "Bullying Dynamics & Resisting Peer Pressure",
+            "sourceModuleId": "module-bullying-and-peer-pressure",
+            "status": "draft",
+            "sourceText": "- **Module ID:** `module-bullying-and-peer-pressure`"
+          }
+        ]
+      },
+      "master": {
+        "status": "outline-only",
+        "sourceOutline": "(Tier 2): Complex Trauma Stewardship & Multi-Agency Navigation\n- **Target Audience:** Families involved with statutory child safety, high-conflict family law litigation, or youth displaying severe trauma reactions.\n- **Structure:** 3 Intensive Master Modules (90 minutes each).\n- **Core Curricular Competencies:**\n  1. *De-escalating Trauma-Related Dissociation & Hyperarousal:* Grounding techniques for children experiencing flashbacks, fight-or-flight triggers, or panic.\n  2. *Navigating Child Welfare & Multi-Disciplinary Case Conferences:* Case planning literacy, evidence documentation, presenting parental capacity objectively, and working collaboratively with statutory caseworkers.\n  3. *Co-Parenting Safety Plans in Domestic Abuse Recovery:* Managing parallel parenting, non-contact communication tools, and shielding children from adult hostility.\n\n---"
+      }
+    },
+    {
+      "id": "parenting-track-4",
+      "title": "Neurodivergent Thriving & Adaptive Parenting",
+      "facilitator": {
+        "name": "Leo",
+        "role": "AI learning coach",
+        "limits": [
+          "No diagnosis or clinical authority",
+          "No autonomous agency notification",
+          "No automated case-plan compliance determination"
+        ],
+        "checkpoints": [
+          "optional check-in",
+          "guided understanding",
+          "optional practice commitment"
+        ]
+      },
+      "basic": {
+        "status": "draft",
+        "lessons": [
+          {
+            "number": "4.1",
+            "title": "Autism Spectrum & Neurodiversity-Affirming Strategies",
+            "sourceModuleId": "module-autism-and-parenting-strategies",
+            "status": "draft",
+            "sourceText": "- **Module ID:** `module-autism-and-parenting-strategies`"
+          }
+        ]
+      },
+      "master": {
+        "status": "outline-only",
+        "sourceOutline": "(Tier 2): Systemic Advocacy & Neurodiversity-Affirming Care\n- **Target Audience:** Parents managing complex dual diagnoses, IEP/NDIS funding reviews, school suspensions, and long-term transitional independence planning.\n- **Structure:** 2 Intensive Master Modules (90 minutes each).\n- **Core Curricular Competencies:**\n  1. *Educational & NDIS Rights Advocacy:* Navigating individualized education plans (IEPs), functional behavioral assessments (FBAs), positive behavioral support plans (PBSPs), and legal anti-discrimination mechanisms.\n  2. *Executive Function Scaffolding for Adolescence:* Chunking complex tasks, environmental visual prosthetics, emotional self-advocacy coaching, and preparing for vocational/independent living transitions.\n\n---"
+      }
+    }
+  ],
+  "requirements": {
+    "lessonFlow": [
+      "grounding and objectives",
+      "core concepts",
+      "optional reflection",
+      "practical activity",
+      "self-check and next step"
+    ],
+    "safety": [
+      "Pause learning during immediate danger and show emergency help before reflection",
+      "Use verified region-specific resources; PANDA is not a crisis service",
+      "Exclude weighted blankets from infant sleep guidance",
+      "Treat reporting duties as jurisdiction- and role-specific",
+      "Require consent for touch; never force eye contact",
+      "Do not diagnose attachment, autism or trauma from learner answers"
+    ],
+    "privacy": [
+      "Reflections may be skipped",
+      "Offer text alternatives to photo evidence",
+      "Explain access and sharing before collection",
+      "Human review of evidence and any caseworker summary",
+      "Learning completion does not prove parenting safety or case-plan compliance"
+    ]
+  }
+}

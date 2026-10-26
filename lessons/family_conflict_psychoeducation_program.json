@@ -1,0 +1,617 @@
+{
+  "id": "family_conflict_psychoeducation_program",
+  "title": "Family Conflict Psychoeducation: Three-Level Learning Pathway",
+  "description": "Canonical SafeSteps family conflict psychoeducation program configuration with three-level progression and reusable assessments.",
+  "sections": [],
+  "content": {
+    "overview": "Canonical three-level family conflict psychoeducation pathway for child-safe, privacy-respecting educational practice.",
+    "program": {
+      "title": "Family Conflict Psychoeducation: Three-Level Learning Pathway",
+      "levels": [
+        "Basic",
+        "Developing",
+        "Mastery"
+      ],
+      "audience": "Parents and children, taught together when appropriate or separately when privacy or safety requires it",
+      "lesson_duration_minutes": {
+        "Basic": "30-40",
+        "Developing": "40-50",
+        "Mastery": "45-60"
+      },
+      "safeguards": [
+        "Keep children out of adult disputes; do not ask them to carry messages, report on a parent, or choose sides.",
+        "Use fictional scenarios for practice. Participants may pass, take a break, or choose another way to participate.",
+        "Respect privacy. Follow applicable safeguarding procedures if safety concerns arise.",
+        "This program is educational and is not a substitute for therapy, legal advice, or professional assessment.",
+        "Mastery means demonstrated learning, not perfection or a judgment about someone's parenting."
+      ],
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Understanding Family Conflict",
+          "learning_goal": "Recognize common forms of conflict and distinguish adult responsibilities from children's responsibilities.",
+          "levels": {
+            "Basic": {
+              "activity": "Sort examples into adult problems and child responsibilities.",
+              "assessment": [
+                "True/false quiz",
+                "Exit ticket"
+              ]
+            },
+            "Developing": {
+              "activity": "Analyze a fictional family scenario and identify how conflict may affect a child.",
+              "assessment": [
+                "Short written response",
+                "Scenario discussion"
+              ]
+            },
+            "Mastery": {
+              "activity": "Create a family-specific plan for keeping children out of conflict.",
+              "assessment": [
+                "Teach-back",
+                "Facilitator rubric"
+              ]
+            }
+          }
+        },
+        {
+          "id": 2,
+          "title": "Loyalty Conflicts",
+          "learning_goal": "Recognize loyalty pressure and affirm that children do not need to choose sides.",
+          "levels": {
+            "Basic": {
+              "activity": "Identify feelings a child might have when asked to take sides.",
+              "assessment": [
+                "Feelings matching",
+                "Fill-in-the-blank"
+              ]
+            },
+            "Developing": {
+              "activity": "Role-play reassuring a child that they do not need to choose sides.",
+              "assessment": [
+                "Role-play checklist"
+              ]
+            },
+            "Mastery": {
+              "activity": "Analyze a complex fictional scenario involving pressure from multiple adults and plan a child-centered response.",
+              "assessment": [
+                "Case-study rubric",
+                "Written rationale"
+              ]
+            }
+          }
+        },
+        {
+          "id": 3,
+          "title": "Effects on Well-Being",
+          "learning_goal": "Identify possible signs of stress without diagnosing, and consider supportive next steps.",
+          "levels": {
+            "Basic": {
+              "activity": "Match possible stress signals with supportive responses.",
+              "assessment": [
+                "Matching quiz"
+              ]
+            },
+            "Developing": {
+              "activity": "Review a fictional case and distinguish observations from assumptions.",
+              "assessment": [
+                "Case notes",
+                "Next-step choice"
+              ]
+            },
+            "Mastery": {
+              "activity": "Develop a proportionate support plan, including when to seek professional help.",
+              "assessment": [
+                "Plan review",
+                "Teach-back"
+              ]
+            }
+          }
+        },
+        {
+          "id": 4,
+          "title": "Listening and Validation",
+          "learning_goal": "Practice listening, reflecting feelings, and responding without blame or pressure.",
+          "levels": {
+            "Basic": {
+              "activity": "Practice reflecting a feeling in one sentence.",
+              "assessment": [
+                "Facilitator observation"
+              ]
+            },
+            "Developing": {
+              "activity": "Use listening skills in a paired conversation with a neutral prompt.",
+              "assessment": [
+                "Peer feedback checklist"
+              ]
+            },
+            "Mastery": {
+              "activity": "Demonstrate listening in a challenging simulated conversation while respecting a person's choice not to share.",
+              "assessment": [
+                "Rubric-based role-play"
+              ]
+            }
+          }
+        },
+        {
+          "id": 5,
+          "title": "Calm Communication",
+          "learning_goal": "Use respectful, specific language to express feelings and needs.",
+          "levels": {
+            "Basic": {
+              "activity": "Complete an 'I feel... when... I would like...' sentence.",
+              "assessment": [
+                "Cloze test"
+              ]
+            },
+            "Developing": {
+              "activity": "Rewrite blaming statements and practice a calm request.",
+              "assessment": [
+                "Message rubric",
+                "Role-play"
+              ]
+            },
+            "Mastery": {
+              "activity": "Use clear, respectful communication in a scenario with disagreement and competing needs.",
+              "assessment": [
+                "Applied scenario assessment"
+              ]
+            }
+          }
+        },
+        {
+          "id": 6,
+          "title": "Emotional Regulation",
+          "learning_goal": "Recognize escalation cues and choose a safe pause or coping strategy.",
+          "levels": {
+            "Basic": {
+              "activity": "Name two signs of escalation and two coping strategies.",
+              "assessment": [
+                "Flashcard recall"
+              ]
+            },
+            "Developing": {
+              "activity": "Sequence a pause-and-return plan for a fictional disagreement.",
+              "assessment": [
+                "Sequencing task"
+              ]
+            },
+            "Mastery": {
+              "activity": "Demonstrate choosing and adapting a regulation strategy during a simulated difficult interaction.",
+              "assessment": [
+                "Facilitator observation",
+                "Reflection"
+              ]
+            }
+          }
+        },
+        {
+          "id": 7,
+          "title": "Children Are Not Messengers",
+          "learning_goal": "Identify inappropriate roles for children and practice adult-owned communication.",
+          "levels": {
+            "Basic": {
+              "activity": "Identify which messages belong between adults.",
+              "assessment": [
+                "Multiple-choice quiz"
+              ]
+            },
+            "Developing": {
+              "activity": "Practice redirecting a child who has been asked to carry a message.",
+              "assessment": [
+                "Role-play checklist"
+              ]
+            },
+            "Mastery": {
+              "activity": "Create and evaluate a practical communication-boundary plan for recurring situations.",
+              "assessment": [
+                "Portfolio artifact",
+                "Peer review"
+              ]
+            }
+          }
+        },
+        {
+          "id": 8,
+          "title": "Speaking Respectfully About the Other Parent",
+          "learning_goal": "Avoid putting children in the middle while communicating honestly and appropriately.",
+          "levels": {
+            "Basic": {
+              "activity": "Choose a neutral, reassuring response from several options.",
+              "assessment": [
+                "Matching quiz"
+              ]
+            },
+            "Developing": {
+              "activity": "Rewrite critical comments into age-appropriate, child-focused language.",
+              "assessment": [
+                "Short written task"
+              ]
+            },
+            "Mastery": {
+              "activity": "Respond to a child's difficult question while being honest, respectful, and appropriately boundaried.",
+              "assessment": [
+                "Simulated-dialogue rubric"
+              ]
+            }
+          }
+        },
+        {
+          "id": 9,
+          "title": "Transitions and Schedule Changes",
+          "learning_goal": "Reduce uncertainty around transitions and create practical plans for changes.",
+          "levels": {
+            "Basic": {
+              "activity": "Follow a simple transition checklist.",
+              "assessment": [
+                "Sequencing activity"
+              ]
+            },
+            "Developing": {
+              "activity": "Plan for a fictional delay or schedule change.",
+              "assessment": [
+                "Scenario-based next-step question"
+              ]
+            },
+            "Mastery": {
+              "activity": "Build a workable transition plan with a backup option and child-friendly explanation.",
+              "assessment": [
+                "Portfolio plan",
+                "Plan review"
+              ]
+            }
+          }
+        },
+        {
+          "id": 10,
+          "title": "Repair After Conflict",
+          "learning_goal": "Recognize when repair is needed and practice an accountable apology.",
+          "levels": {
+            "Basic": {
+              "activity": "Identify the parts of a sincere apology.",
+              "assessment": [
+                "True/false quiz",
+                "Short answer"
+              ]
+            },
+            "Developing": {
+              "activity": "Practice acknowledging impact and naming a realistic change.",
+              "assessment": [
+                "Role-play rubric"
+              ]
+            },
+            "Mastery": {
+              "activity": "Demonstrate repair without excuses, pressure, or asking a child to comfort the adult.",
+              "assessment": [
+                "Facilitator observation",
+                "Reflection"
+              ]
+            }
+          }
+        },
+        {
+          "id": 11,
+          "title": "Expressing Feelings Safely",
+          "learning_goal": "Offer developmentally appropriate ways to express feelings while respecting a choice not to share.",
+          "levels": {
+            "Basic": {
+              "activity": "Choose from several safe ways to express a feeling.",
+              "assessment": [
+                "Quick poll",
+                "Matching task"
+              ]
+            },
+            "Developing": {
+              "activity": "Practice responding supportively when someone shares or declines to share a feeling.",
+              "assessment": [
+                "Scenario response"
+              ]
+            },
+            "Mastery": {
+              "activity": "Create a personalized, voluntary expression-and-support plan.",
+              "assessment": [
+                "Journal or plan review, with privacy respected"
+              ]
+            }
+          }
+        },
+        {
+          "id": 12,
+          "title": "Coping and Support Networks",
+          "learning_goal": "Build a menu of coping strategies and identify trusted support people.",
+          "levels": {
+            "Basic": {
+              "activity": "Match a common feeling to a possible coping strategy.",
+              "assessment": [
+                "Matching quiz"
+              ]
+            },
+            "Developing": {
+              "activity": "Create a support map and practice asking a trusted person for help.",
+              "assessment": [
+                "Practical demonstration"
+              ]
+            },
+            "Mastery": {
+              "activity": "Compare coping options for different situations and explain when additional support may be needed.",
+              "assessment": [
+                "Case study",
+                "Teach-back"
+              ]
+            }
+          }
+        },
+        {
+          "id": 13,
+          "title": "Co-Parenting Communication",
+          "learning_goal": "Communicate about practical child needs with brief, neutral, respectful messages.",
+          "levels": {
+            "Basic": {
+              "activity": "Identify clear and respectful features in a sample message.",
+              "assessment": [
+                "Multiple-choice quiz"
+              ]
+            },
+            "Developing": {
+              "activity": "Draft a brief message about a fictional child-related issue.",
+              "assessment": [
+                "Message rubric"
+              ]
+            },
+            "Mastery": {
+              "activity": "Edit a complex message for clarity, relevance, tone, boundaries, and agreed communication channels.",
+              "assessment": [
+                "Peer review",
+                "Revised draft"
+              ]
+            }
+          }
+        },
+        {
+          "id": 14,
+          "title": "Problem-Solving Under Constraints",
+          "learning_goal": "Create workable, child-centered plans that account for real-life constraints.",
+          "levels": {
+            "Basic": {
+              "activity": "Identify the problem and one practical option in a simple scenario.",
+              "assessment": [
+                "Exit ticket"
+              ]
+            },
+            "Developing": {
+              "activity": "Plan around a fictional time, transport, or schedule constraint.",
+              "assessment": [
+                "Problem-solving worksheet"
+              ]
+            },
+            "Mastery": {
+              "activity": "Compare options, anticipate obstacles, and create a realistic backup plan.",
+              "assessment": [
+                "Case-study rubric",
+                "Teach-back"
+              ]
+            }
+          }
+        },
+        {
+          "id": 15,
+          "title": "Digital Communication and Privacy",
+          "learning_goal": "Use digital communication responsibly and protect children from adult conflict online.",
+          "levels": {
+            "Basic": {
+              "activity": "Identify basic privacy and messaging do's and don'ts.",
+              "assessment": [
+                "True/false quiz"
+              ]
+            },
+            "Developing": {
+              "activity": "Rewrite an emotionally charged text as a neutral practical message.",
+              "assessment": [
+                "Applied writing task"
+              ]
+            },
+            "Mastery": {
+              "activity": "Develop a digital communication plan addressing privacy, timing, boundaries, and child involvement.",
+              "assessment": [
+                "Plan review"
+              ]
+            }
+          }
+        },
+        {
+          "id": 16,
+          "title": "Escalation and Safe Next Steps",
+          "learning_goal": "Notice when a conversation is becoming unproductive and choose a safe next step.",
+          "levels": {
+            "Basic": {
+              "activity": "Recognize signs that a conversation should pause.",
+              "assessment": [
+                "Scenario quiz"
+              ]
+            },
+            "Developing": {
+              "activity": "Use a decision tree to choose whether to continue, pause, or seek support.",
+              "assessment": [
+                "Branching assessment"
+              ]
+            },
+            "Mastery": {
+              "activity": "Respond to an ambiguous scenario, explain the reasoning, and identify when safeguarding or professional procedures apply.",
+              "assessment": [
+                "Facilitator-scored case analysis"
+              ]
+            }
+          }
+        },
+        {
+          "id": 17,
+          "title": "Developmental Needs",
+          "learning_goal": "Adjust explanations and expectations to a child's age and developmental abilities.",
+          "levels": {
+            "Basic": {
+              "activity": "Match a simple explanation to a child's age or developmental level.",
+              "assessment": [
+                "Matching task"
+              ]
+            },
+            "Developing": {
+              "activity": "Adapt the same explanation for different age groups.",
+              "assessment": [
+                "Short role-play"
+              ]
+            },
+            "Mastery": {
+              "activity": "Explain a difficult topic in an age-appropriate way and check understanding without pressure.",
+              "assessment": [
+                "Simulated-dialogue rubric"
+              ]
+            }
+          }
+        },
+        {
+          "id": 18,
+          "title": "Predictability and Emotional Safety",
+          "learning_goal": "Create routines and agreements that help children know what to expect.",
+          "levels": {
+            "Basic": {
+              "activity": "Identify routines that can help children know what to expect.",
+              "assessment": [
+                "Quick quiz"
+              ]
+            },
+            "Developing": {
+              "activity": "Map a fictional week and mark transitions or uncertainties.",
+              "assessment": [
+                "Routine map"
+              ]
+            },
+            "Mastery": {
+              "activity": "Create and review a realistic routine plan, including how adults will explain changes.",
+              "assessment": [
+                "Portfolio artifact",
+                "Peer feedback"
+              ]
+            }
+          }
+        },
+        {
+          "id": 19,
+          "title": "Reviewing Progress",
+          "learning_goal": "Track changes over time and identify when support may need adjustment.",
+          "levels": {
+            "Basic": {
+              "activity": "Complete a confidence rating and name one skill to practice.",
+              "assessment": [
+                "Exit ticket"
+              ]
+            },
+            "Developing": {
+              "activity": "Review several weeks of reflections and identify a learning trend.",
+              "assessment": [
+                "Progress tracker"
+              ]
+            },
+            "Mastery": {
+              "activity": "Use evidence over time to adjust goals or support without blame or unsupported conclusions.",
+              "assessment": [
+                "Progress review",
+                "Reflection"
+              ]
+            }
+          }
+        },
+        {
+          "id": 20,
+          "title": "Integration and Next Steps",
+          "learning_goal": "Apply key skills to a realistic scenario and identify ongoing supports.",
+          "levels": {
+            "Basic": {
+              "activity": "Recall key ideas and choose one skill to practice.",
+              "assessment": [
+                "Flashcards",
+                "Final reflection"
+              ]
+            },
+            "Developing": {
+              "activity": "Work through an integrated fictional case with several decision points.",
+              "assessment": [
+                "Case-study rubric"
+              ]
+            },
+            "Mastery": {
+              "activity": "Demonstrate integrated skills, explain reasoning, and create a realistic continuing-learning plan.",
+              "assessment": [
+                "Teach-back",
+                "Portfolio review",
+                "Final reflection"
+              ]
+            }
+          }
+        }
+      ],
+      "completion_guidance": {
+        "Basic": {
+          "description": "Recognize and explain key ideas, feelings, boundaries, and basic strategies.",
+          "evidence": [
+            "Short quizzes",
+            "Matching",
+            "Flashcards",
+            "Exit tickets",
+            "Simple teach-back"
+          ]
+        },
+        "Developing": {
+          "description": "Apply skills in fictional scenarios and create practical plans with support.",
+          "evidence": [
+            "Role-plays",
+            "Scenario questions",
+            "Journals",
+            "Peer feedback",
+            "Planning tasks"
+          ]
+        },
+        "Mastery": {
+          "description": "Integrate and adapt skills in complex situations, explain reasoning, and show growth over time.",
+          "evidence": [
+            "Case studies",
+            "Decision trees",
+            "Practical demonstrations",
+            "Portfolios",
+            "Progress reviews",
+            "Facilitator observation"
+          ]
+        },
+        "progression": "Learners may progress at different rates. Use a brief pre-check to select a starting level, provide review when needed, and allow learners to demonstrate understanding in more than one way."
+      },
+      "reusable_assessments": {
+        "exit_ticket": [
+          "One thing I learned today:",
+          "One thing I'm still unsure about:",
+          "One action I can practice:",
+          "Confidence rating from 1 to 5:"
+        ],
+        "role_play_rubric": {
+          "scoring": {
+            "0": "Not yet",
+            "1": "Partly",
+            "2": "Consistently"
+          },
+          "criteria": [
+            "Uses calm, respectful language",
+            "Keeps children out of adult conflict",
+            "Listens and acknowledges feelings",
+            "Chooses a practical next step",
+            "Respects safety, privacy, and boundaries"
+          ]
+        },
+        "learning_journal_prompts": [
+          "What was the biggest challenge you faced today?",
+          "What felt easier than expected?",
+          "What would you do differently next time?",
+          "What question would you like to ask a trusted adult or facilitator?",
+          "What is one example of progress you noticed this week?"
+        ]
+      }
+    }
+  }
+}

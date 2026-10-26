@@ -1,0 +1,234 @@
+{
+  "curriculum_id": "safesteps_behaviour_change_curriculum_v1",
+  "version": "1.0.0",
+  "title": "SafeSteps Behaviour Change Curriculum",
+  "description": "A complete multi-module behaviour change curriculum for parents, caregivers, and family safety practitioners.",
+  "modules": [
+    "behaviour_change_emotional_regulation_v1",
+    "behaviour_change_habit_replacement_v1",
+    "behaviour_change_repair_skills_v1",
+    "behaviour_change_consistency_v1",
+    "behaviour_change_motivation_v1",
+    "behaviour_change_trigger_management_v1",
+    "behaviour_change_positive_reinforcement_v1",
+    "behaviour_change_boundary_setting_v1",
+    "behaviour_change_conflict_reduction_v1",
+    "parenting_behaviour_change_lessons_v1"
+  ],
+
+  "scenario_banks": {
+    "behaviour_change_emotional_regulation_v1": {
+      "easy": [
+        {
+          "scenario_id": "er_easy_01",
+          "text": "A parent feels overwhelmed when the child cries loudly and takes a moment to breathe before responding."
+        },
+        {
+          "scenario_id": "er_easy_02",
+          "text": "A child spills juice and the parent pauses instead of reacting immediately."
+        }
+      ],
+      "medium": [
+        {
+          "scenario_id": "er_med_01",
+          "text": "A parent notices their heart racing during a sibling argument and uses grounding before intervening."
+        }
+      ],
+      "hard": [
+        {
+          "scenario_id": "er_hard_01",
+          "text": "A parent with trauma triggers feels panic during a child meltdown and attempts to regulate while staying present."
+        }
+      ]
+    },
+
+    "behaviour_change_habit_replacement_v1": {
+      "easy": [
+        {
+          "scenario_id": "hr_easy_01",
+          "text": "A parent replaces saying 'Stop it!' with 'Let’s try that again safely.'"
+        }
+      ],
+      "medium": [
+        {
+          "scenario_id": "hr_med_01",
+          "text": "A parent identifies that yelling happens when they are tired and replaces it with a pause-and-breathe routine."
+        }
+      ],
+      "hard": [
+        {
+          "scenario_id": "hr_hard_01",
+          "text": "A parent with long-standing reactive habits attempts to replace criticism with curiosity during conflict."
+        }
+      ]
+    },
+
+    "behaviour_change_repair_skills_v1": {
+      "easy": [
+        {
+          "scenario_id": "rp_easy_01",
+          "text": "A parent apologises after raising their voice and offers a hug."
+        }
+      ],
+      "medium": [
+        {
+          "scenario_id": "rp_med_01",
+          "text": "A parent explains the impact of their reaction and invites the child to reconnect."
+        }
+      ],
+      "hard": [
+        {
+          "scenario_id": "rp_hard_01",
+          "text": "A parent attempts repair after a major conflict where the child withdrew emotionally."
+        }
+      ]
+    },
+
+    "behaviour_change_consistency_v1": {
+      "easy": [
+        {
+          "scenario_id": "cs_easy_01",
+          "text": "A parent sets a consistent bedtime routine."
+        }
+      ],
+      "medium": [
+        {
+          "scenario_id": "cs_med_01",
+          "text": "A parent maintains consistent expectations even during stressful days."
+        }
+      ],
+      "hard": [
+        {
+          "scenario_id": "cs_hard_01",
+          "text": "A parent attempts consistency while co-parenting with someone who undermines routines."
+        }
+      ]
+    },
+
+    "behaviour_change_motivation_v1": {
+      "easy": [
+        {
+          "scenario_id": "mt_easy_01",
+          "text": "A parent feels unsure but wants to try calmer communication."
+        }
+      ],
+      "medium": [
+        {
+          "scenario_id": "mt_med_01",
+          "text": "A parent recognises ambivalence and seeks clarity before committing to change."
+        }
+      ],
+      "hard": [
+        {
+          "scenario_id": "mt_hard_01",
+          "text": "A parent in a high-stress environment struggles with readiness and fluctuating motivation."
+        }
+      ]
+    },
+
+    "behaviour_change_trigger_management_v1": {
+      "easy": [
+        {
+          "scenario_id": "tm_easy_01",
+          "text": "Noise triggers a parent, who steps outside briefly to reset."
+        }
+      ],
+      "medium": [
+        {
+          "scenario_id": "tm_med_01",
+          "text": "A parent identifies emotional triggers during conflict and uses grounding."
+        }
+      ],
+      "hard": [
+        {
+          "scenario_id": "tm_hard_01",
+          "text": "A parent with trauma triggers manages overwhelming flashbacks during a child's meltdown."
+        }
+      ]
+    },
+
+    "behaviour_change_positive_reinforcement_v1": {
+      "easy": [
+        {
+          "scenario_id": "pr_easy_01",
+          "text": "A parent praises a child for trying, not just succeeding."
+        }
+      ],
+      "medium": [
+        {
+          "scenario_id": "pr_med_01",
+          "text": "A parent shifts from conditional praise to consistent encouragement."
+        }
+      ],
+      "hard": [
+        {
+          "scenario_id": "pr_hard_01",
+          "text": "A parent attempts positive reinforcement despite chronic stress and limited emotional bandwidth."
+        }
+      ]
+    },
+
+    "behaviour_change_boundary_setting_v1": {
+      "easy": [
+        {
+          "scenario_id": "bs_easy_01",
+          "text": "A parent sets a clear rule about screen time."
+        }
+      ],
+      "medium": [
+        {
+          "scenario_id": "bs_med_01",
+          "text": "A parent enforces boundaries calmly even when the child protests."
+        }
+      ],
+      "hard": [
+        {
+          "scenario_id": "bs_hard_01",
+          "text": "A parent attempts healthy boundaries while co-parenting with someone who uses punitive rules."
+        }
+      ]
+    },
+
+    "behaviour_change_conflict_reduction_v1": {
+      "easy": [
+        {
+          "scenario_id": "cr_easy_01",
+          "text": "A parent lowers their voice during a disagreement."
+        }
+      ],
+      "medium": [
+        {
+          "scenario_id": "cr_med_01",
+          "text": "A parent interrupts escalation by pausing and stepping back."
+        }
+      ],
+      "hard": [
+        {
+          "scenario_id": "cr_hard_01",
+          "text": "A parent attempts de-escalation during a high-intensity conflict involving multiple children."
+        }
+      ]
+    },
+
+    "parenting_behaviour_change_lessons_v1": {
+      "easy": [
+        {
+          "scenario_id": "bcl_easy_01",
+          "text": "A parent recognises a harmful pattern and wants to change."
+        }
+      ],
+      "medium": [
+        {
+          "scenario_id": "bcl_med_01",
+          "text": "A parent practices new behaviour but struggles with consistency."
+        }
+      ],
+      "hard": [
+        {
+          "scenario_id": "bcl_hard_01",
+          "text": "A parent attempts behaviour change while dealing with co-parenting conflict and emotional triggers."
+        }
+      ]
+    }
+  }
+}

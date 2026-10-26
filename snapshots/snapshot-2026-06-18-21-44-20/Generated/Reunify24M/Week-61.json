@@ -1,0 +1,96 @@
+﻿{
+    "programId":  "REUNIFY-24M",
+    "week":  61,
+    "stageId":  "STAGE-08",
+    "stageName":  "Help-Seeking \u0026 Support Network",
+    "modules":  [
+                    {
+                        "id":  "PP-ENGAGE-01",
+                        "name":  "Understanding Your Current Position",
+                        "goal":  "Clarify where you are without judgment.",
+                        "tasks":  [
+                                      "Write what you believe is happening in your situation",
+                                      "Write what you believe child protection is concerned about",
+                                      "Write what you want for your child long-term"
+                                  ],
+                        "evidence":  [
+                                         "Written reflections",
+                                         "Caseworker acknowledgement"
+                                     ]
+                    },
+                    {
+                        "id":  "PP-ENGAGE-03",
+                        "name":  "Child-Focused Thinking",
+                        "goal":  "Shift from self-focus to child experience.",
+                        "tasks":  [
+                                      "After stressful events, answer: How was my child affected?",
+                                      "What did my child need from me?",
+                                      "Did I meet that need?"
+                                  ],
+                        "evidence":  [
+                                         "Contact reports",
+                                         "Therapist notes"
+                                     ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "Write what you believe is happening in your situation"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "Write what you believe child protection is concerned about"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "Write what you want for your child long-term"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "After stressful events, answer: How was my child affected?"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "What did my child need from me?"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "Did I meet that need?"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+
+                                ],
+                     "insight":  [
+                                     "Written reflections",
+                                     "Caseworker acknowledgement",
+                                     "Therapist notes"
+                                 ],
+                     "behaviour":  [
+                                       "Contact reports"
+                                   ]
+                 }
+}

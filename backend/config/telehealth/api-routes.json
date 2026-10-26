@@ -1,0 +1,130 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/v1/telehealth/appointments",
+      "permission": "telehealth.appointments.read",
+      "purpose": "List appointments"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/appointments",
+      "permission": "telehealth.appointments.create",
+      "purpose": "Create appointment"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/telehealth/appointments/:appointmentId",
+      "permission": "telehealth.appointments.read",
+      "purpose": "Get appointment"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/v1/telehealth/appointments/:appointmentId",
+      "permission": "telehealth.appointments.update",
+      "purpose": "Update appointment"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/appointments/:appointmentId/confirm",
+      "permission": "telehealth.appointments.update",
+      "purpose": "Confirm appointment"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/appointments/:appointmentId/reschedule",
+      "permission": "telehealth.appointments.update",
+      "purpose": "Reschedule appointment"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/appointments/:appointmentId/cancel",
+      "permission": "telehealth.appointments.cancel",
+      "purpose": "Cancel appointment"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/appointments/:appointmentId/session",
+      "permission": "telehealth.sessions.host",
+      "purpose": "Create session"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/telehealth/sessions/:sessionId",
+      "permission": "telehealth.sessions.join",
+      "purpose": "Get session"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/sessions/:sessionId/join-token",
+      "permission": "telehealth.sessions.join",
+      "purpose": "Issue join token"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/sessions/:sessionId/waiting-room",
+      "permission": "telehealth.sessions.join",
+      "purpose": "Join waiting room"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/sessions/:sessionId/admit",
+      "permission": "telehealth.sessions.admit",
+      "purpose": "Admit participant"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/sessions/:sessionId/remove",
+      "permission": "telehealth.sessions.remove",
+      "purpose": "Remove participant"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/sessions/:sessionId/end",
+      "permission": "telehealth.sessions.host",
+      "purpose": "End session"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/telehealth/sessions/:sessionId/attendance",
+      "permission": "telehealth.attendance.read",
+      "purpose": "Read attendance"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/sessions/:sessionId/consents",
+      "permission": "telehealth.consents.manage",
+      "purpose": "Manage consents"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/sessions/:sessionId/notes",
+      "permission": "telehealth.notes.create",
+      "purpose": "Create session note"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/sessions/:sessionId/actions",
+      "permission": "telehealth.notes.create",
+      "purpose": "Create follow-up action"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/sessions/:sessionId/incidents",
+      "permission": "telehealth.incidents.create",
+      "purpose": "Record incident"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/sessions/:sessionId/recording/start",
+      "permission": "telehealth.recordings.start",
+      "purpose": "Start recording"
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/telehealth/sessions/:sessionId/recording/stop",
+      "permission": "telehealth.recordings.start",
+      "purpose": "Stop recording"
+    }
+  ]
+}

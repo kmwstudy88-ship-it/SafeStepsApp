@@ -1,0 +1,102 @@
+{
+  "generatedAt": "2026-10-19T00:22:39.241Z",
+  "status": "ready",
+  "summary": {
+    "blockingIssueCount": 0,
+    "blockingIssues": [],
+    "counts": {
+      "lessons": 241,
+      "modules": 108,
+      "topics": 328
+    }
+  },
+  "validations": {
+    "ids": {
+      "duplicateLessonIds": [],
+      "duplicateModuleIds": [],
+      "duplicateTopicIds": [],
+      "lessonIdFileNameMismatches": []
+    },
+    "duplicateLessons": {
+      "duplicateHashes": [],
+      "duplicateHashSample": []
+    },
+    "lessonOrdering": {
+      "modulesWithOutOfOrderLessonNumbers": [],
+      "modulesWithNoLessonLinks": 0
+    },
+    "requiredTextFields": {
+      "lessonsMissingRequiredFields": [],
+      "lessonsWithPlaceholderOrGenericContent": [],
+      "modulesMissingRequiredFields": [],
+      "topicsMissingRequiredFields": []
+    },
+    "topicModuleLinks": {
+      "unresolvedTopicModules": [],
+      "topicsWithEmptyModules": 0
+    },
+    "moduleLessonLinks": {
+      "unresolvedModuleLessons": []
+    },
+    "assets": {
+      "foundCount": 0,
+      "missingCount": 0,
+      "missing": []
+    },
+    "masterIndex": {
+      "path": "src/safesteps/lessons/master-index.json",
+      "issues": []
+    },
+    "schema": {
+      "path": "schema/curriculum-schema.json",
+      "issues": []
+    },
+    "secureAttachment": {
+      "path": "topics/secure_attachment.json",
+      "moduleCount": 2,
+      "modules": [
+        "module_trauma_attachment_and_child_development",
+        "module_relationship_skills"
+      ]
+    },
+    "sharedFiles": {
+      "apiClientBytes": 2198,
+      "modelsBytes": 5314
+    },
+    "externalSources": {
+      "availableCount": 0,
+      "totalCount": 4,
+      "sources": [
+        {
+          "label": "Lessons 1 to 47",
+          "path": "C:\\Users\\Miss&MrRandomCunts\\Downloads\\NEW READY TO UPLOAD Courses &  Content\\LESSONS\\safesteps_lessons_1_to_47.json",
+          "available": false,
+          "error": "missing"
+        },
+        {
+          "label": "Lessons 252 to 466",
+          "path": "C:\\Users\\Miss&MrRandomCunts\\Downloads\\NEW READY TO UPLOAD Courses &  Content\\LESSONS\\safesteps_lessons_30_to_40_min_batch_252_to_466.json",
+          "available": false,
+          "error": "missing"
+        },
+        {
+          "label": "Lessons 468 to 780",
+          "path": "C:\\Users\\Miss&MrRandomCunts\\Downloads\\NEW READY TO UPLOAD Courses &  Content\\LESSONS\\safesteps_lessons_30_to_40_min_batch_468_to_780.json",
+          "available": false,
+          "error": "missing"
+        },
+        {
+          "label": "Parent challenges",
+          "path": "C:\\Users\\Miss&MrRandomCunts\\Downloads\\NEW READY TO UPLOAD Courses &  Content\\safesteps_parent_challenges_pack\\safesteps_parent_challenges.json",
+          "available": false,
+          "error": "missing"
+        }
+      ]
+    },
+    "importVersions": {
+      "hasImports": false,
+      "manifests": [],
+      "conflictingVersionSets": []
+    }
+  }
+}

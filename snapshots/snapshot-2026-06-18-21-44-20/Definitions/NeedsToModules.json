@@ -1,0 +1,24 @@
+﻿{
+  "needsToModules": {
+    "emotional_regulation": ["PP-SKILLS-01","PP-SKILLS-14","PP-SKILLS-24"],
+    "contact_behaviour": ["PP-SKILLS-44","PP-SKILLS-45","PP-SKILLS-59"],
+    "insight_child_impact": ["PP-SKILLS-03","PP-SKILLS-15","PP-SKILLS-95"],
+    "routine_mornings": ["PP-SKILLS-06","PP-SKILLS-33"],
+    "substance_use_support": ["PP-SKILLS-13","PP-SKILLS-40","PP-SKILLS-60"],
+    "risk_management": ["PP-SKILLS-18","PP-SKILLS-35","PP-SKILLS-46"],
+    "protective_decision_making": ["PP-SKILLS-35","PP-SKILLS-38","PP-SKILLS-46"],
+    "safety_planning": ["PP-SKILLS-16","PP-SKILLS-27","PP-SKILLS-60"],
+    "contact_boundaries": ["PP-SKILLS-44","PP-SKILLS-31"],
+    "trauma_responses": ["PP-SKILLS-07","PP-SKILLS-41","PP-SKILLS-82"],
+    "child_anxiety": ["PP-SKILLS-51","PP-SKILLS-71"],
+    "child_shutdown": ["PP-SKILLS-72","PP-SKILLS-84"],
+    "child_regression": ["PP-SKILLS-67","PP-SKILLS-94"],
+    "anger_management": ["PP-SKILLS-78","PP-SKILLS-62"],
+    "co_parenting": ["PP-SKILLS-09","PP-SKILLS-31"],
+    "fatherhood": ["PP-SKILLS-10"],
+    "cultural_identity": ["PP-SKILLS-11"],
+    "relapse_risk": ["PP-SKILLS-40","PP-SKILLS-60"],
+    "emotional_safety": ["PP-SKILLS-23","PP-SKILLS-47"],
+    "attachment_support": ["PP-SKILLS-28","PP-SKILLS-49"]
+  }
+}

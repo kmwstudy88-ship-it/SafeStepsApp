@@ -1,0 +1,5 @@
+-- Remote migration history placeholder.
+-- This version is already marked applied in the linked Supabase project, but
+-- the original SQL body was not present in this repository when migration
+-- history was reconciled. Keep this file so local migration versions match
+-- remote history and future db push operations can proceed.

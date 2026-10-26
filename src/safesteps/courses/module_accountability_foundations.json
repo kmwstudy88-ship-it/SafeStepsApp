@@ -1,0 +1,24 @@
+{
+  "id": "module_accountability_foundations",
+  "title": "Accountability Foundations",
+  "description": "This module builds foundational understanding of personal accountability, responsibility for impact on children and family safety, and non-defensive reflection.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "accountability",
+    "responsibility",
+    "child safety",
+    "reflective parenting"
+  ],
+  "outcomes": [
+    "Recognise the difference between intent and impact on children and family members",
+    "Identify minimisation, blame-shifting, and justification patterns",
+    "Practice clear, non-defensive accountability in everyday parenting and casework contexts"
+  ],
+  "lessons": [
+    "lesson_accountability_frameworks",
+    "challenging_minimisation",
+    "interrupting_violent_patterns"
+  ],
+  "content": []
+}

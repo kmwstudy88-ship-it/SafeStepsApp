@@ -1,0 +1,75 @@
+{
+  "progression_map_id": "safesteps_scenario_difficulty_progression_v1",
+  "version": "1.0.0",
+  "dimensions": [
+    "emotional_intensity",
+    "complexity",
+    "relational_layers",
+    "safety_risk",
+    "cognitive_load"
+  ],
+  "levels": [
+    {
+      "level_id": "L1",
+      "label": "Foundational",
+      "description": "Low emotional intensity, single-layer scenarios, minimal risk.",
+      "thresholds": {
+        "emotional_intensity_max": 2,
+        "complexity_max": 2,
+        "relational_layers_max": 1,
+        "safety_risk_max": 1,
+        "cognitive_load_max": 2
+      }
+    },
+    {
+      "level_id": "L2",
+      "label": "Developing",
+      "description": "Moderate emotional intensity, some relational complexity.",
+      "thresholds": {
+        "emotional_intensity_max": 4,
+        "complexity_max": 4,
+        "relational_layers_max": 2,
+        "safety_risk_max": 2,
+        "cognitive_load_max": 4
+      }
+    },
+    {
+      "level_id": "L3",
+      "label": "Advanced",
+      "description": "High emotional intensity, multi-layer scenarios, elevated risk.",
+      "thresholds": {
+        "emotional_intensity_max": 6,
+        "complexity_max": 6,
+        "relational_layers_max": 3,
+        "safety_risk_max": 3,
+        "cognitive_load_max": 6
+      }
+    }
+  ],
+  "scenario_difficulty_mapping": [
+    {
+      "scenario_id": "ER_001",
+      "category": "emotional_regulation",
+      "metrics": {
+        "emotional_intensity": 2,
+        "complexity": 2,
+        "relational_layers": 1,
+        "safety_risk": 1,
+        "cognitive_load": 2
+      },
+      "assigned_level": "L1"
+    },
+    {
+      "scenario_id": "ER_003",
+      "category": "emotional_regulation",
+      "metrics": {
+        "emotional_intensity": 6,
+        "complexity": 6,
+        "relational_layers": 3,
+        "safety_risk": 3,
+        "cognitive_load": 6
+      },
+      "assigned_level": "L3"
+    }
+  ]
+}

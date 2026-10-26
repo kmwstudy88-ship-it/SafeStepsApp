@@ -1,0 +1,46 @@
+{
+  "lessonId": "healthy-boundaries-and-routines-lesson-2",
+  "courseId": "healthy-boundaries-and-routines",
+  "title": "Creating Predictable Routines",
+  "aiFacilitatorAndTeacherScript": {
+    "moduleOverview": "Welcome, AI Facilitator / Teacher. This script provides the complete pedagogical guide for delivering Lesson 2: 'Creating Predictable Routines'. Your goal is to guide participants on how predictable routines reduce stress, support healthy brain development, and transform daily transitions into cooperative experiences[cite: 1].",
+    "timingAndPacing": {
+      "totalDurationMinutes": 30,
+      "breakdown": [
+        {"phase": "Introduction & Hook", "durationMinutes": 5, "description": "Welcome participants, discuss daily household pain points, and introduce the power of predictability."},
+        {"phase": "Core Content Delivery", "durationMinutes": 10, "description": "Explain how routines support brain development (neural pathways for organization and memory) and ease transitions[cite: 1]."},
+        {"phase": "Interactive Reflection & Discussion", "durationMinutes": 8, "description": "Engage participants with reflection questions regarding chaotic parts of their day and child behavior[cite: 1]."},
+        {"phase": "Actionable Activity Assignment", "durationMinutes": 5, "description": "Guide participants on mapping out a simple 3-5 step routine and visual charts[cite: 1]."},
+        {"phase": "Wrap-up & Quiz Prompt", "durationMinutes": 2, "description": "Summarize key concepts and guide learners to the lesson assessment quiz."}
+      ]
+    },
+    "facilitatorDialogueAndPrompts": [
+      {
+        "stage": "Opening",
+        "script": "Welcome back, everyone, to Lesson 2: 'Creating Predictable Routines.' Think about your average morning or bedtime routine. Does it feel smooth, or does it feel like a daily battle? Today we are looking at how simple routines ground children, reduce stress, and signal what comes next[cite: 1]."
+      },
+      {
+        "stage": "Core Concept Explanation",
+        "script": "Routines are much more than just a schedule; they actively support brain development by strengthening neural pathways related to organization, emotional regulation, and memory[cite: 1]. They minimize power struggles and help children transition between activities without constant friction[cite: 1]. Remember, routines don't need to be rigid—they just need to provide consistent structure[cite: 1]."
+      },
+      {
+        "stage": "Guided Reflection Prompt",
+        "script": "Let's reflect on our daily flow. Which parts of the day feel most chaotic for your family[cite: 1]? Have you noticed how your child behaves when routines are predictable versus when things are disorganized[cite: 1]?"
+      },
+      {
+        "stage": "Activity Assignment",
+        "script": "For your practice this week, pick one specific routine—like mornings, bedtime, or meals—and write out a simple 3 to 5 step version, committing to practice it for three days[cite: 1]. You can also partner with your child to create a visual routine chart using drawings or simple words[cite: 1]."
+      }
+    ],
+    "teacherTipsAndTroubleshooting": [
+      {
+        "challenge": "Participant feels overwhelmed trying to structure every minute of the day.",
+        "strategy": "Remind them to start small. They only need to choose *one* routine area to focus on, keeping it to 3-5 manageable steps rather than overhauling the whole day at once."
+      },
+      {
+        "challenge": "Resistance from older children towards visual charts.",
+        "strategy": "Suggest adapting the format—older children can help write or design their own checklists digitally or in a journal instead of traditional picture charts."
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "lessonId": "what-children-need-to-feel-safe-lesson",
+  "courseId": "child-safety-and-wellbeing",
+  "title": "What Children Need to Feel Safe",
+  "durationMinutes": 30,
+  "overview": "Explore the foundational emotional, social, physical, and cognitive requirements children need to feel truly safe, secure, and ready to learn, grow, and thrive.",
+  "timedBreakdown": [
+    {
+      "part": 1,
+      "title": "Introduction & Core Reading",
+      "durationMinutes": 10,
+      "content": [
+        "True safety for a child's developing nervous system is less about the physical absence of danger and more about the presence of a trusting connection.",
+        "Children need four essential experiences from their caregivers—often referred to as being Safe, Seen, Soothed, and Secure.",
+        "Safety spans across physical, social, emotional, and cognitive domains, requiring predictable routines, clear boundaries, and emotional validation."
+      ]
+    },
+    {
+      "part": 2,
+      "title": "Interactive Activities & Tasks",
+      "durationMinutes": 10,
+      "tasks": [
+        "Review your daily family routine and identify one transition or daily rhythm where adding greater predictability could reduce your child's stress.",
+        "Practice validating a child's emotion the next time they experience a big feeling—naming the emotion before trying to fix the problem."
+      ]
+    },
+    {
+      "part": 3,
+      "title": "Reflection Exercise",
+      "durationMinutes": 5,
+      "reflectionQuestions": [
+        "How do you signal to your child that they are safe when they are experiencing overwhelming distress?",
+        "What aspects of your home environment or schedule provide the strongest sense of predictability and security for your child?",
+        "How do you handle moments of repair when emotional conflict or misunderstandings occur?"
+      ]
+    }
+  ],
+  "assessment": {
+    "quiz": [
+      {
+        "question": "True or False: For a child's developing nervous system, safety is purely about the physical absence of danger rather than connection.",
+        "type": "true_false",
+        "answer": false,
+        "explanation": "Safety for a child's developing nervous system isn't just about the absence of danger; it is fundamentally about the presence of connection."
+      },
+      {
+        "question": "What are the four essential experiences (the Four S's) that every child needs from caregivers?",
+        "type": "multiple_choice",
+        "answer": "Safe, Seen, Soothed, and Secure."
+      },
+      {
+        "question": "Why are predictable routines and responsive caregiving essential for children?",
+        "type": "short_answer",
+        "answer": "They build the foundational trust and emotional security required for children to explore, learn, and regulate their stress."
+      }
+    ]
+  },
+  "facilitatorScript": [
+    {
+      "timestamp": "00:00 - 02:00",
+      "section": "Welcome & Introduction",
+      "speaker": "AI Teacher",
+      "dialogue": "Welcome, parents and caregivers! Today, we are focusing on a vital topic: 'What Children Need to Feel Safe.' True safety goes far beyond physical locks or the absence of danger. Today, we'll examine how emotional security, trusting relationships, and predictability form the foundational architecture every child needs to thrive."
+    },
+    {
+      "timestamp": "02:00 - 10:00",
+      "section": "Core Lesson Delivery",
+      "speaker": "AI Teacher",
+      "dialogue": "Let's explore the core concepts. For a child's developing nervous system, safety is about connection. Renowned experts highlight the Four S's: children need to feel Safe from harm, Seen for who they are, Soothed when feelings become too big, and Secure in knowing their caregiver will be consistently present. Safety spans physical, social, emotional, and cognitive domains, and relies heavily on consistent routines, clear boundaries, and emotional validation."
+    },
+    {
+      "timestamp": "10:00 - 20:00",
+      "section": "Guided Tasks & Activities",
+      "speaker": "AI Teacher",
+      "dialogue": "Now it's time to put this into action. Task 1: Review your daily family routine and spot one area—like a chaotic transition time—where adding more predictability could reduce anxiety. Task 2: Practice active listening today by validating your child's feelings and naming their emotions first before jumping in to fix a problem. Take the next 10 minutes to work through these."
+    },
+    {
+      "timestamp": "20:00 - 25:00",
+      "section": "Reflection Exercise",
+      "speaker": "AI Teacher",
+      "dialogue": "Let's take a moment for personal reflection. Ask yourself: How do you signal safety to your child during big meltdowns? What parts of your schedule provide the most predictability? And how do you navigate emotional repair when things get difficult?"
+    },
+    {
+      "timestamp": "25:00 - 30:00",
+      "section": "Assessment Quiz & Wrap-Up",
+      "speaker": "AI Teacher",
+      "dialogue": "Let's finish up with a quick knowledge check. Question 1: True or False—safety for a child's nervous system is only about the absence of physical danger? (Answer: False, it is fundamentally about the presence of connection). Question 2: What are the Four S's that children need? (Answer: Safe, Seen, Soothed, and Secure). Excellent job today building safer, more connected environments!"
+    }
+  ]
+}

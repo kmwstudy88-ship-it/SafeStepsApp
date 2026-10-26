@@ -1,0 +1,176 @@
+{
+  "lessonId": "foundations-of-safe-and-effective-parenting-lesson-4",
+  "courseId": "foundations-of-safe-and-effective-parenting",
+  "title": "Building a Safe Parenting Mindset",
+  "metadata": {
+    "version": "1.0.0",
+    "estimatedDurationMinutes": 30,
+    "targetAudience": "Parents and Caregivers",
+    "prerequisites": []
+  },
+  "aiFacilitatorConfig": {
+    "personaRole": "Warm, empathetic parenting coach grounded in relational safety and emotional self-regulation",
+    "pedagogicalFramework": {
+      "theoreticalBasis": "Relational safety, emotional regulation, and reflective parenting frameworks",
+      "scaffoldingStrategy": "Socratic questioning, reflective prompt guiding, and scaffolded practice"
+    },
+    "pacingConfig": {
+      "openingReflectionMinutes": 5,
+      "coreInstructionMinutes": 10,
+      "interactiveAssessmentsMinutes": 5,
+      "guidedActivityMinutes": 7,
+      "closingReflectionMinutes": 3
+    },
+    "interactionRules": [
+      "Validate the learner's parenting challenges before offering mindset shifts",
+      "Ask one focused reflection question at a time to promote deep processing",
+      "Provide immediate constructive feedback and encouragement on quiz responses"
+    ],
+    "systemPrompts": {
+      "openingGreetingPrompt": "Welcome to Lesson 4: Building a Safe Parenting Mindset. In this 30-minute session, we will explore how self-reflection, emotional awareness, and presence create a safe foundation for your child.",
+      "quizFacilitationPrompt": "Let's test your understanding of key mindset shifts, such as moving from reaction to response and control to connection.",
+      "activityGuidancePrompt": "Take a quiet moment to consider the beliefs you hold around parenting and how you can practice repair after moments of tension.",
+      "closingReflectionPrompt": "As we wrap up today's lesson, reflect on the presence and feeling you want to bring into your relationship with your child."
+    },
+    "safetyAndIntervention": {
+      "sosToolkitTrigger": "Detect emotional distress or frustration and activate immediate self-soothing and support tools"
+    }
+  },
+  "openingReflection": {
+    "prompt": "What does 'safe parenting' mean to you personally, and how do you want your child to feel when they are around you?[cite: 10]",
+    "guidance": "Consider how your internal state and mindset set the tone for safety and connection in your home."
+  },
+  "content": {
+    "overview": "A safe parenting mindset is built on self‑reflection, emotional awareness, and the willingness to grow[cite: 10]. Parenting is not about being perfect; it is about being present, learning from mistakes, and repairing when things go wrong[cite: 10]. Children benefit most from parents who can acknowledge their own emotions and take responsibility for their behaviour[cite: 10].",
+    "coreText": "This lesson helps parents understand how mindset influences daily interactions[cite: 10]. When parents shift from reacting to responding, they create a calmer environment[cite: 10]. When they shift from control to connection, children become more cooperative[cite: 10]. We explore how to build a mindset that supports long‑term change, resilience, and emotional safety[cite: 10].",
+    "keyConcepts": [
+      {
+        "concept": "Presence & Repair over Perfection",
+        "description": "Recognizing that safe parenting focuses on being emotionally present and taking responsibility to repair after mistakes, rather than aiming for perfection[cite: 10]."
+      },
+      {
+        "concept": "Reacting vs. Responding",
+        "description": "Shifting from automatic, emotional reactions to intentional, calm responses to create a peaceful environment[cite: 10]."
+      },
+      {
+        "concept": "Control vs. Connection",
+        "description": "Prioritizing relational connection over strict control, which naturally fosters greater cooperation and resilience in children[cite: 10]."
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "quiz-1",
+      "type": "multiple-choice",
+      "taxonomyLevel": "Knowledge Recall",
+      "question": "According to the lesson, what is a primary quality of a safe parenting mindset?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "Striving to never make mistakes or experience emotional stress.",
+          "isCorrect": false,
+          "explanation": "Parenting is not about being perfect; it is about being present and learning from mistakes[cite: 10]."
+        },
+        {
+          "id": "opt-b",
+          "text": "Self-reflection, emotional awareness, and a willingness to grow and repair[cite: 10].",
+          "isCorrect": true,
+          "explanation": "Correct! Self-reflection, emotional awareness, and taking responsibility for behavior build a safe parenting mindset[cite: 10]."
+        },
+        {
+          "id": "opt-c",
+          "text": "Maintaining strict control over all childhood behaviors at all times.",
+          "isCorrect": false,
+          "explanation": "Shifting away from control toward connection is what promotes cooperation and emotional safety[cite: 10]."
+        }
+      ]
+    },
+    {
+      "id": "quiz-2",
+      "type": "scenario-analysis",
+      "taxonomyLevel": "Applied Understanding",
+      "question": "A parent notices they automatically yell when their child spills a glass of milk. What mindset shift will best help create a calmer environment?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "Shifting from automatic reacting to intentional responding[cite: 10].",
+          "isCorrect": true,
+          "explanation": "Correct! Pausing to move from an emotional reaction to an intentional response creates a calm environment[cite: 10]."
+        },
+        {
+          "id": "opt-b",
+          "text": "Increasing strictness and control so the child never makes another spill.",
+          "isCorrect": false,
+          "explanation": "Focusing heavily on control often increases tension rather than building a safe dynamic[cite: 10]."
+        },
+        {
+          "id": "opt-c",
+          "text": "Ignoring the situation completely to avoid conflict.",
+          "isCorrect": false,
+          "explanation": "Safe parenting involves staying present and addressing moments constructvely through emotional awareness[cite: 10]."
+        }
+      ]
+    }
+  ],
+  "guidedActivities": [
+    {
+      "activityId": "act-1",
+      "title": "Parenting Belief Reframing",
+      "objective": "Identify unhelpful parenting assumptions and replace them with empowering beliefs.",
+      "estimatedDurationMinutes": 4,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Write down one belief about parenting you want to let go of (e.g., 'I must control every situation')[cite: 10]."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Write down one belief you want to strengthen (e.g., 'Connection builds long-term cooperation')[cite: 10]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Keep this new belief somewhere visible as a daily reminder."
+        }
+      ]
+    },
+    {
+      "activityId": "act-2",
+      "title": "Repair Conversation Practice",
+      "objective": "Build emotional safety by taking responsibility and reconnecting after stress.",
+      "estimatedDurationMinutes": 4,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Identify a recent moment of tension or frustration with your child."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Practice or carry out a repair conversation with your child, acknowledging your reaction and affirming your love[cite: 10]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Observe how taking responsibility affects the feeling of connection between you and your child[cite: 10]."
+        }
+      ]
+    }
+  ],
+  "actionableTakeaways": [
+    "Prioritize presence, learning from mistakes, and repair over trying to be perfect[cite: 10].",
+    "Pause to shift from reacting automatically to responding intentionally[cite: 10].",
+    "Focus on connection rather than strict control to foster natural cooperation and emotional safety[cite: 10]."
+  ],
+  "reflectionQuestions": [
+    {
+      "id": "ref-1",
+      "question": "What mindset do you want to bring into your parenting?[cite: 10]"
+    },
+    {
+      "id": "ref-2",
+      "question": "How do you want your child to feel when they are around you?[cite: 10]"
+    },
+    {
+      "id": "ref-3",
+      "question": "What does ‘safe parenting’ mean to you personally?[cite: 10]"
+    }
+  ]
+}

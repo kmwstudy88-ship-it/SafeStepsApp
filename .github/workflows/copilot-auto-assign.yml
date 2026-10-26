@@ -1,0 +1,19 @@
+name: Copilot Agent Auto-Assign
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  issues: write
+
+jobs:
+  assign-copilot:
+    if: github.event.label.name == 'agent-task'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign Copilot
+        run: gh issue edit "$ISSUE_NUMBER" --add-assignee copilot --repo "$GITHUB_REPOSITORY"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}

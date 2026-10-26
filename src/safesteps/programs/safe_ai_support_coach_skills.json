@@ -1,0 +1,9 @@
+{
+  "id": "safe_ai_support_coach_skills",
+  "topicId": "safe-ai-support-coach-skills",
+  "topicName": "using the safesteps ai support coach safely",
+  "caseworkerSummary": "Explains what the SafeSteps AI coach can and cannot do (no clinical diagnosis, no autonomous reporting, no legal compliance findings) and how to use it for practice and reflection. This topic links directly to module_fatherhood_perinatal_and_support_networks and supports structured reflection, practical skill application, and review-ready evidence.",
+  "modules": [
+    "module_fatherhood_perinatal_and_support_networks"
+  ]
+}

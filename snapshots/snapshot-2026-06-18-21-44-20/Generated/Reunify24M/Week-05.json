@@ -1,0 +1,97 @@
+﻿{
+    "programId":  "REUNIFY-24M",
+    "week":  5,
+    "stageId":  "STAGE-01",
+    "stageName":  "Orientation \u0026 Understanding the Case",
+    "modules":  [
+                    {
+                        "id":  "PP-ENGAGE-01",
+                        "name":  "Understanding Your Current Position",
+                        "goal":  "Clarify where you are without judgment.",
+                        "tasks":  [
+                                      "Write what you believe is happening in your situation",
+                                      "Write what you believe child protection is concerned about",
+                                      "Write what you want for your child long-term"
+                                  ],
+                        "evidence":  [
+                                         "Written reflections",
+                                         "Caseworker acknowledgement"
+                                     ]
+                    },
+                    {
+                        "id":  "PP-REUNIFY-01",
+                        "name":  "Understanding the Reunification Pathway",
+                        "goal":  "Know exactly what reunification requires.",
+                        "tasks":  [
+                                      "List what child protection is worried about",
+                                      "List what you are already doing well",
+                                      "List what you need to strengthen for reunification"
+                                  ],
+                        "evidence":  [
+                                         "Reflections",
+                                         "Caseworker acknowledgement"
+                                     ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "Write what you believe is happening in your situation"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "Write what you believe child protection is concerned about"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "Write what you want for your child long-term"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "List what child protection is worried about"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "List what you are already doing well"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "List what you need to strengthen for reunification"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+
+                                ],
+                     "insight":  [
+                                     "Written reflections",
+                                     "Caseworker acknowledgement",
+                                     "Reflections",
+                                     "Caseworker acknowledgement"
+                                 ],
+                     "behaviour":  [
+
+                                   ]
+                 }
+}

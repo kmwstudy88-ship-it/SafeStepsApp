@@ -1,20 +1,20 @@
-﻿[
-    {
-        "duration":  "variable",
-        "title":  "PARENTING Program",
-        "courseIds":  [
-                          "parenting"
-                      ],
-        "id":  "parenting-program",
-        "weeks":  52
-    },
-    {
-        "duration":  "variable",
-        "title":  "MH Program",
-        "courseIds":  [
-                          "mh"
-                      ],
-        "id":  "mh-program",
-        "weeks":  52
-    }
+[
+  {
+    "duration": "variable",
+    "title": "PARENTING Program",
+    "courseIds": [
+      "parenting"
+    ],
+    "id": "parenting-program",
+    "weeks": 52
+  },
+  {
+    "duration": "variable",
+    "title": "MH Program",
+    "courseIds": [
+      "mh"
+    ],
+    "id": "mh-program",
+    "weeks": 52
+  }
 ]

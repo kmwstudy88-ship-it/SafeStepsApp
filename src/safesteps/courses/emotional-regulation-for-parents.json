@@ -1,0 +1,22 @@
+{
+  "id": "emotional-regulation-for-parents",
+  "title": "Emotional Regulation for Parents",
+  "description": "Core program course helping parents recognise triggers, calm the nervous system, and co-regulate with children under stress.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "emotional-regulation-for-parents"
+  ],
+  "outcomes": [
+    "Understand the core principles of emotional regulation for parents",
+    "Apply emotional regulation for parents safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "co_regulation_basics",
+    "regulation_strategies",
+    "lesson_managing_parental_stress"
+  ],
+  "content": []
+}

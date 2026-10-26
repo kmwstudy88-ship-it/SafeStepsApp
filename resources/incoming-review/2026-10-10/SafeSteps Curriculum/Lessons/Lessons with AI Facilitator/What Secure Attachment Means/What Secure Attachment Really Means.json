@@ -1,0 +1,902 @@
+{
+  "courseId": "building-secure-attachment",
+  "courseTitle": "Building Secure Attachment & Relational Resilience",
+  "targetAudience": "Parents and Caregivers",
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "lessonId": "building-secure-attachment-lesson-1",
+      "courseId": "building-secure-attachment",
+      "title": "What Secure Attachment Really Means",
+      "metadata": {
+        "version": "1.0.0",
+        "estimatedDurationMinutes": 30,
+        "targetAudience": "Parents and Caregivers",
+        "prerequisites": []
+      },
+      "aiFacilitatorConfig": {
+        "personaRole": "Warm, empathetic parenting coach grounded in attachment theory and relational frameworks",
+        "pedagogicalFramework": {
+          "theoreticalBasis": "Attachment theory and relational frameworks guiding users from insecure loops to earned security",
+          "scaffoldingStrategy": "Socratic questioning, active listening validation, and scaffolded instruction"
+        },
+        "pacingConfig": {
+          "openingReflectionMinutes": 5,
+          "coreInstructionMinutes": 10,
+          "interactiveAssessmentsMinutes": 5,
+          "guidedActivityMinutes": 7,
+          "closingReflectionMinutes": 3
+        },
+        "interactionRules": [
+          "Validate learner emotions before offering pedagogical guidance",
+          "Ask one follow-up question at a time to prevent cognitive overload",
+          "Provide immediate constructive feedback on assessment responses"
+        ],
+        "systemPrompts": {
+          "openingGreetingPrompt": "Welcome to Lesson 1: What Secure Attachment Really Means. In this 30-minute session, we will explore the foundational elements of emotional safety, consistency, and connection with your child.",
+          "quizFacilitationPrompt": "Let's review key principles of secure attachment and relational trust through these practical scenarios.",
+          "activityGuidancePrompt": "Take a moment to prepare for your undivided attention exercise. Removing distractions helps send a clear message of availability.",
+          "closingReflectionPrompt": "As we conclude today's lesson, reflect on how your own upbringing influences your current dynamic with your child."
+        },
+        "safetyAndIntervention": {
+          "sosToolkitTrigger": "Detect distress signals and activate the SOS toolkit for immediate, in-the-moment support"
+        }
+      },
+      "openingReflection": {
+        "prompt": "What does safety mean to you in relationships, and how did your caregivers respond to your emotions growing up?",
+        "guidance": "Reflect on your personal history of emotional safety to better understand your natural tendencies when responding to your child's needs."
+      },
+      "content": {
+        "overview": "Secure attachment is the deep sense a child has that their caregiver is emotionally available, responsive, and safe. It is not about being perfect or constantly cheerful. It is about being consistent enough that a child trusts you will return, listen, and care. Children with secure attachment explore more confidently, recover from stress more quickly, and form healthier relationships throughout life.",
+        "coreText": "Many parents worry that they have already damaged attachment, but attachment is flexible and repairable. Even if a parent has made mistakes, secure attachment can still form through repeated moments of connection, comfort, and responsiveness. What matters most is the pattern over time, not isolated moments. This lesson helps parents understand the foundations of secure attachment and why it is one of the strongest predictors of a child’s emotional wellbeing.",
+        "keyConcepts": [
+          {
+            "concept": "Emotional Availability & Consistency",
+            "description": "Providing dependable presence and responsiveness so the child trusts that their caregiver is a safe base."
+          },
+          {
+            "concept": "Patterns Over Perfection",
+            "description": "Recognizing that secure attachment is built over cumulative daily moments rather than flawless parenting."
+          },
+          {
+            "concept": "Flexibility & Repairability",
+            "description": "Understanding that attachment bond dynamics can be reshaped and restored through ongoing connection and comfort."
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "id": "quiz-1-1",
+          "type": "multiple-choice",
+          "taxonomyLevel": "Knowledge Recall",
+          "question": "What is the core foundation of secure attachment between a parent and child?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Never making mistakes and maintaining a cheerful mood at all times.",
+              "isCorrect": false,
+              "explanation": "Secure attachment is not about perfection or being constantly cheerful, but about overall consistency and responsiveness."
+            },
+            {
+              "id": "opt-b",
+              "text": "A deep sense that the caregiver is emotionally available, responsive, and safe.",
+              "isCorrect": true,
+              "explanation": "Correct! Secure attachment comes from a child's trust that their caregiver is dependable and safe."
+            },
+            {
+              "id": "opt-c",
+              "text": "Ensuring the child never experiences stress or difficult emotions.",
+              "isCorrect": false,
+              "explanation": "Secure attachment helps children recover from stress quickly, rather than shielding them from all stress."
+            }
+          ]
+        },
+        {
+          "id": "quiz-1-2",
+          "type": "scenario-analysis",
+          "taxonomyLevel": "Applied Understanding",
+          "question": "A parent feels guilty after losing their patience with their child during a difficult morning. Based on attachment theory, what is the most accurate perspective?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "The attachment bond has been permanently damaged by this mistake.",
+              "isCorrect": false,
+              "explanation": "Attachment is flexible and repairable; isolated mistakes do not destroy a bond."
+            },
+            {
+              "id": "opt-b",
+              "text": "What matters most is the pattern over time, and secure attachment forms through ongoing connection and responsiveness.",
+              "isCorrect": true,
+              "explanation": "Correct! Cumulative patterns over time are what shape secure attachment, not single moments of imperfection."
+            },
+            {
+              "id": "opt-c",
+              "text": "The parent should ignore the incident to avoid making the child worry.",
+              "isCorrect": false,
+              "explanation": "Acknowledging moments and reconnecting builds trust and repairs the dynamic."
+            }
+          ]
+        }
+      ],
+      "guidedActivities": [
+        {
+          "activityId": "act-1-1",
+          "title": "Undivided Attention Practice",
+          "objective": "Provide uninterrupted presence to signal safety and emotional availability.",
+          "estimatedDurationMinutes": 5,
+          "steps": [
+            {
+              "stepNumber": 1,
+              "instruction": "Set aside five minutes today to give your child your full, undivided attention (put away phones and distractions)."
+            },
+            {
+              "stepNumber": 2,
+              "instruction": "Engage in whatever activity your child chooses without redirecting them."
+            },
+            {
+              "stepNumber": 3,
+              "instruction": "Notice how your child responds to your complete availability."
+            }
+          ]
+        },
+        {
+          "activityId": "act-1-2",
+          "title": "Comfort Seeking Reflection",
+          "objective": "Identify and evaluate responses to a child's bid for comfort.",
+          "estimatedDurationMinutes": 3,
+          "steps": [
+            {
+              "stepNumber": 1,
+              "instruction": "Identify one specific moment this week when your child sought comfort or reassurance from you."
+            },
+            {
+              "stepNumber": 2,
+              "instruction": "Reflect on your emotional state and verbal/physical response during that interaction."
+            },
+            {
+              "stepNumber": 3,
+              "instruction": "Consider small adjustments that could enhance emotional safety during future bids for comfort."
+            }
+          ]
+        }
+      ],
+      "actionableTakeaways": [
+        "Focus on consistency and emotional availability rather than striving for perfection.",
+        "Remember that attachment is built through patterns over time, allowing for growth and repair.",
+        "Dedicated moments of undivided attention strengthen a child's trust and sense of safety."
+      ],
+      "reflectionQuestions": [
+        {
+          "id": "ref-1-1",
+          "question": "What does safety mean to you in relationships?"
+        },
+        {
+          "id": "ref-1-2",
+          "question": "How did your caregivers respond to your emotions growing up?"
+        },
+        {
+          "id": "ref-1-3",
+          "question": "What moments help your child feel most connected to you?"
+        }
+      ]
+    },
+    {
+      "lessonId": "building-secure-attachment-lesson-2",
+      "courseId": "building-secure-attachment",
+      "title": "The Power of Attunement",
+      "metadata": {
+        "version": "1.0.0",
+        "estimatedDurationMinutes": 30,
+        "targetAudience": "Parents and Caregivers",
+        "prerequisites": [
+          "building-secure-attachment-lesson-1"
+        ]
+      },
+      "aiFacilitatorConfig": {
+        "personaRole": "Warm, empathetic parenting coach grounded in attachment theory and relational frameworks",
+        "pedagogicalFramework": {
+          "theoreticalBasis": "Attachment theory and relational frameworks guiding users from insecure loops to earned security",
+          "scaffoldingStrategy": "Socratic questioning, active listening validation, and scaffolded instruction"
+        },
+        "pacingConfig": {
+          "openingReflectionMinutes": 5,
+          "coreInstructionMinutes": 10,
+          "interactiveAssessmentsMinutes": 5,
+          "guidedActivityMinutes": 7,
+          "closingReflectionMinutes": 3
+        },
+        "interactionRules": [
+          "Validate learner emotions before offering pedagogical guidance",
+          "Ask one follow-up question at a time to prevent cognitive overload",
+          "Provide immediate constructive feedback on assessment responses"
+        ],
+        "systemPrompts": {
+          "openingGreetingPrompt": "Welcome to Lesson 2: The Power of Attunement. In this 30-minute session, we will explore how slowing down to observe your child's emotional state creates the bedrock of secure attachment.",
+          "quizFacilitationPrompt": "Let's test your understanding of emotional attunement and non-verbal awareness through these practical scenarios.",
+          "activityGuidancePrompt": "Take your time with these observation exercises. Noticing non-verbal cues before responding builds strong emotional connection.",
+          "closingReflectionPrompt": "As we conclude today's session, take a moment to reflect on what daily barriers might get in the way of being fully attuned to your child."
+        },
+        "safetyAndIntervention": {
+          "sosToolkitTrigger": "Detect distress signals and activate the SOS toolkit for immediate, in-the-moment support"
+        }
+      },
+      "openingReflection": {
+        "prompt": "How easy or difficult is it for you to notice your child’s emotional cues during a busy or stressful day?",
+        "guidance": "Consider what common obstacles—such as stress, multitasking, or past emotional habits—might get in the way of being fully present and attuned."
+      },
+      "content": {
+        "overview": "Attunement is the ability to notice, understand, and respond to your child’s emotional state. It is the heart of secure attachment. When a parent is attuned, the child feels seen and understood. This does not require mind‑reading; it simply means paying attention to cues such as tone, posture, facial expressions, and behaviour.",
+        "coreText": "Children who experience attunement learn that their feelings matter. They become better at recognising and expressing emotions. When attunement is missing, children may feel confused, alone, or overwhelmed. But attunement can be learned and strengthened at any stage of parenting. This lesson teaches parents how to slow down, observe, and respond in ways that build emotional connection.",
+        "keyConcepts": [
+          {
+            "concept": "Non-Verbal Cues Reading",
+            "description": "Paying deliberate attention to subtle indicators such as tone, body posture, facial expressions, and sudden behavior shifts."
+          },
+          {
+            "concept": "Emotional Validation",
+            "description": "Acknowledging a child's internal state with validating language to signal that their feelings are real and safe."
+          },
+          {
+            "concept": "Learnable Relational Skill",
+            "description": "Recognizing that attunement is not an inherent personality trait, but a practice that can be developed over time."
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "id": "quiz-2-1",
+          "type": "multiple-choice",
+          "taxonomyLevel": "Knowledge Recall",
+          "question": "What does emotional attunement require from a parent?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "The ability to read their child's mind accurately in every situation.",
+              "isCorrect": false,
+              "explanation": "Attunement does not require mind-reading; it simply means paying attention to observable emotional cues."
+            },
+            {
+              "id": "opt-b",
+              "text": "Slowing down and paying attention to cues like tone, posture, facial expressions, and behavior.",
+              "isCorrect": true,
+              "explanation": "Correct! Attunement is about noticing, understanding, and responding to emotional cues."
+            },
+            {
+              "id": "opt-c",
+              "text": "Immediately fixing every negative emotion the child experiences.",
+              "isCorrect": false,
+              "explanation": "Attunement is about helping the child feel seen and understood, not instantly erasing difficult feelings."
+            }
+          ]
+        },
+        {
+          "id": "quiz-2-2",
+          "type": "scenario-analysis",
+          "taxonomyLevel": "Applied Understanding",
+          "question": "A child comes home from school slumped over, quiet, and drops their backpack on the floor. Which response best demonstrates emotional attunement?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "'Pick up your backpack right now and clean up your mess.'",
+              "isCorrect": false,
+              "explanation": "Focusing solely on behavior misses the child's underlying emotional cues and state."
+            },
+            {
+              "id": "opt-b",
+              "text": "'I see you seem down or exhausted today. I'm here if you want to sit together for a moment.'",
+              "isCorrect": true,
+              "explanation": "Correct! This validates the child's body posture and energy level, helping them feel seen and understood."
+            },
+            {
+              "id": "opt-c",
+              "text": "'Cheer up! Tomorrow is going to be a much better day.'",
+              "isCorrect": false,
+              "explanation": "Bypassing or trying to quickly fix the feeling can make the child feel alone or unheard."
+            }
+          ]
+        }
+      ],
+      "guidedActivities": [
+        {
+          "activityId": "act-2-1",
+          "title": "Silent Observation Practice",
+          "objective": "Practice observing non-verbal emotional cues without intervening or interrupting.",
+          "estimatedDurationMinutes": 4,
+          "steps": [
+            {
+              "stepNumber": 1,
+              "instruction": "Watch your child for two minutes today without speaking."
+            },
+            {
+              "stepNumber": 2,
+              "instruction": "Pay close attention to their mood, energy level, facial expression, and body language."
+            },
+            {
+              "stepNumber": 3,
+              "instruction": "Mentally note what emotional state their body posture or cues might be communicating."
+            }
+          ]
+        },
+        {
+          "activityId": "act-2-2",
+          "title": "Validation Response Practice",
+          "objective": "Deliver a concise, non-judgmental validating phrase in response to an emotional cue.",
+          "estimatedDurationMinutes": 3,
+          "steps": [
+            {
+              "stepNumber": 1,
+              "instruction": "Notice the next emotional cue your child expresses (e.g., frustration, sadness, disappointment)."
+            },
+            {
+              "stepNumber": 2,
+              "instruction": "Respond with a simple validating phrase such as 'I see you're upset' or 'That was disappointing.'"
+            },
+            {
+              "stepNumber": 3,
+              "instruction": "Pause and observe your child's reaction when they feel understood."
+            }
+          ]
+        }
+      ],
+      "actionableTakeaways": [
+        "Attunement starts with slowing down to notice tone, body language, and posture.",
+        "Validating emotional states helps children learn that their feelings matter.",
+        "Attunement is a skill that can be learned and strengthened at any stage of parenting."
+      ],
+      "reflectionQuestions": [
+        {
+          "id": "ref-2-1",
+          "question": "How easy or difficult is it for you to notice your child’s emotional cues?"
+        },
+        {
+          "id": "ref-2-2",
+          "question": "What gets in the way of attunement for you—stress, distractions, past experiences?"
+        },
+        {
+          "id": "ref-2-3",
+          "question": "How does your child react when they feel understood?"
+        }
+      ]
+    },
+    {
+      "lessonId": "building-secure-attachment-lesson-3",
+      "courseId": "building-secure-attachment",
+      "title": "Repairing Attachment Ruptures",
+      "metadata": {
+        "version": "1.0.0",
+        "estimatedDurationMinutes": 30,
+        "targetAudience": "Parents and Caregivers",
+        "prerequisites": [
+          "building-secure-attachment-lesson-1",
+          "building-secure-attachment-lesson-2"
+        ]
+      },
+      "aiFacilitatorConfig": {
+        "personaRole": "Warm, empathetic parenting coach grounded in attachment theory and relational frameworks",
+        "pedagogicalFramework": {
+          "theoreticalBasis": "Attachment theory and relational frameworks guiding users from insecure loops to earned security",
+          "scaffoldingStrategy": "Socratic questioning, active listening validation, and scaffolded instruction"
+        },
+        "pacingConfig": {
+          "openingReflectionMinutes": 5,
+          "coreInstructionMinutes": 10,
+          "interactiveAssessmentsMinutes": 5,
+          "guidedActivityMinutes": 7,
+          "closingReflectionMinutes": 3
+        },
+        "interactionRules": [
+          "Validate learner emotions before offering pedagogical guidance",
+          "Ask one follow-up question at a time to prevent cognitive overload",
+          "Provide immediate constructive feedback on assessment responses"
+        ],
+        "systemPrompts": {
+          "openingGreetingPrompt": "Welcome to Lesson 3: Repairing Attachment Ruptures. Today we will focus on how taking ownership after conflict builds deeper trust and resilience with your child.",
+          "quizFacilitationPrompt": "Let's explore common conflict dynamics and practice effective repair steps.",
+          "activityGuidancePrompt": "Practice drafting a simple, genuine repair phrase that owns your reaction without placing blame on your child.",
+          "closingReflectionPrompt": "Reflect on how taking initiative to repair ruptures builds long-term emotional safety in your household."
+        },
+        "safetyAndIntervention": {
+          "sosToolkitTrigger": "Detect distress signals and activate the SOS toolkit for immediate, in-the-moment support"
+        }
+      },
+      "openingReflection": {
+        "prompt": "How do you typically feel or respond after a disconnection or argument with your child?[cite: 8]",
+        "guidance": "Consider whether shame, defensiveness, or fear of losing authority gets in the way of initiating repair[cite: 8]."
+      },
+      "content": {
+        "overview": "Conflict, misunderstandings, and lost patience are inevitable in parenting[cite: 8]. What protects attachment is not preventing ruptures altogether, but repairing them quickly and sincerely[cite: 8]. Repair is the act of re-establishing connection after a moment of stress or disconnection[cite: 8].",
+        "coreText": "When a parent initiates repair, it teaches the child that relationships can survive conflict and that difficult feelings do not end love[cite: 8]. Effective repair involves taking ownership of your own reaction, validating the child's feelings, and restoring emotional warmth without demanding an immediate apology[cite: 8]. Over time, frequent repair builds emotional resilience and trust[cite: 8].",
+        "keyConcepts": [
+          {
+            "concept": "Inevitability of Rupture",
+            "description": "Understanding that disconnections happen in every healthy relationship and are opportunities for growth[cite: 8]."
+          },
+          {
+            "concept": "Parent-Led Ownership",
+            "description": "Taking full responsibility for your adult reactions rather than shifting blame onto the child's behavior[cite: 8]."
+          },
+          {
+            "concept": "Relational Repair Sequence",
+            "description": "Slowing down, acknowledging what happened, validating impact, and reconnecting with physical or verbal warmth[cite: 8]."
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "id": "quiz-3-1",
+          "type": "multiple-choice",
+          "taxonomyLevel": "Knowledge Recall",
+          "question": "What is the primary purpose of initiating repair after a conflict with a child?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "To prove to the child that the parent was right all along.",
+              "isCorrect": false,
+              "explanation": "Repair is not about winning an argument; it is about re-establishing emotional connection and safety[cite: 8]."
+            },
+            {
+              "id": "opt-b",
+              "text": "To re-establish connection, take ownership, and show that love survives conflict[cite: 8].",
+              "isCorrect": true,
+              "explanation": "Correct! Repair teaches children that relationships are resilient and that conflict does not mean abandonment[cite: 8]."
+            },
+            {
+              "id": "opt-c",
+              "text": "To demand an immediate apology from the child for their bad behavior.",
+              "isCorrect": false,
+              "explanation": "Repair requires the parent to take ownership of their own reactions first without conditional demands[cite: 8]."
+            }
+          ]
+        },
+        {
+          "id": "quiz-3-2",
+          "type": "scenario-analysis",
+          "taxonomyLevel": "Applied Understanding",
+          "question": "A parent yells after a long, frustrating evening. Once calm, what is the most constructive repair step?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "'I wouldn't have yelled if you had listened to me the first time.'",
+              "isCorrect": false,
+              "explanation": "This shifts responsibility onto the child rather than taking ownership of adult emotional regulation[cite: 8]."
+            },
+            {
+              "id": "opt-b",
+              "text": "'I'm sorry I raised my voice earlier. I was overwhelmed, but it wasn't your fault, and I love you.'[cite: 8]",
+              "isCorrect": true,
+              "explanation": "Correct! This owns the reaction, removes blame from the child, and restores warmth[cite: 8]."
+            },
+            {
+              "id": "opt-c",
+              "text": "Act as if nothing happened and buy the child a toy to make up for it.",
+              "isCorrect": false,
+              "explanation": "Bypassing the rupture misses the opportunity to model healthy emotional repair and accountability[cite: 8]."
+            }
+          ]
+        }
+      ],
+      "guidedActivities": [
+        {
+          "activityId": "act-3-1",
+          "title": "Repair Scripting Practice",
+          "objective": "Formulate a clear, owner-focused repair phrase for future disconnections.",
+          "estimatedDurationMinutes": 4,
+          "steps": [
+            {
+              "stepNumber": 1,
+              "instruction": "Recall a recent minor rupture or moment of lost patience[cite: 8]."
+            },
+            {
+              "stepNumber": 2,
+              "instruction": "Draft a short repair statement starting with: 'I'm sorry for how I responded when...'[cite: 8]"
+            },
+            {
+              "stepNumber": 3,
+              "instruction": "Ensure the statement contains zero blame toward the child (avoid using 'because you did...')[cite: 8]."
+            }
+          ]
+        },
+        {
+          "activityId": "act-3-2",
+          "title": "Active Repair Practice",
+          "objective": "Execute a genuine repair conversation following a rupture.",
+          "estimatedDurationMinutes": 3,
+          "steps": [
+            {
+              "stepNumber": 1,
+              "instruction": "Identify an unresolved tension or recent rupture with your child[cite: 8]."
+            },
+            {
+              "stepNumber": 2,
+              "instruction": "Approach your child when both of you are calm and deliver your sincere repair statement[cite: 8]."
+            },
+            {
+              "stepNumber": 3,
+              "instruction": "Listen actively to their response without defending yourself[cite: 8]."
+            }
+          ]
+        }
+      ],
+      "actionableTakeaways": [
+        "Ruptures are natural; prompt, parent-led repair is what protects secure attachment[cite: 8].",
+        "Take ownership of your reactions without blaming the child's behavior[cite: 8].",
+        "Demonstrating repair models healthy conflict resolution for your child's future relationships[cite: 8]."
+      ],
+      "reflectionQuestions": [
+        {
+          "id": "ref-3-1",
+          "question": "What stops you from initiating repair after a disruption or argument?[cite: 8]"
+        },
+        {
+          "id": "ref-3-2",
+          "question": "How did your caregivers handle repair or apologies when you were growing up?[cite: 8]"
+        },
+        {
+          "id": "ref-3-3",
+          "question": "How does your child react when you sincerely apologize or reconnect?[cite: 8]"
+        }
+      ]
+    },
+    {
+      "lessonId": "building-secure-attachment-lesson-4",
+      "courseId": "building-secure-attachment",
+      "title": "Managing Parental Triggers & Emotional Regulation",
+      "metadata": {
+        "version": "1.0.0",
+        "estimatedDurationMinutes": 30,
+        "targetAudience": "Parents and Caregivers",
+        "prerequisites": [
+          "building-secure-attachment-lesson-1",
+          "building-secure-attachment-lesson-2",
+          "building-secure-attachment-lesson-3"
+        ]
+      },
+      "aiFacilitatorConfig": {
+        "personaRole": "Warm, empathetic parenting coach grounded in attachment theory and relational frameworks",
+        "pedagogicalFramework": {
+          "theoreticalBasis": "Attachment theory and relational frameworks guiding users from insecure loops to earned security",
+          "scaffoldingStrategy": "Socratic questioning, active listening validation, and scaffolded instruction"
+        },
+        "pacingConfig": {
+          "openingReflectionMinutes": 5,
+          "coreInstructionMinutes": 10,
+          "interactiveAssessmentsMinutes": 5,
+          "guidedActivityMinutes": 7,
+          "closingReflectionMinutes": 3
+        },
+        "interactionRules": [
+          "Validate learner emotions before offering pedagogical guidance",
+          "Ask one follow-up question at a time to prevent cognitive overload",
+          "Provide immediate constructive feedback on assessment responses"
+        ],
+        "systemPrompts": {
+          "openingGreetingPrompt": "Welcome to Lesson 4: Managing Parental Triggers & Emotional Regulation. Today we focus on self-regulation techniques that keep you grounded during stressful parenting moments.",
+          "quizFacilitationPrompt": "Let's examine internal bodily triggers and practice self-soothing strategies.",
+          "activityGuidancePrompt": "Try this grounding pause. Regulation starts in your nervous system before it transfers to your child.",
+          "closingReflectionPrompt": "As we finish, reflect on how pausing before reacting alters the emotional climate of your home."
+        },
+        "safetyAndIntervention": {
+          "sosToolkitTrigger": "Detect distress signals and activate the SOS toolkit for immediate, in-the-moment support"
+        }
+      },
+      "openingReflection": {
+        "prompt": "What specific child behaviors (e.g., whining, tantrums, defiance) instantly raise your stress levels or trigger a strong reaction?[cite: 5]",
+        "guidance": "Identify bodily sensations—like a racing heart or tight shoulders—that tell you you are becoming triggered[cite: 5]."
+      },
+      "content": {
+        "overview": "To offer co-regulation to a child, parents must first regulate themselves[cite: 5]. Parental triggers often stem from fatigue, stress, or unexamined past experiences[cite: 5]. Understanding physical warning signs allows parents to pause before reacting impulsively[cite: 5].",
+        "coreText": "Children rely on adult nervous systems to help calm their own[cite: 5]. When a parent remains calm during a child's meltdown, it signals safety[cite: 5]. Learning self-regulation strategies—such as deep breathing, grounding, and self-compassion—enables parents to respond thoughtfully rather than react out of frustration[cite: 5].",
+        "keyConcepts": [
+          {
+            "concept": "Somatic Warning Signals",
+            "description": "Noticing physiological stress indicators (shallow breathing, clenched jaw) before emotional escalation[cite: 5]."
+          },
+          {
+            "concept": "Co-Regulation Baseline",
+            "description": "Recognizing that a calm adult presence provides the necessary nervous system anchor for a dysregulated child[cite: 5]."
+          },
+          {
+            "concept": "The Power of the Pause",
+            "description": "Inserting a brief intentional pause between a child's triggering behavior and your parenting response[cite: 5]."
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "id": "quiz-4-1",
+          "type": "multiple-choice",
+          "taxonomyLevel": "Knowledge Recall",
+          "question": "Why is parent self-regulation essential for building secure attachment?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Parents must show that they never feel angry or frustrated.",
+              "isCorrect": false,
+              "explanation": "Feeling anger is natural; self-regulation is about managing how that anger is expressed[cite: 5]."
+            },
+            {
+              "id": "opt-b",
+              "text": "Children rely on a caregiver's calm nervous system to co-regulate and feel safe[cite: 5].",
+              "isCorrect": true,
+              "explanation": "Correct! A child's emotional regulation depends heavily on co-regulating with a calm adult[cite: 5]."
+            },
+            {
+              "id": "opt-c",
+              "text": "It guarantees that children will immediately stop throwing tantrums.",
+              "isCorrect": false,
+              "explanation": "Self-regulation changes the parent's response, which creates safety, but does not instantly suppress child emotions[cite: 5]."
+            }
+          ]
+        },
+        {
+          "id": "quiz-4-2",
+          "type": "scenario-analysis",
+          "taxonomyLevel": "Applied Understanding",
+          "question": "Your child throws a toy across the room in frustration. You feel your pulse quicken and fists clench. What is the most effective immediate step?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Yell loudly to establish control and stop the behavior immediately.",
+              "isCorrect": false,
+              "explanation": "Yelling escalates the nervous system for both parent and child, damaging emotional safety[cite: 5]."
+            },
+            {
+              "id": "opt-b",
+              "text": "Pause, take a slow grounding breath, and steady your own body before addressing the situation[cite: 5].",
+              "isCorrect": true,
+              "explanation": "Correct! Pausing to regulate your nervous system allows you to respond with calm clarity[cite: 5]."
+            },
+            {
+              "id": "opt-c",
+              "text": "Send the child to their room for the rest of the day without speaking.",
+              "isCorrect": false,
+              "explanation": "Isolating the child while dysregulated prevents co-regulation and connection[cite: 5]."
+            }
+          ]
+        }
+      ],
+      "guidedActivities": [
+        {
+          "activityId": "act-4-1",
+          "title": "Somatic Scan & Grounding Breath",
+          "objective": "Identify physical stress cues and utilize a calming breath protocol.",
+          "estimatedDurationMinutes": 4,
+          "steps": [
+            {
+              "stepNumber": 1,
+              "instruction": "Close your eyes and scan your body for hidden tension (shoulders, jaw, stomach)[cite: 5]."
+            },
+            {
+              "stepNumber": 2,
+              "instruction": "Take 3 deep, slow breaths: inhale for 4 seconds, hold for 2 seconds, and exhale for 6 seconds[cite: 5]."
+            },
+            {
+              "stepNumber": 3,
+              "instruction": "Feel your feet grounded firmly on the floor and release physical tightness[cite: 5]."
+            }
+          ]
+        },
+        {
+          "activityId": "act-4-2",
+          "title": "Trigger Response Planning",
+          "objective": "Develop a pre-planned strategy for high-stress parenting moments.",
+          "estimatedDurationMinutes": 3,
+          "steps": [
+            {
+              "stepNumber": 1,
+              "instruction": "Identify your top personal parenting trigger from the past week[cite: 5]."
+            },
+            {
+              "stepNumber": 2,
+              "instruction": "Choose one self-soothing phrase to say to yourself when triggered (e.g., 'I am safe, this is not an emergency')[cite: 5]."
+            },
+            {
+              "stepNumber": 3,
+              "instruction": "Commit to using this phrase and taking one slow breath before responding next time[cite: 5]."
+            }
+          ]
+        }
+      ],
+      "actionableTakeaways": [
+        "Notice your body's early stress signals before emotional reactions escalate[cite: 5].",
+        "Prioritize calm adult regulation as the foundation for child co-regulation[cite: 5].",
+        "Use the power of a intentional pause to choose thoughtful responses over automatic reactions[cite: 5]."
+      ],
+      "reflectionQuestions": [
+        {
+          "id": "ref-4-1",
+          "question": "What bodily signs tell you that you are losing emotional regulation?[cite: 5]"
+        },
+        {
+          "id": "ref-4-2",
+          "question": "What self-care or regulation strategies help you regain composure under stress?[cite: 5]"
+        },
+        {
+          "id": "ref-4-3",
+          "question": "How does your child's mood shift when you stay calm during their emotional outbursts?[cite: 5]"
+        }
+      ]
+    },
+    {
+      "lessonId": "building-secure-attachment-lesson-5",
+      "courseId": "building-secure-attachment",
+      "title": "Building Earned Security & Long-Term Resilience",
+      "metadata": {
+        "version": "1.0.0",
+        "estimatedDurationMinutes": 30,
+        "targetAudience": "Parents and Caregivers",
+        "prerequisites": [
+          "building-secure-attachment-lesson-1",
+          "building-secure-attachment-lesson-2",
+          "building-secure-attachment-lesson-3",
+          "building-secure-attachment-lesson-4"
+        ]
+      },
+      "aiFacilitatorConfig": {
+        "personaRole": "Warm, empathetic parenting coach grounded in attachment theory and relational frameworks",
+        "pedagogicalFramework": {
+          "theoreticalBasis": "Attachment theory and relational frameworks guiding users from insecure loops to earned security",
+          "scaffoldingStrategy": "Socratic questioning, active listening validation, and scaffolded instruction"
+        },
+        "pacingConfig": {
+          "openingReflectionMinutes": 5,
+          "coreInstructionMinutes": 10,
+          "interactiveAssessmentsMinutes": 5,
+          "guidedActivityMinutes": 7,
+          "closingReflectionMinutes": 3
+        },
+        "interactionRules": [
+          "Validate learner emotions before offering pedagogical guidance",
+          "Ask one follow-up question at a time to prevent cognitive overload",
+          "Provide immediate constructive feedback on assessment responses"
+        ],
+        "systemPrompts": {
+          "openingGreetingPrompt": "Welcome to Lesson 5: Building Earned Security & Long-Term Resilience. In this final session, we celebrate how conscious parenting breaks intergenerational cycles and builds lasting resilience.",
+          "quizFacilitationPrompt": "Let's review how intentional parenting choices foster earned security over time.",
+          "activityGuidancePrompt": "Take time to map your family's relational strengths and write down a commitment to future growth.",
+          "closingReflectionPrompt": "Reflect on how far you have come and how your dedication creates a lasting legacy of emotional safety for your family."
+        },
+        "safetyAndIntervention": {
+          "sosToolkitTrigger": "Detect distress signals and activate the SOS toolkit for immediate, in-the-moment support"
+        }
+      },
+      "openingReflection": {
+        "prompt": "Reflecting on your journey through this course, what patterns from your own upbringing have you consciously chosen to transform?[cite: 7]",
+        "guidance": "Acknowledge the courage it takes to build earned security and create new relational habits for your children[cite: 7]."
+      },
+      "content": {
+        "overview": "Earned security is the ability to develop secure attachment patterns as an adult, even if one experienced insecure attachment in childhood[cite: 7]. It comes from making sense of past experiences and choosing intentional parenting practices[cite: 7].",
+        "coreText": "By practicing attunement, prompt repair, and emotional regulation, parents break harmful generational patterns[cite: 7]. This transformation creates a resilient relational environment where children feel safe to grow, explore, and thrive[cite: 7]. Earned security demonstrates that history is not destiny, and every positive moment builds a stronger future[cite: 7].",
+        "keyConcepts": [
+          {
+            "concept": "Earned Security Framework",
+            "description": "Understanding that adults can cultivate secure attachment mindsets through self-reflection and conscious action[cite: 7]."
+          },
+          {
+            "concept": "Cycle Breaking",
+            "description": "Interrupting reactive generational patterns to establish compassionate, responsive parenting habits[cite: 7]."
+          },
+          {
+            "concept": "Long-Term Relational Resilience",
+            "description": "Creating an enduring atmosphere of trust, safety, and mutual respect that supports children into adulthood[cite: 7]."
+          }
+        ]
+      },
+      "assessments": [
+        {
+          "id": "quiz-5-1",
+          "type": "multiple-choice",
+          "taxonomyLevel": "Knowledge Recall",
+          "question": "What is the concept of 'earned security' in attachment theory?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "A security status that can only be achieved if one had perfect childhood caregivers.",
+              "isCorrect": false,
+              "explanation": "Earned security specifically refers to developing secure attachment despite difficult childhood experiences[cite: 7]."
+            },
+            {
+              "id": "opt-b",
+              "text": "Developing secure attachment patterns as an adult through self-reflection, understanding, and intentional practice[cite: 7].",
+              "isCorrect": true,
+              "explanation": "Correct! Earned security means reshaping attachment patterns through conscious effort and self-awareness[cite: 7]."
+            },
+            {
+              "id": "opt-c",
+              "text": "Earning rewards or certificates for completing parenting programs.",
+              "isCorrect": false,
+              "explanation": "Earned security is a psychological and relational framework, not a tangible reward[cite: 7]."
+            }
+          ]
+        },
+        {
+          "id": "quiz-5-2",
+          "type": "scenario-analysis",
+          "taxonomyLevel": "Applied Understanding",
+          "question": "A parent notices they are repeating a harsh phrase their own parents used during conflict. What action reflects earned security?",
+          "options": [
+            {
+              "id": "opt-a",
+              "text": "Accepting that they are doomed to repeat the past and ignoring the behavior.",
+              "isCorrect": false,
+              "explanation": "Earned security rejects the idea that history is destiny[cite: 7]."
+            },
+            {
+              "id": "opt-b",
+              "text": "Pausing, acknowledging the inherited habit, repairing with the child, and choosing a more supportive response going forward[cite: 7].",
+              "isCorrect": true,
+              "explanation": "Correct! Reflecting on habits, repairing, and choosing new pathways is the essence of cycle breaking[cite: 7]."
+            },
+            {
+              "id": "opt-c",
+              "text": "Blaming the child for pushing them to say harsh words.",
+              "isCorrect": false,
+              "explanation": "Shifting blame avoids personal accountability and prevents cycle breaking[cite: 7]."
+            }
+          ]
+        }
+      ],
+      "guidedActivities": [
+        {
+          "activityId": "act-5-1",
+          "title": "Cycle-Breaker Mapping",
+          "objective": "Identify inherited relational patterns and map out transformed parenting choices.",
+          "estimatedDurationMinutes": 4,
+          "steps": [
+            {
+              "stepNumber": 1,
+              "instruction": "Write down one inherited pattern you wish to leave behind (e.g., dismissiveness, shouting)[cite: 7]."
+            },
+            {
+              "stepNumber": 2,
+              "instruction": "Write down the new pattern you are replacing it with (e.g., attunement, calm repair)[cite: 7]."
+            },
+            {
+              "stepNumber": 3,
+              "instruction": "Acknowledge the positive impact this shift will have on your child's future[cite: 7]."
+            }
+          ]
+        },
+        {
+          "activityId": "act-5-2",
+          "title": "Future Connection Pledge",
+          "objective": "Formulate a long-term intention for relational connection with your child.",
+          "estimatedDurationMinutes": 3,
+          "steps": [
+            {
+              "stepNumber": 1,
+              "instruction": "Craft a 1-sentence pledge focused on emotional safety (e.g., 'I commit to listening with curiosity and offering repair when things go wrong')[cite: 7]."
+            },
+            {
+              "stepNumber": 2,
+              "instruction": "Place this pledge somewhere visible as a daily reminder of your growth[cite: 7]."
+            },
+            {
+              "stepNumber": 3,
+              "instruction": "Share this commitment with a supportive partner, friend, or co-parent[cite: 7]."
+            }
+          ]
+        }
+      ],
+      "actionableTakeaways": [
+        "Your past does not define your parenting future; secure attachment can be earned at any stage[cite: 7].",
+        "Breaking intergenerational cycles requires reflection, self-compassion, and consistent action[cite: 7].",
+        "Every moment of attunement and repair leaves a lasting legacy of emotional safety[cite: 7]."
+      ],
+      "reflectionQuestions": [
+        {
+          "id": "ref-5-1",
+          "question": "What is one breakthrough or key learning you experienced during this curriculum?[cite: 7]"
+        },
+        {
+          "id": "ref-5-2",
+          "question": "How has your understanding of secure attachment transformed your daily interactions?[cite: 7]"
+        },
+        {
+          "id": "ref-5-3",
+          "question": "What legacy of emotional health do you hope to pass down to your children?[cite: 7]"
+        }
+      ]
+    }
+  ]
+}

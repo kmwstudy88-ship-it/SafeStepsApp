@@ -1,0 +1,21 @@
+{
+  "id": "module_safe_housing_responses_and_crisis_accommodation",
+  "title": "Safe Housing Responses and Crisis Accommodation",
+  "description": "This module supports practitioners to understand crisis accommodation options, safety considerations, and housing pathways for people experiencing DFV. It focuses on coordinated responses and trauma-informed housing support.",
+  "type": "module",
+  "level": "housing_economic_security",
+  "tags": [
+    "dfv",
+    "crisis accommodation",
+    "safe housing",
+    "trauma-informed",
+    "support"
+  ],
+  "outcomes": [
+    "Understand crisis accommodation models and pathways",
+    "Support safe and trauma-informed housing responses",
+    "Coordinate with housing and DFV services to promote safety"
+  ],
+  "lessons": [],
+  "content": []
+}

@@ -1,0 +1,168 @@
+{
+  "lessonId": "positive-communication-skills-lesson-1",
+  "courseId": "positive-communication-skills",
+  "title": "Speaking So Children Feel Safe",
+  "metadata": {
+    "version": "1.0.0",
+    "estimatedDurationMinutes": 30,
+    "targetAudience": "Parents and Caregivers",
+    "prerequisites": []
+  },
+  "aiFacilitatorConfig": {
+    "personaRole": "Warm, empathetic parenting coach and conversational guide",
+    "facilitationStrategy": "Socratic questioning, active listening validation, and scaffolded instruction",
+    "pacingConfig": {
+      "openingReflectionMinutes": 5,
+      "coreInstructionMinutes": 10,
+      "interactiveAssessmentsMinutes": 5,
+      "guidedActivityMinutes": 7,
+      "closingReflectionMinutes": 3
+    },
+    "interactionRules": [
+      "Validate learner emotions before offering pedagogical guidance",
+      "Ask one follow-up question at a time to prevent cognitive overload",
+      "Provide immediate constructive feedback on assessment responses"
+    ],
+    "systemPrompts": {
+      "openingGreetingPrompt": "Welcome to Lesson 1: Speaking So Children Feel Safe. In this 30-minute session, we'll explore how tone, body language, and emotional presence create emotional safety for your child.",
+      "quizFacilitationPrompt": "Let's check your understanding of intentional communication versus reactive patterns through these real-world scenarios.",
+      "activityGuidancePrompt": "Take your time with these exercises. Practicing tone regulation in calm moments builds the habit for high-stress situations.",
+      "closingReflectionPrompt": "As we conclude our 30-minute session, take a moment to reflect on your own communication origins and how you want to show up today."
+    }
+  },
+  "openingReflection": {
+    "prompt": "Think back to how adults spoke to you when you were a child during moments of stress or correction. How did their tone and posture impact your feelings of safety?",
+    "guidance": "Reflect on how those early experiences might influence the default tone or reaction patterns you use with your child today[cite: 5]."
+  },
+  "content": {
+    "overview": "Communication is more than the words we use—it is the tone, body language, and emotional presence behind those words[cite: 5]. Children are highly sensitive to how adults speak to them[cite: 5]. A calm, warm tone helps children feel safe and respected, while harsh or unpredictable communication can create fear or defensiveness[cite: 5].",
+    "coreText": "This lesson explores how parents can use communication to build trust rather than control[cite: 5]. When parents speak with clarity, kindness, and consistency, children are more likely to listen and cooperate[cite: 5]. Positive communication does not mean avoiding boundaries; it means expressing them in ways that support connection[cite: 5]. Parents learn how to shift from reactive communication to intentional communication, creating a home environment where children feel heard and valued[cite: 5].",
+    "keyConcepts": [
+      {
+        "concept": "Emotional Presence & Non-Verbal Cues",
+        "description": "Recognizing that body language, pacing, and tone transmit messages of safety or threat long before words are processed[cite: 5]."
+      },
+      {
+        "concept": "Connection-Oriented Boundaries",
+        "description": "Maintaining clear limits while delivering them with warm, respectful delivery to preserve relational safety[cite: 5]."
+      },
+      {
+        "concept": "Intentional vs. Reactive Shift",
+        "description": "Transitioning from reflexive emotional outbursts to deliberate, calm communication during stressful moments[cite: 5]."
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "quiz-1",
+      "type": "multiple-choice",
+      "question": "How does a child primarily interpret an adult's message during a tense interaction?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "Exclusively by analyzing the exact words and logic used.",
+          "isCorrect": false,
+          "explanation": "Children process emotional cues like tone, body language, and presence before processing formal logic[cite: 5]."
+        },
+        {
+          "id": "opt-b",
+          "text": "Through tone, body language, and the emotional presence behind the words[cite: 5].",
+          "isCorrect": true,
+          "explanation": "Correct! Children are highly sensitive to non-verbal cues and emotional presence[cite: 5]."
+        },
+        {
+          "id": "opt-c",
+          "text": "By focusing solely on whether a punishment is attached.",
+          "isCorrect": false,
+          "explanation": "Focusing on threat or fear creates defensiveness rather than safety and real cooperation[cite: 5]."
+        }
+      ]
+    },
+    {
+      "id": "quiz-2",
+      "type": "multiple-choice",
+      "question": "What is the primary difference between reactive and intentional communication?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "Intentional communication avoids enforcing rules or boundaries.",
+          "isCorrect": false,
+          "explanation": "Positive communication does not mean avoiding boundaries; it means expressing them in ways that support connection[cite: 5]."
+        },
+        {
+          "id": "opt-b",
+          "text": "Reactive communication is always soft, while intentional communication is firm.",
+          "isCorrect": false,
+          "explanation": "Reactive communication is often driven by unpredictable stress, whereas intentional communication is grounded and calm[cite: 5]."
+        },
+        {
+          "id": "opt-c",
+          "text": "Intentional communication uses calm clarity and kindness to build trust rather than exert control[cite: 5].",
+          "isCorrect": true,
+          "explanation": "Correct! Intentional communication focuses on building trust and connection while upholding clear expectations[cite: 5]."
+        }
+      ]
+    }
+  ],
+  "guidedActivities": [
+    {
+      "activityId": "act-1",
+      "title": "Calm Delivery Practice",
+      "objective": "Intentionally regulate tone and pace when issuing everyday requests.",
+      "estimatedDurationMinutes": 4,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Pause and take a breath before speaking to your child during a routine task."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Deliver one instruction using a slow, calm, and warm tone of voice[cite: 5]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Observe and note your child's immediate non-verbal and verbal response[cite: 5]."
+        }
+      ]
+    },
+    {
+      "activityId": "act-2",
+      "title": "Audio Self-Reflection Exercise",
+      "objective": "Build self-awareness of communication pacing and pitch under stress.",
+      "estimatedDurationMinutes": 3,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Record an audio snippet of yourself speaking during a busy or stressful moment (audio only)[cite: 5]."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Listen back to the recording later when you are calm[cite: 5]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Reflect on your tone, volume, and pace, noting areas where warmth can be increased[cite: 5]."
+        }
+      ]
+    }
+  ],
+  "actionableTakeaways": [
+    "Prioritize tone, body language, and emotional presence over strict word choice[cite: 5].",
+    "Express firm boundaries in ways that support emotional safety and connection[cite: 5].",
+    "Shift from reflexive emotional reactions to calm, intentional directives[cite: 5]."
+  ],
+  "reflectionQuestions": [
+    {
+      "id": "ref-1",
+      "question": "How did adults speak to you when you were a child?[cite: 5]"
+    },
+    {
+      "id": "ref-2",
+      "question": "What tone do you use when you feel stressed or rushed?[cite: 5]"
+    },
+    {
+      "id": "ref-3",
+      "question": "How does your child respond when you speak calmly?[cite: 5]"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "screens": [
+    {
+      "name": "appointment-dashboard",
+      "layout": "calendar-and-list",
+      "cards": [
+        "upcoming_sessions",
+        "waiting_room",
+        "consent_status",
+        "incident_alerts"
+      ]
+    },
+    {
+      "name": "appointment-detail",
+      "layout": "timeline",
+      "panels": [
+        "appointment_info",
+        "participants",
+        "consent_status",
+        "session_notes",
+        "follow_up_actions"
+      ]
+    },
+    {
+      "name": "session-room",
+      "layout": "video-first",
+      "controls": [
+        "mute",
+        "camera",
+        "chat",
+        "screen_share",
+        "file_share",
+        "recording",
+        "exit"
+      ]
+    },
+    {
+      "name": "child-safe-session",
+      "layout": "simplified",
+      "features": [
+        "one_tap_exit",
+        "safe_person_contact",
+        "restricted_chat",
+        "no_public_links"
+      ]
+    }
+  ],
+  "defaultViews": {
+    "host": "appointment-dashboard",
+    "participant": "session-room",
+    "supervisor": "appointment-dashboard",
+    "court_officer": "appointment-detail"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "module_reunification_and_contact_readiness",
+  "title": "Reunification Pathways, Contact Readiness & Return Home",
+  "description": "SS-CURR-002: Guides parents through the reunification journey, understanding the child's experience of care, preparing for supervised and unsupervised contact visits, learning from feedback, and sustaining Home Again transitions.",
+  "type": "module",
+  "level": "intensive",
+  "tags": [
+    "reunification",
+    "contact visits",
+    "home again",
+    "child safety",
+    "SS-CURR-002"
+  ],
+  "outcomes": [
+    "Understand child safety expectations, parent rights, goals, and the child's emotional experience of placement and transitions",
+    "Prepare for family contact visits with child-centred activities, emotional regulation, and constructive use of visit feedback",
+    "Demonstrate sustained parenting change and maintain safe, predictable routines during return-home transitions"
+  ],
+  "lessons": [
+    "reunification_foundations_and_expectations",
+    "understanding_child_experience_of_care",
+    "preparing_for_family_contact_visits",
+    "learning_from_visit_feedback",
+    "demonstrating_sustained_parenting_change",
+    "reunification_transition_and_home_again"
+  ],
+  "content": []
+}

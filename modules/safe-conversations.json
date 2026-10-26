@@ -1,0 +1,22 @@
+{
+  "id": "safe-conversations",
+  "title": "Safe Conversations",
+  "description": "Core program course on active listening, non-defensive communication, and safe boundary setting.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "safe-conversations"
+  ],
+  "outcomes": [
+    "Understand the core principles of safe conversations",
+    "Apply safe conversations safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "active_listening",
+    "communication_skills",
+    "holding_space"
+  ],
+  "content": []
+}

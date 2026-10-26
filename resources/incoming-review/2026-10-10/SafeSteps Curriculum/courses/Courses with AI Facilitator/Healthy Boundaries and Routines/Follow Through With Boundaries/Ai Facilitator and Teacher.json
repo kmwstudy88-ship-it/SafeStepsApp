@@ -1,0 +1,46 @@
+{
+  "lessonId": "healthy-boundaries-and-routines-lesson-3",
+  "courseId": "healthy-boundaries-and-routines",
+  "title": "Following Through With Boundaries",
+  "aiFacilitatorAndTeacherScript": {
+    "moduleOverview": "Welcome, AI Facilitator / Teacher. This script provides the complete pedagogical guide for delivering Lesson 3: 'Following Through With Boundaries'. Your goal is to guide participants on why consistent follow-through builds trust, how to handle boundary testing without harshness, and how to utilize natural or logical consequences[cite: 2].",
+    "timingAndPacing": {
+      "totalDurationMinutes": 30,
+      "breakdown": [
+        {"phase": "Introduction & Hook", "durationMinutes": 5, "description": "Welcome participants, discuss the difficulty of following through when tired or stressed, and introduce consistency."},
+        {"phase": "Core Content Delivery", "durationMinutes": 10, "description": "Explain why children test boundaries and how calm, consistent follow-through creates safety and trust[cite: 2]."},
+        {"phase": "Interactive Reflection & Discussion", "durationMinutes": 8, "description": "Engage participants with reflection questions on challenges with follow-through and support systems[cite: 2]."},
+        {"phase": "Actionable Activity Assignment", "durationMinutes": 5, "description": "Guide participants to choose a boundary to practice and write a calm response script[cite: 2]."},
+        {"phase": "Wrap-up & Quiz Prompt", "durationMinutes": 2, "description": "Summarize key takeaways and direct learners to the lesson quiz."}
+      ]
+    },
+    "facilitatorDialogueAndPrompts": [
+      {
+        "stage": "Opening",
+        "script": "Welcome back to Lesson 3: 'Following Through With Boundaries.' We know setting boundaries is only half the work—following through is where the real test happens[cite: 2]. When you are exhausted or stressed, consistency is tough. Let's explore why staying steady matters so much."
+      },
+      {
+        "stage": "Core Concept Explanation",
+        "script": "Children test boundaries not to be defiant, but to find out where the limits truly are[cite: 2]. When parents follow through calmly and consistently, children learn that limits are reliable and real[cite: 2]. Instead of resorting to harsh punishment, we focus on natural and logical consequences, which build trust and cooperation over time[cite: 2]."
+      },
+      {
+        "stage": "Guided Reflection Prompt",
+        "script": "Let's reflect openly: What makes follow-through most challenging for you in the heat of the moment[cite: 2]? How does your child react when you manage to stay consistent[cite: 2]? And what support do you need to maintain your boundaries when stress runs high[cite: 2]?"
+      },
+      {
+        "stage": "Activity Assignment",
+        "script": "For your practice this week, choose one boundary and commit to following through every single time for the next three days[cite: 2]. Write down the exact calm, consistent response you will use when your child tests that boundary[cite: 2]."
+      }
+    ],
+    "teacherTipsAndTroubleshooting": [
+      {
+        "challenge": "Participant feels guilty or gives in after a few hours of testing.",
+        "strategy": "Normalize this struggle. Remind them that children push harder initially when a new pattern starts (an extinction burst), so holding the line for three days is crucial to turn the corner."
+      },
+      {
+        "challenge": "Discussions lean toward venting about children's misbehavior.",
+        "strategy": "Gently pivot the focus back to adult responses and self-regulation, reinforcing that we can only control our own follow-through."
+      }
+    ]
+  }
+}

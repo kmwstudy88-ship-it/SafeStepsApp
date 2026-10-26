@@ -1,0 +1,96 @@
+﻿{
+    "programId":  "HOMEAGAIN-6-12M",
+    "week":  20,
+    "phaseId":  "PHASE-02",
+    "phaseName":  "Strengthening",
+    "modules":  [
+                    {
+                        "id":  "PP-REUNIFY-01",
+                        "name":  "Understanding the Reunification Pathway",
+                        "goal":  "Know exactly what reunification requires.",
+                        "tasks":  [
+                                      "List what child protection is worried about",
+                                      "List what you are already doing well",
+                                      "List what you need to strengthen for reunification"
+                                  ],
+                        "evidence":  [
+                                         "Reflections",
+                                         "Caseworker acknowledgement"
+                                     ]
+                    },
+                    {
+                        "id":  "PP-ENGAGE-03",
+                        "name":  "Child-Focused Thinking",
+                        "goal":  "Shift from self-focus to child experience.",
+                        "tasks":  [
+                                      "After stressful events, answer: How was my child affected?",
+                                      "What did my child need from me?",
+                                      "Did I meet that need?"
+                                  ],
+                        "evidence":  [
+                                         "Contact reports",
+                                         "Therapist notes"
+                                     ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "List what child protection is worried about"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "List what you are already doing well"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "List what you need to strengthen for reunification"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "After stressful events, answer: How was my child affected?"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "What did my child need from me?"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "Did I meet that need?"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+
+                                ],
+                     "insight":  [
+                                     "Reflections",
+                                     "Caseworker acknowledgement",
+                                     "Therapist notes"
+                                 ],
+                     "behaviour":  [
+                                       "Contact reports"
+                                   ]
+                 }
+}

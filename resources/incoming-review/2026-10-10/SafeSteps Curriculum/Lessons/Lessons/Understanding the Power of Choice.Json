@@ -1,0 +1,110 @@
+{
+  "lessonId": "M1L1",
+  "module": 1,
+  "moduleTitle": "Understanding the Power of Choice",
+  "lessonTitle": "The Power of Choice",
+  "durationMinutes": 120,
+  "lessonObjective": "Help parents understand how giving children appropriate choices develops confidence, responsibility and resilience.",
+  "learningOutcomes": [
+    "Understand why choice is essential for healthy child development",
+    "Recognise the difference between guidance and control",
+    "Identify age-appropriate decisions children can make",
+    "Develop a plan to increase responsibility at home"
+  ],
+  "materials": [
+    "Whiteboard",
+    "Sticky notes",
+    "Family Choice Audit Worksheet",
+    "Pens"
+  ],
+  "sections": [
+    {
+      "type": "icebreaker",
+      "title": "Choice Reflection",
+      "duration": 15,
+      "instructions": [
+        "List five decisions you made for your child today",
+        "List five decisions your child made independently"
+      ],
+      "discussionQuestions": [
+        "What patterns do you notice?",
+        "Are you surprised by the balance?",
+        "Where might your child be ready for more responsibility?"
+      ]
+    },
+    {
+      "type": "teaching",
+      "title": "Why Choice Matters",
+      "duration": 20,
+      "content": {
+        "keyConcepts": [
+          "Autonomy",
+          "Competence",
+          "Ownership",
+          "Personal Responsibility"
+        ],
+        "facilitatorNotes": "Children who never make decisions often become dependent on adults. Appropriate choices encourage judgement and confidence."
+      }
+    },
+    {
+      "type": "discussion",
+      "title": "Choice and Self-Esteem",
+      "duration": 15,
+      "model": "Choice -> Responsibility -> Competence -> Confidence",
+      "activity": "Participants reflect on a childhood decision they were trusted to make."
+    },
+    {
+      "type": "caseStudy",
+      "title": "Jack",
+      "duration": 20,
+      "scenario": "Eight-year-old Jack refuses to choose clothes, activities or meals because adults always decide for him.",
+      "questions": [
+        "What skills might Jack be missing?",
+        "What message may Jack have learned about himself?",
+        "How could responsibility be gradually transferred?"
+      ]
+    },
+    {
+      "type": "workshop",
+      "title": "Family Choice Audit",
+      "duration": 30,
+      "activity": {
+        "columns": [
+          "My Child Already Chooses",
+          "I Control",
+          "I Could Transfer"
+        ],
+        "examples": [
+          "Clothing",
+          "Homework timing",
+          "Bedroom organisation",
+          "Lunch choices",
+          "Play activities"
+        ]
+      }
+    },
+    {
+      "type": "actionPlan",
+      "title": "Implementation Planning",
+      "duration": 10,
+      "tasks": [
+        "One choice to introduce immediately",
+        "One choice to introduce within a month",
+        "One responsibility to gradually transfer"
+      ]
+    }
+  ],
+  "homework": {
+    "task": "Introduce three age-appropriate choices during the week",
+    "record": [
+      "Child response",
+      "Parent response",
+      "Lessons learned"
+    ]
+  },
+  "reflection": [
+    "Where do I over-manage?",
+    "What am I afraid might happen if I let go?",
+    "What would greater independence look like in six months?"
+  ]
+}

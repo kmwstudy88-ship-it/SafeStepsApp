@@ -1,0 +1,26 @@
+{
+  "id": "module_child_rights_feelings_and_safety",
+  "title": "Child Rights, Feelings & Personal Safety Learning (Child Track)",
+  "description": "SS-CHD-009 to SS-CHD-011: Developmentally appropriate child learning track covering personal rights, body safety, safe vs. unsafe secrets, naming big feelings, identifying trusted adults, asking for help, and preparing for family visits.",
+  "type": "module",
+  "level": "child",
+  "tags": [
+    "child track",
+    "body safety",
+    "child voice",
+    "feelings check-in",
+    "safe people"
+  ],
+  "outcomes": [
+    "Help children recognise their personal rights, body boundaries, and the difference between safe surprises and unsafe secrets",
+    "Build age-appropriate skills for noticing body signals, naming big feelings, and using calming tools",
+    "Empower children to identify safe adults, ask for help without fear, and prepare for family contact visits"
+  ],
+  "lessons": [
+    "child_rights_and_body_safety",
+    "child_feelings_and_calming_tools",
+    "child_safe_adults_and_asking_for_help",
+    "child_visit_preparation_and_transitions"
+  ],
+  "content": []
+}

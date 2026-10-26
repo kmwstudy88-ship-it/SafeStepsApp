@@ -1,0 +1,22 @@
+create table if not exists public.safety_alerts (
+  id uuid primary key default gen_random_uuid(),
+  tenant_id uuid not null references public.platform_tenants(id) on delete restrict,
+  case_id uuid references public.cases(id) on delete cascade,
+  child_id uuid references public.children(id) on delete set null,
+  alert_reference text not null,
+  alert_type text not null,
+  safety_level text not null,
+  alert_title text not null,
+  alert_summary text not null,
+  alert_status text not null default 'open',
+  source_table text,
+  source_record_id uuid,
+  acknowledgement_required boolean not null default true,
+  acknowledged_by_user_id uuid references auth.users(id) on delete set null,
+  acknowledged_at timestamptz,
+  resolved_by_user_id uuid references auth.users(id) on delete set null,
+  resolved_at timestamptz,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  unique (tenant_id, alert_reference)
+);

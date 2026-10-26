@@ -1,0 +1,4 @@
+CREATE TRIGGER trg_set_updated_at BEFORE UPDATE ON messaging_thread_summaries FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+CREATE TRIGGER video_progress_report_snapshots_no_update BEFORE DELETE OR UPDATE ON video_progress_report_snapshots FOR EACH ROW EXECUTE FUNCTION prevent_video_report_snapshot_mutation();
+CREATE TRIGGER video_report_export_audit_no_update BEFORE DELETE OR UPDATE ON video_report_export_audit_events FOR EACH ROW EXECUTE FUNCTION prevent_video_export_record_mutation();
+CREATE TRIGGER video_report_export_files_no_update BEFORE DELETE OR UPDATE ON video_report_export_files FOR EACH ROW EXECUTE FUNCTION prevent_video_export_record_mutation();

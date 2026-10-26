@@ -1,0 +1,50 @@
+{
+  "recordingRules": {
+    "disabledByDefault": true,
+    "requiresExplicitPolicyApproval": true,
+    "requiresParticipantConsent": true,
+    "requiresVisibleNotice": true,
+    "requiresStartStopAuditEvents": true,
+    "encryptedStorage": true,
+    "accessRestrictions": true,
+    "retentionPolicy": "organisation_policy",
+    "exportControls": true
+  },
+  "childSafetyRules": {
+    "verifiedAuthorisedAdultSetup": true,
+    "childFriendlyInterface": true,
+    "oneTapExit": true,
+    "hiddenNotificationPreviews": true,
+    "noPublicMeetingLinks": true,
+    "restrictedDirectMessaging": true,
+    "controlledFileSharing": true,
+    "recordingDisabledUnlessAuthorised": true,
+    "separateConsentAndAssentRecords": true,
+    "safePersonContactOption": true
+  },
+  "interpreterRules": {
+    "identityRequired": true,
+    "confidentialityAcknowledgementRequired": true,
+    "notesLimitedToTechnicalCommunication": true
+  },
+  "deviceChecks": {
+    "cameraPermission": true,
+    "microphonePermission": true,
+    "speakerOutput": true,
+    "networkQuality": true,
+    "browserCompatibility": true,
+    "batteryLevel": true,
+    "storageAvailability": true,
+    "accessibilitySettings": true
+  },
+  "minimumOperationalResultsStored": [
+    "camera_ok",
+    "microphone_ok",
+    "speaker_ok",
+    "network_ok",
+    "browser_ok",
+    "battery_ok",
+    "storage_ok",
+    "accessibility_ok"
+  ]
+}

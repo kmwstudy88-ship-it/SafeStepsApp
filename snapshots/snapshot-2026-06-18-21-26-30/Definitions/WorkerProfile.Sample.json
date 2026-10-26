@@ -1,0 +1,10 @@
+﻿{
+  "caseId": "CASE-EXAMPLE-001",
+  "workerName": "Example Worker",
+  "priorityNeeds": [
+    "risk_management",
+    "protective_decision_making",
+    "safety_planning",
+    "contact_boundaries"
+  ]
+}

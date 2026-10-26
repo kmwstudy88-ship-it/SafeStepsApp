@@ -1,0 +1,55 @@
+{
+  "topicId": "active-listening",
+  "topicName": "Active Listening",
+  "courseType": "parenting",
+  "levels": [
+    "basic",
+    "intermediate",
+    "master"
+  ],
+  "lessons": [
+    {
+      "lessonId": "lesson_1_1",
+      "title": "What Active Listening Means",
+      "definitionPrompt": "What does active listening mean to you?",
+      "learningObjectives": [
+        "Understand active listening",
+        "Recognise listening barriers",
+        "Develop listening skills"
+      ],
+      "activities": [
+        {
+          "activityId": "act001",
+          "title": "Listening Reflection"
+        }
+      ],
+      "assessment": {
+        "passingScore": 80
+      },
+      "aiTeacher": {
+        "guidedDiscussion": true,
+        "interventionRecommendations": true,
+        "assessmentEnabled": true,
+        "teacherId": "safesteps_ai_teacher",
+        "enabled": true,
+        "definitionRequired": true,
+        "activityCoaching": true,
+        "adaptiveLearning": true,
+        "reflectionRequired": true,
+        "progressTracking": true
+      }
+    }
+  ],
+  "aiTeacher": {
+    "guidedDiscussion": true,
+    "interventionRecommendations": true,
+    "assessmentEnabled": true,
+    "teacherId": "safesteps_ai_teacher",
+    "enabled": true,
+    "definitionRequired": true,
+    "activityCoaching": true,
+    "adaptiveLearning": true,
+    "reflectionRequired": true,
+    "progressTracking": true
+  }
+}

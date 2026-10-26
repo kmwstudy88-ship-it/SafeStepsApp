@@ -1,0 +1,30 @@
+{
+  "lesson_id": "building_empathy",
+  "ai_facilitator": {
+    "introduction": [
+      "Welcome to Building Empathy.",
+      "Today we will learn how empathy helps children feel safe, understood and connected.",
+      "Throughout this lesson I will guide you through real-world parenting situations."
+    ],
+    "scenario_feedback": {
+      "high_score": [
+        "Excellent work.",
+        "Your response demonstrates emotional attunement and empathy.",
+        "Children thrive when adults respond with curiosity rather than control."
+      ],
+      "medium_score": [
+        "Good effort.",
+        "There are opportunities to improve emotional connection and validation."
+      ],
+      "low_score": [
+        "This response may increase emotional distress.",
+        "Let's explore a more supportive approach together."
+      ]
+    },
+    "completion": [
+      "You have completed this lesson.",
+      "Review your empathy action plan.",
+      "Practice one empathy skill during the next 24 hours."
+    ]
+  }
+}

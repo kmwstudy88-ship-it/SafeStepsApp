@@ -1,0 +1,22 @@
+{
+  "id": "substance-use-and-parenting-stability",
+  "title": "Substance Use and Parenting Stability",
+  "description": "Core program course supporting sober caregiving, trigger mapping, relapse response, and safe supervision during AOD recovery.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "substance-use-and-parenting-stability"
+  ],
+  "outcomes": [
+    "Understand the core principles of substance use and parenting stability",
+    "Apply substance use and parenting stability safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "understanding_substance_use_and_family_impact",
+    "triggers_cravings_and_safer_choices",
+    "parenting_safely_during_recovery"
+  ],
+  "content": []
+}

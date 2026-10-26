@@ -1,0 +1,21 @@
+{
+  "id": "module_protection_orders_and_court_processes",
+  "title": "Protection Orders and Court Processes",
+  "description": "This module explains how protection orders work, what they can include, and how court processes operate in DFV matters. It supports practitioners to guide clients safely and confidently through legal steps.",
+  "type": "module",
+  "level": "justice_legal",
+  "tags": [
+    "dfv",
+    "protection orders",
+    "courts",
+    "legal processes",
+    "safety"
+  ],
+  "outcomes": [
+    "Understand how protection orders are made and enforced",
+    "Support clients through DFV-related court processes",
+    "Recognise safety considerations in legal proceedings"
+  ],
+  "lessons": [],
+  "content": []
+}

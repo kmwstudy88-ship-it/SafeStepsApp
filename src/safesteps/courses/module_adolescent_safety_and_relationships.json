@@ -1,0 +1,25 @@
+{
+  "id": "module_adolescent_safety_and_relationships",
+  "title": "Adolescent Safety, Consent & Healthy Relationships (Youth Track)",
+  "description": "SS-CRS-PAR-006 & Youth Track: Supports adolescents and parents in navigating healthy peer and dating relationships, consent, digital boundaries, online safety, and emotional independence during family change.",
+  "type": "module",
+  "level": "adolescent",
+  "tags": [
+    "adolescents",
+    "consent",
+    "digital safety",
+    "healthy relationships",
+    "youth track"
+  ],
+  "outcomes": [
+    "Recognise the signs of respectful vs. controlling or unhealthy dating and peer relationships",
+    "Maintain strong digital boundaries, online consent, and protection against image-based abuse or coercion",
+    "Build healthy coping strategies for family stress, emotional independence, and help-seeking"
+  ],
+  "lessons": [
+    "adolescent_healthy_dating_and_consent",
+    "adolescent_digital_boundaries_and_safety",
+    "adolescent_coping_with_family_stress"
+  ],
+  "content": []
+}

@@ -1,0 +1,22 @@
+{
+  "id": "behaviour-management-foundations",
+  "title": "Behaviour Management Foundations",
+  "description": "Core program course on understanding behaviour as communication, calm limit setting, and teaching instead of punishing.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "behaviour-management-foundations"
+  ],
+  "outcomes": [
+    "Understand the core principles of behaviour management foundations",
+    "Apply behaviour management foundations safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "co_regulation_basics",
+    "understanding_child_cues",
+    "lesson_behaviour_change_principles"
+  ],
+  "content": []
+}

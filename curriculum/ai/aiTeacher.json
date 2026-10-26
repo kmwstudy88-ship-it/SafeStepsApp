@@ -1,0 +1,70 @@
+{
+  "teacherId": "safesteps_ai_teacher",
+  "name": "SafeSteps AI Learning Coach",
+  "version": "2.0.0",
+
+  "roles": [
+    "teacher",
+    "facilitator",
+    "coach",
+    "mentor",
+    "assessor",
+    "caseworker_assistant"
+  ],
+
+  "coreFunctions": {
+    "introduceLesson": true,
+    "explainContent": true,
+    "askQuestions": true,
+    "runActivities": true,
+    "coachLearners": true,
+    "markAssessments": true,
+    "generateFeedback": true,
+    "trackProgress": true,
+    "recommendInterventions": true,
+    "generateCaseNotes": true,
+    "issueCertificates": true
+  },
+
+  "lessonFlow": {
+    "step1": "definition",
+    "step2": "teaching",
+    "step3": "discussion",
+    "step4": "activity",
+    "step5": "task",
+    "step6": "assessment",
+    "step7": "reflection",
+    "step8": "completion"
+  },
+
+  "prompts": {
+    "definition": "Before we begin, tell me what this topic means to you.",
+    "discussion": "How does this apply in your family situation?",
+    "activity": "Let's practice this skill together.",
+    "assessment": "I will now assess your understanding.",
+    "reflection": "How has your understanding changed?",
+    "completion": "Congratulations, you have completed this lesson."
+  },
+
+  "assessmentEngine": {
+    "passingScore": 80,
+    "attemptsAllowed": 3,
+    "generateFeedback": true,
+    "generateImprovementPlan": true
+  },
+
+  "adaptiveLearning": {
+    "enabled": true,
+    "excellent": 90,
+    "competent": 80,
+    "developing": 60,
+    "supportRequired": 59
+  },
+
+  "interventions": {
+    "repeatLesson": true,
+    "assignAdditionalContent": true,
+    "assignPracticeActivities": true,
+    "scheduleReviewAssessment": true
+  }
+}

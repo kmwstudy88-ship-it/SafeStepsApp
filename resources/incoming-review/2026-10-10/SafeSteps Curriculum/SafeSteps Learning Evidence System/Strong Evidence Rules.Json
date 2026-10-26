@@ -1,0 +1,11 @@
+{
+  "evidenceQualityRules": {
+    "valid": "Evidence directly measures the stated competency.",
+    "sufficient": "Enough evidence exists to support the decision.",
+    "authentic": "Evidence can reasonably be attributed to the learner.",
+    "current": "Evidence reflects present knowledge or behaviour.",
+    "consistent": "Competency is demonstrated across multiple activities.",
+    "accessible": "Reasonable adjustments are supported.",
+    "transparent": "Questions, standards and marking criteria are visible."
+  }
+}

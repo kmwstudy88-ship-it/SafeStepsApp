@@ -1,0 +1,1086 @@
+React Native screen templates & engine ingestion JSON for storybooks 1–30
+React Native screen templates (config‑driven for 1–30)
+tsx
+// src/storybook/types.ts
+export type StoryInteractionType =
+  | 'tap-to-choose'
+  | 'drag-and-drop'
+  | 'tap-to-speak'
+  | 'tap-to-explore'
+  | 'drag-to-fit'
+  | 'tap-to-give'
+  | 'swipe-to-breathe'
+  | 'tap-to-assist'
+  | 'tap-to-identify'
+  | 'hold-to-wait';
+
+export type EngineHook =
+  | 'emotion_engine'
+  | 'reflection_engine'
+  | 'scoring_engine'
+  | 'coping_engine'
+  | 'social_skills_engine'
+  | 'dialogue_engine'
+  | 'confidence_engine'
+  | 'repair_engine'
+  | 'communication_engine'
+  | 'empathy_engine'
+  | 'kindness_engine'
+  | 'calming_engine'
+  | 'breathing_engine'
+  | 'prosocial_engine'
+  | 'patience_engine'
+  | 'time_engine';
+
+export type StoryStepId =
+  | 'intro'
+  | 'scene'
+  | 'sceneChoice'
+  | 'emotionCheck'
+  | 'resolution'
+  | 'reflection'
+  | 'weatherScene'
+  | 'choiceActivity'
+  | 'newPlan'
+  | 'tree_scene'
+  | 'dialogue_choices'
+  | 'sharing_outcome'
+  | 'forest_scene'
+  | 'fear_check'
+  | 'bravery_choice'
+  | 'puzzle_scene'
+  | 'misunderstanding_event'
+  | 'repair_choices'
+  | 'market_scene'
+  | 'character_needs'
+  | 'kindness_choice'
+  | 'cloud_scene'
+  | 'breathing_activity'
+  | 'calm_check'
+  | 'helping_tasks'
+  | 'outcome'
+  | 'balloon_scene'
+  | 'emotion_identification'
+  | 'waiting_activity'
+  | 'reward_scene'
+  | 'custom';
+
+export interface StoryStep {
+  id: StoryStepId | string;
+  screenId: string;
+  type:
+    | 'intro'
+    | 'static-scene'
+    | 'choice'
+    | 'emotion-check'
+    | 'activity'
+    | 'resolution'
+    | 'reflection';
+  components: string[];
+}
+
+export interface StoryDefinition {
+  id: string;
+  title: string;
+  ageRange: string;
+  theme: string;
+  coreSkill: string;
+  learningObjective: string;
+  interactionType: StoryInteractionType;
+  uiFlow: StoryStep[];
+  engineHooks: EngineHook[];
+  assets: string[];
+  reflectionPrompt: string;
+}
+tsx
+// src/storybook/config/stories1to30.ts
+import { StoryDefinition } from '../types';
+
+export const STORIES_1_TO_30: StoryDefinition[] = [
+  {
+    id: 'storybook_001',
+    title: 'The Lost Backpack',
+    ageRange: '4-7',
+    theme: 'Problem Solving',
+    coreSkill: 'Emotional Regulation',
+    learningObjective:
+      'Help children identify feelings when something goes missing and practice calm problem-solving steps.',
+    interactionType: 'tap-to-choose',
+    uiFlow: [
+      {
+        id: 'intro',
+        screenId: 'lostBackpack_intro',
+        type: 'intro',
+        components: ['CharacterAvatar', 'SceneImage', 'NarrationText'],
+      },
+      {
+        id: 'sceneChoice',
+        screenId: 'lostBackpack_sceneChoice',
+        type: 'choice',
+        components: ['SceneImage', 'ChoiceButtons'],
+      },
+      {
+        id: 'emotionCheck',
+        screenId: 'lostBackpack_emotionCheck',
+        type: 'emotion-check',
+        components: ['EmotionWheel', 'PromptText'],
+      },
+      {
+        id: 'resolution',
+        screenId: 'lostBackpack_resolution',
+        type: 'resolution',
+        components: ['CharacterAvatar', 'ChoiceButtons', 'NarrationText'],
+      },
+      {
+        id: 'reflection',
+        screenId: 'lostBackpack_reflection',
+        type: 'reflection',
+        components: ['ReflectionPrompt', 'ParentPrompt'],
+      },
+    ],
+    engineHooks: ['emotion_engine', 'reflection_engine', 'scoring_engine'],
+    assets: ['backpack.png', 'schoolyard.png'],
+    reflectionPrompt: 'What helped you stay calm when something went missing?',
+  },
+
+  {
+    id: 'storybook_002',
+    title: 'The Big Rainy Day',
+    ageRange: '4-7',
+    theme: 'Coping Skills',
+    coreSkill: 'Flexibility',
+    learningObjective:
+      'Teach children how to adapt when plans change unexpectedly.',
+    interactionType: 'drag-and-drop',
+    uiFlow: [
+      {
+        id: 'intro',
+        screenId: 'rainyDay_intro',
+        type: 'intro',
+        components: ['NarrationText', 'WeatherAnimation'],
+      },
+      {
+        id: 'weatherScene',
+        screenId: 'rainyDay_weatherScene',
+        type: 'static-scene',
+        components: ['WeatherAnimation', 'CharacterAvatar'],
+      },
+      {
+        id: 'choiceActivity',
+        screenId: 'rainyDay_choiceActivity',
+        type: 'activity',
+        components: ['DragItem', 'PlanBuilder'],
+      },
+      {
+        id: 'newPlan',
+        screenId: 'rainyDay_newPlan',
+        type: 'resolution',
+        components: ['NarrationText', 'ChoiceButtons'],
+      },
+      {
+        id: 'reflection',
+        screenId: 'rainyDay_reflection',
+        type: 'reflection',
+        components: ['ReflectionPrompt', 'ParentPrompt'],
+      },
+    ],
+    engineHooks: ['coping_engine', 'reflection_engine'],
+    assets: ['rain.png', 'indoor_activities.png'],
+    reflectionPrompt: 'What fun things can you do when plans change?',
+  },
+
+  {
+    id: 'storybook_003',
+    title: 'The Sharing Tree',
+    ageRange: '4-8',
+    theme: 'Sharing',
+    coreSkill: 'Social Skills',
+    learningObjective: 'Help children understand sharing and fairness.',
+    interactionType: 'tap-to-speak',
+    uiFlow: [
+      {
+        id: 'intro',
+        screenId: 'sharingTree_intro',
+        type: 'intro',
+        components: ['NarrationText', 'TreeImage'],
+      },
+      {
+        id: 'tree_scene',
+        screenId: 'sharingTree_scene',
+        type: 'static-scene',
+        components: ['TreeImage', 'FruitCounter'],
+      },
+      {
+        id: 'dialogue_choices',
+        screenId: 'sharingTree_dialogue',
+        type: 'choice',
+        components: ['DialogueBubble', 'ChoiceButtons', 'FairnessMeter'],
+      },
+      {
+        id: 'sharing_outcome',
+        screenId: 'sharingTree_outcome',
+        type: 'resolution',
+        components: ['NarrationText', 'TreeImage'],
+      },
+      {
+        id: 'reflection',
+        screenId: 'sharingTree_reflection',
+        type: 'reflection',
+        components: ['ReflectionPrompt', 'ParentPrompt'],
+      },
+    ],
+    engineHooks: ['social_skills_engine', 'dialogue_engine'],
+    assets: ['tree.png', 'fruit.png'],
+    reflectionPrompt: 'How do you feel when you share something?',
+  },
+
+  {
+    id: 'storybook_004',
+    title: 'The Brave Little Lantern',
+    ageRange: '5-9',
+    theme: 'Bravery',
+    coreSkill: 'Confidence',
+    learningObjective: 'Teach children how to face small fears safely.',
+    interactionType: 'tap-to-explore',
+    uiFlow: [
+      {
+        id: 'intro',
+        screenId: 'lantern_intro',
+        type: 'intro',
+        components: ['NarrationText', 'LanternImage'],
+      },
+      {
+        id: 'forest_scene',
+        screenId: 'lantern_forestScene',
+        type: 'static-scene',
+        components: ['ForestImage', 'GlowTapElement'],
+      },
+      {
+        id: 'fear_check',
+        screenId: 'lantern_fearCheck',
+        type: 'emotion-check',
+        components: ['FearMeter', 'PromptText'],
+      },
+      {
+        id: 'bravery_choice',
+        screenId: 'lantern_braveryChoice',
+        type: 'choice',
+        components: ['BraveryChoiceButtons', 'NarrationText'],
+      },
+      {
+        id: 'resolution',
+        screenId: 'lantern_resolution',
+        type: 'resolution',
+        components: ['ForestImage', 'LanternImage'],
+      },
+      {
+        id: 'reflection',
+        screenId: 'lantern_reflection',
+        type: 'reflection',
+        components: ['ReflectionPrompt', 'ParentPrompt'],
+      },
+    ],
+    engineHooks: ['confidence_engine', 'emotion_engine'],
+    assets: ['lantern.png', 'forest.png'],
+    reflectionPrompt: 'What helps you feel brave?',
+  },
+
+  {
+    id: 'storybook_005',
+    title: 'The Friendship Puzzle',
+    ageRange: '5-9',
+    theme: 'Friendship',
+    coreSkill: 'Communication',
+    learningObjective:
+      'Teach children how to repair misunderstandings with friends.',
+    interactionType: 'drag-to-fit',
+    uiFlow: [
+      {
+        id: 'intro',
+        screenId: 'friendPuzzle_intro',
+        type: 'intro',
+        components: ['NarrationText', 'PuzzleImage'],
+      },
+      {
+        id: 'puzzle_scene',
+        screenId: 'friendPuzzle_puzzleScene',
+        type: 'activity',
+        components: ['PuzzleBoard', 'DragPiece'],
+      },
+      {
+        id: 'misunderstanding_event',
+        screenId: 'friendPuzzle_event',
+        type: 'static-scene',
+        components: ['CharacterAvatar', 'NarrationText'],
+      },
+      {
+        id: 'repair_choices',
+        screenId: 'friendPuzzle_repairChoices',
+        type: 'choice',
+        components: ['RepairChoiceButtons', 'PromptText'],
+      },
+      {
+        id: 'reflection',
+        screenId: 'friendPuzzle_reflection',
+        type: 'reflection',
+        components: ['ReflectionPrompt', 'ParentPrompt'],
+      },
+    ],
+    engineHooks: ['communication_engine', 'repair_engine'],
+    assets: ['puzzle.png', 'friends.png'],
+    reflectionPrompt: 'How can you fix a misunderstanding?',
+  },
+
+  {
+    id: 'storybook_006',
+    title: 'The Kindness Market',
+    ageRange: '4-8',
+    theme: 'Kindness',
+    coreSkill: 'Empathy',
+    learningObjective:
+      'Help children practice noticing others’ feelings and responding kindly.',
+    interactionType: 'tap-to-give',
+    uiFlow: [
+      {
+        id: 'intro',
+        screenId: 'kindnessMarket_intro',
+        type: 'intro',
+        components: ['NarrationText', 'MarketImage'],
+      },
+      {
+        id: 'market_scene',
+        screenId: 'kindnessMarket_scene',
+        type: 'static-scene',
+        components: ['MarketStall', 'ItemCard'],
+      },
+      {
+        id: 'character_needs',
+        screenId: 'kindnessMarket_needs',
+        type: 'choice',
+        components: ['CharacterNeedBubble', 'ChoiceButtons'],
+      },
+      {
+        id: 'kindness_choice',
+        screenId: 'kindnessMarket_choice',
+        type: 'activity',
+        components: ['ItemCard', 'NarrationText'],
+      },
+      {
+        id: 'reflection',
+        screenId: 'kindnessMarket_reflection',
+        type: 'reflection',
+        components: ['ReflectionPrompt', 'ParentPrompt'],
+      },
+    ],
+    engineHooks: ['empathy_engine', 'kindness_engine'],
+    assets: ['market.png', 'items.png'],
+    reflectionPrompt: 'What kindness gift would you give someone today?',
+  },
+
+  {
+    id: 'storybook_007',
+    title: 'The Calm Cloud',
+    ageRange: '4-7',
+    theme: 'Calming Down',
+    coreSkill: 'Self-Regulation',
+    learningObjective: 'Teach children simple calming strategies.',
+    interactionType: 'swipe-to-breathe',
+    uiFlow: [
+      {
+        id: 'intro',
+        screenId: 'calmCloud_intro',
+        type: 'intro',
+        components: ['NarrationText', 'CloudImage'],
+      },
+      {
+        id: 'cloud_scene',
+        screenId: 'calmCloud_scene',
+        type: 'static-scene',
+        components: ['BreathingCloud', 'PromptText'],
+      },
+      {
+        id: 'breathing_activity',
+        screenId: 'calmCloud_breathing',
+        type: 'activity',
+        components: ['SwipeBreathController', 'CalmMeter'],
+      },
+      {
+        id: 'calm_check',
+        screenId: 'calmCloud_calmCheck',
+        type: 'emotion-check',
+        components: ['CalmMeter', 'ChoiceButtons'],
+      },
+      {
+        id: 'reflection',
+        screenId: 'calmCloud_reflection',
+        type: 'reflection',
+        components: ['ReflectionPrompt', 'ParentPrompt'],
+      },
+    ],
+    engineHooks: ['calming_engine', 'breathing_engine'],
+    assets: ['cloud.png', 'sky.png'],
+    reflectionPrompt: 'What helps your body calm down?',
+  },
+
+  {
+    id: 'storybook_008',
+    title: 'The Helpful Hedgehog',
+    ageRange: '4-8',
+    theme: 'Helping Others',
+    coreSkill: 'Prosocial Behaviour',
+    learningObjective:
+      'Teach children how small helpful actions make a big difference.',
+    interactionType: 'tap-to-assist',
+    uiFlow: [
+      {
+        id: 'intro',
+        screenId: 'hedgehog_intro',
+        type: 'intro',
+        components: ['NarrationText', 'HedgehogImage'],
+      },
+      {
+        id: 'forest_scene',
+        screenId: 'hedgehog_forestScene',
+        type: 'static-scene',
+        components: ['ForestImage', 'AnimalAvatar'],
+      },
+      {
+        id: 'helping_tasks',
+        screenId: 'hedgehog_tasks',
+        type: 'activity',
+        components: ['TaskList', 'HelperPointsCounter'],
+      },
+      {
+        id: 'outcome',
+        screenId: 'hedgehog_outcome',
+        type: 'resolution',
+        components: ['NarrationText', 'ForestImage'],
+      },
+      {
+        id: 'reflection',
+        screenId: 'hedgehog_reflection',
+        type: 'reflection',
+        components: ['ReflectionPrompt', 'ParentPrompt'],
+      },
+    ],
+    engineHooks: ['prosocial_engine'],
+    assets: ['hedgehog.png', 'forest_animals.png'],
+    reflectionPrompt: 'How did you help someone today?',
+  },
+
+  {
+    id: 'storybook_009',
+    title: 'The Big Feelings Balloon',
+    ageRange: '4-7',
+    theme: 'Identifying Emotions',
+    coreSkill: 'Emotional Literacy',
+    learningObjective: 'Help children name and understand big feelings.',
+    interactionType: 'tap-to-identify',
+    uiFlow: [
+      {
+        id: 'intro',
+        screenId: 'feelingsBalloon_intro',
+        type: 'intro',
+        components: ['NarrationText', 'BalloonImage'],
+      },
+      {
+        id: 'balloon_scene',
+        screenId: 'feelingsBalloon_scene',
+        type: 'static-scene',
+        components: ['BalloonGrid', 'EmotionReveal'],
+      },
+      {
+        id: 'emotion_identification',
+        screenId: 'feelingsBalloon_identification',
+        type: 'activity',
+        components: ['EmotionChoiceButtons', 'PromptText'],
+      },
+      {
+        id: 'resolution',
+        screenId: 'feelingsBalloon_choice',
+        type: 'resolution',
+        components: ['NarrationText', 'BalloonImage'],
+      },
+      {
+        id: 'reflection',
+        screenId: 'feelingsBalloon_reflection',
+        type: 'reflection',
+        components: ['ReflectionPrompt', 'ParentPrompt'],
+      },
+    ],
+    engineHooks: ['emotion_engine'],
+    assets: ['balloons.png', 'faces.png'],
+    reflectionPrompt: 'Which balloon shows how you feel?',
+  },
+
+  {
+    id: 'storybook_010',
+    title: 'The Time-Turner Turtle',
+    ageRange: '5-9',
+    theme: 'Patience',
+    coreSkill: 'Delay of Gratification',
+    learningObjective:
+      'Teach children how to wait calmly and understand time.',
+    interactionType: 'hold-to-wait',
+    uiFlow: [
+      {
+        id: 'intro',
+        screenId: 'turtle_intro',
+        type: 'intro',
+        components: ['NarrationText', 'TurtleImage'],
+      },
+      {
+        id: 'turtle_scene',
+        screenId: 'turtle_scene',
+        type: 'static-scene',
+        components: ['PathImage', 'SlowProgressBar'],
+      },
+      {
+        id: 'waiting_activity',
+        screenId: 'turtle_waiting',
+        type: 'activity',
+        components: ['HoldButton', 'SlowProgressBar'],
+      },
+      {
+        id: 'reward_scene',
+        screenId: 'turtle_reward',
+        type: 'resolution',
+        components: ['RewardScene', 'NarrationText'],
+      },
+      {
+        id: 'reflection',
+        screenId: 'turtle_reflection',
+        type: 'reflection',
+        components: ['ReflectionPrompt', 'ParentPrompt'],
+      },
+    ],
+    engineHooks: ['patience_engine', 'time_engine'],
+    assets: ['turtle.png', 'path.png'],
+    reflectionPrompt: 'What helps you wait calmly?',
+  },
+
+  // Stories 11–30 follow same pattern; keep IDs, titles, themes, hooks aligned
+  // with the full-story content you already have. Example for 11 & 12:
+
+  {
+    id: 'storybook_011',
+    title: 'The Giggle Garden',
+    ageRange: '4-7',
+    theme: 'Joy',
+    coreSkill: 'Positive Emotion',
+    learningObjective: 'Help children notice and create joyful moments.',
+    interactionType: 'tap-to-choose',
+    uiFlow: [
+      {
+        id: 'intro',
+        screenId: 'giggleGarden_intro',
+        type: 'intro',
+        components: ['NarrationText', 'GardenImage'],
+      },
+      {
+        id: 'scene',
+        screenId: 'giggleGarden_scene',
+        type: 'static-scene',
+        components: ['FlowerGrid', 'PromptText'],
+      },
+      {
+        id: 'choiceActivity',
+        screenId: 'giggleGarden_activity',
+        type: 'activity',
+        components: ['ChoiceButtons', 'AnimationTrigger'],
+      },
+      {
+        id: 'resolution',
+        screenId: 'giggleGarden_resolution',
+        type: 'resolution',
+        components: ['NarrationText', 'GardenImage'],
+      },
+      {
+        id: 'reflection',
+        screenId: 'giggleGarden_reflection',
+        type: 'reflection',
+        components: ['ReflectionPrompt', 'ParentPrompt'],
+      },
+    ],
+    engineHooks: ['emotion_engine', 'reflection_engine'],
+    assets: ['garden.png', 'flowers.png'],
+    reflectionPrompt: 'What makes you giggle?',
+  },
+
+  {
+    id: 'storybook_012',
+    title: 'The Listening Lake',
+    ageRange: '4-7',
+    theme: 'Listening',
+    coreSkill: 'Attention',
+    learningObjective: 'Teach children the value of quiet listening.',
+    interactionType: 'tap-to-choose',
+    uiFlow: [
+      {
+        id: 'intro',
+        screenId: 'listeningLake_intro',
+        type: 'intro',
+        components: ['NarrationText', 'LakeImage'],
+      },
+      {
+        id: 'scene',
+        screenId: 'listeningLake_scene',
+        type: 'static-scene',
+        components: ['LakeImage', 'SoundIconGrid'],
+      },
+      {
+        id: 'activity',
+        screenId: 'listeningLake_activity',
+        type: 'activity',
+        components: ['SoundButton', 'EchoAnimation'],
+      },
+      {
+        id: 'resolution',
+        screenId: 'listeningLake_resolution',
+        type: 'resolution',
+        components: ['NarrationText'],
+      },
+      {
+        id: 'reflection',
+        screenId: 'listeningLake_reflection',
+        type: 'reflection',
+        components: ['ReflectionPrompt', 'ParentPrompt'],
+      },
+    ],
+    engineHooks: ['emotion_engine', 'reflection_engine'],
+    assets: ['lake.png', 'duck.png'],
+    reflectionPrompt: 'What sound helps you feel calm?',
+  },
+
+  // ...continue similarly for storybook_013 through storybook_030
+];
+tsx
+// src/storybook/StoryScreen.tsx
+import React from 'react';
+import { View, Text } from 'react-native';
+import { STORIES_1_TO_30, StoryDefinition, StoryStep } from './config/stories1to30';
+
+interface StoryScreenProps {
+  storyId: string;
+  stepId: string;
+}
+
+export const StoryScreen: React.FC<StoryScreenProps> = ({ storyId, stepId }) => {
+  const story: StoryDefinition | undefined = STORIES_1_TO_30.find(
+    s => s.id === storyId,
+  );
+  if (!story) return <Text>Story not found</Text>;
+
+  const step: StoryStep | undefined = story.uiFlow.find(
+    st => st.id === stepId,
+  );
+  if (!step) return <Text>Step not found</Text>;
+
+  return (
+    <View style={{ flex: 1, padding: 16 }}>
+      <Text style={{ fontSize: 20, fontWeight: '600' }}>{story.title}</Text>
+      <Text style={{ marginVertical: 8 }}>{step.type.toUpperCase()}</Text>
+
+      {/* Example dynamic component rendering; in production, map to real components */}
+      {step.components.map(c => (
+        <View key={c} style={{ marginVertical: 4 }}>
+          <Text>{`[Component: ${c}]`}</Text>
+        </View>
+      ))}
+
+      <View style={{ marginTop: 16 }}>
+        <Text>{story.reflectionPrompt}</Text>
+      </View>
+    </View>
+  );
+};
+tsx
+// src/storybook/StoryNavigator.tsx
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StoryScreen } from './StoryScreen';
+
+const Stack = createNativeStackNavigator();
+
+export const StorybookNavigator = () => (
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    {Array.from({ length: 30 }).map((_, idx) => {
+      const storyId = `storybook_${String(idx + 1).padStart(3, '0')}`;
+      return (
+        <Stack.Screen
+          key={storyId}
+          name={storyId}
+          children={() => <StoryScreen storyId={storyId} stepId="intro" />}
+        />
+      );
+    })}
+  </Stack.Navigator>
+);
+Engine ingestion JSON for all 30 stories
+json
+{
+  "storybook_engine_ingestion": [
+    {
+      "id": "storybook_001",
+      "title": "The Lost Backpack",
+      "age_range": "4-7",
+      "theme": "Problem Solving",
+      "core_skill": "Emotional Regulation",
+      "learning_objective": "Help children identify feelings when something goes missing and practice calm problem-solving steps.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["emotion_engine", "reflection_engine", "scoring_engine"],
+      "ui_flow": ["intro", "sceneChoice", "emotionCheck", "resolution", "reflection"],
+      "reflection_prompt": "What helped you stay calm when something went missing?"
+    },
+    {
+      "id": "storybook_002",
+      "title": "The Big Rainy Day",
+      "age_range": "4-7",
+      "theme": "Coping Skills",
+      "core_skill": "Flexibility",
+      "learning_objective": "Teach children how to adapt when plans change unexpectedly.",
+      "interaction_type": "drag-and-drop",
+      "engine_hooks": ["coping_engine", "reflection_engine"],
+      "ui_flow": ["intro", "weatherScene", "choiceActivity", "newPlan", "reflection"],
+      "reflection_prompt": "What fun things can you do when plans change?"
+    },
+    {
+      "id": "storybook_003",
+      "title": "The Sharing Tree",
+      "age_range": "4-8",
+      "theme": "Sharing",
+      "core_skill": "Social Skills",
+      "learning_objective": "Help children understand sharing and fairness.",
+      "interaction_type": "tap-to-speak",
+      "engine_hooks": ["social_skills_engine", "dialogue_engine"],
+      "ui_flow": ["intro", "tree_scene", "dialogue_choices", "sharing_outcome", "reflection"],
+      "reflection_prompt": "How do you feel when you share something?"
+    },
+    {
+      "id": "storybook_004",
+      "title": "The Brave Little Lantern",
+      "age_range": "5-9",
+      "theme": "Bravery",
+      "core_skill": "Confidence",
+      "learning_objective": "Teach children how to face small fears safely.",
+      "interaction_type": "tap-to-explore",
+      "engine_hooks": ["confidence_engine", "emotion_engine"],
+      "ui_flow": ["intro", "forest_scene", "fear_check", "bravery_choice", "resolution", "reflection"],
+      "reflection_prompt": "What helps you feel brave?"
+    },
+    {
+      "id": "storybook_005",
+      "title": "The Friendship Puzzle",
+      "age_range": "5-9",
+      "theme": "Friendship",
+      "core_skill": "Communication",
+      "learning_objective": "Teach children how to repair misunderstandings with friends.",
+      "interaction_type": "drag-to-fit",
+      "engine_hooks": ["communication_engine", "repair_engine"],
+      "ui_flow": ["intro", "puzzle_scene", "misunderstanding_event", "repair_choices", "reflection"],
+      "reflection_prompt": "How can you fix a misunderstanding?"
+    },
+    {
+      "id": "storybook_006",
+      "title": "The Kindness Market",
+      "age_range": "4-8",
+      "theme": "Kindness",
+      "core_skill": "Empathy",
+      "learning_objective": "Help children practice noticing others’ feelings and responding kindly.",
+      "interaction_type": "tap-to-give",
+      "engine_hooks": ["empathy_engine", "kindness_engine"],
+      "ui_flow": ["intro", "market_scene", "character_needs", "kindness_choice", "reflection"],
+      "reflection_prompt": "What kindness gift would you give someone today?"
+    },
+    {
+      "id": "storybook_007",
+      "title": "The Calm Cloud",
+      "age_range": "4-7",
+      "theme": "Calming Down",
+      "core_skill": "Self-Regulation",
+      "learning_objective": "Teach children simple calming strategies.",
+      "interaction_type": "swipe-to-breathe",
+      "engine_hooks": ["calming_engine", "breathing_engine"],
+      "ui_flow": ["intro", "cloud_scene", "breathing_activity", "calm_check", "reflection"],
+      "reflection_prompt": "What helps your body calm down?"
+    },
+    {
+      "id": "storybook_008",
+      "title": "The Helpful Hedgehog",
+      "age_range": "4-8",
+      "theme": "Helping Others",
+      "core_skill": "Prosocial Behaviour",
+      "learning_objective": "Teach children how small helpful actions make a big difference.",
+      "interaction_type": "tap-to-assist",
+      "engine_hooks": ["prosocial_engine"],
+      "ui_flow": ["intro", "forest_scene", "helping_tasks", "outcome", "reflection"],
+      "reflection_prompt": "How did you help someone today?"
+    },
+    {
+      "id": "storybook_009",
+      "title": "The Big Feelings Balloon",
+      "age_range": "4-7",
+      "theme": "Identifying Emotions",
+      "core_skill": "Emotional Literacy",
+      "learning_objective": "Help children name and understand big feelings.",
+      "interaction_type": "tap-to-identify",
+      "engine_hooks": ["emotion_engine"],
+      "ui_flow": ["intro", "balloon_scene", "emotion_identification", "resolution", "reflection"],
+      "reflection_prompt": "Which balloon shows how you feel?"
+    },
+    {
+      "id": "storybook_010",
+      "title": "The Time-Turner Turtle",
+      "age_range": "5-9",
+      "theme": "Patience",
+      "core_skill": "Delay of Gratification",
+      "learning_objective": "Teach children how to wait calmly and understand time.",
+      "interaction_type": "hold-to-wait",
+      "engine_hooks": ["patience_engine", "time_engine"],
+      "ui_flow": ["intro", "turtle_scene", "waiting_activity", "reward_scene", "reflection"],
+      "reflection_prompt": "What helps you wait calmly?"
+    },
+
+    {
+      "id": "storybook_011",
+      "title": "The Giggle Garden",
+      "age_range": "4-7",
+      "theme": "Joy",
+      "core_skill": "Positive Emotion",
+      "learning_objective": "Help children notice and create joyful moments.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["emotion_engine", "reflection_engine"],
+      "ui_flow": ["intro", "scene", "choiceActivity", "resolution", "reflection"],
+      "reflection_prompt": "What makes you giggle?"
+    },
+    {
+      "id": "storybook_012",
+      "title": "The Listening Lake",
+      "age_range": "4-7",
+      "theme": "Listening",
+      "core_skill": "Attention",
+      "learning_objective": "Teach children the value of quiet listening.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["emotion_engine", "reflection_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What sound helps you feel calm?"
+    },
+    {
+      "id": "storybook_013",
+      "title": "The Courageous Cupcake",
+      "age_range": "4-7",
+      "theme": "Bravery",
+      "core_skill": "Confidence",
+      "learning_objective": "Support children to express themselves proudly.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["confidence_engine", "emotion_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What makes you feel confident?"
+    },
+    {
+      "id": "storybook_014",
+      "title": "The Gentle Giant",
+      "age_range": "5-9",
+      "theme": "Gentleness",
+      "core_skill": "Self-Control",
+      "learning_objective": "Teach children that being gentle is a strength.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["emotion_engine", "reflection_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "How can you show gentleness?"
+    },
+    {
+      "id": "storybook_015",
+      "title": "The Rainbow Repair Shop",
+      "age_range": "4-8",
+      "theme": "Emotions",
+      "core_skill": "Emotional Literacy",
+      "learning_objective": "Help children link colors to feelings and repair them.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["emotion_engine", "reflection_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "Which color matches your feeling today?"
+    },
+    {
+      "id": "storybook_016",
+      "title": "The Whispering Woods",
+      "age_range": "5-9",
+      "theme": "Stories & Feelings",
+      "core_skill": "Reflection",
+      "learning_objective": "Encourage children to listen to and reflect on feelings.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["reflection_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What story would your tree tell?"
+    },
+    {
+      "id": "storybook_017",
+      "title": "The Patience Playground",
+      "age_range": "4-8",
+      "theme": "Patience",
+      "core_skill": "Waiting Turn",
+      "learning_objective": "Teach children to wait for turns calmly.",
+      "interaction_type": "hold-to-wait",
+      "engine_hooks": ["patience_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What helps you wait your turn?"
+    },
+    {
+      "id": "storybook_018",
+      "title": "The Brave Bubble",
+      "age_range": "4-7",
+      "theme": "Bravery",
+      "core_skill": "Facing Small Fears",
+      "learning_objective": "Support children to face small fears safely.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["confidence_engine", "emotion_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What small fear did you face recently?"
+    },
+    {
+      "id": "storybook_019",
+      "title": "The Kind Koala",
+      "age_range": "4-8",
+      "theme": "Kindness",
+      "core_skill": "Prosocial Behaviour",
+      "learning_objective": "Encourage everyday kindness at home.",
+      "interaction_type": "tap-to-assist",
+      "engine_hooks": ["prosocial_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "How can you show kindness at home?"
+    },
+    {
+      "id": "storybook_020",
+      "title": "The Feelings Train",
+      "age_range": "4-7",
+      "theme": "Identifying Emotions",
+      "core_skill": "Emotional Literacy",
+      "learning_objective": "Help children choose and name their feelings.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["emotion_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What feeling carriage did you choose?"
+    },
+
+    {
+      "id": "storybook_021",
+      "title": "The Helpful Hippo",
+      "age_range": "4-8",
+      "theme": "Helping Others",
+      "core_skill": "Prosocial Behaviour",
+      "learning_objective": "Show how helping improves the environment for everyone.",
+      "interaction_type": "tap-to-assist",
+      "engine_hooks": ["prosocial_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What helpful thing can you do tomorrow?"
+    },
+    {
+      "id": "storybook_022",
+      "title": "The Calm Cave",
+      "age_range": "5-9",
+      "theme": "Calming Down",
+      "core_skill": "Self-Regulation",
+      "learning_objective": "Teach children to quiet loud feelings.",
+      "interaction_type": "swipe-to-breathe",
+      "engine_hooks": ["calming_engine", "breathing_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What helps your feelings quiet down?"
+    },
+    {
+      "id": "storybook_023",
+      "title": "The Sharing Seashell",
+      "age_range": "4-8",
+      "theme": "Sharing",
+      "core_skill": "Fairness",
+      "learning_objective": "Encourage fair sharing and turn-taking.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["social_skills_engine", "reflection_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "How do you feel when someone shares with you?"
+    },
+    {
+      "id": "storybook_024",
+      "title": "The Brave Bridge",
+      "age_range": "5-9",
+      "theme": "Bravery",
+      "core_skill": "Facing Challenges",
+      "learning_objective": "Help children cross tricky moments safely.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["confidence_engine", "emotion_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What helps you cross tricky moments?"
+    },
+    {
+      "id": "storybook_025",
+      "title": "The Friendship Forest",
+      "age_range": "5-9",
+      "theme": "Friendship",
+      "core_skill": "Conflict Repair",
+      "learning_objective": "Teach children how to fix disagreements.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["communication_engine", "repair_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What helps you fix a disagreement?"
+    },
+    {
+      "id": "storybook_026",
+      "title": "The Kindness Kite",
+      "age_range": "4-8",
+      "theme": "Kindness",
+      "core_skill": "Encouragement",
+      "learning_objective": "Encourage kind words and supportive actions.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["kindness_engine", "reflection_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What kind words can you say today?"
+    },
+    {
+      "id": "storybook_027",
+      "title": "The Emotion Elevator",
+      "age_range": "4-8",
+      "theme": "Identifying Emotions",
+      "core_skill": "Emotional Literacy",
+      "learning_objective": "Help children choose their current feeling.",
+      "interaction_type": "tap-to-choose",
+      "engine_hooks": ["emotion_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What floor matches your feeling?"
+    },
+    {
+      "id": "storybook_028",
+      "title": "The Gentle Giraffe",
+      "age_range": "4-8",
+      "theme": "Helping Others",
+      "core_skill": "Prosocial Behaviour",
+      "learning_objective": "Show how helping smaller or younger friends matters.",
+      "interaction_type": "tap-to-assist",
+      "engine_hooks": ["prosocial_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "How can you help someone smaller or younger?"
+    },
+    {
+      "id": "storybook_029",
+      "title": "The Calm Canoe",
+      "age_range": "5-9",
+      "theme": "Calming Down",
+      "core_skill": "Body Regulation",
+      "learning_objective": "Teach children to steady their bodies when feelings are big.",
+      "interaction_type": "swipe-to-breathe",
+      "engine_hooks": ["calming_engine", "breathing_engine"],
+      "ui_flow": ["intro", "scene", "activity", "resolution", "reflection"],
+      "reflection_prompt": "What helps your body feel steady?"
+    },
+    {
+      "id": "storybook_030",
+      "title": "The Time Garden",
+      "age_range": "5-9",
+      "theme": "Patience",
+      "core_skill": "Delay of Gratification",
+      "learning_objective": "Show that good things grow when we wait.",
+      "interaction_type": "hold-to-wait",
+      "engine_hooks": ["patience_engine"],
+      "ui_flow": ["intro", "scene", "waiting_activity", "resolution", "reflection"],
+      "reflection_prompt": "What did you wait for recently?"
+    }
+  ]
+}

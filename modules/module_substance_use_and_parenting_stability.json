@@ -1,0 +1,28 @@
+{
+  "id": "module_substance_use_and_parenting_stability",
+  "title": "Alcohol and Other Drug Recovery & Safe Parenting",
+  "description": "SS-CURR-004: Supports parents in understanding substance use impacts on children, mapping triggers, building sober care and supervision plans, responding safely to lapse/relapse, and documenting sustained recovery.",
+  "type": "module",
+  "level": "intensive",
+  "tags": [
+    "aod recovery",
+    "sober parenting",
+    "relapse prevention",
+    "child safety",
+    "SS-CURR-004"
+  ],
+  "outcomes": [
+    "Understand how alcohol and other drug use affects family routines, emotional availability, and child safety",
+    "Build practical trigger maps, craving response plans, and sober supervision arrangements with protective adults",
+    "Respond honestly and rapidly to lapses or relapses while maintaining child protection and longitudinal recovery evidence"
+  ],
+  "lessons": [
+    "understanding_substance_use_and_family_impact",
+    "triggers_cravings_and_safer_choices",
+    "recovery_and_treatment_planning",
+    "lapse_relapse_and_recovery_response",
+    "parenting_safely_during_recovery",
+    "sustained_recovery_evidence"
+  ],
+  "content": []
+}

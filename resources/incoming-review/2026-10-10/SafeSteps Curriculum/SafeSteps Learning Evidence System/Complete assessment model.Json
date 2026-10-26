@@ -1,0 +1,21 @@
+{
+  "assessmentPlan": {
+    "baselineAssessmentWeight": 0,
+    "knowledgeAssessmentWeight": 20,
+    "scenarioAssessmentWeight": 25,
+    "reflectionWeight": 15,
+    "skillDemonstrationWeight": 25,
+    "actionPlanWeight": 15,
+    "passingScore": 80,
+    "mandatoryCompetencies": [
+      "recognises_child_impact",
+      "prioritises_safety",
+      "accepts_responsibility",
+      "selects_safe_responses",
+      "creates_realistic_change_plan"
+    ],
+    "multipleEvidenceRequired": true,
+    "minimumEvidenceItems": 5,
+    "criticalSafetyOverride": true
+  }
+}

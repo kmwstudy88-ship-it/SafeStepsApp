@@ -1,0 +1,23 @@
+{
+  "id": "module_emotional_regulation",
+  "title": "Emotional Regulation",
+  "description": "This module supports parents and caregivers to recognise early signs of stress and dysregulation, use grounding strategies, and co-regulate safely with children.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "emotional regulation",
+    "co-regulation",
+    "stress management",
+    "parenting"
+  ],
+  "outcomes": [
+    "Identify personal emotional triggers and physiological signs of escalation",
+    "Apply practical pause and grounding techniques before responding under stress",
+    "Support children through big feelings using calm, predictable co-regulation"
+  ],
+  "lessons": [
+    "co_regulation_basics",
+    "holding_space"
+  ],
+  "content": []
+}

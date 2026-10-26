@@ -1,0 +1,25 @@
+{
+  "evidenceRecord": {
+    "evidenceId": "EV-UH-001",
+    "learnerId": "",
+    "courseId": "understanding_harm_basic",
+    "lessonId": "what_is_harm",
+    "evidenceType": "scenario_response",
+    "collectionMethod": "learner_submission",
+    "prompt": "",
+    "response": "",
+    "submittedAt": "",
+    "attemptNumber": 1,
+    "competenciesMeasured": [],
+    "rubricId": "",
+    "automaticScore": 0,
+    "facilitatorScore": null,
+    "maximumScore": 100,
+    "feedback": "",
+    "verificationStatus": "unverified",
+    "reviewedBy": null,
+    "reviewedAt": null,
+    "remediationRequired": false,
+    "privacyClassification": "sensitive_learning_record"
+  }
+}

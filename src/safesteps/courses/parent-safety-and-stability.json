@@ -1,0 +1,22 @@
+{
+  "id": "parent-safety-and-stability",
+  "title": "Parent Safety and Stability",
+  "description": "Core program course building immediate physical and emotional safety, crisis planning, and household stability.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "parent-safety-and-stability"
+  ],
+  "outcomes": [
+    "Understand the core principles of parent safety and stability",
+    "Apply parent safety and stability safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "safety_planning",
+    "building_safe_routines",
+    "restoring_routines"
+  ],
+  "content": []
+}

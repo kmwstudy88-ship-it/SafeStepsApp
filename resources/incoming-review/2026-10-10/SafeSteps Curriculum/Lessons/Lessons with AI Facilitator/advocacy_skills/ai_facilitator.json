@@ -1,0 +1,19 @@
+{
+  "lesson_id": "advocacy_skills",
+  "ai_facilitator": {
+    "opening": [
+      "Welcome to Advocacy Skills.",
+      "Advocacy means respectfully speaking up for children's needs, safety and wellbeing."
+    ],
+    "coaching": [
+      "What evidence supports your concern?",
+      "How can you communicate clearly and professionally?",
+      "Who else may be able to assist?",
+      "What is the child's best interest?"
+    ],
+    "completion": [
+      "Strong advocacy combines persistence with collaboration.",
+      "Your voice can help create better outcomes for children."
+    ]
+  }
+}

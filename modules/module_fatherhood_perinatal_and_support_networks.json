@@ -1,0 +1,28 @@
+{
+  "id": "module_fatherhood_perinatal_and_support_networks",
+  "title": "Fatherhood, Perinatal Care, Support Networks & Mental Health Planning",
+  "description": "SS-CURR-001 & SS-CURR-003: Covers pregnancy and newborn fourth-trimester care, accountable fatherhood and positive role modelling, building informal and formal support networks, mental health crisis planning, and safe AI coach skills.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "perinatal",
+    "newborn care",
+    "fatherhood",
+    "support network",
+    "mental health planning"
+  ],
+  "outcomes": [
+    "Support maternal, paternal, and infant wellbeing across pregnancy, the fourth trimester, and early infancy",
+    "Practise accountable, non-violent fatherhood and build a reliable village of informal and professional supports",
+    "Create clear mental-health and crisis support plans and use the SafeSteps AI Support Coach safely within privacy boundaries"
+  ],
+  "lessons": [
+    "pregnancy_and_perinatal_wellbeing",
+    "newborn_care_and_fourth_trimester",
+    "fatherhood_and_positive_role_modelling",
+    "building_your_village_and_support_network",
+    "mental_health_support_and_crisis_planning",
+    "safe_ai_support_coach_skills"
+  ],
+  "content": []
+}

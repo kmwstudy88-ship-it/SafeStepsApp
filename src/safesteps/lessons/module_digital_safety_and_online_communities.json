@@ -1,0 +1,21 @@
+{
+  "id": "module_digital_safety_and_online_communities",
+  "title": "Digital Safety and Online Communities",
+  "description": "This module supports communities to understand digital safety risks related to DFV, including online abuse, tech-facilitated coercion, and unsafe digital behaviours. It focuses on building safer online communities, recognising digital red flags, and supporting people experiencing digital forms of abuse.",
+  "type": "module",
+  "level": "community",
+  "tags": [
+    "dfv",
+    "digital safety",
+    "online abuse",
+    "technology-facilitated coercion",
+    "community safety"
+  ],
+  "outcomes": [
+    "Recognise digital risks and online behaviours associated with DFV",
+    "Support safer online practices within communities",
+    "Identify and respond to tech-facilitated abuse in safe and appropriate ways"
+  ],
+  "lessons": [],
+  "content": []
+}

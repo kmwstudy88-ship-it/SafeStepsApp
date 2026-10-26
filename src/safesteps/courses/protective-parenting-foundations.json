@@ -1,0 +1,22 @@
+{
+  "id": "protective-parenting-foundations",
+  "title": "Protective Parenting Foundations",
+  "description": "Core program course developing protective factors, safe boundaries, and attuned supervision.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "protective-parenting-foundations"
+  ],
+  "outcomes": [
+    "Understand the core principles of protective parenting foundations",
+    "Apply protective parenting foundations safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "lesson_protective_factors",
+    "taking_responsibility",
+    "understanding_child_cues"
+  ],
+  "content": []
+}

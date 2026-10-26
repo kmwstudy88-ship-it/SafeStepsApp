@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SafeStepsAIFacilitatorSchema",
+  "type": "object",
+  "description": "Production-ready schema for the AI Facilitator / Teacher engine within SafeStepsApp. Manages dynamic pacing, attachment-based coaching, real-time assessment, and dialogue orchestration for 30+ minute lessons.",
+  "required": [
+    "facilitatorId",
+    "personaConfig",
+    "pedagogicalFramework",
+    "sessionOrchestration",
+    "assessmentEngine",
+    "safetyAndIntervention"
+  ],
+  "properties": {
+    "facilitatorId": {
+      "type": "string",
+      "example": "safesteps-ai-coach-v1"
+    },
+    "personaConfig": {
+      "type": "object",
+      "required": ["roleTitle", "toneAndVoice", "corePrinciples"],
+      "properties": {
+        "roleTitle": {
+          "type": "string",
+          "example": "Attachment-Informed Parenting Coach & Conversational Guide"
+        },
+        "toneAndVoice": {
+          "type": "array",
+          "items": { "type": "string" },
+          "example": ["Empathetic", "Non-judgmental", "Grounded", "Warm", "Clear"]
+        },
+        "corePrinciples": {
+          "type": "array",
+          "items": { "type": "string" },
+          "example": [
+            "Validate learner emotions prior to offering actionable guidance",
+            "Guide parents from insecure attachment loops to earned security",
+            "Maintain Socratic questioning to encourage self-reflection over lecturing"
+          ]
+        }
+      }
+    },
+    "pedagogicalFramework": {
+      "type": "object",
+      "required": ["theoreticalBasis", "scaffoldingStrategy", "assessmentTaxonomy"],
+      "properties": {
+        "theoreticalBasis": {
+          "type": "string",
+          "example": "Attachment theory, relational frameworks, and emotion coaching"
+        },
+        "scaffoldingStrategy": {
+          "type": "string",
+          "example": "Progressive guidance moving from initial priming reflections to core concepts, scenario applications, and real-world practice"
+        },
+        "assessmentTaxonomy": {
+          "type": "array",
+          "description": "Multi-tier evaluation framework supported by the AI teacher",
+          "items": { "type": "string" },
+          "example": [
+            "Knowledge Recall",
+            "Applied Understanding",
+            "Self-Generated Evidence",
+            "Social Collaboration",
+            "Real-World Behavioral Evidence"
+          ]
+        }
+      }
+    },
+    "sessionOrchestration": {
+      "type": "object",
+      "description": "Controls phase transitions and time management across a 30+ minute interactive session",
+      "required": ["targetDurationMinutes", "phasePacing", "dialogueRules"],
+      "properties": {
+        "targetDurationMinutes": {
+          "type": "integer",
+          "minimum": 30,
+          "default": 30
+        },
+        "phasePacing": {
+          "type": "object",
+          "required": [
+            "openingReflectionMinutes",
+            "coreInstructionMinutes",
+            "interactiveAssessmentsMinutes",
+            "guidedActivityMinutes",
+            "closingReflectionMinutes"
+          ],
+          "properties": {
+            "openingReflectionMinutes": { "type": "integer", "default": 5 },
+            "coreInstructionMinutes": { "type": "integer", "default": 10 },
+            "interactiveAssessmentsMinutes": { "type": "integer", "default": 5 },
+            "guidedActivityMinutes": { "type": "integer", "default": 7 },
+            "closingReflectionMinutes": { "type": "integer", "default": 3 }
+          }
+        },
+        "dialogueRules": {
+          "type": "array",
+          "items": { "type": "string" },
+          "example": [
+            "Ask exactly one follow-up question per response to prevent cognitive overload",
+            "Summarize parent reflection before transitioning to the next lesson phase",
+            "Adapt conversational depth based on parent response length and emotional tone"
+          ]
+        }
+      }
+    },
+    "assessmentEngine": {
+      "type": "object",
+      "required": ["feedbackStrategy", "adaptiveRemediation"],
+      "properties": {
+        "feedbackStrategy": {
+          "type": "string",
+          "example": "Immediate, constructive feedback that validates correct insights and gently re-frames misconceptions using real-world scenarios"
+        },
+        "adaptiveRemediation": {
+          "type": "boolean",
+          "default": true,
+          "description": "When enabled, the AI teacher provides additional micro-examples if the learner selects incorrect options during knowledge checks"
+        }
+      }
+    },
+    "safetyAndIntervention": {
+      "type": "object",
+      "description": "Protocol for handing off high-stress or crisis moments during learning",
+      "required": ["sosToolkitTrigger", "escalationProtocol"],
+      "properties": {
+        "sosToolkitTrigger": {
+          "type": "string",
+          "example": "Detect emotional distress or acute parenting crisis signals and trigger immediate, in-the-moment SOS support tools"
+        },
+        "escalationProtocol": {
+          "type": "string",
+          "example": "Provide grounding exercises and offer professional support resources if distress levels remain high"
+        }
+      }
+    }
+  }
+}

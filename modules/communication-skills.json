@@ -1,0 +1,22 @@
+{
+  "id": "communication-skills",
+  "title": "Communication Skills",
+  "description": "Core program course on clear, respectful, child-focused communication and repair after misunderstandings.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "communication-skills"
+  ],
+  "outcomes": [
+    "Understand the core principles of communication skills",
+    "Apply communication skills safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "communication_skills",
+    "active_listening",
+    "building_empathy"
+  ],
+  "content": []
+}

@@ -1,0 +1,178 @@
+{
+  "lessonId": "building-secure-attachment-lesson-4",
+  "courseId": "building-secure-attachment",
+  "title": "Building Long‑Term Connection",
+  "metadata": {
+    "version": "1.0.0",
+    "estimatedDurationMinutes": 30,
+    "targetAudience": "Parents and Caregivers",
+    "prerequisites": [
+      "building-secure-attachment-lesson-3"
+    ]
+  },
+  "aiFacilitatorConfig": {
+    "personaRole": "Warm, empathetic parenting coach grounded in attachment theory and relational frameworks",
+    "pedagogicalFramework": {
+      "theoreticalBasis": "Attachment theory and relational frameworks guiding users from insecure loops to earned security",
+      "scaffoldingStrategy": "Socratic questioning, active listening validation, and scaffolded instruction"
+    },
+    "pacingConfig": {
+      "openingReflectionMinutes": 5,
+      "coreInstructionMinutes": 10,
+      "interactiveAssessmentsMinutes": 5,
+      "guidedActivityMinutes": 7,
+      "closingReflectionMinutes": 3
+    },
+    "interactionRules": [
+      "Validate learner emotions before offering pedagogical guidance",
+      "Ask one follow-up question at a time to prevent cognitive overload",
+      "Provide immediate constructive feedback on assessment responses"
+    ],
+    "systemPrompts": {
+      "openingGreetingPrompt": "Welcome to Lesson 4: Building Long-Term Connection. In this 30-minute session, we will explore how small, daily micro-moments lay the emotional foundation for lifelong secure attachment.",
+      "quizFacilitationPrompt": "Let's review key principles of long-term relational connection through these practical scenarios.",
+      "activityGuidancePrompt": "Take your time setting up these connection rituals. Consistency in small moments matters far more than intensity or duration.",
+      "closingReflectionPrompt": "As we conclude today's session, take a moment to reflect on the daily rhythms you want to establish with your child."
+    },
+    "safetyAndIntervention": {
+      "sosToolkitTrigger": "Detect distress signals and activate the SOS toolkit for immediate, in-the-moment support"
+    }
+  },
+  "openingReflection": {
+    "prompt": "Reflect on your own childhood: What small, repeating moments or routines made you feel safe, valued, and connected to your caregivers?",
+    "guidance": "Notice how lasting connection is rarely built through grand gestures, but rather through small, reliable interactions over time[cite: 6]."
+  },
+  "content": {
+    "overview": "Connection is not built in grand gestures; it is built in small, repeated moments of warmth, presence, and responsiveness[cite: 6]. Long‑term connection grows when parents show interest in their child’s world, listen without judgment, and create shared experiences[cite: 6]. These moments become the emotional foundation children rely on throughout life[cite: 6].",
+    "coreText": "This lesson explores how connection can be strengthened through routines, rituals, and daily interactions[cite: 6]. Even busy or stressed parents can build strong connection by being intentional with small moments—eye contact, gentle touch, shared laughter, or a few minutes of undivided attention[cite: 6]. Parents learn how to create a home environment where connection is part of the rhythm of daily life[cite: 6].",
+    "keyConcepts": [
+      {
+        "concept": "Micro-Moments of Responsiveness",
+        "description": "Building trust through small, frequent instances of eye contact, gentle touch, and undivided attention rather than rare, elaborate events[cite: 6]."
+      },
+      {
+        "concept": "Predictable Connection Rituals",
+        "description": "Integrating intentional connection points into daily routines to give children a reliable sense of relational safety[cite: 6]."
+      },
+      {
+        "concept": "Child-Led Presence",
+        "description": "Showing genuine interest in the child's world by participating in activities on their terms without taking control[cite: 6]."
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "quiz-1",
+      "type": "multiple-choice",
+      "taxonomyLevel": "Knowledge Recall",
+      "question": "According to attachment principles, how is long-term connection primarily built?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "Through occasional, grand vacation gestures or expensive gifts.",
+          "isCorrect": false,
+          "explanation": "Grand gestures do not replace the emotional security provided by day-to-day presence and responsiveness[cite: 6]."
+        },
+        {
+          "id": "opt-b",
+          "text": "Through small, repeated moments of warmth, presence, and responsiveness[cite: 6].",
+          "isCorrect": true,
+          "explanation": "Correct! Long-term security grows from small, reliable daily micro-interactions[cite: 6]."
+        },
+        {
+          "id": "opt-c",
+          "text": "By ensuring the child never experiences stress or disappointment.",
+          "isCorrect": false,
+          "explanation": "Connection is built through warmth and presence during daily life, not by protecting children from all normal challenges[cite: 6]."
+        }
+      ]
+    },
+    {
+      "id": "quiz-2",
+      "type": "scenario-analysis",
+      "taxonomyLevel": "Applied Understanding",
+      "question": "How can a busy or stressed parent effectively maintain a strong emotional connection with their child?",
+      "options": [
+        {
+          "id": "opt-a",
+          "text": "By being intentional with micro-moments like eye contact, gentle touch, or a few minutes of undivided attention[cite: 6].",
+          "isCorrect": true,
+          "explanation": "Correct! Even brief moments of focused, warm presence build a strong emotional foundation[cite: 6]."
+        },
+        {
+          "id": "opt-b",
+          "text": "By waiting until they have several free hours on the weekend to engage with the child.",
+          "isCorrect": false,
+          "explanation": "Children need regular, predictable daily micro-connections rather than long delays between interactions[cite: 6]."
+        },
+        {
+          "id": "opt-c",
+          "text": "By letting the child watch television while sitting in the same room.",
+          "isCorrect": false,
+          "explanation": "Shared presence requires active interest, eye contact, or warm interaction rather than passive proximity[cite: 6]."
+        }
+      ]
+    }
+  ],
+  "guidedActivities": [
+    {
+      "activityId": "act-1",
+      "title": "Daily Connection Ritual Creation",
+      "objective": "Establish a predictable, repeating connection point within the daily routine.",
+      "estimatedDurationMinutes": 4,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Identify a recurring transition point in your daily schedule (e.g., waking up, arriving home, bedtime)[cite: 6]."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Design a brief, positive ritual for this moment, such as a special greeting phrase, a warm hug, or a shared snack[cite: 6]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Commit to executing this simple ritual consistently over the next week[cite: 6]."
+        }
+      ]
+    },
+    {
+      "activityId": "act-2",
+      "title": "5-Minute Child-Led Engagement",
+      "objective": "Practice entering the child's emotional world through focused, non-judgmental attention.",
+      "estimatedDurationMinutes": 3,
+      "steps": [
+        {
+          "stepNumber": 1,
+          "instruction": "Set aside five uninterrupted minutes today specifically for your child[cite: 6]."
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Invite your child to choose an activity they enjoy and join them[cite: 6]."
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Follow their lead completely without directing, correcting, or giving unsolicited advice[cite: 6]."
+        }
+      ]
+    }
+  ],
+  "actionableTakeaways": [
+    "Prioritize small, repeated moments of warmth over grand gestures[cite: 6].",
+    "Integrate simple, predictable connection rituals into daily transition points[cite: 6].",
+    "Spend dedicated, non-directive time following your child's lead in activities they enjoy[cite: 6]."
+  ],
+  "reflectionQuestions": [
+    {
+      "id": "ref-1",
+      "question": "What moments help you feel most connected to your child?[cite: 6]"
+    },
+    {
+      "id": "ref-2",
+      "question": "How does your child show they want connection?[cite: 6]"
+    },
+    {
+      "id": "ref-3",
+      "question": "What is one connection ritual you want to build into your daily routine?[cite: 6]"
+    }
+  ]
+}

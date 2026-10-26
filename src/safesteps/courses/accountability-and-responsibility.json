@@ -1,0 +1,22 @@
+{
+  "id": "accountability-and-responsibility",
+  "title": "Accountability and Responsibility",
+  "description": "Core program course on owning impact, challenging minimisation, and practising consistent repair.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "accountability-and-responsibility"
+  ],
+  "outcomes": [
+    "Understand the core principles of accountability and responsibility",
+    "Apply accountability and responsibility safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "taking_responsibility",
+    "challenging_minimisation",
+    "understanding_harm"
+  ],
+  "content": []
+}

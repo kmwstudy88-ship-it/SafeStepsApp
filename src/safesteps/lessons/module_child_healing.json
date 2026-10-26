@@ -1,0 +1,21 @@
+{
+  "id": "module_child_healing",
+  "title": "Supporting Child Healing",
+  "description": "This module helps parents understand how domestic and family violence affects children emotionally, behaviourally, and developmentally. It provides practical, age‑appropriate strategies to support children’s healing, resilience, and sense of safety.",
+  "type": "module",
+  "level": "foundational",
+  "tags": [
+    "dfv",
+    "child wellbeing",
+    "trauma",
+    "healing",
+    "parenting"
+  ],
+  "outcomes": [
+    "Understand how DFV impacts children at different developmental stages",
+    "Provide age‑appropriate emotional support to children recovering from DFV",
+    "Strengthen children’s resilience and sense of safety"
+  ],
+  "lessons": [],
+  "content": []
+}

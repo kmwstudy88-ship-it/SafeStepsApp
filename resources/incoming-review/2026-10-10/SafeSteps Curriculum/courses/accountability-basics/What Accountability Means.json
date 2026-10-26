@@ -1,0 +1,25 @@
+{
+  "id": "accountability-basics",
+  "title": "Accountability Foundations",
+  "description": "This course introduces the core principles of accountability, including ownership of behaviour, honesty, and responsibility for impact.",
+  "learningOutcomes": [
+    "Understand what accountability means in relationships.",
+    "Recognise the difference between excuses and responsibility.",
+    "Identify behaviours that avoid accountability.",
+    "Develop skills for honest self-reflection."
+  ],
+  "modules": [
+    {
+      "title": "What Accountability Means",
+      "content": "Defines responsibility, ownership, and behavioural integrity."
+    },
+    {
+      "title": "Avoidance Patterns",
+      "content": "Explores blame-shifting, minimising, and denial."
+    },
+    {
+      "title": "Building Accountability",
+      "content": "Provides tools for honest reflection and behavioural responsibility."
+    }
+  ]
+}

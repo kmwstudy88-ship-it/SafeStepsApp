@@ -1,0 +1,26 @@
+{
+  "id": "module_relationship_skills",
+  "title": "Relationship Skills",
+  "description": "This module develops respectful communication, active listening, boundary-setting, and repair skills that strengthen child-safe family relationships.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "relationship skills",
+    "communication",
+    "repair",
+    "respectful relationships"
+  ],
+  "outcomes": [
+    "Practice respectful, non-coercive communication across family interactions",
+    "Protect children from adult conflict and maintain child-focused boundaries",
+    "Repair relational ruptures through empathy, consistency, and follow-through"
+  ],
+  "lessons": [
+    "active_listening",
+    "lesson_active_listening",
+    "communication_skills",
+    "conflict_management",
+    "building_empathy"
+  ],
+  "content": []
+}

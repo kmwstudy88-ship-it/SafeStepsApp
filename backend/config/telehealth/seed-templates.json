@@ -1,0 +1,53 @@
+{
+  "appointmentTemplates": [
+    {
+      "name": "family_support_session",
+      "appointmentType": "family_support_session",
+      "defaultDurationMinutes": 60,
+      "defaultMeetingMethod": "secure_video",
+      "requiredConsentTypes": [
+        "telehealth_consent",
+        "privacy_acknowledgement"
+      ]
+    },
+    {
+      "name": "psychological_assessment",
+      "appointmentType": "psychological_assessment",
+      "defaultDurationMinutes": 90,
+      "defaultMeetingMethod": "secure_video",
+      "requiredConsentTypes": [
+        "telehealth_consent",
+        "privacy_acknowledgement",
+        "information_sharing_consent"
+      ]
+    },
+    {
+      "name": "parent_child_contact",
+      "appointmentType": "parent_child_contact",
+      "defaultDurationMinutes": 45,
+      "defaultMeetingMethod": "secure_video",
+      "requiredConsentTypes": [
+        "participation_consent",
+        "child_participation_consent",
+        "telehealth_consent"
+      ]
+    }
+  ],
+  "notificationTemplates": [
+    {
+      "event": "appointment_created",
+      "channel": "email",
+      "template": "You have a new telehealth appointment scheduled."
+    },
+    {
+      "event": "consent_missing",
+      "channel": "in_app",
+      "template": "Mandatory consent is pending before the session can begin."
+    },
+    {
+      "event": "incident_created",
+      "channel": "notify_supervisor",
+      "template": "A telehealth incident requires review."
+    }
+  ]
+}

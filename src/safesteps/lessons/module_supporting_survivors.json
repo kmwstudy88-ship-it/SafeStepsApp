@@ -1,0 +1,21 @@
+{
+  "id": "module_supporting_survivors",
+  "title": "Supporting Survivors",
+  "description": "This module equips peer mentors with the practical skills needed to support survivors of domestic and family violence safely and effectively. It focuses on strengths-based support, navigating services, and encouraging help-seeking without stepping outside the peer role.",
+  "type": "module",
+  "level": "intermediate",
+  "tags": [
+    "dfv",
+    "peer support",
+    "survivor support",
+    "strengths-based",
+    "service navigation"
+  ],
+  "outcomes": [
+    "Provide strengths-based emotional support to survivors",
+    "Help survivors understand and navigate available services",
+    "Encourage safe and appropriate help-seeking without giving advice outside the peer role"
+  ],
+  "lessons": [],
+  "content": []
+}

@@ -1,0 +1,7 @@
+{
+  "easyScenarios": 10,
+  "mediumScenarios": 10,
+  "advancedScenarios": 10,
+  "expertScenarios": 10,
+  "adaptiveScenarios": true
+}

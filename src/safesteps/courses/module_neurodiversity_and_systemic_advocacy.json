@@ -1,0 +1,30 @@
+{
+  "id": "module_neurodiversity_and_systemic_advocacy",
+  "title": "Neurodiversity-Affirming Care, Sensory Support & Systemic Advocacy",
+  "description": "Parenting Track 4 & Master Tier Competencies: Covers ADHD and executive function scaffolding, sensory-integrated sleep and home environments, educational/IEP/NDIS advocacy, trauma dissociation de-escalation, case conference literacy, and parallel parenting safety plans.",
+  "type": "module",
+  "level": "advanced",
+  "tags": [
+    "neurodiversity",
+    "ADHD",
+    "autism",
+    "NDIS advocacy",
+    "IEP",
+    "parallel parenting",
+    "master track"
+  ],
+  "outcomes": [
+    "Scaffold executive functioning, sensory regulation, and restorative sleep for neurodivergent children and teens",
+    "Advocate effectively in school IEP, behaviour support, NDIS, and multi-disciplinary child welfare case conferences",
+    "De-escalate trauma-related dissociation or hyperarousal and maintain safe parallel parenting boundaries after DFV"
+  ],
+  "lessons": [
+    "adhd_and_executive_function_scaffolding",
+    "sensory_processing_and_sleep_architecture",
+    "educational_and_ndis_rights_advocacy",
+    "deescalating_dissociation_and_hyperarousal",
+    "navigating_child_welfare_case_conferences",
+    "parallel_parenting_and_dfv_safety_plans"
+  ],
+  "content": []
+}

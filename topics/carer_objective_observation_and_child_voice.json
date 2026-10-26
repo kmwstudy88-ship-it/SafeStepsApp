@@ -1,0 +1,9 @@
+{
+  "id": "carer_objective_observation_and_child_voice",
+  "topicId": "carer-objective-observation-and-child-voice",
+  "topicName": "recording objective carer observations & honouring child voice",
+  "caseworkerSummary": "Trains carers to record clear, fair, bias-free observations that strictly separate direct behavioural observation and the child's exact words from adult assumptions. This topic links directly to module_foster_and_kinship_carer_support and supports structured reflection, practical skill application, and review-ready evidence.",
+  "modules": [
+    "module_foster_and_kinship_carer_support"
+  ]
+}

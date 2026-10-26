@@ -1,0 +1,21 @@
+{
+  "id": "module_legal_advocacy_and_supporting_clients",
+  "title": "Legal Advocacy and Supporting Clients Through the System",
+  "description": "This module supports practitioners to provide safe, ethical, and empowering legal advocacy for clients navigating DFV legal systems. It focuses on rights, informed decision-making, and trauma-informed support.",
+  "type": "module",
+  "level": "justice_legal",
+  "tags": [
+    "dfv",
+    "legal advocacy",
+    "client support",
+    "justice system",
+    "rights"
+  ],
+  "outcomes": [
+    "Provide safe and ethical legal advocacy",
+    "Support clients to understand their rights and options",
+    "Use trauma-informed approaches in legal contexts"
+  ],
+  "lessons": [],
+  "content": []
+}

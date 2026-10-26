@@ -1,0 +1,50 @@
+name: Deploy Production Backend and Mobile App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  supabase-deploy:
+    name: Deploy Database Migrations
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Link and Push Migrations
+        run: |
+          supabase link --project-ref ${{ secrets.SUPABASE_PROJECT_ID }} -p ${{ secrets.SUPABASE_DB_PASSWORD }}
+          supabase db push
+
+  expo-build:
+    name: Trigger EAS Mobile Build
+    runs-on: ubuntu-latest
+    needs: supabase-deploy
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: 'npm'
+          node-version: '22'
+
+      - name: Setup Expo CLI and EAS
+        uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Install Project Dependencies
+        run: npm ci
+
+      - name: Submit Production Build to EAS
+        run: eas build --platform all --profile production --non-interactive

@@ -1,0 +1,25 @@
+{
+  "id": "module_foster_and_kinship_carer_support",
+  "title": "Foster & Kinship Carer Trauma-Informed Support (Carer Track)",
+  "description": "Carer Track & SS-AST-010: Equips foster, kinship, and family carers to support placement stability, respond to trauma and loyalty conflicts, facilitate safe family contact, and record objective observations separated from interpretation.",
+  "type": "module",
+  "level": "carer",
+  "tags": [
+    "foster care",
+    "kinship care",
+    "placement stability",
+    "contact support",
+    "objective observation"
+  ],
+  "outcomes": [
+    "Provide trauma-informed, culturally safe care that honours the child's identity, family connections, and felt safety",
+    "Prepare and support children before and after family contact visits without loyalty pressure",
+    "Record factual, objective carer observations that clearly separate direct observation and the child's own words from adult interpretation"
+  ],
+  "lessons": [
+    "carer_supporting_placement_transitions",
+    "carer_facilitating_safe_family_contact",
+    "carer_objective_observation_and_child_voice"
+  ],
+  "content": []
+}

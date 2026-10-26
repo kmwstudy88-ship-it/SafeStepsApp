@@ -1,0 +1,21 @@
+{
+  "id": "module_dfv_and_health_impacts",
+  "title": "DFV and Health Impacts",
+  "description": "This module provides an overview of the physical, psychological, reproductive, and long-term health impacts of domestic and family violence. It supports health and community workers to recognise DFV-related health presentations.",
+  "type": "module",
+  "level": "health_wellbeing",
+  "tags": [
+    "dfv",
+    "health impacts",
+    "trauma",
+    "injury",
+    "wellbeing"
+  ],
+  "outcomes": [
+    "Recognise the health impacts of DFV across multiple domains",
+    "Identify DFV-related health presentations",
+    "Understand long-term health consequences of trauma and violence"
+  ],
+  "lessons": [],
+  "content": []
+}

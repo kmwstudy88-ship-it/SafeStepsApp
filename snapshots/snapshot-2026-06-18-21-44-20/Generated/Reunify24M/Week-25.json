@@ -1,0 +1,80 @@
+﻿{
+    "programId":  "REUNIFY-24M",
+    "week":  25,
+    "stageId":  "STAGE-04",
+    "stageName":  "Safe Contact \u0026 Relationship Repair",
+    "modules":  [
+                    {
+                        "id":  "PP-REUNIFY-03",
+                        "name":  "Safe Contact \u0026 Supervised Visit Behaviour",
+                        "goal":  "Show safe, consistent behaviour during contact.",
+                        "tasks":  [
+                                      "Prepare a contact plan before each visit",
+                                      "Bring age-appropriate activities",
+                                      "Avoid discussing the case with the child"
+                                  ],
+                        "evidence":  [
+                                         "Positive contact reports",
+                                         "Supervisor feedback"
+                                     ]
+                    }
+                ],
+    "days":  [
+                 {
+                     "day":  1,
+                     "tasks":  [
+                                   "Prepare a contact plan before each visit"
+                               ]
+                 },
+                 {
+                     "day":  2,
+                     "tasks":  [
+                                   "Bring age-appropriate activities"
+                               ]
+                 },
+                 {
+                     "day":  3,
+                     "tasks":  [
+                                   "Avoid discussing the case with the child"
+                               ]
+                 },
+                 {
+                     "day":  4,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  5,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  6,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 },
+                 {
+                     "day":  7,
+                     "tasks":  [
+                                   "Reflection: How did I apply safety today?"
+                               ]
+                 }
+             ],
+    "evidence":  {
+                     "stability":  [
+
+                                   ],
+                     "safety":  [
+
+                                ],
+                     "insight":  [
+                                     "Supervisor feedback"
+                                 ],
+                     "behaviour":  [
+                                       "Positive contact reports"
+                                   ]
+                 }
+}

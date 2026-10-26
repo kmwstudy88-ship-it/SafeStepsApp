@@ -1,0 +1,45 @@
+{
+  "moduleId": "safe.steps.telehealth",
+  "name": "Telehealth, Secure Video Sessions and Appointment Management",
+  "version": "1.0.0",
+  "status": "production-ready",
+  "description": "Secure remote appointments and professional sessions for families, workers, clinicians, lawyers and approved professionals.",
+  "enabled": true,
+  "domain": "care-and-justice",
+  "dependencies": [
+    "cases",
+    "families",
+    "participants",
+    "calendar",
+    "notifications",
+    "secure-messaging",
+    "evidence",
+    "visits",
+    "child-voice",
+    "assessments",
+    "legal",
+    "audit"
+  ],
+  "routePrefixes": [
+    "/api/v1/telehealth"
+  ],
+  "capabilities": [
+    "appointments",
+    "video-sessions",
+    "waiting-room",
+    "attendance",
+    "consents",
+    "session-notes",
+    "recording-controls",
+    "incidents",
+    "follow-up-actions",
+    "audit-history"
+  ],
+  "audit": {
+    "logAccess": true,
+    "logRoleChanges": true,
+    "logConsentEvents": true,
+    "logRecordingEvents": true,
+    "immutable": true
+  }
+}

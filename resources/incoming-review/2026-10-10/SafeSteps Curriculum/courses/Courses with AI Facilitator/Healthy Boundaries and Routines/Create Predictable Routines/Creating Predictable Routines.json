@@ -1,0 +1,39 @@
+{
+  "lessonId": "healthy-boundaries-and-routines-lesson-2",
+  "courseId": "healthy-boundaries-and-routines",
+  "title": "Creating Predictable Routines",
+  "durationMinutes": 30,
+  "content": "Routines help children feel grounded and secure[cite: 1]. Predictability reduces stress because children know what comes next[cite: 1]. Routines also support brain development by strengthening neural pathways related to organisation, emotional regulation, and memory[cite: 1].\n\nThis lesson explores how routines can transform daily life—reducing power struggles, improving cooperation, and helping children transition more smoothly between activities[cite: 1]. Routines do not need to be rigid; they simply need to be consistent enough to provide structure[cite: 1].\n\nParents learn how to build simple routines for mornings, meals, homework, and bedtime, and how to adjust them when life becomes chaotic[cite: 1].",
+  "assessmentsAndQuizzes": {
+    "quiz": [
+      {
+        "question": "How do predictable routines support child development?",
+        "options": [
+          "By strengthening neural pathways related to organisation, emotional regulation, and memory",
+          "By preventing children from ever feeling stressed",
+          "By making sure every day is completely identical without exception",
+          "By eliminating the need for parental supervision"
+        ],
+        "correctAnswer": "By strengthening neural pathways related to organisation, emotional regulation, and memory"
+      },
+      {
+        "question": "True or False: Routines must be completely rigid to be effective.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "correctAnswer": "False"
+      }
+    ],
+    "activities": [
+      "Choose one routine (morning, bedtime, or meals) and write out a simple 3–5 step version. Practice it for three days[cite: 1].",
+      "Create a visual routine chart with your child using drawings or simple words[cite: 1]."
+    ],
+    "reflectionQuestions": [
+      "Which parts of the day feel most chaotic?[cite: 1]",
+      "How does your child behave when routines are predictable?[cite: 1]",
+      "What routine would make the biggest difference in your home?[cite: 1]"
+    ]
+  },
+  "aiFacilitatorScript": "Welcome to lesson two: 'Creating Predictable Routines.' Facilitate a supportive space where parents can share their daily pain points, such as hectic mornings or bedtime battles. Help them understand that routines act as an external scaffold for developing brains. Encourage participants to keep their initial routine steps simple (3 to 5 steps) and highlight the value of visual charts for younger children."
+}

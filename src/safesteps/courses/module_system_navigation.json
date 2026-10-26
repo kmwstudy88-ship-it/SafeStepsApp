@@ -1,0 +1,25 @@
+{
+  "id": "module_system_navigation",
+  "title": "System Navigation",
+  "description": "This module helps parents and practitioners navigate child protection, family law, support services, and case-plan expectations constructively and transparently.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "system navigation",
+    "case planning",
+    "service engagement",
+    "child protection"
+  ],
+  "outcomes": [
+    "Understand statutory, legal, and community support pathways and expectations",
+    "Engage constructively and transparently with caseworkers and support services",
+    "Document progress and questions clearly for case reviews and meetings"
+  ],
+  "lessons": [
+    "advocacy_skills",
+    "lesson_advocacy_skills",
+    "lesson_connecting_to_services",
+    "encouraging_help_seeking"
+  ],
+  "content": []
+}

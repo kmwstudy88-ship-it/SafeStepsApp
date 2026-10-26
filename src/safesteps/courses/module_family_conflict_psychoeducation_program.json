@@ -1,0 +1,23 @@
+{
+  "id": "module_family_conflict_psychoeducation_program",
+  "title": "Family Conflict Psychoeducation Program",
+  "description": "Canonical module wrapper for the Family Conflict Psychoeducation three-level learning pathway with child-safe safeguards and assessment guidance.",
+  "type": "module",
+  "level": "workforce_capability",
+  "tags": [
+    "family conflict",
+    "psychoeducation",
+    "child safe practice",
+    "communication",
+    "de-escalation"
+  ],
+  "outcomes": [
+    "Apply child-safe conflict psychoeducation practices without placing children in adult disputes",
+    "Use structured Basic/Developing/Mastery progression with reusable assessments and rubrics",
+    "Support decision-support only automation boundaries with human review for safeguarding concerns"
+  ],
+  "lessons": [
+    "family_conflict_psychoeducation_program"
+  ],
+  "content": []
+}

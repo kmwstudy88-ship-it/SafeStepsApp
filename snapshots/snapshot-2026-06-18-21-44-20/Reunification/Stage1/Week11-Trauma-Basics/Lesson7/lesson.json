@@ -1,0 +1,56 @@
+﻿{
+    "lessonId":  "Lesson7",
+    "lessonNumber":  7,
+    "title":  "Weekly Reflection",
+    "summary":  "This lesson teaches parents about: Weekly Reflection",
+    "learningObjectives":  [
+                               "Understand the key concepts of Weekly Reflection Apply the skills in real-life parenting situations Build confidence and consistency"
+                           ],
+    "skills":  [
+
+               ],
+    "content":  [
+                    {
+                        "body":  "In this lesson, you will explore: Weekly Reflection.",
+                        "type":  "text"
+                    }
+                ],
+    "activities":  [
+                       {
+                           "instructions":  "Write about a time you experienced this topic.",
+                           "activityId":  "A1",
+                           "activityType":  "reflection",
+                           "expectedTimeMinutes":  10
+                       }
+                   ],
+    "evidence":  [
+                     {
+                         "evidenceId":  "E1",
+                         "description":  "Describe how you applied this lesson during the week.",
+                         "type":  "text",
+                         "required":  true
+                     }
+                 ],
+    "caseworkerNotes":  {
+                            "protectiveFactors":  [
+                                                      "Parent demonstrates insight"
+                                                  ],
+                            "observationPrompts":  [
+                                                       "Ask parent to explain learning"
+                                                   ],
+                            "riskIndicators":  [
+                                                   "Observe parent engagement"
+                                               ]
+                        },
+    "parentReflection":  [
+                             {
+                                 "question":  "What did you learn from this lesson?",
+                                 "questionId":  "Q1"
+                             }
+                         ],
+    "metadata":  {
+                     "updatedAt":  "2026-06-18T17:54:15",
+                     "version":  1,
+                     "createdAt":  "2026-06-18T17:54:15"
+                 }
+}

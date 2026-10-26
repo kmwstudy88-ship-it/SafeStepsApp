@@ -1,0 +1,64 @@
+{
+  "lessonId": "understanding-child-development-lesson-1",
+  "courseId": "understanding-child-development",
+  "title": "Understanding Developmental Stages",
+  "durationMinutes": 30,
+  "overview": "Learn how children grow in predictable patterns across emotional, social, physical, and cognitive domains, and align parental expectations with developmental realities to reduce conflict[cite: 1].",
+  "timedBreakdown": [
+    {
+      "part": 1,
+      "title": "Introduction & Core Reading",
+      "durationMinutes": 10,
+      "content": [
+        "Children grow in predictable patterns, though every child develops at their own individual pace[cite: 1].",
+        "Understanding these stages allows parents to respond with patience and set realistic expectations[cite: 1].",
+        "Development encompasses emotional, social, physical, and cognitive growth, with each area influencing the others[cite: 1].",
+        "Knowing typical age-related behavior helps prevent misinterpreting normal actions (like toddler short attention spans or teenage desires for independence) as personal defiance[cite: 1]."
+      ]
+    },
+    {
+      "part": 2,
+      "title": "Interactive Activities & Tasks",
+      "durationMinutes": 10,
+      "tasks": [
+        "Choose your child's age group and read a short summary of typical developmental milestones; write down three that stand out to you[cite: 1].",
+        "Observe your child for one day and identify one behavior that makes more sense when viewed through a developmental lens[cite: 1]."
+      ]
+    },
+    {
+      "part": 3,
+      "title": "Reflection Exercise",
+      "durationMinutes": 5,
+      "reflectionQuestions": [
+        "What behaviours have you misunderstood in the past?[cite: 1]",
+        "How does knowing your child’s developmental stage change your expectations?[cite: 1]",
+        "What support does your child need at this stage of growth?[cite: 1]"
+      ]
+    }
+  ],
+  "assessment": {
+    "quiz": [
+      {
+        "question": "True or False: Every child develops at the exact same pace despite growing in predictable patterns[cite: 1].",
+        "type": "true_false",
+        "answer": false,
+        "explanation": "Children grow in predictable patterns, but each child develops at their own pace[cite: 1]."
+      },
+      {
+        "question": "What are the four core areas of development mentioned in the text?[cite: 1]",
+        "type": "multiple_choice",
+        "answer": "Emotional, social, physical, and cognitive growth[cite: 1]"
+      },
+      {
+        "question": "Why do toddlers often struggle with long attention spans according to developmental stages?[cite: 1]",
+        "type": "short_answer",
+        "answer": "It is a natural part of their current developmental stage, not personal defiance or disrespect[cite: 1]."
+      },
+      {
+        "question": "How does aligning parental expectations with a child's development affect household conflict?[cite: 1]",
+        "type": "multiple_choice",
+        "answer": "Conflict decreases and connection increases[cite: 1]."
+      }
+    ]
+  }
+}

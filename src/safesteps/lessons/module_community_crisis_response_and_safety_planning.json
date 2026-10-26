@@ -1,0 +1,21 @@
+{
+  "id": "module_community_crisis_response_and_safety_planning",
+  "title": "Community Crisis Response and Safety Planning",
+  "description": "This module equips community members and local groups to respond safely and effectively during DFV-related crises. It focuses on recognising immediate danger, supporting safety planning, and knowing when and how to escalate concerns.",
+  "type": "module",
+  "level": "community",
+  "tags": [
+    "dfv",
+    "crisis response",
+    "safety planning",
+    "community safety",
+    "emergency response"
+  ],
+  "outcomes": [
+    "Recognise signs of immediate danger or escalating DFV risk",
+    "Support basic safety planning in community contexts",
+    "Know when and how to escalate concerns to services or authorities"
+  ],
+  "lessons": [],
+  "content": []
+}

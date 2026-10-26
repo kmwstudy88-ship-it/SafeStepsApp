@@ -1,0 +1,41 @@
+{
+  "lessonId": "healthy-boundaries-and-routines-lesson-1",
+  "courseId": "healthy-boundaries-and-routines",
+  "title": "Why Boundaries Create Safety",
+  "durationMinutes": 30,
+  "content": "Boundaries are not about control—they are about safety, predictability, and emotional security[cite: 3]. Children feel safer when they know what is expected and how adults will respond[cite: 3]. Without boundaries, children may feel overwhelmed, confused, or anxious because the world feels unpredictable[cite: 3].\n\nMany parents struggle with boundaries because they were raised with either harsh discipline or no boundaries at all[cite: 3]. This lesson reframes boundaries as an act of care, not punishment[cite: 3]. Boundaries help children learn self‑control, responsibility, and respect for others[cite: 3].\n\nWhen boundaries are clear, consistent, and delivered with warmth, children thrive[cite: 3]. They learn that adults can be trusted to guide them, even when emotions run high[cite: 3].",
+  "assessmentsAndQuizzes": {
+    "quiz": [
+      {
+        "question": "According to the lesson, what are boundaries primarily about?",
+        "options": [
+          "Strict control and punishment",
+          "Safety, predictability, and emotional security",
+          "Ensuring children never experience frustration",
+          "Proving adult authority"
+        ],
+        "correctAnswer": "Safety, predictability, and emotional security"
+      },
+      {
+        "question": "Why do many parents struggle with setting boundaries?",
+        "options": [
+          "Because they do not care about their children",
+          "Because children never test limits",
+          "Because they were raised with either harsh discipline or no boundaries at all",
+          "Because boundaries take too much time to explain"
+        ],
+        "correctAnswer": "Because they were raised with either harsh discipline or no boundaries at all"
+      }
+    ],
+    "activities": [
+      "Identify one boundary you want to strengthen this week. Write down how you will communicate it calmly[cite: 3].",
+      "Observe your child’s behaviour for one day and note moments when unclear boundaries lead to confusion or conflict[cite: 3]."
+    ],
+    "reflectionQuestions": [
+      "How were boundaries handled in your childhood?[cite: 3]",
+      "What makes setting boundaries difficult for you?[cite: 3]",
+      "How does your child respond when boundaries are clear and consistent?[cite: 3]"
+    ]
+  },
+  "aiFacilitatorScript": "Welcome to lesson one: 'Why Boundaries Create Safety.' As the AI facilitator, your role here is to help parents reframe boundaries not as punitive control, but as a nurturing act of safety and love. Guide participants to explore their own childhood experiences with boundaries without judgment. Emphasize that children experience less anxiety when limits are predictable. Lead a discussion on how they can communicate clear expectations with warmth and consistency."
+}

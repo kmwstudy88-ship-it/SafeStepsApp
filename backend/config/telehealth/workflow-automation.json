@@ -1,0 +1,54 @@
+{
+  "workflows": [
+    {
+      "name": "appointment_scheduling",
+      "trigger": "appointment_created",
+      "actions": [
+        "create_calendar_event",
+        "send_invitation",
+        "create_waiting_room_entry",
+        "schedule_reminders"
+      ]
+    },
+    {
+      "name": "consent_gate",
+      "trigger": "session_start_requested",
+      "condition": "mandatory_consents_missing",
+      "actions": [
+        "block_session_start",
+        "notify_host",
+        "create_follow_up_task"
+      ]
+    },
+    {
+      "name": "waiting_room_admission",
+      "trigger": "participant_joined",
+      "actions": [
+        "validate_identity",
+        "check_device_permissions",
+        "assign_waiting_room_status",
+        "notify_host"
+      ]
+    },
+    {
+      "name": "incident_escalation",
+      "trigger": "incident_created",
+      "actions": [
+        "create_supervisor_task",
+        "notify_caseworker",
+        "log_audit_event",
+        "attach_to_case_record"
+      ]
+    },
+    {
+      "name": "follow_up_generation",
+      "trigger": "session_completed",
+      "actions": [
+        "create_case_note",
+        "generate_follow_up_actions",
+        "link_evidence_if_present",
+        "update_attendance_status"
+      ]
+    }
+  ]
+}

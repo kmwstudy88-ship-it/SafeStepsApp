@@ -1,0 +1,22 @@
+{
+  "id": "building-your-village",
+  "title": "Building Your Village",
+  "description": "Core program course on overcoming isolation, mapping informal and professional supports, and proactive help-seeking.",
+  "type": "module",
+  "level": "general",
+  "tags": [
+    "program-pathway",
+    "building-your-village"
+  ],
+  "outcomes": [
+    "Understand the core principles of building your village",
+    "Apply building your village safely in daily family routines",
+    "Document factual reflections and practical evidence of progress"
+  ],
+  "lessons": [
+    "building_your_village_and_support_network",
+    "encouraging_help_seeking",
+    "lesson_connecting_to_services"
+  ],
+  "content": []
+}

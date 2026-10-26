@@ -1,0 +1,91 @@
+{
+  "appointmentTypes": [
+    "caseworker_appointment",
+    "family_support_session",
+    "parenting_coaching",
+    "psychological_assessment",
+    "mental_health_consultation",
+    "drug_and_alcohol_appointment",
+    "domestic_family_violence_support",
+    "legal_consultation",
+    "court_preparation",
+    "parent_child_contact",
+    "family_conference",
+    "child_consultation",
+    "supervisor_review",
+    "custom_professional_session"
+  ],
+  "appointmentStatuses": [
+    "draft",
+    "scheduled",
+    "confirmed",
+    "rescheduled",
+    "waiting",
+    "in_progress",
+    "completed",
+    "cancelled",
+    "participant_absent",
+    "provider_absent",
+    "technical_failure",
+    "abandoned"
+  ],
+  "participantRoles": [
+    "host",
+    "co_host",
+    "parent",
+    "child",
+    "caseworker",
+    "family_support_worker",
+    "clinician",
+    "lawyer",
+    "court_officer",
+    "interpreter",
+    "support_person",
+    "observer",
+    "external_professional"
+  ],
+  "noteTypes": [
+    "general_session_note",
+    "clinical_note",
+    "case_note",
+    "contact_observation",
+    "parenting_coaching_note",
+    "child_voice_note",
+    "legal_preparation_note",
+    "technical_incident_note",
+    "private_professional_note"
+  ],
+  "visibilityLevels": [
+    "private_to_author",
+    "professional_team",
+    "case_team",
+    "participant_shared",
+    "legal_privileged",
+    "court_authorised",
+    "organisation_restricted"
+  ],
+  "incidentTypes": [
+    "connection_failure",
+    "unauthorised_participant",
+    "consent_issue",
+    "privacy_breach",
+    "threatening_behaviour",
+    "child_distress",
+    "medical_concern",
+    "recording_failure",
+    "file_sharing_issue",
+    "session_termination",
+    "other_safety_incident"
+  ],
+  "consentTypes": [
+    "participation_consent",
+    "telehealth_consent",
+    "privacy_acknowledgement",
+    "recording_consent",
+    "child_participation_consent",
+    "information_sharing_consent",
+    "interpreter_consent",
+    "screen_capture_consent",
+    "document_sharing_consent"
+  ]
+}
