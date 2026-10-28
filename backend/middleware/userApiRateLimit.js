@@ -131,3 +131,4 @@ async function incrementRedisCounter(key, currentTime, windowMs, maxRequests) {
 }
 
 export const userApiRateLimit = createRateLimiter({ increment: incrementRedisCounter });
+export const apiRateLimit = createRateLimiter();

@@ -7,7 +7,7 @@ import { errorHandler, notFoundHandler } from "./middleware/errorHandler.js";
 import { requireAuthenticatedUser } from "./middleware/requireAuthenticatedUser.js";
 import { requestContext } from "./middleware/requestContext.js";
 import { universalApiProtection } from "./middleware/universalApiProtection.js";
-import { userApiRateLimit } from "./middleware/userApiRateLimit.js";
+import { apiRateLimit, userApiRateLimit } from "./middleware/userApiRateLimit.js";
 
 const app = express();
 const port = process.env.PORT ?? 3000;
@@ -61,12 +61,16 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use("/agent-skills", apiRateLimit);
+app.use("/auth", apiRateLimit);
+app.use("/documents", apiRateLimit);
 app.use("/users", userApiRateLimit);
 app.use("/worksheets", userApiRateLimit);
 
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true, limit: "2mb" }));
 
+app.use(apiRateLimit);
 app.use(universalApiProtection);
 
 app.get("/health", (req, res) => {
@@ -75,9 +79,9 @@ app.get("/health", (req, res) => {
 
 app.use("/auth", authRoutes);
 app.use("/documents", documentRoutes);
-app.use("/agent-skills", requireAuthenticatedUser, agentSkillsRoutes);
-app.use("/worksheets", requireAuthenticatedUser, worksheetRoutes);
-app.use("/users", requireAuthenticatedUser, userCurriculumRoutes);
+app.use("/agent-skills", apiRateLimit, requireAuthenticatedUser, agentSkillsRoutes);
+app.use("/worksheets", apiRateLimit, requireAuthenticatedUser, worksheetRoutes);
+app.use("/users", apiRateLimit, requireAuthenticatedUser, userCurriculumRoutes);
 app.use("/ai-support", aiSupportRoutes);
 
 app.use(notFoundHandler);

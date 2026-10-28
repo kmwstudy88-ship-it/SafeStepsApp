@@ -36,6 +36,7 @@ import { createRateLimiter } from "../../middleware/userApiRateLimit.js";
 const router = express.Router();
 const MAX_TEXT_BYTES = 2 * 1024 * 1024;
 const listDocumentAnalysesRateLimit = createRateLimiter();
+const documentRoutesRateLimit = listDocumentAnalysesRateLimit;
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
@@ -63,8 +64,8 @@ router.get("/intelligence/schema", (_req, res) => {
 
 router.post(
   "/upload",
-  requireAuthenticatedUser,
   listDocumentAnalysesRateLimit,
+  requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
   upload.single("file"),
   requireCaseAccess,
@@ -98,6 +99,7 @@ router.post(
 
 router.post(
   "/analyze",
+  listDocumentAnalysesRateLimit,
   requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
   upload.single("file"),
@@ -177,8 +179,8 @@ router.post(
 
 router.get(
   "/analyses/:analysisId",
-  requireAuthenticatedUser,
   listDocumentAnalysesRateLimit,
+  requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
   requireCaseAccess,
   async (req, res, next) => {
@@ -197,8 +199,8 @@ router.get(
 
 router.get(
   "/:documentId/analyses",
-  requireAuthenticatedUser,
   listDocumentAnalysesRateLimit,
+  requireAuthenticatedUser,
   requireAnyRole(...DOCUMENT_ROLES),
   requireCaseAccess,
   async (req, res, next) => {
