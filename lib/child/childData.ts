@@ -1,5 +1,34 @@
 export type ShareAudience = "private" | "parent" | "caseworker" | "both";
 
+export type ChildAgeBand = "picture_word_3_6" | "child_7_11" | "teen_12_17";
+
+export function deriveAgeBand(age: number): ChildAgeBand {
+  if (age <= 6) return "picture_word_3_6";
+  if (age <= 11) return "child_7_11";
+  return "teen_12_17";
+}
+
+export type PictureOption = {
+  id: string;
+  emoji: string;
+  label: string;
+};
+
+export const DEFAULT_PICTURE_OPTIONS: PictureOption[] = [
+  { id: "dog", emoji: "🐶", label: "Dog" },
+  { id: "cat", emoji: "🐱", label: "Cat" },
+  { id: "lion", emoji: "🦁", label: "Lion" },
+  { id: "bear", emoji: "🐻", label: "Bear" },
+  { id: "dolphin", emoji: "🐬", label: "Dolphin" },
+  { id: "butterfly", emoji: "🦋", label: "Butterfly" },
+  { id: "flower", emoji: "🌻", label: "Flower" },
+  { id: "apple", emoji: "🍎", label: "Apple" },
+  { id: "rocket", emoji: "🚀", label: "Rocket" },
+  { id: "star", emoji: "🌟", label: "Star" },
+  { id: "sun", emoji: "☀️", label: "Sun" },
+  { id: "rainbow", emoji: "🌈", label: "Rainbow" },
+];
+
 export type ChildLesson = {
   id: string;
   week: number;
