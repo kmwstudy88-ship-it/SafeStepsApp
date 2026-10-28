@@ -28,6 +28,8 @@ const CHILD_SIGNALS: { id: ChildTransitionSignal; label: string }[] = [
 export default function ContactVisitTransitionCoachScreen() {
   const router = useRouter();
   const [visitPhase, setVisitPhase] = useState<ContactVisitPhase>("post_visit_transition");
+  const [childAgeBand, setChildAgeBand] = useState<"0-4" | "5-8" | "9-12" | "13-17">("5-8");
+  const [parentDraftReflection, setParentDraftReflection] = useState("");
   const [arousalScore, setArousalScore] = useState("6");
   const [selectedSignals, setSelectedSignals] = useState<ChildTransitionSignal[]>([
     "quiet_withdrawn_or_shut_down",
@@ -46,8 +48,9 @@ export default function ContactVisitTransitionCoachScreen() {
       parentOrCarerUserId: "parent-local",
       visitPhase,
       parentArousal0to10: Number(arousalScore) || 3,
-      childAgeBand: "5-8",
+      childAgeBand,
       childObservedSignals: selectedSignals,
+      parentDraftReflection: parentDraftReflection.trim() || undefined,
     });
     setResult(res);
   };
@@ -81,8 +84,28 @@ export default function ContactVisitTransitionCoachScreen() {
           ))}
         </View>
 
+        <Text style={styles.sectionTitle}>2. Child Age Band</Text>
+        <View style={styles.chipRow}>
+          {(
+            [
+              { id: "0-4", label: "0–4 yrs (Infant / Toddler)" },
+              { id: "5-8", label: "5–8 yrs (Primary)" },
+              { id: "9-12", label: "9–12 yrs (Middle)" },
+              { id: "13-17", label: "13–17 yrs (Adolescent)" },
+            ] as const
+          ).map((age) => (
+            <Pressable
+              key={age.id}
+              style={[styles.chip, childAgeBand === age.id && styles.chipActive]}
+              onPress={() => setChildAgeBand(age.id)}
+            >
+              <Text style={styles.chipText}>{age.label}</Text>
+            </Pressable>
+          ))}
+        </View>
+
         <Text style={styles.sectionTitle}>
-          2. Your Current Nervous System Arousal (0 = Calm, 10 = Overwhelmed)
+          3. Your Current Nervous System Arousal (0 = Calm, 10 = Overwhelmed)
         </Text>
         <TextInput
           style={styles.input}
@@ -91,7 +114,7 @@ export default function ContactVisitTransitionCoachScreen() {
           keyboardType="numeric"
         />
 
-        <Text style={styles.sectionTitle}>3. Child Signals Observed Around Handover</Text>
+        <Text style={styles.sectionTitle}>4. Child Signals Observed Around Handover</Text>
         {CHILD_SIGNALS.map((sig) => {
           const active = selectedSignals.includes(sig.id);
           return (
@@ -107,6 +130,18 @@ export default function ContactVisitTransitionCoachScreen() {
             </Pressable>
           );
         })}
+
+        <Text style={styles.sectionTitle}>
+          5. Optional Notes or Parent Feelings Before/After
+        </Text>
+        <TextInput
+          style={[styles.input, { minHeight: 60 }]}
+          multiline
+          placeholder="e.g., Felt nervous during handover; child hugged teddy tight..."
+          placeholderTextColor="#64748B"
+          value={parentDraftReflection}
+          onChangeText={setParentDraftReflection}
+        />
 
         <Pressable style={styles.primaryBtn} onPress={handleRunCoach}>
           <Text style={styles.primaryBtnText}>
@@ -128,6 +163,13 @@ export default function ContactVisitTransitionCoachScreen() {
                 • Guardrail: {flag}
               </Text>
             ))}
+            <View style={styles.evidenceNoteBox}>
+              <Text style={styles.evidenceNoteTitle}>Reunification Evidence Note for Caseworker Review:</Text>
+              <Text style={styles.evidenceNoteBody}>{result.reunificationEvidenceNote}</Text>
+            </View>
+            <Text style={styles.auditHashText}>
+              🔐 Cryptographic Audit Hash: {result.auditSha256.slice(0, 16)}... (Encrypted in Offline Vault)
+            </Text>
           </View>
         ) : null}
       </View>
@@ -212,6 +254,31 @@ const styles = StyleSheet.create({
   resultBody: { color: "#E2E8F0", fontSize: 13 },
   resultSafe: { color: "#6EE7B7", fontSize: 13 },
   resultWarn: { color: "#FCD34D", fontSize: 12 },
+  evidenceNoteBox: {
+    backgroundColor: "#1E293B",
+    borderRadius: 6,
+    padding: 10,
+    marginTop: 4,
+    gap: 4,
+    borderLeftWidth: 3,
+    borderLeftColor: "#38BDF8",
+  },
+  evidenceNoteTitle: {
+    color: "#94A3B8",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  evidenceNoteBody: {
+    color: "#E2E8F0",
+    fontSize: 12,
+    lineHeight: 18,
+  },
+  auditHashText: {
+    color: "#64748B",
+    fontSize: 11,
+    marginTop: 4,
+    fontFamily: "monospace",
+  },
   secondaryBtn: {
     backgroundColor: "#334155",
     paddingVertical: 10,
