@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Pressable,
   ScrollView,
@@ -23,6 +23,14 @@ import type {
   NeuroSleepHouseholdResult,
 } from "../../lib/engines/specializedClinicalPopulationsEngine";
 
+const SENSORY_PRESETS = [
+  { id: "dim_lighting", label: "🌙 Low-Lux Sensory Lighting (<20 lux)" },
+  { id: "deep_pressure", label: "🛌 Weighted Blanket / Deep Pressure" },
+  { id: "visual_schedule", label: "📋 Predictable Visual Routine Cards" },
+  { id: "brown_noise", label: "🎧 Calming Brown Noise / Voice Tone" },
+  { id: "seamless_fabrics", label: "👕 Tagless & Non-Constrictive Clothing" },
+];
+
 export default function SpecializedClinicalToolkitsScreen() {
   const router = useRouter();
 
@@ -31,11 +39,32 @@ export default function SpecializedClinicalToolkitsScreen() {
   const [cravingAfter, setCravingAfter] = useState("3");
   const [highRiskEvent, setHighRiskEvent] = useState("Thursday Payday & Court Mention");
   const [matChecked, setMatChecked] = useState(true);
-  const [addictionResult, setAddictionResult] = useState<AddictionRecoveryShieldResult | null>(
-    null,
-  );
+  const [addictionResult, setAddictionResult] = useState<AddictionRecoveryShieldResult | null>(null);
+
+  // 90-Second TIPP Urge Surf Timer
+  const [tippTimerSeconds, setTippTimerSeconds] = useState(90);
+  const [tippTimerActive, setTippTimerActive] = useState(false);
+
+  useEffect(() => {
+    if (!tippTimerActive) return;
+    const interval = setInterval(() => {
+      setTippTimerSeconds((prev) => {
+        if (prev <= 1) {
+          setTippTimerActive(false);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [tippTimerActive]);
 
   // Module 6: Neurodivergent & Trauma Sleep Toolkit
+  const [selectedSensoryPresets, setSelectedSensoryPresets] = useState<string[]>([
+    "dim_lighting",
+    "deep_pressure",
+    "visual_schedule",
+  ]);
   const [neuroResult, setNeuroResult] = useState<NeuroSleepHouseholdResult | null>(null);
 
   // Module 7: Kinship & Foster Carer ProQOL
@@ -52,18 +81,27 @@ export default function SpecializedClinicalToolkitsScreen() {
     "Weekend walk on Country by the river with the children",
   );
   const [culturalWorkerName, setCulturalWorkerName] = useState("Uncle David (Cultural Worker)");
+  const [culturalAttestationNote, setCulturalAttestationNote] = useState(
+    "Co-designed with cultural safety protocols; upholds Aboriginal Child Placement Principles.",
+  );
   const [sewbResult, setSewbResult] = useState<CulturalSewbYarningResult | null>(null);
 
   // Module 11: Closed-Loop Adaptive Micro-Lessons & 7/14/30d Re-Tests
   const [prescriptionResult, setPrescriptionResult] =
     useState<AdaptiveMicroPrescriptionResult | null>(null);
 
+  const toggleSensoryPreset = (id: string) => {
+    setSelectedSensoryPresets((prev) =>
+      prev.includes(id) ? prev.filter((p) => p !== id) : [...prev, id],
+    );
+  };
+
   const handleRunAddictionShield = async () => {
     const res = await submitAddictionUrgeSurfShield({
       participantUserId: "parent-local",
       cravingBefore0to10: Number(cravingBefore) || 7,
       cravingAfter0to10: Number(cravingAfter) || 3,
-      urgeSurfSecondsCompleted: 90,
+      urgeSurfSecondsCompleted: 90 - tippTimerSeconds,
       haltSTriggers: ["tired_or_sleep_deprived", "stressed_court_or_contact_worry"],
       upcomingHighRiskEvent: highRiskEvent,
       matAdherenceChecked: matChecked,
@@ -81,7 +119,9 @@ export default function SpecializedClinicalToolkitsScreen() {
         "fasd_concrete_visual_single_step",
         "parent_abi_or_idd_plain_language_chunking",
       ],
-      sensoryTriggers: ["Loud television", "Scratchy pyjama tags", "Sudden light changes"],
+      sensoryTriggers: selectedSensoryPresets.map((id) =>
+        SENSORY_PRESETS.find((p) => p.id === id)?.label || id,
+      ),
       sleepDistressSignals: ["nightmares_or_night_terrors", "bedtime_hyperarousal_or_stall_tactics"],
     });
     setNeuroResult(res);
@@ -109,7 +149,7 @@ export default function SpecializedClinicalToolkitsScreen() {
       domainCountry,
       domainSpiritAncestors: "Honouring Elders and keeping family spirit strong",
       culturalWorkerCoSigned: true,
-      culturalWorkerName,
+      culturalWorkerName: `${culturalWorkerName} [${culturalAttestationNote}]`,
     });
     setSewbResult(res);
   };
@@ -138,20 +178,57 @@ export default function SpecializedClinicalToolkitsScreen() {
     setPrescriptionResult(res);
   };
 
+  const formatTimer = (s: number) => {
+    const mins = Math.floor(s / 60);
+    const secs = s % 60;
+    return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+  };
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Text style={styles.pageTitle}>
-        Specialized Clinical Toolkits: Addiction, Neuro/Sleep, Kinship, Cultural SEWB & Adaptive Rx
+        Specialized Clinical Toolkits: Addiction, Neuro/Sleep, Kinship, Cultural SEWB &amp; Adaptive Rx
       </Text>
 
       {/* Module 5: 24/7 Addiction Urge-Surfing & MAT Shield */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>
-          1. 24/7 Addiction 90-Second Urge-Surfing, HALT+S & MAT Routine Shield
+          1. 24/7 Addiction 90-Second Urge-Surfing, HALT+S &amp; MAT Routine Shield
         </Text>
+
+        {/* 90-Second TIPP Urge Surf Player */}
+        <View style={styles.timerCard}>
+          <View style={styles.timerHeader}>
+            <Text style={styles.timerTitle}>🌊 Somatic Urge-Surfing &amp; TIPP Reset</Text>
+            <Text style={styles.timerClock}>{formatTimer(tippTimerSeconds)}</Text>
+          </View>
+          <Text style={styles.timerHint}>
+            T = Temperature (splash cold water/hold ice) | I = Intense burst (pushups/steps) | P = Paced breathing | P = Paired relaxation
+          </Text>
+          <View style={styles.timerBtnRow}>
+            <Pressable
+              style={[styles.timerBtn, tippTimerActive && styles.timerBtnActive]}
+              onPress={() => setTippTimerActive((prev) => !prev)}
+            >
+              <Text style={styles.timerBtnText}>
+                {tippTimerActive ? "Pause Urge-Surf" : "Start 90s Urge Surf"}
+              </Text>
+            </Pressable>
+            <Pressable
+              style={styles.timerSecondaryBtn}
+              onPress={() => {
+                setTippTimerActive(false);
+                setTippTimerSeconds(90);
+              }}
+            >
+              <Text style={styles.timerSecondaryBtnText}>Reset (90s)</Text>
+            </Pressable>
+          </View>
+        </View>
+
         <View style={styles.row}>
           <View style={{ flex: 1 }}>
-            <Text style={styles.label}>Craving Before (0–10)</Text>
+            <Text style={styles.label}>Craving Before Wave (0–10)</Text>
             <TextInput
               style={styles.input}
               value={cravingBefore}
@@ -160,7 +237,7 @@ export default function SpecializedClinicalToolkitsScreen() {
             />
           </View>
           <View style={{ flex: 1 }}>
-            <Text style={styles.label}>Craving After 90s Wave (0–10)</Text>
+            <Text style={styles.label}>Craving After Wave (0–10)</Text>
             <TextInput
               style={styles.input}
               value={cravingAfter}
@@ -169,6 +246,7 @@ export default function SpecializedClinicalToolkitsScreen() {
             />
           </View>
         </View>
+
         <Text style={styles.label}>Upcoming High-Risk Calendar Trigger (Payday / Anniversary)</Text>
         <TextInput
           style={styles.input}
@@ -180,11 +258,11 @@ export default function SpecializedClinicalToolkitsScreen() {
           onPress={() => setMatChecked((prev) => !prev)}
         >
           <Text style={styles.toggleText}>
-            {matChecked ? "☑" : "☐"} Prescribed MAT / Recovery Medication Taken & Locked in Child-Safe Box
+            {matChecked ? "☑" : "☐"} Prescribed MAT / Recovery Medication Taken &amp; Locked in Child-Safe Box
           </Text>
         </Pressable>
         <Pressable style={styles.primaryBtn} onPress={handleRunAddictionShield}>
-          <Text style={styles.primaryBtnText}>Complete 90-Second Urge-Surf & Recovery Shield</Text>
+          <Text style={styles.primaryBtnText}>Complete 90-Second Urge-Surf &amp; Recovery Shield</Text>
         </Pressable>
 
         {addictionResult ? (
@@ -204,13 +282,32 @@ export default function SpecializedClinicalToolkitsScreen() {
       {/* Module 6: Child Trauma Sleep & Neurodivergent Low-Arousal Household Toolkit */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>
-          2. Child Trauma Sleep/Nightmare Coach & Neurodivergent Low-Arousal Toolkit
+          2. Child Trauma Sleep/Nightmare Coach &amp; Neurodivergent Low-Arousal Toolkit
         </Text>
         <Text style={styles.helperText}>
-          Generates Autism / ADHD / FASD / Parent ABI-IDD accommodated 3-step visual routines and nightmare co-regulation scripts.
+          Select active household sensory accommodations for bedtime decompression:
         </Text>
+
+        <View style={styles.presetGrid}>
+          {SENSORY_PRESETS.map((preset) => {
+            const active = selectedSensoryPresets.includes(preset.id);
+            return (
+              <Pressable
+                key={preset.id}
+                style={[styles.presetChip, active && styles.presetChipActive]}
+                onPress={() => toggleSensoryPreset(preset.id)}
+              >
+                <Text style={[styles.presetChipText, active && styles.presetChipTextActive]}>
+                  {active ? "☑ " : "☐ "}
+                  {preset.label}
+                </Text>
+              </Pressable>
+            );
+          })}
+        </View>
+
         <Pressable style={styles.primaryBtn} onPress={handleRunNeuroSleep}>
-          <Text style={styles.primaryBtnText}>Build Low-Arousal Bedtime & Sensory Plan</Text>
+          <Text style={styles.primaryBtnText}>Build Low-Arousal Bedtime &amp; Sensory Plan</Text>
         </Pressable>
 
         {neuroResult ? (
@@ -231,7 +328,7 @@ export default function SpecializedClinicalToolkitsScreen() {
       {/* Module 7: Kinship, Foster & Grandparent Carer ProQOL & Contact Coach */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>
-          3. Kinship, Foster & Grandparent Carer Secondary Trauma (ProQOL) Coach
+          3. Kinship, Foster &amp; Grandparent Carer Secondary Trauma (ProQOL) Coach
         </Text>
         <View style={styles.row}>
           <View style={{ flex: 1 }}>
@@ -263,7 +360,7 @@ export default function SpecializedClinicalToolkitsScreen() {
           </View>
         </View>
         <Pressable style={styles.primaryBtn} onPress={handleRunCarerProQol}>
-          <Text style={styles.primaryBtnText}>Evaluate Carer Stability & Boundary Script</Text>
+          <Text style={styles.primaryBtnText}>Evaluate Carer Stability &amp; Boundary Script</Text>
         </Pressable>
 
         {carerResult ? (
@@ -282,15 +379,15 @@ export default function SpecializedClinicalToolkitsScreen() {
       {/* Module 8: First Nations Cultural SEWB 7-Domain Yarning Map */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>
-          4. First Nations Cultural SEWB 7-Domain Yarning Map & Cultural Worker Co-Sign
+          4. First Nations Cultural SEWB 7-Domain Yarning Map &amp; Cultural Worker Co-Sign
         </Text>
-        <Text style={styles.label}>Connection to Family & Kinship Network</Text>
+        <Text style={styles.label}>Connection to Family &amp; Kinship Network</Text>
         <TextInput
           style={styles.input}
           value={domainFamilyKinship}
           onChangeText={setDomainFamilyKinship}
         />
-        <Text style={styles.label}>Connection to Country & Land</Text>
+        <Text style={styles.label}>Connection to Country &amp; Land</Text>
         <TextInput style={styles.input} value={domainCountry} onChangeText={setDomainCountry} />
         <Text style={styles.label}>Co-Signing Cultural Worker / Elder Name</Text>
         <TextInput
@@ -298,8 +395,14 @@ export default function SpecializedClinicalToolkitsScreen() {
           value={culturalWorkerName}
           onChangeText={setCulturalWorkerName}
         />
+        <Text style={styles.label}>Cultural Protocol Attestation &amp; Elder Endorsement</Text>
+        <TextInput
+          style={styles.input}
+          value={culturalAttestationNote}
+          onChangeText={setCulturalAttestationNote}
+        />
         <Pressable style={styles.primaryBtn} onPress={handleRunSewbMap}>
-          <Text style={styles.primaryBtnText}>Weave 7-Domain SEWB Yarning Map & Co-Sign</Text>
+          <Text style={styles.primaryBtnText}>Weave 7-Domain SEWB Yarning Map &amp; Co-Sign</Text>
         </Pressable>
 
         {sewbResult ? (
@@ -320,7 +423,7 @@ export default function SpecializedClinicalToolkitsScreen() {
       {/* Module 11: Closed-Loop Adaptive Micro-Lesson & Spaced Re-Test Prescriber */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>
-          5. Closed-Loop Adaptive 3-Minute Micro-Lessons & 7/14/30-Day Re-Test Scheduler
+          5. Closed-Loop Adaptive 3-Minute Micro-Lessons &amp; 7/14/30-Day Re-Test Scheduler
         </Text>
         <Pressable style={styles.primaryBtn} onPress={handleRunAdaptivePrescriptions}>
           <Text style={styles.primaryBtnText}>Generate Closed-Loop Skill Prescriptions</Text>
@@ -356,7 +459,7 @@ export default function SpecializedClinicalToolkitsScreen() {
           style={styles.secondaryBtn}
           onPress={() => router.push("/ai-support-coach/safety-plan-vault")}
         >
-          <Text style={styles.secondaryBtnText}>Stealth & Escape Safety Vault</Text>
+          <Text style={styles.secondaryBtnText}>Stealth &amp; Escape Safety Vault</Text>
         </Pressable>
       </View>
     </ScrollView>
@@ -389,6 +492,52 @@ const styles = StyleSheet.create({
     paddingVertical: 9,
     fontSize: 13,
   },
+  timerCard: {
+    backgroundColor: "#0F172A",
+    borderRadius: 8,
+    padding: 12,
+    gap: 8,
+    borderWidth: 1,
+    borderColor: "#38BDF8",
+  },
+  timerHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  timerTitle: { color: "#38BDF8", fontSize: 13, fontWeight: "700" },
+  timerClock: { color: "#F8FAFC", fontSize: 18, fontWeight: "800", fontFamily: "monospace" },
+  timerHint: { color: "#94A3B8", fontSize: 11, lineHeight: 15 },
+  timerBtnRow: { flexDirection: "row", gap: 8 },
+  timerBtn: {
+    flex: 1,
+    backgroundColor: "#0284C7",
+    paddingVertical: 8,
+    borderRadius: 6,
+    alignItems: "center",
+  },
+  timerBtnActive: { backgroundColor: "#0369A1" },
+  timerBtnText: { color: "#FFFFFF", fontWeight: "700", fontSize: 12 },
+  timerSecondaryBtn: {
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    backgroundColor: "#334155",
+    borderRadius: 6,
+    alignItems: "center",
+  },
+  timerSecondaryBtnText: { color: "#F8FAFC", fontWeight: "600", fontSize: 12 },
+  presetGrid: { gap: 6 },
+  presetChip: {
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    backgroundColor: "#0F172A",
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: "#334155",
+  },
+  presetChipActive: { backgroundColor: "#1E3A8A", borderColor: "#60A5FA" },
+  presetChipText: { color: "#94A3B8", fontSize: 12, fontWeight: "600" },
+  presetChipTextActive: { color: "#BFDBFE", fontWeight: "700" },
   toggleRow: {
     padding: 10,
     borderRadius: 8,

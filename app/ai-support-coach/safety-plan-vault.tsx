@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Pressable,
   ScrollView,
@@ -9,6 +9,7 @@ import {
   View,
 } from "react-native";
 import {
+  getAiSupportOfflineQueueStatus,
   hashSafetyPin,
   runTechAbuseSafetyAudit,
   saveEncryptedDfvSafetyPlan,
@@ -80,6 +81,24 @@ export default function SafetyPlanAndStealthVaultScreen() {
     "School notified of authorized pickup list; vet boarding arranged with cousin.",
   );
   const [vaultRecord, setVaultRecord] = useState<LivingDfvSafetyPlanVaultRecord | null>(null);
+
+  const [offlineStatus, setOfflineStatus] = useState<{
+    pendingCount: number;
+    tamperVerified: boolean;
+  }>({ pendingCount: 0, tamperVerified: true });
+
+  const refreshQueueStatus = async () => {
+    try {
+      const q = await getAiSupportOfflineQueueStatus();
+      setOfflineStatus({ pendingCount: q.pendingCount, tamperVerified: q.tamperVerified });
+    } catch {
+      // Non-blocking fallback
+    }
+  };
+
+  useEffect(() => {
+    refreshQueueStatus();
+  }, []);
 
   if (cloakActive) {
     return (
@@ -158,12 +177,29 @@ export default function SafetyPlanAndStealthVaultScreen() {
       ],
     });
     setVaultRecord(record);
+    await refreshQueueStatus();
   };
 
   const isDuressDecoy = pinResult?.mode === "duress_sanitized_decoy";
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+      {/* Offline Vault & Security Status Bar */}
+      <View style={styles.statusBar}>
+        <View style={styles.statusBadge}>
+          <Text style={styles.statusBadgeDot}>●</Text>
+          <Text style={styles.statusBadgeText}>
+            Stealth Vault: Active | Offline Sync:{" "}
+            {offlineStatus.pendingCount === 0
+              ? "Synchronized"
+              : `${offlineStatus.pendingCount} Queued`}
+          </Text>
+        </View>
+        <Text style={styles.tamperText}>
+          {offlineStatus.tamperVerified ? "🛡️ Cryptographically Verified" : "⚠ Queue Discrepancy"}
+        </Text>
+      </View>
+
       {/* Instant Quick-Exit Cloak Banner */}
       <View style={styles.quickExitBanner}>
         <View style={{ flex: 1 }}>
@@ -190,6 +226,20 @@ export default function SafetyPlanAndStealthVaultScreen() {
         <Text style={styles.helperText}>
           Demo Primary PIN: {primaryPin} | Demo Duress Decoy PIN: {duressPin} (hides DFV vault &amp; silently alerts caseworker)
         </Text>
+        <View style={styles.pinShortcutRow}>
+          <Pressable
+            style={[styles.pinShortcutBtn, enteredPin === primaryPin && styles.pinShortcutActive]}
+            onPress={() => setEnteredPin(primaryPin)}
+          >
+            <Text style={styles.pinShortcutText}>Use Primary PIN ({primaryPin})</Text>
+          </Pressable>
+          <Pressable
+            style={[styles.pinShortcutBtn, enteredPin === duressPin && styles.pinShortcutActive]}
+            onPress={() => setEnteredPin(duressPin)}
+          >
+            <Text style={styles.pinShortcutText}>Use Duress Decoy ({duressPin})</Text>
+          </Pressable>
+        </View>
         <View style={styles.row}>
           <TextInput
             style={[styles.input, { flex: 1 }]}
@@ -390,6 +440,32 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   quickExitButtonText: { color: "#FFFFFF", fontWeight: "800", fontSize: 12 },
+  statusBar: {
+    backgroundColor: "#1E293B",
+    borderRadius: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#334155",
+  },
+  statusBadge: { flexDirection: "row", alignItems: "center", gap: 6 },
+  statusBadgeDot: { color: "#10B981", fontSize: 10 },
+  statusBadgeText: { color: "#E2E8F0", fontSize: 12, fontWeight: "600" },
+  tamperText: { color: "#38BDF8", fontSize: 11, fontWeight: "700" },
+  pinShortcutRow: { flexDirection: "row", gap: 8, marginBottom: 4 },
+  pinShortcutBtn: {
+    backgroundColor: "#0F172A",
+    borderWidth: 1,
+    borderColor: "#475569",
+    paddingVertical: 6,
+    paddingHorizontal: 10,
+    borderRadius: 6,
+  },
+  pinShortcutActive: { backgroundColor: "#0284C7", borderColor: "#38BDF8" },
+  pinShortcutText: { color: "#E2E8F0", fontSize: 12, fontWeight: "600" },
   card: {
     backgroundColor: "#1E293B",
     borderRadius: 12,

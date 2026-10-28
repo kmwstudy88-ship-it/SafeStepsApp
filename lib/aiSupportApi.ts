@@ -359,6 +359,18 @@ export async function submitChildThreeHousesPlayroom(
   return localResult;
 }
 
+export async function getAiSupportOfflineQueueStatus(): Promise<{
+  pendingCount: number;
+  tamperVerified: boolean;
+}> {
+  const queue = await getPendingAiSupportQueue();
+  const tamperVerified = verifyAiSupportQueueChain(queue);
+  return {
+    pendingCount: queue.length,
+    tamperVerified,
+  };
+}
+
 export {
   clearAllQueuedAiSupportItems,
   getPendingAiSupportQueue,
