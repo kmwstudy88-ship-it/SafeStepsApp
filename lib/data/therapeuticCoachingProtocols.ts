@@ -711,6 +711,168 @@ export const SITUATIONAL_JUDGEMENT_VIGNETTES: SituationalJudgementVignette[] = [
       },
     ],
   },
+  {
+    id: "sjt_avith_teen_escalation",
+    title: "Teen Door Slam & Escalation (AVITH / Non-Violent Resistance)",
+    pathway: "family_intergenerational_repair",
+    scenarioText:
+      "Your 14-year-old child kicks a bedroom door, knocks over a lamp, and shouts insults demanding car keys/money to see friends late on a school night. Your younger child is watching from the hallway.",
+    easyReadScenarioText:
+      "Your teenager is yelling, kicking doors, and demanding money. Your younger child is scared. What is your safest response?",
+    childAgeContext: "13–17 years",
+    options: [
+      {
+        id: "opt_a_physical_contest",
+        responseText: "Block the doorway with your body, raise your voice louder, and dare them to touch you.",
+        authenticityWeight: 10,
+        reflectiveFunctioningLevel: "hostile_pre_mentalizing",
+        clinicalRationale: "High physical risk of escalation and injury in an AVITH cycle.",
+      },
+      {
+        id: "opt_b_passive_appease",
+        responseText: "Hand over the keys and money immediately so they stop kicking doors and leave the house.",
+        authenticityWeight: 25,
+        reflectiveFunctioningLevel: "rehearsed_textbook",
+        clinicalRationale: "Reinforces fear-based compliance without establishing safe boundaries or youth de-escalation.",
+      },
+      {
+        id: "opt_c_nvr_presence_boundary",
+        responseText: "Step back to create physical space, guide your younger child to a safe room ('You're safe, stay with me'), and use a low, calm voice: 'I care about you too much to argue while we are both heated. We will talk when our bodies are calm.'",
+        authenticityWeight: 95,
+        reflectiveFunctioningLevel: "protective_mentalizing",
+        clinicalRationale: "Demonstrates Non-Violent Resistance (NVR), shields younger sibling, de-escalates physical confrontation, and maintains connection with clear limits.",
+      },
+    ],
+  },
+  {
+    id: "sjt_kinship_boundary_enforcement",
+    title: "Kinship Carer Unannounced Contact Boundary",
+    pathway: "parent_co_regulation_cos",
+    scenarioText:
+      "You are a grandmother caring for your two grandchildren under a formal order. The biological parent turns up unannounced on Saturday afternoon wanting to take the kids to the park immediately. The children look confused and excited.",
+    easyReadScenarioText:
+      "You are looking after your grandkids. Their parent turns up without asking and wants to take them right now. What do you do?",
+    options: [
+      {
+        id: "opt_a_shame_shout",
+        responseText: "Scream at the parent on the doorstep that they are irresponsible and ruin everything.",
+        authenticityWeight: 15,
+        reflectiveFunctioningLevel: "hostile_pre_mentalizing",
+        clinicalRationale: "Triangulates the children and creates intense loyalty conflict and trauma-arousal.",
+      },
+      {
+        id: "opt_b_break_order_secretly",
+        responseText: "Let them take the children for an hour and tell the kids not to tell their caseworker.",
+        authenticityWeight: 10,
+        reflectiveFunctioningLevel: "hostile_pre_mentalizing",
+        clinicalRationale: "Violates safety planning and legal orders, teaching children secretive deception.",
+      },
+      {
+        id: "opt_c_compassionate_firm_boundary",
+        responseText: "Step outside to the porch, keep your voice steady and warm: 'The kids love seeing you, but we follow the contact schedule so everyone stays safe. Let's arrange Tuesday with the caseworker like planned.'",
+        authenticityWeight: 95,
+        reflectiveFunctioningLevel: "protective_mentalizing",
+        clinicalRationale: "Combines firm boundary enforcement with respectful non-blaming dignity and adherence to child protective safety plans.",
+      },
+    ],
+  },
+  {
+    id: "sjt_neurodivergent_homework_meltdown",
+    title: "ADHD / Neurodivergent Transition Overload",
+    pathway: "neurodiversity_abi_scaffolding",
+    scenarioText:
+      "Your 9-year-old with ADHD has a violent crying fit when asked to stop gaming and sit down for 10 minutes of reading homework. They tear up the worksheet.",
+    easyReadScenarioText:
+      "Your child with ADHD gets angry and tears up their homework when screen time ends. What is your best move?",
+    childAgeContext: "9–12 years",
+    options: [
+      {
+        id: "opt_a_punish_hard",
+        responseText: "Smack the table, yell that they are lazy, and confiscate all screens for a month.",
+        authenticityWeight: 10,
+        reflectiveFunctioningLevel: "hostile_pre_mentalizing",
+        clinicalRationale: "Triggers nervous system shutdown or escalation; misinterprets executive dysfunction as willful defiance.",
+      },
+      {
+        id: "opt_b_textbook_denial",
+        responseText: "Ignore it completely and pretend the homework was never assigned.",
+        authenticityWeight: 35,
+        reflectiveFunctioningLevel: "rehearsed_textbook",
+        clinicalRationale: "Avoids executive function scaffolding.",
+      },
+      {
+        id: "opt_c_low_arousal_scaffold",
+        responseText: "Pause the task, sit beside them on the floor without eye contact demand ('Nervous system is in overdrive, let's take a 3-minute drink of ice water'), then break the reading into one 3-minute chunk using visual timer.",
+        authenticityWeight: 95,
+        reflectiveFunctioningLevel: "protective_mentalizing",
+        clinicalRationale: "Applies low-arousal sensory co-regulation, body reset, and neurodiversity-affirming task-chunking.",
+      },
+    ],
+  },
+  {
+    id: "sjt_caseworker_unannounced_visit",
+    title: "Caseworker Unannounced Home Review",
+    pathway: "grief_shame_resilience",
+    scenarioText:
+      "Your child protection caseworker knocks on your door while your sink is full of dishes, toys are on the rug, and you are feeling exhausted. A surge of panic and shame hits your throat.",
+    easyReadScenarioText:
+      "Your worker arrives while your house is messy. You feel scared and ashamed. What do you do?",
+    options: [
+      {
+        id: "opt_a_slam_hide",
+        responseText: "Pretend you are not home, turn off the lights, and post angrily on social media about caseworker harassment.",
+        authenticityWeight: 15,
+        reflectiveFunctioningLevel: "hostile_pre_mentalizing",
+        clinicalRationale: "High risk of escalated protective concerns and missed opportunity to demonstrate transparency.",
+      },
+      {
+        id: "opt_b_hostile_confront",
+        responseText: "Open the door aggressively, demand a search warrant, and accuse them of trying to steal your kids.",
+        authenticityWeight: 15,
+        reflectiveFunctioningLevel: "hostile_pre_mentalizing",
+        clinicalRationale: "Reflects defensive fight-response that obscures genuine parenting capacity.",
+      },
+      {
+        id: "opt_c_grounded_transparency",
+        responseText: "Take a deep belly breath, open the door with honest transparency: 'Come in. Today has been a messy, tiring morning with laundry and dishes, but the kids had lunch and are safe. Let me put the kettle on while we chat.'",
+        authenticityWeight: 95,
+        reflectiveFunctioningLevel: "protective_mentalizing",
+        clinicalRationale: "Demonstrates shame resilience, normalizes realistic parenting, shows transparent collaboration, and disarms perfectionism-anxiety.",
+      },
+    ],
+  },
+  {
+    id: "sjt_first_nations_mob_yarning",
+    title: "Cultural SEWB Reconnection & Mob Yarning",
+    pathway: "cultural_sewb_yarning",
+    scenarioText:
+      "After months of stress and family court hearings, you feel drained and cut off from family and culture. A community Aunty invites you to a women's/men's yarning circle at the local Aboriginal Community Controlled Health Organisation (ACCHO).",
+    easyReadScenarioText:
+      "An Elder invites you to an Aboriginal community yarning circle after tough times. How do you respond?",
+    options: [
+      {
+        id: "opt_a_isolate_shame",
+        responseText: "Stay home and tell yourself you have brought too much shame on your family to show your face.",
+        authenticityWeight: 20,
+        reflectiveFunctioningLevel: "hostile_pre_mentalizing",
+        clinicalRationale: "Internalized colonial shame leads to deep isolation and cultural rupture.",
+      },
+      {
+        id: "opt_b_superficial_check",
+        responseText: "Say you don't need culture because you already have a court certificate.",
+        authenticityWeight: 30,
+        reflectiveFunctioningLevel: "rehearsed_textbook",
+        clinicalRationale: "Replaces genuine cultural identity and community grounding with bureaucratic compliance.",
+      },
+      {
+        id: "opt_c_embrace_yarning_circle",
+        responseText: "Accept the invitation with humility, sit by the fire/yarning circle with the Elder, listen to stories, and share honestly about your healing journey without shame.",
+        authenticityWeight: 95,
+        reflectiveFunctioningLevel: "protective_mentalizing",
+        clinicalRationale: "Grounds healing in First Nations Social & Emotional Wellbeing (SEWB), community connection, and intergenerational resilience.",
+      },
+    ],
+  },
 ];
 
 export const STRESS_ROLEPLAY_SCENARIOS: StressRoleplayScenario[] = [

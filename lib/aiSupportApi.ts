@@ -23,11 +23,43 @@ import {
   type SupportCoachTurnInput,
   type SupportCoachTurnOutput,
 } from "./engines/aiSupportCoachEngine";
+import {
+  clearAllQueuedAiSupportItems,
+  getPendingAiSupportQueue,
+  queueAiSupportSubmission,
+  syncPendingAiSupportQueue,
+  verifyAiSupportQueueChain,
+} from "./engines/aiSupportOfflineSyncQueue";
 
 const DEFAULT_API_BASE_URL =
   process.env.EXPO_PUBLIC_API_BASE_URL ||
   process.env.EXPO_PUBLIC_BACKEND_URL ||
   "http://localhost:3000";
+
+async function postWithOfflineQueueFallback(
+  endpoint: string,
+  payload: Record<string, unknown>,
+  accessToken?: string,
+): Promise<void> {
+  try {
+    const response = await fetch(
+      `${DEFAULT_API_BASE_URL}${endpoint.startsWith("/") ? "" : "/"}${endpoint}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
+        },
+        body: JSON.stringify(payload),
+      },
+    );
+    if (!response.ok) {
+      await queueAiSupportSubmission(endpoint, payload);
+    }
+  } catch {
+    await queueAiSupportSubmission(endpoint, payload);
+  }
+}
 
 export async function submitAiCoachTurn(
   input: SupportCoachTurnInput,
@@ -75,20 +107,11 @@ export async function submitCouplesDfvSafetyCheck(
   options?: { accessToken?: string },
 ): Promise<CouplesDfvSafetyCheckResult> {
   const localResult = evaluateCouplesDfvSafetyGate(input);
-
-  try {
-    await fetch(`${DEFAULT_API_BASE_URL}/ai-support/couples-dfv/safety-check`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        ...(options?.accessToken ? { Authorization: `Bearer ${options.accessToken}` } : {}),
-      },
-      body: JSON.stringify(input),
-    });
-  } catch {
-    // Local deterministic result is authoritative and immediate
-  }
-
+  await postWithOfflineQueueFallback(
+    "/ai-support/couples-dfv/safety-check",
+    input as unknown as Record<string, unknown>,
+    options?.accessToken,
+  );
   return localResult;
 }
 
@@ -208,63 +231,140 @@ export async function saveEncryptedDfvSafetyPlan(
 
 export async function submitContactVisitCoachSession(
   input: ContactVisitCoachingInput,
+  options?: { accessToken?: string },
 ): Promise<ContactVisitCoachingResult> {
-  return runContactVisitCoaching(input);
+  const localResult = runContactVisitCoaching(input);
+  await postWithOfflineQueueFallback(
+    "/ai-support/visits/coach",
+    input as unknown as Record<string, unknown>,
+    options?.accessToken,
+  );
+  return localResult;
 }
 
 export async function submitRestorativeFamilyMeetingPlan(
   input: RestorativeFamilyMeetingInput,
+  options?: { accessToken?: string },
 ): Promise<RestorativeFamilyMeetingResult> {
-  return buildRestorativeFamilyMeetingPlan(input);
+  const localResult = buildRestorativeFamilyMeetingPlan(input);
+  await postWithOfflineQueueFallback(
+    "/ai-support/family-meeting/repair-script",
+    input as unknown as Record<string, unknown>,
+    options?.accessToken,
+  );
+  return localResult;
 }
 
 export async function submitAddictionUrgeSurfShield(
   input: AddictionRecoveryShieldInput,
+  options?: { accessToken?: string },
 ): Promise<AddictionRecoveryShieldResult> {
-  return runAddictionRecoveryShield(input);
+  const localResult = runAddictionRecoveryShield(input);
+  await postWithOfflineQueueFallback(
+    "/ai-support/addiction/urge-surf",
+    input as unknown as Record<string, unknown>,
+    options?.accessToken,
+  );
+  return localResult;
 }
 
 export async function submitNeuroSleepHouseholdToolkit(
   input: NeuroSleepHouseholdInput,
+  options?: { accessToken?: string },
 ): Promise<NeuroSleepHouseholdResult> {
-  return buildNeuroSleepHouseholdToolkit(input);
+  const localResult = buildNeuroSleepHouseholdToolkit(input);
+  await postWithOfflineQueueFallback(
+    "/ai-support/neuro-sleep/profile",
+    input as unknown as Record<string, unknown>,
+    options?.accessToken,
+  );
+  return localResult;
 }
 
 export async function submitKinshipCarerProQolCheck(
   input: KinshipCarerSupportInput,
+  options?: { accessToken?: string },
 ): Promise<KinshipCarerSupportResult> {
-  return evaluateKinshipCarerSupport(input);
+  const localResult = evaluateKinshipCarerSupport(input);
+  await postWithOfflineQueueFallback(
+    "/ai-support/kinship-carer/check-in",
+    input as unknown as Record<string, unknown>,
+    options?.accessToken,
+  );
+  return localResult;
 }
 
 export async function submitCulturalSewbYarningMap(
   input: CulturalSewbYarningInput,
+  options?: { accessToken?: string },
 ): Promise<CulturalSewbYarningResult> {
-  return buildFirstNationsSewbYarningMap(input);
+  const localResult = buildFirstNationsSewbYarningMap(input);
+  await postWithOfflineQueueFallback(
+    "/ai-support/cultural-sewb/yarning-map",
+    input as unknown as Record<string, unknown>,
+    options?.accessToken,
+  );
+  return localResult;
 }
 
 export async function generateCourtSaferAiAnnexure(
   input: CourtSaferAiAnnexureInput,
+  options?: { accessToken?: string },
 ): Promise<CourtSaferAiAnnexureResult> {
-  return compileCourtSaferAiAnnexure(input);
+  const localResult = compileCourtSaferAiAnnexure(input);
+  await postWithOfflineQueueFallback(
+    "/ai-support/court-annexure/compile",
+    input as unknown as Record<string, unknown>,
+    options?.accessToken,
+  );
+  return localResult;
 }
 
 export async function submit360MultiInformantPortal(
   input: MultiInformant360PortalInput,
+  options?: { accessToken?: string },
 ): Promise<MultiInformant360PortalResult> {
-  return evaluate360MultiInformantPortal(input);
+  const localResult = evaluate360MultiInformantPortal(input);
+  await postWithOfflineQueueFallback(
+    "/ai-support/informants/submit-360",
+    input as unknown as Record<string, unknown>,
+    options?.accessToken,
+  );
+  return localResult;
 }
 
 export async function generateAdaptiveMicroPrescriptions(
   input: AdaptiveMicroPrescriptionInput,
+  options?: { accessToken?: string },
 ): Promise<AdaptiveMicroPrescriptionResult> {
-  return prescribeAdaptiveMicroLessonsAndReTests(input);
+  const localResult = prescribeAdaptiveMicroLessonsAndReTests(input);
+  await postWithOfflineQueueFallback(
+    "/ai-support/prescriptions/generate",
+    input as unknown as Record<string, unknown>,
+    options?.accessToken,
+  );
+  return localResult;
 }
 
 export async function submitChildThreeHousesPlayroom(
   input: ChildThreeHousesInput,
+  options?: { accessToken?: string },
 ): Promise<ChildThreeHousesResult> {
-  return evaluateChildThreeHousesAndSafetyHand(input);
+  const localResult = evaluateChildThreeHousesAndSafetyHand(input);
+  await postWithOfflineQueueFallback(
+    "/ai-support/child/three-houses",
+    input as unknown as Record<string, unknown>,
+    options?.accessToken,
+  );
+  return localResult;
 }
 
-export { hashSafetyPin };
+export {
+  clearAllQueuedAiSupportItems,
+  getPendingAiSupportQueue,
+  hashSafetyPin,
+  queueAiSupportSubmission,
+  syncPendingAiSupportQueue,
+  verifyAiSupportQueueChain,
+};
 
