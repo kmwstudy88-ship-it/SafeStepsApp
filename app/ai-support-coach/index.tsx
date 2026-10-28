@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import React, { useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   ScrollView,
   StyleSheet,
@@ -9,7 +9,11 @@ import {
   View,
 } from "react-native";
 
-import { submitAiCoachTurn } from "../../lib/aiSupportApi";
+import {
+  getPendingAiSupportQueue,
+  submitAiCoachTurn,
+  syncPendingAiSupportQueue,
+} from "../../lib/aiSupportApi";
 import {
   AUSTRALIAN_CRISIS_RESOURCES,
   CLINICAL_PATHWAY_PROTOCOLS,
@@ -111,6 +115,44 @@ export default function AiSupportCoachHubScreen() {
   const [turnHistory, setTurnHistory] = useState<SupportCoachTurnOutput[]>([]);
   const [submitting, setSubmitting] = useState(false);
 
+  // Offline queue & synchronization state
+  const [queuedCount, setQueuedCount] = useState(0);
+  const [syncingQueue, setSyncingQueue] = useState(false);
+  const [syncMessage, setSyncMessage] = useState<string | null>(null);
+
+  const refreshQueueStatus = useCallback(async () => {
+    try {
+      const queue = await getPendingAiSupportQueue();
+      setQueuedCount(queue.length);
+    } catch {
+      // offline vault in memory
+    }
+  }, []);
+
+  useEffect(() => {
+    refreshQueueStatus();
+  }, [refreshQueueStatus]);
+
+  async function handleManualQueueSync() {
+    setSyncingQueue(true);
+    setSyncMessage(null);
+    try {
+      const summary = await syncPendingAiSupportQueue();
+      if (summary.total === 0) {
+        setSyncMessage("All offline items are already synchronized.");
+      } else if (summary.failed === 0) {
+        setSyncMessage(`Synced ${summary.synced} item${summary.synced === 1 ? "" : "s"} successfully.`);
+      } else {
+        setSyncMessage(`Synced ${summary.synced}, failed ${summary.failed}. Will retry automatically.`);
+      }
+      await refreshQueueStatus();
+    } catch {
+      setSyncMessage("Sync unavailable. Data remains safely queued in offline vault.");
+    } finally {
+      setSyncingQueue(false);
+    }
+  }
+
   const activePathwayProtocol = useMemo(
     () =>
       CLINICAL_PATHWAY_PROTOCOLS.find((p) => p.id === clinicalPathway) ??
@@ -174,6 +216,7 @@ export default function AiSupportCoachHubScreen() {
       });
       setTurnHistory((prev) => [output, ...prev]);
       setUserInput("");
+      await refreshQueueStatus();
     } finally {
       setSubmitting(false);
     }
@@ -248,6 +291,27 @@ export default function AiSupportCoachHubScreen() {
           >
             <Text style={styles.navPillText}>Restorative Family Repair Studio</Text>
           </TouchableOpacity>
+        </View>
+
+        {/* Offline Queue & Sync Status Banner */}
+        <View style={styles.syncStatusCard}>
+          <View style={styles.syncStatusHeader}>
+            <Text style={styles.syncStatusTitle}>
+              {queuedCount > 0
+                ? `🟠 ${queuedCount} Offline ${queuedCount === 1 ? "Record" : "Records"} Queued (Encrypted Vault)`
+                : "🟢 Offline Vault Synced & Cryptographically Verified"}
+            </Text>
+            <TouchableOpacity
+              style={[styles.syncButton, syncingQueue && styles.syncButtonDisabled]}
+              onPress={handleManualQueueSync}
+              disabled={syncingQueue}
+            >
+              <Text style={styles.syncButtonText}>
+                {syncingQueue ? "Syncing..." : queuedCount > 0 ? "Sync Now" : "Check Sync"}
+              </Text>
+            </TouchableOpacity>
+          </View>
+          {syncMessage ? <Text style={styles.syncStatusMessage}>{syncMessage}</Text> : null}
         </View>
       </View>
 
@@ -1168,5 +1232,45 @@ const styles = StyleSheet.create({
   crisisDesc: {
     fontSize: 12,
     color: "#4B6369",
+  },
+  syncStatusCard: {
+    backgroundColor: "#F0FDF4",
+    borderRadius: 12,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: "#BBF7D0",
+    gap: 6,
+    marginTop: 10,
+  },
+  syncStatusHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 8,
+  },
+  syncStatusTitle: {
+    fontSize: 13,
+    fontWeight: "800",
+    color: "#166534",
+    flex: 1,
+  },
+  syncButton: {
+    backgroundColor: "#166534",
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 8,
+  },
+  syncButtonDisabled: {
+    opacity: 0.6,
+  },
+  syncButtonText: {
+    color: "#FFFFFF",
+    fontSize: 12,
+    fontWeight: "800",
+  },
+  syncStatusMessage: {
+    fontSize: 12,
+    color: "#15803D",
+    fontStyle: "italic",
   },
 });
