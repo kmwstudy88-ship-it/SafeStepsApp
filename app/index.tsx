@@ -24,7 +24,8 @@ export default function SafeStepsHub() {
         { title: 'Supervisor Risk Dashboard', subtitle: 'Highest-risk cases, rising risk, escalations, and follow-ups', route: '/dashboard/supervisor', icon: '🚦', badge: 'Safety' },
         { title: 'Assessments & Practice', subtitle: 'Private reflection and step-by-step learning practice', route: '/assessments', icon: '📊', badge: 'Local' },
         { title: 'Secure Evidence Vault', subtitle: 'Photo proof & routine milestone locker', route: '/evidence', icon: '🔐', badge: 'Vault' },
-        { title: 'Court-Ready Progress Reports', subtitle: 'Cryptographically sealed PDF summaries', route: '/reports', icon: '⚖️', badge: 'PDF Export' },
+        { title: 'Concerns & Right of Reply', subtitle: 'Procedural fairness register with non-destructive parent reply & evidence linking', route: '/concerns', icon: '⚖️', badge: 'Fairness' },
+        { title: 'Court-Ready Progress Reports', subtitle: 'Cryptographically sealed PDF summaries', route: '/reports', icon: '📜', badge: 'PDF Export' },
       ],
     },
     {
