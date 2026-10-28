@@ -103,20 +103,90 @@ export default function RestorativeFamilyMeetingStudioScreen() {
 
         {result ? (
           <View style={styles.resultBox}>
-            <Text style={styles.resultTitle}>
-              Delivery Mode: {result.activeDeliveryMode} | Permitted:{" "}
-              {result.meetingPermitted ? "YES" : "NO"}
-            </Text>
-            <Text style={styles.resultBody}>{result.safetyGateReason}</Text>
-            {result.excuseOrChildBlameDetected ? (
-              <Text style={styles.resultWarn}>
-                Excuse / Child-Blame Detected & Removed:{" "}
-                {result.detectedBlameOrMinimizationFlags.join("; ")}
+            <View
+              style={[
+                styles.statusBanner,
+                result.meetingPermitted ? styles.statusBannerPermitted : styles.statusBannerBlocked,
+              ]}
+            >
+              <Text style={styles.statusBannerText}>
+                {result.meetingPermitted
+                  ? "🟢 CONJOINT RESTORATIVE MEETING PERMITTED"
+                  : "🟠 PARALLEL INDIVIDUAL PREPARATION REQUIRED"}
               </Text>
+            </View>
+
+            <Text style={styles.resultBody}>{result.safetyGateReason}</Text>
+
+            {result.excuseOrChildBlameDetected ? (
+              <View style={styles.warnBox}>
+                <Text style={styles.resultWarnTitle}>⚠️ Excuse / Minimization Flags Filtered:</Text>
+                {result.detectedBlameOrMinimizationFlags.map((flag, idx) => (
+                  <Text key={idx} style={styles.resultWarnItem}>
+                    • {flag}
+                  </Text>
+                ))}
+              </View>
             ) : null}
-            <Text style={styles.resultSafe}>
-              5-Step Child-Centred Repair Apology:{" "}
-              {result.sanitizedChildCentredApology}
+
+            <Text style={styles.subSectionTitle}>Child-Centred 5-Step Repair Apology Script:</Text>
+            <View style={styles.stepsCard}>
+              <View style={styles.stepRow}>
+                <Text style={styles.stepNum}>1</Text>
+                <View style={styles.stepContent}>
+                  <Text style={styles.stepLabel}>Own Adult Action (100% Responsibility):</Text>
+                  <Text style={styles.stepText}>
+                    {result.fiveStepRepairStructure.step1OwnAdultAction}
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.stepRow}>
+                <Text style={styles.stepNum}>2</Text>
+                <View style={styles.stepContent}>
+                  <Text style={styles.stepLabel}>Name Child Nervous System Impact:</Text>
+                  <Text style={styles.stepText}>
+                    {result.fiveStepRepairStructure.step2NameChildImpact}
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.stepRow}>
+                <Text style={styles.stepNum}>3</Text>
+                <View style={styles.stepContent}>
+                  <Text style={styles.stepLabel}>Zero Excuses Guarantee:</Text>
+                  <Text style={styles.stepText}>
+                    {result.fiveStepRepairStructure.step3ZeroExcusesGuarantee}
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.stepRow}>
+                <Text style={styles.stepNum}>4</Text>
+                <View style={styles.stepContent}>
+                  <Text style={styles.stepLabel}>Concrete Safety & Regulation Change:</Text>
+                  <Text style={styles.stepText}>
+                    {result.fiveStepRepairStructure.step4ConcreteSafetyChange}
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.stepRow}>
+                <Text style={styles.stepNum}>5</Text>
+                <View style={styles.stepContent}>
+                  <Text style={styles.stepLabel}>No Pressure to Forgive:</Text>
+                  <Text style={styles.stepText}>
+                    {result.fiveStepRepairStructure.step5NoPressureToForgive}
+                  </Text>
+                </View>
+              </View>
+            </View>
+
+            <Text style={styles.subSectionTitle}>Voice of the Child Centering Cards:</Text>
+            {result.voiceOfChildCards.map((card, idx) => (
+              <View key={idx} style={styles.voiceCard}>
+                <Text style={styles.voiceCardText}>🧸 "{card}"</Text>
+              </View>
+            ))}
+
+            <Text style={styles.auditHashText}>
+              🔐 Cryptographic Audit Hash: {result.auditSha256.slice(0, 16)}... (Encrypted in Offline Vault)
             </Text>
           </View>
         ) : null}
@@ -204,6 +274,103 @@ const styles = StyleSheet.create({
   resultBody: { color: "#E2E8F0", fontSize: 13 },
   resultSafe: { color: "#6EE7B7", fontSize: 13 },
   resultWarn: { color: "#FCD34D", fontSize: 12 },
+  statusBanner: {
+    paddingVertical: 8,
+    paddingHorizontal: 12,
+    borderRadius: 8,
+    borderWidth: 1,
+    alignItems: "center",
+  },
+  statusBannerPermitted: {
+    backgroundColor: "#064E3B",
+    borderColor: "#34D399",
+  },
+  statusBannerBlocked: {
+    backgroundColor: "#451A03",
+    borderColor: "#FBBF24",
+  },
+  statusBannerText: {
+    color: "#F8FAFC",
+    fontWeight: "800",
+    fontSize: 12,
+  },
+  warnBox: {
+    backgroundColor: "#291515",
+    padding: 10,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#EF4444",
+    gap: 4,
+  },
+  resultWarnTitle: {
+    color: "#FCA5A5",
+    fontSize: 12,
+    fontWeight: "700",
+  },
+  resultWarnItem: {
+    color: "#FECACA",
+    fontSize: 12,
+  },
+  subSectionTitle: {
+    color: "#38BDF8",
+    fontSize: 13,
+    fontWeight: "700",
+    marginTop: 6,
+  },
+  stepsCard: {
+    backgroundColor: "#1E293B",
+    borderRadius: 8,
+    padding: 10,
+    gap: 8,
+  },
+  stepRow: {
+    flexDirection: "row",
+    gap: 10,
+    alignItems: "flex-start",
+  },
+  stepNum: {
+    backgroundColor: "#0284C7",
+    color: "#FFFFFF",
+    fontWeight: "800",
+    fontSize: 12,
+    width: 22,
+    height: 22,
+    borderRadius: 11,
+    textAlign: "center",
+    lineHeight: 22,
+  },
+  stepContent: {
+    flex: 1,
+    gap: 2,
+  },
+  stepLabel: {
+    color: "#94A3B8",
+    fontSize: 11,
+    fontWeight: "700",
+  },
+  stepText: {
+    color: "#F1F5F9",
+    fontSize: 12,
+    lineHeight: 18,
+  },
+  voiceCard: {
+    backgroundColor: "#1E293B",
+    padding: 8,
+    borderRadius: 6,
+    borderLeftWidth: 3,
+    borderLeftColor: "#F472B6",
+  },
+  voiceCardText: {
+    color: "#F9A8D4",
+    fontSize: 12,
+    fontStyle: "italic",
+  },
+  auditHashText: {
+    color: "#64748B",
+    fontSize: 11,
+    marginTop: 4,
+    fontFamily: "monospace",
+  },
   secondaryBtn: {
     backgroundColor: "#334155",
     paddingVertical: 10,
