@@ -37,6 +37,7 @@ export default function SafeStepsHub() {
         { title: 'Voice Calming Coach', subtitle: 'Box breathing (4-4-4-4) & grounding reset', route: '/voice-coach', icon: '🌬️', badge: 'Audio Reset' },
         { title: '24/7 Parenting SOS Reliever', subtitle: 'Zero-judgment emergency de-escalation scripts', route: '/sos', icon: '🚨', badge: 'SOS' },
         { title: 'Document Fairness & Bias Analyzer', subtitle: 'Objective framing & constructive reframing', route: '/fairness', icon: '📝', badge: 'AI Explainer' },
+        { title: 'Document Intelligence & Extractions', subtitle: 'Extracted concerns, case goals, contradiction detection & procedural dispute', route: '/documents/intelligence', icon: '🔍', badge: 'Review' },
       ],
     },
     {
