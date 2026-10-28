@@ -13,6 +13,7 @@ export default function SafeStepsHub() {
         { title: 'Daily Parenting Challenges', subtitle: 'Evidence-backed daily challenges, streaks, and reward milestones', route: '/daily-challenges', icon: '🔥', badge: 'Streaks' },
         { title: 'Interactive Roleplay Simulator', subtitle: 'Practice de-escalation & caseworker meetings', route: '/scenarios', icon: '🎭', badge: 'Active' },
         { title: 'Interactive Storybooks', subtitle: 'Parent-child co-reading & reflection', route: '/storybooks', icon: '📖', badge: 'Co-reading' },
+        { title: 'Co-Play Games & Bonding Activities', subtitle: 'Interactive turn-taking games, emotion matching & visit icebreakers', route: '/games', icon: '🎮', badge: 'Co-play' },
       ],
     },
     {
@@ -50,6 +51,8 @@ export default function SafeStepsHub() {
     {
       pillar: 'Pillar 5: Access, Language & Account',
       items: [
+        { title: 'Child Space Login', subtitle: 'Child-safe login (Picture sequence, PIN, Secret word)', route: '/child/login', icon: '🧒', badge: 'Child-Safe' },
+        { title: 'Parent-Child Monitored Space', subtitle: 'Child-approved shared updates, milestones, and safe messaging', route: '/parent-child', icon: '👨‍👧', badge: 'Safeguarded' },
         { title: 'Accessibility & Language', subtitle: 'Plain-language mode, text-to-speech, and preferred language tools', route: '/accessibility', icon: '🗣️', badge: 'Inclusive' },
         { title: 'Settings & Trusted Contacts', subtitle: 'Profile, trusted-contact SOS list, and account preferences', route: '/settings', icon: '⚙️', badge: 'Account' },
       ],
