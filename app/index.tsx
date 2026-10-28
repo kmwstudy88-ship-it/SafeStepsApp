@@ -40,6 +40,7 @@ export default function SafeStepsHub() {
     {
       pillar: 'Pillar 4: Safety, Privacy & Contact Visits',
       items: [
+        { title: 'Unified Family Calendar', subtitle: 'Visits, court hearings, specialist appointments, and prep checklists', route: '/calendar', icon: '📅', badge: 'Timeline' },
         { title: 'Safety Plan Builder', subtitle: 'Editable safety steps, escape contacts, and go-bag checklist', route: '/safety-plan', icon: '🛡️', badge: 'Plan' },
         { title: 'Supervised Contact Visit Companion', subtitle: 'Visit flow, bonding ideas, and post-visit reflections for reports', route: '/contact-visit', icon: '🤝', badge: 'Visits' },
         { title: 'Discreet Privacy Mode', subtitle: 'Functional disguise screen with PIN unlock and recovery support', route: '/discreet', icon: '🔒', badge: 'Disguise' },
