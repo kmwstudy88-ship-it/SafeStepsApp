@@ -62,6 +62,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/agent-skills", apiRateLimit);
+app.use("/ai-support", apiRateLimit);
 app.use("/auth", apiRateLimit);
 app.use("/documents", apiRateLimit);
 app.use("/users", userApiRateLimit);

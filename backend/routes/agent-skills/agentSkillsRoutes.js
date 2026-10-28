@@ -15,12 +15,15 @@ import {
   requireCaseAccess,
 } from "../../middleware/authorize.js";
 import { requireAuthenticatedUser } from "../../middleware/requireAuthenticatedUser.js";
+import { createRateLimiter } from "../../middleware/userApiRateLimit.js";
 
 const MAX_TEXT_BYTES = 2 * 1024 * 1024;
 
 const router = express.Router();
+const agentSkillsRateLimit = createRateLimiter();
+router.use(agentSkillsRateLimit);
 
-const auth = [requireAuthenticatedUser, requireAnyRole(...DOCUMENT_ROLES), requireCaseAccess];
+const auth = [agentSkillsRateLimit, requireAuthenticatedUser, requireAnyRole(...DOCUMENT_ROLES), requireCaseAccess];
 const skillsOrchestrator = createSkillsOrchestrator({ handlers: createDefaultSkillHandlers() });
 
 // ─── shared helpers ──────────────────────────────────────────────────────────

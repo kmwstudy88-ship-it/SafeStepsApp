@@ -27,12 +27,15 @@ import {
   requireAnyRole,
 } from "../../middleware/authorize.js";
 import { requireAuthenticatedUser } from "../../middleware/requireAuthenticatedUser.js";
+import { createRateLimiter } from "../../middleware/userApiRateLimit.js";
 
 const router = express.Router();
+const aiSupportRateLimit = createRateLimiter();
+router.use(aiSupportRateLimit);
 
-const coachAuth = [requireAuthenticatedUser, requireAnyRole(...AI_COACH_ROLES)];
-const adultAndStaffAuth = [requireAuthenticatedUser, requireAnyRole("carer", ...DOCUMENT_ROLES)];
-const clinicianAuth = [requireAuthenticatedUser, requireAnyRole(...STAFF_DOCUMENT_ROLES)];
+const coachAuth = [aiSupportRateLimit, requireAuthenticatedUser, requireAnyRole(...AI_COACH_ROLES)];
+const adultAndStaffAuth = [aiSupportRateLimit, requireAuthenticatedUser, requireAnyRole("carer", ...DOCUMENT_ROLES)];
+const clinicianAuth = [aiSupportRateLimit, requireAuthenticatedUser, requireAnyRole(...STAFF_DOCUMENT_ROLES)];
 
 router.post("/coach/turn", ...coachAuth, async (req, res, next) => {
   try {
