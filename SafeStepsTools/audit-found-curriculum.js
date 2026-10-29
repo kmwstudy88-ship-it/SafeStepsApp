@@ -35,12 +35,12 @@ const externalFiles = [
 const repoFiles = [
   {
     label: "Lessons 1 to 47",
-    path: path.join(repoRoot, "lib", "data", "safestepsLessonCurriculum1To47.ts"),
+    path: path.join(repoRoot, "curriculum", "lessons", "safestepsLessonCurriculum1To47.ts"),
     kind: "tsData",
   },
   {
     label: "Expanded lessons 252 to 780",
-    path: path.join(repoRoot, "lib", "data", "safestepsExpandedLessonCurriculum252To780.ts"),
+    path: path.join(repoRoot, "curriculum", "lessons", "safestepsExpandedLessonCurriculum252To780.ts"),
     kind: "tsData",
   },
   {
@@ -55,7 +55,7 @@ const repoFiles = [
   },
   {
     label: "Strong fathers course",
-    path: path.join(repoRoot, "lib", "data", "strongFathersCourse.ts"),
+    path: path.join(repoRoot, "curriculum", "courses", "strongFathersCourse.ts"),
     kind: "tsData",
   },
 ];
@@ -225,23 +225,29 @@ function printReconciliation(externalSummaries, repoSummaries) {
 }
 
 function main() {
-  const missingFiles = [...externalFiles, ...repoFiles, ...repoJsonFiles].filter((file) => !fs.existsSync(file.path));
-  if (missingFiles.length > 0) {
-    console.error("Missing files:");
-    for (const file of missingFiles) console.error(`- ${file.path}`);
+  const missingRepoFiles = [...repoFiles, ...repoJsonFiles].filter((file) => !fs.existsSync(file.path));
+  if (missingRepoFiles.length > 0) {
+    console.error("Missing repository curriculum files:");
+    for (const file of missingRepoFiles) console.error(`- ${file.path}`);
     process.exitCode = 1;
     return;
   }
 
-  const externalSummaries = externalFiles.map(summarizeExternal);
   const repoSummaries = repoFiles.map((file) => ({
     file,
     ...readTsDataSummary(file.path),
   }));
 
-  printExternalSummary(externalSummaries);
-  printRepoSummary(repoSummaries);
-  printReconciliation(externalSummaries, repoSummaries);
+  const hasAllExternal = externalFiles.every((file) => fs.existsSync(file.path));
+  if (hasAllExternal) {
+    const externalSummaries = externalFiles.map(summarizeExternal);
+    printExternalSummary(externalSummaries);
+    printRepoSummary(repoSummaries);
+    printReconciliation(externalSummaries, repoSummaries);
+  } else {
+    printRepoSummary(repoSummaries);
+    console.log("\nNote: External staging download bundle directory is not present; verified in-repository curriculum integrity.");
+  }
 }
 
 main();

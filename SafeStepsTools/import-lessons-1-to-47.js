@@ -10,7 +10,7 @@ const sourcePath = path.join(
   "LESSONS",
   "safesteps_lessons_1_to_47.json",
 );
-const outputPath = path.join(repoRoot, "lib", "data", "safestepsLessonCurriculum1To47.ts");
+const outputPath = path.join(repoRoot, "curriculum", "lessons", "safestepsLessonCurriculum1To47.ts");
 
 function main() {
   if (!fs.existsSync(sourcePath)) {

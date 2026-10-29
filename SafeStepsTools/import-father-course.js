@@ -3,7 +3,7 @@ const path = require("path");
 
 const repoRoot = path.resolve(__dirname, "..");
 const sourcePath = path.join(repoRoot, "data", "courses", "fathers", "father-course.full.json");
-const outputPath = path.join(repoRoot, "lib", "data", "strongFathersCourse.ts");
+const outputPath = path.join(repoRoot, "curriculum", "courses", "strongFathersCourse.ts");
 
 function main() {
   if (!fs.existsSync(sourcePath)) {
