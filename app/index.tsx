@@ -28,6 +28,7 @@ export default function SafeStepsHub() {
         { title: 'Case Plan & Progress Checklist', subtitle: 'Action milestones, child voice, and demonstrated goals', route: '/case-plan', icon: '📋', badge: 'Plan' },
         { title: 'Concerns & Right of Reply', subtitle: 'Procedural fairness register with non-destructive parent reply & evidence linking', route: '/concerns', icon: '⚖️', badge: 'Fairness' },
         { title: 'Court-Ready Progress Reports', subtitle: 'Cryptographically sealed PDF summaries', route: '/reports', icon: '📜', badge: 'PDF Export' },
+        { title: 'Court & Lawyer Portal', subtitle: 'Privileged read-only verified chronology, concern progress & disclosure bundles', route: '/legal', icon: '🏛️', badge: 'Legal' },
       ],
     },
     {
