@@ -86,6 +86,8 @@
     "smoke:document-intelligence": "node SafeStepsTools/smoke-document-intelligence-api.mjs",
     "smoke:ai-support": "node SafeStepsTools/smoke-ai-support-and-evaluators.mjs",
     "test:backend": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand --config jest.backend.config.cjs",
+    "test:staging-boundary": "node SafeStepsTools/staging-boundary-result.test.mjs",
+    "verify:all": "npm run audit:routes && npm run audit:curriculum-titles && npm run audit:found-curriculum && npm run test:backend && npm run smoke:ai-support && npm run test:staging-boundary",
     "audit:found-curriculum": "node SafeStepsTools/audit-found-curriculum.js",
     "audit:curriculum-titles": "node SafeStepsTools/audit-curriculum-titles.js",
     "import:curriculum-source": "node SafeStepsTools/import-curriculum-source.js",
