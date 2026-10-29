@@ -8,7 +8,6 @@ const implementationPathSegments = new Set([
   "engine",
   "family",
   "lobby",
-  "parent",
   "session",
   "specs",
   "turns",

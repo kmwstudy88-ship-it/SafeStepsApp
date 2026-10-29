@@ -95,7 +95,8 @@
     "test": "jest --runInBand",
     "verify:staging": "node SafeStepsTools/verify-staging-journey.mjs",
     "bootstrap:staging-auth": "node SafeStepsTools/staging-auth-bootstrap.mjs",
-    "release:gate": "node SafeStepsTools/production-readiness-gate.mjs"
+    "release:gate": "node SafeStepsTools/production-readiness-gate.mjs",
+    "release:gate:mock": "node SafeStepsTools/run-mock-release-gate.mjs"
   },
   "private": true,
   "expo": {
@@ -138,6 +139,7 @@
     "metro": "0.84.5",
     "metro-config": "0.84.5",
     "metro-transform-worker": "0.84.5",
-    "uuid": "11.1.1"
+    "uuid": "11.1.1",
+    "zod": "4.6.7"
   }
 }
