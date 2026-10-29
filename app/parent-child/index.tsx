@@ -18,6 +18,7 @@ const navItems = [
   ["Parent-Child Profile", "/parent-child", "👥"],
   ["My Program", "/programs/my-programs", "▣"],
   ["Lessons", "/lessons", "☰"],
+  ["Challenges", "/challenges", "🌱"],
   ["Tasks", "/tasks", "☑"],
   ["Family Meeting", "/family-meeting", "◇"],
   ["Assessments", "/assessment-system", "⌁"],
@@ -266,6 +267,7 @@ function OverviewContent({ overview }: { overview: ParentChildOverview }) {
       <View style={styles.shortcutRow}>
         <Shortcut title="My Program" subtitle="View your program pathway" href="/programs/my-programs" icon="▤" />
         <Shortcut title="Courses" subtitle="Browse and continue courses" href="/lessons" icon="□" />
+        <Shortcut title="Family Challenges" subtitle="Voluntary connection & weekend bonding" href="/challenges?track=family" icon="🌱" />
       </View>
 
       <FamilyProfile overview={overview} />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, ScrollView } from 'react-native';
+import { ChallengeRecommendations } from '../../components/ChallengeRecommendations';
 
 export type StoryScene = {
   id: string;
@@ -105,6 +106,13 @@ export function StorybookReaderScreen({
             <Text style={styles.primaryNavText}>{isLast ? 'Complete Story' : 'Next Scene'}</Text>
           </TouchableOpacity>
         </View>
+
+        <ChallengeRecommendations
+          context={`${storybook.title} ${storybook.subtitle} ${currentScene.title} ${currentScene.emotionalTheme}`}
+          title="Practice This Story's Skill in a Family Challenge"
+          track="family"
+          limit={2}
+        />
       </ScrollView>
     </SafeAreaView>
   );

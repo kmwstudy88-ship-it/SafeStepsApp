@@ -21,6 +21,7 @@ import {
   toggleCaseTaskCompletion,
   recordParentGoalPerspective,
 } from './casePlanService';
+import { ChallengeRecommendations } from '../../components/ChallengeRecommendations';
 
 export function CasePlanScreen() {
   const router = useRouter();
@@ -340,6 +341,12 @@ export function CasePlanScreen() {
             );
           })}
         </View>
+
+        <ChallengeRecommendations
+          context={`${plan.planTitle} ${tasks.map((t) => t.title).join(' ')}`}
+          title="Personal & Family Challenges Supporting Your Case Plan"
+          limit={3}
+        />
       </ScrollView>
     </SafeAreaView>
   );

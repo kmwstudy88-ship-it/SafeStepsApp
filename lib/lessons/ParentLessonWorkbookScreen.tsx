@@ -12,6 +12,7 @@ import {
   PARENT_LESSON_WORKBOOKS,
   ParentLessonWorkbook,
 } from './parentLessonDefinitions';
+import { ChallengeRecommendations } from '../../components/ChallengeRecommendations';
 
 const TOTAL_PAGES = 9;
 
@@ -1392,6 +1393,12 @@ export function ParentLessonWorkbookScreen({
               </Text>
               <Text style={[styles.dividerHeart, { color: theme.heartIcon }]}>♥</Text>
             </View>
+
+            <ChallengeRecommendations
+              context={`${lesson.title} ${lesson.page1.introText} ${lesson.page9.introText}`}
+              title="Practice This Lesson with Personal & Family Challenges"
+              limit={3}
+            />
 
             <TouchableOpacity
               style={[styles.primaryCtaButton, { backgroundColor: theme.buttonBg }]}

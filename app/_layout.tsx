@@ -16,6 +16,9 @@ export default function RootLayout() {
       >
         <Stack.Screen name="index" options={{ title: 'SafeSteps' }} />
         <Stack.Screen name="lessons/index" options={{ title: 'Parent Lessons', headerShown: false }} />
+        <Stack.Screen name="daily-challenges" options={{ title: 'Daily & Family Challenges' }} />
+        <Stack.Screen name="challenges/index" options={{ title: 'Personal & Family Challenges', headerShown: false }} />
+        <Stack.Screen name="challenges/[challengeId]" options={{ title: 'Challenge Detail', headerShown: false }} />
         <Stack.Screen name="scenarios/index" options={{ title: 'Roleplay Simulation' }} />
         <Stack.Screen name="storybooks/index" options={{ title: 'Interactive Storybooks' }} />
         <Stack.Screen name="assessments/index" options={{ title: 'Assessments & Results' }} />

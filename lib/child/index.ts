@@ -5,3 +5,4 @@ export * from "./LetterPad";
 export * from "./childData";
 export * from "./childService";
 export * from "./components";
+export type { ShareAudience } from "./childData";

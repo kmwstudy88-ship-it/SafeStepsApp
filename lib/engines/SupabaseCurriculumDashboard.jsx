@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { initialCurriculum } from './curriculumData';
-import { SupabaseCurriculumEngine } from './SupabaseCurriculumEngine';
+import { SupabaseCurriculumEngine } from './supabaseCurriculumEngine';
 
 const engine = new SupabaseCurriculumEngine("user_safety_app_01");
 

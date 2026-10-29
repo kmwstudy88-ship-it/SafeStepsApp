@@ -23,6 +23,26 @@ function createTsLoader(baseDir, mocks = {}) {
     const transformed = code
       .replace(/import\s+type\s+[^;]+;/g, '')
       .replace(
+        /export\s+\{\s*([^}]+)\s*\}\s+from\s+['"]([^'"]+)['"]\s*;/g,
+        (_, specifiers, pkg) => {
+          const names = specifiers
+            .split(',')
+            .map((s) => s.trim())
+            .filter(Boolean)
+            .filter((s) => !s.startsWith('type '));
+          const reqVar = `_reexp_${exportedNames.length}`;
+          const assignments = names
+            .map((n) => {
+              const parts = n.split(/\s+as\s+/);
+              const orig = parts[0].trim();
+              const alias = (parts[1] || parts[0]).trim();
+              return `exports.${alias} = ${reqVar}.${orig};`;
+            })
+            .join(' ');
+          return `const ${reqVar} = require(${JSON.stringify(pkg)}); ${assignments}`;
+        },
+      )
+      .replace(
         /import\s+\{\s*([^}]+)\s*\}\s+from\s+['"]([^'"]+)['"]\s*;/g,
         (_, specifiers, pkg) => {
           const bindings = specifiers
@@ -519,4 +539,220 @@ test('worktree dailyChallenges shared helpers calculate streaks, unlock all 4 re
   assert.equal(loadedSettings.paused, true);
   assert.equal(loadedSettings.dailyReminder, false);
 });
+
+test('personal and family challenges taxonomy, safeguard metadata (SS-PCD-030/036/043/045), break pause/resume, child perspective reflection, recommendations, and root taskEngine work end to end', async () => {
+  const storageMap = new Map();
+  const insertedSupabaseRecords = [];
+
+  const loader = createTsLoader(repoRoot, {
+    '@react-native-async-storage/async-storage': {
+      getItem: async (k) => (storageMap.has(k) ? storageMap.get(k) : null),
+      setItem: async (k, v) => {
+        storageMap.set(k, v);
+      },
+      removeItem: async (k) => {
+        storageMap.delete(k);
+      },
+    },
+    '../supabaseClient': {
+      supabase: {
+        from: (table) => ({
+          upsert: async (payload) => {
+            insertedSupabaseRecords.push({ table, op: 'upsert', payload });
+            return { error: null };
+          },
+          insert: async (payload) => {
+            insertedSupabaseRecords.push({ table, op: 'insert', payload });
+            return { error: null };
+          },
+          update: (payload) => ({
+            eq: () => ({
+              eq: async () => {
+                insertedSupabaseRecords.push({ table, op: 'update', payload });
+                return { error: null };
+              },
+            }),
+          }),
+        }),
+      },
+    },
+  });
+
+  const {
+    personalChallenges,
+    familyChallenges,
+    weekendActivityChallenges,
+    allParentChallenges,
+    isPersonalChallenge,
+    isFamilyChallenge,
+    isWeekendActivityChallenge,
+    getChallengeTrack,
+    getChallengeSafeguardMetadata,
+    filterChallenges,
+  } = loader.load('lib/data/familyChallenges.ts');
+
+  // 1. Verify 104 total challenges split cleanly into 16 personal + 88 family
+  assert.equal(allParentChallenges.length, 104);
+  assert.equal(personalChallenges.length, 16);
+  assert.equal(familyChallenges.length, 88);
+  assert.equal(personalChallenges.length + familyChallenges.length, 104);
+  assert.ok(weekendActivityChallenges.length >= 20);
+
+  // Verify classification & safeguard metadata (SS-PCD-030, SS-PCD-036, SS-PCD-043, SS-PCD-045)
+  const personalSample = personalChallenges[0];
+  const familySample = familyChallenges[0];
+  assert.equal(isPersonalChallenge(personalSample), true);
+  assert.equal(isFamilyChallenge(personalSample), false);
+  assert.equal(getChallengeTrack(personalSample), 'personal');
+
+  assert.equal(isFamilyChallenge(familySample), true);
+  assert.equal(isPersonalChallenge(familySample), false);
+  assert.equal(getChallengeTrack(familySample), 'family');
+  assert.equal(isWeekendActivityChallenge(weekendActivityChallenges[0]), true);
+
+  const familySafeguards = getChallengeSafeguardMetadata(familySample);
+  assert.equal(familySafeguards.voluntaryParticipation, true);
+  assert.equal(familySafeguards.noAdverseNonParticipationEffect, true);
+  assert.equal(familySafeguards.supportsBreakWithoutPenalty, true);
+  assert.equal(familySafeguards.supportsSeparateChildReflection, true);
+  assert.equal(familySafeguards.noCovertAssessmentOrParentingScore, true);
+  assert.match(familySafeguards.safeguardSummary, /Voluntary family & parent-child activity/i);
+
+  const personalSafeguards = getChallengeSafeguardMetadata(personalSample);
+  assert.equal(personalSafeguards.supportsSeparateChildReflection, false);
+  assert.equal(personalSafeguards.supportsBreakWithoutPenalty, true);
+
+  // Filter helper verification
+  assert.equal(filterChallenges({ track: 'personal' }).length, 16);
+  assert.equal(filterChallenges({ track: 'family' }).length, 88);
+  assert.equal(filterChallenges({ track: 'weekend' }).length, weekendActivityChallenges.length);
+  assert.equal(
+    filterChallenges({ track: 'personal', category: 'Parent Self-Regulation' }).length,
+    8,
+  );
+  assert.ok(
+    filterChallenges({ query: 'bedtime' }).every((c) =>
+      `${c.displayTitle} ${c.purpose} ${c.category} ${c.tags.join(' ')}`
+        .toLowerCase()
+        .includes('bedtime'),
+    ),
+  );
+
+  // 2. Verify contextual challenge recommendations (lib/challenges/recommendations.ts)
+  const { getRecommendedChallenges } = loader.load('lib/challenges/recommendations.ts');
+  const recommendedAll = getRecommendedChallenges(
+    {
+      title: 'Emotional Regulation & Calm Reset',
+      category: 'Parent Self-Regulation',
+      summary: 'Learn breathing and calm recovery before responding.',
+    },
+    4,
+  );
+  assert.equal(recommendedAll.length, 4);
+  assert.ok(recommendedAll.some((c) => c.category === 'Parent Self-Regulation'));
+
+  const recommendedFromString = getRecommendedChallenges(
+    'Calm Reset breathing and parent self-regulation',
+    4,
+  );
+  assert.equal(recommendedFromString.length, 4);
+
+  const recommendedPersonalOnly = getRecommendedChallenges(
+    { title: 'Parent Self-Regulation' },
+    4,
+    { track: 'personal' },
+  );
+  assert.ok(recommendedPersonalOnly.every((c) => isPersonalChallenge(c)));
+
+  // 3. Verify "I need a break" pause/resume (SS-PCD-036) & separate child reflection (SS-PCD-043) via taskEngine & dailyChallengesFlow
+  const {
+    createUserTaskFromParentChallenge,
+    fetchParentChallengeTask,
+    pauseUserChallengeTask,
+    resumeUserChallengeTask,
+    getTaskCompletionRequirement,
+    completeUserTask,
+  } = loader.load('lib/engines/taskEngine.ts');
+  const {
+    attachDailyChallengeEvidence,
+    buildDailyChallengeSummary,
+    getActiveChallengesByTrack,
+    getStoredChallengeTasks,
+  } = loader.load('lib/dailyChallengesFlow.ts');
+
+  assert.equal(getActiveChallengesByTrack('daily').length, 8);
+  assert.equal(getActiveChallengesByTrack('personal').length, 16);
+  assert.equal(getActiveChallengesByTrack('family').length, 88);
+
+  const testUser = `family_test_${Date.now()}`;
+  const createdTask = await createUserTaskFromParentChallenge(familySample.id, testUser);
+  assert.equal(createdTask.status, 'in_progress');
+  assert.equal(createdTask.track, 'family');
+
+  // Pause challenge for a break (SS-PCD-036)
+  const pausedTask = await pauseUserChallengeTask(
+    familySample.id,
+    'Child asked to stop and rest today.',
+    testUser,
+  );
+  assert.equal(pausedTask.status, 'paused_break');
+  assert.equal(pausedTask.break_reason, 'Child asked to stop and rest today.');
+  assert.ok(pausedTask.paused_at);
+
+  const summaryDuringBreak = buildDailyChallengeSummary(
+    await getStoredChallengeTasks(testUser),
+    [],
+    new Date('2026-10-19T12:00:00.000Z'),
+  );
+  assert.equal(summaryDuringBreak.activeBreakCount, 1);
+
+  // Resume challenge from break
+  const resumedTask = await resumeUserChallengeTask(familySample.id, testUser);
+  assert.equal(resumedTask.status, 'in_progress');
+  assert.equal(resumedTask.paused_at, null);
+
+  // Attach evidence with separate optional child perspective (SS-PCD-043)
+  await attachDailyChallengeEvidence({
+    challengeId: familySample.id,
+    taskId: resumedTask.id,
+    reflection: 'Kept the check-in brief, warm, and predictable.',
+    childPerspectiveNote: 'I liked picking the game we played after dinner.',
+    evidenceNote: '10-minute connection check-in completed calmly.',
+    userId: testUser,
+  });
+
+  const fetchedTaskBeforeComplete = await fetchParentChallengeTask(familySample.id, testUser);
+  const requirement = await getTaskCompletionRequirement(fetchedTaskBeforeComplete, testUser);
+  assert.equal(requirement.canComplete, true);
+  assert.ok(requirement.linkedEvidenceCount >= 1);
+
+  const finishedFamilyTask = await completeUserTask(fetchedTaskBeforeComplete, testUser);
+  assert.equal(finishedFamilyTask.status, 'completed');
+  assert.equal(
+    finishedFamilyTask.child_perspective_note,
+    'I liked picking the game we played after dinner.',
+  );
+  assert.equal(finishedFamilyTask.shared_with_child, true);
+
+  // Complete one personal challenge as well and verify personalCompletedCount + familyCompletedCount
+  const personalTask = await createUserTaskFromParentChallenge(personalSample.id, testUser);
+  await attachDailyChallengeEvidence({
+    challengeId: personalSample.id,
+    taskId: personalTask.id,
+    reflection: 'Completed 90-second breathing reset before responding.',
+    userId: testUser,
+  });
+  await completeUserTask(personalTask, testUser);
+
+  const finalSummary = buildDailyChallengeSummary(
+    await getStoredChallengeTasks(testUser),
+    [],
+    new Date('2026-10-19T12:00:00.000Z'),
+  );
+  assert.equal(finalSummary.familyCompletedCount, 1);
+  assert.equal(finalSummary.personalCompletedCount, 1);
+  assert.equal(finalSummary.totalCompletedAllTracks, 2);
+  assert.equal(finalSummary.activeBreakCount, 0);
+});
+
 

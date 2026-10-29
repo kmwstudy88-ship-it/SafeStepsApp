@@ -10,6 +10,7 @@ import {
   Alert,
 } from 'react-native';
 import { useRouter } from 'expo-router';
+import { ChallengeRecommendations } from '../../components/ChallengeRecommendations';
 
 interface GameItem {
   id: string;
@@ -151,6 +152,13 @@ export default function GamesHubScreen() {
             </TouchableOpacity>
           ))}
         </View>
+
+        <ChallengeRecommendations
+          context="Emotional Literacy Connection Attachment Child Voice Co-Play Games"
+          title="Voluntary Family Challenges After Co-Play (SS-PCD-030)"
+          track="family"
+          limit={3}
+        />
       </ScrollView>
     </SafeAreaView>
   );

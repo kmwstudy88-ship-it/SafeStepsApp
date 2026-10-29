@@ -2,8 +2,6 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 import { supabase } from "../supabase";
 import { ChildAgeBand, deriveAgeBand } from "./childData";
 
-export { ChildAgeBand, deriveAgeBand };
-
 export type ChildAccount = {
   id: string;
   reunificationCaseId?: string;
@@ -26,12 +24,6 @@ type ChildContextType = {
 };
 
 const ChildContext = createContext<ChildContextType | undefined>(undefined);
-
-export function deriveAgeBand(age: number): ChildAgeBand {
-  if (age <= 6) return "picture_word_3_6";
-  if (age <= 11) return "child_7_11";
-  return "teen_12_17";
-}
 
 export const ChildProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [childAccount, setChildAccount] = useState<ChildAccount | null>(null);

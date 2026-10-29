@@ -1,4 +1,12 @@
 import {
+  filterChallenges,
+  getChallengeSafeguardMetadata,
+  getChallengeTrack,
+  isWeekendActivityChallenge,
+  type ChallengeCadenceFilter,
+  type ChallengeTrack,
+} from './data/familyChallenges';
+import {
   getParentChallengeById,
   safestepsParentChallenges,
   type SafeStepsParentChallenge,
@@ -16,13 +24,19 @@ export type ChallengeTaskRecord = {
   challenge_id: string;
   title: string;
   description: string;
-  status: 'ready' | 'in_progress' | 'completed';
+  status: 'ready' | 'in_progress' | 'paused_break' | 'completed';
   completed_at: string | null;
   created_at: string;
   priority: 'low' | 'medium' | 'high';
   related_lesson_id: string;
   evidence_required: boolean;
   category: string;
+  track?: 'personal' | 'family';
+  is_weekend_activity?: boolean;
+  paused_at?: string | null;
+  break_reason?: string | null;
+  child_perspective_note?: string | null;
+  shared_with_child?: boolean;
 };
 
 export type ChallengeEvidenceRecord = {
@@ -33,6 +47,9 @@ export type ChallengeEvidenceRecord = {
   title: string;
   reflection: string;
   evidence_note: string;
+  child_perspective_note?: string;
+  shared_with_child?: boolean;
+  track?: 'personal' | 'family';
   created_at: string;
   synced: boolean;
 };
@@ -128,6 +145,16 @@ export function getActiveDailyChallenges(): SafeStepsParentChallenge[] {
     .slice(0, 8);
 }
 
+export function getActiveChallengesByTrack(
+  track: ChallengeTrack | 'daily' = 'all',
+  cadence: ChallengeCadenceFilter = 'all',
+): SafeStepsParentChallenge[] {
+  if (track === 'daily') {
+    return getActiveDailyChallenges();
+  }
+  return filterChallenges({ track, challengeType: cadence });
+}
+
 export function buildParentChallengeTask(
   challengeId: string,
   userId = 'local-parent',
@@ -136,6 +163,9 @@ export function buildParentChallengeTask(
   if (!challenge) {
     throw new Error('Parent challenge not found.');
   }
+
+  const track = getChallengeTrack(challenge);
+  const safeguards = getChallengeSafeguardMetadata(challenge);
 
   return {
     id: `challenge_task_${challenge.id}`,
@@ -159,6 +189,8 @@ export function buildParentChallengeTask(
       `Evidence task: ${challenge.evidenceTask}`,
       '',
       `Safety note: ${challenge.safetyNote}`,
+      '',
+      `Safeguard notice: ${safeguards.safeguardSummary}`,
     ].join('\n'),
     status: 'in_progress',
     completed_at: null,
@@ -167,6 +199,10 @@ export function buildParentChallengeTask(
     related_lesson_id: `challenge:${challenge.id}`,
     evidence_required: true,
     category: `parent_challenge:${challenge.category}`,
+    track,
+    is_weekend_activity: isWeekendActivityChallenge(challenge),
+    paused_at: null,
+    break_reason: null,
   };
 }
 
@@ -200,11 +236,64 @@ export async function startDailyChallengeTask(
   return created;
 }
 
+/**
+ * SS-PCD-036: "I need a break" control.
+ * Pauses any challenge activity immediately without data loss, streak penalty,
+ * or non-engagement inference.
+ */
+export async function pauseChallengeForBreak(
+  challengeId: string,
+  breakReason = 'Taking a calm break (no penalty)',
+  userId = 'local-parent',
+): Promise<ChallengeTaskRecord> {
+  const task = await startDailyChallengeTask(challengeId, userId);
+  if (task.status === 'completed') {
+    return task;
+  }
+
+  const tasks = await getStoredChallengeTasks(userId);
+  const pausedTask: ChallengeTaskRecord = {
+    ...task,
+    status: 'paused_break',
+    paused_at: new Date().toISOString(),
+    break_reason: breakReason.trim() || 'Taking a calm break (no penalty)',
+  };
+
+  const nextTasks = tasks.map((item) => (item.id === task.id ? pausedTask : item));
+  await cacheData(`daily_challenge_tasks_${userId}`, nextTasks);
+  notifyChallengeTaskListeners(nextTasks);
+  return pausedTask;
+}
+
+export async function resumeChallengeFromBreak(
+  challengeId: string,
+  userId = 'local-parent',
+): Promise<ChallengeTaskRecord> {
+  const task = await startDailyChallengeTask(challengeId, userId);
+  if (task.status === 'completed') {
+    return task;
+  }
+
+  const tasks = await getStoredChallengeTasks(userId);
+  const resumedTask: ChallengeTaskRecord = {
+    ...task,
+    status: 'in_progress',
+    paused_at: null,
+  };
+
+  const nextTasks = tasks.map((item) => (item.id === task.id ? resumedTask : item));
+  await cacheData(`daily_challenge_tasks_${userId}`, nextTasks);
+  notifyChallengeTaskListeners(nextTasks);
+  return resumedTask;
+}
+
 export async function attachDailyChallengeEvidence(input: {
   challengeId: string;
   taskId?: string;
   reflection: string;
   evidenceNote?: string;
+  childPerspectiveNote?: string;
+  sharedWithChild?: boolean;
   userId?: string;
 }): Promise<ChallengeEvidenceRecord> {
   const userId = input.userId ?? 'local-parent';
@@ -218,21 +307,43 @@ export async function attachDailyChallengeEvidence(input: {
     throw new Error('Parent challenge not found.');
   }
 
+  const track = getChallengeTrack(challenge);
+  const trimmedChildNote = (input.childPerspectiveNote ?? '').trim();
+
   const task = await startDailyChallengeTask(challenge.id, userId);
+  const targetTaskId = input.taskId ?? task.id;
   const evidenceRecord: ChallengeEvidenceRecord = {
     id: `challenge_evidence_${challenge.id}_${Date.now()}`,
     owner_id: userId,
-    task_id: input.taskId ?? task.id,
+    task_id: targetTaskId,
     challenge_id: challenge.id,
     title: `Challenge evidence: ${challenge.displayTitle}`,
     reflection: trimmedReflection,
     evidence_note: (input.evidenceNote ?? '').trim(),
+    child_perspective_note: trimmedChildNote || undefined,
+    shared_with_child: Boolean(input.sharedWithChild),
+    track,
     created_at: new Date().toISOString(),
     synced: false,
   };
 
   const existingEvidence = await getStoredChallengeEvidence(userId);
   await cacheData(`daily_challenge_evidence_${userId}`, [evidenceRecord, ...existingEvidence]);
+
+  if (trimmedChildNote || input.sharedWithChild !== undefined) {
+    const tasks = await getStoredChallengeTasks(userId);
+    const nextTasks = tasks.map((item) =>
+      item.id === targetTaskId || item.id === task.id
+        ? {
+            ...item,
+            child_perspective_note: trimmedChildNote || item.child_perspective_note || null,
+            shared_with_child: Boolean(input.sharedWithChild || trimmedChildNote),
+          }
+        : item,
+    );
+    await cacheData(`daily_challenge_tasks_${userId}`, nextTasks);
+    notifyChallengeTaskListeners(nextTasks);
+  }
 
   await enqueueOfflineItem({
     type: 'evidence_upload',
@@ -242,17 +353,23 @@ export async function attachDailyChallengeEvidence(input: {
       notes: [
         `Reflection: ${evidenceRecord.reflection}`,
         evidenceRecord.evidence_note ? `Evidence note: ${evidenceRecord.evidence_note}` : '',
+        evidenceRecord.child_perspective_note
+          ? `Child perspective (voluntary/unpressured): ${evidenceRecord.child_perspective_note}`
+          : '',
         `Evidence task: ${challenge.evidenceTask}`,
       ]
         .filter(Boolean)
         .join('\n'),
       evidenceType: 'self_report_interview',
-      purpose: `Complete daily challenge: ${challenge.displayTitle}`,
+      purpose: `Complete ${track} challenge: ${challenge.displayTitle}`,
       structuredData: {
         task_id: evidenceRecord.task_id,
         challenge_id: challenge.id,
+        track,
         reflection: evidenceRecord.reflection,
         evidence_note: evidenceRecord.evidence_note,
+        child_perspective_note: evidenceRecord.child_perspective_note ?? null,
+        shared_with_child: evidenceRecord.shared_with_child ?? false,
       },
     },
   });
@@ -322,6 +439,7 @@ export async function completeDailyChallengeTask(
     ...existing,
     status: 'completed',
     completed_at: completedAt,
+    paused_at: null,
   };
 
   const nextTasks = tasks.map((item) => (item.id === existing.id ? updated : item));
@@ -512,11 +630,22 @@ export function buildDailyChallengeSummary(
 
   const completedDailyCount = challenges.filter((c) => completedChallengeIds.has(c.id)).length;
   let points = 0;
+  let personalCompletedCount = 0;
+  let familyCompletedCount = 0;
+
   for (const id of completedChallengeIds) {
     const challenge = getParentChallengeById(id);
     points += challenge ? getChallengePoints(challenge) : DAILY_CHALLENGE_POINTS.daily;
+    if (challenge) {
+      if (getChallengeTrack(challenge) === 'personal') {
+        personalCompletedCount += 1;
+      } else {
+        familyCompletedCount += 1;
+      }
+    }
   }
 
+  const activeBreakCount = tasks.filter((task) => task.status === 'paused_break').length;
   const rewards = evaluateRewardTiers(points, claimedRewardIds);
   const claimedPoints = rewards.filter((r) => r.claimed).reduce((sum, r) => sum + r.points, 0);
   const streakInfo = calculateDailyChallengeStreak(tasks, referenceDate);
@@ -525,6 +654,10 @@ export function buildDailyChallengeSummary(
     challenges,
     completedCount: completedDailyCount,
     totalCount: challenges.length,
+    totalCompletedAllTracks: completedChallengeIds.size,
+    personalCompletedCount,
+    familyCompletedCount,
+    activeBreakCount,
     points,
     claimedPoints,
     availablePoints: Math.max(0, points - claimedPoints),

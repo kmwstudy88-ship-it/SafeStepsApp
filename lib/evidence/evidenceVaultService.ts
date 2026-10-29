@@ -15,7 +15,10 @@ export type EvidenceCategory =
   | 'Case Plan Goal Demonstration'
   | 'Parenting Skills'
   | 'Home Environment'
-  | 'Program Task';
+  | 'Program Task'
+  | (string & {});
+
+export type EvidenceCaptureMode = 'live_camera' | 'upload' | 'gallery_upload';
 
 export type EvidenceStatus =
   | 'pending_verification'
@@ -31,6 +34,7 @@ export interface ChainOfCustodyEntry {
   timestamp: string;
   hashSignature: string;
   note?: string;
+  notes?: string;
 }
 
 export interface EvidenceRecord {
@@ -42,12 +46,13 @@ export interface EvidenceRecord {
   milestoneGoalId?: string;
   reflectionText: string;
   mediaUri?: string;
-  captureMode: 'live_camera' | 'upload';
+  captureMode: EvidenceCaptureMode;
   deviceTimestamp: string;
   serverReceiptTimestamp: string;
   clockSkewSeconds: number;
   clockAnomalyDetected: boolean;
   sha256Hash: string;
+  sha256Digest?: string;
   isLiveCaptured: boolean;
   status: EvidenceStatus;
   reviewNotes?: string;
@@ -118,8 +123,9 @@ export interface DepositEvidenceInput {
   milestoneGoalId?: string;
   reflectionText: string;
   mediaUri?: string;
+  imageUri?: string;
   mediaContentForHash?: string;
-  captureMode?: 'live_camera' | 'upload';
+  captureMode?: EvidenceCaptureMode;
   deviceTimestamp?: string;
   serverTimeForTesting?: string;
 }
@@ -130,7 +136,7 @@ export interface DepositEvidenceInput {
  */
 export async function depositEvidence(
   input: DepositEvidenceInput
-): Promise<{ success: boolean; evidence: EvidenceRecord; offlineQueued?: boolean }> {
+): Promise<{ success: boolean; evidence: EvidenceRecord; offlineQueued?: boolean; error?: string }> {
   const deviceTime = input.deviceTimestamp || new Date().toISOString();
   const serverTime = input.serverTimeForTesting || new Date().toISOString();
 
@@ -166,13 +172,14 @@ export async function depositEvidence(
     category: input.category,
     milestoneGoalId: input.milestoneGoalId,
     reflectionText: input.reflectionText,
-    mediaUri: input.mediaUri,
+    mediaUri: input.mediaUri || input.imageUri,
     captureMode: input.captureMode || 'live_camera',
     deviceTimestamp: deviceTime,
     serverReceiptTimestamp: serverTime,
     clockSkewSeconds: skewSecs,
     clockAnomalyDetected: anomaly,
     sha256Hash: sha256,
+    sha256Digest: sha256,
     isLiveCaptured: isLive,
     status: 'pending_verification',
     disputed: false,
@@ -271,14 +278,34 @@ export async function reviewEvidence(
  * while recording contrary claims and disputes.
  */
 export async function logEvidenceDispute(
-  evidenceId: string,
-  dispute: {
+  evidenceIdOrInput:
+    | string
+    | {
+        evidenceId: string;
+        disputedBy?: string;
+        raisedBy?: string;
+        role: 'parent' | 'worker';
+        reason: string;
+        contraryEvidenceId?: string;
+      },
+  disputeArg?: {
     raisedBy: string;
     role: 'parent' | 'worker';
     reason: string;
     contraryEvidenceId?: string;
   }
 ): Promise<{ success: boolean; evidence?: EvidenceRecord; error?: string }> {
+  const evidenceId =
+    typeof evidenceIdOrInput === 'string' ? evidenceIdOrInput : evidenceIdOrInput.evidenceId;
+  const dispute =
+    typeof evidenceIdOrInput === 'string'
+      ? disputeArg!
+      : {
+          raisedBy: evidenceIdOrInput.raisedBy || evidenceIdOrInput.disputedBy || 'parent',
+          role: evidenceIdOrInput.role,
+          reason: evidenceIdOrInput.reason,
+          contraryEvidenceId: evidenceIdOrInput.contraryEvidenceId,
+        };
   const record = localEvidenceCache.get(evidenceId);
   if (!record) {
     return { success: false, error: 'Evidence record not found' };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, ScrollView, TouchableOpacity, TextInput, Alert } from 'react-native';
+import { ChallengeRecommendations } from '../../components/ChallengeRecommendations';
 
 type VisitReflection = {
   id: string;
@@ -131,6 +132,14 @@ export function ContactVisitCompanionScreen({
                 <Text style={styles.actDesc}>{act.description}</Text>
               </View>
             ))}
+            <View style={{ marginTop: 12 }}>
+              <ChallengeRecommendations
+                context="Contact Visit Connection Attachment Child Voice Communication"
+                title="Voluntary Visit & Family Bonding Challenges (SS-PCD-030)"
+                track="family"
+                limit={3}
+              />
+            </View>
           </View>
         ) : (
           <View style={styles.reflectionColumn}>

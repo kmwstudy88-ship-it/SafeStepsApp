@@ -11,6 +11,7 @@ export default function SafeStepsHub() {
       items: [
         { title: 'Parent Lesson Workbooks (9-Page)', subtitle: 'Taking Responsibility, Strengthening Family Bond & Emotional Support', route: '/lessons', icon: '💜', badge: '9-Page' },
         { title: 'Daily Parenting Challenges', subtitle: 'Evidence-backed daily challenges, streaks, and reward milestones', route: '/daily-challenges', icon: '🔥', badge: 'Streaks' },
+        { title: 'Personal & Family Challenges (104)', subtitle: '16 personal self-regulation & 88 voluntary family connection activities', route: '/challenges', icon: '🌱', badge: '104' },
         { title: 'Interactive Roleplay Simulator', subtitle: 'Practice de-escalation & caseworker meetings', route: '/scenarios', icon: '🎭', badge: 'Active' },
         { title: 'Interactive Storybooks', subtitle: 'Parent-child co-reading & reflection', route: '/storybooks', icon: '📖', badge: 'Co-reading' },
         { title: 'Co-Play Games & Bonding Activities', subtitle: 'Interactive turn-taking games, emotion matching & visit icebreakers', route: '/games', icon: '🎮', badge: 'Co-play' },

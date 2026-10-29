@@ -1,6 +1,6 @@
 import { supabase } from "../supabase";
-
-export type ShareAudience = "private" | "parent" | "caseworker" | "both";
+import type { ShareAudience } from "./childData";
+export type { ShareAudience };
 
 export type ChildMonitoredMessage = {
   id: string;

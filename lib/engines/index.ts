@@ -21,36 +21,36 @@
  */
 
 // 1. Assessment Scoring Engine
-export * from "./assessmentScoringEngine.ts";
+export * from "./assessmentScoringEngine";
 
 // 2. Recognition Support Engine
-export * from "./recognitionSupportEngine.ts";
+export * from "./recognitionSupportEngine";
 
 // 3. SAFER Assessment Engine
-export * from "./saferAssessmentEngine.ts";
+export * from "./saferAssessmentEngine";
 
 // 4. Contact Progression Engine
-export * from "./contactProgressionEngine.ts";
+export * from "./contactProgressionEngine";
 
 // 5. Family Meeting Engine
-export * from "./familyMeetingEngine.ts";
+export * from "./familyMeetingEngine";
 
 // 6. Psychometric Quality Engine
-export * from "./psychometricEngine.ts";
+export * from "./psychometricEngine";
 
 // 7. Kinship Safety Circle Engine
-export * from "./kinshipSafetyCircleEngine.ts";
+export * from "./kinshipSafetyCircleEngine";
 
 // 8. Child Development Capacity Engine
-export * from "./childDevelopmentCapacityEngine.ts";
+export * from "./childDevelopmentCapacityEngine";
 
 // 9. Learning Progression Engine
-export * from "./learningProgressionEngine.ts";
+export * from "./learningProgressionEngine";
 
 // 10. Forensic Assurance Engine
-export * from "./forensicAssuranceEngine.ts";
+export * from "./forensicAssuranceEngine";
 
 // 11. Regulation Scenario Engine
-export * from "./regulationScenarioEngine.ts";
+export * from "./regulationScenarioEngine";
 
 export const SAFESTEPS_ENGINE_SUITE_VERSION = "2.0.0";
