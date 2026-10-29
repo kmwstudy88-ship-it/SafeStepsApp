@@ -1,11 +1,13 @@
 "use strict";
 
 const crypto = require("crypto");
-const { admin } = require("../supabase");
 const { embed } = require("./embeddings");
 
 const CHUNK_SIZE = 800;
 const CHUNK_OVERLAP = 150;
+
+// Local in-memory chunk store for offline / local mode
+const inMemoryChunks = [];
 
 function chunkText(text, chunkSize = CHUNK_SIZE, overlap = CHUNK_OVERLAP) {
   const chunks = [];
@@ -24,8 +26,6 @@ async function indexDocument(documentId, caseId, text) {
   if (!chunks.length) return 0;
   const vectors = await embed(chunks, "document");
 
-  await admin.from("document_chunks").delete().eq("document_id", documentId);
-
   const rows = chunks.map((chunk, idx) => ({
     document_id: documentId,
     case_id: caseId,
@@ -35,9 +35,33 @@ async function indexDocument(documentId, caseId, text) {
     embedding: vectors[idx],
   }));
 
-  const { error } = await admin.from("document_chunks").insert(rows);
-  if (error) throw error;
+  // Attempt database persistence if configured
+  try {
+    const { admin } = require("../supabase");
+    if (admin?.from) {
+      await admin.from("document_chunks").delete().eq("document_id", documentId);
+      const { error } = await admin.from("document_chunks").insert(rows);
+      if (!error) {
+        // Also keep in memory for fast local queries
+        for (let i = inMemoryChunks.length - 1; i >= 0; i--) {
+          if (inMemoryChunks[i].document_id === documentId) inMemoryChunks.splice(i, 1);
+        }
+        inMemoryChunks.push(...rows);
+        return rows.length;
+      }
+    }
+  } catch (_) {}
+
+  // Fallback in-memory indexing
+  for (let i = inMemoryChunks.length - 1; i >= 0; i--) {
+    if (inMemoryChunks[i].document_id === documentId) inMemoryChunks.splice(i, 1);
+  }
+  inMemoryChunks.push(...rows);
   return rows.length;
 }
 
-module.exports = { indexDocument, chunkText };
+function getInMemoryChunks() {
+  return inMemoryChunks;
+}
+
+module.exports = { indexDocument, chunkText, getInMemoryChunks };

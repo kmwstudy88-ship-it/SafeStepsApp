@@ -31,6 +31,18 @@ const {
 } = require('./skills');
 const { generateCurriculum } = require('./curriculum/service');
 const { telehealthService } = require('./telehealth/service');
+const {
+  processImageBuffer,
+  processPageBuffers,
+  fullText: ocrFullText,
+  meanConfidence: ocrMeanConfidence,
+  renderPdfToPageBuffers,
+} = require('./document-intelligence/ocr');
+const {
+  indexDocument,
+  search: semanticSearch,
+  similarDocuments,
+} = require('./document-intelligence/semanticSearch');
 
 const PORT = Number(process.env.PORT || 3000);
 const MAX_BODY_BYTES = 35 * 1024 * 1024;
@@ -404,6 +416,76 @@ function createApp({
         }
         return sendJson(res, 404, { error: { code: 'NOT_FOUND', message: 'Route not found.' } });
       }
+
+    if (req.method === 'POST' && url.pathname === '/documents/ocr') {
+      const user = await requireUser(req, res); if (!user) return;
+      const body = await parseBody(req);
+      if (!body.contentBase64) {
+        return sendJson(res, 400, { error: 'contentBase64 is required for OCR processing' });
+      }
+      const buffer = Buffer.from(body.contentBase64, 'base64');
+      const isPdf = body.mimeType === 'application/pdf' || String(body.fileName || '').toLowerCase().endsWith('.pdf');
+      const pageBuffers = isPdf ? await renderPdfToPageBuffers(buffer) : [buffer];
+      const pages = await processPageBuffers(pageBuffers, body.lang || 'eng');
+      const extractedFullText = ocrFullText(pages);
+      const confidence = ocrMeanConfidence(pages);
+
+      return sendJson(res, 200, {
+        ok: true,
+        pages,
+        full_text: extractedFullText,
+        mean_confidence: Number(confidence.toFixed(4)),
+        needs_review: pages.some((p) => p.needsReview),
+        decision_support_only: true,
+        human_review_required: true,
+      });
+    }
+
+    if (req.method === 'POST' && url.pathname === '/documents/semantic-search') {
+      const user = await requireUser(req, res); if (!user) return;
+      const body = await parseBody(req);
+      if (!body.query || !body.query.trim()) {
+        return sendJson(res, 400, { error: 'query string is required' });
+      }
+      const topK = Math.min(50, Math.max(1, Number(body.topK || 10)));
+      const results = await semanticSearch(body.query.trim(), body.caseId || null, topK);
+      return sendJson(res, 200, {
+        ok: true,
+        query: body.query.trim(),
+        case_id: body.caseId || null,
+        total_matches: results.length,
+        results,
+        decision_support_only: true,
+      });
+    }
+
+    if (req.method === 'POST' && url.pathname === '/documents/index') {
+      const user = await requireUser(req, res); if (!user) return;
+      const body = await parseBody(req);
+      if (!body.documentId || !body.text) {
+        return sendJson(res, 400, { error: 'documentId and text are required' });
+      }
+      const indexedCount = await indexDocument(body.documentId, body.caseId || null, body.text);
+      return sendJson(res, 200, {
+        ok: true,
+        document_id: body.documentId,
+        case_id: body.caseId || null,
+        chunks_indexed: indexedCount,
+      });
+    }
+
+    const similarDocMatch = url.pathname.match(/^\/documents\/([a-zA-Z0-9_-]+)\/similar$/);
+    if (req.method === 'GET' && similarDocMatch) {
+      const user = await requireUser(req, res); if (!user) return;
+      const topK = Math.min(20, Math.max(1, Number(url.searchParams.get('topK') || 5)));
+      const matches = await similarDocuments(similarDocMatch[1], topK);
+      return sendJson(res, 200, {
+        ok: true,
+        document_id: similarDocMatch[1],
+        similar_documents: matches,
+        decision_support_only: true,
+      });
+    }
 
     if (req.method === 'GET' && url.pathname === '/documents/intelligence/schema') {
       return sendJson(res, 200, {
