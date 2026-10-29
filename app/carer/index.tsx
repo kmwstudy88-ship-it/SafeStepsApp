@@ -6,29 +6,34 @@ import { globalStyles } from "../../lib/styles";
 
 const carerItems = [
   {
+    title: "Kinship & Foster Carer Clinical Toolkits",
+    body: "Complete the Kinship/Foster Carer ProQOL check, manage secondary trauma boundaries, and access neuro-sleep sensory load presets.",
+    href: "/ai-support-coach/specialized-toolkits",
+  },
+  {
+    title: "Contact Visit Transition Coach",
+    body: "Developmentally tailored visit transitions (0–4, 5–8, 9–12, 13–17 yrs), emotional buffering, and reunification evidence notes.",
+    href: "/visits/transition-coach",
+  },
+  {
+    title: "Child Three Houses & 5-Finger Safety Hand",
+    body: "Explore the Signs of Safety House of Good Things, Worries, Dreams, and 5-Finger Safety Network adult contacts.",
+    href: "/child/three-houses-playroom",
+  },
+  {
     title: "Kinship & Foster Carer AI Support Coach",
     body: "Trauma-informed co-regulation, contact handover buffering, sensory decompression, and carer respite coaching.",
     href: "/ai-support-coach",
   },
   {
-    title: "Carer Strain & Secondary Trauma Check-In (ProQOL-Carer)",
-    body: "Complete the Kinship/Foster Carer ProQOL, SDQ child summary, and family protective scales.",
+    title: "Carer Strain & Protective Scales (50+ Instruments)",
+    body: "Administer the Kinship/Foster Carer ProQOL, SDQ child summary, and family protective scales.",
     href: "/ai-support-coach/check-in-scales",
   },
   {
     title: "Child wellbeing observations",
     body: "Record sleep, mood, behaviour, routines, and changes before or after family contact.",
     href: "/child/evidence",
-  },
-  {
-    title: "Visit preparation",
-    body: "Use the child visit preparation tools before contact.",
-    href: "/child/visits/prepare",
-  },
-  {
-    title: "Visit reflection",
-    body: "Capture child-centred observations after contact visits.",
-    href: "/child/visits/reflection",
   },
   {
     title: "Message support team",

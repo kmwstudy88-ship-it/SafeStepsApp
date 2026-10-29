@@ -6,6 +6,21 @@ import { globalStyles } from "../../lib/styles";
 
 const advocateItems = [
   {
+    title: "Stealth & DFV Survivor Safety Plan Vault",
+    body: "Review encrypted living safety plan readiness, quick-exit decoy safeguards, and technology-facilitated abuse / stalkerware audits.",
+    href: "/ai-support-coach/safety-plan-vault",
+  },
+  {
+    title: "360° Multi-Informant & SAFER Annexures",
+    body: "Review multi-informant convergence, legal non-diagnostic disclaimers, and clinician-approved SAFER court annexures.",
+    href: "/assessment-system/multi-informant-court-bridge",
+  },
+  {
+    title: "Restorative Family Meeting & Repair Studio",
+    body: "Child-centred 5-step repair apologies, blame filtering, and safety-gated conjoint vs. parallel delivery modes.",
+    href: "/family-meeting/restorative-repair",
+  },
+  {
     title: "Shared progress summary",
     body: "Review progress surfaces the parent has chosen to share.",
     href: "/progress",
@@ -16,14 +31,14 @@ const advocateItems = [
     href: "/reports",
   },
   {
-    title: "Resources",
-    body: "Access SafeSteps resources that help explain the program and parent rights in plain language.",
-    href: "/resources",
-  },
-  {
     title: "Evidence uploads",
     body: "Support the parent to prepare evidence, without accessing unshared private case records.",
     href: "/evidence",
+  },
+  {
+    title: "Resources & Parent Rights",
+    body: "Access SafeSteps resources explaining statutory child protection procedures and parent rights in plain language.",
+    href: "/resources",
   },
 ];
 
