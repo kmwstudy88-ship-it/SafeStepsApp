@@ -16,6 +16,9 @@ import { getParentChildOverview, type ParentChildOverview } from "../../lib/pare
 const navItems = [
   ["Home Dashboard", "/dashboard", "⌂"],
   ["Parent-Child Profile", "/parent-child", "👥"],
+  ["Contact Visit Coach", "/visits/transition-coach", "⇄"],
+  ["Restorative Repair", "/family-meeting/restorative-repair", "🤝"],
+  ["Child Playroom", "/child/three-houses-playroom", "🏡"],
   ["My Program", "/programs/my-programs", "▣"],
   ["Lessons", "/lessons", "☰"],
   ["Tasks", "/tasks", "☑"],

@@ -342,11 +342,20 @@ export default function FacilitatorWorkspaceScreen() {
           <Link href={"/assessment-system/ai-psychologist-evaluator" as never} style={globalStyles.pill}>
             5P Psychologist & 10 Evaluators
           </Link>
+          <Link href={"/assessment-system/multi-informant-court-bridge" as never} style={globalStyles.pill}>
+            360° Multi-Informant & SAFER Annexures
+          </Link>
           <Link href={"/clinician-review" as never} style={globalStyles.pill}>
             Clinician SPJ Sign-Off Console
           </Link>
           <Link href={"/ai-support-coach/couples-family-dfv" as never} style={globalStyles.pill}>
             Couples DFV Restoration Gate
+          </Link>
+          <Link href={"/visits/transition-coach" as never} style={globalStyles.pill}>
+            Visit Transition Coach
+          </Link>
+          <Link href={"/family-meeting/restorative-repair" as never} style={globalStyles.pill}>
+            Restorative Repair Studio
           </Link>
         </View>
       </View>
