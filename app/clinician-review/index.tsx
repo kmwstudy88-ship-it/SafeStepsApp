@@ -68,9 +68,21 @@ export default function ClinicianReviewConsoleScreen() {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.navBtn}
+            onPress={() => router.push("/assessment-system/multi-informant-court-bridge" as never)}
+          >
+            <Text style={styles.navBtnText}>360° Court Bridge</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.navBtn}
             onPress={() => router.push("/ai-support-coach/couples-family-dfv" as never)}
           >
             <Text style={styles.navBtnText}>Couples DFV Hub</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.navBtn}
+            onPress={() => router.push("/reports" as never)}
+          >
+            <Text style={styles.navBtnText}>Reports Hub</Text>
           </TouchableOpacity>
         </View>
       </View>

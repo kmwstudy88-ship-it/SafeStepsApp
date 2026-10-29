@@ -11,9 +11,29 @@ const oversightItems = [
     href: "/assessment-system/readiness-index",
   },
   {
+    title: "360° Multi-Informant & SAFER Annexures",
+    body: "Triangulate contact supervisor, teacher SDQ, and AOD worker collateral and review clinician-signed SAFER court annexures.",
+    href: "/assessment-system/multi-informant-court-bridge",
+  },
+  {
+    title: "Child Three Houses & Voice-of-the-Child",
+    body: "Review Signs of Safety House of Good Things, Worries, Dreams, and 5-Finger Safety Network adult contacts.",
+    href: "/child/three-houses-playroom",
+  },
+  {
+    title: "Contact Visit Reunification Evidence",
+    body: "Review developmental handover observations, parent visit reflections, and worker reunification evidence notes.",
+    href: "/visits/transition-coach",
+  },
+  {
     title: "Evidence report review",
     body: "Open report summaries, stored evidence counts, task completion, and progress notes prepared for case review.",
     href: "/reports",
+  },
+  {
+    title: "Clinician SPJ Governance & Sign-Off",
+    body: "Verify Structured Professional Judgement (SPJ) approvals, external psychologist bridges, and SHA-256 audit receipts.",
+    href: "/clinician-review",
   },
   {
     title: "Timeline and court preparation",
