@@ -20,10 +20,43 @@ From the repository root:
 npm ci
 npm run lint
 npx tsc --noEmit
-npm test
-npm run test:backend
-npm run smoke:document-intelligence
+npm run verify:all
 npx expo-doctor
+```
+
+The unified `npm run verify:all` runs the 6-stage validation pipeline:
+1. `audit:routes` (checks 182 routes for zero unauthorized implementation candidates)
+2. `audit:curriculum-titles` (ensures zero placeholder titles across curriculum)
+3. `audit:found-curriculum` (validates 1,090 curriculum assets with zero duplicate IDs)
+4. `test:backend` (executes 27 backend test suites covering auth, rate limiting, and risk rules)
+5. `smoke:ai-support` (verifies all 18 AI Support, 5P psychologist, and evaluator endpoints)
+6. `test:staging-boundary` (verifies RLS read-denial and network failure containment)
+
+To run the full suite of 112 frontend and domain engine test suites (808 tests):
+
+```powershell
+npm test
+```
+
+## AI Support, 5P Psychologist & Evaluator Engine
+
+SafeSteps includes an offline-resilient AI Support Coach and 10-Engine Clinical Evaluator:
+- **360° Multi-Informant & SAFER Annexures** (`/assessment-system/multi-informant-court-bridge`)
+- **Contact Visit Transition Coach** (`/visits/transition-coach`)
+- **Restorative Family Meeting & Repair Studio** (`/family-meeting/restorative-repair`)
+- **Child Three Houses & 5-Finger Safety Hand Playroom** (`/child/three-houses-playroom`)
+- **Stealth & DFV Survivor Safety Plan Vault** (`/ai-support-coach/safety-plan-vault`)
+
+To verify the AI database tables and strict row-level security (RLS) policies:
+
+```powershell
+npm run db:verify-ai
+```
+
+To run the production readiness gate locally in mock mode:
+
+```powershell
+npm run release:gate:mock
 ```
 
 Start the app with:
