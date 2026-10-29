@@ -13,6 +13,24 @@ module.exports = ({ config }) => ({
   },
   ios: {
     supportsTablet: true,
+    bundleIdentifier: "au.com.safesteps.app",
+    infoPlist: {
+      NSCameraUsageDescription: "SafeSteps requires camera access for tamper-proof live capture of required case plan milestones and home safety verification.",
+      NSPhotoLibraryUsageDescription: "SafeSteps requires photo library access to upload documentation and completion certificates.",
+      NSMicrophoneUsageDescription: "SafeSteps requires microphone access for audio reflections and telehealth support sessions.",
+    },
+  },
+  android: {
+    package: "au.com.safesteps.app",
+    adaptiveIcon: {
+      backgroundColor: "#FFFFFF",
+    },
+    permissions: [
+      "CAMERA",
+      "RECORD_AUDIO",
+      "READ_EXTERNAL_STORAGE",
+      "WRITE_EXTERNAL_STORAGE",
+    ],
   },
   web: {
     bundler: "metro",
