@@ -31,6 +31,9 @@ async function escalationHandler({ input = {} }) {
       behavioralCues: signals.behavioralCues || signals.behavioral || [],
       contextualFactors: signals.contextualFactors || signals.contextual || [],
       protectiveFactors: signals.protectiveFactors || signals.protective || [],
+      materialHardshipFactors: signals.materialHardshipFactors || signals.materialHardshipSignals || signals.materialHardship || [],
+      structuralBarriers: signals.structuralBarriers || signals.contactMitigatingBarriers || [],
+      decoupleMaterialHardship: signals.decoupleMaterialHardship !== false,
       recentEvents: signals.recentEvents || [],
       hardFlags: signals.hardFlags || [],
     };
@@ -40,6 +43,11 @@ async function escalationHandler({ input = {} }) {
   const rationale = scored.rationale;
 
   const reviewActions = [];
+  if (scored.material_hardship_assessment?.detected) {
+    reviewActions.push(
+      'Poverty != Neglect Safeguard: Dispatch Economic & Concrete Supports (ECS) flexible funding/vouchers for material hardship indicators rather than escalating child-safety surveillance.',
+    );
+  }
   if (severity === 'critical' || scored.hard_escalation?.triggered) {
     reviewActions.push(
       'Notify on-call supervisor immediately for same-day human safety review.',

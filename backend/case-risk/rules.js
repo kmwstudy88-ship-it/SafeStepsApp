@@ -51,6 +51,10 @@ const DEFAULT_RULES = Object.freeze({
       caregiver_insight: 6,
       safe_contact_observed: 8,
       school_engagement: 5,
+      parent_partner_engaged: 10,
+      economic_concrete_support_active: 9,
+      kinship_placement_supported: 7,
+      post_reunification_step_down_active: 8,
     },
     trends: {
       repeated_acute_events_7d: 12,
@@ -59,6 +63,58 @@ const DEFAULT_RULES = Object.freeze({
       multiple_document_signals: 5,
     },
   },
+  materialHardshipSignals: Object.freeze({
+    unsafe_housing: {
+      ecs_category: 'housing_stabilization',
+      task_type: 'ecs_housing_support',
+      title: 'Provide emergency housing stabilization / repair grant (Poverty != Neglect)',
+      due_in_hours: 48,
+      priority: 'high',
+    },
+    caregiver_overload: {
+      ecs_category: 'respite_and_childcare',
+      task_type: 'ecs_childcare_respite',
+      title: 'Arrange subsidized childcare or kinship respite support',
+      due_in_hours: 72,
+      priority: 'medium',
+    },
+    limited_transport: {
+      ecs_category: 'transport_assistance',
+      task_type: 'ecs_transport_voucher',
+      title: 'Issue transit passes / ride-share vouchers or relocate visit closer to home',
+      due_in_hours: 48,
+      priority: 'medium',
+    },
+    food_insecurity: {
+      ecs_category: 'nutrition_and_groceries',
+      task_type: 'ecs_food_assistance',
+      title: 'Disburse immediate grocery / nutrition flexible funds',
+      due_in_hours: 24,
+      priority: 'high',
+    },
+    utility_arrears: {
+      ecs_category: 'utility_relief',
+      task_type: 'ecs_utility_relief',
+      title: 'Pay utility arrears via flexible funding pool to prevent shut-off',
+      due_in_hours: 24,
+      priority: 'high',
+    },
+    eviction_risk: {
+      ecs_category: 'rental_assistance',
+      task_type: 'ecs_eviction_prevention',
+      title: 'Activate emergency rental assistance & housing advocacy',
+      due_in_hours: 24,
+      priority: 'urgent',
+    },
+  }),
+  contactMitigatingBarriers: Object.freeze([
+    'limited_transport',
+    'work_schedule_conflict',
+    'distant_placement',
+    'agency_waitlist',
+    'lack_of_childcare',
+    'hospitalization_or_illness',
+  ]),
   hardEscalationSignals: {
     child_immediate_danger: 'Immediate child safety danger disclosed',
     credible_threat_to_life: 'Credible threat to life disclosed',
@@ -103,6 +159,13 @@ function rulesFromEnv() {
         protective: { ...DEFAULT_RULES.weights.protective, ...(parsed.weights?.protective || {}) },
         trends: { ...DEFAULT_RULES.weights.trends, ...(parsed.weights?.trends || {}) },
       },
+      materialHardshipSignals: {
+        ...DEFAULT_RULES.materialHardshipSignals,
+        ...(parsed.materialHardshipSignals || {}),
+      },
+      contactMitigatingBarriers: Array.isArray(parsed.contactMitigatingBarriers)
+        ? parsed.contactMitigatingBarriers
+        : DEFAULT_RULES.contactMitigatingBarriers,
       hardEscalationSignals: { ...DEFAULT_RULES.hardEscalationSignals, ...(parsed.hardEscalationSignals || {}) },
       followUpTemplates: {
         ...DEFAULT_RULES.followUpTemplates,

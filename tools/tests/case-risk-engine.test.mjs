@@ -157,3 +157,48 @@ test('scoreCaseRisk applies repeated-event trend boosts when thresholds are cros
   const trendKeys = result.factors.filter((item) => item.category === 'trend').map((item) => item.key);
   assert.deepEqual(trendKeys.sort(), ['repeated_acute_events_7d', 'repeated_events_30d', 'repeated_same_signal'].sort());
 });
+
+test('scoreCaseRisk decouples material hardship from neglect score and generates ECS recommendations when enabled', () => {
+  const conflated = scoreCaseRisk({
+    contextualFactors: ['unsafe_housing', 'caregiver_overload', 'limited_transport'],
+    behavioralCues: ['missed_contact'],
+  });
+  // Without decoupling: 10 + 10 + 9 + 5 + 8 = 42 (moderate risk)
+  assert.equal(conflated.score, 42);
+  assert.equal(conflated.tier, 'moderate');
+  assert.equal(conflated.material_hardship_assessment.detected, true);
+  assert.equal(conflated.material_hardship_assessment.recommended_ecs_actions.length, 3);
+
+  const decoupled = scoreCaseRisk(
+    {
+      contextualFactors: ['unsafe_housing', 'caregiver_overload', 'limited_transport'],
+      behavioralCues: ['missed_contact'],
+    },
+    { decoupleMaterialHardship: true },
+  );
+  // With poverty != neglect decoupling: material hardship routed to ECS (0 risk weight),
+  // and missed_contact mitigated by limited_transport barrier -> remains at baseScore 10 (low)
+  assert.equal(decoupled.score, 10);
+  assert.equal(decoupled.tier, 'low');
+  assert.equal(decoupled.material_hardship_assessment.decoupled_from_neglect_score, true);
+  assert.equal(decoupled.material_hardship_assessment.missed_contact_mitigated, true);
+  assert.match(decoupled.rationale, /Material hardship.*decoupled from neglect score/);
+  assert.match(decoupled.rationale, /Missed contact was contextually mitigated/);
+});
+
+test('scoreCaseRisk recognizes Parent Partner, ECS, Kinship Support, and Step-Down protective factors', () => {
+  const result = scoreCaseRisk({
+    behavioralCues: ['child_distress', 'substance_relapse'],
+    protectiveFactors: [
+      'parent_partner_engaged',
+      'economic_concrete_support_active',
+      'kinship_placement_supported',
+      'post_reunification_step_down_active',
+    ],
+  });
+
+  // 10 + 16 + 14 - (10 + 9 + 7 + 8) = 6 -> low
+  assert.equal(result.score, 6);
+  assert.equal(result.tier, 'low');
+});
+

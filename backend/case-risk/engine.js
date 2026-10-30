@@ -60,6 +60,14 @@ function extractSignalsFromPayload(payload = {}) {
       ...toArray(payload.protective_factors).map((item) => normalizeFactor(item, 'protective')),
       ...docSignals.filter((item) => item.category === 'protective'),
     ].filter(Boolean),
+    structuralBarriers: [
+      ...toArray(payload.structural_barriers || payload.structuralBarriers).map((item) => normalizeFactor(item, 'barrier')),
+      ...docSignals.filter((item) => item.category === 'barrier'),
+    ].filter(Boolean),
+    materialHardship: [
+      ...toArray(payload.material_hardship_factors || payload.materialHardshipFactors).map((item) => normalizeFactor(item, 'material_hardship')),
+      ...docSignals.filter((item) => item.category === 'material_hardship'),
+    ].filter(Boolean),
     hardFlags: normalizeHardFlags(payload.hard_flags || payload.hard_escalation_flags),
   };
 }
@@ -136,17 +144,41 @@ function round(value) {
 
 function scoreCaseRisk(input = {}, options = {}) {
   const rules = options.rules || rulesFromEnv();
+  const decoupleMaterialHardship = Boolean(options.decoupleMaterialHardship || input.decoupleMaterialHardship);
   const behavioral = toArray(input.behavioralCues).map((item) => normalizeFactor(item, 'behavioral')).filter(Boolean);
   const contextual = toArray(input.contextualFactors).map((item) => normalizeFactor(item, 'contextual')).filter(Boolean);
   const protective = toArray(input.protectiveFactors).map((item) => normalizeFactor(item, 'protective')).filter(Boolean);
   const recentEvents = toArray(input.recentEvents);
+
+  const structuralBarriers = [
+    ...toArray(input.structuralBarriers).map((item) => normalizeFactor(item, 'barrier')).filter(Boolean),
+    ...recentEvents.flatMap((event) => extractSignalsFromPayload(event.payload || {}).structuralBarriers),
+  ];
+  const explicitMaterialHardship = [
+    ...toArray(input.materialHardshipFactors).map((item) => normalizeFactor(item, 'material_hardship')).filter(Boolean),
+    ...recentEvents.flatMap((event) => extractSignalsFromPayload(event.payload || {}).materialHardship),
+  ];
+
   const hardFlags = [
     ...toArray(input.hardFlags).flatMap((value) => normalizeHardFlags(value)),
     ...recentEvents.flatMap((event) => extractSignalsFromPayload(event.payload || {}).hardFlags),
   ];
 
+  const hardshipMap = rules.materialHardshipSignals || {};
+  const mitigatingBarrierSet = new Set(rules.contactMitigatingBarriers || []);
+  const activeBarrierKeys = new Set(structuralBarriers.map((item) => item.key));
+  if (decoupleMaterialHardship) {
+    for (const factor of contextual) {
+      if (mitigatingBarrierSet.has(factor.key)) activeBarrierKeys.add(factor.key);
+    }
+  }
+  const hasContactMitigatingBarrier = [...activeBarrierKeys].some((key) => mitigatingBarrierSet.has(key));
+
   const factorBreakdown = [];
+  const detectedHardshipKeys = new Set(explicitMaterialHardship.map((f) => f.key));
+  let missedContactMitigated = false;
   let score = rules.baseScore;
+
   const addFactor = (factor, weight, direction) => {
     factorBreakdown.push({
       key: factor.key,
@@ -156,15 +188,63 @@ function scoreCaseRisk(input = {}, options = {}) {
       direction,
       note: factor.note || null,
     });
-    score += direction === 'decrease' ? -Math.abs(weight) : Math.abs(weight);
+    if (direction === 'decrease') {
+      score -= Math.abs(weight);
+    } else if (direction === 'increase') {
+      score += Math.abs(weight);
+    }
   };
 
   for (const factor of behavioral) {
+    if (factor.key === 'missed_contact' && hasContactMitigatingBarrier) {
+      missedContactMitigated = true;
+      addFactor(
+        {
+          ...factor,
+          note: factor.note || `Mitigated by documented structural barrier (${[...activeBarrierKeys].join(', ')})`,
+        },
+        0,
+        'barrier_mitigated',
+      );
+      continue;
+    }
     if (rules.weights.behavioral[factor.key] != null) addFactor(factor, rules.weights.behavioral[factor.key], 'increase');
   }
+
   for (const factor of contextual) {
+    if (hardshipMap[factor.key]) {
+      detectedHardshipKeys.add(factor.key);
+      if (decoupleMaterialHardship) {
+        addFactor(
+          {
+            ...factor,
+            category: 'material_hardship',
+            note: factor.note || 'Decoupled from child-maltreatment risk; routed to Economic & Concrete Supports (ECS)',
+          },
+          0,
+          'support_need',
+        );
+        continue;
+      }
+    }
     if (rules.weights.contextual[factor.key] != null) addFactor(factor, rules.weights.contextual[factor.key], 'increase');
   }
+
+  for (const factor of explicitMaterialHardship) {
+    detectedHardshipKeys.add(factor.key);
+    if (!factorBreakdown.some((item) => item.key === factor.key && item.category === 'material_hardship')) {
+      addFactor(
+        {
+          ...factor,
+          category: 'material_hardship',
+          note: factor.note || 'Routed to Economic & Concrete Supports (ECS)',
+        },
+        0,
+        'support_need',
+      );
+    }
+  }
+
   for (const factor of protective) {
     if (rules.weights.protective[factor.key] != null) addFactor(factor, rules.weights.protective[factor.key], 'decrease');
   }
@@ -187,12 +267,20 @@ function scoreCaseRisk(input = {}, options = {}) {
   if (signalCount < 2) confidence -= rules.confidence.sparsePenalty;
   confidence = round(Math.max(0.2, Math.min(rules.confidence.max, confidence)));
 
+  const recommendedEcsActions = [...detectedHardshipKeys]
+    .map((key) => (hardshipMap[key] ? { signal: key, ...hardshipMap[key] } : null))
+    .filter(Boolean);
+
   const strongestRisk = factorBreakdown.filter((factor) => factor.direction === 'increase').sort((a, b) => b.weight - a.weight).slice(0, 3);
   const strongestProtective = factorBreakdown.filter((factor) => factor.direction === 'decrease').sort((a, b) => b.weight - a.weight).slice(0, 2);
   const rationaleParts = [];
   if (strongestRisk.length) rationaleParts.push(`Primary risk drivers: ${strongestRisk.map((factor) => factor.key).join(', ')}.`);
   if (trendFactors.length) rationaleParts.push(`Recent pattern pressure: ${trendFactors.map((factor) => factor.key).join(', ')}.`);
   if (strongestProtective.length) rationaleParts.push(`Protective offsets: ${strongestProtective.map((factor) => factor.key).join(', ')}.`);
+  if (missedContactMitigated) rationaleParts.push(`Missed contact was contextually mitigated by documented barriers (${[...activeBarrierKeys].join(', ')}).`);
+  if (detectedHardshipKeys.size > 0 && decoupleMaterialHardship) {
+    rationaleParts.push(`Material hardship (${[...detectedHardshipKeys].join(', ')}) decoupled from neglect score and routed to Concrete Supports (ECS).`);
+  }
   if (hardEscalationTriggers.length) rationaleParts.push(`Hard escalation triggered by ${hardEscalationTriggers.map((item) => item.key).join(', ')}.`);
   if (!rationaleParts.length) rationaleParts.push('Limited structured signals were available, so the result should receive prompt human review.');
 
@@ -206,6 +294,14 @@ function scoreCaseRisk(input = {}, options = {}) {
     hard_escalation: {
       triggered: hardEscalationTriggers.length > 0,
       triggers: hardEscalationTriggers,
+    },
+    material_hardship_assessment: {
+      detected: detectedHardshipKeys.size > 0,
+      decoupled_from_neglect_score: decoupleMaterialHardship,
+      signals: [...detectedHardshipKeys],
+      structural_barriers: [...activeBarrierKeys],
+      missed_contact_mitigated: missedContactMitigated,
+      recommended_ecs_actions: recommendedEcsActions,
     },
   };
 }

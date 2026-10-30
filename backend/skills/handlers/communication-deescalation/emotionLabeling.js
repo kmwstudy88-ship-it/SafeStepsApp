@@ -28,6 +28,16 @@ const EMOTION_PATTERNS = [
     pattern: /\b(trying\s+my\s+best|want\s+to\s+make\s+it\s+work|committed|ready\s+to|hopeful|proud)\b/i,
     validation: 'Your care and determination to show up for your family come through clearly.',
   },
+  {
+    label: 'post_visit_separation_grief',
+    pattern: /\b(after\s+the\s+visit|saying\s+goodbye|empty\s+house|miss\s+my\s+kids|visit\s+ended|leaving\s+them)\b/i,
+    validation: 'The ache after a visit ends is a natural reflection of how deeply you love your child; post-visit transition grief deserves gentle support, not judgment.',
+  },
+  {
+    label: 'institutional_mistrust_or_fear',
+    pattern: /\b(used\s+against\s+me|afraid\s+to\s+ask\s+for\s+help|surveilled|judged\s+for\s+being\s+poor|take\s+my\s+child)\b/i,
+    validation: 'It is completely understandable to feel guarded; requesting Economic & Concrete Supports (ECS) is protected by the Poverty != Neglect safeguard and cannot be used against you.',
+  },
 ];
 
 async function emotionLabelingHandler({ input = {} }) {

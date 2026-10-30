@@ -8,6 +8,7 @@ const {
   triageChildHelpRequest,
   getSeriousDecisionReviews,
   reviewSeriousDecision,
+  verifyDecisionStructuralEquity,
   getContradictionReviews,
   resolveContradictionItem,
   getSupervisorAuditTrail,
@@ -91,4 +92,36 @@ test('resolveContradictionItem evaluates contrary evidence and resolves finding'
   const updated = all.find((c) => c.id === 'contra_sup_01');
   assert(updated);
   assert.equal(updated.status, 'clarified_in_favour_of_parent');
+});
+
+test('verifyDecisionStructuralEquity audits serious decisions for poverty conflation, waitlist tolling, and fatherhood/kinship equity', async () => {
+  const flaggedRes = await verifyDecisionStructuralEquity(
+    'dec_002',
+    {
+      povertyDecoupledFromNeglect: false,
+      agencyWaitlistsAccountedFor: true,
+      fatherhoodInclusionVerified: false,
+      kinshipParityChecked: true,
+    },
+    'supervisor_ellen'
+  );
+
+  assert.equal(flaggedRes.success, true);
+  assert.equal(flaggedRes.equityPassed, false);
+  assert.equal(flaggedRes.unmetSafeguards.length, 2);
+
+  const passedRes = await verifyDecisionStructuralEquity(
+    'dec_002',
+    {
+      povertyDecoupledFromNeglect: true,
+      agencyWaitlistsAccountedFor: true,
+      fatherhoodInclusionVerified: true,
+      kinshipParityChecked: true,
+    },
+    'supervisor_ellen'
+  );
+
+  assert.equal(passedRes.success, true);
+  assert.equal(passedRes.equityPassed, true);
+  assert.equal(passedRes.unmetSafeguards.length, 0);
 });

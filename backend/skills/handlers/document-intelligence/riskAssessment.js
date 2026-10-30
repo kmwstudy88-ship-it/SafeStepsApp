@@ -19,6 +19,9 @@ const TEXT_PROTECTIVE_PATTERNS = [
   { factor: 'active_support_network', pattern: /\b(kinship\s+support|grandmother\s+assisting|extended\s+family\s+support|community\s+mentor)\b/i },
   { factor: 'service_engagement', pattern: /\b(completed\s+parenting\s+module|engaged\s+in\s+counseling|participated\s+in\s+program|followed\s+safety\s+plan)\b/i },
   { factor: 'stable_home_routine', pattern: /\b(stable\s+housing|predictable\s+routine|safe\s+home\s+environment)\b/i },
+  { factor: 'parent_partner_peer_mentorship', pattern: /\b(parent\s+partner|peer\s+mentor|lived[\s-]experience\s+mentor)\b/i },
+  { factor: 'economic_concrete_support_stabilized', pattern: /\b(concrete\s+support|utility\s+grant|transit\s+voucher|flexible\s+funding|ecs\s+grant)\b/i },
+  { factor: 'abc_pcit_dyadic_coaching', pattern: /\b(followed\s+the\s+child's\s+lead|labeled\s+praise|abc\s+coaching|pcit|dyadic\s+coaching)\b/i },
 ];
 
 async function riskAssessmentHandler({ input = {} }) {
@@ -119,6 +122,11 @@ async function riskAssessmentHandler({ input = {} }) {
   }
   if (protectiveSignals.length > 0 && riskSignals.length === 0) {
     uncertainties.push('Only protective signals were identified in the excerpt; review full case history for complete context.');
+  }
+  if (riskSignals.some((r) => r.factor === 'housing_or_utility_instability')) {
+    uncertainties.push(
+      'Poverty != Neglect Safeguard: Housing or utility instability detected. Verify that material hardship is decoupled from parental neglect scoring and routed to Economic & Concrete Supports (ECS).'
+    );
   }
 
   const totalSignals = riskSignals.length + protectiveSignals.length;

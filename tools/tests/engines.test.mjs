@@ -119,6 +119,73 @@ test('contactProgressionEngine steps back stage when acute incidents occur', () 
   assert.ok(result.riskStepBackTriggers.length >= 2);
 });
 
+test('contactProgressionEngine credits visits excused by structural barriers and enforces 12-month step-down plan before full_return', () => {
+  const visitsWithTransitExcused = Array.from({ length: 8 }, (_, i) => ({
+    visitId: `v-tr-${i}`,
+    visitDate: '2026-09-10',
+    stage: 'trial_at_home',
+    attended: i < 6, // 2 visits missed due to regional transit cancellation
+    onTime: true,
+    incidentFree: true,
+    positiveRepairObserved: true,
+    excusedByStructuralBarrier: i >= 6,
+    structuralBarrierNote: i >= 6 ? 'Regional bus cancellation — verified transit barrier' : undefined,
+  }));
+
+  // Without active 12-month post-reunification step-down plan, full_return is blocked to prevent service cliff
+  const blockedResult = evaluateContactProgression({
+    caseId: 'case-123',
+    currentStage: 'trial_at_home',
+    targetStage: 'full_return',
+    recentVisits: visitsWithTransitExcused,
+    safetyVerification: {
+      functionalSafetyPlanCurrent: true,
+      stableLivingEnvironmentVerified: true,
+      substanceScreeningCompliant: true,
+      supportNetworkActive: true,
+      culturalSafetyPlanInPlace: true,
+      accessibilityAccommodationsMet: true,
+      postReunificationStepDownPlanActive: false,
+      economicConcreteSupportsVerified: true,
+    },
+    openSafetyIncidentsCount: 0,
+    unresolvedContradictionsCount: 0,
+    caseWorkerEndorsement: true,
+  });
+
+  assert.equal(blockedResult.barrierMitigatedVisitsCount, 2);
+  assert.equal(blockedResult.totalVisitsConsidered, 8);
+  assert.equal(blockedResult.readyToAdvance, false);
+  assert.ok(
+    blockedResult.missingPrerequisites.some((m) => m.includes('12-month Post-Reunification Step-Down Support Plan'))
+  );
+
+  // With 12-month step-down plan active, advances to full_return
+  const advanceResult = evaluateContactProgression({
+    caseId: 'case-123',
+    currentStage: 'trial_at_home',
+    targetStage: 'full_return',
+    recentVisits: visitsWithTransitExcused,
+    safetyVerification: {
+      functionalSafetyPlanCurrent: true,
+      stableLivingEnvironmentVerified: true,
+      substanceScreeningCompliant: true,
+      supportNetworkActive: true,
+      culturalSafetyPlanInPlace: true,
+      accessibilityAccommodationsMet: true,
+      postReunificationStepDownPlanActive: true,
+      economicConcreteSupportsVerified: true,
+    },
+    openSafetyIncidentsCount: 0,
+    unresolvedContradictionsCount: 0,
+    caseWorkerEndorsement: true,
+  });
+
+  assert.equal(advanceResult.transitionAction, 'advance');
+  assert.equal(advanceResult.recommendedStage, 'full_return');
+  assert.equal(advanceResult.readyToAdvance, true);
+});
+
 test('familyMeetingEngine resolves consensus and activates circuit breaker on deadlock or conflict', () => {
   // Test unanimous consensus
   const unanimousInput = {
@@ -276,6 +343,29 @@ test('kinshipSafetyCircleEngine evaluates network resilience and flags 30-minute
   const breachResult = evaluateKinshipSafetyCircle(breachInput);
   assert.equal(breachResult.tier, 'critical_gap');
   assert.equal(breachResult.boundaryBreachRiskIdentified, true);
+
+  // Test paternal kinship inclusion and lived-experience Parent Partner recognition
+  const paternalCheckResult = evaluateKinshipSafetyCircle({
+    ...robustInput,
+    paternalRelativesConsidered: false,
+    members: [
+      ...robustInput.members,
+      {
+        memberId: 'mem-pp',
+        name: 'Tanya Williams',
+        relationship: 'Certified Parent Partner Mentor',
+        roleType: 'lived_experience_parent_partner',
+        verified: true,
+        contactConfirmed: true,
+        responseWindowMinutes: 60,
+        hasExclusionFlag: false,
+        availability: 'daytime',
+      },
+    ],
+  });
+  assert.equal(paternalCheckResult.hasParentPartnerMentor, true);
+  assert.equal(paternalCheckResult.paternalKinshipIncluded, false);
+  assert.ok(paternalCheckResult.identifiedGaps.some((g) => g.includes('Paternal kinship network')));
 });
 
 test('childDevelopmentCapacityEngine identifies age bands and flags adult conflict exposure', () => {
@@ -357,6 +447,32 @@ test('forensicAssuranceEngine flags procedural defects and hearsay without prima
   assert.ok(result.proportionalityConcerns.length > 0);
   assert.ok(result.fairnessDefectFlags.length > 0);
   assert.ok(result.mandatorySupervisorCheckpoints.length > 0);
+
+  // Verify Poverty != Neglect and Agency Waitlist forensic safeguards
+  const povertyWaitlistResult = evaluateForensicAssurance({
+    caseId: 'case-2',
+    proposedInterventionSeverity: 'care_application',
+    supervisoryEndorsementPresent: true,
+    artifacts: [
+      {
+        artifactId: 'art-poverty',
+        title: 'Eviction arrears & waitlist delay report',
+        sourceType: 'official_agency_log',
+        sha256Digest: 'def456',
+        integrityVerified: true,
+        containsDirectObservation: true,
+        containsHearsayOrRumor: false,
+        participantGivenOpportunityToRespond: true,
+        conflatesMaterialHardshipWithNeglect: true,
+        ignoresAgencyWaitlistBarrier: true,
+        observedAt: '2026-09-15',
+      },
+    ],
+  });
+  assert.equal(povertyWaitlistResult.courtPackReadiness, 'high_evidentiary_risk');
+  assert.ok(povertyWaitlistResult.fairnessDefectFlags.some((f) => f.includes('Poverty != Neglect defect')));
+  assert.ok(povertyWaitlistResult.fairnessDefectFlags.some((f) => f.includes('Systemic barrier defect')));
+  assert.equal(povertyWaitlistResult.proportionalityConcerns.length, 2);
 });
 
 test('regulationScenarioEngine runs interactive simulation and returns proficiency feedback', () => {

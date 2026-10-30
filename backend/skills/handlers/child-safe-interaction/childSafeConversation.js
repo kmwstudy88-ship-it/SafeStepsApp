@@ -50,6 +50,7 @@ async function childSafeConversationHandler({ input = {}, context = {} }) {
   const boundaries = [
     'Share only what feels comfortable; private identifying details are not needed.',
     'Children are never asked to take sides or carry messages between adults.',
+    'Children are never blamed for family money/housing stress or for feeling sad when a visit starts or ends.',
     'If someone is in immediate danger, a trusted adult or emergency service must be contacted right away.',
   ];
 

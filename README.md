@@ -54,10 +54,11 @@ Compatibility and generated areas live here:
 | `/sos` | `lib/support/SOSQuickRelieverScreen.tsx` | static support scripts | none |
 | `/fairness` | `lib/fairness/DocumentFairnessViewerScreen.tsx` | live fairness analyzer UI | Node API fairness endpoint |
 | `/cases` | `app/cases/index.tsx` | authenticated case list | Supabase auth, case assignments, realtime |
-| `/cases/[id]` | `app/cases/[id].tsx` | case detail + analysis status | Supabase cases/documents/analyses |
-| `/carers` | `lib/carers/CarerPortalScreen.tsx` | interactive carer dashboard, journal, media picker, sharing states, and monitored-message controls | device-local prototype; case integration pending |
+| `/cases/[id]` | `app/cases/[id].tsx` | case detail + analysis status + ECS / step-down link | Supabase cases/documents/analyses |
+| `/reunification-support` | `lib/reunification/ReunificationArchitectureScreen.tsx` | Economic & Concrete Supports (ECS), Parent Partner peer mentorship, 12-month post-reunification step-down, fatherhood & kinship equity | `reunificationArchitectureService` |
+| `/carers` | `lib/carers/CarerPortalScreen.tsx` | interactive carer dashboard, journal, kinship stipend parity & licensing waivers, sharing states, and monitored-message controls | `carerPortalService` |
 | `/documents/[id]` | `app/documents/[id].tsx` | document upload + processing | `expo-document-picker` + Node analysis API |
-| `/contact-visit` | `lib/contactVisit/ContactVisitCompanionScreen.tsx` | static guidance UI | none |
+| `/contact-visit` | `lib/contactVisit/ContactVisitCompanionScreen.tsx` | 4-stage visit flow, ABC/PCIT relational coaching prompts, carer transition handoffs, transport voucher requests, and canonical reflection logging | `contactVisitService` |
 | `/discreet` | `lib/privacy/DiscreetModeScreen.tsx` | device-local disguise prototype | none |
 
 ## Parent/caregiver feature inventory
@@ -72,9 +73,9 @@ The current parent/caregiver surface is narrower than the backend/domain footpri
 | Scheduling & calendar | none | missing unified parent calendar for visits, hearings, assessments, and appointments | case appointments plus consolidated visit records |
 | Notifications | none | missing parent-facing alerts center and delivery flows in app | notification preferences and notification-related backend infrastructure |
 | Court & legal literacy | none | missing plain-language guidance for hearings, rights, and document prep | no dedicated app surface yet |
-| Financial / housing evidence upload | `/evidence`, `/documents/[id]` | partial: generic evidence and document upload only | evidence categories include housing and document/evidence pipelines exist |
+| Financial / housing evidence & Concrete Supports (ECS) | `/reunification-support`, `/evidence`, `/documents/[id]` | active: flexible funding requests (rent, utilities, transport, childcare), waitlist compliance timer pause, plus evidence/document upload | `reunificationArchitectureService`, evidence categories, and document/evidence pipelines |
 | Substance-use self-tracking | none | missing parent log for sobriety, UA, recovery, and appointment tracking | assessment/evidence foundations only |
-| Peer / community support | none | missing parent peer-support, mentor, or forum surface | community/referral foundations exist outside the parent app surface |
+| Peer / community support (Parent Partners) | `/reunification-support` | active: lived-experience Parent Partner matching and confidential, non-surveilled peer advocacy session logging | `reunificationArchitectureService` and community/referral foundations |
 | Onboarding & consent | `/cases` sign-in only | partial: sign-in exists, but no dedicated onboarding, identity-verification, consent, or terms flow | onboarding consent events and parent intake save/resume RPCs |
 | Dispute / grievance path | none | missing contestability and supervisor-review request flow | governance and decision-review structures exist, but no parent UI |
 | Emergency / crisis escalation | `/sos` only | partial: calming scripts exist, but no distinct crisis-routing or hotline flow; Personal AI can only offer generic local-emergency guidance and does not dispatch or queue help | repository migrations define Personal AI safety/referral structures, but they are absent from the verified deployment snapshot |

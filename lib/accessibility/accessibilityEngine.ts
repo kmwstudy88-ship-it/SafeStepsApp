@@ -50,6 +50,14 @@ export const PLAIN_LANGUAGE_GLOSSARY: Record<string, string> = {
   "kinship placement": "living with family members or close community carers",
   "restorative repair": "making things right with your child after a hard moment",
   "emotional dysregulation": "feeling overwhelmed and having big feelings",
+  "substantiated neglect": "agency finding that a child's basic needs were not met (must not be based on poverty alone)",
+  "material hardship": "lack of money for rent, utilities, food, or transport (not child abuse)",
+  "economic and concrete supports": "direct practical help with rent, bills, groceries, childcare, or bus passes",
+  "compliance clock": "court timeline for completing case plan steps (paused when you are stuck on a waitlist)",
+  "parent partner": "peer mentor who has been through child protection and successfully brought their children home",
+  "kinship licensing waiver": "exemption from non-safety house rules so family members can care for children",
+  "post-reunification step-down": "12 months of supportive check-ins and practical help after your children return home",
+  "dyadic coaching": "supportive practice together with your child during play",
 };
 
 /**

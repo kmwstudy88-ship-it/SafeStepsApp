@@ -23,6 +23,8 @@ export type SaferSpecialistFlag =
   | "mental_health"
   | "disability"
   | "housing_instability"
+  | "material_hardship_poverty"
+  | "agency_waitlist_barrier"
   | "social_isolation"
   | "complex_needs"
   | "cultural_safety";
@@ -64,6 +66,7 @@ export type SaferJudgementInput = {
   classifications: SaferEvidenceClassification[];
   reviewState?: SaferReviewState;
   recognitionSupportPlan?: RecognitionSupportPlan | null;
+  materialHardshipDecoupledFromRisk?: boolean;
 };
 
 export type SaferJudgementResult = {
@@ -108,6 +111,8 @@ const specialistFlagKeywords: Record<SaferSpecialistFlag, string[]> = {
   mental_health: ["mental health", "depression", "anxiety", "self-harm", "psychological"],
   disability: ["disability", "ndis", "reasonable adjustment", "accessibility", "easy read"],
   housing_instability: ["housing", "homeless", "accommodation", "tenancy", "unstable home"],
+  material_hardship_poverty: ["poverty", "utility arrears", "food bank", "eviction", "bus fare", "material hardship"],
+  agency_waitlist_barrier: ["waitlist", "waiting list", "provider delay", "no appointment available"],
   social_isolation: ["social isolation", "isolated", "no support", "limited support"],
   complex_needs: ["complex needs", "multiple needs", "cumulative", "high risk"],
   cultural_safety: ["cultural safety", "aboriginal", "torres strait", "cultural plan"],
@@ -209,6 +214,10 @@ export function computeSaferGuidedJudgement(input: SaferJudgementInput): SaferJu
     ),
   );
   const reviewState = input.reviewState ?? "draft";
+  const unmitigatedHardshipConflation =
+    input.materialHardshipDecoupledFromRisk === false &&
+    (specialistFlags.includes("material_hardship_poverty") ||
+      specialistFlags.includes("housing_instability"));
   const requiredReview =
     reviewState !== "reviewed" ||
     riskScore >= 65 ||
@@ -216,11 +225,17 @@ export function computeSaferGuidedJudgement(input: SaferJudgementInput): SaferJu
     missingCategories.includes("child") ||
     missingCategories.includes("protection_and_safety") ||
     specialistFlags.includes("family_violence") ||
+    unmitigatedHardshipConflation ||
     requiredRecognitionGaps.length > 0;
   const flags = [
     ...(riskScore >= 65 ? ["High risk judgement requires supervisor review."] : []),
     ...(missingCategories.length ? [`Missing SAFER evidence categories: ${missingCategories.join(", ")}.`] : []),
     ...(specialistFlags.includes("family_violence") ? ["Family violence flag requires specialist risk review."] : []),
+    ...(unmitigatedHardshipConflation
+      ? [
+          "Poverty != Neglect safeguard: Material hardship or housing instability detected; route to Economic & Concrete Supports (ECS) rather than inflating child maltreatment risk.",
+        ]
+      : []),
     ...(input.evidenceGapCount > 0 ? [`${input.evidenceGapCount} evidence gap(s) remain unresolved.`] : []),
     ...requiredRecognitionGaps.map((gap) => gap.label),
     ...(reviewState !== "reviewed" ? [`Assessment is ${reviewState}; do not use as final decision evidence.`] : []),

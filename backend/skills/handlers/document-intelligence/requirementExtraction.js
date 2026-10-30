@@ -12,6 +12,7 @@ const DUE_DATE_PATTERN = /\b(by\s+\d{4}-\d{2}-\d{2}|by\s+(?:January|February|Mar
 const PARTY_PATTERN = /\b(parent|mother|father|carer|caregiver|caseworker|worker|agency|department|provider)\b/i;
 
 function inferStatusHint(sentence) {
+  if (/\b(waitlisted|waiting\s+list|clock\s+paused|tolled\s+due\s+to\s+barrier)\b/i.test(sentence)) return 'tolled_by_waitlist';
   if (/\b(completed|met|fulfilled|finished|attended\s+all)\b/i.test(sentence)) return 'met';
   if (/\b(in\s+progress|partially|enrolled|started)\b/i.test(sentence)) return 'partially_met';
   if (/\b(unmet|missed|not\s+yet\s+completed|pending)\b/i.test(sentence)) return 'unmet';
@@ -61,6 +62,11 @@ async function requirementExtractionHandler({ input = {} }) {
       if (!dueMatch || hasVague) {
         ambiguousRequirements.push(
           `${item.locator}: Requirement "${item.text}" lacks a specific measurable target or concrete deadline.`,
+        );
+      }
+      if (/\b(pay\s+for|at\s+parent's\s+expense|purchase\s+furniture|secure\s+unsubsidized\s+housing)\b/i.test(item.text)) {
+        ambiguousRequirements.push(
+          `${item.locator}: Poverty != Neglect Safeguard — Requirement "${item.text}" conditions compliance on personal financial expenditure; route material needs to Economic & Concrete Supports (ECS).`,
         );
       }
     } else if (hasVague) {

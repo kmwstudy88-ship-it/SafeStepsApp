@@ -33,6 +33,8 @@ export type ContactVisitEvidence = {
   onTime: boolean;
   incidentFree: boolean;
   positiveRepairObserved: boolean;
+  excusedByStructuralBarrier?: boolean;
+  structuralBarrierNote?: string;
   supervisorNotes?: string;
 };
 
@@ -43,6 +45,8 @@ export type ContactSafetyVerification = {
   supportNetworkActive: boolean;
   culturalSafetyPlanInPlace: boolean;
   accessibilityAccommodationsMet: boolean;
+  postReunificationStepDownPlanActive?: boolean;
+  economicConcreteSupportsVerified?: boolean;
 };
 
 export type ContactProgressionInput = {
@@ -68,6 +72,7 @@ export type ContactProgressionEvaluation = {
   requiredReviewCheckpoints: string[];
   totalVisitsConsidered: number;
   incidentFreeVisitCount: number;
+  barrierMitigatedVisitsCount: number;
   minimumVisitsRequired: number;
   decisionSupportOnly: true;
   humanReviewRequired: true;
@@ -96,10 +101,13 @@ export function evaluateContactProgression(
   const riskStepBackTriggers: string[] = [];
   const requiredReviewCheckpoints: string[] = [];
 
-  // 1. Visit count and incident check
+  // 1. Visit count and incident check (accounting for structural transit/waitlist barriers)
   const minimumVisits = STAGE_MINIMUM_VISITS[input.currentStage];
   const relevantVisits = input.recentVisits.filter(
-    (v) => v.stage === input.currentStage && v.attended,
+    (v) => v.stage === input.currentStage && (v.attended || v.excusedByStructuralBarrier),
+  );
+  const barrierMitigatedVisits = input.recentVisits.filter(
+    (v) => v.stage === input.currentStage && !v.attended && v.excusedByStructuralBarrier,
   );
   const incidentFreeVisits = relevantVisits.filter((v) => v.incidentFree);
 
@@ -147,6 +155,19 @@ export function evaluateContactProgression(
   if (!input.safetyVerification.accessibilityAccommodationsMet) {
     missingPrerequisites.push("Accessibility and communication adjustments must be confirmed.");
   }
+  if (
+    input.targetStage === "full_return" &&
+    input.safetyVerification.postReunificationStepDownPlanActive === false
+  ) {
+    missingPrerequisites.push(
+      "12-month Post-Reunification Step-Down Support Plan must be active before full return to prevent the post-reunification service cliff.",
+    );
+  }
+  if (input.safetyVerification.economicConcreteSupportsVerified === false) {
+    missingPrerequisites.push(
+      "Economic & Concrete Supports (ECS) stabilization must be verified so material hardship is not conflated with safety failure.",
+    );
+  }
 
   if (!input.caseWorkerEndorsement) {
     missingPrerequisites.push("Caseworker clinical endorsement is required before progression.");
@@ -192,6 +213,7 @@ export function evaluateContactProgression(
     requiredReviewCheckpoints,
     totalVisitsConsidered: relevantVisits.length,
     incidentFreeVisitCount: incidentFreeVisits.length,
+    barrierMitigatedVisitsCount: barrierMitigatedVisits.length,
     minimumVisitsRequired: minimumVisits,
     decisionSupportOnly: true,
     humanReviewRequired: true,

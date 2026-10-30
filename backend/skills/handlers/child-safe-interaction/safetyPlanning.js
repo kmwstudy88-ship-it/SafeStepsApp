@@ -47,6 +47,12 @@ async function safetyPlanningHandler({ input = {}, context = {} }) {
         'Use a grounding exercise (like naming 5 things you can see and taking 3 slow breaths).',
       ];
 
+  if (!immediateDanger && /\b(visit|goodbye|handover|coming\s+home|back\s+home)\b/i.test(message)) {
+    planSteps.push(
+      'Keep your special transition comfort item (like a favorite toy, drawing, or shared routine note) close during visit hellos, goodbyes, and return-home transitions.',
+    );
+  }
+
   const escalationFlags = [
     ...(immediateDanger ? ['immediate_danger_detected'] : []),
     ...disclosureSignals.map((signal) => `disclosure_${signal}`),

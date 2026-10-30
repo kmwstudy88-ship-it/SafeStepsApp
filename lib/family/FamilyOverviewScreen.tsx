@@ -109,6 +109,30 @@ export function FamilyOverviewScreen() {
           </View>
         </View>
 
+        <View style={styles.reunificationHubCard}>
+          <View style={styles.challengeHubHeader}>
+            <Text style={styles.reunificationHubBadge}>POVERTY != NEGLECT • STRUCTURAL EQUITY</Text>
+            <Text style={styles.challengeHubTitle}>Reunification Safeguards & Concrete Support (ECS)</Text>
+            <Text style={styles.challengeHubSub}>
+              Request flexible Economic & Concrete Supports (rent, utilities, transit), pause statutory compliance clocks for agency waitlists, connect with a lived-experience Parent Partner, and track your 12-month post-reunification step-down plan.
+            </Text>
+          </View>
+          <View style={styles.challengeButtonsRow}>
+            <TouchableOpacity
+              style={styles.reunificationPrimaryBtn}
+              onPress={() => router.push('/reunification-support' as any)}
+            >
+              <Text style={styles.challengePrimaryBtnText}>ECS Grants & Waitlist Tolling</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.reunificationSecondaryBtn}
+              onPress={() => router.push('/contact-visit' as any)}
+            >
+              <Text style={styles.reunificationSecondaryBtnText}>ABC/PCIT Visit Companion</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
         {visibleCards.map((item) => (
           <View key={item.id} style={styles.caseCard}>
             <View style={styles.caseHeader}>
@@ -161,4 +185,9 @@ const styles = StyleSheet.create({
   challengePrimaryBtnText: { color: '#FFFFFF', fontSize: 13, fontWeight: '700' },
   challengeSecondaryBtn: { backgroundColor: '#FFFFFF', borderRadius: 10, borderWidth: 1, borderColor: '#99F6E4', paddingHorizontal: 12, paddingVertical: 10 },
   challengeSecondaryBtnText: { color: '#0F766E', fontSize: 13, fontWeight: '700' },
+  reunificationHubCard: { backgroundColor: '#EFF6FF', borderRadius: 14, borderWidth: 1, borderColor: '#BFDBFE', padding: 16, gap: 12 },
+  reunificationHubBadge: { alignSelf: 'flex-start', backgroundColor: '#DBEAFE', color: '#1E40AF', fontSize: 11, fontWeight: '800', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 8 },
+  reunificationPrimaryBtn: { backgroundColor: '#1D4ED8', borderRadius: 10, paddingHorizontal: 14, paddingVertical: 10 },
+  reunificationSecondaryBtn: { backgroundColor: '#FFFFFF', borderRadius: 10, borderWidth: 1, borderColor: '#93C5FD', paddingHorizontal: 12, paddingVertical: 10 },
+  reunificationSecondaryBtnText: { color: '#1D4ED8', fontSize: 13, fontWeight: '700' },
 });

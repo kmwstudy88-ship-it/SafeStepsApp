@@ -5,6 +5,7 @@ import { importTypeScriptModule } from './load-typescript-module.mjs';
 
 const {
   depositEvidence,
+  depositSystemicBarrierProof,
   reviewEvidence,
   logEvidenceDispute,
   getEvidenceRecordsForCase,
@@ -117,4 +118,32 @@ test('logEvidenceDispute non-destructively records contrary dispute preserving o
   // Original hash and reflection are strictly preserved
   assert(ev.sha256Hash);
   assert.equal(ev.reflectionText, 'Attended session on Tuesday morning.');
+});
+
+test('depositSystemicBarrierProof seals agency waitlist letters and ECS stabilization receipts with tollsComplianceClock metadata', async () => {
+  const waitlistProof = await depositSystemicBarrierProof({
+    caseId: 'case-reunification-105',
+    userId: 'parent-user-46',
+    title: 'Regional Trauma Clinic 12-Week Waitlist Confirmation Letter',
+    proofType: 'agency_waitlist_letter',
+    barrierDescription: 'Clinic intake confirmed referral received 2026-10-01; earliest appointment is 2026-12-24.',
+  });
+
+  assert.equal(waitlistProof.success, true);
+  assert.equal(waitlistProof.evidence.category, 'Systemic Waitlist / Barrier Proof');
+  assert.equal(waitlistProof.evidence.systemicBarrierProofType, 'agency_waitlist_letter');
+  assert.equal(waitlistProof.evidence.tollsComplianceClock, true);
+  assert.equal(waitlistProof.evidence.sha256Hash.length, 64);
+
+  const ecsReceipt = await depositSystemicBarrierProof({
+    caseId: 'case-reunification-105',
+    userId: 'parent-user-46',
+    title: 'Utility Arrears ECS Grant Receipt',
+    proofType: 'ecs_stabilization_receipt',
+    barrierDescription: 'Paid $420 electricity arrears via flexible concrete support fund.',
+  });
+
+  assert.equal(ecsReceipt.success, true);
+  assert.equal(ecsReceipt.evidence.category, 'Economic & Concrete Support (ECS) Proof');
+  assert.equal(ecsReceipt.evidence.tollsComplianceClock, false);
 });

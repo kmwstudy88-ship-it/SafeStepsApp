@@ -10,9 +10,16 @@ const BIAS_RULES = [
   {
     category: 'socioeconomic_or_poverty_bias',
     severity: 'high',
-    pattern: /\b(chaotic\s+low[-\s]?income\s+lifestyle|welfare[-\s]?dependent|poor\s+neighborhood\s+means\s+unsafe|lacks\s+middle[-\s]?class\s+standards)\b/i,
+    pattern: /\b(chaotic\s+low[-\s]?income\s+lifestyle|welfare[-\s]?dependent|poor\s+neighborhood\s+means\s+unsafe|lacks\s+middle[-\s]?class\s+standards|neglect\s+due\s+to\s+(?:poverty|eviction|utility\s+shutoff|food\s+insecurity))\b/i,
     impact: 'Conflates financial hardship or material poverty with parental lack of care.',
-    reframe: 'Distinguish material or housing resource needs from parenting capacity, and document concrete support referrals.',
+    reframe: 'Distinguish material or housing resource needs from parenting capacity, and document Economic & Concrete Supports (ECS) referrals.',
+  },
+  {
+    category: 'kinship_licensing_disparity_bias',
+    severity: 'high',
+    pattern: /\b(rejected\s+kinship\s+placement\s+due\s+to\s+(?:square\s+footage|bedroom\s+size|cosmetic\s+housing)|denied\s+relative\s+carer\s+for\s+non[-\s]?safety\s+housing)\b/i,
+    impact: 'Excludes safe kinship caregivers using middle-class physical housing metrics unrelated to child safety.',
+    reframe: 'Apply Title IV-E / statutory non-safety kinship licensing waivers and ensure foster stipend parity for relative carers.',
   },
   {
     category: 'gender_or_role_stereotyping',

@@ -1,12 +1,43 @@
 import React, { useMemo, useState } from 'react';
 import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { useRouter } from 'expo-router';
 import { queueFairnessAnalysis, waitForDocumentAnalysis, type DocumentAnalysis } from '../documentIntelligenceApi';
 
+const STRUCTURAL_EQUITY_PATTERNS = [
+  {
+    id: 'poverty_neglect_conflation',
+    category: 'Poverty != Neglect Conflation',
+    pattern: /\b(eviction|utility\s+shutoff|utilities\s+disconnected|rent\s+arrears|food\s+insecurity|no\s+bus\s+fare|lack\s+of\s+furniture|crowded\s+apartment)\b/i,
+    explanation: 'Conflates household poverty or material hardship with parental neglect or lack of care.',
+    reframe: 'Decouple material hardship from child-safety risk scoring and route immediately to Economic & Concrete Supports (ECS) flexible funding.',
+  },
+  {
+    id: 'waitlist_compliance_penalty',
+    category: 'Agency Waitlist / Barrier Blaming',
+    pattern: /\b(waitlisted|waiting\s+list|provider\s+delay|no\s+intake\s+slots|transit\s+cancelled|shift\s+work\s+conflict)\b/i,
+    explanation: 'Penalizes the parent for systemic service-provider waitlists, transit gaps, or unaccommodated work shifts.',
+    reframe: 'Pause/toll the statutory compliance clock for the duration of the agency waitlist or transit barrier without penalizing completion percentage.',
+  },
+  {
+    id: 'kinship_or_father_exclusion',
+    category: 'Kinship Licensing Disparity / Father Exclusion',
+    pattern: /\b(bedroom\s+size|square\s+footage|father\s+not\s+contacted|paternal\s+relatives\s+excluded|grandmother\s+denied\s+stipend)\b/i,
+    explanation: 'Applies non-safety physical licensing standards to kinship homes or excludes the father and paternal kin network.',
+    reframe: 'Apply kinship physical-space waiver, provide foster-equivalent kinship stipend parity, and document active paternal kinship outreach.',
+  },
+];
+
 export function DocumentFairnessViewerScreen() {
+  const router = useRouter();
   const [inputText, setInputText] = useState('');
   const [analysis, setAnalysis] = useState<DocumentAnalysis | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const localEquityFindings = useMemo(() => {
+    if (!inputText.trim()) return [];
+    return STRUCTURAL_EQUITY_PATTERNS.filter((rule) => rule.pattern.test(inputText));
+  }, [inputText]);
 
   const flags = useMemo(() => [
     ...(analysis?.bias?.signals || []),
@@ -65,6 +96,34 @@ export function DocumentFairnessViewerScreen() {
           {loading && <Text style={styles.statusText}>Queued securely for document-intelligence analysis…</Text>}
           {error && <Text style={styles.errorText}>{error}</Text>}
         </View>
+
+        {localEquityFindings.length > 0 && (
+          <View style={styles.resultsCard}>
+            <Text style={styles.scoreTitle}>Instant Structural Equity & Poverty!=Neglect Safeguard Scan</Text>
+            {localEquityFindings.map((finding) => (
+              <View style={styles.flagItem} key={finding.id}>
+                <Text style={styles.flagTag}>{finding.category}</Text>
+                <Text style={styles.flagBody}>{finding.explanation}</Text>
+                <Text style={styles.reframeTag}>Required Safeguard Action:</Text>
+                <Text style={styles.reframeBody}>{finding.reframe}</Text>
+              </View>
+            ))}
+            <View style={styles.scoreRow}>
+              <TouchableOpacity
+                style={[styles.analyzeButton, { flex: 1, backgroundColor: '#0F766E' }]}
+                onPress={() => router.push('/reunification-support' as any)}
+              >
+                <Text style={styles.analyzeButtonText}>Open ECS & Waitlist Tolling</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.analyzeButton, { flex: 1, backgroundColor: '#1E40AF' }]}
+                onPress={() => router.push('/concerns' as any)}
+              >
+                <Text style={styles.analyzeButtonText}>File Right-of-Reply Contest</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        )}
 
         {analysis && (
           <View style={styles.resultsCard}>

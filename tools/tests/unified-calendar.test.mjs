@@ -8,6 +8,7 @@ const {
   getUpcomingEvents,
   createCalendarEvent,
   markEventCompleted,
+  excuseEventForSystemicBarrier,
   DEFAULT_MOCK_EVENTS,
 } = await importTypeScriptModule('../../lib/family/unifiedCalendarService.ts');
 
@@ -110,4 +111,30 @@ test('markEventCompleted transitions event completion state', async () => {
   const notFound = await markEventCompleted('non_existent_event_id');
   assert.equal(notFound.success, false);
   assert.match(notFound.error, /not found/i);
+});
+
+test('createCalendarEvent and excuseEventForSystemicBarrier support fatherhood accommodations, transit vouchers, and excused systemic barriers', async () => {
+  const createRes = await createCalendarEvent({
+    caseId: 'demo_case',
+    title: 'Father-Child Evening Community Visit',
+    eventType: 'contact_visit',
+    startTime: '2026-11-22T18:00:00Z',
+    locationType: 'community',
+    fatherInclusiveSchedule: true,
+    transitSupportProvided: true,
+    prePostVisitBufferMinutes: 15,
+  });
+
+  assert.equal(createRes.success, true);
+  assert.equal(createRes.event.fatherInclusiveSchedule, true);
+  assert.equal(createRes.event.transitSupportProvided, true);
+  assert.equal(createRes.event.prePostVisitBufferMinutes, 15);
+
+  const excuseRes = await excuseEventForSystemicBarrier(
+    createRes.event.id,
+    'Regional rail strike — transit voucher rescheduled to Saturday morning'
+  );
+  assert.equal(excuseRes.success, true);
+  assert.equal(excuseRes.event.excusedBySystemicBarrier, true);
+  assert.match(excuseRes.event.systemicBarrierReason, /Regional rail strike/);
 });

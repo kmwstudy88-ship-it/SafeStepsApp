@@ -28,6 +28,13 @@ const CULTURAL_SAFETY_RULES = [
     impact: 'Disregards cultural identity, community connection, and culturally grounded protective factors.',
     alternative: 'Consult with culturally appropriate community organizations, family-led decision makers, or cultural advisors.',
   },
+  {
+    issue: 'paternal_and_fatherhood_network_exclusion',
+    severity: 'high',
+    pattern: /\b(father\s+not\s+contacted|paternal\s+relatives\s+excluded|mothers[-\s]?only\s+program|ignored\s+paternal\s+kinship)\b/i,
+    impact: 'Excludes the father and paternal kinship network from case planning, family time, and placement consideration.',
+    alternative: 'Conduct active fatherhood outreach, include paternal kin in safety circles and kinship assessments, and ensure gender-inclusive parenting coaching.',
+  },
 ];
 
 async function culturalSafetyHandler({ input = {} }) {

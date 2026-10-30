@@ -1164,6 +1164,406 @@ export const PARENT_LESSON_WORKBOOKS: ParentLessonWorkbook[] = [
       completeSubtext: "You're making a difference every day.",
     },
   },
+  {
+    id: 'abc_ec_following_lead_and_nurturance',
+    title: 'ABC-EC: Following the Lead & Nurturance',
+    durationLabel: '30-Minute Lesson',
+    theme: {
+      id: 'abc_warm_amber',
+      background: '#FFFDF7',
+      cardBackground: '#FFFFFF',
+      cardBorder: '#F3E3C3',
+      accentPrimary: '#9C4221',
+      accentSecondary: '#2B6CB0',
+      accentSoft: '#FEEBC8',
+      accentTint: '#FFFFAF0',
+      headingColor: '#652B19',
+      bodyColor: '#4A2B1D',
+      mutedColor: '#8C624C',
+      badgeBg: '#FBD38D',
+      badgeText: '#652B19',
+      buttonBg: '#9C4221',
+      buttonText: '#FFFFFF',
+      bannerBg: '#FEFCBF',
+      bannerBorder: '#F6E05E',
+      heartIcon: '#DD6B20',
+    },
+    page1: {
+      introText:
+        'Attachment and Biobehavioral Catch-up (ABC-EC) focuses on three powerful in-the-moment habits: offering warm nurturance when your child is distressed, following their lead with delight during play, and keeping your voice and body calm and non-frightening.',
+      learningOutcomes: [
+        'offer immediate comfort when your child is upset or clingy',
+        'follow your child’s lead during everyday play without taking over',
+        'share genuine delight in your child’s small actions',
+        'keep tone and posture calm and predictable during stress',
+        'practise 5-minute in-the-moment connection during visits or at home',
+      ],
+      lessonPlan: [
+        { icon: '✏️', duration: '5 min', label: 'your definition' },
+        { icon: '💬', duration: '5 min', label: 'check-in' },
+        { icon: '💡', duration: '10 min', label: 'three ABC targets' },
+        { icon: '🧸', duration: '10 min', label: 'in-the-moment practice' },
+        { icon: '🧡', duration: '5 min', label: 'reflection & wrap-up' },
+      ],
+    },
+    page2: {
+      heading: 'Before You Start',
+      subheading: 'Your Definition',
+      introText:
+        'Before we explore ABC in-the-moment practice, reflect on what following your child’s lead and comforting them means to you.',
+      mainQuestionLabel: 'Main Start Question',
+      mainQuestion: 'What does it look like when you follow your child’s lead during play or comfort them when they cry?',
+      tipText: 'Think about letting your child choose the game, copying their excitement, and holding them gently when they feel overwhelmed.',
+    },
+    page3: {
+      heading: 'Check-In & Warm-Up',
+      durationBadge: '5-Minute Check-In',
+      introText:
+        'Notice how your child signals when they want comfort or when they want you to join their play.',
+      questionsTitle: 'Quick Check-In Questions',
+      questions: [
+        'How does your child show they need comfort (even if they push away or act grumpy at first)?',
+        'What activity does your child love leading when you play together?',
+        'When is it hardest to let your child lead instead of directing or correcting?',
+      ],
+      ratingTitle: 'Quick Rating',
+      ratingPrompt: 'How natural does following your child’s lead feel right now?',
+      ratingLowLabel: 'Still learning',
+      ratingHighLabel: 'Feels natural',
+    },
+    page4: {
+      heading: 'The Three ABC In-the-Moment Targets',
+      durationBadge: '30-Minute Lesson',
+      sectionLabel: 'Key Learning',
+      introText:
+        'Children who have experienced separation or stress often send confusing signals. These three simple responses help their nervous system settle and trust.',
+      pillars: [
+        {
+          icon: '🫂',
+          title: 'Target 1: Nurturance When Distressed',
+          description:
+            'Even if a child acts fussy or turns away when hurt or scared, offer gentle, calm comfort so they learn you are their safe harbour.',
+        },
+        {
+          icon: '🎈',
+          title: 'Target 2: Following the Lead with Delight',
+          description:
+            'Let your child pick how to play, describe what they are doing, and light up with warmth when they show you something.',
+        },
+        {
+          icon: '🕊️',
+          title: 'Target 3: Calm, Non-Overwhelming Presence',
+          description:
+            'Soften your voice, lower your shoulders, and avoid sudden loud reactions so your child always feels physically and emotionally safe.',
+        },
+      ],
+      bottomBannerQuote: 'When you follow their lead in small moments, children feel deeply seen and valued.',
+    },
+    page5: {
+      heading: 'Why Following the Lead Can Feel Tricky',
+      sectionLabel: 'Key Learning',
+      introText:
+        'During supervised visits or busy evenings, parents often feel pressure to "teach" or "control" every moment. Stepping back to follow your child’s lead takes pressure off both of you.',
+      barriersTitle: 'Common Traps',
+      barriersIcon: '🚧',
+      barriers: [
+        'feeling watched during supervised visits and trying to make the child behave "perfectly"',
+        'asking too many quiz questions ("What colour is that?") instead of joining the play',
+        'misreading post-visit clinginess or fussiness as "spoiled" behaviour',
+        'taking over the toy to show the "right" way to build it',
+      ],
+      repairTitle: 'ABC In-the-Moment Shifts',
+      repairIcon: '🌱',
+      repairs: [
+        'narrate like a friendly sports announcer ("You put the green block right on top!")',
+        'copy their play gently (if they roll a car, roll a car beside them)',
+        'soothe first whenever tears show up ("I’m right here, you’re safe")',
+        'take one slow breath to soften your face and voice',
+      ],
+      bottomBannerQuote: 'You do not have to direct the play to be a wonderful parent—your warm attention is the gift.',
+    },
+    page6: {
+      heading: 'Activity 1:',
+      subtitle: 'In-the-Moment Narration Practice',
+      activityBadge: 'Practice Activity',
+      introText:
+        'Imagine your child hands you a crayon or stacks two cups during a visit or at home.',
+      formTitle: 'Practise Your ABC Responses',
+      prompts: [
+        'What can I say to describe what my child is doing without quizzing or correcting?',
+        'How can I show delight with my face, voice, or posture?',
+        'If my child gets frustrated when the tower falls, what nurturing words will I say?',
+      ],
+      ideasTitle: 'ABC Coaching Phrases',
+      ideas: [
+        'You stacked it so high!',
+        'I love watching you draw',
+        'Aw, that was loud—I have you',
+        'You chose the blue truck!',
+        'I am right here with you',
+        'Let’s do it your way',
+      ],
+    },
+    page7: {
+      heading: 'Activity 2:',
+      subtitle: 'My 5-Minute Lead-Following Plan',
+      activityBadge: 'Practice Activity',
+      introText:
+        'Five minutes of pure child-led play during a visit or at home builds powerful attachment security.',
+      formTitle: 'Plan Your Next Session',
+      prompts: [
+        'One simple toy or activity I will let my child lead:',
+        'One habit I will pause during those 5 minutes (e.g., no quiz questions):',
+        'One soothing gesture I will offer if goodbye time feels hard:',
+      ],
+      remindersTitle: 'Simple Strategy Reminders',
+      reminders: [
+        'describe, don’t quiz',
+        'mirror their play',
+        'light up with delight',
+        'comfort every tear',
+        'soft voice & posture',
+      ],
+      bottomBannerQuote: 'Five minutes of following your child’s lead strengthens trust for days.',
+    },
+    page8: {
+      heading: 'Reflection',
+      badgeLabel: 'Pause & Reflect',
+      introText:
+        'Reflect on how ABC in-the-moment connection supports your child’s sense of safety.',
+      questionsTitle: 'Reflection Questions',
+      questions: [
+        'Which of the three ABC targets (Nurturance, Following the Lead, Calm Presence) feels strongest for you right now?',
+        'Which target do you want to practise during your next family time?',
+        'How can your Parent Partner or support person encourage you after the visit?',
+      ],
+      selfCheckTitle: 'Quick Self-Check',
+      selfCheckItems: [
+        'I know how to narrate my child’s play instead of quizzing.',
+        'I can respond with warm nurturance when my child is distressed.',
+        'I have a 5-minute child-led play plan ready.',
+      ],
+    },
+    page9: {
+      heading: 'ABC-EC: Following the Lead & Nurturance',
+      subheading: 'Lesson Wrap-Up',
+      introText:
+        'Wonderful work! Every time you follow your child’s lead and comfort their distress, you help their brain and body feel safe with you.',
+      weeklyPlanTitle: 'This Week I Will...',
+      minutesPrefix: 'spend',
+      minutesSuffix: 'minutes following my child’s lead with zero quiz questions',
+      prompt2Label: 'use this nurturing comfort phrase:',
+      prompt3Label: 'share delight when my child:',
+      rememberTitle: 'Remember',
+      rememberItems: [
+        'comfort distress every time',
+        'follow their lead with delight',
+        'keep voice and body calm',
+        'connection matters more than perfection',
+      ],
+      completeHeading: 'Lesson Complete',
+      completeSubtext: "You're making a difference every day.",
+    },
+  },
+  {
+    id: 'pcit_pride_dyadic_play',
+    title: 'PCIT: PRIDE Dyadic Play & Calm Boundaries',
+    durationLabel: '30-Minute Lesson',
+    theme: {
+      id: 'pcit_ocean_blue',
+      background: '#F4F9FD',
+      cardBackground: '#FFFFFF',
+      cardBorder: '#CFE3F5',
+      accentPrimary: '#1A5276',
+      accentSecondary: '#117A65',
+      accentSoft: '#EBF5FB',
+      accentTint: '#F7FBFE',
+      headingColor: '#154360',
+      bodyColor: '#213B4D',
+      mutedColor: '#5D788A',
+      badgeBg: '#D4E6F1',
+      badgeText: '#154360',
+      buttonBg: '#1A5276',
+      buttonText: '#FFFFFF',
+      bannerBg: '#E8F8F5',
+      bannerBorder: '#A3E4D7',
+      heartIcon: '#1F618D',
+    },
+    page1: {
+      introText:
+        'Parent-Child Interaction Therapy (PCIT) uses the PRIDE skills—Labeled Praise, Reflection, Imitation, Behavioral Description, and Enjoyment—to build a warm emotional bank account before setting calm, predictable boundaries.',
+      learningOutcomes: [
+        'use specific Labeled Praises so your child knows what they did well',
+        'reflect your child’s calm words to show you are listening',
+        'imitate and describe your child’s positive play',
+        'avoid commands, criticisms, and rapid-fire questions during special play',
+        'pair warm PRIDE connection with calm, predictable transitions',
+      ],
+      lessonPlan: [
+        { icon: '✏️', duration: '5 min', label: 'your definition' },
+        { icon: '💬', duration: '5 min', label: 'check-in' },
+        { icon: '🌟', duration: '10 min', label: 'the 5 PRIDE skills' },
+        { icon: '🧩', duration: '10 min', label: 'practice & scripts' },
+        { icon: '💙', duration: '5 min', label: 'reflection & wrap-up' },
+      ],
+    },
+    page2: {
+      heading: 'Before You Start',
+      subheading: 'Your Definition',
+      introText:
+        'Think about how your child reacts when you notice and praise something specific they are doing well.',
+      mainQuestionLabel: 'Main Start Question',
+      mainQuestion: 'What happens to your child’s face and posture when they feel genuinely praised and enjoyed by you?',
+      tipText: 'Notice how specific warmth ("Thank you for gentle hands!") works better than vague words ("Good job").',
+    },
+    page3: {
+      heading: 'Check-In & Warm-Up',
+      durationBadge: '5-Minute Check-In',
+      introText:
+        'Let’s check in on how play and limit-setting feel during your visits or routines at home.',
+      questionsTitle: 'Quick Check-In Questions',
+      questions: [
+        'What positive behaviours do you love seeing in your child?',
+        'Which PRIDE skill (Praise, Reflect, Imitate, Describe, Enjoy) do you already use naturally?',
+        'When transitions or pack-up time arrive, what helps keep the mood calm?',
+      ],
+      ratingTitle: 'Quick Rating',
+      ratingPrompt: 'How strong does your PRIDE play connection feel today?',
+      ratingLowLabel: 'Building up',
+      ratingHighLabel: 'Very strong',
+    },
+    page4: {
+      heading: 'What Are the PCIT PRIDE Skills?',
+      durationBadge: '30-Minute Lesson',
+      sectionLabel: 'Key Learning',
+      introText:
+        'Five minutes of daily PRIDE Special Play fills your child’s emotional tank and reduces power struggles.',
+      pillars: [
+        {
+          icon: '👏',
+          title: 'P — Labeled Praise & R — Reflection',
+          description:
+            'Name the exact behaviour you appreciate ("Thank you for picking up the blocks!") and repeat back your child’s calm words.',
+        },
+        {
+          icon: '🪞',
+          title: 'I — Imitation & D — Description',
+          description:
+            'Play with the same toy in the same way and describe their actions ("You are drawing a big sunny circle").',
+        },
+        {
+          icon: '😊',
+          title: 'E — Enjoyment & Calm Predictability',
+          description:
+            'Let your warmth show in your voice and smile, then give a calm 5-minute warning before pack-up time.',
+        },
+      ],
+      bottomBannerQuote: 'Labeled praise grows the exact behaviour you want to see more of.',
+    },
+    page5: {
+      heading: 'Replacing Criticism with PRIDE Connection',
+      sectionLabel: 'Key Learning',
+      introText:
+        'When parents are exhausted or under agency scrutiny, it is easy to slip into commands or corrections. Shifting to PRIDE keeps the relationship warm and cooperative.',
+      barriersTitle: 'What Drains Special Play',
+      barriersIcon: '⚡',
+      barriers: [
+        'vague praise ("Be good") that doesn’t tell the child what to do',
+        'stringing together commands ("Sit down, stop touching that, hurry up")',
+        'waiting until behaviour escalates before giving attention',
+        'abruptly ending play without a transition warning',
+      ],
+      repairTitle: 'PRIDE Replacements',
+      repairIcon: '🌟',
+      repairs: [
+        'catch your child being calm and give a Labeled Praise right away',
+        'reflect their words ("You said the dinosaur is hungry!")',
+        'give one clear, calm instruction at a time when needed',
+        'use a 5-minute and 2-minute transition countdown before handover',
+      ],
+      bottomBannerQuote: 'Attention is like fertilizer—whatever you water with warm attention will grow.',
+    },
+    page6: {
+      heading: 'Activity 1:',
+      subtitle: 'Turn Vague Praise into Labeled Praise',
+      activityBadge: 'Practice Activity',
+      introText:
+        'Practise turning everyday moments into specific PCIT Labeled Praises and Behavioral Descriptions.',
+      formTitle: 'Write Your PRIDE Lines',
+      prompts: [
+        'Write one Labeled Praise for when your child shares or uses gentle hands:',
+        'Write one Behavioral Description for drawing, building, or eating together:',
+        'Write one calm 5-minute transition phrase for the end of a visit:',
+      ],
+      ideasTitle: 'PRIDE Examples',
+      ideas: [
+        'Thank you for using a calm indoor voice!',
+        'I love how gently you petted the dog!',
+        'You are putting all the red cars in a line.',
+        'Thank you for holding my hand in the carpark.',
+      ],
+    },
+    page7: {
+      heading: 'Activity 2:',
+      subtitle: 'My PRIDE Special Play Routine',
+      activityBadge: 'Practice Activity',
+      introText:
+        'Build a simple 5-minute PRIDE Special Play routine for your next contact visit or home afternoon.',
+      formTitle: 'Build Your PRIDE Plan',
+      prompts: [
+        'The 5-minute activity I will use for PRIDE Special Play:',
+        'My favourite Labeled Praise I will say at least 3 times:',
+        'How I will calmly bridge the transition at the end of play:',
+      ],
+      remindersTitle: 'PRIDE Quick Check',
+      reminders: [
+        'P — Labeled Praise',
+        'R — Reflect words',
+        'I — Imitate play',
+        'D — Describe actions',
+        'E — Enjoy together',
+      ],
+      bottomBannerQuote: 'Warm PRIDE play makes calm boundaries ten times easier.',
+    },
+    page8: {
+      heading: 'Reflection',
+      badgeLabel: 'Pause & Reflect',
+      introText:
+        'Pause to notice how PRIDE skills support both your confidence and your child’s cooperation.',
+      questionsTitle: 'Reflection Questions',
+      questions: [
+        'Which PRIDE skill feels most helpful for your child’s age and temperament?',
+        'How does giving Labeled Praise change the atmosphere during a visit?',
+        'What is one transition moment where a 5-minute warning + Labeled Praise will help this week?',
+      ],
+      selfCheckTitle: 'Quick Self-Check',
+      selfCheckItems: [
+        'I can name all 5 PRIDE skills.',
+        'I have 2 specific Labeled Praises ready for my next visit.',
+        'I can pair warm play with a calm 5-minute transition warning.',
+      ],
+    },
+    page9: {
+      heading: 'PCIT: PRIDE Dyadic Play & Calm Boundaries',
+      subheading: 'Lesson Wrap-Up',
+      introText:
+        'Fantastic effort! Practising PRIDE skills turns everyday play into verified attachment repair and emotional safety.',
+      weeklyPlanTitle: 'This Week I Will...',
+      minutesPrefix: 'practise',
+      minutesSuffix: 'minutes of PRIDE Special Play with my child',
+      prompt2Label: 'use this specific Labeled Praise:',
+      prompt3Label: 'use this calm transition countdown:',
+      rememberTitle: 'Remember',
+      rememberItems: [
+        'specific praise builds confidence',
+        'reflecting words shows deep listening',
+        'warm play comes before correction',
+        'predictable countdowns ease goodbyes',
+      ],
+      completeHeading: 'Lesson Complete',
+      completeSubtext: "You're making a difference every day.",
+    },
+  },
 ];
 
 const DEFAULT_THEME_PALETTES: LessonThemePalette[] = [

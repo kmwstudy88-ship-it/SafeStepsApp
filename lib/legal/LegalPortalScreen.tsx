@@ -15,10 +15,12 @@ import {
   getConcernByConcernProgress,
   getDisclosureBundles,
   generateBundleAccessReceipt,
+  getStatutoryDefenseFilings,
   AuthorizedLegalCase,
   VerifiedChronologyEvent,
   ConcernProgressTracking,
   DisclosureBundle,
+  StatutoryDefenseFiling,
 } from './legalPortalService';
 
 interface Props {
@@ -34,6 +36,7 @@ export function LegalPortalScreen({ onBack }: Props) {
   const [chronology, setChronology] = useState<VerifiedChronologyEvent[]>([]);
   const [concerns, setConcerns] = useState<ConcernProgressTracking[]>([]);
   const [bundles, setBundles] = useState<DisclosureBundle[]>([]);
+  const [statutoryFilings, setStatutoryFilings] = useState<StatutoryDefenseFiling[]>([]);
   const [downloadingBundleId, setDownloadingBundleId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -56,14 +59,16 @@ export function LegalPortalScreen({ onBack }: Props) {
   }, []);
 
   const loadCaseData = async (caseId: string) => {
-    const [chron, conc, bndl] = await Promise.all([
+    const [chron, conc, bndl, filings] = await Promise.all([
       getCaseVerifiedChronology(caseId),
       getConcernByConcernProgress(caseId),
       getDisclosureBundles(caseId),
+      getStatutoryDefenseFilings(caseId),
     ]);
     setChronology(chron);
     setConcerns(conc);
     setBundles(bndl);
+    setStatutoryFilings(filings);
   };
 
   const handleSelectCase = async (c: AuthorizedLegalCase) => {
@@ -360,6 +365,39 @@ export function LegalPortalScreen({ onBack }: Props) {
                 </TouchableOpacity>
               </View>
             ))}
+
+            {statutoryFilings.length > 0 && (
+              <>
+                <Text style={[styles.sectionHeading, { marginTop: 10 }]}>
+                  Statutory Safeguard Filings (Waitlist Tolling & Poverty ≠ Neglect)
+                </Text>
+                {statutoryFilings.map((filing) => (
+                  <View key={filing.id} style={styles.card}>
+                    <View style={styles.cardHeaderRow}>
+                      <Text style={styles.bundleVersion}>
+                        {filing.filingType.replace(/_/g, ' ').toUpperCase()}
+                      </Text>
+                      <View style={[styles.catBadge, { backgroundColor: '#EFF6FF' }]}>
+                        <Text style={[styles.catBadgeText, { color: '#1D4ED8' }]}>STATUTORY RECORD</Text>
+                      </View>
+                    </View>
+                    <Text style={styles.cardTitle}>{filing.title}</Text>
+                    <Text style={styles.meta}>Authority: {filing.statutoryAuthority}</Text>
+                    <Text style={styles.eventSummary}>{filing.factualGrounds}</Text>
+                    {filing.daysTolledRequested !== undefined && (
+                      <Text style={styles.expiryText}>
+                        ⏸️ Permanency Clock Tolled: {filing.daysTolledRequested} Days (Agency Waitlist)
+                      </Text>
+                    )}
+                    {filing.ecsStabilizationAmountAud !== undefined && (
+                      <Text style={[styles.expiryText, { color: '#166534' }]}>
+                        💵 ECS Material Stabilization: ${filing.ecsStabilizationAmountAud} AUD
+                      </Text>
+                    )}
+                  </View>
+                ))}
+              </>
+            )}
           </View>
         )}
       </ScrollView>

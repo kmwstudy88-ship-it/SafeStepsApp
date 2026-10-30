@@ -37,6 +37,10 @@ async function caseUpdateHandler({ input = {} }) {
       behavioral_cues: extractedSignals.behavioral.map((f) => f.key),
       contextual_factors: extractedSignals.contextual.map((f) => f.key),
       protective_factors: extractedSignals.protective.map((f) => f.key),
+      material_hardship_signals: (extractedSignals.materialHardship || []).map((f) => f.key),
+      contact_mitigating_barriers: (
+        extractedSignals.structuralBarriers || extractedSignals.contactMitigatingBarriers || []
+      ).map((f) => f.key),
       hard_flags: extractedSignals.hardFlags,
     },
     verification_status: 'pending_human_verification',
@@ -47,6 +51,16 @@ async function caseUpdateHandler({ input = {} }) {
   ];
   if (extractedSignals.protective.length === 0) {
     reviewNotes.push('Check whether protective factors or family strengths observed during this event should be recorded.');
+  }
+  if ((extractedSignals.materialHardship || []).length > 0) {
+    reviewNotes.push(
+      'Poverty != Neglect Safeguard: Material hardship signals detected; route to Economic & Concrete Supports (ECS) rather than escalating child-safety risk.',
+    );
+  }
+  if ((extractedSignals.structuralBarriers || extractedSignals.contactMitigatingBarriers || []).length > 0) {
+    reviewNotes.push(
+      'Systemic contact barrier detected; verify whether missed/rescheduled contact should be excused and compliance clocks tolled.',
+    );
   }
   if (extractedSignals.hardFlags.length > 0) {
     reviewNotes.push(`High-priority flags detected (${extractedSignals.hardFlags.join(', ')}); route to supervisor immediately.`);

@@ -12,9 +12,11 @@
 
 export type SupportRoleType =
   | "primary_kinship"
+  | "paternal_kinship"
   | "secondary_backup"
   | "emergency_30min_responder"
   | "cultural_community_mentor"
+  | "lived_experience_parent_partner"
   | "professional_provider";
 
 export type KinshipCircleMember = {
@@ -34,6 +36,7 @@ export type KinshipSafetyCircleInput = {
   caseId: string;
   familyId: string;
   members: KinshipCircleMember[];
+  paternalRelativesConsidered?: boolean;
   excludedIndividuals?: {
     name: string;
     relationship: string;
@@ -52,6 +55,8 @@ export type KinshipSafetyCircleResult = {
   hasPrimarySupport: boolean;
   hasThirtyMinuteResponder: boolean;
   hasIndependentBackup: boolean;
+  hasParentPartnerMentor: boolean;
+  paternalKinshipIncluded: boolean;
   boundaryBreachRiskIdentified: boolean;
   identifiedGaps: string[];
   recommendedActions: string[];
@@ -116,6 +121,24 @@ export function evaluateKinshipSafetyCircle(
     );
   }
 
+  // Check 5: Paternal kinship inclusion & Lived-Experience Parent Partner
+  const hasParentPartnerMentor = vettedMembers.some(
+    (m) => m.roleType === "lived_experience_parent_partner" && m.contactConfirmed,
+  );
+  const paternalKinshipIncluded = vettedMembers.some(
+    (m) =>
+      m.roleType === "paternal_kinship" ||
+      /paternal|father/i.test(m.relationship),
+  );
+  if (input.paternalRelativesConsidered === false && !paternalKinshipIncluded) {
+    identifiedGaps.push(
+      "Paternal kinship network has not been explored (mother-centric network bias risk).",
+    );
+    recommendedActions.push(
+      "Conduct proactive paternal relative outreach to expand the family's kinship and respite safety net.",
+    );
+  }
+
   // Determine resilience tier
   let tier: SafetyCircleResilienceTier = "robust";
   if (boundaryBreachRisk || vettedMembers.length === 0) {
@@ -134,6 +157,8 @@ export function evaluateKinshipSafetyCircle(
     hasPrimarySupport,
     hasThirtyMinuteResponder,
     hasIndependentBackup,
+    hasParentPartnerMentor,
+    paternalKinshipIncluded,
     boundaryBreachRiskIdentified: boundaryBreachRisk,
     identifiedGaps,
     recommendedActions,

@@ -17,6 +17,11 @@ export type ExtractionStatus =
   | 'disputed_by_parent'
   | 'dismissed';
 
+export type StructuralBiasFlag =
+  | 'poverty_conflated_with_neglect'
+  | 'agency_waitlist_penalized'
+  | 'paternal_exclusion';
+
 export interface ExtractedConcern {
   id: string;
   documentId: string;
@@ -30,6 +35,8 @@ export interface ExtractedConcern {
   status: ExtractionStatus;
   verifiedBy?: string;
   parentDisputeNote?: string;
+  structuralBiasFlag?: StructuralBiasFlag;
+  recommendedEcsOrSafeguard?: string;
   createdAt: string;
 }
 
@@ -223,4 +230,45 @@ export async function resolveContradiction(
 
   localIntelligenceStore.set(caseId, data);
   return { success: true, contradiction: { ...contra } };
+}
+
+/**
+ * Scans extracted document concerns for systemic child-welfare bias patterns:
+ * 1) Conflating material hardship/poverty with child neglect
+ * 2) Penalizing parents for agency/provider waitlists or transit delays
+ */
+export async function auditExtractedConcernsForSystemicBias(
+  caseId: string
+): Promise<{
+  flaggedConcerns: ExtractedConcern[];
+  totalFlagged: number;
+}> {
+  const data = localIntelligenceStore.get(caseId) || localIntelligenceStore.get('demo_case');
+  if (!data) return { flaggedConcerns: [], totalFlagged: 0 };
+
+  const waitlistRegex = /\b(?:waitlist|waiting list|delayed|provider capacity|escort|rescheduled)\b/i;
+  const povertyRegex = /\b(?:eviction|rent arrears|utility|electricity|food insecurity|groceries|homeless|bus fare|car repair)\b/i;
+
+  const flagged: ExtractedConcern[] = [];
+
+  for (const concern of data.concerns) {
+    const combinedText = `${concern.concernTitle} ${concern.exactQuote} ${concern.parentDisputeNote || ''}`;
+    if (waitlistRegex.test(combinedText)) {
+      concern.structuralBiasFlag = 'agency_waitlist_penalized';
+      concern.recommendedEcsOrSafeguard =
+        'Pause statutory compliance clock for agency/provider or transport delay outside parental control.';
+      flagged.push({ ...concern });
+    } else if (povertyRegex.test(combinedText)) {
+      concern.structuralBiasFlag = 'poverty_conflated_with_neglect';
+      concern.recommendedEcsOrSafeguard =
+        'Decouple material hardship from child neglect; route to Economic & Concrete Supports (ECS).';
+      flagged.push({ ...concern });
+    }
+  }
+
+  localIntelligenceStore.set(caseId, data);
+  return {
+    flaggedConcerns: flagged,
+    totalFlagged: flagged.length,
+  };
 }

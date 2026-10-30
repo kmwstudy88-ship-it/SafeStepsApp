@@ -30,6 +30,26 @@ const TIER_SCHEDULES = {
       { task_id: 'routine_support_review', title: 'Complete routine supportive check-in and celebrate milestone progress', priority: 'low' },
     ],
   },
+  post_reunification_step_down: {
+    dueWindow: 'graduated 30/60/90/180/365-day post-return cadence',
+    tasks: [
+      {
+        task_id: 'ecs_stability_checkin',
+        title: 'Verify ongoing Economic & Concrete Supports (ECS) housing, childcare, and utility stability to prevent the post-reunification service cliff',
+        priority: 'medium',
+      },
+      {
+        task_id: 'parent_partner_peer_checkin',
+        title: 'Offer non-surveilled Parent Partner peer mentor check-in and voluntary respite care support',
+        priority: 'low',
+      },
+      {
+        task_id: 'voluntary_dyadic_coaching_offer',
+        title: 'Provide optional ABC/PCIT relational transition support without punitive compliance scoring',
+        priority: 'low',
+      },
+    ],
+  },
 };
 
 async function followUpSchedulingHandler({ input = {} }) {

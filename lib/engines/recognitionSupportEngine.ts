@@ -16,14 +16,23 @@ export type AccessibilityInput = {
   reasonableAdjustmentsRecorded: boolean;
 };
 
+export type StructuralEquityInput = {
+  materialHardshipIdentified: boolean;
+  economicConcreteSupportOffered: boolean;
+  hyperSurveillanceDisparityRiskIdentified?: boolean;
+  disparityAndBiasAuditCompleted?: boolean;
+  livedExperienceParentPartnerOffered?: boolean;
+};
+
 export type RecognitionSupportPlanInput = {
   culturalSafety: CulturalSafetyInput;
   accessibility: AccessibilityInput;
+  structuralEquity?: StructuralEquityInput;
 };
 
 export type RecognitionSupportGap = {
   id: string;
-  domain: "cultural_safety" | "accessibility";
+  domain: "cultural_safety" | "accessibility" | "structural_equity";
   label: string;
   severity: "required" | "recommended";
 };
@@ -133,12 +142,45 @@ export function buildRecognitionSupportPlan(input: RecognitionSupportPlanInput):
     }
   }
 
+  const structuralEquity = input.structuralEquity;
+  if (structuralEquity) {
+    if (structuralEquity.materialHardshipIdentified && !structuralEquity.economicConcreteSupportOffered) {
+      gaps.push({
+        id: "economic-concrete-support",
+        domain: "structural_equity",
+        label: "Provide Economic & Concrete Supports (ECS) before treating material hardship as neglect.",
+        severity: "required",
+      });
+    }
+    if (
+      structuralEquity.hyperSurveillanceDisparityRiskIdentified &&
+      !structuralEquity.disparityAndBiasAuditCompleted
+    ) {
+      gaps.push({
+        id: "disparity-bias-audit",
+        domain: "structural_equity",
+        label: "Complete a racial/spatial equity and bias check before escalating removal or substantiation.",
+        severity: "required",
+      });
+    }
+    if (structuralEquity.livedExperienceParentPartnerOffered === false) {
+      gaps.push({
+        id: "parent-partner-peer-mentor",
+        domain: "structural_equity",
+        label: "Offer a lived-experience Parent Partner peer mentor to counter institutional distrust.",
+        severity: "recommended",
+      });
+    }
+  }
+
   const requiredGapCount = gaps.filter((gap) => gap.severity === "required").length;
   const evidenceTags = [
     ...(culturalSafetyRequired ? ["cultural_safety"] : []),
     ...(accessibilityRequired ? ["accessibility"] : []),
     ...(accessibility.easyReadRequired ? ["easy_read"] : []),
     ...(culturalSafety.aboriginalControlledServiceInvolved ? ["aboriginal_controlled_service"] : []),
+    ...(structuralEquity?.economicConcreteSupportOffered ? ["economic_concrete_support"] : []),
+    ...(structuralEquity?.livedExperienceParentPartnerOffered ? ["parent_partner_offered"] : []),
   ];
 
   return {

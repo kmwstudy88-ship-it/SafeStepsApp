@@ -41,6 +41,14 @@ export type SeriousDecisionStatus =
   | 'rejected'
   | 'more_evidence_required';
 
+export interface StructuralEquityCheck {
+  povertyDecoupledFromNeglect: boolean;
+  agencyWaitlistsAccountedFor: boolean;
+  fatherhoodInclusionVerified: boolean;
+  kinshipParityChecked: boolean;
+  postReunificationStepDownVerified?: boolean;
+}
+
 export interface SeriousDecisionReview {
   id: string;
   caseId: string;
@@ -51,6 +59,7 @@ export interface SeriousDecisionReview {
   parentPerspective: string;
   riskTier: 'low' | 'moderate' | 'high' | 'critical';
   status: SeriousDecisionStatus;
+  structuralEquityCheck?: StructuralEquityCheck;
   supervisorRationale?: string;
   reviewedBy?: string;
   reviewedAt?: string;
@@ -332,4 +341,72 @@ export async function resolveContradictionItem(
  */
 export async function getSupervisorAuditTrail(limit: number = 20): Promise<SupervisorAuditEntry[]> {
   return auditTrail.slice(0, limit);
+}
+
+/**
+ * Verifies that a serious case decision has accounted for structural child-welfare
+ * blind spots: decoupling poverty from neglect, tolling agency waitlists, including
+ * fathers, and ensuring kinship placement parity.
+ */
+export async function verifyDecisionStructuralEquity(
+  decisionId: string,
+  check: StructuralEquityCheck,
+  supervisorId: string
+): Promise<{
+  success: boolean;
+  review?: SeriousDecisionReview;
+  equityPassed: boolean;
+  unmetSafeguards: string[];
+  error?: string;
+}> {
+  seedStore();
+  const review = seriousDecisionsStore.get(decisionId);
+  if (!review) {
+    return {
+      success: false,
+      equityPassed: false,
+      unmetSafeguards: [],
+      error: 'Decision review not found',
+    };
+  }
+
+  const unmetSafeguards: string[] = [];
+  if (!check.povertyDecoupledFromNeglect) {
+    unmetSafeguards.push('Material hardship / poverty has not been separated from child neglect allegations (ECS safeguard required).');
+  }
+  if (!check.agencyWaitlistsAccountedFor) {
+    unmetSafeguards.push('Agency/provider waitlists or transit barriers have not been tolled on the compliance clock.');
+  }
+  if (!check.fatherhoodInclusionVerified) {
+    unmetSafeguards.push('Proactive paternal outreach and fatherhood-inclusive scheduling have not been verified.');
+  }
+  if (!check.kinshipParityChecked) {
+    unmetSafeguards.push('Kinship caregiver stipend parity and non-safety licensing waivers have not been verified.');
+  }
+  if (review.decisionType === 'case_closure' && check.postReunificationStepDownVerified === false) {
+    unmetSafeguards.push('12-month Post-Reunification Step-Down Support Plan is not active prior to case closure.');
+  }
+
+  review.structuralEquityCheck = { ...check };
+  seriousDecisionsStore.set(decisionId, review);
+
+  const equityPassed = unmetSafeguards.length === 0;
+  auditTrail.unshift({
+    id: `audit_${Date.now()}`,
+    action: equityPassed ? 'structural_equity_verified' : 'structural_equity_gaps_flagged',
+    targetType: 'serious_decision',
+    targetId: decisionId,
+    actorId: supervisorId,
+    timestamp: new Date().toISOString(),
+    notes: equityPassed
+      ? 'All structural equity safeguards verified (poverty decoupled, waitlists tolled, fatherhood & kinship equity confirmed).'
+      : `Unmet safeguards: ${unmetSafeguards.join(' | ')}`,
+  });
+
+  return {
+    success: true,
+    review: { ...review },
+    equityPassed,
+    unmetSafeguards,
+  };
 }

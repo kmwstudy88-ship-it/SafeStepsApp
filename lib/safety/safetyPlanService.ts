@@ -16,6 +16,14 @@ export interface TrustedContact {
   isQuickDial: boolean;
 }
 
+export interface PostReunificationStepDownSafetySection {
+  activePhase: 'months_1_3_intensive' | 'months_4_6_transitional' | 'months_7_12_community_sustained';
+  parentPartnerMentorName: string;
+  parentPartnerMentorPhone: string;
+  childcareAndRespitePlan: string;
+  nonPunitiveEarlyHelpAttestation: boolean;
+}
+
 export interface SafetyPlan {
   id: string;
   caseId: string;
@@ -27,6 +35,7 @@ export interface SafetyPlan {
   childSteps: string;
   codeWord?: string;
   emergencyPlanActive: boolean;
+  postReunificationStepDownSection?: PostReunificationStepDownSafetySection;
   lastUpdated: string;
 }
 
@@ -63,6 +72,13 @@ export const DEFAULT_MOCK_SAFETY_PLAN: SafetyPlan = {
   childSteps: 'Look for the blue backpack cue, walk calmly to the front gate, wait with Joanne until safe.',
   codeWord: 'Blueberry',
   emergencyPlanActive: false,
+  postReunificationStepDownSection: {
+    activePhase: 'months_1_3_intensive',
+    parentPartnerMentorName: 'Tanya Williams (Certified Parent Partner)',
+    parentPartnerMentorPhone: '0422 888 444',
+    childcareAndRespitePlan: 'Subsidized community childcare (Mon-Thu) + Maternal Grandmother weekend respite.',
+    nonPunitiveEarlyHelpAttestation: true,
+  },
   lastUpdated: new Date().toISOString(),
 };
 
@@ -128,6 +144,18 @@ export function formatSafetyPlanSummary(plan: SafetyPlan): string {
     .map((c) => `- ${c.name} (${c.relationship}): ${c.phone}`)
     .join('\n');
 
+  const stepDownText = plan.postReunificationStepDownSection
+    ? `\n12-MONTH POST-REUNIFICATION STEP-DOWN & SAFE HARBOR:
+- Phase: ${plan.postReunificationStepDownSection.activePhase}
+- Parent Partner Peer Mentor: ${plan.postReunificationStepDownSection.parentPartnerMentorName} (${plan.postReunificationStepDownSection.parentPartnerMentorPhone})
+- Childcare & Respite Buffer: ${plan.postReunificationStepDownSection.childcareAndRespitePlan}
+- Non-Punitive Safe Harbor: ${
+        plan.postReunificationStepDownSection.nonPunitiveEarlyHelpAttestation
+          ? 'ACTIVE — Requesting concrete or respite support is treated as protective early help, never automatic re-removal.'
+          : 'Pending'
+      }\n`
+    : '';
+
   return `SAFESTEPS SAFETY PLAN (Updated: ${plan.lastUpdated.split('T')[0]})
 --------------------------------------------------
 WARNING SIGNS:
@@ -142,7 +170,7 @@ ${plan.goBagEssentials}
 CHILD ACTION STEPS:
 ${plan.childSteps}
 ${plan.codeWord ? `Code Word: "${plan.codeWord}"` : ''}
-
+${stepDownText}
 TRUSTED CONTACTS & CRISIS HELPLINES:
 ${contactsText}
 - Police & Emergency Services: 000 (24/7)

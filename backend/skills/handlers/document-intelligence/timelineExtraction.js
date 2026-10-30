@@ -9,7 +9,7 @@ const {
 const EXACT_DATE_PATTERN = /\b(\d{4}-\d{2}-\d{2}|\d{1,2}\/\d{1,2}\/\d{2,4}|(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:,\s*\d{4})?|\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)(?:\s+\d{4})?)\b/i;
 const APPROX_DATE_PATTERN = /\b(early\s+\d{4}|mid[-\s]\d{4}|late\s+\d{4}|last\s+(?:week|month|year)|(?:two|three|\d+)\s+(?:days|weeks|months)\s+ago|yesterday|on\s+(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday))\b/i;
 const VAGUE_TIME_PATTERN = /\b(recently|some\s+time\s+ago|previously|at\s+some\s+point|a\s+while\s+back|later\s+on)\b/i;
-const ACTOR_PATTERN = /\b(mother|father|parent|child|carer|caseworker|worker|supervisor|teacher|grandmother|grandfather|aunt|uncle)\b/ig;
+const ACTOR_PATTERN = /\b(mother|father|parent\s+partner|peer\s+mentor|parent|child|carer|caseworker|worker|supervisor|teacher|grandmother|grandfather|aunt|uncle|provider)\b/ig;
 
 function extractActors(text) {
   const matches = text.match(ACTOR_PATTERN) || [];
@@ -69,6 +69,11 @@ async function timelineExtractionHandler({ input = {} }) {
     } else if (vagueMatch) {
       chronologyGaps.push(
         `${item.locator}: Unanchored temporal phrase "${vagueMatch[1]}" leaves event sequence ambiguous.`,
+      );
+    }
+    if (!exactMatch && /\b(placed\s+on\s+waitlist|waiting\s+list|waitlisted\s+for)\b/i.test(item.text)) {
+      chronologyGaps.push(
+        `${item.locator}: Waitlist reference lacks an exact start date needed to calculate statutory compliance-clock tolling.`,
       );
     }
   }

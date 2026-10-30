@@ -25,6 +25,11 @@ test("PLAIN_LANGUAGE_GLOSSARY defines essential trauma-informed terms", () => {
   assert(PLAIN_LANGUAGE_GLOSSARY["procedural fairness"]);
   assert(PLAIN_LANGUAGE_GLOSSARY["restorative repair"]);
   assert(PLAIN_LANGUAGE_GLOSSARY["emotional dysregulation"]);
+  assert(PLAIN_LANGUAGE_GLOSSARY["material hardship"]);
+  assert(PLAIN_LANGUAGE_GLOSSARY["economic and concrete supports"]);
+  assert(PLAIN_LANGUAGE_GLOSSARY["compliance clock"]);
+  assert(PLAIN_LANGUAGE_GLOSSARY["parent partner"]);
+  assert(PLAIN_LANGUAGE_GLOSSARY["post-reunification step-down"]);
 });
 
 test("segmentTextForReadAloud splits sentences and paragraphs with stable IDs", () => {

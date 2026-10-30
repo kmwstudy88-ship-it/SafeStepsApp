@@ -59,6 +59,14 @@ async function casePacketBuilderHandler({ input = {} }) {
       content: 'Ensure practical barriers (transport, work hours, waitlists) are distinguished from engagement concerns.',
       source_count: documents.length,
     },
+    {
+      section_id: 'structural_equity_ecs_and_step_down',
+      title: 'Economic & Concrete Supports (ECS), Waitlist Tolling & 12-Month Step-Down Plan',
+      case_id: caseId,
+      content:
+        'Verify that poverty/material hardship is decoupled from neglect (routed to ECS flexible grants), provider waitlist delays toll the statutory compliance clock, and a graduated 12-month post-reunification step-down plan is active.',
+      source_count: documents.length,
+    },
   ];
 
   const openQuestions = [];
@@ -82,6 +90,12 @@ async function casePacketBuilderHandler({ input = {} }) {
       role: 'supervisor',
       status: 'pending_review',
       description: 'Confirm balanced inclusion of protective factors, cultural safety considerations, and barrier context.',
+    },
+    {
+      checkpoint_id: 'structural_equity_and_ecs_verification',
+      role: 'supervisor',
+      status: 'pending_review',
+      description: 'Confirm Poverty != Neglect separation, agency waitlist compliance-clock tolling, kinship parity, and 12-month step-down support.',
     },
   ];
 

@@ -29,7 +29,7 @@ The live inventory check reports:
 |---|---|---|
 | `assessment_instances` | Missing table | Do not create it as a second assessment-run model. Use `assessment_records`; update the inventory expectation in a separate migration/tooling change. |
 | `consent_records` | Missing table | Do not invent a generic replacement. Existing `governance_consents` and domain consent tables remain authoritative within their scopes. |
-| `community_service_referrals` | Missing `tenant_id` | Resolve its case/organization tenant boundary before claiming complete tenant enforcement. |
+| `community_service_referrals` | Missing `tenant_id` | Resolve its case/organization tenant boundary before claiming complete tenant enforcement. (Repository migration `20261030014500_reunification_architecture_safeguards.sql` adds `tenant_id → platform_tenants.id`, compliance-clock pause metadata, and canonical `cases.id`-anchored tables `case_concrete_support_requests`, `case_service_barrier_logs`, `case_parent_partner_sessions`, and `case_post_reunification_step_down_plans`.) |
 
 The latest recorded migration version is `20260829181644`. Catalog objects can exist without a matching repository filename; migration timestamps alone are not deployment evidence. The September document-intelligence queue/result tables are absent from this project.
 

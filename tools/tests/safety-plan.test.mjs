@@ -77,4 +77,7 @@ test('formatSafetyPlanSummary creates comprehensive offline readable text', asyn
   assert(summary.includes('CHILD ACTION STEPS:'));
   assert(summary.includes('000 (24/7)'));
   assert(summary.includes('13 11 14 (24/7)'));
+  assert(summary.includes('12-MONTH POST-REUNIFICATION STEP-DOWN & SAFE HARBOR:'));
+  assert(summary.includes('Tanya Williams (Certified Parent Partner)'));
+  assert(summary.includes('protective early help, never automatic re-removal'));
 });

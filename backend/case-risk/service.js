@@ -268,14 +268,48 @@ function assignmentForRole(assignments, role) {
   return assignments.find((item) => item.assignment_role === role)?.user_id || null;
 }
 
-function buildFollowUpTasks({ caseId, snapshot, previousSnapshot, assignments, rules = rulesFromEnv() }) {
+function buildConcreteSupportTasks({ caseId, snapshot, assignments = [], rules = rulesFromEnv() }) {
+  const ecsActions = snapshot?.material_hardship_assessment?.recommended_ecs_actions || [];
+  const workerAssignee = assignmentForRole(assignments, 'case_worker') || assignmentForRole(assignments, 'supervisor');
+
+  return ecsActions.map((action) => {
+    const fallback = rules.materialHardshipSignals?.[action.signal] || {};
+    const dueInHours = Number(action.due_in_hours ?? fallback.due_in_hours ?? 48);
+    return {
+      case_id: caseId,
+      task_type: action.task_type || fallback.task_type || `ecs_${action.signal}`,
+      title: action.title || fallback.title || `Provide concrete support for ${action.signal}`,
+      due_at: addHours(dueInHours),
+      priority: action.priority || fallback.priority || 'medium',
+      assignee: workerAssignee,
+      status: 'pending',
+      source: 'economic_concrete_supports',
+      allow_duplicates: false,
+      detail: decisionSupportDetail(snapshot, {
+        generated_by: snapshot.model_version,
+        ecs_category: action.ecs_category || fallback.ecs_category || 'material_support',
+        mitigates_signal: action.signal,
+        poverty_decoupled_from_neglect: true,
+      }),
+    };
+  });
+}
+
+function buildFollowUpTasks({
+  caseId,
+  snapshot,
+  previousSnapshot,
+  assignments,
+  rules = rulesFromEnv(),
+  includeConcreteSupportTasks = false,
+}) {
   const templates = rules.followUpTemplates[snapshot.tier] || [];
   const workerAssignee = assignmentForRole(assignments, 'case_worker') || assignmentForRole(assignments, 'supervisor');
   const supervisorAssignee = assignmentForRole(assignments, 'supervisor') || workerAssignee;
   const previousScore = Number(previousSnapshot?.score ?? 0);
   const riskIncreased = snapshot.score > previousScore;
 
-  return templates.map((template) => ({
+  const baseTasks = templates.map((template) => ({
     case_id: caseId,
     task_type: template.task_type,
     title: template.title,
@@ -292,6 +326,9 @@ function buildFollowUpTasks({ caseId, snapshot, previousSnapshot, assignments, r
       reprioritized: Boolean(previousSnapshot) && riskIncreased,
     }),
   }));
+
+  if (!includeConcreteSupportTasks) return baseTasks;
+  return [...baseTasks, ...buildConcreteSupportTasks({ caseId, snapshot, assignments, rules })];
 }
 
 function buildDashboardPayload({ cases, snapshots, alerts, tasks, timelineByCase }) {
@@ -635,6 +672,7 @@ function createCaseRiskService(adminClient = defaultAdminClient()) {
 
 module.exports = {
   assertCaseAccess,
+  buildConcreteSupportTasks,
   buildDashboardPayload,
   buildEscalationAlerts,
   buildFollowUpTasks,

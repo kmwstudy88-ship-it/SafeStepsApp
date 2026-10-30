@@ -65,6 +65,8 @@ export type ChallengeSafeguardMetadata = {
   supportsBreakWithoutPenalty: true;
   supportsSeparateChildReflection: boolean;
   noCovertAssessmentOrParentingScore: true;
+  povertyDecoupledFromAssessment: true;
+  supportsWaitlistPause: true;
   safeguardSummary: string;
   registerIds: readonly string[];
 };
@@ -82,6 +84,8 @@ export function getChallengeSafeguardMetadata(
     supportsBreakWithoutPenalty: true,
     supportsSeparateChildReflection: isFamily,
     noCovertAssessmentOrParentingScore: true,
+    povertyDecoupledFromAssessment: true,
+    supportsWaitlistPause: true,
     safeguardSummary: isFamily
       ? "Voluntary family & parent-child activity (SS-PCD-030). Pausing or skipping carries no penalty or adverse inference, and separate parent/child reflections are never used as a covert parenting capacity score (SS-PCD-045)."
       : "Personal parent skill & evidence practice (SS-TASK-001). You can pause for a break at any time without losing progress or streak continuity.",

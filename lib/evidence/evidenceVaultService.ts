@@ -16,7 +16,15 @@ export type EvidenceCategory =
   | 'Parenting Skills'
   | 'Home Environment'
   | 'Program Task'
+  | 'Systemic Waitlist / Barrier Proof'
+  | 'Economic & Concrete Support (ECS) Proof'
   | (string & {});
+
+export type SystemicBarrierProofType =
+  | 'agency_waitlist_letter'
+  | 'transit_disruption_notice'
+  | 'work_shift_roster'
+  | 'ecs_stabilization_receipt';
 
 export type EvidenceCaptureMode = 'live_camera' | 'upload' | 'gallery_upload';
 
@@ -60,6 +68,8 @@ export interface EvidenceRecord {
   reviewedAt?: string;
   disputed: boolean;
   disputeReason?: string;
+  systemicBarrierProofType?: SystemicBarrierProofType;
+  tollsComplianceClock?: boolean;
   chainOfCustody: ChainOfCustodyEntry[];
   createdAt: string;
 }
@@ -128,6 +138,8 @@ export interface DepositEvidenceInput {
   captureMode?: EvidenceCaptureMode;
   deviceTimestamp?: string;
   serverTimeForTesting?: string;
+  systemicBarrierProofType?: SystemicBarrierProofType;
+  tollsComplianceClock?: boolean;
 }
 
 /**
@@ -183,6 +195,8 @@ export async function depositEvidence(
     isLiveCaptured: isLive,
     status: 'pending_verification',
     disputed: false,
+    systemicBarrierProofType: input.systemicBarrierProofType,
+    tollsComplianceClock: input.tollsComplianceClock,
     chainOfCustody: [initialCustody],
     createdAt: serverTime,
   };
@@ -343,4 +357,33 @@ export function getEvidenceRecordsForCase(caseId: string): EvidenceRecord[] {
     }
   });
   return records.sort((a, b) => (b.createdAt > a.createdAt ? 1 : -1));
+}
+
+/**
+ * Deposits a cryptographically sealed proof of a systemic service barrier
+ * (e.g., agency provider waitlist letter, regional transit cancellation, or work-shift roster)
+ * to support ASFA / statutory compliance-clock tolling.
+ */
+export async function depositSystemicBarrierProof(input: {
+  caseId: string;
+  userId: string;
+  title: string;
+  proofType: SystemicBarrierProofType;
+  barrierDescription: string;
+  milestoneGoalId?: string;
+}): Promise<{ success: boolean; evidence: EvidenceRecord; offlineQueued?: boolean }> {
+  const isEcsReceipt = input.proofType === 'ecs_stabilization_receipt';
+  return depositEvidence({
+    caseId: input.caseId,
+    userId: input.userId,
+    title: input.title,
+    category: isEcsReceipt
+      ? 'Economic & Concrete Support (ECS) Proof'
+      : 'Systemic Waitlist / Barrier Proof',
+    milestoneGoalId: input.milestoneGoalId,
+    reflectionText: `[${input.proofType.toUpperCase()}] ${input.barrierDescription}`,
+    captureMode: 'upload',
+    systemicBarrierProofType: input.proofType,
+    tollsComplianceClock: !isEcsReceipt,
+  });
 }

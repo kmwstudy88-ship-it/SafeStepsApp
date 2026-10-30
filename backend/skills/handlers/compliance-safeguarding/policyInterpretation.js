@@ -42,6 +42,10 @@ async function policyInterpretationHandler({ input = {} }) {
       checkpoint: 'family_transparency_check',
       description: 'Explain expectations and review pathways to the family in clear, accessible language.',
     },
+    {
+      checkpoint: 'structural_equity_and_poverty_safeguard',
+      description: 'Verify that policy application separates poverty from neglect (ECS routing), tolls compliance clocks during agency waitlists, and honors kinship licensing waivers.',
+    },
   ];
 
   const citations = sentences.slice(0, 3).map((s) => `${s.locator} "${s.text}"`);

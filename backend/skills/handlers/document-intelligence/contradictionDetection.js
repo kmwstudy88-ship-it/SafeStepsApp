@@ -35,6 +35,13 @@ const TOPIC_RULES = [
     severity: 'high',
     explanation: 'Conflicting statements about substance screening results or sobriety status.',
   },
+  {
+    topic: 'waitlist_vs_noncompliance_attribution',
+    positive: /\b(on\s+waiting\s+list|waitlisted\s+by\s+provider|no\s+intake\s+slots|transit\s+cancelled)\b/i,
+    negative: /\b(parent\s+refused\s+to\s+start|non[-\s]?compliant\s+with\s+program|failed\s+to\s+engage\s+in\s+service)\b/i,
+    severity: 'high',
+    explanation: 'Document simultaneously notes an agency waitlist or transit cancellation while attributing the delay to parental non-compliance.',
+  },
 ];
 
 async function contradictionDetectionHandler({ input = {} }) {

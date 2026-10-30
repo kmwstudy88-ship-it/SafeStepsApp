@@ -51,6 +51,8 @@ export interface CasePlanAction {
   linkedEvidenceVaultIds?: string[];
   linkedRoute?: string;
   sequenceOrder: number;
+  complianceTimerPaused?: boolean;
+  systemicBarrierNote?: string;
 }
 
 export interface CasePlanGoal {
@@ -106,6 +108,7 @@ export interface CaseProgressSummary {
   demonstratedGoals: number;
   totalActions: number;
   completedActions: number;
+  pausedByBarrierActions?: number;
   domainProgress: Record<GoalDomain, { total: number; completed: number; percentage: number }>;
 }
 
@@ -334,6 +337,7 @@ export async function getCaseTasks(caseId: string): Promise<CaseTask[]> {
 export function calculateCaseProgress(plan: CasePlan): CaseProgressSummary {
   let totalActions = 0;
   let completedActions = 0;
+  let pausedByBarrierActions = 0;
   let demonstratedGoals = 0;
 
   const domainMap: Record<GoalDomain, { total: number; completed: number; percentage: number }> = {
@@ -352,6 +356,9 @@ export function calculateCaseProgress(plan: CasePlan): CaseProgressSummary {
 
     const domain = goal.goalDomain;
     goal.actions.forEach((act) => {
+      if (act.complianceTimerPaused) {
+        pausedByBarrierActions++;
+      }
       totalActions++;
       if (domainMap[domain]) {
         domainMap[domain].total++;
@@ -371,15 +378,17 @@ export function calculateCaseProgress(plan: CasePlan): CaseProgressSummary {
     d.percentage = d.total > 0 ? Math.round((d.completed / d.total) * 100) : 0;
   });
 
+  const effectiveTotal = Math.max(0, totalActions - pausedByBarrierActions);
   const overallPercentage =
-    totalActions > 0 ? Math.round((completedActions / totalActions) * 100) : 0;
+    effectiveTotal > 0 ? Math.round((completedActions / effectiveTotal) * 100) : totalActions > 0 ? 100 : 0;
 
   return {
-    overallPercentage,
+    overallPercentage: Math.min(100, overallPercentage),
     totalGoals: plan.goals.length,
     demonstratedGoals,
     totalActions,
     completedActions,
+    pausedByBarrierActions,
     domainProgress: domainMap,
   };
 }
@@ -496,4 +505,48 @@ export async function recordParentGoalPerspective(
 
   localCasePlans.set(plan.caseId, plan);
   return { success: true, goal: JSON.parse(JSON.stringify(goal)) };
+}
+
+export interface PauseActionComplianceTimerInput {
+  caseId: string;
+  goalId: string;
+  actionId: string;
+  barrierReason: string;
+}
+
+/**
+ * Pauses the compliance clock on a case-plan action when an agency waitlist,
+ * transport gap, or childcare shortage blocks completion, ensuring the parent
+ * is not penalized for structural/agency capacity delays.
+ */
+export async function pauseActionComplianceTimer(
+  input: PauseActionComplianceTimerInput
+): Promise<{ success: boolean; plan?: CasePlan; action?: CasePlanAction; error?: string }> {
+  const plan = localCasePlans.get(input.caseId) || localCasePlans.get('demo_case');
+  if (!plan) {
+    return { success: false, error: 'Case plan not found' };
+  }
+  const goal = plan.goals.find((g) => g.id === input.goalId);
+  if (!goal) {
+    return { success: false, error: 'Goal not found' };
+  }
+  const action = goal.actions.find((a) => a.id === input.actionId);
+  if (!action) {
+    return { success: false, error: 'Action not found' };
+  }
+  if (!input.barrierReason?.trim()) {
+    return { success: false, error: 'Barrier reason cannot be empty' };
+  }
+
+  action.actionStatus = 'blocked';
+  action.complianceTimerPaused = true;
+  action.systemicBarrierNote = input.barrierReason.trim();
+  plan.updatedAt = new Date().toISOString();
+
+  localCasePlans.set(plan.caseId, plan);
+  return {
+    success: true,
+    plan: JSON.parse(JSON.stringify(plan)),
+    action: JSON.parse(JSON.stringify(action)),
+  };
 }

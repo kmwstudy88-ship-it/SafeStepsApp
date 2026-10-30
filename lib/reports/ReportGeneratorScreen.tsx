@@ -27,6 +27,23 @@ export function ReportGeneratorScreen() {
     ],
     verifiedEvidenceCount: 19,
     workerObservationSummary: 'Sarah has consistently demonstrated emotional regulation tools during weekly supervised visits. Punctual, engaged with children in child-led play, and receptive to positive feedback. Observed proactive boundary setting without raising voice.',
+    structuralFairnessContext: {
+      povertyDecoupledAttestation: true,
+      concreteSupportSummary: {
+        totalDisbursedAud: 540,
+        stabilizedCategories: ['Utility Arrears Relief ($420)', 'Regional Transit Passes ($120)'],
+      },
+      complianceClockTolling: {
+        totalDaysTolledForWaitlists: 28,
+        activeBarrierNotes: ['Regional Trauma Therapist 4-week provider waitlist (compliance timer paused)'],
+      },
+      relationalAndPeerSupport: {
+        parentPartnerSessionsCompleted: 6,
+        abcPcitCoachingVerified: true,
+        fatherhoodInclusionVerified: true,
+        kinshipEquityVerified: true,
+      },
+    },
   };
 
   const handleGenerate = async () => {
@@ -69,6 +86,10 @@ export function ReportGeneratorScreen() {
           <View style={styles.previewItem}>
             <Text style={styles.itemLabel}>Psychometric Deltas:</Text>
             <Text style={styles.itemVal}>CAPES (+42%), KEPS (-44%)</Text>
+          </View>
+          <View style={styles.previewItem}>
+            <Text style={styles.itemLabel}>ECS & Clock Tolling:</Text>
+            <Text style={styles.itemVal}>$540 Disbursed · 28d Waitlist Tolled</Text>
           </View>
         </View>
 

@@ -41,3 +41,41 @@ test('buildCourtReportHtml generates structured court-ready report with cryptogr
   assert(html.includes('Digital Verification Seal'));
   assert(html.includes('All curriculum logs, timestamps, and psychometric scores match canonical case storage'));
 });
+
+test('buildCourtReportHtml renders Section 4 Structural Fairness, ECS & Compliance-Clock Tolling when provided', () => {
+  const mockReportWithFairness = {
+    caseReference: 'QLD-2026-8941',
+    parentName: 'Sarah Jenkins',
+    childrenNames: ['Leo (Age 6)'],
+    caseworkerName: 'Mark Henderson (CSO)',
+    reportPeriod: 'June 2026 - September 2026',
+    completedCurriculumModules: [],
+    assessmentTrajectories: [],
+    contactVisitStats: [{ totalVisits: 10, attendedVisits: 10, punctualityRate: '100%' }],
+    verifiedEvidenceCount: 12,
+    workerObservationSummary: 'Strong relational attunement observed.',
+    structuralFairnessContext: {
+      povertyDecoupledAttestation: true,
+      concreteSupportSummary: {
+        totalDisbursedAud: 540,
+        stabilizedCategories: ['Utility Arrears ($420)', 'Transit Passes ($120)'],
+      },
+      complianceClockTolling: {
+        totalDaysTolledForWaitlists: 28,
+        activeBarrierNotes: ['Regional Trauma Therapist 4-week waitlist'],
+      },
+      relationalAndPeerSupport: {
+        parentPartnerSessionsCompleted: 6,
+        abcPcitCoachingVerified: true,
+        fatherhoodInclusionVerified: true,
+        kinshipEquityVerified: true,
+      },
+    },
+  };
+
+  const html = buildCourtReportHtml(mockReportWithFairness);
+  assert(html.includes('4. Structural Fairness, Concrete Supports (ECS) & Compliance-Clock Tolling'));
+  assert(html.includes('$540 AUD'));
+  assert(html.includes('28 days tolled due to agency/provider barriers'));
+  assert(html.includes('Parent Partner Sessions: 6'));
+});

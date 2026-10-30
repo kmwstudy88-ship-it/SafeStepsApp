@@ -10,6 +10,8 @@ const {
   getDisclosureBundles,
   generateBundleAccessReceipt,
   getLegalAccessReceipts,
+  getStatutoryDefenseFilings,
+  generateStatutoryDefenseFiling,
   DEFAULT_MOCK_LEGAL_CASES,
 } = await importTypeScriptModule('../../lib/legal/legalPortalService.ts');
 
@@ -88,4 +90,24 @@ test('generateBundleAccessReceipt issues signed access receipt and records audit
   const recorded = receipts.find((r) => r.receiptId === res.receipt.receiptId);
   assert(recorded);
   assert.equal(recorded.lawyerId, 'lawyer_current');
+});
+
+test('getStatutoryDefenseFilings and generateStatutoryDefenseFiling support compliance-clock tolling and poverty!=neglect filings', async () => {
+  const initialFilings = await getStatutoryDefenseFilings('case_smith_01');
+  assert(initialFilings.length >= 2);
+  assert(initialFilings.some((f) => f.filingType === 'compliance_clock_tolling_motion'));
+  assert(initialFilings.some((f) => f.filingType === 'poverty_not_neglect_contest'));
+
+  const newFilingRes = await generateStatutoryDefenseFiling({
+    caseId: 'case_smith_01',
+    filingType: 'kinship_licensing_waiver_petition',
+    title: 'Petition for Non-Safety Kinship Bedroom Dimension Waiver',
+    statutoryAuthority: 'Title IV-E Kinship Equity Standard / Child Placement Principle',
+    factualGrounds: 'Maternal grandmother residence meets all fire and health safety checks; requesting waiver of non-safety square-footage rule.',
+    filedBy: 'Parent Legal Representative',
+  });
+
+  assert.equal(newFilingRes.success, true);
+  assert.equal(newFilingRes.filing.filingType, 'kinship_licensing_waiver_petition');
+  assert.equal(newFilingRes.filing.sha256Digest.length, 64);
 });

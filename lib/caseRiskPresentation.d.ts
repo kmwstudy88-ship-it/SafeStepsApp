@@ -4,6 +4,13 @@ export type CaseRiskHistoryItem = {
   confidence: number | null;
   rationale: string | null;
   model_version: string | null;
+  material_hardship_assessment?: {
+    detected: boolean;
+    decoupled_from_neglect_score: boolean;
+    signals: string[];
+    structural_barriers?: string[];
+    missed_contact_mitigated?: boolean;
+  };
 };
 
 export type CaseRiskSummary =
@@ -27,6 +34,7 @@ export type CaseRiskSummary =
         cautionText: string;
         rationaleText: string;
         rulesText: string;
+        materialHardshipText?: string;
       };
       emptyText?: string;
     };

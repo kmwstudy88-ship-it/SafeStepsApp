@@ -22,6 +22,8 @@ export type ForensicEvidenceArtifact = {
   containsHearsayOrRumor: boolean;
   participantGivenOpportunityToRespond: boolean;
   participantResponseRecorded?: boolean;
+  conflatesMaterialHardshipWithNeglect?: boolean;
+  ignoresAgencyWaitlistBarrier?: boolean;
   observedAt: string;
 };
 
@@ -86,6 +88,34 @@ export function evaluateForensicAssurance(
       fairnessDefectFlags.push(
         `Procedural fairness defect: Participant was not given opportunity to respond to claims in "${art.title}".`,
       );
+    }
+
+    if (art.conflatesMaterialHardshipWithNeglect) {
+      fairnessDefectFlags.push(
+        `Poverty != Neglect defect: Artifact "${art.title}" (${art.artifactId}) conflates material hardship with child neglect without prior Economic & Concrete Supports (ECS) stabilization.`,
+      );
+      if (
+        input.proposedInterventionSeverity === "suspended_contact" ||
+        input.proposedInterventionSeverity === "care_application"
+      ) {
+        proportionalityConcerns.push(
+          `Disproportionate intervention: "${art.title}" relies on unmitigated material hardship/poverty to justify restrictive separation.`,
+        );
+      }
+    }
+
+    if (art.ignoresAgencyWaitlistBarrier) {
+      fairnessDefectFlags.push(
+        `Systemic barrier defect: Artifact "${art.title}" (${art.artifactId}) alleges service non-compliance while parent was on a documented agency/provider waitlist.`,
+      );
+      if (
+        input.proposedInterventionSeverity === "suspended_contact" ||
+        input.proposedInterventionSeverity === "care_application"
+      ) {
+        proportionalityConcerns.push(
+          `Disproportionate intervention: "${art.title}" penalizes parent for agency/provider waitlist delays outside parental control.`,
+        );
+      }
     }
   }
 

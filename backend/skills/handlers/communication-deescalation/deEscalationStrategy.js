@@ -25,12 +25,14 @@ async function deEscalationStrategyHandler({ input = {} }) {
     'Acknowledge the other person’s underlying concern in one short, neutral sentence without arguing over disputed details.',
     'Shift focus to one shared, immediate priority (such as keeping routines calm and predictable).',
     'Keep children completely out of adult disagreements—never ask a child to carry messages or take sides.',
+    'If tension arises around visit transitions or agency barriers, request a 15-minute pre/post-visit buffer or ask your lived-experience Parent Partner to join the conversation.',
   ];
 
   const pauseOptions = [
     '"I want to give this the attention it deserves. Let’s take a 20-minute break and come back to this calmly."',
     '"Right now I need a moment to collect my thoughts so we can communicate respectfully. I will follow up this afternoon."',
     '"Let’s pause this topic for today and focus only on today’s schedule."',
+    '"Let’s invite my Parent Partner mentor to join our next check-in so we can review the schedule and concrete supports together."',
   ];
 
   return buildSkillEnvelope({

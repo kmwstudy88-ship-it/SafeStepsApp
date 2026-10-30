@@ -63,3 +63,19 @@ test('COACH_SUGGESTED_PROMPTS provides non-judgmental prompt options', () => {
   assert(Array.isArray(COACH_SUGGESTED_PROMPTS));
   assert(COACH_SUGGESTED_PROMPTS.length >= 4);
 });
+
+test('getCoachResponse provides non-punitive ECS safe-harbor reassurance, ABC/PCIT PRIDE coaching, and post-visit transition support', async () => {
+  const ecsResponse = await getCoachResponse('I cannot afford bus fare or groceries this week');
+  assert.equal(ecsResponse.crisisTriggered, false);
+  assert.match(ecsResponse.message, /Poverty is NOT child neglect/i);
+  assert.match(ecsResponse.message, /Economic & Concrete Supports/i);
+
+  const pcitResponse = await getCoachResponse('Coach me on ABC / PCIT PRIDE skills for my visit today');
+  assert.equal(pcitResponse.crisisTriggered, false);
+  assert.match(pcitResponse.message, /Follow the Lead/i);
+  assert.match(pcitResponse.message, /Labeled Praise/i);
+
+  const transitionResponse = await getCoachResponse('My child cried when leaving after the visit ended');
+  assert.equal(transitionResponse.crisisTriggered, false);
+  assert.match(transitionResponse.message, /transition ritual/i);
+});

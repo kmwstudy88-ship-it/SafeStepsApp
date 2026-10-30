@@ -1,4 +1,11 @@
-export type IntensiveProgramId = "newpin" | "hopes" | "pfr" | "walking-family";
+export type IntensiveProgramId =
+  | "newpin"
+  | "hopes"
+  | "pfr"
+  | "walking-family"
+  | "abc-ec"
+  | "pcit"
+  | "parent-partner";
 
 export type ReunificationTaskId =
   | "kinship_mapping"
@@ -6,7 +13,12 @@ export type ReunificationTaskId =
   | "service_coordination"
   | "coparenting_deescalation";
 
-export type ReunificationChallengeId = "systemic_overload" | "parent_child_alienation" | "trauma_backslide";
+export type ReunificationChallengeId =
+  | "systemic_overload"
+  | "parent_child_alienation"
+  | "trauma_backslide"
+  | "poverty_neglect_conflation"
+  | "post_reunification_cliff";
 
 export type SafetyVerificationId =
   | "functional_safety_plan"
@@ -132,6 +144,65 @@ export const intensiveReunificationPrograms: IntensiveReunificationProgram[] = [
       "Link combined-session observations to the contact progression stage.",
     ],
   },
+  {
+    id: "abc-ec",
+    name: "ABC-EC (Attachment and Biobehavioral Catch-up) In-the-Moment Coaching",
+    deliveryModel: "Home or supportive visit dyadic coaching (10 sessions)",
+    duration: "10 weeks",
+    targetAgeRange: "Infants and toddlers (6 months to 4 years)",
+    safeStepsUse:
+      "Replace didactic classroom lectures with real-time, positive in-the-moment coaching focused on nurturance, following the child's lead with delight, and non-frightening care.",
+    coreComponents: [
+      "Providing nurturance when the child is distressed (even when cues are hard to read)",
+      "Following the child's lead with delight",
+      "Eliminating overwhelming or frightening caregiver behaviors",
+      "High-frequency positive in-the-moment coaching comments",
+    ],
+    evidencePrompts: [
+      "Document observed nurturance during a moment of child distress or transition.",
+      "Record parent reflection on following the child's lead during free play.",
+      "Link supportive coaching observations to contact progression readiness.",
+    ],
+  },
+  {
+    id: "pcit",
+    name: "PCIT (Parent-Child Interaction Therapy) Dyadic PRIDE Coaching",
+    deliveryModel: "Live dyadic play coaching with immediate skill feedback",
+    duration: "12 to 20 weeks (mastery-based)",
+    targetAgeRange: "2 to 7 years",
+    safeStepsUse:
+      "Support trauma-informed relationship enhancement (Child-Directed Interaction PRIDE skills) and calm, predictable boundary setting.",
+    coreComponents: [
+      "Labeled Praise (P)",
+      "Reflective Listening (R)",
+      "Imitation of child play (I)",
+      "Behavioral Description (D) and Enjoyment (E)",
+      "Calm, predictable consistency without harsh escalation",
+    ],
+    evidencePrompts: [
+      "Record use of PRIDE skills during 5-minute child-led play check-in.",
+      "Document calm parent co-regulation during limit-setting or clean-up transitions.",
+    ],
+  },
+  {
+    id: "parent-partner",
+    name: "Lived-Experience Parent Partner Peer Mentorship",
+    deliveryModel: "Confidential peer advocacy and navigation by reunified parents",
+    duration: "Continuous from intake through 12 months post-reunification",
+    targetAgeRange: "All family reunification stages",
+    safeStepsUse:
+      "Counteract institutional distrust, shame, and hyper-surveillance by pairing parents with mentors who have successfully navigated child welfare and reunified.",
+    coreComponents: [
+      "Confidential, non-surveilled emotional validation and hope-building",
+      "Courtroom and Family Team Meeting (FTM) preparation and accompaniment",
+      "Translation of statutory jargon into actionable steps",
+      "Warm connection to community Economic & Concrete Supports (ECS)",
+    ],
+    evidencePrompts: [
+      "Log Parent Partner attendance date and advocacy domain (session notes remain confidential).",
+      "Credit peer mentorship engagement as an active protective factor in case reviews.",
+    ],
+  },
 ];
 
 export const highIntensityReunificationTasks: ReunificationTaskDefinition[] = [
@@ -234,6 +305,38 @@ export const reunificationChallengeModels: ReunificationChallengeDefinition[] = 
       "Use early-warning check-ins rather than waiting for crisis.",
     ],
     warningSignals: ["Sudden missed supports", "Escalating conflict", "Substance or mental health risk indicators", "Withdrawal from worker contact"],
+  },
+  {
+    id: "poverty_neglect_conflation",
+    title: "Conflation of Material Hardship with Child Neglect",
+    riskImpact:
+      "Diagnosing structural poverty (eviction, utility shutoffs, food insecurity, lack of transit) as parental unfitness causes unnecessary trauma and delays reunification.",
+    mitigationStrategies: [
+      "Decouple poverty indicators from child-maltreatment risk scores.",
+      "Deploy immediate Economic & Concrete Supports (ECS) for rent, utilities, groceries, childcare, and transport.",
+      "Pause compliance clocks when agency waitlists or regional transit gaps block service access.",
+    ],
+    warningSignals: [
+      "Missed visits caused by transit costs or vehicle breakdown",
+      "Housing or utility arrears cited as sole barrier to return",
+      "Working parent penalized for shift conflicts with weekday classes",
+    ],
+  },
+  {
+    id: "post_reunification_cliff",
+    title: "Post-Reunification Service Cliff",
+    riskImpact:
+      "Abrupt termination of child-care subsidies, flexible funding, and peer mentorship upon physical return drives foster care re-entry.",
+    mitigationStrategies: [
+      "Maintain a mandatory 12-month graduated step-down support schedule (Months 1-3 Intensive, 4-6 Transitional, 7-12 Community Sustained).",
+      "Ensure post-reunification requests for concrete or respite aid are treated as protective early help, never automatic re-investigation.",
+      "Continue Parent Partner peer mentorship and priority childcare subsidies throughout the 12-month transition.",
+    ],
+    warningSignals: [
+      "Loss of foster-care childcare subsidy immediately upon child's return",
+      "Caregiver overwhelm during the first 90 days of full return",
+      "Reluctance to ask caseworker for help due to fear of re-removal",
+    ],
   },
 ];
 

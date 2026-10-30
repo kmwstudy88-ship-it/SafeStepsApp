@@ -28,6 +28,11 @@ const HARSH_REPLACEMENTS = [
     replacement: 'challenging for everyone involved',
     note: 'Softened evaluative label "unacceptable" to reduce defensiveness.',
   },
+  {
+    pattern: /\b(non[-\s]?compliant|out\s+of\s+compliance)\b/gi,
+    replacement: 'navigating a scheduling, waitlist, or concrete-support barrier',
+    note: 'Reframed punitive "non-compliant" label to explore agency waitlists, transit gaps, or Economic & Concrete Supports (ECS).',
+  },
 ];
 
 async function traumaInformedCommunicationHandler({ input = {} }) {

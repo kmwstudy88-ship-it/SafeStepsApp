@@ -46,6 +46,11 @@ async function developmentalAppropriatenessHandler({ input = {}, context = {} })
   }
 
   const adaptations = [...(BAND_ADAPTATIONS[ageBand] || BAND_ADAPTATIONS.unknown)];
+  if (ageBand === 'early_child' || ageBand === 'middle_child') {
+    adaptations.push(
+      'Use PCIT PRIDE skills (Labeled Praise, Reflection, Behavioral Description) and ABC-EC "Following the Lead" rather than rapid-fire adult questioning.',
+    );
+  }
   if (message && /\b(approximately|therefore|consequently|non-compliance|subsequent|obligations|stipulated)\b/i.test(message)) {
     adaptations.push(
       'Replace formal or bureaucratic words ("consequently", "obligations", "stipulated") with everyday, kid-friendly phrasing.',

@@ -6,6 +6,7 @@ import { importTypeScriptModule } from './load-typescript-module.mjs';
 const {
   getConcernsForCase,
   submitParentRightOfReply,
+  flagMaterialHardshipConflation,
   reviewParentReply,
   DEFAULT_MOCK_CONCERNS,
 } = await importTypeScriptModule('../../lib/concerns/concernsRegisterService.ts');
@@ -142,4 +143,25 @@ test('reviewParentReply handles acknowledged_contrary_position and errors', asyn
   });
   assert.equal(invalidReplyRes.success, false);
   assert.match(invalidReplyRes.error, /not found on this concern/i);
+});
+
+test('flagMaterialHardshipConflation attaches poverty_or_barrier_context reply and flags ECS support without overwriting agency wording', async () => {
+  const concernsBefore = await getConcernsForCase('demo_case');
+  const targetBefore = concernsBefore.find((c) => c.id === 'concern_02');
+  const originalAgencyWording = targetBefore.agencyWording;
+
+  const res = await flagMaterialHardshipConflation({
+    concernId: 'concern_02',
+    hardshipExplanation: 'Vehicle breakdown on regional highway; requested transit card from agency 5 days prior.',
+    requestedEcsSupport: 'Regional transit pass or fuel voucher ($60)',
+  });
+
+  assert.equal(res.success, true);
+  assert.equal(res.concern.materialHardshipConflationFlagged, true);
+  assert.equal(res.concern.requestedEcsSupport, 'Regional transit pass or fuel voucher ($60)');
+  assert.equal(res.concern.agencyWording, originalAgencyWording);
+
+  const latestReply = res.concern.parentReplies[res.concern.parentReplies.length - 1];
+  assert.equal(latestReply.replyType, 'poverty_or_barrier_context');
+  assert.match(latestReply.parentStatement, /MATERIAL HARDSHIP \/ SYSTEMIC BARRIER CONTESTABILITY/);
 });

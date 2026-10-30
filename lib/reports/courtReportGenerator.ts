@@ -1,3 +1,20 @@
+export type CourtStructuralFairnessSection = {
+  povertyDecoupledAttestation: boolean;
+  concreteSupportSummary?: {
+    totalDisbursedAud: number;
+    stabilizedCategories: string[];
+  };
+  complianceClockTolling?: {
+    totalDaysTolledForWaitlists: number;
+    activeBarrierNotes: string[];
+  };
+  relationalAndPeerSupport?: {
+    parentPartnerSessionsCompleted: number;
+    abcPcitCoachingVerified: boolean;
+    fatherhoodInclusionVerified: boolean;
+    kinshipEquityVerified: boolean;
+  };
+};
 
 export type CourtReportData = {
   caseReference: string;
@@ -10,6 +27,7 @@ export type CourtReportData = {
   contactVisitStats: { totalVisits: number; attendedVisits: number; punctualityRate: string }[];
   verifiedEvidenceCount: number;
   workerObservationSummary: string;
+  structuralFairnessContext?: CourtStructuralFairnessSection;
 };
 
 export function buildCourtReportHtml(data: CourtReportData): string {
@@ -91,6 +109,35 @@ export function buildCourtReportHtml(data: CourtReportData): string {
     <p style="font-size: 14px; color: #4A5568; background: #FFF; padding: 12px; border: 1px solid #E2E8F0; border-radius: 6px;">
       ${data.workerObservationSummary}
     </p>
+
+    ${
+      data.structuralFairnessContext
+        ? `
+    <div class="section-title">4. Structural Fairness, Concrete Supports (ECS) & Compliance-Clock Tolling</div>
+    <div style="font-size: 13px; color: #2D3748; background: #F7FAFC; padding: 14px; border: 1px solid #CBD5E0; border-radius: 6px; margin-top: 10px;">
+      <div><strong>Poverty ≠ Neglect Safeguard:</strong> ${
+        data.structuralFairnessContext.povertyDecoupledAttestation
+          ? 'Verified — Material hardship indicators were routed to Economic & Concrete Supports (ECS) and excluded from child maltreatment scoring.'
+          : 'Pending review'
+      }</div>
+      ${
+        data.structuralFairnessContext.concreteSupportSummary
+          ? `<div style="margin-top: 6px;"><strong>Economic & Concrete Supports (ECS) Disbursed:</strong> $${data.structuralFairnessContext.concreteSupportSummary.totalDisbursedAud} AUD (${data.structuralFairnessContext.concreteSupportSummary.stabilizedCategories.join(', ')})</div>`
+          : ''
+      }
+      ${
+        data.structuralFairnessContext.complianceClockTolling
+          ? `<div style="margin-top: 6px;"><strong>Systemic Waitlist / Compliance-Clock Tolling:</strong> ${data.structuralFairnessContext.complianceClockTolling.totalDaysTolledForWaitlists} days tolled due to agency/provider barriers (${data.structuralFairnessContext.complianceClockTolling.activeBarrierNotes.join('; ')})</div>`
+          : ''
+      }
+      ${
+        data.structuralFairnessContext.relationalAndPeerSupport
+          ? `<div style="margin-top: 6px;"><strong>Relational Coaching & Equity Safeguards:</strong> Parent Partner Sessions: ${data.structuralFairnessContext.relationalAndPeerSupport.parentPartnerSessionsCompleted} | ABC/PCIT Coaching: ${data.structuralFairnessContext.relationalAndPeerSupport.abcPcitCoachingVerified ? 'Verified' : 'In Progress'} | Fatherhood Inclusion: ${data.structuralFairnessContext.relationalAndPeerSupport.fatherhoodInclusionVerified ? 'Verified' : 'Pending'} | Kinship Equity: ${data.structuralFairnessContext.relationalAndPeerSupport.kinshipEquityVerified ? 'Verified' : 'N/A'}</div>`
+          : ''
+      }
+    </div>`
+        : ''
+    }
 
     <div class="seal">
       <strong>Digital Verification Seal:</strong> This report is cryptographically sealed through SafeSteps. All curriculum logs, timestamps, and psychometric scores match canonical case storage with zero unverified alterations.

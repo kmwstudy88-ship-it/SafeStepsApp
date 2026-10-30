@@ -31,6 +31,12 @@ const PRIVACY_DETECTION_RULES = [
     pattern: /\b(where\s+do\s+you\s+live|what\s+is\s+your\s+last\s+name|send\s+a\s+photo|who\s+else\s+lives\s+at)\b/i,
     issue: 'Prompt solicits unnecessary personal or identifying details.',
   },
+  {
+    data_type: 'confidential_peer_mentor_or_ecs_boundary',
+    severity: 'high',
+    pattern: /\b(share\s+parent\s+partner\s+notes\s+with\s+court|subpoena\s+peer\s+mentor|disclose\s+confidential\s+mentor\s+chat|report\s+ecs\s+request\s+as\s+neglect)\b/i,
+    issue: 'Attempts to breach confidential Parent Partner peer-mentorship boundary or use an ECS request as surveillance evidence.',
+  },
 ];
 
 async function boundaryPrivacyHandler({ input = {} }) {
@@ -73,6 +79,7 @@ async function boundaryPrivacyHandler({ input = {} }) {
     'Collect and retain only the minimum context needed to support safety and wellbeing.',
     'Use role-based references (e.g., "parent", "trusted adult", "support service") instead of unnecessary personal identifiers in shared summaries.',
     'Remind participants that they do not need to share private location or identifying details during coaching exercises.',
+    'Protect non-surveilled Parent Partner peer-mentor reflections and Economic & Concrete Supports (ECS) requests from being exported as adversarial court surveillance.',
   ];
 
   return buildSkillEnvelope({

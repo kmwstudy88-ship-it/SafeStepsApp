@@ -31,6 +31,12 @@ const COMPLIANCE_RULES = [
     pattern: /\b(asked\s+child\s+to\s+monitor\s+parent|told\s+child\s+adult\s+court\s+details|blamed\s+the\s+child)\b/i,
     issue: 'Places adult conflict responsibility or inappropriate adult details onto a child.',
   },
+  {
+    standard: 'Supportive Family Time & Kinship Equity',
+    severity: 'high',
+    pattern: /\b(cancelled\s+visit\s+as\s+punishment|withheld\s+sibling\s+contact|denied\s+kinship\s+stipend|no\s+post[-\s]?reunification\s+support)\b/i,
+    issue: 'Punitive cancellation of child-parent/sibling contact, denial of kinship parity, or abrupt termination of post-reunification support.',
+  },
 ];
 
 async function childSafeStandardsComplianceHandler({ input = {} }) {

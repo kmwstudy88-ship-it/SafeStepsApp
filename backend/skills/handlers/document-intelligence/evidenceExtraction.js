@@ -8,6 +8,10 @@ const {
 
 const EVIDENCE_TYPE_RULES = [
   {
+    type: 'systemic_barrier_proof',
+    pattern: /\b(waitlist\s+confirmation|transit\s+cancellation|eviction\s+filing|shift\s+roster|ecs\s+voucher\s+receipt)\b/i,
+  },
+  {
     type: 'record',
     pattern: /\b(certificate|log|attendance\s+record|medical\s+report|hospital\s+record|toxicology|urinalysis|signed\s+agreement|verified\s+by|documented\s+in)\b/i,
   },

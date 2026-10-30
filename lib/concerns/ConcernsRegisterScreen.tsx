@@ -33,6 +33,10 @@ const REPLY_TYPE_LABELS: Record<RightOfReplyType, { label: string; desc: string 
     label: 'Agreed with Action Plan',
     desc: 'Acknowledge the concern and state steps taken or planned to resolve it.',
   },
+  poverty_or_barrier_context: {
+    label: 'Material Hardship / Structural Barrier (Poverty ≠ Neglect)',
+    desc: 'Flag that this concern stems from transport, housing, childcare, or waitlist barriers requiring Concrete Support (ECS).',
+  },
 };
 
 export function ConcernsRegisterScreen() {

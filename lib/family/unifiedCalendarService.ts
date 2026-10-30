@@ -38,6 +38,11 @@ export interface CalendarEvent {
   reminderMinutesBefore: number;
   isCompleted: boolean;
   linkedRoute?: string;
+  fatherInclusiveSchedule?: boolean;
+  transitSupportProvided?: boolean;
+  prePostVisitBufferMinutes?: number;
+  excusedBySystemicBarrier?: boolean;
+  systemicBarrierReason?: string;
 }
 
 // In-memory store
@@ -161,6 +166,9 @@ export interface CreateCalendarEventInput {
   prepInstructions?: string;
   reminderMinutesBefore?: number;
   linkedRoute?: string;
+  fatherInclusiveSchedule?: boolean;
+  transitSupportProvided?: boolean;
+  prePostVisitBufferMinutes?: number;
 }
 
 /**
@@ -191,6 +199,9 @@ export async function createCalendarEvent(
     reminderMinutesBefore: input.reminderMinutesBefore ?? 60,
     isCompleted: false,
     linkedRoute: input.linkedRoute,
+    fatherInclusiveSchedule: input.fatherInclusiveSchedule,
+    transitSupportProvided: input.transitSupportProvided,
+    prePostVisitBufferMinutes: input.prePostVisitBufferMinutes,
   };
 
   localEventsCache.set(id, newEvent);
@@ -209,6 +220,28 @@ export async function markEventCompleted(
   }
 
   evt.isCompleted = true;
+  localEventsCache.set(eventId, evt);
+  return { success: true, event: { ...evt } };
+}
+
+/**
+ * Records a verified systemic barrier (e.g., transit failure, agency waitlist, shift conflict)
+ * on a calendar event so the parent is not penalized for an unexcused miss.
+ */
+export async function excuseEventForSystemicBarrier(
+  eventId: string,
+  reason: string
+): Promise<{ success: boolean; event?: CalendarEvent; error?: string }> {
+  const evt = localEventsCache.get(eventId);
+  if (!evt) {
+    return { success: false, error: 'Calendar event not found' };
+  }
+  if (!reason.trim()) {
+    return { success: false, error: 'Systemic barrier reason is required' };
+  }
+
+  evt.excusedBySystemicBarrier = true;
+  evt.systemicBarrierReason = reason.trim();
   localEventsCache.set(eventId, evt);
   return { success: true, event: { ...evt } };
 }

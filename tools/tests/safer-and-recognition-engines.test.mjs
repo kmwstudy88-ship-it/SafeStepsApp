@@ -175,3 +175,59 @@ test('computeSaferGuidedJudgement enforces practitioner review on draft state, h
   assert.ok(gatedResult.flags.some((flag) => flag.includes('Assessment is draft')));
   assert.match(gatedResult.recommendation, /Use as decision-support only/i);
 });
+
+test('buildRecognitionSupportPlan flags structural_equity gaps when material hardship lacks ECS or disparity check is missing', () => {
+  const planWithEquityGaps = buildRecognitionSupportPlan({
+    culturalSafety: {
+      childIdentifiedAsAboriginalOrTorresStraitIslander: false,
+      culturalIdentityRecorded: true,
+      culturalPlanRecorded: true,
+      familyCommunityConnectionsRecorded: true,
+      aboriginalControlledServiceInvolved: false,
+    },
+    accessibility: {
+      disabilityOrAccessNeedIdentified: false,
+      communicationPreferenceRecorded: true,
+      easyReadRequired: false,
+      easyReadProvided: false,
+      supportPersonOffered: true,
+      reasonableAdjustmentsRecorded: true,
+    },
+    structuralEquity: {
+      materialHardshipIdentified: true,
+      economicConcreteSupportOffered: false,
+      hyperSurveillanceDisparityRiskIdentified: true,
+      disparityAndBiasAuditCompleted: false,
+      livedExperienceParentPartnerOffered: false,
+    },
+  });
+
+  assert.equal(planWithEquityGaps.complete, false);
+  assert.equal(planWithEquityGaps.reviewRequired, true);
+  assert.deepEqual(
+    planWithEquityGaps.gaps.map((g) => g.id),
+    ['economic-concrete-support', 'disparity-bias-audit', 'parent-partner-peer-mentor']
+  );
+
+  // Verify SAFER engine flags unmitigated material hardship conflation
+  const povertyClassification = classifySaferEvidence({
+    id: 'ev-pov',
+    title: 'Utility arrears and eviction notice',
+    notes: 'child parent family cultural community risk strength safety utility arrears poverty',
+    sourceType: 'worker_observation',
+  });
+  assert.ok(povertyClassification.specialistFlags.includes('material_hardship_poverty'));
+
+  const saferWithHardship = computeSaferGuidedJudgement({
+    consequenceOfHarm: 20,
+    probabilityOfHarm: 20,
+    protectiveCapacity: 85,
+    demonstratedSafety: 85,
+    evidenceGapCount: 0,
+    classifications: [povertyClassification],
+    reviewState: 'reviewed',
+    materialHardshipDecoupledFromRisk: false,
+  });
+  assert.equal(saferWithHardship.requiredReview, true);
+  assert.ok(saferWithHardship.flags.some((f) => f.includes('Poverty != Neglect safeguard')));
+});

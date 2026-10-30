@@ -254,3 +254,121 @@ export async function sendCarerMonitoredMessage(
 
   return { success: true, message: { ...newMsg } };
 }
+
+export type KinshipActionType =
+  | 'licensing_space_waiver'
+  | 'stipend_parity_review'
+  | 'respite_care_hours'
+  | 'concrete_bedding_or_transport_grant';
+
+export interface KinshipSupportItem {
+  id: string;
+  actionType: KinshipActionType;
+  title: string;
+  description: string;
+  status: 'approved' | 'pending_review';
+  createdAt: string;
+}
+
+export interface KinshipSupportSummary {
+  placementId: string;
+  carerName: string;
+  relationshipToChild: string;
+  stipendParityStatus: 'full_foster_parity' | 'partial_kinship_rate';
+  monthlyStipendCents: number;
+  strangerFosterBenchmarkCents: number;
+  respiteHoursPerMonth: number;
+  supportItems: KinshipSupportItem[];
+}
+
+const localKinshipSupport = new Map<string, KinshipSupportSummary>();
+
+const DEFAULT_KINSHIP_SUMMARY: KinshipSupportSummary = {
+  placementId: 'placement_leo_01',
+  carerName: 'Anne Lewis',
+  relationshipToChild: 'Maternal Grandmother',
+  stipendParityStatus: 'full_foster_parity',
+  monthlyStipendCents: 185000,
+  strangerFosterBenchmarkCents: 185000,
+  respiteHoursPerMonth: 16,
+  supportItems: [
+    {
+      id: 'ksup_01',
+      actionType: 'licensing_space_waiver',
+      title: 'Bedroom Square-Footage Kinship Waiver',
+      description: 'Waived standard physical housing square-footage requirement to preserve familial continuity with Maternal Grandmother.',
+      status: 'approved',
+      createdAt: '2026-10-12T10:00:00Z',
+    },
+    {
+      id: 'ksup_02',
+      actionType: 'concrete_bedding_or_transport_grant',
+      title: 'Concrete Kinship Setup Grant (Bunk Bed & Car Seat)',
+      description: 'Direct flexible funding grant so resources follow the child into kinship placement.',
+      status: 'approved',
+      createdAt: '2026-10-14T14:20:00Z',
+    },
+  ],
+};
+
+localKinshipSupport.set('placement_leo_01', JSON.parse(JSON.stringify(DEFAULT_KINSHIP_SUMMARY)));
+
+/**
+ * Retrieves kinship caregiver financial parity, licensing waivers, and respite support summary.
+ */
+export async function getKinshipSupportSummary(
+  placementId: string = 'placement_leo_01'
+): Promise<KinshipSupportSummary> {
+  const summary = localKinshipSupport.get(placementId) || localKinshipSupport.get('placement_leo_01')!;
+  return JSON.parse(JSON.stringify(summary));
+}
+
+export interface RequestKinshipSupportInput {
+  placementId?: string;
+  actionType: KinshipActionType;
+  title: string;
+  description: string;
+  additionalRespiteHours?: number;
+}
+
+/**
+ * Submits a kinship caregiver support or licensing-waiver request so kinship placements
+ * receive the same concrete and financial resources as licensed non-relative placements.
+ */
+export async function requestKinshipSupportAction(
+  input: RequestKinshipSupportInput
+): Promise<{ success: boolean; summary?: KinshipSupportSummary; item?: KinshipSupportItem; error?: string }> {
+  if (!input.title?.trim() || !input.description?.trim()) {
+    return { success: false, error: 'Support title and description cannot be empty' };
+  }
+
+  const placementId = input.placementId?.trim() || 'placement_leo_01';
+  const summary = await getKinshipSupportSummary(placementId);
+  summary.placementId = placementId;
+
+  const newItem: KinshipSupportItem = {
+    id: `ksup_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+    actionType: input.actionType,
+    title: input.title.trim(),
+    description: input.description.trim(),
+    status: 'approved',
+    createdAt: new Date().toISOString(),
+  };
+
+  summary.supportItems.unshift(newItem);
+  if (input.actionType === 'stipend_parity_review') {
+    summary.stipendParityStatus = 'full_foster_parity';
+    summary.monthlyStipendCents = summary.strangerFosterBenchmarkCents;
+  }
+  if (input.additionalRespiteHours && input.additionalRespiteHours > 0) {
+    summary.respiteHoursPerMonth += input.additionalRespiteHours;
+  }
+
+  localKinshipSupport.set(placementId, summary);
+  return {
+    success: true,
+    summary: JSON.parse(JSON.stringify(summary)),
+    item: { ...newItem },
+  };
+}
+

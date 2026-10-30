@@ -8,6 +8,7 @@ const {
   getCaseTasks,
   calculateCaseProgress,
   updateCasePlanActionStatus,
+  pauseActionComplianceTimer,
   toggleCaseTaskCompletion,
   recordParentGoalPerspective,
 } = await importTypeScriptModule('../../lib/parentWorkspace/casePlanService.ts');
@@ -120,4 +121,29 @@ test('updateCasePlanActionStatus and recordParentGoalPerspective handle errors g
   });
   assert.equal(emptyPerspective.success, false);
   assert.match(emptyPerspective.error, /cannot be empty/i);
+});
+
+test('pauseActionComplianceTimer pauses compliance clock for agency waitlist without penalizing overallPercentage', async () => {
+  const planBefore = await getCasePlan('demo_case');
+  const progressBefore = calculateCaseProgress(planBefore);
+
+  const pauseRes = await pauseActionComplianceTimer({
+    caseId: 'demo_case',
+    goalId: 'goal_02',
+    actionId: 'act_02_02',
+    barrierReason: '14-week agency waitlist for trauma-informed ABC parenting coach',
+  });
+
+  assert.equal(pauseRes.success, true);
+  const updatedGoal = pauseRes.plan.goals.find((g) => g.id === 'goal_02');
+  const pausedAction = updatedGoal.actions.find((a) => a.id === 'act_02_02');
+
+  assert.equal(pausedAction.actionStatus, 'blocked');
+  assert.equal(pausedAction.complianceTimerPaused, true);
+  assert.equal(pausedAction.systemicBarrierNote, '14-week agency waitlist for trauma-informed ABC parenting coach');
+
+  const progressAfter = calculateCaseProgress(pauseRes.plan);
+  assert.equal(progressAfter.pausedByBarrierActions, 1);
+  // Active denominator shrinks by 1 uncompleted action, so overallPercentage does not drop
+  assert(progressAfter.overallPercentage >= progressBefore.overallPercentage);
 });

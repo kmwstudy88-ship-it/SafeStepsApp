@@ -20,6 +20,7 @@ import {
   updateCasePlanActionStatus,
   toggleCaseTaskCompletion,
   recordParentGoalPerspective,
+  pauseActionComplianceTimer,
 } from './casePlanService';
 import { ChallengeRecommendations } from '../../components/ChallengeRecommendations';
 
@@ -69,6 +70,24 @@ export function CasePlanScreen() {
     const result = await toggleCaseTaskCompletion(plan.caseId, taskId);
     if (result.success) {
       await loadData();
+    }
+  };
+
+  const handlePauseActionForBarrier = async (goalId: string, actionId: string) => {
+    if (!plan) return;
+    const result = await pauseActionComplianceTimer({
+      caseId: plan.caseId,
+      goalId,
+      actionId,
+      barrierReason: 'External agency waitlist / transport barrier logged; compliance clock paused.',
+    });
+    if (result.success && result.plan) {
+      setPlan(result.plan);
+      setProgress(calculateCaseProgress(result.plan));
+      Alert.alert(
+        'Compliance Clock Paused',
+        'This action is marked as blocked by an external service/transport barrier so your completion score is not penalized.'
+      );
     }
   };
 
@@ -262,7 +281,12 @@ export function CasePlanScreen() {
                               {act.actionTitle}
                             </Text>
                           </View>
-                          <Text style={styles.actionDescText}>{act.actionDescription}</Text>
+                           <Text style={styles.actionDescText}>{act.actionDescription}</Text>
+                          {act.complianceTimerPaused ? (
+                            <Text style={styles.evidenceLink}>
+                              ⏸️ Compliance Clock Paused: {act.systemicBarrierNote}
+                            </Text>
+                          ) : null}
 
                           <View style={styles.actionFooter}>
                             {act.linkedEvidenceVaultIds && act.linkedEvidenceVaultIds.length > 0 && (
@@ -273,6 +297,15 @@ export function CasePlanScreen() {
                                 <Text style={styles.evidenceLink}>
                                   🔐 Vault: {act.linkedEvidenceVaultIds.join(', ')}
                                 </Text>
+                              </TouchableOpacity>
+                            )}
+
+                            {!isCompleted && !act.complianceTimerPaused && (
+                              <TouchableOpacity
+                                onPress={() => handlePauseActionForBarrier(goal.id, act.id)}
+                                activeOpacity={0.8}
+                              >
+                                <Text style={styles.routeLink}>⏸️ Flag Waitlist / Barrier</Text>
                               </TouchableOpacity>
                             )}
 

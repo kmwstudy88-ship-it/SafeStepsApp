@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   Alert,
   Image,
@@ -13,8 +13,14 @@ import {
   View,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import {
+  getKinshipSupportSummary,
+  requestKinshipSupportAction,
+  type KinshipActionType,
+  type KinshipSupportSummary,
+} from './carerPortalService';
 
-type Tab = 'Home' | 'Journal' | 'Messages' | 'Settings';
+type Tab = 'Home' | 'Journal' | 'Kinship' | 'Messages' | 'Settings';
 type EntryKind = 'Daily update' | 'Achievement' | 'Worry or concern';
 
 type JournalEntry = {
@@ -30,6 +36,7 @@ type JournalEntry = {
 const tabs: Array<{ label: Tab; icon: string }> = [
   { label: 'Home', icon: '⌂' },
   { label: 'Journal', icon: '✎' },
+  { label: 'Kinship', icon: '♡' },
   { label: 'Messages', icon: '◌' },
   { label: 'Settings', icon: '⚙' },
 ];
@@ -61,6 +68,14 @@ export function CarerPortalScreen() {
   const [entryText, setEntryText] = useState('');
   const [attachment, setAttachment] = useState<string | undefined>();
   const [parentCommunication, setParentCommunication] = useState(true);
+  const [kinshipSummary, setKinshipSummary] = useState<KinshipSupportSummary | null>(null);
+  const [kinshipActionType, setKinshipActionType] = useState<KinshipActionType>('licensing_space_waiver');
+  const [kinshipTitle, setKinshipTitle] = useState('');
+  const [kinshipDesc, setKinshipDesc] = useState('');
+
+  useEffect(() => {
+    getKinshipSupportSummary().then(setKinshipSummary);
+  }, []);
 
   const sharedCount = useMemo(() => entries.filter((entry) => entry.shared).length, [entries]);
 
@@ -103,9 +118,11 @@ export function CarerPortalScreen() {
     ? renderHome()
     : activeTab === 'Journal'
       ? renderJournal()
-      : activeTab === 'Messages'
-        ? renderMessages()
-        : renderSettings();
+      : activeTab === 'Kinship'
+        ? renderKinship()
+        : activeTab === 'Messages'
+          ? renderMessages()
+          : renderSettings();
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -211,6 +228,105 @@ export function CarerPortalScreen() {
       <View style={styles.filterRow}><View style={styles.filterActive}><Text style={styles.filterActiveText}>All updates</Text></View><View style={styles.filter}><Text style={styles.filterText}>Achievements</Text></View><View style={styles.filter}><Text style={styles.filterText}>Concerns</Text></View></View>
       {entries.map(renderEntry)}
     </>;
+  }
+
+  async function handleSubmitKinshipRequest() {
+    const res = await requestKinshipSupportAction({
+      actionType: kinshipActionType,
+      title: kinshipTitle,
+      description: kinshipDesc,
+      additionalRespiteHours: kinshipActionType === 'respite_care_hours' ? 8 : 0,
+    });
+    if (!res.success) {
+      Alert.alert('Add details', res.error || 'Please enter a title and description.');
+      return;
+    }
+    if (res.summary) setKinshipSummary(res.summary);
+    setKinshipTitle('');
+    setKinshipDesc('');
+    Alert.alert('Kinship Support Approved', 'Resources and licensing waivers follow the child into kinship care.');
+  }
+
+  function renderKinship() {
+    return (
+      <>
+        <Text style={styles.eyebrow}>KINSHIP CAREGIVER EQUITY</Text>
+        <Text style={styles.pageTitle}>Kinship Support & Stipend Parity</Text>
+        <Text style={styles.pageSubtitle}>
+          Grandmothers, aunts, and family carers deserve the same financial stipends, respite care, and concrete household support as licensed non-relative carers.
+        </Text>
+        {kinshipSummary ? (
+          <View style={styles.entryCard}>
+            <Text style={styles.entryTitle}>
+              {kinshipSummary.carerName} ({kinshipSummary.relationshipToChild})
+            </Text>
+            <Text style={styles.entryDetail}>
+              Stipend Parity: {kinshipSummary.stipendParityStatus.replace(/_/g, ' ').toUpperCase()} ($
+              {(kinshipSummary.monthlyStipendCents / 100).toFixed(0)}/mo vs $
+              {(kinshipSummary.strangerFosterBenchmarkCents / 100).toFixed(0)}/mo benchmark)
+            </Text>
+            <Text style={styles.shared}>
+              ✓ Allocated Respite Care: {kinshipSummary.respiteHoursPerMonth} hours / month
+            </Text>
+          </View>
+        ) : null}
+
+        <View style={styles.composer}>
+          <Text style={styles.composerTitle}>Request Kinship Waiver, Stipend Parity or Concrete Aid</Text>
+          <View style={styles.kindRow}>
+            {(
+              [
+                'licensing_space_waiver',
+                'stipend_parity_review',
+                'respite_care_hours',
+                'concrete_bedding_or_transport_grant',
+              ] as KinshipActionType[]
+            ).map((type) => (
+              <TouchableOpacity
+                key={type}
+                style={[styles.kindChip, kinshipActionType === type && styles.kindChipActive]}
+                onPress={() => setKinshipActionType(type)}
+              >
+                <Text style={[styles.kindText, kinshipActionType === type && styles.kindTextActive]}>
+                  {type.replace(/_/g, ' ')}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+          <TextInput
+            value={kinshipTitle}
+            onChangeText={setKinshipTitle}
+            style={styles.replyInput}
+            placeholder="Support or waiver title (e.g., Shared sibling bedroom waiver)"
+            placeholderTextColor="#8A97A5"
+          />
+          <TextInput
+            value={kinshipDesc}
+            onChangeText={setKinshipDesc}
+            multiline
+            style={styles.textArea}
+            placeholder="Describe what Mia and your household need to keep placement stable."
+            placeholderTextColor="#8A97A5"
+          />
+          <TouchableOpacity style={styles.primaryButton} onPress={handleSubmitKinshipRequest}>
+            <Text style={styles.primaryButtonText}>Submit Kinship Equity Request</Text>
+          </TouchableOpacity>
+        </View>
+
+        {kinshipSummary?.supportItems.map((item) => (
+          <View key={item.id} style={styles.entryCard}>
+            <View style={styles.entryTop}>
+              <View style={styles.entryKindPill}>
+                <Text style={styles.entryKindText}>{item.actionType.replace(/_/g, ' ').toUpperCase()}</Text>
+              </View>
+              <Text style={styles.shared}>{item.status.toUpperCase()}</Text>
+            </View>
+            <Text style={styles.entryTitle}>{item.title}</Text>
+            <Text style={styles.entryDetail}>{item.description}</Text>
+          </View>
+        ))}
+      </>
+    );
   }
 
   function renderMessages() {

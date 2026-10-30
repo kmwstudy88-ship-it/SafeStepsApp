@@ -30,7 +30,8 @@ export type RightOfReplyType =
   | 'factual_correction'
   | 'context_clarification'
   | 'contrary_evidence'
-  | 'agreement_with_action_plan';
+  | 'agreement_with_action_plan'
+  | 'poverty_or_barrier_context';
 
 export type CaseworkerReviewStatus =
   | 'pending'
@@ -72,6 +73,8 @@ export interface AgencyConcern {
     | 'accepted_correction'
     | 'acknowledged_contrary_position';
   parentReplies: ParentReply[];
+  materialHardshipConflationFlagged?: boolean;
+  requestedEcsSupport?: string;
   createdAt: string;
 }
 
@@ -211,4 +214,41 @@ export async function reviewParentReply(
 
   localConcernsCache.set(input.concernId, concern);
   return { success: true, concern };
+}
+
+export interface FlagMaterialHardshipConflationInput {
+  concernId: string;
+  hardshipSignal?: 'unsafe_housing' | 'limited_transport' | 'caregiver_overload' | 'food_insecurity' | 'utility_arrears' | 'agency_waitlist';
+  parentStatement?: string;
+  hardshipExplanation?: string;
+  requestedEcsSupport?: string;
+}
+
+/**
+ * Formally contests that an agency concern conflates systemic poverty or structural
+ * service barriers (e.g., lack of public transport or childcare) with child neglect,
+ * and links a request for Economic & Concrete Supports (ECS).
+ */
+export async function flagMaterialHardshipConflation(
+  input: FlagMaterialHardshipConflationInput
+): Promise<{ success: boolean; concern?: AgencyConcern; error?: string }> {
+  const concern = localConcernsCache.get(input.concernId);
+  if (!concern) {
+    return { success: false, error: 'Concern record not found' };
+  }
+  const statementText = (input.parentStatement || input.hardshipExplanation || '').trim();
+  if (!statementText) {
+    return { success: false, error: 'Parent statement cannot be empty' };
+  }
+
+  const signalLabel = input.hardshipSignal || 'material_hardship_or_barrier';
+  concern.materialHardshipConflationFlagged = true;
+  concern.requestedEcsSupport =
+    input.requestedEcsSupport?.trim() || `Route ${signalLabel} to Economic & Concrete Supports (ECS)`;
+
+  return submitParentRightOfReply({
+    concernId: input.concernId,
+    replyType: 'poverty_or_barrier_context',
+    parentStatement: `[MATERIAL HARDSHIP / SYSTEMIC BARRIER CONTESTABILITY — ${signalLabel}] ${statementText}`,
+  });
 }

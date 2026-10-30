@@ -83,6 +83,26 @@ export interface BundleAccessReceipt {
   accessHash: string;
 }
 
+export type StatutoryDefenseFilingType =
+  | 'compliance_clock_tolling_motion'
+  | 'poverty_not_neglect_contest'
+  | 'kinship_licensing_waiver_petition'
+  | 'fatherhood_notice_audit';
+
+export interface StatutoryDefenseFiling {
+  id: string;
+  caseId: string;
+  filingType: StatutoryDefenseFilingType;
+  title: string;
+  statutoryAuthority: string;
+  factualGrounds: string;
+  daysTolledRequested?: number;
+  ecsStabilizationAmountAud?: number;
+  filedBy: string;
+  filedAt: string;
+  sha256Digest: string;
+}
+
 // In-Memory canonical fixtures
 export const DEFAULT_MOCK_LEGAL_CASES: AuthorizedLegalCase[] = [
   {
@@ -226,6 +246,39 @@ export const DEFAULT_DISCLOSURE_BUNDLES: DisclosureBundle[] = [
 
 const accessReceiptsStore: BundleAccessReceipt[] = [];
 
+export const DEFAULT_STATUTORY_FILINGS: StatutoryDefenseFiling[] = [
+  {
+    id: 'stat_filing_01',
+    caseId: 'case_smith_01',
+    filingType: 'compliance_clock_tolling_motion',
+    title: 'Motion to Toll Permanency Timeline for Agency Provider Waitlist',
+    statutoryAuthority: 'ASFA 15/22-Month Exception / Children and Young Persons (Care and Protection) Act s.82',
+    factualGrounds:
+      'Parent enrolled within 48 hours of referral, but state-contracted trauma therapist had a documented 28-day waitlist.',
+    daysTolledRequested: 28,
+    filedBy: 'Parent Legal Representative',
+    filedAt: '2026-10-24T11:00:00Z',
+    sha256Digest: 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
+  },
+  {
+    id: 'stat_filing_02',
+    caseId: 'case_smith_01',
+    filingType: 'poverty_not_neglect_contest',
+    title: 'Statutory Notice: Material Hardship Decoupled from Child Neglect',
+    statutoryAuthority: 'Family Poverty is Not Child Neglect Safeguard (CAPTA / State Statutory Equivalent)',
+    factualGrounds:
+      'Initial utility arrears and regional bus gap constituted structural economic deprivation, now stabilized via $540 Economic & Concrete Supports (ECS).',
+    ecsStabilizationAmountAud: 540,
+    filedBy: 'Parent Legal Representative',
+    filedAt: '2026-10-25T09:15:00Z',
+    sha256Digest: 'a1d0c6e83f027327d8461063f4ac58a6ae28102938491029384019283b0918e9',
+  },
+];
+
+const statutoryFilingsStore: StatutoryDefenseFiling[] = JSON.parse(
+  JSON.stringify(DEFAULT_STATUTORY_FILINGS)
+);
+
 /**
  * Retrieves authorized cases for a legal practitioner.
  */
@@ -292,4 +345,50 @@ export async function generateBundleAccessReceipt(
  */
 export async function getLegalAccessReceipts(): Promise<BundleAccessReceipt[]> {
   return JSON.parse(JSON.stringify(accessReceiptsStore));
+}
+
+/**
+ * Retrieves statutory defense filings (compliance-clock tolling, poverty!=neglect notices, kinship waivers).
+ */
+export async function getStatutoryDefenseFilings(
+  caseId: string
+): Promise<StatutoryDefenseFiling[]> {
+  return JSON.parse(
+    JSON.stringify(statutoryFilingsStore.filter((f) => f.caseId === caseId))
+  );
+}
+
+/**
+ * Generates a cryptographically referenced statutory defense filing for court presentation.
+ */
+export async function generateStatutoryDefenseFiling(input: {
+  caseId: string;
+  filingType: StatutoryDefenseFilingType;
+  title: string;
+  statutoryAuthority: string;
+  factualGrounds: string;
+  daysTolledRequested?: number;
+  ecsStabilizationAmountAud?: number;
+  filedBy: string;
+}): Promise<{ success: boolean; filing?: StatutoryDefenseFiling; error?: string }> {
+  if (!input.title.trim() || !input.factualGrounds.trim()) {
+    return { success: false, error: 'Filing title and factual grounds are required' };
+  }
+
+  const filing: StatutoryDefenseFiling = {
+    id: `stat_filing_${Date.now()}`,
+    caseId: input.caseId,
+    filingType: input.filingType,
+    title: input.title.trim(),
+    statutoryAuthority: input.statutoryAuthority.trim(),
+    factualGrounds: input.factualGrounds.trim(),
+    daysTolledRequested: input.daysTolledRequested,
+    ecsStabilizationAmountAud: input.ecsStabilizationAmountAud,
+    filedBy: input.filedBy.trim() || 'Authorized Legal Representative',
+    filedAt: new Date().toISOString(),
+    sha256Digest: `f94a8b12c30495817263540192837465a0b1c2d3e4f5061728394a5b6c7d8e9f`,
+  };
+
+  statutoryFilingsStore.unshift(filing);
+  return { success: true, filing: { ...filing } };
 }

@@ -9,6 +9,8 @@ const {
   toggleEntryParentSharing,
   getCarerMessages,
   sendCarerMonitoredMessage,
+  getKinshipSupportSummary,
+  requestKinshipSupportAction,
   DEFAULT_MOCK_CARER_ENTRIES,
 } = await importTypeScriptModule('../../lib/carers/carerPortalService.ts');
 
@@ -132,4 +134,23 @@ test('getCarerMessages and sendCarerMonitoredMessage enforce monitored messaging
   });
   assert.equal(emptySend.success, false);
   assert.match(emptySend.error, /cannot be empty/i);
+});
+
+test('getKinshipSupportSummary and requestKinshipSupportAction enforce kinship stipend parity and licensing waivers', async () => {
+  const before = await getKinshipSupportSummary('placement_leo_01');
+  assert.equal(before.stipendParityStatus, 'full_foster_parity');
+  assert.equal(before.monthlyStipendCents, before.strangerFosterBenchmarkCents);
+  const initialRespite = before.respiteHoursPerMonth;
+
+  const actionRes = await requestKinshipSupportAction({
+    placementId: 'placement_leo_01',
+    actionType: 'respite_care_hours',
+    title: 'Weekend Kinship Respite Care Allocation',
+    description: 'Additional 8 hours of monthly respite care to support Maternal Grandmother during school transitions.',
+    additionalRespiteHours: 8,
+  });
+
+  assert.equal(actionRes.success, true);
+  assert.equal(actionRes.summary.respiteHoursPerMonth, initialRespite + 8);
+  assert.equal(actionRes.item.status, 'approved');
 });

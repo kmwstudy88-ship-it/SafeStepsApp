@@ -4,6 +4,7 @@ import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
 const {
+  buildConcreteSupportTasks,
   buildEscalationAlerts,
   buildFollowUpTasks,
   buildDashboardPayload,
@@ -379,4 +380,58 @@ test('buildDashboardPayload keeps decision-support disclosures when there are no
   assert.equal(dashboard.human_review_required, true);
   assert.equal(dashboard.decision_support_only, true);
   assert.deepEqual(dashboard.case_summaries, []);
+});
+
+test('buildConcreteSupportTasks generates non-punitive ECS tasks when material hardship signals are present', () => {
+  const snapshot = {
+    score: 10,
+    tier: 'low',
+    rationale: 'Material hardship decoupled from neglect score.',
+    model_version: 'risk-rules-v1',
+    material_hardship_assessment: {
+      detected: true,
+      decoupled_from_neglect_score: true,
+      signals: ['unsafe_housing', 'limited_transport'],
+      recommended_ecs_actions: [
+        {
+          signal: 'unsafe_housing',
+          ecs_category: 'housing_stabilization',
+          task_type: 'ecs_housing_support',
+          title: 'Provide emergency housing stabilization / repair grant (Poverty != Neglect)',
+          due_in_hours: 48,
+          priority: 'high',
+        },
+        {
+          signal: 'limited_transport',
+          ecs_category: 'transport_assistance',
+          task_type: 'ecs_transport_voucher',
+          title: 'Issue transit passes / ride-share vouchers or relocate visit closer to home',
+          due_in_hours: 48,
+          priority: 'medium',
+        },
+      ],
+    },
+  };
+
+  const ecsTasks = buildConcreteSupportTasks({
+    caseId: 'case-ecs-1',
+    snapshot,
+    assignments: [{ assignment_role: 'case_worker', user_id: 'worker-ecs-1' }],
+  });
+
+  assert.equal(ecsTasks.length, 2);
+  assert.equal(ecsTasks[0].task_type, 'ecs_housing_support');
+  assert.equal(ecsTasks[0].source, 'economic_concrete_supports');
+  assert.equal(ecsTasks[0].assignee, 'worker-ecs-1');
+  assert.equal(ecsTasks[0].detail.poverty_decoupled_from_neglect, true);
+  assert.equal(ecsTasks[0].detail.decision_support_only, true);
+
+  const combinedTasks = buildFollowUpTasks({
+    caseId: 'case-ecs-1',
+    snapshot,
+    previousSnapshot: null,
+    assignments: [{ assignment_role: 'case_worker', user_id: 'worker-ecs-1' }],
+    includeConcreteSupportTasks: true,
+  });
+  assert.equal(combinedTasks.length, 3); // 1 low-tier check_in + 2 ECS tasks
 });

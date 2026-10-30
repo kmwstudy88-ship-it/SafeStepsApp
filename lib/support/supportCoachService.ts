@@ -80,6 +80,8 @@ export const COACH_SUGGESTED_PROMPTS: string[] = [
   'How do I prepare for my caseworker meeting tomorrow?',
   'Bedtime routine is falling apart tonight',
   'Need a 60-second breathing reset right now',
+  'I cannot afford bus fare or groceries this week (ECS Safe Harbor)',
+  'Coach me on ABC / PCIT PRIDE skills for my visit today',
 ];
 
 const LOCAL_FALLBACK_RULES: { keywords: RegExp; response: string; suggestions: string[] }[] = [
@@ -106,6 +108,24 @@ const LOCAL_FALLBACK_RULES: { keywords: RegExp; response: string; suggestions: s
     response:
       "Let's do a 4-4-4-4 Box Breathing Reset right now:\n1. Inhale slowly through your nose: 1... 2... 3... 4\n2. Hold your breath gently: 1... 2... 3... 4\n3. Exhale completely through your mouth: 1... 2... 3... 4\n4. Pause empty: 1... 2... 3... 4\nRepeat this twice more. Your nervous system is settling.",
     suggestions: ['I feel a bit calmer now', 'Show me quick bedtime scripts'],
+  },
+  {
+    keywords: /\b(?:rent|eviction|food|groceries|electricity|utility|transport|bus|broke|money|afford|voucher)\b/i,
+    response:
+      "Poverty is NOT child neglect. In SafeSteps, asking for help with rent, utility bills, groceries, childcare, or transport carries ZERO child-protection risk penalty. You can request non-punitive Economic & Concrete Supports (ECS) or pause your compliance timer if a transit gap blocks your visit.",
+    suggestions: ['Open Economic & Concrete Supports (ECS)', 'Connect with a Parent Partner Peer Mentor'],
+  },
+  {
+    keywords: /\b(?:abc|pcit|pride|follow the lead|nurturance|connect during visit|play with my child)\b/i,
+    response:
+      "During your visit today, use ABC In-the-Moment & PCIT PRIDE coaching:\n1. Follow the Lead: Let your child pick the activity and narrate what they are doing ('You are stacking the blue block on top!').\n2. Labeled Praise (P): 'Thank you for sharing that crayon with me!'\n3. Reflect (R) & Imitate (I): Mirror their calm words and play.\n4. Nurturance: If they become fussy or sad near the end of the visit, offer immediate warm comfort—separation grief is normal attachment, not bad behavior.",
+    suggestions: ['Open Contact Visit Companion', 'How do I handle goodbye tears?'],
+  },
+  {
+    keywords: /\b(?:after the visit|saying goodbye|cried when leaving|visit ended|missing my child|return to carer|goodbye tears)\b/i,
+    response:
+      "End-of-visit tears and post-visit sadness are signs of how deeply you and your child love each other—not a parenting failure. Use a predictable 5-minute transition ritual ('Two more minutes of blocks, then our special handshake and sharing your drawing with your carer'), and take 10 minutes after the visit with your Parent Partner or breathing reset to buffer your own nervous system.",
+    suggestions: ['Guide me through a post-visit breathing reset', 'Log a Carer Transition Handoff Note'],
   },
 ];
 

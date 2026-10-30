@@ -110,6 +110,10 @@ export default function CaseDetailScreen() {
           <Text style={styles.buttonText}>Open Document Viewer & Upload</Text>
         </TouchableOpacity>
 
+        <TouchableOpacity style={styles.secondaryButton} onPress={() => router.push('/reunification-support' as any)}>
+          <Text style={styles.secondaryButtonText}>Open Concrete Supports (ECS), Parent Partners & Step-Down Hub</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity
           style={styles.secondaryButton}
           onPress={handleRecomputeRisk}
@@ -130,6 +134,9 @@ export default function CaseDetailScreen() {
               <Text style={styles.itemTitle}>{riskSummary.latest.title}</Text>
               <Text style={styles.meta}>{riskSummary.latest.cautionText}</Text>
               <Text style={styles.meta}>{riskSummary.latest.rationaleText}</Text>
+              {riskSummary.latest.materialHardshipText ? (
+                <Text style={styles.meta}>{riskSummary.latest.materialHardshipText}</Text>
+              ) : null}
               <Text style={styles.meta}>{riskSummary.latest.rulesText}</Text>
             </View>
           ) : <Text style={styles.meta}>{riskSummary.emptyText || 'No risk history available yet.'}</Text>}

@@ -43,6 +43,15 @@ const UNREALISTIC_PATTERNS = [
       reframe: 'Sequence services in priority order so the participant can meaningfully engage in one or two core supports at a time.',
     }),
   },
+  {
+    severity: 'high',
+    pattern: /\b(penalized\s+despite\s+waitlist|non[-\s]?compliant\s+while\s+on\s+waiting\s+list|complete\s+therapy\s+despite\s+\d+[-\s]?week\s+waitlist)\b/i,
+    reason: 'Penalizes parent for agency or provider waitlists outside parental control (ASFA / statutory timeline collision).',
+    reframe: (sentence) => ({
+      expectation: sentence,
+      reframe: 'Pause/toll the statutory compliance clock while the parent is on a verified provider waitlist and credit interim self-directed progress.',
+    }),
+  },
 ];
 
 async function unrealisticExpectationDetectionHandler({ input = {} }) {

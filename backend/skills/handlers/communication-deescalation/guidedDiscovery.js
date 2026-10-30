@@ -24,12 +24,14 @@ async function guidedDiscoveryHandler({ input = {} }) {
     'When you picture a calmer moment in a fictional scenario like this, what is one small thing that helps everyone feel heard?',
     'What part of this situation feels most within your control right now, and what part needs extra support?',
     'If a friend were navigating a similar moment, what gentle next step might you suggest to them?',
+    'Would connecting with a lived-experience Parent Partner or requesting concrete material support (rent, utilities, transit) help take pressure off right now?',
   ];
 
   const optOutPrompts = [
     'You can pass on any question or switch to a fictional example at any time.',
     'If you prefer to pause, take a breath, or come back to this later, that is completely okay.',
     'Would you rather explore a practical step, or take a break from this topic today?',
+    'Requesting concrete support or peer mentorship is always voluntary and protected from compliance penalties.',
   ];
 
   return buildSkillEnvelope({

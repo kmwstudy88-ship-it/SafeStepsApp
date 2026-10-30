@@ -24,6 +24,13 @@ const BEHAVIOR_THEMES = [
       'Stress or overwhelm around formal communication rather than lack of care.',
     ],
   },
+  {
+    pattern: /\b(pushing\s+away|acting\s+tough|refusing\s+hug|miscuing|goodbye\s+grief)\b/i,
+    meanings: [
+      'ABC-EC Attachment Miscuing: Children who have experienced separation trauma often push away or act tough when they most need gentle nurturance and emotional safety.',
+      'Acute pre/post-visit separation grief requiring calm co-regulation, sensory transition objects, and non-demanding warmth.',
+    ],
+  },
 ];
 
 async function behaviorMessageInterpretationHandler({ input = {} }) {

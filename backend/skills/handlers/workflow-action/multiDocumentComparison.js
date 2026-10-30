@@ -18,6 +18,11 @@ const COMPARISON_THEMES = [
     positive: /\b(safe\s+housing|clean\s+and\s+appropriate|adequate\s+utilities|stable\s+home)\b/i,
     negative: /\b(unsafe\s+housing|utilities\s+disconnected|hazards\s+observed)\b/i,
   },
+  {
+    topic: 'waitlist_and_barrier_attribution',
+    positive: /\b(waitlisted|waiting\s+list|provider\s+delay|transit\s+cancelled|clock\s+paused)\b/i,
+    negative: /\b(refused\s+service|non[-\s]?compliant\s+with\s+referral|failed\s+to\s+enroll|unwilling\s+to\s+attend)\b/i,
+  },
 ];
 
 async function multiDocumentComparisonHandler({ input = {} }) {

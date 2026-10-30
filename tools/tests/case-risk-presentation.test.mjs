@@ -41,3 +41,24 @@ test('buildCaseRiskSummary tolerates partial snapshot payloads', () => {
   assert.equal(summary.latest.rationaleText, 'No rationale available.');
   assert.equal(summary.latest.rulesText, 'Rules: unknown');
 });
+
+test('buildCaseRiskSummary formats materialHardshipText when poverty/hardship safeguard is detected', () => {
+  const summary = buildCaseRiskSummary({
+    riskHistory: [{
+      score: 10,
+      tier: 'low',
+      confidence: 0.78,
+      rationale: 'Material hardship decoupled from neglect score.',
+      model_version: 'risk-rules-v1',
+      material_hardship_assessment: {
+        detected: true,
+        decoupled_from_neglect_score: true,
+        signals: ['unsafe_housing', 'limited_transport'],
+      },
+    }],
+  });
+
+  assert.equal(summary.hasError, false);
+  assert.match(summary.latest.materialHardshipText, /Material hardship safeguard: unsafe_housing, limited_transport/);
+  assert.match(summary.latest.materialHardshipText, /decoupled from neglect score/);
+});

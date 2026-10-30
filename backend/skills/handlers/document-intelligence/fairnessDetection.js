@@ -47,6 +47,16 @@ const FAIRNESS_PATTERNS = [
       reframe: `Use neutral attribution such as "stated", "reported", or "described" rather than "${match[0]}".`,
     }),
   },
+  {
+    category: 'systemic_barrier_blaming',
+    severity: 'high',
+    pattern: /\b(failed\s+to\s+complete\s+while\s+waitlisted|non[-\s]?compliant\s+due\s+to\s+poverty|refused\s+visit\s+because\s+of\s+transit|failed\s+to\s+provide\s+housing)\b/i,
+    explanation: 'Attributes systemic agency waitlists, transit gaps, or poverty-driven material hardship as personal parental defiance or neglect.',
+    reframe: (match, sentence) => ({
+      concern: sentence,
+      reframe: `Separate systemic/economic barriers from parental intent: document the concrete barrier ("${match[0]}"), route to Economic & Concrete Supports (ECS), and toll the compliance clock while waitlisted.`,
+    }),
+  },
 ];
 
 async function fairnessDetectionHandler({ input = {} }) {

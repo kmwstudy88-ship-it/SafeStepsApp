@@ -8,6 +8,7 @@ const {
   verifyExtractedConcern,
   disputeExtractedConcern,
   resolveContradiction,
+  auditExtractedConcernsForSystemicBias,
   DEFAULT_MOCK_INTELLIGENCE,
 } = await importTypeScriptModule('../../lib/documents/documentIntelligenceService.ts');
 
@@ -87,4 +88,13 @@ test('resolveContradiction logs resolution notes and marks status as clarified',
   assert(updated);
   assert.equal(updated.status, 'clarified');
   assert.equal(updated.resolutionNotes, note);
+});
+
+test('auditExtractedConcernsForSystemicBias detects provider/transport delays and flags compliance-clock safeguard', async () => {
+  const auditRes = await auditExtractedConcernsForSystemicBias('demo_case');
+  assert(auditRes.totalFlagged >= 1);
+  const delayedConcern = auditRes.flaggedConcerns.find((c) => c.id === 'ext_concern_02');
+  assert(delayedConcern);
+  assert.equal(delayedConcern.structuralBiasFlag, 'agency_waitlist_penalized');
+  assert.match(delayedConcern.recommendedEcsOrSafeguard, /Pause statutory compliance clock/);
 });

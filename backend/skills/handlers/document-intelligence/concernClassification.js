@@ -34,8 +34,8 @@ const CONCERN_CATEGORIES = [
   {
     category: 'resource',
     severity: 'medium',
-    pattern: /\b(transport\s+barrier|food\s+insecurity|utility\s+arrears|childcare\s+shortage|financial\s+hardship|housing\s+waitlist)\b/i,
-    triage: 'Connect the family with concrete material/community support services rather than treating resource gaps as personal failure.',
+    pattern: /\b(transport\s+barrier|food\s+insecurity|utility\s+arrears|childcare\s+shortage|financial\s+hardship|housing\s+waitlist|eviction\s+notice|rent\s+arrears|bus\s+fare|lack\s+of\s+bedding|provider\s+waitlist)\b/i,
+    triage: 'Poverty != Neglect Safeguard: Route to Economic & Concrete Supports (ECS) for flexible material aid (rent, utilities, transit, childcare) and toll statutory compliance clocks for provider waitlists rather than treating resource gaps as parental failure.',
   },
 ];
 

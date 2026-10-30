@@ -215,3 +215,345 @@ test('configured orchestrator blocks automated irreversible child-protection dec
   assert.equal(result.status, 'blocked');
   assert.ok(result.policy.automationBlockedReasons.includes('irreversible_decision_automation_prohibited'));
 });
+
+test('bias_discrimination_detection and unrealistic_expectation_detection flag poverty-neglect conflation, kinship housing bias, and waitlist penalties', async () => {
+  const orchestrator = createConfiguredSkillsOrchestrator();
+
+  const biasRes = await orchestrator.runSkill({
+    skillId: 'bias_discrimination_detection',
+    input: {
+      artifact:
+        'Caseworker substantiated neglect due to utility shutoff and rejected kinship placement due to bedroom size.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+
+  assert.equal(biasRes.status, 'ok');
+  const categories = biasRes.output.bias_signals.map((b) => b.category);
+  assert.ok(categories.includes('socioeconomic_or_poverty_bias'));
+  assert.ok(categories.includes('kinship_licensing_disparity_bias'));
+
+  const waitlistRes = await orchestrator.runSkill({
+    skillId: 'unrealistic_expectation_detection',
+    input: {
+      documentId: 'doc-waitlist',
+      text: 'Parent was marked non-compliant while on waiting list for trauma therapy and must complete therapy despite 12-week waitlist.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+
+  assert.equal(waitlistRes.status, 'ok');
+  assert.ok(waitlistRes.output.unrealistic_expectations.length >= 1);
+  assert.match(waitlistRes.output.suggested_reframes[0].reframe, /Pause\/toll the statutory compliance clock/i);
+
+  const riskRes = await orchestrator.runSkill({
+    skillId: 'risk_assessment',
+    input: {
+      caseId: 'case-ecs-1',
+      text: 'Parent engaged with a lived-experience parent partner and practiced labeled praise during ABC coaching, though an eviction notice was received.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(riskRes.status, 'ok');
+  const protectiveFactors = riskRes.output.protective_signals.map((p) => p.factor);
+  assert.ok(protectiveFactors.includes('parent_partner_peer_mentorship'));
+  assert.ok(protectiveFactors.includes('abc_pcit_dyadic_coaching'));
+  assert.ok(
+    riskRes.output.uncertainties.some((u) => u.includes('Poverty != Neglect Safeguard')),
+  );
+
+  const packetRes = await orchestrator.runSkill({
+    skillId: 'case_packet_builder',
+    input: {
+      caseId: 'case-ecs-1',
+      documents: [{ id: 'doc-ecs-1', title: 'ECS & Step-Down Plan' }],
+      protectiveFactors: ['Parent Partner engaged', '12-month step-down plan active'],
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(packetRes.status, 'ok');
+  assert.ok(
+    packetRes.output.packet_sections.some(
+      (s) => s.section_id === 'structural_equity_ecs_and_step_down',
+    ),
+  );
+  assert.ok(
+    packetRes.output.human_review_queue.some(
+      (q) => q.checkpoint_id === 'structural_equity_and_ecs_verification',
+    ),
+  );
+
+  const concernRes = await orchestrator.runSkill({
+    skillId: 'concern_classification',
+    input: {
+      documentId: 'doc-ecs-2',
+      text: 'Family received an eviction notice and faces a provider waitlist for childcare.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(concernRes.status, 'ok');
+  assert.ok(concernRes.output.concerns.some((c) => c.category === 'resource'));
+  assert.ok(
+    concernRes.output.triage_hints.some((h) => h.includes('Poverty != Neglect Safeguard')),
+  );
+
+  const fairnessRes = await orchestrator.runSkill({
+    skillId: 'fairness_detection',
+    input: {
+      documentId: 'doc-fair-2',
+      text: 'Mother failed to complete while waitlisted and was non-compliant due to poverty.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(fairnessRes.status, 'ok');
+  assert.ok(
+    fairnessRes.output.concerns.some((c) => c.category === 'systemic_barrier_blaming'),
+  );
+
+  const culturalRes = await orchestrator.runSkill({
+    skillId: 'cultural_safety',
+    input: {
+      artifact: 'Father not contacted during intake and paternal relatives excluded from kinship review.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(culturalRes.status, 'ok');
+  assert.ok(
+    culturalRes.output.cultural_safety_concerns.some(
+      (c) => c.issue === 'paternal_and_fatherhood_network_exclusion',
+    ),
+  );
+
+  const stepDownRes = await orchestrator.runSkill({
+    skillId: 'follow_up_scheduling',
+    input: {
+      caseId: 'case-step-down-1',
+      tier: 'post_reunification_step_down',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(stepDownRes.status, 'ok');
+  assert.equal(stepDownRes.output.tasks.length, 3);
+  assert.ok(stepDownRes.output.tasks.some((t) => t.task_id === 'ecs_stability_checkin'));
+
+  const reqRes = await orchestrator.runSkill({
+    skillId: 'requirement_extraction',
+    input: {
+      documentId: 'doc-req-ecs',
+      text: 'Parent must complete trauma counseling while waitlisted by 2026-08-01. Parent must purchase furniture at parent\'s expense by 2026-07-01.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(reqRes.status, 'ok');
+  assert.ok(reqRes.output.obligations.some((o) => o.status_hint === 'tolled_by_waitlist'));
+  assert.ok(
+    reqRes.output.ambiguous_requirements.some((a) => a.includes('Poverty != Neglect Safeguard')),
+  );
+
+  const evRes = await orchestrator.runSkill({
+    skillId: 'evidence_extraction',
+    input: {
+      documentId: 'doc-ev-barrier',
+      text: 'Parent uploaded a waitlist confirmation and transit cancellation notice.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(evRes.status, 'ok');
+  assert.ok(
+    evRes.output.evidence_items.some((e) => e.evidence_type === 'systemic_barrier_proof'),
+  );
+
+  const behRes = await orchestrator.runSkill({
+    skillId: 'behavior_message_interpretation',
+    input: {
+      message: 'Child was pushing away and acting tough during goodbye grief.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(behRes.status, 'ok');
+  assert.ok(
+    behRes.output.possible_meanings.some((m) => m.includes('ABC-EC Attachment Miscuing')),
+  );
+
+  const contraRes = await orchestrator.runSkill({
+    skillId: 'contradiction_detection',
+    input: {
+      documentId: 'doc-contra-waitlist',
+      text: 'Provider confirmed mother is on waiting list with no intake slots. Later the report states mother is non-compliant with program.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(contraRes.status, 'ok');
+  assert.ok(
+    contraRes.output.contradictions.some(
+      (c) => c.topic === 'waitlist_vs_noncompliance_attribution',
+    ),
+  );
+
+  const compRes = await orchestrator.runSkill({
+    skillId: 'multi_document_comparison',
+    input: {
+      documentIds: ['doc-w1', 'doc-w2'],
+      documents: [
+        { id: 'doc-w1', text: 'Clinic letter confirms parent is waitlisted due to provider delay.' },
+        { id: 'doc-w2', text: 'Case summary states parent was non-compliant with referral.' },
+      ],
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(compRes.status, 'ok');
+  assert.ok(
+    compRes.output.contradictions.some(
+      (c) => c.topic === 'waitlist_and_barrier_attribution',
+    ),
+  );
+
+  const escRes = await orchestrator.runSkill({
+    skillId: 'escalation',
+    input: {
+      caseId: 'case-esc-ecs',
+      signals: {
+        materialHardshipSignals: ['utility_shutoff_or_arrears', 'eviction_or_rent_arrears'],
+        protectiveFactors: ['parent_partner_engaged'],
+      },
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(escRes.status, 'ok');
+  assert.ok(
+    escRes.output.review_actions.some((a) => a.includes('Poverty != Neglect Safeguard')),
+  );
+
+  const updRes = await orchestrator.runSkill({
+    skillId: 'case_update',
+    input: {
+      caseId: 'case-upd-ecs',
+      event: {
+        event_type: 'home_visit',
+        summary: 'Parent requested utility assistance and reported provider waitlist delay.',
+        material_hardship_factors: ['utility_shutoff_or_arrears'],
+        structural_barriers: ['agency_service_waitlist'],
+      },
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(updRes.status, 'ok');
+  assert.ok(
+    updRes.output.event_payload.structured_signals.material_hardship_signals.includes(
+      'utility_shutoff_or_arrears',
+    ),
+  );
+  assert.ok(
+    updRes.output.event_payload.structured_signals.contact_mitigating_barriers.includes(
+      'agency_service_waitlist',
+    ),
+  );
+  assert.ok(
+    updRes.output.review_notes.some((n) => n.includes('Poverty != Neglect Safeguard')),
+  );
+
+  const timeRes = await orchestrator.runSkill({
+    skillId: 'timeline_extraction',
+    input: {
+      documentId: 'doc-time-waitlist',
+      text: 'On 2026-04-01 the parent partner attended the meeting. Mother was placed on waitlist for therapy.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(timeRes.status, 'ok');
+  assert.ok(timeRes.output.timeline_events[0].actors.includes('parent partner'));
+  assert.ok(
+    timeRes.output.chronology_gaps.some((g) => g.includes('compliance-clock tolling')),
+  );
+
+  const emoRes = await orchestrator.runSkill({
+    skillId: 'emotion_labeling',
+    input: {
+      message: 'After the visit ended and saying goodbye, I am afraid to ask for help because it might be used against me.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(emoRes.status, 'ok');
+  assert.ok(emoRes.output.labels.includes('post_visit_separation_grief'));
+  assert.ok(emoRes.output.labels.includes('institutional_mistrust_or_fear'));
+
+  const safePlanRes = await orchestrator.runSkill({
+    skillId: 'safety_planning',
+    input: {
+      message: 'I feel nervous during visit goodbye and handover.',
+      ageBand: 'middle_child',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(safePlanRes.status, 'ok');
+  assert.ok(
+    safePlanRes.output.plan_steps.some((s) => s.includes('transition comfort item')),
+  );
+
+  const deEscRes = await orchestrator.runSkill({
+    skillId: 'de_escalation_strategy',
+    input: {
+      message: 'We are arguing about the visit handover time.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(deEscRes.status, 'ok');
+  assert.ok(
+    deEscRes.output.de_escalation_steps.some((s) => s.includes('Parent Partner')),
+  );
+
+  const discRes = await orchestrator.runSkill({
+    skillId: 'disclosure_sensitive_handling',
+    input: {
+      message: 'The lights went out at home and the bus broke on the way to school.',
+      ageBand: 'middle_child',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(discRes.status, 'ok');
+  assert.equal(discRes.output.review_route.ecs_material_support_flag, true);
+  assert.ok(
+    discRes.output.review_route.handling_rules.some((r) => r.includes('Poverty != Neglect Safeguard')),
+  );
+
+  const devRes = await orchestrator.runSkill({
+    skillId: 'developmental_appropriateness',
+    input: {
+      message: 'Let us play with blocks.',
+      ageBand: 'early_child',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(devRes.status, 'ok');
+  assert.ok(
+    devRes.output.adaptations.some((a) => a.includes('PCIT PRIDE')),
+  );
+
+  const privRes = await orchestrator.runSkill({
+    skillId: 'boundary_privacy',
+    input: {
+      message: 'Worker asked to share parent partner notes with court and report ecs request as neglect.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(privRes.status, 'ok');
+  assert.ok(
+    privRes.output.privacy_flags.some(
+      (f) => f.data_type === 'confidential_peer_mentor_or_ecs_boundary',
+    ),
+  );
+
+  const stdRes = await orchestrator.runSkill({
+    skillId: 'child_safe_standards_compliance',
+    input: {
+      artifact: 'Agency cancelled visit as punishment and denied kinship stipend.',
+    },
+    context: { userId: 'test-user-1' },
+  });
+  assert.equal(stdRes.status, 'ok');
+  assert.ok(
+    stdRes.output.compliance_flags.some(
+      (f) => f.standard === 'Supportive Family Time & Kinship Equity',
+    ),
+  );
+});
