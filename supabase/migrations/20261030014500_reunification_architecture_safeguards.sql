@@ -30,11 +30,57 @@ begin
 end
 $fn$;
 
--- 1. Resolve community_service_referrals tenant boundary (Section 1.1)
+-- 1. Resolve community_service_referrals tenant boundary (Section 1.1) and ensure RLS on base tables
+alter table if exists public.platform_tenants enable row level security;
+drop policy if exists platform_tenants_service_manage on public.platform_tenants;
+create policy platform_tenants_service_manage
+  on public.platform_tenants
+  for all
+  to service_role, postgres
+  using (true)
+  with check (true);
+drop policy if exists platform_tenants_authenticated_read on public.platform_tenants;
+create policy platform_tenants_authenticated_read
+  on public.platform_tenants
+  for select
+  to authenticated
+  using ((select auth.uid()) is not null);
+
+alter table if exists public.cases enable row level security;
+drop policy if exists cases_service_manage on public.cases;
+create policy cases_service_manage
+  on public.cases
+  for all
+  to service_role, postgres
+  using (true)
+  with check (true);
+drop policy if exists cases_authenticated_case_access on public.cases;
+create policy cases_authenticated_case_access
+  on public.cases
+  for select
+  to authenticated
+  using (public.safesteps_has_case_access(id));
+
 alter table if exists public.community_service_referrals
   add column if not exists tenant_id uuid references public.platform_tenants(id),
   add column if not exists compliance_clock_paused boolean not null default false,
   add column if not exists waitlist_weeks integer check (waitlist_weeks is null or waitlist_weeks >= 0);
+
+alter table if exists public.community_service_referrals enable row level security;
+drop policy if exists community_service_referrals_service_manage on public.community_service_referrals;
+create policy community_service_referrals_service_manage
+  on public.community_service_referrals
+  for all
+  to service_role, postgres
+  using (true)
+  with check (true);
+drop policy if exists community_service_referrals_authenticated_access on public.community_service_referrals;
+create policy community_service_referrals_authenticated_access
+  on public.community_service_referrals
+  for all
+  to authenticated
+  using (public.safesteps_has_case_access(case_id))
+  with check (public.safesteps_has_case_access(case_id));
 
 create index if not exists community_service_referrals_tenant_id_idx
   on public.community_service_referrals(tenant_id);
