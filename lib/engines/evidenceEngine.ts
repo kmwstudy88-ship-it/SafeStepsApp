@@ -6,6 +6,10 @@ import {
   OfflineEvidenceAttachment,
   queueOfflineEvidence,
   removeOfflineEvidenceItem,
+  readOfflineEvidenceAttachment,
+  retainOfflineEvidenceDraft,
+  getOfflineEvidenceVaultHistory,
+  verifyOfflineEvidenceVaultChain,
 } from "./offlineEvidenceVault";
 import type { EvidenceReviewAvailability } from "./structuredEvidenceWorkflow";
 
@@ -33,6 +37,8 @@ export type EvidenceItem = {
 };
 
 export type CreateEvidenceItemInput = {
+  id?: string;
+  expectedOwnerId?: string;
   title: string;
   notes?: string;
   evidence_type?: string | null;
@@ -52,6 +58,7 @@ export type CreateEvidenceItemInput = {
 };
 
 export type CreateEvidenceWithAttachmentInput = {
+  captureDraftId?: string;
   title: string;
   notes?: string;
   evidence_type?: string | null;
@@ -115,6 +122,7 @@ async function getPreviousEvidenceAuditHash(userId: string) {
 }
 
 async function writeEvidenceAuditLog(input: {
+  auditId?: string;
   userId: string;
   evidenceId: string;
   eventType: "evidence_created" | "offline_evidence_synced" | "status_changed";
@@ -130,6 +138,7 @@ async function writeEvidenceAuditLog(input: {
   });
 
   const { error } = await supabase.from("evidence_audit_log").insert({
+    ...(input.auditId ? { id: input.auditId } : {}),
     evidence_id: input.evidenceId,
     owner_id: input.userId,
     event_type: input.eventType,
@@ -139,9 +148,14 @@ async function writeEvidenceAuditLog(input: {
     hash_algorithm: "sha256",
   });
 
-  if (error) {
-    throw new Error(error.message);
+  if (error?.code === "23505" && input.auditId) {
+    const { data: existing, error: readError } = await supabase.from("evidence_audit_log")
+      .select("owner_id,evidence_id,event_type,event_payload").eq("id", input.auditId).single();
+    if (!readError && existing?.owner_id === input.userId && existing.evidence_id === input.evidenceId
+      && existing.event_type === input.eventType
+      && await createEvidenceVaultHash(existing.event_payload) === await createEvidenceVaultHash(input.payload)) return;
   }
+  if (error) throw new Error(error.message);
 }
 
 async function getCurrentEvidenceUserId(action: string) {
@@ -280,8 +294,9 @@ export async function fetchEvidenceCaseReviewAvailability(): Promise<EvidenceCas
 
 export async function createEvidenceItem(input: CreateEvidenceItemInput) {
   const userId = await getCurrentEvidenceUserId("adding evidence");
+  if (input.expectedOwnerId && input.expectedOwnerId !== userId) throw new Error("The signed-in account changed. Evidence remains queued.");
   const status = input.status ?? "stored";
-  const capturedAt = input.captured_at ?? new Date().toISOString();
+  const capturedAt = input.captured_at === undefined ? new Date().toISOString() : input.captured_at;
   const notes = input.notes ?? "";
   const filePath = input.file_path ?? null;
   const evidenceType = input.evidence_type ?? null;
@@ -303,9 +318,10 @@ export async function createEvidenceItem(input: CreateEvidenceItemInput) {
     attachment_byte_size: input.attachment_byte_size ?? null,
   });
 
-  const { data, error } = await supabase
+  const { data: inserted, error } = await supabase
     .from("evidence_items")
     .insert({
+      ...(input.id ? { id: input.id } : {}),
       owner_id: userId,
       title: input.title,
       notes,
@@ -328,11 +344,21 @@ export async function createEvidenceItem(input: CreateEvidenceItemInput) {
     .select()
     .single();
 
-  if (error) {
+  let data = inserted;
+  if (error?.code === "23505" && input.id) {
+    const existing = await supabase.from("evidence_items").select("*")
+      .eq("id", input.id).eq("owner_id", userId).single();
+    if (existing.error || existing.data?.integrity_hash !== integrityHash) {
+      throw new Error("Evidence registration conflict. The queued original has been retained.");
+    }
+    data = existing.data;
+  } else if (error) {
     throw new Error(error.message);
   }
+  if (!data) throw new Error("Evidence registration returned no receipt.");
 
   await writeEvidenceAuditLog({
+    auditId: input.id,
     userId,
     evidenceId: data.id,
     eventType: input.audit_event_type ?? "evidence_created",
@@ -347,7 +373,7 @@ export async function createEvidenceItem(input: CreateEvidenceItemInput) {
     },
   });
 
-  await supabase.from("progress_events").insert({
+  if (inserted) await supabase.from("progress_events").insert({
     owner_id: userId,
     event_type: "evidence_added",
     label: `Evidence added: ${input.title}`,
@@ -377,103 +403,108 @@ function evidenceNotesWithAttachment(input: CreateEvidenceWithAttachmentInput) {
 }
 
 export async function createEvidenceItemWithOfflineFallback(input: CreateEvidenceWithAttachmentInput) {
-  const userId = await getCurrentEvidenceUserId("adding evidence");
-
-  try {
-    const filePath = input.attachment
-      ? await uploadEvidenceFile(input.attachment.uri, input.attachment.name, input.attachment.mimeType)
-      : null;
-
-    return {
-      mode: "online" as const,
-      item: await createEvidenceItem({
-        title: input.title,
-        notes: evidenceNotesWithAttachment(input),
-        evidence_type: input.evidence_type ?? null,
-        purpose: input.purpose ?? null,
-        structured_data: input.structured_data ?? null,
-        source_reliability: input.structured_data?.source_reliability as string | null | undefined,
-        file_path: filePath,
-        status: "stored",
-      }),
-    };
-  } catch (error) {
-    const queued = await queueOfflineEvidence({
-      ownerId: userId,
-      title: input.title,
-      notes: evidenceNotesWithAttachment(input),
-      evidenceType: input.evidence_type ?? null,
-      purpose: input.purpose ?? null,
-      structuredData: input.structured_data ?? null,
-      attachment: input.attachment ?? null,
-    });
-
-    return {
-      mode: "offline" as const,
-      item: queued,
-      error: error instanceof Error ? error.message : "Evidence queued for upload.",
-    };
+  const { data: localSession, error: sessionError } = await supabase.auth.getSession();
+  if (sessionError) throw sessionError;
+  const userId = localSession.session?.user.id;
+  if (!userId) throw new Error("Sign in before saving evidence.");
+  const captureDraftId = input.captureDraftId ?? input.attachment?.captureDraftId;
+  if (captureDraftId) {
+    const source = (await getOfflineEvidenceVaultItems(userId)).find((item) => item.id === captureDraftId);
+    if (!source?.requiresConfirmation) throw new Error("This capture draft is unavailable for this account.");
   }
+  const digest = captureDraftId ? (await createEvidenceVaultHash({ ownerId: userId, captureDraftId, purpose: "confirm-capture" })).replace(/^sha256:/, "") : null;
+  const confirmationId = digest ? `${digest.slice(0, 8)}-${digest.slice(8, 12)}-8${digest.slice(13, 16)}-a${digest.slice(17, 20)}-${digest.slice(20, 32)}` : undefined;
+  const queued = await queueOfflineEvidence({
+    captureId: confirmationId,
+    ownerId: userId, title: input.title, notes: evidenceNotesWithAttachment(input),
+    evidenceType: input.evidence_type ?? null, purpose: input.purpose ?? null,
+    structuredData: { ...input.structured_data, ...(input.attachment ? { source_reliability: "unverified" } : {}), ...(captureDraftId ? { capture_draft_id: captureDraftId } : {}) }, attachment: input.attachment ?? null,
+  });
+  if (captureDraftId) await retainOfflineEvidenceDraft(captureDraftId, userId);
+  const result = await syncPendingOfflineEvidence().catch(() => ({ syncedCount: 0, failedCount: 1, pendingCount: 1 }));
+  const pending = await getOfflineEvidenceVaultItems(userId);
+  const retained = pending.find((item) => item.id === queued.id);
+  return retained
+    ? { mode: "offline" as const, item: retained, error: retained.lastError ?? "Evidence saved securely on this device; upload is pending." }
+    : { mode: "online" as const, item: { ...queued, id: queued.id.replace("offline-evidence-", "") }, error: result.failedCount ? "Some other evidence items remain pending." : undefined };
 }
 
 export async function getPendingOfflineEvidenceItems() {
-  const userId = await getCurrentEvidenceUserId("viewing offline evidence");
+  const { data, error } = await supabase.auth.getSession();
+  if (error) throw error;
+  const userId = data.session?.user.id;
+  if (!userId) throw new Error("Sign in before viewing local evidence.");
   return getOfflineEvidenceVaultItems(userId);
 }
 
-export async function syncPendingOfflineEvidence() {
+let syncOperation: Promise<{ syncedCount: number; failedCount: number; pendingCount: number }> | null = null;
+
+export function syncPendingOfflineEvidence() {
+  if (syncOperation) return syncOperation;
+  const operation = syncOfflineEvidence();
+  syncOperation = operation;
+  void operation.finally(() => { if (syncOperation === operation) syncOperation = null; }).catch(() => undefined);
+  return operation;
+}
+
+async function uploadSealedEvidence(pendingItem: Awaited<ReturnType<typeof getOfflineEvidenceVaultItems>>[number], userId: string) {
+  if (!pendingItem.attachment) return null;
+  const attachment = pendingItem.attachment;
+  const bytes = await readOfflineEvidenceAttachment(attachment);
+  const path = `${userId}/${pendingItem.id}.${getSafeFileExtension(attachment.name, attachment.mimeType)}`;
+  const { error } = await supabase.storage.from("evidence").upload(path, bytes, {
+    contentType: attachment.mimeType ?? "application/octet-stream", upsert: false,
+  });
+  if (error) {
+    // An interrupted request may already have uploaded this immutable object.
+    // Verify the bytes rather than trusting a filename or overwriting it.
+    const existing = await supabase.storage.from("evidence").download(path);
+    if (existing.error || !existing.data) throw new Error(error.message);
+    const stored = new Uint8Array(await existing.data.arrayBuffer());
+    if (stored.length !== bytes.length || !stored.every((value, index) => value === bytes[index])) {
+      throw new Error("Uploaded evidence conflicts with the queued original.");
+    }
+  }
+  return path;
+}
+
+async function syncOfflineEvidence() {
   const userId = await getCurrentEvidenceUserId("syncing offline evidence");
+  const history = await getOfflineEvidenceVaultHistory();
+  if (!await verifyOfflineEvidenceVaultChain(history)) throw new Error("Evidence history failed verification. Sync stopped; originals retained.");
   const pendingItems = await getOfflineEvidenceVaultItems(userId);
   let syncedCount = 0;
   let failedCount = 0;
-
-  for (const pendingItem of pendingItems) {
+  for (const pendingItem of [...pendingItems].reverse()) {
+    if (pendingItem.requiresConfirmation) continue;
     try {
-      const filePath = pendingItem.attachment
-        ? await uploadEvidenceFile(
-            pendingItem.attachment.uri,
-            pendingItem.attachment.name,
-            pendingItem.attachment.mimeType,
-          )
-        : null;
-
+      // Recheck the account before each item; never send one account's queue as another.
+      if (await getCurrentEvidenceUserId("syncing evidence") !== userId) throw new Error("The signed-in account changed.");
+      const filePath = await uploadSealedEvidence(pendingItem, userId);
+      // New capture ids are UUIDs; legacy ids without a UUID cannot be retried safely.
+      const id = pendingItem.id.replace(/^offline-evidence-/, "");
+      if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) {
+        throw new Error("This legacy capture needs migration before sync.");
+      }
       await createEvidenceItem({
-        title: pendingItem.title,
-        notes: [
-          pendingItem.notes,
-          "Offline vault sync: yes",
-          `Offline captured at: ${pendingItem.createdAt}`,
-          `Offline vault hash: ${pendingItem.integrityHash}`,
-          `Previous vault hash: ${pendingItem.previousHash}`,
-        ]
-          .filter(Boolean)
-          .join("\n"),
-        file_path: filePath,
-        evidence_type: pendingItem.evidenceType ?? null,
-        purpose: pendingItem.purpose ?? null,
+        id, expectedOwnerId: userId, title: pendingItem.title, notes: pendingItem.notes, file_path: filePath,
+        evidence_type: pendingItem.evidenceType ?? null, purpose: pendingItem.purpose ?? null,
         structured_data: pendingItem.structuredData ?? null,
         source_reliability: pendingItem.structuredData?.source_reliability as string | null | undefined,
-        status: "stored",
-        captured_at: pendingItem.createdAt,
-        vault_hash: pendingItem.integrityHash,
-        vault_previous_hash: pendingItem.previousHash,
-        attachment_sha256: pendingItem.attachment?.sha256 ?? null,
+        status: "stored", captured_at: pendingItem.attachment?.source === "live" ? pendingItem.attachment.capturedAt ?? pendingItem.createdAt : null,
+        vault_hash: pendingItem.integrityHash, vault_previous_hash: pendingItem.previousHash,
+        attachment_sha256: pendingItem.attachment?.digestEncoding === "bytes" ? pendingItem.attachment.sha256 : null,
         attachment_byte_size: pendingItem.attachment?.byteSize ?? null,
         audit_event_type: "offline_evidence_synced",
       });
-
       await removeOfflineEvidenceItem(pendingItem.id);
       syncedCount += 1;
     } catch (error) {
-      await markOfflineEvidenceSyncFailed(
-        pendingItem.id,
-        error instanceof Error ? error.message : "Could not sync offline evidence.",
-      );
+      await markOfflineEvidenceSyncFailed(pendingItem.id, error instanceof Error ? error.message : "Could not sync evidence.");
       failedCount += 1;
     }
   }
-
-  return { syncedCount, failedCount, pendingCount: pendingItems.length - syncedCount };
+  return { syncedCount, failedCount, pendingCount: (await getOfflineEvidenceVaultItems(userId)).length };
 }
 
 export async function updateEvidenceItemsStatus(

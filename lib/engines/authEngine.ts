@@ -1,3 +1,4 @@
+import { assertOfflineEvidenceSynced } from "./offlineEvidenceVault";
 import * as Linking from "expo-linking";
 
 import { supabase } from "../supabase/client";
@@ -243,6 +244,9 @@ export async function resendEmailVerification(email: string) {
 }
 
 export async function signOut() {
+  const { data, error: sessionError } = await supabase.auth.getSession();
+  if (sessionError) throw sessionError;
+  if (data.session?.user.id) await assertOfflineEvidenceSynced(data.session.user.id);
   const { error } = await supabase.auth.signOut();
 
   if (error) {

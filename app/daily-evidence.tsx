@@ -6,15 +6,16 @@ import * as ImagePicker from "expo-image-picker";
 import { AppBottomNav } from "../components/AppBottomNav";
 import { useAuth } from "../lib/auth";
 import {
-  addDailyHomeEvidence,
   createDailyHomeEvidenceTasks,
   getDailyHomeEvidenceHistory,
   getDailyHomeEvidenceStatus,
-  uploadEvidenceMedia,
   type DailyHomeEvidenceHistory,
   type DailyHomeEvidenceCategory,
   type DailyHomeEvidenceStatus,
 } from "../lib/platformData";
+import { pickDurableEvidence, attachmentFromCaptureDraft } from "../lib/engines/evidenceCapture";
+import type { OfflineEvidenceAttachment } from "../lib/engines/offlineEvidenceVault";
+import { createEvidenceItemWithOfflineFallback } from "../lib/engines/evidenceEngine";
 import { globalStyles } from "../lib/styles";
 
 const CATEGORY_OPTIONS: { value: DailyHomeEvidenceCategory; label: string; prompt: string }[] = [
@@ -57,6 +58,8 @@ export default function DailyEvidenceScreen() {
   });
   const [category, setCategory] = useState<DailyHomeEvidenceCategory>("inside_home");
   const [selectedMedia, setSelectedMedia] = useState<ImagePicker.ImagePickerAsset | null>(null);
+  const [sealedAttachment, setSealedAttachment] = useState<OfflineEvidenceAttachment | null>(null);
+  const [mediaSource, setMediaSource] = useState<"media" | "live">("media");
   const [notes, setNotes] = useState("");
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -73,6 +76,10 @@ export default function DailyEvidenceScreen() {
       setStatus(nextStatus);
       setHistory(nextHistory);
       setLoading(false);
+    }).catch(() => {
+      if (!active) return;
+      setLoading(false);
+      setError("Saved history could not be loaded. Captures can still be kept securely on this device while signed in.");
     });
 
     return () => {
@@ -98,15 +105,15 @@ export default function DailyEvidenceScreen() {
       return;
     }
 
-    const result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: false,
-      mediaTypes: ["images", "videos"],
-      quality: 0.8,
-      videoMaxDuration: 90,
-    });
-
-    if (!result.canceled) {
-      setSelectedMedia(result.assets[0]);
+    try {
+      const result = await pickDurableEvidence(user.id, "library");
+      if (result?.asset) {
+        setSelectedMedia(result.asset);
+        setSealedAttachment(attachmentFromCaptureDraft(result.draft));
+        setMediaSource("media");
+      }
+    } catch (captureError) {
+      setError(captureError instanceof Error ? captureError.message : "Could not preserve this capture.");
     }
   };
 
@@ -120,20 +127,20 @@ export default function DailyEvidenceScreen() {
       return;
     }
 
-    const result = await ImagePicker.launchCameraAsync({
-      allowsEditing: false,
-      mediaTypes: ["images", "videos"],
-      quality: 0.8,
-      videoMaxDuration: 90,
-    });
-
-    if (!result.canceled) {
-      setSelectedMedia(result.assets[0]);
+    try {
+      const result = await pickDurableEvidence(user.id, "camera");
+      if (result?.asset) {
+        setSelectedMedia(result.asset);
+        setSealedAttachment(attachmentFromCaptureDraft(result.draft));
+        setMediaSource("live");
+      }
+    } catch (captureError) {
+      setError(captureError instanceof Error ? captureError.message : "Could not preserve this capture.");
     }
   };
 
   const handleSave = async () => {
-    if (!selectedMedia) {
+    if (!selectedMedia || !sealedAttachment) {
       setError("Attach a photo or video first.");
       return;
     }
@@ -144,21 +151,26 @@ export default function DailyEvidenceScreen() {
 
     try {
       const mediaType = getMediaType(selectedMedia);
-      const filePath = await uploadEvidenceMedia(
-        user.id,
-        selectedMedia.uri,
-        selectedMedia.fileName ?? undefined,
-        selectedMedia.mimeType ?? undefined,
-      );
-
-      await addDailyHomeEvidence(user.id, category, mediaType, notes, filePath);
-      setStatus(await getDailyHomeEvidenceStatus(user.id));
-      setHistory(await getDailyHomeEvidenceHistory(user.id));
+      const dateKey = new Date().toISOString().slice(0, 10);
+      const label = CATEGORY_OPTIONS.find((item) => item.value === category)?.label ?? category;
+      const result = await createEvidenceItemWithOfflineFallback({
+        title: `Daily home evidence - ${label} - ${dateKey} - ${mediaType}`,
+        notes: [`Daily hard evidence`, `date=${dateKey}`, `category=${category}`, `media=${mediaType}`, `notes=${notes.trim()}`].join("\n"),
+        evidence_type: "direct_observation", purpose: "daily_home_check_in",
+        structured_data: { category, dateKey, mediaType, capture_source: mediaSource, source_reliability: "unverified" },
+        attachment: sealedAttachment,
+      });
+      const refreshed = await Promise.allSettled([getDailyHomeEvidenceStatus(user.id), getDailyHomeEvidenceHistory(user.id)]);
+      if (refreshed[0].status === "fulfilled") setStatus(refreshed[0].value);
+      if (refreshed[1].status === "fulfilled") setHistory(refreshed[1].value);
       setSelectedMedia(null);
+      setSealedAttachment(null);
       setNotes("");
-      setNotice(`${CATEGORY_OPTIONS.find((item) => item.value === category)?.label} ${mediaType} saved.`);
-    } catch {
-      setError("Could not save daily home evidence yet. Check Supabase storage and try again.");
+      setNotice(result.mode === "offline"
+        ? "Saved securely on this device. Upload is pending: open Evidence to retry. Do not clear app data or uninstall before sync completes."
+        : `${label} ${mediaType} saved. Capture authenticity remains unverified.`);
+    } catch (saveError) {
+      setError(saveError instanceof Error ? saveError.message : "Could not save daily home evidence.");
     } finally {
       setSaving(false);
     }
@@ -242,6 +254,7 @@ export default function DailyEvidenceScreen() {
 
       <View style={globalStyles.card}>
         <Text style={globalStyles.cardTitle}>Attach photo or video</Text>
+        <Text style={globalStyles.mutedText}>Camera captures and imported files remain unverified until reviewed. Unsynced evidence can be lost if app data is cleared or the app is uninstalled.</Text>
         {selectedMedia ? (
           <Text style={globalStyles.notice}>
             Selected {getMediaType(selectedMedia)}: {selectedMedia.fileName ?? "daily home evidence"}

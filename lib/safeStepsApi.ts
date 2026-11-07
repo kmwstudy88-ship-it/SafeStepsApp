@@ -1,3 +1,4 @@
+import { assertOfflineEvidenceSynced } from "./engines/offlineEvidenceVault";
 import { supabase } from "./supabaseClient";
 
 const DEFAULT_API_URL = "http://localhost:3000";
@@ -120,6 +121,9 @@ export async function getSafeStepsSessionContext() {
 }
 
 export async function signOutSafeStepsSession() {
+  const { data, error: sessionError } = await supabase.auth.getSession();
+  if (sessionError) throw sessionError;
+  if (data.session?.user.id) await assertOfflineEvidenceSynced(data.session.user.id);
   await safeStepsApiRequest<{ signedOut: true }>("/auth/logout", { method: "POST" });
   const { error } = await supabase.auth.signOut({ scope: "local" });
   if (error) throw new Error(error.message);
