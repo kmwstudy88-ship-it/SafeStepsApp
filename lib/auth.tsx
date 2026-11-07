@@ -1,3 +1,7 @@
+import { AppState, Text, View } from "react-native";
+import { recoverEvidencePicker } from "./engines/evidenceCapture";
+import { assertOfflineEvidenceSynced, recoverOfflineEvidenceCaptures } from "./engines/offlineEvidenceVault";
+import { syncPendingOfflineEvidence } from "./engines/evidenceEngine";
 import React, { createContext, useEffect, useMemo, useState } from "react";
 import type { Session, User } from "@supabase/supabase-js";
 
@@ -24,6 +28,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [initializing, setInitializing] = useState(true);
   const [session, setSession] = useState<Session | null>(null);
   const [demoMode, setDemoMode] = useState(false);
+  const [evidenceWarning, setEvidenceWarning] = useState<string | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -46,6 +51,30 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       subscription.unsubscribe();
     };
   }, []);
+
+  useEffect(() => {
+    if (!session?.user.id || demoMode) { setEvidenceWarning(null); return; }
+    let active = true;
+    let running = false;
+    const recoverAndSync = async () => {
+      if (running || AppState.currentState === "background") return;
+      running = true;
+      try {
+        await recoverEvidencePicker(session.user.id);
+        const recovery = await recoverOfflineEvidenceCaptures();
+        const result = await syncPendingOfflineEvidence();
+        if (active) setEvidenceWarning(recovery.failedCount
+          ? "An interrupted capture needs attention. Keep this device and contact support; do not clear app data or uninstall."
+          : result.pendingCount ? `${result.pendingCount} evidence item(s) need confirmation or upload. Open Evidence to review. Do not clear app data or uninstall.` : null);
+      } catch {
+        if (active) setEvidenceWarning("Evidence sync could not be checked. Open Evidence before signing out or changing phones.");
+      } finally { running = false; }
+    };
+    void recoverAndSync();
+    const listener = AppState.addEventListener("change", (state) => { if (state === "active") void recoverAndSync(); });
+    const interval = setInterval(() => { void recoverAndSync(); }, 60_000);
+    return () => { active = false; listener.remove(); clearInterval(interval); };
+  }, [session?.user.id, demoMode]);
 
   const value = useMemo<AuthContextValue>(
     () => ({
@@ -77,6 +106,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           return;
         }
 
+        if (session?.user.id) await assertOfflineEvidenceSynced(session.user.id);
         const { error } = await supabase.auth.signOut();
 
         if (error) throw error;
@@ -85,7 +115,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     [demoMode, initializing, session],
   );
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return <AuthContext.Provider value={value}>
+    <View style={{ flex: 1 }}>
+      {evidenceWarning ? <Text accessibilityRole="alert" style={{ padding: 12, backgroundColor: "#fff3cd", color: "#5c4400" }}>{evidenceWarning}</Text> : null}
+      {children}
+    </View>
+  </AuthContext.Provider>;
 }
 
 export function useAuth() {

@@ -5,6 +5,7 @@ import {
   ScrollView,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from "react-native";
 import { Redirect, useLocalSearchParams } from "expo-router";
@@ -22,7 +23,8 @@ import {
   syncPendingOfflineEvidence,
   updateEvidenceItemsStatus,
 } from "../../lib/engines/evidenceEngine";
-import type { OfflineEvidenceVaultItem } from "../../lib/engines/offlineEvidenceVault";
+import { attachmentFromCaptureDraft, pickDurableEvidence } from "../../lib/engines/evidenceCapture";
+import type { OfflineEvidenceAttachment, OfflineEvidenceVaultItem } from "../../lib/engines/offlineEvidenceVault";
 import {
   emptyStructuredEvidenceRecord,
   evidenceReviewReadiness,
@@ -34,12 +36,7 @@ import {
   type StructuredEvidenceType,
 } from "../../lib/engines/structuredEvidenceWorkflow";
 
-type EvidenceAttachment = {
-  uri: string;
-  name: string;
-  mimeType?: string;
-  source: "document" | "media" | "live";
-};
+type EvidenceAttachment = OfflineEvidenceAttachment;
 
 export default function EvidenceScreen() {
   const { initializing, user } = useAuth();
@@ -49,6 +46,7 @@ export default function EvidenceScreen() {
     challengeId?: string;
   }>();
   const [items, setItems] = useState<EvidenceItem[]>([]);
+  const [captureDraftId, setCaptureDraftId] = useState<string | undefined>();
   const [pendingItems, setPendingItems] = useState<OfflineEvidenceVaultItem[]>([]);
   const [reviewAvailability, setReviewAvailability] = useState<EvidenceCaseReviewAvailability>({
     status: "unknown_case_linkage",
@@ -298,6 +296,7 @@ export default function EvidenceScreen() {
         reviewAvailability: reviewAvailability.status,
       });
       const result = await createEvidenceItemWithOfflineFallback({
+        captureDraftId,
         title: structuredEvidenceTitle(structuredRecord),
         notes: structuredEvidenceNotes(structuredRecord),
         evidence_type: structuredRecord.evidence_type,
@@ -315,13 +314,14 @@ export default function EvidenceScreen() {
 
       changeEvidenceType(evidenceType);
       setAttachment(null);
+      setCaptureDraftId(undefined);
       if (result.mode === "online") {
         await loadEvidence();
         setMessage("Evidence saved.");
       } else {
         setPendingItems(await getPendingOfflineEvidenceItems());
         setMessage(
-          "No connection detected. Evidence has been sealed in the offline vault and will upload when sync succeeds.",
+          "Evidence is sealed on this device and is awaiting upload. Do not clear app data or uninstall until sync succeeds.",
         );
       }
     } catch (saveError) {
@@ -391,6 +391,7 @@ export default function EvidenceScreen() {
         mimeType: picked.mimeType,
         source: "document",
       });
+      setCaptureDraftId(undefined);
       if (!record.purpose.trim()) updateRecord({ purpose: picked.name.replace(/\.[^/.]+$/, "") });
     }
   }
@@ -406,21 +407,16 @@ export default function EvidenceScreen() {
       return;
     }
 
-    const result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: false,
-      mediaTypes: ["images", "videos"],
-      quality: 0.8,
-      videoMaxDuration: 90,
-    });
-
-    if (!result.canceled) {
-      const picked = result.assets[0];
-      setAttachment({
-        uri: picked.uri,
-        name: picked.fileName ?? `evidence-${Date.now()}`,
-        mimeType: picked.mimeType,
-        source: "media",
-      });
+    try {
+      if (!user) return;
+      const result = await pickDurableEvidence(user.id, "library");
+      if (result?.draft.attachment) {
+        setAttachment(attachmentFromCaptureDraft(result.draft));
+        setCaptureDraftId(result.draft.id);
+        setMessage("Capture encrypted on this device. Add context and save to confirm submission.");
+      }
+    } catch (captureError) {
+      setError(captureError instanceof Error ? captureError.message : "Could not preserve this capture.");
     }
   }
 
@@ -435,22 +431,16 @@ export default function EvidenceScreen() {
       return;
     }
 
-    const result = await ImagePicker.launchCameraAsync({
-      allowsEditing: false,
-      mediaTypes: ["images", "videos"],
-      quality: 0.8,
-      videoMaxDuration: 90,
-    });
-
-    if (!result.canceled) {
-      const captured = result.assets[0];
-      setAttachment({
-        uri: captured.uri,
-        name: captured.fileName ?? `live-evidence-${Date.now()}`,
-        mimeType: captured.mimeType,
-        source: "live",
-      });
-      if (!record.purpose.trim()) updateRecord({ purpose: "Live evidence capture" });
+    try {
+      if (!user) return;
+      const result = await pickDurableEvidence(user.id, "camera");
+      if (result?.draft.attachment) {
+        setAttachment(attachmentFromCaptureDraft(result.draft));
+        setCaptureDraftId(result.draft.id);
+        setMessage("Capture encrypted on this device. Add context and save to confirm submission.");
+      }
+    } catch (captureError) {
+      setError(captureError instanceof Error ? captureError.message : "Could not preserve this capture.");
     }
   }
 
@@ -529,8 +519,21 @@ export default function EvidenceScreen() {
           hashes and uploaded when sync succeeds.
         </Text>
         <Text style={{ marginTop: 8, fontWeight: "bold" }}>
-          Pending upload: {pendingItems.length}
+          Pending confirmation or upload: {pendingItems.length}
         </Text>
+        {pendingItems.filter((item) => item.requiresConfirmation).map((item) => (
+          <View key={item.id} style={{ marginTop: 12 }}>
+            <Text>{item.title}</Text>
+            <Text>Unverified capture; not submitted. Add context and save to confirm.</Text>
+            <TouchableOpacity onPress={() => {
+              setAttachment(attachmentFromCaptureDraft(item));
+              setCaptureDraftId(item.id);
+              setMessage(item.attachment ? "Recovered capture attached. Complete the evidence details and save to confirm." : "No recoverable file was returned. Record the interruption in your notes; it does not establish non-compliance.");
+            }} style={{ paddingVertical: 10 }}>
+              <Text style={{ color: "#155a40", fontWeight: "bold" }}>Use saved capture</Text>
+            </TouchableOpacity>
+          </View>
+        ))}
         {pendingItems.length > 0 ? (
           <Pressable
             disabled={syncing}
